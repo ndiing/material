@@ -1,0 +1,1046 @@
+[
+    {
+        "comment": "/**\n * @extends MdComponent\n * @element md-switch\n * @fires MdSwitchComponent#onSwitchNativeInput\n * @fires MdSwitchComponent#onSwitchNativeReset\n */",
+        "meta": {
+            "range": [
+                343,
+                3225
+            ],
+            "filename": "switch.js",
+            "lineno": 12,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\switch",
+            "code": {
+                "id": "astnode100000020",
+                "name": "MdSwitchComponent",
+                "type": "ClassDeclaration",
+                "paramnames": []
+            }
+        },
+        "augments": [
+            "MdComponent"
+        ],
+        "tags": [
+            {
+                "originalTitle": "element",
+                "title": "element",
+                "text": "md-switch",
+                "value": "md-switch"
+            }
+        ],
+        "fires": [
+            "MdSwitchComponent#event:onSwitchNativeInput",
+            "MdSwitchComponent#event:onSwitchNativeReset"
+        ],
+        "name": "MdSwitchComponent",
+        "longname": "MdSwitchComponent",
+        "kind": "class",
+        "scope": "global",
+        "undocumented": true
+    },
+    {
+        "comment": "/**\n     * @property {String} [name]\n     * @property {String} [value]\n     * @property {Boolean} [indeterminate]\n     * @property {Boolean} [checked]\n     * @property {Array} [icons]\n     */",
+        "meta": {
+            "range": [
+                589,
+                792
+            ],
+            "filename": "switch.js",
+            "lineno": 20,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\switch",
+            "code": {
+                "id": "astnode100000024",
+                "name": "properties",
+                "type": "ClassProperty"
+            }
+        },
+        "properties": [
+            {
+                "type": {
+                    "names": [
+                        "String"
+                    ]
+                },
+                "optional": true,
+                "name": "name"
+            },
+            {
+                "type": {
+                    "names": [
+                        "String"
+                    ]
+                },
+                "optional": true,
+                "name": "value"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Boolean"
+                    ]
+                },
+                "optional": true,
+                "name": "indeterminate"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Boolean"
+                    ]
+                },
+                "optional": true,
+                "name": "checked"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Array"
+                    ]
+                },
+                "optional": true,
+                "name": "icons"
+            }
+        ],
+        "name": "properties",
+        "longname": "MdSwitchComponent#properties",
+        "kind": "member",
+        "memberof": "MdSwitchComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                619,
+                641
+            ],
+            "filename": "switch.js",
+            "lineno": 21,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\switch",
+            "code": {
+                "id": "astnode100000026",
+                "name": "name",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "name",
+        "longname": "name",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                627,
+                639
+            ],
+            "filename": "switch.js",
+            "lineno": 21,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\switch",
+            "code": {
+                "id": "astnode100000028",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "name.type",
+        "kind": "member",
+        "memberof": "name",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                651,
+                674
+            ],
+            "filename": "switch.js",
+            "lineno": 22,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\switch",
+            "code": {
+                "id": "astnode100000030",
+                "name": "value",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "value",
+        "longname": "value",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                660,
+                672
+            ],
+            "filename": "switch.js",
+            "lineno": 22,
+            "columnno": 17,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\switch",
+            "code": {
+                "id": "astnode100000032",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "value.type",
+        "kind": "member",
+        "memberof": "value",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                684,
+                716
+            ],
+            "filename": "switch.js",
+            "lineno": 23,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\switch",
+            "code": {
+                "id": "astnode100000034",
+                "name": "indeterminate",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "indeterminate",
+        "longname": "indeterminate",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                701,
+                714
+            ],
+            "filename": "switch.js",
+            "lineno": 23,
+            "columnno": 25,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\switch",
+            "code": {
+                "id": "astnode100000036",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Boolean"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "indeterminate.type",
+        "kind": "member",
+        "memberof": "indeterminate",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                726,
+                752
+            ],
+            "filename": "switch.js",
+            "lineno": 24,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\switch",
+            "code": {
+                "id": "astnode100000038",
+                "name": "checked",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "checked",
+        "longname": "checked",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                737,
+                750
+            ],
+            "filename": "switch.js",
+            "lineno": 24,
+            "columnno": 19,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\switch",
+            "code": {
+                "id": "astnode100000040",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Boolean"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "checked.type",
+        "kind": "member",
+        "memberof": "checked",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                762,
+                784
+            ],
+            "filename": "switch.js",
+            "lineno": 25,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\switch",
+            "code": {
+                "id": "astnode100000042",
+                "name": "icons",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "icons",
+        "longname": "icons",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                771,
+                782
+            ],
+            "filename": "switch.js",
+            "lineno": 25,
+            "columnno": 17,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\switch",
+            "code": {
+                "id": "astnode100000044",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Array"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "icons.type",
+        "kind": "member",
+        "memberof": "icons",
+        "scope": "static"
+    },
+    {
+        "comment": "/**\n     */",
+        "meta": {
+            "range": [
+                814,
+                852
+            ],
+            "filename": "switch.js",
+            "lineno": 30,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\switch",
+            "code": {
+                "id": "astnode100000046",
+                "name": "MdSwitchComponent",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "MdSwitchComponent",
+        "longname": "MdSwitchComponent",
+        "kind": "class",
+        "scope": "global",
+        "params": [],
+        "undocumented": true
+    },
+    {
+        "comment": "/**\n * @extends MdComponent\n * @element md-switch\n * @fires MdSwitchComponent#onSwitchNativeInput\n * @fires MdSwitchComponent#onSwitchNativeReset\n */",
+        "meta": {
+            "range": [
+                343,
+                3225
+            ],
+            "filename": "switch.js",
+            "lineno": 12,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\switch",
+            "code": {
+                "id": "astnode100000020",
+                "name": "MdSwitchComponent",
+                "type": "ClassDeclaration",
+                "paramnames": []
+            }
+        },
+        "name": "MdSwitchComponent",
+        "longname": "MdSwitchComponent",
+        "kind": "class",
+        "augments": [
+            "MdComponent"
+        ],
+        "tags": [
+            {
+                "originalTitle": "element",
+                "title": "element",
+                "text": "md-switch",
+                "value": "md-switch"
+            }
+        ],
+        "fires": [
+            "MdSwitchComponent#event:onSwitchNativeInput",
+            "MdSwitchComponent#event:onSwitchNativeReset"
+        ],
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n     */",
+        "meta": {
+            "range": [
+                874,
+                1801
+            ],
+            "filename": "switch.js",
+            "lineno": 36,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\switch",
+            "code": {
+                "id": "astnode100000053",
+                "name": "MdSwitchComponent#render",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "render",
+        "longname": "MdSwitchComponent#render",
+        "kind": "function",
+        "memberof": "MdSwitchComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\n     * @async\n     */",
+        "meta": {
+            "range": [
+                1837,
+                2428
+            ],
+            "filename": "switch.js",
+            "lineno": 60,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\switch",
+            "code": {
+                "id": "astnode100000130",
+                "name": "MdSwitchComponent#connectedCallback",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "async": true,
+        "name": "connectedCallback",
+        "longname": "MdSwitchComponent#connectedCallback",
+        "kind": "function",
+        "memberof": "MdSwitchComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1908,
+                1938
+            ],
+            "filename": "switch.js",
+            "lineno": 62,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\switch",
+            "code": {
+                "id": "astnode100000140",
+                "name": "this.defaultValue",
+                "type": "MemberExpression",
+                "value": "this.value",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "defaultValue",
+        "longname": "MdSwitchComponent#defaultValue",
+        "kind": "member",
+        "memberof": "MdSwitchComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1948,
+                1994
+            ],
+            "filename": "switch.js",
+            "lineno": 63,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\switch",
+            "code": {
+                "id": "astnode100000148",
+                "name": "this.defaultIndeterminate",
+                "type": "MemberExpression",
+                "value": "this.indeterminate",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "defaultIndeterminate",
+        "longname": "MdSwitchComponent#defaultIndeterminate",
+        "kind": "member",
+        "memberof": "MdSwitchComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2004,
+                2038
+            ],
+            "filename": "switch.js",
+            "lineno": 64,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\switch",
+            "code": {
+                "id": "astnode100000156",
+                "name": "this.defaultChecked",
+                "type": "MemberExpression",
+                "value": "this.checked",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "defaultChecked",
+        "longname": "MdSwitchComponent#defaultChecked",
+        "kind": "member",
+        "memberof": "MdSwitchComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2210,
+                2421
+            ],
+            "filename": "switch.js",
+            "lineno": 68,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\switch",
+            "code": {
+                "id": "astnode100000186",
+                "name": "this.ripple",
+                "type": "NewExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "ripple",
+        "longname": "MdSwitchComponent#ripple",
+        "kind": "member",
+        "memberof": "MdSwitchComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2255,
+                2285
+            ],
+            "filename": "switch.js",
+            "lineno": 69,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\switch",
+            "code": {
+                "id": "astnode100000194",
+                "name": "container",
+                "type": "Literal",
+                "value": ".md-switch__thumb"
+            }
+        },
+        "undocumented": true,
+        "name": "container",
+        "longname": "container",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2299,
+                2328
+            ],
+            "filename": "switch.js",
+            "lineno": 70,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\switch",
+            "code": {
+                "id": "astnode100000196",
+                "name": "trigger",
+                "type": "Literal",
+                "value": ".md-switch__native"
+            }
+        },
+        "undocumented": true,
+        "name": "trigger",
+        "longname": "trigger",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2342,
+                2357
+            ],
+            "filename": "switch.js",
+            "lineno": 71,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\switch",
+            "code": {
+                "id": "astnode100000198",
+                "name": "unbounded",
+                "type": "Literal",
+                "value": true
+            }
+        },
+        "undocumented": true,
+        "name": "unbounded",
+        "longname": "unbounded",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2371,
+                2381
+            ],
+            "filename": "switch.js",
+            "lineno": 72,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\switch",
+            "code": {
+                "id": "astnode100000200",
+                "name": "radius",
+                "type": "Literal",
+                "value": 40
+            }
+        },
+        "undocumented": true,
+        "name": "radius",
+        "longname": "radius",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2395,
+                2409
+            ],
+            "filename": "switch.js",
+            "lineno": 73,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\switch",
+            "code": {
+                "id": "astnode100000202",
+                "name": "centered",
+                "type": "Literal",
+                "value": true
+            }
+        },
+        "undocumented": true,
+        "name": "centered",
+        "longname": "centered",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n     * @async\n     */",
+        "meta": {
+            "range": [
+                2464,
+                2586
+            ],
+            "filename": "switch.js",
+            "lineno": 80,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\switch",
+            "code": {
+                "id": "astnode100000204",
+                "name": "MdSwitchComponent#disconnectedCallback",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "async": true,
+        "name": "disconnectedCallback",
+        "longname": "MdSwitchComponent#disconnectedCallback",
+        "kind": "function",
+        "memberof": "MdSwitchComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\n     * @param {Any} [event]\n     */",
+        "meta": {
+            "range": [
+                2636,
+                2942
+            ],
+            "filename": "switch.js",
+            "lineno": 88,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\switch",
+            "code": {
+                "id": "astnode100000224",
+                "name": "MdSwitchComponent#handleSwitchNativeInput",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "event"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleSwitchNativeInput",
+        "longname": "MdSwitchComponent#handleSwitchNativeInput",
+        "kind": "function",
+        "memberof": "MdSwitchComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2764,
+                2792
+            ],
+            "filename": "switch.js",
+            "lineno": 90,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\switch",
+            "code": {
+                "id": "astnode100000238",
+                "name": "native",
+                "type": "MemberExpression",
+                "value": "event.currentTarget"
+            }
+        },
+        "undocumented": true,
+        "name": "native",
+        "longname": "<anonymous>~native",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2802,
+                2843
+            ],
+            "filename": "switch.js",
+            "lineno": 91,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\switch",
+            "code": {
+                "id": "astnode100000244",
+                "name": "this.indeterminate",
+                "type": "MemberExpression",
+                "value": "native.indeterminate",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "indeterminate",
+        "longname": "MdSwitchComponent#indeterminate",
+        "kind": "member",
+        "memberof": "MdSwitchComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2853,
+                2882
+            ],
+            "filename": "switch.js",
+            "lineno": 92,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\switch",
+            "code": {
+                "id": "astnode100000252",
+                "name": "this.checked",
+                "type": "MemberExpression",
+                "value": "native.checked",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "checked",
+        "longname": "MdSwitchComponent#checked",
+        "kind": "member",
+        "memberof": "MdSwitchComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2927,
+                2932
+            ],
+            "filename": "switch.js",
+            "lineno": 93,
+            "columnno": 43,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\switch",
+            "code": {
+                "id": "astnode100000266",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n     * @param {Any} [event]\n     */",
+        "meta": {
+            "range": [
+                2992,
+                3223
+            ],
+            "filename": "switch.js",
+            "lineno": 99,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\switch",
+            "code": {
+                "id": "astnode100000268",
+                "name": "MdSwitchComponent#handleSwitchNativeReset",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "event"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleSwitchNativeReset",
+        "longname": "MdSwitchComponent#handleSwitchNativeReset",
+        "kind": "function",
+        "memberof": "MdSwitchComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                3033,
+                3063
+            ],
+            "filename": "switch.js",
+            "lineno": 100,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\switch",
+            "code": {
+                "id": "astnode100000274",
+                "name": "this.value",
+                "type": "MemberExpression",
+                "value": "this.defaultValue",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "value",
+        "longname": "MdSwitchComponent#value",
+        "kind": "member",
+        "memberof": "MdSwitchComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                3073,
+                3119
+            ],
+            "filename": "switch.js",
+            "lineno": 101,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\switch",
+            "code": {
+                "id": "astnode100000282",
+                "name": "this.indeterminate",
+                "type": "MemberExpression",
+                "value": "this.defaultIndeterminate",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "indeterminate",
+        "longname": "MdSwitchComponent#indeterminate",
+        "kind": "member",
+        "memberof": "MdSwitchComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                3129,
+                3163
+            ],
+            "filename": "switch.js",
+            "lineno": 102,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\switch",
+            "code": {
+                "id": "astnode100000290",
+                "name": "this.checked",
+                "type": "MemberExpression",
+                "value": "this.defaultChecked",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "checked",
+        "longname": "MdSwitchComponent#checked",
+        "kind": "member",
+        "memberof": "MdSwitchComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                3208,
+                3213
+            ],
+            "filename": "switch.js",
+            "lineno": 103,
+            "columnno": 43,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\switch",
+            "code": {
+                "id": "astnode100000304",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                3290,
+                3307
+            ],
+            "filename": "switch.js",
+            "lineno": 107,
+            "columnno": 9,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\switch",
+            "code": {
+                "id": "astnode100000314",
+                "name": "exports.MdSwitchComponent",
+                "type": "Identifier"
+            }
+        },
+        "undocumented": true,
+        "name": "MdSwitchComponent",
+        "longname": "MdSwitchComponent",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "kind": "package",
+        "longname": "package:undefined",
+        "files": [
+            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\switch\\switch.js"
+        ]
+    }
+]

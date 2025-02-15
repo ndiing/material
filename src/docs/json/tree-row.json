@@ -1,0 +1,94 @@
+[
+    {
+        "comment": "/**\n * @extends MdComponent\n * @element md-tree-row\n */",
+        "meta": {
+            "range": [
+                148,
+                323
+            ],
+            "filename": "tree-row.js",
+            "lineno": 8,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000012",
+                "name": "MdTreeRowComponent",
+                "type": "ClassDeclaration",
+                "paramnames": []
+            }
+        },
+        "augments": [
+            "MdComponent"
+        ],
+        "tags": [
+            {
+                "originalTitle": "element",
+                "title": "element",
+                "text": "md-tree-row",
+                "value": "md-tree-row"
+            }
+        ],
+        "name": "MdTreeRowComponent",
+        "longname": "MdTreeRowComponent",
+        "kind": "class",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n     */",
+        "meta": {
+            "range": [
+                215,
+                321
+            ],
+            "filename": "tree-row.js",
+            "lineno": 11,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000016",
+                "name": "MdTreeRowComponent#connectedCallback",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "connectedCallback",
+        "longname": "MdTreeRowComponent#connectedCallback",
+        "kind": "function",
+        "memberof": "MdTreeRowComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                391,
+                409
+            ],
+            "filename": "tree-row.js",
+            "lineno": 17,
+            "columnno": 9,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000041",
+                "name": "exports.MdTreeRowComponent",
+                "type": "Identifier"
+            }
+        },
+        "undocumented": true,
+        "name": "MdTreeRowComponent",
+        "longname": "MdTreeRowComponent",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "kind": "package",
+        "longname": "package:undefined",
+        "files": [
+            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree\\tree-row.js"
+        ]
+    }
+]

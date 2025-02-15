@@ -30,243 +30,239 @@ function sortItems(items) {
     });
 }
 
-/**
- * @extends MdComponent
- */
+
 class DemoMain extends MdComponent {
-    get mainTopAppBar(){
-        return this.querySelector('#mainTopAppBar')
+    get demoMainTopAppBar(){
+        return this.querySelector('#demoMainTopAppBar')
     }
 
-    get mainNavigationDrawer(){
-        return this.querySelector('#mainNavigationDrawer')
+    get demoMainNavigationDrawer(){
+        return this.querySelector('#demoMainNavigationDrawer')
     }
 
-    /**
-     */
     constructor() {
         super();
 
         // Daftar item navigasi
         this.items = [
-            { label: "Badge", routerLink: "/badge" },
+            { label: "Badge", routerLink: "/demo/badge" },
             {
                 label: "Bottom App Bar",
                 children: [
-                    { label: "Bottom App Bar", routerLink: "/bottom-app-bar" },
-                    { label: "Bottom App Bar No FAB", routerLink: "/bottom-app-bar-no-fab" },
+                    { label: "Bottom App Bar", routerLink: "/demo/bottom-app-bar" },
+                    { label: "Bottom App Bar No FAB", routerLink: "/demo/bottom-app-bar-no-fab" },
                 ],
             },
             {
                 label: "Bottom Sheet",
                 children: [
-                    { label: "Bottom Sheet", routerLink: "/bottom-sheet" },
-                    { label: "Bottom Sheet Modal", routerLink: "/bottom-sheet-modal" },
+                    { label: "Bottom Sheet", routerLink: "/demo/bottom-sheet" },
+                    { label: "Bottom Sheet Modal", routerLink: "/demo/bottom-sheet-modal" },
                 ],
             },
             {
                 label: "Button",
                 children: [
-                    { label: "Button", routerLink: "/button" },
-                    { label: "Button Elevated", routerLink: "/button-elevated" },
-                    { label: "Button Filled", routerLink: "/button-filled" },
-                    { label: "Button Filled Tonal", routerLink: "/button-filled-tonal" },
-                    { label: "Button Outlined", routerLink: "/button-outlined" },
+                    { label: "Button", routerLink: "/demo/button" },
+                    { label: "Button Elevated", routerLink: "/demo/button-elevated" },
+                    { label: "Button Filled", routerLink: "/demo/button-filled" },
+                    { label: "Button Filled Tonal", routerLink: "/demo/button-filled-tonal" },
+                    { label: "Button Outlined", routerLink: "/demo/button-outlined" },
                 ],
             },
-            { label: "Card", routerLink: "/card" },
-            { label: "Checkbox", routerLink: "/checkbox" },
+            { label: "Card", routerLink: "/demo/card" },
+            { label: "Checkbox", routerLink: "/demo/checkbox" },
             {
                 label: "Chips",
                 children: [
-                    // { label: "Chips", routerLink: "/chips" },
-                    { label: "Chips Single Select", routerLink: "/chips-single-select" },
-                    { label: "Chips Multi Select", routerLink: "/chips-multi-select" },
+                    // { label: "Chips", routerLink: "/demo/chips" },
+                    { label: "Chips Single Select", routerLink: "/demo/chips-single-select" },
+                    { label: "Chips Multi Select", routerLink: "/demo/chips-multi-select" },
                 ],
             },
-            // { label: "Data Table Cell", routerLink: "/data-table-cell" },
+            // { label: "Data Table Cell", routerLink: "/demo/data-table-cell" },
             {
                 label: "Data Table",
                 children: [
-                    { label: "Data Table", routerLink: "/data-table" },
-                    { label: "Data Table Checkbox", routerLink: "/data-table-checkbox" },
-                    { label: "Data Table Sortable", routerLink: "/data-table-sortable" },
+                    { label: "Data Table", routerLink: "/demo/data-table" },
+                    { label: "Data Table Checkbox", routerLink: "/demo/data-table-checkbox" },
+                    { label: "Data Table Sortable", routerLink: "/demo/data-table-sortable" },
                 ],
             },
 
-            { label: "Dialog", routerLink: "/dialog" },
-            { label: "Divider", routerLink: "/divider" },
+            { label: "Dialog", routerLink: "/demo/dialog" },
+            { label: "Divider", routerLink: "/demo/divider" },
             {
                 label: "FAB",
                 children: [
-                    { label: "FAB", routerLink: "/fab" },
-                    { label: "FAB Unelevated", routerLink: "/fab-unelevated" },
-                    { label: "FAB Extended", routerLink: "/fab-extended" },
-                    { label: "FAB Small", routerLink: "/fab-small" },
-                    { label: "FAB Large", routerLink: "/fab-large" },
+                    { label: "FAB", routerLink: "/demo/fab" },
+                    { label: "FAB Unelevated", routerLink: "/demo/fab-unelevated" },
+                    { label: "FAB Extended", routerLink: "/demo/fab-extended" },
+                    { label: "FAB Small", routerLink: "/demo/fab-small" },
+                    { label: "FAB Large", routerLink: "/demo/fab-large" },
                 ],
             },
-            { label: "Form", routerLink: "/form" },
-            { label: "Icon", routerLink: "/icon" },
+            { label: "Form", routerLink: "/demo/form" },
+            { label: "Icon", routerLink: "/demo/icon" },
             {
                 label: "Icon Button",
                 children: [
-                    { label: "Icon Button", routerLink: "/icon-button" },
-                    { label: "Icon Button Filled", routerLink: "/icon-button-filled" },
-                    { label: "Icon Button Filled Tonal", routerLink: "/icon-button-filled-tonal" },
-                    { label: "Icon Button Outlined", routerLink: "/icon-button-outlined" },
+                    { label: "Icon Button", routerLink: "/demo/icon-button" },
+                    { label: "Icon Button Filled", routerLink: "/demo/icon-button-filled" },
+                    { label: "Icon Button Filled Tonal", routerLink: "/demo/icon-button-filled-tonal" },
+                    { label: "Icon Button Outlined", routerLink: "/demo/icon-button-outlined" },
                 ],
             },
-            { label: "Image", routerLink: "/image" },
-            // { label: "List Item", routerLink: "/list-item" },
-            // { label: "List Row", routerLink: "/list-row" },
+            { label: "Image", routerLink: "/demo/image" },
+            // { label: "List Item", routerLink: "/demo/list-item" },
+            // { label: "List Row", routerLink: "/demo/list-row" },
             {
                 label: "List",
                 children: [
-                    { label: "List", routerLink: "/list" },
-                    // { label: "List Single Select", routerLink: "/list-single-select" },
-                    // { label: "List Multi Select", routerLink: "/list-multi-select" },
+                    { label: "List", routerLink: "/demo/list" },
+                    // { label: "List Single Select", routerLink: "/demo/list-single-select" },
+                    // { label: "List Multi Select", routerLink: "/demo/list-multi-select" },
                 ],
             },
-            { label: "Menu", routerLink: "/menu" },
+            { label: "Menu", routerLink: "/demo/menu" },
             {
                 label: "Navigation Bar",
                 children: [
-                    { label: "Navigation Bar", routerLink: "/navigation-bar" },
-                    { label: "Navigation Bar No Label", routerLink: "/navigation-bar-no-label" },
+                    { label: "Navigation Bar", routerLink: "/demo/navigation-bar" },
+                    { label: "Navigation Bar No Label", routerLink: "/demo/navigation-bar-no-label" },
                 ],
             },
             {
                 label: "Navigation Drawer",
                 children: [
-                    { label: "Navigation Drawer", routerLink: "/navigation-drawer" },
-                    { label: "Navigation Drawer Modal", routerLink: "/navigation-drawer-modal" },
+                    { label: "Navigation Drawer", routerLink: "/demo/navigation-drawer" },
+                    { label: "Navigation Drawer Modal", routerLink: "/demo/navigation-drawer-modal" },
                 ],
             },
-            // { label: "Navigation List Item", routerLink: "/navigation-list-item" },
-            // { label: "Navigation List Row", routerLink: "/navigation-list-row" },
-            { label: "Navigation List", routerLink: "/navigation-list" },
+            // { label: "Navigation List Item", routerLink: "/demo/navigation-list-item" },
+            // { label: "Navigation List Row", routerLink: "/demo/navigation-list-row" },
+            { label: "Navigation List", routerLink: "/demo/navigation-list" },
             {
                 label: "Navigation Rail",
                 children: [
-                    { label: "Navigation Rail", routerLink: "/navigation-rail" },
-                    { label: "Navigation Rail No Label", routerLink: "/navigation-rail-no-label" },
+                    { label: "Navigation Rail", routerLink: "/demo/navigation-rail" },
+                    { label: "Navigation Rail No Label", routerLink: "/demo/navigation-rail-no-label" },
                 ],
             },
             {
                 label: "Progress Indicator",
                 children: [
-                    { label: "Progress Indicator", routerLink: "/progress-indicator" },
-                    { label: "Progress Indicator Circular", routerLink: "/progress-indicator-circular" },
+                    { label: "Progress Indicator", routerLink: "/demo/progress-indicator" },
+                    { label: "Progress Indicator Circular", routerLink: "/demo/progress-indicator-circular" },
                 ],
             },
-            { label: "Radio Button", routerLink: "/radio-button" },
-            { label: "Scrim", routerLink: "/scrim" },
+            { label: "Radio Button", routerLink: "/demo/radio-button" },
+            { label: "Scrim", routerLink: "/demo/scrim" },
             {
                 label: "Segmented Button",
                 children: [
-                    // { label: "Segmented Button", routerLink: "/segmented-button" },
-                    { label: "Segmented Button Single Select", routerLink: "/segmented-button-single-select" },
-                    { label: "Segmented Button Multi Select", routerLink: "/segmented-button-multi-select" },
+                    // { label: "Segmented Button", routerLink: "/demo/segmented-button" },
+                    { label: "Segmented Button Single Select", routerLink: "/demo/segmented-button-single-select" },
+                    { label: "Segmented Button Multi Select", routerLink: "/demo/segmented-button-multi-select" },
                 ],
             },
             {
                 label: "Sheet",
                 children: [
-                    // { label: "Sheet", routerLink: "/sheet" },
-                    { label: "Sheet North", routerLink: "/sheet-north" },
-                    { label: "Sheet East", routerLink: "/sheet-east" },
-                    { label: "Sheet South", routerLink: "/sheet-south" },
-                    { label: "Sheet West", routerLink: "/sheet-west" },
-                    { label: "Sheet North Modal", routerLink: "/sheet-north-modal" },
-                    { label: "Sheet East Modal", routerLink: "/sheet-east-modal" },
-                    { label: "Sheet South Modal", routerLink: "/sheet-south-modal" },
-                    { label: "Sheet West Modal", routerLink: "/sheet-west-modal" },
-                    // { label: "Sheet Center", routerLink: "/sheet-center" },
+                    // { label: "Sheet", routerLink: "/demo/sheet" },
+                    { label: "Sheet North", routerLink: "/demo/sheet-north" },
+                    { label: "Sheet East", routerLink: "/demo/sheet-east" },
+                    { label: "Sheet South", routerLink: "/demo/sheet-south" },
+                    { label: "Sheet West", routerLink: "/demo/sheet-west" },
+                    { label: "Sheet North Modal", routerLink: "/demo/sheet-north-modal" },
+                    { label: "Sheet East Modal", routerLink: "/demo/sheet-east-modal" },
+                    { label: "Sheet South Modal", routerLink: "/demo/sheet-south-modal" },
+                    { label: "Sheet West Modal", routerLink: "/demo/sheet-west-modal" },
+                    // { label: "Sheet Center", routerLink: "/demo/sheet-center" },
                 ],
             },
             {
                 label: "Side Sheet",
                 children: [
-                    { label: "Side Sheet", routerLink: "/side-sheet" },
-                    { label: "Side Sheet Modal", routerLink: "/side-sheet-modal" },
+                    { label: "Side Sheet", routerLink: "/demo/side-sheet" },
+                    { label: "Side Sheet Modal", routerLink: "/demo/side-sheet-modal" },
                 ],
             },
             {
                 label: "Slider",
                 children: [
-                    // { label: "Slider", routerLink: "/slider" },
-                    { label: "Slider Centered", routerLink: "/slider-centered" },
-                    { label: "Slider Continuous", routerLink: "/slider-continuous" },
-                    { label: "Slider Discrete", routerLink: "/slider-discrete" },
-                    { label: "Slider Range Selection", routerLink: "/slider-range-selection" },
+                    // { label: "Slider", routerLink: "/demo/slider" },
+                    { label: "Slider Centered", routerLink: "/demo/slider-centered" },
+                    { label: "Slider Continuous", routerLink: "/demo/slider-continuous" },
+                    { label: "Slider Discrete", routerLink: "/demo/slider-discrete" },
+                    { label: "Slider Range Selection", routerLink: "/demo/slider-range-selection" },
                 ],
             },
-            { label: "Snackbar", routerLink: "/snackbar" },
-            { label: "Switch", routerLink: "/switch" },
-            // { label: "Tab", routerLink: "/tab" },
+            { label: "Snackbar", routerLink: "/demo/snackbar" },
+            { label: "Switch", routerLink: "/demo/switch" },
+            // { label: "Tab", routerLink: "/demo/tab" },
             {
                 label: "Tabs",
                 children: [
-                    // { label: "Tabs", routerLink: "/tabs" },
-                    { label: "Tabs Primary", routerLink: "/tabs-primary" },
-                    { label: "Tabs Secondary", routerLink: "/tabs-secondary" },
+                    // { label: "Tabs", routerLink: "/demo/tabs" },
+                    { label: "Tabs Primary", routerLink: "/demo/tabs-primary" },
+                    { label: "Tabs Secondary", routerLink: "/demo/tabs-secondary" },
                 ],
             },
             {
                 label: "Text Field",
                 children: [
-                    { label: "Text Field", routerLink: "/text-field" },
-                    { label: "Text Field Outlined", routerLink: "/text-field-outlined" },
-                    { label: "Text Field Filled", routerLink: "/text-field-filled" },
-                    { label: "Datetime Field", routerLink: "/datetime-field" },
-                    { label: "Date Field", routerLink: "/date-field" },
-                    { label: "Time Field", routerLink: "/time-field" },
-                    { label: "Month Field", routerLink: "/month-field" },
-                    { label: "Week Field", routerLink: "/week-field" },
+                    { label: "Text Field", routerLink: "/demo/text-field" },
+                    { label: "Text Field Outlined", routerLink: "/demo/text-field-outlined" },
+                    { label: "Text Field Filled", routerLink: "/demo/text-field-filled" },
+                    { label: "Datetime Field", routerLink: "/demo/datetime-field" },
+                    { label: "Date Field", routerLink: "/demo/date-field" },
+                    { label: "Time Field", routerLink: "/demo/time-field" },
+                    { label: "Month Field", routerLink: "/demo/month-field" },
+                    { label: "Week Field", routerLink: "/demo/week-field" },
                 ],
             },
-            { label: "Tooltip", routerLink: "/tooltip" },
-            { label: "Top App Bar", routerLink: "/top-app-bar" },
-            // { label: "Tree Item", routerLink: "/tree-item" },
-            // { label: "Tree Row", routerLink: "/tree-row" },
-            { label: "Tree", routerLink: "/tree" },
+            { label: "Tooltip", routerLink: "/demo/tooltip" },
+            { label: "Top App Bar", routerLink: "/demo/top-app-bar" },
+            // { label: "Tree Item", routerLink: "/demo/tree-item" },
+            // { label: "Tree Row", routerLink: "/demo/tree-row" },
+            { label: "Tree", routerLink: "/demo/tree" },
             {
                 label: "Picker",
                 children: [
                     // {
                     //     label: "Datetime Picker",
                     //     children: [
-                            { label: "Datetime Picker", routerLink: "/datetime-picker" },
-                            { label: "Datetime Picker Modal", routerLink: "/datetime-picker-modal" },
+                            { label: "Datetime Picker", routerLink: "/demo/datetime-picker" },
+                            { label: "Datetime Picker Modal", routerLink: "/demo/datetime-picker-modal" },
                         // ],
                     // },
                     // {
                     //     label: "Date Picker",
                     //     children: [
-                            { label: "Date Picker", routerLink: "/date-picker" },
-                            { label: "Date Picker Modal", routerLink: "/date-picker-modal" },
+                            { label: "Date Picker", routerLink: "/demo/date-picker" },
+                            { label: "Date Picker Modal", routerLink: "/demo/date-picker-modal" },
                         // ],
                     // },
                     // {
                     //     label: "Time Picker",
                     //     children: [
-                            { label: "Time Picker", routerLink: "/time-picker" },
-                            { label: "Time Picker Modal", routerLink: "/time-picker-modal" },
+                            { label: "Time Picker", routerLink: "/demo/time-picker" },
+                            { label: "Time Picker Modal", routerLink: "/demo/time-picker-modal" },
                         // ],
                     // },
                     // {
                     //     label: "Week Picker",
                     //     children: [
-                            { label: "Week Picker", routerLink: "/week-picker" },
-                            { label: "Week Picker Modal", routerLink: "/week-picker-modal" },
+                            { label: "Week Picker", routerLink: "/demo/week-picker" },
+                            { label: "Week Picker Modal", routerLink: "/demo/week-picker-modal" },
                         // ],
                     // },
                     // {
                     //     label: "Month Picker",
                     //     children: [
-                            { label: "Month Picker", routerLink: "/month-picker" },
-                            { label: "Month Picker Modal", routerLink: "/month-picker-modal" },
+                            { label: "Month Picker", routerLink: "/demo/month-picker" },
+                            { label: "Month Picker Modal", routerLink: "/demo/month-picker-modal" },
                         // ],
                     // },
                 ],
@@ -278,25 +274,22 @@ class DemoMain extends MdComponent {
         select(this.items);
 
         // Konfigurasi tindakan pada Top App Bar
-        this.mainTopAppBarLeadingActions = [{ icon: "menu" }];
+        this.demoMainTopAppBarLeadingActions = [{ icon: "menu" }];
     }
 
-    /**
-     * @private
-     */
     render() {
         return html`
             <div class="md-layout__border">
 
                 <md-top-app-bar
-                    id="mainTopAppBar"
+                    id="demoMainTopAppBar"
                     label="Material Design (0.67.0)"
-                    .leadingActions="${this.mainTopAppBarLeadingActions}"
+                    .leadingActions="${this.demoMainTopAppBarLeadingActions}"
                     @onTopAppBarIconButtonClick="${this.handleMainTopAppBarIconButtonClick}"
                 ></md-top-app-bar>
 
                 <md-navigation-drawer
-                    id="mainNavigationDrawer"
+                    id="demoMainNavigationDrawer"
                     type="tree"
                     .items="${this.items}"
                     @onTreeItemClick="${this.handleMainNavigationDrawerTreeItemClick}"
@@ -331,39 +324,39 @@ class DemoMain extends MdComponent {
     handleMainLayoutCallback(item) {
         if (item.name === "expanded") {
             // Pengaturan untuk desktop
-            this.mainTopAppBar.open = false;
+            this.demoMainTopAppBar.open = false;
 
-            this.mainNavigationDrawer.modal = false;
-            this.mainNavigationDrawer.open = true;
-            this.mainNavigationDrawer.navigationDrawerScrim.open = false;
+            this.demoMainNavigationDrawer.modal = false;
+            this.demoMainNavigationDrawer.open = true;
+            this.demoMainNavigationDrawer.navigationDrawerScrim.open = false;
         } else {
             // Pengaturan untuk tablet/mobile
-            this.mainTopAppBar.open = true;
+            this.demoMainTopAppBar.open = true;
 
-            this.mainNavigationDrawer.modal = true;
-            this.mainNavigationDrawer.open = false;
-            this.mainNavigationDrawer.navigationDrawerScrim.open = false;
+            this.demoMainNavigationDrawer.modal = true;
+            this.demoMainNavigationDrawer.open = false;
+            this.demoMainNavigationDrawer.navigationDrawerScrim.open = false;
         }
     }
 
     // Menangani klik tombol ikon pada Top App Bar.
     handleMainTopAppBarIconButtonClick(event) {
-        this.mainNavigationDrawer.toggle();
+        this.demoMainNavigationDrawer.toggle();
     }
 
     // Menangani klik pada item navigasi dalam Navigation Drawer.
     handleMainNavigationDrawerTreeItemClick(event) {
         if (
-            this.mainNavigationDrawer.modal 
+            this.demoMainNavigationDrawer.modal 
             && event.detail.event.currentTarget.data.routerLink
         ) {
-            this.mainNavigationDrawer.toggle();
+            this.demoMainNavigationDrawer.toggle();
         }
     }
 
     // Menangani navigasi menggunakan tombol Enter pada Navigation Drawer.
     handleMainNavitaionDrawerTreeKeydownEnter(event) {
-        const treeItemSelected = this.mainNavigationDrawer.querySelector("md-tree-item[selected]");
+        const treeItemSelected = this.demoMainNavigationDrawer.querySelector("md-tree-item[selected]");
         treeItemSelected.click();
     }
 }

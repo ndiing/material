@@ -1,0 +1,964 @@
+[
+    {
+        "comment": "/**\n * @extends MdComponent\n * @element md-checkbox\n * @fires MdCheckboxComponent#onCheckboxNativeInput\n * @fires MdCheckboxComponent#onCheckboxNativeReset\n */",
+        "meta": {
+            "range": [
+                353,
+                2889
+            ],
+            "filename": "checkbox.js",
+            "lineno": 12,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\checkbox",
+            "code": {
+                "id": "astnode100000020",
+                "name": "MdCheckboxComponent",
+                "type": "ClassDeclaration",
+                "paramnames": []
+            }
+        },
+        "augments": [
+            "MdComponent"
+        ],
+        "tags": [
+            {
+                "originalTitle": "element",
+                "title": "element",
+                "text": "md-checkbox",
+                "value": "md-checkbox"
+            }
+        ],
+        "fires": [
+            "MdCheckboxComponent#event:onCheckboxNativeInput",
+            "MdCheckboxComponent#event:onCheckboxNativeReset"
+        ],
+        "name": "MdCheckboxComponent",
+        "longname": "MdCheckboxComponent",
+        "kind": "class",
+        "scope": "global",
+        "undocumented": true
+    },
+    {
+        "comment": "/**\n     * @property {String} [name]\n     * @property {String} [value]\n     * @property {Boolean} [indeterminate]\n     * @property {Boolean} [checked]\n     */",
+        "meta": {
+            "range": [
+                568,
+                739
+            ],
+            "filename": "checkbox.js",
+            "lineno": 19,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\checkbox",
+            "code": {
+                "id": "astnode100000024",
+                "name": "properties",
+                "type": "ClassProperty"
+            }
+        },
+        "properties": [
+            {
+                "type": {
+                    "names": [
+                        "String"
+                    ]
+                },
+                "optional": true,
+                "name": "name"
+            },
+            {
+                "type": {
+                    "names": [
+                        "String"
+                    ]
+                },
+                "optional": true,
+                "name": "value"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Boolean"
+                    ]
+                },
+                "optional": true,
+                "name": "indeterminate"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Boolean"
+                    ]
+                },
+                "optional": true,
+                "name": "checked"
+            }
+        ],
+        "name": "properties",
+        "longname": "MdCheckboxComponent#properties",
+        "kind": "member",
+        "memberof": "MdCheckboxComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                598,
+                620
+            ],
+            "filename": "checkbox.js",
+            "lineno": 20,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\checkbox",
+            "code": {
+                "id": "astnode100000026",
+                "name": "name",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "name",
+        "longname": "name",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                606,
+                618
+            ],
+            "filename": "checkbox.js",
+            "lineno": 20,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\checkbox",
+            "code": {
+                "id": "astnode100000028",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "name.type",
+        "kind": "member",
+        "memberof": "name",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                630,
+                653
+            ],
+            "filename": "checkbox.js",
+            "lineno": 21,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\checkbox",
+            "code": {
+                "id": "astnode100000030",
+                "name": "value",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "value",
+        "longname": "value",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                639,
+                651
+            ],
+            "filename": "checkbox.js",
+            "lineno": 21,
+            "columnno": 17,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\checkbox",
+            "code": {
+                "id": "astnode100000032",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "value.type",
+        "kind": "member",
+        "memberof": "value",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                663,
+                695
+            ],
+            "filename": "checkbox.js",
+            "lineno": 22,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\checkbox",
+            "code": {
+                "id": "astnode100000034",
+                "name": "indeterminate",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "indeterminate",
+        "longname": "indeterminate",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                680,
+                693
+            ],
+            "filename": "checkbox.js",
+            "lineno": 22,
+            "columnno": 25,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\checkbox",
+            "code": {
+                "id": "astnode100000036",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Boolean"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "indeterminate.type",
+        "kind": "member",
+        "memberof": "indeterminate",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                705,
+                731
+            ],
+            "filename": "checkbox.js",
+            "lineno": 23,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\checkbox",
+            "code": {
+                "id": "astnode100000038",
+                "name": "checked",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "checked",
+        "longname": "checked",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                716,
+                729
+            ],
+            "filename": "checkbox.js",
+            "lineno": 23,
+            "columnno": 19,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\checkbox",
+            "code": {
+                "id": "astnode100000040",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Boolean"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "checked.type",
+        "kind": "member",
+        "memberof": "checked",
+        "scope": "static"
+    },
+    {
+        "comment": "/**\n     */",
+        "meta": {
+            "range": [
+                761,
+                799
+            ],
+            "filename": "checkbox.js",
+            "lineno": 28,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\checkbox",
+            "code": {
+                "id": "astnode100000042",
+                "name": "MdCheckboxComponent",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "MdCheckboxComponent",
+        "longname": "MdCheckboxComponent",
+        "kind": "class",
+        "scope": "global",
+        "params": [],
+        "undocumented": true
+    },
+    {
+        "comment": "/**\n * @extends MdComponent\n * @element md-checkbox\n * @fires MdCheckboxComponent#onCheckboxNativeInput\n * @fires MdCheckboxComponent#onCheckboxNativeReset\n */",
+        "meta": {
+            "range": [
+                353,
+                2889
+            ],
+            "filename": "checkbox.js",
+            "lineno": 12,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\checkbox",
+            "code": {
+                "id": "astnode100000020",
+                "name": "MdCheckboxComponent",
+                "type": "ClassDeclaration",
+                "paramnames": []
+            }
+        },
+        "name": "MdCheckboxComponent",
+        "longname": "MdCheckboxComponent",
+        "kind": "class",
+        "augments": [
+            "MdComponent"
+        ],
+        "tags": [
+            {
+                "originalTitle": "element",
+                "title": "element",
+                "text": "md-checkbox",
+                "value": "md-checkbox"
+            }
+        ],
+        "fires": [
+            "MdCheckboxComponent#event:onCheckboxNativeInput",
+            "MdCheckboxComponent#event:onCheckboxNativeReset"
+        ],
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n     */",
+        "meta": {
+            "range": [
+                821,
+                1646
+            ],
+            "filename": "checkbox.js",
+            "lineno": 34,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\checkbox",
+            "code": {
+                "id": "astnode100000049",
+                "name": "MdCheckboxComponent#render",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "render",
+        "longname": "MdCheckboxComponent#render",
+        "kind": "function",
+        "memberof": "MdCheckboxComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\n     * @async\n     */",
+        "meta": {
+            "range": [
+                1682,
+                2165
+            ],
+            "filename": "checkbox.js",
+            "lineno": 58,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\checkbox",
+            "code": {
+                "id": "astnode100000108",
+                "name": "MdCheckboxComponent#connectedCallback",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "async": true,
+        "name": "connectedCallback",
+        "longname": "MdCheckboxComponent#connectedCallback",
+        "kind": "function",
+        "memberof": "MdCheckboxComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1753,
+                1783
+            ],
+            "filename": "checkbox.js",
+            "lineno": 60,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\checkbox",
+            "code": {
+                "id": "astnode100000118",
+                "name": "this.defaultValue",
+                "type": "MemberExpression",
+                "value": "this.value",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "defaultValue",
+        "longname": "MdCheckboxComponent#defaultValue",
+        "kind": "member",
+        "memberof": "MdCheckboxComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1793,
+                1839
+            ],
+            "filename": "checkbox.js",
+            "lineno": 61,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\checkbox",
+            "code": {
+                "id": "astnode100000126",
+                "name": "this.defaultIndeterminate",
+                "type": "MemberExpression",
+                "value": "this.indeterminate",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "defaultIndeterminate",
+        "longname": "MdCheckboxComponent#defaultIndeterminate",
+        "kind": "member",
+        "memberof": "MdCheckboxComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1849,
+                1883
+            ],
+            "filename": "checkbox.js",
+            "lineno": 62,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\checkbox",
+            "code": {
+                "id": "astnode100000134",
+                "name": "this.defaultChecked",
+                "type": "MemberExpression",
+                "value": "this.checked",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "defaultChecked",
+        "longname": "MdCheckboxComponent#defaultChecked",
+        "kind": "member",
+        "memberof": "MdCheckboxComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1971,
+                2158
+            ],
+            "filename": "checkbox.js",
+            "lineno": 65,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\checkbox",
+            "code": {
+                "id": "astnode100000155",
+                "name": "this.ripple",
+                "type": "NewExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "ripple",
+        "longname": "MdCheckboxComponent#ripple",
+        "kind": "member",
+        "memberof": "MdCheckboxComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2016,
+                2048
+            ],
+            "filename": "checkbox.js",
+            "lineno": 66,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\checkbox",
+            "code": {
+                "id": "astnode100000163",
+                "name": "container",
+                "type": "Literal",
+                "value": ".md-checkbox__track"
+            }
+        },
+        "undocumented": true,
+        "name": "container",
+        "longname": "container",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2062,
+                2093
+            ],
+            "filename": "checkbox.js",
+            "lineno": 67,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\checkbox",
+            "code": {
+                "id": "astnode100000165",
+                "name": "trigger",
+                "type": "Literal",
+                "value": ".md-checkbox__native"
+            }
+        },
+        "undocumented": true,
+        "name": "trigger",
+        "longname": "trigger",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2107,
+                2122
+            ],
+            "filename": "checkbox.js",
+            "lineno": 68,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\checkbox",
+            "code": {
+                "id": "astnode100000167",
+                "name": "unbounded",
+                "type": "Literal",
+                "value": true
+            }
+        },
+        "undocumented": true,
+        "name": "unbounded",
+        "longname": "unbounded",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2136,
+                2146
+            ],
+            "filename": "checkbox.js",
+            "lineno": 69,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\checkbox",
+            "code": {
+                "id": "astnode100000169",
+                "name": "radius",
+                "type": "Literal",
+                "value": 40
+            }
+        },
+        "undocumented": true,
+        "name": "radius",
+        "longname": "radius",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n     * @async\n     */",
+        "meta": {
+            "range": [
+                2201,
+                2323
+            ],
+            "filename": "checkbox.js",
+            "lineno": 76,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\checkbox",
+            "code": {
+                "id": "astnode100000171",
+                "name": "MdCheckboxComponent#disconnectedCallback",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "async": true,
+        "name": "disconnectedCallback",
+        "longname": "MdCheckboxComponent#disconnectedCallback",
+        "kind": "function",
+        "memberof": "MdCheckboxComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\n     * @param {Any} [event]\n     */",
+        "meta": {
+            "range": [
+                2373,
+                2602
+            ],
+            "filename": "checkbox.js",
+            "lineno": 84,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\checkbox",
+            "code": {
+                "id": "astnode100000191",
+                "name": "MdCheckboxComponent#handleCheckboxNativeInput",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "event"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleCheckboxNativeInput",
+        "longname": "MdCheckboxComponent#handleCheckboxNativeInput",
+        "kind": "function",
+        "memberof": "MdCheckboxComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2422,
+                2450
+            ],
+            "filename": "checkbox.js",
+            "lineno": 85,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\checkbox",
+            "code": {
+                "id": "astnode100000197",
+                "name": "native",
+                "type": "MemberExpression",
+                "value": "event.currentTarget"
+            }
+        },
+        "undocumented": true,
+        "name": "native",
+        "longname": "<anonymous>~native",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2460,
+                2501
+            ],
+            "filename": "checkbox.js",
+            "lineno": 86,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\checkbox",
+            "code": {
+                "id": "astnode100000203",
+                "name": "this.indeterminate",
+                "type": "MemberExpression",
+                "value": "native.indeterminate",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "indeterminate",
+        "longname": "MdCheckboxComponent#indeterminate",
+        "kind": "member",
+        "memberof": "MdCheckboxComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2511,
+                2540
+            ],
+            "filename": "checkbox.js",
+            "lineno": 87,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\checkbox",
+            "code": {
+                "id": "astnode100000211",
+                "name": "this.checked",
+                "type": "MemberExpression",
+                "value": "native.checked",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "checked",
+        "longname": "MdCheckboxComponent#checked",
+        "kind": "member",
+        "memberof": "MdCheckboxComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2587,
+                2592
+            ],
+            "filename": "checkbox.js",
+            "lineno": 88,
+            "columnno": 45,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\checkbox",
+            "code": {
+                "id": "astnode100000225",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n     * @param {Any} [event]\n     */",
+        "meta": {
+            "range": [
+                2652,
+                2887
+            ],
+            "filename": "checkbox.js",
+            "lineno": 94,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\checkbox",
+            "code": {
+                "id": "astnode100000227",
+                "name": "MdCheckboxComponent#handleCheckboxNativeReset",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "event"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleCheckboxNativeReset",
+        "longname": "MdCheckboxComponent#handleCheckboxNativeReset",
+        "kind": "function",
+        "memberof": "MdCheckboxComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2695,
+                2725
+            ],
+            "filename": "checkbox.js",
+            "lineno": 95,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\checkbox",
+            "code": {
+                "id": "astnode100000233",
+                "name": "this.value",
+                "type": "MemberExpression",
+                "value": "this.defaultValue",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "value",
+        "longname": "MdCheckboxComponent#value",
+        "kind": "member",
+        "memberof": "MdCheckboxComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2735,
+                2781
+            ],
+            "filename": "checkbox.js",
+            "lineno": 96,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\checkbox",
+            "code": {
+                "id": "astnode100000241",
+                "name": "this.indeterminate",
+                "type": "MemberExpression",
+                "value": "this.defaultIndeterminate",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "indeterminate",
+        "longname": "MdCheckboxComponent#indeterminate",
+        "kind": "member",
+        "memberof": "MdCheckboxComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2791,
+                2825
+            ],
+            "filename": "checkbox.js",
+            "lineno": 97,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\checkbox",
+            "code": {
+                "id": "astnode100000249",
+                "name": "this.checked",
+                "type": "MemberExpression",
+                "value": "this.defaultChecked",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "checked",
+        "longname": "MdCheckboxComponent#checked",
+        "kind": "member",
+        "memberof": "MdCheckboxComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2872,
+                2877
+            ],
+            "filename": "checkbox.js",
+            "lineno": 98,
+            "columnno": 45,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\checkbox",
+            "code": {
+                "id": "astnode100000263",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2958,
+                2977
+            ],
+            "filename": "checkbox.js",
+            "lineno": 102,
+            "columnno": 9,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\checkbox",
+            "code": {
+                "id": "astnode100000273",
+                "name": "exports.MdCheckboxComponent",
+                "type": "Identifier"
+            }
+        },
+        "undocumented": true,
+        "name": "MdCheckboxComponent",
+        "longname": "MdCheckboxComponent",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "kind": "package",
+        "longname": "package:undefined",
+        "files": [
+            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\checkbox\\checkbox.js"
+        ]
+    }
+]

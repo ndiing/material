@@ -1,0 +1,1042 @@
+[
+    {
+        "comment": "/**\n * @extends MdComponent\n * @element md-navigation-rail\n * @fires MdNavigationRailComponent#onNavigationRailShown\n * @fires MdNavigationRailComponent#onNavigationRailClosed\n * @fires MdNavigationRailComponent#onNavigationRailIconButtonClick\n */",
+        "meta": {
+            "range": [
+                449,
+                4600
+            ],
+            "filename": "navigation-rail.js",
+            "lineno": 13,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\navigation-rail",
+            "code": {
+                "id": "astnode100000020",
+                "name": "MdNavigationRailComponent",
+                "type": "ClassDeclaration",
+                "paramnames": []
+            }
+        },
+        "augments": [
+            "MdComponent"
+        ],
+        "tags": [
+            {
+                "originalTitle": "element",
+                "title": "element",
+                "text": "md-navigation-rail",
+                "value": "md-navigation-rail"
+            }
+        ],
+        "fires": [
+            "MdNavigationRailComponent#event:onNavigationRailShown",
+            "MdNavigationRailComponent#event:onNavigationRailClosed",
+            "MdNavigationRailComponent#event:onNavigationRailIconButtonClick"
+        ],
+        "name": "MdNavigationRailComponent",
+        "longname": "MdNavigationRailComponent",
+        "kind": "class",
+        "scope": "global",
+        "undocumented": true
+    },
+    {
+        "comment": "/**\n     * @property {Array} [icons]\n     * @property {Array} [actions]\n     * @property {String} [label]\n     * @property {String} [sublabel]\n     * @property {Array} [items]\n     * @property {Boolean} [open]\n     */",
+        "meta": {
+            "range": [
+                729,
+                972
+            ],
+            "filename": "navigation-rail.js",
+            "lineno": 22,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\navigation-rail",
+            "code": {
+                "id": "astnode100000024",
+                "name": "properties",
+                "type": "ClassProperty"
+            }
+        },
+        "properties": [
+            {
+                "type": {
+                    "names": [
+                        "Array"
+                    ]
+                },
+                "optional": true,
+                "name": "icons"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Array"
+                    ]
+                },
+                "optional": true,
+                "name": "actions"
+            },
+            {
+                "type": {
+                    "names": [
+                        "String"
+                    ]
+                },
+                "optional": true,
+                "name": "label"
+            },
+            {
+                "type": {
+                    "names": [
+                        "String"
+                    ]
+                },
+                "optional": true,
+                "name": "sublabel"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Array"
+                    ]
+                },
+                "optional": true,
+                "name": "items"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Boolean"
+                    ]
+                },
+                "optional": true,
+                "name": "open"
+            }
+        ],
+        "name": "properties",
+        "longname": "MdNavigationRailComponent#properties",
+        "kind": "member",
+        "memberof": "MdNavigationRailComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                759,
+                781
+            ],
+            "filename": "navigation-rail.js",
+            "lineno": 23,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\navigation-rail",
+            "code": {
+                "id": "astnode100000026",
+                "name": "icons",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "icons",
+        "longname": "icons",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                768,
+                779
+            ],
+            "filename": "navigation-rail.js",
+            "lineno": 23,
+            "columnno": 17,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\navigation-rail",
+            "code": {
+                "id": "astnode100000028",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Array"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "icons.type",
+        "kind": "member",
+        "memberof": "icons",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                791,
+                815
+            ],
+            "filename": "navigation-rail.js",
+            "lineno": 24,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\navigation-rail",
+            "code": {
+                "id": "astnode100000030",
+                "name": "actions",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "actions",
+        "longname": "actions",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                802,
+                813
+            ],
+            "filename": "navigation-rail.js",
+            "lineno": 24,
+            "columnno": 19,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\navigation-rail",
+            "code": {
+                "id": "astnode100000032",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Array"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "actions.type",
+        "kind": "member",
+        "memberof": "actions",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                825,
+                848
+            ],
+            "filename": "navigation-rail.js",
+            "lineno": 25,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\navigation-rail",
+            "code": {
+                "id": "astnode100000034",
+                "name": "label",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "label",
+        "longname": "label",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                834,
+                846
+            ],
+            "filename": "navigation-rail.js",
+            "lineno": 25,
+            "columnno": 17,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\navigation-rail",
+            "code": {
+                "id": "astnode100000036",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "label.type",
+        "kind": "member",
+        "memberof": "label",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                858,
+                884
+            ],
+            "filename": "navigation-rail.js",
+            "lineno": 26,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\navigation-rail",
+            "code": {
+                "id": "astnode100000038",
+                "name": "sublabel",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "sublabel",
+        "longname": "sublabel",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                870,
+                882
+            ],
+            "filename": "navigation-rail.js",
+            "lineno": 26,
+            "columnno": 20,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\navigation-rail",
+            "code": {
+                "id": "astnode100000040",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "sublabel.type",
+        "kind": "member",
+        "memberof": "sublabel",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                894,
+                916
+            ],
+            "filename": "navigation-rail.js",
+            "lineno": 27,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\navigation-rail",
+            "code": {
+                "id": "astnode100000042",
+                "name": "items",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "items",
+        "longname": "items",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                903,
+                914
+            ],
+            "filename": "navigation-rail.js",
+            "lineno": 27,
+            "columnno": 17,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\navigation-rail",
+            "code": {
+                "id": "astnode100000044",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Array"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "items.type",
+        "kind": "member",
+        "memberof": "items",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                926,
+                964
+            ],
+            "filename": "navigation-rail.js",
+            "lineno": 28,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\navigation-rail",
+            "code": {
+                "id": "astnode100000046",
+                "name": "open",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\",\"reflect\":true}"
+            }
+        },
+        "undocumented": true,
+        "name": "open",
+        "longname": "open",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                934,
+                947
+            ],
+            "filename": "navigation-rail.js",
+            "lineno": 28,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\navigation-rail",
+            "code": {
+                "id": "astnode100000048",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Boolean"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "open.type",
+        "kind": "member",
+        "memberof": "open",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                949,
+                962
+            ],
+            "filename": "navigation-rail.js",
+            "lineno": 28,
+            "columnno": 31,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\navigation-rail",
+            "code": {
+                "id": "astnode100000050",
+                "name": "reflect",
+                "type": "Literal",
+                "value": true
+            }
+        },
+        "undocumented": true,
+        "name": "reflect",
+        "longname": "open.reflect",
+        "kind": "member",
+        "memberof": "open",
+        "scope": "static"
+    },
+    {
+        "comment": "/**\n     */",
+        "meta": {
+            "range": [
+                994,
+                1130
+            ],
+            "filename": "navigation-rail.js",
+            "lineno": 33,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\navigation-rail",
+            "code": {
+                "id": "astnode100000052",
+                "name": "MdNavigationRailComponent",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "MdNavigationRailComponent",
+        "longname": "MdNavigationRailComponent",
+        "kind": "class",
+        "scope": "global",
+        "params": [],
+        "undocumented": true
+    },
+    {
+        "comment": "/**\n * @extends MdComponent\n * @element md-navigation-rail\n * @fires MdNavigationRailComponent#onNavigationRailShown\n * @fires MdNavigationRailComponent#onNavigationRailClosed\n * @fires MdNavigationRailComponent#onNavigationRailIconButtonClick\n */",
+        "meta": {
+            "range": [
+                449,
+                4600
+            ],
+            "filename": "navigation-rail.js",
+            "lineno": 13,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\navigation-rail",
+            "code": {
+                "id": "astnode100000020",
+                "name": "MdNavigationRailComponent",
+                "type": "ClassDeclaration",
+                "paramnames": []
+            }
+        },
+        "name": "MdNavigationRailComponent",
+        "longname": "MdNavigationRailComponent",
+        "kind": "class",
+        "augments": [
+            "MdComponent"
+        ],
+        "tags": [
+            {
+                "originalTitle": "element",
+                "title": "element",
+                "text": "md-navigation-rail",
+                "value": "md-navigation-rail"
+            }
+        ],
+        "fires": [
+            "MdNavigationRailComponent#event:onNavigationRailShown",
+            "MdNavigationRailComponent#event:onNavigationRailClosed",
+            "MdNavigationRailComponent#event:onNavigationRailIconButtonClick"
+        ],
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1035,
+                1050
+            ],
+            "filename": "navigation-rail.js",
+            "lineno": 35,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\navigation-rail",
+            "code": {
+                "id": "astnode100000060",
+                "name": "this.items",
+                "type": "ArrayExpression",
+                "value": "[]",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "items",
+        "longname": "MdNavigationRailComponent#items",
+        "kind": "member",
+        "memberof": "MdNavigationRailComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1060,
+                1123
+            ],
+            "filename": "navigation-rail.js",
+            "lineno": 36,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\navigation-rail",
+            "code": {
+                "id": "astnode100000066",
+                "name": "this.rippleOptions",
+                "type": "ObjectExpression",
+                "value": "{\"container\":\".md-navigation-list__icon\"}",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "rippleOptions",
+        "longname": "MdNavigationRailComponent#rippleOptions",
+        "kind": "member",
+        "memberof": "MdNavigationRailComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1083,
+                1121
+            ],
+            "filename": "navigation-rail.js",
+            "lineno": 36,
+            "columnno": 31,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\navigation-rail",
+            "code": {
+                "id": "astnode100000071",
+                "name": "container",
+                "type": "Literal",
+                "value": ".md-navigation-list__icon"
+            }
+        },
+        "undocumented": true,
+        "name": "container",
+        "longname": "MdNavigationRailComponent#rippleOptions.container",
+        "kind": "member",
+        "memberof": "MdNavigationRailComponent#rippleOptions",
+        "scope": "static"
+    },
+    {
+        "comment": "/**\n     * @param {Any} [item]\n     */",
+        "meta": {
+            "range": [
+                1179,
+                1275
+            ],
+            "filename": "navigation-rail.js",
+            "lineno": 42,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\navigation-rail",
+            "code": {
+                "id": "astnode100000073",
+                "name": "MdNavigationRailComponent#renderIcon",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "item"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "item"
+            }
+        ],
+        "name": "renderIcon",
+        "longname": "MdNavigationRailComponent#renderIcon",
+        "kind": "function",
+        "memberof": "MdNavigationRailComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\n     * @param {Any} [item]\n     */",
+        "meta": {
+            "range": [
+                1324,
+                1860
+            ],
+            "filename": "navigation-rail.js",
+            "lineno": 49,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\navigation-rail",
+            "code": {
+                "id": "astnode100000089",
+                "name": "MdNavigationRailComponent#renderIconButton",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "item"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "item"
+            }
+        ],
+        "name": "renderIconButton",
+        "longname": "MdNavigationRailComponent#renderIconButton",
+        "kind": "function",
+        "memberof": "MdNavigationRailComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\n     * @param {Any} [item]\n     * @param {Any} [component=\"icon\"]\n     */",
+        "meta": {
+            "range": [
+                1948,
+                2251
+            ],
+            "filename": "navigation-rail.js",
+            "lineno": 68,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\navigation-rail",
+            "code": {
+                "id": "astnode100000141",
+                "name": "MdNavigationRailComponent#renderComponent",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "item",
+                    "component"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "item"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "defaultvalue": "\"icon\"",
+                "name": "component"
+            }
+        ],
+        "name": "renderComponent",
+        "longname": "MdNavigationRailComponent#renderComponent",
+        "kind": "function",
+        "memberof": "MdNavigationRailComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\n     */",
+        "meta": {
+            "range": [
+                2273,
+                3427
+            ],
+            "filename": "navigation-rail.js",
+            "lineno": 81,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\navigation-rail",
+            "code": {
+                "id": "astnode100000176",
+                "name": "MdNavigationRailComponent#render",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "render",
+        "longname": "MdNavigationRailComponent#render",
+        "kind": "function",
+        "memberof": "MdNavigationRailComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\n     * @async\n     */",
+        "meta": {
+            "range": [
+                3463,
+                3851
+            ],
+            "filename": "navigation-rail.js",
+            "lineno": 98,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\navigation-rail",
+            "code": {
+                "id": "astnode100000299",
+                "name": "MdNavigationRailComponent#connectedCallback",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "async": true,
+        "name": "connectedCallback",
+        "longname": "MdNavigationRailComponent#connectedCallback",
+        "kind": "function",
+        "memberof": "MdNavigationRailComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\n     * @param {Any} [changedProperties]\n     */",
+        "meta": {
+            "range": [
+                3913,
+                3989
+            ],
+            "filename": "navigation-rail.js",
+            "lineno": 110,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\navigation-rail",
+            "code": {
+                "id": "astnode100000356",
+                "name": "MdNavigationRailComponent#updated",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "changedProperties"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "changedProperties"
+            }
+        ],
+        "name": "updated",
+        "longname": "MdNavigationRailComponent#updated",
+        "kind": "function",
+        "memberof": "MdNavigationRailComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\n     */",
+        "meta": {
+            "range": [
+                4011,
+                4159
+            ],
+            "filename": "navigation-rail.js",
+            "lineno": 116,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\navigation-rail",
+            "code": {
+                "id": "astnode100000367",
+                "name": "MdNavigationRailComponent#show",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "show",
+        "longname": "MdNavigationRailComponent#show",
+        "kind": "function",
+        "memberof": "MdNavigationRailComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                4092,
+                4108
+            ],
+            "filename": "navigation-rail.js",
+            "lineno": 118,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\navigation-rail",
+            "code": {
+                "id": "astnode100000380",
+                "name": "this.open",
+                "type": "Literal",
+                "value": true,
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "open",
+        "longname": "MdNavigationRailComponent#open",
+        "kind": "member",
+        "memberof": "MdNavigationRailComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\n     */",
+        "meta": {
+            "range": [
+                4181,
+                4332
+            ],
+            "filename": "navigation-rail.js",
+            "lineno": 124,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\navigation-rail",
+            "code": {
+                "id": "astnode100000391",
+                "name": "MdNavigationRailComponent#close",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "close",
+        "longname": "MdNavigationRailComponent#close",
+        "kind": "function",
+        "memberof": "MdNavigationRailComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                4263,
+                4280
+            ],
+            "filename": "navigation-rail.js",
+            "lineno": 126,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\navigation-rail",
+            "code": {
+                "id": "astnode100000404",
+                "name": "this.open",
+                "type": "Literal",
+                "value": false,
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "open",
+        "longname": "MdNavigationRailComponent#open",
+        "kind": "member",
+        "memberof": "MdNavigationRailComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\n     */",
+        "meta": {
+            "range": [
+                4354,
+                4433
+            ],
+            "filename": "navigation-rail.js",
+            "lineno": 132,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\navigation-rail",
+            "code": {
+                "id": "astnode100000415",
+                "name": "MdNavigationRailComponent#toggle",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "toggle",
+        "longname": "MdNavigationRailComponent#toggle",
+        "kind": "function",
+        "memberof": "MdNavigationRailComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\n     * @param {Any} [event]\n     */",
+        "meta": {
+            "range": [
+                4483,
+                4598
+            ],
+            "filename": "navigation-rail.js",
+            "lineno": 140,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\navigation-rail",
+            "code": {
+                "id": "astnode100000433",
+                "name": "MdNavigationRailComponent#handleNavigationRailIconButtonClick",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "event"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleNavigationRailIconButtonClick",
+        "longname": "MdNavigationRailComponent#handleNavigationRailIconButtonClick",
+        "kind": "function",
+        "memberof": "MdNavigationRailComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                4583,
+                4588
+            ],
+            "filename": "navigation-rail.js",
+            "lineno": 141,
+            "columnno": 55,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\navigation-rail",
+            "code": {
+                "id": "astnode100000445",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                4682,
+                4707
+            ],
+            "filename": "navigation-rail.js",
+            "lineno": 145,
+            "columnno": 9,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\navigation-rail",
+            "code": {
+                "id": "astnode100000455",
+                "name": "exports.MdNavigationRailComponent",
+                "type": "Identifier"
+            }
+        },
+        "undocumented": true,
+        "name": "MdNavigationRailComponent",
+        "longname": "MdNavigationRailComponent",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "kind": "package",
+        "longname": "package:undefined",
+        "files": [
+            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\navigation-rail\\navigation-rail.js"
+        ]
+    }
+]

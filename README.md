@@ -130,8 +130,8 @@ Berikut contoh file HTML dasar untuk menggunakan Material:
 
 ## Dokumentasi & Demo
 
-- **Dokumentasi**: [Material Docs](https://ndiing.github.io/material/docs/)
-- **Demo**: [Material Demo](https://ndiing.github.io/material/dist/)
+- **Dokumentasi**: [Material Docs](https://ndiing.github.io/material/dist/#/docs)
+- **Demo**: [Material Demo](https://ndiing.github.io/material/dist/#/demo)
 
 ---
 

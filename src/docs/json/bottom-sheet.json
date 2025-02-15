@@ -1,0 +1,1528 @@
+[
+    {
+        "comment": "/**\n * @extends MdComponent\n * @element md-bottom-sheet\n * @fires MdBottomSheetComponent#onBottomSheetShow\n * @fires MdBottomSheetComponent#onBottomSheetClose\n * @fires MdBottomSheetComponent#onBottomSheetShown\n * @fires MdBottomSheetComponent#onBottomSheetClosed\n * @fires MdBottomSheetComponent#onBottomSheetScrimClose\n * @fires MdBottomSheetComponent#onBottomSheetIconButtonClick\n * @fires MdBottomSheetComponent#onBottomSheetButtonClick\n */",
+        "meta": {
+            "range": [
+                646,
+                7926
+            ],
+            "filename": "bottom-sheet.js",
+            "lineno": 17,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-sheet",
+            "code": {
+                "id": "astnode100000020",
+                "name": "MdBottomSheetComponent",
+                "type": "ClassDeclaration",
+                "paramnames": []
+            }
+        },
+        "augments": [
+            "MdComponent"
+        ],
+        "tags": [
+            {
+                "originalTitle": "element",
+                "title": "element",
+                "text": "md-bottom-sheet",
+                "value": "md-bottom-sheet"
+            }
+        ],
+        "fires": [
+            "MdBottomSheetComponent#event:onBottomSheetShow",
+            "MdBottomSheetComponent#event:onBottomSheetClose",
+            "MdBottomSheetComponent#event:onBottomSheetShown",
+            "MdBottomSheetComponent#event:onBottomSheetClosed",
+            "MdBottomSheetComponent#event:onBottomSheetScrimClose",
+            "MdBottomSheetComponent#event:onBottomSheetIconButtonClick",
+            "MdBottomSheetComponent#event:onBottomSheetButtonClick"
+        ],
+        "name": "MdBottomSheetComponent",
+        "longname": "MdBottomSheetComponent",
+        "kind": "class",
+        "scope": "global",
+        "undocumented": true
+    },
+    {
+        "comment": "/**\n     * @property {Array} [icons]\n     * @property {Array} [actions]\n     * @property {String} [label]\n     * @property {String} [sublabel]\n     * @property {Array} [buttons]\n     * @property {Boolean} [open]\n     * @property {Boolean} [modal]\n     */",
+        "meta": {
+            "range": [
+                960,
+                1254
+            ],
+            "filename": "bottom-sheet.js",
+            "lineno": 27,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-sheet",
+            "code": {
+                "id": "astnode100000024",
+                "name": "properties",
+                "type": "ClassProperty"
+            }
+        },
+        "properties": [
+            {
+                "type": {
+                    "names": [
+                        "Array"
+                    ]
+                },
+                "optional": true,
+                "name": "icons"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Array"
+                    ]
+                },
+                "optional": true,
+                "name": "actions"
+            },
+            {
+                "type": {
+                    "names": [
+                        "String"
+                    ]
+                },
+                "optional": true,
+                "name": "label"
+            },
+            {
+                "type": {
+                    "names": [
+                        "String"
+                    ]
+                },
+                "optional": true,
+                "name": "sublabel"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Array"
+                    ]
+                },
+                "optional": true,
+                "name": "buttons"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Boolean"
+                    ]
+                },
+                "optional": true,
+                "name": "open"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Boolean"
+                    ]
+                },
+                "optional": true,
+                "name": "modal"
+            }
+        ],
+        "name": "properties",
+        "longname": "MdBottomSheetComponent#properties",
+        "kind": "member",
+        "memberof": "MdBottomSheetComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                990,
+                1012
+            ],
+            "filename": "bottom-sheet.js",
+            "lineno": 28,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-sheet",
+            "code": {
+                "id": "astnode100000026",
+                "name": "icons",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "icons",
+        "longname": "icons",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                999,
+                1010
+            ],
+            "filename": "bottom-sheet.js",
+            "lineno": 28,
+            "columnno": 17,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-sheet",
+            "code": {
+                "id": "astnode100000028",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Array"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "icons.type",
+        "kind": "member",
+        "memberof": "icons",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1022,
+                1046
+            ],
+            "filename": "bottom-sheet.js",
+            "lineno": 29,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-sheet",
+            "code": {
+                "id": "astnode100000030",
+                "name": "actions",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "actions",
+        "longname": "actions",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1033,
+                1044
+            ],
+            "filename": "bottom-sheet.js",
+            "lineno": 29,
+            "columnno": 19,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-sheet",
+            "code": {
+                "id": "astnode100000032",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Array"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "actions.type",
+        "kind": "member",
+        "memberof": "actions",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1056,
+                1079
+            ],
+            "filename": "bottom-sheet.js",
+            "lineno": 30,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-sheet",
+            "code": {
+                "id": "astnode100000034",
+                "name": "label",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "label",
+        "longname": "label",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1065,
+                1077
+            ],
+            "filename": "bottom-sheet.js",
+            "lineno": 30,
+            "columnno": 17,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-sheet",
+            "code": {
+                "id": "astnode100000036",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "label.type",
+        "kind": "member",
+        "memberof": "label",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1089,
+                1115
+            ],
+            "filename": "bottom-sheet.js",
+            "lineno": 31,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-sheet",
+            "code": {
+                "id": "astnode100000038",
+                "name": "sublabel",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "sublabel",
+        "longname": "sublabel",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1101,
+                1113
+            ],
+            "filename": "bottom-sheet.js",
+            "lineno": 31,
+            "columnno": 20,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-sheet",
+            "code": {
+                "id": "astnode100000040",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "sublabel.type",
+        "kind": "member",
+        "memberof": "sublabel",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1125,
+                1149
+            ],
+            "filename": "bottom-sheet.js",
+            "lineno": 32,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-sheet",
+            "code": {
+                "id": "astnode100000042",
+                "name": "buttons",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "buttons",
+        "longname": "buttons",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1136,
+                1147
+            ],
+            "filename": "bottom-sheet.js",
+            "lineno": 32,
+            "columnno": 19,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-sheet",
+            "code": {
+                "id": "astnode100000044",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Array"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "buttons.type",
+        "kind": "member",
+        "memberof": "buttons",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1159,
+                1197
+            ],
+            "filename": "bottom-sheet.js",
+            "lineno": 33,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-sheet",
+            "code": {
+                "id": "astnode100000046",
+                "name": "open",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\",\"reflect\":true}"
+            }
+        },
+        "undocumented": true,
+        "name": "open",
+        "longname": "open",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1167,
+                1180
+            ],
+            "filename": "bottom-sheet.js",
+            "lineno": 33,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-sheet",
+            "code": {
+                "id": "astnode100000048",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Boolean"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "open.type",
+        "kind": "member",
+        "memberof": "open",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1182,
+                1195
+            ],
+            "filename": "bottom-sheet.js",
+            "lineno": 33,
+            "columnno": 31,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-sheet",
+            "code": {
+                "id": "astnode100000050",
+                "name": "reflect",
+                "type": "Literal",
+                "value": true
+            }
+        },
+        "undocumented": true,
+        "name": "reflect",
+        "longname": "open.reflect",
+        "kind": "member",
+        "memberof": "open",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1207,
+                1246
+            ],
+            "filename": "bottom-sheet.js",
+            "lineno": 34,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-sheet",
+            "code": {
+                "id": "astnode100000052",
+                "name": "modal",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\",\"reflect\":true}"
+            }
+        },
+        "undocumented": true,
+        "name": "modal",
+        "longname": "modal",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1216,
+                1229
+            ],
+            "filename": "bottom-sheet.js",
+            "lineno": 34,
+            "columnno": 17,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-sheet",
+            "code": {
+                "id": "astnode100000054",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Boolean"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "modal.type",
+        "kind": "member",
+        "memberof": "modal",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1231,
+                1244
+            ],
+            "filename": "bottom-sheet.js",
+            "lineno": 34,
+            "columnno": 32,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-sheet",
+            "code": {
+                "id": "astnode100000056",
+                "name": "reflect",
+                "type": "Literal",
+                "value": true
+            }
+        },
+        "undocumented": true,
+        "name": "reflect",
+        "longname": "modal.reflect",
+        "kind": "member",
+        "memberof": "modal",
+        "scope": "static"
+    },
+    {
+        "comment": "/**\n     */",
+        "meta": {
+            "range": [
+                1276,
+                1363
+            ],
+            "filename": "bottom-sheet.js",
+            "lineno": 39,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-sheet",
+            "code": {
+                "id": "astnode100000058",
+                "name": "MdBottomSheetComponent",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "MdBottomSheetComponent",
+        "longname": "MdBottomSheetComponent",
+        "kind": "class",
+        "scope": "global",
+        "params": [],
+        "undocumented": true
+    },
+    {
+        "comment": "/**\n * @extends MdComponent\n * @element md-bottom-sheet\n * @fires MdBottomSheetComponent#onBottomSheetShow\n * @fires MdBottomSheetComponent#onBottomSheetClose\n * @fires MdBottomSheetComponent#onBottomSheetShown\n * @fires MdBottomSheetComponent#onBottomSheetClosed\n * @fires MdBottomSheetComponent#onBottomSheetScrimClose\n * @fires MdBottomSheetComponent#onBottomSheetIconButtonClick\n * @fires MdBottomSheetComponent#onBottomSheetButtonClick\n */",
+        "meta": {
+            "range": [
+                646,
+                7926
+            ],
+            "filename": "bottom-sheet.js",
+            "lineno": 17,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-sheet",
+            "code": {
+                "id": "astnode100000020",
+                "name": "MdBottomSheetComponent",
+                "type": "ClassDeclaration",
+                "paramnames": []
+            }
+        },
+        "name": "MdBottomSheetComponent",
+        "longname": "MdBottomSheetComponent",
+        "kind": "class",
+        "augments": [
+            "MdComponent"
+        ],
+        "tags": [
+            {
+                "originalTitle": "element",
+                "title": "element",
+                "text": "md-bottom-sheet",
+                "value": "md-bottom-sheet"
+            }
+        ],
+        "fires": [
+            "MdBottomSheetComponent#event:onBottomSheetShow",
+            "MdBottomSheetComponent#event:onBottomSheetClose",
+            "MdBottomSheetComponent#event:onBottomSheetShown",
+            "MdBottomSheetComponent#event:onBottomSheetClosed",
+            "MdBottomSheetComponent#event:onBottomSheetScrimClose",
+            "MdBottomSheetComponent#event:onBottomSheetIconButtonClick",
+            "MdBottomSheetComponent#event:onBottomSheetButtonClick"
+        ],
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1317,
+                1356
+            ],
+            "filename": "bottom-sheet.js",
+            "lineno": 41,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-sheet",
+            "code": {
+                "id": "astnode100000066",
+                "name": "this.body",
+                "type": "CallExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "body",
+        "longname": "MdBottomSheetComponent#body",
+        "kind": "member",
+        "memberof": "MdBottomSheetComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\n     * @param {Any} [item]\n     */",
+        "meta": {
+            "range": [
+                1412,
+                1508
+            ],
+            "filename": "bottom-sheet.js",
+            "lineno": 47,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-sheet",
+            "code": {
+                "id": "astnode100000077",
+                "name": "MdBottomSheetComponent#renderIcon",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "item"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "item"
+            }
+        ],
+        "name": "renderIcon",
+        "longname": "MdBottomSheetComponent#renderIcon",
+        "kind": "function",
+        "memberof": "MdBottomSheetComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\n     * @param {Any} [item]\n     */",
+        "meta": {
+            "range": [
+                1557,
+                2090
+            ],
+            "filename": "bottom-sheet.js",
+            "lineno": 54,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-sheet",
+            "code": {
+                "id": "astnode100000093",
+                "name": "MdBottomSheetComponent#renderIconButton",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "item"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "item"
+            }
+        ],
+        "name": "renderIconButton",
+        "longname": "MdBottomSheetComponent#renderIconButton",
+        "kind": "function",
+        "memberof": "MdBottomSheetComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\n     * @param {Any} [item]\n     */",
+        "meta": {
+            "range": [
+                2139,
+                2652
+            ],
+            "filename": "bottom-sheet.js",
+            "lineno": 72,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-sheet",
+            "code": {
+                "id": "astnode100000145",
+                "name": "MdBottomSheetComponent#renderButton",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "item"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "item"
+            }
+        ],
+        "name": "renderButton",
+        "longname": "MdBottomSheetComponent#renderButton",
+        "kind": "function",
+        "memberof": "MdBottomSheetComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\n     * @param {Any} [item]\n     */",
+        "meta": {
+            "range": [
+                2701,
+                2795
+            ],
+            "filename": "bottom-sheet.js",
+            "lineno": 90,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-sheet",
+            "code": {
+                "id": "astnode100000197",
+                "name": "MdBottomSheetComponent#renderSpacer",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "item"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "item"
+            }
+        ],
+        "name": "renderSpacer",
+        "longname": "MdBottomSheetComponent#renderSpacer",
+        "kind": "function",
+        "memberof": "MdBottomSheetComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\n     * @param {Any} [item]\n     * @param {Any} [component=\"icon\"]\n     */",
+        "meta": {
+            "range": [
+                2883,
+                3276
+            ],
+            "filename": "bottom-sheet.js",
+            "lineno": 98,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-sheet",
+            "code": {
+                "id": "astnode100000207",
+                "name": "MdBottomSheetComponent#renderComponent",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "item",
+                    "component"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "item"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "defaultvalue": "\"icon\"",
+                "name": "component"
+            }
+        ],
+        "name": "renderComponent",
+        "longname": "MdBottomSheetComponent#renderComponent",
+        "kind": "function",
+        "memberof": "MdBottomSheetComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2941,
+                3190
+            ],
+            "filename": "bottom-sheet.js",
+            "lineno": 99,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-sheet",
+            "code": {
+                "id": "astnode100000216",
+                "name": "components",
+                "type": "ArrayExpression",
+                "value": "[\"[\\\"icon\\\",null]\",\"[\\\"icon-button\\\",null]\",\"[\\\"button\\\",null]\",\"[\\\"spacer\\\",null]\"]"
+            }
+        },
+        "undocumented": true,
+        "name": "components",
+        "longname": "<anonymous>~components",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "/**\n     */",
+        "meta": {
+            "range": [
+                3298,
+                4519
+            ],
+            "filename": "bottom-sheet.js",
+            "lineno": 110,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-sheet",
+            "code": {
+                "id": "astnode100000262",
+                "name": "MdBottomSheetComponent#render",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "render",
+        "longname": "MdBottomSheetComponent#render",
+        "kind": "function",
+        "memberof": "MdBottomSheetComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\n     * @async\n     */",
+        "meta": {
+            "range": [
+                4555,
+                5371
+            ],
+            "filename": "bottom-sheet.js",
+            "lineno": 117,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-sheet",
+            "code": {
+                "id": "astnode100000430",
+                "name": "MdBottomSheetComponent#connectedCallback",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "async": true,
+        "name": "connectedCallback",
+        "longname": "MdBottomSheetComponent#connectedCallback",
+        "kind": "function",
+        "memberof": "MdBottomSheetComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                4749,
+                4807
+            ],
+            "filename": "bottom-sheet.js",
+            "lineno": 121,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-sheet",
+            "code": {
+                "id": "astnode100000457",
+                "name": "this.bottomSheetScrim",
+                "type": "CallExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "bottomSheetScrim",
+        "longname": "MdBottomSheetComponent#bottomSheetScrim",
+        "kind": "member",
+        "memberof": "MdBottomSheetComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                4906,
+                4984
+            ],
+            "filename": "bottom-sheet.js",
+            "lineno": 123,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-sheet",
+            "code": {
+                "id": "astnode100000480",
+                "name": "this.handleBottomSheetScrimClose",
+                "type": "CallExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "handleBottomSheetScrimClose",
+        "longname": "MdBottomSheetComponent#handleBottomSheetScrimClose",
+        "kind": "member",
+        "memberof": "MdBottomSheetComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\n     */",
+        "meta": {
+            "range": [
+                5393,
+                5602
+            ],
+            "filename": "bottom-sheet.js",
+            "lineno": 133,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-sheet",
+            "code": {
+                "id": "astnode100000548",
+                "name": "MdBottomSheetComponent#disconnectedCallback",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "disconnectedCallback",
+        "longname": "MdBottomSheetComponent#disconnectedCallback",
+        "kind": "function",
+        "memberof": "MdBottomSheetComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\n     * @param {Any} [changedProperties]\n     */",
+        "meta": {
+            "range": [
+                5664,
+                5871
+            ],
+            "filename": "bottom-sheet.js",
+            "lineno": 142,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-sheet",
+            "code": {
+                "id": "astnode100000575",
+                "name": "MdBottomSheetComponent#updated",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "changedProperties"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "changedProperties"
+            }
+        ],
+        "name": "updated",
+        "longname": "MdBottomSheetComponent#updated",
+        "kind": "function",
+        "memberof": "MdBottomSheetComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\n     */",
+        "meta": {
+            "range": [
+                5893,
+                6252
+            ],
+            "filename": "bottom-sheet.js",
+            "lineno": 151,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-sheet",
+            "code": {
+                "id": "astnode100000607",
+                "name": "MdBottomSheetComponent#show",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "show",
+        "longname": "MdBottomSheetComponent#show",
+        "kind": "function",
+        "memberof": "MdBottomSheetComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                5981,
+                6049
+            ],
+            "filename": "bottom-sheet.js",
+            "lineno": 153,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-sheet",
+            "code": {
+                "id": "astnode100000620",
+                "name": "this.handleBottomSheetShown",
+                "type": "CallExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "handleBottomSheetShown",
+        "longname": "MdBottomSheetComponent#handleBottomSheetShown",
+        "kind": "member",
+        "memberof": "MdBottomSheetComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                6135,
+                6151
+            ],
+            "filename": "bottom-sheet.js",
+            "lineno": 155,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-sheet",
+            "code": {
+                "id": "astnode100000641",
+                "name": "this.open",
+                "type": "Literal",
+                "value": true,
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "open",
+        "longname": "MdBottomSheetComponent#open",
+        "kind": "member",
+        "memberof": "MdBottomSheetComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\n     */",
+        "meta": {
+            "range": [
+                6274,
+                6656
+            ],
+            "filename": "bottom-sheet.js",
+            "lineno": 162,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-sheet",
+            "code": {
+                "id": "astnode100000663",
+                "name": "MdBottomSheetComponent#close",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "close",
+        "longname": "MdBottomSheetComponent#close",
+        "kind": "function",
+        "memberof": "MdBottomSheetComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                6363,
+                6433
+            ],
+            "filename": "bottom-sheet.js",
+            "lineno": 164,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-sheet",
+            "code": {
+                "id": "astnode100000676",
+                "name": "this.handleBottomSheetClosed",
+                "type": "CallExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "handleBottomSheetClosed",
+        "longname": "MdBottomSheetComponent#handleBottomSheetClosed",
+        "kind": "member",
+        "memberof": "MdBottomSheetComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                6520,
+                6537
+            ],
+            "filename": "bottom-sheet.js",
+            "lineno": 166,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-sheet",
+            "code": {
+                "id": "astnode100000697",
+                "name": "this.open",
+                "type": "Literal",
+                "value": false,
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "open",
+        "longname": "MdBottomSheetComponent#open",
+        "kind": "member",
+        "memberof": "MdBottomSheetComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\n     */",
+        "meta": {
+            "range": [
+                6678,
+                6757
+            ],
+            "filename": "bottom-sheet.js",
+            "lineno": 173,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-sheet",
+            "code": {
+                "id": "astnode100000721",
+                "name": "MdBottomSheetComponent#toggle",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "toggle",
+        "longname": "MdBottomSheetComponent#toggle",
+        "kind": "function",
+        "memberof": "MdBottomSheetComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\n     * @param {Any} [event]\n     */",
+        "meta": {
+            "range": [
+                6807,
+                7092
+            ],
+            "filename": "bottom-sheet.js",
+            "lineno": 181,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-sheet",
+            "code": {
+                "id": "astnode100000739",
+                "name": "MdBottomSheetComponent#handleBottomSheetShown",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "event"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleBottomSheetShown",
+        "longname": "MdBottomSheetComponent#handleBottomSheetShown",
+        "kind": "function",
+        "memberof": "MdBottomSheetComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\n     * @param {Any} [event]\n     */",
+        "meta": {
+            "range": [
+                7142,
+                7428
+            ],
+            "filename": "bottom-sheet.js",
+            "lineno": 191,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-sheet",
+            "code": {
+                "id": "astnode100000772",
+                "name": "MdBottomSheetComponent#handleBottomSheetClosed",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "event"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleBottomSheetClosed",
+        "longname": "MdBottomSheetComponent#handleBottomSheetClosed",
+        "kind": "function",
+        "memberof": "MdBottomSheetComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\n     * @param {Any} [event]\n     */",
+        "meta": {
+            "range": [
+                7478,
+                7614
+            ],
+            "filename": "bottom-sheet.js",
+            "lineno": 201,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-sheet",
+            "code": {
+                "id": "astnode100000805",
+                "name": "MdBottomSheetComponent#handleBottomSheetScrimClose",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "event"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleBottomSheetScrimClose",
+        "longname": "MdBottomSheetComponent#handleBottomSheetScrimClose",
+        "kind": "function",
+        "memberof": "MdBottomSheetComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                7599,
+                7604
+            ],
+            "filename": "bottom-sheet.js",
+            "lineno": 203,
+            "columnno": 47,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-sheet",
+            "code": {
+                "id": "astnode100000826",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n     * @param {Any} [event]\n     */",
+        "meta": {
+            "range": [
+                7664,
+                7773
+            ],
+            "filename": "bottom-sheet.js",
+            "lineno": 209,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-sheet",
+            "code": {
+                "id": "astnode100000828",
+                "name": "MdBottomSheetComponent#handleBottomSheetIconButtonClick",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "event"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleBottomSheetIconButtonClick",
+        "longname": "MdBottomSheetComponent#handleBottomSheetIconButtonClick",
+        "kind": "function",
+        "memberof": "MdBottomSheetComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                7758,
+                7763
+            ],
+            "filename": "bottom-sheet.js",
+            "lineno": 210,
+            "columnno": 52,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-sheet",
+            "code": {
+                "id": "astnode100000840",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n     * @param {Any} [event]\n     */",
+        "meta": {
+            "range": [
+                7823,
+                7924
+            ],
+            "filename": "bottom-sheet.js",
+            "lineno": 216,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-sheet",
+            "code": {
+                "id": "astnode100000842",
+                "name": "MdBottomSheetComponent#handleBottomSheetButtonClick",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "event"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleBottomSheetButtonClick",
+        "longname": "MdBottomSheetComponent#handleBottomSheetButtonClick",
+        "kind": "function",
+        "memberof": "MdBottomSheetComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                7909,
+                7914
+            ],
+            "filename": "bottom-sheet.js",
+            "lineno": 217,
+            "columnno": 48,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-sheet",
+            "code": {
+                "id": "astnode100000854",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                8002,
+                8024
+            ],
+            "filename": "bottom-sheet.js",
+            "lineno": 221,
+            "columnno": 9,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-sheet",
+            "code": {
+                "id": "astnode100000864",
+                "name": "exports.MdBottomSheetComponent",
+                "type": "Identifier"
+            }
+        },
+        "undocumented": true,
+        "name": "MdBottomSheetComponent",
+        "longname": "MdBottomSheetComponent",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "kind": "package",
+        "longname": "package:undefined",
+        "files": [
+            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-sheet\\bottom-sheet.js"
+        ]
+    }
+]

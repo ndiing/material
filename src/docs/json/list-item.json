@@ -1,0 +1,1508 @@
+[
+    {
+        "comment": "/**\n * @extends MdComponent\n * @element md-list-item\n * @fires MdListItemComponent#onListItemSelected\n */",
+        "meta": {
+            "range": [
+                299,
+                5938
+            ],
+            "filename": "list-item.js",
+            "lineno": 11,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000020",
+                "name": "MdListItemComponent",
+                "type": "ClassDeclaration",
+                "paramnames": []
+            }
+        },
+        "augments": [
+            "MdComponent"
+        ],
+        "tags": [
+            {
+                "originalTitle": "element",
+                "title": "element",
+                "text": "md-list-item",
+                "value": "md-list-item"
+            }
+        ],
+        "fires": [
+            "MdListItemComponent#event:onListItemSelected"
+        ],
+        "name": "MdListItemComponent",
+        "longname": "MdListItemComponent",
+        "kind": "class",
+        "scope": "global",
+        "undocumented": true
+    },
+    {
+        "comment": "/**\n     * @property {Boolean} [leadingCheckbox]\n     * @property {Boolean} [leadingRadioButton]\n     * @property {Boolean} [leadingSwitch]\n     * @property {String} [avatar]\n     * @property {String} [image]\n     * @property {String} [video]\n     * @property {String} [icon]\n     * @property {String} [label]\n     * @property {String} [sublabel]\n     * @property {String} [text]\n     * @property {Boolean} [trailingCheckbox]\n     * @property {Boolean} [trailingRadioButton]\n     * @property {Boolean} [trailingSwitch]\n     * @property {Boolean} [selected]\n     * @property {Boolean} [disabled]\n     * @property {String} [routerLink]\n     * @property {Object} [rippleOptions]\n     * @property {Number} [badge]\n     */",
+        "meta": {
+            "range": [
+                1073,
+                1834
+            ],
+            "filename": "list-item.js",
+            "lineno": 32,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000024",
+                "name": "properties",
+                "type": "ClassProperty"
+            }
+        },
+        "properties": [
+            {
+                "type": {
+                    "names": [
+                        "Boolean"
+                    ]
+                },
+                "optional": true,
+                "name": "leadingCheckbox"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Boolean"
+                    ]
+                },
+                "optional": true,
+                "name": "leadingRadioButton"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Boolean"
+                    ]
+                },
+                "optional": true,
+                "name": "leadingSwitch"
+            },
+            {
+                "type": {
+                    "names": [
+                        "String"
+                    ]
+                },
+                "optional": true,
+                "name": "avatar"
+            },
+            {
+                "type": {
+                    "names": [
+                        "String"
+                    ]
+                },
+                "optional": true,
+                "name": "image"
+            },
+            {
+                "type": {
+                    "names": [
+                        "String"
+                    ]
+                },
+                "optional": true,
+                "name": "video"
+            },
+            {
+                "type": {
+                    "names": [
+                        "String"
+                    ]
+                },
+                "optional": true,
+                "name": "icon"
+            },
+            {
+                "type": {
+                    "names": [
+                        "String"
+                    ]
+                },
+                "optional": true,
+                "name": "label"
+            },
+            {
+                "type": {
+                    "names": [
+                        "String"
+                    ]
+                },
+                "optional": true,
+                "name": "sublabel"
+            },
+            {
+                "type": {
+                    "names": [
+                        "String"
+                    ]
+                },
+                "optional": true,
+                "name": "text"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Boolean"
+                    ]
+                },
+                "optional": true,
+                "name": "trailingCheckbox"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Boolean"
+                    ]
+                },
+                "optional": true,
+                "name": "trailingRadioButton"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Boolean"
+                    ]
+                },
+                "optional": true,
+                "name": "trailingSwitch"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Boolean"
+                    ]
+                },
+                "optional": true,
+                "name": "selected"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Boolean"
+                    ]
+                },
+                "optional": true,
+                "name": "disabled"
+            },
+            {
+                "type": {
+                    "names": [
+                        "String"
+                    ]
+                },
+                "optional": true,
+                "name": "routerLink"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Object"
+                    ]
+                },
+                "optional": true,
+                "name": "rippleOptions"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Number"
+                    ]
+                },
+                "optional": true,
+                "name": "badge"
+            }
+        ],
+        "name": "properties",
+        "longname": "MdListItemComponent#properties",
+        "kind": "member",
+        "memberof": "MdListItemComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1103,
+                1137
+            ],
+            "filename": "list-item.js",
+            "lineno": 33,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000026",
+                "name": "leadingCheckbox",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "leadingCheckbox",
+        "longname": "leadingCheckbox",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1122,
+                1135
+            ],
+            "filename": "list-item.js",
+            "lineno": 33,
+            "columnno": 27,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000028",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Boolean"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "leadingCheckbox.type",
+        "kind": "member",
+        "memberof": "leadingCheckbox",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1147,
+                1184
+            ],
+            "filename": "list-item.js",
+            "lineno": 34,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000030",
+                "name": "leadingRadioButton",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "leadingRadioButton",
+        "longname": "leadingRadioButton",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1169,
+                1182
+            ],
+            "filename": "list-item.js",
+            "lineno": 34,
+            "columnno": 30,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000032",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Boolean"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "leadingRadioButton.type",
+        "kind": "member",
+        "memberof": "leadingRadioButton",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1194,
+                1226
+            ],
+            "filename": "list-item.js",
+            "lineno": 35,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000034",
+                "name": "leadingSwitch",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "leadingSwitch",
+        "longname": "leadingSwitch",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1211,
+                1224
+            ],
+            "filename": "list-item.js",
+            "lineno": 35,
+            "columnno": 25,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000036",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Boolean"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "leadingSwitch.type",
+        "kind": "member",
+        "memberof": "leadingSwitch",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1236,
+                1260
+            ],
+            "filename": "list-item.js",
+            "lineno": 36,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000038",
+                "name": "avatar",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "avatar",
+        "longname": "avatar",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1246,
+                1258
+            ],
+            "filename": "list-item.js",
+            "lineno": 36,
+            "columnno": 18,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000040",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "avatar.type",
+        "kind": "member",
+        "memberof": "avatar",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1270,
+                1293
+            ],
+            "filename": "list-item.js",
+            "lineno": 37,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000042",
+                "name": "image",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "image",
+        "longname": "image",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1279,
+                1291
+            ],
+            "filename": "list-item.js",
+            "lineno": 37,
+            "columnno": 17,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000044",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "image.type",
+        "kind": "member",
+        "memberof": "image",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1303,
+                1326
+            ],
+            "filename": "list-item.js",
+            "lineno": 38,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000046",
+                "name": "video",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "video",
+        "longname": "video",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1312,
+                1324
+            ],
+            "filename": "list-item.js",
+            "lineno": 38,
+            "columnno": 17,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000048",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "video.type",
+        "kind": "member",
+        "memberof": "video",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1336,
+                1358
+            ],
+            "filename": "list-item.js",
+            "lineno": 39,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000050",
+                "name": "icon",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "icon",
+        "longname": "icon",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1344,
+                1356
+            ],
+            "filename": "list-item.js",
+            "lineno": 39,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000052",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "icon.type",
+        "kind": "member",
+        "memberof": "icon",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1368,
+                1391
+            ],
+            "filename": "list-item.js",
+            "lineno": 40,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000054",
+                "name": "label",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "label",
+        "longname": "label",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1377,
+                1389
+            ],
+            "filename": "list-item.js",
+            "lineno": 40,
+            "columnno": 17,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000056",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "label.type",
+        "kind": "member",
+        "memberof": "label",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1401,
+                1427
+            ],
+            "filename": "list-item.js",
+            "lineno": 41,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000058",
+                "name": "sublabel",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "sublabel",
+        "longname": "sublabel",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1413,
+                1425
+            ],
+            "filename": "list-item.js",
+            "lineno": 41,
+            "columnno": 20,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000060",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "sublabel.type",
+        "kind": "member",
+        "memberof": "sublabel",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1437,
+                1459
+            ],
+            "filename": "list-item.js",
+            "lineno": 42,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000062",
+                "name": "text",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "text",
+        "longname": "text",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1445,
+                1457
+            ],
+            "filename": "list-item.js",
+            "lineno": 42,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000064",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "text.type",
+        "kind": "member",
+        "memberof": "text",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1469,
+                1504
+            ],
+            "filename": "list-item.js",
+            "lineno": 43,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000066",
+                "name": "trailingCheckbox",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "trailingCheckbox",
+        "longname": "trailingCheckbox",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1489,
+                1502
+            ],
+            "filename": "list-item.js",
+            "lineno": 43,
+            "columnno": 28,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000068",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Boolean"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "trailingCheckbox.type",
+        "kind": "member",
+        "memberof": "trailingCheckbox",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1514,
+                1552
+            ],
+            "filename": "list-item.js",
+            "lineno": 44,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000070",
+                "name": "trailingRadioButton",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "trailingRadioButton",
+        "longname": "trailingRadioButton",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1537,
+                1550
+            ],
+            "filename": "list-item.js",
+            "lineno": 44,
+            "columnno": 31,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000072",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Boolean"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "trailingRadioButton.type",
+        "kind": "member",
+        "memberof": "trailingRadioButton",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1562,
+                1595
+            ],
+            "filename": "list-item.js",
+            "lineno": 45,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000074",
+                "name": "trailingSwitch",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "trailingSwitch",
+        "longname": "trailingSwitch",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1580,
+                1593
+            ],
+            "filename": "list-item.js",
+            "lineno": 45,
+            "columnno": 26,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000076",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Boolean"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "trailingSwitch.type",
+        "kind": "member",
+        "memberof": "trailingSwitch",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1605,
+                1647
+            ],
+            "filename": "list-item.js",
+            "lineno": 46,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000078",
+                "name": "selected",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\",\"reflect\":true}"
+            }
+        },
+        "undocumented": true,
+        "name": "selected",
+        "longname": "selected",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1617,
+                1630
+            ],
+            "filename": "list-item.js",
+            "lineno": 46,
+            "columnno": 20,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000080",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Boolean"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "selected.type",
+        "kind": "member",
+        "memberof": "selected",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1632,
+                1645
+            ],
+            "filename": "list-item.js",
+            "lineno": 46,
+            "columnno": 35,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000082",
+                "name": "reflect",
+                "type": "Literal",
+                "value": true
+            }
+        },
+        "undocumented": true,
+        "name": "reflect",
+        "longname": "selected.reflect",
+        "kind": "member",
+        "memberof": "selected",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1657,
+                1699
+            ],
+            "filename": "list-item.js",
+            "lineno": 47,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000084",
+                "name": "disabled",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\",\"reflect\":true}"
+            }
+        },
+        "undocumented": true,
+        "name": "disabled",
+        "longname": "disabled",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1669,
+                1682
+            ],
+            "filename": "list-item.js",
+            "lineno": 47,
+            "columnno": 20,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000086",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Boolean"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "disabled.type",
+        "kind": "member",
+        "memberof": "disabled",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1684,
+                1697
+            ],
+            "filename": "list-item.js",
+            "lineno": 47,
+            "columnno": 35,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000088",
+                "name": "reflect",
+                "type": "Literal",
+                "value": true
+            }
+        },
+        "undocumented": true,
+        "name": "reflect",
+        "longname": "disabled.reflect",
+        "kind": "member",
+        "memberof": "disabled",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1709,
+                1752
+            ],
+            "filename": "list-item.js",
+            "lineno": 48,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000090",
+                "name": "routerLink",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\",\"reflect\":true}"
+            }
+        },
+        "undocumented": true,
+        "name": "routerLink",
+        "longname": "routerLink",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1723,
+                1735
+            ],
+            "filename": "list-item.js",
+            "lineno": 48,
+            "columnno": 22,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000092",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "routerLink.type",
+        "kind": "member",
+        "memberof": "routerLink",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1737,
+                1750
+            ],
+            "filename": "list-item.js",
+            "lineno": 48,
+            "columnno": 36,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000094",
+                "name": "reflect",
+                "type": "Literal",
+                "value": true
+            }
+        },
+        "undocumented": true,
+        "name": "reflect",
+        "longname": "routerLink.reflect",
+        "kind": "member",
+        "memberof": "routerLink",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1762,
+                1793
+            ],
+            "filename": "list-item.js",
+            "lineno": 49,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000096",
+                "name": "rippleOptions",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "rippleOptions",
+        "longname": "rippleOptions",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1779,
+                1791
+            ],
+            "filename": "list-item.js",
+            "lineno": 49,
+            "columnno": 25,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000098",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Object"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "rippleOptions.type",
+        "kind": "member",
+        "memberof": "rippleOptions",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1803,
+                1826
+            ],
+            "filename": "list-item.js",
+            "lineno": 50,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000100",
+                "name": "badge",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "badge",
+        "longname": "badge",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1812,
+                1824
+            ],
+            "filename": "list-item.js",
+            "lineno": 50,
+            "columnno": 17,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000102",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Number"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "badge.type",
+        "kind": "member",
+        "memberof": "badge",
+        "scope": "static"
+    },
+    {
+        "comment": "/**\n     */",
+        "meta": {
+            "range": [
+                1856,
+                1927
+            ],
+            "filename": "list-item.js",
+            "lineno": 55,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000104",
+                "name": "MdListItemComponent",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "MdListItemComponent",
+        "longname": "MdListItemComponent",
+        "kind": "class",
+        "scope": "global",
+        "params": [],
+        "undocumented": true
+    },
+    {
+        "comment": "/**\n * @extends MdComponent\n * @element md-list-item\n * @fires MdListItemComponent#onListItemSelected\n */",
+        "meta": {
+            "range": [
+                299,
+                5938
+            ],
+            "filename": "list-item.js",
+            "lineno": 11,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000020",
+                "name": "MdListItemComponent",
+                "type": "ClassDeclaration",
+                "paramnames": []
+            }
+        },
+        "name": "MdListItemComponent",
+        "longname": "MdListItemComponent",
+        "kind": "class",
+        "augments": [
+            "MdComponent"
+        ],
+        "tags": [
+            {
+                "originalTitle": "element",
+                "title": "element",
+                "text": "md-list-item",
+                "value": "md-list-item"
+            }
+        ],
+        "fires": [
+            "MdListItemComponent#event:onListItemSelected"
+        ],
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1897,
+                1920
+            ],
+            "filename": "list-item.js",
+            "lineno": 57,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000112",
+                "name": "this.rippleOptions",
+                "type": "ObjectExpression",
+                "value": "{}",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "rippleOptions",
+        "longname": "MdListItemComponent#rippleOptions",
+        "kind": "member",
+        "memberof": "MdListItemComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\n     */",
+        "meta": {
+            "range": [
+                1949,
+                4766
+            ],
+            "filename": "list-item.js",
+            "lineno": 62,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000117",
+                "name": "MdListItemComponent#render",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "render",
+        "longname": "MdListItemComponent#render",
+        "kind": "function",
+        "memberof": "MdListItemComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\n     * @async\n     */",
+        "meta": {
+            "range": [
+                4802,
+                5348
+            ],
+            "filename": "list-item.js",
+            "lineno": 133,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000344",
+                "name": "MdListItemComponent#connectedCallback",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "async": true,
+        "name": "connectedCallback",
+        "longname": "MdListItemComponent#connectedCallback",
+        "kind": "function",
+        "memberof": "MdListItemComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                4992,
+                5043
+            ],
+            "filename": "list-item.js",
+            "lineno": 138,
+            "columnno": 18,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000372",
+                "name": "sublabel",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "sublabel",
+        "longname": "<anonymous>~sublabel",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                5291,
+                5341
+            ],
+            "filename": "list-item.js",
+            "lineno": 145,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000406",
+                "name": "this.ripple",
+                "type": "NewExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "ripple",
+        "longname": "MdListItemComponent#ripple",
+        "kind": "member",
+        "memberof": "MdListItemComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\n     * @async\n     */",
+        "meta": {
+            "range": [
+                5384,
+                5506
+            ],
+            "filename": "list-item.js",
+            "lineno": 151,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000416",
+                "name": "MdListItemComponent#disconnectedCallback",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "async": true,
+        "name": "disconnectedCallback",
+        "longname": "MdListItemComponent#disconnectedCallback",
+        "kind": "function",
+        "memberof": "MdListItemComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\n     * @async\n     * @param {Any} [changedProperties]\n     */",
+        "meta": {
+            "range": [
+                5582,
+                5936
+            ],
+            "filename": "list-item.js",
+            "lineno": 160,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000436",
+                "name": "MdListItemComponent#updated",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "changedProperties"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "async": true,
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "changedProperties"
+            }
+        ],
+        "name": "updated",
+        "longname": "MdListItemComponent#updated",
+        "kind": "function",
+        "memberof": "MdListItemComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                5902,
+                5916
+            ],
+            "filename": "list-item.js",
+            "lineno": 166,
+            "columnno": 46,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000485",
+                "name": "listItem",
+                "type": "ThisExpression",
+                "value": "this"
+            }
+        },
+        "undocumented": true,
+        "name": "listItem",
+        "longname": "listItem",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                6008,
+                6027
+            ],
+            "filename": "list-item.js",
+            "lineno": 171,
+            "columnno": 9,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
+            "code": {
+                "id": "astnode100000495",
+                "name": "exports.MdListItemComponent",
+                "type": "Identifier"
+            }
+        },
+        "undocumented": true,
+        "name": "MdListItemComponent",
+        "longname": "MdListItemComponent",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "kind": "package",
+        "longname": "package:undefined",
+        "files": [
+            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list\\list-item.js"
+        ]
+    }
+]

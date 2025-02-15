@@ -1,0 +1,1044 @@
+[
+    {
+        "comment": "/**\n * @extends MdComponent\n * @element md-tabs\n * @fires MdTabsComponent#onTabClick\n */",
+        "meta": {
+            "range": [
+                239,
+                3991
+            ],
+            "filename": "tabs.js",
+            "lineno": 10,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tabs",
+            "code": {
+                "id": "astnode100000016",
+                "name": "MdTabsComponent",
+                "type": "ClassDeclaration",
+                "paramnames": []
+            }
+        },
+        "augments": [
+            "MdComponent"
+        ],
+        "tags": [
+            {
+                "originalTitle": "element",
+                "title": "element",
+                "text": "md-tabs",
+                "value": "md-tabs"
+            }
+        ],
+        "fires": [
+            "MdTabsComponent#event:onTabClick"
+        ],
+        "name": "MdTabsComponent",
+        "longname": "MdTabsComponent",
+        "kind": "class",
+        "scope": "global",
+        "undocumented": true
+    },
+    {
+        "comment": "/**\n     * @property {Array} [items]\n     * @property {Object} [rippleOptions]\n     * @property {String} [variant]\n     */",
+        "meta": {
+            "range": [
+                414,
+                550
+            ],
+            "filename": "tabs.js",
+            "lineno": 16,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tabs",
+            "code": {
+                "id": "astnode100000020",
+                "name": "properties",
+                "type": "ClassProperty"
+            }
+        },
+        "properties": [
+            {
+                "type": {
+                    "names": [
+                        "Array"
+                    ]
+                },
+                "optional": true,
+                "name": "items"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Object"
+                    ]
+                },
+                "optional": true,
+                "name": "rippleOptions"
+            },
+            {
+                "type": {
+                    "names": [
+                        "String"
+                    ]
+                },
+                "optional": true,
+                "name": "variant"
+            }
+        ],
+        "name": "properties",
+        "longname": "MdTabsComponent#properties",
+        "kind": "member",
+        "memberof": "MdTabsComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                444,
+                466
+            ],
+            "filename": "tabs.js",
+            "lineno": 17,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tabs",
+            "code": {
+                "id": "astnode100000022",
+                "name": "items",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "items",
+        "longname": "items",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                453,
+                464
+            ],
+            "filename": "tabs.js",
+            "lineno": 17,
+            "columnno": 17,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tabs",
+            "code": {
+                "id": "astnode100000024",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Array"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "items.type",
+        "kind": "member",
+        "memberof": "items",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                476,
+                507
+            ],
+            "filename": "tabs.js",
+            "lineno": 18,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tabs",
+            "code": {
+                "id": "astnode100000026",
+                "name": "rippleOptions",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "rippleOptions",
+        "longname": "rippleOptions",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                493,
+                505
+            ],
+            "filename": "tabs.js",
+            "lineno": 18,
+            "columnno": 25,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tabs",
+            "code": {
+                "id": "astnode100000028",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Object"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "rippleOptions.type",
+        "kind": "member",
+        "memberof": "rippleOptions",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                517,
+                542
+            ],
+            "filename": "tabs.js",
+            "lineno": 19,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tabs",
+            "code": {
+                "id": "astnode100000030",
+                "name": "variant",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "variant",
+        "longname": "variant",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                528,
+                540
+            ],
+            "filename": "tabs.js",
+            "lineno": 19,
+            "columnno": 19,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tabs",
+            "code": {
+                "id": "astnode100000032",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "variant.type",
+        "kind": "member",
+        "memberof": "variant",
+        "scope": "static"
+    },
+    {
+        "comment": "/**\n     * @readonly\n     */",
+        "meta": {
+            "range": [
+                589,
+                625
+            ],
+            "filename": "tabs.js",
+            "lineno": 25,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tabs",
+            "code": {
+                "id": "astnode100000034",
+                "name": "variants",
+                "type": "ClassProperty"
+            }
+        },
+        "readonly": true,
+        "name": "variants",
+        "longname": "MdTabsComponent#variants",
+        "kind": "member",
+        "memberof": "MdTabsComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\n     */",
+        "meta": {
+            "range": [
+                647,
+                744
+            ],
+            "filename": "tabs.js",
+            "lineno": 29,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tabs",
+            "code": {
+                "id": "astnode100000038",
+                "name": "MdTabsComponent",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "MdTabsComponent",
+        "longname": "MdTabsComponent",
+        "kind": "class",
+        "scope": "global",
+        "params": [],
+        "undocumented": true
+    },
+    {
+        "comment": "/**\n * @extends MdComponent\n * @element md-tabs\n * @fires MdTabsComponent#onTabClick\n */",
+        "meta": {
+            "range": [
+                239,
+                3991
+            ],
+            "filename": "tabs.js",
+            "lineno": 10,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tabs",
+            "code": {
+                "id": "astnode100000016",
+                "name": "MdTabsComponent",
+                "type": "ClassDeclaration",
+                "paramnames": []
+            }
+        },
+        "name": "MdTabsComponent",
+        "longname": "MdTabsComponent",
+        "kind": "class",
+        "augments": [
+            "MdComponent"
+        ],
+        "tags": [
+            {
+                "originalTitle": "element",
+                "title": "element",
+                "text": "md-tabs",
+                "value": "md-tabs"
+            }
+        ],
+        "fires": [
+            "MdTabsComponent#event:onTabClick"
+        ],
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                688,
+                703
+            ],
+            "filename": "tabs.js",
+            "lineno": 31,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tabs",
+            "code": {
+                "id": "astnode100000046",
+                "name": "this.items",
+                "type": "ArrayExpression",
+                "value": "[]",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "items",
+        "longname": "MdTabsComponent#items",
+        "kind": "member",
+        "memberof": "MdTabsComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                713,
+                737
+            ],
+            "filename": "tabs.js",
+            "lineno": 32,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tabs",
+            "code": {
+                "id": "astnode100000052",
+                "name": "this.variant",
+                "type": "Literal",
+                "value": "primary",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "variant",
+        "longname": "MdTabsComponent#variant",
+        "kind": "member",
+        "memberof": "MdTabsComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\n     * @param {Any} [item]\n     */",
+        "meta": {
+            "range": [
+                793,
+                1438
+            ],
+            "filename": "tabs.js",
+            "lineno": 38,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tabs",
+            "code": {
+                "id": "astnode100000057",
+                "name": "MdTabsComponent#renderTab",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "item"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "item"
+            }
+        ],
+        "name": "renderTab",
+        "longname": "MdTabsComponent#renderTab",
+        "kind": "function",
+        "memberof": "MdTabsComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\n     */",
+        "meta": {
+            "range": [
+                1460,
+                1539
+            ],
+            "filename": "tabs.js",
+            "lineno": 57,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tabs",
+            "code": {
+                "id": "astnode100000123",
+                "name": "MdTabsComponent#render",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "render",
+        "longname": "MdTabsComponent#render",
+        "kind": "function",
+        "memberof": "MdTabsComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\n     */",
+        "meta": {
+            "range": [
+                1561,
+                1750
+            ],
+            "filename": "tabs.js",
+            "lineno": 63,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tabs",
+            "code": {
+                "id": "astnode100000141",
+                "name": "MdTabsComponent#connectedCallback",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "connectedCallback",
+        "longname": "MdTabsComponent#connectedCallback",
+        "kind": "function",
+        "memberof": "MdTabsComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\n     * @param {Any} [changedProperties]\n     */",
+        "meta": {
+            "range": [
+                1812,
+                2099
+            ],
+            "filename": "tabs.js",
+            "lineno": 72,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tabs",
+            "code": {
+                "id": "astnode100000167",
+                "name": "MdTabsComponent#updated",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "changedProperties"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "changedProperties"
+            }
+        ],
+        "name": "updated",
+        "longname": "MdTabsComponent#updated",
+        "kind": "function",
+        "memberof": "MdTabsComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\n     * @param {Any} [event]\n     */",
+        "meta": {
+            "range": [
+                2149,
+                2476
+            ],
+            "filename": "tabs.js",
+            "lineno": 84,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tabs",
+            "code": {
+                "id": "astnode100000211",
+                "name": "MdTabsComponent#handleTabClick",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "event"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleTabClick",
+        "longname": "MdTabsComponent#handleTabClick",
+        "kind": "function",
+        "memberof": "MdTabsComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2270,
+                2301
+            ],
+            "filename": "tabs.js",
+            "lineno": 86,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tabs",
+            "code": {
+                "id": "astnode100000225",
+                "name": "data",
+                "type": "MemberExpression",
+                "value": "event.currentTarget.data"
+            }
+        },
+        "undocumented": true,
+        "name": "data",
+        "longname": "<anonymous>~data",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2354,
+                2383
+            ],
+            "filename": "tabs.js",
+            "lineno": 88,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tabs",
+            "code": {
+                "id": "astnode100000243",
+                "name": "item.selected",
+                "type": "BinaryExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "selected",
+        "longname": "item.selected",
+        "kind": "member",
+        "memberof": "item",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2461,
+                2466
+            ],
+            "filename": "tabs.js",
+            "lineno": 91,
+            "columnno": 34,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tabs",
+            "code": {
+                "id": "astnode100000262",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n     * @async\n     * @param {Any} [event]\n     */",
+        "meta": {
+            "range": [
+                2540,
+                3989
+            ],
+            "filename": "tabs.js",
+            "lineno": 98,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tabs",
+            "code": {
+                "id": "astnode100000264",
+                "name": "MdTabsComponent#handleTabSelected",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "event"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "async": true,
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleTabSelected",
+        "longname": "MdTabsComponent#handleTabSelected",
+        "kind": "function",
+        "memberof": "MdTabsComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2641,
+                2663
+            ],
+            "filename": "tabs.js",
+            "lineno": 100,
+            "columnno": 18,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tabs",
+            "code": {
+                "id": "astnode100000279",
+                "name": "tab",
+                "type": "MemberExpression",
+                "value": "event.detail.tab"
+            }
+        },
+        "undocumented": true,
+        "name": "tab",
+        "longname": "<anonymous>~tab",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2683,
+                2698
+            ],
+            "filename": "tabs.js",
+            "lineno": 101,
+            "columnno": 18,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tabs",
+            "code": {
+                "id": "astnode100000287",
+                "name": "data",
+                "type": "MemberExpression",
+                "value": "tab.data"
+            }
+        },
+        "undocumented": true,
+        "name": "data",
+        "longname": "<anonymous>~data",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2712,
+                2753
+            ],
+            "filename": "tabs.js",
+            "lineno": 102,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tabs",
+            "code": {
+                "id": "astnode100000293",
+                "name": "this.currIndex",
+                "type": "CallExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "currIndex",
+        "longname": "MdTabsComponent#currIndex",
+        "kind": "member",
+        "memberof": "MdTabsComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2767,
+                2816
+            ],
+            "filename": "tabs.js",
+            "lineno": 103,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tabs",
+            "code": {
+                "id": "astnode100000305",
+                "name": "this.prevIndex",
+                "type": "LogicalExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "prevIndex",
+        "longname": "MdTabsComponent#prevIndex",
+        "kind": "member",
+        "memberof": "MdTabsComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2836,
+                2898
+            ],
+            "filename": "tabs.js",
+            "lineno": 104,
+            "columnno": 18,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tabs",
+            "code": {
+                "id": "astnode100000317",
+                "name": "direction",
+                "type": "ConditionalExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "direction",
+        "longname": "<anonymous>~direction",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                3074,
+                3105
+            ],
+            "filename": "tabs.js",
+            "lineno": 108,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tabs",
+            "code": {
+                "id": "astnode100000356",
+                "name": "this.prevIndex",
+                "type": "MemberExpression",
+                "value": "this.currIndex",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "prevIndex",
+        "longname": "MdTabsComponent#prevIndex",
+        "kind": "member",
+        "memberof": "MdTabsComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                3123,
+                3144
+            ],
+            "filename": "tabs.js",
+            "lineno": 109,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tabs",
+            "code": {
+                "id": "astnode100000364",
+                "name": "left",
+                "type": "MemberExpression",
+                "value": "tab.offsetLeft"
+            }
+        },
+        "undocumented": true,
+        "name": "left",
+        "longname": "<anonymous>~left",
+        "kind": "member",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                3162,
+                3213
+            ],
+            "filename": "tabs.js",
+            "lineno": 110,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tabs",
+            "code": {
+                "id": "astnode100000370",
+                "name": "right",
+                "type": "BinaryExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "right",
+        "longname": "<anonymous>~right",
+        "kind": "member",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                3300,
+                3343
+            ],
+            "filename": "tabs.js",
+            "lineno": 112,
+            "columnno": 22,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tabs",
+            "code": {
+                "id": "astnode100000391",
+                "name": "label",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "label",
+        "longname": "<anonymous>~label",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                3361,
+                3401
+            ],
+            "filename": "tabs.js",
+            "lineno": 113,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tabs",
+            "code": {
+                "id": "astnode100000399",
+                "name": "left",
+                "type": "BinaryExpression",
+                "funcscope": "<anonymous>",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "left",
+        "longname": "<anonymous>~left",
+        "kind": "member",
+        "memberof": "<anonymous>",
+        "scope": "inner"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                3419,
+                3472
+            ],
+            "filename": "tabs.js",
+            "lineno": 114,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tabs",
+            "code": {
+                "id": "astnode100000409",
+                "name": "right",
+                "type": "BinaryExpression",
+                "funcscope": "<anonymous>",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "right",
+        "longname": "<anonymous>~right",
+        "kind": "member",
+        "memberof": "<anonymous>",
+        "scope": "inner"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                3568,
+                3611
+            ],
+            "filename": "tabs.js",
+            "lineno": 116,
+            "columnno": 26,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tabs",
+            "code": {
+                "id": "astnode100000431",
+                "name": "badge",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "badge",
+        "longname": "<anonymous>~badge",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                3670,
+                3752
+            ],
+            "filename": "tabs.js",
+            "lineno": 118,
+            "columnno": 24,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tabs",
+            "code": {
+                "id": "astnode100000442",
+                "name": "right",
+                "type": "BinaryExpression",
+                "funcscope": "<anonymous>",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "right",
+        "longname": "<anonymous>~right",
+        "kind": "member",
+        "memberof": "<anonymous>",
+        "scope": "inner"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                4052,
+                4067
+            ],
+            "filename": "tabs.js",
+            "lineno": 128,
+            "columnno": 9,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tabs",
+            "code": {
+                "id": "astnode100000489",
+                "name": "exports.MdTabsComponent",
+                "type": "Identifier"
+            }
+        },
+        "undocumented": true,
+        "name": "MdTabsComponent",
+        "longname": "MdTabsComponent",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "kind": "package",
+        "longname": "package:undefined",
+        "files": [
+            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tabs\\tabs.js"
+        ]
+    }
+]

@@ -1,0 +1,565 @@
+[
+    {
+        "comment": "/**\n * @extends MdComponent\n * @element md-chips\n * @fires MdChipsComponent#onChipClick\n */",
+        "meta": {
+            "range": [
+                285,
+                1883
+            ],
+            "filename": "chips.js",
+            "lineno": 11,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\chips",
+            "code": {
+                "id": "astnode100000020",
+                "name": "MdChipsComponent",
+                "type": "ClassDeclaration",
+                "paramnames": []
+            }
+        },
+        "augments": [
+            "MdComponent"
+        ],
+        "tags": [
+            {
+                "originalTitle": "element",
+                "title": "element",
+                "text": "md-chips",
+                "value": "md-chips"
+            }
+        ],
+        "fires": [
+            "MdChipsComponent#event:onChipClick"
+        ],
+        "name": "MdChipsComponent",
+        "longname": "MdChipsComponent",
+        "kind": "class",
+        "scope": "global",
+        "undocumented": true
+    },
+    {
+        "comment": "/**\n     * @property {Array} [items]\n     * @property {String} [type]\n     */",
+        "meta": {
+            "range": [
+                416,
+                508
+            ],
+            "filename": "chips.js",
+            "lineno": 16,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\chips",
+            "code": {
+                "id": "astnode100000024",
+                "name": "properties",
+                "type": "ClassProperty"
+            }
+        },
+        "properties": [
+            {
+                "type": {
+                    "names": [
+                        "Array"
+                    ]
+                },
+                "optional": true,
+                "name": "items"
+            },
+            {
+                "type": {
+                    "names": [
+                        "String"
+                    ]
+                },
+                "optional": true,
+                "name": "type"
+            }
+        ],
+        "name": "properties",
+        "longname": "MdChipsComponent#properties",
+        "kind": "member",
+        "memberof": "MdChipsComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                446,
+                468
+            ],
+            "filename": "chips.js",
+            "lineno": 17,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\chips",
+            "code": {
+                "id": "astnode100000026",
+                "name": "items",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "items",
+        "longname": "items",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                455,
+                466
+            ],
+            "filename": "chips.js",
+            "lineno": 17,
+            "columnno": 17,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\chips",
+            "code": {
+                "id": "astnode100000028",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Array"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "items.type",
+        "kind": "member",
+        "memberof": "items",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                478,
+                500
+            ],
+            "filename": "chips.js",
+            "lineno": 18,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\chips",
+            "code": {
+                "id": "astnode100000030",
+                "name": "type",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "type",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                486,
+                498
+            ],
+            "filename": "chips.js",
+            "lineno": 18,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\chips",
+            "code": {
+                "id": "astnode100000032",
+                "name": "type",
+                "type": "Identifier",
+                "value": "String"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "type.type",
+        "kind": "member",
+        "memberof": "type",
+        "scope": "static"
+    },
+    {
+        "comment": "/**\n     * @readonly\n     */",
+        "meta": {
+            "range": [
+                547,
+                589
+            ],
+            "filename": "chips.js",
+            "lineno": 24,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\chips",
+            "code": {
+                "id": "astnode100000034",
+                "name": "types",
+                "type": "ClassProperty"
+            }
+        },
+        "readonly": true,
+        "name": "types",
+        "longname": "MdChipsComponent#types",
+        "kind": "member",
+        "memberof": "MdChipsComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\n     */",
+        "meta": {
+            "range": [
+                611,
+                686
+            ],
+            "filename": "chips.js",
+            "lineno": 28,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\chips",
+            "code": {
+                "id": "astnode100000038",
+                "name": "MdChipsComponent",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "MdChipsComponent",
+        "longname": "MdChipsComponent",
+        "kind": "class",
+        "scope": "global",
+        "params": [],
+        "undocumented": true
+    },
+    {
+        "comment": "/**\n * @extends MdComponent\n * @element md-chips\n * @fires MdChipsComponent#onChipClick\n */",
+        "meta": {
+            "range": [
+                285,
+                1883
+            ],
+            "filename": "chips.js",
+            "lineno": 11,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\chips",
+            "code": {
+                "id": "astnode100000020",
+                "name": "MdChipsComponent",
+                "type": "ClassDeclaration",
+                "paramnames": []
+            }
+        },
+        "name": "MdChipsComponent",
+        "longname": "MdChipsComponent",
+        "kind": "class",
+        "augments": [
+            "MdComponent"
+        ],
+        "tags": [
+            {
+                "originalTitle": "element",
+                "title": "element",
+                "text": "md-chips",
+                "value": "md-chips"
+            }
+        ],
+        "fires": [
+            "MdChipsComponent#event:onChipClick"
+        ],
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                652,
+                679
+            ],
+            "filename": "chips.js",
+            "lineno": 30,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\chips",
+            "code": {
+                "id": "astnode100000046",
+                "name": "this.type",
+                "type": "Literal",
+                "value": "single-select",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "MdChipsComponent#type",
+        "kind": "member",
+        "memberof": "MdChipsComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\n     * @param {Any} [item]\n     */",
+        "meta": {
+            "range": [
+                735,
+                1231
+            ],
+            "filename": "chips.js",
+            "lineno": 36,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\chips",
+            "code": {
+                "id": "astnode100000051",
+                "name": "MdChipsComponent#renderChip",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "item"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "item"
+            }
+        ],
+        "name": "renderChip",
+        "longname": "MdChipsComponent#renderChip",
+        "kind": "function",
+        "memberof": "MdChipsComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\n     */",
+        "meta": {
+            "range": [
+                1253,
+                1333
+            ],
+            "filename": "chips.js",
+            "lineno": 53,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\chips",
+            "code": {
+                "id": "astnode100000103",
+                "name": "MdChipsComponent#render",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "render",
+        "longname": "MdChipsComponent#render",
+        "kind": "function",
+        "memberof": "MdChipsComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\n     */",
+        "meta": {
+            "range": [
+                1355,
+                1457
+            ],
+            "filename": "chips.js",
+            "lineno": 59,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\chips",
+            "code": {
+                "id": "astnode100000121",
+                "name": "MdChipsComponent#connectedCallback",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "connectedCallback",
+        "longname": "MdChipsComponent#connectedCallback",
+        "kind": "function",
+        "memberof": "MdChipsComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\n     * @param {Any} [event]\n     */",
+        "meta": {
+            "range": [
+                1507,
+                1881
+            ],
+            "filename": "chips.js",
+            "lineno": 67,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\chips",
+            "code": {
+                "id": "astnode100000138",
+                "name": "MdChipsComponent#handleChipClick",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "event"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleChipClick",
+        "longname": "MdChipsComponent#handleChipClick",
+        "kind": "function",
+        "memberof": "MdChipsComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1546,
+                1577
+            ],
+            "filename": "chips.js",
+            "lineno": 68,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\chips",
+            "code": {
+                "id": "astnode100000144",
+                "name": "data",
+                "type": "MemberExpression",
+                "value": "event.currentTarget.data"
+            }
+        },
+        "undocumented": true,
+        "name": "data",
+        "longname": "<anonymous>~data",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1683,
+                1712
+            ],
+            "filename": "chips.js",
+            "lineno": 71,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\chips",
+            "code": {
+                "id": "astnode100000169",
+                "name": "item.selected",
+                "type": "BinaryExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "selected",
+        "longname": "item.selected",
+        "kind": "member",
+        "memberof": "item",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1759,
+                1789
+            ],
+            "filename": "chips.js",
+            "lineno": 74,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\chips",
+            "code": {
+                "id": "astnode100000178",
+                "name": "data.selected",
+                "type": "UnaryExpression",
+                "funcscope": "<anonymous>",
+                "value": "!data.selected",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "selected",
+        "longname": "<anonymous>~data.selected",
+        "kind": "member",
+        "memberof": "<anonymous>~data",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1866,
+                1871
+            ],
+            "filename": "chips.js",
+            "lineno": 77,
+            "columnno": 35,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\chips",
+            "code": {
+                "id": "astnode100000198",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1946,
+                1962
+            ],
+            "filename": "chips.js",
+            "lineno": 81,
+            "columnno": 9,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\chips",
+            "code": {
+                "id": "astnode100000208",
+                "name": "exports.MdChipsComponent",
+                "type": "Identifier"
+            }
+        },
+        "undocumented": true,
+        "name": "MdChipsComponent",
+        "longname": "MdChipsComponent",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "kind": "package",
+        "longname": "package:undefined",
+        "files": [
+            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\chips\\chips.js"
+        ]
+    }
+]

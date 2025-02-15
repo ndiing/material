@@ -1,0 +1,2415 @@
+[
+    {
+        "comment": "/**\n * @extends MdComponent\n * @element md-data-table\n * @fires MdDataTableComponent#onDataTableKeydown\n * @fires MdDataTableComponent#onDataTableHeaderCellClick\n * @fires MdDataTableComponent#onDataTableBodyCellClick\n * @fires MdDataTableComponent#onDataTableHeaderCheckboxClick\n * @fires MdDataTableComponent#onDataTableBodyClick\n * @fires MdDataTableComponent#onDataTableBodyCheckboxClick\n */",
+        "meta": {
+            "range": [
+                642,
+                10825
+            ],
+            "filename": "data-table.js",
+            "lineno": 17,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000024",
+                "name": "MdDataTableComponent",
+                "type": "ClassDeclaration",
+                "paramnames": []
+            }
+        },
+        "augments": [
+            "MdComponent"
+        ],
+        "tags": [
+            {
+                "originalTitle": "element",
+                "title": "element",
+                "text": "md-data-table",
+                "value": "md-data-table"
+            }
+        ],
+        "fires": [
+            "MdDataTableComponent#event:onDataTableKeydown",
+            "MdDataTableComponent#event:onDataTableHeaderCellClick",
+            "MdDataTableComponent#event:onDataTableBodyCellClick",
+            "MdDataTableComponent#event:onDataTableHeaderCheckboxClick",
+            "MdDataTableComponent#event:onDataTableBodyClick",
+            "MdDataTableComponent#event:onDataTableBodyCheckboxClick"
+        ],
+        "name": "MdDataTableComponent",
+        "longname": "MdDataTableComponent",
+        "kind": "class",
+        "scope": "global",
+        "undocumented": true
+    },
+    {
+        "comment": "/**\n     * @property {Array} [headers]\n     * @property {Array} [bodies]\n     * @property {Array} [footers]\n     * @property {Array} [data]\n     * @property {Boolean} [checkbox]\n     */",
+        "meta": {
+            "range": [
+                885,
+                1082
+            ],
+            "filename": "data-table.js",
+            "lineno": 25,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000028",
+                "name": "properties",
+                "type": "ClassProperty"
+            }
+        },
+        "properties": [
+            {
+                "type": {
+                    "names": [
+                        "Array"
+                    ]
+                },
+                "optional": true,
+                "name": "headers"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Array"
+                    ]
+                },
+                "optional": true,
+                "name": "bodies"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Array"
+                    ]
+                },
+                "optional": true,
+                "name": "footers"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Array"
+                    ]
+                },
+                "optional": true,
+                "name": "data"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Boolean"
+                    ]
+                },
+                "optional": true,
+                "name": "checkbox"
+            }
+        ],
+        "name": "properties",
+        "longname": "MdDataTableComponent#properties",
+        "kind": "member",
+        "memberof": "MdDataTableComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                915,
+                939
+            ],
+            "filename": "data-table.js",
+            "lineno": 26,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000030",
+                "name": "headers",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "headers",
+        "longname": "headers",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                926,
+                937
+            ],
+            "filename": "data-table.js",
+            "lineno": 26,
+            "columnno": 19,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000032",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Array"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "headers.type",
+        "kind": "member",
+        "memberof": "headers",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                949,
+                972
+            ],
+            "filename": "data-table.js",
+            "lineno": 27,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000034",
+                "name": "bodies",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "bodies",
+        "longname": "bodies",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                959,
+                970
+            ],
+            "filename": "data-table.js",
+            "lineno": 27,
+            "columnno": 18,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000036",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Array"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "bodies.type",
+        "kind": "member",
+        "memberof": "bodies",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                982,
+                1006
+            ],
+            "filename": "data-table.js",
+            "lineno": 28,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000038",
+                "name": "footers",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "footers",
+        "longname": "footers",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                993,
+                1004
+            ],
+            "filename": "data-table.js",
+            "lineno": 28,
+            "columnno": 19,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000040",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Array"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "footers.type",
+        "kind": "member",
+        "memberof": "footers",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1016,
+                1037
+            ],
+            "filename": "data-table.js",
+            "lineno": 29,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000042",
+                "name": "data",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "data",
+        "longname": "data",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1024,
+                1035
+            ],
+            "filename": "data-table.js",
+            "lineno": 29,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000044",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Array"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "data.type",
+        "kind": "member",
+        "memberof": "data",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1047,
+                1074
+            ],
+            "filename": "data-table.js",
+            "lineno": 30,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000046",
+                "name": "checkbox",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "checkbox",
+        "longname": "checkbox",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1059,
+                1072
+            ],
+            "filename": "data-table.js",
+            "lineno": 30,
+            "columnno": 20,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000048",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Boolean"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "checkbox.type",
+        "kind": "member",
+        "memberof": "checkbox",
+        "scope": "static"
+    },
+    {
+        "comment": "/**\n     */",
+        "meta": {
+            "range": [
+                1104,
+                1309
+            ],
+            "filename": "data-table.js",
+            "lineno": 35,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000050",
+                "name": "MdDataTableComponent",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "MdDataTableComponent",
+        "longname": "MdDataTableComponent",
+        "kind": "class",
+        "scope": "global",
+        "params": [],
+        "undocumented": true
+    },
+    {
+        "comment": "/**\n * @extends MdComponent\n * @element md-data-table\n * @fires MdDataTableComponent#onDataTableKeydown\n * @fires MdDataTableComponent#onDataTableHeaderCellClick\n * @fires MdDataTableComponent#onDataTableBodyCellClick\n * @fires MdDataTableComponent#onDataTableHeaderCheckboxClick\n * @fires MdDataTableComponent#onDataTableBodyClick\n * @fires MdDataTableComponent#onDataTableBodyCheckboxClick\n */",
+        "meta": {
+            "range": [
+                642,
+                10825
+            ],
+            "filename": "data-table.js",
+            "lineno": 17,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000024",
+                "name": "MdDataTableComponent",
+                "type": "ClassDeclaration",
+                "paramnames": []
+            }
+        },
+        "name": "MdDataTableComponent",
+        "longname": "MdDataTableComponent",
+        "kind": "class",
+        "augments": [
+            "MdComponent"
+        ],
+        "tags": [
+            {
+                "originalTitle": "element",
+                "title": "element",
+                "text": "md-data-table",
+                "value": "md-data-table"
+            }
+        ],
+        "fires": [
+            "MdDataTableComponent#event:onDataTableKeydown",
+            "MdDataTableComponent#event:onDataTableHeaderCellClick",
+            "MdDataTableComponent#event:onDataTableBodyCellClick",
+            "MdDataTableComponent#event:onDataTableHeaderCheckboxClick",
+            "MdDataTableComponent#event:onDataTableBodyClick",
+            "MdDataTableComponent#event:onDataTableBodyCheckboxClick"
+        ],
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1145,
+                1162
+            ],
+            "filename": "data-table.js",
+            "lineno": 37,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000058",
+                "name": "this.headers",
+                "type": "ArrayExpression",
+                "value": "[]",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "headers",
+        "longname": "MdDataTableComponent#headers",
+        "kind": "member",
+        "memberof": "MdDataTableComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1172,
+                1188
+            ],
+            "filename": "data-table.js",
+            "lineno": 38,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000064",
+                "name": "this.bodies",
+                "type": "ArrayExpression",
+                "value": "[]",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "bodies",
+        "longname": "MdDataTableComponent#bodies",
+        "kind": "member",
+        "memberof": "MdDataTableComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1198,
+                1215
+            ],
+            "filename": "data-table.js",
+            "lineno": 39,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000070",
+                "name": "this.footers",
+                "type": "ArrayExpression",
+                "value": "[]",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "footers",
+        "longname": "MdDataTableComponent#footers",
+        "kind": "member",
+        "memberof": "MdDataTableComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1225,
+                1239
+            ],
+            "filename": "data-table.js",
+            "lineno": 40,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000076",
+                "name": "this.data",
+                "type": "ArrayExpression",
+                "value": "[]",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "data",
+        "longname": "MdDataTableComponent#data",
+        "kind": "member",
+        "memberof": "MdDataTableComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1249,
+                1268
+            ],
+            "filename": "data-table.js",
+            "lineno": 41,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000082",
+                "name": "this.storeData",
+                "type": "ArrayExpression",
+                "value": "[]",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "storeData",
+        "longname": "MdDataTableComponent#storeData",
+        "kind": "member",
+        "memberof": "MdDataTableComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1278,
+                1302
+            ],
+            "filename": "data-table.js",
+            "lineno": 42,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000088",
+                "name": "this.store",
+                "type": "NewExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "store",
+        "longname": "MdDataTableComponent#store",
+        "kind": "member",
+        "memberof": "MdDataTableComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\n     * @param {Any} [th]\n     */",
+        "meta": {
+            "range": [
+                1356,
+                1636
+            ],
+            "filename": "data-table.js",
+            "lineno": 48,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000094",
+                "name": "MdDataTableComponent#styleDataTableHeaderCell",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "th"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "th"
+            }
+        ],
+        "name": "styleDataTableHeaderCell",
+        "longname": "MdDataTableComponent#styleDataTableHeaderCell",
+        "kind": "function",
+        "memberof": "MdDataTableComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1416,
+                1434
+            ],
+            "filename": "data-table.js",
+            "lineno": 50,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000101",
+                "name": "position",
+                "type": "Literal",
+                "value": "sticky"
+            }
+        },
+        "undocumented": true,
+        "name": "position",
+        "longname": "position",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1448,
+                1454
+            ],
+            "filename": "data-table.js",
+            "lineno": 51,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000103",
+                "name": "top",
+                "type": "Literal",
+                "value": 0
+            }
+        },
+        "undocumented": true,
+        "name": "top",
+        "longname": "top",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1468,
+                1480
+            ],
+            "filename": "data-table.js",
+            "lineno": 52,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000105",
+                "name": "\"z-index\"",
+                "type": "Literal",
+                "value": 2
+            }
+        },
+        "undocumented": true,
+        "name": "\"z-index\"",
+        "longname": "\"z-index\"",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1529,
+                1547
+            ],
+            "filename": "data-table.js",
+            "lineno": 54,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000113",
+                "name": "position",
+                "type": "Literal",
+                "value": "sticky"
+            }
+        },
+        "undocumented": true,
+        "name": "position",
+        "longname": "position",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1565,
+                1572
+            ],
+            "filename": "data-table.js",
+            "lineno": 55,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000115",
+                "name": "left",
+                "type": "Literal",
+                "value": 0
+            }
+        },
+        "undocumented": true,
+        "name": "left",
+        "longname": "left",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1590,
+                1602
+            ],
+            "filename": "data-table.js",
+            "lineno": 56,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000117",
+                "name": "\"z-index\"",
+                "type": "Literal",
+                "value": 3
+            }
+        },
+        "undocumented": true,
+        "name": "\"z-index\"",
+        "longname": "\"z-index\"",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n     * @param {Any} [td]\n     */",
+        "meta": {
+            "range": [
+                1683,
+                1883
+            ],
+            "filename": "data-table.js",
+            "lineno": 64,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000119",
+                "name": "MdDataTableComponent#styleDataTableBodyCell",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "td"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "td"
+            }
+        ],
+        "name": "styleDataTableBodyCell",
+        "longname": "MdDataTableComponent#styleDataTableBodyCell",
+        "kind": "function",
+        "memberof": "MdDataTableComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1776,
+                1794
+            ],
+            "filename": "data-table.js",
+            "lineno": 67,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000132",
+                "name": "position",
+                "type": "Literal",
+                "value": "sticky"
+            }
+        },
+        "undocumented": true,
+        "name": "position",
+        "longname": "position",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1812,
+                1819
+            ],
+            "filename": "data-table.js",
+            "lineno": 68,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000134",
+                "name": "left",
+                "type": "Literal",
+                "value": 0
+            }
+        },
+        "undocumented": true,
+        "name": "left",
+        "longname": "left",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1837,
+                1849
+            ],
+            "filename": "data-table.js",
+            "lineno": 69,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000136",
+                "name": "\"z-index\"",
+                "type": "Literal",
+                "value": 1
+            }
+        },
+        "undocumented": true,
+        "name": "\"z-index\"",
+        "longname": "\"z-index\"",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n     * @readonly\n     */",
+        "meta": {
+            "range": [
+                1922,
+                2061
+            ],
+            "filename": "data-table.js",
+            "lineno": 77,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000138",
+                "name": "MdDataTableComponent#checkboxData",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "readonly": true,
+        "name": "checkboxData",
+        "longname": "MdDataTableComponent#checkboxData",
+        "kind": "member",
+        "memberof": "MdDataTableComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1994,
+                2008
+            ],
+            "filename": "data-table.js",
+            "lineno": 79,
+            "columnno": 22,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000150",
+                "name": "checkbox",
+                "type": "Literal",
+                "value": true
+            }
+        },
+        "undocumented": true,
+        "name": "checkbox",
+        "longname": "checkbox",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2010,
+                2022
+            ],
+            "filename": "data-table.js",
+            "lineno": 79,
+            "columnno": 38,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000152",
+                "name": "sticky",
+                "type": "Literal",
+                "value": true
+            }
+        },
+        "undocumented": true,
+        "name": "sticky",
+        "longname": "sticky",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n     */",
+        "meta": {
+            "range": [
+                2083,
+                6127
+            ],
+            "filename": "data-table.js",
+            "lineno": 86,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000156",
+                "name": "MdDataTableComponent#render",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "render",
+        "longname": "MdDataTableComponent#render",
+        "kind": "function",
+        "memberof": "MdDataTableComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\n     */",
+        "meta": {
+            "range": [
+                6149,
+                6407
+            ],
+            "filename": "data-table.js",
+            "lineno": 169,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000362",
+                "name": "MdDataTableComponent#connectedCallback",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "connectedCallback",
+        "longname": "MdDataTableComponent#connectedCallback",
+        "kind": "function",
+        "memberof": "MdDataTableComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                6259,
+                6327
+            ],
+            "filename": "data-table.js",
+            "lineno": 172,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000380",
+                "name": "this.handleDataTableKeydown",
+                "type": "CallExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "handleDataTableKeydown",
+        "longname": "MdDataTableComponent#handleDataTableKeydown",
+        "kind": "member",
+        "memberof": "MdDataTableComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\n     */",
+        "meta": {
+            "range": [
+                6429,
+                6573
+            ],
+            "filename": "data-table.js",
+            "lineno": 178,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000400",
+                "name": "MdDataTableComponent#disconnectedCallback",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "disconnectedCallback",
+        "longname": "MdDataTableComponent#disconnectedCallback",
+        "kind": "function",
+        "memberof": "MdDataTableComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\n     * @async\n     * @param {Any} [changedProperties]\n     */",
+        "meta": {
+            "range": [
+                6649,
+                6897
+            ],
+            "filename": "data-table.js",
+            "lineno": 187,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000418",
+                "name": "MdDataTableComponent#updated",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "changedProperties"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "async": true,
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "changedProperties"
+            }
+        ],
+        "name": "updated",
+        "longname": "MdDataTableComponent#updated",
+        "kind": "function",
+        "memberof": "MdDataTableComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\n     */",
+        "meta": {
+            "range": [
+                6919,
+                7131
+            ],
+            "filename": "data-table.js",
+            "lineno": 198,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000456",
+                "name": "MdDataTableComponent#updateStore",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "updateStore",
+        "longname": "MdDataTableComponent#updateStore",
+        "kind": "function",
+        "memberof": "MdDataTableComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                6949,
+                7056
+            ],
+            "filename": "data-table.js",
+            "lineno": 199,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000461",
+                "name": "result",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "result",
+        "longname": "<anonymous>~result",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                6987,
+                7044
+            ],
+            "filename": "data-table.js",
+            "lineno": 200,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000470",
+                "name": "sorters",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "sorters",
+        "longname": "sorters",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                7066,
+                7094
+            ],
+            "filename": "data-table.js",
+            "lineno": 202,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000486",
+                "name": "this.storeData",
+                "type": "MemberExpression",
+                "value": "result.data",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "storeData",
+        "longname": "MdDataTableComponent#storeData",
+        "kind": "member",
+        "memberof": "MdDataTableComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\n     * @readonly\n     */",
+        "meta": {
+            "range": [
+                7170,
+                7250
+            ],
+            "filename": "data-table.js",
+            "lineno": 209,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000498",
+                "name": "MdDataTableComponent#selected",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "readonly": true,
+        "name": "selected",
+        "longname": "MdDataTableComponent#selected",
+        "kind": "member",
+        "memberof": "MdDataTableComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\n     * @readonly\n     */",
+        "meta": {
+            "range": [
+                7289,
+                7396
+            ],
+            "filename": "data-table.js",
+            "lineno": 216,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000514",
+                "name": "MdDataTableComponent#indeterminate",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "readonly": true,
+        "name": "indeterminate",
+        "longname": "MdDataTableComponent#indeterminate",
+        "kind": "member",
+        "memberof": "MdDataTableComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\n     * @readonly\n     */",
+        "meta": {
+            "range": [
+                7435,
+                7538
+            ],
+            "filename": "data-table.js",
+            "lineno": 223,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000536",
+                "name": "MdDataTableComponent#checked",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "readonly": true,
+        "name": "checked",
+        "longname": "MdDataTableComponent#checked",
+        "kind": "member",
+        "memberof": "MdDataTableComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\n     * @param {Any} [event]\n     */",
+        "meta": {
+            "range": [
+                7588,
+                7903
+            ],
+            "filename": "data-table.js",
+            "lineno": 230,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000558",
+                "name": "MdDataTableComponent#handleDataTableKeydown",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "event"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleDataTableKeydown",
+        "longname": "MdDataTableComponent#handleDataTableKeydown",
+        "kind": "function",
+        "memberof": "MdDataTableComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                7764,
+                7784
+            ],
+            "filename": "data-table.js",
+            "lineno": 234,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000590",
+                "name": "item.selected",
+                "type": "Literal",
+                "value": true,
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "selected",
+        "longname": "item.selected",
+        "kind": "member",
+        "memberof": "item",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                7888,
+                7893
+            ],
+            "filename": "data-table.js",
+            "lineno": 238,
+            "columnno": 42,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000607",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n     * @param {Any} [event]\n     */",
+        "meta": {
+            "range": [
+                7953,
+                8568
+            ],
+            "filename": "data-table.js",
+            "lineno": 244,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000609",
+                "name": "MdDataTableComponent#handleDataTableHeaderCellClick",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "event"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleDataTableHeaderCellClick",
+        "longname": "MdDataTableComponent#handleDataTableHeaderCellClick",
+        "kind": "function",
+        "memberof": "MdDataTableComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                8007,
+                8038
+            ],
+            "filename": "data-table.js",
+            "lineno": 245,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000615",
+                "name": "data",
+                "type": "MemberExpression",
+                "value": "event.currentTarget.data"
+            }
+        },
+        "undocumented": true,
+        "name": "data",
+        "longname": "<anonymous>~data",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                8087,
+                8227
+            ],
+            "filename": "data-table.js",
+            "lineno": 247,
+            "columnno": 18,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000628",
+                "name": "actions",
+                "type": "ObjectExpression",
+                "value": "{\"undefined\":\"arrow_upward\",\"asc\":\"arrow_downward\",\"desc\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "actions",
+        "longname": "<anonymous>~actions",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                8115,
+                8140
+            ],
+            "filename": "data-table.js",
+            "lineno": 248,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000631",
+                "name": "undefined",
+                "type": "Literal",
+                "value": "arrow_upward"
+            }
+        },
+        "undocumented": true,
+        "name": "undefined",
+        "longname": "<anonymous>~actions.undefined",
+        "kind": "member",
+        "memberof": "<anonymous>~actions",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                8158,
+                8179
+            ],
+            "filename": "data-table.js",
+            "lineno": 249,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000633",
+                "name": "asc",
+                "type": "Literal",
+                "value": "arrow_downward"
+            }
+        },
+        "undocumented": true,
+        "name": "asc",
+        "longname": "<anonymous>~actions.asc",
+        "kind": "member",
+        "memberof": "<anonymous>~actions",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                8197,
+                8212
+            ],
+            "filename": "data-table.js",
+            "lineno": 250,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000635",
+                "name": "desc",
+                "type": "Identifier",
+                "value": "undefined"
+            }
+        },
+        "undocumented": true,
+        "name": "desc",
+        "longname": "<anonymous>~actions.desc",
+        "kind": "member",
+        "memberof": "<anonymous>~actions",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                8241,
+                8274
+            ],
+            "filename": "data-table.js",
+            "lineno": 252,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000638",
+                "name": "data.action",
+                "type": "MemberExpression",
+                "funcscope": "<anonymous>",
+                "value": "actions[undefined]",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "action",
+        "longname": "<anonymous>~data.action",
+        "kind": "member",
+        "memberof": "<anonymous>~data",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                8294,
+                8414
+            ],
+            "filename": "data-table.js",
+            "lineno": 253,
+            "columnno": 18,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000648",
+                "name": "orders",
+                "type": "ObjectExpression",
+                "value": "{\"undefined\":\"asc\",\"asc\":\"desc\",\"desc\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "orders",
+        "longname": "<anonymous>~orders",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                8321,
+                8337
+            ],
+            "filename": "data-table.js",
+            "lineno": 254,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000651",
+                "name": "undefined",
+                "type": "Literal",
+                "value": "asc"
+            }
+        },
+        "undocumented": true,
+        "name": "undefined",
+        "longname": "<anonymous>~orders.undefined",
+        "kind": "member",
+        "memberof": "<anonymous>~orders",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                8355,
+                8366
+            ],
+            "filename": "data-table.js",
+            "lineno": 255,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000653",
+                "name": "asc",
+                "type": "Literal",
+                "value": "desc"
+            }
+        },
+        "undocumented": true,
+        "name": "asc",
+        "longname": "<anonymous>~orders.asc",
+        "kind": "member",
+        "memberof": "<anonymous>~orders",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                8384,
+                8399
+            ],
+            "filename": "data-table.js",
+            "lineno": 256,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000655",
+                "name": "desc",
+                "type": "Identifier",
+                "value": "undefined"
+            }
+        },
+        "undocumented": true,
+        "name": "desc",
+        "longname": "<anonymous>~orders.desc",
+        "kind": "member",
+        "memberof": "<anonymous>~orders",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                8428,
+                8459
+            ],
+            "filename": "data-table.js",
+            "lineno": 258,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000658",
+                "name": "data.order",
+                "type": "MemberExpression",
+                "funcscope": "<anonymous>",
+                "value": "orders[undefined]",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "order",
+        "longname": "<anonymous>~data.order",
+        "kind": "member",
+        "memberof": "<anonymous>~data",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                8553,
+                8558
+            ],
+            "filename": "data-table.js",
+            "lineno": 261,
+            "columnno": 50,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000679",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n     * @param {Any} [event]\n     */",
+        "meta": {
+            "range": [
+                8618,
+                8719
+            ],
+            "filename": "data-table.js",
+            "lineno": 267,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000681",
+                "name": "MdDataTableComponent#handleDataTableBodyCellClick",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "event"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleDataTableBodyCellClick",
+        "longname": "MdDataTableComponent#handleDataTableBodyCellClick",
+        "kind": "function",
+        "memberof": "MdDataTableComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                8704,
+                8709
+            ],
+            "filename": "data-table.js",
+            "lineno": 268,
+            "columnno": 48,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000693",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n     * @param {Any} [event]\n     */",
+        "meta": {
+            "range": [
+                8769,
+                9109
+            ],
+            "filename": "data-table.js",
+            "lineno": 274,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000695",
+                "name": "MdDataTableComponent#handleDataTableHeaderCheckboxClick",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "event"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleDataTableHeaderCheckboxClick",
+        "longname": "MdDataTableComponent#handleDataTableHeaderCheckboxClick",
+        "kind": "function",
+        "memberof": "MdDataTableComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                8827,
+                8858
+            ],
+            "filename": "data-table.js",
+            "lineno": 275,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000701",
+                "name": "data",
+                "type": "MemberExpression",
+                "value": "event.currentTarget.data"
+            }
+        },
+        "undocumented": true,
+        "name": "data",
+        "longname": "<anonymous>~data",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                8874,
+                8920
+            ],
+            "filename": "data-table.js",
+            "lineno": 276,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000709",
+                "name": "selected",
+                "type": "LogicalExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "selected",
+        "longname": "<anonymous>~selected",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                8972,
+                8996
+            ],
+            "filename": "data-table.js",
+            "lineno": 278,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000730",
+                "name": "item.selected",
+                "type": "Identifier",
+                "value": "selected",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "selected",
+        "longname": "item.selected",
+        "kind": "member",
+        "memberof": "item",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                9094,
+                9099
+            ],
+            "filename": "data-table.js",
+            "lineno": 281,
+            "columnno": 54,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000747",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n     * @param {Any} [event]\n     */",
+        "meta": {
+            "range": [
+                9159,
+                10478
+            ],
+            "filename": "data-table.js",
+            "lineno": 287,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000749",
+                "name": "MdDataTableComponent#handleDataTableBodyClick",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "event"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleDataTableBodyClick",
+        "longname": "MdDataTableComponent#handleDataTableBodyClick",
+        "kind": "function",
+        "memberof": "MdDataTableComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                9207,
+                9250
+            ],
+            "filename": "data-table.js",
+            "lineno": 288,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000755",
+                "name": "bodyData",
+                "type": "ChainExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "bodyData",
+        "longname": "<anonymous>~bodyData",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                9306,
+                9337
+            ],
+            "filename": "data-table.js",
+            "lineno": 290,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000762",
+                "name": "data",
+                "type": "MemberExpression",
+                "value": "event.currentTarget.data"
+            }
+        },
+        "undocumented": true,
+        "name": "data",
+        "longname": "<anonymous>~data",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                9380,
+                9410
+            ],
+            "filename": "data-table.js",
+            "lineno": 292,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000775",
+                "name": "data.selected",
+                "type": "UnaryExpression",
+                "funcscope": "<anonymous>",
+                "value": "!data.selected",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "selected",
+        "longname": "<anonymous>~data.selected",
+        "kind": "member",
+        "memberof": "<anonymous>~data",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                9461,
+                9513
+            ],
+            "filename": "data-table.js",
+            "lineno": 294,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000789",
+                "name": "this.prevSelectedIndex",
+                "type": "LogicalExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "prevSelectedIndex",
+        "longname": "MdDataTableComponent#prevSelectedIndex",
+        "kind": "member",
+        "memberof": "MdDataTableComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                9527,
+                9578
+            ],
+            "filename": "data-table.js",
+            "lineno": 295,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000799",
+                "name": "this.currentSelectedIndex",
+                "type": "CallExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "currentSelectedIndex",
+        "longname": "MdDataTableComponent#currentSelectedIndex",
+        "kind": "member",
+        "memberof": "MdDataTableComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                9592,
+                9667
+            ],
+            "filename": "data-table.js",
+            "lineno": 296,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000811",
+                "name": "this.swapSelectedIndex",
+                "type": "BinaryExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "swapSelectedIndex",
+        "longname": "MdDataTableComponent#swapSelectedIndex",
+        "kind": "member",
+        "memberof": "MdDataTableComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                9913,
+                9998
+            ],
+            "filename": "data-table.js",
+            "lineno": 301,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000855",
+                "name": "item.selected",
+                "type": "LogicalExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "selected",
+        "longname": "item.selected",
+        "kind": "member",
+        "memberof": "item",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                10270,
+                10299
+            ],
+            "filename": "data-table.js",
+            "lineno": 308,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000903",
+                "name": "item.selected",
+                "type": "BinaryExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "selected",
+        "longname": "item.selected",
+        "kind": "member",
+        "memberof": "item",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                10329,
+                10377
+            ],
+            "filename": "data-table.js",
+            "lineno": 310,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000911",
+                "name": "this.prevSelectedIndex",
+                "type": "CallExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "prevSelectedIndex",
+        "longname": "MdDataTableComponent#prevSelectedIndex",
+        "kind": "member",
+        "memberof": "MdDataTableComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                10463,
+                10468
+            ],
+            "filename": "data-table.js",
+            "lineno": 313,
+            "columnno": 44,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000934",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n     * @param {Any} [event]\n     */",
+        "meta": {
+            "range": [
+                10528,
+                10823
+            ],
+            "filename": "data-table.js",
+            "lineno": 319,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000936",
+                "name": "MdDataTableComponent#handleDataTableBodyCheckboxClick",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "event"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleDataTableBodyCheckboxClick",
+        "longname": "MdDataTableComponent#handleDataTableBodyCheckboxClick",
+        "kind": "function",
+        "memberof": "MdDataTableComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                10584,
+                10615
+            ],
+            "filename": "data-table.js",
+            "lineno": 320,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000942",
+                "name": "data",
+                "type": "MemberExpression",
+                "value": "event.currentTarget.data"
+            }
+        },
+        "undocumented": true,
+        "name": "data",
+        "longname": "<anonymous>~data",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                10631,
+                10676
+            ],
+            "filename": "data-table.js",
+            "lineno": 321,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000950",
+                "name": "bodyData",
+                "type": "MemberExpression",
+                "value": ".data"
+            }
+        },
+        "undocumented": true,
+        "name": "bodyData",
+        "longname": "<anonymous>~bodyData",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                10686,
+                10724
+            ],
+            "filename": "data-table.js",
+            "lineno": 322,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000962",
+                "name": "bodyData.selected",
+                "type": "UnaryExpression",
+                "funcscope": "<anonymous>",
+                "value": "!bodyData.selected",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "selected",
+        "longname": "<anonymous>~bodyData.selected",
+        "kind": "member",
+        "memberof": "<anonymous>~bodyData",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                10808,
+                10813
+            ],
+            "filename": "data-table.js",
+            "lineno": 324,
+            "columnno": 52,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000982",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                10897,
+                10917
+            ],
+            "filename": "data-table.js",
+            "lineno": 328,
+            "columnno": 9,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100000992",
+                "name": "exports.MdDataTableComponent",
+                "type": "Identifier"
+            }
+        },
+        "undocumented": true,
+        "name": "MdDataTableComponent",
+        "longname": "MdDataTableComponent",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "kind": "package",
+        "longname": "package:undefined",
+        "files": [
+            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table\\data-table.js"
+        ]
+    }
+]

@@ -1,9 +1,4 @@
-import { Router } from "../material/router/router";
-import { Progress } from "../material/progress/progress.js";
-import { setTheme } from "../material/color/color.js";
-
 import DemoMain from "./main/main.js";
-import DemoError from "./error/error.js";
 
 import DemoBadge from "./badge/badge.js";
 
@@ -145,185 +140,150 @@ import DemoTimeField from "./time-field/time-field.js";
 import DemoMonthField from "./month-field/month-field.js";
 import DemoWeekField from "./week-field/week-field.js";
 
-const routes = [
-    {
-        path: "",
-        component: DemoMain,
-        children: [
-            { path: "badge", component: DemoBadge },
+export default {
+    path: "demo",
+    component: DemoMain,
+    children: [
+        { path: "badge", component: DemoBadge },
 
-            { path: "bottom-app-bar", component: DemoBottomAppBar },
-            { path: "bottom-app-bar-no-fab", component: DemoBottomAppBarNoFab },
+        { path: "bottom-app-bar", component: DemoBottomAppBar },
+        { path: "bottom-app-bar-no-fab", component: DemoBottomAppBarNoFab },
 
-            { path: "bottom-sheet", component: DemoBottomSheet },
-            { path: "bottom-sheet-modal", component: DemoBottomSheetModal },
+        { path: "bottom-sheet", component: DemoBottomSheet },
+        { path: "bottom-sheet-modal", component: DemoBottomSheetModal },
 
-            { path: "button", component: DemoButton },
-            { path: "button-elevated", component: DemoButtonElevated },
-            { path: "button-filled", component: DemoButtonFilled },
-            { path: "button-filled-tonal", component: DemoButtonFilledTonal },
-            { path: "button-outlined", component: DemoButtonOutlined },
+        { path: "button", component: DemoButton },
+        { path: "button-elevated", component: DemoButtonElevated },
+        { path: "button-filled", component: DemoButtonFilled },
+        { path: "button-filled-tonal", component: DemoButtonFilledTonal },
+        { path: "button-outlined", component: DemoButtonOutlined },
 
-            { path: "card", component: DemoCard },
+        { path: "card", component: DemoCard },
 
-            { path: "checkbox", component: DemoCheckbox },
+        { path: "checkbox", component: DemoCheckbox },
 
-            { path: "chips", component: DemoChips },
-            { path: "chips-single-select", component: DemoChipsSingleSelect },
-            { path: "chips-multi-select", component: DemoChipsMultiSelect },
+        { path: "chips", component: DemoChips },
+        { path: "chips-single-select", component: DemoChipsSingleSelect },
+        { path: "chips-multi-select", component: DemoChipsMultiSelect },
 
-            { path: "data-table-cell", component: DemoDataTableCell },
-            { path: "data-table", component: DemoDataTable },
-            { path: "data-table-checkbox", component: DemoDataTableCheckbox },
-            { path: "data-table-sortable", component: DemoDataTableSortable },
+        { path: "data-table-cell", component: DemoDataTableCell },
+        { path: "data-table", component: DemoDataTable },
+        { path: "data-table-checkbox", component: DemoDataTableCheckbox },
+        { path: "data-table-sortable", component: DemoDataTableSortable },
 
-            { path: "dialog", component: DemoDialog },
+        { path: "dialog", component: DemoDialog },
 
-            { path: "divider", component: DemoDivider },
+        { path: "divider", component: DemoDivider },
 
-            { path: "fab", component: DemoFab },
-            { path: "fab-unelevated", component: DemoFabUnelevated },
-            { path: "fab-extended", component: DemoFabExtended },
-            { path: "fab-small", component: DemoFabSmall },
-            { path: "fab-large", component: DemoFabLarge },
+        { path: "fab", component: DemoFab },
+        { path: "fab-unelevated", component: DemoFabUnelevated },
+        { path: "fab-extended", component: DemoFabExtended },
+        { path: "fab-small", component: DemoFabSmall },
+        { path: "fab-large", component: DemoFabLarge },
 
-            { path: "form", component: DemoForm },
+        { path: "form", component: DemoForm },
 
-            { path: "icon", component: DemoIcon },
+        { path: "icon", component: DemoIcon },
 
-            { path: "icon-button", component: DemoIconButton },
-            { path: "icon-button-filled", component: DemoIconButtonFilled },
-            { path: "icon-button-filled-tonal", component: DemoIconButtonFilledTonal },
-            { path: "icon-button-outlined", component: DemoIconButtonOutlined },
+        { path: "icon-button", component: DemoIconButton },
+        { path: "icon-button-filled", component: DemoIconButtonFilled },
+        { path: "icon-button-filled-tonal", component: DemoIconButtonFilledTonal },
+        { path: "icon-button-outlined", component: DemoIconButtonOutlined },
 
-            { path: "image", component: DemoImage },
+        { path: "image", component: DemoImage },
 
-            { path: "list-item", component: DemoListItem },
-            { path: "list-row", component: DemoListRow },
-            { path: "list", component: DemoList },
-            { path: "list-single-select", component: DemoListSingleSelect },
-            { path: "list-multi-select", component: DemoListMultiSelect },
+        { path: "list-item", component: DemoListItem },
+        { path: "list-row", component: DemoListRow },
+        { path: "list", component: DemoList },
+        { path: "list-single-select", component: DemoListSingleSelect },
+        { path: "list-multi-select", component: DemoListMultiSelect },
 
-            { path: "menu", component: DemoMenu },
+        { path: "menu", component: DemoMenu },
 
-            { path: "navigation-bar", component: DemoNavigationBar },
-            { path: "navigation-bar-no-label", component: DemoNavigationBarNoLabel },
+        { path: "navigation-bar", component: DemoNavigationBar },
+        { path: "navigation-bar-no-label", component: DemoNavigationBarNoLabel },
 
-            { path: "navigation-drawer", component: DemoNavigationDrawer },
-            { path: "navigation-drawer-modal", component: DemoNavigationDrawerModal },
+        { path: "navigation-drawer", component: DemoNavigationDrawer },
+        { path: "navigation-drawer-modal", component: DemoNavigationDrawerModal },
 
-            { path: "navigation-list-item", component: DemoNavigationListItem },
-            { path: "navigation-list-row", component: DemoNavigationListRow },
-            { path: "navigation-list", component: DemoNavigationList },
+        { path: "navigation-list-item", component: DemoNavigationListItem },
+        { path: "navigation-list-row", component: DemoNavigationListRow },
+        { path: "navigation-list", component: DemoNavigationList },
 
-            { path: "navigation-rail", component: DemoNavigationRail },
-            { path: "navigation-rail-no-label", component: DemoNavigationRailNoLabel },
+        { path: "navigation-rail", component: DemoNavigationRail },
+        { path: "navigation-rail-no-label", component: DemoNavigationRailNoLabel },
 
-            { path: "progress-indicator", component: DemoProgressIndicator },
-            { path: "progress-indicator-circular", component: DemoProgressIndicatorCircular },
+        { path: "progress-indicator", component: DemoProgressIndicator },
+        { path: "progress-indicator-circular", component: DemoProgressIndicatorCircular },
 
-            { path: "radio-button", component: DemoRadioButton },
+        { path: "radio-button", component: DemoRadioButton },
 
-            { path: "scrim", component: DemoScrim },
+        { path: "scrim", component: DemoScrim },
 
-            { path: "segmented-button", component: DemoSegmentedButton },
-            { path: "segmented-button-single-select", component: DemoSegmentedButtonSingleSelect },
-            { path: "segmented-button-multi-select", component: DemoSegmentedButtonMultiSelect },
+        { path: "segmented-button", component: DemoSegmentedButton },
+        { path: "segmented-button-single-select", component: DemoSegmentedButtonSingleSelect },
+        { path: "segmented-button-multi-select", component: DemoSegmentedButtonMultiSelect },
 
-            { path: "sheet", component: DemoSheet },
-            { path: "sheet-north", component: DemoSheetNorth },
-            { path: "sheet-north-modal", component: DemoSheetNorthModal },
-            { path: "sheet-east", component: DemoSheetEast },
-            { path: "sheet-east-modal", component: DemoSheetEastModal },
-            { path: "sheet-south", component: DemoSheetSouth },
-            { path: "sheet-south-modal", component: DemoSheetSouthModal },
-            { path: "sheet-west", component: DemoSheetWest },
-            { path: "sheet-west-modal", component: DemoSheetWestModal },
-            { path: "sheet-center", component: DemoSheetCenter },
+        { path: "sheet", component: DemoSheet },
+        { path: "sheet-north", component: DemoSheetNorth },
+        { path: "sheet-north-modal", component: DemoSheetNorthModal },
+        { path: "sheet-east", component: DemoSheetEast },
+        { path: "sheet-east-modal", component: DemoSheetEastModal },
+        { path: "sheet-south", component: DemoSheetSouth },
+        { path: "sheet-south-modal", component: DemoSheetSouthModal },
+        { path: "sheet-west", component: DemoSheetWest },
+        { path: "sheet-west-modal", component: DemoSheetWestModal },
+        { path: "sheet-center", component: DemoSheetCenter },
 
-            { path: "side-sheet", component: DemoSideSheet },
-            { path: "side-sheet-modal", component: DemoSideSheetModal },
+        { path: "side-sheet", component: DemoSideSheet },
+        { path: "side-sheet-modal", component: DemoSideSheetModal },
 
-            { path: "slider", component: DemoSlider },
-            { path: "slider-centered", component: DemoSliderCentered },
-            { path: "slider-continuous", component: DemoSliderContinuous },
-            { path: "slider-discrete", component: DemoSliderDiscrete },
-            { path: "slider-range-selection", component: DemoSliderRangeSelection },
+        { path: "slider", component: DemoSlider },
+        { path: "slider-centered", component: DemoSliderCentered },
+        { path: "slider-continuous", component: DemoSliderContinuous },
+        { path: "slider-discrete", component: DemoSliderDiscrete },
+        { path: "slider-range-selection", component: DemoSliderRangeSelection },
 
-            { path: "snackbar", component: DemoSnackbar },
+        { path: "snackbar", component: DemoSnackbar },
 
-            { path: "switch", component: DemoSwitch },
+        { path: "switch", component: DemoSwitch },
 
-            { path: "tab", component: DemoTab },
-            { path: "tabs", component: DemoTabs },
-            { path: "tabs-primary", component: DemoTabsPrimary },
-            { path: "tabs-secondary", component: DemoTabsSecondary },
+        { path: "tab", component: DemoTab },
+        { path: "tabs", component: DemoTabs },
+        { path: "tabs-primary", component: DemoTabsPrimary },
+        { path: "tabs-secondary", component: DemoTabsSecondary },
 
-            { path: "text-field", component: DemoTextField },
-            { path: "text-field-outlined", component: DemoTextFieldOutlined },
-            { path: "text-field-filled", component: DemoTextFieldFilled },
+        { path: "text-field", component: DemoTextField },
+        { path: "text-field-outlined", component: DemoTextFieldOutlined },
+        { path: "text-field-filled", component: DemoTextFieldFilled },
 
-            { path: "tooltip", component: DemoTooltip },
+        { path: "tooltip", component: DemoTooltip },
 
-            { path: "top-app-bar", component: DemoTopAppBar },
+        { path: "top-app-bar", component: DemoTopAppBar },
 
-            { path: "tree-item", component: DemoTreeItem },
-            { path: "tree-row", component: DemoTreeRow },
-            { path: "tree", component: DemoTree },
+        { path: "tree-item", component: DemoTreeItem },
+        { path: "tree-row", component: DemoTreeRow },
+        { path: "tree", component: DemoTree },
 
-            { path: "datetime-picker", component: DemoDatetimePicker },
-            { path: "datetime-picker-modal", component: DemoDatetimePickerModal },
+        { path: "datetime-picker", component: DemoDatetimePicker },
+        { path: "datetime-picker-modal", component: DemoDatetimePickerModal },
 
-            { path: "date-picker", component: DemoDatePicker },
-            { path: "date-picker-modal", component: DemoDatePickerModal },
+        { path: "date-picker", component: DemoDatePicker },
+        { path: "date-picker-modal", component: DemoDatePickerModal },
 
-            { path: "time-picker", component: DemoTimePicker },
-            { path: "time-picker-modal", component: DemoTimePickerModal },
+        { path: "time-picker", component: DemoTimePicker },
+        { path: "time-picker-modal", component: DemoTimePickerModal },
 
-            { path: "week-picker", component: DemoWeekPicker },
-            { path: "week-picker-modal", component: DemoWeekPickerModal },
+        { path: "week-picker", component: DemoWeekPicker },
+        { path: "week-picker-modal", component: DemoWeekPickerModal },
 
-            { path: "month-picker", component: DemoMonthPicker },
-            { path: "month-picker-modal", component: DemoMonthPickerModal },
+        { path: "month-picker", component: DemoMonthPicker },
+        { path: "month-picker-modal", component: DemoMonthPickerModal },
 
-            { path: "datetime-field", component: DemoDatetimeField },
-            { path: "date-field", component: DemoDateField },
-            { path: "time-field", component: DemoTimeField },
-            { path: "month-field", component: DemoMonthField },
-            { path: "week-field", component: DemoWeekField },
-        ],
-    },
-    {
-        path: "*",
-        component: DemoError,
-    },
-];
-Router.use(routes);
-
-// const progress = new Progress();
-
-// const fetch = window.fetch
-// window.fetch = async function(){
-//     performance.mark("mark-fetch-1");
-//     const res= await fetch(arguments)
-//     performance.mark("mark-fetch-2");
-//     performance.measure("measure-fetch-1", "mark-fetch-1", "mark-fetch-2");
-//     performance.clearMarks("mark-fetch-1");
-//     performance.clearMarks("mark-fetch-2");
-//     performance.clearMeasures("measure-fetch-1");
-//     return res
-// }
-
-// const observer = new PerformanceObserver((entries) => {
-//     entries.getEntries().forEach((entry) => progress.start(entry.duration));
-// });
-// observer.observe({
-//     entryTypes: PerformanceObserver.supportedEntryTypes,
-// });
-
-// function getRandomHexColor() {
-//     return `#${Math.floor(Math.random() * 16777215)
-//         .toString(16)
-//         .padStart(6, "0")}`;
-// }
-// setTheme(getRandomHexColor());
+        { path: "datetime-field", component: DemoDatetimeField },
+        { path: "date-field", component: DemoDateField },
+        { path: "time-field", component: DemoTimeField },
+        { path: "month-field", component: DemoMonthField },
+        { path: "week-field", component: DemoWeekField },
+    ],
+};

@@ -1,0 +1,2146 @@
+[
+    {
+        "comment": "/**\n * @extends MdComponent\n * @element md-tree\n * @fires MdTreeComponent#onTreeKeydownArrowDown\n * @fires MdTreeComponent#onTreeKeydownArrowUp\n * @fires MdTreeComponent#onTreeKeydownArrowRight\n * @fires MdTreeComponent#onTreeKeydownArrowLeft\n * @fires MdTreeComponent#onTreeKeydownEnter\n * @fires MdTreeComponent#onTreeKeydown\n * @fires MdTreeComponent#onTreeItemClick\n */",
+        "meta": {
+            "range": [
+                564,
+                8651
+            ],
+            "filename": "tree.js",
+            "lineno": 17,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000020",
+                "name": "MdTreeComponent",
+                "type": "ClassDeclaration",
+                "paramnames": []
+            }
+        },
+        "augments": [
+            "MdComponent"
+        ],
+        "tags": [
+            {
+                "originalTitle": "element",
+                "title": "element",
+                "text": "md-tree",
+                "value": "md-tree"
+            }
+        ],
+        "fires": [
+            "MdTreeComponent#event:onTreeKeydownArrowDown",
+            "MdTreeComponent#event:onTreeKeydownArrowUp",
+            "MdTreeComponent#event:onTreeKeydownArrowRight",
+            "MdTreeComponent#event:onTreeKeydownArrowLeft",
+            "MdTreeComponent#event:onTreeKeydownEnter",
+            "MdTreeComponent#event:onTreeKeydown",
+            "MdTreeComponent#event:onTreeItemClick"
+        ],
+        "name": "MdTreeComponent",
+        "longname": "MdTreeComponent",
+        "kind": "class",
+        "scope": "global",
+        "undocumented": true
+    },
+    {
+        "comment": "/**\n     * @property {Array} [items]\n     */",
+        "meta": {
+            "range": [
+                661,
+                721
+            ],
+            "filename": "tree.js",
+            "lineno": 21,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000024",
+                "name": "properties",
+                "type": "ClassProperty"
+            }
+        },
+        "properties": [
+            {
+                "type": {
+                    "names": [
+                        "Array"
+                    ]
+                },
+                "optional": true,
+                "name": "items"
+            }
+        ],
+        "name": "properties",
+        "longname": "MdTreeComponent#properties",
+        "kind": "member",
+        "memberof": "MdTreeComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                691,
+                713
+            ],
+            "filename": "tree.js",
+            "lineno": 22,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000026",
+                "name": "items",
+                "type": "ObjectExpression",
+                "value": "{\"type\":\"\"}"
+            }
+        },
+        "undocumented": true,
+        "name": "items",
+        "longname": "items",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                700,
+                711
+            ],
+            "filename": "tree.js",
+            "lineno": 22,
+            "columnno": 17,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000028",
+                "name": "type",
+                "type": "Identifier",
+                "value": "Array"
+            }
+        },
+        "undocumented": true,
+        "name": "type",
+        "longname": "items.type",
+        "kind": "member",
+        "memberof": "items",
+        "scope": "static"
+    },
+    {
+        "comment": "/**\n     */",
+        "meta": {
+            "range": [
+                743,
+                899
+            ],
+            "filename": "tree.js",
+            "lineno": 27,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000030",
+                "name": "MdTreeComponent",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "MdTreeComponent",
+        "longname": "MdTreeComponent",
+        "kind": "class",
+        "scope": "global",
+        "params": [],
+        "undocumented": true
+    },
+    {
+        "comment": "/**\n * @extends MdComponent\n * @element md-tree\n * @fires MdTreeComponent#onTreeKeydownArrowDown\n * @fires MdTreeComponent#onTreeKeydownArrowUp\n * @fires MdTreeComponent#onTreeKeydownArrowRight\n * @fires MdTreeComponent#onTreeKeydownArrowLeft\n * @fires MdTreeComponent#onTreeKeydownEnter\n * @fires MdTreeComponent#onTreeKeydown\n * @fires MdTreeComponent#onTreeItemClick\n */",
+        "meta": {
+            "range": [
+                564,
+                8651
+            ],
+            "filename": "tree.js",
+            "lineno": 17,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000020",
+                "name": "MdTreeComponent",
+                "type": "ClassDeclaration",
+                "paramnames": []
+            }
+        },
+        "name": "MdTreeComponent",
+        "longname": "MdTreeComponent",
+        "kind": "class",
+        "augments": [
+            "MdComponent"
+        ],
+        "tags": [
+            {
+                "originalTitle": "element",
+                "title": "element",
+                "text": "md-tree",
+                "value": "md-tree"
+            }
+        ],
+        "fires": [
+            "MdTreeComponent#event:onTreeKeydownArrowDown",
+            "MdTreeComponent#event:onTreeKeydownArrowUp",
+            "MdTreeComponent#event:onTreeKeydownArrowRight",
+            "MdTreeComponent#event:onTreeKeydownArrowLeft",
+            "MdTreeComponent#event:onTreeKeydownEnter",
+            "MdTreeComponent#event:onTreeKeydown",
+            "MdTreeComponent#event:onTreeItemClick"
+        ],
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                784,
+                799
+            ],
+            "filename": "tree.js",
+            "lineno": 29,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000038",
+                "name": "this.items",
+                "type": "ArrayExpression",
+                "value": "[]",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "items",
+        "longname": "MdTreeComponent#items",
+        "kind": "member",
+        "memberof": "MdTreeComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                809,
+                828
+            ],
+            "filename": "tree.js",
+            "lineno": 30,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000044",
+                "name": "this.flatItems",
+                "type": "ArrayExpression",
+                "value": "[]",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "flatItems",
+        "longname": "MdTreeComponent#flatItems",
+        "kind": "member",
+        "memberof": "MdTreeComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                838,
+                862
+            ],
+            "filename": "tree.js",
+            "lineno": 31,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000050",
+                "name": "this.store",
+                "type": "NewExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "store",
+        "longname": "MdTreeComponent#store",
+        "kind": "member",
+        "memberof": "MdTreeComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                872,
+                892
+            ],
+            "filename": "tree.js",
+            "lineno": 32,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000057",
+                "name": "this.storeItems",
+                "type": "ArrayExpression",
+                "value": "[]",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "storeItems",
+        "longname": "MdTreeComponent#storeItems",
+        "kind": "member",
+        "memberof": "MdTreeComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\n     * @param {Any} [item]\n     */",
+        "meta": {
+            "range": [
+                948,
+                1693
+            ],
+            "filename": "tree.js",
+            "lineno": 38,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000062",
+                "name": "MdTreeComponent#renderTreeItem",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "item"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "item"
+            }
+        ],
+        "name": "renderTreeItem",
+        "longname": "MdTreeComponent#renderTreeItem",
+        "kind": "function",
+        "memberof": "MdTreeComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\n     */",
+        "meta": {
+            "range": [
+                1715,
+                1835
+            ],
+            "filename": "tree.js",
+            "lineno": 59,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000126",
+                "name": "MdTreeComponent#render",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "render",
+        "longname": "MdTreeComponent#render",
+        "kind": "function",
+        "memberof": "MdTreeComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "/**\n     */",
+        "meta": {
+            "range": [
+                1857,
+                2094
+            ],
+            "filename": "tree.js",
+            "lineno": 65,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000152",
+                "name": "MdTreeComponent#connectedCallback",
+                "type": "MethodDefinition",
+                "paramnames": []
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "name": "connectedCallback",
+        "longname": "MdTreeComponent#connectedCallback",
+        "kind": "function",
+        "memberof": "MdTreeComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1961,
+                2019
+            ],
+            "filename": "tree.js",
+            "lineno": 68,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000170",
+                "name": "this.handleTreeKeydown",
+                "type": "CallExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "handleTreeKeydown",
+        "longname": "MdTreeComponent#handleTreeKeydown",
+        "kind": "member",
+        "memberof": "MdTreeComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\n     * @async\n     * @param {Any} [changedProperties]\n     */",
+        "meta": {
+            "range": [
+                2170,
+                2579
+            ],
+            "filename": "tree.js",
+            "lineno": 76,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000190",
+                "name": "MdTreeComponent#updated",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "changedProperties"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "async": true,
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "changedProperties"
+            }
+        ],
+        "name": "updated",
+        "longname": "MdTreeComponent#updated",
+        "kind": "function",
+        "memberof": "MdTreeComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2344,
+                2395
+            ],
+            "filename": "tree.js",
+            "lineno": 80,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000214",
+                "name": "this.flatItems",
+                "type": "MemberExpression",
+                "value": ".flatItems",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "flatItems",
+        "longname": "MdTreeComponent#flatItems",
+        "kind": "member",
+        "memberof": "MdTreeComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2460,
+                2485
+            ],
+            "filename": "tree.js",
+            "lineno": 82,
+            "columnno": 18,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000238",
+                "name": "result",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "result",
+        "longname": "<anonymous>~result",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2499,
+                2528
+            ],
+            "filename": "tree.js",
+            "lineno": 83,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000247",
+                "name": "this.storeItems",
+                "type": "MemberExpression",
+                "value": "result.data",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "storeItems",
+        "longname": "MdTreeComponent#storeItems",
+        "kind": "member",
+        "memberof": "MdTreeComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "/**\n     * @param {Any} [items]\n     * @param {Any} [parent]\n     * @param {Any} [indent=0]\n     */",
+        "meta": {
+            "range": [
+                2689,
+                3471
+            ],
+            "filename": "tree.js",
+            "lineno": 93,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000259",
+                "name": "MdTreeComponent#flatten",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "items",
+                    "parent",
+                    "indent"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "items"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "parent"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "defaultvalue": 0,
+                "name": "indent"
+            }
+        ],
+        "name": "flatten",
+        "longname": "MdTreeComponent#flatten",
+        "kind": "function",
+        "memberof": "MdTreeComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2738,
+                2746
+            ],
+            "filename": "tree.js",
+            "lineno": 94,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000269",
+                "name": "expanded"
+            }
+        },
+        "undocumented": true,
+        "name": "expanded",
+        "longname": "<anonymous>~expanded",
+        "kind": "member",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2760,
+                2774
+            ],
+            "filename": "tree.js",
+            "lineno": 95,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000272",
+                "name": "flatItems",
+                "type": "ArrayExpression",
+                "value": "[]"
+            }
+        },
+        "undocumented": true,
+        "name": "flatItems",
+        "longname": "<anonymous>~flatItems",
+        "kind": "member",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2822,
+                2842
+            ],
+            "filename": "tree.js",
+            "lineno": 97,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000284",
+                "name": "item.parent",
+                "type": "Identifier",
+                "value": "parent",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "parent",
+        "longname": "item.parent",
+        "kind": "member",
+        "memberof": "item",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2856,
+                2876
+            ],
+            "filename": "tree.js",
+            "lineno": 98,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000290",
+                "name": "item.indent",
+                "type": "Identifier",
+                "value": "indent",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "indent",
+        "longname": "item.indent",
+        "kind": "member",
+        "memberof": "item",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2908,
+                2927
+            ],
+            "filename": "tree.js",
+            "lineno": 99,
+            "columnno": 30,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000300",
+                "name": "item.visible",
+                "type": "Literal",
+                "value": true,
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "visible",
+        "longname": "item.visible",
+        "kind": "member",
+        "memberof": "item",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2977,
+                2992
+            ],
+            "filename": "tree.js",
+            "lineno": 100,
+            "columnno": 48,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000314",
+                "name": "expanded",
+                "type": "Literal",
+                "funcscope": "<anonymous>",
+                "value": true,
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "expanded",
+        "longname": "<anonymous>~expanded",
+        "kind": "member",
+        "memberof": "<anonymous>",
+        "scope": "inner"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                3091,
+                3145
+            ],
+            "filename": "tree.js",
+            "lineno": 103,
+            "columnno": 22,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000327",
+                "name": "result",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "result",
+        "longname": "<anonymous>~result",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                3206,
+                3232
+            ],
+            "filename": "tree.js",
+            "lineno": 105,
+            "columnno": 20,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000346",
+                "name": "expanded",
+                "type": "MemberExpression",
+                "funcscope": "<anonymous>",
+                "value": "result.expanded",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "expanded",
+        "longname": "<anonymous>~expanded",
+        "kind": "member",
+        "memberof": "<anonymous>",
+        "scope": "inner"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                3254,
+                3278
+            ],
+            "filename": "tree.js",
+            "lineno": 106,
+            "columnno": 20,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000352",
+                "name": "item.expanded",
+                "type": "Identifier",
+                "value": "expanded",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "expanded",
+        "longname": "item.expanded",
+        "kind": "member",
+        "memberof": "item",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                3443,
+                3451
+            ],
+            "filename": "tree.js",
+            "lineno": 112,
+            "columnno": 17,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000374",
+                "name": "expanded",
+                "type": "Identifier",
+                "value": "expanded"
+            }
+        },
+        "undocumented": true,
+        "name": "expanded",
+        "longname": "expanded",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                3453,
+                3462
+            ],
+            "filename": "tree.js",
+            "lineno": 112,
+            "columnno": 27,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000376",
+                "name": "flatItems",
+                "type": "Identifier",
+                "value": "flatItems"
+            }
+        },
+        "undocumented": true,
+        "name": "flatItems",
+        "longname": "flatItems",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n     * @param {Any} [data]\n     */",
+        "meta": {
+            "range": [
+                3520,
+                3774
+            ],
+            "filename": "tree.js",
+            "lineno": 118,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000378",
+                "name": "MdTreeComponent#updateVisibility",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "data"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "data"
+            }
+        ],
+        "name": "updateVisibility",
+        "longname": "MdTreeComponent#updateVisibility",
+        "kind": "function",
+        "memberof": "MdTreeComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                3599,
+                3627
+            ],
+            "filename": "tree.js",
+            "lineno": 120,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000394",
+                "name": "item.visible",
+                "type": "MemberExpression",
+                "value": "data.expanded",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "visible",
+        "longname": "item.visible",
+        "kind": "member",
+        "memberof": "item",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                3660,
+                3687
+            ],
+            "filename": "tree.js",
+            "lineno": 121,
+            "columnno": 31,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000407",
+                "name": "item.visible",
+                "type": "MemberExpression",
+                "value": "data.visible",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "visible",
+        "longname": "item.visible",
+        "kind": "member",
+        "memberof": "item",
+        "scope": "static"
+    },
+    {
+        "comment": "/**\n     * @async\n     * @param {Any} [arg]\n     */",
+        "meta": {
+            "range": [
+                3836,
+                4163
+            ],
+            "filename": "tree.js",
+            "lineno": 130,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000422",
+                "name": "MdTreeComponent#updateScroll",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "arg"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "async": true,
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "arg"
+            }
+        ],
+        "name": "updateScroll",
+        "longname": "MdTreeComponent#updateScroll",
+        "kind": "function",
+        "memberof": "MdTreeComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                3911,
+                3974
+            ],
+            "filename": "tree.js",
+            "lineno": 132,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000433",
+                "name": "treeItemSelected",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "treeItemSelected",
+        "longname": "<anonymous>~treeItemSelected",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                4064,
+                4083
+            ],
+            "filename": "tree.js",
+            "lineno": 135,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000451",
+                "name": "behavior",
+                "type": "Literal",
+                "value": "instant"
+            }
+        },
+        "undocumented": true,
+        "name": "behavior",
+        "longname": "behavior",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                4097,
+                4113
+            ],
+            "filename": "tree.js",
+            "lineno": 136,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000453",
+                "name": "block",
+                "type": "Literal",
+                "value": "nearest"
+            }
+        },
+        "undocumented": true,
+        "name": "block",
+        "longname": "block",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                4127,
+                4144
+            ],
+            "filename": "tree.js",
+            "lineno": 137,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000455",
+                "name": "inline",
+                "type": "Literal",
+                "value": "nearest"
+            }
+        },
+        "undocumented": true,
+        "name": "inline",
+        "longname": "inline",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n     * @param {Any} [event]\n     */",
+        "meta": {
+            "range": [
+                4213,
+                4858
+            ],
+            "filename": "tree.js",
+            "lineno": 144,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000457",
+                "name": "MdTreeComponent#handleTreeKeydownArrowDown",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "event"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleTreeKeydownArrowDown",
+        "longname": "MdTreeComponent#handleTreeKeydownArrowDown",
+        "kind": "function",
+        "memberof": "MdTreeComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                4295,
+                4356
+            ],
+            "filename": "tree.js",
+            "lineno": 146,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000468",
+                "name": "visibleItems",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "visibleItems",
+        "longname": "<anonymous>~visibleItems",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                4372,
+                4435
+            ],
+            "filename": "tree.js",
+            "lineno": 147,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000482",
+                "name": "selectedIndex",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "selectedIndex",
+        "longname": "<anonymous>~selectedIndex",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                4545,
+                4629
+            ],
+            "filename": "tree.js",
+            "lineno": 149,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000511",
+                "name": "nextItem",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "nextItem",
+        "longname": "<anonymous>~nextItem",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                4691,
+                4724
+            ],
+            "filename": "tree.js",
+            "lineno": 151,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000537",
+                "name": "item.selected",
+                "type": "BinaryExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "selected",
+        "longname": "item.selected",
+        "kind": "member",
+        "memberof": "item",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                4843,
+                4848
+            ],
+            "filename": "tree.js",
+            "lineno": 155,
+            "columnno": 46,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000561",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n     * @param {Any} [event]\n     */",
+        "meta": {
+            "range": [
+                4908,
+                5512
+            ],
+            "filename": "tree.js",
+            "lineno": 161,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000563",
+                "name": "MdTreeComponent#handleTreeKeydownArrowUp",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "event"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleTreeKeydownArrowUp",
+        "longname": "MdTreeComponent#handleTreeKeydownArrowUp",
+        "kind": "function",
+        "memberof": "MdTreeComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                4988,
+                5049
+            ],
+            "filename": "tree.js",
+            "lineno": 163,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000574",
+                "name": "visibleItems",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "visibleItems",
+        "longname": "<anonymous>~visibleItems",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                5065,
+                5132
+            ],
+            "filename": "tree.js",
+            "lineno": 164,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000588",
+                "name": "selectedIndex",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "selectedIndex",
+        "longname": "<anonymous>~selectedIndex",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                5189,
+                5283
+            ],
+            "filename": "tree.js",
+            "lineno": 166,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000605",
+                "name": "nextIndex",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "nextIndex",
+        "longname": "<anonymous>~nextIndex",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                5345,
+                5380
+            ],
+            "filename": "tree.js",
+            "lineno": 168,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000631",
+                "name": "item.selected",
+                "type": "BinaryExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "selected",
+        "longname": "item.selected",
+        "kind": "member",
+        "memberof": "item",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                5497,
+                5502
+            ],
+            "filename": "tree.js",
+            "lineno": 172,
+            "columnno": 44,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000655",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n     * @param {Any} [event]\n     */",
+        "meta": {
+            "range": [
+                5562,
+                6475
+            ],
+            "filename": "tree.js",
+            "lineno": 178,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000657",
+                "name": "MdTreeComponent#handleTreeKeydownArrowRight",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "event"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleTreeKeydownArrowRight",
+        "longname": "MdTreeComponent#handleTreeKeydownArrowRight",
+        "kind": "function",
+        "memberof": "MdTreeComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                5645,
+                5705
+            ],
+            "filename": "tree.js",
+            "lineno": 180,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000668",
+                "name": "selectedItem",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "selectedItem",
+        "longname": "<anonymous>~selectedItem",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                5764,
+                5792
+            ],
+            "filename": "tree.js",
+            "lineno": 182,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000685",
+                "name": "selectedItem.expanded",
+                "type": "Literal",
+                "funcscope": "<anonymous>",
+                "value": true,
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "expanded",
+        "longname": "<anonymous>~selectedItem.expanded",
+        "kind": "member",
+        "memberof": "<anonymous>~selectedItem",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                5861,
+                5922
+            ],
+            "filename": "tree.js",
+            "lineno": 184,
+            "columnno": 18,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000697",
+                "name": "visibleItems",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "visibleItems",
+        "longname": "<anonymous>~visibleItems",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                5942,
+                6005
+            ],
+            "filename": "tree.js",
+            "lineno": 185,
+            "columnno": 18,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000711",
+                "name": "selectedIndex",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "selectedIndex",
+        "longname": "<anonymous>~selectedIndex",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                6123,
+                6213
+            ],
+            "filename": "tree.js",
+            "lineno": 187,
+            "columnno": 18,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000740",
+                "name": "nextIndex",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "nextIndex",
+        "longname": "<anonymous>~nextIndex",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                6283,
+                6318
+            ],
+            "filename": "tree.js",
+            "lineno": 189,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000766",
+                "name": "item.selected",
+                "type": "BinaryExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "selected",
+        "longname": "item.selected",
+        "kind": "member",
+        "memberof": "item",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                6460,
+                6465
+            ],
+            "filename": "tree.js",
+            "lineno": 194,
+            "columnno": 47,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000790",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n     * @param {Any} [event]\n     */",
+        "meta": {
+            "range": [
+                6525,
+                7170
+            ],
+            "filename": "tree.js",
+            "lineno": 200,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000792",
+                "name": "MdTreeComponent#handleTreeKeydownArrowLeft",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "event"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleTreeKeydownArrowLeft",
+        "longname": "MdTreeComponent#handleTreeKeydownArrowLeft",
+        "kind": "function",
+        "memberof": "MdTreeComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                6607,
+                6667
+            ],
+            "filename": "tree.js",
+            "lineno": 202,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000803",
+                "name": "selectedItem",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "selectedItem",
+        "longname": "<anonymous>~selectedItem",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                6718,
+                6747
+            ],
+            "filename": "tree.js",
+            "lineno": 204,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000822",
+                "name": "selectedItem.expanded",
+                "type": "Literal",
+                "funcscope": "<anonymous>",
+                "value": false,
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "expanded",
+        "longname": "<anonymous>~selectedItem.expanded",
+        "kind": "member",
+        "memberof": "<anonymous>~selectedItem",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                6970,
+                7014
+            ],
+            "filename": "tree.js",
+            "lineno": 210,
+            "columnno": 16,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000859",
+                "name": "item.selected",
+                "type": "BinaryExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "selected",
+        "longname": "item.selected",
+        "kind": "member",
+        "memberof": "item",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                7155,
+                7160
+            ],
+            "filename": "tree.js",
+            "lineno": 215,
+            "columnno": 46,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000885",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n     * @param {Any} [event]\n     */",
+        "meta": {
+            "range": [
+                7220,
+                7482
+            ],
+            "filename": "tree.js",
+            "lineno": 221,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000887",
+                "name": "MdTreeComponent#handleTreeKeydownEnter",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "event"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleTreeKeydownEnter",
+        "longname": "MdTreeComponent#handleTreeKeydownEnter",
+        "kind": "function",
+        "memberof": "MdTreeComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                7467,
+                7472
+            ],
+            "filename": "tree.js",
+            "lineno": 225,
+            "columnno": 42,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000904",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n     * @param {Any} [event]\n     */",
+        "meta": {
+            "range": [
+                7532,
+                8134
+            ],
+            "filename": "tree.js",
+            "lineno": 231,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000906",
+                "name": "MdTreeComponent#handleTreeKeydown",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "event"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleTreeKeydown",
+        "longname": "MdTreeComponent#handleTreeKeydown",
+        "kind": "function",
+        "memberof": "MdTreeComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                8119,
+                8124
+            ],
+            "filename": "tree.js",
+            "lineno": 239,
+            "columnno": 37,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000987",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n     * @param {Any} [event]\n     */",
+        "meta": {
+            "range": [
+                8184,
+                8649
+            ],
+            "filename": "tree.js",
+            "lineno": 245,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000989",
+                "name": "MdTreeComponent#handleTreeItemClick",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "event"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "event"
+            }
+        ],
+        "name": "handleTreeItemClick",
+        "longname": "MdTreeComponent#handleTreeItemClick",
+        "kind": "function",
+        "memberof": "MdTreeComponent",
+        "scope": "instance"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                8227,
+                8276
+            ],
+            "filename": "tree.js",
+            "lineno": 246,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100000995",
+                "name": "action",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "action",
+        "longname": "<anonymous>~action",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                8292,
+                8323
+            ],
+            "filename": "tree.js",
+            "lineno": 247,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100001005",
+                "name": "data",
+                "type": "MemberExpression",
+                "value": "event.currentTarget.data"
+            }
+        },
+        "undocumented": true,
+        "name": "data",
+        "longname": "<anonymous>~data",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                8384,
+                8414
+            ],
+            "filename": "tree.js",
+            "lineno": 249,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100001018",
+                "name": "data.expanded",
+                "type": "UnaryExpression",
+                "funcscope": "<anonymous>",
+                "value": "!data.expanded",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "expanded",
+        "longname": "<anonymous>~data.expanded",
+        "kind": "member",
+        "memberof": "<anonymous>~data",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                8522,
+                8551
+            ],
+            "filename": "tree.js",
+            "lineno": 253,
+            "columnno": 12,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100001043",
+                "name": "item.selected",
+                "type": "BinaryExpression",
+                "value": "",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "selected",
+        "longname": "item.selected",
+        "kind": "member",
+        "memberof": "item",
+        "scope": "static"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                8634,
+                8639
+            ],
+            "filename": "tree.js",
+            "lineno": 256,
+            "columnno": 39,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100001062",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                8712,
+                8727
+            ],
+            "filename": "tree.js",
+            "lineno": 260,
+            "columnno": 9,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree",
+            "code": {
+                "id": "astnode100001072",
+                "name": "exports.MdTreeComponent",
+                "type": "Identifier"
+            }
+        },
+        "undocumented": true,
+        "name": "MdTreeComponent",
+        "longname": "MdTreeComponent",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "kind": "package",
+        "longname": "package:undefined",
+        "files": [
+            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree\\tree.js"
+        ]
+    }
+]

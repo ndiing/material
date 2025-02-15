@@ -1,0 +1,1048 @@
+[
+    {
+        "comment": "/**\n * @param {Any} [string]\n */",
+        "meta": {
+            "range": [
+                33,
+                92
+            ],
+            "filename": "util.js",
+            "lineno": 4,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
+            "code": {
+                "id": "astnode100000002",
+                "name": "parseDate",
+                "type": "FunctionDeclaration",
+                "paramnames": [
+                    "string"
+                ]
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "string"
+            }
+        ],
+        "name": "parseDate",
+        "longname": "parseDate",
+        "kind": "function",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n * @param {Any} [string]\n */",
+        "meta": {
+            "range": [
+                127,
+                195
+            ],
+            "filename": "util.js",
+            "lineno": 11,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
+            "code": {
+                "id": "astnode100000010",
+                "name": "parseDatetimeLocal",
+                "type": "FunctionDeclaration",
+                "paramnames": [
+                    "string"
+                ]
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "string"
+            }
+        ],
+        "name": "parseDatetimeLocal",
+        "longname": "parseDatetimeLocal",
+        "kind": "function",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n * @param {Any} [string]\n */",
+        "meta": {
+            "range": [
+                230,
+                298
+            ],
+            "filename": "util.js",
+            "lineno": 18,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
+            "code": {
+                "id": "astnode100000018",
+                "name": "parseMonth",
+                "type": "FunctionDeclaration",
+                "paramnames": [
+                    "string"
+                ]
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "string"
+            }
+        ],
+        "name": "parseMonth",
+        "longname": "parseMonth",
+        "kind": "function",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n * @param {Any} [string]\n */",
+        "meta": {
+            "range": [
+                333,
+                498
+            ],
+            "filename": "util.js",
+            "lineno": 25,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
+            "code": {
+                "id": "astnode100000028",
+                "name": "parseTime",
+                "type": "FunctionDeclaration",
+                "paramnames": [
+                    "string"
+                ]
+            },
+            "vars": {
+                "undefined": null,
+                "date": "parseTime~date"
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "string"
+            }
+        ],
+        "name": "parseTime",
+        "longname": "parseTime",
+        "kind": "function",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                420,
+                437
+            ],
+            "filename": "util.js",
+            "lineno": 27,
+            "columnno": 10,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
+            "code": {
+                "id": "astnode100000041",
+                "name": "date",
+                "type": "NewExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "date",
+        "longname": "parseTime~date",
+        "kind": "constant",
+        "memberof": "parseTime",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "/**\n * @param {Any} [string]\n */",
+        "meta": {
+            "range": [
+                533,
+                726
+            ],
+            "filename": "util.js",
+            "lineno": 35,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
+            "code": {
+                "id": "astnode100000056",
+                "name": "parseWeek",
+                "type": "FunctionDeclaration",
+                "paramnames": [
+                    "string"
+                ]
+            },
+            "vars": {
+                "undefined": null,
+                "d": "parseWeek~d",
+                "days": "parseWeek~days"
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "string"
+            }
+        ],
+        "name": "parseWeek",
+        "longname": "parseWeek",
+        "kind": "function",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                617,
+                641
+            ],
+            "filename": "util.js",
+            "lineno": 37,
+            "columnno": 10,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
+            "code": {
+                "id": "astnode100000069",
+                "name": "d",
+                "type": "NewExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "d",
+        "longname": "parseWeek~d",
+        "kind": "constant",
+        "memberof": "parseWeek",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                653,
+                674
+            ],
+            "filename": "util.js",
+            "lineno": 38,
+            "columnno": 10,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
+            "code": {
+                "id": "astnode100000077",
+                "name": "days",
+                "type": "BinaryExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "days",
+        "longname": "parseWeek~days",
+        "kind": "constant",
+        "memberof": "parseWeek",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "/**\n * @param {Any} [date]\n */",
+        "meta": {
+            "range": [
+                759,
+                836
+            ],
+            "filename": "util.js",
+            "lineno": 46,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
+            "code": {
+                "id": "astnode100000097",
+                "name": "stringifyDate",
+                "type": "FunctionDeclaration",
+                "paramnames": [
+                    "date"
+                ]
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "date"
+            }
+        ],
+        "name": "stringifyDate",
+        "longname": "stringifyDate",
+        "kind": "function",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n * @param {Any} [date]\n */",
+        "meta": {
+            "range": [
+                869,
+                1250
+            ],
+            "filename": "util.js",
+            "lineno": 53,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
+            "code": {
+                "id": "astnode100000112",
+                "name": "stringifyDatetimeLocal",
+                "type": "FunctionDeclaration",
+                "paramnames": [
+                    "date"
+                ]
+            },
+            "vars": {
+                "year": "stringifyDatetimeLocal~year",
+                "month": "stringifyDatetimeLocal~month",
+                "day": "stringifyDatetimeLocal~day",
+                "hours": "stringifyDatetimeLocal~hours",
+                "minutes": "stringifyDatetimeLocal~minutes"
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "date"
+            }
+        ],
+        "name": "stringifyDatetimeLocal",
+        "longname": "stringifyDatetimeLocal",
+        "kind": "function",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                919,
+                944
+            ],
+            "filename": "util.js",
+            "lineno": 54,
+            "columnno": 10,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
+            "code": {
+                "id": "astnode100000117",
+                "name": "year",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "year",
+        "longname": "stringifyDatetimeLocal~year",
+        "kind": "constant",
+        "memberof": "stringifyDatetimeLocal",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                956,
+                1008
+            ],
+            "filename": "util.js",
+            "lineno": 55,
+            "columnno": 10,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
+            "code": {
+                "id": "astnode100000124",
+                "name": "month",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "month",
+        "longname": "stringifyDatetimeLocal~month",
+        "kind": "constant",
+        "memberof": "stringifyDatetimeLocal",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1020,
+                1065
+            ],
+            "filename": "util.js",
+            "lineno": 56,
+            "columnno": 10,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
+            "code": {
+                "id": "astnode100000140",
+                "name": "day",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "day",
+        "longname": "stringifyDatetimeLocal~day",
+        "kind": "constant",
+        "memberof": "stringifyDatetimeLocal",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1077,
+                1125
+            ],
+            "filename": "util.js",
+            "lineno": 57,
+            "columnno": 10,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
+            "code": {
+                "id": "astnode100000154",
+                "name": "hours",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "hours",
+        "longname": "stringifyDatetimeLocal~hours",
+        "kind": "constant",
+        "memberof": "stringifyDatetimeLocal",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1137,
+                1189
+            ],
+            "filename": "util.js",
+            "lineno": 58,
+            "columnno": 10,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
+            "code": {
+                "id": "astnode100000168",
+                "name": "minutes",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "minutes",
+        "longname": "stringifyDatetimeLocal~minutes",
+        "kind": "constant",
+        "memberof": "stringifyDatetimeLocal",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "/**\n * @param {Any} [date]\n */",
+        "meta": {
+            "range": [
+                1283,
+                1359
+            ],
+            "filename": "util.js",
+            "lineno": 65,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
+            "code": {
+                "id": "astnode100000194",
+                "name": "stringifyMonth",
+                "type": "FunctionDeclaration",
+                "paramnames": [
+                    "date"
+                ]
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "date"
+            }
+        ],
+        "name": "stringifyMonth",
+        "longname": "stringifyMonth",
+        "kind": "function",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n * @param {Any} [date]\n */",
+        "meta": {
+            "range": [
+                1392,
+                1468
+            ],
+            "filename": "util.js",
+            "lineno": 72,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
+            "code": {
+                "id": "astnode100000208",
+                "name": "stringifyTime",
+                "type": "FunctionDeclaration",
+                "paramnames": [
+                    "date"
+                ]
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "date"
+            }
+        ],
+        "name": "stringifyTime",
+        "longname": "stringifyTime",
+        "kind": "function",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n * @param {Any} [date]\n */",
+        "meta": {
+            "range": [
+                1501,
+                1800
+            ],
+            "filename": "util.js",
+            "lineno": 79,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
+            "code": {
+                "id": "astnode100000222",
+                "name": "stringifyWeek",
+                "type": "FunctionDeclaration",
+                "paramnames": [
+                    "date"
+                ]
+            },
+            "vars": {
+                "firstDayOfYear": "stringifyWeek~firstDayOfYear",
+                "days": "stringifyWeek~days",
+                "weekNumber": "stringifyWeek~weekNumber"
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "date"
+            }
+        ],
+        "name": "stringifyWeek",
+        "longname": "stringifyWeek",
+        "kind": "function",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1542,
+                1593
+            ],
+            "filename": "util.js",
+            "lineno": 80,
+            "columnno": 10,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
+            "code": {
+                "id": "astnode100000227",
+                "name": "firstDayOfYear",
+                "type": "NewExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "firstDayOfYear",
+        "longname": "stringifyWeek~firstDayOfYear",
+        "kind": "constant",
+        "memberof": "stringifyWeek",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1605,
+                1671
+            ],
+            "filename": "util.js",
+            "lineno": 81,
+            "columnno": 10,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
+            "code": {
+                "id": "astnode100000238",
+                "name": "days",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "days",
+        "longname": "stringifyWeek~days",
+        "kind": "constant",
+        "memberof": "stringifyWeek",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1683,
+                1721
+            ],
+            "filename": "util.js",
+            "lineno": 82,
+            "columnno": 10,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
+            "code": {
+                "id": "astnode100000256",
+                "name": "weekNumber",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "weekNumber",
+        "longname": "stringifyWeek~weekNumber",
+        "kind": "constant",
+        "memberof": "stringifyWeek",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "/**\n * @param {Any} [element]\n */",
+        "meta": {
+            "range": [
+                1836,
+                2172
+            ],
+            "filename": "util.js",
+            "lineno": 89,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
+            "code": {
+                "id": "astnode100000284",
+                "name": "closestScrollableElement",
+                "type": "FunctionDeclaration",
+                "paramnames": [
+                    "element"
+                ]
+            },
+            "vars": {
+                "current": "closestScrollableElement~current",
+                "style": "closestScrollableElement~style"
+            }
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Any"
+                    ]
+                },
+                "optional": true,
+                "name": "element"
+            }
+        ],
+        "name": "closestScrollableElement",
+        "longname": "closestScrollableElement",
+        "kind": "function",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1889,
+                1906
+            ],
+            "filename": "util.js",
+            "lineno": 90,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
+            "code": {
+                "id": "astnode100000289",
+                "name": "current",
+                "type": "Identifier",
+                "value": "element"
+            }
+        },
+        "undocumented": true,
+        "name": "current",
+        "longname": "closestScrollableElement~current",
+        "kind": "member",
+        "memberof": "closestScrollableElement",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                1944,
+                1984
+            ],
+            "filename": "util.js",
+            "lineno": 92,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
+            "code": {
+                "id": "astnode100000296",
+                "name": "style",
+                "type": "CallExpression",
+                "value": ""
+            }
+        },
+        "undocumented": true,
+        "name": "style",
+        "longname": "closestScrollableElement~style",
+        "kind": "constant",
+        "memberof": "closestScrollableElement",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2078,
+                2109
+            ],
+            "filename": "util.js",
+            "lineno": 94,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
+            "code": {
+                "id": "astnode100000318",
+                "name": "current",
+                "type": "MemberExpression",
+                "funcscope": "closestScrollableElement",
+                "value": "current.parentElement",
+                "paramnames": []
+            }
+        },
+        "undocumented": true,
+        "name": "current",
+        "longname": "closestScrollableElement~current",
+        "kind": "member",
+        "memberof": "closestScrollableElement",
+        "scope": "inner"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2182,
+                2191
+            ],
+            "filename": "util.js",
+            "lineno": 98,
+            "columnno": 9,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
+            "code": {
+                "id": "astnode100000332",
+                "name": "exports.parseDate",
+                "type": "Identifier"
+            }
+        },
+        "undocumented": true,
+        "name": "parseDate",
+        "longname": "parseDate",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2193,
+                2211
+            ],
+            "filename": "util.js",
+            "lineno": 98,
+            "columnno": 20,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
+            "code": {
+                "id": "astnode100000335",
+                "name": "exports.parseDatetimeLocal",
+                "type": "Identifier"
+            }
+        },
+        "undocumented": true,
+        "name": "parseDatetimeLocal",
+        "longname": "parseDatetimeLocal",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2213,
+                2223
+            ],
+            "filename": "util.js",
+            "lineno": 98,
+            "columnno": 40,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
+            "code": {
+                "id": "astnode100000338",
+                "name": "exports.parseMonth",
+                "type": "Identifier"
+            }
+        },
+        "undocumented": true,
+        "name": "parseMonth",
+        "longname": "parseMonth",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2225,
+                2234
+            ],
+            "filename": "util.js",
+            "lineno": 98,
+            "columnno": 52,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
+            "code": {
+                "id": "astnode100000341",
+                "name": "exports.parseTime",
+                "type": "Identifier"
+            }
+        },
+        "undocumented": true,
+        "name": "parseTime",
+        "longname": "parseTime",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2236,
+                2245
+            ],
+            "filename": "util.js",
+            "lineno": 98,
+            "columnno": 63,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
+            "code": {
+                "id": "astnode100000344",
+                "name": "exports.parseWeek",
+                "type": "Identifier"
+            }
+        },
+        "undocumented": true,
+        "name": "parseWeek",
+        "longname": "parseWeek",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2247,
+                2260
+            ],
+            "filename": "util.js",
+            "lineno": 98,
+            "columnno": 74,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
+            "code": {
+                "id": "astnode100000347",
+                "name": "exports.stringifyDate",
+                "type": "Identifier"
+            }
+        },
+        "undocumented": true,
+        "name": "stringifyDate",
+        "longname": "stringifyDate",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2262,
+                2284
+            ],
+            "filename": "util.js",
+            "lineno": 98,
+            "columnno": 89,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
+            "code": {
+                "id": "astnode100000350",
+                "name": "exports.stringifyDatetimeLocal",
+                "type": "Identifier"
+            }
+        },
+        "undocumented": true,
+        "name": "stringifyDatetimeLocal",
+        "longname": "stringifyDatetimeLocal",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2286,
+                2300
+            ],
+            "filename": "util.js",
+            "lineno": 98,
+            "columnno": 113,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
+            "code": {
+                "id": "astnode100000353",
+                "name": "exports.stringifyMonth",
+                "type": "Identifier"
+            }
+        },
+        "undocumented": true,
+        "name": "stringifyMonth",
+        "longname": "stringifyMonth",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2302,
+                2315
+            ],
+            "filename": "util.js",
+            "lineno": 98,
+            "columnno": 129,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
+            "code": {
+                "id": "astnode100000356",
+                "name": "exports.stringifyTime",
+                "type": "Identifier"
+            }
+        },
+        "undocumented": true,
+        "name": "stringifyTime",
+        "longname": "stringifyTime",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2317,
+                2330
+            ],
+            "filename": "util.js",
+            "lineno": 98,
+            "columnno": 144,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
+            "code": {
+                "id": "astnode100000359",
+                "name": "exports.stringifyWeek",
+                "type": "Identifier"
+            }
+        },
+        "undocumented": true,
+        "name": "stringifyWeek",
+        "longname": "stringifyWeek",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                2332,
+                2356
+            ],
+            "filename": "util.js",
+            "lineno": 98,
+            "columnno": 159,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util",
+            "code": {
+                "id": "astnode100000362",
+                "name": "exports.closestScrollableElement",
+                "type": "Identifier"
+            }
+        },
+        "undocumented": true,
+        "name": "closestScrollableElement",
+        "longname": "closestScrollableElement",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "kind": "package",
+        "longname": "package:undefined",
+        "files": [
+            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util\\util.js"
+        ]
+    }
+]
