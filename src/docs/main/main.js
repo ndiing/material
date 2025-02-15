@@ -19,7 +19,14 @@ function sortItems(items) {
         if (a.children && !b.children) return -1;
         if (!a.children && b.children) return 1;
 
-        return a.label.localeCompare(b.label);
+        if (a.type && b.type) {
+            return a.type.localeCompare(b.type);
+        }
+
+        const labelComparison = a.label.localeCompare(b.label);
+        if (labelComparison !== 0) return labelComparison;
+
+        return 0;
     });
 
     items.forEach((item) => {
