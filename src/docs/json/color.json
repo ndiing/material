@@ -2,10 +2,7 @@
     {
         "comment": "/**\n * @param {Any} [input]\n * @param {Any} [customColors]\n */",
         "meta": {
-            "range": [
-                180,
-                1750
-            ],
+            "range": [180, 1750],
             "filename": "color.js",
             "lineno": 7,
             "columnno": 0,
@@ -14,10 +11,7 @@
                 "id": "astnode100000012",
                 "name": "setTheme",
                 "type": "FunctionDeclaration",
-                "paramnames": [
-                    "input",
-                    "customColors"
-                ]
+                "paramnames": ["input", "customColors"]
             },
             "vars": {
                 "theme": "setTheme~theme",
@@ -41,18 +35,14 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "input"
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "customColors"
@@ -67,10 +57,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                235,
-                240
-            ],
+            "range": [235, 240],
             "filename": "color.js",
             "lineno": 8,
             "columnno": 8,
@@ -91,10 +78,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                295,
-                344
-            ],
+            "range": [295, 344],
             "filename": "color.js",
             "lineno": 10,
             "columnno": 8,
@@ -118,10 +102,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                367,
-                429
-            ],
+            "range": [367, 429],
             "filename": "color.js",
             "lineno": 12,
             "columnno": 8,
@@ -145,10 +126,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                441,
-                509
-            ],
+            "range": [441, 509],
             "filename": "color.js",
             "lineno": 14,
             "columnno": 4,
@@ -172,10 +150,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                515,
-                587
-            ],
+            "range": [515, 587],
             "filename": "color.js",
             "lineno": 15,
             "columnno": 4,
@@ -199,10 +174,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                593,
-                673
-            ],
+            "range": [593, 673],
             "filename": "color.js",
             "lineno": 16,
             "columnno": 4,
@@ -226,10 +198,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                679,
-                757
-            ],
+            "range": [679, 757],
             "filename": "color.js",
             "lineno": 17,
             "columnno": 4,
@@ -253,10 +222,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                763,
-                838
-            ],
+            "range": [763, 838],
             "filename": "color.js",
             "lineno": 18,
             "columnno": 4,
@@ -280,10 +246,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                844,
-                923
-            ],
+            "range": [844, 923],
             "filename": "color.js",
             "lineno": 19,
             "columnno": 4,
@@ -307,10 +270,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                929,
-                1011
-            ],
+            "range": [929, 1011],
             "filename": "color.js",
             "lineno": 20,
             "columnno": 4,
@@ -334,10 +294,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1017,
-                1087
-            ],
+            "range": [1017, 1087],
             "filename": "color.js",
             "lineno": 21,
             "columnno": 4,
@@ -361,10 +318,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1093,
-                1166
-            ],
+            "range": [1093, 1166],
             "filename": "color.js",
             "lineno": 22,
             "columnno": 4,
@@ -388,10 +342,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1172,
-                1255
-            ],
+            "range": [1172, 1255],
             "filename": "color.js",
             "lineno": 23,
             "columnno": 4,
@@ -415,10 +366,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1261,
-                1340
-            ],
+            "range": [1261, 1340],
             "filename": "color.js",
             "lineno": 24,
             "columnno": 4,
@@ -442,10 +390,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1346,
-                1422
-            ],
+            "range": [1346, 1422],
             "filename": "color.js",
             "lineno": 25,
             "columnno": 4,
@@ -469,10 +414,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1428,
-                1508
-            ],
+            "range": [1428, 1508],
             "filename": "color.js",
             "lineno": 26,
             "columnno": 4,
@@ -496,10 +438,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1514,
-                1597
-            ],
+            "range": [1514, 1597],
             "filename": "color.js",
             "lineno": 27,
             "columnno": 4,
@@ -523,10 +462,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1609,
-                1679
-            ],
+            "range": [1609, 1679],
             "filename": "color.js",
             "lineno": 28,
             "columnno": 10,
@@ -549,10 +485,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1705,
-                1726
-            ],
+            "range": [1705, 1726],
             "filename": "color.js",
             "lineno": 29,
             "columnno": 24,
@@ -573,10 +506,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1728,
-                1744
-            ],
+            "range": [1728, 1744],
             "filename": "color.js",
             "lineno": 29,
             "columnno": 47,
@@ -597,10 +527,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1760,
-                1768
-            ],
+            "range": [1760, 1768],
             "filename": "color.js",
             "lineno": 31,
             "columnno": 9,
@@ -620,8 +547,6 @@
     {
         "kind": "package",
         "longname": "package:undefined",
-        "files": [
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\color\\color.js"
-        ]
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\color\\color.js"]
     }
 ]

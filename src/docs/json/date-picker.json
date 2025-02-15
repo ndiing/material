@@ -2,10 +2,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-date-picker\n * @fires MdDatePickerComponent#onDatePickerShow\n * @fires MdDatePickerComponent#onDatePickerClose\n * @fires MdDatePickerComponent#onDatePickerYearItemClick\n * @fires MdDatePickerComponent#onDatePickerMonthItemClick\n * @fires MdDatePickerComponent#onDatePickerDayItemClick\n * @fires MdDatePickerComponent#onDatePickerScrimClose\n * @fires MdDatePickerComponent#onDatePickerShown\n * @fires MdDatePickerComponent#onDatePickerClosed\n * @fires MdDatePickerComponent#onDatePickerIconButtonPrevClick\n * @fires MdDatePickerComponent#onDatePickerIconButtonNextClick\n * @fires MdDatePickerComponent#onDatePickerIconButtonClick\n * @fires MdDatePickerComponent#onDatePickerButtonCancelClick\n * @fires MdDatePickerComponent#onDatePickerButtonOkClick\n * @fires MdDatePickerComponent#onDatePickerButtonLabelClick\n * @fires MdDatePickerComponent#onDatePickerButtonClick\n */",
         "meta": {
-            "range": [
-                1324,
-                20214
-            ],
+            "range": [1324, 20214],
             "filename": "date-picker.js",
             "lineno": 29,
             "columnno": 0,
@@ -20,9 +17,7 @@
                 "": null
             }
         },
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -31,23 +26,7 @@
                 "value": "md-date-picker"
             }
         ],
-        "fires": [
-            "MdDatePickerComponent#event:onDatePickerShow",
-            "MdDatePickerComponent#event:onDatePickerClose",
-            "MdDatePickerComponent#event:onDatePickerYearItemClick",
-            "MdDatePickerComponent#event:onDatePickerMonthItemClick",
-            "MdDatePickerComponent#event:onDatePickerDayItemClick",
-            "MdDatePickerComponent#event:onDatePickerScrimClose",
-            "MdDatePickerComponent#event:onDatePickerShown",
-            "MdDatePickerComponent#event:onDatePickerClosed",
-            "MdDatePickerComponent#event:onDatePickerIconButtonPrevClick",
-            "MdDatePickerComponent#event:onDatePickerIconButtonNextClick",
-            "MdDatePickerComponent#event:onDatePickerIconButtonClick",
-            "MdDatePickerComponent#event:onDatePickerButtonCancelClick",
-            "MdDatePickerComponent#event:onDatePickerButtonOkClick",
-            "MdDatePickerComponent#event:onDatePickerButtonLabelClick",
-            "MdDatePickerComponent#event:onDatePickerButtonClick"
-        ],
+        "fires": ["MdDatePickerComponent#event:onDatePickerShow", "MdDatePickerComponent#event:onDatePickerClose", "MdDatePickerComponent#event:onDatePickerYearItemClick", "MdDatePickerComponent#event:onDatePickerMonthItemClick", "MdDatePickerComponent#event:onDatePickerDayItemClick", "MdDatePickerComponent#event:onDatePickerScrimClose", "MdDatePickerComponent#event:onDatePickerShown", "MdDatePickerComponent#event:onDatePickerClosed", "MdDatePickerComponent#event:onDatePickerIconButtonPrevClick", "MdDatePickerComponent#event:onDatePickerIconButtonNextClick", "MdDatePickerComponent#event:onDatePickerIconButtonClick", "MdDatePickerComponent#event:onDatePickerButtonCancelClick", "MdDatePickerComponent#event:onDatePickerButtonOkClick", "MdDatePickerComponent#event:onDatePickerButtonLabelClick", "MdDatePickerComponent#event:onDatePickerButtonClick"],
         "name": "MdDatePickerComponent",
         "longname": "MdDatePickerComponent",
         "kind": "class",
@@ -57,10 +36,7 @@
     {
         "comment": "/**\n     * @property {Array} [icons]\n     * @property {Array} [actions]\n     * @property {String} [label]\n     * @property {String} [sublabel]\n     * @property {Array} [buttons]\n     * @property {Boolean} [open]\n     * @property {Boolean} [modal]\n     * @property {String} [value]\n     * @property {Any} [index]\n     * @property {Any} [selection]\n     */",
         "meta": {
-            "range": [
-                1737,
-                2435
-            ],
+            "range": [1737, 2435],
             "filename": "date-picker.js",
             "lineno": 42,
             "columnno": 4,
@@ -74,90 +50,70 @@
         "properties": [
             {
                 "type": {
-                    "names": [
-                        "Array"
-                    ]
+                    "names": ["Array"]
                 },
                 "optional": true,
                 "name": "icons"
             },
             {
                 "type": {
-                    "names": [
-                        "Array"
-                    ]
+                    "names": ["Array"]
                 },
                 "optional": true,
                 "name": "actions"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "label"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "sublabel"
             },
             {
                 "type": {
-                    "names": [
-                        "Array"
-                    ]
+                    "names": ["Array"]
                 },
                 "optional": true,
                 "name": "buttons"
             },
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "open"
             },
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "modal"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "value"
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "index"
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "selection"
@@ -172,10 +128,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1767,
-                1789
-            ],
+            "range": [1767, 1789],
             "filename": "date-picker.js",
             "lineno": 43,
             "columnno": 8,
@@ -196,10 +149,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1776,
-                1787
-            ],
+            "range": [1776, 1787],
             "filename": "date-picker.js",
             "lineno": 43,
             "columnno": 17,
@@ -221,10 +171,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1799,
-                1823
-            ],
+            "range": [1799, 1823],
             "filename": "date-picker.js",
             "lineno": 44,
             "columnno": 8,
@@ -245,10 +192,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1810,
-                1821
-            ],
+            "range": [1810, 1821],
             "filename": "date-picker.js",
             "lineno": 44,
             "columnno": 19,
@@ -270,10 +214,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1833,
-                1856
-            ],
+            "range": [1833, 1856],
             "filename": "date-picker.js",
             "lineno": 45,
             "columnno": 8,
@@ -294,10 +235,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1842,
-                1854
-            ],
+            "range": [1842, 1854],
             "filename": "date-picker.js",
             "lineno": 45,
             "columnno": 17,
@@ -319,10 +257,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1866,
-                1892
-            ],
+            "range": [1866, 1892],
             "filename": "date-picker.js",
             "lineno": 46,
             "columnno": 8,
@@ -343,10 +278,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1878,
-                1890
-            ],
+            "range": [1878, 1890],
             "filename": "date-picker.js",
             "lineno": 46,
             "columnno": 20,
@@ -368,10 +300,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1902,
-                1926
-            ],
+            "range": [1902, 1926],
             "filename": "date-picker.js",
             "lineno": 47,
             "columnno": 8,
@@ -392,10 +321,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1913,
-                1924
-            ],
+            "range": [1913, 1924],
             "filename": "date-picker.js",
             "lineno": 47,
             "columnno": 19,
@@ -417,10 +343,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1936,
-                1974
-            ],
+            "range": [1936, 1974],
             "filename": "date-picker.js",
             "lineno": 48,
             "columnno": 8,
@@ -441,10 +364,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1944,
-                1957
-            ],
+            "range": [1944, 1957],
             "filename": "date-picker.js",
             "lineno": 48,
             "columnno": 16,
@@ -466,10 +386,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1959,
-                1972
-            ],
+            "range": [1959, 1972],
             "filename": "date-picker.js",
             "lineno": 48,
             "columnno": 31,
@@ -491,10 +408,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1984,
-                2008
-            ],
+            "range": [1984, 2008],
             "filename": "date-picker.js",
             "lineno": 49,
             "columnno": 8,
@@ -515,10 +429,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1993,
-                2006
-            ],
+            "range": [1993, 2006],
             "filename": "date-picker.js",
             "lineno": 49,
             "columnno": 17,
@@ -540,10 +451,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2018,
-                2359
-            ],
+            "range": [2018, 2359],
             "filename": "date-picker.js",
             "lineno": 50,
             "columnno": 8,
@@ -564,10 +472,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2039,
-                2051
-            ],
+            "range": [2039, 2051],
             "filename": "date-picker.js",
             "lineno": 51,
             "columnno": 12,
@@ -589,10 +494,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2065,
-                2078
-            ],
+            "range": [2065, 2078],
             "filename": "date-picker.js",
             "lineno": 52,
             "columnno": 12,
@@ -614,10 +516,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2092,
-                2348
-            ],
+            "range": [2092, 2348],
             "filename": "date-picker.js",
             "lineno": 53,
             "columnno": 12,
@@ -639,10 +538,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2121,
-                2217
-            ],
+            "range": [2121, 2217],
             "filename": "date-picker.js",
             "lineno": 54,
             "columnno": 16,
@@ -663,10 +559,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2235,
-                2333
-            ],
+            "range": [2235, 2333],
             "filename": "date-picker.js",
             "lineno": 57,
             "columnno": 16,
@@ -687,10 +580,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2369,
-                2391
-            ],
+            "range": [2369, 2391],
             "filename": "date-picker.js",
             "lineno": 62,
             "columnno": 8,
@@ -711,10 +601,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2378,
-                2389
-            ],
+            "range": [2378, 2389],
             "filename": "date-picker.js",
             "lineno": 62,
             "columnno": 17,
@@ -736,10 +623,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2401,
-                2427
-            ],
+            "range": [2401, 2427],
             "filename": "date-picker.js",
             "lineno": 63,
             "columnno": 8,
@@ -760,10 +644,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2414,
-                2425
-            ],
+            "range": [2414, 2425],
             "filename": "date-picker.js",
             "lineno": 63,
             "columnno": 21,
@@ -785,10 +666,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2440,
-                2516
-            ],
+            "range": [2440, 2516],
             "filename": "date-picker.js",
             "lineno": 65,
             "columnno": 4,
@@ -809,10 +687,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2490,
-                2505
-            ],
+            "range": [2490, 2505],
             "filename": "date-picker.js",
             "lineno": 65,
             "columnno": 54,
@@ -833,10 +708,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2521,
-                2596
-            ],
+            "range": [2521, 2596],
             "filename": "date-picker.js",
             "lineno": 66,
             "columnno": 4,
@@ -857,10 +729,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2572,
-                2585
-            ],
+            "range": [2572, 2585],
             "filename": "date-picker.js",
             "lineno": 66,
             "columnno": 55,
@@ -881,10 +750,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2601,
-                2682
-            ],
+            "range": [2601, 2682],
             "filename": "date-picker.js",
             "lineno": 67,
             "columnno": 4,
@@ -905,10 +771,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2654,
-                2671
-            ],
+            "range": [2654, 2671],
             "filename": "date-picker.js",
             "lineno": 67,
             "columnno": 57,
@@ -929,10 +792,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2687,
-                2761
-            ],
+            "range": [2687, 2761],
             "filename": "date-picker.js",
             "lineno": 68,
             "columnno": 4,
@@ -953,10 +813,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2736,
-                2750
-            ],
+            "range": [2736, 2750],
             "filename": "date-picker.js",
             "lineno": 68,
             "columnno": 53,
@@ -977,10 +834,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                2800,
-                2915
-            ],
+            "range": [2800, 2915],
             "filename": "date-picker.js",
             "lineno": 73,
             "columnno": 4,
@@ -1006,10 +860,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                2954,
-                3456
-            ],
+            "range": [2954, 3456],
             "filename": "date-picker.js",
             "lineno": 80,
             "columnno": 4,
@@ -1035,10 +886,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2980,
-                3015
-            ],
+            "range": [2980, 3015],
             "filename": "date-picker.js",
             "lineno": 81,
             "columnno": 12,
@@ -1061,10 +909,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3025,
-                3058
-            ],
+            "range": [3025, 3058],
             "filename": "date-picker.js",
             "lineno": 82,
             "columnno": 8,
@@ -1088,10 +933,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3088,
-                3098
-            ],
+            "range": [3088, 3098],
             "filename": "date-picker.js",
             "lineno": 83,
             "columnno": 28,
@@ -1112,10 +954,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3132,
-                3160
-            ],
+            "range": [3132, 3160],
             "filename": "date-picker.js",
             "lineno": 84,
             "columnno": 18,
@@ -1138,10 +977,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3199,
-                3223
-            ],
+            "range": [3199, 3223],
             "filename": "date-picker.js",
             "lineno": 86,
             "columnno": 16,
@@ -1162,10 +998,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3241,
-                3269
-            ],
+            "range": [3241, 3269],
             "filename": "date-picker.js",
             "lineno": 87,
             "columnno": 16,
@@ -1186,10 +1019,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3287,
-                3344
-            ],
+            "range": [3287, 3344],
             "filename": "date-picker.js",
             "lineno": 88,
             "columnno": 16,
@@ -1210,10 +1040,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3362,
-                3422
-            ],
+            "range": [3362, 3422],
             "filename": "date-picker.js",
             "lineno": 89,
             "columnno": 16,
@@ -1234,10 +1061,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                3495,
-                4059
-            ],
+            "range": [3495, 4059],
             "filename": "date-picker.js",
             "lineno": 97,
             "columnno": 4,
@@ -1263,10 +1087,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3538,
-                3548
-            ],
+            "range": [3538, 3548],
             "filename": "date-picker.js",
             "lineno": 98,
             "columnno": 28,
@@ -1287,10 +1108,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3582,
-                3630
-            ],
+            "range": [3582, 3630],
             "filename": "date-picker.js",
             "lineno": 99,
             "columnno": 18,
@@ -1313,10 +1131,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3669,
-                3693
-            ],
+            "range": [3669, 3693],
             "filename": "date-picker.js",
             "lineno": 101,
             "columnno": 16,
@@ -1337,10 +1152,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3711,
-                3733
-            ],
+            "range": [3711, 3733],
             "filename": "date-picker.js",
             "lineno": 102,
             "columnno": 16,
@@ -1361,10 +1173,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3751,
-                3780
-            ],
+            "range": [3751, 3780],
             "filename": "date-picker.js",
             "lineno": 103,
             "columnno": 16,
@@ -1385,10 +1194,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3798,
-                3900
-            ],
+            "range": [3798, 3900],
             "filename": "date-picker.js",
             "lineno": 104,
             "columnno": 16,
@@ -1409,10 +1215,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3918,
-                4025
-            ],
+            "range": [3918, 4025],
             "filename": "date-picker.js",
             "lineno": 105,
             "columnno": 16,
@@ -1433,10 +1236,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                4098,
-                4314
-            ],
+            "range": [4098, 4314],
             "filename": "date-picker.js",
             "lineno": 113,
             "columnno": 4,
@@ -1462,10 +1262,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4143,
-                4152
-            ],
+            "range": [4143, 4152],
             "filename": "date-picker.js",
             "lineno": 114,
             "columnno": 28,
@@ -1486,10 +1283,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4186,
-                4210
-            ],
+            "range": [4186, 4210],
             "filename": "date-picker.js",
             "lineno": 115,
             "columnno": 18,
@@ -1512,10 +1306,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4249,
-                4280
-            ],
+            "range": [4249, 4280],
             "filename": "date-picker.js",
             "lineno": 117,
             "columnno": 16,
@@ -1536,10 +1327,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                4353,
-                5392
-            ],
+            "range": [4353, 5392],
             "filename": "date-picker.js",
             "lineno": 125,
             "columnno": 4,
@@ -1565,10 +1353,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4394,
-                4403
-            ],
+            "range": [4394, 4403],
             "filename": "date-picker.js",
             "lineno": 126,
             "columnno": 28,
@@ -1589,10 +1374,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4451,
-                4460
-            ],
+            "range": [4451, 4460],
             "filename": "date-picker.js",
             "lineno": 127,
             "columnno": 32,
@@ -1613,10 +1395,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4500,
-                4606
-            ],
+            "range": [4500, 4606],
             "filename": "date-picker.js",
             "lineno": 128,
             "columnno": 22,
@@ -1639,10 +1418,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4653,
-                4677
-            ],
+            "range": [4653, 4677],
             "filename": "date-picker.js",
             "lineno": 130,
             "columnno": 20,
@@ -1663,10 +1439,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4699,
-                4721
-            ],
+            "range": [4699, 4721],
             "filename": "date-picker.js",
             "lineno": 131,
             "columnno": 20,
@@ -1687,10 +1460,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4743,
-                4762
-            ],
+            "range": [4743, 4762],
             "filename": "date-picker.js",
             "lineno": 132,
             "columnno": 20,
@@ -1711,10 +1481,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4784,
-                4811
-            ],
+            "range": [4784, 4811],
             "filename": "date-picker.js",
             "lineno": 133,
             "columnno": 20,
@@ -1735,10 +1502,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4833,
-                4978
-            ],
+            "range": [4833, 4978],
             "filename": "date-picker.js",
             "lineno": 134,
             "columnno": 20,
@@ -1759,10 +1523,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5000,
-                5152
-            ],
+            "range": [5000, 5152],
             "filename": "date-picker.js",
             "lineno": 135,
             "columnno": 20,
@@ -1783,10 +1544,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5174,
-                5287
-            ],
+            "range": [5174, 5287],
             "filename": "date-picker.js",
             "lineno": 136,
             "columnno": 20,
@@ -1807,10 +1565,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5309,
-                5338
-            ],
+            "range": [5309, 5338],
             "filename": "date-picker.js",
             "lineno": 137,
             "columnno": 20,
@@ -1831,10 +1586,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                5431,
-                5764
-            ],
+            "range": [5431, 5764],
             "filename": "date-picker.js",
             "lineno": 146,
             "columnno": 4,
@@ -1860,10 +1612,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5459,
-                5676
-            ],
+            "range": [5459, 5676],
             "filename": "date-picker.js",
             "lineno": 147,
             "columnno": 14,
@@ -1886,10 +1635,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5479,
-                5562
-            ],
+            "range": [5479, 5562],
             "filename": "date-picker.js",
             "lineno": 148,
             "columnno": 12,
@@ -1909,10 +1655,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5576,
-                5613
-            ],
+            "range": [5576, 5613],
             "filename": "date-picker.js",
             "lineno": 149,
             "columnno": 12,
@@ -1933,10 +1676,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5627,
-                5665
-            ],
+            "range": [5627, 5665],
             "filename": "date-picker.js",
             "lineno": 150,
             "columnno": 12,
@@ -1957,10 +1697,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5696,
-                5715
-            ],
+            "range": [5696, 5715],
             "filename": "date-picker.js",
             "lineno": 152,
             "columnno": 18,
@@ -1981,10 +1718,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5717,
-                5728
-            ],
+            "range": [5717, 5728],
             "filename": "date-picker.js",
             "lineno": 152,
             "columnno": 39,
@@ -2005,10 +1739,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5730,
-                5754
-            ],
+            "range": [5730, 5754],
             "filename": "date-picker.js",
             "lineno": 152,
             "columnno": 52,
@@ -2029,10 +1760,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                5803,
-                5967
-            ],
+            "range": [5803, 5967],
             "filename": "date-picker.js",
             "lineno": 158,
             "columnno": 4,
@@ -2058,10 +1786,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5850,
-                5860
-            ],
+            "range": [5850, 5860],
             "filename": "date-picker.js",
             "lineno": 160,
             "columnno": 14,
@@ -2082,10 +1807,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5862,
-                5889
-            ],
+            "range": [5862, 5889],
             "filename": "date-picker.js",
             "lineno": 160,
             "columnno": 26,
@@ -2106,10 +1828,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5907,
-                5917
-            ],
+            "range": [5907, 5917],
             "filename": "date-picker.js",
             "lineno": 161,
             "columnno": 14,
@@ -2130,10 +1849,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5919,
-                5947
-            ],
+            "range": [5919, 5947],
             "filename": "date-picker.js",
             "lineno": 161,
             "columnno": 26,
@@ -2154,10 +1870,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                6006,
-                6131
-            ],
+            "range": [6006, 6131],
             "filename": "date-picker.js",
             "lineno": 168,
             "columnno": 4,
@@ -2183,10 +1896,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6040,
-                6059
-            ],
+            "range": [6040, 6059],
             "filename": "date-picker.js",
             "lineno": 169,
             "columnno": 18,
@@ -2207,10 +1917,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6065,
-                6077
-            ],
+            "range": [6065, 6077],
             "filename": "date-picker.js",
             "lineno": 169,
             "columnno": 43,
@@ -2231,10 +1938,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6079,
-                6094
-            ],
+            "range": [6079, 6094],
             "filename": "date-picker.js",
             "lineno": 169,
             "columnno": 57,
@@ -2255,10 +1959,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6100,
-                6108
-            ],
+            "range": [6100, 6108],
             "filename": "date-picker.js",
             "lineno": 169,
             "columnno": 78,
@@ -2279,10 +1980,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6110,
-                6121
-            ],
+            "range": [6110, 6121],
             "filename": "date-picker.js",
             "lineno": 169,
             "columnno": 88,
@@ -2303,10 +2001,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                6153,
-                6320
-            ],
+            "range": [6153, 6320],
             "filename": "date-picker.js",
             "lineno": 174,
             "columnno": 4,
@@ -2331,10 +2026,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-date-picker\n * @fires MdDatePickerComponent#onDatePickerShow\n * @fires MdDatePickerComponent#onDatePickerClose\n * @fires MdDatePickerComponent#onDatePickerYearItemClick\n * @fires MdDatePickerComponent#onDatePickerMonthItemClick\n * @fires MdDatePickerComponent#onDatePickerDayItemClick\n * @fires MdDatePickerComponent#onDatePickerScrimClose\n * @fires MdDatePickerComponent#onDatePickerShown\n * @fires MdDatePickerComponent#onDatePickerClosed\n * @fires MdDatePickerComponent#onDatePickerIconButtonPrevClick\n * @fires MdDatePickerComponent#onDatePickerIconButtonNextClick\n * @fires MdDatePickerComponent#onDatePickerIconButtonClick\n * @fires MdDatePickerComponent#onDatePickerButtonCancelClick\n * @fires MdDatePickerComponent#onDatePickerButtonOkClick\n * @fires MdDatePickerComponent#onDatePickerButtonLabelClick\n * @fires MdDatePickerComponent#onDatePickerButtonClick\n */",
         "meta": {
-            "range": [
-                1324,
-                20214
-            ],
+            "range": [1324, 20214],
             "filename": "date-picker.js",
             "lineno": 29,
             "columnno": 0,
@@ -2352,9 +2044,7 @@
         "name": "MdDatePickerComponent",
         "longname": "MdDatePickerComponent",
         "kind": "class",
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -2363,32 +2053,13 @@
                 "value": "md-date-picker"
             }
         ],
-        "fires": [
-            "MdDatePickerComponent#event:onDatePickerShow",
-            "MdDatePickerComponent#event:onDatePickerClose",
-            "MdDatePickerComponent#event:onDatePickerYearItemClick",
-            "MdDatePickerComponent#event:onDatePickerMonthItemClick",
-            "MdDatePickerComponent#event:onDatePickerDayItemClick",
-            "MdDatePickerComponent#event:onDatePickerScrimClose",
-            "MdDatePickerComponent#event:onDatePickerShown",
-            "MdDatePickerComponent#event:onDatePickerClosed",
-            "MdDatePickerComponent#event:onDatePickerIconButtonPrevClick",
-            "MdDatePickerComponent#event:onDatePickerIconButtonNextClick",
-            "MdDatePickerComponent#event:onDatePickerIconButtonClick",
-            "MdDatePickerComponent#event:onDatePickerButtonCancelClick",
-            "MdDatePickerComponent#event:onDatePickerButtonOkClick",
-            "MdDatePickerComponent#event:onDatePickerButtonLabelClick",
-            "MdDatePickerComponent#event:onDatePickerButtonClick"
-        ],
+        "fires": ["MdDatePickerComponent#event:onDatePickerShow", "MdDatePickerComponent#event:onDatePickerClose", "MdDatePickerComponent#event:onDatePickerYearItemClick", "MdDatePickerComponent#event:onDatePickerMonthItemClick", "MdDatePickerComponent#event:onDatePickerDayItemClick", "MdDatePickerComponent#event:onDatePickerScrimClose", "MdDatePickerComponent#event:onDatePickerShown", "MdDatePickerComponent#event:onDatePickerClosed", "MdDatePickerComponent#event:onDatePickerIconButtonPrevClick", "MdDatePickerComponent#event:onDatePickerIconButtonNextClick", "MdDatePickerComponent#event:onDatePickerIconButtonClick", "MdDatePickerComponent#event:onDatePickerButtonCancelClick", "MdDatePickerComponent#event:onDatePickerButtonOkClick", "MdDatePickerComponent#event:onDatePickerButtonLabelClick", "MdDatePickerComponent#event:onDatePickerButtonClick"],
         "scope": "global"
     },
     {
         "comment": "",
         "meta": {
-            "range": [
-                6194,
-                6219
-            ],
+            "range": [6194, 6219],
             "filename": "date-picker.js",
             "lineno": 176,
             "columnno": 8,
@@ -2411,10 +2082,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6229,
-                6252
-            ],
+            "range": [6229, 6252],
             "filename": "date-picker.js",
             "lineno": 177,
             "columnno": 8,
@@ -2437,10 +2105,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6262,
-                6289
-            ],
+            "range": [6262, 6289],
             "filename": "date-picker.js",
             "lineno": 178,
             "columnno": 8,
@@ -2463,10 +2128,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6299,
-                6313
-            ],
+            "range": [6299, 6313],
             "filename": "date-picker.js",
             "lineno": 179,
             "columnno": 8,
@@ -2489,10 +2151,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     */",
         "meta": {
-            "range": [
-                6369,
-                6544
-            ],
+            "range": [6369, 6544],
             "filename": "date-picker.js",
             "lineno": 185,
             "columnno": 4,
@@ -2501,9 +2160,7 @@
                 "id": "astnode100000698",
                 "name": "MdDatePickerComponent#renderIcon",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item"
-                ]
+                "paramnames": ["item"]
             },
             "vars": {
                 "": null
@@ -2512,9 +2169,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
@@ -2529,10 +2184,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     */",
         "meta": {
-            "range": [
-                6593,
-                7155
-            ],
+            "range": [6593, 7155],
             "filename": "date-picker.js",
             "lineno": 197,
             "columnno": 4,
@@ -2541,9 +2193,7 @@
                 "id": "astnode100000714",
                 "name": "MdDatePickerComponent#renderIconButton",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item"
-                ]
+                "paramnames": ["item"]
             },
             "vars": {
                 "": null
@@ -2552,9 +2202,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
@@ -2569,10 +2217,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     */",
         "meta": {
-            "range": [
-                7204,
-                7746
-            ],
+            "range": [7204, 7746],
             "filename": "date-picker.js",
             "lineno": 216,
             "columnno": 4,
@@ -2581,9 +2226,7 @@
                 "id": "astnode100000766",
                 "name": "MdDatePickerComponent#renderButton",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item"
-                ]
+                "paramnames": ["item"]
             },
             "vars": {
                 "": null
@@ -2592,9 +2235,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
@@ -2609,10 +2250,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     */",
         "meta": {
-            "range": [
-                7795,
-                7968
-            ],
+            "range": [7795, 7968],
             "filename": "date-picker.js",
             "lineno": 235,
             "columnno": 4,
@@ -2621,9 +2259,7 @@
                 "id": "astnode100000818",
                 "name": "MdDatePickerComponent#renderSpacer",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item"
-                ]
+                "paramnames": ["item"]
             },
             "vars": {
                 "": null
@@ -2632,9 +2268,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
@@ -2649,10 +2283,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     * @param {Any} [component=\"icon\"]\n     */",
         "meta": {
-            "range": [
-                8056,
-                8449
-            ],
+            "range": [8056, 8449],
             "filename": "date-picker.js",
             "lineno": 248,
             "columnno": 4,
@@ -2661,10 +2292,7 @@
                 "id": "astnode100000828",
                 "name": "MdDatePickerComponent#renderComponent",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item",
-                    "component"
-                ]
+                "paramnames": ["item", "component"]
             },
             "vars": {
                 "": null
@@ -2673,18 +2301,14 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "defaultvalue": "\"icon\"",
@@ -2700,10 +2324,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                8114,
-                8363
-            ],
+            "range": [8114, 8363],
             "filename": "date-picker.js",
             "lineno": 249,
             "columnno": 14,
@@ -2726,10 +2347,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                8471,
-                9041
-            ],
+            "range": [8471, 9041],
             "filename": "date-picker.js",
             "lineno": 260,
             "columnno": 4,
@@ -2754,10 +2372,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                9063,
-                9636
-            ],
+            "range": [9063, 9636],
             "filename": "date-picker.js",
             "lineno": 279,
             "columnno": 4,
@@ -2782,10 +2397,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                9658,
-                11223
-            ],
+            "range": [9658, 11223],
             "filename": "date-picker.js",
             "lineno": 298,
             "columnno": 4,
@@ -2810,10 +2422,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                10755,
-                10789
-            ],
+            "range": [10755, 10789],
             "filename": "date-picker.js",
             "lineno": 319,
             "columnno": 40,
@@ -2834,10 +2443,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                10831,
-                10889
-            ],
+            "range": [10831, 10889],
             "filename": "date-picker.js",
             "lineno": 320,
             "columnno": 40,
@@ -2858,10 +2464,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                10931,
-                10982
-            ],
+            "range": [10931, 10982],
             "filename": "date-picker.js",
             "lineno": 321,
             "columnno": 40,
@@ -2882,10 +2485,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                11245,
-                12769
-            ],
+            "range": [11245, 12769],
             "filename": "date-picker.js",
             "lineno": 334,
             "columnno": 4,
@@ -2910,10 +2510,7 @@
     {
         "comment": "/**\n     * @async\n     */",
         "meta": {
-            "range": [
-                12805,
-                13710
-            ],
+            "range": [12805, 13710],
             "filename": "date-picker.js",
             "lineno": 367,
             "columnno": 4,
@@ -2939,10 +2536,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                12876,
-                12926
-            ],
+            "range": [12876, 12926],
             "filename": "date-picker.js",
             "lineno": 369,
             "columnno": 8,
@@ -2965,10 +2559,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                12936,
-                12966
-            ],
+            "range": [12936, 12966],
             "filename": "date-picker.js",
             "lineno": 370,
             "columnno": 8,
@@ -2991,10 +2582,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                13097,
-                13154
-            ],
+            "range": [13097, 13154],
             "filename": "date-picker.js",
             "lineno": 373,
             "columnno": 8,
@@ -3017,10 +2605,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                13252,
-                13328
-            ],
+            "range": [13252, 13328],
             "filename": "date-picker.js",
             "lineno": 375,
             "columnno": 8,
@@ -3043,10 +2628,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                13732,
-                13938
-            ],
+            "range": [13732, 13938],
             "filename": "date-picker.js",
             "lineno": 385,
             "columnno": 4,
@@ -3071,10 +2653,7 @@
     {
         "comment": "/**\n     * @async\n     * @param {Any} [changedProperties]\n     */",
         "meta": {
-            "range": [
-                14014,
-                14517
-            ],
+            "range": [14014, 14517],
             "filename": "date-picker.js",
             "lineno": 395,
             "columnno": 4,
@@ -3083,9 +2662,7 @@
                 "id": "astnode100001337",
                 "name": "MdDatePickerComponent#updated",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "changedProperties"
-                ]
+                "paramnames": ["changedProperties"]
             },
             "vars": {
                 "": null
@@ -3095,9 +2672,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "changedProperties"
@@ -3112,10 +2687,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                14453,
-                14500
-            ],
+            "range": [14453, 14500],
             "filename": "date-picker.js",
             "lineno": 405,
             "columnno": 12,
@@ -3138,10 +2710,7 @@
     {
         "comment": "/**\n     * @param {Any} [options]\n     */",
         "meta": {
-            "range": [
-                14569,
-                15366
-            ],
+            "range": [14569, 15366],
             "filename": "date-picker.js",
             "lineno": 412,
             "columnno": 4,
@@ -3150,9 +2719,7 @@
                 "id": "astnode100001412",
                 "name": "MdDatePickerComponent#show",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "options"
-                ]
+                "paramnames": ["options"]
             },
             "vars": {
                 "": null
@@ -3161,9 +2728,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "options"
@@ -3178,10 +2743,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                14593,
-                14623
-            ],
+            "range": [14593, 14623],
             "filename": "date-picker.js",
             "lineno": 413,
             "columnno": 8,
@@ -3204,10 +2766,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                14633,
-                14699
-            ],
+            "range": [14633, 14699],
             "filename": "date-picker.js",
             "lineno": 414,
             "columnno": 8,
@@ -3230,10 +2789,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                14880,
-                14895
-            ],
+            "range": [14880, 14895],
             "filename": "date-picker.js",
             "lineno": 418,
             "columnno": 12,
@@ -3254,10 +2810,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                14909,
-                14922
-            ],
+            "range": [14909, 14922],
             "filename": "date-picker.js",
             "lineno": 419,
             "columnno": 12,
@@ -3278,10 +2831,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                14970,
-                15205
-            ],
+            "range": [14970, 15205],
             "filename": "date-picker.js",
             "lineno": 421,
             "columnno": 12,
@@ -3302,10 +2852,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                15251,
-                15267
-            ],
+            "range": [15251, 15267],
             "filename": "date-picker.js",
             "lineno": 429,
             "columnno": 8,
@@ -3328,10 +2875,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                15388,
-                15748
-            ],
+            "range": [15388, 15748],
             "filename": "date-picker.js",
             "lineno": 436,
             "columnno": 4,
@@ -3356,10 +2900,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                15406,
-                15474
-            ],
+            "range": [15406, 15474],
             "filename": "date-picker.js",
             "lineno": 437,
             "columnno": 8,
@@ -3382,10 +2923,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                15630,
-                15647
-            ],
+            "range": [15630, 15647],
             "filename": "date-picker.js",
             "lineno": 440,
             "columnno": 8,
@@ -3408,10 +2946,7 @@
     {
         "comment": "/**\n     * @param {Any} [options]\n     */",
         "meta": {
-            "range": [
-                15800,
-                15893
-            ],
+            "range": [15800, 15893],
             "filename": "date-picker.js",
             "lineno": 448,
             "columnno": 4,
@@ -3420,9 +2955,7 @@
                 "id": "astnode100001559",
                 "name": "MdDatePickerComponent#toggle",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "options"
-                ]
+                "paramnames": ["options"]
             },
             "vars": {
                 "": null
@@ -3431,9 +2964,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "options"
@@ -3448,10 +2979,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                15943,
-                16164
-            ],
+            "range": [15943, 16164],
             "filename": "date-picker.js",
             "lineno": 456,
             "columnno": 4,
@@ -3460,9 +2988,7 @@
                 "id": "astnode100001579",
                 "name": "MdDatePickerComponent#handleDatePickerYearItemClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -3471,9 +2997,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -3488,10 +3012,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                15996,
-                16027
-            ],
+            "range": [15996, 16027],
             "filename": "date-picker.js",
             "lineno": 457,
             "columnno": 14,
@@ -3514,10 +3035,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                16084,
-                16098
-            ],
+            "range": [16084, 16098],
             "filename": "date-picker.js",
             "lineno": 459,
             "columnno": 8,
@@ -3540,10 +3058,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                16149,
-                16154
-            ],
+            "range": [16149, 16154],
             "filename": "date-picker.js",
             "lineno": 460,
             "columnno": 49,
@@ -3564,10 +3079,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                16214,
-                16482
-            ],
+            "range": [16214, 16482],
             "filename": "date-picker.js",
             "lineno": 466,
             "columnno": 4,
@@ -3576,9 +3088,7 @@
                 "id": "astnode100001617",
                 "name": "MdDatePickerComponent#handleDatePickerMonthItemClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -3587,9 +3097,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -3604,10 +3112,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                16268,
-                16299
-            ],
+            "range": [16268, 16299],
             "filename": "date-picker.js",
             "lineno": 467,
             "columnno": 14,
@@ -3630,10 +3135,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                16401,
-                16415
-            ],
+            "range": [16401, 16415],
             "filename": "date-picker.js",
             "lineno": 470,
             "columnno": 8,
@@ -3656,10 +3158,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                16467,
-                16472
-            ],
+            "range": [16467, 16472],
             "filename": "date-picker.js",
             "lineno": 471,
             "columnno": 50,
@@ -3680,10 +3179,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                16532,
-                16966
-            ],
+            "range": [16532, 16966],
             "filename": "date-picker.js",
             "lineno": 477,
             "columnno": 4,
@@ -3692,9 +3188,7 @@
                 "id": "astnode100001665",
                 "name": "MdDatePickerComponent#handleDatePickerDayItemClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -3703,9 +3197,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -3720,10 +3212,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                16584,
-                16615
-            ],
+            "range": [16584, 16615],
             "filename": "date-picker.js",
             "lineno": 478,
             "columnno": 14,
@@ -3746,10 +3235,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                16951,
-                16956
-            ],
+            "range": [16951, 16956],
             "filename": "date-picker.js",
             "lineno": 486,
             "columnno": 48,
@@ -3770,10 +3256,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                17016,
-                17150
-            ],
+            "range": [17016, 17150],
             "filename": "date-picker.js",
             "lineno": 492,
             "columnno": 4,
@@ -3782,9 +3265,7 @@
                 "id": "astnode100001752",
                 "name": "MdDatePickerComponent#handleDatePickerScrimClose",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -3793,9 +3274,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -3810,10 +3289,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                17135,
-                17140
-            ],
+            "range": [17135, 17140],
             "filename": "date-picker.js",
             "lineno": 494,
             "columnno": 46,
@@ -3834,10 +3310,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                17200,
-                17354
-            ],
+            "range": [17200, 17354],
             "filename": "date-picker.js",
             "lineno": 500,
             "columnno": 4,
@@ -3846,9 +3319,7 @@
                 "id": "astnode100001775",
                 "name": "MdDatePickerComponent#handleDatePickerShown",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -3857,9 +3328,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -3874,10 +3343,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                17404,
-                17561
-            ],
+            "range": [17404, 17561],
             "filename": "date-picker.js",
             "lineno": 508,
             "columnno": 4,
@@ -3886,9 +3352,7 @@
                 "id": "astnode100001795",
                 "name": "MdDatePickerComponent#handleDatePickerClosed",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -3897,9 +3361,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -3914,10 +3376,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                17611,
-                18060
-            ],
+            "range": [17611, 18060],
             "filename": "date-picker.js",
             "lineno": 516,
             "columnno": 4,
@@ -3926,9 +3385,7 @@
                 "id": "astnode100001815",
                 "name": "MdDatePickerComponent#handleDatePickerIconButtonPrevClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -3937,9 +3394,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -3954,10 +3409,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                17670,
-                17931
-            ],
+            "range": [17670, 17931],
             "filename": "date-picker.js",
             "lineno": 517,
             "columnno": 14,
@@ -3980,10 +3432,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                17690,
-                17760
-            ],
+            "range": [17690, 17760],
             "filename": "date-picker.js",
             "lineno": 518,
             "columnno": 12,
@@ -4003,10 +3452,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                17774,
-                17843
-            ],
+            "range": [17774, 17843],
             "filename": "date-picker.js",
             "lineno": 519,
             "columnno": 12,
@@ -4027,10 +3473,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                17857,
-                17920
-            ],
+            "range": [17857, 17920],
             "filename": "date-picker.js",
             "lineno": 520,
             "columnno": 12,
@@ -4051,10 +3494,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                18045,
-                18050
-            ],
+            "range": [18045, 18050],
             "filename": "date-picker.js",
             "lineno": 524,
             "columnno": 55,
@@ -4075,10 +3515,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                18110,
-                18559
-            ],
+            "range": [18110, 18559],
             "filename": "date-picker.js",
             "lineno": 530,
             "columnno": 4,
@@ -4087,9 +3524,7 @@
                 "id": "astnode100001893",
                 "name": "MdDatePickerComponent#handleDatePickerIconButtonNextClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -4098,9 +3533,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -4115,10 +3548,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                18169,
-                18430
-            ],
+            "range": [18169, 18430],
             "filename": "date-picker.js",
             "lineno": 531,
             "columnno": 14,
@@ -4141,10 +3571,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                18189,
-                18259
-            ],
+            "range": [18189, 18259],
             "filename": "date-picker.js",
             "lineno": 532,
             "columnno": 12,
@@ -4164,10 +3591,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                18273,
-                18342
-            ],
+            "range": [18273, 18342],
             "filename": "date-picker.js",
             "lineno": 533,
             "columnno": 12,
@@ -4188,10 +3612,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                18356,
-                18419
-            ],
+            "range": [18356, 18419],
             "filename": "date-picker.js",
             "lineno": 534,
             "columnno": 12,
@@ -4212,10 +3633,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                18544,
-                18549
-            ],
+            "range": [18544, 18549],
             "filename": "date-picker.js",
             "lineno": 538,
             "columnno": 55,
@@ -4236,10 +3654,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                18609,
-                19005
-            ],
+            "range": [18609, 19005],
             "filename": "date-picker.js",
             "lineno": 544,
             "columnno": 4,
@@ -4248,9 +3663,7 @@
                 "id": "astnode100001971",
                 "name": "MdDatePickerComponent#handleDatePickerIconButtonClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -4259,9 +3672,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -4276,10 +3687,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                18664,
-                18695
-            ],
+            "range": [18664, 18695],
             "filename": "date-picker.js",
             "lineno": 545,
             "columnno": 14,
@@ -4302,10 +3710,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                18711,
-                18870
-            ],
+            "range": [18711, 18870],
             "filename": "date-picker.js",
             "lineno": 546,
             "columnno": 14,
@@ -4328,10 +3733,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                18731,
-                18788
-            ],
+            "range": [18731, 18788],
             "filename": "date-picker.js",
             "lineno": 547,
             "columnno": 12,
@@ -4353,10 +3755,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                18802,
-                18859
-            ],
+            "range": [18802, 18859],
             "filename": "date-picker.js",
             "lineno": 548,
             "columnno": 12,
@@ -4378,10 +3777,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                18886,
-                18903
-            ],
+            "range": [18886, 18903],
             "filename": "date-picker.js",
             "lineno": 550,
             "columnno": 14,
@@ -4404,10 +3800,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                18990,
-                18995
-            ],
+            "range": [18990, 18995],
             "filename": "date-picker.js",
             "lineno": 552,
             "columnno": 51,
@@ -4428,10 +3821,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                19055,
-                19251
-            ],
+            "range": [19055, 19251],
             "filename": "date-picker.js",
             "lineno": 558,
             "columnno": 4,
@@ -4440,9 +3830,7 @@
                 "id": "astnode100002027",
                 "name": "MdDatePickerComponent#handleDatePickerButtonCancelClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -4451,9 +3839,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -4468,10 +3854,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                19106,
-                19156
-            ],
+            "range": [19106, 19156],
             "filename": "date-picker.js",
             "lineno": 559,
             "columnno": 8,
@@ -4494,10 +3877,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                19236,
-                19241
-            ],
+            "range": [19236, 19241],
             "filename": "date-picker.js",
             "lineno": 561,
             "columnno": 53,
@@ -4518,10 +3898,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                19301,
-                19429
-            ],
+            "range": [19301, 19429],
             "filename": "date-picker.js",
             "lineno": 567,
             "columnno": 4,
@@ -4530,9 +3907,7 @@
                 "id": "astnode100002054",
                 "name": "MdDatePickerComponent#handleDatePickerButtonOkClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -4541,9 +3916,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -4558,10 +3931,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                19414,
-                19419
-            ],
+            "range": [19414, 19419],
             "filename": "date-picker.js",
             "lineno": 569,
             "columnno": 49,
@@ -4582,10 +3952,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                19479,
-                19713
-            ],
+            "range": [19479, 19713],
             "filename": "date-picker.js",
             "lineno": 575,
             "columnno": 4,
@@ -4594,9 +3961,7 @@
                 "id": "astnode100002068",
                 "name": "MdDatePickerComponent#handleDatePickerButtonLabelClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -4605,9 +3970,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -4622,10 +3985,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                19535,
-                19606
-            ],
+            "range": [19535, 19606],
             "filename": "date-picker.js",
             "lineno": 576,
             "columnno": 14,
@@ -4648,10 +4008,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                19555,
-                19559
-            ],
+            "range": [19555, 19559],
             "filename": "date-picker.js",
             "lineno": 577,
             "columnno": 12,
@@ -4672,10 +4029,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                19573,
-                19577
-            ],
+            "range": [19573, 19577],
             "filename": "date-picker.js",
             "lineno": 578,
             "columnno": 12,
@@ -4697,10 +4051,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                19591,
-                19595
-            ],
+            "range": [19591, 19595],
             "filename": "date-picker.js",
             "lineno": 579,
             "columnno": 12,
@@ -4722,10 +4073,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                19616,
-                19644
-            ],
+            "range": [19616, 19644],
             "filename": "date-picker.js",
             "lineno": 581,
             "columnno": 8,
@@ -4748,10 +4096,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                19698,
-                19703
-            ],
+            "range": [19698, 19703],
             "filename": "date-picker.js",
             "lineno": 582,
             "columnno": 52,
@@ -4772,10 +4117,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                19763,
-                20212
-            ],
+            "range": [19763, 20212],
             "filename": "date-picker.js",
             "lineno": 588,
             "columnno": 4,
@@ -4784,9 +4126,7 @@
                 "id": "astnode100002102",
                 "name": "MdDatePickerComponent#handleDatePickerButtonClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -4795,9 +4135,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -4812,10 +4150,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                19814,
-                19845
-            ],
+            "range": [19814, 19845],
             "filename": "date-picker.js",
             "lineno": 589,
             "columnno": 14,
@@ -4838,10 +4173,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                19861,
-                20081
-            ],
+            "range": [19861, 20081],
             "filename": "date-picker.js",
             "lineno": 590,
             "columnno": 14,
@@ -4864,10 +4196,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                19881,
-                19938
-            ],
+            "range": [19881, 19938],
             "filename": "date-picker.js",
             "lineno": 591,
             "columnno": 12,
@@ -4889,10 +4218,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                19952,
-                20001
-            ],
+            "range": [19952, 20001],
             "filename": "date-picker.js",
             "lineno": 592,
             "columnno": 12,
@@ -4914,10 +4240,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                20015,
-                20070
-            ],
+            "range": [20015, 20070],
             "filename": "date-picker.js",
             "lineno": 593,
             "columnno": 12,
@@ -4939,10 +4262,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                20097,
-                20114
-            ],
+            "range": [20097, 20114],
             "filename": "date-picker.js",
             "lineno": 595,
             "columnno": 14,
@@ -4965,10 +4285,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                20197,
-                20202
-            ],
+            "range": [20197, 20202],
             "filename": "date-picker.js",
             "lineno": 597,
             "columnno": 47,
@@ -4989,10 +4306,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                20288,
-                20309
-            ],
+            "range": [20288, 20309],
             "filename": "date-picker.js",
             "lineno": 601,
             "columnno": 9,
@@ -5012,8 +4326,6 @@
     {
         "kind": "package",
         "longname": "package:undefined",
-        "files": [
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker\\date-picker.js"
-        ]
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-picker\\date-picker.js"]
     }
 ]

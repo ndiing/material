@@ -2,10 +2,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-progress-indicator\n */",
         "meta": {
-            "range": [
-                158,
-                3401
-            ],
+            "range": [158, 3401],
             "filename": "progress-indicator.js",
             "lineno": 8,
             "columnno": 0,
@@ -17,9 +14,7 @@
                 "paramnames": []
             }
         },
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -37,10 +32,7 @@
     {
         "comment": "/**\n     * @property {String} [variant]\n     * @property {Number} [max]\n     * @property {Number} [value]\n     */",
         "meta": {
-            "range": [
-                337,
-                464
-            ],
+            "range": [337, 464],
             "filename": "progress-indicator.js",
             "lineno": 14,
             "columnno": 4,
@@ -54,27 +46,21 @@
         "properties": [
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "variant"
             },
             {
                 "type": {
-                    "names": [
-                        "Number"
-                    ]
+                    "names": ["Number"]
                 },
                 "optional": true,
                 "name": "max"
             },
             {
                 "type": {
-                    "names": [
-                        "Number"
-                    ]
+                    "names": ["Number"]
                 },
                 "optional": true,
                 "name": "value"
@@ -89,10 +75,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                367,
-                392
-            ],
+            "range": [367, 392],
             "filename": "progress-indicator.js",
             "lineno": 15,
             "columnno": 8,
@@ -113,10 +96,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                378,
-                390
-            ],
+            "range": [378, 390],
             "filename": "progress-indicator.js",
             "lineno": 15,
             "columnno": 19,
@@ -138,10 +118,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                402,
-                423
-            ],
+            "range": [402, 423],
             "filename": "progress-indicator.js",
             "lineno": 16,
             "columnno": 8,
@@ -162,10 +139,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                409,
-                421
-            ],
+            "range": [409, 421],
             "filename": "progress-indicator.js",
             "lineno": 16,
             "columnno": 15,
@@ -187,10 +161,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                433,
-                456
-            ],
+            "range": [433, 456],
             "filename": "progress-indicator.js",
             "lineno": 17,
             "columnno": 8,
@@ -211,10 +182,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                442,
-                454
-            ],
+            "range": [442, 454],
             "filename": "progress-indicator.js",
             "lineno": 17,
             "columnno": 17,
@@ -236,10 +204,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                503,
-                527
-            ],
+            "range": [503, 527],
             "filename": "progress-indicator.js",
             "lineno": 23,
             "columnno": 4,
@@ -260,10 +225,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                549,
-                635
-            ],
+            "range": [549, 635],
             "filename": "progress-indicator.js",
             "lineno": 27,
             "columnno": 4,
@@ -288,10 +250,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-progress-indicator\n */",
         "meta": {
-            "range": [
-                158,
-                3401
-            ],
+            "range": [158, 3401],
             "filename": "progress-indicator.js",
             "lineno": 8,
             "columnno": 0,
@@ -306,9 +265,7 @@
         "name": "MdProgressIndicatorComponent",
         "longname": "MdProgressIndicatorComponent",
         "kind": "class",
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -322,10 +279,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                590,
-                604
-            ],
+            "range": [590, 604],
             "filename": "progress-indicator.js",
             "lineno": 29,
             "columnno": 8,
@@ -348,10 +302,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                614,
-                628
-            ],
+            "range": [614, 628],
             "filename": "progress-indicator.js",
             "lineno": 30,
             "columnno": 8,
@@ -374,10 +325,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                657,
-                901
-            ],
+            "range": [657, 901],
             "filename": "progress-indicator.js",
             "lineno": 35,
             "columnno": 4,
@@ -402,10 +350,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                923,
-                2715
-            ],
+            "range": [923, 2715],
             "filename": "progress-indicator.js",
             "lineno": 47,
             "columnno": 4,
@@ -430,10 +375,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                967,
-                997
-            ],
+            "range": [967, 997],
             "filename": "progress-indicator.js",
             "lineno": 48,
             "columnno": 8,
@@ -456,10 +398,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1007,
-                1040
-            ],
+            "range": [1007, 1040],
             "filename": "progress-indicator.js",
             "lineno": 49,
             "columnno": 8,
@@ -482,10 +421,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1050,
-                1093
-            ],
+            "range": [1050, 1093],
             "filename": "progress-indicator.js",
             "lineno": 50,
             "columnno": 8,
@@ -508,10 +444,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1103,
-                1177
-            ],
+            "range": [1103, 1177],
             "filename": "progress-indicator.js",
             "lineno": 51,
             "columnno": 8,
@@ -534,10 +467,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                2737,
-                2899
-            ],
+            "range": [2737, 2899],
             "filename": "progress-indicator.js",
             "lineno": 94,
             "columnno": 4,
@@ -562,10 +492,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                2921,
-                3036
-            ],
+            "range": [2921, 3036],
             "filename": "progress-indicator.js",
             "lineno": 101,
             "columnno": 4,
@@ -590,10 +517,7 @@
     {
         "comment": "/**\n     * @param {Any} [changedProperties]\n     */",
         "meta": {
-            "range": [
-                3098,
-                3399
-            ],
+            "range": [3098, 3399],
             "filename": "progress-indicator.js",
             "lineno": 109,
             "columnno": 4,
@@ -602,9 +526,7 @@
                 "id": "astnode100000197",
                 "name": "MdProgressIndicatorComponent#updated",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "changedProperties"
-                ]
+                "paramnames": ["changedProperties"]
             },
             "vars": {
                 "": null
@@ -613,9 +535,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "changedProperties"
@@ -630,10 +550,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3489,
-                3517
-            ],
+            "range": [3489, 3517],
             "filename": "progress-indicator.js",
             "lineno": 119,
             "columnno": 9,
@@ -653,8 +570,6 @@
     {
         "kind": "package",
         "longname": "package:undefined",
-        "files": [
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress-indicator\\progress-indicator.js"
-        ]
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress-indicator\\progress-indicator.js"]
     }
 ]

@@ -2,10 +2,7 @@
     {
         "comment": "/**\n */",
         "meta": {
-            "range": [
-                8,
-                5382
-            ],
+            "range": [8, 5382],
             "filename": "ripple.js",
             "lineno": 3,
             "columnno": 0,
@@ -14,10 +11,7 @@
                 "id": "astnode100000002",
                 "name": "Ripple",
                 "type": "ClassDeclaration",
-                "paramnames": [
-                    "host",
-                    "options"
-                ]
+                "paramnames": ["host", "options"]
             }
         },
         "name": "Ripple",
@@ -29,10 +23,7 @@
     {
         "comment": "/**\n     * @param {Any} [host]\n     * @param {Any} [options]\n     */",
         "meta": {
-            "range": [
-                100,
-                397
-            ],
+            "range": [100, 397],
             "filename": "ripple.js",
             "lineno": 8,
             "columnno": 4,
@@ -41,10 +32,7 @@
                 "id": "astnode100000005",
                 "name": "Ripple",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "host",
-                    "options"
-                ]
+                "paramnames": ["host", "options"]
             },
             "vars": {
                 "": null
@@ -53,18 +41,14 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "host"
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "options"
@@ -79,10 +63,7 @@
     {
         "comment": "/**\n */",
         "meta": {
-            "range": [
-                8,
-                5382
-            ],
+            "range": [8, 5382],
             "filename": "ripple.js",
             "lineno": 3,
             "columnno": 0,
@@ -91,10 +72,7 @@
                 "id": "astnode100000002",
                 "name": "Ripple",
                 "type": "ClassDeclaration",
-                "paramnames": [
-                    "host",
-                    "options"
-                ]
+                "paramnames": ["host", "options"]
             }
         },
         "name": "Ripple",
@@ -104,18 +82,14 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "host"
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "options"
@@ -125,10 +99,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                137,
-                153
-            ],
+            "range": [137, 153],
             "filename": "ripple.js",
             "lineno": 9,
             "columnno": 8,
@@ -151,10 +122,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                163,
-                369
-            ],
+            "range": [163, 369],
             "filename": "ripple.js",
             "lineno": 10,
             "columnno": 8,
@@ -177,10 +145,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                192,
-                207
-            ],
+            "range": [192, 207],
             "filename": "ripple.js",
             "lineno": 11,
             "columnno": 12,
@@ -202,10 +167,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                221,
-                238
-            ],
+            "range": [221, 238],
             "filename": "ripple.js",
             "lineno": 12,
             "columnno": 12,
@@ -227,10 +189,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                252,
-                270
-            ],
+            "range": [252, 270],
             "filename": "ripple.js",
             "lineno": 13,
             "columnno": 12,
@@ -252,10 +211,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                284,
-                300
-            ],
+            "range": [284, 300],
             "filename": "ripple.js",
             "lineno": 14,
             "columnno": 12,
@@ -277,10 +233,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                314,
-                334
-            ],
+            "range": [314, 334],
             "filename": "ripple.js",
             "lineno": 15,
             "columnno": 12,
@@ -302,10 +255,7 @@
     {
         "comment": "/**\n     * @async\n     */",
         "meta": {
-            "range": [
-                433,
-                2415
-            ],
+            "range": [433, 2415],
             "filename": "ripple.js",
             "lineno": 24,
             "columnno": 4,
@@ -331,10 +281,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                456,
-                482
-            ],
+            "range": [456, 482],
             "filename": "ripple.js",
             "lineno": 25,
             "columnno": 8,
@@ -357,10 +304,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                600,
-                664
-            ],
+            "range": [600, 664],
             "filename": "ripple.js",
             "lineno": 28,
             "columnno": 16,
@@ -383,10 +327,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                703,
-                742
-            ],
+            "range": [703, 742],
             "filename": "ripple.js",
             "lineno": 30,
             "columnno": 16,
@@ -409,10 +350,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                776,
-                800
-            ],
+            "range": [776, 800],
             "filename": "ripple.js",
             "lineno": 33,
             "columnno": 8,
@@ -435,10 +373,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                914,
-                974
-            ],
+            "range": [914, 974],
             "filename": "ripple.js",
             "lineno": 36,
             "columnno": 16,
@@ -461,10 +396,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1013,
-                1048
-            ],
+            "range": [1013, 1048],
             "filename": "ripple.js",
             "lineno": 38,
             "columnno": 16,
@@ -487,10 +419,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1331,
-                1362
-            ],
+            "range": [1331, 1362],
             "filename": "ripple.js",
             "lineno": 45,
             "columnno": 8,
@@ -513,10 +442,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1411,
-                1481
-            ],
+            "range": [1411, 1481],
             "filename": "ripple.js",
             "lineno": 47,
             "columnno": 12,
@@ -539,10 +465,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1589,
-                1651
-            ],
+            "range": [1589, 1651],
             "filename": "ripple.js",
             "lineno": 50,
             "columnno": 8,
@@ -565,10 +488,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1661,
-                1725
-            ],
+            "range": [1661, 1725],
             "filename": "ripple.js",
             "lineno": 51,
             "columnno": 8,
@@ -591,10 +511,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1735,
-                1797
-            ],
+            "range": [1735, 1797],
             "filename": "ripple.js",
             "lineno": 52,
             "columnno": 8,
@@ -617,10 +534,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1807,
-                1871
-            ],
+            "range": [1807, 1871],
             "filename": "ripple.js",
             "lineno": 53,
             "columnno": 8,
@@ -643,10 +557,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1881,
-                1943
-            ],
+            "range": [1881, 1943],
             "filename": "ripple.js",
             "lineno": 54,
             "columnno": 8,
@@ -669,10 +580,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1953,
-                2017
-            ],
+            "range": [1953, 2017],
             "filename": "ripple.js",
             "lineno": 55,
             "columnno": 8,
@@ -695,10 +603,7 @@
     {
         "comment": "/**\n     * @async\n     */",
         "meta": {
-            "range": [
-                2451,
-                3360
-            ],
+            "range": [2451, 3360],
             "filename": "ripple.js",
             "lineno": 66,
             "columnno": 4,
@@ -724,10 +629,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3303,
-                3324
-            ],
+            "range": [3303, 3324],
             "filename": "ripple.js",
             "lineno": 81,
             "columnno": 8,
@@ -750,10 +652,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3334,
-                3353
-            ],
+            "range": [3334, 3353],
             "filename": "ripple.js",
             "lineno": 82,
             "columnno": 8,
@@ -776,10 +675,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                3410,
-                3502
-            ],
+            "range": [3410, 3502],
             "filename": "ripple.js",
             "lineno": 88,
             "columnno": 4,
@@ -788,9 +684,7 @@
                 "id": "astnode100000495",
                 "name": "Ripple#handleRippleHoverIn",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -799,9 +693,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -816,10 +708,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                3552,
-                3648
-            ],
+            "range": [3552, 3648],
             "filename": "ripple.js",
             "lineno": 95,
             "columnno": 4,
@@ -828,9 +717,7 @@
                 "id": "astnode100000510",
                 "name": "Ripple#handleRippleHoverOut",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -839,9 +726,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -856,10 +741,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                3698,
-                4795
-            ],
+            "range": [3698, 4795],
             "filename": "ripple.js",
             "lineno": 102,
             "columnno": 4,
@@ -868,9 +750,7 @@
                 "id": "astnode100000525",
                 "name": "Ripple#handleRipplePressIn",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -879,9 +759,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -896,10 +774,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3801,
-                3814
-            ],
+            "range": [3801, 3814],
             "filename": "ripple.js",
             "lineno": 103,
             "columnno": 74,
@@ -920,10 +795,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3892,
-                3905
-            ],
+            "range": [3892, 3905],
             "filename": "ripple.js",
             "lineno": 104,
             "columnno": 73,
@@ -944,10 +816,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3982,
-                4027
-            ],
+            "range": [3982, 4027],
             "filename": "ripple.js",
             "lineno": 106,
             "columnno": 14,
@@ -970,10 +839,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4085,
-                4132
-            ],
+            "range": [4085, 4132],
             "filename": "ripple.js",
             "lineno": 108,
             "columnno": 18,
@@ -996,10 +862,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4152,
-                4198
-            ],
+            "range": [4152, 4198],
             "filename": "ripple.js",
             "lineno": 109,
             "columnno": 18,
@@ -1022,10 +885,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4218,
-                4256
-            ],
+            "range": [4218, 4256],
             "filename": "ripple.js",
             "lineno": 110,
             "columnno": 18,
@@ -1048,10 +908,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4276,
-                4344
-            ],
+            "range": [4276, 4344],
             "filename": "ripple.js",
             "lineno": 111,
             "columnno": 18,
@@ -1074,10 +931,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                4845,
-                5092
-            ],
+            "range": [4845, 5092],
             "filename": "ripple.js",
             "lineno": 123,
             "columnno": 4,
@@ -1086,9 +940,7 @@
                 "id": "astnode100000716",
                 "name": "Ripple#handleRipplePressOut",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -1097,9 +949,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -1114,10 +964,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                5142,
-                5234
-            ],
+            "range": [5142, 5234],
             "filename": "ripple.js",
             "lineno": 132,
             "columnno": 4,
@@ -1126,9 +973,7 @@
                 "id": "astnode100000749",
                 "name": "Ripple#handleRippleFocusIn",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -1137,9 +982,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -1154,10 +997,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                5284,
-                5380
-            ],
+            "range": [5284, 5380],
             "filename": "ripple.js",
             "lineno": 139,
             "columnno": 4,
@@ -1166,9 +1006,7 @@
                 "id": "astnode100000764",
                 "name": "Ripple#handleRippleFocusOut",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -1177,9 +1015,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -1194,10 +1030,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5392,
-                5398
-            ],
+            "range": [5392, 5398],
             "filename": "ripple.js",
             "lineno": 143,
             "columnno": 9,
@@ -1217,8 +1050,6 @@
     {
         "kind": "package",
         "longname": "package:undefined",
-        "files": [
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple\\ripple.js"
-        ]
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple\\ripple.js"]
     }
 ]

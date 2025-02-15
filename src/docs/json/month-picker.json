@@ -2,10 +2,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-month-picker\n * @fires MdMonthPickerComponent#onMonthPickerShow\n * @fires MdMonthPickerComponent#onMonthPickerClose\n * @fires MdMonthPickerComponent#onMonthPickerYearItemClick\n * @fires MdMonthPickerComponent#onMonthPickerMonthItemClick\n * @fires MdMonthPickerComponent#onMonthPickerScrimClose\n * @fires MdMonthPickerComponent#onMonthPickerShown\n * @fires MdMonthPickerComponent#onMonthPickerClosed\n * @fires MdMonthPickerComponent#onMonthPickerIconButtonPrevClick\n * @fires MdMonthPickerComponent#onMonthPickerIconButtonNextClick\n * @fires MdMonthPickerComponent#onMonthPickerIconButtonClick\n * @fires MdMonthPickerComponent#onMonthPickerButtonCancelClick\n * @fires MdMonthPickerComponent#onMonthPickerButtonOkClick\n * @fires MdMonthPickerComponent#onMonthPickerButtonLabelClick\n * @fires MdMonthPickerComponent#onMonthPickerButtonClick\n */",
         "meta": {
-            "range": [
-                1298,
-                16376
-            ],
+            "range": [1298, 16376],
             "filename": "month-picker.js",
             "lineno": 28,
             "columnno": 0,
@@ -20,9 +17,7 @@
                 "": null
             }
         },
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -31,22 +26,7 @@
                 "value": "md-month-picker"
             }
         ],
-        "fires": [
-            "MdMonthPickerComponent#event:onMonthPickerShow",
-            "MdMonthPickerComponent#event:onMonthPickerClose",
-            "MdMonthPickerComponent#event:onMonthPickerYearItemClick",
-            "MdMonthPickerComponent#event:onMonthPickerMonthItemClick",
-            "MdMonthPickerComponent#event:onMonthPickerScrimClose",
-            "MdMonthPickerComponent#event:onMonthPickerShown",
-            "MdMonthPickerComponent#event:onMonthPickerClosed",
-            "MdMonthPickerComponent#event:onMonthPickerIconButtonPrevClick",
-            "MdMonthPickerComponent#event:onMonthPickerIconButtonNextClick",
-            "MdMonthPickerComponent#event:onMonthPickerIconButtonClick",
-            "MdMonthPickerComponent#event:onMonthPickerButtonCancelClick",
-            "MdMonthPickerComponent#event:onMonthPickerButtonOkClick",
-            "MdMonthPickerComponent#event:onMonthPickerButtonLabelClick",
-            "MdMonthPickerComponent#event:onMonthPickerButtonClick"
-        ],
+        "fires": ["MdMonthPickerComponent#event:onMonthPickerShow", "MdMonthPickerComponent#event:onMonthPickerClose", "MdMonthPickerComponent#event:onMonthPickerYearItemClick", "MdMonthPickerComponent#event:onMonthPickerMonthItemClick", "MdMonthPickerComponent#event:onMonthPickerScrimClose", "MdMonthPickerComponent#event:onMonthPickerShown", "MdMonthPickerComponent#event:onMonthPickerClosed", "MdMonthPickerComponent#event:onMonthPickerIconButtonPrevClick", "MdMonthPickerComponent#event:onMonthPickerIconButtonNextClick", "MdMonthPickerComponent#event:onMonthPickerIconButtonClick", "MdMonthPickerComponent#event:onMonthPickerButtonCancelClick", "MdMonthPickerComponent#event:onMonthPickerButtonOkClick", "MdMonthPickerComponent#event:onMonthPickerButtonLabelClick", "MdMonthPickerComponent#event:onMonthPickerButtonClick"],
         "name": "MdMonthPickerComponent",
         "longname": "MdMonthPickerComponent",
         "kind": "class",
@@ -56,10 +36,7 @@
     {
         "comment": "/**\n     * @property {Array} [icons]\n     * @property {Array} [actions]\n     * @property {String} [label]\n     * @property {String} [sublabel]\n     * @property {Array} [buttons]\n     * @property {Boolean} [open]\n     * @property {Boolean} [modal]\n     * @property {String} [value]\n     * @property {Any} [index]\n     * @property {Any} [selection]\n     */",
         "meta": {
-            "range": [
-                1712,
-                2412
-            ],
+            "range": [1712, 2412],
             "filename": "month-picker.js",
             "lineno": 41,
             "columnno": 4,
@@ -73,90 +50,70 @@
         "properties": [
             {
                 "type": {
-                    "names": [
-                        "Array"
-                    ]
+                    "names": ["Array"]
                 },
                 "optional": true,
                 "name": "icons"
             },
             {
                 "type": {
-                    "names": [
-                        "Array"
-                    ]
+                    "names": ["Array"]
                 },
                 "optional": true,
                 "name": "actions"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "label"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "sublabel"
             },
             {
                 "type": {
-                    "names": [
-                        "Array"
-                    ]
+                    "names": ["Array"]
                 },
                 "optional": true,
                 "name": "buttons"
             },
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "open"
             },
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "modal"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "value"
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "index"
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "selection"
@@ -171,10 +128,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1742,
-                1764
-            ],
+            "range": [1742, 1764],
             "filename": "month-picker.js",
             "lineno": 42,
             "columnno": 8,
@@ -195,10 +149,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1751,
-                1762
-            ],
+            "range": [1751, 1762],
             "filename": "month-picker.js",
             "lineno": 42,
             "columnno": 17,
@@ -220,10 +171,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1774,
-                1798
-            ],
+            "range": [1774, 1798],
             "filename": "month-picker.js",
             "lineno": 43,
             "columnno": 8,
@@ -244,10 +192,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1785,
-                1796
-            ],
+            "range": [1785, 1796],
             "filename": "month-picker.js",
             "lineno": 43,
             "columnno": 19,
@@ -269,10 +214,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1808,
-                1831
-            ],
+            "range": [1808, 1831],
             "filename": "month-picker.js",
             "lineno": 44,
             "columnno": 8,
@@ -293,10 +235,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1817,
-                1829
-            ],
+            "range": [1817, 1829],
             "filename": "month-picker.js",
             "lineno": 44,
             "columnno": 17,
@@ -318,10 +257,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1841,
-                1867
-            ],
+            "range": [1841, 1867],
             "filename": "month-picker.js",
             "lineno": 45,
             "columnno": 8,
@@ -342,10 +278,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1853,
-                1865
-            ],
+            "range": [1853, 1865],
             "filename": "month-picker.js",
             "lineno": 45,
             "columnno": 20,
@@ -367,10 +300,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1877,
-                1901
-            ],
+            "range": [1877, 1901],
             "filename": "month-picker.js",
             "lineno": 46,
             "columnno": 8,
@@ -391,10 +321,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1888,
-                1899
-            ],
+            "range": [1888, 1899],
             "filename": "month-picker.js",
             "lineno": 46,
             "columnno": 19,
@@ -416,10 +343,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1911,
-                1949
-            ],
+            "range": [1911, 1949],
             "filename": "month-picker.js",
             "lineno": 47,
             "columnno": 8,
@@ -440,10 +364,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1919,
-                1932
-            ],
+            "range": [1919, 1932],
             "filename": "month-picker.js",
             "lineno": 47,
             "columnno": 16,
@@ -465,10 +386,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1934,
-                1947
-            ],
+            "range": [1934, 1947],
             "filename": "month-picker.js",
             "lineno": 47,
             "columnno": 31,
@@ -490,10 +408,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1959,
-                1983
-            ],
+            "range": [1959, 1983],
             "filename": "month-picker.js",
             "lineno": 48,
             "columnno": 8,
@@ -514,10 +429,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1968,
-                1981
-            ],
+            "range": [1968, 1981],
             "filename": "month-picker.js",
             "lineno": 48,
             "columnno": 17,
@@ -539,10 +451,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1993,
-                2336
-            ],
+            "range": [1993, 2336],
             "filename": "month-picker.js",
             "lineno": 49,
             "columnno": 8,
@@ -563,10 +472,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2014,
-                2026
-            ],
+            "range": [2014, 2026],
             "filename": "month-picker.js",
             "lineno": 50,
             "columnno": 12,
@@ -588,10 +494,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2040,
-                2053
-            ],
+            "range": [2040, 2053],
             "filename": "month-picker.js",
             "lineno": 51,
             "columnno": 12,
@@ -613,10 +516,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2067,
-                2325
-            ],
+            "range": [2067, 2325],
             "filename": "month-picker.js",
             "lineno": 52,
             "columnno": 12,
@@ -638,10 +538,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2096,
-                2193
-            ],
+            "range": [2096, 2193],
             "filename": "month-picker.js",
             "lineno": 53,
             "columnno": 16,
@@ -662,10 +559,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2211,
-                2310
-            ],
+            "range": [2211, 2310],
             "filename": "month-picker.js",
             "lineno": 56,
             "columnno": 16,
@@ -686,10 +580,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2346,
-                2368
-            ],
+            "range": [2346, 2368],
             "filename": "month-picker.js",
             "lineno": 61,
             "columnno": 8,
@@ -710,10 +601,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2355,
-                2366
-            ],
+            "range": [2355, 2366],
             "filename": "month-picker.js",
             "lineno": 61,
             "columnno": 17,
@@ -735,10 +623,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2378,
-                2404
-            ],
+            "range": [2378, 2404],
             "filename": "month-picker.js",
             "lineno": 62,
             "columnno": 8,
@@ -759,10 +644,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2391,
-                2402
-            ],
+            "range": [2391, 2402],
             "filename": "month-picker.js",
             "lineno": 62,
             "columnno": 21,
@@ -784,10 +666,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2417,
-                2493
-            ],
+            "range": [2417, 2493],
             "filename": "month-picker.js",
             "lineno": 64,
             "columnno": 4,
@@ -808,10 +687,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2467,
-                2482
-            ],
+            "range": [2467, 2482],
             "filename": "month-picker.js",
             "lineno": 64,
             "columnno": 54,
@@ -832,10 +708,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2498,
-                2573
-            ],
+            "range": [2498, 2573],
             "filename": "month-picker.js",
             "lineno": 65,
             "columnno": 4,
@@ -856,10 +729,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2549,
-                2562
-            ],
+            "range": [2549, 2562],
             "filename": "month-picker.js",
             "lineno": 65,
             "columnno": 55,
@@ -880,10 +750,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                2612,
-                3114
-            ],
+            "range": [2612, 3114],
             "filename": "month-picker.js",
             "lineno": 70,
             "columnno": 4,
@@ -909,10 +776,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2638,
-                2673
-            ],
+            "range": [2638, 2673],
             "filename": "month-picker.js",
             "lineno": 71,
             "columnno": 12,
@@ -935,10 +799,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2683,
-                2716
-            ],
+            "range": [2683, 2716],
             "filename": "month-picker.js",
             "lineno": 72,
             "columnno": 8,
@@ -962,10 +823,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2746,
-                2756
-            ],
+            "range": [2746, 2756],
             "filename": "month-picker.js",
             "lineno": 73,
             "columnno": 28,
@@ -986,10 +844,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2790,
-                2818
-            ],
+            "range": [2790, 2818],
             "filename": "month-picker.js",
             "lineno": 74,
             "columnno": 18,
@@ -1012,10 +867,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2857,
-                2881
-            ],
+            "range": [2857, 2881],
             "filename": "month-picker.js",
             "lineno": 76,
             "columnno": 16,
@@ -1036,10 +888,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2899,
-                2927
-            ],
+            "range": [2899, 2927],
             "filename": "month-picker.js",
             "lineno": 77,
             "columnno": 16,
@@ -1060,10 +909,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2945,
-                3002
-            ],
+            "range": [2945, 3002],
             "filename": "month-picker.js",
             "lineno": 78,
             "columnno": 16,
@@ -1084,10 +930,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3020,
-                3080
-            ],
+            "range": [3020, 3080],
             "filename": "month-picker.js",
             "lineno": 79,
             "columnno": 16,
@@ -1108,10 +951,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                3153,
-                3717
-            ],
+            "range": [3153, 3717],
             "filename": "month-picker.js",
             "lineno": 87,
             "columnno": 4,
@@ -1137,10 +977,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3196,
-                3206
-            ],
+            "range": [3196, 3206],
             "filename": "month-picker.js",
             "lineno": 88,
             "columnno": 28,
@@ -1161,10 +998,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3240,
-                3288
-            ],
+            "range": [3240, 3288],
             "filename": "month-picker.js",
             "lineno": 89,
             "columnno": 18,
@@ -1187,10 +1021,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3327,
-                3351
-            ],
+            "range": [3327, 3351],
             "filename": "month-picker.js",
             "lineno": 91,
             "columnno": 16,
@@ -1211,10 +1042,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3369,
-                3391
-            ],
+            "range": [3369, 3391],
             "filename": "month-picker.js",
             "lineno": 92,
             "columnno": 16,
@@ -1235,10 +1063,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3409,
-                3438
-            ],
+            "range": [3409, 3438],
             "filename": "month-picker.js",
             "lineno": 93,
             "columnno": 16,
@@ -1259,10 +1084,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3456,
-                3558
-            ],
+            "range": [3456, 3558],
             "filename": "month-picker.js",
             "lineno": 94,
             "columnno": 16,
@@ -1283,10 +1105,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3576,
-                3683
-            ],
+            "range": [3576, 3683],
             "filename": "month-picker.js",
             "lineno": 95,
             "columnno": 16,
@@ -1307,10 +1126,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                3756,
-                4037
-            ],
+            "range": [3756, 4037],
             "filename": "month-picker.js",
             "lineno": 103,
             "columnno": 4,
@@ -1336,10 +1152,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3784,
-                3949
-            ],
+            "range": [3784, 3949],
             "filename": "month-picker.js",
             "lineno": 104,
             "columnno": 14,
@@ -1362,10 +1175,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3804,
-                3887
-            ],
+            "range": [3804, 3887],
             "filename": "month-picker.js",
             "lineno": 105,
             "columnno": 12,
@@ -1385,10 +1195,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3901,
-                3938
-            ],
+            "range": [3901, 3938],
             "filename": "month-picker.js",
             "lineno": 106,
             "columnno": 12,
@@ -1409,10 +1216,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3969,
-                3988
-            ],
+            "range": [3969, 3988],
             "filename": "month-picker.js",
             "lineno": 108,
             "columnno": 18,
@@ -1433,10 +1237,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3990,
-                4001
-            ],
+            "range": [3990, 4001],
             "filename": "month-picker.js",
             "lineno": 108,
             "columnno": 39,
@@ -1457,10 +1258,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4003,
-                4027
-            ],
+            "range": [4003, 4027],
             "filename": "month-picker.js",
             "lineno": 108,
             "columnno": 52,
@@ -1481,10 +1279,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                4076,
-                4240
-            ],
+            "range": [4076, 4240],
             "filename": "month-picker.js",
             "lineno": 114,
             "columnno": 4,
@@ -1510,10 +1305,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4123,
-                4133
-            ],
+            "range": [4123, 4133],
             "filename": "month-picker.js",
             "lineno": 116,
             "columnno": 14,
@@ -1534,10 +1326,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4135,
-                4162
-            ],
+            "range": [4135, 4162],
             "filename": "month-picker.js",
             "lineno": 116,
             "columnno": 26,
@@ -1558,10 +1347,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4180,
-                4190
-            ],
+            "range": [4180, 4190],
             "filename": "month-picker.js",
             "lineno": 117,
             "columnno": 14,
@@ -1582,10 +1368,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4192,
-                4220
-            ],
+            "range": [4192, 4220],
             "filename": "month-picker.js",
             "lineno": 117,
             "columnno": 26,
@@ -1606,10 +1389,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                4279,
-                4404
-            ],
+            "range": [4279, 4404],
             "filename": "month-picker.js",
             "lineno": 124,
             "columnno": 4,
@@ -1635,10 +1415,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4313,
-                4332
-            ],
+            "range": [4313, 4332],
             "filename": "month-picker.js",
             "lineno": 125,
             "columnno": 18,
@@ -1659,10 +1436,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4338,
-                4350
-            ],
+            "range": [4338, 4350],
             "filename": "month-picker.js",
             "lineno": 125,
             "columnno": 43,
@@ -1683,10 +1457,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4352,
-                4367
-            ],
+            "range": [4352, 4367],
             "filename": "month-picker.js",
             "lineno": 125,
             "columnno": 57,
@@ -1707,10 +1478,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4373,
-                4381
-            ],
+            "range": [4373, 4381],
             "filename": "month-picker.js",
             "lineno": 125,
             "columnno": 78,
@@ -1731,10 +1499,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4383,
-                4394
-            ],
+            "range": [4383, 4394],
             "filename": "month-picker.js",
             "lineno": 125,
             "columnno": 88,
@@ -1755,10 +1520,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                4426,
-                4593
-            ],
+            "range": [4426, 4593],
             "filename": "month-picker.js",
             "lineno": 130,
             "columnno": 4,
@@ -1783,10 +1545,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-month-picker\n * @fires MdMonthPickerComponent#onMonthPickerShow\n * @fires MdMonthPickerComponent#onMonthPickerClose\n * @fires MdMonthPickerComponent#onMonthPickerYearItemClick\n * @fires MdMonthPickerComponent#onMonthPickerMonthItemClick\n * @fires MdMonthPickerComponent#onMonthPickerScrimClose\n * @fires MdMonthPickerComponent#onMonthPickerShown\n * @fires MdMonthPickerComponent#onMonthPickerClosed\n * @fires MdMonthPickerComponent#onMonthPickerIconButtonPrevClick\n * @fires MdMonthPickerComponent#onMonthPickerIconButtonNextClick\n * @fires MdMonthPickerComponent#onMonthPickerIconButtonClick\n * @fires MdMonthPickerComponent#onMonthPickerButtonCancelClick\n * @fires MdMonthPickerComponent#onMonthPickerButtonOkClick\n * @fires MdMonthPickerComponent#onMonthPickerButtonLabelClick\n * @fires MdMonthPickerComponent#onMonthPickerButtonClick\n */",
         "meta": {
-            "range": [
-                1298,
-                16376
-            ],
+            "range": [1298, 16376],
             "filename": "month-picker.js",
             "lineno": 28,
             "columnno": 0,
@@ -1804,9 +1563,7 @@
         "name": "MdMonthPickerComponent",
         "longname": "MdMonthPickerComponent",
         "kind": "class",
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -1815,31 +1572,13 @@
                 "value": "md-month-picker"
             }
         ],
-        "fires": [
-            "MdMonthPickerComponent#event:onMonthPickerShow",
-            "MdMonthPickerComponent#event:onMonthPickerClose",
-            "MdMonthPickerComponent#event:onMonthPickerYearItemClick",
-            "MdMonthPickerComponent#event:onMonthPickerMonthItemClick",
-            "MdMonthPickerComponent#event:onMonthPickerScrimClose",
-            "MdMonthPickerComponent#event:onMonthPickerShown",
-            "MdMonthPickerComponent#event:onMonthPickerClosed",
-            "MdMonthPickerComponent#event:onMonthPickerIconButtonPrevClick",
-            "MdMonthPickerComponent#event:onMonthPickerIconButtonNextClick",
-            "MdMonthPickerComponent#event:onMonthPickerIconButtonClick",
-            "MdMonthPickerComponent#event:onMonthPickerButtonCancelClick",
-            "MdMonthPickerComponent#event:onMonthPickerButtonOkClick",
-            "MdMonthPickerComponent#event:onMonthPickerButtonLabelClick",
-            "MdMonthPickerComponent#event:onMonthPickerButtonClick"
-        ],
+        "fires": ["MdMonthPickerComponent#event:onMonthPickerShow", "MdMonthPickerComponent#event:onMonthPickerClose", "MdMonthPickerComponent#event:onMonthPickerYearItemClick", "MdMonthPickerComponent#event:onMonthPickerMonthItemClick", "MdMonthPickerComponent#event:onMonthPickerScrimClose", "MdMonthPickerComponent#event:onMonthPickerShown", "MdMonthPickerComponent#event:onMonthPickerClosed", "MdMonthPickerComponent#event:onMonthPickerIconButtonPrevClick", "MdMonthPickerComponent#event:onMonthPickerIconButtonNextClick", "MdMonthPickerComponent#event:onMonthPickerIconButtonClick", "MdMonthPickerComponent#event:onMonthPickerButtonCancelClick", "MdMonthPickerComponent#event:onMonthPickerButtonOkClick", "MdMonthPickerComponent#event:onMonthPickerButtonLabelClick", "MdMonthPickerComponent#event:onMonthPickerButtonClick"],
         "scope": "global"
     },
     {
         "comment": "",
         "meta": {
-            "range": [
-                4467,
-                4492
-            ],
+            "range": [4467, 4492],
             "filename": "month-picker.js",
             "lineno": 132,
             "columnno": 8,
@@ -1862,10 +1601,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4502,
-                4525
-            ],
+            "range": [4502, 4525],
             "filename": "month-picker.js",
             "lineno": 133,
             "columnno": 8,
@@ -1888,10 +1624,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4535,
-                4562
-            ],
+            "range": [4535, 4562],
             "filename": "month-picker.js",
             "lineno": 134,
             "columnno": 8,
@@ -1914,10 +1647,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4572,
-                4586
-            ],
+            "range": [4572, 4586],
             "filename": "month-picker.js",
             "lineno": 135,
             "columnno": 8,
@@ -1940,10 +1670,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     */",
         "meta": {
-            "range": [
-                4642,
-                4817
-            ],
+            "range": [4642, 4817],
             "filename": "month-picker.js",
             "lineno": 141,
             "columnno": 4,
@@ -1952,9 +1679,7 @@
                 "id": "astnode100000433",
                 "name": "MdMonthPickerComponent#renderIcon",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item"
-                ]
+                "paramnames": ["item"]
             },
             "vars": {
                 "": null
@@ -1963,9 +1688,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
@@ -1980,10 +1703,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     */",
         "meta": {
-            "range": [
-                4866,
-                5429
-            ],
+            "range": [4866, 5429],
             "filename": "month-picker.js",
             "lineno": 153,
             "columnno": 4,
@@ -1992,9 +1712,7 @@
                 "id": "astnode100000449",
                 "name": "MdMonthPickerComponent#renderIconButton",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item"
-                ]
+                "paramnames": ["item"]
             },
             "vars": {
                 "": null
@@ -2003,9 +1721,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
@@ -2020,10 +1736,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     */",
         "meta": {
-            "range": [
-                5478,
-                6021
-            ],
+            "range": [5478, 6021],
             "filename": "month-picker.js",
             "lineno": 172,
             "columnno": 4,
@@ -2032,9 +1745,7 @@
                 "id": "astnode100000501",
                 "name": "MdMonthPickerComponent#renderButton",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item"
-                ]
+                "paramnames": ["item"]
             },
             "vars": {
                 "": null
@@ -2043,9 +1754,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
@@ -2060,10 +1769,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     */",
         "meta": {
-            "range": [
-                6070,
-                6244
-            ],
+            "range": [6070, 6244],
             "filename": "month-picker.js",
             "lineno": 191,
             "columnno": 4,
@@ -2072,9 +1778,7 @@
                 "id": "astnode100000553",
                 "name": "MdMonthPickerComponent#renderSpacer",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item"
-                ]
+                "paramnames": ["item"]
             },
             "vars": {
                 "": null
@@ -2083,9 +1787,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
@@ -2100,10 +1802,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     * @param {Any} [component=\"icon\"]\n     */",
         "meta": {
-            "range": [
-                6332,
-                6725
-            ],
+            "range": [6332, 6725],
             "filename": "month-picker.js",
             "lineno": 204,
             "columnno": 4,
@@ -2112,10 +1811,7 @@
                 "id": "astnode100000563",
                 "name": "MdMonthPickerComponent#renderComponent",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item",
-                    "component"
-                ]
+                "paramnames": ["item", "component"]
             },
             "vars": {
                 "": null
@@ -2124,18 +1820,14 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "defaultvalue": "\"icon\"",
@@ -2151,10 +1843,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6390,
-                6639
-            ],
+            "range": [6390, 6639],
             "filename": "month-picker.js",
             "lineno": 205,
             "columnno": 14,
@@ -2177,10 +1866,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                6747,
-                7321
-            ],
+            "range": [6747, 7321],
             "filename": "month-picker.js",
             "lineno": 216,
             "columnno": 4,
@@ -2205,10 +1891,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                7343,
-                7920
-            ],
+            "range": [7343, 7920],
             "filename": "month-picker.js",
             "lineno": 235,
             "columnno": 4,
@@ -2233,10 +1916,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                7942,
-                9411
-            ],
+            "range": [7942, 9411],
             "filename": "month-picker.js",
             "lineno": 254,
             "columnno": 4,
@@ -2261,10 +1941,7 @@
     {
         "comment": "/**\n     * @async\n     */",
         "meta": {
-            "range": [
-                9447,
-                10363
-            ],
+            "range": [9447, 10363],
             "filename": "month-picker.js",
             "lineno": 286,
             "columnno": 4,
@@ -2290,10 +1967,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                9518,
-                9568
-            ],
+            "range": [9518, 9568],
             "filename": "month-picker.js",
             "lineno": 288,
             "columnno": 8,
@@ -2316,10 +1990,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                9578,
-                9608
-            ],
+            "range": [9578, 9608],
             "filename": "month-picker.js",
             "lineno": 289,
             "columnno": 8,
@@ -2342,10 +2013,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                9741,
-                9799
-            ],
+            "range": [9741, 9799],
             "filename": "month-picker.js",
             "lineno": 292,
             "columnno": 8,
@@ -2368,10 +2036,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                9898,
-                9976
-            ],
+            "range": [9898, 9976],
             "filename": "month-picker.js",
             "lineno": 294,
             "columnno": 8,
@@ -2394,10 +2059,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                10385,
-                10594
-            ],
+            "range": [10385, 10594],
             "filename": "month-picker.js",
             "lineno": 304,
             "columnno": 4,
@@ -2422,10 +2084,7 @@
     {
         "comment": "/**\n     * @async\n     * @param {Any} [changedProperties]\n     */",
         "meta": {
-            "range": [
-                10670,
-                11175
-            ],
+            "range": [10670, 11175],
             "filename": "month-picker.js",
             "lineno": 314,
             "columnno": 4,
@@ -2434,9 +2093,7 @@
                 "id": "astnode100000983",
                 "name": "MdMonthPickerComponent#updated",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "changedProperties"
-                ]
+                "paramnames": ["changedProperties"]
             },
             "vars": {
                 "": null
@@ -2446,9 +2103,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "changedProperties"
@@ -2463,10 +2118,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                11111,
-                11158
-            ],
+            "range": [11111, 11158],
             "filename": "month-picker.js",
             "lineno": 324,
             "columnno": 12,
@@ -2489,10 +2141,7 @@
     {
         "comment": "/**\n     * @param {Any} [options]\n     */",
         "meta": {
-            "range": [
-                11227,
-                12030
-            ],
+            "range": [11227, 12030],
             "filename": "month-picker.js",
             "lineno": 331,
             "columnno": 4,
@@ -2501,9 +2150,7 @@
                 "id": "astnode100001058",
                 "name": "MdMonthPickerComponent#show",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "options"
-                ]
+                "paramnames": ["options"]
             },
             "vars": {
                 "": null
@@ -2512,9 +2159,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "options"
@@ -2529,10 +2174,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                11251,
-                11281
-            ],
+            "range": [11251, 11281],
             "filename": "month-picker.js",
             "lineno": 332,
             "columnno": 8,
@@ -2555,10 +2197,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                11291,
-                11359
-            ],
+            "range": [11291, 11359],
             "filename": "month-picker.js",
             "lineno": 333,
             "columnno": 8,
@@ -2581,10 +2220,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                11542,
-                11557
-            ],
+            "range": [11542, 11557],
             "filename": "month-picker.js",
             "lineno": 337,
             "columnno": 12,
@@ -2605,10 +2241,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                11571,
-                11584
-            ],
+            "range": [11571, 11584],
             "filename": "month-picker.js",
             "lineno": 338,
             "columnno": 12,
@@ -2629,10 +2262,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                11632,
-                11867
-            ],
+            "range": [11632, 11867],
             "filename": "month-picker.js",
             "lineno": 340,
             "columnno": 12,
@@ -2653,10 +2283,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                11913,
-                11929
-            ],
+            "range": [11913, 11929],
             "filename": "month-picker.js",
             "lineno": 348,
             "columnno": 8,
@@ -2679,10 +2306,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                12052,
-                12418
-            ],
+            "range": [12052, 12418],
             "filename": "month-picker.js",
             "lineno": 355,
             "columnno": 4,
@@ -2707,10 +2331,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                12070,
-                12140
-            ],
+            "range": [12070, 12140],
             "filename": "month-picker.js",
             "lineno": 356,
             "columnno": 8,
@@ -2733,10 +2354,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                12298,
-                12315
-            ],
+            "range": [12298, 12315],
             "filename": "month-picker.js",
             "lineno": 359,
             "columnno": 8,
@@ -2759,10 +2377,7 @@
     {
         "comment": "/**\n     * @param {Any} [options]\n     */",
         "meta": {
-            "range": [
-                12470,
-                12563
-            ],
+            "range": [12470, 12563],
             "filename": "month-picker.js",
             "lineno": 367,
             "columnno": 4,
@@ -2771,9 +2386,7 @@
                 "id": "astnode100001205",
                 "name": "MdMonthPickerComponent#toggle",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "options"
-                ]
+                "paramnames": ["options"]
             },
             "vars": {
                 "": null
@@ -2782,9 +2395,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "options"
@@ -2799,10 +2410,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                12613,
-                12836
-            ],
+            "range": [12613, 12836],
             "filename": "month-picker.js",
             "lineno": 375,
             "columnno": 4,
@@ -2811,9 +2419,7 @@
                 "id": "astnode100001225",
                 "name": "MdMonthPickerComponent#handleMonthPickerYearItemClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -2822,9 +2428,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -2839,10 +2443,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                12667,
-                12698
-            ],
+            "range": [12667, 12698],
             "filename": "month-picker.js",
             "lineno": 376,
             "columnno": 14,
@@ -2865,10 +2466,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                12755,
-                12769
-            ],
+            "range": [12755, 12769],
             "filename": "month-picker.js",
             "lineno": 378,
             "columnno": 8,
@@ -2891,10 +2489,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                12821,
-                12826
-            ],
+            "range": [12821, 12826],
             "filename": "month-picker.js",
             "lineno": 379,
             "columnno": 50,
@@ -2915,10 +2510,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                12886,
-                13273
-            ],
+            "range": [12886, 13273],
             "filename": "month-picker.js",
             "lineno": 385,
             "columnno": 4,
@@ -2927,9 +2519,7 @@
                 "id": "astnode100001263",
                 "name": "MdMonthPickerComponent#handleMonthPickerMonthItemClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -2938,9 +2528,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -2955,10 +2543,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                12941,
-                12972
-            ],
+            "range": [12941, 12972],
             "filename": "month-picker.js",
             "lineno": 386,
             "columnno": 14,
@@ -2981,10 +2566,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                13258,
-                13263
-            ],
+            "range": [13258, 13263],
             "filename": "month-picker.js",
             "lineno": 393,
             "columnno": 51,
@@ -3005,10 +2587,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                13323,
-                13459
-            ],
+            "range": [13323, 13459],
             "filename": "month-picker.js",
             "lineno": 399,
             "columnno": 4,
@@ -3017,9 +2596,7 @@
                 "id": "astnode100001336",
                 "name": "MdMonthPickerComponent#handleMonthPickerScrimClose",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -3028,9 +2605,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -3045,10 +2620,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                13444,
-                13449
-            ],
+            "range": [13444, 13449],
             "filename": "month-picker.js",
             "lineno": 401,
             "columnno": 47,
@@ -3069,10 +2641,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                13509,
-                13666
-            ],
+            "range": [13509, 13666],
             "filename": "month-picker.js",
             "lineno": 407,
             "columnno": 4,
@@ -3081,9 +2650,7 @@
                 "id": "astnode100001359",
                 "name": "MdMonthPickerComponent#handleMonthPickerShown",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -3092,9 +2659,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -3109,10 +2674,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                13716,
-                13876
-            ],
+            "range": [13716, 13876],
             "filename": "month-picker.js",
             "lineno": 415,
             "columnno": 4,
@@ -3121,9 +2683,7 @@
                 "id": "astnode100001379",
                 "name": "MdMonthPickerComponent#handleMonthPickerClosed",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -3132,9 +2692,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -3149,10 +2707,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                13926,
-                14300
-            ],
+            "range": [13926, 14300],
             "filename": "month-picker.js",
             "lineno": 423,
             "columnno": 4,
@@ -3161,9 +2716,7 @@
                 "id": "astnode100001399",
                 "name": "MdMonthPickerComponent#handleMonthPickerIconButtonPrevClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -3172,9 +2725,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -3189,10 +2740,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                13986,
-                14170
-            ],
+            "range": [13986, 14170],
             "filename": "month-picker.js",
             "lineno": 424,
             "columnno": 14,
@@ -3215,10 +2763,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                14006,
-                14076
-            ],
+            "range": [14006, 14076],
             "filename": "month-picker.js",
             "lineno": 425,
             "columnno": 12,
@@ -3238,10 +2783,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                14090,
-                14159
-            ],
+            "range": [14090, 14159],
             "filename": "month-picker.js",
             "lineno": 426,
             "columnno": 12,
@@ -3262,10 +2804,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                14285,
-                14290
-            ],
+            "range": [14285, 14290],
             "filename": "month-picker.js",
             "lineno": 430,
             "columnno": 56,
@@ -3286,10 +2825,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                14350,
-                14724
-            ],
+            "range": [14350, 14724],
             "filename": "month-picker.js",
             "lineno": 436,
             "columnno": 4,
@@ -3298,9 +2834,7 @@
                 "id": "astnode100001461",
                 "name": "MdMonthPickerComponent#handleMonthPickerIconButtonNextClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -3309,9 +2843,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -3326,10 +2858,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                14410,
-                14594
-            ],
+            "range": [14410, 14594],
             "filename": "month-picker.js",
             "lineno": 437,
             "columnno": 14,
@@ -3352,10 +2881,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                14430,
-                14500
-            ],
+            "range": [14430, 14500],
             "filename": "month-picker.js",
             "lineno": 438,
             "columnno": 12,
@@ -3375,10 +2901,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                14514,
-                14583
-            ],
+            "range": [14514, 14583],
             "filename": "month-picker.js",
             "lineno": 439,
             "columnno": 12,
@@ -3399,10 +2922,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                14709,
-                14714
-            ],
+            "range": [14709, 14714],
             "filename": "month-picker.js",
             "lineno": 443,
             "columnno": 56,
@@ -3423,10 +2943,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                14774,
-                15174
-            ],
+            "range": [14774, 15174],
             "filename": "month-picker.js",
             "lineno": 449,
             "columnno": 4,
@@ -3435,9 +2952,7 @@
                 "id": "astnode100001523",
                 "name": "MdMonthPickerComponent#handleMonthPickerIconButtonClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -3446,9 +2961,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -3463,10 +2976,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                14830,
-                14861
-            ],
+            "range": [14830, 14861],
             "filename": "month-picker.js",
             "lineno": 450,
             "columnno": 14,
@@ -3489,10 +2999,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                14877,
-                15038
-            ],
+            "range": [14877, 15038],
             "filename": "month-picker.js",
             "lineno": 451,
             "columnno": 14,
@@ -3515,10 +3022,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                14897,
-                14955
-            ],
+            "range": [14897, 14955],
             "filename": "month-picker.js",
             "lineno": 452,
             "columnno": 12,
@@ -3540,10 +3044,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                14969,
-                15027
-            ],
+            "range": [14969, 15027],
             "filename": "month-picker.js",
             "lineno": 453,
             "columnno": 12,
@@ -3565,10 +3066,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                15054,
-                15071
-            ],
+            "range": [15054, 15071],
             "filename": "month-picker.js",
             "lineno": 455,
             "columnno": 14,
@@ -3591,10 +3089,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                15159,
-                15164
-            ],
+            "range": [15159, 15164],
             "filename": "month-picker.js",
             "lineno": 457,
             "columnno": 52,
@@ -3615,10 +3110,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                15224,
-                15422
-            ],
+            "range": [15224, 15422],
             "filename": "month-picker.js",
             "lineno": 463,
             "columnno": 4,
@@ -3627,9 +3119,7 @@
                 "id": "astnode100001579",
                 "name": "MdMonthPickerComponent#handleMonthPickerButtonCancelClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -3638,9 +3128,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -3655,10 +3143,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                15276,
-                15326
-            ],
+            "range": [15276, 15326],
             "filename": "month-picker.js",
             "lineno": 464,
             "columnno": 8,
@@ -3681,10 +3166,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                15407,
-                15412
-            ],
+            "range": [15407, 15412],
             "filename": "month-picker.js",
             "lineno": 466,
             "columnno": 54,
@@ -3705,10 +3187,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                15472,
-                15602
-            ],
+            "range": [15472, 15602],
             "filename": "month-picker.js",
             "lineno": 472,
             "columnno": 4,
@@ -3717,9 +3196,7 @@
                 "id": "astnode100001606",
                 "name": "MdMonthPickerComponent#handleMonthPickerButtonOkClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -3728,9 +3205,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -3745,10 +3220,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                15587,
-                15592
-            ],
+            "range": [15587, 15592],
             "filename": "month-picker.js",
             "lineno": 474,
             "columnno": 50,
@@ -3769,10 +3241,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                15652,
-                15870
-            ],
+            "range": [15652, 15870],
             "filename": "month-picker.js",
             "lineno": 480,
             "columnno": 4,
@@ -3781,9 +3250,7 @@
                 "id": "astnode100001620",
                 "name": "MdMonthPickerComponent#handleMonthPickerButtonLabelClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -3792,9 +3259,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -3809,10 +3274,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                15709,
-                15762
-            ],
+            "range": [15709, 15762],
             "filename": "month-picker.js",
             "lineno": 481,
             "columnno": 14,
@@ -3835,10 +3297,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                15729,
-                15733
-            ],
+            "range": [15729, 15733],
             "filename": "month-picker.js",
             "lineno": 482,
             "columnno": 12,
@@ -3859,10 +3318,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                15747,
-                15751
-            ],
+            "range": [15747, 15751],
             "filename": "month-picker.js",
             "lineno": 483,
             "columnno": 12,
@@ -3884,10 +3340,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                15772,
-                15800
-            ],
+            "range": [15772, 15800],
             "filename": "month-picker.js",
             "lineno": 485,
             "columnno": 8,
@@ -3910,10 +3363,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                15855,
-                15860
-            ],
+            "range": [15855, 15860],
             "filename": "month-picker.js",
             "lineno": 486,
             "columnno": 53,
@@ -3934,10 +3384,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                15920,
-                16374
-            ],
+            "range": [15920, 16374],
             "filename": "month-picker.js",
             "lineno": 492,
             "columnno": 4,
@@ -3946,9 +3393,7 @@
                 "id": "astnode100001652",
                 "name": "MdMonthPickerComponent#handleMonthPickerButtonClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -3957,9 +3402,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -3974,10 +3417,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                15972,
-                16003
-            ],
+            "range": [15972, 16003],
             "filename": "month-picker.js",
             "lineno": 493,
             "columnno": 14,
@@ -4000,10 +3440,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                16019,
-                16242
-            ],
+            "range": [16019, 16242],
             "filename": "month-picker.js",
             "lineno": 494,
             "columnno": 14,
@@ -4026,10 +3463,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                16039,
-                16097
-            ],
+            "range": [16039, 16097],
             "filename": "month-picker.js",
             "lineno": 495,
             "columnno": 12,
@@ -4051,10 +3485,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                16111,
-                16161
-            ],
+            "range": [16111, 16161],
             "filename": "month-picker.js",
             "lineno": 496,
             "columnno": 12,
@@ -4076,10 +3507,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                16175,
-                16231
-            ],
+            "range": [16175, 16231],
             "filename": "month-picker.js",
             "lineno": 497,
             "columnno": 12,
@@ -4101,10 +3529,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                16258,
-                16275
-            ],
+            "range": [16258, 16275],
             "filename": "month-picker.js",
             "lineno": 499,
             "columnno": 14,
@@ -4127,10 +3552,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                16359,
-                16364
-            ],
+            "range": [16359, 16364],
             "filename": "month-picker.js",
             "lineno": 501,
             "columnno": 48,
@@ -4151,10 +3573,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                16452,
-                16474
-            ],
+            "range": [16452, 16474],
             "filename": "month-picker.js",
             "lineno": 505,
             "columnno": 9,
@@ -4174,8 +3593,6 @@
     {
         "kind": "package",
         "longname": "package:undefined",
-        "files": [
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\month-picker\\month-picker.js"
-        ]
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\month-picker\\month-picker.js"]
     }
 ]

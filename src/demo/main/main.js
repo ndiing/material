@@ -30,14 +30,13 @@ function sortItems(items) {
     });
 }
 
-
 class DemoMain extends MdComponent {
-    get demoMainTopAppBar(){
-        return this.querySelector('#demoMainTopAppBar')
+    get demoMainTopAppBar() {
+        return this.querySelector("#demoMainTopAppBar");
     }
 
-    get demoMainNavigationDrawer(){
-        return this.querySelector('#demoMainNavigationDrawer')
+    get demoMainNavigationDrawer() {
+        return this.querySelector("#demoMainNavigationDrawer");
     }
 
     constructor() {
@@ -233,37 +232,37 @@ class DemoMain extends MdComponent {
                     // {
                     //     label: "Datetime Picker",
                     //     children: [
-                            { label: "Datetime Picker", routerLink: "/demo/datetime-picker" },
-                            { label: "Datetime Picker Modal", routerLink: "/demo/datetime-picker-modal" },
-                        // ],
+                    { label: "Datetime Picker", routerLink: "/demo/datetime-picker" },
+                    { label: "Datetime Picker Modal", routerLink: "/demo/datetime-picker-modal" },
+                    // ],
                     // },
                     // {
                     //     label: "Date Picker",
                     //     children: [
-                            { label: "Date Picker", routerLink: "/demo/date-picker" },
-                            { label: "Date Picker Modal", routerLink: "/demo/date-picker-modal" },
-                        // ],
+                    { label: "Date Picker", routerLink: "/demo/date-picker" },
+                    { label: "Date Picker Modal", routerLink: "/demo/date-picker-modal" },
+                    // ],
                     // },
                     // {
                     //     label: "Time Picker",
                     //     children: [
-                            { label: "Time Picker", routerLink: "/demo/time-picker" },
-                            { label: "Time Picker Modal", routerLink: "/demo/time-picker-modal" },
-                        // ],
+                    { label: "Time Picker", routerLink: "/demo/time-picker" },
+                    { label: "Time Picker Modal", routerLink: "/demo/time-picker-modal" },
+                    // ],
                     // },
                     // {
                     //     label: "Week Picker",
                     //     children: [
-                            { label: "Week Picker", routerLink: "/demo/week-picker" },
-                            { label: "Week Picker Modal", routerLink: "/demo/week-picker-modal" },
-                        // ],
+                    { label: "Week Picker", routerLink: "/demo/week-picker" },
+                    { label: "Week Picker Modal", routerLink: "/demo/week-picker-modal" },
+                    // ],
                     // },
                     // {
                     //     label: "Month Picker",
                     //     children: [
-                            { label: "Month Picker", routerLink: "/demo/month-picker" },
-                            { label: "Month Picker Modal", routerLink: "/demo/month-picker-modal" },
-                        // ],
+                    { label: "Month Picker", routerLink: "/demo/month-picker" },
+                    { label: "Month Picker Modal", routerLink: "/demo/month-picker-modal" },
+                    // ],
                     // },
                 ],
             },
@@ -280,24 +279,22 @@ class DemoMain extends MdComponent {
     render() {
         return html`
             <div class="md-layout__border">
-
                 <md-top-app-bar
                     id="demoMainTopAppBar"
                     label="Material Design (0.67.0)"
                     .leadingActions="${this.demoMainTopAppBarLeadingActions}"
-                    @onTopAppBarIconButtonClick="${this.handleMainTopAppBarIconButtonClick}"
+                    @onTopAppBarIconButtonClick="${this.handleDemoMainTopAppBarIconButtonClick}"
                 ></md-top-app-bar>
 
                 <md-navigation-drawer
                     id="demoMainNavigationDrawer"
                     type="tree"
                     .items="${this.items}"
-                    @onTreeItemClick="${this.handleMainNavigationDrawerTreeItemClick}"
-                    @onTreeKeydownEnter="${this.handleMainNavitaionDrawerTreeKeydownEnter}"
+                    @onTreeItemClick="${this.handleDemoMainNavigationDrawerTreeItemClick}"
+                    @onTreeKeydownEnter="${this.handleDemoMainNavigationDrawerTreeKeydownEnter}"
                 ></md-navigation-drawer>
 
                 <md-sheet region="center"><md-outlet></md-outlet></md-sheet>
-
             </div>
         `;
     }
@@ -340,22 +337,19 @@ class DemoMain extends MdComponent {
     }
 
     // Menangani klik tombol ikon pada Top App Bar.
-    handleMainTopAppBarIconButtonClick(event) {
+    handleDemoMainTopAppBarIconButtonClick(event) {
         this.demoMainNavigationDrawer.toggle();
     }
 
     // Menangani klik pada item navigasi dalam Navigation Drawer.
-    handleMainNavigationDrawerTreeItemClick(event) {
-        if (
-            this.demoMainNavigationDrawer.modal 
-            && event.detail.event.currentTarget.data.routerLink
-        ) {
+    handleDemoMainNavigationDrawerTreeItemClick(event) {
+        if (this.demoMainNavigationDrawer.modal && event.detail.event.currentTarget.data.routerLink) {
             this.demoMainNavigationDrawer.toggle();
         }
     }
 
     // Menangani navigasi menggunakan tombol Enter pada Navigation Drawer.
-    handleMainNavitaionDrawerTreeKeydownEnter(event) {
+    handleDemoMainNavigationDrawerTreeKeydownEnter(event) {
         const treeItemSelected = this.demoMainNavigationDrawer.querySelector("md-tree-item[selected]");
         treeItemSelected.click();
     }

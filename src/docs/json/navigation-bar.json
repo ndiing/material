@@ -2,10 +2,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-navigation-bar\n * @fires MdNavigationBarComponent#onNavigationBarShown\n * @fires MdNavigationBarComponent#onNavigationBarClosed\n */",
         "meta": {
-            "range": [
-                376,
-                2018
-            ],
+            "range": [376, 2018],
             "filename": "navigation-bar.js",
             "lineno": 12,
             "columnno": 0,
@@ -17,9 +14,7 @@
                 "paramnames": []
             }
         },
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -28,10 +23,7 @@
                 "value": "md-navigation-bar"
             }
         ],
-        "fires": [
-            "MdNavigationBarComponent#event:onNavigationBarShown",
-            "MdNavigationBarComponent#event:onNavigationBarClosed"
-        ],
+        "fires": ["MdNavigationBarComponent#event:onNavigationBarShown", "MdNavigationBarComponent#event:onNavigationBarClosed"],
         "name": "MdNavigationBarComponent",
         "longname": "MdNavigationBarComponent",
         "kind": "class",
@@ -41,10 +33,7 @@
     {
         "comment": "/**\n     * @property {Boolean} [open]\n     * @property {Array} [items]\n     */",
         "meta": {
-            "range": [
-                516,
-                624
-            ],
+            "range": [516, 624],
             "filename": "navigation-bar.js",
             "lineno": 17,
             "columnno": 4,
@@ -58,18 +47,14 @@
         "properties": [
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "open"
             },
             {
                 "type": {
-                    "names": [
-                        "Array"
-                    ]
+                    "names": ["Array"]
                 },
                 "optional": true,
                 "name": "items"
@@ -84,10 +69,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                546,
-                584
-            ],
+            "range": [546, 584],
             "filename": "navigation-bar.js",
             "lineno": 18,
             "columnno": 8,
@@ -108,10 +90,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                554,
-                567
-            ],
+            "range": [554, 567],
             "filename": "navigation-bar.js",
             "lineno": 18,
             "columnno": 16,
@@ -133,10 +112,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                569,
-                582
-            ],
+            "range": [569, 582],
             "filename": "navigation-bar.js",
             "lineno": 18,
             "columnno": 31,
@@ -158,10 +134,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                594,
-                616
-            ],
+            "range": [594, 616],
             "filename": "navigation-bar.js",
             "lineno": 19,
             "columnno": 8,
@@ -182,10 +155,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                603,
-                614
-            ],
+            "range": [603, 614],
             "filename": "navigation-bar.js",
             "lineno": 19,
             "columnno": 17,
@@ -207,10 +177,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                646,
-                782
-            ],
+            "range": [646, 782],
             "filename": "navigation-bar.js",
             "lineno": 24,
             "columnno": 4,
@@ -235,10 +202,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-navigation-bar\n * @fires MdNavigationBarComponent#onNavigationBarShown\n * @fires MdNavigationBarComponent#onNavigationBarClosed\n */",
         "meta": {
-            "range": [
-                376,
-                2018
-            ],
+            "range": [376, 2018],
             "filename": "navigation-bar.js",
             "lineno": 12,
             "columnno": 0,
@@ -253,9 +217,7 @@
         "name": "MdNavigationBarComponent",
         "longname": "MdNavigationBarComponent",
         "kind": "class",
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -264,19 +226,13 @@
                 "value": "md-navigation-bar"
             }
         ],
-        "fires": [
-            "MdNavigationBarComponent#event:onNavigationBarShown",
-            "MdNavigationBarComponent#event:onNavigationBarClosed"
-        ],
+        "fires": ["MdNavigationBarComponent#event:onNavigationBarShown", "MdNavigationBarComponent#event:onNavigationBarClosed"],
         "scope": "global"
     },
     {
         "comment": "",
         "meta": {
-            "range": [
-                687,
-                702
-            ],
+            "range": [687, 702],
             "filename": "navigation-bar.js",
             "lineno": 26,
             "columnno": 8,
@@ -299,10 +255,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                712,
-                775
-            ],
+            "range": [712, 775],
             "filename": "navigation-bar.js",
             "lineno": 27,
             "columnno": 8,
@@ -325,10 +278,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                735,
-                773
-            ],
+            "range": [735, 773],
             "filename": "navigation-bar.js",
             "lineno": 27,
             "columnno": 31,
@@ -350,10 +300,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                804,
-                1013
-            ],
+            "range": [804, 1013],
             "filename": "navigation-bar.js",
             "lineno": 32,
             "columnno": 4,
@@ -378,10 +325,7 @@
     {
         "comment": "/**\n     * @async\n     */",
         "meta": {
-            "range": [
-                1049,
-                1436
-            ],
+            "range": [1049, 1436],
             "filename": "navigation-bar.js",
             "lineno": 44,
             "columnno": 4,
@@ -407,10 +351,7 @@
     {
         "comment": "/**\n     * @param {Any} [changedProperties]\n     */",
         "meta": {
-            "range": [
-                1498,
-                1574
-            ],
+            "range": [1498, 1574],
             "filename": "navigation-bar.js",
             "lineno": 56,
             "columnno": 4,
@@ -419,9 +360,7 @@
                 "id": "astnode100000131",
                 "name": "MdNavigationBarComponent#updated",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "changedProperties"
-                ]
+                "paramnames": ["changedProperties"]
             },
             "vars": {
                 "": null
@@ -430,9 +369,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "changedProperties"
@@ -447,10 +384,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                1596,
-                1743
-            ],
+            "range": [1596, 1743],
             "filename": "navigation-bar.js",
             "lineno": 62,
             "columnno": 4,
@@ -475,10 +409,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1677,
-                1693
-            ],
+            "range": [1677, 1693],
             "filename": "navigation-bar.js",
             "lineno": 64,
             "columnno": 8,
@@ -501,10 +432,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                1765,
-                1915
-            ],
+            "range": [1765, 1915],
             "filename": "navigation-bar.js",
             "lineno": 70,
             "columnno": 4,
@@ -529,10 +457,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1847,
-                1864
-            ],
+            "range": [1847, 1864],
             "filename": "navigation-bar.js",
             "lineno": 72,
             "columnno": 8,
@@ -555,10 +480,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                1937,
-                2016
-            ],
+            "range": [1937, 2016],
             "filename": "navigation-bar.js",
             "lineno": 78,
             "columnno": 4,
@@ -583,10 +505,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2098,
-                2122
-            ],
+            "range": [2098, 2122],
             "filename": "navigation-bar.js",
             "lineno": 84,
             "columnno": 9,
@@ -606,8 +525,6 @@
     {
         "kind": "package",
         "longname": "package:undefined",
-        "files": [
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\navigation-bar\\navigation-bar.js"
-        ]
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\navigation-bar\\navigation-bar.js"]
     }
 ]

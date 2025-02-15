@@ -2,10 +2,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-tooltip\n * @fires MdTooltipComponent#onTooltipShow\n * @fires MdTooltipComponent#onTooltipClose\n * @fires MdTooltipComponent#onTooltipIconButtonClick\n * @fires MdTooltipComponent#onTooltipButtonClick\n */",
         "meta": {
-            "range": [
-                495,
-                5246
-            ],
+            "range": [495, 5246],
             "filename": "tooltip.js",
             "lineno": 15,
             "columnno": 0,
@@ -17,9 +14,7 @@
                 "paramnames": []
             }
         },
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -28,12 +23,7 @@
                 "value": "md-tooltip"
             }
         ],
-        "fires": [
-            "MdTooltipComponent#event:onTooltipShow",
-            "MdTooltipComponent#event:onTooltipClose",
-            "MdTooltipComponent#event:onTooltipIconButtonClick",
-            "MdTooltipComponent#event:onTooltipButtonClick"
-        ],
+        "fires": ["MdTooltipComponent#event:onTooltipShow", "MdTooltipComponent#event:onTooltipClose", "MdTooltipComponent#event:onTooltipIconButtonClick", "MdTooltipComponent#event:onTooltipButtonClick"],
         "name": "MdTooltipComponent",
         "longname": "MdTooltipComponent",
         "kind": "class",
@@ -43,10 +33,7 @@
     {
         "comment": "/**\n     * @property {Array} [icons]\n     * @property {Array} [actions]\n     * @property {String} [label]\n     * @property {String} [sublabel]\n     * @property {Array} [buttons]\n     * @property {Boolean} [open]\n     */",
         "meta": {
-            "range": [
-                770,
-                1015
-            ],
+            "range": [770, 1015],
             "filename": "tooltip.js",
             "lineno": 24,
             "columnno": 4,
@@ -60,54 +47,42 @@
         "properties": [
             {
                 "type": {
-                    "names": [
-                        "Array"
-                    ]
+                    "names": ["Array"]
                 },
                 "optional": true,
                 "name": "icons"
             },
             {
                 "type": {
-                    "names": [
-                        "Array"
-                    ]
+                    "names": ["Array"]
                 },
                 "optional": true,
                 "name": "actions"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "label"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "sublabel"
             },
             {
                 "type": {
-                    "names": [
-                        "Array"
-                    ]
+                    "names": ["Array"]
                 },
                 "optional": true,
                 "name": "buttons"
             },
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "open"
@@ -122,10 +97,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                800,
-                822
-            ],
+            "range": [800, 822],
             "filename": "tooltip.js",
             "lineno": 25,
             "columnno": 8,
@@ -146,10 +118,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                809,
-                820
-            ],
+            "range": [809, 820],
             "filename": "tooltip.js",
             "lineno": 25,
             "columnno": 17,
@@ -171,10 +140,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                832,
-                856
-            ],
+            "range": [832, 856],
             "filename": "tooltip.js",
             "lineno": 26,
             "columnno": 8,
@@ -195,10 +161,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                843,
-                854
-            ],
+            "range": [843, 854],
             "filename": "tooltip.js",
             "lineno": 26,
             "columnno": 19,
@@ -220,10 +183,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                866,
-                889
-            ],
+            "range": [866, 889],
             "filename": "tooltip.js",
             "lineno": 27,
             "columnno": 8,
@@ -244,10 +204,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                875,
-                887
-            ],
+            "range": [875, 887],
             "filename": "tooltip.js",
             "lineno": 27,
             "columnno": 17,
@@ -269,10 +226,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                899,
-                925
-            ],
+            "range": [899, 925],
             "filename": "tooltip.js",
             "lineno": 28,
             "columnno": 8,
@@ -293,10 +247,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                911,
-                923
-            ],
+            "range": [911, 923],
             "filename": "tooltip.js",
             "lineno": 28,
             "columnno": 20,
@@ -318,10 +269,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                935,
-                959
-            ],
+            "range": [935, 959],
             "filename": "tooltip.js",
             "lineno": 29,
             "columnno": 8,
@@ -342,10 +290,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                946,
-                957
-            ],
+            "range": [946, 957],
             "filename": "tooltip.js",
             "lineno": 29,
             "columnno": 19,
@@ -367,10 +312,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                969,
-                1007
-            ],
+            "range": [969, 1007],
             "filename": "tooltip.js",
             "lineno": 30,
             "columnno": 8,
@@ -391,10 +333,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                977,
-                990
-            ],
+            "range": [977, 990],
             "filename": "tooltip.js",
             "lineno": 30,
             "columnno": 16,
@@ -416,10 +355,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                992,
-                1005
-            ],
+            "range": [992, 1005],
             "filename": "tooltip.js",
             "lineno": 30,
             "columnno": 31,
@@ -441,10 +377,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                1037,
-                1124
-            ],
+            "range": [1037, 1124],
             "filename": "tooltip.js",
             "lineno": 35,
             "columnno": 4,
@@ -469,10 +402,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-tooltip\n * @fires MdTooltipComponent#onTooltipShow\n * @fires MdTooltipComponent#onTooltipClose\n * @fires MdTooltipComponent#onTooltipIconButtonClick\n * @fires MdTooltipComponent#onTooltipButtonClick\n */",
         "meta": {
-            "range": [
-                495,
-                5246
-            ],
+            "range": [495, 5246],
             "filename": "tooltip.js",
             "lineno": 15,
             "columnno": 0,
@@ -487,9 +417,7 @@
         "name": "MdTooltipComponent",
         "longname": "MdTooltipComponent",
         "kind": "class",
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -498,21 +426,13 @@
                 "value": "md-tooltip"
             }
         ],
-        "fires": [
-            "MdTooltipComponent#event:onTooltipShow",
-            "MdTooltipComponent#event:onTooltipClose",
-            "MdTooltipComponent#event:onTooltipIconButtonClick",
-            "MdTooltipComponent#event:onTooltipButtonClick"
-        ],
+        "fires": ["MdTooltipComponent#event:onTooltipShow", "MdTooltipComponent#event:onTooltipClose", "MdTooltipComponent#event:onTooltipIconButtonClick", "MdTooltipComponent#event:onTooltipButtonClick"],
         "scope": "global"
     },
     {
         "comment": "",
         "meta": {
-            "range": [
-                1078,
-                1117
-            ],
+            "range": [1078, 1117],
             "filename": "tooltip.js",
             "lineno": 37,
             "columnno": 8,
@@ -535,10 +455,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     */",
         "meta": {
-            "range": [
-                1173,
-                1269
-            ],
+            "range": [1173, 1269],
             "filename": "tooltip.js",
             "lineno": 43,
             "columnno": 4,
@@ -547,9 +464,7 @@
                 "id": "astnode100000075",
                 "name": "MdTooltipComponent#renderIcon",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item"
-                ]
+                "paramnames": ["item"]
             },
             "vars": {
                 "": null
@@ -558,9 +473,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
@@ -575,10 +488,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     */",
         "meta": {
-            "range": [
-                1318,
-                1847
-            ],
+            "range": [1318, 1847],
             "filename": "tooltip.js",
             "lineno": 50,
             "columnno": 4,
@@ -587,9 +497,7 @@
                 "id": "astnode100000091",
                 "name": "MdTooltipComponent#renderIconButton",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item"
-                ]
+                "paramnames": ["item"]
             },
             "vars": {
                 "": null
@@ -598,9 +506,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
@@ -615,10 +521,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     */",
         "meta": {
-            "range": [
-                1896,
-                2405
-            ],
+            "range": [1896, 2405],
             "filename": "tooltip.js",
             "lineno": 68,
             "columnno": 4,
@@ -627,9 +530,7 @@
                 "id": "astnode100000143",
                 "name": "MdTooltipComponent#renderButton",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item"
-                ]
+                "paramnames": ["item"]
             },
             "vars": {
                 "": null
@@ -638,9 +539,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
@@ -655,10 +554,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     */",
         "meta": {
-            "range": [
-                2454,
-                2543
-            ],
+            "range": [2454, 2543],
             "filename": "tooltip.js",
             "lineno": 86,
             "columnno": 4,
@@ -667,9 +563,7 @@
                 "id": "astnode100000195",
                 "name": "MdTooltipComponent#renderSpacer",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item"
-                ]
+                "paramnames": ["item"]
             },
             "vars": {
                 "": null
@@ -678,9 +572,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
@@ -695,10 +587,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     * @param {Any} [component=\"icon\"]\n     */",
         "meta": {
-            "range": [
-                2631,
-                3024
-            ],
+            "range": [2631, 3024],
             "filename": "tooltip.js",
             "lineno": 94,
             "columnno": 4,
@@ -707,10 +596,7 @@
                 "id": "astnode100000205",
                 "name": "MdTooltipComponent#renderComponent",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item",
-                    "component"
-                ]
+                "paramnames": ["item", "component"]
             },
             "vars": {
                 "": null
@@ -719,18 +605,14 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "defaultvalue": "\"icon\"",
@@ -746,10 +628,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2689,
-                2938
-            ],
+            "range": [2689, 2938],
             "filename": "tooltip.js",
             "lineno": 95,
             "columnno": 14,
@@ -772,10 +651,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                3046,
-                4217
-            ],
+            "range": [3046, 4217],
             "filename": "tooltip.js",
             "lineno": 106,
             "columnno": 4,
@@ -800,10 +676,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                4239,
-                4343
-            ],
+            "range": [4239, 4343],
             "filename": "tooltip.js",
             "lineno": 112,
             "columnno": 4,
@@ -828,10 +701,7 @@
     {
         "comment": "/**\n     * @param {Any} [options]\n     */",
         "meta": {
-            "range": [
-                4395,
-                4704
-            ],
+            "range": [4395, 4704],
             "filename": "tooltip.js",
             "lineno": 120,
             "columnno": 4,
@@ -840,9 +710,7 @@
                 "id": "astnode100000445",
                 "name": "MdTooltipComponent#show",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "options"
-                ]
+                "paramnames": ["options"]
             },
             "vars": {
                 "": null
@@ -851,9 +719,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "options"
@@ -868,10 +734,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4445,
-                4460
-            ],
+            "range": [4445, 4460],
             "filename": "tooltip.js",
             "lineno": 122,
             "columnno": 12,
@@ -892,10 +755,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4474,
-                4576
-            ],
+            "range": [4474, 4576],
             "filename": "tooltip.js",
             "lineno": 123,
             "columnno": 12,
@@ -916,10 +776,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4590,
-                4599
-            ],
+            "range": [4590, 4599],
             "filename": "tooltip.js",
             "lineno": 124,
             "columnno": 12,
@@ -940,10 +797,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4645,
-                4661
-            ],
+            "range": [4645, 4661],
             "filename": "tooltip.js",
             "lineno": 127,
             "columnno": 8,
@@ -966,10 +820,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                4726,
-                4805
-            ],
+            "range": [4726, 4805],
             "filename": "tooltip.js",
             "lineno": 133,
             "columnno": 4,
@@ -994,10 +845,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4744,
-                4761
-            ],
+            "range": [4744, 4761],
             "filename": "tooltip.js",
             "lineno": 134,
             "columnno": 8,
@@ -1020,10 +868,7 @@
     {
         "comment": "/**\n     * @param {Any} [options]\n     */",
         "meta": {
-            "range": [
-                4857,
-                4950
-            ],
+            "range": [4857, 4950],
             "filename": "tooltip.js",
             "lineno": 141,
             "columnno": 4,
@@ -1032,9 +877,7 @@
                 "id": "astnode100000498",
                 "name": "MdTooltipComponent#toggle",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "options"
-                ]
+                "paramnames": ["options"]
             },
             "vars": {
                 "": null
@@ -1043,9 +886,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "options"
@@ -1060,10 +901,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                5000,
-                5101
-            ],
+            "range": [5000, 5101],
             "filename": "tooltip.js",
             "lineno": 149,
             "columnno": 4,
@@ -1072,9 +910,7 @@
                 "id": "astnode100000518",
                 "name": "MdTooltipComponent#handleTooltipIconButtonClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -1083,9 +919,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -1100,10 +934,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5086,
-                5091
-            ],
+            "range": [5086, 5091],
             "filename": "tooltip.js",
             "lineno": 150,
             "columnno": 48,
@@ -1124,10 +955,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                5151,
-                5244
-            ],
+            "range": [5151, 5244],
             "filename": "tooltip.js",
             "lineno": 156,
             "columnno": 4,
@@ -1136,9 +964,7 @@
                 "id": "astnode100000532",
                 "name": "MdTooltipComponent#handleTooltipButtonClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -1147,9 +973,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -1164,10 +988,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5229,
-                5234
-            ],
+            "range": [5229, 5234],
             "filename": "tooltip.js",
             "lineno": 157,
             "columnno": 44,
@@ -1188,10 +1009,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5313,
-                5331
-            ],
+            "range": [5313, 5331],
             "filename": "tooltip.js",
             "lineno": 161,
             "columnno": 9,
@@ -1211,8 +1029,6 @@
     {
         "kind": "package",
         "longname": "package:undefined",
-        "files": [
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tooltip\\tooltip.js"
-        ]
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tooltip\\tooltip.js"]
     }
 ]

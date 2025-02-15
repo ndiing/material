@@ -2,10 +2,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-chips\n * @fires MdChipsComponent#onChipClick\n */",
         "meta": {
-            "range": [
-                285,
-                1883
-            ],
+            "range": [285, 1883],
             "filename": "chips.js",
             "lineno": 11,
             "columnno": 0,
@@ -17,9 +14,7 @@
                 "paramnames": []
             }
         },
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -28,9 +23,7 @@
                 "value": "md-chips"
             }
         ],
-        "fires": [
-            "MdChipsComponent#event:onChipClick"
-        ],
+        "fires": ["MdChipsComponent#event:onChipClick"],
         "name": "MdChipsComponent",
         "longname": "MdChipsComponent",
         "kind": "class",
@@ -40,10 +33,7 @@
     {
         "comment": "/**\n     * @property {Array} [items]\n     * @property {String} [type]\n     */",
         "meta": {
-            "range": [
-                416,
-                508
-            ],
+            "range": [416, 508],
             "filename": "chips.js",
             "lineno": 16,
             "columnno": 4,
@@ -57,18 +47,14 @@
         "properties": [
             {
                 "type": {
-                    "names": [
-                        "Array"
-                    ]
+                    "names": ["Array"]
                 },
                 "optional": true,
                 "name": "items"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "type"
@@ -83,10 +69,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                446,
-                468
-            ],
+            "range": [446, 468],
             "filename": "chips.js",
             "lineno": 17,
             "columnno": 8,
@@ -107,10 +90,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                455,
-                466
-            ],
+            "range": [455, 466],
             "filename": "chips.js",
             "lineno": 17,
             "columnno": 17,
@@ -132,10 +112,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                478,
-                500
-            ],
+            "range": [478, 500],
             "filename": "chips.js",
             "lineno": 18,
             "columnno": 8,
@@ -156,10 +133,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                486,
-                498
-            ],
+            "range": [486, 498],
             "filename": "chips.js",
             "lineno": 18,
             "columnno": 16,
@@ -181,10 +155,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                547,
-                589
-            ],
+            "range": [547, 589],
             "filename": "chips.js",
             "lineno": 24,
             "columnno": 4,
@@ -205,10 +176,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                611,
-                686
-            ],
+            "range": [611, 686],
             "filename": "chips.js",
             "lineno": 28,
             "columnno": 4,
@@ -233,10 +201,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-chips\n * @fires MdChipsComponent#onChipClick\n */",
         "meta": {
-            "range": [
-                285,
-                1883
-            ],
+            "range": [285, 1883],
             "filename": "chips.js",
             "lineno": 11,
             "columnno": 0,
@@ -251,9 +216,7 @@
         "name": "MdChipsComponent",
         "longname": "MdChipsComponent",
         "kind": "class",
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -262,18 +225,13 @@
                 "value": "md-chips"
             }
         ],
-        "fires": [
-            "MdChipsComponent#event:onChipClick"
-        ],
+        "fires": ["MdChipsComponent#event:onChipClick"],
         "scope": "global"
     },
     {
         "comment": "",
         "meta": {
-            "range": [
-                652,
-                679
-            ],
+            "range": [652, 679],
             "filename": "chips.js",
             "lineno": 30,
             "columnno": 8,
@@ -296,10 +254,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     */",
         "meta": {
-            "range": [
-                735,
-                1231
-            ],
+            "range": [735, 1231],
             "filename": "chips.js",
             "lineno": 36,
             "columnno": 4,
@@ -308,9 +263,7 @@
                 "id": "astnode100000051",
                 "name": "MdChipsComponent#renderChip",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item"
-                ]
+                "paramnames": ["item"]
             },
             "vars": {
                 "": null
@@ -319,9 +272,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
@@ -336,10 +287,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                1253,
-                1333
-            ],
+            "range": [1253, 1333],
             "filename": "chips.js",
             "lineno": 53,
             "columnno": 4,
@@ -364,10 +312,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                1355,
-                1457
-            ],
+            "range": [1355, 1457],
             "filename": "chips.js",
             "lineno": 59,
             "columnno": 4,
@@ -392,10 +337,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                1507,
-                1881
-            ],
+            "range": [1507, 1881],
             "filename": "chips.js",
             "lineno": 67,
             "columnno": 4,
@@ -404,9 +346,7 @@
                 "id": "astnode100000138",
                 "name": "MdChipsComponent#handleChipClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -415,9 +355,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -432,10 +370,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1546,
-                1577
-            ],
+            "range": [1546, 1577],
             "filename": "chips.js",
             "lineno": 68,
             "columnno": 14,
@@ -458,10 +393,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1683,
-                1712
-            ],
+            "range": [1683, 1712],
             "filename": "chips.js",
             "lineno": 71,
             "columnno": 16,
@@ -484,10 +416,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1759,
-                1789
-            ],
+            "range": [1759, 1789],
             "filename": "chips.js",
             "lineno": 74,
             "columnno": 12,
@@ -511,10 +440,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1866,
-                1871
-            ],
+            "range": [1866, 1871],
             "filename": "chips.js",
             "lineno": 77,
             "columnno": 35,
@@ -535,10 +461,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1946,
-                1962
-            ],
+            "range": [1946, 1962],
             "filename": "chips.js",
             "lineno": 81,
             "columnno": 9,
@@ -558,8 +481,6 @@
     {
         "kind": "package",
         "longname": "package:undefined",
-        "files": [
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\chips\\chips.js"
-        ]
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\chips\\chips.js"]
     }
 ]

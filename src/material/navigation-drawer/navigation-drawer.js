@@ -92,19 +92,7 @@ class MdNavigationDrawerComponent extends MdComponent {
         return html`
             ${this.icons?.length || this.label || this.sublabel || this.actions?.length ? html` <div class="md-navigation-drawer__header">${this.icons?.length ? html` <div class="md-navigation-drawer__icons">${this.icons.map((icon) => this.renderComponent(icon, "icon"))}</div> ` : nothing} ${this.label || this.sublabel ? html` <div class="md-navigation-drawer__labels">${this.label ? html`<div class="md-navigation-drawer__label">${this.label}</div>` : nothing} ${this.sublabel ? html`<div class="md-navigation-drawer__sublabel">${this.sublabel}</div>` : nothing}</div> ` : nothing} ${this.actions?.length ? html` <div class="md-navigation-drawer__actions">${this.actions.map((action) => this.renderComponent(action, "icon-button"))}</div> ` : nothing}</div> ` : nothing}
             <div class="md-navigation-drawer__wrapper">
-                <div class="md-navigation-drawer__body">
-                    ${this.type === "navigation-list"
-                        ? html`
-                              <md-navigation-list
-                                  .items="${this.items}"
-                              ></md-navigation-list>
-                          `
-                        : html`
-                              <md-tree
-                                  .items="${this.items}"
-                              ></md-tree>
-                          `}
-                </div>
+                <div class="md-navigation-drawer__body">${this.type === "navigation-list" ? html` <md-navigation-list .items="${this.items}"></md-navigation-list> ` : html` <md-tree .items="${this.items}"></md-tree> `}</div>
             </div>
         `;
     }
@@ -188,8 +176,6 @@ class MdNavigationDrawerComponent extends MdComponent {
         if (this.open) this.close();
         this.emit("onNavigationDrawerScrimClose", { event });
     }
-
-    
 }
 customElements.define("md-navigation-drawer", MdNavigationDrawerComponent);
 export { MdNavigationDrawerComponent };

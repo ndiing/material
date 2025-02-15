@@ -2,10 +2,7 @@
     {
         "comment": "/**\n * @extends LitElement\n */",
         "meta": {
-            "range": [
-                123,
-                604
-            ],
+            "range": [123, 604],
             "filename": "component.js",
             "lineno": 7,
             "columnno": 0,
@@ -17,9 +14,7 @@
                 "paramnames": []
             }
         },
-        "augments": [
-            "LitElement"
-        ],
+        "augments": ["LitElement"],
         "name": "MdComponent",
         "longname": "MdComponent",
         "kind": "class",
@@ -29,10 +24,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                182,
-                259
-            ],
+            "range": [182, 259],
             "filename": "component.js",
             "lineno": 10,
             "columnno": 4,
@@ -57,10 +49,7 @@
     {
         "comment": "/**\n * @extends LitElement\n */",
         "meta": {
-            "range": [
-                123,
-                604
-            ],
+            "range": [123, 604],
             "filename": "component.js",
             "lineno": 7,
             "columnno": 0,
@@ -75,18 +64,13 @@
         "name": "MdComponent",
         "longname": "MdComponent",
         "kind": "class",
-        "augments": [
-            "LitElement"
-        ],
+        "augments": ["LitElement"],
         "scope": "global"
     },
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                281,
-                328
-            ],
+            "range": [281, 328],
             "filename": "component.js",
             "lineno": 17,
             "columnno": 4,
@@ -111,10 +95,7 @@
     {
         "comment": "/**\n     * @param {Any} [type]\n     * @param {Any} [detail]\n     */",
         "meta": {
-            "range": [
-                406,
-                602
-            ],
+            "range": [406, 602],
             "filename": "component.js",
             "lineno": 25,
             "columnno": 4,
@@ -123,10 +104,7 @@
                 "id": "astnode100000031",
                 "name": "MdComponent#emit",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "type",
-                    "detail"
-                ]
+                "paramnames": ["type", "detail"]
             },
             "vars": {
                 "": null
@@ -135,18 +113,14 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "type"
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "detail"
@@ -161,10 +135,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                441,
-                560
-            ],
+            "range": [441, 560],
             "filename": "component.js",
             "lineno": 26,
             "columnno": 14,
@@ -187,10 +158,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                485,
-                498
-            ],
+            "range": [485, 498],
             "filename": "component.js",
             "lineno": 27,
             "columnno": 12,
@@ -211,10 +179,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                512,
-                528
-            ],
+            "range": [512, 528],
             "filename": "component.js",
             "lineno": 28,
             "columnno": 12,
@@ -235,10 +200,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                542,
-                548
-            ],
+            "range": [542, 548],
             "filename": "component.js",
             "lineno": 29,
             "columnno": 12,
@@ -259,10 +221,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                614,
-                625
-            ],
+            "range": [614, 625],
             "filename": "component.js",
             "lineno": 34,
             "columnno": 9,
@@ -282,8 +241,6 @@
     {
         "kind": "package",
         "longname": "package:undefined",
-        "files": [
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\component\\component.js"
-        ]
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\component\\component.js"]
     }
 ]

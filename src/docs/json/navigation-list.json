@@ -2,10 +2,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-navigation-list\n * @fires MdNavigationListComponent#onNavigationListKeydownArrowUp\n * @fires MdNavigationListComponent#onNavigationListKeydownArrowDown\n * @fires MdNavigationListComponent#onNavigationListKeydownEnter\n * @fires MdNavigationListComponent#onNavigationListKeydown\n * @fires MdNavigationListComponent#onNavigationListItemClick\n */",
         "meta": {
-            "range": [
-                576,
-                5748
-            ],
+            "range": [576, 5748],
             "filename": "navigation-list.js",
             "lineno": 15,
             "columnno": 0,
@@ -17,9 +14,7 @@
                 "paramnames": []
             }
         },
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -28,13 +23,7 @@
                 "value": "md-navigation-list"
             }
         ],
-        "fires": [
-            "MdNavigationListComponent#event:onNavigationListKeydownArrowUp",
-            "MdNavigationListComponent#event:onNavigationListKeydownArrowDown",
-            "MdNavigationListComponent#event:onNavigationListKeydownEnter",
-            "MdNavigationListComponent#event:onNavigationListKeydown",
-            "MdNavigationListComponent#event:onNavigationListItemClick"
-        ],
+        "fires": ["MdNavigationListComponent#event:onNavigationListKeydownArrowUp", "MdNavigationListComponent#event:onNavigationListKeydownArrowDown", "MdNavigationListComponent#event:onNavigationListKeydownEnter", "MdNavigationListComponent#event:onNavigationListKeydown", "MdNavigationListComponent#event:onNavigationListItemClick"],
         "name": "MdNavigationListComponent",
         "longname": "MdNavigationListComponent",
         "kind": "class",
@@ -44,10 +33,7 @@
     {
         "comment": "/**\n     * @property {Array} [items]\n     * @property {Object} [rippleOptions]\n     */",
         "meta": {
-            "range": [
-                725,
-                826
-            ],
+            "range": [725, 826],
             "filename": "navigation-list.js",
             "lineno": 20,
             "columnno": 4,
@@ -61,18 +47,14 @@
         "properties": [
             {
                 "type": {
-                    "names": [
-                        "Array"
-                    ]
+                    "names": ["Array"]
                 },
                 "optional": true,
                 "name": "items"
             },
             {
                 "type": {
-                    "names": [
-                        "Object"
-                    ]
+                    "names": ["Object"]
                 },
                 "optional": true,
                 "name": "rippleOptions"
@@ -87,10 +69,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                755,
-                777
-            ],
+            "range": [755, 777],
             "filename": "navigation-list.js",
             "lineno": 21,
             "columnno": 8,
@@ -111,10 +90,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                764,
-                775
-            ],
+            "range": [764, 775],
             "filename": "navigation-list.js",
             "lineno": 21,
             "columnno": 17,
@@ -136,10 +112,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                787,
-                818
-            ],
+            "range": [787, 818],
             "filename": "navigation-list.js",
             "lineno": 22,
             "columnno": 8,
@@ -160,10 +133,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                804,
-                816
-            ],
+            "range": [804, 816],
             "filename": "navigation-list.js",
             "lineno": 22,
             "columnno": 25,
@@ -185,10 +155,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                848,
-                975
-            ],
+            "range": [848, 975],
             "filename": "navigation-list.js",
             "lineno": 27,
             "columnno": 4,
@@ -213,10 +180,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-navigation-list\n * @fires MdNavigationListComponent#onNavigationListKeydownArrowUp\n * @fires MdNavigationListComponent#onNavigationListKeydownArrowDown\n * @fires MdNavigationListComponent#onNavigationListKeydownEnter\n * @fires MdNavigationListComponent#onNavigationListKeydown\n * @fires MdNavigationListComponent#onNavigationListItemClick\n */",
         "meta": {
-            "range": [
-                576,
-                5748
-            ],
+            "range": [576, 5748],
             "filename": "navigation-list.js",
             "lineno": 15,
             "columnno": 0,
@@ -231,9 +195,7 @@
         "name": "MdNavigationListComponent",
         "longname": "MdNavigationListComponent",
         "kind": "class",
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -242,22 +204,13 @@
                 "value": "md-navigation-list"
             }
         ],
-        "fires": [
-            "MdNavigationListComponent#event:onNavigationListKeydownArrowUp",
-            "MdNavigationListComponent#event:onNavigationListKeydownArrowDown",
-            "MdNavigationListComponent#event:onNavigationListKeydownEnter",
-            "MdNavigationListComponent#event:onNavigationListKeydown",
-            "MdNavigationListComponent#event:onNavigationListItemClick"
-        ],
+        "fires": ["MdNavigationListComponent#event:onNavigationListKeydownArrowUp", "MdNavigationListComponent#event:onNavigationListKeydownArrowDown", "MdNavigationListComponent#event:onNavigationListKeydownEnter", "MdNavigationListComponent#event:onNavigationListKeydown", "MdNavigationListComponent#event:onNavigationListItemClick"],
         "scope": "global"
     },
     {
         "comment": "",
         "meta": {
-            "range": [
-                889,
-                904
-            ],
+            "range": [889, 904],
             "filename": "navigation-list.js",
             "lineno": 29,
             "columnno": 8,
@@ -280,10 +233,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                914,
-                938
-            ],
+            "range": [914, 938],
             "filename": "navigation-list.js",
             "lineno": 30,
             "columnno": 8,
@@ -306,10 +256,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                948,
-                968
-            ],
+            "range": [948, 968],
             "filename": "navigation-list.js",
             "lineno": 31,
             "columnno": 8,
@@ -332,10 +279,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     */",
         "meta": {
-            "range": [
-                1024,
-                1793
-            ],
+            "range": [1024, 1793],
             "filename": "navigation-list.js",
             "lineno": 37,
             "columnno": 4,
@@ -344,9 +288,7 @@
                 "id": "astnode100000060",
                 "name": "MdNavigationListComponent#renderNavigationListItem",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item"
-                ]
+                "paramnames": ["item"]
             },
             "vars": {
                 "": null
@@ -355,9 +297,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
@@ -372,10 +312,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                1815,
-                1909
-            ],
+            "range": [1815, 1909],
             "filename": "navigation-list.js",
             "lineno": 57,
             "columnno": 4,
@@ -400,10 +337,7 @@
     {
         "comment": "/**\n     * @async\n     */",
         "meta": {
-            "range": [
-                1945,
-                2313
-            ],
+            "range": [1945, 2313],
             "filename": "navigation-list.js",
             "lineno": 64,
             "columnno": 4,
@@ -429,10 +363,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2150,
-                2228
-            ],
+            "range": [2150, 2228],
             "filename": "navigation-list.js",
             "lineno": 68,
             "columnno": 8,
@@ -455,10 +386,7 @@
     {
         "comment": "/**\n     * @async\n     */",
         "meta": {
-            "range": [
-                2349,
-                2504
-            ],
+            "range": [2349, 2504],
             "filename": "navigation-list.js",
             "lineno": 75,
             "columnno": 4,
@@ -484,10 +412,7 @@
     {
         "comment": "/**\n     * @async\n     * @param {Any} [changedProperties]\n     */",
         "meta": {
-            "range": [
-                2580,
-                2830
-            ],
+            "range": [2580, 2830],
             "filename": "navigation-list.js",
             "lineno": 84,
             "columnno": 4,
@@ -496,9 +421,7 @@
                 "id": "astnode100000205",
                 "name": "MdNavigationListComponent#updated",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "changedProperties"
-                ]
+                "paramnames": ["changedProperties"]
             },
             "vars": {
                 "": null
@@ -508,9 +431,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "changedProperties"
@@ -525,10 +446,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                2852,
-                2985
-            ],
+            "range": [2852, 2985],
             "filename": "navigation-list.js",
             "lineno": 95,
             "columnno": 4,
@@ -553,10 +471,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2882,
-                2909
-            ],
+            "range": [2882, 2909],
             "filename": "navigation-list.js",
             "lineno": 96,
             "columnno": 14,
@@ -579,10 +494,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2919,
-                2948
-            ],
+            "range": [2919, 2948],
             "filename": "navigation-list.js",
             "lineno": 97,
             "columnno": 8,
@@ -605,10 +517,7 @@
     {
         "comment": "/**\n     * @async\n     */",
         "meta": {
-            "range": [
-                3021,
-                3386
-            ],
+            "range": [3021, 3386],
             "filename": "navigation-list.js",
             "lineno": 104,
             "columnno": 4,
@@ -634,10 +543,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3093,
-                3177
-            ],
+            "range": [3093, 3177],
             "filename": "navigation-list.js",
             "lineno": 106,
             "columnno": 14,
@@ -660,10 +566,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3287,
-                3303
-            ],
+            "range": [3287, 3303],
             "filename": "navigation-list.js",
             "lineno": 109,
             "columnno": 12,
@@ -684,10 +587,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3317,
-                3334
-            ],
+            "range": [3317, 3334],
             "filename": "navigation-list.js",
             "lineno": 110,
             "columnno": 12,
@@ -708,10 +608,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3348,
-                3367
-            ],
+            "range": [3348, 3367],
             "filename": "navigation-list.js",
             "lineno": 111,
             "columnno": 12,
@@ -732,10 +629,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                3436,
-                3917
-            ],
+            "range": [3436, 3917],
             "filename": "navigation-list.js",
             "lineno": 118,
             "columnno": 4,
@@ -744,9 +638,7 @@
                 "id": "astnode100000304",
                 "name": "MdNavigationListComponent#handleNavigationListKeydownArrowUp",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -755,9 +647,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -772,10 +662,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3526,
-                3592
-            ],
+            "range": [3526, 3592],
             "filename": "navigation-list.js",
             "lineno": 120,
             "columnno": 14,
@@ -798,10 +685,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3608,
-                3637
-            ],
+            "range": [3608, 3637],
             "filename": "navigation-list.js",
             "lineno": 121,
             "columnno": 14,
@@ -824,10 +708,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3740,
-                3775
-            ],
+            "range": [3740, 3775],
             "filename": "navigation-list.js",
             "lineno": 124,
             "columnno": 12,
@@ -850,10 +731,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3902,
-                3907
-            ],
+            "range": [3902, 3907],
             "filename": "navigation-list.js",
             "lineno": 128,
             "columnno": 54,
@@ -874,10 +752,7 @@
     {
         "comment": "/**\n     * @async\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                3981,
-                4492
-            ],
+            "range": [3981, 4492],
             "filename": "navigation-list.js",
             "lineno": 135,
             "columnno": 4,
@@ -886,9 +761,7 @@
                 "id": "astnode100000378",
                 "name": "MdNavigationListComponent#handleNavigationListKeydownArrowDown",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -898,9 +771,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -915,10 +786,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4079,
-                4145
-            ],
+            "range": [4079, 4145],
             "filename": "navigation-list.js",
             "lineno": 137,
             "columnno": 14,
@@ -941,10 +809,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4161,
-                4190
-            ],
+            "range": [4161, 4190],
             "filename": "navigation-list.js",
             "lineno": 138,
             "columnno": 14,
@@ -967,10 +832,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4313,
-                4348
-            ],
+            "range": [4313, 4348],
             "filename": "navigation-list.js",
             "lineno": 141,
             "columnno": 12,
@@ -993,10 +855,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4477,
-                4482
-            ],
+            "range": [4477, 4482],
             "filename": "navigation-list.js",
             "lineno": 145,
             "columnno": 56,
@@ -1017,10 +876,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                4542,
-                4833
-            ],
+            "range": [4542, 4833],
             "filename": "navigation-list.js",
             "lineno": 151,
             "columnno": 4,
@@ -1029,9 +885,7 @@
                 "id": "astnode100000455",
                 "name": "MdNavigationListComponent#handleNavigationListKeydownEnter",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -1040,9 +894,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -1057,10 +909,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4818,
-                4823
-            ],
+            "range": [4818, 4823],
             "filename": "navigation-list.js",
             "lineno": 155,
             "columnno": 52,
@@ -1081,10 +930,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                4883,
-                5343
-            ],
+            "range": [4883, 5343],
             "filename": "navigation-list.js",
             "lineno": 161,
             "columnno": 4,
@@ -1093,9 +939,7 @@
                 "id": "astnode100000474",
                 "name": "MdNavigationListComponent#handleNavigationListKeydown",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -1104,9 +948,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -1121,10 +963,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5328,
-                5333
-            ],
+            "range": [5328, 5333],
             "filename": "navigation-list.js",
             "lineno": 167,
             "columnno": 47,
@@ -1145,10 +984,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                5393,
-                5746
-            ],
+            "range": [5393, 5746],
             "filename": "navigation-list.js",
             "lineno": 173,
             "columnno": 4,
@@ -1157,9 +993,7 @@
                 "id": "astnode100000533",
                 "name": "MdNavigationListComponent#handleNavigationListItemClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -1168,9 +1002,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -1185,10 +1017,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5525,
-                5556
-            ],
+            "range": [5525, 5556],
             "filename": "navigation-list.js",
             "lineno": 175,
             "columnno": 14,
@@ -1211,10 +1040,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5609,
-                5638
-            ],
+            "range": [5609, 5638],
             "filename": "navigation-list.js",
             "lineno": 177,
             "columnno": 12,
@@ -1237,10 +1063,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5731,
-                5736
-            ],
+            "range": [5731, 5736],
             "filename": "navigation-list.js",
             "lineno": 180,
             "columnno": 49,
@@ -1261,10 +1084,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5830,
-                5855
-            ],
+            "range": [5830, 5855],
             "filename": "navigation-list.js",
             "lineno": 184,
             "columnno": 9,
@@ -1284,8 +1104,6 @@
     {
         "kind": "package",
         "longname": "package:undefined",
-        "files": [
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\navigation-list\\navigation-list.js"
-        ]
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\navigation-list\\navigation-list.js"]
     }
 ]

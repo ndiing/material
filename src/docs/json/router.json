@@ -2,10 +2,7 @@
     {
         "comment": "/**\n * @fires Router#onRouterCurrentEntryChange\n * @fires Router#onRouterNavigate\n * @fires Router#onRouterNavigateError\n * @fires Router#onRouterNavigateSuccess\n */",
         "meta": {
-            "range": [
-                166,
-                7420
-            ],
+            "range": [166, 7420],
             "filename": "router.js",
             "lineno": 7,
             "columnno": 0,
@@ -17,12 +14,7 @@
                 "paramnames": []
             }
         },
-        "fires": [
-            "Router#event:onRouterCurrentEntryChange",
-            "Router#event:onRouterNavigate",
-            "Router#event:onRouterNavigateError",
-            "Router#event:onRouterNavigateSuccess"
-        ],
+        "fires": ["Router#event:onRouterCurrentEntryChange", "Router#event:onRouterNavigate", "Router#event:onRouterNavigateError", "Router#event:onRouterNavigateSuccess"],
         "name": "Router",
         "longname": "Router",
         "kind": "class",
@@ -31,10 +23,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                185,
-                204
-            ],
+            "range": [185, 204],
             "filename": "router.js",
             "lineno": 8,
             "columnno": 4,
@@ -55,10 +44,7 @@
     {
         "comment": "/**\n     * @static\n     * @param {Any} [pathname=this.pathname]\n     * @param {Any} [routes=this.routes]\n     * @param {Any} [parent=null]\n     * @param {Any} [result=[]]\n     */",
         "meta": {
-            "range": [
-                393,
-                1294
-            ],
+            "range": [393, 1294],
             "filename": "router.js",
             "lineno": 17,
             "columnno": 4,
@@ -67,12 +53,7 @@
                 "id": "astnode100000007",
                 "name": "Router.get",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "pathname",
-                    "routes",
-                    "parent",
-                    "result"
-                ]
+                "paramnames": ["pathname", "routes", "parent", "result"]
             },
             "vars": {
                 "": null
@@ -82,9 +63,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "defaultvalue": "this.pathname",
@@ -92,9 +71,7 @@
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "defaultvalue": "this.routes",
@@ -102,9 +79,7 @@
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "defaultvalue": null,
@@ -112,9 +87,7 @@
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "defaultvalue": "[]",
@@ -129,10 +102,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                501,
-                506
-            ],
+            "range": [501, 506],
             "filename": "router.js",
             "lineno": 18,
             "columnno": 19,
@@ -153,10 +123,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                569,
-                590
-            ],
+            "range": [569, 590],
             "filename": "router.js",
             "lineno": 20,
             "columnno": 16,
@@ -180,10 +147,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                608,
-                691
-            ],
+            "range": [608, 691],
             "filename": "router.js",
             "lineno": 21,
             "columnno": 16,
@@ -207,10 +171,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                709,
-                833
-            ],
+            "range": [709, 833],
             "filename": "router.js",
             "lineno": 22,
             "columnno": 16,
@@ -234,10 +195,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                867,
-                905
-            ],
+            "range": [867, 905],
             "filename": "router.js",
             "lineno": 24,
             "columnno": 18,
@@ -260,10 +218,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                950,
-                1023
-            ],
+            "range": [950, 1023],
             "filename": "router.js",
             "lineno": 26,
             "columnno": 16,
@@ -286,10 +241,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1147,
-                1218
-            ],
+            "range": [1147, 1218],
             "filename": "router.js",
             "lineno": 32,
             "columnno": 22,
@@ -312,10 +264,7 @@
     {
         "comment": "/**\n     * @static\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                1348,
-                1586
-            ],
+            "range": [1348, 1586],
             "filename": "router.js",
             "lineno": 42,
             "columnno": 4,
@@ -341,10 +290,7 @@
     {
         "comment": "/**\n     * @static\n     * @async\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                1665,
-                2750
-            ],
+            "range": [1665, 2750],
             "filename": "router.js",
             "lineno": 55,
             "columnno": 4,
@@ -353,9 +299,7 @@
                 "id": "astnode100000174",
                 "name": "Router.handleNavigation",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -366,9 +310,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -382,10 +324,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1833,
-                1852
-            ],
+            "range": [1833, 1852],
             "filename": "router.js",
             "lineno": 59,
             "columnno": 14,
@@ -408,10 +347,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1912,
-                1917
-            ],
+            "range": [1912, 1917],
             "filename": "router.js",
             "lineno": 61,
             "columnno": 19,
@@ -432,10 +368,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2263,
-                2299
-            ],
+            "range": [2263, 2299],
             "filename": "router.js",
             "lineno": 71,
             "columnno": 18,
@@ -458,10 +391,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2319,
-                2366
-            ],
+            "range": [2319, 2366],
             "filename": "router.js",
             "lineno": 72,
             "columnno": 18,
@@ -484,10 +414,7 @@
     {
         "comment": "/**\n     * @static\n     * @param {Any} [routes]\n     */",
         "meta": {
-            "range": [
-                2816,
-                3317
-            ],
+            "range": [2816, 3317],
             "filename": "router.js",
             "lineno": 88,
             "columnno": 4,
@@ -496,9 +423,7 @@
                 "id": "astnode100000315",
                 "name": "Router.removeComponent",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "routes"
-                ]
+                "paramnames": ["routes"]
             },
             "vars": {
                 "": null
@@ -508,9 +433,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "routes"
@@ -524,10 +447,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2863,
-                2928
-            ],
+            "range": [2863, 2928],
             "filename": "router.js",
             "lineno": 89,
             "columnno": 14,
@@ -550,10 +470,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2949,
-                2955
-            ],
+            "range": [2949, 2955],
             "filename": "router.js",
             "lineno": 90,
             "columnno": 19,
@@ -574,10 +491,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2986,
-                3021
-            ],
+            "range": [2986, 3021],
             "filename": "router.js",
             "lineno": 91,
             "columnno": 16,
@@ -600,10 +514,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3250,
-                3286
-            ],
+            "range": [3250, 3286],
             "filename": "router.js",
             "lineno": 96,
             "columnno": 16,
@@ -627,10 +538,7 @@
     {
         "comment": "/**\n     * @static\n     * @param {Any} [route]\n     * @param {Any} [outlet]\n     */",
         "meta": {
-            "range": [
-                3411,
-                3577
-            ],
+            "range": [3411, 3577],
             "filename": "router.js",
             "lineno": 106,
             "columnno": 4,
@@ -639,10 +547,7 @@
                 "id": "astnode100000385",
                 "name": "Router.renderComponent",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "route",
-                    "outlet"
-                ]
+                "paramnames": ["route", "outlet"]
             },
             "vars": {
                 "": null
@@ -652,18 +557,14 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "route"
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "outlet"
@@ -677,10 +578,7 @@
     {
         "comment": "/**\n     * @static\n     * @async\n     * @param {Any} [container]\n     * @param {Any} [route]\n     */",
         "meta": {
-            "range": [
-                3688,
-                4533
-            ],
+            "range": [3688, 4533],
             "filename": "router.js",
             "lineno": 116,
             "columnno": 4,
@@ -689,10 +587,7 @@
                 "id": "astnode100000411",
                 "name": "Router.getOutlet",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "container",
-                    "route"
-                ]
+                "paramnames": ["container", "route"]
             },
             "vars": {
                 "": null
@@ -703,18 +598,14 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "container"
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "route"
@@ -728,10 +619,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3795,
-                3803
-            ],
+            "range": [3795, 3803],
             "filename": "router.js",
             "lineno": 118,
             "columnno": 16,
@@ -752,10 +640,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3821,
-                3827
-            ],
+            "range": [3821, 3827],
             "filename": "router.js",
             "lineno": 119,
             "columnno": 16,
@@ -776,10 +661,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3845,
-                3879
-            ],
+            "range": [3845, 3879],
             "filename": "router.js",
             "lineno": 120,
             "columnno": 16,
@@ -802,10 +684,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3897,
-                3915
-            ],
+            "range": [3897, 3915],
             "filename": "router.js",
             "lineno": 121,
             "columnno": 16,
@@ -828,10 +707,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3965,
-                4011
-            ],
+            "range": [3965, 4011],
             "filename": "router.js",
             "lineno": 123,
             "columnno": 16,
@@ -855,10 +731,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4029,
-                4051
-            ],
+            "range": [4029, 4051],
             "filename": "router.js",
             "lineno": 124,
             "columnno": 16,
@@ -882,10 +755,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4085,
-                4316
-            ],
+            "range": [4085, 4316],
             "filename": "router.js",
             "lineno": 126,
             "columnno": 18,
@@ -910,10 +780,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4120,
-                4159
-            ],
+            "range": [4120, 4159],
             "filename": "router.js",
             "lineno": 127,
             "columnno": 16,
@@ -937,10 +804,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4330,
-                4371
-            ],
+            "range": [4330, 4371],
             "filename": "router.js",
             "lineno": 133,
             "columnno": 12,
@@ -964,10 +828,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4428,
-                4441
-            ],
+            "range": [4428, 4441],
             "filename": "router.js",
             "lineno": 135,
             "columnno": 16,
@@ -988,10 +849,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4459,
-                4474
-            ],
+            "range": [4459, 4474],
             "filename": "router.js",
             "lineno": 136,
             "columnno": 16,
@@ -1012,10 +870,7 @@
     {
         "comment": "/**\n     * @static\n     * @param {Any} [route]\n     */",
         "meta": {
-            "range": [
-                4598,
-                4689
-            ],
+            "range": [4598, 4689],
             "filename": "router.js",
             "lineno": 146,
             "columnno": 4,
@@ -1024,9 +879,7 @@
                 "id": "astnode100000505",
                 "name": "Router.setContainer",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "route"
-                ]
+                "paramnames": ["route"]
             },
             "vars": {
                 "": null
@@ -1036,9 +889,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "route"
@@ -1052,10 +903,7 @@
     {
         "comment": "/**\n     * @static\n     * @async\n     * @param {Any} [route]\n     */",
         "meta": {
-            "range": [
-                4768,
-                4901
-            ],
+            "range": [4768, 4901],
             "filename": "router.js",
             "lineno": 155,
             "columnno": 4,
@@ -1064,9 +912,7 @@
                 "id": "astnode100000516",
                 "name": "Router.loadComponent",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "route"
-                ]
+                "paramnames": ["route"]
             },
             "vars": {
                 "": null
@@ -1077,9 +923,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "route"
@@ -1093,10 +937,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4848,
-                4884
-            ],
+            "range": [4848, 4884],
             "filename": "router.js",
             "lineno": 157,
             "columnno": 12,
@@ -1119,10 +960,7 @@
     {
         "comment": "/**\n     * @static\n     * @async\n     * @param {Any} [route]\n     */",
         "meta": {
-            "range": [
-                4980,
-                5328
-            ],
+            "range": [4980, 5328],
             "filename": "router.js",
             "lineno": 166,
             "columnno": 4,
@@ -1131,9 +969,7 @@
                 "id": "astnode100000537",
                 "name": "Router.handleBeforeLoad",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "route"
-                ]
+                "paramnames": ["route"]
             },
             "vars": {
                 "": null
@@ -1144,9 +980,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "route"
@@ -1160,10 +994,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5086,
-                5197
-            ],
+            "range": [5086, 5197],
             "filename": "router.js",
             "lineno": 168,
             "columnno": 18,
@@ -1185,10 +1016,7 @@
     {
         "comment": "/**\n     * @static\n     */",
         "meta": {
-            "range": [
-                5365,
-                5610
-            ],
+            "range": [5365, 5610],
             "filename": "router.js",
             "lineno": 180,
             "columnno": 4,
@@ -1213,10 +1041,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5564,
-                5603
-            ],
+            "range": [5564, 5603],
             "filename": "router.js",
             "lineno": 182,
             "columnno": 85,
@@ -1239,10 +1064,7 @@
     {
         "comment": "/**\n     * @static\n     * @param {Any} [url]\n     */",
         "meta": {
-            "range": [
-                5673,
-                5866
-            ],
+            "range": [5673, 5866],
             "filename": "router.js",
             "lineno": 189,
             "columnno": 4,
@@ -1251,9 +1073,7 @@
                 "id": "astnode100000630",
                 "name": "Router.navigate",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "url"
-                ]
+                "paramnames": ["url"]
             },
             "vars": {
                 "": null
@@ -1263,9 +1083,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "url"
@@ -1279,10 +1097,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5823,
-                5849
-            ],
+            "range": [5823, 5849],
             "filename": "router.js",
             "lineno": 193,
             "columnno": 12,
@@ -1305,10 +1120,7 @@
     {
         "comment": "/**\n     * @static\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                5931,
-                6156
-            ],
+            "range": [5931, 6156],
             "filename": "router.js",
             "lineno": 201,
             "columnno": 4,
@@ -1317,9 +1129,7 @@
                 "id": "astnode100000661",
                 "name": "Router.handleNavigate",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -1329,9 +1139,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -1345,10 +1153,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5976,
-                6022
-            ],
+            "range": [5976, 6022],
             "filename": "router.js",
             "lineno": 202,
             "columnno": 14,
@@ -1371,10 +1176,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6065,
-                6105
-            ],
+            "range": [6065, 6105],
             "filename": "router.js",
             "lineno": 204,
             "columnno": 18,
@@ -1397,10 +1199,7 @@
     {
         "comment": "/**\n     * @static\n     * @param {Any} [type]\n     * @param {Any} [detail]\n     */",
         "meta": {
-            "range": [
-                6249,
-                6454
-            ],
+            "range": [6249, 6454],
             "filename": "router.js",
             "lineno": 214,
             "columnno": 4,
@@ -1409,10 +1208,7 @@
                 "id": "astnode100000693",
                 "name": "Router.emit",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "type",
-                    "detail"
-                ]
+                "paramnames": ["type", "detail"]
             },
             "vars": {
                 "": null
@@ -1422,18 +1218,14 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "type"
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "detail"
@@ -1447,10 +1239,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6291,
-                6410
-            ],
+            "range": [6291, 6410],
             "filename": "router.js",
             "lineno": 215,
             "columnno": 14,
@@ -1473,10 +1262,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6335,
-                6348
-            ],
+            "range": [6335, 6348],
             "filename": "router.js",
             "lineno": 216,
             "columnno": 12,
@@ -1497,10 +1283,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6362,
-                6378
-            ],
+            "range": [6362, 6378],
             "filename": "router.js",
             "lineno": 217,
             "columnno": 12,
@@ -1521,10 +1304,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6392,
-                6398
-            ],
+            "range": [6392, 6398],
             "filename": "router.js",
             "lineno": 218,
             "columnno": 12,
@@ -1545,10 +1325,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6459,
-                6478
-            ],
+            "range": [6459, 6478],
             "filename": "router.js",
             "lineno": 222,
             "columnno": 4,
@@ -1569,10 +1346,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6483,
-                6503
-            ],
+            "range": [6483, 6503],
             "filename": "router.js",
             "lineno": 223,
             "columnno": 4,
@@ -1593,10 +1367,7 @@
     {
         "comment": "/**\n     * @static\n     * @param {Any} [routes=[]]\n     * @param {Any} [options={}]\n     */",
         "meta": {
-            "range": [
-                6605,
-                7418
-            ],
+            "range": [6605, 7418],
             "filename": "router.js",
             "lineno": 230,
             "columnno": 4,
@@ -1605,10 +1376,7 @@
                 "id": "astnode100000722",
                 "name": "Router.use",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "routes",
-                    "options"
-                ]
+                "paramnames": ["routes", "options"]
             },
             "vars": {
                 "": null
@@ -1618,9 +1386,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "defaultvalue": "[]",
@@ -1628,9 +1394,7 @@
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "defaultvalue": "{}",
@@ -1645,10 +1409,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6653,
-                6673
-            ],
+            "range": [6653, 6673],
             "filename": "router.js",
             "lineno": 231,
             "columnno": 8,
@@ -1671,10 +1432,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6683,
-                6772
-            ],
+            "range": [6683, 6772],
             "filename": "router.js",
             "lineno": 232,
             "columnno": 8,
@@ -1697,10 +1455,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6712,
-                6737
-            ],
+            "range": [6712, 6737],
             "filename": "router.js",
             "lineno": 233,
             "columnno": 12,
@@ -1722,10 +1477,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6997,
-                7033
-            ],
+            "range": [6997, 7033],
             "filename": "router.js",
             "lineno": 239,
             "columnno": 18,
@@ -1748,10 +1500,7 @@
     {
         "comment": "/**\n             */",
         "meta": {
-            "range": [
-                7080,
-                7225
-            ],
+            "range": [7080, 7225],
             "filename": "router.js",
             "lineno": 243,
             "columnno": 12,
@@ -1772,10 +1521,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                7430,
-                7436
-            ],
+            "range": [7430, 7436],
             "filename": "router.js",
             "lineno": 253,
             "columnno": 9,
@@ -1795,8 +1541,6 @@
     {
         "kind": "package",
         "longname": "package:undefined",
-        "files": [
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router\\router.js"
-        ]
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router\\router.js"]
     }
 ]

@@ -2,10 +2,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-tab\n * @fires MdTabComponent#onTabSelected\n */",
         "meta": {
-            "range": [
-                283,
-                2618
-            ],
+            "range": [283, 2618],
             "filename": "tab.js",
             "lineno": 11,
             "columnno": 0,
@@ -17,9 +14,7 @@
                 "paramnames": []
             }
         },
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -28,9 +23,7 @@
                 "value": "md-tab"
             }
         ],
-        "fires": [
-            "MdTabComponent#event:onTabSelected"
-        ],
+        "fires": ["MdTabComponent#event:onTabSelected"],
         "name": "MdTabComponent",
         "longname": "MdTabComponent",
         "kind": "class",
@@ -40,10 +33,7 @@
     {
         "comment": "/**\n     * @property {String} [icon]\n     * @property {String} [label]\n     * @property {String} [sublabel]\n     * @property {Boolean} [selected]\n     * @property {Boolean} [disabled]\n     * @property {String} [routerLink]\n     * @property {Object} [rippleOptions]\n     * @property {Number} [badge]\n     */",
         "meta": {
-            "range": [
-                641,
-                1001
-            ],
+            "range": [641, 1001],
             "filename": "tab.js",
             "lineno": 22,
             "columnno": 4,
@@ -57,72 +47,56 @@
         "properties": [
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "icon"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "label"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "sublabel"
             },
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "selected"
             },
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "disabled"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "routerLink"
             },
             {
                 "type": {
-                    "names": [
-                        "Object"
-                    ]
+                    "names": ["Object"]
                 },
                 "optional": true,
                 "name": "rippleOptions"
             },
             {
                 "type": {
-                    "names": [
-                        "Number"
-                    ]
+                    "names": ["Number"]
                 },
                 "optional": true,
                 "name": "badge"
@@ -137,10 +111,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                671,
-                693
-            ],
+            "range": [671, 693],
             "filename": "tab.js",
             "lineno": 23,
             "columnno": 8,
@@ -161,10 +132,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                679,
-                691
-            ],
+            "range": [679, 691],
             "filename": "tab.js",
             "lineno": 23,
             "columnno": 16,
@@ -186,10 +154,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                703,
-                726
-            ],
+            "range": [703, 726],
             "filename": "tab.js",
             "lineno": 24,
             "columnno": 8,
@@ -210,10 +175,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                712,
-                724
-            ],
+            "range": [712, 724],
             "filename": "tab.js",
             "lineno": 24,
             "columnno": 17,
@@ -235,10 +197,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                736,
-                762
-            ],
+            "range": [736, 762],
             "filename": "tab.js",
             "lineno": 25,
             "columnno": 8,
@@ -259,10 +218,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                748,
-                760
-            ],
+            "range": [748, 760],
             "filename": "tab.js",
             "lineno": 25,
             "columnno": 20,
@@ -284,10 +240,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                772,
-                814
-            ],
+            "range": [772, 814],
             "filename": "tab.js",
             "lineno": 26,
             "columnno": 8,
@@ -308,10 +261,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                784,
-                797
-            ],
+            "range": [784, 797],
             "filename": "tab.js",
             "lineno": 26,
             "columnno": 20,
@@ -333,10 +283,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                799,
-                812
-            ],
+            "range": [799, 812],
             "filename": "tab.js",
             "lineno": 26,
             "columnno": 35,
@@ -358,10 +305,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                824,
-                866
-            ],
+            "range": [824, 866],
             "filename": "tab.js",
             "lineno": 27,
             "columnno": 8,
@@ -382,10 +326,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                836,
-                849
-            ],
+            "range": [836, 849],
             "filename": "tab.js",
             "lineno": 27,
             "columnno": 20,
@@ -407,10 +348,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                851,
-                864
-            ],
+            "range": [851, 864],
             "filename": "tab.js",
             "lineno": 27,
             "columnno": 35,
@@ -432,10 +370,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                876,
-                919
-            ],
+            "range": [876, 919],
             "filename": "tab.js",
             "lineno": 28,
             "columnno": 8,
@@ -456,10 +391,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                890,
-                902
-            ],
+            "range": [890, 902],
             "filename": "tab.js",
             "lineno": 28,
             "columnno": 22,
@@ -481,10 +413,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                904,
-                917
-            ],
+            "range": [904, 917],
             "filename": "tab.js",
             "lineno": 28,
             "columnno": 36,
@@ -506,10 +435,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                929,
-                960
-            ],
+            "range": [929, 960],
             "filename": "tab.js",
             "lineno": 29,
             "columnno": 8,
@@ -530,10 +456,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                946,
-                958
-            ],
+            "range": [946, 958],
             "filename": "tab.js",
             "lineno": 29,
             "columnno": 25,
@@ -555,10 +478,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                970,
-                993
-            ],
+            "range": [970, 993],
             "filename": "tab.js",
             "lineno": 30,
             "columnno": 8,
@@ -579,10 +499,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                979,
-                991
-            ],
+            "range": [979, 991],
             "filename": "tab.js",
             "lineno": 30,
             "columnno": 17,
@@ -604,10 +521,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                1023,
-                1094
-            ],
+            "range": [1023, 1094],
             "filename": "tab.js",
             "lineno": 35,
             "columnno": 4,
@@ -632,10 +546,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-tab\n * @fires MdTabComponent#onTabSelected\n */",
         "meta": {
-            "range": [
-                283,
-                2618
-            ],
+            "range": [283, 2618],
             "filename": "tab.js",
             "lineno": 11,
             "columnno": 0,
@@ -650,9 +561,7 @@
         "name": "MdTabComponent",
         "longname": "MdTabComponent",
         "kind": "class",
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -661,18 +570,13 @@
                 "value": "md-tab"
             }
         ],
-        "fires": [
-            "MdTabComponent#event:onTabSelected"
-        ],
+        "fires": ["MdTabComponent#event:onTabSelected"],
         "scope": "global"
     },
     {
         "comment": "",
         "meta": {
-            "range": [
-                1064,
-                1087
-            ],
+            "range": [1064, 1087],
             "filename": "tab.js",
             "lineno": 37,
             "columnno": 8,
@@ -695,10 +599,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                1116,
-                1808
-            ],
+            "range": [1116, 1808],
             "filename": "tab.js",
             "lineno": 42,
             "columnno": 4,
@@ -723,10 +624,7 @@
     {
         "comment": "/**\n     * @async\n     */",
         "meta": {
-            "range": [
-                1844,
-                2045
-            ],
+            "range": [1844, 2045],
             "filename": "tab.js",
             "lineno": 57,
             "columnno": 4,
@@ -752,10 +650,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1988,
-                2038
-            ],
+            "range": [1988, 2038],
             "filename": "tab.js",
             "lineno": 61,
             "columnno": 8,
@@ -778,10 +673,7 @@
     {
         "comment": "/**\n     * @async\n     */",
         "meta": {
-            "range": [
-                2081,
-                2203
-            ],
+            "range": [2081, 2203],
             "filename": "tab.js",
             "lineno": 67,
             "columnno": 4,
@@ -807,10 +699,7 @@
     {
         "comment": "/**\n     * @async\n     * @param {Any} [changedProperties]\n     */",
         "meta": {
-            "range": [
-                2279,
-                2616
-            ],
+            "range": [2279, 2616],
             "filename": "tab.js",
             "lineno": 76,
             "columnno": 4,
@@ -819,9 +708,7 @@
                 "id": "astnode100000225",
                 "name": "MdTabComponent#updated",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "changedProperties"
-                ]
+                "paramnames": ["changedProperties"]
             },
             "vars": {
                 "": null
@@ -831,9 +718,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "changedProperties"
@@ -848,10 +733,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2587,
-                2596
-            ],
+            "range": [2587, 2596],
             "filename": "tab.js",
             "lineno": 82,
             "columnno": 41,
@@ -872,10 +754,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2677,
-                2691
-            ],
+            "range": [2677, 2691],
             "filename": "tab.js",
             "lineno": 87,
             "columnno": 9,
@@ -895,8 +774,6 @@
     {
         "kind": "package",
         "longname": "package:undefined",
-        "files": [
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tabs\\tab.js"
-        ]
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tabs\\tab.js"]
     }
 ]

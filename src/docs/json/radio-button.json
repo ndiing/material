@@ -2,10 +2,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-radio-button\n * @fires MdRadioButtonComponent#onRadioButtonNativeInput\n * @fires MdRadioButtonComponent#onRadioButtonNativeReset\n */",
         "meta": {
-            "range": [
-                369,
-                2947
-            ],
+            "range": [369, 2947],
             "filename": "radio-button.js",
             "lineno": 12,
             "columnno": 0,
@@ -17,9 +14,7 @@
                 "paramnames": []
             }
         },
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -28,10 +23,7 @@
                 "value": "md-radio-button"
             }
         ],
-        "fires": [
-            "MdRadioButtonComponent#event:onRadioButtonNativeInput",
-            "MdRadioButtonComponent#event:onRadioButtonNativeReset"
-        ],
+        "fires": ["MdRadioButtonComponent#event:onRadioButtonNativeInput", "MdRadioButtonComponent#event:onRadioButtonNativeReset"],
         "name": "MdRadioButtonComponent",
         "longname": "MdRadioButtonComponent",
         "kind": "class",
@@ -41,10 +33,7 @@
     {
         "comment": "/**\n     * @property {String} [name]\n     * @property {String} [value]\n     * @property {Boolean} [indeterminate]\n     * @property {Boolean} [checked]\n     */",
         "meta": {
-            "range": [
-                587,
-                758
-            ],
+            "range": [587, 758],
             "filename": "radio-button.js",
             "lineno": 19,
             "columnno": 4,
@@ -58,36 +47,28 @@
         "properties": [
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "name"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "value"
             },
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "indeterminate"
             },
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "checked"
@@ -102,10 +83,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                617,
-                639
-            ],
+            "range": [617, 639],
             "filename": "radio-button.js",
             "lineno": 20,
             "columnno": 8,
@@ -126,10 +104,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                625,
-                637
-            ],
+            "range": [625, 637],
             "filename": "radio-button.js",
             "lineno": 20,
             "columnno": 16,
@@ -151,10 +126,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                649,
-                672
-            ],
+            "range": [649, 672],
             "filename": "radio-button.js",
             "lineno": 21,
             "columnno": 8,
@@ -175,10 +147,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                658,
-                670
-            ],
+            "range": [658, 670],
             "filename": "radio-button.js",
             "lineno": 21,
             "columnno": 17,
@@ -200,10 +169,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                682,
-                714
-            ],
+            "range": [682, 714],
             "filename": "radio-button.js",
             "lineno": 22,
             "columnno": 8,
@@ -224,10 +190,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                699,
-                712
-            ],
+            "range": [699, 712],
             "filename": "radio-button.js",
             "lineno": 22,
             "columnno": 25,
@@ -249,10 +212,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                724,
-                750
-            ],
+            "range": [724, 750],
             "filename": "radio-button.js",
             "lineno": 23,
             "columnno": 8,
@@ -273,10 +233,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                735,
-                748
-            ],
+            "range": [735, 748],
             "filename": "radio-button.js",
             "lineno": 23,
             "columnno": 19,
@@ -298,10 +255,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                780,
-                818
-            ],
+            "range": [780, 818],
             "filename": "radio-button.js",
             "lineno": 28,
             "columnno": 4,
@@ -326,10 +280,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-radio-button\n * @fires MdRadioButtonComponent#onRadioButtonNativeInput\n * @fires MdRadioButtonComponent#onRadioButtonNativeReset\n */",
         "meta": {
-            "range": [
-                369,
-                2947
-            ],
+            "range": [369, 2947],
             "filename": "radio-button.js",
             "lineno": 12,
             "columnno": 0,
@@ -344,9 +295,7 @@
         "name": "MdRadioButtonComponent",
         "longname": "MdRadioButtonComponent",
         "kind": "class",
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -355,19 +304,13 @@
                 "value": "md-radio-button"
             }
         ],
-        "fires": [
-            "MdRadioButtonComponent#event:onRadioButtonNativeInput",
-            "MdRadioButtonComponent#event:onRadioButtonNativeReset"
-        ],
+        "fires": ["MdRadioButtonComponent#event:onRadioButtonNativeInput", "MdRadioButtonComponent#event:onRadioButtonNativeReset"],
         "scope": "global"
     },
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                840,
-                1680
-            ],
+            "range": [840, 1680],
             "filename": "radio-button.js",
             "lineno": 34,
             "columnno": 4,
@@ -392,10 +335,7 @@
     {
         "comment": "/**\n     * @async\n     */",
         "meta": {
-            "range": [
-                1716,
-                2211
-            ],
+            "range": [1716, 2211],
             "filename": "radio-button.js",
             "lineno": 58,
             "columnno": 4,
@@ -421,10 +361,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1787,
-                1817
-            ],
+            "range": [1787, 1817],
             "filename": "radio-button.js",
             "lineno": 60,
             "columnno": 8,
@@ -447,10 +384,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1827,
-                1873
-            ],
+            "range": [1827, 1873],
             "filename": "radio-button.js",
             "lineno": 61,
             "columnno": 8,
@@ -473,10 +407,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1883,
-                1917
-            ],
+            "range": [1883, 1917],
             "filename": "radio-button.js",
             "lineno": 62,
             "columnno": 8,
@@ -499,10 +430,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2009,
-                2204
-            ],
+            "range": [2009, 2204],
             "filename": "radio-button.js",
             "lineno": 65,
             "columnno": 8,
@@ -525,10 +453,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2054,
-                2090
-            ],
+            "range": [2054, 2090],
             "filename": "radio-button.js",
             "lineno": 66,
             "columnno": 12,
@@ -549,10 +474,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2104,
-                2139
-            ],
+            "range": [2104, 2139],
             "filename": "radio-button.js",
             "lineno": 67,
             "columnno": 12,
@@ -573,10 +495,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2153,
-                2168
-            ],
+            "range": [2153, 2168],
             "filename": "radio-button.js",
             "lineno": 68,
             "columnno": 12,
@@ -597,10 +516,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2182,
-                2192
-            ],
+            "range": [2182, 2192],
             "filename": "radio-button.js",
             "lineno": 69,
             "columnno": 12,
@@ -621,10 +537,7 @@
     {
         "comment": "/**\n     * @async\n     */",
         "meta": {
-            "range": [
-                2247,
-                2369
-            ],
+            "range": [2247, 2369],
             "filename": "radio-button.js",
             "lineno": 76,
             "columnno": 4,
@@ -650,10 +563,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                2419,
-                2654
-            ],
+            "range": [2419, 2654],
             "filename": "radio-button.js",
             "lineno": 84,
             "columnno": 4,
@@ -662,9 +572,7 @@
                 "id": "astnode100000191",
                 "name": "MdRadioButtonComponent#handleRadioButtonNativeInput",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -673,9 +581,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -690,10 +596,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2471,
-                2499
-            ],
+            "range": [2471, 2499],
             "filename": "radio-button.js",
             "lineno": 85,
             "columnno": 14,
@@ -716,10 +619,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2509,
-                2550
-            ],
+            "range": [2509, 2550],
             "filename": "radio-button.js",
             "lineno": 86,
             "columnno": 8,
@@ -742,10 +642,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2560,
-                2589
-            ],
+            "range": [2560, 2589],
             "filename": "radio-button.js",
             "lineno": 87,
             "columnno": 8,
@@ -768,10 +665,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2639,
-                2644
-            ],
+            "range": [2639, 2644],
             "filename": "radio-button.js",
             "lineno": 88,
             "columnno": 48,
@@ -792,10 +686,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                2704,
-                2945
-            ],
+            "range": [2704, 2945],
             "filename": "radio-button.js",
             "lineno": 94,
             "columnno": 4,
@@ -804,9 +695,7 @@
                 "id": "astnode100000227",
                 "name": "MdRadioButtonComponent#handleRadioButtonNativeReset",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -815,9 +704,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -832,10 +719,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2750,
-                2780
-            ],
+            "range": [2750, 2780],
             "filename": "radio-button.js",
             "lineno": 95,
             "columnno": 8,
@@ -858,10 +742,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2790,
-                2836
-            ],
+            "range": [2790, 2836],
             "filename": "radio-button.js",
             "lineno": 96,
             "columnno": 8,
@@ -884,10 +765,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2846,
-                2880
-            ],
+            "range": [2846, 2880],
             "filename": "radio-button.js",
             "lineno": 97,
             "columnno": 8,
@@ -910,10 +788,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2930,
-                2935
-            ],
+            "range": [2930, 2935],
             "filename": "radio-button.js",
             "lineno": 98,
             "columnno": 48,
@@ -934,10 +809,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3023,
-                3045
-            ],
+            "range": [3023, 3045],
             "filename": "radio-button.js",
             "lineno": 102,
             "columnno": 9,
@@ -957,8 +829,6 @@
     {
         "kind": "package",
         "longname": "package:undefined",
-        "files": [
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\radio-button\\radio-button.js"
-        ]
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\radio-button\\radio-button.js"]
     }
 ]

@@ -2,10 +2,7 @@
     {
         "comment": "/**\n * @param {Any} [week]\n */",
         "meta": {
-            "range": [
-                31,
-                349
-            ],
+            "range": [31, 349],
             "filename": "polyfill.js",
             "lineno": 4,
             "columnno": 0,
@@ -14,9 +11,7 @@
                 "id": "astnode100000003",
                 "name": "Date.prototype.setWeek",
                 "type": "FunctionExpression",
-                "paramnames": [
-                    "week"
-                ]
+                "paramnames": ["week"]
             },
             "vars": {
                 "year": "Date#setWeek~year",
@@ -28,9 +23,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "week"
@@ -45,10 +38,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                84,
-                109
-            ],
+            "range": [84, 109],
             "filename": "polyfill.js",
             "lineno": 5,
             "columnno": 10,
@@ -71,10 +61,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                121,
-                157
-            ],
+            "range": [121, 157],
             "filename": "polyfill.js",
             "lineno": 6,
             "columnno": 10,
@@ -97,10 +84,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                169,
-                212
-            ],
+            "range": [169, 212],
             "filename": "polyfill.js",
             "lineno": 7,
             "columnno": 10,
@@ -123,10 +107,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                224,
-                296
-            ],
+            "range": [224, 296],
             "filename": "polyfill.js",
             "lineno": 8,
             "columnno": 10,
@@ -149,10 +130,7 @@
     {
         "comment": "/**\n */",
         "meta": {
-            "range": [
-                360,
-                718
-            ],
+            "range": [360, 718],
             "filename": "polyfill.js",
             "lineno": 15,
             "columnno": 0,
@@ -179,10 +157,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                409,
-                442
-            ],
+            "range": [409, 442],
             "filename": "polyfill.js",
             "lineno": 16,
             "columnno": 10,
@@ -205,10 +180,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                454,
-                485
-            ],
+            "range": [454, 485],
             "filename": "polyfill.js",
             "lineno": 17,
             "columnno": 10,
@@ -231,10 +203,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                547,
-                599
-            ],
+            "range": [547, 599],
             "filename": "polyfill.js",
             "lineno": 19,
             "columnno": 10,
@@ -257,10 +226,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                611,
-                692
-            ],
+            "range": [611, 692],
             "filename": "polyfill.js",
             "lineno": 20,
             "columnno": 10,
@@ -283,8 +249,6 @@
     {
         "kind": "package",
         "longname": "package:undefined",
-        "files": [
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\polyfill\\polyfill.js"
-        ]
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\polyfill\\polyfill.js"]
     }
 ]

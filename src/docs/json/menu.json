@@ -2,10 +2,7 @@
     {
         "comment": "/**\r\n * @extends MdComponent\r\n * @requires MdNavigationList\r\n * @element md-menu\r\n * @fires MdMenuComponent#onMenuShow\r\n * @fires MdMenuComponent#onMenuClose\r\n * @fires MdMenuComponent#onMenuShown\r\n * @fires MdMenuComponent#onMenuClosed\r\n */",
         "meta": {
-            "range": [
-                556,
-                4362
-            ],
+            "range": [556, 4362],
             "filename": "menu.js",
             "lineno": 17,
             "columnno": 0,
@@ -17,12 +14,8 @@
                 "paramnames": []
             }
         },
-        "augments": [
-            "MdComponent"
-        ],
-        "requires": [
-            "module:MdNavigationList"
-        ],
+        "augments": ["MdComponent"],
+        "requires": ["module:MdNavigationList"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -31,12 +24,7 @@
                 "value": "md-menu"
             }
         ],
-        "fires": [
-            "MdMenuComponent#event:onMenuShow",
-            "MdMenuComponent#event:onMenuClose",
-            "MdMenuComponent#event:onMenuShown",
-            "MdMenuComponent#event:onMenuClosed"
-        ],
+        "fires": ["MdMenuComponent#event:onMenuShow", "MdMenuComponent#event:onMenuClose", "MdMenuComponent#event:onMenuShown", "MdMenuComponent#event:onMenuClosed"],
         "name": "MdMenuComponent",
         "longname": "MdMenuComponent",
         "kind": "class",
@@ -46,10 +34,7 @@
     {
         "comment": "/**\r\n     * @property {Boolean} [open]\r\n     * @property {Array} [items]\r\n     */",
         "meta": {
-            "range": [
-                692,
-                803
-            ],
+            "range": [692, 803],
             "filename": "menu.js",
             "lineno": 22,
             "columnno": 4,
@@ -63,18 +48,14 @@
         "properties": [
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "open"
             },
             {
                 "type": {
-                    "names": [
-                        "Array"
-                    ]
+                    "names": ["Array"]
                 },
                 "optional": true,
                 "name": "items"
@@ -89,10 +70,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                723,
-                761
-            ],
+            "range": [723, 761],
             "filename": "menu.js",
             "lineno": 23,
             "columnno": 8,
@@ -113,10 +91,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                731,
-                744
-            ],
+            "range": [731, 744],
             "filename": "menu.js",
             "lineno": 23,
             "columnno": 16,
@@ -138,10 +113,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                746,
-                759
-            ],
+            "range": [746, 759],
             "filename": "menu.js",
             "lineno": 23,
             "columnno": 31,
@@ -163,10 +135,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                772,
-                794
-            ],
+            "range": [772, 794],
             "filename": "menu.js",
             "lineno": 24,
             "columnno": 8,
@@ -187,10 +156,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                781,
-                792
-            ],
+            "range": [781, 792],
             "filename": "menu.js",
             "lineno": 24,
             "columnno": 17,
@@ -212,10 +178,7 @@
     {
         "comment": "/**\r\n     */",
         "meta": {
-            "range": [
-                829,
-                895
-            ],
+            "range": [829, 895],
             "filename": "menu.js",
             "lineno": 29,
             "columnno": 4,
@@ -240,10 +203,7 @@
     {
         "comment": "/**\r\n * @extends MdComponent\r\n * @requires MdNavigationList\r\n * @element md-menu\r\n * @fires MdMenuComponent#onMenuShow\r\n * @fires MdMenuComponent#onMenuClose\r\n * @fires MdMenuComponent#onMenuShown\r\n * @fires MdMenuComponent#onMenuClosed\r\n */",
         "meta": {
-            "range": [
-                556,
-                4362
-            ],
+            "range": [556, 4362],
             "filename": "menu.js",
             "lineno": 17,
             "columnno": 0,
@@ -258,12 +218,8 @@
         "name": "MdMenuComponent",
         "longname": "MdMenuComponent",
         "kind": "class",
-        "augments": [
-            "MdComponent"
-        ],
-        "requires": [
-            "module:MdNavigationList"
-        ],
+        "augments": ["MdComponent"],
+        "requires": ["module:MdNavigationList"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -272,21 +228,13 @@
                 "value": "md-menu"
             }
         ],
-        "fires": [
-            "MdMenuComponent#event:onMenuShow",
-            "MdMenuComponent#event:onMenuClose",
-            "MdMenuComponent#event:onMenuShown",
-            "MdMenuComponent#event:onMenuClosed"
-        ],
+        "fires": ["MdMenuComponent#event:onMenuShow", "MdMenuComponent#event:onMenuClose", "MdMenuComponent#event:onMenuShown", "MdMenuComponent#event:onMenuClosed"],
         "scope": "global"
     },
     {
         "comment": "",
         "meta": {
-            "range": [
-                872,
-                887
-            ],
+            "range": [872, 887],
             "filename": "menu.js",
             "lineno": 31,
             "columnno": 8,
@@ -309,10 +257,7 @@
     {
         "comment": "/**\r\n     */",
         "meta": {
-            "range": [
-                921,
-                1113
-            ],
+            "range": [921, 1113],
             "filename": "menu.js",
             "lineno": 36,
             "columnno": 4,
@@ -337,10 +282,7 @@
     {
         "comment": "/**\r\n     * @async\r\n     */",
         "meta": {
-            "range": [
-                1154,
-                1535
-            ],
+            "range": [1154, 1535],
             "filename": "menu.js",
             "lineno": 48,
             "columnno": 4,
@@ -366,10 +308,7 @@
     {
         "comment": "/**\r\n     * @param {Any} [options={}]\r\n     */",
         "meta": {
-            "range": [
-                1595,
-                2923
-            ],
+            "range": [1595, 2923],
             "filename": "menu.js",
             "lineno": 60,
             "columnno": 4,
@@ -378,9 +317,7 @@
                 "id": "astnode100000127",
                 "name": "MdMenuComponent#show",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "options"
-                ]
+                "paramnames": ["options"]
             },
             "vars": {
                 "": null
@@ -389,9 +326,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "defaultvalue": "{}",
@@ -407,10 +342,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1689,
-                1737
-            ],
+            "range": [1689, 1737],
             "filename": "menu.js",
             "lineno": 62,
             "columnno": 8,
@@ -433,10 +365,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1748,
-                1782
-            ],
+            "range": [1748, 1782],
             "filename": "menu.js",
             "lineno": 63,
             "columnno": 8,
@@ -459,10 +388,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1793,
-                1847
-            ],
+            "range": [1793, 1847],
             "filename": "menu.js",
             "lineno": 64,
             "columnno": 8,
@@ -485,10 +411,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1928,
-                1996
-            ],
+            "range": [1928, 1996],
             "filename": "menu.js",
             "lineno": 66,
             "columnno": 8,
@@ -511,10 +434,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2089,
-                2155
-            ],
+            "range": [2089, 2155],
             "filename": "menu.js",
             "lineno": 68,
             "columnno": 8,
@@ -537,10 +457,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2237,
-                2316
-            ],
+            "range": [2237, 2316],
             "filename": "menu.js",
             "lineno": 70,
             "columnno": 8,
@@ -563,10 +480,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2364,
-                2433
-            ],
+            "range": [2364, 2433],
             "filename": "menu.js",
             "lineno": 72,
             "columnno": 8,
@@ -589,10 +503,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2511,
-                2526
-            ],
+            "range": [2511, 2526],
             "filename": "menu.js",
             "lineno": 75,
             "columnno": 12,
@@ -613,10 +524,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2576,
-                2816
-            ],
+            "range": [2576, 2816],
             "filename": "menu.js",
             "lineno": 77,
             "columnno": 12,
@@ -637,10 +545,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2865,
-                2881
-            ],
+            "range": [2865, 2881],
             "filename": "menu.js",
             "lineno": 85,
             "columnno": 8,
@@ -663,10 +568,7 @@
     {
         "comment": "/**\r\n     */",
         "meta": {
-            "range": [
-                2949,
-                3389
-            ],
+            "range": [2949, 3389],
             "filename": "menu.js",
             "lineno": 91,
             "columnno": 4,
@@ -691,10 +593,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3032,
-                3088
-            ],
+            "range": [3032, 3088],
             "filename": "menu.js",
             "lineno": 93,
             "columnno": 8,
@@ -717,10 +616,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3329,
-                3346
-            ],
+            "range": [3329, 3346],
             "filename": "menu.js",
             "lineno": 97,
             "columnno": 8,
@@ -743,10 +639,7 @@
     {
         "comment": "/**\r\n     * @param {Any} [options]\r\n     */",
         "meta": {
-            "range": [
-                3446,
-                3542
-            ],
+            "range": [3446, 3542],
             "filename": "menu.js",
             "lineno": 104,
             "columnno": 4,
@@ -755,9 +648,7 @@
                 "id": "astnode100000354",
                 "name": "MdMenuComponent#toggle",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "options"
-                ]
+                "paramnames": ["options"]
             },
             "vars": {
                 "": null
@@ -766,9 +657,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "options"
@@ -783,10 +672,7 @@
     {
         "comment": "/**\r\n     * @param {Any} [event]\r\n     */",
         "meta": {
-            "range": [
-                3597,
-                3658
-            ],
+            "range": [3597, 3658],
             "filename": "menu.js",
             "lineno": 112,
             "columnno": 4,
@@ -795,9 +681,7 @@
                 "id": "astnode100000374",
                 "name": "MdMenuComponent#handleMenuWindowScroll",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -806,9 +690,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -823,10 +705,7 @@
     {
         "comment": "/**\r\n     * @param {Any} [event]\r\n     */",
         "meta": {
-            "range": [
-                3713,
-                3946
-            ],
+            "range": [3713, 3946],
             "filename": "menu.js",
             "lineno": 119,
             "columnno": 4,
@@ -835,9 +714,7 @@
                 "id": "astnode100000384",
                 "name": "MdMenuComponent#handleMenuWindowClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -846,9 +723,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -863,10 +738,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3759,
-                3823
-            ],
+            "range": [3759, 3823],
             "filename": "menu.js",
             "lineno": 120,
             "columnno": 14,
@@ -889,10 +761,7 @@
     {
         "comment": "/**\r\n     * @param {Any} [event]\r\n     */",
         "meta": {
-            "range": [
-                4001,
-                4151
-            ],
+            "range": [4001, 4151],
             "filename": "menu.js",
             "lineno": 129,
             "columnno": 4,
@@ -901,9 +770,7 @@
                 "id": "astnode100000424",
                 "name": "MdMenuComponent#handleMenuShown",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -912,9 +779,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -929,10 +794,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4135,
-                4140
-            ],
+            "range": [4135, 4140],
             "filename": "menu.js",
             "lineno": 131,
             "columnno": 35,
@@ -953,10 +815,7 @@
     {
         "comment": "/**\r\n     * @param {Any} [event]\r\n     */",
         "meta": {
-            "range": [
-                4206,
-                4359
-            ],
+            "range": [4206, 4359],
             "filename": "menu.js",
             "lineno": 137,
             "columnno": 4,
@@ -965,9 +824,7 @@
                 "id": "astnode100000447",
                 "name": "MdMenuComponent#handleMenuClosed",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -976,9 +833,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -993,10 +848,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4343,
-                4348
-            ],
+            "range": [4343, 4348],
             "filename": "menu.js",
             "lineno": 139,
             "columnno": 36,
@@ -1017,10 +869,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4425,
-                4440
-            ],
+            "range": [4425, 4440],
             "filename": "menu.js",
             "lineno": 143,
             "columnno": 9,
@@ -1040,8 +889,6 @@
     {
         "kind": "package",
         "longname": "package:undefined",
-        "files": [
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\menu\\menu.js"
-        ]
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\menu\\menu.js"]
     }
 ]

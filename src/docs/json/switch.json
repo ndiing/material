@@ -2,10 +2,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-switch\n * @fires MdSwitchComponent#onSwitchNativeInput\n * @fires MdSwitchComponent#onSwitchNativeReset\n */",
         "meta": {
-            "range": [
-                343,
-                3225
-            ],
+            "range": [343, 3225],
             "filename": "switch.js",
             "lineno": 12,
             "columnno": 0,
@@ -17,9 +14,7 @@
                 "paramnames": []
             }
         },
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -28,10 +23,7 @@
                 "value": "md-switch"
             }
         ],
-        "fires": [
-            "MdSwitchComponent#event:onSwitchNativeInput",
-            "MdSwitchComponent#event:onSwitchNativeReset"
-        ],
+        "fires": ["MdSwitchComponent#event:onSwitchNativeInput", "MdSwitchComponent#event:onSwitchNativeReset"],
         "name": "MdSwitchComponent",
         "longname": "MdSwitchComponent",
         "kind": "class",
@@ -41,10 +33,7 @@
     {
         "comment": "/**\n     * @property {String} [name]\n     * @property {String} [value]\n     * @property {Boolean} [indeterminate]\n     * @property {Boolean} [checked]\n     * @property {Array} [icons]\n     */",
         "meta": {
-            "range": [
-                589,
-                792
-            ],
+            "range": [589, 792],
             "filename": "switch.js",
             "lineno": 20,
             "columnno": 4,
@@ -58,45 +47,35 @@
         "properties": [
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "name"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "value"
             },
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "indeterminate"
             },
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "checked"
             },
             {
                 "type": {
-                    "names": [
-                        "Array"
-                    ]
+                    "names": ["Array"]
                 },
                 "optional": true,
                 "name": "icons"
@@ -111,10 +90,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                619,
-                641
-            ],
+            "range": [619, 641],
             "filename": "switch.js",
             "lineno": 21,
             "columnno": 8,
@@ -135,10 +111,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                627,
-                639
-            ],
+            "range": [627, 639],
             "filename": "switch.js",
             "lineno": 21,
             "columnno": 16,
@@ -160,10 +133,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                651,
-                674
-            ],
+            "range": [651, 674],
             "filename": "switch.js",
             "lineno": 22,
             "columnno": 8,
@@ -184,10 +154,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                660,
-                672
-            ],
+            "range": [660, 672],
             "filename": "switch.js",
             "lineno": 22,
             "columnno": 17,
@@ -209,10 +176,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                684,
-                716
-            ],
+            "range": [684, 716],
             "filename": "switch.js",
             "lineno": 23,
             "columnno": 8,
@@ -233,10 +197,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                701,
-                714
-            ],
+            "range": [701, 714],
             "filename": "switch.js",
             "lineno": 23,
             "columnno": 25,
@@ -258,10 +219,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                726,
-                752
-            ],
+            "range": [726, 752],
             "filename": "switch.js",
             "lineno": 24,
             "columnno": 8,
@@ -282,10 +240,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                737,
-                750
-            ],
+            "range": [737, 750],
             "filename": "switch.js",
             "lineno": 24,
             "columnno": 19,
@@ -307,10 +262,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                762,
-                784
-            ],
+            "range": [762, 784],
             "filename": "switch.js",
             "lineno": 25,
             "columnno": 8,
@@ -331,10 +283,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                771,
-                782
-            ],
+            "range": [771, 782],
             "filename": "switch.js",
             "lineno": 25,
             "columnno": 17,
@@ -356,10 +305,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                814,
-                852
-            ],
+            "range": [814, 852],
             "filename": "switch.js",
             "lineno": 30,
             "columnno": 4,
@@ -384,10 +330,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-switch\n * @fires MdSwitchComponent#onSwitchNativeInput\n * @fires MdSwitchComponent#onSwitchNativeReset\n */",
         "meta": {
-            "range": [
-                343,
-                3225
-            ],
+            "range": [343, 3225],
             "filename": "switch.js",
             "lineno": 12,
             "columnno": 0,
@@ -402,9 +345,7 @@
         "name": "MdSwitchComponent",
         "longname": "MdSwitchComponent",
         "kind": "class",
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -413,19 +354,13 @@
                 "value": "md-switch"
             }
         ],
-        "fires": [
-            "MdSwitchComponent#event:onSwitchNativeInput",
-            "MdSwitchComponent#event:onSwitchNativeReset"
-        ],
+        "fires": ["MdSwitchComponent#event:onSwitchNativeInput", "MdSwitchComponent#event:onSwitchNativeReset"],
         "scope": "global"
     },
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                874,
-                1801
-            ],
+            "range": [874, 1801],
             "filename": "switch.js",
             "lineno": 36,
             "columnno": 4,
@@ -450,10 +385,7 @@
     {
         "comment": "/**\n     * @async\n     */",
         "meta": {
-            "range": [
-                1837,
-                2428
-            ],
+            "range": [1837, 2428],
             "filename": "switch.js",
             "lineno": 60,
             "columnno": 4,
@@ -479,10 +411,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1908,
-                1938
-            ],
+            "range": [1908, 1938],
             "filename": "switch.js",
             "lineno": 62,
             "columnno": 8,
@@ -505,10 +434,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1948,
-                1994
-            ],
+            "range": [1948, 1994],
             "filename": "switch.js",
             "lineno": 63,
             "columnno": 8,
@@ -531,10 +457,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2004,
-                2038
-            ],
+            "range": [2004, 2038],
             "filename": "switch.js",
             "lineno": 64,
             "columnno": 8,
@@ -557,10 +480,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2210,
-                2421
-            ],
+            "range": [2210, 2421],
             "filename": "switch.js",
             "lineno": 68,
             "columnno": 8,
@@ -583,10 +503,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2255,
-                2285
-            ],
+            "range": [2255, 2285],
             "filename": "switch.js",
             "lineno": 69,
             "columnno": 12,
@@ -607,10 +524,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2299,
-                2328
-            ],
+            "range": [2299, 2328],
             "filename": "switch.js",
             "lineno": 70,
             "columnno": 12,
@@ -631,10 +545,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2342,
-                2357
-            ],
+            "range": [2342, 2357],
             "filename": "switch.js",
             "lineno": 71,
             "columnno": 12,
@@ -655,10 +566,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2371,
-                2381
-            ],
+            "range": [2371, 2381],
             "filename": "switch.js",
             "lineno": 72,
             "columnno": 12,
@@ -679,10 +587,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2395,
-                2409
-            ],
+            "range": [2395, 2409],
             "filename": "switch.js",
             "lineno": 73,
             "columnno": 12,
@@ -703,10 +608,7 @@
     {
         "comment": "/**\n     * @async\n     */",
         "meta": {
-            "range": [
-                2464,
-                2586
-            ],
+            "range": [2464, 2586],
             "filename": "switch.js",
             "lineno": 80,
             "columnno": 4,
@@ -732,10 +634,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                2636,
-                2942
-            ],
+            "range": [2636, 2942],
             "filename": "switch.js",
             "lineno": 88,
             "columnno": 4,
@@ -744,9 +643,7 @@
                 "id": "astnode100000224",
                 "name": "MdSwitchComponent#handleSwitchNativeInput",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -755,9 +652,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -772,10 +667,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2764,
-                2792
-            ],
+            "range": [2764, 2792],
             "filename": "switch.js",
             "lineno": 90,
             "columnno": 14,
@@ -798,10 +690,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2802,
-                2843
-            ],
+            "range": [2802, 2843],
             "filename": "switch.js",
             "lineno": 91,
             "columnno": 8,
@@ -824,10 +713,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2853,
-                2882
-            ],
+            "range": [2853, 2882],
             "filename": "switch.js",
             "lineno": 92,
             "columnno": 8,
@@ -850,10 +736,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2927,
-                2932
-            ],
+            "range": [2927, 2932],
             "filename": "switch.js",
             "lineno": 93,
             "columnno": 43,
@@ -874,10 +757,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                2992,
-                3223
-            ],
+            "range": [2992, 3223],
             "filename": "switch.js",
             "lineno": 99,
             "columnno": 4,
@@ -886,9 +766,7 @@
                 "id": "astnode100000268",
                 "name": "MdSwitchComponent#handleSwitchNativeReset",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -897,9 +775,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -914,10 +790,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3033,
-                3063
-            ],
+            "range": [3033, 3063],
             "filename": "switch.js",
             "lineno": 100,
             "columnno": 8,
@@ -940,10 +813,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3073,
-                3119
-            ],
+            "range": [3073, 3119],
             "filename": "switch.js",
             "lineno": 101,
             "columnno": 8,
@@ -966,10 +836,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3129,
-                3163
-            ],
+            "range": [3129, 3163],
             "filename": "switch.js",
             "lineno": 102,
             "columnno": 8,
@@ -992,10 +859,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3208,
-                3213
-            ],
+            "range": [3208, 3213],
             "filename": "switch.js",
             "lineno": 103,
             "columnno": 43,
@@ -1016,10 +880,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3290,
-                3307
-            ],
+            "range": [3290, 3307],
             "filename": "switch.js",
             "lineno": 107,
             "columnno": 9,
@@ -1039,8 +900,6 @@
     {
         "kind": "package",
         "longname": "package:undefined",
-        "files": [
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\switch\\switch.js"
-        ]
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\switch\\switch.js"]
     }
 ]

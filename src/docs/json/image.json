@@ -2,10 +2,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-image\n */",
         "meta": {
-            "range": [
-                259,
-                1586
-            ],
+            "range": [259, 1586],
             "filename": "image.js",
             "lineno": 10,
             "columnno": 0,
@@ -17,9 +14,7 @@
                 "paramnames": []
             }
         },
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -37,10 +32,7 @@
     {
         "comment": "/**\n     * @property {String} [src]\n     * @property {String} [alt]\n     * @property {String} [ratio]\n     * @property {Boolean} [circular]\n     */",
         "meta": {
-            "range": [
-                460,
-                620
-            ],
+            "range": [460, 620],
             "filename": "image.js",
             "lineno": 17,
             "columnno": 4,
@@ -54,36 +46,28 @@
         "properties": [
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "src"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "alt"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "ratio"
             },
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "circular"
@@ -98,10 +82,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                490,
-                511
-            ],
+            "range": [490, 511],
             "filename": "image.js",
             "lineno": 18,
             "columnno": 8,
@@ -122,10 +103,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                497,
-                509
-            ],
+            "range": [497, 509],
             "filename": "image.js",
             "lineno": 18,
             "columnno": 15,
@@ -147,10 +125,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                521,
-                542
-            ],
+            "range": [521, 542],
             "filename": "image.js",
             "lineno": 19,
             "columnno": 8,
@@ -171,10 +146,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                528,
-                540
-            ],
+            "range": [528, 540],
             "filename": "image.js",
             "lineno": 19,
             "columnno": 15,
@@ -196,10 +168,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                552,
-                575
-            ],
+            "range": [552, 575],
             "filename": "image.js",
             "lineno": 20,
             "columnno": 8,
@@ -220,10 +189,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                561,
-                573
-            ],
+            "range": [561, 573],
             "filename": "image.js",
             "lineno": 20,
             "columnno": 17,
@@ -245,10 +211,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                585,
-                612
-            ],
+            "range": [585, 612],
             "filename": "image.js",
             "lineno": 21,
             "columnno": 8,
@@ -269,10 +232,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                597,
-                610
-            ],
+            "range": [597, 610],
             "filename": "image.js",
             "lineno": 21,
             "columnno": 20,
@@ -294,10 +254,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                642,
-                680
-            ],
+            "range": [642, 680],
             "filename": "image.js",
             "lineno": 26,
             "columnno": 4,
@@ -322,10 +279,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-image\n */",
         "meta": {
-            "range": [
-                259,
-                1586
-            ],
+            "range": [259, 1586],
             "filename": "image.js",
             "lineno": 10,
             "columnno": 0,
@@ -340,9 +294,7 @@
         "name": "MdImageComponent",
         "longname": "MdImageComponent",
         "kind": "class",
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -356,10 +308,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                719,
-                1166
-            ],
+            "range": [719, 1166],
             "filename": "image.js",
             "lineno": 33,
             "columnno": 4,
@@ -385,10 +334,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                758,
-                768
-            ],
+            "range": [758, 768],
             "filename": "image.js",
             "lineno": 34,
             "columnno": 14,
@@ -411,10 +357,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                808,
-                842
-            ],
+            "range": [808, 842],
             "filename": "image.js",
             "lineno": 36,
             "columnno": 12,
@@ -438,10 +381,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                995,
-                1044
-            ],
+            "range": [995, 1044],
             "filename": "image.js",
             "lineno": 41,
             "columnno": 16,
@@ -465,10 +405,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1083,
-                1113
-            ],
+            "range": [1083, 1113],
             "filename": "image.js",
             "lineno": 43,
             "columnno": 16,
@@ -492,10 +429,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                1188,
-                1460
-            ],
+            "range": [1188, 1460],
             "filename": "image.js",
             "lineno": 51,
             "columnno": 4,
@@ -520,10 +454,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                1482,
-                1584
-            ],
+            "range": [1482, 1584],
             "filename": "image.js",
             "lineno": 64,
             "columnno": 4,
@@ -548,10 +479,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1649,
-                1665
-            ],
+            "range": [1649, 1665],
             "filename": "image.js",
             "lineno": 70,
             "columnno": 9,
@@ -571,8 +499,6 @@
     {
         "kind": "package",
         "longname": "package:undefined",
-        "files": [
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\image\\image.js"
-        ]
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\image\\image.js"]
     }
 ]

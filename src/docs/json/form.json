@@ -2,10 +2,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-form\n * @fires MdFormComponent#onFormNativeFormdata\n * @fires MdFormComponent#onFormNativeReset\n * @fires MdFormComponent#onFormNativeSubmit\n */",
         "meta": {
-            "range": [
-                394,
-                3291
-            ],
+            "range": [394, 3291],
             "filename": "form.js",
             "lineno": 13,
             "columnno": 0,
@@ -17,9 +14,7 @@
                 "paramnames": []
             }
         },
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -28,11 +23,7 @@
                 "value": "md-form"
             }
         ],
-        "fires": [
-            "MdFormComponent#event:onFormNativeFormdata",
-            "MdFormComponent#event:onFormNativeReset",
-            "MdFormComponent#event:onFormNativeSubmit"
-        ],
+        "fires": ["MdFormComponent#event:onFormNativeFormdata", "MdFormComponent#event:onFormNativeReset", "MdFormComponent#event:onFormNativeSubmit"],
         "name": "MdFormComponent",
         "longname": "MdFormComponent",
         "kind": "class",
@@ -42,10 +33,7 @@
     {
         "comment": "/**\n     * @property {String} [acceptCharset]\n     * @property {String} [action]\n     * @property {String} [autocomplete]\n     * @property {String} [enctype]\n     * @property {String} [method]\n     * @property {String} [name]\n     * @property {Boolean} [noValidate]\n     */",
         "meta": {
-            "range": [
-                720,
-                1003
-            ],
+            "range": [720, 1003],
             "filename": "form.js",
             "lineno": 23,
             "columnno": 4,
@@ -59,63 +47,49 @@
         "properties": [
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "acceptCharset"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "action"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "autocomplete"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "enctype"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "method"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "name"
             },
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "noValidate"
@@ -130,10 +104,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                750,
-                781
-            ],
+            "range": [750, 781],
             "filename": "form.js",
             "lineno": 24,
             "columnno": 8,
@@ -154,10 +125,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                767,
-                779
-            ],
+            "range": [767, 779],
             "filename": "form.js",
             "lineno": 24,
             "columnno": 25,
@@ -179,10 +147,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                791,
-                815
-            ],
+            "range": [791, 815],
             "filename": "form.js",
             "lineno": 25,
             "columnno": 8,
@@ -203,10 +168,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                801,
-                813
-            ],
+            "range": [801, 813],
             "filename": "form.js",
             "lineno": 25,
             "columnno": 18,
@@ -228,10 +190,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                825,
-                855
-            ],
+            "range": [825, 855],
             "filename": "form.js",
             "lineno": 26,
             "columnno": 8,
@@ -252,10 +211,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                841,
-                853
-            ],
+            "range": [841, 853],
             "filename": "form.js",
             "lineno": 26,
             "columnno": 24,
@@ -277,10 +233,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                865,
-                890
-            ],
+            "range": [865, 890],
             "filename": "form.js",
             "lineno": 27,
             "columnno": 8,
@@ -301,10 +254,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                876,
-                888
-            ],
+            "range": [876, 888],
             "filename": "form.js",
             "lineno": 27,
             "columnno": 19,
@@ -326,10 +276,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                900,
-                924
-            ],
+            "range": [900, 924],
             "filename": "form.js",
             "lineno": 28,
             "columnno": 8,
@@ -350,10 +297,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                910,
-                922
-            ],
+            "range": [910, 922],
             "filename": "form.js",
             "lineno": 28,
             "columnno": 18,
@@ -375,10 +319,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                934,
-                956
-            ],
+            "range": [934, 956],
             "filename": "form.js",
             "lineno": 29,
             "columnno": 8,
@@ -399,10 +340,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                942,
-                954
-            ],
+            "range": [942, 954],
             "filename": "form.js",
             "lineno": 29,
             "columnno": 16,
@@ -424,10 +362,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                966,
-                995
-            ],
+            "range": [966, 995],
             "filename": "form.js",
             "lineno": 30,
             "columnno": 8,
@@ -448,10 +383,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                980,
-                993
-            ],
+            "range": [980, 993],
             "filename": "form.js",
             "lineno": 30,
             "columnno": 22,
@@ -473,10 +405,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                1042,
-                1121
-            ],
+            "range": [1042, 1121],
             "filename": "form.js",
             "lineno": 36,
             "columnno": 4,
@@ -502,10 +431,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                1143,
-                1230
-            ],
+            "range": [1143, 1230],
             "filename": "form.js",
             "lineno": 42,
             "columnno": 4,
@@ -530,10 +456,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-form\n * @fires MdFormComponent#onFormNativeFormdata\n * @fires MdFormComponent#onFormNativeReset\n * @fires MdFormComponent#onFormNativeSubmit\n */",
         "meta": {
-            "range": [
-                394,
-                3291
-            ],
+            "range": [394, 3291],
             "filename": "form.js",
             "lineno": 13,
             "columnno": 0,
@@ -548,9 +471,7 @@
         "name": "MdFormComponent",
         "longname": "MdFormComponent",
         "kind": "class",
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -559,20 +480,13 @@
                 "value": "md-form"
             }
         ],
-        "fires": [
-            "MdFormComponent#event:onFormNativeFormdata",
-            "MdFormComponent#event:onFormNativeReset",
-            "MdFormComponent#event:onFormNativeSubmit"
-        ],
+        "fires": ["MdFormComponent#event:onFormNativeFormdata", "MdFormComponent#event:onFormNativeReset", "MdFormComponent#event:onFormNativeSubmit"],
         "scope": "global"
     },
     {
         "comment": "",
         "meta": {
-            "range": [
-                1184,
-                1223
-            ],
+            "range": [1184, 1223],
             "filename": "form.js",
             "lineno": 44,
             "columnno": 8,
@@ -595,10 +509,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                1252,
-                1990
-            ],
+            "range": [1252, 1990],
             "filename": "form.js",
             "lineno": 49,
             "columnno": 4,
@@ -623,10 +534,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                2012,
-                2113
-            ],
+            "range": [2012, 2113],
             "filename": "form.js",
             "lineno": 71,
             "columnno": 4,
@@ -651,10 +559,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                2135,
-                2183
-            ],
+            "range": [2135, 2183],
             "filename": "form.js",
             "lineno": 78,
             "columnno": 4,
@@ -679,10 +584,7 @@
     {
         "comment": "/**\n     * @param {Any} [submitButton]\n     */",
         "meta": {
-            "range": [
-                2240,
-                2555
-            ],
+            "range": [2240, 2555],
             "filename": "form.js",
             "lineno": 85,
             "columnno": 4,
@@ -691,9 +593,7 @@
                 "id": "astnode100000180",
                 "name": "MdFormComponent#submit",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "submitButton"
-                ]
+                "paramnames": ["submitButton"]
             },
             "vars": {
                 "": null
@@ -702,9 +602,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "submitButton"
@@ -719,10 +617,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                2605,
-                2698
-            ],
+            "range": [2605, 2698],
             "filename": "form.js",
             "lineno": 100,
             "columnno": 4,
@@ -731,9 +626,7 @@
                 "id": "astnode100000219",
                 "name": "MdFormComponent#handleFormNativeFormdata",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -742,9 +635,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -759,10 +650,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2683,
-                2688
-            ],
+            "range": [2683, 2688],
             "filename": "form.js",
             "lineno": 101,
             "columnno": 44,
@@ -783,10 +671,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                2748,
-                3079
-            ],
+            "range": [2748, 3079],
             "filename": "form.js",
             "lineno": 107,
             "columnno": 4,
@@ -795,9 +680,7 @@
                 "id": "astnode100000233",
                 "name": "MdFormComponent#handleFormNativeReset",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -806,9 +689,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -823,10 +704,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2798,
-                2805
-            ],
+            "range": [2798, 2805],
             "filename": "form.js",
             "lineno": 108,
             "columnno": 19,
@@ -847,10 +725,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2855,
-                2969
-            ],
+            "range": [2855, 2969],
             "filename": "form.js",
             "lineno": 109,
             "columnno": 18,
@@ -873,10 +748,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2906,
-                2919
-            ],
+            "range": [2906, 2919],
             "filename": "form.js",
             "lineno": 110,
             "columnno": 16,
@@ -897,10 +769,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2937,
-                2953
-            ],
+            "range": [2937, 2953],
             "filename": "form.js",
             "lineno": 111,
             "columnno": 16,
@@ -921,10 +790,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3064,
-                3069
-            ],
+            "range": [3064, 3069],
             "filename": "form.js",
             "lineno": 115,
             "columnno": 41,
@@ -945,10 +811,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                3129,
-                3289
-            ],
+            "range": [3129, 3289],
             "filename": "form.js",
             "lineno": 121,
             "columnno": 4,
@@ -957,9 +820,7 @@
                 "id": "astnode100000274",
                 "name": "MdFormComponent#handleFormNativeSubmit",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -968,9 +829,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -985,10 +844,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3274,
-                3279
-            ],
+            "range": [3274, 3279],
             "filename": "form.js",
             "lineno": 124,
             "columnno": 42,
@@ -1009,10 +865,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3352,
-                3367
-            ],
+            "range": [3352, 3367],
             "filename": "form.js",
             "lineno": 128,
             "columnno": 9,
@@ -1032,8 +885,6 @@
     {
         "kind": "package",
         "longname": "package:undefined",
-        "files": [
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\form\\form.js"
-        ]
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\form\\form.js"]
     }
 ]

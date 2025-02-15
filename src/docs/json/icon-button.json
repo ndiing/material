@@ -2,10 +2,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-icon-button\n * @fires MdIconButtonComponent#onIconButtonClick\n */",
         "meta": {
-            "range": [
-                302,
-                2702
-            ],
+            "range": [302, 2702],
             "filename": "icon-button.js",
             "lineno": 11,
             "columnno": 0,
@@ -17,9 +14,7 @@
                 "paramnames": []
             }
         },
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -28,9 +23,7 @@
                 "value": "md-icon-button"
             }
         ],
-        "fires": [
-            "MdIconButtonComponent#event:onIconButtonClick"
-        ],
+        "fires": ["MdIconButtonComponent#event:onIconButtonClick"],
         "name": "MdIconButtonComponent",
         "longname": "MdIconButtonComponent",
         "kind": "class",
@@ -40,10 +33,7 @@
     {
         "comment": "/**\n     * @property {String} [icon]\n     * @property {String} [variant]\n     * @property {String} [type]\n     * @property {Boolean} [toggle]\n     * @property {Boolean} [selected]\n     * @property {Boolean} [disabled]\n     */",
         "meta": {
-            "range": [
-                586,
-                867
-            ],
+            "range": [586, 867],
             "filename": "icon-button.js",
             "lineno": 20,
             "columnno": 4,
@@ -57,54 +47,42 @@
         "properties": [
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "icon"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "variant"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "type"
             },
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "toggle"
             },
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "selected"
             },
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "disabled"
@@ -119,10 +97,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                616,
-                638
-            ],
+            "range": [616, 638],
             "filename": "icon-button.js",
             "lineno": 21,
             "columnno": 8,
@@ -143,10 +118,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                624,
-                636
-            ],
+            "range": [624, 636],
             "filename": "icon-button.js",
             "lineno": 21,
             "columnno": 16,
@@ -168,10 +140,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                648,
-                673
-            ],
+            "range": [648, 673],
             "filename": "icon-button.js",
             "lineno": 22,
             "columnno": 8,
@@ -192,10 +161,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                659,
-                671
-            ],
+            "range": [659, 671],
             "filename": "icon-button.js",
             "lineno": 22,
             "columnno": 19,
@@ -217,10 +183,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                683,
-                705
-            ],
+            "range": [683, 705],
             "filename": "icon-button.js",
             "lineno": 23,
             "columnno": 8,
@@ -241,10 +204,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                691,
-                703
-            ],
+            "range": [691, 703],
             "filename": "icon-button.js",
             "lineno": 23,
             "columnno": 16,
@@ -266,10 +226,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                715,
-                755
-            ],
+            "range": [715, 755],
             "filename": "icon-button.js",
             "lineno": 24,
             "columnno": 8,
@@ -290,10 +247,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                725,
-                738
-            ],
+            "range": [725, 738],
             "filename": "icon-button.js",
             "lineno": 24,
             "columnno": 18,
@@ -315,10 +269,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                740,
-                753
-            ],
+            "range": [740, 753],
             "filename": "icon-button.js",
             "lineno": 24,
             "columnno": 33,
@@ -340,10 +291,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                765,
-                807
-            ],
+            "range": [765, 807],
             "filename": "icon-button.js",
             "lineno": 25,
             "columnno": 8,
@@ -364,10 +312,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                777,
-                790
-            ],
+            "range": [777, 790],
             "filename": "icon-button.js",
             "lineno": 25,
             "columnno": 20,
@@ -389,10 +334,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                792,
-                805
-            ],
+            "range": [792, 805],
             "filename": "icon-button.js",
             "lineno": 25,
             "columnno": 35,
@@ -414,10 +356,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                817,
-                859
-            ],
+            "range": [817, 859],
             "filename": "icon-button.js",
             "lineno": 26,
             "columnno": 8,
@@ -438,10 +377,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                829,
-                842
-            ],
+            "range": [829, 842],
             "filename": "icon-button.js",
             "lineno": 26,
             "columnno": 20,
@@ -463,10 +399,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                844,
-                857
-            ],
+            "range": [844, 857],
             "filename": "icon-button.js",
             "lineno": 26,
             "columnno": 35,
@@ -488,10 +421,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                906,
-                956
-            ],
+            "range": [906, 956],
             "filename": "icon-button.js",
             "lineno": 32,
             "columnno": 4,
@@ -512,10 +442,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                978,
-                1046
-            ],
+            "range": [978, 1046],
             "filename": "icon-button.js",
             "lineno": 36,
             "columnno": 4,
@@ -540,10 +467,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-icon-button\n * @fires MdIconButtonComponent#onIconButtonClick\n */",
         "meta": {
-            "range": [
-                302,
-                2702
-            ],
+            "range": [302, 2702],
             "filename": "icon-button.js",
             "lineno": 11,
             "columnno": 0,
@@ -558,9 +482,7 @@
         "name": "MdIconButtonComponent",
         "longname": "MdIconButtonComponent",
         "kind": "class",
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -569,18 +491,13 @@
                 "value": "md-icon-button"
             }
         ],
-        "fires": [
-            "MdIconButtonComponent#event:onIconButtonClick"
-        ],
+        "fires": ["MdIconButtonComponent#event:onIconButtonClick"],
         "scope": "global"
     },
     {
         "comment": "",
         "meta": {
-            "range": [
-                1019,
-                1039
-            ],
+            "range": [1019, 1039],
             "filename": "icon-button.js",
             "lineno": 38,
             "columnno": 8,
@@ -603,10 +520,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                1068,
-                1399
-            ],
+            "range": [1068, 1399],
             "filename": "icon-button.js",
             "lineno": 43,
             "columnno": 4,
@@ -631,10 +545,7 @@
     {
         "comment": "/**\n     * @async\n     */",
         "meta": {
-            "range": [
-                1435,
-                1917
-            ],
+            "range": [1435, 1917],
             "filename": "icon-button.js",
             "lineno": 58,
             "columnno": 4,
@@ -660,10 +571,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1552,
-                1618
-            ],
+            "range": [1552, 1618],
             "filename": "icon-button.js",
             "lineno": 61,
             "columnno": 8,
@@ -686,10 +594,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1731,
-                1910
-            ],
+            "range": [1731, 1910],
             "filename": "icon-button.js",
             "lineno": 64,
             "columnno": 8,
@@ -712,10 +617,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1776,
-                1810
-            ],
+            "range": [1776, 1810],
             "filename": "icon-button.js",
             "lineno": 65,
             "columnno": 12,
@@ -736,10 +638,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1824,
-                1839
-            ],
+            "range": [1824, 1839],
             "filename": "icon-button.js",
             "lineno": 66,
             "columnno": 12,
@@ -760,10 +659,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1853,
-                1863
-            ],
+            "range": [1853, 1863],
             "filename": "icon-button.js",
             "lineno": 67,
             "columnno": 12,
@@ -784,10 +680,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                1939,
-                2126
-            ],
+            "range": [1939, 2126],
             "filename": "icon-button.js",
             "lineno": 74,
             "columnno": 4,
@@ -812,10 +705,7 @@
     {
         "comment": "/**\n     * @param {Any} [changedProperties]\n     */",
         "meta": {
-            "range": [
-                2188,
-                2482
-            ],
+            "range": [2188, 2482],
             "filename": "icon-button.js",
             "lineno": 83,
             "columnno": 4,
@@ -824,9 +714,7 @@
                 "id": "astnode100000194",
                 "name": "MdIconButtonComponent#updated",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "changedProperties"
-                ]
+                "paramnames": ["changedProperties"]
             },
             "vars": {
                 "": null
@@ -835,9 +723,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "changedProperties"
@@ -852,10 +738,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                2532,
-                2700
-            ],
+            "range": [2532, 2700],
             "filename": "icon-button.js",
             "lineno": 95,
             "columnno": 4,
@@ -864,9 +747,7 @@
                 "id": "astnode100000238",
                 "name": "MdIconButtonComponent#handleIconButtonClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -875,9 +756,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -892,10 +771,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2602,
-                2632
-            ],
+            "range": [2602, 2632],
             "filename": "icon-button.js",
             "lineno": 97,
             "columnno": 12,
@@ -918,10 +794,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2685,
-                2690
-            ],
+            "range": [2685, 2690],
             "filename": "icon-button.js",
             "lineno": 99,
             "columnno": 41,
@@ -942,10 +815,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2776,
-                2797
-            ],
+            "range": [2776, 2797],
             "filename": "icon-button.js",
             "lineno": 103,
             "columnno": 9,
@@ -965,8 +835,6 @@
     {
         "kind": "package",
         "longname": "package:undefined",
-        "files": [
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\icon-button\\icon-button.js"
-        ]
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\icon-button\\icon-button.js"]
     }
 ]

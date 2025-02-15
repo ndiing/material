@@ -2,10 +2,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-navigation-rail\n * @fires MdNavigationRailComponent#onNavigationRailShown\n * @fires MdNavigationRailComponent#onNavigationRailClosed\n * @fires MdNavigationRailComponent#onNavigationRailIconButtonClick\n */",
         "meta": {
-            "range": [
-                449,
-                4600
-            ],
+            "range": [449, 4600],
             "filename": "navigation-rail.js",
             "lineno": 13,
             "columnno": 0,
@@ -17,9 +14,7 @@
                 "paramnames": []
             }
         },
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -28,11 +23,7 @@
                 "value": "md-navigation-rail"
             }
         ],
-        "fires": [
-            "MdNavigationRailComponent#event:onNavigationRailShown",
-            "MdNavigationRailComponent#event:onNavigationRailClosed",
-            "MdNavigationRailComponent#event:onNavigationRailIconButtonClick"
-        ],
+        "fires": ["MdNavigationRailComponent#event:onNavigationRailShown", "MdNavigationRailComponent#event:onNavigationRailClosed", "MdNavigationRailComponent#event:onNavigationRailIconButtonClick"],
         "name": "MdNavigationRailComponent",
         "longname": "MdNavigationRailComponent",
         "kind": "class",
@@ -42,10 +33,7 @@
     {
         "comment": "/**\n     * @property {Array} [icons]\n     * @property {Array} [actions]\n     * @property {String} [label]\n     * @property {String} [sublabel]\n     * @property {Array} [items]\n     * @property {Boolean} [open]\n     */",
         "meta": {
-            "range": [
-                729,
-                972
-            ],
+            "range": [729, 972],
             "filename": "navigation-rail.js",
             "lineno": 22,
             "columnno": 4,
@@ -59,54 +47,42 @@
         "properties": [
             {
                 "type": {
-                    "names": [
-                        "Array"
-                    ]
+                    "names": ["Array"]
                 },
                 "optional": true,
                 "name": "icons"
             },
             {
                 "type": {
-                    "names": [
-                        "Array"
-                    ]
+                    "names": ["Array"]
                 },
                 "optional": true,
                 "name": "actions"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "label"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "sublabel"
             },
             {
                 "type": {
-                    "names": [
-                        "Array"
-                    ]
+                    "names": ["Array"]
                 },
                 "optional": true,
                 "name": "items"
             },
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "open"
@@ -121,10 +97,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                759,
-                781
-            ],
+            "range": [759, 781],
             "filename": "navigation-rail.js",
             "lineno": 23,
             "columnno": 8,
@@ -145,10 +118,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                768,
-                779
-            ],
+            "range": [768, 779],
             "filename": "navigation-rail.js",
             "lineno": 23,
             "columnno": 17,
@@ -170,10 +140,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                791,
-                815
-            ],
+            "range": [791, 815],
             "filename": "navigation-rail.js",
             "lineno": 24,
             "columnno": 8,
@@ -194,10 +161,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                802,
-                813
-            ],
+            "range": [802, 813],
             "filename": "navigation-rail.js",
             "lineno": 24,
             "columnno": 19,
@@ -219,10 +183,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                825,
-                848
-            ],
+            "range": [825, 848],
             "filename": "navigation-rail.js",
             "lineno": 25,
             "columnno": 8,
@@ -243,10 +204,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                834,
-                846
-            ],
+            "range": [834, 846],
             "filename": "navigation-rail.js",
             "lineno": 25,
             "columnno": 17,
@@ -268,10 +226,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                858,
-                884
-            ],
+            "range": [858, 884],
             "filename": "navigation-rail.js",
             "lineno": 26,
             "columnno": 8,
@@ -292,10 +247,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                870,
-                882
-            ],
+            "range": [870, 882],
             "filename": "navigation-rail.js",
             "lineno": 26,
             "columnno": 20,
@@ -317,10 +269,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                894,
-                916
-            ],
+            "range": [894, 916],
             "filename": "navigation-rail.js",
             "lineno": 27,
             "columnno": 8,
@@ -341,10 +290,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                903,
-                914
-            ],
+            "range": [903, 914],
             "filename": "navigation-rail.js",
             "lineno": 27,
             "columnno": 17,
@@ -366,10 +312,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                926,
-                964
-            ],
+            "range": [926, 964],
             "filename": "navigation-rail.js",
             "lineno": 28,
             "columnno": 8,
@@ -390,10 +333,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                934,
-                947
-            ],
+            "range": [934, 947],
             "filename": "navigation-rail.js",
             "lineno": 28,
             "columnno": 16,
@@ -415,10 +355,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                949,
-                962
-            ],
+            "range": [949, 962],
             "filename": "navigation-rail.js",
             "lineno": 28,
             "columnno": 31,
@@ -440,10 +377,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                994,
-                1130
-            ],
+            "range": [994, 1130],
             "filename": "navigation-rail.js",
             "lineno": 33,
             "columnno": 4,
@@ -468,10 +402,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-navigation-rail\n * @fires MdNavigationRailComponent#onNavigationRailShown\n * @fires MdNavigationRailComponent#onNavigationRailClosed\n * @fires MdNavigationRailComponent#onNavigationRailIconButtonClick\n */",
         "meta": {
-            "range": [
-                449,
-                4600
-            ],
+            "range": [449, 4600],
             "filename": "navigation-rail.js",
             "lineno": 13,
             "columnno": 0,
@@ -486,9 +417,7 @@
         "name": "MdNavigationRailComponent",
         "longname": "MdNavigationRailComponent",
         "kind": "class",
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -497,20 +426,13 @@
                 "value": "md-navigation-rail"
             }
         ],
-        "fires": [
-            "MdNavigationRailComponent#event:onNavigationRailShown",
-            "MdNavigationRailComponent#event:onNavigationRailClosed",
-            "MdNavigationRailComponent#event:onNavigationRailIconButtonClick"
-        ],
+        "fires": ["MdNavigationRailComponent#event:onNavigationRailShown", "MdNavigationRailComponent#event:onNavigationRailClosed", "MdNavigationRailComponent#event:onNavigationRailIconButtonClick"],
         "scope": "global"
     },
     {
         "comment": "",
         "meta": {
-            "range": [
-                1035,
-                1050
-            ],
+            "range": [1035, 1050],
             "filename": "navigation-rail.js",
             "lineno": 35,
             "columnno": 8,
@@ -533,10 +455,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1060,
-                1123
-            ],
+            "range": [1060, 1123],
             "filename": "navigation-rail.js",
             "lineno": 36,
             "columnno": 8,
@@ -559,10 +478,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1083,
-                1121
-            ],
+            "range": [1083, 1121],
             "filename": "navigation-rail.js",
             "lineno": 36,
             "columnno": 31,
@@ -584,10 +500,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     */",
         "meta": {
-            "range": [
-                1179,
-                1275
-            ],
+            "range": [1179, 1275],
             "filename": "navigation-rail.js",
             "lineno": 42,
             "columnno": 4,
@@ -596,9 +509,7 @@
                 "id": "astnode100000073",
                 "name": "MdNavigationRailComponent#renderIcon",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item"
-                ]
+                "paramnames": ["item"]
             },
             "vars": {
                 "": null
@@ -607,9 +518,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
@@ -624,10 +533,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     */",
         "meta": {
-            "range": [
-                1324,
-                1860
-            ],
+            "range": [1324, 1860],
             "filename": "navigation-rail.js",
             "lineno": 49,
             "columnno": 4,
@@ -636,9 +542,7 @@
                 "id": "astnode100000089",
                 "name": "MdNavigationRailComponent#renderIconButton",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item"
-                ]
+                "paramnames": ["item"]
             },
             "vars": {
                 "": null
@@ -647,9 +551,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
@@ -664,10 +566,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     * @param {Any} [component=\"icon\"]\n     */",
         "meta": {
-            "range": [
-                1948,
-                2251
-            ],
+            "range": [1948, 2251],
             "filename": "navigation-rail.js",
             "lineno": 68,
             "columnno": 4,
@@ -676,10 +575,7 @@
                 "id": "astnode100000141",
                 "name": "MdNavigationRailComponent#renderComponent",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item",
-                    "component"
-                ]
+                "paramnames": ["item", "component"]
             },
             "vars": {
                 "": null
@@ -688,18 +584,14 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "defaultvalue": "\"icon\"",
@@ -715,10 +607,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                2273,
-                3427
-            ],
+            "range": [2273, 3427],
             "filename": "navigation-rail.js",
             "lineno": 81,
             "columnno": 4,
@@ -743,10 +632,7 @@
     {
         "comment": "/**\n     * @async\n     */",
         "meta": {
-            "range": [
-                3463,
-                3851
-            ],
+            "range": [3463, 3851],
             "filename": "navigation-rail.js",
             "lineno": 98,
             "columnno": 4,
@@ -772,10 +658,7 @@
     {
         "comment": "/**\n     * @param {Any} [changedProperties]\n     */",
         "meta": {
-            "range": [
-                3913,
-                3989
-            ],
+            "range": [3913, 3989],
             "filename": "navigation-rail.js",
             "lineno": 110,
             "columnno": 4,
@@ -784,9 +667,7 @@
                 "id": "astnode100000356",
                 "name": "MdNavigationRailComponent#updated",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "changedProperties"
-                ]
+                "paramnames": ["changedProperties"]
             },
             "vars": {
                 "": null
@@ -795,9 +676,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "changedProperties"
@@ -812,10 +691,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                4011,
-                4159
-            ],
+            "range": [4011, 4159],
             "filename": "navigation-rail.js",
             "lineno": 116,
             "columnno": 4,
@@ -840,10 +716,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4092,
-                4108
-            ],
+            "range": [4092, 4108],
             "filename": "navigation-rail.js",
             "lineno": 118,
             "columnno": 8,
@@ -866,10 +739,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                4181,
-                4332
-            ],
+            "range": [4181, 4332],
             "filename": "navigation-rail.js",
             "lineno": 124,
             "columnno": 4,
@@ -894,10 +764,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4263,
-                4280
-            ],
+            "range": [4263, 4280],
             "filename": "navigation-rail.js",
             "lineno": 126,
             "columnno": 8,
@@ -920,10 +787,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                4354,
-                4433
-            ],
+            "range": [4354, 4433],
             "filename": "navigation-rail.js",
             "lineno": 132,
             "columnno": 4,
@@ -948,10 +812,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                4483,
-                4598
-            ],
+            "range": [4483, 4598],
             "filename": "navigation-rail.js",
             "lineno": 140,
             "columnno": 4,
@@ -960,9 +821,7 @@
                 "id": "astnode100000433",
                 "name": "MdNavigationRailComponent#handleNavigationRailIconButtonClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -971,9 +830,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -988,10 +845,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4583,
-                4588
-            ],
+            "range": [4583, 4588],
             "filename": "navigation-rail.js",
             "lineno": 141,
             "columnno": 55,
@@ -1012,10 +866,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4682,
-                4707
-            ],
+            "range": [4682, 4707],
             "filename": "navigation-rail.js",
             "lineno": 145,
             "columnno": 9,
@@ -1035,8 +886,6 @@
     {
         "kind": "package",
         "longname": "package:undefined",
-        "files": [
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\navigation-rail\\navigation-rail.js"
-        ]
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\navigation-rail\\navigation-rail.js"]
     }
 ]

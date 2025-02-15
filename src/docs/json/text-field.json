@@ -2,10 +2,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-text-field\n * @fires MdTextFieldComponent#onTextFieldFocus\n * @fires MdTextFieldComponent#onTextFieldBlur\n * @fires MdTextFieldComponent#onTextFieldInput\n * @fires MdTextFieldComponent#onTextFieldInvalid\n * @fires MdTextFieldComponent#onTextFieldReset\n * @fires MdTextFieldComponent#onTextFieldIconButtonCancelClick\n * @fires MdTextFieldComponent#onTextFieldIconButtonClick\n * @fires MdTextFieldComponent#onTextFieldClick\n */",
         "meta": {
-            "range": [
-                726,
-                12446
-            ],
+            "range": [726, 12446],
             "filename": "text-field.js",
             "lineno": 19,
             "columnno": 0,
@@ -17,9 +14,7 @@
                 "paramnames": []
             }
         },
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -28,16 +23,7 @@
                 "value": "md-text-field"
             }
         ],
-        "fires": [
-            "MdTextFieldComponent#event:onTextFieldFocus",
-            "MdTextFieldComponent#event:onTextFieldBlur",
-            "MdTextFieldComponent#event:onTextFieldInput",
-            "MdTextFieldComponent#event:onTextFieldInvalid",
-            "MdTextFieldComponent#event:onTextFieldReset",
-            "MdTextFieldComponent#event:onTextFieldIconButtonCancelClick",
-            "MdTextFieldComponent#event:onTextFieldIconButtonClick",
-            "MdTextFieldComponent#event:onTextFieldClick"
-        ],
+        "fires": ["MdTextFieldComponent#event:onTextFieldFocus", "MdTextFieldComponent#event:onTextFieldBlur", "MdTextFieldComponent#event:onTextFieldInput", "MdTextFieldComponent#event:onTextFieldInvalid", "MdTextFieldComponent#event:onTextFieldReset", "MdTextFieldComponent#event:onTextFieldIconButtonCancelClick", "MdTextFieldComponent#event:onTextFieldIconButtonClick", "MdTextFieldComponent#event:onTextFieldClick"],
         "name": "MdTextFieldComponent",
         "longname": "MdTextFieldComponent",
         "kind": "class",
@@ -47,10 +33,7 @@
     {
         "comment": "/**\n     * @property {String} [label]\n     * @property {Boolean} [separateLabel]\n     * @property {Array} [icons]\n     * @property {String} [prefix]\n     * @property {String} [suffix]\n     * @property {Array} [actions]\n     * @property {String} [text]\n     * @property {String} [error]\n     * @property {String} [counter]\n     * @property {String} [name]\n     * @property {String} [type]\n     * @property {String} [value]\n     * @property {String} [placeholder]\n     * @property {String} [title]\n     * @property {String} [autocomplete]\n     * @property {Boolean} [required]\n     * @property {Boolean} [readOnly]\n     * @property {Number} [min]\n     * @property {Number} [max]\n     * @property {Number} [minLength]\n     * @property {Number} [maxLength]\n     * @property {String} [pattern]\n     * @property {String} [variant]\n     * @property {Boolean} [disabled]\n     * @property {Boolean} [errorIcon]\n     * @property {Boolean} [cancelAction]\n     */",
         "meta": {
-            "range": [
-                1735,
-                2692
-            ],
+            "range": [1735, 2692],
             "filename": "text-field.js",
             "lineno": 48,
             "columnno": 4,
@@ -64,234 +47,182 @@
         "properties": [
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "label"
             },
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "separateLabel"
             },
             {
                 "type": {
-                    "names": [
-                        "Array"
-                    ]
+                    "names": ["Array"]
                 },
                 "optional": true,
                 "name": "icons"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "prefix"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "suffix"
             },
             {
                 "type": {
-                    "names": [
-                        "Array"
-                    ]
+                    "names": ["Array"]
                 },
                 "optional": true,
                 "name": "actions"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "text"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "error"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "counter"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "name"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "type"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "value"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "placeholder"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "title"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "autocomplete"
             },
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "required"
             },
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "readOnly"
             },
             {
                 "type": {
-                    "names": [
-                        "Number"
-                    ]
+                    "names": ["Number"]
                 },
                 "optional": true,
                 "name": "min"
             },
             {
                 "type": {
-                    "names": [
-                        "Number"
-                    ]
+                    "names": ["Number"]
                 },
                 "optional": true,
                 "name": "max"
             },
             {
                 "type": {
-                    "names": [
-                        "Number"
-                    ]
+                    "names": ["Number"]
                 },
                 "optional": true,
                 "name": "minLength"
             },
             {
                 "type": {
-                    "names": [
-                        "Number"
-                    ]
+                    "names": ["Number"]
                 },
                 "optional": true,
                 "name": "maxLength"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "pattern"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "variant"
             },
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "disabled"
             },
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "errorIcon"
             },
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "cancelAction"
@@ -306,10 +237,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1765,
-                1788
-            ],
+            "range": [1765, 1788],
             "filename": "text-field.js",
             "lineno": 49,
             "columnno": 8,
@@ -330,10 +258,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1774,
-                1786
-            ],
+            "range": [1774, 1786],
             "filename": "text-field.js",
             "lineno": 49,
             "columnno": 17,
@@ -355,10 +280,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1798,
-                1830
-            ],
+            "range": [1798, 1830],
             "filename": "text-field.js",
             "lineno": 50,
             "columnno": 8,
@@ -379,10 +301,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1815,
-                1828
-            ],
+            "range": [1815, 1828],
             "filename": "text-field.js",
             "lineno": 50,
             "columnno": 25,
@@ -404,10 +323,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1840,
-                1862
-            ],
+            "range": [1840, 1862],
             "filename": "text-field.js",
             "lineno": 51,
             "columnno": 8,
@@ -428,10 +344,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1849,
-                1860
-            ],
+            "range": [1849, 1860],
             "filename": "text-field.js",
             "lineno": 51,
             "columnno": 17,
@@ -453,10 +366,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1872,
-                1896
-            ],
+            "range": [1872, 1896],
             "filename": "text-field.js",
             "lineno": 52,
             "columnno": 8,
@@ -477,10 +387,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1882,
-                1894
-            ],
+            "range": [1882, 1894],
             "filename": "text-field.js",
             "lineno": 52,
             "columnno": 18,
@@ -502,10 +409,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1906,
-                1930
-            ],
+            "range": [1906, 1930],
             "filename": "text-field.js",
             "lineno": 53,
             "columnno": 8,
@@ -526,10 +430,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1916,
-                1928
-            ],
+            "range": [1916, 1928],
             "filename": "text-field.js",
             "lineno": 53,
             "columnno": 18,
@@ -551,10 +452,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1940,
-                1964
-            ],
+            "range": [1940, 1964],
             "filename": "text-field.js",
             "lineno": 54,
             "columnno": 8,
@@ -575,10 +473,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1951,
-                1962
-            ],
+            "range": [1951, 1962],
             "filename": "text-field.js",
             "lineno": 54,
             "columnno": 19,
@@ -600,10 +495,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1974,
-                1996
-            ],
+            "range": [1974, 1996],
             "filename": "text-field.js",
             "lineno": 55,
             "columnno": 8,
@@ -624,10 +516,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1982,
-                1994
-            ],
+            "range": [1982, 1994],
             "filename": "text-field.js",
             "lineno": 55,
             "columnno": 16,
@@ -649,10 +538,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2006,
-                2029
-            ],
+            "range": [2006, 2029],
             "filename": "text-field.js",
             "lineno": 56,
             "columnno": 8,
@@ -673,10 +559,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2015,
-                2027
-            ],
+            "range": [2015, 2027],
             "filename": "text-field.js",
             "lineno": 56,
             "columnno": 17,
@@ -698,10 +581,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2039,
-                2064
-            ],
+            "range": [2039, 2064],
             "filename": "text-field.js",
             "lineno": 57,
             "columnno": 8,
@@ -722,10 +602,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2050,
-                2062
-            ],
+            "range": [2050, 2062],
             "filename": "text-field.js",
             "lineno": 57,
             "columnno": 19,
@@ -747,10 +624,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2074,
-                2096
-            ],
+            "range": [2074, 2096],
             "filename": "text-field.js",
             "lineno": 58,
             "columnno": 8,
@@ -771,10 +645,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2082,
-                2094
-            ],
+            "range": [2082, 2094],
             "filename": "text-field.js",
             "lineno": 58,
             "columnno": 16,
@@ -796,10 +667,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2106,
-                2128
-            ],
+            "range": [2106, 2128],
             "filename": "text-field.js",
             "lineno": 59,
             "columnno": 8,
@@ -820,10 +688,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2114,
-                2126
-            ],
+            "range": [2114, 2126],
             "filename": "text-field.js",
             "lineno": 59,
             "columnno": 16,
@@ -845,10 +710,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2138,
-                2161
-            ],
+            "range": [2138, 2161],
             "filename": "text-field.js",
             "lineno": 60,
             "columnno": 8,
@@ -869,10 +731,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2147,
-                2159
-            ],
+            "range": [2147, 2159],
             "filename": "text-field.js",
             "lineno": 60,
             "columnno": 17,
@@ -894,10 +753,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2171,
-                2200
-            ],
+            "range": [2171, 2200],
             "filename": "text-field.js",
             "lineno": 61,
             "columnno": 8,
@@ -918,10 +774,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2186,
-                2198
-            ],
+            "range": [2186, 2198],
             "filename": "text-field.js",
             "lineno": 61,
             "columnno": 23,
@@ -943,10 +796,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2210,
-                2233
-            ],
+            "range": [2210, 2233],
             "filename": "text-field.js",
             "lineno": 62,
             "columnno": 8,
@@ -967,10 +817,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2219,
-                2231
-            ],
+            "range": [2219, 2231],
             "filename": "text-field.js",
             "lineno": 62,
             "columnno": 17,
@@ -992,10 +839,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2243,
-                2273
-            ],
+            "range": [2243, 2273],
             "filename": "text-field.js",
             "lineno": 63,
             "columnno": 8,
@@ -1016,10 +860,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2259,
-                2271
-            ],
+            "range": [2259, 2271],
             "filename": "text-field.js",
             "lineno": 63,
             "columnno": 24,
@@ -1041,10 +882,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2283,
-                2310
-            ],
+            "range": [2283, 2310],
             "filename": "text-field.js",
             "lineno": 64,
             "columnno": 8,
@@ -1065,10 +903,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2295,
-                2308
-            ],
+            "range": [2295, 2308],
             "filename": "text-field.js",
             "lineno": 64,
             "columnno": 20,
@@ -1090,10 +925,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2320,
-                2347
-            ],
+            "range": [2320, 2347],
             "filename": "text-field.js",
             "lineno": 65,
             "columnno": 8,
@@ -1114,10 +946,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2332,
-                2345
-            ],
+            "range": [2332, 2345],
             "filename": "text-field.js",
             "lineno": 65,
             "columnno": 20,
@@ -1139,10 +968,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2357,
-                2378
-            ],
+            "range": [2357, 2378],
             "filename": "text-field.js",
             "lineno": 66,
             "columnno": 8,
@@ -1163,10 +989,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2364,
-                2376
-            ],
+            "range": [2364, 2376],
             "filename": "text-field.js",
             "lineno": 66,
             "columnno": 15,
@@ -1188,10 +1011,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2388,
-                2409
-            ],
+            "range": [2388, 2409],
             "filename": "text-field.js",
             "lineno": 67,
             "columnno": 8,
@@ -1212,10 +1032,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2395,
-                2407
-            ],
+            "range": [2395, 2407],
             "filename": "text-field.js",
             "lineno": 67,
             "columnno": 15,
@@ -1237,10 +1054,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2419,
-                2446
-            ],
+            "range": [2419, 2446],
             "filename": "text-field.js",
             "lineno": 68,
             "columnno": 8,
@@ -1261,10 +1075,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2432,
-                2444
-            ],
+            "range": [2432, 2444],
             "filename": "text-field.js",
             "lineno": 68,
             "columnno": 21,
@@ -1286,10 +1097,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2456,
-                2483
-            ],
+            "range": [2456, 2483],
             "filename": "text-field.js",
             "lineno": 69,
             "columnno": 8,
@@ -1310,10 +1118,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2469,
-                2481
-            ],
+            "range": [2469, 2481],
             "filename": "text-field.js",
             "lineno": 69,
             "columnno": 21,
@@ -1335,10 +1140,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2493,
-                2518
-            ],
+            "range": [2493, 2518],
             "filename": "text-field.js",
             "lineno": 70,
             "columnno": 8,
@@ -1359,10 +1161,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2504,
-                2516
-            ],
+            "range": [2504, 2516],
             "filename": "text-field.js",
             "lineno": 70,
             "columnno": 19,
@@ -1384,10 +1183,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2528,
-                2553
-            ],
+            "range": [2528, 2553],
             "filename": "text-field.js",
             "lineno": 71,
             "columnno": 8,
@@ -1408,10 +1204,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2539,
-                2551
-            ],
+            "range": [2539, 2551],
             "filename": "text-field.js",
             "lineno": 71,
             "columnno": 19,
@@ -1433,10 +1226,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2563,
-                2605
-            ],
+            "range": [2563, 2605],
             "filename": "text-field.js",
             "lineno": 72,
             "columnno": 8,
@@ -1457,10 +1247,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2575,
-                2588
-            ],
+            "range": [2575, 2588],
             "filename": "text-field.js",
             "lineno": 72,
             "columnno": 20,
@@ -1482,10 +1269,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2590,
-                2603
-            ],
+            "range": [2590, 2603],
             "filename": "text-field.js",
             "lineno": 72,
             "columnno": 35,
@@ -1507,10 +1291,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2615,
-                2643
-            ],
+            "range": [2615, 2643],
             "filename": "text-field.js",
             "lineno": 73,
             "columnno": 8,
@@ -1531,10 +1312,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2628,
-                2641
-            ],
+            "range": [2628, 2641],
             "filename": "text-field.js",
             "lineno": 73,
             "columnno": 21,
@@ -1556,10 +1334,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2653,
-                2684
-            ],
+            "range": [2653, 2684],
             "filename": "text-field.js",
             "lineno": 74,
             "columnno": 8,
@@ -1580,10 +1355,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2669,
-                2682
-            ],
+            "range": [2669, 2682],
             "filename": "text-field.js",
             "lineno": 74,
             "columnno": 24,
@@ -1605,10 +1377,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                2731,
-                2765
-            ],
+            "range": [2731, 2765],
             "filename": "text-field.js",
             "lineno": 80,
             "columnno": 4,
@@ -1629,10 +1398,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                2804,
-                3446
-            ],
+            "range": [2804, 3446],
             "filename": "text-field.js",
             "lineno": 85,
             "columnno": 4,
@@ -1658,10 +1424,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2839,
-                2851
-            ],
+            "range": [2839, 2851],
             "filename": "text-field.js",
             "lineno": 86,
             "columnno": 12,
@@ -1684,10 +1447,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2907,
-                3162
-            ],
+            "range": [2907, 3162],
             "filename": "text-field.js",
             "lineno": 88,
             "columnno": 12,
@@ -1711,10 +1471,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2972,
-                2983
-            ],
+            "range": [2972, 2983],
             "filename": "text-field.js",
             "lineno": 90,
             "columnno": 20,
@@ -1735,10 +1492,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3005,
-                3022
-            ],
+            "range": [3005, 3022],
             "filename": "text-field.js",
             "lineno": 91,
             "columnno": 20,
@@ -1759,10 +1513,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3044,
-                3057
-            ],
+            "range": [3044, 3057],
             "filename": "text-field.js",
             "lineno": 92,
             "columnno": 20,
@@ -1783,10 +1534,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3079,
-                3127
-            ],
+            "range": [3079, 3127],
             "filename": "text-field.js",
             "lineno": 93,
             "columnno": 20,
@@ -1807,10 +1555,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3091,
-                3125
-            ],
+            "range": [3091, 3125],
             "filename": "text-field.js",
             "lineno": 93,
             "columnno": 32,
@@ -1832,10 +1577,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3221,
-                3415
-            ],
+            "range": [3221, 3415],
             "filename": "text-field.js",
             "lineno": 97,
             "columnno": 12,
@@ -1859,10 +1601,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3286,
-                3298
-            ],
+            "range": [3286, 3298],
             "filename": "text-field.js",
             "lineno": 99,
             "columnno": 20,
@@ -1883,10 +1622,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3320,
-                3344
-            ],
+            "range": [3320, 3344],
             "filename": "text-field.js",
             "lineno": 100,
             "columnno": 20,
@@ -1907,10 +1643,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3366,
-                3380
-            ],
+            "range": [3366, 3380],
             "filename": "text-field.js",
             "lineno": 101,
             "columnno": 20,
@@ -1931,10 +1664,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                3485,
-                3533
-            ],
+            "range": [3485, 3533],
             "filename": "text-field.js",
             "lineno": 110,
             "columnno": 4,
@@ -1960,10 +1690,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                3572,
-                3662
-            ],
+            "range": [3572, 3662],
             "filename": "text-field.js",
             "lineno": 117,
             "columnno": 4,
@@ -1989,10 +1716,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                3701,
-                3797
-            ],
+            "range": [3701, 3797],
             "filename": "text-field.js",
             "lineno": 124,
             "columnno": 4,
@@ -2018,10 +1742,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                3819,
-                3972
-            ],
+            "range": [3819, 3972],
             "filename": "text-field.js",
             "lineno": 130,
             "columnno": 4,
@@ -2046,10 +1767,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-text-field\n * @fires MdTextFieldComponent#onTextFieldFocus\n * @fires MdTextFieldComponent#onTextFieldBlur\n * @fires MdTextFieldComponent#onTextFieldInput\n * @fires MdTextFieldComponent#onTextFieldInvalid\n * @fires MdTextFieldComponent#onTextFieldReset\n * @fires MdTextFieldComponent#onTextFieldIconButtonCancelClick\n * @fires MdTextFieldComponent#onTextFieldIconButtonClick\n * @fires MdTextFieldComponent#onTextFieldClick\n */",
         "meta": {
-            "range": [
-                726,
-                12446
-            ],
+            "range": [726, 12446],
             "filename": "text-field.js",
             "lineno": 19,
             "columnno": 0,
@@ -2064,9 +1782,7 @@
         "name": "MdTextFieldComponent",
         "longname": "MdTextFieldComponent",
         "kind": "class",
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -2075,25 +1791,13 @@
                 "value": "md-text-field"
             }
         ],
-        "fires": [
-            "MdTextFieldComponent#event:onTextFieldFocus",
-            "MdTextFieldComponent#event:onTextFieldBlur",
-            "MdTextFieldComponent#event:onTextFieldInput",
-            "MdTextFieldComponent#event:onTextFieldInvalid",
-            "MdTextFieldComponent#event:onTextFieldReset",
-            "MdTextFieldComponent#event:onTextFieldIconButtonCancelClick",
-            "MdTextFieldComponent#event:onTextFieldIconButtonClick",
-            "MdTextFieldComponent#event:onTextFieldClick"
-        ],
+        "fires": ["MdTextFieldComponent#event:onTextFieldFocus", "MdTextFieldComponent#event:onTextFieldBlur", "MdTextFieldComponent#event:onTextFieldInput", "MdTextFieldComponent#event:onTextFieldInvalid", "MdTextFieldComponent#event:onTextFieldReset", "MdTextFieldComponent#event:onTextFieldIconButtonCancelClick", "MdTextFieldComponent#event:onTextFieldIconButtonClick", "MdTextFieldComponent#event:onTextFieldClick"],
         "scope": "global"
     },
     {
         "comment": "",
         "meta": {
-            "range": [
-                3860,
-                3878
-            ],
+            "range": [3860, 3878],
             "filename": "text-field.js",
             "lineno": 132,
             "columnno": 8,
@@ -2116,10 +1820,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3888,
-                3903
-            ],
+            "range": [3888, 3903],
             "filename": "text-field.js",
             "lineno": 133,
             "columnno": 8,
@@ -2142,10 +1843,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3913,
-                3938
-            ],
+            "range": [3913, 3938],
             "filename": "text-field.js",
             "lineno": 134,
             "columnno": 8,
@@ -2168,10 +1866,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3948,
-                3965
-            ],
+            "range": [3948, 3965],
             "filename": "text-field.js",
             "lineno": 135,
             "columnno": 8,
@@ -2194,10 +1889,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     */",
         "meta": {
-            "range": [
-                4021,
-                4241
-            ],
+            "range": [4021, 4241],
             "filename": "text-field.js",
             "lineno": 141,
             "columnno": 4,
@@ -2206,9 +1898,7 @@
                 "id": "astnode100000257",
                 "name": "MdTextFieldComponent#renderIcon",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item"
-                ]
+                "paramnames": ["item"]
             },
             "vars": {
                 "": null
@@ -2217,9 +1907,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
@@ -2234,10 +1922,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     */",
         "meta": {
-            "range": [
-                4290,
-                4879
-            ],
+            "range": [4290, 4879],
             "filename": "text-field.js",
             "lineno": 154,
             "columnno": 4,
@@ -2246,9 +1931,7 @@
                 "id": "astnode100000281",
                 "name": "MdTextFieldComponent#renderIconButton",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item"
-                ]
+                "paramnames": ["item"]
             },
             "vars": {
                 "": null
@@ -2257,9 +1940,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
@@ -2274,10 +1955,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     * @param {Any} [component=\"icon\"]\n     */",
         "meta": {
-            "range": [
-                4967,
-                5270
-            ],
+            "range": [4967, 5270],
             "filename": "text-field.js",
             "lineno": 174,
             "columnno": 4,
@@ -2286,10 +1964,7 @@
                 "id": "astnode100000341",
                 "name": "MdTextFieldComponent#renderComponent",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item",
-                    "component"
-                ]
+                "paramnames": ["item", "component"]
             },
             "vars": {
                 "": null
@@ -2298,18 +1973,14 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "defaultvalue": "\"icon\"",
@@ -2325,10 +1996,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                5292,
-                8890
-            ],
+            "range": [5292, 8890],
             "filename": "text-field.js",
             "lineno": 187,
             "columnno": 4,
@@ -2353,10 +2021,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5317,
-                5396
-            ],
+            "range": [5317, 5396],
             "filename": "text-field.js",
             "lineno": 188,
             "columnno": 14,
@@ -2379,10 +2044,7 @@
     {
         "comment": "/**\n     * @async\n     */",
         "meta": {
-            "range": [
-                8926,
-                9395
-            ],
+            "range": [8926, 9395],
             "filename": "text-field.js",
             "lineno": 271,
             "columnno": 4,
@@ -2408,10 +2070,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                8997,
-                9027
-            ],
+            "range": [8997, 9027],
             "filename": "text-field.js",
             "lineno": 273,
             "columnno": 8,
@@ -2434,10 +2093,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                9190,
-                9280
-            ],
+            "range": [9190, 9280],
             "filename": "text-field.js",
             "lineno": 277,
             "columnno": 8,
@@ -2460,10 +2116,7 @@
     {
         "comment": "/**\n     * @param {Any} [changedProperties]\n     */",
         "meta": {
-            "range": [
-                9457,
-                10038
-            ],
+            "range": [9457, 10038],
             "filename": "text-field.js",
             "lineno": 284,
             "columnno": 4,
@@ -2472,9 +2125,7 @@
                 "id": "astnode100000719",
                 "name": "MdTextFieldComponent#updated",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "changedProperties"
-                ]
+                "paramnames": ["changedProperties"]
             },
             "vars": {
                 "": null
@@ -2483,9 +2134,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "changedProperties"
@@ -2500,10 +2149,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                10088,
-                10225
-            ],
+            "range": [10088, 10225],
             "filename": "text-field.js",
             "lineno": 302,
             "columnno": 4,
@@ -2512,9 +2158,7 @@
                 "id": "astnode100000805",
                 "name": "MdTextFieldComponent#handleTextFieldFocus",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -2523,9 +2167,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -2540,10 +2182,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                10210,
-                10215
-            ],
+            "range": [10210, 10215],
             "filename": "text-field.js",
             "lineno": 304,
             "columnno": 40,
@@ -2564,10 +2203,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                10275,
-                10413
-            ],
+            "range": [10275, 10413],
             "filename": "text-field.js",
             "lineno": 310,
             "columnno": 4,
@@ -2576,9 +2212,7 @@
                 "id": "astnode100000827",
                 "name": "MdTextFieldComponent#handleTextFieldBlur",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -2587,9 +2221,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -2604,10 +2236,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                10398,
-                10403
-            ],
+            "range": [10398, 10403],
             "filename": "text-field.js",
             "lineno": 312,
             "columnno": 39,
@@ -2628,10 +2257,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                10463,
-                10576
-            ],
+            "range": [10463, 10576],
             "filename": "text-field.js",
             "lineno": 318,
             "columnno": 4,
@@ -2640,9 +2266,7 @@
                 "id": "astnode100000849",
                 "name": "MdTextFieldComponent#handleTextFieldInput",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -2651,9 +2275,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -2668,10 +2290,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                10561,
-                10566
-            ],
+            "range": [10561, 10566],
             "filename": "text-field.js",
             "lineno": 320,
             "columnno": 40,
@@ -2692,10 +2311,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                10598,
-                10887
-            ],
+            "range": [10598, 10887],
             "filename": "text-field.js",
             "lineno": 325,
             "columnno": 4,
@@ -2720,10 +2336,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                10622,
-                10661
-            ],
+            "range": [10622, 10661],
             "filename": "text-field.js",
             "lineno": 326,
             "columnno": 8,
@@ -2746,10 +2359,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                10671,
-                10722
-            ],
+            "range": [10671, 10722],
             "filename": "text-field.js",
             "lineno": 327,
             "columnno": 8,
@@ -2772,10 +2382,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                10937,
-                11188
-            ],
+            "range": [10937, 11188],
             "filename": "text-field.js",
             "lineno": 335,
             "columnno": 4,
@@ -2784,9 +2391,7 @@
                 "id": "astnode100000920",
                 "name": "MdTextFieldComponent#handleTextFieldInvalid",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -2795,9 +2400,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -2812,10 +2415,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                11009,
-                11060
-            ],
+            "range": [11009, 11060],
             "filename": "text-field.js",
             "lineno": 337,
             "columnno": 8,
@@ -2838,10 +2438,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                11173,
-                11178
-            ],
+            "range": [11173, 11178],
             "filename": "text-field.js",
             "lineno": 339,
             "columnno": 42,
@@ -2862,10 +2459,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                11238,
-                11537
-            ],
+            "range": [11238, 11537],
             "filename": "text-field.js",
             "lineno": 345,
             "columnno": 4,
@@ -2874,9 +2468,7 @@
                 "id": "astnode100000962",
                 "name": "MdTextFieldComponent#handleTextFieldReset",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -2885,9 +2477,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -2902,10 +2492,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                11276,
-                11306
-            ],
+            "range": [11276, 11306],
             "filename": "text-field.js",
             "lineno": 346,
             "columnno": 8,
@@ -2928,10 +2515,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                11316,
-                11338
-            ],
+            "range": [11316, 11338],
             "filename": "text-field.js",
             "lineno": 347,
             "columnno": 8,
@@ -2954,10 +2538,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                11522,
-                11527
-            ],
+            "range": [11522, 11527],
             "filename": "text-field.js",
             "lineno": 350,
             "columnno": 40,
@@ -2978,10 +2559,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                11587,
-                11984
-            ],
+            "range": [11587, 11984],
             "filename": "text-field.js",
             "lineno": 356,
             "columnno": 4,
@@ -2990,9 +2568,7 @@
                 "id": "astnode100001016",
                 "name": "MdTextFieldComponent#handleTextFieldIconButtonCancelClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -3001,9 +2577,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -3018,10 +2592,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                11641,
-                11672
-            ],
+            "range": [11641, 11672],
             "filename": "text-field.js",
             "lineno": 357,
             "columnno": 8,
@@ -3044,10 +2615,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                11682,
-                11721
-            ],
+            "range": [11682, 11721],
             "filename": "text-field.js",
             "lineno": 358,
             "columnno": 8,
@@ -3070,10 +2638,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                11731,
-                11753
-            ],
+            "range": [11731, 11753],
             "filename": "text-field.js",
             "lineno": 359,
             "columnno": 8,
@@ -3096,10 +2661,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                11969,
-                11974
-            ],
+            "range": [11969, 11974],
             "filename": "text-field.js",
             "lineno": 362,
             "columnno": 56,
@@ -3120,10 +2682,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                12034,
-                12277
-            ],
+            "range": [12034, 12277],
             "filename": "text-field.js",
             "lineno": 368,
             "columnno": 4,
@@ -3132,9 +2691,7 @@
                 "id": "astnode100001082",
                 "name": "MdTextFieldComponent#handleTextFieldIconButtonClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -3143,9 +2700,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -3160,10 +2715,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                12088,
-                12119
-            ],
+            "range": [12088, 12119],
             "filename": "text-field.js",
             "lineno": 369,
             "columnno": 14,
@@ -3186,10 +2738,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                12262,
-                12267
-            ],
+            "range": [12262, 12267],
             "filename": "text-field.js",
             "lineno": 371,
             "columnno": 50,
@@ -3210,10 +2759,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                12327,
-                12444
-            ],
+            "range": [12327, 12444],
             "filename": "text-field.js",
             "lineno": 377,
             "columnno": 4,
@@ -3222,9 +2768,7 @@
                 "id": "astnode100001116",
                 "name": "MdTextFieldComponent#handleTextFieldClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -3233,9 +2777,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -3250,10 +2792,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                12429,
-                12434
-            ],
+            "range": [12429, 12434],
             "filename": "text-field.js",
             "lineno": 379,
             "columnno": 40,
@@ -3274,10 +2813,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                12518,
-                12538
-            ],
+            "range": [12518, 12538],
             "filename": "text-field.js",
             "lineno": 383,
             "columnno": 9,
@@ -3297,8 +2833,6 @@
     {
         "kind": "package",
         "longname": "package:undefined",
-        "files": [
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field\\text-field.js"
-        ]
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field\\text-field.js"]
     }
 ]

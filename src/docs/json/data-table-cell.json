@@ -2,10 +2,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-data-table-cell\n */",
         "meta": {
-            "range": [
-                256,
-                3008
-            ],
+            "range": [256, 3008],
             "filename": "data-table-cell.js",
             "lineno": 10,
             "columnno": 0,
@@ -17,9 +14,7 @@
                 "paramnames": []
             }
         },
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -37,10 +32,7 @@
     {
         "comment": "/**\n     * @property {Boolean} [checkbox]\n     * @property {String} [avatar]\n     * @property {String} [icon]\n     * @property {String} [label]\n     * @property {String} [sublabel]\n     * @property {String} [action]\n     * @property {Boolean} [indeterminate]\n     * @property {Boolean} [checked]\n     */",
         "meta": {
-            "range": [
-                621,
-                933
-            ],
+            "range": [621, 933],
             "filename": "data-table-cell.js",
             "lineno": 21,
             "columnno": 4,
@@ -54,72 +46,56 @@
         "properties": [
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "checkbox"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "avatar"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "icon"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "label"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "sublabel"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "action"
             },
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "indeterminate"
             },
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "checked"
@@ -134,10 +110,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                651,
-                678
-            ],
+            "range": [651, 678],
             "filename": "data-table-cell.js",
             "lineno": 22,
             "columnno": 8,
@@ -158,10 +131,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                663,
-                676
-            ],
+            "range": [663, 676],
             "filename": "data-table-cell.js",
             "lineno": 22,
             "columnno": 20,
@@ -183,10 +153,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                688,
-                712
-            ],
+            "range": [688, 712],
             "filename": "data-table-cell.js",
             "lineno": 23,
             "columnno": 8,
@@ -207,10 +174,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                698,
-                710
-            ],
+            "range": [698, 710],
             "filename": "data-table-cell.js",
             "lineno": 23,
             "columnno": 18,
@@ -232,10 +196,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                722,
-                744
-            ],
+            "range": [722, 744],
             "filename": "data-table-cell.js",
             "lineno": 24,
             "columnno": 8,
@@ -256,10 +217,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                730,
-                742
-            ],
+            "range": [730, 742],
             "filename": "data-table-cell.js",
             "lineno": 24,
             "columnno": 16,
@@ -281,10 +239,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                754,
-                777
-            ],
+            "range": [754, 777],
             "filename": "data-table-cell.js",
             "lineno": 25,
             "columnno": 8,
@@ -305,10 +260,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                763,
-                775
-            ],
+            "range": [763, 775],
             "filename": "data-table-cell.js",
             "lineno": 25,
             "columnno": 17,
@@ -330,10 +282,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                787,
-                813
-            ],
+            "range": [787, 813],
             "filename": "data-table-cell.js",
             "lineno": 26,
             "columnno": 8,
@@ -354,10 +303,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                799,
-                811
-            ],
+            "range": [799, 811],
             "filename": "data-table-cell.js",
             "lineno": 26,
             "columnno": 20,
@@ -379,10 +325,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                823,
-                847
-            ],
+            "range": [823, 847],
             "filename": "data-table-cell.js",
             "lineno": 27,
             "columnno": 8,
@@ -403,10 +346,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                833,
-                845
-            ],
+            "range": [833, 845],
             "filename": "data-table-cell.js",
             "lineno": 27,
             "columnno": 18,
@@ -428,10 +368,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                857,
-                889
-            ],
+            "range": [857, 889],
             "filename": "data-table-cell.js",
             "lineno": 28,
             "columnno": 8,
@@ -452,10 +389,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                874,
-                887
-            ],
+            "range": [874, 887],
             "filename": "data-table-cell.js",
             "lineno": 28,
             "columnno": 25,
@@ -477,10 +411,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                899,
-                925
-            ],
+            "range": [899, 925],
             "filename": "data-table-cell.js",
             "lineno": 29,
             "columnno": 8,
@@ -501,10 +432,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                910,
-                923
-            ],
+            "range": [910, 923],
             "filename": "data-table-cell.js",
             "lineno": 29,
             "columnno": 19,
@@ -526,10 +454,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                955,
-                993
-            ],
+            "range": [955, 993],
             "filename": "data-table-cell.js",
             "lineno": 34,
             "columnno": 4,
@@ -554,10 +479,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-data-table-cell\n */",
         "meta": {
-            "range": [
-                256,
-                3008
-            ],
+            "range": [256, 3008],
             "filename": "data-table-cell.js",
             "lineno": 10,
             "columnno": 0,
@@ -572,9 +494,7 @@
         "name": "MdDataTableCellComponent",
         "longname": "MdDataTableCellComponent",
         "kind": "class",
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -588,10 +508,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                1015,
-                2165
-            ],
+            "range": [1015, 2165],
             "filename": "data-table-cell.js",
             "lineno": 40,
             "columnno": 4,
@@ -616,10 +533,7 @@
     {
         "comment": "/**\n     * @async\n     */",
         "meta": {
-            "range": [
-                2201,
-                2711
-            ],
+            "range": [2201, 2711],
             "filename": "data-table-cell.js",
             "lineno": 63,
             "columnno": 4,
@@ -645,10 +559,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2397,
-                2454
-            ],
+            "range": [2397, 2454],
             "filename": "data-table-cell.js",
             "lineno": 68,
             "columnno": 18,
@@ -671,10 +582,7 @@
     {
         "comment": "/**\n     * @async\n     * @param {Any} [changedProperties]\n     */",
         "meta": {
-            "range": [
-                2787,
-                3006
-            ],
+            "range": [2787, 3006],
             "filename": "data-table-cell.js",
             "lineno": 81,
             "columnno": 4,
@@ -683,9 +591,7 @@
                 "id": "astnode100000253",
                 "name": "MdDataTableCellComponent#updated",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "changedProperties"
-                ]
+                "paramnames": ["changedProperties"]
             },
             "vars": {
                 "": null
@@ -695,9 +601,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "changedProperties"
@@ -712,10 +616,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3089,
-                3113
-            ],
+            "range": [3089, 3113],
             "filename": "data-table-cell.js",
             "lineno": 89,
             "columnno": 9,
@@ -735,8 +636,6 @@
     {
         "kind": "package",
         "longname": "package:undefined",
-        "files": [
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table\\data-table-cell.js"
-        ]
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table\\data-table-cell.js"]
     }
 ]

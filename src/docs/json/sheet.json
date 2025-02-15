@@ -2,10 +2,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-sheet\n * @fires MdSheetComponent#onSheetShow\n * @fires MdSheetComponent#onSheetClose\n * @fires MdSheetComponent#onSheetShown\n * @fires MdSheetComponent#onSheetClosed\n * @fires MdSheetComponent#onSheetScrimClose\n * @fires MdSheetComponent#onSheetIconButtonClick\n * @fires MdSheetComponent#onSheetButtonClick\n */",
         "meta": {
-            "range": [
-                555,
-                7640
-            ],
+            "range": [555, 7640],
             "filename": "sheet.js",
             "lineno": 17,
             "columnno": 0,
@@ -17,9 +14,7 @@
                 "paramnames": []
             }
         },
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -28,15 +23,7 @@
                 "value": "md-sheet"
             }
         ],
-        "fires": [
-            "MdSheetComponent#event:onSheetShow",
-            "MdSheetComponent#event:onSheetClose",
-            "MdSheetComponent#event:onSheetShown",
-            "MdSheetComponent#event:onSheetClosed",
-            "MdSheetComponent#event:onSheetScrimClose",
-            "MdSheetComponent#event:onSheetIconButtonClick",
-            "MdSheetComponent#event:onSheetButtonClick"
-        ],
+        "fires": ["MdSheetComponent#event:onSheetShow", "MdSheetComponent#event:onSheetClose", "MdSheetComponent#event:onSheetShown", "MdSheetComponent#event:onSheetClosed", "MdSheetComponent#event:onSheetScrimClose", "MdSheetComponent#event:onSheetIconButtonClick", "MdSheetComponent#event:onSheetButtonClick"],
         "name": "MdSheetComponent",
         "longname": "MdSheetComponent",
         "kind": "class",
@@ -46,10 +33,7 @@
     {
         "comment": "/**\n     * @property {Array} [icons]\n     * @property {Array} [actions]\n     * @property {String} [label]\n     * @property {String} [sublabel]\n     * @property {Array} [buttons]\n     * @property {Boolean} [open]\n     * @property {String} [region]\n     * @property {Boolean} [modal]\n     */",
         "meta": {
-            "range": [
-                898,
-                1226
-            ],
+            "range": [898, 1226],
             "filename": "sheet.js",
             "lineno": 28,
             "columnno": 4,
@@ -63,72 +47,56 @@
         "properties": [
             {
                 "type": {
-                    "names": [
-                        "Array"
-                    ]
+                    "names": ["Array"]
                 },
                 "optional": true,
                 "name": "icons"
             },
             {
                 "type": {
-                    "names": [
-                        "Array"
-                    ]
+                    "names": ["Array"]
                 },
                 "optional": true,
                 "name": "actions"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "label"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "sublabel"
             },
             {
                 "type": {
-                    "names": [
-                        "Array"
-                    ]
+                    "names": ["Array"]
                 },
                 "optional": true,
                 "name": "buttons"
             },
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "open"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "region"
             },
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "modal"
@@ -143,10 +111,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                928,
-                950
-            ],
+            "range": [928, 950],
             "filename": "sheet.js",
             "lineno": 29,
             "columnno": 8,
@@ -167,10 +132,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                937,
-                948
-            ],
+            "range": [937, 948],
             "filename": "sheet.js",
             "lineno": 29,
             "columnno": 17,
@@ -192,10 +154,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                960,
-                984
-            ],
+            "range": [960, 984],
             "filename": "sheet.js",
             "lineno": 30,
             "columnno": 8,
@@ -216,10 +175,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                971,
-                982
-            ],
+            "range": [971, 982],
             "filename": "sheet.js",
             "lineno": 30,
             "columnno": 19,
@@ -241,10 +197,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                994,
-                1017
-            ],
+            "range": [994, 1017],
             "filename": "sheet.js",
             "lineno": 31,
             "columnno": 8,
@@ -265,10 +218,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1003,
-                1015
-            ],
+            "range": [1003, 1015],
             "filename": "sheet.js",
             "lineno": 31,
             "columnno": 17,
@@ -290,10 +240,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1027,
-                1053
-            ],
+            "range": [1027, 1053],
             "filename": "sheet.js",
             "lineno": 32,
             "columnno": 8,
@@ -314,10 +261,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1039,
-                1051
-            ],
+            "range": [1039, 1051],
             "filename": "sheet.js",
             "lineno": 32,
             "columnno": 20,
@@ -339,10 +283,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1063,
-                1087
-            ],
+            "range": [1063, 1087],
             "filename": "sheet.js",
             "lineno": 33,
             "columnno": 8,
@@ -363,10 +304,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1074,
-                1085
-            ],
+            "range": [1074, 1085],
             "filename": "sheet.js",
             "lineno": 33,
             "columnno": 19,
@@ -388,10 +326,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1097,
-                1135
-            ],
+            "range": [1097, 1135],
             "filename": "sheet.js",
             "lineno": 34,
             "columnno": 8,
@@ -412,10 +347,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1105,
-                1118
-            ],
+            "range": [1105, 1118],
             "filename": "sheet.js",
             "lineno": 34,
             "columnno": 16,
@@ -437,10 +369,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1120,
-                1133
-            ],
+            "range": [1120, 1133],
             "filename": "sheet.js",
             "lineno": 34,
             "columnno": 31,
@@ -462,10 +391,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1145,
-                1169
-            ],
+            "range": [1145, 1169],
             "filename": "sheet.js",
             "lineno": 35,
             "columnno": 8,
@@ -486,10 +412,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1155,
-                1167
-            ],
+            "range": [1155, 1167],
             "filename": "sheet.js",
             "lineno": 35,
             "columnno": 18,
@@ -511,10 +434,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1179,
-                1218
-            ],
+            "range": [1179, 1218],
             "filename": "sheet.js",
             "lineno": 36,
             "columnno": 8,
@@ -535,10 +455,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1188,
-                1201
-            ],
+            "range": [1188, 1201],
             "filename": "sheet.js",
             "lineno": 36,
             "columnno": 17,
@@ -560,10 +477,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1203,
-                1216
-            ],
+            "range": [1203, 1216],
             "filename": "sheet.js",
             "lineno": 36,
             "columnno": 32,
@@ -585,10 +499,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                1265,
-                1320
-            ],
+            "range": [1265, 1320],
             "filename": "sheet.js",
             "lineno": 42,
             "columnno": 4,
@@ -609,10 +520,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                1342,
-                1461
-            ],
+            "range": [1342, 1461],
             "filename": "sheet.js",
             "lineno": 46,
             "columnno": 4,
@@ -637,10 +545,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-sheet\n * @fires MdSheetComponent#onSheetShow\n * @fires MdSheetComponent#onSheetClose\n * @fires MdSheetComponent#onSheetShown\n * @fires MdSheetComponent#onSheetClosed\n * @fires MdSheetComponent#onSheetScrimClose\n * @fires MdSheetComponent#onSheetIconButtonClick\n * @fires MdSheetComponent#onSheetButtonClick\n */",
         "meta": {
-            "range": [
-                555,
-                7640
-            ],
+            "range": [555, 7640],
             "filename": "sheet.js",
             "lineno": 17,
             "columnno": 0,
@@ -655,9 +560,7 @@
         "name": "MdSheetComponent",
         "longname": "MdSheetComponent",
         "kind": "class",
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -666,24 +569,13 @@
                 "value": "md-sheet"
             }
         ],
-        "fires": [
-            "MdSheetComponent#event:onSheetShow",
-            "MdSheetComponent#event:onSheetClose",
-            "MdSheetComponent#event:onSheetShown",
-            "MdSheetComponent#event:onSheetClosed",
-            "MdSheetComponent#event:onSheetScrimClose",
-            "MdSheetComponent#event:onSheetIconButtonClick",
-            "MdSheetComponent#event:onSheetButtonClick"
-        ],
+        "fires": ["MdSheetComponent#event:onSheetShow", "MdSheetComponent#event:onSheetClose", "MdSheetComponent#event:onSheetShown", "MdSheetComponent#event:onSheetClosed", "MdSheetComponent#event:onSheetScrimClose", "MdSheetComponent#event:onSheetIconButtonClick", "MdSheetComponent#event:onSheetButtonClick"],
         "scope": "global"
     },
     {
         "comment": "",
         "meta": {
-            "range": [
-                1383,
-                1422
-            ],
+            "range": [1383, 1422],
             "filename": "sheet.js",
             "lineno": 48,
             "columnno": 8,
@@ -706,10 +598,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1432,
-                1454
-            ],
+            "range": [1432, 1454],
             "filename": "sheet.js",
             "lineno": 49,
             "columnno": 8,
@@ -732,10 +621,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     */",
         "meta": {
-            "range": [
-                1510,
-                1606
-            ],
+            "range": [1510, 1606],
             "filename": "sheet.js",
             "lineno": 55,
             "columnno": 4,
@@ -744,9 +630,7 @@
                 "id": "astnode100000094",
                 "name": "MdSheetComponent#renderIcon",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item"
-                ]
+                "paramnames": ["item"]
             },
             "vars": {
                 "": null
@@ -755,9 +639,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
@@ -772,10 +654,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     */",
         "meta": {
-            "range": [
-                1655,
-                2182
-            ],
+            "range": [1655, 2182],
             "filename": "sheet.js",
             "lineno": 62,
             "columnno": 4,
@@ -784,9 +663,7 @@
                 "id": "astnode100000110",
                 "name": "MdSheetComponent#renderIconButton",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item"
-                ]
+                "paramnames": ["item"]
             },
             "vars": {
                 "": null
@@ -795,9 +672,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
@@ -812,10 +687,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     */",
         "meta": {
-            "range": [
-                2231,
-                2738
-            ],
+            "range": [2231, 2738],
             "filename": "sheet.js",
             "lineno": 80,
             "columnno": 4,
@@ -824,9 +696,7 @@
                 "id": "astnode100000162",
                 "name": "MdSheetComponent#renderButton",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item"
-                ]
+                "paramnames": ["item"]
             },
             "vars": {
                 "": null
@@ -835,9 +705,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
@@ -852,10 +720,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     */",
         "meta": {
-            "range": [
-                2787,
-                2874
-            ],
+            "range": [2787, 2874],
             "filename": "sheet.js",
             "lineno": 98,
             "columnno": 4,
@@ -864,9 +729,7 @@
                 "id": "astnode100000214",
                 "name": "MdSheetComponent#renderSpacer",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item"
-                ]
+                "paramnames": ["item"]
             },
             "vars": {
                 "": null
@@ -875,9 +738,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
@@ -892,10 +753,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     * @param {Any} [component=\"icon\"]\n     */",
         "meta": {
-            "range": [
-                2962,
-                3355
-            ],
+            "range": [2962, 3355],
             "filename": "sheet.js",
             "lineno": 106,
             "columnno": 4,
@@ -904,10 +762,7 @@
                 "id": "astnode100000224",
                 "name": "MdSheetComponent#renderComponent",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item",
-                    "component"
-                ]
+                "paramnames": ["item", "component"]
             },
             "vars": {
                 "": null
@@ -916,18 +771,14 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "defaultvalue": "\"icon\"",
@@ -943,10 +794,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3020,
-                3269
-            ],
+            "range": [3020, 3269],
             "filename": "sheet.js",
             "lineno": 107,
             "columnno": 14,
@@ -969,10 +817,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                3377,
-                4528
-            ],
+            "range": [3377, 4528],
             "filename": "sheet.js",
             "lineno": 118,
             "columnno": 4,
@@ -997,10 +842,7 @@
     {
         "comment": "/**\n     * @async\n     */",
         "meta": {
-            "range": [
-                4564,
-                5310
-            ],
+            "range": [4564, 5310],
             "filename": "sheet.js",
             "lineno": 125,
             "columnno": 4,
@@ -1026,10 +868,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4744,
-                4796
-            ],
+            "range": [4744, 4796],
             "filename": "sheet.js",
             "lineno": 129,
             "columnno": 8,
@@ -1052,10 +891,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4889,
-                4955
-            ],
+            "range": [4889, 4955],
             "filename": "sheet.js",
             "lineno": 131,
             "columnno": 8,
@@ -1078,10 +914,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                5332,
-                5523
-            ],
+            "range": [5332, 5523],
             "filename": "sheet.js",
             "lineno": 141,
             "columnno": 4,
@@ -1106,10 +939,7 @@
     {
         "comment": "/**\n     * @param {Any} [changedProperties]\n     */",
         "meta": {
-            "range": [
-                5585,
-                5991
-            ],
+            "range": [5585, 5991],
             "filename": "sheet.js",
             "lineno": 150,
             "columnno": 4,
@@ -1118,9 +948,7 @@
                 "id": "astnode100000592",
                 "name": "MdSheetComponent#updated",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "changedProperties"
-                ]
+                "paramnames": ["changedProperties"]
             },
             "vars": {
                 "": null
@@ -1129,9 +957,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "changedProperties"
@@ -1146,10 +972,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                6013,
-                6335
-            ],
+            "range": [6013, 6335],
             "filename": "sheet.js",
             "lineno": 164,
             "columnno": 4,
@@ -1174,10 +997,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6094,
-                6150
-            ],
+            "range": [6094, 6150],
             "filename": "sheet.js",
             "lineno": 166,
             "columnno": 8,
@@ -1200,10 +1020,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6230,
-                6246
-            ],
+            "range": [6230, 6246],
             "filename": "sheet.js",
             "lineno": 168,
             "columnno": 8,
@@ -1226,10 +1043,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                6357,
-                6696
-            ],
+            "range": [6357, 6696],
             "filename": "sheet.js",
             "lineno": 175,
             "columnno": 4,
@@ -1254,10 +1068,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6439,
-                6497
-            ],
+            "range": [6439, 6497],
             "filename": "sheet.js",
             "lineno": 177,
             "columnno": 8,
@@ -1280,10 +1091,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6578,
-                6595
-            ],
+            "range": [6578, 6595],
             "filename": "sheet.js",
             "lineno": 179,
             "columnno": 8,
@@ -1306,10 +1114,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                6718,
-                6797
-            ],
+            "range": [6718, 6797],
             "filename": "sheet.js",
             "lineno": 186,
             "columnno": 4,
@@ -1334,10 +1139,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                6847,
-                6986
-            ],
+            "range": [6847, 6986],
             "filename": "sheet.js",
             "lineno": 194,
             "columnno": 4,
@@ -1346,9 +1148,7 @@
                 "id": "astnode100000789",
                 "name": "MdSheetComponent#handleSheetShown",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -1357,9 +1157,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -1374,10 +1172,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                7036,
-                7178
-            ],
+            "range": [7036, 7178],
             "filename": "sheet.js",
             "lineno": 202,
             "columnno": 4,
@@ -1386,9 +1181,7 @@
                 "id": "astnode100000809",
                 "name": "MdSheetComponent#handleSheetClosed",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -1397,9 +1190,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -1414,10 +1205,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                7228,
-                7352
-            ],
+            "range": [7228, 7352],
             "filename": "sheet.js",
             "lineno": 210,
             "columnno": 4,
@@ -1426,9 +1214,7 @@
                 "id": "astnode100000829",
                 "name": "MdSheetComponent#handleSheetScrimClose",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -1437,9 +1223,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -1454,10 +1238,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                7337,
-                7342
-            ],
+            "range": [7337, 7342],
             "filename": "sheet.js",
             "lineno": 212,
             "columnno": 41,
@@ -1478,10 +1259,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                7402,
-                7499
-            ],
+            "range": [7402, 7499],
             "filename": "sheet.js",
             "lineno": 218,
             "columnno": 4,
@@ -1490,9 +1268,7 @@
                 "id": "astnode100000852",
                 "name": "MdSheetComponent#handleSheetIconButtonClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -1501,9 +1277,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -1518,10 +1292,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                7484,
-                7489
-            ],
+            "range": [7484, 7489],
             "filename": "sheet.js",
             "lineno": 219,
             "columnno": 46,
@@ -1542,10 +1313,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                7549,
-                7638
-            ],
+            "range": [7549, 7638],
             "filename": "sheet.js",
             "lineno": 225,
             "columnno": 4,
@@ -1554,9 +1322,7 @@
                 "id": "astnode100000866",
                 "name": "MdSheetComponent#handleSheetButtonClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -1565,9 +1331,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -1582,10 +1346,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                7623,
-                7628
-            ],
+            "range": [7623, 7628],
             "filename": "sheet.js",
             "lineno": 226,
             "columnno": 42,
@@ -1606,10 +1367,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                7703,
-                7719
-            ],
+            "range": [7703, 7719],
             "filename": "sheet.js",
             "lineno": 230,
             "columnno": 9,
@@ -1629,8 +1387,6 @@
     {
         "kind": "package",
         "longname": "package:undefined",
-        "files": [
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\sheet\\sheet.js"
-        ]
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\sheet\\sheet.js"]
     }
 ]

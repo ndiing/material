@@ -2,10 +2,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-chip\n * @fires MdChipComponent#onChipActionClick\n */",
         "meta": {
-            "range": [
-                231,
-                2200
-            ],
+            "range": [231, 2200],
             "filename": "chip.js",
             "lineno": 10,
             "columnno": 0,
@@ -17,9 +14,7 @@
                 "paramnames": []
             }
         },
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -28,9 +23,7 @@
                 "value": "md-chip"
             }
         ],
-        "fires": [
-            "MdChipComponent#event:onChipActionClick"
-        ],
+        "fires": ["MdChipComponent#event:onChipActionClick"],
         "name": "MdChipComponent",
         "longname": "MdChipComponent",
         "kind": "class",
@@ -40,10 +33,7 @@
     {
         "comment": "/**\n     * @property {String} [icon]\n     * @property {String} [avatar]\n     * @property {String} [label]\n     * @property {String} [action]\n     * @property {Boolean} [selected]\n     * @property {Boolean} [disabled]\n     */",
         "meta": {
-            "range": [
-                508,
-                773
-            ],
+            "range": [508, 773],
             "filename": "chip.js",
             "lineno": 19,
             "columnno": 4,
@@ -57,54 +47,42 @@
         "properties": [
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "icon"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "avatar"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "label"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "action"
             },
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "selected"
             },
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "disabled"
@@ -119,10 +97,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                538,
-                560
-            ],
+            "range": [538, 560],
             "filename": "chip.js",
             "lineno": 20,
             "columnno": 8,
@@ -143,10 +118,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                546,
-                558
-            ],
+            "range": [546, 558],
             "filename": "chip.js",
             "lineno": 20,
             "columnno": 16,
@@ -168,10 +140,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                570,
-                594
-            ],
+            "range": [570, 594],
             "filename": "chip.js",
             "lineno": 21,
             "columnno": 8,
@@ -192,10 +161,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                580,
-                592
-            ],
+            "range": [580, 592],
             "filename": "chip.js",
             "lineno": 21,
             "columnno": 18,
@@ -217,10 +183,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                604,
-                627
-            ],
+            "range": [604, 627],
             "filename": "chip.js",
             "lineno": 22,
             "columnno": 8,
@@ -241,10 +204,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                613,
-                625
-            ],
+            "range": [613, 625],
             "filename": "chip.js",
             "lineno": 22,
             "columnno": 17,
@@ -266,10 +226,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                637,
-                661
-            ],
+            "range": [637, 661],
             "filename": "chip.js",
             "lineno": 23,
             "columnno": 8,
@@ -290,10 +247,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                647,
-                659
-            ],
+            "range": [647, 659],
             "filename": "chip.js",
             "lineno": 23,
             "columnno": 18,
@@ -315,10 +269,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                671,
-                713
-            ],
+            "range": [671, 713],
             "filename": "chip.js",
             "lineno": 24,
             "columnno": 8,
@@ -339,10 +290,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                683,
-                696
-            ],
+            "range": [683, 696],
             "filename": "chip.js",
             "lineno": 24,
             "columnno": 20,
@@ -364,10 +312,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                698,
-                711
-            ],
+            "range": [698, 711],
             "filename": "chip.js",
             "lineno": 24,
             "columnno": 35,
@@ -389,10 +334,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                723,
-                765
-            ],
+            "range": [723, 765],
             "filename": "chip.js",
             "lineno": 25,
             "columnno": 8,
@@ -413,10 +355,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                735,
-                748
-            ],
+            "range": [735, 748],
             "filename": "chip.js",
             "lineno": 25,
             "columnno": 20,
@@ -438,10 +377,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                750,
-                763
-            ],
+            "range": [750, 763],
             "filename": "chip.js",
             "lineno": 25,
             "columnno": 35,
@@ -463,10 +399,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                795,
-                833
-            ],
+            "range": [795, 833],
             "filename": "chip.js",
             "lineno": 30,
             "columnno": 4,
@@ -491,10 +424,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-chip\n * @fires MdChipComponent#onChipActionClick\n */",
         "meta": {
-            "range": [
-                231,
-                2200
-            ],
+            "range": [231, 2200],
             "filename": "chip.js",
             "lineno": 10,
             "columnno": 0,
@@ -509,9 +439,7 @@
         "name": "MdChipComponent",
         "longname": "MdChipComponent",
         "kind": "class",
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -520,18 +448,13 @@
                 "value": "md-chip"
             }
         ],
-        "fires": [
-            "MdChipComponent#event:onChipActionClick"
-        ],
+        "fires": ["MdChipComponent#event:onChipActionClick"],
         "scope": "global"
     },
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                855,
-                1681
-            ],
+            "range": [855, 1681],
             "filename": "chip.js",
             "lineno": 36,
             "columnno": 4,
@@ -556,10 +479,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1524,
-                1534
-            ],
+            "range": [1524, 1534],
             "filename": "chip.js",
             "lineno": 51,
             "columnno": 42,
@@ -580,10 +500,7 @@
     {
         "comment": "/**\n     * @async\n     */",
         "meta": {
-            "range": [
-                1717,
-                1903
-            ],
+            "range": [1717, 1903],
             "filename": "chip.js",
             "lineno": 61,
             "columnno": 4,
@@ -609,10 +526,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1862,
-                1896
-            ],
+            "range": [1862, 1896],
             "filename": "chip.js",
             "lineno": 65,
             "columnno": 8,
@@ -635,10 +549,7 @@
     {
         "comment": "/**\n     * @async\n     */",
         "meta": {
-            "range": [
-                1939,
-                2061
-            ],
+            "range": [1939, 2061],
             "filename": "chip.js",
             "lineno": 71,
             "columnno": 4,
@@ -664,10 +575,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                2111,
-                2198
-            ],
+            "range": [2111, 2198],
             "filename": "chip.js",
             "lineno": 79,
             "columnno": 4,
@@ -676,9 +584,7 @@
                 "id": "astnode100000183",
                 "name": "MdChipComponent#handleChipActionClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -687,9 +593,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -704,10 +608,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2183,
-                2188
-            ],
+            "range": [2183, 2188],
             "filename": "chip.js",
             "lineno": 80,
             "columnno": 41,
@@ -728,10 +629,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2261,
-                2276
-            ],
+            "range": [2261, 2276],
             "filename": "chip.js",
             "lineno": 84,
             "columnno": 9,
@@ -751,8 +649,6 @@
     {
         "kind": "package",
         "longname": "package:undefined",
-        "files": [
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\chips\\chip.js"
-        ]
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\chips\\chip.js"]
     }
 ]

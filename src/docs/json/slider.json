@@ -2,10 +2,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-slider\n * @fires MdSliderComponent#onSliderNativeInput\n * @fires MdSliderComponent#onSliderNativeReset\n */",
         "meta": {
-            "range": [
-                356,
-                6073
-            ],
+            "range": [356, 6073],
             "filename": "slider.js",
             "lineno": 12,
             "columnno": 0,
@@ -20,9 +17,7 @@
                 "": null
             }
         },
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -31,10 +26,7 @@
                 "value": "md-slider"
             }
         ],
-        "fires": [
-            "MdSliderComponent#event:onSliderNativeInput",
-            "MdSliderComponent#event:onSliderNativeReset"
-        ],
+        "fires": ["MdSliderComponent#event:onSliderNativeInput", "MdSliderComponent#event:onSliderNativeReset"],
         "name": "MdSliderComponent",
         "longname": "MdSliderComponent",
         "kind": "class",
@@ -44,10 +36,7 @@
     {
         "comment": "/**\n     * @property {Number} [min]\n     * @property {Number} [max]\n     * @property {Number} [step]\n     * @property {String} [variant]\n     * @property {String} [name]\n     * @property {Any} [value]\n     */",
         "meta": {
-            "range": [
-                619,
-                1119
-            ],
+            "range": [619, 1119],
             "filename": "slider.js",
             "lineno": 21,
             "columnno": 4,
@@ -61,54 +50,42 @@
         "properties": [
             {
                 "type": {
-                    "names": [
-                        "Number"
-                    ]
+                    "names": ["Number"]
                 },
                 "optional": true,
                 "name": "min"
             },
             {
                 "type": {
-                    "names": [
-                        "Number"
-                    ]
+                    "names": ["Number"]
                 },
                 "optional": true,
                 "name": "max"
             },
             {
                 "type": {
-                    "names": [
-                        "Number"
-                    ]
+                    "names": ["Number"]
                 },
                 "optional": true,
                 "name": "step"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "variant"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "name"
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "value"
@@ -123,10 +100,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                649,
-                670
-            ],
+            "range": [649, 670],
             "filename": "slider.js",
             "lineno": 22,
             "columnno": 8,
@@ -147,10 +121,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                656,
-                668
-            ],
+            "range": [656, 668],
             "filename": "slider.js",
             "lineno": 22,
             "columnno": 15,
@@ -172,10 +143,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                680,
-                701
-            ],
+            "range": [680, 701],
             "filename": "slider.js",
             "lineno": 23,
             "columnno": 8,
@@ -196,10 +164,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                687,
-                699
-            ],
+            "range": [687, 699],
             "filename": "slider.js",
             "lineno": 23,
             "columnno": 15,
@@ -221,10 +186,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                711,
-                733
-            ],
+            "range": [711, 733],
             "filename": "slider.js",
             "lineno": 24,
             "columnno": 8,
@@ -245,10 +207,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                719,
-                731
-            ],
+            "range": [719, 731],
             "filename": "slider.js",
             "lineno": 24,
             "columnno": 16,
@@ -270,10 +229,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                743,
-                768
-            ],
+            "range": [743, 768],
             "filename": "slider.js",
             "lineno": 25,
             "columnno": 8,
@@ -294,10 +250,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                754,
-                766
-            ],
+            "range": [754, 766],
             "filename": "slider.js",
             "lineno": 25,
             "columnno": 19,
@@ -319,10 +272,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                778,
-                800
-            ],
+            "range": [778, 800],
             "filename": "slider.js",
             "lineno": 26,
             "columnno": 8,
@@ -343,10 +293,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                786,
-                798
-            ],
+            "range": [786, 798],
             "filename": "slider.js",
             "lineno": 26,
             "columnno": 16,
@@ -368,10 +315,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                810,
-                1111
-            ],
+            "range": [810, 1111],
             "filename": "slider.js",
             "lineno": 27,
             "columnno": 8,
@@ -392,10 +336,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                831,
-                1100
-            ],
+            "range": [831, 1100],
             "filename": "slider.js",
             "lineno": 28,
             "columnno": 12,
@@ -417,10 +358,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                860,
-                968
-            ],
+            "range": [860, 968],
             "filename": "slider.js",
             "lineno": 29,
             "columnno": 16,
@@ -441,10 +379,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                986,
-                1085
-            ],
+            "range": [986, 1085],
             "filename": "slider.js",
             "lineno": 32,
             "columnno": 16,
@@ -465,10 +400,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                1158,
-                1227
-            ],
+            "range": [1158, 1227],
             "filename": "slider.js",
             "lineno": 42,
             "columnno": 4,
@@ -489,10 +421,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                1266,
-                1499
-            ],
+            "range": [1266, 1499],
             "filename": "slider.js",
             "lineno": 47,
             "columnno": 4,
@@ -518,10 +447,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1299,
-                1454
-            ],
+            "range": [1299, 1454],
             "filename": "slider.js",
             "lineno": 48,
             "columnno": 14,
@@ -544,10 +470,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1323,
-                1334
-            ],
+            "range": [1323, 1334],
             "filename": "slider.js",
             "lineno": 49,
             "columnno": 12,
@@ -569,10 +492,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1348,
-                1361
-            ],
+            "range": [1348, 1361],
             "filename": "slider.js",
             "lineno": 50,
             "columnno": 12,
@@ -594,10 +514,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1375,
-                1409
-            ],
+            "range": [1375, 1409],
             "filename": "slider.js",
             "lineno": 51,
             "columnno": 12,
@@ -619,10 +536,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1423,
-                1443
-            ],
+            "range": [1423, 1443],
             "filename": "slider.js",
             "lineno": 52,
             "columnno": 12,
@@ -644,10 +558,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                1538,
-                1627
-            ],
+            "range": [1538, 1627],
             "filename": "slider.js",
             "lineno": 60,
             "columnno": 4,
@@ -673,10 +584,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                1666,
-                1753
-            ],
+            "range": [1666, 1753],
             "filename": "slider.js",
             "lineno": 67,
             "columnno": 4,
@@ -702,10 +610,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                1775,
-                1882
-            ],
+            "range": [1775, 1882],
             "filename": "slider.js",
             "lineno": 73,
             "columnno": 4,
@@ -730,10 +635,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-slider\n * @fires MdSliderComponent#onSliderNativeInput\n * @fires MdSliderComponent#onSliderNativeReset\n */",
         "meta": {
-            "range": [
-                356,
-                6073
-            ],
+            "range": [356, 6073],
             "filename": "slider.js",
             "lineno": 12,
             "columnno": 0,
@@ -751,9 +653,7 @@
         "name": "MdSliderComponent",
         "longname": "MdSliderComponent",
         "kind": "class",
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -762,19 +662,13 @@
                 "value": "md-slider"
             }
         ],
-        "fires": [
-            "MdSliderComponent#event:onSliderNativeInput",
-            "MdSliderComponent#event:onSliderNativeReset"
-        ],
+        "fires": ["MdSliderComponent#event:onSliderNativeInput", "MdSliderComponent#event:onSliderNativeReset"],
         "scope": "global"
     },
     {
         "comment": "",
         "meta": {
-            "range": [
-                1816,
-                1828
-            ],
+            "range": [1816, 1828],
             "filename": "slider.js",
             "lineno": 75,
             "columnno": 8,
@@ -797,10 +691,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1838,
-                1852
-            ],
+            "range": [1838, 1852],
             "filename": "slider.js",
             "lineno": 76,
             "columnno": 8,
@@ -823,10 +714,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1862,
-                1875
-            ],
+            "range": [1862, 1875],
             "filename": "slider.js",
             "lineno": 77,
             "columnno": 8,
@@ -849,10 +737,7 @@
     {
         "comment": "/**\n     * @param {Any} [value]\n     * @param {Any} [index]\n     */",
         "meta": {
-            "range": [
-                1960,
-                3295
-            ],
+            "range": [1960, 3295],
             "filename": "slider.js",
             "lineno": 84,
             "columnno": 4,
@@ -861,10 +746,7 @@
                 "id": "astnode100000157",
                 "name": "MdSliderComponent#renderSliderWrapper",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "value",
-                    "index"
-                ]
+                "paramnames": ["value", "index"]
             },
             "vars": {
                 "": null
@@ -873,18 +755,14 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "value"
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "index"
@@ -899,10 +777,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2195,
-                2200
-            ],
+            "range": [2195, 2200],
             "filename": "slider.js",
             "lineno": 90,
             "columnno": 31,
@@ -923,10 +798,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2734,
-                2757
-            ],
+            "range": [2734, 2757],
             "filename": "slider.js",
             "lineno": 101,
             "columnno": 26,
@@ -947,10 +819,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2922,
-                2950
-            ],
+            "range": [2922, 2950],
             "filename": "slider.js",
             "lineno": 105,
             "columnno": 36,
@@ -971,10 +840,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2988,
-                3045
-            ],
+            "range": [2988, 3045],
             "filename": "slider.js",
             "lineno": 106,
             "columnno": 36,
@@ -995,10 +861,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                3317,
-                3635
-            ],
+            "range": [3317, 3635],
             "filename": "slider.js",
             "lineno": 119,
             "columnno": 4,
@@ -1023,10 +886,7 @@
     {
         "comment": "/**\n     * @async\n     */",
         "meta": {
-            "range": [
-                3671,
-                4287
-            ],
+            "range": [3671, 4287],
             "filename": "slider.js",
             "lineno": 134,
             "columnno": 4,
@@ -1052,10 +912,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3827,
-                3911
-            ],
+            "range": [3827, 3911],
             "filename": "slider.js",
             "lineno": 138,
             "columnno": 12,
@@ -1078,10 +935,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3931,
-                3989
-            ],
+            "range": [3931, 3989],
             "filename": "slider.js",
             "lineno": 140,
             "columnno": 8,
@@ -1104,10 +958,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4017,
-                4042
-            ],
+            "range": [4017, 4042],
             "filename": "slider.js",
             "lineno": 141,
             "columnno": 26,
@@ -1130,10 +981,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4076,
-                4101
-            ],
+            "range": [4076, 4101],
             "filename": "slider.js",
             "lineno": 142,
             "columnno": 32,
@@ -1156,10 +1004,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4143,
-                4175
-            ],
+            "range": [4143, 4175],
             "filename": "slider.js",
             "lineno": 143,
             "columnno": 40,
@@ -1182,10 +1027,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4190,
-                4217
-            ],
+            "range": [4190, 4217],
             "filename": "slider.js",
             "lineno": 144,
             "columnno": 13,
@@ -1208,10 +1050,7 @@
     {
         "comment": "/**\n     * @param {Any} [changedProperties]\n     */",
         "meta": {
-            "range": [
-                4349,
-                4638
-            ],
+            "range": [4349, 4638],
             "filename": "slider.js",
             "lineno": 152,
             "columnno": 4,
@@ -1220,9 +1059,7 @@
                 "id": "astnode100000400",
                 "name": "MdSliderComponent#updated",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "changedProperties"
-                ]
+                "paramnames": ["changedProperties"]
             },
             "vars": {
                 "": null
@@ -1231,9 +1068,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "changedProperties"
@@ -1248,10 +1083,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                4660,
-                4957
-            ],
+            "range": [4660, 4957],
             "filename": "slider.js",
             "lineno": 163,
             "columnno": 4,
@@ -1276,10 +1108,7 @@
     {
         "comment": "/**\n     * @param {Any} [value]\n     * @param {Any} [min=this.min]\n     * @param {Any} [max=this.max]\n     */",
         "meta": {
-            "range": [
-                5077,
-                5178
-            ],
+            "range": [5077, 5178],
             "filename": "slider.js",
             "lineno": 175,
             "columnno": 4,
@@ -1288,11 +1117,7 @@
                 "id": "astnode100000495",
                 "name": "MdSliderComponent#percentage",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "value",
-                    "min",
-                    "max"
-                ]
+                "paramnames": ["value", "min", "max"]
             },
             "vars": {
                 "": null
@@ -1301,18 +1126,14 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "value"
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "defaultvalue": "this.min",
@@ -1320,9 +1141,7 @@
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "defaultvalue": "this.max",
@@ -1338,10 +1157,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                5228,
-                5804
-            ],
+            "range": [5228, 5804],
             "filename": "slider.js",
             "lineno": 182,
             "columnno": 4,
@@ -1350,9 +1166,7 @@
                 "id": "astnode100000518",
                 "name": "MdSliderComponent#handleSliderNativeInput",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -1361,9 +1175,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -1378,10 +1190,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5275,
-                5303
-            ],
+            "range": [5275, 5303],
             "filename": "slider.js",
             "lineno": 183,
             "columnno": 14,
@@ -1404,10 +1213,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5319,
-                5337
-            ],
+            "range": [5319, 5337],
             "filename": "slider.js",
             "lineno": 184,
             "columnno": 14,
@@ -1430,10 +1236,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5388,
-                5474
-            ],
+            "range": [5388, 5474],
             "filename": "slider.js",
             "lineno": 186,
             "columnno": 12,
@@ -1456,10 +1259,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5488,
-                5574
-            ],
+            "range": [5488, 5574],
             "filename": "slider.js",
             "lineno": 187,
             "columnno": 12,
@@ -1482,10 +1282,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5594,
-                5639
-            ],
+            "range": [5594, 5639],
             "filename": "slider.js",
             "lineno": 189,
             "columnno": 8,
@@ -1508,10 +1305,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5649,
-                5686
-            ],
+            "range": [5649, 5686],
             "filename": "slider.js",
             "lineno": 190,
             "columnno": 8,
@@ -1535,10 +1329,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5789,
-                5794
-            ],
+            "range": [5789, 5794],
             "filename": "slider.js",
             "lineno": 193,
             "columnno": 43,
@@ -1559,10 +1350,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                5854,
-                6071
-            ],
+            "range": [5854, 6071],
             "filename": "slider.js",
             "lineno": 199,
             "columnno": 4,
@@ -1571,9 +1359,7 @@
                 "id": "astnode100000639",
                 "name": "MdSliderComponent#handleSliderNativeReset",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -1582,9 +1368,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -1599,10 +1383,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5895,
-                5953
-            ],
+            "range": [5895, 5953],
             "filename": "slider.js",
             "lineno": 200,
             "columnno": 8,
@@ -1625,10 +1406,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6056,
-                6061
-            ],
+            "range": [6056, 6061],
             "filename": "slider.js",
             "lineno": 203,
             "columnno": 43,
@@ -1649,10 +1427,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6138,
-                6155
-            ],
+            "range": [6138, 6155],
             "filename": "slider.js",
             "lineno": 207,
             "columnno": 9,
@@ -1672,8 +1447,6 @@
     {
         "kind": "package",
         "longname": "package:undefined",
-        "files": [
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\slider\\slider.js"
-        ]
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\slider\\slider.js"]
     }
 ]

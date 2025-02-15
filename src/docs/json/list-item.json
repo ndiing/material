@@ -2,10 +2,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-list-item\n * @fires MdListItemComponent#onListItemSelected\n */",
         "meta": {
-            "range": [
-                299,
-                5938
-            ],
+            "range": [299, 5938],
             "filename": "list-item.js",
             "lineno": 11,
             "columnno": 0,
@@ -17,9 +14,7 @@
                 "paramnames": []
             }
         },
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -28,9 +23,7 @@
                 "value": "md-list-item"
             }
         ],
-        "fires": [
-            "MdListItemComponent#event:onListItemSelected"
-        ],
+        "fires": ["MdListItemComponent#event:onListItemSelected"],
         "name": "MdListItemComponent",
         "longname": "MdListItemComponent",
         "kind": "class",
@@ -40,10 +33,7 @@
     {
         "comment": "/**\n     * @property {Boolean} [leadingCheckbox]\n     * @property {Boolean} [leadingRadioButton]\n     * @property {Boolean} [leadingSwitch]\n     * @property {String} [avatar]\n     * @property {String} [image]\n     * @property {String} [video]\n     * @property {String} [icon]\n     * @property {String} [label]\n     * @property {String} [sublabel]\n     * @property {String} [text]\n     * @property {Boolean} [trailingCheckbox]\n     * @property {Boolean} [trailingRadioButton]\n     * @property {Boolean} [trailingSwitch]\n     * @property {Boolean} [selected]\n     * @property {Boolean} [disabled]\n     * @property {String} [routerLink]\n     * @property {Object} [rippleOptions]\n     * @property {Number} [badge]\n     */",
         "meta": {
-            "range": [
-                1073,
-                1834
-            ],
+            "range": [1073, 1834],
             "filename": "list-item.js",
             "lineno": 32,
             "columnno": 4,
@@ -57,162 +47,126 @@
         "properties": [
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "leadingCheckbox"
             },
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "leadingRadioButton"
             },
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "leadingSwitch"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "avatar"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "image"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "video"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "icon"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "label"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "sublabel"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "text"
             },
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "trailingCheckbox"
             },
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "trailingRadioButton"
             },
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "trailingSwitch"
             },
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "selected"
             },
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "disabled"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "routerLink"
             },
             {
                 "type": {
-                    "names": [
-                        "Object"
-                    ]
+                    "names": ["Object"]
                 },
                 "optional": true,
                 "name": "rippleOptions"
             },
             {
                 "type": {
-                    "names": [
-                        "Number"
-                    ]
+                    "names": ["Number"]
                 },
                 "optional": true,
                 "name": "badge"
@@ -227,10 +181,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1103,
-                1137
-            ],
+            "range": [1103, 1137],
             "filename": "list-item.js",
             "lineno": 33,
             "columnno": 8,
@@ -251,10 +202,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1122,
-                1135
-            ],
+            "range": [1122, 1135],
             "filename": "list-item.js",
             "lineno": 33,
             "columnno": 27,
@@ -276,10 +224,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1147,
-                1184
-            ],
+            "range": [1147, 1184],
             "filename": "list-item.js",
             "lineno": 34,
             "columnno": 8,
@@ -300,10 +245,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1169,
-                1182
-            ],
+            "range": [1169, 1182],
             "filename": "list-item.js",
             "lineno": 34,
             "columnno": 30,
@@ -325,10 +267,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1194,
-                1226
-            ],
+            "range": [1194, 1226],
             "filename": "list-item.js",
             "lineno": 35,
             "columnno": 8,
@@ -349,10 +288,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1211,
-                1224
-            ],
+            "range": [1211, 1224],
             "filename": "list-item.js",
             "lineno": 35,
             "columnno": 25,
@@ -374,10 +310,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1236,
-                1260
-            ],
+            "range": [1236, 1260],
             "filename": "list-item.js",
             "lineno": 36,
             "columnno": 8,
@@ -398,10 +331,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1246,
-                1258
-            ],
+            "range": [1246, 1258],
             "filename": "list-item.js",
             "lineno": 36,
             "columnno": 18,
@@ -423,10 +353,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1270,
-                1293
-            ],
+            "range": [1270, 1293],
             "filename": "list-item.js",
             "lineno": 37,
             "columnno": 8,
@@ -447,10 +374,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1279,
-                1291
-            ],
+            "range": [1279, 1291],
             "filename": "list-item.js",
             "lineno": 37,
             "columnno": 17,
@@ -472,10 +396,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1303,
-                1326
-            ],
+            "range": [1303, 1326],
             "filename": "list-item.js",
             "lineno": 38,
             "columnno": 8,
@@ -496,10 +417,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1312,
-                1324
-            ],
+            "range": [1312, 1324],
             "filename": "list-item.js",
             "lineno": 38,
             "columnno": 17,
@@ -521,10 +439,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1336,
-                1358
-            ],
+            "range": [1336, 1358],
             "filename": "list-item.js",
             "lineno": 39,
             "columnno": 8,
@@ -545,10 +460,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1344,
-                1356
-            ],
+            "range": [1344, 1356],
             "filename": "list-item.js",
             "lineno": 39,
             "columnno": 16,
@@ -570,10 +482,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1368,
-                1391
-            ],
+            "range": [1368, 1391],
             "filename": "list-item.js",
             "lineno": 40,
             "columnno": 8,
@@ -594,10 +503,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1377,
-                1389
-            ],
+            "range": [1377, 1389],
             "filename": "list-item.js",
             "lineno": 40,
             "columnno": 17,
@@ -619,10 +525,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1401,
-                1427
-            ],
+            "range": [1401, 1427],
             "filename": "list-item.js",
             "lineno": 41,
             "columnno": 8,
@@ -643,10 +546,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1413,
-                1425
-            ],
+            "range": [1413, 1425],
             "filename": "list-item.js",
             "lineno": 41,
             "columnno": 20,
@@ -668,10 +568,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1437,
-                1459
-            ],
+            "range": [1437, 1459],
             "filename": "list-item.js",
             "lineno": 42,
             "columnno": 8,
@@ -692,10 +589,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1445,
-                1457
-            ],
+            "range": [1445, 1457],
             "filename": "list-item.js",
             "lineno": 42,
             "columnno": 16,
@@ -717,10 +611,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1469,
-                1504
-            ],
+            "range": [1469, 1504],
             "filename": "list-item.js",
             "lineno": 43,
             "columnno": 8,
@@ -741,10 +632,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1489,
-                1502
-            ],
+            "range": [1489, 1502],
             "filename": "list-item.js",
             "lineno": 43,
             "columnno": 28,
@@ -766,10 +654,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1514,
-                1552
-            ],
+            "range": [1514, 1552],
             "filename": "list-item.js",
             "lineno": 44,
             "columnno": 8,
@@ -790,10 +675,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1537,
-                1550
-            ],
+            "range": [1537, 1550],
             "filename": "list-item.js",
             "lineno": 44,
             "columnno": 31,
@@ -815,10 +697,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1562,
-                1595
-            ],
+            "range": [1562, 1595],
             "filename": "list-item.js",
             "lineno": 45,
             "columnno": 8,
@@ -839,10 +718,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1580,
-                1593
-            ],
+            "range": [1580, 1593],
             "filename": "list-item.js",
             "lineno": 45,
             "columnno": 26,
@@ -864,10 +740,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1605,
-                1647
-            ],
+            "range": [1605, 1647],
             "filename": "list-item.js",
             "lineno": 46,
             "columnno": 8,
@@ -888,10 +761,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1617,
-                1630
-            ],
+            "range": [1617, 1630],
             "filename": "list-item.js",
             "lineno": 46,
             "columnno": 20,
@@ -913,10 +783,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1632,
-                1645
-            ],
+            "range": [1632, 1645],
             "filename": "list-item.js",
             "lineno": 46,
             "columnno": 35,
@@ -938,10 +805,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1657,
-                1699
-            ],
+            "range": [1657, 1699],
             "filename": "list-item.js",
             "lineno": 47,
             "columnno": 8,
@@ -962,10 +826,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1669,
-                1682
-            ],
+            "range": [1669, 1682],
             "filename": "list-item.js",
             "lineno": 47,
             "columnno": 20,
@@ -987,10 +848,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1684,
-                1697
-            ],
+            "range": [1684, 1697],
             "filename": "list-item.js",
             "lineno": 47,
             "columnno": 35,
@@ -1012,10 +870,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1709,
-                1752
-            ],
+            "range": [1709, 1752],
             "filename": "list-item.js",
             "lineno": 48,
             "columnno": 8,
@@ -1036,10 +891,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1723,
-                1735
-            ],
+            "range": [1723, 1735],
             "filename": "list-item.js",
             "lineno": 48,
             "columnno": 22,
@@ -1061,10 +913,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1737,
-                1750
-            ],
+            "range": [1737, 1750],
             "filename": "list-item.js",
             "lineno": 48,
             "columnno": 36,
@@ -1086,10 +935,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1762,
-                1793
-            ],
+            "range": [1762, 1793],
             "filename": "list-item.js",
             "lineno": 49,
             "columnno": 8,
@@ -1110,10 +956,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1779,
-                1791
-            ],
+            "range": [1779, 1791],
             "filename": "list-item.js",
             "lineno": 49,
             "columnno": 25,
@@ -1135,10 +978,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1803,
-                1826
-            ],
+            "range": [1803, 1826],
             "filename": "list-item.js",
             "lineno": 50,
             "columnno": 8,
@@ -1159,10 +999,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1812,
-                1824
-            ],
+            "range": [1812, 1824],
             "filename": "list-item.js",
             "lineno": 50,
             "columnno": 17,
@@ -1184,10 +1021,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                1856,
-                1927
-            ],
+            "range": [1856, 1927],
             "filename": "list-item.js",
             "lineno": 55,
             "columnno": 4,
@@ -1212,10 +1046,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-list-item\n * @fires MdListItemComponent#onListItemSelected\n */",
         "meta": {
-            "range": [
-                299,
-                5938
-            ],
+            "range": [299, 5938],
             "filename": "list-item.js",
             "lineno": 11,
             "columnno": 0,
@@ -1230,9 +1061,7 @@
         "name": "MdListItemComponent",
         "longname": "MdListItemComponent",
         "kind": "class",
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -1241,18 +1070,13 @@
                 "value": "md-list-item"
             }
         ],
-        "fires": [
-            "MdListItemComponent#event:onListItemSelected"
-        ],
+        "fires": ["MdListItemComponent#event:onListItemSelected"],
         "scope": "global"
     },
     {
         "comment": "",
         "meta": {
-            "range": [
-                1897,
-                1920
-            ],
+            "range": [1897, 1920],
             "filename": "list-item.js",
             "lineno": 57,
             "columnno": 8,
@@ -1275,10 +1099,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                1949,
-                4766
-            ],
+            "range": [1949, 4766],
             "filename": "list-item.js",
             "lineno": 62,
             "columnno": 4,
@@ -1303,10 +1124,7 @@
     {
         "comment": "/**\n     * @async\n     */",
         "meta": {
-            "range": [
-                4802,
-                5348
-            ],
+            "range": [4802, 5348],
             "filename": "list-item.js",
             "lineno": 133,
             "columnno": 4,
@@ -1332,10 +1150,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4992,
-                5043
-            ],
+            "range": [4992, 5043],
             "filename": "list-item.js",
             "lineno": 138,
             "columnno": 18,
@@ -1358,10 +1173,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5291,
-                5341
-            ],
+            "range": [5291, 5341],
             "filename": "list-item.js",
             "lineno": 145,
             "columnno": 8,
@@ -1384,10 +1196,7 @@
     {
         "comment": "/**\n     * @async\n     */",
         "meta": {
-            "range": [
-                5384,
-                5506
-            ],
+            "range": [5384, 5506],
             "filename": "list-item.js",
             "lineno": 151,
             "columnno": 4,
@@ -1413,10 +1222,7 @@
     {
         "comment": "/**\n     * @async\n     * @param {Any} [changedProperties]\n     */",
         "meta": {
-            "range": [
-                5582,
-                5936
-            ],
+            "range": [5582, 5936],
             "filename": "list-item.js",
             "lineno": 160,
             "columnno": 4,
@@ -1425,9 +1231,7 @@
                 "id": "astnode100000436",
                 "name": "MdListItemComponent#updated",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "changedProperties"
-                ]
+                "paramnames": ["changedProperties"]
             },
             "vars": {
                 "": null
@@ -1437,9 +1241,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "changedProperties"
@@ -1454,10 +1256,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5902,
-                5916
-            ],
+            "range": [5902, 5916],
             "filename": "list-item.js",
             "lineno": 166,
             "columnno": 46,
@@ -1478,10 +1277,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6008,
-                6027
-            ],
+            "range": [6008, 6027],
             "filename": "list-item.js",
             "lineno": 171,
             "columnno": 9,
@@ -1501,8 +1297,6 @@
     {
         "kind": "package",
         "longname": "package:undefined",
-        "files": [
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list\\list-item.js"
-        ]
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list\\list-item.js"]
     }
 ]

@@ -2,10 +2,7 @@
     {
         "comment": "/**\n * @fires Movable#onMovablePointerdown\n * @fires Movable#onMovablePointermove\n * @fires Movable#onMovablePointerup\n */",
         "meta": {
-            "range": [
-                123,
-                4539
-            ],
+            "range": [123, 4539],
             "filename": "movable.js",
             "lineno": 6,
             "columnno": 0,
@@ -14,17 +11,10 @@
                 "id": "astnode100000002",
                 "name": "Movable",
                 "type": "ClassDeclaration",
-                "paramnames": [
-                    "host",
-                    "options"
-                ]
+                "paramnames": ["host", "options"]
             }
         },
-        "fires": [
-            "Movable#event:onMovablePointerdown",
-            "Movable#event:onMovablePointermove",
-            "Movable#event:onMovablePointerup"
-        ],
+        "fires": ["Movable#event:onMovablePointerdown", "Movable#event:onMovablePointermove", "Movable#event:onMovablePointerup"],
         "name": "Movable",
         "longname": "Movable",
         "kind": "class",
@@ -34,10 +24,7 @@
     {
         "comment": "/**\n     * @param {Any} [host]\n     * @param {Any} [options={}]\n     */",
         "meta": {
-            "range": [
-                219,
-                462
-            ],
+            "range": [219, 462],
             "filename": "movable.js",
             "lineno": 11,
             "columnno": 4,
@@ -46,10 +33,7 @@
                 "id": "astnode100000005",
                 "name": "Movable",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "host",
-                    "options"
-                ]
+                "paramnames": ["host", "options"]
             },
             "vars": {
                 "": null
@@ -58,18 +42,14 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "host"
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "defaultvalue": "{}",
@@ -85,10 +65,7 @@
     {
         "comment": "/**\n * @fires Movable#onMovablePointerdown\n * @fires Movable#onMovablePointermove\n * @fires Movable#onMovablePointerup\n */",
         "meta": {
-            "range": [
-                123,
-                4539
-            ],
+            "range": [123, 4539],
             "filename": "movable.js",
             "lineno": 6,
             "columnno": 0,
@@ -97,36 +74,25 @@
                 "id": "astnode100000002",
                 "name": "Movable",
                 "type": "ClassDeclaration",
-                "paramnames": [
-                    "host",
-                    "options"
-                ]
+                "paramnames": ["host", "options"]
             }
         },
         "name": "Movable",
         "longname": "Movable",
         "kind": "class",
-        "fires": [
-            "Movable#event:onMovablePointerdown",
-            "Movable#event:onMovablePointermove",
-            "Movable#event:onMovablePointerup"
-        ],
+        "fires": ["Movable#event:onMovablePointerdown", "Movable#event:onMovablePointermove", "Movable#event:onMovablePointerup"],
         "scope": "global",
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "host"
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "defaultvalue": "{}",
@@ -137,10 +103,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                261,
-                277
-            ],
+            "range": [261, 277],
             "filename": "movable.js",
             "lineno": 12,
             "columnno": 8,
@@ -163,10 +126,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                287,
-                434
-            ],
+            "range": [287, 434],
             "filename": "movable.js",
             "lineno": 13,
             "columnno": 8,
@@ -189,10 +149,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                316,
-                332
-            ],
+            "range": [316, 332],
             "filename": "movable.js",
             "lineno": 14,
             "columnno": 12,
@@ -214,10 +171,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                346,
-                399
-            ],
+            "range": [346, 399],
             "filename": "movable.js",
             "lineno": 15,
             "columnno": 12,
@@ -239,10 +193,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                512,
-                1173
-            ],
+            "range": [512, 1173],
             "filename": "movable.js",
             "lineno": 24,
             "columnno": 4,
@@ -251,9 +202,7 @@
                 "id": "astnode100000046",
                 "name": "Movable#handlePointerdown",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -262,9 +211,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -279,10 +226,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                547,
-                652
-            ],
+            "range": [547, 652],
             "filename": "movable.js",
             "lineno": 25,
             "columnno": 8,
@@ -305,10 +249,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                863,
-                889
-            ],
+            "range": [863, 889],
             "filename": "movable.js",
             "lineno": 29,
             "columnno": 8,
@@ -331,10 +272,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                899,
-                925
-            ],
+            "range": [899, 925],
             "filename": "movable.js",
             "lineno": 30,
             "columnno": 8,
@@ -357,10 +295,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                935,
-                974
-            ],
+            "range": [935, 974],
             "filename": "movable.js",
             "lineno": 31,
             "columnno": 8,
@@ -383,10 +318,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                984,
-                1023
-            ],
+            "range": [984, 1023],
             "filename": "movable.js",
             "lineno": 32,
             "columnno": 8,
@@ -409,10 +341,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1033,
-                1072
-            ],
+            "range": [1033, 1072],
             "filename": "movable.js",
             "lineno": 33,
             "columnno": 8,
@@ -435,10 +364,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1082,
-                1123
-            ],
+            "range": [1082, 1123],
             "filename": "movable.js",
             "lineno": 34,
             "columnno": 8,
@@ -461,10 +387,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                1223,
-                2867
-            ],
+            "range": [1223, 2867],
             "filename": "movable.js",
             "lineno": 41,
             "columnno": 4,
@@ -473,9 +396,7 @@
                 "id": "astnode100000173",
                 "name": "Movable#handlePointermove",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -484,9 +405,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -501,10 +420,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1264,
-                1302
-            ],
+            "range": [1264, 1302],
             "filename": "movable.js",
             "lineno": 42,
             "columnno": 14,
@@ -527,10 +443,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1318,
-                1356
-            ],
+            "range": [1318, 1356],
             "filename": "movable.js",
             "lineno": 43,
             "columnno": 14,
@@ -553,10 +466,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1488,
-                1546
-            ],
+            "range": [1488, 1546],
             "filename": "movable.js",
             "lineno": 46,
             "columnno": 16,
@@ -579,10 +489,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1665,
-                1689
-            ],
+            "range": [1665, 1689],
             "filename": "movable.js",
             "lineno": 49,
             "columnno": 16,
@@ -605,10 +512,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1707,
-                1765
-            ],
+            "range": [1707, 1765],
             "filename": "movable.js",
             "lineno": 50,
             "columnno": 16,
@@ -631,10 +535,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1884,
-                1944
-            ],
+            "range": [1884, 1944],
             "filename": "movable.js",
             "lineno": 53,
             "columnno": 16,
@@ -657,10 +558,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2063,
-                2087
-            ],
+            "range": [2063, 2087],
             "filename": "movable.js",
             "lineno": 56,
             "columnno": 16,
@@ -683,10 +581,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2105,
-                2165
-            ],
+            "range": [2105, 2165],
             "filename": "movable.js",
             "lineno": 57,
             "columnno": 16,
@@ -709,10 +604,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2265,
-                2289
-            ],
+            "range": [2265, 2289],
             "filename": "movable.js",
             "lineno": 61,
             "columnno": 16,
@@ -735,10 +627,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2372,
-                2396
-            ],
+            "range": [2372, 2396],
             "filename": "movable.js",
             "lineno": 64,
             "columnno": 16,
@@ -761,10 +650,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                2917,
-                3268
-            ],
+            "range": [2917, 3268],
             "filename": "movable.js",
             "lineno": 78,
             "columnno": 4,
@@ -773,9 +659,7 @@
                 "id": "astnode100000471",
                 "name": "Movable#handlePointerup",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -784,9 +668,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -801,10 +683,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2950,
-                2975
-            ],
+            "range": [2950, 2975],
             "filename": "movable.js",
             "lineno": 79,
             "columnno": 8,
@@ -827,10 +706,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2985,
-                3010
-            ],
+            "range": [2985, 3010],
             "filename": "movable.js",
             "lineno": 80,
             "columnno": 8,
@@ -853,10 +729,7 @@
     {
         "comment": "/**\n     * @param {Any} [type]\n     * @param {Any} [detail]\n     */",
         "meta": {
-            "range": [
-                3346,
-                3547
-            ],
+            "range": [3346, 3547],
             "filename": "movable.js",
             "lineno": 91,
             "columnno": 4,
@@ -865,10 +738,7 @@
                 "id": "astnode100000526",
                 "name": "Movable#emit",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "type",
-                    "detail"
-                ]
+                "paramnames": ["type", "detail"]
             },
             "vars": {
                 "": null
@@ -877,18 +747,14 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "type"
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "detail"
@@ -903,10 +769,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3381,
-                3500
-            ],
+            "range": [3381, 3500],
             "filename": "movable.js",
             "lineno": 92,
             "columnno": 14,
@@ -929,10 +792,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3425,
-                3438
-            ],
+            "range": [3425, 3438],
             "filename": "movable.js",
             "lineno": 93,
             "columnno": 12,
@@ -953,10 +813,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3452,
-                3468
-            ],
+            "range": [3452, 3468],
             "filename": "movable.js",
             "lineno": 94,
             "columnno": 12,
@@ -977,10 +834,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3482,
-                3488
-            ],
+            "range": [3482, 3488],
             "filename": "movable.js",
             "lineno": 95,
             "columnno": 12,
@@ -1001,10 +855,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                3569,
-                4170
-            ],
+            "range": [3569, 4170],
             "filename": "movable.js",
             "lineno": 102,
             "columnno": 4,
@@ -1029,10 +880,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3590,
-                3599
-            ],
+            "range": [3590, 3599],
             "filename": "movable.js",
             "lineno": 103,
             "columnno": 12,
@@ -1055,10 +903,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3609,
-                3645
-            ],
+            "range": [3609, 3645],
             "filename": "movable.js",
             "lineno": 104,
             "columnno": 8,
@@ -1082,10 +927,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3666,
-                3672
-            ],
+            "range": [3666, 3672],
             "filename": "movable.js",
             "lineno": 105,
             "columnno": 19,
@@ -1106,10 +948,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3712,
-                3794
-            ],
+            "range": [3712, 3794],
             "filename": "movable.js",
             "lineno": 106,
             "columnno": 12,
@@ -1133,10 +972,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3814,
-                3830
-            ],
+            "range": [3814, 3830],
             "filename": "movable.js",
             "lineno": 108,
             "columnno": 8,
@@ -1160,10 +996,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3898,
-                3956
-            ],
+            "range": [3898, 3956],
             "filename": "movable.js",
             "lineno": 110,
             "columnno": 8,
@@ -1186,10 +1019,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3966,
-                4024
-            ],
+            "range": [3966, 4024],
             "filename": "movable.js",
             "lineno": 111,
             "columnno": 8,
@@ -1212,10 +1042,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4034,
-                4088
-            ],
+            "range": [4034, 4088],
             "filename": "movable.js",
             "lineno": 112,
             "columnno": 8,
@@ -1238,10 +1065,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                4192,
-                4537
-            ],
+            "range": [4192, 4537],
             "filename": "movable.js",
             "lineno": 118,
             "columnno": 4,
@@ -1266,10 +1090,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4218,
-                4270
-            ],
+            "range": [4218, 4270],
             "filename": "movable.js",
             "lineno": 119,
             "columnno": 14,
@@ -1292,10 +1113,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4425,
-                4454
-            ],
+            "range": [4425, 4454],
             "filename": "movable.js",
             "lineno": 124,
             "columnno": 8,
@@ -1318,10 +1136,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4464,
-                4493
-            ],
+            "range": [4464, 4493],
             "filename": "movable.js",
             "lineno": 125,
             "columnno": 8,
@@ -1344,10 +1159,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4503,
-                4530
-            ],
+            "range": [4503, 4530],
             "filename": "movable.js",
             "lineno": 126,
             "columnno": 8,
@@ -1370,10 +1182,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4549,
-                4556
-            ],
+            "range": [4549, 4556],
             "filename": "movable.js",
             "lineno": 129,
             "columnno": 9,
@@ -1393,8 +1202,6 @@
     {
         "kind": "package",
         "longname": "package:undefined",
-        "files": [
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable\\movable.js"
-        ]
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable\\movable.js"]
     }
 ]

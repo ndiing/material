@@ -2,10 +2,7 @@
     {
         "comment": "/**\n * @param {Any} [string]\n */",
         "meta": {
-            "range": [
-                33,
-                92
-            ],
+            "range": [33, 92],
             "filename": "util.js",
             "lineno": 4,
             "columnno": 0,
@@ -14,17 +11,13 @@
                 "id": "astnode100000002",
                 "name": "parseDate",
                 "type": "FunctionDeclaration",
-                "paramnames": [
-                    "string"
-                ]
+                "paramnames": ["string"]
             }
         },
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "string"
@@ -38,10 +31,7 @@
     {
         "comment": "/**\n * @param {Any} [string]\n */",
         "meta": {
-            "range": [
-                127,
-                195
-            ],
+            "range": [127, 195],
             "filename": "util.js",
             "lineno": 11,
             "columnno": 0,
@@ -50,17 +40,13 @@
                 "id": "astnode100000010",
                 "name": "parseDatetimeLocal",
                 "type": "FunctionDeclaration",
-                "paramnames": [
-                    "string"
-                ]
+                "paramnames": ["string"]
             }
         },
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "string"
@@ -74,10 +60,7 @@
     {
         "comment": "/**\n * @param {Any} [string]\n */",
         "meta": {
-            "range": [
-                230,
-                298
-            ],
+            "range": [230, 298],
             "filename": "util.js",
             "lineno": 18,
             "columnno": 0,
@@ -86,17 +69,13 @@
                 "id": "astnode100000018",
                 "name": "parseMonth",
                 "type": "FunctionDeclaration",
-                "paramnames": [
-                    "string"
-                ]
+                "paramnames": ["string"]
             }
         },
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "string"
@@ -110,10 +89,7 @@
     {
         "comment": "/**\n * @param {Any} [string]\n */",
         "meta": {
-            "range": [
-                333,
-                498
-            ],
+            "range": [333, 498],
             "filename": "util.js",
             "lineno": 25,
             "columnno": 0,
@@ -122,9 +98,7 @@
                 "id": "astnode100000028",
                 "name": "parseTime",
                 "type": "FunctionDeclaration",
-                "paramnames": [
-                    "string"
-                ]
+                "paramnames": ["string"]
             },
             "vars": {
                 "undefined": null,
@@ -134,9 +108,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "string"
@@ -150,10 +122,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                420,
-                437
-            ],
+            "range": [420, 437],
             "filename": "util.js",
             "lineno": 27,
             "columnno": 10,
@@ -176,10 +145,7 @@
     {
         "comment": "/**\n * @param {Any} [string]\n */",
         "meta": {
-            "range": [
-                533,
-                726
-            ],
+            "range": [533, 726],
             "filename": "util.js",
             "lineno": 35,
             "columnno": 0,
@@ -188,9 +154,7 @@
                 "id": "astnode100000056",
                 "name": "parseWeek",
                 "type": "FunctionDeclaration",
-                "paramnames": [
-                    "string"
-                ]
+                "paramnames": ["string"]
             },
             "vars": {
                 "undefined": null,
@@ -201,9 +165,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "string"
@@ -217,10 +179,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                617,
-                641
-            ],
+            "range": [617, 641],
             "filename": "util.js",
             "lineno": 37,
             "columnno": 10,
@@ -243,10 +202,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                653,
-                674
-            ],
+            "range": [653, 674],
             "filename": "util.js",
             "lineno": 38,
             "columnno": 10,
@@ -269,10 +225,7 @@
     {
         "comment": "/**\n * @param {Any} [date]\n */",
         "meta": {
-            "range": [
-                759,
-                836
-            ],
+            "range": [759, 836],
             "filename": "util.js",
             "lineno": 46,
             "columnno": 0,
@@ -281,17 +234,13 @@
                 "id": "astnode100000097",
                 "name": "stringifyDate",
                 "type": "FunctionDeclaration",
-                "paramnames": [
-                    "date"
-                ]
+                "paramnames": ["date"]
             }
         },
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "date"
@@ -305,10 +254,7 @@
     {
         "comment": "/**\n * @param {Any} [date]\n */",
         "meta": {
-            "range": [
-                869,
-                1250
-            ],
+            "range": [869, 1250],
             "filename": "util.js",
             "lineno": 53,
             "columnno": 0,
@@ -317,9 +263,7 @@
                 "id": "astnode100000112",
                 "name": "stringifyDatetimeLocal",
                 "type": "FunctionDeclaration",
-                "paramnames": [
-                    "date"
-                ]
+                "paramnames": ["date"]
             },
             "vars": {
                 "year": "stringifyDatetimeLocal~year",
@@ -332,9 +276,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "date"
@@ -348,10 +290,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                919,
-                944
-            ],
+            "range": [919, 944],
             "filename": "util.js",
             "lineno": 54,
             "columnno": 10,
@@ -374,10 +313,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                956,
-                1008
-            ],
+            "range": [956, 1008],
             "filename": "util.js",
             "lineno": 55,
             "columnno": 10,
@@ -400,10 +336,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1020,
-                1065
-            ],
+            "range": [1020, 1065],
             "filename": "util.js",
             "lineno": 56,
             "columnno": 10,
@@ -426,10 +359,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1077,
-                1125
-            ],
+            "range": [1077, 1125],
             "filename": "util.js",
             "lineno": 57,
             "columnno": 10,
@@ -452,10 +382,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1137,
-                1189
-            ],
+            "range": [1137, 1189],
             "filename": "util.js",
             "lineno": 58,
             "columnno": 10,
@@ -478,10 +405,7 @@
     {
         "comment": "/**\n * @param {Any} [date]\n */",
         "meta": {
-            "range": [
-                1283,
-                1359
-            ],
+            "range": [1283, 1359],
             "filename": "util.js",
             "lineno": 65,
             "columnno": 0,
@@ -490,17 +414,13 @@
                 "id": "astnode100000194",
                 "name": "stringifyMonth",
                 "type": "FunctionDeclaration",
-                "paramnames": [
-                    "date"
-                ]
+                "paramnames": ["date"]
             }
         },
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "date"
@@ -514,10 +434,7 @@
     {
         "comment": "/**\n * @param {Any} [date]\n */",
         "meta": {
-            "range": [
-                1392,
-                1468
-            ],
+            "range": [1392, 1468],
             "filename": "util.js",
             "lineno": 72,
             "columnno": 0,
@@ -526,17 +443,13 @@
                 "id": "astnode100000208",
                 "name": "stringifyTime",
                 "type": "FunctionDeclaration",
-                "paramnames": [
-                    "date"
-                ]
+                "paramnames": ["date"]
             }
         },
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "date"
@@ -550,10 +463,7 @@
     {
         "comment": "/**\n * @param {Any} [date]\n */",
         "meta": {
-            "range": [
-                1501,
-                1800
-            ],
+            "range": [1501, 1800],
             "filename": "util.js",
             "lineno": 79,
             "columnno": 0,
@@ -562,9 +472,7 @@
                 "id": "astnode100000222",
                 "name": "stringifyWeek",
                 "type": "FunctionDeclaration",
-                "paramnames": [
-                    "date"
-                ]
+                "paramnames": ["date"]
             },
             "vars": {
                 "firstDayOfYear": "stringifyWeek~firstDayOfYear",
@@ -575,9 +483,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "date"
@@ -591,10 +497,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1542,
-                1593
-            ],
+            "range": [1542, 1593],
             "filename": "util.js",
             "lineno": 80,
             "columnno": 10,
@@ -617,10 +520,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1605,
-                1671
-            ],
+            "range": [1605, 1671],
             "filename": "util.js",
             "lineno": 81,
             "columnno": 10,
@@ -643,10 +543,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1683,
-                1721
-            ],
+            "range": [1683, 1721],
             "filename": "util.js",
             "lineno": 82,
             "columnno": 10,
@@ -669,10 +566,7 @@
     {
         "comment": "/**\n * @param {Any} [element]\n */",
         "meta": {
-            "range": [
-                1836,
-                2172
-            ],
+            "range": [1836, 2172],
             "filename": "util.js",
             "lineno": 89,
             "columnno": 0,
@@ -681,9 +575,7 @@
                 "id": "astnode100000284",
                 "name": "closestScrollableElement",
                 "type": "FunctionDeclaration",
-                "paramnames": [
-                    "element"
-                ]
+                "paramnames": ["element"]
             },
             "vars": {
                 "current": "closestScrollableElement~current",
@@ -693,9 +585,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "element"
@@ -709,10 +599,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1889,
-                1906
-            ],
+            "range": [1889, 1906],
             "filename": "util.js",
             "lineno": 90,
             "columnno": 8,
@@ -735,10 +622,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1944,
-                1984
-            ],
+            "range": [1944, 1984],
             "filename": "util.js",
             "lineno": 92,
             "columnno": 14,
@@ -761,10 +645,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2078,
-                2109
-            ],
+            "range": [2078, 2109],
             "filename": "util.js",
             "lineno": 94,
             "columnno": 8,
@@ -788,10 +669,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2182,
-                2191
-            ],
+            "range": [2182, 2191],
             "filename": "util.js",
             "lineno": 98,
             "columnno": 9,
@@ -811,10 +689,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2193,
-                2211
-            ],
+            "range": [2193, 2211],
             "filename": "util.js",
             "lineno": 98,
             "columnno": 20,
@@ -834,10 +709,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2213,
-                2223
-            ],
+            "range": [2213, 2223],
             "filename": "util.js",
             "lineno": 98,
             "columnno": 40,
@@ -857,10 +729,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2225,
-                2234
-            ],
+            "range": [2225, 2234],
             "filename": "util.js",
             "lineno": 98,
             "columnno": 52,
@@ -880,10 +749,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2236,
-                2245
-            ],
+            "range": [2236, 2245],
             "filename": "util.js",
             "lineno": 98,
             "columnno": 63,
@@ -903,10 +769,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2247,
-                2260
-            ],
+            "range": [2247, 2260],
             "filename": "util.js",
             "lineno": 98,
             "columnno": 74,
@@ -926,10 +789,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2262,
-                2284
-            ],
+            "range": [2262, 2284],
             "filename": "util.js",
             "lineno": 98,
             "columnno": 89,
@@ -949,10 +809,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2286,
-                2300
-            ],
+            "range": [2286, 2300],
             "filename": "util.js",
             "lineno": 98,
             "columnno": 113,
@@ -972,10 +829,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2302,
-                2315
-            ],
+            "range": [2302, 2315],
             "filename": "util.js",
             "lineno": 98,
             "columnno": 129,
@@ -995,10 +849,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2317,
-                2330
-            ],
+            "range": [2317, 2330],
             "filename": "util.js",
             "lineno": 98,
             "columnno": 144,
@@ -1018,10 +869,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2332,
-                2356
-            ],
+            "range": [2332, 2356],
             "filename": "util.js",
             "lineno": 98,
             "columnno": 159,
@@ -1041,8 +889,6 @@
     {
         "kind": "package",
         "longname": "package:undefined",
-        "files": [
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util\\util.js"
-        ]
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\util\\util.js"]
     }
 ]

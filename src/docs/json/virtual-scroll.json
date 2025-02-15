@@ -2,10 +2,7 @@
     {
         "comment": "/**\n * @fires VirtualScroll#onVirtualScroll\n */",
         "meta": {
-            "range": [
-                48,
-                2590
-            ],
+            "range": [48, 2590],
             "filename": "virtual-scroll.js",
             "lineno": 4,
             "columnno": 0,
@@ -14,15 +11,10 @@
                 "id": "astnode100000002",
                 "name": "VirtualScroll",
                 "type": "ClassDeclaration",
-                "paramnames": [
-                    "host",
-                    "options"
-                ]
+                "paramnames": ["host", "options"]
             }
         },
-        "fires": [
-            "VirtualScroll#event:onVirtualScroll"
-        ],
+        "fires": ["VirtualScroll#event:onVirtualScroll"],
         "name": "VirtualScroll",
         "longname": "VirtualScroll",
         "kind": "class",
@@ -32,10 +24,7 @@
     {
         "comment": "/**\n     * @param {Any} [host]\n     * @param {Any} [options]\n     */",
         "meta": {
-            "range": [
-                147,
-                506
-            ],
+            "range": [147, 506],
             "filename": "virtual-scroll.js",
             "lineno": 9,
             "columnno": 4,
@@ -44,10 +33,7 @@
                 "id": "astnode100000005",
                 "name": "VirtualScroll",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "host",
-                    "options"
-                ]
+                "paramnames": ["host", "options"]
             },
             "vars": {
                 "": null
@@ -56,18 +42,14 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "host"
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "options"
@@ -82,10 +64,7 @@
     {
         "comment": "/**\n * @fires VirtualScroll#onVirtualScroll\n */",
         "meta": {
-            "range": [
-                48,
-                2590
-            ],
+            "range": [48, 2590],
             "filename": "virtual-scroll.js",
             "lineno": 4,
             "columnno": 0,
@@ -94,34 +73,25 @@
                 "id": "astnode100000002",
                 "name": "VirtualScroll",
                 "type": "ClassDeclaration",
-                "paramnames": [
-                    "host",
-                    "options"
-                ]
+                "paramnames": ["host", "options"]
             }
         },
         "name": "VirtualScroll",
         "longname": "VirtualScroll",
         "kind": "class",
-        "fires": [
-            "VirtualScroll#event:onVirtualScroll"
-        ],
+        "fires": ["VirtualScroll#event:onVirtualScroll"],
         "scope": "global",
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "host"
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "options"
@@ -131,10 +101,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                184,
-                200
-            ],
+            "range": [184, 200],
             "filename": "virtual-scroll.js",
             "lineno": 10,
             "columnno": 8,
@@ -157,10 +124,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                210,
-                478
-            ],
+            "range": [210, 478],
             "filename": "virtual-scroll.js",
             "lineno": 11,
             "columnno": 8,
@@ -183,10 +147,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                239,
-                255
-            ],
+            "range": [239, 255],
             "filename": "virtual-scroll.js",
             "lineno": 12,
             "columnno": 12,
@@ -208,10 +169,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                269,
-                282
-            ],
+            "range": [269, 282],
             "filename": "virtual-scroll.js",
             "lineno": 13,
             "columnno": 12,
@@ -233,10 +191,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                296,
-                310
-            ],
+            "range": [296, 310],
             "filename": "virtual-scroll.js",
             "lineno": 14,
             "columnno": 12,
@@ -258,10 +213,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                324,
-                349
-            ],
+            "range": [324, 349],
             "filename": "virtual-scroll.js",
             "lineno": 15,
             "columnno": 12,
@@ -283,10 +235,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                363,
-                397
-            ],
+            "range": [363, 397],
             "filename": "virtual-scroll.js",
             "lineno": 16,
             "columnno": 12,
@@ -308,10 +257,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                411,
-                443
-            ],
+            "range": [411, 443],
             "filename": "virtual-scroll.js",
             "lineno": 17,
             "columnno": 12,
@@ -333,10 +279,7 @@
     {
         "comment": "/**\n     * @param {Any} [options={}]\n     */",
         "meta": {
-            "range": [
-                561,
-                745
-            ],
+            "range": [561, 745],
             "filename": "virtual-scroll.js",
             "lineno": 26,
             "columnno": 4,
@@ -345,9 +288,7 @@
                 "id": "astnode100000042",
                 "name": "VirtualScroll#load",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "options"
-                ]
+                "paramnames": ["options"]
             },
             "vars": {
                 "": null
@@ -356,9 +297,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "defaultvalue": "{}",
@@ -374,10 +313,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                601,
-                605
-            ],
+            "range": [601, 605],
             "filename": "virtual-scroll.js",
             "lineno": 27,
             "columnno": 19,
@@ -398,10 +334,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                638,
-                659
-            ],
+            "range": [638, 659],
             "filename": "virtual-scroll.js",
             "lineno": 28,
             "columnno": 18,
@@ -424,10 +357,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                673,
-                699
-            ],
+            "range": [673, 699],
             "filename": "virtual-scroll.js",
             "lineno": 29,
             "columnno": 12,
@@ -450,10 +380,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                795,
-                1776
-            ],
+            "range": [795, 1776],
             "filename": "virtual-scroll.js",
             "lineno": 37,
             "columnno": 4,
@@ -462,9 +389,7 @@
                 "id": "astnode100000074",
                 "name": "VirtualScroll#handleScroll",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -473,9 +398,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -490,10 +413,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                831,
-                857
-            ],
+            "range": [831, 857],
             "filename": "virtual-scroll.js",
             "lineno": 38,
             "columnno": 14,
@@ -516,10 +436,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                873,
-                907
-            ],
+            "range": [873, 907],
             "filename": "virtual-scroll.js",
             "lineno": 39,
             "columnno": 14,
@@ -542,10 +459,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                923,
-                954
-            ],
+            "range": [923, 954],
             "filename": "virtual-scroll.js",
             "lineno": 40,
             "columnno": 14,
@@ -568,10 +482,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                970,
-                1008
-            ],
+            "range": [970, 1008],
             "filename": "virtual-scroll.js",
             "lineno": 41,
             "columnno": 14,
@@ -594,10 +505,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1024,
-                1094
-            ],
+            "range": [1024, 1094],
             "filename": "virtual-scroll.js",
             "lineno": 42,
             "columnno": 14,
@@ -620,10 +528,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1110,
-                1141
-            ],
+            "range": [1110, 1141],
             "filename": "virtual-scroll.js",
             "lineno": 43,
             "columnno": 14,
@@ -646,10 +551,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1155,
-                1210
-            ],
+            "range": [1155, 1210],
             "filename": "virtual-scroll.js",
             "lineno": 44,
             "columnno": 12,
@@ -672,10 +574,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1220,
-                1246
-            ],
+            "range": [1220, 1246],
             "filename": "virtual-scroll.js",
             "lineno": 45,
             "columnno": 8,
@@ -699,10 +598,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1260,
-                1321
-            ],
+            "range": [1260, 1321],
             "filename": "virtual-scroll.js",
             "lineno": 46,
             "columnno": 12,
@@ -725,10 +621,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1331,
-                1365
-            ],
+            "range": [1331, 1365],
             "filename": "virtual-scroll.js",
             "lineno": 47,
             "columnno": 8,
@@ -752,10 +645,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1375,
-                1392
-            ],
+            "range": [1375, 1392],
             "filename": "virtual-scroll.js",
             "lineno": 48,
             "columnno": 8,
@@ -779,10 +669,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1408,
-                1438
-            ],
+            "range": [1408, 1438],
             "filename": "virtual-scroll.js",
             "lineno": 49,
             "columnno": 14,
@@ -805,10 +692,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1735,
-                1740
-            ],
+            "range": [1735, 1740],
             "filename": "virtual-scroll.js",
             "lineno": 55,
             "columnno": 12,
@@ -829,10 +713,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1754,
-                1757
-            ],
+            "range": [1754, 1757],
             "filename": "virtual-scroll.js",
             "lineno": 56,
             "columnno": 12,
@@ -853,10 +734,7 @@
     {
         "comment": "/**\n     * @param {Any} [type]\n     * @param {Any} [detail]\n     */",
         "meta": {
-            "range": [
-                1854,
-                2055
-            ],
+            "range": [1854, 2055],
             "filename": "virtual-scroll.js",
             "lineno": 64,
             "columnno": 4,
@@ -865,10 +743,7 @@
                 "id": "astnode100000244",
                 "name": "VirtualScroll#emit",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "type",
-                    "detail"
-                ]
+                "paramnames": ["type", "detail"]
             },
             "vars": {
                 "": null
@@ -877,18 +752,14 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "type"
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "detail"
@@ -903,10 +774,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1889,
-                2008
-            ],
+            "range": [1889, 2008],
             "filename": "virtual-scroll.js",
             "lineno": 65,
             "columnno": 14,
@@ -929,10 +797,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1933,
-                1946
-            ],
+            "range": [1933, 1946],
             "filename": "virtual-scroll.js",
             "lineno": 66,
             "columnno": 12,
@@ -953,10 +818,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1960,
-                1976
-            ],
+            "range": [1960, 1976],
             "filename": "virtual-scroll.js",
             "lineno": 67,
             "columnno": 12,
@@ -977,10 +839,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1990,
-                1996
-            ],
+            "range": [1990, 1996],
             "filename": "virtual-scroll.js",
             "lineno": 68,
             "columnno": 12,
@@ -1001,10 +860,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                2077,
-                2363
-            ],
+            "range": [2077, 2363],
             "filename": "virtual-scroll.js",
             "lineno": 75,
             "columnno": 4,
@@ -1029,10 +885,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2148,
-                2204
-            ],
+            "range": [2148, 2204],
             "filename": "virtual-scroll.js",
             "lineno": 77,
             "columnno": 8,
@@ -1055,10 +908,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2214,
-                2262
-            ],
+            "range": [2214, 2262],
             "filename": "virtual-scroll.js",
             "lineno": 78,
             "columnno": 8,
@@ -1081,10 +931,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                2385,
-                2588
-            ],
+            "range": [2385, 2588],
             "filename": "virtual-scroll.js",
             "lineno": 85,
             "columnno": 4,
@@ -1109,10 +956,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2530,
-                2547
-            ],
+            "range": [2530, 2547],
             "filename": "virtual-scroll.js",
             "lineno": 88,
             "columnno": 8,
@@ -1135,10 +979,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2557,
-                2581
-            ],
+            "range": [2557, 2581],
             "filename": "virtual-scroll.js",
             "lineno": 89,
             "columnno": 8,
@@ -1161,10 +1002,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2600,
-                2613
-            ],
+            "range": [2600, 2613],
             "filename": "virtual-scroll.js",
             "lineno": 92,
             "columnno": 9,
@@ -1184,8 +1022,6 @@
     {
         "kind": "package",
         "longname": "package:undefined",
-        "files": [
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual-scroll\\virtual-scroll.js"
-        ]
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual-scroll\\virtual-scroll.js"]
     }
 ]

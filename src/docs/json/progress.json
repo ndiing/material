@@ -2,10 +2,7 @@
     {
         "comment": "/**\n */",
         "meta": {
-            "range": [
-                8,
-                1708
-            ],
+            "range": [8, 1708],
             "filename": "progress.js",
             "lineno": 3,
             "columnno": 0,
@@ -26,10 +23,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                45,
-                194
-            ],
+            "range": [45, 194],
             "filename": "progress.js",
             "lineno": 6,
             "columnno": 4,
@@ -54,10 +48,7 @@
     {
         "comment": "/**\n */",
         "meta": {
-            "range": [
-                8,
-                1708
-            ],
+            "range": [8, 1708],
             "filename": "progress.js",
             "lineno": 3,
             "columnno": 0,
@@ -77,10 +68,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                69,
-                90
-            ],
+            "range": [69, 90],
             "filename": "progress.js",
             "lineno": 7,
             "columnno": 8,
@@ -103,10 +91,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                100,
-                117
-            ],
+            "range": [100, 117],
             "filename": "progress.js",
             "lineno": 8,
             "columnno": 8,
@@ -129,10 +114,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                127,
-                148
-            ],
+            "range": [127, 148],
             "filename": "progress.js",
             "lineno": 9,
             "columnno": 8,
@@ -155,10 +137,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                158,
-                187
-            ],
+            "range": [158, 187],
             "filename": "progress.js",
             "lineno": 10,
             "columnno": 8,
@@ -181,10 +160,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                216,
-                530
-            ],
+            "range": [216, 530],
             "filename": "progress.js",
             "lineno": 15,
             "columnno": 4,
@@ -209,10 +185,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                278,
-                350
-            ],
+            "range": [278, 350],
             "filename": "progress.js",
             "lineno": 17,
             "columnno": 12,
@@ -235,10 +208,7 @@
     {
         "comment": "/**\n     * @param {Any} [newDuration]\n     */",
         "meta": {
-            "range": [
-                586,
-                889
-            ],
+            "range": [586, 889],
             "filename": "progress.js",
             "lineno": 26,
             "columnno": 4,
@@ -247,9 +217,7 @@
                 "id": "astnode100000078",
                 "name": "Progress#start",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "newDuration"
-                ]
+                "paramnames": ["newDuration"]
             },
             "vars": {
                 "": null
@@ -258,9 +226,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "newDuration"
@@ -275,10 +241,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                615,
-                643
-            ],
+            "range": [615, 643],
             "filename": "progress.js",
             "lineno": 27,
             "columnno": 8,
@@ -301,10 +264,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                696,
-                730
-            ],
+            "range": [696, 730],
             "filename": "progress.js",
             "lineno": 29,
             "columnno": 12,
@@ -327,10 +287,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                812,
-                872
-            ],
+            "range": [812, 872],
             "filename": "progress.js",
             "lineno": 33,
             "columnno": 12,
@@ -353,10 +310,7 @@
     {
         "comment": "/**\n     * @param {Any} [currentTime]\n     */",
         "meta": {
-            "range": [
-                945,
-                1383
-            ],
+            "range": [945, 1383],
             "filename": "progress.js",
             "lineno": 40,
             "columnno": 4,
@@ -365,9 +319,7 @@
                 "id": "astnode100000130",
                 "name": "Progress#step",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "currentTime"
-                ]
+                "paramnames": ["currentTime"]
             },
             "vars": {
                 "": null
@@ -376,9 +328,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "currentTime"
@@ -393,10 +343,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1022,
-                1060
-            ],
+            "range": [1022, 1060],
             "filename": "progress.js",
             "lineno": 42,
             "columnno": 12,
@@ -419,10 +366,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1074,
-                1121
-            ],
+            "range": [1074, 1121],
             "filename": "progress.js",
             "lineno": 43,
             "columnno": 12,
@@ -445,10 +389,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1131,
-                1173
-            ],
+            "range": [1131, 1173],
             "filename": "progress.js",
             "lineno": 44,
             "columnno": 8,
@@ -471,10 +412,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1183,
-                1221
-            ],
+            "range": [1183, 1221],
             "filename": "progress.js",
             "lineno": 45,
             "columnno": 8,
@@ -497,10 +435,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1263,
-                1323
-            ],
+            "range": [1263, 1323],
             "filename": "progress.js",
             "lineno": 47,
             "columnno": 12,
@@ -523,10 +458,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                1405,
-                1557
-            ],
+            "range": [1405, 1557],
             "filename": "progress.js",
             "lineno": 55,
             "columnno": 4,
@@ -551,10 +483,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1511,
-                1540
-            ],
+            "range": [1511, 1540],
             "filename": "progress.js",
             "lineno": 58,
             "columnno": 12,
@@ -577,10 +506,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                1579,
-                1706
-            ],
+            "range": [1579, 1706],
             "filename": "progress.js",
             "lineno": 64,
             "columnno": 4,
@@ -605,10 +531,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1597,
-                1618
-            ],
+            "range": [1597, 1618],
             "filename": "progress.js",
             "lineno": 65,
             "columnno": 8,
@@ -631,10 +554,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1628,
-                1645
-            ],
+            "range": [1628, 1645],
             "filename": "progress.js",
             "lineno": 66,
             "columnno": 8,
@@ -657,10 +577,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1655,
-                1676
-            ],
+            "range": [1655, 1676],
             "filename": "progress.js",
             "lineno": 67,
             "columnno": 8,
@@ -683,10 +600,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1718,
-                1726
-            ],
+            "range": [1718, 1726],
             "filename": "progress.js",
             "lineno": 71,
             "columnno": 9,
@@ -706,8 +620,6 @@
     {
         "kind": "package",
         "longname": "package:undefined",
-        "files": [
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress\\progress.js"
-        ]
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress\\progress.js"]
     }
 ]

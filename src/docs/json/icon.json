@@ -2,10 +2,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-icon\n */",
         "meta": {
-            "range": [
-                144,
-                311
-            ],
+            "range": [144, 311],
             "filename": "icon.js",
             "lineno": 8,
             "columnno": 0,
@@ -17,9 +14,7 @@
                 "paramnames": []
             }
         },
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -36,10 +31,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                208,
-                309
-            ],
+            "range": [208, 309],
             "filename": "icon.js",
             "lineno": 11,
             "columnno": 4,
@@ -64,10 +56,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                372,
-                387
-            ],
+            "range": [372, 387],
             "filename": "icon.js",
             "lineno": 17,
             "columnno": 9,
@@ -87,8 +76,6 @@
     {
         "kind": "package",
         "longname": "package:undefined",
-        "files": [
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\icon\\icon.js"
-        ]
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\icon\\icon.js"]
     }
 ]

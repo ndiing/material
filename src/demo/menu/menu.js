@@ -6,7 +6,6 @@ class DemoMenu extends MdComponent {
         return html`
             <div class="md-layout">
                 <div class="md-layout__grid">
-
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                         <md-button
                             variant="filled-tonal"
@@ -15,14 +14,9 @@ class DemoMenu extends MdComponent {
                         ></md-button>
                         <md-menu
                             id="menu"
-                            .items="${[
-                                { label: "Label" }, 
-                                { label: "Label" }, 
-                                { label: "Label" }, 
-                                { label: "Label" }
-                            ]}"
+                            .items="${[{ label: "Label" }, { label: "Label" }, { label: "Label" }, { label: "Label" }]}"
                             @onNavigationListKeydownEnter="${console.log}"
-                            @onNavigationListItemClick="${event=>console.log(event.detail.event.currentTarget.data)}"
+                            @onNavigationListItemClick="${(event) => console.log(event.detail.event.currentTarget.data)}"
                             @onMenuShow="${console.log}"
                             @onMenuClose="${console.log}"
                             @onMenuShown="${console.log}"
@@ -38,14 +32,9 @@ class DemoMenu extends MdComponent {
                         ></md-button>
                         <md-menu
                             id="menu2"
-                            .items="${[
-                                { label: "Label" }, 
-                                { label: "Label" }, 
-                                { label: "Label" }, 
-                                { label: "Label", selected: true }
-                            ]}"
+                            .items="${[{ label: "Label" }, { label: "Label" }, { label: "Label" }, { label: "Label", selected: true }]}"
                             @onNavigationListKeydownEnter="${console.log}"
-                            @onNavigationListItemClick="${event=>console.log(event.detail.event.currentTarget.data)}"
+                            @onNavigationListItemClick="${(event) => console.log(event.detail.event.currentTarget.data)}"
                             @onMenuShow="${console.log}"
                             @onMenuClose="${console.log}"
                             @onMenuShown="${console.log}"
@@ -54,7 +43,6 @@ class DemoMenu extends MdComponent {
                     </div>
 
                     <div style="height:100vh"></div>
-
                 </div>
             </div>
         `;

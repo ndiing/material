@@ -2,10 +2,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-navigation-list-item\n * @fires MdNavigationListItemComponent#onNavigationListItemSelected\n */",
         "meta": {
-            "range": [
-                330,
-                2847
-            ],
+            "range": [330, 2847],
             "filename": "navigation-list-item.js",
             "lineno": 11,
             "columnno": 0,
@@ -17,9 +14,7 @@
                 "paramnames": []
             }
         },
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -28,9 +23,7 @@
                 "value": "md-navigation-list-item"
             }
         ],
-        "fires": [
-            "MdNavigationListItemComponent#event:onNavigationListItemSelected"
-        ],
+        "fires": ["MdNavigationListItemComponent#event:onNavigationListItemSelected"],
         "name": "MdNavigationListItemComponent",
         "longname": "MdNavigationListItemComponent",
         "kind": "class",
@@ -40,10 +33,7 @@
     {
         "comment": "/**\n     * @property {String} [icon]\n     * @property {String} [label]\n     * @property {String} [sublabel]\n     * @property {Boolean} [selected]\n     * @property {Boolean} [disabled]\n     * @property {String} [routerLink]\n     * @property {Object} [rippleOptions]\n     * @property {Number} [badge]\n     */",
         "meta": {
-            "range": [
-                703,
-                1063
-            ],
+            "range": [703, 1063],
             "filename": "navigation-list-item.js",
             "lineno": 22,
             "columnno": 4,
@@ -57,72 +47,56 @@
         "properties": [
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "icon"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "label"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "sublabel"
             },
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "selected"
             },
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "disabled"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "routerLink"
             },
             {
                 "type": {
-                    "names": [
-                        "Object"
-                    ]
+                    "names": ["Object"]
                 },
                 "optional": true,
                 "name": "rippleOptions"
             },
             {
                 "type": {
-                    "names": [
-                        "Number"
-                    ]
+                    "names": ["Number"]
                 },
                 "optional": true,
                 "name": "badge"
@@ -137,10 +111,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                733,
-                755
-            ],
+            "range": [733, 755],
             "filename": "navigation-list-item.js",
             "lineno": 23,
             "columnno": 8,
@@ -161,10 +132,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                741,
-                753
-            ],
+            "range": [741, 753],
             "filename": "navigation-list-item.js",
             "lineno": 23,
             "columnno": 16,
@@ -186,10 +154,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                765,
-                788
-            ],
+            "range": [765, 788],
             "filename": "navigation-list-item.js",
             "lineno": 24,
             "columnno": 8,
@@ -210,10 +175,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                774,
-                786
-            ],
+            "range": [774, 786],
             "filename": "navigation-list-item.js",
             "lineno": 24,
             "columnno": 17,
@@ -235,10 +197,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                798,
-                824
-            ],
+            "range": [798, 824],
             "filename": "navigation-list-item.js",
             "lineno": 25,
             "columnno": 8,
@@ -259,10 +218,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                810,
-                822
-            ],
+            "range": [810, 822],
             "filename": "navigation-list-item.js",
             "lineno": 25,
             "columnno": 20,
@@ -284,10 +240,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                834,
-                876
-            ],
+            "range": [834, 876],
             "filename": "navigation-list-item.js",
             "lineno": 26,
             "columnno": 8,
@@ -308,10 +261,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                846,
-                859
-            ],
+            "range": [846, 859],
             "filename": "navigation-list-item.js",
             "lineno": 26,
             "columnno": 20,
@@ -333,10 +283,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                861,
-                874
-            ],
+            "range": [861, 874],
             "filename": "navigation-list-item.js",
             "lineno": 26,
             "columnno": 35,
@@ -358,10 +305,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                886,
-                928
-            ],
+            "range": [886, 928],
             "filename": "navigation-list-item.js",
             "lineno": 27,
             "columnno": 8,
@@ -382,10 +326,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                898,
-                911
-            ],
+            "range": [898, 911],
             "filename": "navigation-list-item.js",
             "lineno": 27,
             "columnno": 20,
@@ -407,10 +348,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                913,
-                926
-            ],
+            "range": [913, 926],
             "filename": "navigation-list-item.js",
             "lineno": 27,
             "columnno": 35,
@@ -432,10 +370,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                938,
-                981
-            ],
+            "range": [938, 981],
             "filename": "navigation-list-item.js",
             "lineno": 28,
             "columnno": 8,
@@ -456,10 +391,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                952,
-                964
-            ],
+            "range": [952, 964],
             "filename": "navigation-list-item.js",
             "lineno": 28,
             "columnno": 22,
@@ -481,10 +413,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                966,
-                979
-            ],
+            "range": [966, 979],
             "filename": "navigation-list-item.js",
             "lineno": 28,
             "columnno": 36,
@@ -506,10 +435,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                991,
-                1022
-            ],
+            "range": [991, 1022],
             "filename": "navigation-list-item.js",
             "lineno": 29,
             "columnno": 8,
@@ -530,10 +456,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1008,
-                1020
-            ],
+            "range": [1008, 1020],
             "filename": "navigation-list-item.js",
             "lineno": 29,
             "columnno": 25,
@@ -555,10 +478,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1032,
-                1055
-            ],
+            "range": [1032, 1055],
             "filename": "navigation-list-item.js",
             "lineno": 30,
             "columnno": 8,
@@ -579,10 +499,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1041,
-                1053
-            ],
+            "range": [1041, 1053],
             "filename": "navigation-list-item.js",
             "lineno": 30,
             "columnno": 17,
@@ -604,10 +521,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                1085,
-                1156
-            ],
+            "range": [1085, 1156],
             "filename": "navigation-list-item.js",
             "lineno": 35,
             "columnno": 4,
@@ -632,10 +546,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-navigation-list-item\n * @fires MdNavigationListItemComponent#onNavigationListItemSelected\n */",
         "meta": {
-            "range": [
-                330,
-                2847
-            ],
+            "range": [330, 2847],
             "filename": "navigation-list-item.js",
             "lineno": 11,
             "columnno": 0,
@@ -650,9 +561,7 @@
         "name": "MdNavigationListItemComponent",
         "longname": "MdNavigationListItemComponent",
         "kind": "class",
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -661,18 +570,13 @@
                 "value": "md-navigation-list-item"
             }
         ],
-        "fires": [
-            "MdNavigationListItemComponent#event:onNavigationListItemSelected"
-        ],
+        "fires": ["MdNavigationListItemComponent#event:onNavigationListItemSelected"],
         "scope": "global"
     },
     {
         "comment": "",
         "meta": {
-            "range": [
-                1126,
-                1149
-            ],
+            "range": [1126, 1149],
             "filename": "navigation-list-item.js",
             "lineno": 37,
             "columnno": 8,
@@ -695,10 +599,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                1178,
-                1942
-            ],
+            "range": [1178, 1942],
             "filename": "navigation-list-item.js",
             "lineno": 42,
             "columnno": 4,
@@ -723,10 +624,7 @@
     {
         "comment": "/**\n     * @async\n     */",
         "meta": {
-            "range": [
-                1978,
-                2197
-            ],
+            "range": [1978, 2197],
             "filename": "navigation-list-item.js",
             "lineno": 57,
             "columnno": 4,
@@ -752,10 +650,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2140,
-                2190
-            ],
+            "range": [2140, 2190],
             "filename": "navigation-list-item.js",
             "lineno": 61,
             "columnno": 8,
@@ -778,10 +673,7 @@
     {
         "comment": "/**\n     * @async\n     */",
         "meta": {
-            "range": [
-                2233,
-                2355
-            ],
+            "range": [2233, 2355],
             "filename": "navigation-list-item.js",
             "lineno": 67,
             "columnno": 4,
@@ -807,10 +699,7 @@
     {
         "comment": "/**\n     * @async\n     * @param {Any} [changedProperties]\n     */",
         "meta": {
-            "range": [
-                2431,
-                2845
-            ],
+            "range": [2431, 2845],
             "filename": "navigation-list-item.js",
             "lineno": 76,
             "columnno": 4,
@@ -819,9 +708,7 @@
                 "id": "astnode100000225",
                 "name": "MdNavigationListItemComponent#updated",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "changedProperties"
-                ]
+                "paramnames": ["changedProperties"]
             },
             "vars": {
                 "": null
@@ -831,9 +718,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "changedProperties"
@@ -848,10 +733,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2788,
-                2812
-            ],
+            "range": [2788, 2812],
             "filename": "navigation-list-item.js",
             "lineno": 83,
             "columnno": 16,
@@ -872,10 +754,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2938,
-                2967
-            ],
+            "range": [2938, 2967],
             "filename": "navigation-list-item.js",
             "lineno": 89,
             "columnno": 9,
@@ -895,8 +774,6 @@
     {
         "kind": "package",
         "longname": "package:undefined",
-        "files": [
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\navigation-list\\navigation-list-item.js"
-        ]
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\navigation-list\\navigation-list-item.js"]
     }
 ]

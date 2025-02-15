@@ -2,10 +2,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-segmented-button\n * @fires MdSegmentedButtonComponent#onSegmentedButtonItemClick\n */",
         "meta": {
-            "range": [
-                278,
-                2036
-            ],
+            "range": [278, 2036],
             "filename": "segmented-button.js",
             "lineno": 10,
             "columnno": 0,
@@ -17,9 +14,7 @@
                 "paramnames": []
             }
         },
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -28,9 +23,7 @@
                 "value": "md-segmented-button"
             }
         ],
-        "fires": [
-            "MdSegmentedButtonComponent#event:onSegmentedButtonItemClick"
-        ],
+        "fires": ["MdSegmentedButtonComponent#event:onSegmentedButtonItemClick"],
         "name": "MdSegmentedButtonComponent",
         "longname": "MdSegmentedButtonComponent",
         "kind": "class",
@@ -40,10 +33,7 @@
     {
         "comment": "/**\n     * @property {Array} [items]\n     * @property {String} [type]\n     */",
         "meta": {
-            "range": [
-                419,
-                511
-            ],
+            "range": [419, 511],
             "filename": "segmented-button.js",
             "lineno": 15,
             "columnno": 4,
@@ -57,18 +47,14 @@
         "properties": [
             {
                 "type": {
-                    "names": [
-                        "Array"
-                    ]
+                    "names": ["Array"]
                 },
                 "optional": true,
                 "name": "items"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "type"
@@ -83,10 +69,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                449,
-                471
-            ],
+            "range": [449, 471],
             "filename": "segmented-button.js",
             "lineno": 16,
             "columnno": 8,
@@ -107,10 +90,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                458,
-                469
-            ],
+            "range": [458, 469],
             "filename": "segmented-button.js",
             "lineno": 16,
             "columnno": 17,
@@ -132,10 +112,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                481,
-                503
-            ],
+            "range": [481, 503],
             "filename": "segmented-button.js",
             "lineno": 17,
             "columnno": 8,
@@ -156,10 +133,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                489,
-                501
-            ],
+            "range": [489, 501],
             "filename": "segmented-button.js",
             "lineno": 17,
             "columnno": 16,
@@ -181,10 +155,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                550,
-                592
-            ],
+            "range": [550, 592],
             "filename": "segmented-button.js",
             "lineno": 23,
             "columnno": 4,
@@ -205,10 +176,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                614,
-                714
-            ],
+            "range": [614, 714],
             "filename": "segmented-button.js",
             "lineno": 27,
             "columnno": 4,
@@ -233,10 +201,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-segmented-button\n * @fires MdSegmentedButtonComponent#onSegmentedButtonItemClick\n */",
         "meta": {
-            "range": [
-                278,
-                2036
-            ],
+            "range": [278, 2036],
             "filename": "segmented-button.js",
             "lineno": 10,
             "columnno": 0,
@@ -251,9 +216,7 @@
         "name": "MdSegmentedButtonComponent",
         "longname": "MdSegmentedButtonComponent",
         "kind": "class",
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -262,18 +225,13 @@
                 "value": "md-segmented-button"
             }
         ],
-        "fires": [
-            "MdSegmentedButtonComponent#event:onSegmentedButtonItemClick"
-        ],
+        "fires": ["MdSegmentedButtonComponent#event:onSegmentedButtonItemClick"],
         "scope": "global"
     },
     {
         "comment": "",
         "meta": {
-            "range": [
-                655,
-                670
-            ],
+            "range": [655, 670],
             "filename": "segmented-button.js",
             "lineno": 29,
             "columnno": 8,
@@ -296,10 +254,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                680,
-                707
-            ],
+            "range": [680, 707],
             "filename": "segmented-button.js",
             "lineno": 30,
             "columnno": 8,
@@ -322,10 +277,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     */",
         "meta": {
-            "range": [
-                763,
-                1341
-            ],
+            "range": [763, 1341],
             "filename": "segmented-button.js",
             "lineno": 36,
             "columnno": 4,
@@ -334,9 +286,7 @@
                 "id": "astnode100000053",
                 "name": "MdSegmentedButtonComponent#renderButton",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item"
-                ]
+                "paramnames": ["item"]
             },
             "vars": {
                 "": null
@@ -345,9 +295,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
@@ -362,10 +310,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                1363,
-                1445
-            ],
+            "range": [1363, 1445],
             "filename": "segmented-button.js",
             "lineno": 54,
             "columnno": 4,
@@ -390,10 +335,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                1467,
-                1580
-            ],
+            "range": [1467, 1580],
             "filename": "segmented-button.js",
             "lineno": 60,
             "columnno": 4,
@@ -418,10 +360,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                1630,
-                2034
-            ],
+            "range": [1630, 2034],
             "filename": "segmented-button.js",
             "lineno": 68,
             "columnno": 4,
@@ -430,9 +369,7 @@
                 "id": "astnode100000140",
                 "name": "MdSegmentedButtonComponent#handleSegmentedButtonItemClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -441,9 +378,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -458,10 +393,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1684,
-                1715
-            ],
+            "range": [1684, 1715],
             "filename": "segmented-button.js",
             "lineno": 69,
             "columnno": 14,
@@ -484,10 +416,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1821,
-                1850
-            ],
+            "range": [1821, 1850],
             "filename": "segmented-button.js",
             "lineno": 72,
             "columnno": 16,
@@ -510,10 +439,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1897,
-                1927
-            ],
+            "range": [1897, 1927],
             "filename": "segmented-button.js",
             "lineno": 75,
             "columnno": 12,
@@ -537,10 +463,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2019,
-                2024
-            ],
+            "range": [2019, 2024],
             "filename": "segmented-button.js",
             "lineno": 78,
             "columnno": 50,
@@ -561,10 +484,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2120,
-                2146
-            ],
+            "range": [2120, 2146],
             "filename": "segmented-button.js",
             "lineno": 82,
             "columnno": 9,
@@ -584,8 +504,6 @@
     {
         "kind": "package",
         "longname": "package:undefined",
-        "files": [
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\segmented-button\\segmented-button.js"
-        ]
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\segmented-button\\segmented-button.js"]
     }
 ]

@@ -2,10 +2,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-tabs\n * @fires MdTabsComponent#onTabClick\n */",
         "meta": {
-            "range": [
-                239,
-                3991
-            ],
+            "range": [239, 3991],
             "filename": "tabs.js",
             "lineno": 10,
             "columnno": 0,
@@ -17,9 +14,7 @@
                 "paramnames": []
             }
         },
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -28,9 +23,7 @@
                 "value": "md-tabs"
             }
         ],
-        "fires": [
-            "MdTabsComponent#event:onTabClick"
-        ],
+        "fires": ["MdTabsComponent#event:onTabClick"],
         "name": "MdTabsComponent",
         "longname": "MdTabsComponent",
         "kind": "class",
@@ -40,10 +33,7 @@
     {
         "comment": "/**\n     * @property {Array} [items]\n     * @property {Object} [rippleOptions]\n     * @property {String} [variant]\n     */",
         "meta": {
-            "range": [
-                414,
-                550
-            ],
+            "range": [414, 550],
             "filename": "tabs.js",
             "lineno": 16,
             "columnno": 4,
@@ -57,27 +47,21 @@
         "properties": [
             {
                 "type": {
-                    "names": [
-                        "Array"
-                    ]
+                    "names": ["Array"]
                 },
                 "optional": true,
                 "name": "items"
             },
             {
                 "type": {
-                    "names": [
-                        "Object"
-                    ]
+                    "names": ["Object"]
                 },
                 "optional": true,
                 "name": "rippleOptions"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "variant"
@@ -92,10 +76,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                444,
-                466
-            ],
+            "range": [444, 466],
             "filename": "tabs.js",
             "lineno": 17,
             "columnno": 8,
@@ -116,10 +97,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                453,
-                464
-            ],
+            "range": [453, 464],
             "filename": "tabs.js",
             "lineno": 17,
             "columnno": 17,
@@ -141,10 +119,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                476,
-                507
-            ],
+            "range": [476, 507],
             "filename": "tabs.js",
             "lineno": 18,
             "columnno": 8,
@@ -165,10 +140,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                493,
-                505
-            ],
+            "range": [493, 505],
             "filename": "tabs.js",
             "lineno": 18,
             "columnno": 25,
@@ -190,10 +162,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                517,
-                542
-            ],
+            "range": [517, 542],
             "filename": "tabs.js",
             "lineno": 19,
             "columnno": 8,
@@ -214,10 +183,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                528,
-                540
-            ],
+            "range": [528, 540],
             "filename": "tabs.js",
             "lineno": 19,
             "columnno": 19,
@@ -239,10 +205,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                589,
-                625
-            ],
+            "range": [589, 625],
             "filename": "tabs.js",
             "lineno": 25,
             "columnno": 4,
@@ -263,10 +226,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                647,
-                744
-            ],
+            "range": [647, 744],
             "filename": "tabs.js",
             "lineno": 29,
             "columnno": 4,
@@ -291,10 +251,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-tabs\n * @fires MdTabsComponent#onTabClick\n */",
         "meta": {
-            "range": [
-                239,
-                3991
-            ],
+            "range": [239, 3991],
             "filename": "tabs.js",
             "lineno": 10,
             "columnno": 0,
@@ -309,9 +266,7 @@
         "name": "MdTabsComponent",
         "longname": "MdTabsComponent",
         "kind": "class",
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -320,18 +275,13 @@
                 "value": "md-tabs"
             }
         ],
-        "fires": [
-            "MdTabsComponent#event:onTabClick"
-        ],
+        "fires": ["MdTabsComponent#event:onTabClick"],
         "scope": "global"
     },
     {
         "comment": "",
         "meta": {
-            "range": [
-                688,
-                703
-            ],
+            "range": [688, 703],
             "filename": "tabs.js",
             "lineno": 31,
             "columnno": 8,
@@ -354,10 +304,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                713,
-                737
-            ],
+            "range": [713, 737],
             "filename": "tabs.js",
             "lineno": 32,
             "columnno": 8,
@@ -380,10 +327,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     */",
         "meta": {
-            "range": [
-                793,
-                1438
-            ],
+            "range": [793, 1438],
             "filename": "tabs.js",
             "lineno": 38,
             "columnno": 4,
@@ -392,9 +336,7 @@
                 "id": "astnode100000057",
                 "name": "MdTabsComponent#renderTab",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item"
-                ]
+                "paramnames": ["item"]
             },
             "vars": {
                 "": null
@@ -403,9 +345,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
@@ -420,10 +360,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                1460,
-                1539
-            ],
+            "range": [1460, 1539],
             "filename": "tabs.js",
             "lineno": 57,
             "columnno": 4,
@@ -448,10 +385,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                1561,
-                1750
-            ],
+            "range": [1561, 1750],
             "filename": "tabs.js",
             "lineno": 63,
             "columnno": 4,
@@ -476,10 +410,7 @@
     {
         "comment": "/**\n     * @param {Any} [changedProperties]\n     */",
         "meta": {
-            "range": [
-                1812,
-                2099
-            ],
+            "range": [1812, 2099],
             "filename": "tabs.js",
             "lineno": 72,
             "columnno": 4,
@@ -488,9 +419,7 @@
                 "id": "astnode100000167",
                 "name": "MdTabsComponent#updated",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "changedProperties"
-                ]
+                "paramnames": ["changedProperties"]
             },
             "vars": {
                 "": null
@@ -499,9 +428,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "changedProperties"
@@ -516,10 +443,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                2149,
-                2476
-            ],
+            "range": [2149, 2476],
             "filename": "tabs.js",
             "lineno": 84,
             "columnno": 4,
@@ -528,9 +452,7 @@
                 "id": "astnode100000211",
                 "name": "MdTabsComponent#handleTabClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -539,9 +461,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -556,10 +476,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2270,
-                2301
-            ],
+            "range": [2270, 2301],
             "filename": "tabs.js",
             "lineno": 86,
             "columnno": 14,
@@ -582,10 +499,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2354,
-                2383
-            ],
+            "range": [2354, 2383],
             "filename": "tabs.js",
             "lineno": 88,
             "columnno": 12,
@@ -608,10 +522,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2461,
-                2466
-            ],
+            "range": [2461, 2466],
             "filename": "tabs.js",
             "lineno": 91,
             "columnno": 34,
@@ -632,10 +543,7 @@
     {
         "comment": "/**\n     * @async\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                2540,
-                3989
-            ],
+            "range": [2540, 3989],
             "filename": "tabs.js",
             "lineno": 98,
             "columnno": 4,
@@ -644,9 +552,7 @@
                 "id": "astnode100000264",
                 "name": "MdTabsComponent#handleTabSelected",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -656,9 +562,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -673,10 +577,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2641,
-                2663
-            ],
+            "range": [2641, 2663],
             "filename": "tabs.js",
             "lineno": 100,
             "columnno": 18,
@@ -699,10 +600,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2683,
-                2698
-            ],
+            "range": [2683, 2698],
             "filename": "tabs.js",
             "lineno": 101,
             "columnno": 18,
@@ -725,10 +623,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2712,
-                2753
-            ],
+            "range": [2712, 2753],
             "filename": "tabs.js",
             "lineno": 102,
             "columnno": 12,
@@ -751,10 +646,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2767,
-                2816
-            ],
+            "range": [2767, 2816],
             "filename": "tabs.js",
             "lineno": 103,
             "columnno": 12,
@@ -777,10 +669,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2836,
-                2898
-            ],
+            "range": [2836, 2898],
             "filename": "tabs.js",
             "lineno": 104,
             "columnno": 18,
@@ -803,10 +692,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3074,
-                3105
-            ],
+            "range": [3074, 3105],
             "filename": "tabs.js",
             "lineno": 108,
             "columnno": 12,
@@ -829,10 +715,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3123,
-                3144
-            ],
+            "range": [3123, 3144],
             "filename": "tabs.js",
             "lineno": 109,
             "columnno": 16,
@@ -855,10 +738,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3162,
-                3213
-            ],
+            "range": [3162, 3213],
             "filename": "tabs.js",
             "lineno": 110,
             "columnno": 16,
@@ -881,10 +761,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3300,
-                3343
-            ],
+            "range": [3300, 3343],
             "filename": "tabs.js",
             "lineno": 112,
             "columnno": 22,
@@ -907,10 +784,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3361,
-                3401
-            ],
+            "range": [3361, 3401],
             "filename": "tabs.js",
             "lineno": 113,
             "columnno": 16,
@@ -934,10 +808,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3419,
-                3472
-            ],
+            "range": [3419, 3472],
             "filename": "tabs.js",
             "lineno": 114,
             "columnno": 16,
@@ -961,10 +832,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3568,
-                3611
-            ],
+            "range": [3568, 3611],
             "filename": "tabs.js",
             "lineno": 116,
             "columnno": 26,
@@ -987,10 +855,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3670,
-                3752
-            ],
+            "range": [3670, 3752],
             "filename": "tabs.js",
             "lineno": 118,
             "columnno": 24,
@@ -1014,10 +879,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4052,
-                4067
-            ],
+            "range": [4052, 4067],
             "filename": "tabs.js",
             "lineno": 128,
             "columnno": 9,
@@ -1037,8 +899,6 @@
     {
         "kind": "package",
         "longname": "package:undefined",
-        "files": [
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tabs\\tabs.js"
-        ]
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tabs\\tabs.js"]
     }
 ]

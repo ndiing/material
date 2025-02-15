@@ -2,10 +2,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-scrim\n * @fires MdScrimComponent#onScrimShow\n * @fires MdScrimComponent#onScrimClose\n * @fires MdScrimComponent#onScrimClick\n * @fires MdScrimComponent#onScrimShown\n * @fires MdScrimComponent#onScrimClosed\n */",
         "meta": {
-            "range": [
-                345,
-                2191
-            ],
+            "range": [345, 2191],
             "filename": "scrim.js",
             "lineno": 13,
             "columnno": 0,
@@ -17,9 +14,7 @@
                 "paramnames": []
             }
         },
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -28,13 +23,7 @@
                 "value": "md-scrim"
             }
         ],
-        "fires": [
-            "MdScrimComponent#event:onScrimShow",
-            "MdScrimComponent#event:onScrimClose",
-            "MdScrimComponent#event:onScrimClick",
-            "MdScrimComponent#event:onScrimShown",
-            "MdScrimComponent#event:onScrimClosed"
-        ],
+        "fires": ["MdScrimComponent#event:onScrimShow", "MdScrimComponent#event:onScrimClose", "MdScrimComponent#event:onScrimClick", "MdScrimComponent#event:onScrimShown", "MdScrimComponent#event:onScrimClosed"],
         "name": "MdScrimComponent",
         "longname": "MdScrimComponent",
         "kind": "class",
@@ -43,10 +32,7 @@
     {
         "comment": "/**\n     * @property {Boolean} [open]\n     */",
         "meta": {
-            "range": [
-                444,
-                520
-            ],
+            "range": [444, 520],
             "filename": "scrim.js",
             "lineno": 17,
             "columnno": 4,
@@ -60,9 +46,7 @@
         "properties": [
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "open"
@@ -77,10 +61,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                474,
-                512
-            ],
+            "range": [474, 512],
             "filename": "scrim.js",
             "lineno": 18,
             "columnno": 8,
@@ -101,10 +82,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                482,
-                495
-            ],
+            "range": [482, 495],
             "filename": "scrim.js",
             "lineno": 18,
             "columnno": 16,
@@ -126,10 +104,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                497,
-                510
-            ],
+            "range": [497, 510],
             "filename": "scrim.js",
             "lineno": 18,
             "columnno": 31,
@@ -151,10 +126,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                542,
-                773
-            ],
+            "range": [542, 773],
             "filename": "scrim.js",
             "lineno": 23,
             "columnno": 4,
@@ -179,10 +151,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                647,
-                703
-            ],
+            "range": [647, 703],
             "filename": "scrim.js",
             "lineno": 26,
             "columnno": 8,
@@ -205,10 +174,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                795,
-                929
-            ],
+            "range": [795, 929],
             "filename": "scrim.js",
             "lineno": 32,
             "columnno": 4,
@@ -233,10 +199,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                951,
-                1161
-            ],
+            "range": [951, 1161],
             "filename": "scrim.js",
             "lineno": 39,
             "columnno": 4,
@@ -261,10 +224,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                968,
-                1024
-            ],
+            "range": [968, 1024],
             "filename": "scrim.js",
             "lineno": 40,
             "columnno": 8,
@@ -287,10 +247,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1104,
-                1120
-            ],
+            "range": [1104, 1120],
             "filename": "scrim.js",
             "lineno": 42,
             "columnno": 8,
@@ -313,10 +270,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                1183,
-                1399
-            ],
+            "range": [1183, 1399],
             "filename": "scrim.js",
             "lineno": 48,
             "columnno": 4,
@@ -341,10 +295,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1201,
-                1259
-            ],
+            "range": [1201, 1259],
             "filename": "scrim.js",
             "lineno": 49,
             "columnno": 8,
@@ -367,10 +318,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1340,
-                1357
-            ],
+            "range": [1340, 1357],
             "filename": "scrim.js",
             "lineno": 51,
             "columnno": 8,
@@ -393,10 +341,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                1421,
-                1500
-            ],
+            "range": [1421, 1500],
             "filename": "scrim.js",
             "lineno": 57,
             "columnno": 4,
@@ -421,10 +366,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                1550,
-                1649
-            ],
+            "range": [1550, 1649],
             "filename": "scrim.js",
             "lineno": 65,
             "columnno": 4,
@@ -433,9 +375,7 @@
                 "id": "astnode100000172",
                 "name": "MdScrimComponent#handleScrimClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -444,9 +384,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -461,10 +399,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1634,
-                1639
-            ],
+            "range": [1634, 1639],
             "filename": "scrim.js",
             "lineno": 67,
             "columnno": 36,
@@ -485,10 +420,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                1699,
-                1918
-            ],
+            "range": [1699, 1918],
             "filename": "scrim.js",
             "lineno": 73,
             "columnno": 4,
@@ -497,9 +429,7 @@
                 "id": "astnode100000191",
                 "name": "MdScrimComponent#handleScrimShown",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -508,9 +438,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -525,10 +453,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1893,
-                1898
-            ],
+            "range": [1893, 1898],
             "filename": "scrim.js",
             "lineno": 76,
             "columnno": 40,
@@ -549,10 +474,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                1968,
-                2189
-            ],
+            "range": [1968, 2189],
             "filename": "scrim.js",
             "lineno": 83,
             "columnno": 4,
@@ -561,9 +483,7 @@
                 "id": "astnode100000221",
                 "name": "MdScrimComponent#handleScrimClosed",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -572,9 +492,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -589,10 +507,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2164,
-                2169
-            ],
+            "range": [2164, 2169],
             "filename": "scrim.js",
             "lineno": 86,
             "columnno": 41,
@@ -613,10 +528,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2254,
-                2270
-            ],
+            "range": [2254, 2270],
             "filename": "scrim.js",
             "lineno": 91,
             "columnno": 9,
@@ -636,8 +548,6 @@
     {
         "kind": "package",
         "longname": "package:undefined",
-        "files": [
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scrim\\scrim.js"
-        ]
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scrim\\scrim.js"]
     }
 ]

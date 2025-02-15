@@ -2,10 +2,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-tree-item\n * @fires MdTreeItemComponent#onTreeItemSelected\n */",
         "meta": {
-            "range": [
-                299,
-                2809
-            ],
+            "range": [299, 2809],
             "filename": "tree-item.js",
             "lineno": 11,
             "columnno": 0,
@@ -17,9 +14,7 @@
                 "paramnames": []
             }
         },
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -28,9 +23,7 @@
                 "value": "md-tree-item"
             }
         ],
-        "fires": [
-            "MdTreeItemComponent#event:onTreeItemSelected"
-        ],
+        "fires": ["MdTreeItemComponent#event:onTreeItemSelected"],
         "name": "MdTreeItemComponent",
         "longname": "MdTreeItemComponent",
         "kind": "class",
@@ -40,10 +33,7 @@
     {
         "comment": "/**\n     * @property {Boolean} [selected]\n     * @property {Boolean} [expanded]\n     * @property {String} [indent]\n     * @property {Array} [actions]\n     * @property {Array} [nodeIcons]\n     * @property {Array} [leafIcons]\n     * @property {String} [label]\n     * @property {String} [routerLink]\n     */",
         "meta": {
-            "range": [
-                660,
-                1018
-            ],
+            "range": [660, 1018],
             "filename": "tree-item.js",
             "lineno": 22,
             "columnno": 4,
@@ -57,72 +47,56 @@
         "properties": [
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "selected"
             },
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "expanded"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "indent"
             },
             {
                 "type": {
-                    "names": [
-                        "Array"
-                    ]
+                    "names": ["Array"]
                 },
                 "optional": true,
                 "name": "actions"
             },
             {
                 "type": {
-                    "names": [
-                        "Array"
-                    ]
+                    "names": ["Array"]
                 },
                 "optional": true,
                 "name": "nodeIcons"
             },
             {
                 "type": {
-                    "names": [
-                        "Array"
-                    ]
+                    "names": ["Array"]
                 },
                 "optional": true,
                 "name": "leafIcons"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "label"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "routerLink"
@@ -137,10 +111,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                690,
-                732
-            ],
+            "range": [690, 732],
             "filename": "tree-item.js",
             "lineno": 23,
             "columnno": 8,
@@ -161,10 +132,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                702,
-                715
-            ],
+            "range": [702, 715],
             "filename": "tree-item.js",
             "lineno": 23,
             "columnno": 20,
@@ -186,10 +154,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                717,
-                730
-            ],
+            "range": [717, 730],
             "filename": "tree-item.js",
             "lineno": 23,
             "columnno": 35,
@@ -211,10 +176,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                742,
-                784
-            ],
+            "range": [742, 784],
             "filename": "tree-item.js",
             "lineno": 24,
             "columnno": 8,
@@ -235,10 +197,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                754,
-                767
-            ],
+            "range": [754, 767],
             "filename": "tree-item.js",
             "lineno": 24,
             "columnno": 20,
@@ -260,10 +219,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                769,
-                782
-            ],
+            "range": [769, 782],
             "filename": "tree-item.js",
             "lineno": 24,
             "columnno": 35,
@@ -285,10 +241,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                794,
-                818
-            ],
+            "range": [794, 818],
             "filename": "tree-item.js",
             "lineno": 25,
             "columnno": 8,
@@ -309,10 +262,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                804,
-                816
-            ],
+            "range": [804, 816],
             "filename": "tree-item.js",
             "lineno": 25,
             "columnno": 18,
@@ -334,10 +284,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                828,
-                852
-            ],
+            "range": [828, 852],
             "filename": "tree-item.js",
             "lineno": 26,
             "columnno": 8,
@@ -358,10 +305,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                839,
-                850
-            ],
+            "range": [839, 850],
             "filename": "tree-item.js",
             "lineno": 26,
             "columnno": 19,
@@ -383,10 +327,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                862,
-                888
-            ],
+            "range": [862, 888],
             "filename": "tree-item.js",
             "lineno": 27,
             "columnno": 8,
@@ -407,10 +348,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                875,
-                886
-            ],
+            "range": [875, 886],
             "filename": "tree-item.js",
             "lineno": 27,
             "columnno": 21,
@@ -432,10 +370,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                898,
-                924
-            ],
+            "range": [898, 924],
             "filename": "tree-item.js",
             "lineno": 28,
             "columnno": 8,
@@ -456,10 +391,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                911,
-                922
-            ],
+            "range": [911, 922],
             "filename": "tree-item.js",
             "lineno": 28,
             "columnno": 21,
@@ -481,10 +413,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                934,
-                957
-            ],
+            "range": [934, 957],
             "filename": "tree-item.js",
             "lineno": 29,
             "columnno": 8,
@@ -505,10 +434,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                943,
-                955
-            ],
+            "range": [943, 955],
             "filename": "tree-item.js",
             "lineno": 29,
             "columnno": 17,
@@ -530,10 +456,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                967,
-                1010
-            ],
+            "range": [967, 1010],
             "filename": "tree-item.js",
             "lineno": 30,
             "columnno": 8,
@@ -554,10 +477,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                981,
-                993
-            ],
+            "range": [981, 993],
             "filename": "tree-item.js",
             "lineno": 30,
             "columnno": 22,
@@ -579,10 +499,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                995,
-                1008
-            ],
+            "range": [995, 1008],
             "filename": "tree-item.js",
             "lineno": 30,
             "columnno": 36,
@@ -604,10 +521,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                1057,
-                1252
-            ],
+            "range": [1057, 1252],
             "filename": "tree-item.js",
             "lineno": 36,
             "columnno": 4,
@@ -633,10 +547,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                1291,
-                1487
-            ],
+            "range": [1291, 1487],
             "filename": "tree-item.js",
             "lineno": 45,
             "columnno": 4,
@@ -662,10 +573,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                1509,
-                1716
-            ],
+            "range": [1509, 1716],
             "filename": "tree-item.js",
             "lineno": 53,
             "columnno": 4,
@@ -690,10 +598,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-tree-item\n * @fires MdTreeItemComponent#onTreeItemSelected\n */",
         "meta": {
-            "range": [
-                299,
-                2809
-            ],
+            "range": [299, 2809],
             "filename": "tree-item.js",
             "lineno": 11,
             "columnno": 0,
@@ -708,9 +613,7 @@
         "name": "MdTreeItemComponent",
         "longname": "MdTreeItemComponent",
         "kind": "class",
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -719,18 +622,13 @@
                 "value": "md-tree-item"
             }
         ],
-        "fires": [
-            "MdTreeItemComponent#event:onTreeItemSelected"
-        ],
+        "fires": ["MdTreeItemComponent#event:onTreeItemSelected"],
         "scope": "global"
     },
     {
         "comment": "",
         "meta": {
-            "range": [
-                1550,
-                1612
-            ],
+            "range": [1550, 1612],
             "filename": "tree-item.js",
             "lineno": 55,
             "columnno": 8,
@@ -753,10 +651,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1622,
-                1664
-            ],
+            "range": [1622, 1664],
             "filename": "tree-item.js",
             "lineno": 56,
             "columnno": 8,
@@ -779,10 +674,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1674,
-                1709
-            ],
+            "range": [1674, 1709],
             "filename": "tree-item.js",
             "lineno": 57,
             "columnno": 8,
@@ -805,10 +697,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                1738,
-                2122
-            ],
+            "range": [1738, 2122],
             "filename": "tree-item.js",
             "lineno": 62,
             "columnno": 4,
@@ -833,10 +722,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1785,
-                1804
-            ],
+            "range": [1785, 1804],
             "filename": "tree-item.js",
             "lineno": 63,
             "columnno": 36,
@@ -857,10 +743,7 @@
     {
         "comment": "/**\n     * @async\n     */",
         "meta": {
-            "range": [
-                2158,
-                2350
-            ],
+            "range": [2158, 2350],
             "filename": "tree-item.js",
             "lineno": 69,
             "columnno": 4,
@@ -886,10 +769,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2309,
-                2343
-            ],
+            "range": [2309, 2343],
             "filename": "tree-item.js",
             "lineno": 73,
             "columnno": 8,
@@ -912,10 +792,7 @@
     {
         "comment": "/**\n     * @async\n     */",
         "meta": {
-            "range": [
-                2386,
-                2508
-            ],
+            "range": [2386, 2508],
             "filename": "tree-item.js",
             "lineno": 79,
             "columnno": 4,
@@ -941,10 +818,7 @@
     {
         "comment": "/**\n     * @async\n     * @param {Any} [changedProperties]\n     */",
         "meta": {
-            "range": [
-                2584,
-                2807
-            ],
+            "range": [2584, 2807],
             "filename": "tree-item.js",
             "lineno": 88,
             "columnno": 4,
@@ -953,9 +827,7 @@
                 "id": "astnode100000274",
                 "name": "MdTreeItemComponent#updated",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "changedProperties"
-                ]
+                "paramnames": ["changedProperties"]
             },
             "vars": {
                 "": null
@@ -965,9 +837,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "changedProperties"
@@ -982,10 +852,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2773,
-                2787
-            ],
+            "range": [2773, 2787],
             "filename": "tree-item.js",
             "lineno": 91,
             "columnno": 46,
@@ -1006,10 +873,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2879,
-                2898
-            ],
+            "range": [2879, 2898],
             "filename": "tree-item.js",
             "lineno": 96,
             "columnno": 9,
@@ -1029,8 +893,6 @@
     {
         "kind": "package",
         "longname": "package:undefined",
-        "files": [
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree\\tree-item.js"
-        ]
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree\\tree-item.js"]
     }
 ]

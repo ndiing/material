@@ -2,10 +2,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-top-app-bar\n * @fires MdTopAppBarComponent#onTopAppBarShown\n * @fires MdTopAppBarComponent#onTopAppBarClosed\n * @fires MdTopAppBarComponent#onTopAppBarIconButtonClick\n */",
         "meta": {
-            "range": [
-                415,
-                3359
-            ],
+            "range": [415, 3359],
             "filename": "top-app-bar.js",
             "lineno": 13,
             "columnno": 0,
@@ -17,9 +14,7 @@
                 "paramnames": []
             }
         },
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -28,11 +23,7 @@
                 "value": "md-top-app-bar"
             }
         ],
-        "fires": [
-            "MdTopAppBarComponent#event:onTopAppBarShown",
-            "MdTopAppBarComponent#event:onTopAppBarClosed",
-            "MdTopAppBarComponent#event:onTopAppBarIconButtonClick"
-        ],
+        "fires": ["MdTopAppBarComponent#event:onTopAppBarShown", "MdTopAppBarComponent#event:onTopAppBarClosed", "MdTopAppBarComponent#event:onTopAppBarIconButtonClick"],
         "name": "MdTopAppBarComponent",
         "longname": "MdTopAppBarComponent",
         "kind": "class",
@@ -42,10 +33,7 @@
     {
         "comment": "/**\n     * @property {Array} [leadingActions]\n     * @property {String} [label]\n     * @property {String} [sublabel]\n     * @property {Array} [trailingActions]\n     * @property {Boolean} [open]\n     */",
         "meta": {
-            "range": [
-                674,
-                902
-            ],
+            "range": [674, 902],
             "filename": "top-app-bar.js",
             "lineno": 21,
             "columnno": 4,
@@ -59,45 +47,35 @@
         "properties": [
             {
                 "type": {
-                    "names": [
-                        "Array"
-                    ]
+                    "names": ["Array"]
                 },
                 "optional": true,
                 "name": "leadingActions"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "label"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "sublabel"
             },
             {
                 "type": {
-                    "names": [
-                        "Array"
-                    ]
+                    "names": ["Array"]
                 },
                 "optional": true,
                 "name": "trailingActions"
             },
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "open"
@@ -112,10 +90,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                704,
-                735
-            ],
+            "range": [704, 735],
             "filename": "top-app-bar.js",
             "lineno": 22,
             "columnno": 8,
@@ -136,10 +111,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                722,
-                733
-            ],
+            "range": [722, 733],
             "filename": "top-app-bar.js",
             "lineno": 22,
             "columnno": 26,
@@ -161,10 +133,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                745,
-                768
-            ],
+            "range": [745, 768],
             "filename": "top-app-bar.js",
             "lineno": 23,
             "columnno": 8,
@@ -185,10 +154,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                754,
-                766
-            ],
+            "range": [754, 766],
             "filename": "top-app-bar.js",
             "lineno": 23,
             "columnno": 17,
@@ -210,10 +176,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                778,
-                804
-            ],
+            "range": [778, 804],
             "filename": "top-app-bar.js",
             "lineno": 24,
             "columnno": 8,
@@ -234,10 +197,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                790,
-                802
-            ],
+            "range": [790, 802],
             "filename": "top-app-bar.js",
             "lineno": 24,
             "columnno": 20,
@@ -259,10 +219,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                814,
-                846
-            ],
+            "range": [814, 846],
             "filename": "top-app-bar.js",
             "lineno": 25,
             "columnno": 8,
@@ -283,10 +240,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                833,
-                844
-            ],
+            "range": [833, 844],
             "filename": "top-app-bar.js",
             "lineno": 25,
             "columnno": 27,
@@ -308,10 +262,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                856,
-                894
-            ],
+            "range": [856, 894],
             "filename": "top-app-bar.js",
             "lineno": 26,
             "columnno": 8,
@@ -332,10 +283,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                864,
-                877
-            ],
+            "range": [864, 877],
             "filename": "top-app-bar.js",
             "lineno": 26,
             "columnno": 16,
@@ -357,10 +305,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                879,
-                892
-            ],
+            "range": [879, 892],
             "filename": "top-app-bar.js",
             "lineno": 26,
             "columnno": 31,
@@ -382,10 +327,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                924,
-                962
-            ],
+            "range": [924, 962],
             "filename": "top-app-bar.js",
             "lineno": 31,
             "columnno": 4,
@@ -410,10 +352,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-top-app-bar\n * @fires MdTopAppBarComponent#onTopAppBarShown\n * @fires MdTopAppBarComponent#onTopAppBarClosed\n * @fires MdTopAppBarComponent#onTopAppBarIconButtonClick\n */",
         "meta": {
-            "range": [
-                415,
-                3359
-            ],
+            "range": [415, 3359],
             "filename": "top-app-bar.js",
             "lineno": 13,
             "columnno": 0,
@@ -428,9 +367,7 @@
         "name": "MdTopAppBarComponent",
         "longname": "MdTopAppBarComponent",
         "kind": "class",
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -439,20 +376,13 @@
                 "value": "md-top-app-bar"
             }
         ],
-        "fires": [
-            "MdTopAppBarComponent#event:onTopAppBarShown",
-            "MdTopAppBarComponent#event:onTopAppBarClosed",
-            "MdTopAppBarComponent#event:onTopAppBarIconButtonClick"
-        ],
+        "fires": ["MdTopAppBarComponent#event:onTopAppBarShown", "MdTopAppBarComponent#event:onTopAppBarClosed", "MdTopAppBarComponent#event:onTopAppBarIconButtonClick"],
         "scope": "global"
     },
     {
         "comment": "/**\n     * @param {Any} [item]\n     */",
         "meta": {
-            "range": [
-                1011,
-                1542
-            ],
+            "range": [1011, 1542],
             "filename": "top-app-bar.js",
             "lineno": 38,
             "columnno": 4,
@@ -461,9 +391,7 @@
                 "id": "astnode100000055",
                 "name": "MdTopAppBarComponent#renderIconButton",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item"
-                ]
+                "paramnames": ["item"]
             },
             "vars": {
                 "": null
@@ -472,9 +400,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
@@ -489,10 +415,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                1564,
-                2210
-            ],
+            "range": [1564, 2210],
             "filename": "top-app-bar.js",
             "lineno": 55,
             "columnno": 4,
@@ -517,10 +440,7 @@
     {
         "comment": "/**\n     * @async\n     */",
         "meta": {
-            "range": [
-                2246,
-                2630
-            ],
+            "range": [2246, 2630],
             "filename": "top-app-bar.js",
             "lineno": 62,
             "columnno": 4,
@@ -546,10 +466,7 @@
     {
         "comment": "/**\n     * @param {Any} [changedProperties]\n     */",
         "meta": {
-            "range": [
-                2692,
-                2768
-            ],
+            "range": [2692, 2768],
             "filename": "top-app-bar.js",
             "lineno": 74,
             "columnno": 4,
@@ -558,9 +475,7 @@
                 "id": "astnode100000259",
                 "name": "MdTopAppBarComponent#updated",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "changedProperties"
-                ]
+                "paramnames": ["changedProperties"]
             },
             "vars": {
                 "": null
@@ -569,9 +484,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "changedProperties"
@@ -586,10 +499,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                2790,
-                2933
-            ],
+            "range": [2790, 2933],
             "filename": "top-app-bar.js",
             "lineno": 80,
             "columnno": 4,
@@ -614,10 +524,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2871,
-                2887
-            ],
+            "range": [2871, 2887],
             "filename": "top-app-bar.js",
             "lineno": 82,
             "columnno": 8,
@@ -640,10 +547,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                2955,
-                3101
-            ],
+            "range": [2955, 3101],
             "filename": "top-app-bar.js",
             "lineno": 88,
             "columnno": 4,
@@ -668,10 +572,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3037,
-                3054
-            ],
+            "range": [3037, 3054],
             "filename": "top-app-bar.js",
             "lineno": 90,
             "columnno": 8,
@@ -694,10 +595,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                3123,
-                3202
-            ],
+            "range": [3123, 3202],
             "filename": "top-app-bar.js",
             "lineno": 96,
             "columnno": 4,
@@ -722,10 +620,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                3252,
-                3357
-            ],
+            "range": [3252, 3357],
             "filename": "top-app-bar.js",
             "lineno": 104,
             "columnno": 4,
@@ -734,9 +629,7 @@
                 "id": "astnode100000336",
                 "name": "MdTopAppBarComponent#handleTopAppBarIconButtonClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -745,9 +638,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -762,10 +653,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3342,
-                3347
-            ],
+            "range": [3342, 3347],
             "filename": "top-app-bar.js",
             "lineno": 105,
             "columnno": 50,
@@ -786,10 +674,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3432,
-                3452
-            ],
+            "range": [3432, 3452],
             "filename": "top-app-bar.js",
             "lineno": 109,
             "columnno": 9,
@@ -809,8 +694,6 @@
     {
         "kind": "package",
         "longname": "package:undefined",
-        "files": [
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\top-app-bar\\top-app-bar.js"
-        ]
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\top-app-bar\\top-app-bar.js"]
     }
 ]

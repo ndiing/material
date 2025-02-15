@@ -2,10 +2,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-side-sheet\n * @fires MdSideSheetComponent#onSideSheetShow\n * @fires MdSideSheetComponent#onSideSheetClose\n * @fires MdSideSheetComponent#onSideSheetShown\n * @fires MdSideSheetComponent#onSideSheetClosed\n * @fires MdSideSheetComponent#onSideSheetScrimClose\n * @fires MdSideSheetComponent#onSideSheetIconButtonClick\n * @fires MdSideSheetComponent#onSideSheetButtonClick\n */",
         "meta": {
-            "range": [
-                616,
-                7780
-            ],
+            "range": [616, 7780],
             "filename": "side-sheet.js",
             "lineno": 17,
             "columnno": 0,
@@ -17,9 +14,7 @@
                 "paramnames": []
             }
         },
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -28,15 +23,7 @@
                 "value": "md-side-sheet"
             }
         ],
-        "fires": [
-            "MdSideSheetComponent#event:onSideSheetShow",
-            "MdSideSheetComponent#event:onSideSheetClose",
-            "MdSideSheetComponent#event:onSideSheetShown",
-            "MdSideSheetComponent#event:onSideSheetClosed",
-            "MdSideSheetComponent#event:onSideSheetScrimClose",
-            "MdSideSheetComponent#event:onSideSheetIconButtonClick",
-            "MdSideSheetComponent#event:onSideSheetButtonClick"
-        ],
+        "fires": ["MdSideSheetComponent#event:onSideSheetShow", "MdSideSheetComponent#event:onSideSheetClose", "MdSideSheetComponent#event:onSideSheetShown", "MdSideSheetComponent#event:onSideSheetClosed", "MdSideSheetComponent#event:onSideSheetScrimClose", "MdSideSheetComponent#event:onSideSheetIconButtonClick", "MdSideSheetComponent#event:onSideSheetButtonClick"],
         "name": "MdSideSheetComponent",
         "longname": "MdSideSheetComponent",
         "kind": "class",
@@ -46,10 +33,7 @@
     {
         "comment": "/**\n     * @property {Array} [icons]\n     * @property {Array} [actions]\n     * @property {String} [label]\n     * @property {String} [sublabel]\n     * @property {Array} [buttons]\n     * @property {Boolean} [open]\n     * @property {Boolean} [modal]\n     */",
         "meta": {
-            "range": [
-                928,
-                1222
-            ],
+            "range": [928, 1222],
             "filename": "side-sheet.js",
             "lineno": 27,
             "columnno": 4,
@@ -63,63 +47,49 @@
         "properties": [
             {
                 "type": {
-                    "names": [
-                        "Array"
-                    ]
+                    "names": ["Array"]
                 },
                 "optional": true,
                 "name": "icons"
             },
             {
                 "type": {
-                    "names": [
-                        "Array"
-                    ]
+                    "names": ["Array"]
                 },
                 "optional": true,
                 "name": "actions"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "label"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "sublabel"
             },
             {
                 "type": {
-                    "names": [
-                        "Array"
-                    ]
+                    "names": ["Array"]
                 },
                 "optional": true,
                 "name": "buttons"
             },
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "open"
             },
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "modal"
@@ -134,10 +104,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                958,
-                980
-            ],
+            "range": [958, 980],
             "filename": "side-sheet.js",
             "lineno": 28,
             "columnno": 8,
@@ -158,10 +125,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                967,
-                978
-            ],
+            "range": [967, 978],
             "filename": "side-sheet.js",
             "lineno": 28,
             "columnno": 17,
@@ -183,10 +147,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                990,
-                1014
-            ],
+            "range": [990, 1014],
             "filename": "side-sheet.js",
             "lineno": 29,
             "columnno": 8,
@@ -207,10 +168,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1001,
-                1012
-            ],
+            "range": [1001, 1012],
             "filename": "side-sheet.js",
             "lineno": 29,
             "columnno": 19,
@@ -232,10 +190,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1024,
-                1047
-            ],
+            "range": [1024, 1047],
             "filename": "side-sheet.js",
             "lineno": 30,
             "columnno": 8,
@@ -256,10 +211,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1033,
-                1045
-            ],
+            "range": [1033, 1045],
             "filename": "side-sheet.js",
             "lineno": 30,
             "columnno": 17,
@@ -281,10 +233,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1057,
-                1083
-            ],
+            "range": [1057, 1083],
             "filename": "side-sheet.js",
             "lineno": 31,
             "columnno": 8,
@@ -305,10 +254,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1069,
-                1081
-            ],
+            "range": [1069, 1081],
             "filename": "side-sheet.js",
             "lineno": 31,
             "columnno": 20,
@@ -330,10 +276,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1093,
-                1117
-            ],
+            "range": [1093, 1117],
             "filename": "side-sheet.js",
             "lineno": 32,
             "columnno": 8,
@@ -354,10 +297,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1104,
-                1115
-            ],
+            "range": [1104, 1115],
             "filename": "side-sheet.js",
             "lineno": 32,
             "columnno": 19,
@@ -379,10 +319,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1127,
-                1165
-            ],
+            "range": [1127, 1165],
             "filename": "side-sheet.js",
             "lineno": 33,
             "columnno": 8,
@@ -403,10 +340,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1135,
-                1148
-            ],
+            "range": [1135, 1148],
             "filename": "side-sheet.js",
             "lineno": 33,
             "columnno": 16,
@@ -428,10 +362,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1150,
-                1163
-            ],
+            "range": [1150, 1163],
             "filename": "side-sheet.js",
             "lineno": 33,
             "columnno": 31,
@@ -453,10 +384,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1175,
-                1214
-            ],
+            "range": [1175, 1214],
             "filename": "side-sheet.js",
             "lineno": 34,
             "columnno": 8,
@@ -477,10 +405,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1184,
-                1197
-            ],
+            "range": [1184, 1197],
             "filename": "side-sheet.js",
             "lineno": 34,
             "columnno": 17,
@@ -502,10 +427,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1199,
-                1212
-            ],
+            "range": [1199, 1212],
             "filename": "side-sheet.js",
             "lineno": 34,
             "columnno": 32,
@@ -527,10 +449,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                1244,
-                1331
-            ],
+            "range": [1244, 1331],
             "filename": "side-sheet.js",
             "lineno": 39,
             "columnno": 4,
@@ -555,10 +474,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-side-sheet\n * @fires MdSideSheetComponent#onSideSheetShow\n * @fires MdSideSheetComponent#onSideSheetClose\n * @fires MdSideSheetComponent#onSideSheetShown\n * @fires MdSideSheetComponent#onSideSheetClosed\n * @fires MdSideSheetComponent#onSideSheetScrimClose\n * @fires MdSideSheetComponent#onSideSheetIconButtonClick\n * @fires MdSideSheetComponent#onSideSheetButtonClick\n */",
         "meta": {
-            "range": [
-                616,
-                7780
-            ],
+            "range": [616, 7780],
             "filename": "side-sheet.js",
             "lineno": 17,
             "columnno": 0,
@@ -573,9 +489,7 @@
         "name": "MdSideSheetComponent",
         "longname": "MdSideSheetComponent",
         "kind": "class",
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -584,24 +498,13 @@
                 "value": "md-side-sheet"
             }
         ],
-        "fires": [
-            "MdSideSheetComponent#event:onSideSheetShow",
-            "MdSideSheetComponent#event:onSideSheetClose",
-            "MdSideSheetComponent#event:onSideSheetShown",
-            "MdSideSheetComponent#event:onSideSheetClosed",
-            "MdSideSheetComponent#event:onSideSheetScrimClose",
-            "MdSideSheetComponent#event:onSideSheetIconButtonClick",
-            "MdSideSheetComponent#event:onSideSheetButtonClick"
-        ],
+        "fires": ["MdSideSheetComponent#event:onSideSheetShow", "MdSideSheetComponent#event:onSideSheetClose", "MdSideSheetComponent#event:onSideSheetShown", "MdSideSheetComponent#event:onSideSheetClosed", "MdSideSheetComponent#event:onSideSheetScrimClose", "MdSideSheetComponent#event:onSideSheetIconButtonClick", "MdSideSheetComponent#event:onSideSheetButtonClick"],
         "scope": "global"
     },
     {
         "comment": "",
         "meta": {
-            "range": [
-                1285,
-                1324
-            ],
+            "range": [1285, 1324],
             "filename": "side-sheet.js",
             "lineno": 41,
             "columnno": 8,
@@ -624,10 +527,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     */",
         "meta": {
-            "range": [
-                1380,
-                1476
-            ],
+            "range": [1380, 1476],
             "filename": "side-sheet.js",
             "lineno": 47,
             "columnno": 4,
@@ -636,9 +536,7 @@
                 "id": "astnode100000077",
                 "name": "MdSideSheetComponent#renderIcon",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item"
-                ]
+                "paramnames": ["item"]
             },
             "vars": {
                 "": null
@@ -647,9 +545,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
@@ -664,10 +560,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     */",
         "meta": {
-            "range": [
-                1525,
-                2056
-            ],
+            "range": [1525, 2056],
             "filename": "side-sheet.js",
             "lineno": 54,
             "columnno": 4,
@@ -676,9 +569,7 @@
                 "id": "astnode100000093",
                 "name": "MdSideSheetComponent#renderIconButton",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item"
-                ]
+                "paramnames": ["item"]
             },
             "vars": {
                 "": null
@@ -687,9 +578,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
@@ -704,10 +593,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     */",
         "meta": {
-            "range": [
-                2105,
-                2616
-            ],
+            "range": [2105, 2616],
             "filename": "side-sheet.js",
             "lineno": 72,
             "columnno": 4,
@@ -716,9 +602,7 @@
                 "id": "astnode100000145",
                 "name": "MdSideSheetComponent#renderButton",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item"
-                ]
+                "paramnames": ["item"]
             },
             "vars": {
                 "": null
@@ -727,9 +611,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
@@ -744,10 +626,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     */",
         "meta": {
-            "range": [
-                2665,
-                2757
-            ],
+            "range": [2665, 2757],
             "filename": "side-sheet.js",
             "lineno": 90,
             "columnno": 4,
@@ -756,9 +635,7 @@
                 "id": "astnode100000197",
                 "name": "MdSideSheetComponent#renderSpacer",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item"
-                ]
+                "paramnames": ["item"]
             },
             "vars": {
                 "": null
@@ -767,9 +644,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
@@ -784,10 +659,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     * @param {Any} [component=\"icon\"]\n     */",
         "meta": {
-            "range": [
-                2845,
-                3238
-            ],
+            "range": [2845, 3238],
             "filename": "side-sheet.js",
             "lineno": 98,
             "columnno": 4,
@@ -796,10 +668,7 @@
                 "id": "astnode100000207",
                 "name": "MdSideSheetComponent#renderComponent",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item",
-                    "component"
-                ]
+                "paramnames": ["item", "component"]
             },
             "vars": {
                 "": null
@@ -808,18 +677,14 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "defaultvalue": "\"icon\"",
@@ -835,10 +700,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2903,
-                3152
-            ],
+            "range": [2903, 3152],
             "filename": "side-sheet.js",
             "lineno": 99,
             "columnno": 14,
@@ -861,10 +723,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                3260,
-                4461
-            ],
+            "range": [3260, 4461],
             "filename": "side-sheet.js",
             "lineno": 110,
             "columnno": 4,
@@ -889,10 +748,7 @@
     {
         "comment": "/**\n     * @async\n     */",
         "meta": {
-            "range": [
-                4497,
-                5291
-            ],
+            "range": [4497, 5291],
             "filename": "side-sheet.js",
             "lineno": 117,
             "columnno": 4,
@@ -918,10 +774,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4687,
-                4743
-            ],
+            "range": [4687, 4743],
             "filename": "side-sheet.js",
             "lineno": 121,
             "columnno": 8,
@@ -944,10 +797,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4840,
-                4914
-            ],
+            "range": [4840, 4914],
             "filename": "side-sheet.js",
             "lineno": 123,
             "columnno": 8,
@@ -970,10 +820,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                5313,
-                5516
-            ],
+            "range": [5313, 5516],
             "filename": "side-sheet.js",
             "lineno": 133,
             "columnno": 4,
@@ -998,10 +845,7 @@
     {
         "comment": "/**\n     * @param {Any} [changedProperties]\n     */",
         "meta": {
-            "range": [
-                5578,
-                5783
-            ],
+            "range": [5578, 5783],
             "filename": "side-sheet.js",
             "lineno": 142,
             "columnno": 4,
@@ -1010,9 +854,7 @@
                 "id": "astnode100000575",
                 "name": "MdSideSheetComponent#updated",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "changedProperties"
-                ]
+                "paramnames": ["changedProperties"]
             },
             "vars": {
                 "": null
@@ -1021,9 +863,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "changedProperties"
@@ -1038,10 +878,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                5805,
-                6152
-            ],
+            "range": [5805, 6152],
             "filename": "side-sheet.js",
             "lineno": 151,
             "columnno": 4,
@@ -1066,10 +903,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5891,
-                5955
-            ],
+            "range": [5891, 5955],
             "filename": "side-sheet.js",
             "lineno": 153,
             "columnno": 8,
@@ -1092,10 +926,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6039,
-                6055
-            ],
+            "range": [6039, 6055],
             "filename": "side-sheet.js",
             "lineno": 155,
             "columnno": 8,
@@ -1118,10 +949,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                6174,
-                6542
-            ],
+            "range": [6174, 6542],
             "filename": "side-sheet.js",
             "lineno": 162,
             "columnno": 4,
@@ -1146,10 +974,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6261,
-                6327
-            ],
+            "range": [6261, 6327],
             "filename": "side-sheet.js",
             "lineno": 164,
             "columnno": 8,
@@ -1172,10 +997,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6412,
-                6429
-            ],
+            "range": [6412, 6429],
             "filename": "side-sheet.js",
             "lineno": 166,
             "columnno": 8,
@@ -1198,10 +1020,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                6564,
-                6643
-            ],
+            "range": [6564, 6643],
             "filename": "side-sheet.js",
             "lineno": 173,
             "columnno": 4,
@@ -1226,10 +1045,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                6693,
-                6968
-            ],
+            "range": [6693, 6968],
             "filename": "side-sheet.js",
             "lineno": 181,
             "columnno": 4,
@@ -1238,9 +1054,7 @@
                 "id": "astnode100000739",
                 "name": "MdSideSheetComponent#handleSideSheetShown",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -1249,9 +1063,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -1266,10 +1078,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                7018,
-                7294
-            ],
+            "range": [7018, 7294],
             "filename": "side-sheet.js",
             "lineno": 191,
             "columnno": 4,
@@ -1278,9 +1087,7 @@
                 "id": "astnode100000772",
                 "name": "MdSideSheetComponent#handleSideSheetClosed",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -1289,9 +1096,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -1306,10 +1111,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                7344,
-                7476
-            ],
+            "range": [7344, 7476],
             "filename": "side-sheet.js",
             "lineno": 201,
             "columnno": 4,
@@ -1318,9 +1120,7 @@
                 "id": "astnode100000805",
                 "name": "MdSideSheetComponent#handleSideSheetScrimClose",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -1329,9 +1129,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -1346,10 +1144,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                7461,
-                7466
-            ],
+            "range": [7461, 7466],
             "filename": "side-sheet.js",
             "lineno": 203,
             "columnno": 45,
@@ -1370,10 +1165,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                7526,
-                7631
-            ],
+            "range": [7526, 7631],
             "filename": "side-sheet.js",
             "lineno": 209,
             "columnno": 4,
@@ -1382,9 +1174,7 @@
                 "id": "astnode100000828",
                 "name": "MdSideSheetComponent#handleSideSheetIconButtonClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -1393,9 +1183,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -1410,10 +1198,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                7616,
-                7621
-            ],
+            "range": [7616, 7621],
             "filename": "side-sheet.js",
             "lineno": 210,
             "columnno": 50,
@@ -1434,10 +1219,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                7681,
-                7778
-            ],
+            "range": [7681, 7778],
             "filename": "side-sheet.js",
             "lineno": 216,
             "columnno": 4,
@@ -1446,9 +1228,7 @@
                 "id": "astnode100000842",
                 "name": "MdSideSheetComponent#handleSideSheetButtonClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -1457,9 +1237,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -1474,10 +1252,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                7763,
-                7768
-            ],
+            "range": [7763, 7768],
             "filename": "side-sheet.js",
             "lineno": 217,
             "columnno": 46,
@@ -1498,10 +1273,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                7852,
-                7872
-            ],
+            "range": [7852, 7872],
             "filename": "side-sheet.js",
             "lineno": 221,
             "columnno": 9,
@@ -1521,8 +1293,6 @@
     {
         "kind": "package",
         "longname": "package:undefined",
-        "files": [
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\side-sheet\\side-sheet.js"
-        ]
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\side-sheet\\side-sheet.js"]
     }
 ]

@@ -2,10 +2,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-week-picker\n * @fires MdWeekPickerComponent#onWeekPickerShow\n * @fires MdWeekPickerComponent#onWeekPickerClose\n * @fires MdWeekPickerComponent#onWeekPickerYearItemClick\n * @fires MdWeekPickerComponent#onWeekPickerMonthItemClick\n * @fires MdWeekPickerComponent#onWeekPickerWeekItemClick\n * @fires MdWeekPickerComponent#onWeekPickerScrimClose\n * @fires MdWeekPickerComponent#onWeekPickerShown\n * @fires MdWeekPickerComponent#onWeekPickerClosed\n * @fires MdWeekPickerComponent#onWeekPickerIconButtonPrevClick\n * @fires MdWeekPickerComponent#onWeekPickerIconButtonNextClick\n * @fires MdWeekPickerComponent#onWeekPickerIconButtonClick\n * @fires MdWeekPickerComponent#onWeekPickerButtonCancelClick\n * @fires MdWeekPickerComponent#onWeekPickerButtonOkClick\n * @fires MdWeekPickerComponent#onWeekPickerButtonLabelClick\n * @fires MdWeekPickerComponent#onWeekPickerButtonClick\n */",
         "meta": {
-            "range": [
-                1325,
-                20477
-            ],
+            "range": [1325, 20477],
             "filename": "week-picker.js",
             "lineno": 29,
             "columnno": 0,
@@ -20,9 +17,7 @@
                 "": null
             }
         },
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -31,23 +26,7 @@
                 "value": "md-week-picker"
             }
         ],
-        "fires": [
-            "MdWeekPickerComponent#event:onWeekPickerShow",
-            "MdWeekPickerComponent#event:onWeekPickerClose",
-            "MdWeekPickerComponent#event:onWeekPickerYearItemClick",
-            "MdWeekPickerComponent#event:onWeekPickerMonthItemClick",
-            "MdWeekPickerComponent#event:onWeekPickerWeekItemClick",
-            "MdWeekPickerComponent#event:onWeekPickerScrimClose",
-            "MdWeekPickerComponent#event:onWeekPickerShown",
-            "MdWeekPickerComponent#event:onWeekPickerClosed",
-            "MdWeekPickerComponent#event:onWeekPickerIconButtonPrevClick",
-            "MdWeekPickerComponent#event:onWeekPickerIconButtonNextClick",
-            "MdWeekPickerComponent#event:onWeekPickerIconButtonClick",
-            "MdWeekPickerComponent#event:onWeekPickerButtonCancelClick",
-            "MdWeekPickerComponent#event:onWeekPickerButtonOkClick",
-            "MdWeekPickerComponent#event:onWeekPickerButtonLabelClick",
-            "MdWeekPickerComponent#event:onWeekPickerButtonClick"
-        ],
+        "fires": ["MdWeekPickerComponent#event:onWeekPickerShow", "MdWeekPickerComponent#event:onWeekPickerClose", "MdWeekPickerComponent#event:onWeekPickerYearItemClick", "MdWeekPickerComponent#event:onWeekPickerMonthItemClick", "MdWeekPickerComponent#event:onWeekPickerWeekItemClick", "MdWeekPickerComponent#event:onWeekPickerScrimClose", "MdWeekPickerComponent#event:onWeekPickerShown", "MdWeekPickerComponent#event:onWeekPickerClosed", "MdWeekPickerComponent#event:onWeekPickerIconButtonPrevClick", "MdWeekPickerComponent#event:onWeekPickerIconButtonNextClick", "MdWeekPickerComponent#event:onWeekPickerIconButtonClick", "MdWeekPickerComponent#event:onWeekPickerButtonCancelClick", "MdWeekPickerComponent#event:onWeekPickerButtonOkClick", "MdWeekPickerComponent#event:onWeekPickerButtonLabelClick", "MdWeekPickerComponent#event:onWeekPickerButtonClick"],
         "name": "MdWeekPickerComponent",
         "longname": "MdWeekPickerComponent",
         "kind": "class",
@@ -57,10 +36,7 @@
     {
         "comment": "/**\n     * @property {Array} [icons]\n     * @property {Array} [actions]\n     * @property {String} [label]\n     * @property {String} [sublabel]\n     * @property {Array} [buttons]\n     * @property {Boolean} [open]\n     * @property {Boolean} [modal]\n     * @property {String} [value]\n     * @property {Any} [index]\n     * @property {Any} [selection]\n     */",
         "meta": {
-            "range": [
-                1738,
-                2436
-            ],
+            "range": [1738, 2436],
             "filename": "week-picker.js",
             "lineno": 42,
             "columnno": 4,
@@ -74,90 +50,70 @@
         "properties": [
             {
                 "type": {
-                    "names": [
-                        "Array"
-                    ]
+                    "names": ["Array"]
                 },
                 "optional": true,
                 "name": "icons"
             },
             {
                 "type": {
-                    "names": [
-                        "Array"
-                    ]
+                    "names": ["Array"]
                 },
                 "optional": true,
                 "name": "actions"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "label"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "sublabel"
             },
             {
                 "type": {
-                    "names": [
-                        "Array"
-                    ]
+                    "names": ["Array"]
                 },
                 "optional": true,
                 "name": "buttons"
             },
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "open"
             },
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "modal"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "value"
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "index"
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "selection"
@@ -172,10 +128,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1768,
-                1790
-            ],
+            "range": [1768, 1790],
             "filename": "week-picker.js",
             "lineno": 43,
             "columnno": 8,
@@ -196,10 +149,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1777,
-                1788
-            ],
+            "range": [1777, 1788],
             "filename": "week-picker.js",
             "lineno": 43,
             "columnno": 17,
@@ -221,10 +171,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1800,
-                1824
-            ],
+            "range": [1800, 1824],
             "filename": "week-picker.js",
             "lineno": 44,
             "columnno": 8,
@@ -245,10 +192,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1811,
-                1822
-            ],
+            "range": [1811, 1822],
             "filename": "week-picker.js",
             "lineno": 44,
             "columnno": 19,
@@ -270,10 +214,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1834,
-                1857
-            ],
+            "range": [1834, 1857],
             "filename": "week-picker.js",
             "lineno": 45,
             "columnno": 8,
@@ -294,10 +235,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1843,
-                1855
-            ],
+            "range": [1843, 1855],
             "filename": "week-picker.js",
             "lineno": 45,
             "columnno": 17,
@@ -319,10 +257,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1867,
-                1893
-            ],
+            "range": [1867, 1893],
             "filename": "week-picker.js",
             "lineno": 46,
             "columnno": 8,
@@ -343,10 +278,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1879,
-                1891
-            ],
+            "range": [1879, 1891],
             "filename": "week-picker.js",
             "lineno": 46,
             "columnno": 20,
@@ -368,10 +300,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1903,
-                1927
-            ],
+            "range": [1903, 1927],
             "filename": "week-picker.js",
             "lineno": 47,
             "columnno": 8,
@@ -392,10 +321,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1914,
-                1925
-            ],
+            "range": [1914, 1925],
             "filename": "week-picker.js",
             "lineno": 47,
             "columnno": 19,
@@ -417,10 +343,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1937,
-                1975
-            ],
+            "range": [1937, 1975],
             "filename": "week-picker.js",
             "lineno": 48,
             "columnno": 8,
@@ -441,10 +364,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1945,
-                1958
-            ],
+            "range": [1945, 1958],
             "filename": "week-picker.js",
             "lineno": 48,
             "columnno": 16,
@@ -466,10 +386,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1960,
-                1973
-            ],
+            "range": [1960, 1973],
             "filename": "week-picker.js",
             "lineno": 48,
             "columnno": 31,
@@ -491,10 +408,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1985,
-                2009
-            ],
+            "range": [1985, 2009],
             "filename": "week-picker.js",
             "lineno": 49,
             "columnno": 8,
@@ -515,10 +429,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1994,
-                2007
-            ],
+            "range": [1994, 2007],
             "filename": "week-picker.js",
             "lineno": 49,
             "columnno": 17,
@@ -540,10 +451,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2019,
-                2360
-            ],
+            "range": [2019, 2360],
             "filename": "week-picker.js",
             "lineno": 50,
             "columnno": 8,
@@ -564,10 +472,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2040,
-                2052
-            ],
+            "range": [2040, 2052],
             "filename": "week-picker.js",
             "lineno": 51,
             "columnno": 12,
@@ -589,10 +494,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2066,
-                2079
-            ],
+            "range": [2066, 2079],
             "filename": "week-picker.js",
             "lineno": 52,
             "columnno": 12,
@@ -614,10 +516,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2093,
-                2349
-            ],
+            "range": [2093, 2349],
             "filename": "week-picker.js",
             "lineno": 53,
             "columnno": 12,
@@ -639,10 +538,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2122,
-                2218
-            ],
+            "range": [2122, 2218],
             "filename": "week-picker.js",
             "lineno": 54,
             "columnno": 16,
@@ -663,10 +559,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2236,
-                2334
-            ],
+            "range": [2236, 2334],
             "filename": "week-picker.js",
             "lineno": 57,
             "columnno": 16,
@@ -687,10 +580,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2370,
-                2392
-            ],
+            "range": [2370, 2392],
             "filename": "week-picker.js",
             "lineno": 62,
             "columnno": 8,
@@ -711,10 +601,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2379,
-                2390
-            ],
+            "range": [2379, 2390],
             "filename": "week-picker.js",
             "lineno": 62,
             "columnno": 17,
@@ -736,10 +623,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2402,
-                2428
-            ],
+            "range": [2402, 2428],
             "filename": "week-picker.js",
             "lineno": 63,
             "columnno": 8,
@@ -760,10 +644,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2415,
-                2426
-            ],
+            "range": [2415, 2426],
             "filename": "week-picker.js",
             "lineno": 63,
             "columnno": 21,
@@ -785,10 +666,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2441,
-                2517
-            ],
+            "range": [2441, 2517],
             "filename": "week-picker.js",
             "lineno": 65,
             "columnno": 4,
@@ -809,10 +687,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2491,
-                2506
-            ],
+            "range": [2491, 2506],
             "filename": "week-picker.js",
             "lineno": 65,
             "columnno": 54,
@@ -833,10 +708,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2522,
-                2597
-            ],
+            "range": [2522, 2597],
             "filename": "week-picker.js",
             "lineno": 66,
             "columnno": 4,
@@ -857,10 +729,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2573,
-                2586
-            ],
+            "range": [2573, 2586],
             "filename": "week-picker.js",
             "lineno": 66,
             "columnno": 55,
@@ -881,10 +750,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2602,
-                2683
-            ],
+            "range": [2602, 2683],
             "filename": "week-picker.js",
             "lineno": 67,
             "columnno": 4,
@@ -905,10 +771,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2655,
-                2672
-            ],
+            "range": [2655, 2672],
             "filename": "week-picker.js",
             "lineno": 67,
             "columnno": 57,
@@ -929,10 +792,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2688,
-                2762
-            ],
+            "range": [2688, 2762],
             "filename": "week-picker.js",
             "lineno": 68,
             "columnno": 4,
@@ -953,10 +813,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2737,
-                2751
-            ],
+            "range": [2737, 2751],
             "filename": "week-picker.js",
             "lineno": 68,
             "columnno": 53,
@@ -977,10 +834,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                2801,
-                2916
-            ],
+            "range": [2801, 2916],
             "filename": "week-picker.js",
             "lineno": 73,
             "columnno": 4,
@@ -1006,10 +860,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                2955,
-                3457
-            ],
+            "range": [2955, 3457],
             "filename": "week-picker.js",
             "lineno": 80,
             "columnno": 4,
@@ -1035,10 +886,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2981,
-                3016
-            ],
+            "range": [2981, 3016],
             "filename": "week-picker.js",
             "lineno": 81,
             "columnno": 12,
@@ -1061,10 +909,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3026,
-                3059
-            ],
+            "range": [3026, 3059],
             "filename": "week-picker.js",
             "lineno": 82,
             "columnno": 8,
@@ -1088,10 +933,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3089,
-                3099
-            ],
+            "range": [3089, 3099],
             "filename": "week-picker.js",
             "lineno": 83,
             "columnno": 28,
@@ -1112,10 +954,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3133,
-                3161
-            ],
+            "range": [3133, 3161],
             "filename": "week-picker.js",
             "lineno": 84,
             "columnno": 18,
@@ -1138,10 +977,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3200,
-                3224
-            ],
+            "range": [3200, 3224],
             "filename": "week-picker.js",
             "lineno": 86,
             "columnno": 16,
@@ -1162,10 +998,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3242,
-                3270
-            ],
+            "range": [3242, 3270],
             "filename": "week-picker.js",
             "lineno": 87,
             "columnno": 16,
@@ -1186,10 +1019,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3288,
-                3345
-            ],
+            "range": [3288, 3345],
             "filename": "week-picker.js",
             "lineno": 88,
             "columnno": 16,
@@ -1210,10 +1040,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3363,
-                3423
-            ],
+            "range": [3363, 3423],
             "filename": "week-picker.js",
             "lineno": 89,
             "columnno": 16,
@@ -1234,10 +1061,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                3496,
-                4060
-            ],
+            "range": [3496, 4060],
             "filename": "week-picker.js",
             "lineno": 97,
             "columnno": 4,
@@ -1263,10 +1087,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3539,
-                3549
-            ],
+            "range": [3539, 3549],
             "filename": "week-picker.js",
             "lineno": 98,
             "columnno": 28,
@@ -1287,10 +1108,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3583,
-                3631
-            ],
+            "range": [3583, 3631],
             "filename": "week-picker.js",
             "lineno": 99,
             "columnno": 18,
@@ -1313,10 +1131,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3670,
-                3694
-            ],
+            "range": [3670, 3694],
             "filename": "week-picker.js",
             "lineno": 101,
             "columnno": 16,
@@ -1337,10 +1152,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3712,
-                3734
-            ],
+            "range": [3712, 3734],
             "filename": "week-picker.js",
             "lineno": 102,
             "columnno": 16,
@@ -1361,10 +1173,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3752,
-                3781
-            ],
+            "range": [3752, 3781],
             "filename": "week-picker.js",
             "lineno": 103,
             "columnno": 16,
@@ -1385,10 +1194,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3799,
-                3901
-            ],
+            "range": [3799, 3901],
             "filename": "week-picker.js",
             "lineno": 104,
             "columnno": 16,
@@ -1409,10 +1215,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3919,
-                4026
-            ],
+            "range": [3919, 4026],
             "filename": "week-picker.js",
             "lineno": 105,
             "columnno": 16,
@@ -1433,10 +1236,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                4099,
-                4319
-            ],
+            "range": [4099, 4319],
             "filename": "week-picker.js",
             "lineno": 113,
             "columnno": 4,
@@ -1462,10 +1262,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4144,
-                4153
-            ],
+            "range": [4144, 4153],
             "filename": "week-picker.js",
             "lineno": 114,
             "columnno": 28,
@@ -1486,10 +1283,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4187,
-                4215
-            ],
+            "range": [4187, 4215],
             "filename": "week-picker.js",
             "lineno": 115,
             "columnno": 18,
@@ -1512,10 +1306,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4254,
-                4285
-            ],
+            "range": [4254, 4285],
             "filename": "week-picker.js",
             "lineno": 117,
             "columnno": 16,
@@ -1536,10 +1327,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                4358,
-                5518
-            ],
+            "range": [4358, 5518],
             "filename": "week-picker.js",
             "lineno": 125,
             "columnno": 4,
@@ -1565,10 +1353,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4399,
-                4408
-            ],
+            "range": [4399, 4408],
             "filename": "week-picker.js",
             "lineno": 126,
             "columnno": 28,
@@ -1589,10 +1374,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4442,
-                4555
-            ],
+            "range": [4442, 4555],
             "filename": "week-picker.js",
             "lineno": 127,
             "columnno": 18,
@@ -1615,10 +1397,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4594,
-                4622
-            ],
+            "range": [4594, 4622],
             "filename": "week-picker.js",
             "lineno": 129,
             "columnno": 16,
@@ -1639,10 +1418,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4640,
-                4666
-            ],
+            "range": [4640, 4666],
             "filename": "week-picker.js",
             "lineno": 130,
             "columnno": 16,
@@ -1663,10 +1439,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4684,
-                4708
-            ],
+            "range": [4684, 4708],
             "filename": "week-picker.js",
             "lineno": 131,
             "columnno": 16,
@@ -1687,10 +1460,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4726,
-                4834
-            ],
+            "range": [4726, 4834],
             "filename": "week-picker.js",
             "lineno": 132,
             "columnno": 16,
@@ -1711,10 +1481,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4852,
-                4965
-            ],
+            "range": [4852, 4965],
             "filename": "week-picker.js",
             "lineno": 133,
             "columnno": 16,
@@ -1735,10 +1502,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4983,
-                5484
-            ],
+            "range": [4983, 5484],
             "filename": "week-picker.js",
             "lineno": 134,
             "columnno": 16,
@@ -1759,10 +1523,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5006,
-                5015
-            ],
+            "range": [5006, 5015],
             "filename": "week-picker.js",
             "lineno": 134,
             "columnno": 39,
@@ -1783,10 +1544,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5059,
-                5165
-            ],
+            "range": [5059, 5165],
             "filename": "week-picker.js",
             "lineno": 135,
             "columnno": 26,
@@ -1809,10 +1567,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5220,
-                5247
-            ],
+            "range": [5220, 5247],
             "filename": "week-picker.js",
             "lineno": 137,
             "columnno": 24,
@@ -1833,10 +1588,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5273,
-                5386
-            ],
+            "range": [5273, 5386],
             "filename": "week-picker.js",
             "lineno": 138,
             "columnno": 24,
@@ -1857,10 +1609,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5412,
-                5441
-            ],
+            "range": [5412, 5441],
             "filename": "week-picker.js",
             "lineno": 139,
             "columnno": 24,
@@ -1881,10 +1630,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                5557,
-                5994
-            ],
+            "range": [5557, 5994],
             "filename": "week-picker.js",
             "lineno": 149,
             "columnno": 4,
@@ -1910,10 +1656,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5585,
-                5906
-            ],
+            "range": [5585, 5906],
             "filename": "week-picker.js",
             "lineno": 150,
             "columnno": 14,
@@ -1936,10 +1679,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5605,
-                5688
-            ],
+            "range": [5605, 5688],
             "filename": "week-picker.js",
             "lineno": 151,
             "columnno": 12,
@@ -1959,10 +1699,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5702,
-                5739
-            ],
+            "range": [5702, 5739],
             "filename": "week-picker.js",
             "lineno": 152,
             "columnno": 12,
@@ -1983,10 +1720,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5753,
-                5791
-            ],
+            "range": [5753, 5791],
             "filename": "week-picker.js",
             "lineno": 153,
             "columnno": 12,
@@ -2007,10 +1741,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5805,
-                5843
-            ],
+            "range": [5805, 5843],
             "filename": "week-picker.js",
             "lineno": 154,
             "columnno": 12,
@@ -2031,10 +1762,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5857,
-                5895
-            ],
+            "range": [5857, 5895],
             "filename": "week-picker.js",
             "lineno": 155,
             "columnno": 12,
@@ -2055,10 +1783,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5926,
-                5945
-            ],
+            "range": [5926, 5945],
             "filename": "week-picker.js",
             "lineno": 157,
             "columnno": 18,
@@ -2079,10 +1804,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5947,
-                5958
-            ],
+            "range": [5947, 5958],
             "filename": "week-picker.js",
             "lineno": 157,
             "columnno": 39,
@@ -2103,10 +1825,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5960,
-                5984
-            ],
+            "range": [5960, 5984],
             "filename": "week-picker.js",
             "lineno": 157,
             "columnno": 52,
@@ -2127,10 +1846,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                6033,
-                6197
-            ],
+            "range": [6033, 6197],
             "filename": "week-picker.js",
             "lineno": 163,
             "columnno": 4,
@@ -2156,10 +1872,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6080,
-                6090
-            ],
+            "range": [6080, 6090],
             "filename": "week-picker.js",
             "lineno": 165,
             "columnno": 14,
@@ -2180,10 +1893,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6092,
-                6119
-            ],
+            "range": [6092, 6119],
             "filename": "week-picker.js",
             "lineno": 165,
             "columnno": 26,
@@ -2204,10 +1914,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6137,
-                6147
-            ],
+            "range": [6137, 6147],
             "filename": "week-picker.js",
             "lineno": 166,
             "columnno": 14,
@@ -2228,10 +1935,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6149,
-                6177
-            ],
+            "range": [6149, 6177],
             "filename": "week-picker.js",
             "lineno": 166,
             "columnno": 26,
@@ -2252,10 +1956,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                6236,
-                6361
-            ],
+            "range": [6236, 6361],
             "filename": "week-picker.js",
             "lineno": 173,
             "columnno": 4,
@@ -2281,10 +1982,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6270,
-                6289
-            ],
+            "range": [6270, 6289],
             "filename": "week-picker.js",
             "lineno": 174,
             "columnno": 18,
@@ -2305,10 +2003,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6295,
-                6307
-            ],
+            "range": [6295, 6307],
             "filename": "week-picker.js",
             "lineno": 174,
             "columnno": 43,
@@ -2329,10 +2024,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6309,
-                6324
-            ],
+            "range": [6309, 6324],
             "filename": "week-picker.js",
             "lineno": 174,
             "columnno": 57,
@@ -2353,10 +2045,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6330,
-                6338
-            ],
+            "range": [6330, 6338],
             "filename": "week-picker.js",
             "lineno": 174,
             "columnno": 78,
@@ -2377,10 +2066,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6340,
-                6351
-            ],
+            "range": [6340, 6351],
             "filename": "week-picker.js",
             "lineno": 174,
             "columnno": 88,
@@ -2401,10 +2087,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                6383,
-                6550
-            ],
+            "range": [6383, 6550],
             "filename": "week-picker.js",
             "lineno": 179,
             "columnno": 4,
@@ -2429,10 +2112,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-week-picker\n * @fires MdWeekPickerComponent#onWeekPickerShow\n * @fires MdWeekPickerComponent#onWeekPickerClose\n * @fires MdWeekPickerComponent#onWeekPickerYearItemClick\n * @fires MdWeekPickerComponent#onWeekPickerMonthItemClick\n * @fires MdWeekPickerComponent#onWeekPickerWeekItemClick\n * @fires MdWeekPickerComponent#onWeekPickerScrimClose\n * @fires MdWeekPickerComponent#onWeekPickerShown\n * @fires MdWeekPickerComponent#onWeekPickerClosed\n * @fires MdWeekPickerComponent#onWeekPickerIconButtonPrevClick\n * @fires MdWeekPickerComponent#onWeekPickerIconButtonNextClick\n * @fires MdWeekPickerComponent#onWeekPickerIconButtonClick\n * @fires MdWeekPickerComponent#onWeekPickerButtonCancelClick\n * @fires MdWeekPickerComponent#onWeekPickerButtonOkClick\n * @fires MdWeekPickerComponent#onWeekPickerButtonLabelClick\n * @fires MdWeekPickerComponent#onWeekPickerButtonClick\n */",
         "meta": {
-            "range": [
-                1325,
-                20477
-            ],
+            "range": [1325, 20477],
             "filename": "week-picker.js",
             "lineno": 29,
             "columnno": 0,
@@ -2450,9 +2130,7 @@
         "name": "MdWeekPickerComponent",
         "longname": "MdWeekPickerComponent",
         "kind": "class",
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -2461,32 +2139,13 @@
                 "value": "md-week-picker"
             }
         ],
-        "fires": [
-            "MdWeekPickerComponent#event:onWeekPickerShow",
-            "MdWeekPickerComponent#event:onWeekPickerClose",
-            "MdWeekPickerComponent#event:onWeekPickerYearItemClick",
-            "MdWeekPickerComponent#event:onWeekPickerMonthItemClick",
-            "MdWeekPickerComponent#event:onWeekPickerWeekItemClick",
-            "MdWeekPickerComponent#event:onWeekPickerScrimClose",
-            "MdWeekPickerComponent#event:onWeekPickerShown",
-            "MdWeekPickerComponent#event:onWeekPickerClosed",
-            "MdWeekPickerComponent#event:onWeekPickerIconButtonPrevClick",
-            "MdWeekPickerComponent#event:onWeekPickerIconButtonNextClick",
-            "MdWeekPickerComponent#event:onWeekPickerIconButtonClick",
-            "MdWeekPickerComponent#event:onWeekPickerButtonCancelClick",
-            "MdWeekPickerComponent#event:onWeekPickerButtonOkClick",
-            "MdWeekPickerComponent#event:onWeekPickerButtonLabelClick",
-            "MdWeekPickerComponent#event:onWeekPickerButtonClick"
-        ],
+        "fires": ["MdWeekPickerComponent#event:onWeekPickerShow", "MdWeekPickerComponent#event:onWeekPickerClose", "MdWeekPickerComponent#event:onWeekPickerYearItemClick", "MdWeekPickerComponent#event:onWeekPickerMonthItemClick", "MdWeekPickerComponent#event:onWeekPickerWeekItemClick", "MdWeekPickerComponent#event:onWeekPickerScrimClose", "MdWeekPickerComponent#event:onWeekPickerShown", "MdWeekPickerComponent#event:onWeekPickerClosed", "MdWeekPickerComponent#event:onWeekPickerIconButtonPrevClick", "MdWeekPickerComponent#event:onWeekPickerIconButtonNextClick", "MdWeekPickerComponent#event:onWeekPickerIconButtonClick", "MdWeekPickerComponent#event:onWeekPickerButtonCancelClick", "MdWeekPickerComponent#event:onWeekPickerButtonOkClick", "MdWeekPickerComponent#event:onWeekPickerButtonLabelClick", "MdWeekPickerComponent#event:onWeekPickerButtonClick"],
         "scope": "global"
     },
     {
         "comment": "",
         "meta": {
-            "range": [
-                6424,
-                6449
-            ],
+            "range": [6424, 6449],
             "filename": "week-picker.js",
             "lineno": 181,
             "columnno": 8,
@@ -2509,10 +2168,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6459,
-                6482
-            ],
+            "range": [6459, 6482],
             "filename": "week-picker.js",
             "lineno": 182,
             "columnno": 8,
@@ -2535,10 +2191,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6492,
-                6519
-            ],
+            "range": [6492, 6519],
             "filename": "week-picker.js",
             "lineno": 183,
             "columnno": 8,
@@ -2561,10 +2214,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6529,
-                6543
-            ],
+            "range": [6529, 6543],
             "filename": "week-picker.js",
             "lineno": 184,
             "columnno": 8,
@@ -2587,10 +2237,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     */",
         "meta": {
-            "range": [
-                6599,
-                6774
-            ],
+            "range": [6599, 6774],
             "filename": "week-picker.js",
             "lineno": 190,
             "columnno": 4,
@@ -2599,9 +2246,7 @@
                 "id": "astnode100000722",
                 "name": "MdWeekPickerComponent#renderIcon",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item"
-                ]
+                "paramnames": ["item"]
             },
             "vars": {
                 "": null
@@ -2610,9 +2255,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
@@ -2627,10 +2270,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     */",
         "meta": {
-            "range": [
-                6823,
-                7385
-            ],
+            "range": [6823, 7385],
             "filename": "week-picker.js",
             "lineno": 202,
             "columnno": 4,
@@ -2639,9 +2279,7 @@
                 "id": "astnode100000738",
                 "name": "MdWeekPickerComponent#renderIconButton",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item"
-                ]
+                "paramnames": ["item"]
             },
             "vars": {
                 "": null
@@ -2650,9 +2288,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
@@ -2667,10 +2303,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     */",
         "meta": {
-            "range": [
-                7434,
-                7976
-            ],
+            "range": [7434, 7976],
             "filename": "week-picker.js",
             "lineno": 221,
             "columnno": 4,
@@ -2679,9 +2312,7 @@
                 "id": "astnode100000790",
                 "name": "MdWeekPickerComponent#renderButton",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item"
-                ]
+                "paramnames": ["item"]
             },
             "vars": {
                 "": null
@@ -2690,9 +2321,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
@@ -2707,10 +2336,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     */",
         "meta": {
-            "range": [
-                8025,
-                8198
-            ],
+            "range": [8025, 8198],
             "filename": "week-picker.js",
             "lineno": 240,
             "columnno": 4,
@@ -2719,9 +2345,7 @@
                 "id": "astnode100000842",
                 "name": "MdWeekPickerComponent#renderSpacer",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item"
-                ]
+                "paramnames": ["item"]
             },
             "vars": {
                 "": null
@@ -2730,9 +2354,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
@@ -2747,10 +2369,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     * @param {Any} [component=\"icon\"]\n     */",
         "meta": {
-            "range": [
-                8286,
-                8679
-            ],
+            "range": [8286, 8679],
             "filename": "week-picker.js",
             "lineno": 253,
             "columnno": 4,
@@ -2759,10 +2378,7 @@
                 "id": "astnode100000852",
                 "name": "MdWeekPickerComponent#renderComponent",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item",
-                    "component"
-                ]
+                "paramnames": ["item", "component"]
             },
             "vars": {
                 "": null
@@ -2771,18 +2387,14 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "defaultvalue": "\"icon\"",
@@ -2798,10 +2410,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                8344,
-                8593
-            ],
+            "range": [8344, 8593],
             "filename": "week-picker.js",
             "lineno": 254,
             "columnno": 14,
@@ -2824,10 +2433,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                8701,
-                9271
-            ],
+            "range": [8701, 9271],
             "filename": "week-picker.js",
             "lineno": 265,
             "columnno": 4,
@@ -2852,10 +2458,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                9293,
-                9866
-            ],
+            "range": [9293, 9866],
             "filename": "week-picker.js",
             "lineno": 284,
             "columnno": 4,
@@ -2880,10 +2483,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                9888,
-                11482
-            ],
+            "range": [9888, 11482],
             "filename": "week-picker.js",
             "lineno": 303,
             "columnno": 4,
@@ -2908,10 +2508,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                11014,
-                11048
-            ],
+            "range": [11014, 11048],
             "filename": "week-picker.js",
             "lineno": 326,
             "columnno": 40,
@@ -2932,10 +2529,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                11090,
-                11148
-            ],
+            "range": [11090, 11148],
             "filename": "week-picker.js",
             "lineno": 327,
             "columnno": 40,
@@ -2956,10 +2550,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                11190,
-                11241
-            ],
+            "range": [11190, 11241],
             "filename": "week-picker.js",
             "lineno": 328,
             "columnno": 40,
@@ -2980,10 +2571,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                11504,
-                13028
-            ],
+            "range": [11504, 13028],
             "filename": "week-picker.js",
             "lineno": 341,
             "columnno": 4,
@@ -3008,10 +2596,7 @@
     {
         "comment": "/**\n     * @async\n     */",
         "meta": {
-            "range": [
-                13064,
-                13969
-            ],
+            "range": [13064, 13969],
             "filename": "week-picker.js",
             "lineno": 374,
             "columnno": 4,
@@ -3037,10 +2622,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                13135,
-                13185
-            ],
+            "range": [13135, 13185],
             "filename": "week-picker.js",
             "lineno": 376,
             "columnno": 8,
@@ -3063,10 +2645,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                13195,
-                13225
-            ],
+            "range": [13195, 13225],
             "filename": "week-picker.js",
             "lineno": 377,
             "columnno": 8,
@@ -3089,10 +2668,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                13356,
-                13413
-            ],
+            "range": [13356, 13413],
             "filename": "week-picker.js",
             "lineno": 380,
             "columnno": 8,
@@ -3115,10 +2691,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                13511,
-                13587
-            ],
+            "range": [13511, 13587],
             "filename": "week-picker.js",
             "lineno": 382,
             "columnno": 8,
@@ -3141,10 +2714,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                13991,
-                14197
-            ],
+            "range": [13991, 14197],
             "filename": "week-picker.js",
             "lineno": 392,
             "columnno": 4,
@@ -3169,10 +2739,7 @@
     {
         "comment": "/**\n     * @async\n     * @param {Any} [changedProperties]\n     */",
         "meta": {
-            "range": [
-                14273,
-                14776
-            ],
+            "range": [14273, 14776],
             "filename": "week-picker.js",
             "lineno": 402,
             "columnno": 4,
@@ -3181,9 +2748,7 @@
                 "id": "astnode100001363",
                 "name": "MdWeekPickerComponent#updated",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "changedProperties"
-                ]
+                "paramnames": ["changedProperties"]
             },
             "vars": {
                 "": null
@@ -3193,9 +2758,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "changedProperties"
@@ -3210,10 +2773,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                14712,
-                14759
-            ],
+            "range": [14712, 14759],
             "filename": "week-picker.js",
             "lineno": 412,
             "columnno": 12,
@@ -3236,10 +2796,7 @@
     {
         "comment": "/**\n     * @param {Any} [options]\n     */",
         "meta": {
-            "range": [
-                14828,
-                15625
-            ],
+            "range": [14828, 15625],
             "filename": "week-picker.js",
             "lineno": 419,
             "columnno": 4,
@@ -3248,9 +2805,7 @@
                 "id": "astnode100001438",
                 "name": "MdWeekPickerComponent#show",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "options"
-                ]
+                "paramnames": ["options"]
             },
             "vars": {
                 "": null
@@ -3259,9 +2814,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "options"
@@ -3276,10 +2829,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                14852,
-                14882
-            ],
+            "range": [14852, 14882],
             "filename": "week-picker.js",
             "lineno": 420,
             "columnno": 8,
@@ -3302,10 +2852,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                14892,
-                14958
-            ],
+            "range": [14892, 14958],
             "filename": "week-picker.js",
             "lineno": 421,
             "columnno": 8,
@@ -3328,10 +2875,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                15139,
-                15154
-            ],
+            "range": [15139, 15154],
             "filename": "week-picker.js",
             "lineno": 425,
             "columnno": 12,
@@ -3352,10 +2896,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                15168,
-                15181
-            ],
+            "range": [15168, 15181],
             "filename": "week-picker.js",
             "lineno": 426,
             "columnno": 12,
@@ -3376,10 +2917,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                15229,
-                15464
-            ],
+            "range": [15229, 15464],
             "filename": "week-picker.js",
             "lineno": 428,
             "columnno": 12,
@@ -3400,10 +2938,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                15510,
-                15526
-            ],
+            "range": [15510, 15526],
             "filename": "week-picker.js",
             "lineno": 436,
             "columnno": 8,
@@ -3426,10 +2961,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                15647,
-                16007
-            ],
+            "range": [15647, 16007],
             "filename": "week-picker.js",
             "lineno": 443,
             "columnno": 4,
@@ -3454,10 +2986,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                15665,
-                15733
-            ],
+            "range": [15665, 15733],
             "filename": "week-picker.js",
             "lineno": 444,
             "columnno": 8,
@@ -3480,10 +3009,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                15889,
-                15906
-            ],
+            "range": [15889, 15906],
             "filename": "week-picker.js",
             "lineno": 447,
             "columnno": 8,
@@ -3506,10 +3032,7 @@
     {
         "comment": "/**\n     * @param {Any} [options]\n     */",
         "meta": {
-            "range": [
-                16059,
-                16152
-            ],
+            "range": [16059, 16152],
             "filename": "week-picker.js",
             "lineno": 455,
             "columnno": 4,
@@ -3518,9 +3041,7 @@
                 "id": "astnode100001585",
                 "name": "MdWeekPickerComponent#toggle",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "options"
-                ]
+                "paramnames": ["options"]
             },
             "vars": {
                 "": null
@@ -3529,9 +3050,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "options"
@@ -3546,10 +3065,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                16202,
-                16423
-            ],
+            "range": [16202, 16423],
             "filename": "week-picker.js",
             "lineno": 463,
             "columnno": 4,
@@ -3558,9 +3074,7 @@
                 "id": "astnode100001605",
                 "name": "MdWeekPickerComponent#handleWeekPickerYearItemClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -3569,9 +3083,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -3586,10 +3098,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                16255,
-                16286
-            ],
+            "range": [16255, 16286],
             "filename": "week-picker.js",
             "lineno": 464,
             "columnno": 14,
@@ -3612,10 +3121,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                16343,
-                16357
-            ],
+            "range": [16343, 16357],
             "filename": "week-picker.js",
             "lineno": 466,
             "columnno": 8,
@@ -3638,10 +3144,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                16408,
-                16413
-            ],
+            "range": [16408, 16413],
             "filename": "week-picker.js",
             "lineno": 467,
             "columnno": 49,
@@ -3662,10 +3165,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                16473,
-                16741
-            ],
+            "range": [16473, 16741],
             "filename": "week-picker.js",
             "lineno": 473,
             "columnno": 4,
@@ -3674,9 +3174,7 @@
                 "id": "astnode100001643",
                 "name": "MdWeekPickerComponent#handleWeekPickerMonthItemClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -3685,9 +3183,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -3702,10 +3198,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                16527,
-                16558
-            ],
+            "range": [16527, 16558],
             "filename": "week-picker.js",
             "lineno": 474,
             "columnno": 14,
@@ -3728,10 +3221,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                16660,
-                16674
-            ],
+            "range": [16660, 16674],
             "filename": "week-picker.js",
             "lineno": 477,
             "columnno": 8,
@@ -3754,10 +3244,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                16726,
-                16731
-            ],
+            "range": [16726, 16731],
             "filename": "week-picker.js",
             "lineno": 478,
             "columnno": 50,
@@ -3778,10 +3265,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                16791,
-                17229
-            ],
+            "range": [16791, 17229],
             "filename": "week-picker.js",
             "lineno": 484,
             "columnno": 4,
@@ -3790,9 +3274,7 @@
                 "id": "astnode100001691",
                 "name": "MdWeekPickerComponent#handleWeekPickerWeekItemClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -3801,9 +3283,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -3818,10 +3298,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                16844,
-                16875
-            ],
+            "range": [16844, 16875],
             "filename": "week-picker.js",
             "lineno": 485,
             "columnno": 14,
@@ -3844,10 +3321,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                17214,
-                17219
-            ],
+            "range": [17214, 17219],
             "filename": "week-picker.js",
             "lineno": 493,
             "columnno": 49,
@@ -3868,10 +3342,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                17279,
-                17413
-            ],
+            "range": [17279, 17413],
             "filename": "week-picker.js",
             "lineno": 499,
             "columnno": 4,
@@ -3880,9 +3351,7 @@
                 "id": "astnode100001778",
                 "name": "MdWeekPickerComponent#handleWeekPickerScrimClose",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -3891,9 +3360,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -3908,10 +3375,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                17398,
-                17403
-            ],
+            "range": [17398, 17403],
             "filename": "week-picker.js",
             "lineno": 501,
             "columnno": 46,
@@ -3932,10 +3396,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                17463,
-                17617
-            ],
+            "range": [17463, 17617],
             "filename": "week-picker.js",
             "lineno": 507,
             "columnno": 4,
@@ -3944,9 +3405,7 @@
                 "id": "astnode100001801",
                 "name": "MdWeekPickerComponent#handleWeekPickerShown",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -3955,9 +3414,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -3972,10 +3429,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                17667,
-                17824
-            ],
+            "range": [17667, 17824],
             "filename": "week-picker.js",
             "lineno": 515,
             "columnno": 4,
@@ -3984,9 +3438,7 @@
                 "id": "astnode100001821",
                 "name": "MdWeekPickerComponent#handleWeekPickerClosed",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -3995,9 +3447,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -4012,10 +3462,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                17874,
-                18323
-            ],
+            "range": [17874, 18323],
             "filename": "week-picker.js",
             "lineno": 523,
             "columnno": 4,
@@ -4024,9 +3471,7 @@
                 "id": "astnode100001841",
                 "name": "MdWeekPickerComponent#handleWeekPickerIconButtonPrevClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -4035,9 +3480,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -4052,10 +3495,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                17933,
-                18194
-            ],
+            "range": [17933, 18194],
             "filename": "week-picker.js",
             "lineno": 524,
             "columnno": 14,
@@ -4078,10 +3518,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                17953,
-                18023
-            ],
+            "range": [17953, 18023],
             "filename": "week-picker.js",
             "lineno": 525,
             "columnno": 12,
@@ -4101,10 +3538,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                18037,
-                18106
-            ],
+            "range": [18037, 18106],
             "filename": "week-picker.js",
             "lineno": 526,
             "columnno": 12,
@@ -4125,10 +3559,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                18120,
-                18183
-            ],
+            "range": [18120, 18183],
             "filename": "week-picker.js",
             "lineno": 527,
             "columnno": 12,
@@ -4149,10 +3580,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                18308,
-                18313
-            ],
+            "range": [18308, 18313],
             "filename": "week-picker.js",
             "lineno": 531,
             "columnno": 55,
@@ -4173,10 +3601,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                18373,
-                18822
-            ],
+            "range": [18373, 18822],
             "filename": "week-picker.js",
             "lineno": 537,
             "columnno": 4,
@@ -4185,9 +3610,7 @@
                 "id": "astnode100001919",
                 "name": "MdWeekPickerComponent#handleWeekPickerIconButtonNextClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -4196,9 +3619,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -4213,10 +3634,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                18432,
-                18693
-            ],
+            "range": [18432, 18693],
             "filename": "week-picker.js",
             "lineno": 538,
             "columnno": 14,
@@ -4239,10 +3657,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                18452,
-                18522
-            ],
+            "range": [18452, 18522],
             "filename": "week-picker.js",
             "lineno": 539,
             "columnno": 12,
@@ -4262,10 +3677,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                18536,
-                18605
-            ],
+            "range": [18536, 18605],
             "filename": "week-picker.js",
             "lineno": 540,
             "columnno": 12,
@@ -4286,10 +3698,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                18619,
-                18682
-            ],
+            "range": [18619, 18682],
             "filename": "week-picker.js",
             "lineno": 541,
             "columnno": 12,
@@ -4310,10 +3719,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                18807,
-                18812
-            ],
+            "range": [18807, 18812],
             "filename": "week-picker.js",
             "lineno": 545,
             "columnno": 55,
@@ -4334,10 +3740,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                18872,
-                19268
-            ],
+            "range": [18872, 19268],
             "filename": "week-picker.js",
             "lineno": 551,
             "columnno": 4,
@@ -4346,9 +3749,7 @@
                 "id": "astnode100001997",
                 "name": "MdWeekPickerComponent#handleWeekPickerIconButtonClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -4357,9 +3758,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -4374,10 +3773,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                18927,
-                18958
-            ],
+            "range": [18927, 18958],
             "filename": "week-picker.js",
             "lineno": 552,
             "columnno": 14,
@@ -4400,10 +3796,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                18974,
-                19133
-            ],
+            "range": [18974, 19133],
             "filename": "week-picker.js",
             "lineno": 553,
             "columnno": 14,
@@ -4426,10 +3819,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                18994,
-                19051
-            ],
+            "range": [18994, 19051],
             "filename": "week-picker.js",
             "lineno": 554,
             "columnno": 12,
@@ -4451,10 +3841,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                19065,
-                19122
-            ],
+            "range": [19065, 19122],
             "filename": "week-picker.js",
             "lineno": 555,
             "columnno": 12,
@@ -4476,10 +3863,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                19149,
-                19166
-            ],
+            "range": [19149, 19166],
             "filename": "week-picker.js",
             "lineno": 557,
             "columnno": 14,
@@ -4502,10 +3886,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                19253,
-                19258
-            ],
+            "range": [19253, 19258],
             "filename": "week-picker.js",
             "lineno": 559,
             "columnno": 51,
@@ -4526,10 +3907,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                19318,
-                19514
-            ],
+            "range": [19318, 19514],
             "filename": "week-picker.js",
             "lineno": 565,
             "columnno": 4,
@@ -4538,9 +3916,7 @@
                 "id": "astnode100002053",
                 "name": "MdWeekPickerComponent#handleWeekPickerButtonCancelClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -4549,9 +3925,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -4566,10 +3940,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                19369,
-                19419
-            ],
+            "range": [19369, 19419],
             "filename": "week-picker.js",
             "lineno": 566,
             "columnno": 8,
@@ -4592,10 +3963,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                19499,
-                19504
-            ],
+            "range": [19499, 19504],
             "filename": "week-picker.js",
             "lineno": 568,
             "columnno": 53,
@@ -4616,10 +3984,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                19564,
-                19692
-            ],
+            "range": [19564, 19692],
             "filename": "week-picker.js",
             "lineno": 574,
             "columnno": 4,
@@ -4628,9 +3993,7 @@
                 "id": "astnode100002080",
                 "name": "MdWeekPickerComponent#handleWeekPickerButtonOkClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -4639,9 +4002,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -4656,10 +4017,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                19677,
-                19682
-            ],
+            "range": [19677, 19682],
             "filename": "week-picker.js",
             "lineno": 576,
             "columnno": 49,
@@ -4680,10 +4038,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                19742,
-                19976
-            ],
+            "range": [19742, 19976],
             "filename": "week-picker.js",
             "lineno": 582,
             "columnno": 4,
@@ -4692,9 +4047,7 @@
                 "id": "astnode100002094",
                 "name": "MdWeekPickerComponent#handleWeekPickerButtonLabelClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -4703,9 +4056,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -4720,10 +4071,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                19798,
-                19869
-            ],
+            "range": [19798, 19869],
             "filename": "week-picker.js",
             "lineno": 583,
             "columnno": 14,
@@ -4746,10 +4094,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                19818,
-                19822
-            ],
+            "range": [19818, 19822],
             "filename": "week-picker.js",
             "lineno": 584,
             "columnno": 12,
@@ -4770,10 +4115,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                19836,
-                19840
-            ],
+            "range": [19836, 19840],
             "filename": "week-picker.js",
             "lineno": 585,
             "columnno": 12,
@@ -4795,10 +4137,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                19854,
-                19858
-            ],
+            "range": [19854, 19858],
             "filename": "week-picker.js",
             "lineno": 586,
             "columnno": 12,
@@ -4820,10 +4159,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                19879,
-                19907
-            ],
+            "range": [19879, 19907],
             "filename": "week-picker.js",
             "lineno": 588,
             "columnno": 8,
@@ -4846,10 +4182,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                19961,
-                19966
-            ],
+            "range": [19961, 19966],
             "filename": "week-picker.js",
             "lineno": 589,
             "columnno": 52,
@@ -4870,10 +4203,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                20026,
-                20475
-            ],
+            "range": [20026, 20475],
             "filename": "week-picker.js",
             "lineno": 595,
             "columnno": 4,
@@ -4882,9 +4212,7 @@
                 "id": "astnode100002128",
                 "name": "MdWeekPickerComponent#handleWeekPickerButtonClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -4893,9 +4221,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -4910,10 +4236,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                20077,
-                20108
-            ],
+            "range": [20077, 20108],
             "filename": "week-picker.js",
             "lineno": 596,
             "columnno": 14,
@@ -4936,10 +4259,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                20124,
-                20344
-            ],
+            "range": [20124, 20344],
             "filename": "week-picker.js",
             "lineno": 597,
             "columnno": 14,
@@ -4962,10 +4282,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                20144,
-                20201
-            ],
+            "range": [20144, 20201],
             "filename": "week-picker.js",
             "lineno": 598,
             "columnno": 12,
@@ -4987,10 +4304,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                20215,
-                20264
-            ],
+            "range": [20215, 20264],
             "filename": "week-picker.js",
             "lineno": 599,
             "columnno": 12,
@@ -5012,10 +4326,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                20278,
-                20333
-            ],
+            "range": [20278, 20333],
             "filename": "week-picker.js",
             "lineno": 600,
             "columnno": 12,
@@ -5037,10 +4348,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                20360,
-                20377
-            ],
+            "range": [20360, 20377],
             "filename": "week-picker.js",
             "lineno": 602,
             "columnno": 14,
@@ -5063,10 +4371,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                20460,
-                20465
-            ],
+            "range": [20460, 20465],
             "filename": "week-picker.js",
             "lineno": 604,
             "columnno": 47,
@@ -5087,10 +4392,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                20551,
-                20572
-            ],
+            "range": [20551, 20572],
             "filename": "week-picker.js",
             "lineno": 608,
             "columnno": 9,
@@ -5110,8 +4412,6 @@
     {
         "kind": "package",
         "longname": "package:undefined",
-        "files": [
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker\\week-picker.js"
-        ]
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\week-picker\\week-picker.js"]
     }
 ]

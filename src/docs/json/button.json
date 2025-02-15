@@ -2,10 +2,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-button\n */",
         "meta": {
-            "range": [
-                247,
-                2187
-            ],
+            "range": [247, 2187],
             "filename": "button.js",
             "lineno": 10,
             "columnno": 0,
@@ -17,9 +14,7 @@
                 "paramnames": []
             }
         },
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -37,10 +32,7 @@
     {
         "comment": "/**\n     * @property {String} [icon]\n     * @property {String} [label]\n     * @property {String} [variant]\n     * @property {String} [type]\n     * @property {Boolean} [disabled]\n     * @property {Boolean} [selected]\n     */",
         "meta": {
-            "range": [
-                525,
-                789
-            ],
+            "range": [525, 789],
             "filename": "button.js",
             "lineno": 19,
             "columnno": 4,
@@ -54,54 +46,42 @@
         "properties": [
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "icon"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "label"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "variant"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "type"
             },
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "disabled"
             },
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "selected"
@@ -116,10 +96,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                555,
-                577
-            ],
+            "range": [555, 577],
             "filename": "button.js",
             "lineno": 20,
             "columnno": 8,
@@ -140,10 +117,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                563,
-                575
-            ],
+            "range": [563, 575],
             "filename": "button.js",
             "lineno": 20,
             "columnno": 16,
@@ -165,10 +139,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                587,
-                610
-            ],
+            "range": [587, 610],
             "filename": "button.js",
             "lineno": 21,
             "columnno": 8,
@@ -189,10 +160,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                596,
-                608
-            ],
+            "range": [596, 608],
             "filename": "button.js",
             "lineno": 21,
             "columnno": 17,
@@ -214,10 +182,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                620,
-                645
-            ],
+            "range": [620, 645],
             "filename": "button.js",
             "lineno": 22,
             "columnno": 8,
@@ -238,10 +203,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                631,
-                643
-            ],
+            "range": [631, 643],
             "filename": "button.js",
             "lineno": 22,
             "columnno": 19,
@@ -263,10 +225,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                655,
-                677
-            ],
+            "range": [655, 677],
             "filename": "button.js",
             "lineno": 23,
             "columnno": 8,
@@ -287,10 +246,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                663,
-                675
-            ],
+            "range": [663, 675],
             "filename": "button.js",
             "lineno": 23,
             "columnno": 16,
@@ -312,10 +268,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                687,
-                729
-            ],
+            "range": [687, 729],
             "filename": "button.js",
             "lineno": 24,
             "columnno": 8,
@@ -336,10 +289,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                699,
-                712
-            ],
+            "range": [699, 712],
             "filename": "button.js",
             "lineno": 24,
             "columnno": 20,
@@ -361,10 +311,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                714,
-                727
-            ],
+            "range": [714, 727],
             "filename": "button.js",
             "lineno": 24,
             "columnno": 35,
@@ -386,10 +333,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                739,
-                781
-            ],
+            "range": [739, 781],
             "filename": "button.js",
             "lineno": 25,
             "columnno": 8,
@@ -410,10 +354,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                751,
-                764
-            ],
+            "range": [751, 764],
             "filename": "button.js",
             "lineno": 25,
             "columnno": 20,
@@ -435,10 +376,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                766,
-                779
-            ],
+            "range": [766, 779],
             "filename": "button.js",
             "lineno": 25,
             "columnno": 35,
@@ -460,10 +398,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                828,
-                890
-            ],
+            "range": [828, 890],
             "filename": "button.js",
             "lineno": 31,
             "columnno": 4,
@@ -484,10 +419,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                912,
-                980
-            ],
+            "range": [912, 980],
             "filename": "button.js",
             "lineno": 35,
             "columnno": 4,
@@ -512,10 +444,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-button\n */",
         "meta": {
-            "range": [
-                247,
-                2187
-            ],
+            "range": [247, 2187],
             "filename": "button.js",
             "lineno": 10,
             "columnno": 0,
@@ -530,9 +459,7 @@
         "name": "MdButtonComponent",
         "longname": "MdButtonComponent",
         "kind": "class",
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -546,10 +473,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                953,
-                973
-            ],
+            "range": [953, 973],
             "filename": "button.js",
             "lineno": 37,
             "columnno": 8,
@@ -572,10 +496,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                1002,
-                1400
-            ],
+            "range": [1002, 1400],
             "filename": "button.js",
             "lineno": 42,
             "columnno": 4,
@@ -600,10 +521,7 @@
     {
         "comment": "/**\n     * @async\n     */",
         "meta": {
-            "range": [
-                1436,
-                1676
-            ],
+            "range": [1436, 1676],
             "filename": "button.js",
             "lineno": 57,
             "columnno": 4,
@@ -629,10 +547,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1583,
-                1669
-            ],
+            "range": [1583, 1669],
             "filename": "button.js",
             "lineno": 61,
             "columnno": 8,
@@ -655,10 +570,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1628,
-                1657
-            ],
+            "range": [1628, 1657],
             "filename": "button.js",
             "lineno": 62,
             "columnno": 12,
@@ -679,10 +591,7 @@
     {
         "comment": "/**\n     * @async\n     */",
         "meta": {
-            "range": [
-                1712,
-                1834
-            ],
+            "range": [1712, 1834],
             "filename": "button.js",
             "lineno": 69,
             "columnno": 4,
@@ -708,10 +617,7 @@
     {
         "comment": "/**\n     * @param {Any} [changedProperties]\n     */",
         "meta": {
-            "range": [
-                1896,
-                2185
-            ],
+            "range": [1896, 2185],
             "filename": "button.js",
             "lineno": 77,
             "columnno": 4,
@@ -720,9 +626,7 @@
                 "id": "astnode100000169",
                 "name": "MdButtonComponent#updated",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "changedProperties"
-                ]
+                "paramnames": ["changedProperties"]
             },
             "vars": {
                 "": null
@@ -731,9 +635,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "changedProperties"
@@ -748,10 +650,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2252,
-                2269
-            ],
+            "range": [2252, 2269],
             "filename": "button.js",
             "lineno": 87,
             "columnno": 9,
@@ -771,8 +670,6 @@
     {
         "kind": "package",
         "longname": "package:undefined",
-        "files": [
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\button\\button.js"
-        ]
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\button\\button.js"]
     }
 ]

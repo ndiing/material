@@ -8,8 +8,8 @@ import { Router } from "./material/router/router";
 import DemoRoutes from "./demo/demo.js";
 import DocsRoutes from "./docs/docs.js";
 
-const component=document.createElement('div')
-component.textContent="i'm empty without you"
+const component = document.createElement("div");
+component.textContent = "i'm empty without you";
 
 const routes = [
     DemoRoutes,

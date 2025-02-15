@@ -2,10 +2,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-navigation-list-row\n */",
         "meta": {
-            "range": [
-                159,
-                355
-            ],
+            "range": [159, 355],
             "filename": "navigation-list-row.js",
             "lineno": 8,
             "columnno": 0,
@@ -17,9 +14,7 @@
                 "paramnames": []
             }
         },
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -36,10 +31,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                236,
-                353
-            ],
+            "range": [236, 353],
             "filename": "navigation-list-row.js",
             "lineno": 11,
             "columnno": 4,
@@ -64,10 +56,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                444,
-                472
-            ],
+            "range": [444, 472],
             "filename": "navigation-list-row.js",
             "lineno": 17,
             "columnno": 9,
@@ -87,8 +76,6 @@
     {
         "kind": "package",
         "longname": "package:undefined",
-        "files": [
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\navigation-list\\navigation-list-row.js"
-        ]
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\navigation-list\\navigation-list-row.js"]
     }
 ]

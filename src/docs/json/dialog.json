@@ -2,10 +2,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-dialog\n * @fires MdDialogComponent#onDialogShow\n * @fires MdDialogComponent#onDialogClose\n * @fires MdDialogComponent#onDialogScrimClose\n * @fires MdDialogComponent#onDialogShown\n * @fires MdDialogComponent#onDialogClosed\n * @fires MdDialogComponent#onDialogIconButtonClick\n * @fires MdDialogComponent#onDialogButtonClick\n */",
         "meta": {
-            "range": [
-                570,
-                7081
-            ],
+            "range": [570, 7081],
             "filename": "dialog.js",
             "lineno": 17,
             "columnno": 0,
@@ -17,9 +14,7 @@
                 "paramnames": []
             }
         },
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -28,15 +23,7 @@
                 "value": "md-dialog"
             }
         ],
-        "fires": [
-            "MdDialogComponent#event:onDialogShow",
-            "MdDialogComponent#event:onDialogClose",
-            "MdDialogComponent#event:onDialogScrimClose",
-            "MdDialogComponent#event:onDialogShown",
-            "MdDialogComponent#event:onDialogClosed",
-            "MdDialogComponent#event:onDialogIconButtonClick",
-            "MdDialogComponent#event:onDialogButtonClick"
-        ],
+        "fires": ["MdDialogComponent#event:onDialogShow", "MdDialogComponent#event:onDialogClose", "MdDialogComponent#event:onDialogScrimClose", "MdDialogComponent#event:onDialogShown", "MdDialogComponent#event:onDialogClosed", "MdDialogComponent#event:onDialogIconButtonClick", "MdDialogComponent#event:onDialogButtonClick"],
         "name": "MdDialogComponent",
         "longname": "MdDialogComponent",
         "kind": "class",
@@ -46,10 +33,7 @@
     {
         "comment": "/**\n     * @property {Array} [icons]\n     * @property {Array} [actions]\n     * @property {String} [label]\n     * @property {String} [sublabel]\n     * @property {Array} [buttons]\n     * @property {Boolean} [open]\n     */",
         "meta": {
-            "range": [
-                844,
-                1089
-            ],
+            "range": [844, 1089],
             "filename": "dialog.js",
             "lineno": 26,
             "columnno": 4,
@@ -63,54 +47,42 @@
         "properties": [
             {
                 "type": {
-                    "names": [
-                        "Array"
-                    ]
+                    "names": ["Array"]
                 },
                 "optional": true,
                 "name": "icons"
             },
             {
                 "type": {
-                    "names": [
-                        "Array"
-                    ]
+                    "names": ["Array"]
                 },
                 "optional": true,
                 "name": "actions"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "label"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "sublabel"
             },
             {
                 "type": {
-                    "names": [
-                        "Array"
-                    ]
+                    "names": ["Array"]
                 },
                 "optional": true,
                 "name": "buttons"
             },
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "open"
@@ -125,10 +97,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                874,
-                896
-            ],
+            "range": [874, 896],
             "filename": "dialog.js",
             "lineno": 27,
             "columnno": 8,
@@ -149,10 +118,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                883,
-                894
-            ],
+            "range": [883, 894],
             "filename": "dialog.js",
             "lineno": 27,
             "columnno": 17,
@@ -174,10 +140,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                906,
-                930
-            ],
+            "range": [906, 930],
             "filename": "dialog.js",
             "lineno": 28,
             "columnno": 8,
@@ -198,10 +161,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                917,
-                928
-            ],
+            "range": [917, 928],
             "filename": "dialog.js",
             "lineno": 28,
             "columnno": 19,
@@ -223,10 +183,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                940,
-                963
-            ],
+            "range": [940, 963],
             "filename": "dialog.js",
             "lineno": 29,
             "columnno": 8,
@@ -247,10 +204,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                949,
-                961
-            ],
+            "range": [949, 961],
             "filename": "dialog.js",
             "lineno": 29,
             "columnno": 17,
@@ -272,10 +226,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                973,
-                999
-            ],
+            "range": [973, 999],
             "filename": "dialog.js",
             "lineno": 30,
             "columnno": 8,
@@ -296,10 +247,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                985,
-                997
-            ],
+            "range": [985, 997],
             "filename": "dialog.js",
             "lineno": 30,
             "columnno": 20,
@@ -321,10 +269,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1009,
-                1033
-            ],
+            "range": [1009, 1033],
             "filename": "dialog.js",
             "lineno": 31,
             "columnno": 8,
@@ -345,10 +290,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1020,
-                1031
-            ],
+            "range": [1020, 1031],
             "filename": "dialog.js",
             "lineno": 31,
             "columnno": 19,
@@ -370,10 +312,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1043,
-                1081
-            ],
+            "range": [1043, 1081],
             "filename": "dialog.js",
             "lineno": 32,
             "columnno": 8,
@@ -394,10 +333,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1051,
-                1064
-            ],
+            "range": [1051, 1064],
             "filename": "dialog.js",
             "lineno": 32,
             "columnno": 16,
@@ -419,10 +355,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1066,
-                1079
-            ],
+            "range": [1066, 1079],
             "filename": "dialog.js",
             "lineno": 32,
             "columnno": 31,
@@ -444,10 +377,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                1111,
-                1198
-            ],
+            "range": [1111, 1198],
             "filename": "dialog.js",
             "lineno": 37,
             "columnno": 4,
@@ -472,10 +402,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-dialog\n * @fires MdDialogComponent#onDialogShow\n * @fires MdDialogComponent#onDialogClose\n * @fires MdDialogComponent#onDialogScrimClose\n * @fires MdDialogComponent#onDialogShown\n * @fires MdDialogComponent#onDialogClosed\n * @fires MdDialogComponent#onDialogIconButtonClick\n * @fires MdDialogComponent#onDialogButtonClick\n */",
         "meta": {
-            "range": [
-                570,
-                7081
-            ],
+            "range": [570, 7081],
             "filename": "dialog.js",
             "lineno": 17,
             "columnno": 0,
@@ -490,9 +417,7 @@
         "name": "MdDialogComponent",
         "longname": "MdDialogComponent",
         "kind": "class",
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -501,24 +426,13 @@
                 "value": "md-dialog"
             }
         ],
-        "fires": [
-            "MdDialogComponent#event:onDialogShow",
-            "MdDialogComponent#event:onDialogClose",
-            "MdDialogComponent#event:onDialogScrimClose",
-            "MdDialogComponent#event:onDialogShown",
-            "MdDialogComponent#event:onDialogClosed",
-            "MdDialogComponent#event:onDialogIconButtonClick",
-            "MdDialogComponent#event:onDialogButtonClick"
-        ],
+        "fires": ["MdDialogComponent#event:onDialogShow", "MdDialogComponent#event:onDialogClose", "MdDialogComponent#event:onDialogScrimClose", "MdDialogComponent#event:onDialogShown", "MdDialogComponent#event:onDialogClosed", "MdDialogComponent#event:onDialogIconButtonClick", "MdDialogComponent#event:onDialogButtonClick"],
         "scope": "global"
     },
     {
         "comment": "",
         "meta": {
-            "range": [
-                1152,
-                1191
-            ],
+            "range": [1152, 1191],
             "filename": "dialog.js",
             "lineno": 39,
             "columnno": 8,
@@ -541,10 +455,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     */",
         "meta": {
-            "range": [
-                1247,
-                1343
-            ],
+            "range": [1247, 1343],
             "filename": "dialog.js",
             "lineno": 45,
             "columnno": 4,
@@ -553,9 +464,7 @@
                 "id": "astnode100000071",
                 "name": "MdDialogComponent#renderIcon",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item"
-                ]
+                "paramnames": ["item"]
             },
             "vars": {
                 "": null
@@ -564,9 +473,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
@@ -581,10 +488,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     */",
         "meta": {
-            "range": [
-                1392,
-                1920
-            ],
+            "range": [1392, 1920],
             "filename": "dialog.js",
             "lineno": 52,
             "columnno": 4,
@@ -593,9 +497,7 @@
                 "id": "astnode100000087",
                 "name": "MdDialogComponent#renderIconButton",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item"
-                ]
+                "paramnames": ["item"]
             },
             "vars": {
                 "": null
@@ -604,9 +506,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
@@ -621,10 +521,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     */",
         "meta": {
-            "range": [
-                1969,
-                2477
-            ],
+            "range": [1969, 2477],
             "filename": "dialog.js",
             "lineno": 70,
             "columnno": 4,
@@ -633,9 +530,7 @@
                 "id": "astnode100000139",
                 "name": "MdDialogComponent#renderButton",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item"
-                ]
+                "paramnames": ["item"]
             },
             "vars": {
                 "": null
@@ -644,9 +539,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
@@ -661,10 +554,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     */",
         "meta": {
-            "range": [
-                2526,
-                2614
-            ],
+            "range": [2526, 2614],
             "filename": "dialog.js",
             "lineno": 88,
             "columnno": 4,
@@ -673,9 +563,7 @@
                 "id": "astnode100000191",
                 "name": "MdDialogComponent#renderSpacer",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item"
-                ]
+                "paramnames": ["item"]
             },
             "vars": {
                 "": null
@@ -684,9 +572,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
@@ -701,10 +587,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     * @param {Any} [component=\"icon\"]\n     */",
         "meta": {
-            "range": [
-                2702,
-                3123
-            ],
+            "range": [2702, 3123],
             "filename": "dialog.js",
             "lineno": 96,
             "columnno": 4,
@@ -713,10 +596,7 @@
                 "id": "astnode100000201",
                 "name": "MdDialogComponent#renderComponent",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item",
-                    "component"
-                ]
+                "paramnames": ["item", "component"]
             },
             "vars": {
                 "": null
@@ -725,18 +605,14 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "defaultvalue": "\"icon\"",
@@ -752,10 +628,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                3145,
-                4306
-            ],
+            "range": [3145, 4306],
             "filename": "dialog.js",
             "lineno": 111,
             "columnno": 4,
@@ -780,10 +653,7 @@
     {
         "comment": "/**\n     * @async\n     */",
         "meta": {
-            "range": [
-                4342,
-                5085
-            ],
+            "range": [4342, 5085],
             "filename": "dialog.js",
             "lineno": 118,
             "columnno": 4,
@@ -809,10 +679,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4524,
-                4577
-            ],
+            "range": [4524, 4577],
             "filename": "dialog.js",
             "lineno": 122,
             "columnno": 8,
@@ -835,10 +702,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4671,
-                4739
-            ],
+            "range": [4671, 4739],
             "filename": "dialog.js",
             "lineno": 124,
             "columnno": 8,
@@ -861,10 +725,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                5107,
-                5301
-            ],
+            "range": [5107, 5301],
             "filename": "dialog.js",
             "lineno": 134,
             "columnno": 4,
@@ -889,10 +750,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                5323,
-                5635
-            ],
+            "range": [5323, 5635],
             "filename": "dialog.js",
             "lineno": 142,
             "columnno": 4,
@@ -917,10 +775,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5340,
-                5398
-            ],
+            "range": [5340, 5398],
             "filename": "dialog.js",
             "lineno": 143,
             "columnno": 8,
@@ -943,10 +798,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5577,
-                5593
-            ],
+            "range": [5577, 5593],
             "filename": "dialog.js",
             "lineno": 147,
             "columnno": 8,
@@ -969,10 +821,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                5657,
-                5976
-            ],
+            "range": [5657, 5976],
             "filename": "dialog.js",
             "lineno": 153,
             "columnno": 4,
@@ -997,10 +846,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5675,
-                5735
-            ],
+            "range": [5675, 5735],
             "filename": "dialog.js",
             "lineno": 154,
             "columnno": 8,
@@ -1023,10 +869,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5916,
-                5933
-            ],
+            "range": [5916, 5933],
             "filename": "dialog.js",
             "lineno": 158,
             "columnno": 8,
@@ -1049,10 +892,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                5998,
-                6077
-            ],
+            "range": [5998, 6077],
             "filename": "dialog.js",
             "lineno": 164,
             "columnno": 4,
@@ -1077,10 +917,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                6127,
-                6253
-            ],
+            "range": [6127, 6253],
             "filename": "dialog.js",
             "lineno": 172,
             "columnno": 4,
@@ -1089,9 +926,7 @@
                 "id": "astnode100000683",
                 "name": "MdDialogComponent#handleDialogScrimClose",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -1100,9 +935,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -1117,10 +950,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6238,
-                6243
-            ],
+            "range": [6238, 6243],
             "filename": "dialog.js",
             "lineno": 174,
             "columnno": 42,
@@ -1141,10 +971,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                6303,
-                6520
-            ],
+            "range": [6303, 6520],
             "filename": "dialog.js",
             "lineno": 180,
             "columnno": 4,
@@ -1153,9 +980,7 @@
                 "id": "astnode100000706",
                 "name": "MdDialogComponent#handleDialogShown",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -1164,9 +989,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -1181,10 +1004,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                6570,
-                6789
-            ],
+            "range": [6570, 6789],
             "filename": "dialog.js",
             "lineno": 190,
             "columnno": 4,
@@ -1193,9 +1013,7 @@
                 "id": "astnode100000733",
                 "name": "MdDialogComponent#handleDialogClosed",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -1204,9 +1022,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -1221,10 +1037,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                6839,
-                6938
-            ],
+            "range": [6839, 6938],
             "filename": "dialog.js",
             "lineno": 200,
             "columnno": 4,
@@ -1233,9 +1046,7 @@
                 "id": "astnode100000760",
                 "name": "MdDialogComponent#handleDialogIconButtonClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -1244,9 +1055,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -1261,10 +1070,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6923,
-                6928
-            ],
+            "range": [6923, 6928],
             "filename": "dialog.js",
             "lineno": 201,
             "columnno": 47,
@@ -1285,10 +1091,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                6988,
-                7079
-            ],
+            "range": [6988, 7079],
             "filename": "dialog.js",
             "lineno": 207,
             "columnno": 4,
@@ -1297,9 +1100,7 @@
                 "id": "astnode100000774",
                 "name": "MdDialogComponent#handleDialogButtonClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -1308,9 +1109,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -1325,10 +1124,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                7064,
-                7069
-            ],
+            "range": [7064, 7069],
             "filename": "dialog.js",
             "lineno": 208,
             "columnno": 43,
@@ -1349,10 +1145,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                7146,
-                7163
-            ],
+            "range": [7146, 7163],
             "filename": "dialog.js",
             "lineno": 212,
             "columnno": 9,
@@ -1372,8 +1165,6 @@
     {
         "kind": "package",
         "longname": "package:undefined",
-        "files": [
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\dialog\\dialog.js"
-        ]
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\dialog\\dialog.js"]
     }
 ]

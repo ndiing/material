@@ -2,10 +2,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                140,
-                294
-            ],
+            "range": [140, 294],
             "filename": "localization.js",
             "lineno": 3,
             "columnno": 6,
@@ -27,10 +24,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                183,
-                195
-            ],
+            "range": [183, 195],
             "filename": "localization.js",
             "lineno": 4,
             "columnno": 4,
@@ -51,10 +45,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                201,
-                214
-            ],
+            "range": [201, 214],
             "filename": "localization.js",
             "lineno": 5,
             "columnno": 4,
@@ -75,10 +66,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                220,
-                290
-            ],
+            "range": [220, 290],
             "filename": "localization.js",
             "lineno": 6,
             "columnno": 4,
@@ -98,10 +86,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                296,
-                344
-            ],
+            "range": [296, 344],
             "filename": "localization.js",
             "lineno": 8,
             "columnno": 0,
@@ -121,10 +106,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                309,
-                343
-            ],
+            "range": [309, 343],
             "filename": "localization.js",
             "lineno": 8,
             "columnno": 13,
@@ -146,10 +128,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                345,
-                393
-            ],
+            "range": [345, 393],
             "filename": "localization.js",
             "lineno": 9,
             "columnno": 0,
@@ -169,10 +148,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                358,
-                392
-            ],
+            "range": [358, 392],
             "filename": "localization.js",
             "lineno": 9,
             "columnno": 13,
@@ -194,8 +170,6 @@
     {
         "kind": "package",
         "longname": "package:undefined",
-        "files": [
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\localization\\localization.js"
-        ]
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\localization\\localization.js"]
     }
 ]

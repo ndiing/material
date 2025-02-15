@@ -2,10 +2,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-bottom-app-bar\n * @fires MdBottomAppBarComponent#onBottomAppBarShown\n * @fires MdBottomAppBarComponent#onBottomAppBarClosed\n * @fires MdBottomAppBarComponent#onBottomAppBarIconButtonClick\n * @fires MdBottomAppBarComponent#onBottomAppBarFabClick\n */",
         "meta": {
-            "range": [
-                493,
-                3638
-            ],
+            "range": [493, 3638],
             "filename": "bottom-app-bar.js",
             "lineno": 14,
             "columnno": 0,
@@ -17,9 +14,7 @@
                 "paramnames": []
             }
         },
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -28,12 +23,7 @@
                 "value": "md-bottom-app-bar"
             }
         ],
-        "fires": [
-            "MdBottomAppBarComponent#event:onBottomAppBarShown",
-            "MdBottomAppBarComponent#event:onBottomAppBarClosed",
-            "MdBottomAppBarComponent#event:onBottomAppBarIconButtonClick",
-            "MdBottomAppBarComponent#event:onBottomAppBarFabClick"
-        ],
+        "fires": ["MdBottomAppBarComponent#event:onBottomAppBarShown", "MdBottomAppBarComponent#event:onBottomAppBarClosed", "MdBottomAppBarComponent#event:onBottomAppBarIconButtonClick", "MdBottomAppBarComponent#event:onBottomAppBarFabClick"],
         "name": "MdBottomAppBarComponent",
         "longname": "MdBottomAppBarComponent",
         "kind": "class",
@@ -43,10 +33,7 @@
     {
         "comment": "/**\n     * @property {Array} [actions]\n     * @property {String} [fab]\n     * @property {Boolean} [open]\n     */",
         "meta": {
-            "range": [
-                666,
-                807
-            ],
+            "range": [666, 807],
             "filename": "bottom-app-bar.js",
             "lineno": 20,
             "columnno": 4,
@@ -60,27 +47,21 @@
         "properties": [
             {
                 "type": {
-                    "names": [
-                        "Array"
-                    ]
+                    "names": ["Array"]
                 },
                 "optional": true,
                 "name": "actions"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "fab"
             },
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "open"
@@ -95,10 +76,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                696,
-                720
-            ],
+            "range": [696, 720],
             "filename": "bottom-app-bar.js",
             "lineno": 21,
             "columnno": 8,
@@ -119,10 +97,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                707,
-                718
-            ],
+            "range": [707, 718],
             "filename": "bottom-app-bar.js",
             "lineno": 21,
             "columnno": 19,
@@ -144,10 +119,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                730,
-                751
-            ],
+            "range": [730, 751],
             "filename": "bottom-app-bar.js",
             "lineno": 22,
             "columnno": 8,
@@ -168,10 +140,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                737,
-                749
-            ],
+            "range": [737, 749],
             "filename": "bottom-app-bar.js",
             "lineno": 22,
             "columnno": 15,
@@ -193,10 +162,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                761,
-                799
-            ],
+            "range": [761, 799],
             "filename": "bottom-app-bar.js",
             "lineno": 23,
             "columnno": 8,
@@ -217,10 +183,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                769,
-                782
-            ],
+            "range": [769, 782],
             "filename": "bottom-app-bar.js",
             "lineno": 23,
             "columnno": 16,
@@ -242,10 +205,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                784,
-                797
-            ],
+            "range": [784, 797],
             "filename": "bottom-app-bar.js",
             "lineno": 23,
             "columnno": 31,
@@ -267,10 +227,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                829,
-                867
-            ],
+            "range": [829, 867],
             "filename": "bottom-app-bar.js",
             "lineno": 28,
             "columnno": 4,
@@ -295,10 +252,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-bottom-app-bar\n * @fires MdBottomAppBarComponent#onBottomAppBarShown\n * @fires MdBottomAppBarComponent#onBottomAppBarClosed\n * @fires MdBottomAppBarComponent#onBottomAppBarIconButtonClick\n * @fires MdBottomAppBarComponent#onBottomAppBarFabClick\n */",
         "meta": {
-            "range": [
-                493,
-                3638
-            ],
+            "range": [493, 3638],
             "filename": "bottom-app-bar.js",
             "lineno": 14,
             "columnno": 0,
@@ -313,9 +267,7 @@
         "name": "MdBottomAppBarComponent",
         "longname": "MdBottomAppBarComponent",
         "kind": "class",
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -324,21 +276,13 @@
                 "value": "md-bottom-app-bar"
             }
         ],
-        "fires": [
-            "MdBottomAppBarComponent#event:onBottomAppBarShown",
-            "MdBottomAppBarComponent#event:onBottomAppBarClosed",
-            "MdBottomAppBarComponent#event:onBottomAppBarIconButtonClick",
-            "MdBottomAppBarComponent#event:onBottomAppBarFabClick"
-        ],
+        "fires": ["MdBottomAppBarComponent#event:onBottomAppBarShown", "MdBottomAppBarComponent#event:onBottomAppBarClosed", "MdBottomAppBarComponent#event:onBottomAppBarIconButtonClick", "MdBottomAppBarComponent#event:onBottomAppBarFabClick"],
         "scope": "global"
     },
     {
         "comment": "/**\n     * @param {Any} [item]\n     */",
         "meta": {
-            "range": [
-                916,
-                1500
-            ],
+            "range": [916, 1500],
             "filename": "bottom-app-bar.js",
             "lineno": 35,
             "columnno": 4,
@@ -347,9 +291,7 @@
                 "id": "astnode100000047",
                 "name": "MdBottomAppBarComponent#renderIconButton",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item"
-                ]
+                "paramnames": ["item"]
             },
             "vars": {
                 "": null
@@ -358,9 +300,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
@@ -375,10 +315,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     */",
         "meta": {
-            "range": [
-                1549,
-                2063
-            ],
+            "range": [1549, 2063],
             "filename": "bottom-app-bar.js",
             "lineno": 54,
             "columnno": 4,
@@ -387,9 +324,7 @@
                 "id": "astnode100000099",
                 "name": "MdBottomAppBarComponent#renderFab",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item"
-                ]
+                "paramnames": ["item"]
             },
             "vars": {
                 "": null
@@ -398,9 +333,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
@@ -415,10 +348,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                2085,
-                2327
-            ],
+            "range": [2085, 2327],
             "filename": "bottom-app-bar.js",
             "lineno": 71,
             "columnno": 4,
@@ -443,10 +373,7 @@
     {
         "comment": "/**\n     * @async\n     */",
         "meta": {
-            "range": [
-                2363,
-                2750
-            ],
+            "range": [2363, 2750],
             "filename": "bottom-app-bar.js",
             "lineno": 78,
             "columnno": 4,
@@ -472,10 +399,7 @@
     {
         "comment": "/**\n     * @param {Any} [changedProperties]\n     */",
         "meta": {
-            "range": [
-                2812,
-                2888
-            ],
+            "range": [2812, 2888],
             "filename": "bottom-app-bar.js",
             "lineno": 90,
             "columnno": 4,
@@ -484,9 +408,7 @@
                 "id": "astnode100000240",
                 "name": "MdBottomAppBarComponent#updated",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "changedProperties"
-                ]
+                "paramnames": ["changedProperties"]
             },
             "vars": {
                 "": null
@@ -495,9 +417,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "changedProperties"
@@ -512,10 +432,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                2910,
-                3056
-            ],
+            "range": [2910, 3056],
             "filename": "bottom-app-bar.js",
             "lineno": 96,
             "columnno": 4,
@@ -540,10 +457,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2991,
-                3007
-            ],
+            "range": [2991, 3007],
             "filename": "bottom-app-bar.js",
             "lineno": 98,
             "columnno": 8,
@@ -566,10 +480,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                3078,
-                3227
-            ],
+            "range": [3078, 3227],
             "filename": "bottom-app-bar.js",
             "lineno": 104,
             "columnno": 4,
@@ -594,10 +505,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3160,
-                3177
-            ],
+            "range": [3160, 3177],
             "filename": "bottom-app-bar.js",
             "lineno": 106,
             "columnno": 8,
@@ -620,10 +528,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                3249,
-                3328
-            ],
+            "range": [3249, 3328],
             "filename": "bottom-app-bar.js",
             "lineno": 112,
             "columnno": 4,
@@ -648,10 +553,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                3378,
-                3489
-            ],
+            "range": [3378, 3489],
             "filename": "bottom-app-bar.js",
             "lineno": 120,
             "columnno": 4,
@@ -660,9 +562,7 @@
                 "id": "astnode100000317",
                 "name": "MdBottomAppBarComponent#handleBottomAppBarIconButtonClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -671,9 +571,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -688,10 +586,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3474,
-                3479
-            ],
+            "range": [3474, 3479],
             "filename": "bottom-app-bar.js",
             "lineno": 121,
             "columnno": 53,
@@ -712,10 +607,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                3539,
-                3636
-            ],
+            "range": [3539, 3636],
             "filename": "bottom-app-bar.js",
             "lineno": 127,
             "columnno": 4,
@@ -724,9 +616,7 @@
                 "id": "astnode100000331",
                 "name": "MdBottomAppBarComponent#handleBottomAppBarFabClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -735,9 +625,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -752,10 +640,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3621,
-                3626
-            ],
+            "range": [3621, 3626],
             "filename": "bottom-app-bar.js",
             "lineno": 128,
             "columnno": 46,
@@ -776,10 +661,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3717,
-                3740
-            ],
+            "range": [3717, 3740],
             "filename": "bottom-app-bar.js",
             "lineno": 132,
             "columnno": 9,
@@ -799,8 +681,6 @@
     {
         "kind": "package",
         "longname": "package:undefined",
-        "files": [
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-app-bar\\bottom-app-bar.js"
-        ]
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-app-bar\\bottom-app-bar.js"]
     }
 ]

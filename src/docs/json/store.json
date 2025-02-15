@@ -2,10 +2,7 @@
     {
         "comment": "/**\n */",
         "meta": {
-            "range": [
-                8,
-                4430
-            ],
+            "range": [8, 4430],
             "filename": "store.js",
             "lineno": 3,
             "columnno": 0,
@@ -14,10 +11,7 @@
                 "id": "astnode100000002",
                 "name": "Store",
                 "type": "ClassDeclaration",
-                "paramnames": [
-                    "data",
-                    "options"
-                ]
+                "paramnames": ["data", "options"]
             }
         },
         "name": "Store",
@@ -29,10 +23,7 @@
     {
         "comment": "/**\n     * @param {Any} [data=[]]\n     * @param {Any} [options={}]\n     */",
         "meta": {
-            "range": [
-                105,
-                207
-            ],
+            "range": [105, 207],
             "filename": "store.js",
             "lineno": 8,
             "columnno": 4,
@@ -41,10 +32,7 @@
                 "id": "astnode100000005",
                 "name": "Store",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "data",
-                    "options"
-                ]
+                "paramnames": ["data", "options"]
             },
             "vars": {
                 "": null
@@ -53,9 +41,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "defaultvalue": "[]",
@@ -63,9 +49,7 @@
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "defaultvalue": "{}",
@@ -81,10 +65,7 @@
     {
         "comment": "/**\n */",
         "meta": {
-            "range": [
-                8,
-                4430
-            ],
+            "range": [8, 4430],
             "filename": "store.js",
             "lineno": 3,
             "columnno": 0,
@@ -93,10 +74,7 @@
                 "id": "astnode100000002",
                 "name": "Store",
                 "type": "ClassDeclaration",
-                "paramnames": [
-                    "data",
-                    "options"
-                ]
+                "paramnames": ["data", "options"]
             }
         },
         "name": "Store",
@@ -106,9 +84,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "defaultvalue": "[]",
@@ -116,9 +92,7 @@
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "defaultvalue": "{}",
@@ -129,10 +103,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                152,
-                168
-            ],
+            "range": [152, 168],
             "filename": "store.js",
             "lineno": 9,
             "columnno": 8,
@@ -155,10 +126,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                178,
-                200
-            ],
+            "range": [178, 200],
             "filename": "store.js",
             "lineno": 10,
             "columnno": 8,
@@ -181,10 +149,7 @@
     {
         "comment": "/**\n     * @param {Any} [data=[]]\n     */",
         "meta": {
-            "range": [
-                259,
-                308
-            ],
+            "range": [259, 308],
             "filename": "store.js",
             "lineno": 16,
             "columnno": 4,
@@ -193,9 +158,7 @@
                 "id": "astnode100000027",
                 "name": "Store#load",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "data"
-                ]
+                "paramnames": ["data"]
             },
             "vars": {
                 "": null
@@ -204,9 +167,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "defaultvalue": "[]",
@@ -222,10 +183,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                285,
-                301
-            ],
+            "range": [285, 301],
             "filename": "store.js",
             "lineno": 17,
             "columnno": 8,
@@ -248,10 +206,7 @@
     {
         "comment": "/**\n     * @param {Any} [data]\n     * @param {Any} [sorters]\n     */",
         "meta": {
-            "range": [
-                387,
-                967
-            ],
+            "range": [387, 967],
             "filename": "store.js",
             "lineno": 24,
             "columnno": 4,
@@ -260,10 +215,7 @@
                 "id": "astnode100000040",
                 "name": "Store#sort",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "data",
-                    "sorters"
-                ]
+                "paramnames": ["data", "sorters"]
             },
             "vars": {
                 "": null
@@ -272,18 +224,14 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "data"
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "sorters"
@@ -298,10 +246,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                541,
-                547
-            ],
+            "range": [541, 547],
             "filename": "store.js",
             "lineno": 27,
             "columnno": 21,
@@ -322,10 +267,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                582,
-                626
-            ],
+            "range": [582, 626],
             "filename": "store.js",
             "lineno": 28,
             "columnno": 20,
@@ -348,10 +290,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                648,
-                692
-            ],
+            "range": [648, 692],
             "filename": "store.js",
             "lineno": 29,
             "columnno": 20,
@@ -374,10 +313,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     * @param {Any} [q]\n     */",
         "meta": {
-            "range": [
-                1040,
-                1509
-            ],
+            "range": [1040, 1509],
             "filename": "store.js",
             "lineno": 42,
             "columnno": 4,
@@ -386,10 +322,7 @@
                 "id": "astnode100000137",
                 "name": "Store#deepSearch",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item",
-                    "q"
-                ]
+                "paramnames": ["item", "q"]
             },
             "vars": {
                 "": null
@@ -398,18 +331,14 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "q"
@@ -424,10 +353,7 @@
     {
         "comment": "/**\n     * @param {Any} [data]\n     * @param {Any} [q]\n     */",
         "meta": {
-            "range": [
-                1582,
-                1698
-            ],
+            "range": [1582, 1698],
             "filename": "store.js",
             "lineno": 60,
             "columnno": 4,
@@ -436,10 +362,7 @@
                 "id": "astnode100000218",
                 "name": "Store#search",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "data",
-                    "q"
-                ]
+                "paramnames": ["data", "q"]
             },
             "vars": {
                 "": null
@@ -448,18 +371,14 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "data"
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "q"
@@ -474,10 +393,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     * @param {Any} [name]\n     */",
         "meta": {
-            "range": [
-                1774,
-                1923
-            ],
+            "range": [1774, 1923],
             "filename": "store.js",
             "lineno": 69,
             "columnno": 4,
@@ -486,10 +402,7 @@
                 "id": "astnode100000242",
                 "name": "Store#getNestedValue",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item",
-                    "name"
-                ]
+                "paramnames": ["item", "name"]
             },
             "vars": {
                 "": null
@@ -498,18 +411,14 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "name"
@@ -524,10 +433,7 @@
     {
         "comment": "/**\n     * @param {Any} [data]\n     * @param {Any} [filters]\n     */",
         "meta": {
-            "range": [
-                2002,
-                3371
-            ],
+            "range": [2002, 3371],
             "filename": "store.js",
             "lineno": 77,
             "columnno": 4,
@@ -536,10 +442,7 @@
                 "id": "astnode100000273",
                 "name": "Store#filter",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "data",
-                    "filters"
-                ]
+                "paramnames": ["data", "filters"]
             },
             "vars": {
                 "": null
@@ -548,18 +451,14 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "data"
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "filters"
@@ -574,10 +473,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2220,
-                2224
-            ],
+            "range": [2220, 2224],
             "filename": "store.js",
             "lineno": 81,
             "columnno": 22,
@@ -598,10 +494,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2226,
-                2231
-            ],
+            "range": [2226, 2231],
             "filename": "store.js",
             "lineno": 81,
             "columnno": 28,
@@ -622,10 +515,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2233,
-                2249
-            ],
+            "range": [2233, 2249],
             "filename": "store.js",
             "lineno": 81,
             "columnno": 35,
@@ -646,10 +536,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2282,
-                2326
-            ],
+            "range": [2282, 2326],
             "filename": "store.js",
             "lineno": 82,
             "columnno": 20,
@@ -672,10 +559,7 @@
     {
         "comment": "/**\n     * @param {Any} [data]\n     * @param {Any} [_start]\n     * @param {Any} [_end]\n     */",
         "meta": {
-            "range": [
-                3476,
-                3550
-            ],
+            "range": [3476, 3550],
             "filename": "store.js",
             "lineno": 114,
             "columnno": 4,
@@ -684,11 +568,7 @@
                 "id": "astnode100000424",
                 "name": "Store#range",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "data",
-                    "_start",
-                    "_end"
-                ]
+                "paramnames": ["data", "_start", "_end"]
             },
             "vars": {
                 "": null
@@ -697,27 +577,21 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "data"
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "_start"
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "_end"
@@ -732,10 +606,7 @@
     {
         "comment": "/**\n     * @param {Any} [data]\n     * @param {Any} [_page]\n     * @param {Any} [_limit]\n     */",
         "meta": {
-            "range": [
-                3656,
-                3808
-            ],
+            "range": [3656, 3808],
             "filename": "store.js",
             "lineno": 123,
             "columnno": 4,
@@ -744,11 +615,7 @@
                 "id": "astnode100000438",
                 "name": "Store#paginate",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "data",
-                    "_page",
-                    "_limit"
-                ]
+                "paramnames": ["data", "_page", "_limit"]
             },
             "vars": {
                 "": null
@@ -757,27 +624,21 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "data"
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "_page"
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "_limit"
@@ -792,10 +653,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3700,
-                3728
-            ],
+            "range": [3700, 3728],
             "filename": "store.js",
             "lineno": 124,
             "columnno": 12,
@@ -818,10 +676,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3742,
-                3762
-            ],
+            "range": [3742, 3762],
             "filename": "store.js",
             "lineno": 125,
             "columnno": 12,
@@ -844,10 +699,7 @@
     {
         "comment": "/**\n     * @param {Any} [options={}]\n     */",
         "meta": {
-            "range": [
-                3863,
-                4428
-            ],
+            "range": [3863, 4428],
             "filename": "store.js",
             "lineno": 132,
             "columnno": 4,
@@ -856,9 +708,7 @@
                 "id": "astnode100000466",
                 "name": "Store#get",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "options"
-                ]
+                "paramnames": ["options"]
             },
             "vars": {
                 "": null
@@ -867,9 +717,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "defaultvalue": "{}",
@@ -885,10 +733,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3897,
-                3904
-            ],
+            "range": [3897, 3904],
             "filename": "store.js",
             "lineno": 133,
             "columnno": 14,
@@ -909,10 +754,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3906,
-                3907
-            ],
+            "range": [3906, 3907],
             "filename": "store.js",
             "lineno": 133,
             "columnno": 23,
@@ -933,10 +775,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3909,
-                3916
-            ],
+            "range": [3909, 3916],
             "filename": "store.js",
             "lineno": 133,
             "columnno": 26,
@@ -957,10 +796,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3918,
-                3924
-            ],
+            "range": [3918, 3924],
             "filename": "store.js",
             "lineno": 133,
             "columnno": 35,
@@ -981,10 +817,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3926,
-                3930
-            ],
+            "range": [3926, 3930],
             "filename": "store.js",
             "lineno": 133,
             "columnno": 43,
@@ -1005,10 +838,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3932,
-                3937
-            ],
+            "range": [3932, 3937],
             "filename": "store.js",
             "lineno": 133,
             "columnno": 49,
@@ -1029,10 +859,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3939,
-                3945
-            ],
+            "range": [3939, 3945],
             "filename": "store.js",
             "lineno": 133,
             "columnno": 56,
@@ -1053,10 +880,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3971,
-                3995
-            ],
+            "range": [3971, 3995],
             "filename": "store.js",
             "lineno": 134,
             "columnno": 12,
@@ -1079,10 +903,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4005,
-                4036
-            ],
+            "range": [4005, 4036],
             "filename": "store.js",
             "lineno": 135,
             "columnno": 8,
@@ -1106,10 +927,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4046,
-                4073
-            ],
+            "range": [4046, 4073],
             "filename": "store.js",
             "lineno": 136,
             "columnno": 8,
@@ -1133,10 +951,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4083,
-                4116
-            ],
+            "range": [4083, 4116],
             "filename": "store.js",
             "lineno": 137,
             "columnno": 8,
@@ -1160,10 +975,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4130,
-                4149
-            ],
+            "range": [4130, 4149],
             "filename": "store.js",
             "lineno": 138,
             "columnno": 12,
@@ -1186,10 +998,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4221,
-                4258
-            ],
+            "range": [4221, 4258],
             "filename": "store.js",
             "lineno": 140,
             "columnno": 12,
@@ -1213,10 +1022,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4338,
-                4379
-            ],
+            "range": [4338, 4379],
             "filename": "store.js",
             "lineno": 142,
             "columnno": 12,
@@ -1240,10 +1046,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4408,
-                4412
-            ],
+            "range": [4408, 4412],
             "filename": "store.js",
             "lineno": 144,
             "columnno": 17,
@@ -1264,10 +1067,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4414,
-                4419
-            ],
+            "range": [4414, 4419],
             "filename": "store.js",
             "lineno": 144,
             "columnno": 23,
@@ -1288,10 +1088,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4440,
-                4445
-            ],
+            "range": [4440, 4445],
             "filename": "store.js",
             "lineno": 147,
             "columnno": 9,
@@ -1311,8 +1108,6 @@
     {
         "kind": "package",
         "longname": "package:undefined",
-        "files": [
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store\\store.js"
-        ]
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store\\store.js"]
     }
 ]

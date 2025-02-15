@@ -2,10 +2,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-datetime-picker\n * @fires MdDatetimePickerComponent#onDatetimePickerShow\n * @fires MdDatetimePickerComponent#onDatetimePickerClose\n * @fires MdDatetimePickerComponent#onDatetimePickerYearItemClick\n * @fires MdDatetimePickerComponent#onDatetimePickerMonthItemClick\n * @fires MdDatetimePickerComponent#onDatetimePickerDayItemClick\n * @fires MdDatetimePickerComponent#onDatetimePickerHourItemClick\n * @fires MdDatetimePickerComponent#onDatetimePickerMinuteItemClick\n * @fires MdDatetimePickerComponent#onDatetimePickerScrimClose\n * @fires MdDatetimePickerComponent#onDatetimePickerShown\n * @fires MdDatetimePickerComponent#onDatetimePickerClosed\n * @fires MdDatetimePickerComponent#onDatetimePickerIconButtonPrevClick\n * @fires MdDatetimePickerComponent#onDatetimePickerIconButtonNextClick\n * @fires MdDatetimePickerComponent#onDatetimePickerIconButtonClick\n * @fires MdDatetimePickerComponent#onDatetimePickerButtonCancelClick\n * @fires MdDatetimePickerComponent#onDatetimePickerButtonOkClick\n * @fires MdDatetimePickerComponent#onDatetimePickerButtonLabelClick\n * @fires MdDatetimePickerComponent#onDatetimePickerButtonClick\n */",
         "meta": {
-            "range": [
-                1600,
-                25645
-            ],
+            "range": [1600, 25645],
             "filename": "datetime-picker.js",
             "lineno": 31,
             "columnno": 0,
@@ -20,9 +17,7 @@
                 "": null
             }
         },
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -31,25 +26,7 @@
                 "value": "md-datetime-picker"
             }
         ],
-        "fires": [
-            "MdDatetimePickerComponent#event:onDatetimePickerShow",
-            "MdDatetimePickerComponent#event:onDatetimePickerClose",
-            "MdDatetimePickerComponent#event:onDatetimePickerYearItemClick",
-            "MdDatetimePickerComponent#event:onDatetimePickerMonthItemClick",
-            "MdDatetimePickerComponent#event:onDatetimePickerDayItemClick",
-            "MdDatetimePickerComponent#event:onDatetimePickerHourItemClick",
-            "MdDatetimePickerComponent#event:onDatetimePickerMinuteItemClick",
-            "MdDatetimePickerComponent#event:onDatetimePickerScrimClose",
-            "MdDatetimePickerComponent#event:onDatetimePickerShown",
-            "MdDatetimePickerComponent#event:onDatetimePickerClosed",
-            "MdDatetimePickerComponent#event:onDatetimePickerIconButtonPrevClick",
-            "MdDatetimePickerComponent#event:onDatetimePickerIconButtonNextClick",
-            "MdDatetimePickerComponent#event:onDatetimePickerIconButtonClick",
-            "MdDatetimePickerComponent#event:onDatetimePickerButtonCancelClick",
-            "MdDatetimePickerComponent#event:onDatetimePickerButtonOkClick",
-            "MdDatetimePickerComponent#event:onDatetimePickerButtonLabelClick",
-            "MdDatetimePickerComponent#event:onDatetimePickerButtonClick"
-        ],
+        "fires": ["MdDatetimePickerComponent#event:onDatetimePickerShow", "MdDatetimePickerComponent#event:onDatetimePickerClose", "MdDatetimePickerComponent#event:onDatetimePickerYearItemClick", "MdDatetimePickerComponent#event:onDatetimePickerMonthItemClick", "MdDatetimePickerComponent#event:onDatetimePickerDayItemClick", "MdDatetimePickerComponent#event:onDatetimePickerHourItemClick", "MdDatetimePickerComponent#event:onDatetimePickerMinuteItemClick", "MdDatetimePickerComponent#event:onDatetimePickerScrimClose", "MdDatetimePickerComponent#event:onDatetimePickerShown", "MdDatetimePickerComponent#event:onDatetimePickerClosed", "MdDatetimePickerComponent#event:onDatetimePickerIconButtonPrevClick", "MdDatetimePickerComponent#event:onDatetimePickerIconButtonNextClick", "MdDatetimePickerComponent#event:onDatetimePickerIconButtonClick", "MdDatetimePickerComponent#event:onDatetimePickerButtonCancelClick", "MdDatetimePickerComponent#event:onDatetimePickerButtonOkClick", "MdDatetimePickerComponent#event:onDatetimePickerButtonLabelClick", "MdDatetimePickerComponent#event:onDatetimePickerButtonClick"],
         "name": "MdDatetimePickerComponent",
         "longname": "MdDatetimePickerComponent",
         "kind": "class",
@@ -59,10 +36,7 @@
     {
         "comment": "/**\n     * @property {Array} [icons]\n     * @property {Array} [actions]\n     * @property {String} [label]\n     * @property {String} [sublabel]\n     * @property {Array} [buttons]\n     * @property {Boolean} [open]\n     * @property {Boolean} [modal]\n     * @property {String} [value]\n     * @property {Any} [index]\n     * @property {Any} [selection]\n     */",
         "meta": {
-            "range": [
-                2017,
-                2733
-            ],
+            "range": [2017, 2733],
             "filename": "datetime-picker.js",
             "lineno": 44,
             "columnno": 4,
@@ -76,90 +50,70 @@
         "properties": [
             {
                 "type": {
-                    "names": [
-                        "Array"
-                    ]
+                    "names": ["Array"]
                 },
                 "optional": true,
                 "name": "icons"
             },
             {
                 "type": {
-                    "names": [
-                        "Array"
-                    ]
+                    "names": ["Array"]
                 },
                 "optional": true,
                 "name": "actions"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "label"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "sublabel"
             },
             {
                 "type": {
-                    "names": [
-                        "Array"
-                    ]
+                    "names": ["Array"]
                 },
                 "optional": true,
                 "name": "buttons"
             },
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "open"
             },
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "modal"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "value"
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "index"
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "selection"
@@ -174,10 +128,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2047,
-                2069
-            ],
+            "range": [2047, 2069],
             "filename": "datetime-picker.js",
             "lineno": 45,
             "columnno": 8,
@@ -198,10 +149,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2056,
-                2067
-            ],
+            "range": [2056, 2067],
             "filename": "datetime-picker.js",
             "lineno": 45,
             "columnno": 17,
@@ -223,10 +171,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2079,
-                2103
-            ],
+            "range": [2079, 2103],
             "filename": "datetime-picker.js",
             "lineno": 46,
             "columnno": 8,
@@ -247,10 +192,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2090,
-                2101
-            ],
+            "range": [2090, 2101],
             "filename": "datetime-picker.js",
             "lineno": 46,
             "columnno": 19,
@@ -272,10 +214,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2113,
-                2136
-            ],
+            "range": [2113, 2136],
             "filename": "datetime-picker.js",
             "lineno": 47,
             "columnno": 8,
@@ -296,10 +235,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2122,
-                2134
-            ],
+            "range": [2122, 2134],
             "filename": "datetime-picker.js",
             "lineno": 47,
             "columnno": 17,
@@ -321,10 +257,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2146,
-                2172
-            ],
+            "range": [2146, 2172],
             "filename": "datetime-picker.js",
             "lineno": 48,
             "columnno": 8,
@@ -345,10 +278,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2158,
-                2170
-            ],
+            "range": [2158, 2170],
             "filename": "datetime-picker.js",
             "lineno": 48,
             "columnno": 20,
@@ -370,10 +300,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2182,
-                2206
-            ],
+            "range": [2182, 2206],
             "filename": "datetime-picker.js",
             "lineno": 49,
             "columnno": 8,
@@ -394,10 +321,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2193,
-                2204
-            ],
+            "range": [2193, 2204],
             "filename": "datetime-picker.js",
             "lineno": 49,
             "columnno": 19,
@@ -419,10 +343,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2216,
-                2254
-            ],
+            "range": [2216, 2254],
             "filename": "datetime-picker.js",
             "lineno": 50,
             "columnno": 8,
@@ -443,10 +364,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2224,
-                2237
-            ],
+            "range": [2224, 2237],
             "filename": "datetime-picker.js",
             "lineno": 50,
             "columnno": 16,
@@ -468,10 +386,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2239,
-                2252
-            ],
+            "range": [2239, 2252],
             "filename": "datetime-picker.js",
             "lineno": 50,
             "columnno": 31,
@@ -493,10 +408,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2264,
-                2288
-            ],
+            "range": [2264, 2288],
             "filename": "datetime-picker.js",
             "lineno": 51,
             "columnno": 8,
@@ -517,10 +429,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2273,
-                2286
-            ],
+            "range": [2273, 2286],
             "filename": "datetime-picker.js",
             "lineno": 51,
             "columnno": 17,
@@ -542,10 +451,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2298,
-                2657
-            ],
+            "range": [2298, 2657],
             "filename": "datetime-picker.js",
             "lineno": 52,
             "columnno": 8,
@@ -566,10 +472,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2319,
-                2331
-            ],
+            "range": [2319, 2331],
             "filename": "datetime-picker.js",
             "lineno": 53,
             "columnno": 12,
@@ -591,10 +494,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2345,
-                2358
-            ],
+            "range": [2345, 2358],
             "filename": "datetime-picker.js",
             "lineno": 54,
             "columnno": 12,
@@ -616,10 +516,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2372,
-                2646
-            ],
+            "range": [2372, 2646],
             "filename": "datetime-picker.js",
             "lineno": 55,
             "columnno": 12,
@@ -641,10 +538,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2401,
-                2506
-            ],
+            "range": [2401, 2506],
             "filename": "datetime-picker.js",
             "lineno": 56,
             "columnno": 16,
@@ -665,10 +559,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2524,
-                2631
-            ],
+            "range": [2524, 2631],
             "filename": "datetime-picker.js",
             "lineno": 59,
             "columnno": 16,
@@ -689,10 +580,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2667,
-                2689
-            ],
+            "range": [2667, 2689],
             "filename": "datetime-picker.js",
             "lineno": 64,
             "columnno": 8,
@@ -713,10 +601,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2676,
-                2687
-            ],
+            "range": [2676, 2687],
             "filename": "datetime-picker.js",
             "lineno": 64,
             "columnno": 17,
@@ -738,10 +623,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2699,
-                2725
-            ],
+            "range": [2699, 2725],
             "filename": "datetime-picker.js",
             "lineno": 65,
             "columnno": 8,
@@ -762,10 +644,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2712,
-                2723
-            ],
+            "range": [2712, 2723],
             "filename": "datetime-picker.js",
             "lineno": 65,
             "columnno": 21,
@@ -787,10 +666,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2738,
-                2814
-            ],
+            "range": [2738, 2814],
             "filename": "datetime-picker.js",
             "lineno": 67,
             "columnno": 4,
@@ -811,10 +687,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2788,
-                2803
-            ],
+            "range": [2788, 2803],
             "filename": "datetime-picker.js",
             "lineno": 67,
             "columnno": 54,
@@ -835,10 +708,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2819,
-                2894
-            ],
+            "range": [2819, 2894],
             "filename": "datetime-picker.js",
             "lineno": 68,
             "columnno": 4,
@@ -859,10 +729,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2870,
-                2883
-            ],
+            "range": [2870, 2883],
             "filename": "datetime-picker.js",
             "lineno": 68,
             "columnno": 55,
@@ -883,10 +750,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2899,
-                2980
-            ],
+            "range": [2899, 2980],
             "filename": "datetime-picker.js",
             "lineno": 69,
             "columnno": 4,
@@ -907,10 +771,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2952,
-                2969
-            ],
+            "range": [2952, 2969],
             "filename": "datetime-picker.js",
             "lineno": 69,
             "columnno": 57,
@@ -931,10 +792,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2985,
-                3059
-            ],
+            "range": [2985, 3059],
             "filename": "datetime-picker.js",
             "lineno": 70,
             "columnno": 4,
@@ -955,10 +813,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3034,
-                3048
-            ],
+            "range": [3034, 3048],
             "filename": "datetime-picker.js",
             "lineno": 70,
             "columnno": 53,
@@ -979,10 +834,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3064,
-                3155
-            ],
+            "range": [3064, 3155],
             "filename": "datetime-picker.js",
             "lineno": 71,
             "columnno": 4,
@@ -1003,10 +855,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3114,
-                3129
-            ],
+            "range": [3114, 3129],
             "filename": "datetime-picker.js",
             "lineno": 71,
             "columnno": 54,
@@ -1027,10 +876,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3131,
-                3144
-            ],
+            "range": [3131, 3144],
             "filename": "datetime-picker.js",
             "lineno": 71,
             "columnno": 71,
@@ -1051,10 +897,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3160,
-                3255
-            ],
+            "range": [3160, 3255],
             "filename": "datetime-picker.js",
             "lineno": 72,
             "columnno": 4,
@@ -1075,10 +918,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3212,
-                3229
-            ],
+            "range": [3212, 3229],
             "filename": "datetime-picker.js",
             "lineno": 72,
             "columnno": 56,
@@ -1099,10 +939,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3231,
-                3244
-            ],
+            "range": [3231, 3244],
             "filename": "datetime-picker.js",
             "lineno": 72,
             "columnno": 75,
@@ -1123,10 +960,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                3294,
-                3409
-            ],
+            "range": [3294, 3409],
             "filename": "datetime-picker.js",
             "lineno": 77,
             "columnno": 4,
@@ -1152,10 +986,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                3448,
-                3950
-            ],
+            "range": [3448, 3950],
             "filename": "datetime-picker.js",
             "lineno": 84,
             "columnno": 4,
@@ -1181,10 +1012,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3474,
-                3509
-            ],
+            "range": [3474, 3509],
             "filename": "datetime-picker.js",
             "lineno": 85,
             "columnno": 12,
@@ -1207,10 +1035,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3519,
-                3552
-            ],
+            "range": [3519, 3552],
             "filename": "datetime-picker.js",
             "lineno": 86,
             "columnno": 8,
@@ -1234,10 +1059,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3582,
-                3592
-            ],
+            "range": [3582, 3592],
             "filename": "datetime-picker.js",
             "lineno": 87,
             "columnno": 28,
@@ -1258,10 +1080,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3626,
-                3654
-            ],
+            "range": [3626, 3654],
             "filename": "datetime-picker.js",
             "lineno": 88,
             "columnno": 18,
@@ -1284,10 +1103,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3693,
-                3717
-            ],
+            "range": [3693, 3717],
             "filename": "datetime-picker.js",
             "lineno": 90,
             "columnno": 16,
@@ -1308,10 +1124,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3735,
-                3763
-            ],
+            "range": [3735, 3763],
             "filename": "datetime-picker.js",
             "lineno": 91,
             "columnno": 16,
@@ -1332,10 +1145,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3781,
-                3838
-            ],
+            "range": [3781, 3838],
             "filename": "datetime-picker.js",
             "lineno": 92,
             "columnno": 16,
@@ -1356,10 +1166,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3856,
-                3916
-            ],
+            "range": [3856, 3916],
             "filename": "datetime-picker.js",
             "lineno": 93,
             "columnno": 16,
@@ -1380,10 +1187,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                3989,
-                4553
-            ],
+            "range": [3989, 4553],
             "filename": "datetime-picker.js",
             "lineno": 101,
             "columnno": 4,
@@ -1409,10 +1213,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4032,
-                4042
-            ],
+            "range": [4032, 4042],
             "filename": "datetime-picker.js",
             "lineno": 102,
             "columnno": 28,
@@ -1433,10 +1234,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4076,
-                4124
-            ],
+            "range": [4076, 4124],
             "filename": "datetime-picker.js",
             "lineno": 103,
             "columnno": 18,
@@ -1459,10 +1257,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4163,
-                4187
-            ],
+            "range": [4163, 4187],
             "filename": "datetime-picker.js",
             "lineno": 105,
             "columnno": 16,
@@ -1483,10 +1278,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4205,
-                4227
-            ],
+            "range": [4205, 4227],
             "filename": "datetime-picker.js",
             "lineno": 106,
             "columnno": 16,
@@ -1507,10 +1299,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4245,
-                4274
-            ],
+            "range": [4245, 4274],
             "filename": "datetime-picker.js",
             "lineno": 107,
             "columnno": 16,
@@ -1531,10 +1320,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4292,
-                4394
-            ],
+            "range": [4292, 4394],
             "filename": "datetime-picker.js",
             "lineno": 108,
             "columnno": 16,
@@ -1555,10 +1341,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4412,
-                4519
-            ],
+            "range": [4412, 4519],
             "filename": "datetime-picker.js",
             "lineno": 109,
             "columnno": 16,
@@ -1579,10 +1362,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                4592,
-                4808
-            ],
+            "range": [4592, 4808],
             "filename": "datetime-picker.js",
             "lineno": 117,
             "columnno": 4,
@@ -1608,10 +1388,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4637,
-                4646
-            ],
+            "range": [4637, 4646],
             "filename": "datetime-picker.js",
             "lineno": 118,
             "columnno": 28,
@@ -1632,10 +1409,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4680,
-                4704
-            ],
+            "range": [4680, 4704],
             "filename": "datetime-picker.js",
             "lineno": 119,
             "columnno": 18,
@@ -1658,10 +1432,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4743,
-                4774
-            ],
+            "range": [4743, 4774],
             "filename": "datetime-picker.js",
             "lineno": 121,
             "columnno": 16,
@@ -1682,10 +1453,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                4847,
-                5886
-            ],
+            "range": [4847, 5886],
             "filename": "datetime-picker.js",
             "lineno": 129,
             "columnno": 4,
@@ -1711,10 +1479,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4888,
-                4897
-            ],
+            "range": [4888, 4897],
             "filename": "datetime-picker.js",
             "lineno": 130,
             "columnno": 28,
@@ -1735,10 +1500,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4945,
-                4954
-            ],
+            "range": [4945, 4954],
             "filename": "datetime-picker.js",
             "lineno": 131,
             "columnno": 32,
@@ -1759,10 +1521,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4994,
-                5100
-            ],
+            "range": [4994, 5100],
             "filename": "datetime-picker.js",
             "lineno": 132,
             "columnno": 22,
@@ -1785,10 +1544,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5147,
-                5171
-            ],
+            "range": [5147, 5171],
             "filename": "datetime-picker.js",
             "lineno": 134,
             "columnno": 20,
@@ -1809,10 +1565,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5193,
-                5215
-            ],
+            "range": [5193, 5215],
             "filename": "datetime-picker.js",
             "lineno": 135,
             "columnno": 20,
@@ -1833,10 +1586,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5237,
-                5256
-            ],
+            "range": [5237, 5256],
             "filename": "datetime-picker.js",
             "lineno": 136,
             "columnno": 20,
@@ -1857,10 +1607,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5278,
-                5305
-            ],
+            "range": [5278, 5305],
             "filename": "datetime-picker.js",
             "lineno": 137,
             "columnno": 20,
@@ -1881,10 +1628,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5327,
-                5472
-            ],
+            "range": [5327, 5472],
             "filename": "datetime-picker.js",
             "lineno": 138,
             "columnno": 20,
@@ -1905,10 +1649,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5494,
-                5646
-            ],
+            "range": [5494, 5646],
             "filename": "datetime-picker.js",
             "lineno": 139,
             "columnno": 20,
@@ -1929,10 +1670,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5668,
-                5781
-            ],
+            "range": [5668, 5781],
             "filename": "datetime-picker.js",
             "lineno": 140,
             "columnno": 20,
@@ -1953,10 +1691,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5803,
-                5832
-            ],
+            "range": [5803, 5832],
             "filename": "datetime-picker.js",
             "lineno": 141,
             "columnno": 20,
@@ -1977,10 +1712,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                5925,
-                6796
-            ],
+            "range": [5925, 6796],
             "filename": "datetime-picker.js",
             "lineno": 150,
             "columnno": 4,
@@ -2006,10 +1738,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5967,
-                5977
-            ],
+            "range": [5967, 5977],
             "filename": "datetime-picker.js",
             "lineno": 151,
             "columnno": 28,
@@ -2030,10 +1759,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6011,
-                6112
-            ],
+            "range": [6011, 6112],
             "filename": "datetime-picker.js",
             "lineno": 152,
             "columnno": 18,
@@ -2056,10 +1782,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6151,
-                6175
-            ],
+            "range": [6151, 6175],
             "filename": "datetime-picker.js",
             "lineno": 154,
             "columnno": 16,
@@ -2080,10 +1803,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6193,
-                6215
-            ],
+            "range": [6193, 6215],
             "filename": "datetime-picker.js",
             "lineno": 155,
             "columnno": 16,
@@ -2104,10 +1824,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6233,
-                6252
-            ],
+            "range": [6233, 6252],
             "filename": "datetime-picker.js",
             "lineno": 156,
             "columnno": 16,
@@ -2128,10 +1845,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6270,
-                6291
-            ],
+            "range": [6270, 6291],
             "filename": "datetime-picker.js",
             "lineno": 157,
             "columnno": 16,
@@ -2152,10 +1866,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6309,
-                6337
-            ],
+            "range": [6309, 6337],
             "filename": "datetime-picker.js",
             "lineno": 158,
             "columnno": 16,
@@ -2176,10 +1887,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6355,
-                6545
-            ],
+            "range": [6355, 6545],
             "filename": "datetime-picker.js",
             "lineno": 159,
             "columnno": 16,
@@ -2200,10 +1908,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6563,
-                6762
-            ],
+            "range": [6563, 6762],
             "filename": "datetime-picker.js",
             "lineno": 160,
             "columnno": 16,
@@ -2224,10 +1929,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                6835,
-                7880
-            ],
+            "range": [6835, 7880],
             "filename": "datetime-picker.js",
             "lineno": 168,
             "columnno": 4,
@@ -2253,10 +1955,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6879,
-                6889
-            ],
+            "range": [6879, 6889],
             "filename": "datetime-picker.js",
             "lineno": 169,
             "columnno": 28,
@@ -2277,10 +1976,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6923,
-                7051
-            ],
+            "range": [6923, 7051],
             "filename": "datetime-picker.js",
             "lineno": 170,
             "columnno": 18,
@@ -2303,10 +1999,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                7090,
-                7114
-            ],
+            "range": [7090, 7114],
             "filename": "datetime-picker.js",
             "lineno": 172,
             "columnno": 16,
@@ -2327,10 +2020,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                7132,
-                7154
-            ],
+            "range": [7132, 7154],
             "filename": "datetime-picker.js",
             "lineno": 173,
             "columnno": 16,
@@ -2351,10 +2041,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                7172,
-                7191
-            ],
+            "range": [7172, 7191],
             "filename": "datetime-picker.js",
             "lineno": 174,
             "columnno": 16,
@@ -2375,10 +2062,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                7209,
-                7230
-            ],
+            "range": [7209, 7230],
             "filename": "datetime-picker.js",
             "lineno": 175,
             "columnno": 16,
@@ -2399,10 +2083,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                7248,
-                7273
-            ],
+            "range": [7248, 7273],
             "filename": "datetime-picker.js",
             "lineno": 176,
             "columnno": 16,
@@ -2423,10 +2104,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                7291,
-                7321
-            ],
+            "range": [7291, 7321],
             "filename": "datetime-picker.js",
             "lineno": 177,
             "columnno": 16,
@@ -2447,10 +2125,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                7339,
-                7578
-            ],
+            "range": [7339, 7578],
             "filename": "datetime-picker.js",
             "lineno": 178,
             "columnno": 16,
@@ -2471,10 +2146,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                7596,
-                7846
-            ],
+            "range": [7596, 7846],
             "filename": "datetime-picker.js",
             "lineno": 179,
             "columnno": 16,
@@ -2495,10 +2167,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                7919,
-                8383
-            ],
+            "range": [7919, 8383],
             "filename": "datetime-picker.js",
             "lineno": 187,
             "columnno": 4,
@@ -2524,10 +2193,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                7947,
-                8295
-            ],
+            "range": [7947, 8295],
             "filename": "datetime-picker.js",
             "lineno": 188,
             "columnno": 14,
@@ -2550,10 +2216,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                7967,
-                8050
-            ],
+            "range": [7967, 8050],
             "filename": "datetime-picker.js",
             "lineno": 189,
             "columnno": 12,
@@ -2573,10 +2236,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                8064,
-                8101
-            ],
+            "range": [8064, 8101],
             "filename": "datetime-picker.js",
             "lineno": 190,
             "columnno": 12,
@@ -2597,10 +2257,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                8115,
-                8162
-            ],
+            "range": [8115, 8162],
             "filename": "datetime-picker.js",
             "lineno": 191,
             "columnno": 12,
@@ -2621,10 +2278,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                8176,
-                8223
-            ],
+            "range": [8176, 8223],
             "filename": "datetime-picker.js",
             "lineno": 192,
             "columnno": 12,
@@ -2645,10 +2299,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                8237,
-                8284
-            ],
+            "range": [8237, 8284],
             "filename": "datetime-picker.js",
             "lineno": 193,
             "columnno": 12,
@@ -2669,10 +2320,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                8315,
-                8334
-            ],
+            "range": [8315, 8334],
             "filename": "datetime-picker.js",
             "lineno": 195,
             "columnno": 18,
@@ -2693,10 +2341,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                8336,
-                8347
-            ],
+            "range": [8336, 8347],
             "filename": "datetime-picker.js",
             "lineno": 195,
             "columnno": 39,
@@ -2717,10 +2362,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                8349,
-                8373
-            ],
+            "range": [8349, 8373],
             "filename": "datetime-picker.js",
             "lineno": 195,
             "columnno": 52,
@@ -2741,10 +2383,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                8422,
-                8586
-            ],
+            "range": [8422, 8586],
             "filename": "datetime-picker.js",
             "lineno": 201,
             "columnno": 4,
@@ -2770,10 +2409,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                8469,
-                8479
-            ],
+            "range": [8469, 8479],
             "filename": "datetime-picker.js",
             "lineno": 203,
             "columnno": 14,
@@ -2794,10 +2430,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                8481,
-                8508
-            ],
+            "range": [8481, 8508],
             "filename": "datetime-picker.js",
             "lineno": 203,
             "columnno": 26,
@@ -2818,10 +2451,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                8526,
-                8536
-            ],
+            "range": [8526, 8536],
             "filename": "datetime-picker.js",
             "lineno": 204,
             "columnno": 14,
@@ -2842,10 +2472,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                8538,
-                8566
-            ],
+            "range": [8538, 8566],
             "filename": "datetime-picker.js",
             "lineno": 204,
             "columnno": 26,
@@ -2866,10 +2493,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                8625,
-                8750
-            ],
+            "range": [8625, 8750],
             "filename": "datetime-picker.js",
             "lineno": 211,
             "columnno": 4,
@@ -2895,10 +2519,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                8659,
-                8678
-            ],
+            "range": [8659, 8678],
             "filename": "datetime-picker.js",
             "lineno": 212,
             "columnno": 18,
@@ -2919,10 +2540,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                8684,
-                8696
-            ],
+            "range": [8684, 8696],
             "filename": "datetime-picker.js",
             "lineno": 212,
             "columnno": 43,
@@ -2943,10 +2561,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                8698,
-                8713
-            ],
+            "range": [8698, 8713],
             "filename": "datetime-picker.js",
             "lineno": 212,
             "columnno": 57,
@@ -2967,10 +2582,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                8719,
-                8727
-            ],
+            "range": [8719, 8727],
             "filename": "datetime-picker.js",
             "lineno": 212,
             "columnno": 78,
@@ -2991,10 +2603,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                8729,
-                8740
-            ],
+            "range": [8729, 8740],
             "filename": "datetime-picker.js",
             "lineno": 212,
             "columnno": 88,
@@ -3015,10 +2624,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                8772,
-                8939
-            ],
+            "range": [8772, 8939],
             "filename": "datetime-picker.js",
             "lineno": 217,
             "columnno": 4,
@@ -3043,10 +2649,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-datetime-picker\n * @fires MdDatetimePickerComponent#onDatetimePickerShow\n * @fires MdDatetimePickerComponent#onDatetimePickerClose\n * @fires MdDatetimePickerComponent#onDatetimePickerYearItemClick\n * @fires MdDatetimePickerComponent#onDatetimePickerMonthItemClick\n * @fires MdDatetimePickerComponent#onDatetimePickerDayItemClick\n * @fires MdDatetimePickerComponent#onDatetimePickerHourItemClick\n * @fires MdDatetimePickerComponent#onDatetimePickerMinuteItemClick\n * @fires MdDatetimePickerComponent#onDatetimePickerScrimClose\n * @fires MdDatetimePickerComponent#onDatetimePickerShown\n * @fires MdDatetimePickerComponent#onDatetimePickerClosed\n * @fires MdDatetimePickerComponent#onDatetimePickerIconButtonPrevClick\n * @fires MdDatetimePickerComponent#onDatetimePickerIconButtonNextClick\n * @fires MdDatetimePickerComponent#onDatetimePickerIconButtonClick\n * @fires MdDatetimePickerComponent#onDatetimePickerButtonCancelClick\n * @fires MdDatetimePickerComponent#onDatetimePickerButtonOkClick\n * @fires MdDatetimePickerComponent#onDatetimePickerButtonLabelClick\n * @fires MdDatetimePickerComponent#onDatetimePickerButtonClick\n */",
         "meta": {
-            "range": [
-                1600,
-                25645
-            ],
+            "range": [1600, 25645],
             "filename": "datetime-picker.js",
             "lineno": 31,
             "columnno": 0,
@@ -3064,9 +2667,7 @@
         "name": "MdDatetimePickerComponent",
         "longname": "MdDatetimePickerComponent",
         "kind": "class",
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -3075,34 +2676,13 @@
                 "value": "md-datetime-picker"
             }
         ],
-        "fires": [
-            "MdDatetimePickerComponent#event:onDatetimePickerShow",
-            "MdDatetimePickerComponent#event:onDatetimePickerClose",
-            "MdDatetimePickerComponent#event:onDatetimePickerYearItemClick",
-            "MdDatetimePickerComponent#event:onDatetimePickerMonthItemClick",
-            "MdDatetimePickerComponent#event:onDatetimePickerDayItemClick",
-            "MdDatetimePickerComponent#event:onDatetimePickerHourItemClick",
-            "MdDatetimePickerComponent#event:onDatetimePickerMinuteItemClick",
-            "MdDatetimePickerComponent#event:onDatetimePickerScrimClose",
-            "MdDatetimePickerComponent#event:onDatetimePickerShown",
-            "MdDatetimePickerComponent#event:onDatetimePickerClosed",
-            "MdDatetimePickerComponent#event:onDatetimePickerIconButtonPrevClick",
-            "MdDatetimePickerComponent#event:onDatetimePickerIconButtonNextClick",
-            "MdDatetimePickerComponent#event:onDatetimePickerIconButtonClick",
-            "MdDatetimePickerComponent#event:onDatetimePickerButtonCancelClick",
-            "MdDatetimePickerComponent#event:onDatetimePickerButtonOkClick",
-            "MdDatetimePickerComponent#event:onDatetimePickerButtonLabelClick",
-            "MdDatetimePickerComponent#event:onDatetimePickerButtonClick"
-        ],
+        "fires": ["MdDatetimePickerComponent#event:onDatetimePickerShow", "MdDatetimePickerComponent#event:onDatetimePickerClose", "MdDatetimePickerComponent#event:onDatetimePickerYearItemClick", "MdDatetimePickerComponent#event:onDatetimePickerMonthItemClick", "MdDatetimePickerComponent#event:onDatetimePickerDayItemClick", "MdDatetimePickerComponent#event:onDatetimePickerHourItemClick", "MdDatetimePickerComponent#event:onDatetimePickerMinuteItemClick", "MdDatetimePickerComponent#event:onDatetimePickerScrimClose", "MdDatetimePickerComponent#event:onDatetimePickerShown", "MdDatetimePickerComponent#event:onDatetimePickerClosed", "MdDatetimePickerComponent#event:onDatetimePickerIconButtonPrevClick", "MdDatetimePickerComponent#event:onDatetimePickerIconButtonNextClick", "MdDatetimePickerComponent#event:onDatetimePickerIconButtonClick", "MdDatetimePickerComponent#event:onDatetimePickerButtonCancelClick", "MdDatetimePickerComponent#event:onDatetimePickerButtonOkClick", "MdDatetimePickerComponent#event:onDatetimePickerButtonLabelClick", "MdDatetimePickerComponent#event:onDatetimePickerButtonClick"],
         "scope": "global"
     },
     {
         "comment": "",
         "meta": {
-            "range": [
-                8813,
-                8838
-            ],
+            "range": [8813, 8838],
             "filename": "datetime-picker.js",
             "lineno": 219,
             "columnno": 8,
@@ -3125,10 +2705,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                8848,
-                8871
-            ],
+            "range": [8848, 8871],
             "filename": "datetime-picker.js",
             "lineno": 220,
             "columnno": 8,
@@ -3151,10 +2728,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                8881,
-                8908
-            ],
+            "range": [8881, 8908],
             "filename": "datetime-picker.js",
             "lineno": 221,
             "columnno": 8,
@@ -3177,10 +2751,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                8918,
-                8932
-            ],
+            "range": [8918, 8932],
             "filename": "datetime-picker.js",
             "lineno": 222,
             "columnno": 8,
@@ -3203,10 +2774,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     */",
         "meta": {
-            "range": [
-                8988,
-                9163
-            ],
+            "range": [8988, 9163],
             "filename": "datetime-picker.js",
             "lineno": 228,
             "columnno": 4,
@@ -3215,9 +2783,7 @@
                 "id": "astnode100001101",
                 "name": "MdDatetimePickerComponent#renderIcon",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item"
-                ]
+                "paramnames": ["item"]
             },
             "vars": {
                 "": null
@@ -3226,9 +2792,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
@@ -3243,10 +2807,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     */",
         "meta": {
-            "range": [
-                9212,
-                9778
-            ],
+            "range": [9212, 9778],
             "filename": "datetime-picker.js",
             "lineno": 240,
             "columnno": 4,
@@ -3255,9 +2816,7 @@
                 "id": "astnode100001117",
                 "name": "MdDatetimePickerComponent#renderIconButton",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item"
-                ]
+                "paramnames": ["item"]
             },
             "vars": {
                 "": null
@@ -3266,9 +2825,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
@@ -3283,10 +2840,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     */",
         "meta": {
-            "range": [
-                9827,
-                10373
-            ],
+            "range": [9827, 10373],
             "filename": "datetime-picker.js",
             "lineno": 259,
             "columnno": 4,
@@ -3295,9 +2849,7 @@
                 "id": "astnode100001169",
                 "name": "MdDatetimePickerComponent#renderButton",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item"
-                ]
+                "paramnames": ["item"]
             },
             "vars": {
                 "": null
@@ -3306,9 +2858,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
@@ -3323,10 +2873,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     */",
         "meta": {
-            "range": [
-                10422,
-                10599
-            ],
+            "range": [10422, 10599],
             "filename": "datetime-picker.js",
             "lineno": 278,
             "columnno": 4,
@@ -3335,9 +2882,7 @@
                 "id": "astnode100001221",
                 "name": "MdDatetimePickerComponent#renderSpacer",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item"
-                ]
+                "paramnames": ["item"]
             },
             "vars": {
                 "": null
@@ -3346,9 +2891,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
@@ -3363,10 +2906,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     * @param {Any} [component=\"icon\"]\n     */",
         "meta": {
-            "range": [
-                10687,
-                11080
-            ],
+            "range": [10687, 11080],
             "filename": "datetime-picker.js",
             "lineno": 291,
             "columnno": 4,
@@ -3375,10 +2915,7 @@
                 "id": "astnode100001231",
                 "name": "MdDatetimePickerComponent#renderComponent",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item",
-                    "component"
-                ]
+                "paramnames": ["item", "component"]
             },
             "vars": {
                 "": null
@@ -3387,18 +2924,14 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "defaultvalue": "\"icon\"",
@@ -3414,10 +2947,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                10745,
-                10994
-            ],
+            "range": [10745, 10994],
             "filename": "datetime-picker.js",
             "lineno": 292,
             "columnno": 14,
@@ -3440,10 +2970,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                11102,
-                11688
-            ],
+            "range": [11102, 11688],
             "filename": "datetime-picker.js",
             "lineno": 303,
             "columnno": 4,
@@ -3468,10 +2995,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                11710,
-                12299
-            ],
+            "range": [11710, 12299],
             "filename": "datetime-picker.js",
             "lineno": 322,
             "columnno": 4,
@@ -3496,10 +3020,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                12321,
-                13930
-            ],
+            "range": [12321, 13930],
             "filename": "datetime-picker.js",
             "lineno": 341,
             "columnno": 4,
@@ -3524,10 +3045,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                13450,
-                13488
-            ],
+            "range": [13450, 13488],
             "filename": "datetime-picker.js",
             "lineno": 362,
             "columnno": 40,
@@ -3548,10 +3066,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                13530,
-                13592
-            ],
+            "range": [13530, 13592],
             "filename": "datetime-picker.js",
             "lineno": 363,
             "columnno": 40,
@@ -3572,10 +3087,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                13634,
-                13689
-            ],
+            "range": [13634, 13689],
             "filename": "datetime-picker.js",
             "lineno": 364,
             "columnno": 40,
@@ -3596,10 +3108,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                13952,
-                14576
-            ],
+            "range": [13952, 14576],
             "filename": "datetime-picker.js",
             "lineno": 377,
             "columnno": 4,
@@ -3624,10 +3133,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                14598,
-                15230
-            ],
+            "range": [14598, 15230],
             "filename": "datetime-picker.js",
             "lineno": 396,
             "columnno": 4,
@@ -3652,10 +3158,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                15252,
-                16966
-            ],
+            "range": [15252, 16966],
             "filename": "datetime-picker.js",
             "lineno": 415,
             "columnno": 4,
@@ -3680,10 +3183,7 @@
     {
         "comment": "/**\n     * @async\n     */",
         "meta": {
-            "range": [
-                17002,
-                17951
-            ],
+            "range": [17002, 17951],
             "filename": "datetime-picker.js",
             "lineno": 450,
             "columnno": 4,
@@ -3709,10 +3209,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                17073,
-                17123
-            ],
+            "range": [17073, 17123],
             "filename": "datetime-picker.js",
             "lineno": 452,
             "columnno": 8,
@@ -3735,10 +3232,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                17133,
-                17163
-            ],
+            "range": [17133, 17163],
             "filename": "datetime-picker.js",
             "lineno": 453,
             "columnno": 8,
@@ -3761,10 +3255,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                17302,
-                17363
-            ],
+            "range": [17302, 17363],
             "filename": "datetime-picker.js",
             "lineno": 456,
             "columnno": 8,
@@ -3787,10 +3278,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                17465,
-                17549
-            ],
+            "range": [17465, 17549],
             "filename": "datetime-picker.js",
             "lineno": 458,
             "columnno": 8,
@@ -3813,10 +3301,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                17973,
-                18191
-            ],
+            "range": [17973, 18191],
             "filename": "datetime-picker.js",
             "lineno": 468,
             "columnno": 4,
@@ -3841,10 +3326,7 @@
     {
         "comment": "/**\n     * @async\n     * @param {Any} [changedProperties]\n     */",
         "meta": {
-            "range": [
-                18267,
-                18778
-            ],
+            "range": [18267, 18778],
             "filename": "datetime-picker.js",
             "lineno": 478,
             "columnno": 4,
@@ -3853,9 +3335,7 @@
                 "id": "astnode100001834",
                 "name": "MdDatetimePickerComponent#updated",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "changedProperties"
-                ]
+                "paramnames": ["changedProperties"]
             },
             "vars": {
                 "": null
@@ -3865,9 +3345,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "changedProperties"
@@ -3882,10 +3360,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                18714,
-                18761
-            ],
+            "range": [18714, 18761],
             "filename": "datetime-picker.js",
             "lineno": 488,
             "columnno": 12,
@@ -3908,10 +3383,7 @@
     {
         "comment": "/**\n     * @param {Any} [options]\n     */",
         "meta": {
-            "range": [
-                18830,
-                19651
-            ],
+            "range": [18830, 19651],
             "filename": "datetime-picker.js",
             "lineno": 495,
             "columnno": 4,
@@ -3920,9 +3392,7 @@
                 "id": "astnode100001909",
                 "name": "MdDatetimePickerComponent#show",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "options"
-                ]
+                "paramnames": ["options"]
             },
             "vars": {
                 "": null
@@ -3931,9 +3401,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "options"
@@ -3948,10 +3416,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                18854,
-                18884
-            ],
+            "range": [18854, 18884],
             "filename": "datetime-picker.js",
             "lineno": 496,
             "columnno": 8,
@@ -3974,10 +3439,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                18894,
-                18968
-            ],
+            "range": [18894, 18968],
             "filename": "datetime-picker.js",
             "lineno": 497,
             "columnno": 8,
@@ -4000,10 +3462,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                19157,
-                19172
-            ],
+            "range": [19157, 19172],
             "filename": "datetime-picker.js",
             "lineno": 501,
             "columnno": 12,
@@ -4024,10 +3483,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                19186,
-                19199
-            ],
+            "range": [19186, 19199],
             "filename": "datetime-picker.js",
             "lineno": 502,
             "columnno": 12,
@@ -4048,10 +3504,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                19247,
-                19482
-            ],
+            "range": [19247, 19482],
             "filename": "datetime-picker.js",
             "lineno": 504,
             "columnno": 12,
@@ -4072,10 +3525,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                19528,
-                19544
-            ],
+            "range": [19528, 19544],
             "filename": "datetime-picker.js",
             "lineno": 512,
             "columnno": 8,
@@ -4098,10 +3548,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                19673,
-                20057
-            ],
+            "range": [19673, 20057],
             "filename": "datetime-picker.js",
             "lineno": 519,
             "columnno": 4,
@@ -4126,10 +3573,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                19691,
-                19767
-            ],
+            "range": [19691, 19767],
             "filename": "datetime-picker.js",
             "lineno": 520,
             "columnno": 8,
@@ -4152,10 +3596,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                19931,
-                19948
-            ],
+            "range": [19931, 19948],
             "filename": "datetime-picker.js",
             "lineno": 523,
             "columnno": 8,
@@ -4178,10 +3619,7 @@
     {
         "comment": "/**\n     * @param {Any} [options]\n     */",
         "meta": {
-            "range": [
-                20109,
-                20202
-            ],
+            "range": [20109, 20202],
             "filename": "datetime-picker.js",
             "lineno": 531,
             "columnno": 4,
@@ -4190,9 +3628,7 @@
                 "id": "astnode100002056",
                 "name": "MdDatetimePickerComponent#toggle",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "options"
-                ]
+                "paramnames": ["options"]
             },
             "vars": {
                 "": null
@@ -4201,9 +3637,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "options"
@@ -4218,10 +3652,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                20252,
-                20481
-            ],
+            "range": [20252, 20481],
             "filename": "datetime-picker.js",
             "lineno": 539,
             "columnno": 4,
@@ -4230,9 +3661,7 @@
                 "id": "astnode100002076",
                 "name": "MdDatetimePickerComponent#handleDatetimePickerYearItemClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -4241,9 +3670,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -4258,10 +3685,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                20309,
-                20340
-            ],
+            "range": [20309, 20340],
             "filename": "datetime-picker.js",
             "lineno": 540,
             "columnno": 14,
@@ -4284,10 +3708,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                20397,
-                20411
-            ],
+            "range": [20397, 20411],
             "filename": "datetime-picker.js",
             "lineno": 542,
             "columnno": 8,
@@ -4310,10 +3731,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                20466,
-                20471
-            ],
+            "range": [20466, 20471],
             "filename": "datetime-picker.js",
             "lineno": 543,
             "columnno": 53,
@@ -4334,10 +3752,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                20531,
-                20807
-            ],
+            "range": [20531, 20807],
             "filename": "datetime-picker.js",
             "lineno": 549,
             "columnno": 4,
@@ -4346,9 +3761,7 @@
                 "id": "astnode100002114",
                 "name": "MdDatetimePickerComponent#handleDatetimePickerMonthItemClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -4357,9 +3770,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -4374,10 +3785,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                20589,
-                20620
-            ],
+            "range": [20589, 20620],
             "filename": "datetime-picker.js",
             "lineno": 550,
             "columnno": 14,
@@ -4400,10 +3808,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                20722,
-                20736
-            ],
+            "range": [20722, 20736],
             "filename": "datetime-picker.js",
             "lineno": 553,
             "columnno": 8,
@@ -4426,10 +3831,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                20792,
-                20797
-            ],
+            "range": [20792, 20797],
             "filename": "datetime-picker.js",
             "lineno": 554,
             "columnno": 54,
@@ -4450,10 +3852,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                20857,
-                21293
-            ],
+            "range": [20857, 21293],
             "filename": "datetime-picker.js",
             "lineno": 560,
             "columnno": 4,
@@ -4462,9 +3861,7 @@
                 "id": "astnode100002162",
                 "name": "MdDatetimePickerComponent#handleDatetimePickerDayItemClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -4473,9 +3870,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -4490,10 +3885,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                20913,
-                20944
-            ],
+            "range": [20913, 20944],
             "filename": "datetime-picker.js",
             "lineno": 561,
             "columnno": 14,
@@ -4516,10 +3908,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                21210,
-                21224
-            ],
+            "range": [21210, 21224],
             "filename": "datetime-picker.js",
             "lineno": 568,
             "columnno": 8,
@@ -4542,10 +3931,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                21278,
-                21283
-            ],
+            "range": [21278, 21283],
             "filename": "datetime-picker.js",
             "lineno": 569,
             "columnno": 52,
@@ -4566,10 +3952,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                21343,
-                21609
-            ],
+            "range": [21343, 21609],
             "filename": "datetime-picker.js",
             "lineno": 575,
             "columnno": 4,
@@ -4578,9 +3961,7 @@
                 "id": "astnode100002250",
                 "name": "MdDatetimePickerComponent#handleDatetimePickerHourItemClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -4589,9 +3970,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -4606,10 +3985,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                21400,
-                21431
-            ],
+            "range": [21400, 21431],
             "filename": "datetime-picker.js",
             "lineno": 576,
             "columnno": 14,
@@ -4632,10 +4008,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                21525,
-                21539
-            ],
+            "range": [21525, 21539],
             "filename": "datetime-picker.js",
             "lineno": 579,
             "columnno": 8,
@@ -4658,10 +4031,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                21594,
-                21599
-            ],
+            "range": [21594, 21599],
             "filename": "datetime-picker.js",
             "lineno": 580,
             "columnno": 53,
@@ -4682,10 +4052,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                21659,
-                21937
-            ],
+            "range": [21659, 21937],
             "filename": "datetime-picker.js",
             "lineno": 586,
             "columnno": 4,
@@ -4694,9 +4061,7 @@
                 "id": "astnode100002298",
                 "name": "MdDatetimePickerComponent#handleDatetimePickerMinuteItemClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -4705,9 +4070,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -4722,10 +4085,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                21718,
-                21749
-            ],
+            "range": [21718, 21749],
             "filename": "datetime-picker.js",
             "lineno": 587,
             "columnno": 14,
@@ -4748,10 +4108,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                21851,
-                21865
-            ],
+            "range": [21851, 21865],
             "filename": "datetime-picker.js",
             "lineno": 590,
             "columnno": 8,
@@ -4774,10 +4131,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                21922,
-                21927
-            ],
+            "range": [21922, 21927],
             "filename": "datetime-picker.js",
             "lineno": 591,
             "columnno": 55,
@@ -4798,10 +4152,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                21987,
-                22129
-            ],
+            "range": [21987, 22129],
             "filename": "datetime-picker.js",
             "lineno": 597,
             "columnno": 4,
@@ -4810,9 +4161,7 @@
                 "id": "astnode100002346",
                 "name": "MdDatetimePickerComponent#handleDatetimePickerScrimClose",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -4821,9 +4170,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -4838,10 +4185,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                22114,
-                22119
-            ],
+            "range": [22114, 22119],
             "filename": "datetime-picker.js",
             "lineno": 599,
             "columnno": 50,
@@ -4862,10 +4206,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                22179,
-                22345
-            ],
+            "range": [22179, 22345],
             "filename": "datetime-picker.js",
             "lineno": 605,
             "columnno": 4,
@@ -4874,9 +4215,7 @@
                 "id": "astnode100002369",
                 "name": "MdDatetimePickerComponent#handleDatetimePickerShown",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -4885,9 +4224,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -4902,10 +4239,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                22395,
-                22564
-            ],
+            "range": [22395, 22564],
             "filename": "datetime-picker.js",
             "lineno": 613,
             "columnno": 4,
@@ -4914,9 +4248,7 @@
                 "id": "astnode100002389",
                 "name": "MdDatetimePickerComponent#handleDatetimePickerClosed",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -4925,9 +4257,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -4942,10 +4272,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                22614,
-                23229
-            ],
+            "range": [22614, 23229],
             "filename": "datetime-picker.js",
             "lineno": 621,
             "columnno": 4,
@@ -4954,9 +4281,7 @@
                 "id": "astnode100002409",
                 "name": "MdDatetimePickerComponent#handleDatetimePickerIconButtonPrevClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -4965,9 +4290,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -4982,10 +4305,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                22677,
-                23096
-            ],
+            "range": [22677, 23096],
             "filename": "datetime-picker.js",
             "lineno": 622,
             "columnno": 14,
@@ -5008,10 +4328,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                22697,
-                22767
-            ],
+            "range": [22697, 22767],
             "filename": "datetime-picker.js",
             "lineno": 623,
             "columnno": 12,
@@ -5031,10 +4348,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                22781,
-                22850
-            ],
+            "range": [22781, 22850],
             "filename": "datetime-picker.js",
             "lineno": 624,
             "columnno": 12,
@@ -5055,10 +4369,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                22864,
-                22927
-            ],
+            "range": [22864, 22927],
             "filename": "datetime-picker.js",
             "lineno": 625,
             "columnno": 12,
@@ -5079,10 +4390,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                22941,
-                23004
-            ],
+            "range": [22941, 23004],
             "filename": "datetime-picker.js",
             "lineno": 626,
             "columnno": 12,
@@ -5103,10 +4411,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                23018,
-                23085
-            ],
+            "range": [23018, 23085],
             "filename": "datetime-picker.js",
             "lineno": 627,
             "columnno": 12,
@@ -5127,10 +4432,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                23214,
-                23219
-            ],
+            "range": [23214, 23219],
             "filename": "datetime-picker.js",
             "lineno": 631,
             "columnno": 59,
@@ -5151,10 +4453,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                23279,
-                23894
-            ],
+            "range": [23279, 23894],
             "filename": "datetime-picker.js",
             "lineno": 637,
             "columnno": 4,
@@ -5163,9 +4462,7 @@
                 "id": "astnode100002519",
                 "name": "MdDatetimePickerComponent#handleDatetimePickerIconButtonNextClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -5174,9 +4471,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -5191,10 +4486,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                23342,
-                23761
-            ],
+            "range": [23342, 23761],
             "filename": "datetime-picker.js",
             "lineno": 638,
             "columnno": 14,
@@ -5217,10 +4509,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                23362,
-                23432
-            ],
+            "range": [23362, 23432],
             "filename": "datetime-picker.js",
             "lineno": 639,
             "columnno": 12,
@@ -5240,10 +4529,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                23446,
-                23515
-            ],
+            "range": [23446, 23515],
             "filename": "datetime-picker.js",
             "lineno": 640,
             "columnno": 12,
@@ -5264,10 +4550,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                23529,
-                23592
-            ],
+            "range": [23529, 23592],
             "filename": "datetime-picker.js",
             "lineno": 641,
             "columnno": 12,
@@ -5288,10 +4571,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                23606,
-                23669
-            ],
+            "range": [23606, 23669],
             "filename": "datetime-picker.js",
             "lineno": 642,
             "columnno": 12,
@@ -5312,10 +4592,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                23683,
-                23750
-            ],
+            "range": [23683, 23750],
             "filename": "datetime-picker.js",
             "lineno": 643,
             "columnno": 12,
@@ -5336,10 +4613,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                23879,
-                23884
-            ],
+            "range": [23879, 23884],
             "filename": "datetime-picker.js",
             "lineno": 647,
             "columnno": 59,
@@ -5360,10 +4634,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                23944,
-                24356
-            ],
+            "range": [23944, 24356],
             "filename": "datetime-picker.js",
             "lineno": 653,
             "columnno": 4,
@@ -5372,9 +4643,7 @@
                 "id": "astnode100002629",
                 "name": "MdDatetimePickerComponent#handleDatetimePickerIconButtonClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -5383,9 +4652,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -5400,10 +4667,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                24003,
-                24034
-            ],
+            "range": [24003, 24034],
             "filename": "datetime-picker.js",
             "lineno": 654,
             "columnno": 14,
@@ -5426,10 +4690,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                24050,
-                24217
-            ],
+            "range": [24050, 24217],
             "filename": "datetime-picker.js",
             "lineno": 655,
             "columnno": 14,
@@ -5452,10 +4713,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                24070,
-                24131
-            ],
+            "range": [24070, 24131],
             "filename": "datetime-picker.js",
             "lineno": 656,
             "columnno": 12,
@@ -5477,10 +4735,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                24145,
-                24206
-            ],
+            "range": [24145, 24206],
             "filename": "datetime-picker.js",
             "lineno": 657,
             "columnno": 12,
@@ -5502,10 +4757,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                24233,
-                24250
-            ],
+            "range": [24233, 24250],
             "filename": "datetime-picker.js",
             "lineno": 659,
             "columnno": 14,
@@ -5528,10 +4780,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                24341,
-                24346
-            ],
+            "range": [24341, 24346],
             "filename": "datetime-picker.js",
             "lineno": 661,
             "columnno": 55,
@@ -5552,10 +4801,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                24406,
-                24610
-            ],
+            "range": [24406, 24610],
             "filename": "datetime-picker.js",
             "lineno": 667,
             "columnno": 4,
@@ -5564,9 +4810,7 @@
                 "id": "astnode100002685",
                 "name": "MdDatetimePickerComponent#handleDatetimePickerButtonCancelClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -5575,9 +4819,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -5592,10 +4834,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                24461,
-                24511
-            ],
+            "range": [24461, 24511],
             "filename": "datetime-picker.js",
             "lineno": 668,
             "columnno": 8,
@@ -5618,10 +4857,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                24595,
-                24600
-            ],
+            "range": [24595, 24600],
             "filename": "datetime-picker.js",
             "lineno": 670,
             "columnno": 57,
@@ -5642,10 +4878,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                24660,
-                24796
-            ],
+            "range": [24660, 24796],
             "filename": "datetime-picker.js",
             "lineno": 676,
             "columnno": 4,
@@ -5654,9 +4887,7 @@
                 "id": "astnode100002712",
                 "name": "MdDatetimePickerComponent#handleDatetimePickerButtonOkClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -5665,9 +4896,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -5682,10 +4911,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                24781,
-                24786
-            ],
+            "range": [24781, 24786],
             "filename": "datetime-picker.js",
             "lineno": 678,
             "columnno": 53,
@@ -5706,10 +4932,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                24846,
-                25124
-            ],
+            "range": [24846, 25124],
             "filename": "datetime-picker.js",
             "lineno": 684,
             "columnno": 4,
@@ -5718,9 +4941,7 @@
                 "id": "astnode100002726",
                 "name": "MdDatetimePickerComponent#handleDatetimePickerButtonLabelClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -5729,9 +4950,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -5746,10 +4965,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                24906,
-                25013
-            ],
+            "range": [24906, 25013],
             "filename": "datetime-picker.js",
             "lineno": 685,
             "columnno": 14,
@@ -5772,10 +4988,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                24926,
-                24930
-            ],
+            "range": [24926, 24930],
             "filename": "datetime-picker.js",
             "lineno": 686,
             "columnno": 12,
@@ -5796,10 +5009,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                24944,
-                24948
-            ],
+            "range": [24944, 24948],
             "filename": "datetime-picker.js",
             "lineno": 687,
             "columnno": 12,
@@ -5821,10 +5031,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                24962,
-                24966
-            ],
+            "range": [24962, 24966],
             "filename": "datetime-picker.js",
             "lineno": 688,
             "columnno": 12,
@@ -5846,10 +5053,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                24980,
-                24984
-            ],
+            "range": [24980, 24984],
             "filename": "datetime-picker.js",
             "lineno": 689,
             "columnno": 12,
@@ -5871,10 +5075,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                24998,
-                25002
-            ],
+            "range": [24998, 25002],
             "filename": "datetime-picker.js",
             "lineno": 690,
             "columnno": 12,
@@ -5896,10 +5097,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                25023,
-                25051
-            ],
+            "range": [25023, 25051],
             "filename": "datetime-picker.js",
             "lineno": 692,
             "columnno": 8,
@@ -5922,10 +5120,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                25109,
-                25114
-            ],
+            "range": [25109, 25114],
             "filename": "datetime-picker.js",
             "lineno": 693,
             "columnno": 56,
@@ -5946,10 +5141,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                25174,
-                25643
-            ],
+            "range": [25174, 25643],
             "filename": "datetime-picker.js",
             "lineno": 699,
             "columnno": 4,
@@ -5958,9 +5150,7 @@
                 "id": "astnode100002764",
                 "name": "MdDatetimePickerComponent#handleDatetimePickerButtonClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -5969,9 +5159,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -5986,10 +5174,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                25229,
-                25260
-            ],
+            "range": [25229, 25260],
             "filename": "datetime-picker.js",
             "lineno": 700,
             "columnno": 14,
@@ -6012,10 +5197,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                25276,
-                25508
-            ],
+            "range": [25276, 25508],
             "filename": "datetime-picker.js",
             "lineno": 701,
             "columnno": 14,
@@ -6038,10 +5220,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                25296,
-                25357
-            ],
+            "range": [25296, 25357],
             "filename": "datetime-picker.js",
             "lineno": 702,
             "columnno": 12,
@@ -6063,10 +5242,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                25371,
-                25424
-            ],
+            "range": [25371, 25424],
             "filename": "datetime-picker.js",
             "lineno": 703,
             "columnno": 12,
@@ -6088,10 +5264,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                25438,
-                25497
-            ],
+            "range": [25438, 25497],
             "filename": "datetime-picker.js",
             "lineno": 704,
             "columnno": 12,
@@ -6113,10 +5286,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                25524,
-                25541
-            ],
+            "range": [25524, 25541],
             "filename": "datetime-picker.js",
             "lineno": 706,
             "columnno": 14,
@@ -6139,10 +5309,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                25628,
-                25633
-            ],
+            "range": [25628, 25633],
             "filename": "datetime-picker.js",
             "lineno": 708,
             "columnno": 51,
@@ -6163,10 +5330,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                25727,
-                25752
-            ],
+            "range": [25727, 25752],
             "filename": "datetime-picker.js",
             "lineno": 712,
             "columnno": 9,
@@ -6186,8 +5350,6 @@
     {
         "kind": "package",
         "longname": "package:undefined",
-        "files": [
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\datetime-picker\\datetime-picker.js"
-        ]
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\datetime-picker\\datetime-picker.js"]
     }
 ]

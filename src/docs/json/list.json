@@ -2,10 +2,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-list\n * @fires MdListComponent#onListItemClick\n * @fires MdListComponent#onListItemCheckboxNativeInput\n * @fires MdListComponent#onListItemRadioButtonNativeInput\n * @fires MdListComponent#onListItemSwitchNativeInput\n */",
         "meta": {
-            "range": [
-                413,
-                4623
-            ],
+            "range": [413, 4623],
             "filename": "list.js",
             "lineno": 13,
             "columnno": 0,
@@ -17,9 +14,7 @@
                 "paramnames": []
             }
         },
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -28,12 +23,7 @@
                 "value": "md-list"
             }
         ],
-        "fires": [
-            "MdListComponent#event:onListItemClick",
-            "MdListComponent#event:onListItemCheckboxNativeInput",
-            "MdListComponent#event:onListItemRadioButtonNativeInput",
-            "MdListComponent#event:onListItemSwitchNativeInput"
-        ],
+        "fires": ["MdListComponent#event:onListItemClick", "MdListComponent#event:onListItemCheckboxNativeInput", "MdListComponent#event:onListItemRadioButtonNativeInput", "MdListComponent#event:onListItemSwitchNativeInput"],
         "name": "MdListComponent",
         "longname": "MdListComponent",
         "kind": "class",
@@ -43,10 +33,7 @@
     {
         "comment": "/**\n     * @property {Array} [items]\n     * @property {String} [type]\n     * @property {Object} [fieldMap]\n     * @property {Object} [rippleOptions]\n     */",
         "meta": {
-            "range": [
-                622,
-                791
-            ],
+            "range": [622, 791],
             "filename": "list.js",
             "lineno": 20,
             "columnno": 4,
@@ -60,36 +47,28 @@
         "properties": [
             {
                 "type": {
-                    "names": [
-                        "Array"
-                    ]
+                    "names": ["Array"]
                 },
                 "optional": true,
                 "name": "items"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "type"
             },
             {
                 "type": {
-                    "names": [
-                        "Object"
-                    ]
+                    "names": ["Object"]
                 },
                 "optional": true,
                 "name": "fieldMap"
             },
             {
                 "type": {
-                    "names": [
-                        "Object"
-                    ]
+                    "names": ["Object"]
                 },
                 "optional": true,
                 "name": "rippleOptions"
@@ -104,10 +83,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                652,
-                674
-            ],
+            "range": [652, 674],
             "filename": "list.js",
             "lineno": 21,
             "columnno": 8,
@@ -128,10 +104,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                661,
-                672
-            ],
+            "range": [661, 672],
             "filename": "list.js",
             "lineno": 21,
             "columnno": 17,
@@ -153,10 +126,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                684,
-                706
-            ],
+            "range": [684, 706],
             "filename": "list.js",
             "lineno": 22,
             "columnno": 8,
@@ -177,10 +147,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                692,
-                704
-            ],
+            "range": [692, 704],
             "filename": "list.js",
             "lineno": 22,
             "columnno": 16,
@@ -202,10 +169,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                716,
-                742
-            ],
+            "range": [716, 742],
             "filename": "list.js",
             "lineno": 23,
             "columnno": 8,
@@ -226,10 +190,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                728,
-                740
-            ],
+            "range": [728, 740],
             "filename": "list.js",
             "lineno": 23,
             "columnno": 20,
@@ -251,10 +212,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                752,
-                783
-            ],
+            "range": [752, 783],
             "filename": "list.js",
             "lineno": 24,
             "columnno": 8,
@@ -275,10 +233,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                769,
-                781
-            ],
+            "range": [769, 781],
             "filename": "list.js",
             "lineno": 24,
             "columnno": 25,
@@ -300,10 +255,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                830,
-                872
-            ],
+            "range": [830, 872],
             "filename": "list.js",
             "lineno": 30,
             "columnno": 4,
@@ -324,10 +276,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                894,
-                994
-            ],
+            "range": [894, 994],
             "filename": "list.js",
             "lineno": 34,
             "columnno": 4,
@@ -352,10 +301,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-list\n * @fires MdListComponent#onListItemClick\n * @fires MdListComponent#onListItemCheckboxNativeInput\n * @fires MdListComponent#onListItemRadioButtonNativeInput\n * @fires MdListComponent#onListItemSwitchNativeInput\n */",
         "meta": {
-            "range": [
-                413,
-                4623
-            ],
+            "range": [413, 4623],
             "filename": "list.js",
             "lineno": 13,
             "columnno": 0,
@@ -370,9 +316,7 @@
         "name": "MdListComponent",
         "longname": "MdListComponent",
         "kind": "class",
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -381,21 +325,13 @@
                 "value": "md-list"
             }
         ],
-        "fires": [
-            "MdListComponent#event:onListItemClick",
-            "MdListComponent#event:onListItemCheckboxNativeInput",
-            "MdListComponent#event:onListItemRadioButtonNativeInput",
-            "MdListComponent#event:onListItemSwitchNativeInput"
-        ],
+        "fires": ["MdListComponent#event:onListItemClick", "MdListComponent#event:onListItemCheckboxNativeInput", "MdListComponent#event:onListItemRadioButtonNativeInput", "MdListComponent#event:onListItemSwitchNativeInput"],
         "scope": "global"
     },
     {
         "comment": "",
         "meta": {
-            "range": [
-                935,
-                950
-            ],
+            "range": [935, 950],
             "filename": "list.js",
             "lineno": 36,
             "columnno": 8,
@@ -418,10 +354,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                960,
-                987
-            ],
+            "range": [960, 987],
             "filename": "list.js",
             "lineno": 37,
             "columnno": 8,
@@ -444,10 +377,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     */",
         "meta": {
-            "range": [
-                1043,
-                2935
-            ],
+            "range": [1043, 2935],
             "filename": "list.js",
             "lineno": 43,
             "columnno": 4,
@@ -456,9 +386,7 @@
                 "id": "astnode100000061",
                 "name": "MdListComponent#renderListItem",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item"
-                ]
+                "paramnames": ["item"]
             },
             "vars": {
                 "": null
@@ -467,9 +395,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
@@ -484,10 +410,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1118,
-                1122
-            ],
+            "range": [1118, 1122],
             "filename": "list.js",
             "lineno": 45,
             "columnno": 23,
@@ -508,10 +431,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1165,
-                1192
-            ],
+            "range": [1165, 1192],
             "filename": "list.js",
             "lineno": 46,
             "columnno": 22,
@@ -534,10 +454,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1210,
-                1234
-            ],
+            "range": [1210, 1234],
             "filename": "list.js",
             "lineno": 47,
             "columnno": 16,
@@ -559,10 +476,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                2957,
-                3041
-            ],
+            "range": [2957, 3041],
             "filename": "list.js",
             "lineno": 83,
             "columnno": 4,
@@ -587,10 +501,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                3063,
-                3164
-            ],
+            "range": [3063, 3164],
             "filename": "list.js",
             "lineno": 89,
             "columnno": 4,
@@ -615,10 +526,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                3214,
-                3731
-            ],
+            "range": [3214, 3731],
             "filename": "list.js",
             "lineno": 97,
             "columnno": 4,
@@ -627,9 +535,7 @@
                 "id": "astnode100000265",
                 "name": "MdListComponent#handleListItemClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -638,9 +544,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -655,10 +559,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3257,
-                3348
-            ],
+            "range": [3257, 3348],
             "filename": "list.js",
             "lineno": 98,
             "columnno": 14,
@@ -681,10 +582,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3392,
-                3423
-            ],
+            "range": [3392, 3423],
             "filename": "list.js",
             "lineno": 100,
             "columnno": 14,
@@ -707,10 +605,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3529,
-                3558
-            ],
+            "range": [3529, 3558],
             "filename": "list.js",
             "lineno": 103,
             "columnno": 16,
@@ -733,10 +628,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3605,
-                3635
-            ],
+            "range": [3605, 3635],
             "filename": "list.js",
             "lineno": 106,
             "columnno": 12,
@@ -760,10 +652,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3716,
-                3721
-            ],
+            "range": [3716, 3721],
             "filename": "list.js",
             "lineno": 109,
             "columnno": 39,
@@ -784,10 +673,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                3781,
-                4009
-            ],
+            "range": [3781, 4009],
             "filename": "list.js",
             "lineno": 115,
             "columnno": 4,
@@ -796,9 +682,7 @@
                 "id": "astnode100000340",
                 "name": "MdListComponent#handleListItemCheckboxNativeInput",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -807,9 +691,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -824,10 +706,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3838,
-                3869
-            ],
+            "range": [3838, 3869],
             "filename": "list.js",
             "lineno": 116,
             "columnno": 14,
@@ -850,10 +729,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3879,
-                3909
-            ],
+            "range": [3879, 3909],
             "filename": "list.js",
             "lineno": 117,
             "columnno": 8,
@@ -877,10 +753,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3994,
-                3999
-            ],
+            "range": [3994, 3999],
             "filename": "list.js",
             "lineno": 119,
             "columnno": 53,
@@ -901,10 +774,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                4059,
-                4347
-            ],
+            "range": [4059, 4347],
             "filename": "list.js",
             "lineno": 125,
             "columnno": 4,
@@ -913,9 +783,7 @@
                 "id": "astnode100000376",
                 "name": "MdListComponent#handleListItemRadioButtonNativeInput",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -924,9 +792,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -941,10 +807,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4119,
-                4150
-            ],
+            "range": [4119, 4150],
             "filename": "list.js",
             "lineno": 126,
             "columnno": 14,
@@ -967,10 +830,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4203,
-                4232
-            ],
+            "range": [4203, 4232],
             "filename": "list.js",
             "lineno": 128,
             "columnno": 12,
@@ -993,10 +853,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4332,
-                4337
-            ],
+            "range": [4332, 4337],
             "filename": "list.js",
             "lineno": 131,
             "columnno": 56,
@@ -1017,10 +874,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                4397,
-                4621
-            ],
+            "range": [4397, 4621],
             "filename": "list.js",
             "lineno": 137,
             "columnno": 4,
@@ -1029,9 +883,7 @@
                 "id": "astnode100000421",
                 "name": "MdListComponent#handleListItemSwitchNativeInput",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -1040,9 +892,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -1057,10 +907,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4452,
-                4483
-            ],
+            "range": [4452, 4483],
             "filename": "list.js",
             "lineno": 138,
             "columnno": 14,
@@ -1083,10 +930,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4493,
-                4523
-            ],
+            "range": [4493, 4523],
             "filename": "list.js",
             "lineno": 139,
             "columnno": 8,
@@ -1110,10 +954,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4606,
-                4611
-            ],
+            "range": [4606, 4611],
             "filename": "list.js",
             "lineno": 141,
             "columnno": 51,
@@ -1134,10 +975,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4684,
-                4699
-            ],
+            "range": [4684, 4699],
             "filename": "list.js",
             "lineno": 145,
             "columnno": 9,
@@ -1157,8 +995,6 @@
     {
         "kind": "package",
         "longname": "package:undefined",
-        "files": [
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list\\list.js"
-        ]
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list\\list.js"]
     }
 ]

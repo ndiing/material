@@ -2,10 +2,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-tree\n * @fires MdTreeComponent#onTreeKeydownArrowDown\n * @fires MdTreeComponent#onTreeKeydownArrowUp\n * @fires MdTreeComponent#onTreeKeydownArrowRight\n * @fires MdTreeComponent#onTreeKeydownArrowLeft\n * @fires MdTreeComponent#onTreeKeydownEnter\n * @fires MdTreeComponent#onTreeKeydown\n * @fires MdTreeComponent#onTreeItemClick\n */",
         "meta": {
-            "range": [
-                564,
-                8651
-            ],
+            "range": [564, 8651],
             "filename": "tree.js",
             "lineno": 17,
             "columnno": 0,
@@ -17,9 +14,7 @@
                 "paramnames": []
             }
         },
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -28,15 +23,7 @@
                 "value": "md-tree"
             }
         ],
-        "fires": [
-            "MdTreeComponent#event:onTreeKeydownArrowDown",
-            "MdTreeComponent#event:onTreeKeydownArrowUp",
-            "MdTreeComponent#event:onTreeKeydownArrowRight",
-            "MdTreeComponent#event:onTreeKeydownArrowLeft",
-            "MdTreeComponent#event:onTreeKeydownEnter",
-            "MdTreeComponent#event:onTreeKeydown",
-            "MdTreeComponent#event:onTreeItemClick"
-        ],
+        "fires": ["MdTreeComponent#event:onTreeKeydownArrowDown", "MdTreeComponent#event:onTreeKeydownArrowUp", "MdTreeComponent#event:onTreeKeydownArrowRight", "MdTreeComponent#event:onTreeKeydownArrowLeft", "MdTreeComponent#event:onTreeKeydownEnter", "MdTreeComponent#event:onTreeKeydown", "MdTreeComponent#event:onTreeItemClick"],
         "name": "MdTreeComponent",
         "longname": "MdTreeComponent",
         "kind": "class",
@@ -46,10 +33,7 @@
     {
         "comment": "/**\n     * @property {Array} [items]\n     */",
         "meta": {
-            "range": [
-                661,
-                721
-            ],
+            "range": [661, 721],
             "filename": "tree.js",
             "lineno": 21,
             "columnno": 4,
@@ -63,9 +47,7 @@
         "properties": [
             {
                 "type": {
-                    "names": [
-                        "Array"
-                    ]
+                    "names": ["Array"]
                 },
                 "optional": true,
                 "name": "items"
@@ -80,10 +62,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                691,
-                713
-            ],
+            "range": [691, 713],
             "filename": "tree.js",
             "lineno": 22,
             "columnno": 8,
@@ -104,10 +83,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                700,
-                711
-            ],
+            "range": [700, 711],
             "filename": "tree.js",
             "lineno": 22,
             "columnno": 17,
@@ -129,10 +105,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                743,
-                899
-            ],
+            "range": [743, 899],
             "filename": "tree.js",
             "lineno": 27,
             "columnno": 4,
@@ -157,10 +130,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-tree\n * @fires MdTreeComponent#onTreeKeydownArrowDown\n * @fires MdTreeComponent#onTreeKeydownArrowUp\n * @fires MdTreeComponent#onTreeKeydownArrowRight\n * @fires MdTreeComponent#onTreeKeydownArrowLeft\n * @fires MdTreeComponent#onTreeKeydownEnter\n * @fires MdTreeComponent#onTreeKeydown\n * @fires MdTreeComponent#onTreeItemClick\n */",
         "meta": {
-            "range": [
-                564,
-                8651
-            ],
+            "range": [564, 8651],
             "filename": "tree.js",
             "lineno": 17,
             "columnno": 0,
@@ -175,9 +145,7 @@
         "name": "MdTreeComponent",
         "longname": "MdTreeComponent",
         "kind": "class",
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -186,24 +154,13 @@
                 "value": "md-tree"
             }
         ],
-        "fires": [
-            "MdTreeComponent#event:onTreeKeydownArrowDown",
-            "MdTreeComponent#event:onTreeKeydownArrowUp",
-            "MdTreeComponent#event:onTreeKeydownArrowRight",
-            "MdTreeComponent#event:onTreeKeydownArrowLeft",
-            "MdTreeComponent#event:onTreeKeydownEnter",
-            "MdTreeComponent#event:onTreeKeydown",
-            "MdTreeComponent#event:onTreeItemClick"
-        ],
+        "fires": ["MdTreeComponent#event:onTreeKeydownArrowDown", "MdTreeComponent#event:onTreeKeydownArrowUp", "MdTreeComponent#event:onTreeKeydownArrowRight", "MdTreeComponent#event:onTreeKeydownArrowLeft", "MdTreeComponent#event:onTreeKeydownEnter", "MdTreeComponent#event:onTreeKeydown", "MdTreeComponent#event:onTreeItemClick"],
         "scope": "global"
     },
     {
         "comment": "",
         "meta": {
-            "range": [
-                784,
-                799
-            ],
+            "range": [784, 799],
             "filename": "tree.js",
             "lineno": 29,
             "columnno": 8,
@@ -226,10 +183,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                809,
-                828
-            ],
+            "range": [809, 828],
             "filename": "tree.js",
             "lineno": 30,
             "columnno": 8,
@@ -252,10 +206,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                838,
-                862
-            ],
+            "range": [838, 862],
             "filename": "tree.js",
             "lineno": 31,
             "columnno": 8,
@@ -278,10 +229,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                872,
-                892
-            ],
+            "range": [872, 892],
             "filename": "tree.js",
             "lineno": 32,
             "columnno": 8,
@@ -304,10 +252,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     */",
         "meta": {
-            "range": [
-                948,
-                1693
-            ],
+            "range": [948, 1693],
             "filename": "tree.js",
             "lineno": 38,
             "columnno": 4,
@@ -316,9 +261,7 @@
                 "id": "astnode100000062",
                 "name": "MdTreeComponent#renderTreeItem",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item"
-                ]
+                "paramnames": ["item"]
             },
             "vars": {
                 "": null
@@ -327,9 +270,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
@@ -344,10 +285,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                1715,
-                1835
-            ],
+            "range": [1715, 1835],
             "filename": "tree.js",
             "lineno": 59,
             "columnno": 4,
@@ -372,10 +310,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                1857,
-                2094
-            ],
+            "range": [1857, 2094],
             "filename": "tree.js",
             "lineno": 65,
             "columnno": 4,
@@ -400,10 +335,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1961,
-                2019
-            ],
+            "range": [1961, 2019],
             "filename": "tree.js",
             "lineno": 68,
             "columnno": 8,
@@ -426,10 +358,7 @@
     {
         "comment": "/**\n     * @async\n     * @param {Any} [changedProperties]\n     */",
         "meta": {
-            "range": [
-                2170,
-                2579
-            ],
+            "range": [2170, 2579],
             "filename": "tree.js",
             "lineno": 76,
             "columnno": 4,
@@ -438,9 +367,7 @@
                 "id": "astnode100000190",
                 "name": "MdTreeComponent#updated",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "changedProperties"
-                ]
+                "paramnames": ["changedProperties"]
             },
             "vars": {
                 "": null
@@ -450,9 +377,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "changedProperties"
@@ -467,10 +392,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2344,
-                2395
-            ],
+            "range": [2344, 2395],
             "filename": "tree.js",
             "lineno": 80,
             "columnno": 12,
@@ -493,10 +415,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2460,
-                2485
-            ],
+            "range": [2460, 2485],
             "filename": "tree.js",
             "lineno": 82,
             "columnno": 18,
@@ -519,10 +438,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2499,
-                2528
-            ],
+            "range": [2499, 2528],
             "filename": "tree.js",
             "lineno": 83,
             "columnno": 12,
@@ -545,10 +461,7 @@
     {
         "comment": "/**\n     * @param {Any} [items]\n     * @param {Any} [parent]\n     * @param {Any} [indent=0]\n     */",
         "meta": {
-            "range": [
-                2689,
-                3471
-            ],
+            "range": [2689, 3471],
             "filename": "tree.js",
             "lineno": 93,
             "columnno": 4,
@@ -557,11 +470,7 @@
                 "id": "astnode100000259",
                 "name": "MdTreeComponent#flatten",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "items",
-                    "parent",
-                    "indent"
-                ]
+                "paramnames": ["items", "parent", "indent"]
             },
             "vars": {
                 "": null
@@ -570,27 +479,21 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "items"
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "parent"
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "defaultvalue": 0,
@@ -606,10 +509,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2738,
-                2746
-            ],
+            "range": [2738, 2746],
             "filename": "tree.js",
             "lineno": 94,
             "columnno": 12,
@@ -630,10 +530,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2760,
-                2774
-            ],
+            "range": [2760, 2774],
             "filename": "tree.js",
             "lineno": 95,
             "columnno": 12,
@@ -656,10 +553,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2822,
-                2842
-            ],
+            "range": [2822, 2842],
             "filename": "tree.js",
             "lineno": 97,
             "columnno": 12,
@@ -682,10 +576,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2856,
-                2876
-            ],
+            "range": [2856, 2876],
             "filename": "tree.js",
             "lineno": 98,
             "columnno": 12,
@@ -708,10 +599,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2908,
-                2927
-            ],
+            "range": [2908, 2927],
             "filename": "tree.js",
             "lineno": 99,
             "columnno": 30,
@@ -734,10 +622,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2977,
-                2992
-            ],
+            "range": [2977, 2992],
             "filename": "tree.js",
             "lineno": 100,
             "columnno": 48,
@@ -761,10 +646,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3091,
-                3145
-            ],
+            "range": [3091, 3145],
             "filename": "tree.js",
             "lineno": 103,
             "columnno": 22,
@@ -787,10 +669,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3206,
-                3232
-            ],
+            "range": [3206, 3232],
             "filename": "tree.js",
             "lineno": 105,
             "columnno": 20,
@@ -814,10 +693,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3254,
-                3278
-            ],
+            "range": [3254, 3278],
             "filename": "tree.js",
             "lineno": 106,
             "columnno": 20,
@@ -840,10 +716,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3443,
-                3451
-            ],
+            "range": [3443, 3451],
             "filename": "tree.js",
             "lineno": 112,
             "columnno": 17,
@@ -864,10 +737,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3453,
-                3462
-            ],
+            "range": [3453, 3462],
             "filename": "tree.js",
             "lineno": 112,
             "columnno": 27,
@@ -888,10 +758,7 @@
     {
         "comment": "/**\n     * @param {Any} [data]\n     */",
         "meta": {
-            "range": [
-                3520,
-                3774
-            ],
+            "range": [3520, 3774],
             "filename": "tree.js",
             "lineno": 118,
             "columnno": 4,
@@ -900,9 +767,7 @@
                 "id": "astnode100000378",
                 "name": "MdTreeComponent#updateVisibility",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "data"
-                ]
+                "paramnames": ["data"]
             },
             "vars": {
                 "": null
@@ -911,9 +776,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "data"
@@ -928,10 +791,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3599,
-                3627
-            ],
+            "range": [3599, 3627],
             "filename": "tree.js",
             "lineno": 120,
             "columnno": 12,
@@ -954,10 +814,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3660,
-                3687
-            ],
+            "range": [3660, 3687],
             "filename": "tree.js",
             "lineno": 121,
             "columnno": 31,
@@ -980,10 +837,7 @@
     {
         "comment": "/**\n     * @async\n     * @param {Any} [arg]\n     */",
         "meta": {
-            "range": [
-                3836,
-                4163
-            ],
+            "range": [3836, 4163],
             "filename": "tree.js",
             "lineno": 130,
             "columnno": 4,
@@ -992,9 +846,7 @@
                 "id": "astnode100000422",
                 "name": "MdTreeComponent#updateScroll",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "arg"
-                ]
+                "paramnames": ["arg"]
             },
             "vars": {
                 "": null
@@ -1004,9 +856,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "arg"
@@ -1021,10 +871,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3911,
-                3974
-            ],
+            "range": [3911, 3974],
             "filename": "tree.js",
             "lineno": 132,
             "columnno": 14,
@@ -1047,10 +894,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4064,
-                4083
-            ],
+            "range": [4064, 4083],
             "filename": "tree.js",
             "lineno": 135,
             "columnno": 12,
@@ -1071,10 +915,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4097,
-                4113
-            ],
+            "range": [4097, 4113],
             "filename": "tree.js",
             "lineno": 136,
             "columnno": 12,
@@ -1095,10 +936,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4127,
-                4144
-            ],
+            "range": [4127, 4144],
             "filename": "tree.js",
             "lineno": 137,
             "columnno": 12,
@@ -1119,10 +957,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                4213,
-                4858
-            ],
+            "range": [4213, 4858],
             "filename": "tree.js",
             "lineno": 144,
             "columnno": 4,
@@ -1131,9 +966,7 @@
                 "id": "astnode100000457",
                 "name": "MdTreeComponent#handleTreeKeydownArrowDown",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -1142,9 +975,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -1159,10 +990,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4295,
-                4356
-            ],
+            "range": [4295, 4356],
             "filename": "tree.js",
             "lineno": 146,
             "columnno": 14,
@@ -1185,10 +1013,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4372,
-                4435
-            ],
+            "range": [4372, 4435],
             "filename": "tree.js",
             "lineno": 147,
             "columnno": 14,
@@ -1211,10 +1036,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4545,
-                4629
-            ],
+            "range": [4545, 4629],
             "filename": "tree.js",
             "lineno": 149,
             "columnno": 14,
@@ -1237,10 +1059,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4691,
-                4724
-            ],
+            "range": [4691, 4724],
             "filename": "tree.js",
             "lineno": 151,
             "columnno": 12,
@@ -1263,10 +1082,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4843,
-                4848
-            ],
+            "range": [4843, 4848],
             "filename": "tree.js",
             "lineno": 155,
             "columnno": 46,
@@ -1287,10 +1103,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                4908,
-                5512
-            ],
+            "range": [4908, 5512],
             "filename": "tree.js",
             "lineno": 161,
             "columnno": 4,
@@ -1299,9 +1112,7 @@
                 "id": "astnode100000563",
                 "name": "MdTreeComponent#handleTreeKeydownArrowUp",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -1310,9 +1121,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -1327,10 +1136,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4988,
-                5049
-            ],
+            "range": [4988, 5049],
             "filename": "tree.js",
             "lineno": 163,
             "columnno": 14,
@@ -1353,10 +1159,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5065,
-                5132
-            ],
+            "range": [5065, 5132],
             "filename": "tree.js",
             "lineno": 164,
             "columnno": 14,
@@ -1379,10 +1182,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5189,
-                5283
-            ],
+            "range": [5189, 5283],
             "filename": "tree.js",
             "lineno": 166,
             "columnno": 14,
@@ -1405,10 +1205,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5345,
-                5380
-            ],
+            "range": [5345, 5380],
             "filename": "tree.js",
             "lineno": 168,
             "columnno": 12,
@@ -1431,10 +1228,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5497,
-                5502
-            ],
+            "range": [5497, 5502],
             "filename": "tree.js",
             "lineno": 172,
             "columnno": 44,
@@ -1455,10 +1249,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                5562,
-                6475
-            ],
+            "range": [5562, 6475],
             "filename": "tree.js",
             "lineno": 178,
             "columnno": 4,
@@ -1467,9 +1258,7 @@
                 "id": "astnode100000657",
                 "name": "MdTreeComponent#handleTreeKeydownArrowRight",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -1478,9 +1267,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -1495,10 +1282,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5645,
-                5705
-            ],
+            "range": [5645, 5705],
             "filename": "tree.js",
             "lineno": 180,
             "columnno": 14,
@@ -1521,10 +1305,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5764,
-                5792
-            ],
+            "range": [5764, 5792],
             "filename": "tree.js",
             "lineno": 182,
             "columnno": 12,
@@ -1548,10 +1329,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5861,
-                5922
-            ],
+            "range": [5861, 5922],
             "filename": "tree.js",
             "lineno": 184,
             "columnno": 18,
@@ -1574,10 +1352,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5942,
-                6005
-            ],
+            "range": [5942, 6005],
             "filename": "tree.js",
             "lineno": 185,
             "columnno": 18,
@@ -1600,10 +1375,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6123,
-                6213
-            ],
+            "range": [6123, 6213],
             "filename": "tree.js",
             "lineno": 187,
             "columnno": 18,
@@ -1626,10 +1398,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6283,
-                6318
-            ],
+            "range": [6283, 6318],
             "filename": "tree.js",
             "lineno": 189,
             "columnno": 16,
@@ -1652,10 +1421,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6460,
-                6465
-            ],
+            "range": [6460, 6465],
             "filename": "tree.js",
             "lineno": 194,
             "columnno": 47,
@@ -1676,10 +1442,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                6525,
-                7170
-            ],
+            "range": [6525, 7170],
             "filename": "tree.js",
             "lineno": 200,
             "columnno": 4,
@@ -1688,9 +1451,7 @@
                 "id": "astnode100000792",
                 "name": "MdTreeComponent#handleTreeKeydownArrowLeft",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -1699,9 +1460,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -1716,10 +1475,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6607,
-                6667
-            ],
+            "range": [6607, 6667],
             "filename": "tree.js",
             "lineno": 202,
             "columnno": 14,
@@ -1742,10 +1498,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6718,
-                6747
-            ],
+            "range": [6718, 6747],
             "filename": "tree.js",
             "lineno": 204,
             "columnno": 12,
@@ -1769,10 +1522,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                6970,
-                7014
-            ],
+            "range": [6970, 7014],
             "filename": "tree.js",
             "lineno": 210,
             "columnno": 16,
@@ -1795,10 +1545,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                7155,
-                7160
-            ],
+            "range": [7155, 7160],
             "filename": "tree.js",
             "lineno": 215,
             "columnno": 46,
@@ -1819,10 +1566,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                7220,
-                7482
-            ],
+            "range": [7220, 7482],
             "filename": "tree.js",
             "lineno": 221,
             "columnno": 4,
@@ -1831,9 +1575,7 @@
                 "id": "astnode100000887",
                 "name": "MdTreeComponent#handleTreeKeydownEnter",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -1842,9 +1584,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -1859,10 +1599,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                7467,
-                7472
-            ],
+            "range": [7467, 7472],
             "filename": "tree.js",
             "lineno": 225,
             "columnno": 42,
@@ -1883,10 +1620,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                7532,
-                8134
-            ],
+            "range": [7532, 8134],
             "filename": "tree.js",
             "lineno": 231,
             "columnno": 4,
@@ -1895,9 +1629,7 @@
                 "id": "astnode100000906",
                 "name": "MdTreeComponent#handleTreeKeydown",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -1906,9 +1638,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -1923,10 +1653,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                8119,
-                8124
-            ],
+            "range": [8119, 8124],
             "filename": "tree.js",
             "lineno": 239,
             "columnno": 37,
@@ -1947,10 +1674,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                8184,
-                8649
-            ],
+            "range": [8184, 8649],
             "filename": "tree.js",
             "lineno": 245,
             "columnno": 4,
@@ -1959,9 +1683,7 @@
                 "id": "astnode100000989",
                 "name": "MdTreeComponent#handleTreeItemClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -1970,9 +1692,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -1987,10 +1707,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                8227,
-                8276
-            ],
+            "range": [8227, 8276],
             "filename": "tree.js",
             "lineno": 246,
             "columnno": 14,
@@ -2013,10 +1730,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                8292,
-                8323
-            ],
+            "range": [8292, 8323],
             "filename": "tree.js",
             "lineno": 247,
             "columnno": 14,
@@ -2039,10 +1753,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                8384,
-                8414
-            ],
+            "range": [8384, 8414],
             "filename": "tree.js",
             "lineno": 249,
             "columnno": 12,
@@ -2066,10 +1777,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                8522,
-                8551
-            ],
+            "range": [8522, 8551],
             "filename": "tree.js",
             "lineno": 253,
             "columnno": 12,
@@ -2092,10 +1800,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                8634,
-                8639
-            ],
+            "range": [8634, 8639],
             "filename": "tree.js",
             "lineno": 256,
             "columnno": 39,
@@ -2116,10 +1821,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                8712,
-                8727
-            ],
+            "range": [8712, 8727],
             "filename": "tree.js",
             "lineno": 260,
             "columnno": 9,
@@ -2139,8 +1841,6 @@
     {
         "kind": "package",
         "longname": "package:undefined",
-        "files": [
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree\\tree.js"
-        ]
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\tree\\tree.js"]
     }
 ]

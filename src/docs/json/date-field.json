@@ -2,10 +2,7 @@
     {
         "comment": "/**\n * @extends MdTextFieldComponent\n * @element md-date-field\n */",
         "meta": {
-            "range": [
-                307,
-                4646
-            ],
+            "range": [307, 4646],
             "filename": "date-field.js",
             "lineno": 10,
             "columnno": 0,
@@ -17,9 +14,7 @@
                 "paramnames": []
             }
         },
-        "augments": [
-            "MdTextFieldComponent"
-        ],
+        "augments": ["MdTextFieldComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -37,10 +32,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                385,
-                451
-            ],
+            "range": [385, 451],
             "filename": "date-field.js",
             "lineno": 13,
             "columnno": 4,
@@ -65,10 +57,7 @@
     {
         "comment": "/**\n * @extends MdTextFieldComponent\n * @element md-date-field\n */",
         "meta": {
-            "range": [
-                307,
-                4646
-            ],
+            "range": [307, 4646],
             "filename": "date-field.js",
             "lineno": 10,
             "columnno": 0,
@@ -83,9 +72,7 @@
         "name": "MdDateFieldComponent",
         "longname": "MdDateFieldComponent",
         "kind": "class",
-        "augments": [
-            "MdTextFieldComponent"
-        ],
+        "augments": ["MdTextFieldComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -99,10 +86,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                426,
-                444
-            ],
+            "range": [426, 444],
             "filename": "date-field.js",
             "lineno": 15,
             "columnno": 8,
@@ -125,10 +109,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                490,
-                727
-            ],
+            "range": [490, 727],
             "filename": "date-field.js",
             "lineno": 21,
             "columnno": 4,
@@ -154,10 +135,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                526,
-                696
-            ],
+            "range": [526, 696],
             "filename": "date-field.js",
             "lineno": 22,
             "columnno": 12,
@@ -180,10 +158,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                568,
-                588
-            ],
+            "range": [568, 588],
             "filename": "date-field.js",
             "lineno": 24,
             "columnno": 16,
@@ -204,10 +179,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                606,
-                630
-            ],
+            "range": [606, 630],
             "filename": "date-field.js",
             "lineno": 25,
             "columnno": 16,
@@ -228,10 +200,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                648,
-                670
-            ],
+            "range": [648, 670],
             "filename": "date-field.js",
             "lineno": 26,
             "columnno": 16,
@@ -252,10 +221,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                749,
-                856
-            ],
+            "range": [749, 856],
             "filename": "date-field.js",
             "lineno": 34,
             "columnno": 4,
@@ -280,10 +246,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                878,
-                975
-            ],
+            "range": [878, 975],
             "filename": "date-field.js",
             "lineno": 41,
             "columnno": 4,
@@ -308,10 +271,7 @@
     {
         "comment": "/**\n     * @async\n     */",
         "meta": {
-            "range": [
-                1011,
-                1726
-            ],
+            "range": [1011, 1726],
             "filename": "date-field.js",
             "lineno": 49,
             "columnno": 4,
@@ -337,10 +297,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1074,
-                1128
-            ],
+            "range": [1074, 1128],
             "filename": "date-field.js",
             "lineno": 51,
             "columnno": 12,
@@ -363,10 +320,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1225,
-                1325
-            ],
+            "range": [1225, 1325],
             "filename": "date-field.js",
             "lineno": 53,
             "columnno": 12,
@@ -389,10 +343,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1339,
-                1431
-            ],
+            "range": [1339, 1431],
             "filename": "date-field.js",
             "lineno": 54,
             "columnno": 12,
@@ -415,10 +366,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                1748,
-                2116
-            ],
+            "range": [1748, 2116],
             "filename": "date-field.js",
             "lineno": 63,
             "columnno": 4,
@@ -443,10 +391,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2076,
-                2099
-            ],
+            "range": [2076, 2099],
             "filename": "date-field.js",
             "lineno": 68,
             "columnno": 12,
@@ -469,10 +414,7 @@
     {
         "comment": "/**\n     * @param {Any} [options={}]\n     */",
         "meta": {
-            "range": [
-                2171,
-                2799
-            ],
+            "range": [2171, 2799],
             "filename": "date-field.js",
             "lineno": 75,
             "columnno": 4,
@@ -481,9 +423,7 @@
                 "id": "astnode100000219",
                 "name": "MdDateFieldComponent#showPicker",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "options"
-                ]
+                "paramnames": ["options"]
             },
             "vars": {
                 "": null
@@ -492,9 +432,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "defaultvalue": "{}",
@@ -510,10 +448,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2237,
-                2287
-            ],
+            "range": [2237, 2287],
             "filename": "date-field.js",
             "lineno": 77,
             "columnno": 12,
@@ -536,10 +471,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2301,
-                2377
-            ],
+            "range": [2301, 2377],
             "filename": "date-field.js",
             "lineno": 78,
             "columnno": 12,
@@ -562,10 +494,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2391,
-                2469
-            ],
+            "range": [2391, 2469],
             "filename": "date-field.js",
             "lineno": 79,
             "columnno": 12,
@@ -588,10 +517,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2686,
-                2743
-            ],
+            "range": [2686, 2743],
             "filename": "date-field.js",
             "lineno": 82,
             "columnno": 44,
@@ -614,10 +540,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                2821,
-                3089
-            ],
+            "range": [2821, 3089],
             "filename": "date-field.js",
             "lineno": 89,
             "columnno": 4,
@@ -642,10 +565,7 @@
     {
         "comment": "/**\n     * @param {Any} [options]\n     */",
         "meta": {
-            "range": [
-                3141,
-                3304
-            ],
+            "range": [3141, 3304],
             "filename": "date-field.js",
             "lineno": 100,
             "columnno": 4,
@@ -654,9 +574,7 @@
                 "id": "astnode100000347",
                 "name": "MdDateFieldComponent#togglePicker",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "options"
-                ]
+                "paramnames": ["options"]
             },
             "vars": {
                 "": null
@@ -665,9 +583,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "options"
@@ -682,10 +598,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                3354,
-                3602
-            ],
+            "range": [3354, 3602],
             "filename": "date-field.js",
             "lineno": 110,
             "columnno": 4,
@@ -694,9 +607,7 @@
                 "id": "astnode100000374",
                 "name": "MdDateFieldComponent#handleDateFieldWindowClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -705,9 +616,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -722,10 +631,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3404,
-                3468
-            ],
+            "range": [3404, 3468],
             "filename": "date-field.js",
             "lineno": 111,
             "columnno": 14,
@@ -748,10 +654,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                3652,
-                3722
-            ],
+            "range": [3652, 3722],
             "filename": "date-field.js",
             "lineno": 120,
             "columnno": 4,
@@ -760,9 +663,7 @@
                 "id": "astnode100000416",
                 "name": "MdDateFieldComponent#handleDateFieldWindowScroll",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -771,9 +672,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -788,10 +687,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                3772,
-                3853
-            ],
+            "range": [3772, 3853],
             "filename": "date-field.js",
             "lineno": 127,
             "columnno": 4,
@@ -800,9 +696,7 @@
                 "id": "astnode100000426",
                 "name": "MdDateFieldComponent#handleDateFieldPickerButtonCancelClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -811,9 +705,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -828,10 +720,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                3903,
-                4079
-            ],
+            "range": [3903, 4079],
             "filename": "date-field.js",
             "lineno": 134,
             "columnno": 4,
@@ -840,9 +729,7 @@
                 "id": "astnode100000436",
                 "name": "MdDateFieldComponent#handleDateFieldPickerButtonOkClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -851,9 +738,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -868,10 +753,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3955,
-                4016
-            ],
+            "range": [3955, 4016],
             "filename": "date-field.js",
             "lineno": 135,
             "columnno": 8,
@@ -894,10 +776,7 @@
     {
         "comment": "/**\n     * @async\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                4143,
-                4350
-            ],
+            "range": [4143, 4350],
             "filename": "date-field.js",
             "lineno": 144,
             "columnno": 4,
@@ -906,9 +785,7 @@
                 "id": "astnode100000465",
                 "name": "MdDateFieldComponent#handleTextFieldIconButtonPickerClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -918,9 +795,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -935,10 +810,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4203,
-                4243
-            ],
+            "range": [4203, 4243],
             "filename": "date-field.js",
             "lineno": 145,
             "columnno": 8,
@@ -961,10 +833,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4308,
-                4340
-            ],
+            "range": [4308, 4340],
             "filename": "date-field.js",
             "lineno": 147,
             "columnno": 28,
@@ -985,10 +854,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                4400,
-                4644
-            ],
+            "range": [4400, 4644],
             "filename": "date-field.js",
             "lineno": 153,
             "columnno": 4,
@@ -997,9 +863,7 @@
                 "id": "astnode100000494",
                 "name": "MdDateFieldComponent#handleTextFieldIconButtonClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -1008,9 +872,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -1025,10 +887,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4454,
-                4485
-            ],
+            "range": [4454, 4485],
             "filename": "date-field.js",
             "lineno": 154,
             "columnno": 14,
@@ -1051,10 +910,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4718,
-                4738
-            ],
+            "range": [4718, 4738],
             "filename": "date-field.js",
             "lineno": 160,
             "columnno": 9,
@@ -1074,8 +930,6 @@
     {
         "kind": "package",
         "longname": "package:undefined",
-        "files": [
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-field\\date-field.js"
-        ]
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\date-field\\date-field.js"]
     }
 ]

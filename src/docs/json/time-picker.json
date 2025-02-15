@@ -2,10 +2,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-time-picker\n * @fires MdTimePickerComponent#onTimePickerShow\n * @fires MdTimePickerComponent#onTimePickerClose\n * @fires MdTimePickerComponent#onTimePickerHourItemClick\n * @fires MdTimePickerComponent#onTimePickerMinuteItemClick\n * @fires MdTimePickerComponent#onTimePickerScrimClose\n * @fires MdTimePickerComponent#onTimePickerShown\n * @fires MdTimePickerComponent#onTimePickerClosed\n * @fires MdTimePickerComponent#onTimePickerIconButtonPrevClick\n * @fires MdTimePickerComponent#onTimePickerIconButtonNextClick\n * @fires MdTimePickerComponent#onTimePickerIconButtonClick\n * @fires MdTimePickerComponent#onTimePickerButtonCancelClick\n * @fires MdTimePickerComponent#onTimePickerButtonOkClick\n * @fires MdTimePickerComponent#onTimePickerButtonLabelClick\n * @fires MdTimePickerComponent#onTimePickerButtonClick\n */",
         "meta": {
-            "range": [
-                1268,
-                17079
-            ],
+            "range": [1268, 17079],
             "filename": "time-picker.js",
             "lineno": 28,
             "columnno": 0,
@@ -20,9 +17,7 @@
                 "": null
             }
         },
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -31,22 +26,7 @@
                 "value": "md-time-picker"
             }
         ],
-        "fires": [
-            "MdTimePickerComponent#event:onTimePickerShow",
-            "MdTimePickerComponent#event:onTimePickerClose",
-            "MdTimePickerComponent#event:onTimePickerHourItemClick",
-            "MdTimePickerComponent#event:onTimePickerMinuteItemClick",
-            "MdTimePickerComponent#event:onTimePickerScrimClose",
-            "MdTimePickerComponent#event:onTimePickerShown",
-            "MdTimePickerComponent#event:onTimePickerClosed",
-            "MdTimePickerComponent#event:onTimePickerIconButtonPrevClick",
-            "MdTimePickerComponent#event:onTimePickerIconButtonNextClick",
-            "MdTimePickerComponent#event:onTimePickerIconButtonClick",
-            "MdTimePickerComponent#event:onTimePickerButtonCancelClick",
-            "MdTimePickerComponent#event:onTimePickerButtonOkClick",
-            "MdTimePickerComponent#event:onTimePickerButtonLabelClick",
-            "MdTimePickerComponent#event:onTimePickerButtonClick"
-        ],
+        "fires": ["MdTimePickerComponent#event:onTimePickerShow", "MdTimePickerComponent#event:onTimePickerClose", "MdTimePickerComponent#event:onTimePickerHourItemClick", "MdTimePickerComponent#event:onTimePickerMinuteItemClick", "MdTimePickerComponent#event:onTimePickerScrimClose", "MdTimePickerComponent#event:onTimePickerShown", "MdTimePickerComponent#event:onTimePickerClosed", "MdTimePickerComponent#event:onTimePickerIconButtonPrevClick", "MdTimePickerComponent#event:onTimePickerIconButtonNextClick", "MdTimePickerComponent#event:onTimePickerIconButtonClick", "MdTimePickerComponent#event:onTimePickerButtonCancelClick", "MdTimePickerComponent#event:onTimePickerButtonOkClick", "MdTimePickerComponent#event:onTimePickerButtonLabelClick", "MdTimePickerComponent#event:onTimePickerButtonClick"],
         "name": "MdTimePickerComponent",
         "longname": "MdTimePickerComponent",
         "kind": "class",
@@ -56,10 +36,7 @@
     {
         "comment": "/**\n     * @property {Array} [icons]\n     * @property {Array} [actions]\n     * @property {String} [label]\n     * @property {String} [sublabel]\n     * @property {Array} [buttons]\n     * @property {Boolean} [open]\n     * @property {Boolean} [modal]\n     * @property {String} [value]\n     * @property {Any} [index]\n     * @property {Any} [selection]\n     */",
         "meta": {
-            "range": [
-                1681,
-                2379
-            ],
+            "range": [1681, 2379],
             "filename": "time-picker.js",
             "lineno": 41,
             "columnno": 4,
@@ -73,90 +50,70 @@
         "properties": [
             {
                 "type": {
-                    "names": [
-                        "Array"
-                    ]
+                    "names": ["Array"]
                 },
                 "optional": true,
                 "name": "icons"
             },
             {
                 "type": {
-                    "names": [
-                        "Array"
-                    ]
+                    "names": ["Array"]
                 },
                 "optional": true,
                 "name": "actions"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "label"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "sublabel"
             },
             {
                 "type": {
-                    "names": [
-                        "Array"
-                    ]
+                    "names": ["Array"]
                 },
                 "optional": true,
                 "name": "buttons"
             },
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "open"
             },
             {
                 "type": {
-                    "names": [
-                        "Boolean"
-                    ]
+                    "names": ["Boolean"]
                 },
                 "optional": true,
                 "name": "modal"
             },
             {
                 "type": {
-                    "names": [
-                        "String"
-                    ]
+                    "names": ["String"]
                 },
                 "optional": true,
                 "name": "value"
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "index"
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "selection"
@@ -171,10 +128,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1711,
-                1733
-            ],
+            "range": [1711, 1733],
             "filename": "time-picker.js",
             "lineno": 42,
             "columnno": 8,
@@ -195,10 +149,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1720,
-                1731
-            ],
+            "range": [1720, 1731],
             "filename": "time-picker.js",
             "lineno": 42,
             "columnno": 17,
@@ -220,10 +171,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1743,
-                1767
-            ],
+            "range": [1743, 1767],
             "filename": "time-picker.js",
             "lineno": 43,
             "columnno": 8,
@@ -244,10 +192,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1754,
-                1765
-            ],
+            "range": [1754, 1765],
             "filename": "time-picker.js",
             "lineno": 43,
             "columnno": 19,
@@ -269,10 +214,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1777,
-                1800
-            ],
+            "range": [1777, 1800],
             "filename": "time-picker.js",
             "lineno": 44,
             "columnno": 8,
@@ -293,10 +235,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1786,
-                1798
-            ],
+            "range": [1786, 1798],
             "filename": "time-picker.js",
             "lineno": 44,
             "columnno": 17,
@@ -318,10 +257,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1810,
-                1836
-            ],
+            "range": [1810, 1836],
             "filename": "time-picker.js",
             "lineno": 45,
             "columnno": 8,
@@ -342,10 +278,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1822,
-                1834
-            ],
+            "range": [1822, 1834],
             "filename": "time-picker.js",
             "lineno": 45,
             "columnno": 20,
@@ -367,10 +300,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1846,
-                1870
-            ],
+            "range": [1846, 1870],
             "filename": "time-picker.js",
             "lineno": 46,
             "columnno": 8,
@@ -391,10 +321,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1857,
-                1868
-            ],
+            "range": [1857, 1868],
             "filename": "time-picker.js",
             "lineno": 46,
             "columnno": 19,
@@ -416,10 +343,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1880,
-                1918
-            ],
+            "range": [1880, 1918],
             "filename": "time-picker.js",
             "lineno": 47,
             "columnno": 8,
@@ -440,10 +364,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1888,
-                1901
-            ],
+            "range": [1888, 1901],
             "filename": "time-picker.js",
             "lineno": 47,
             "columnno": 16,
@@ -465,10 +386,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1903,
-                1916
-            ],
+            "range": [1903, 1916],
             "filename": "time-picker.js",
             "lineno": 47,
             "columnno": 31,
@@ -490,10 +408,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1928,
-                1952
-            ],
+            "range": [1928, 1952],
             "filename": "time-picker.js",
             "lineno": 48,
             "columnno": 8,
@@ -514,10 +429,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1937,
-                1950
-            ],
+            "range": [1937, 1950],
             "filename": "time-picker.js",
             "lineno": 48,
             "columnno": 17,
@@ -539,10 +451,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1962,
-                2303
-            ],
+            "range": [1962, 2303],
             "filename": "time-picker.js",
             "lineno": 49,
             "columnno": 8,
@@ -563,10 +472,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1983,
-                1995
-            ],
+            "range": [1983, 1995],
             "filename": "time-picker.js",
             "lineno": 50,
             "columnno": 12,
@@ -588,10 +494,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2009,
-                2022
-            ],
+            "range": [2009, 2022],
             "filename": "time-picker.js",
             "lineno": 51,
             "columnno": 12,
@@ -613,10 +516,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2036,
-                2292
-            ],
+            "range": [2036, 2292],
             "filename": "time-picker.js",
             "lineno": 52,
             "columnno": 12,
@@ -638,10 +538,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2065,
-                2161
-            ],
+            "range": [2065, 2161],
             "filename": "time-picker.js",
             "lineno": 53,
             "columnno": 16,
@@ -662,10 +559,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2179,
-                2277
-            ],
+            "range": [2179, 2277],
             "filename": "time-picker.js",
             "lineno": 56,
             "columnno": 16,
@@ -686,10 +580,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2313,
-                2335
-            ],
+            "range": [2313, 2335],
             "filename": "time-picker.js",
             "lineno": 61,
             "columnno": 8,
@@ -710,10 +601,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2322,
-                2333
-            ],
+            "range": [2322, 2333],
             "filename": "time-picker.js",
             "lineno": 61,
             "columnno": 17,
@@ -735,10 +623,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2345,
-                2371
-            ],
+            "range": [2345, 2371],
             "filename": "time-picker.js",
             "lineno": 62,
             "columnno": 8,
@@ -759,10 +644,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2358,
-                2369
-            ],
+            "range": [2358, 2369],
             "filename": "time-picker.js",
             "lineno": 62,
             "columnno": 21,
@@ -784,10 +666,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2384,
-                2475
-            ],
+            "range": [2384, 2475],
             "filename": "time-picker.js",
             "lineno": 64,
             "columnno": 4,
@@ -808,10 +687,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2434,
-                2449
-            ],
+            "range": [2434, 2449],
             "filename": "time-picker.js",
             "lineno": 64,
             "columnno": 54,
@@ -832,10 +708,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2451,
-                2464
-            ],
+            "range": [2451, 2464],
             "filename": "time-picker.js",
             "lineno": 64,
             "columnno": 71,
@@ -856,10 +729,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2480,
-                2575
-            ],
+            "range": [2480, 2575],
             "filename": "time-picker.js",
             "lineno": 65,
             "columnno": 4,
@@ -880,10 +750,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2532,
-                2549
-            ],
+            "range": [2532, 2549],
             "filename": "time-picker.js",
             "lineno": 65,
             "columnno": 56,
@@ -904,10 +771,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2551,
-                2564
-            ],
+            "range": [2551, 2564],
             "filename": "time-picker.js",
             "lineno": 65,
             "columnno": 75,
@@ -928,10 +792,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                2614,
-                3485
-            ],
+            "range": [2614, 3485],
             "filename": "time-picker.js",
             "lineno": 70,
             "columnno": 4,
@@ -957,10 +818,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2656,
-                2666
-            ],
+            "range": [2656, 2666],
             "filename": "time-picker.js",
             "lineno": 71,
             "columnno": 28,
@@ -981,10 +839,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2700,
-                2801
-            ],
+            "range": [2700, 2801],
             "filename": "time-picker.js",
             "lineno": 72,
             "columnno": 18,
@@ -1007,10 +862,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2840,
-                2864
-            ],
+            "range": [2840, 2864],
             "filename": "time-picker.js",
             "lineno": 74,
             "columnno": 16,
@@ -1031,10 +883,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2882,
-                2904
-            ],
+            "range": [2882, 2904],
             "filename": "time-picker.js",
             "lineno": 75,
             "columnno": 16,
@@ -1055,10 +904,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2922,
-                2941
-            ],
+            "range": [2922, 2941],
             "filename": "time-picker.js",
             "lineno": 76,
             "columnno": 16,
@@ -1079,10 +925,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2959,
-                2980
-            ],
+            "range": [2959, 2980],
             "filename": "time-picker.js",
             "lineno": 77,
             "columnno": 16,
@@ -1103,10 +946,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2998,
-                3026
-            ],
+            "range": [2998, 3026],
             "filename": "time-picker.js",
             "lineno": 78,
             "columnno": 16,
@@ -1127,10 +967,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3044,
-                3234
-            ],
+            "range": [3044, 3234],
             "filename": "time-picker.js",
             "lineno": 79,
             "columnno": 16,
@@ -1151,10 +988,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3252,
-                3451
-            ],
+            "range": [3252, 3451],
             "filename": "time-picker.js",
             "lineno": 80,
             "columnno": 16,
@@ -1175,10 +1009,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                3524,
-                4569
-            ],
+            "range": [3524, 4569],
             "filename": "time-picker.js",
             "lineno": 88,
             "columnno": 4,
@@ -1204,10 +1035,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3568,
-                3578
-            ],
+            "range": [3568, 3578],
             "filename": "time-picker.js",
             "lineno": 89,
             "columnno": 28,
@@ -1228,10 +1056,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3612,
-                3740
-            ],
+            "range": [3612, 3740],
             "filename": "time-picker.js",
             "lineno": 90,
             "columnno": 18,
@@ -1254,10 +1079,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3779,
-                3803
-            ],
+            "range": [3779, 3803],
             "filename": "time-picker.js",
             "lineno": 92,
             "columnno": 16,
@@ -1278,10 +1100,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3821,
-                3843
-            ],
+            "range": [3821, 3843],
             "filename": "time-picker.js",
             "lineno": 93,
             "columnno": 16,
@@ -1302,10 +1121,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3861,
-                3880
-            ],
+            "range": [3861, 3880],
             "filename": "time-picker.js",
             "lineno": 94,
             "columnno": 16,
@@ -1326,10 +1142,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3898,
-                3919
-            ],
+            "range": [3898, 3919],
             "filename": "time-picker.js",
             "lineno": 95,
             "columnno": 16,
@@ -1350,10 +1163,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3937,
-                3962
-            ],
+            "range": [3937, 3962],
             "filename": "time-picker.js",
             "lineno": 96,
             "columnno": 16,
@@ -1374,10 +1184,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3980,
-                4010
-            ],
+            "range": [3980, 4010],
             "filename": "time-picker.js",
             "lineno": 97,
             "columnno": 16,
@@ -1398,10 +1205,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4028,
-                4267
-            ],
+            "range": [4028, 4267],
             "filename": "time-picker.js",
             "lineno": 98,
             "columnno": 16,
@@ -1422,10 +1226,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4285,
-                4535
-            ],
+            "range": [4285, 4535],
             "filename": "time-picker.js",
             "lineno": 99,
             "columnno": 16,
@@ -1446,10 +1247,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                4608,
-                4845
-            ],
+            "range": [4608, 4845],
             "filename": "time-picker.js",
             "lineno": 107,
             "columnno": 4,
@@ -1475,10 +1273,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4636,
-                4757
-            ],
+            "range": [4636, 4757],
             "filename": "time-picker.js",
             "lineno": 108,
             "columnno": 14,
@@ -1501,10 +1296,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4656,
-                4694
-            ],
+            "range": [4656, 4694],
             "filename": "time-picker.js",
             "lineno": 109,
             "columnno": 12,
@@ -1524,10 +1316,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4708,
-                4746
-            ],
+            "range": [4708, 4746],
             "filename": "time-picker.js",
             "lineno": 110,
             "columnno": 12,
@@ -1548,10 +1337,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4777,
-                4796
-            ],
+            "range": [4777, 4796],
             "filename": "time-picker.js",
             "lineno": 112,
             "columnno": 18,
@@ -1572,10 +1358,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4798,
-                4809
-            ],
+            "range": [4798, 4809],
             "filename": "time-picker.js",
             "lineno": 112,
             "columnno": 39,
@@ -1596,10 +1379,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4811,
-                4835
-            ],
+            "range": [4811, 4835],
             "filename": "time-picker.js",
             "lineno": 112,
             "columnno": 52,
@@ -1620,10 +1400,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                4884,
-                5048
-            ],
+            "range": [4884, 5048],
             "filename": "time-picker.js",
             "lineno": 118,
             "columnno": 4,
@@ -1649,10 +1426,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4931,
-                4941
-            ],
+            "range": [4931, 4941],
             "filename": "time-picker.js",
             "lineno": 120,
             "columnno": 14,
@@ -1673,10 +1447,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4943,
-                4970
-            ],
+            "range": [4943, 4970],
             "filename": "time-picker.js",
             "lineno": 120,
             "columnno": 26,
@@ -1697,10 +1468,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                4988,
-                4998
-            ],
+            "range": [4988, 4998],
             "filename": "time-picker.js",
             "lineno": 121,
             "columnno": 14,
@@ -1721,10 +1489,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5000,
-                5028
-            ],
+            "range": [5000, 5028],
             "filename": "time-picker.js",
             "lineno": 121,
             "columnno": 26,
@@ -1745,10 +1510,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                5087,
-                5212
-            ],
+            "range": [5087, 5212],
             "filename": "time-picker.js",
             "lineno": 128,
             "columnno": 4,
@@ -1774,10 +1536,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5121,
-                5140
-            ],
+            "range": [5121, 5140],
             "filename": "time-picker.js",
             "lineno": 129,
             "columnno": 18,
@@ -1798,10 +1557,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5146,
-                5158
-            ],
+            "range": [5146, 5158],
             "filename": "time-picker.js",
             "lineno": 129,
             "columnno": 43,
@@ -1822,10 +1578,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5160,
-                5175
-            ],
+            "range": [5160, 5175],
             "filename": "time-picker.js",
             "lineno": 129,
             "columnno": 57,
@@ -1846,10 +1599,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5181,
-                5189
-            ],
+            "range": [5181, 5189],
             "filename": "time-picker.js",
             "lineno": 129,
             "columnno": 78,
@@ -1870,10 +1620,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5191,
-                5202
-            ],
+            "range": [5191, 5202],
             "filename": "time-picker.js",
             "lineno": 129,
             "columnno": 88,
@@ -1894,10 +1641,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                5234,
-                5401
-            ],
+            "range": [5234, 5401],
             "filename": "time-picker.js",
             "lineno": 134,
             "columnno": 4,
@@ -1922,10 +1666,7 @@
     {
         "comment": "/**\n * @extends MdComponent\n * @element md-time-picker\n * @fires MdTimePickerComponent#onTimePickerShow\n * @fires MdTimePickerComponent#onTimePickerClose\n * @fires MdTimePickerComponent#onTimePickerHourItemClick\n * @fires MdTimePickerComponent#onTimePickerMinuteItemClick\n * @fires MdTimePickerComponent#onTimePickerScrimClose\n * @fires MdTimePickerComponent#onTimePickerShown\n * @fires MdTimePickerComponent#onTimePickerClosed\n * @fires MdTimePickerComponent#onTimePickerIconButtonPrevClick\n * @fires MdTimePickerComponent#onTimePickerIconButtonNextClick\n * @fires MdTimePickerComponent#onTimePickerIconButtonClick\n * @fires MdTimePickerComponent#onTimePickerButtonCancelClick\n * @fires MdTimePickerComponent#onTimePickerButtonOkClick\n * @fires MdTimePickerComponent#onTimePickerButtonLabelClick\n * @fires MdTimePickerComponent#onTimePickerButtonClick\n */",
         "meta": {
-            "range": [
-                1268,
-                17079
-            ],
+            "range": [1268, 17079],
             "filename": "time-picker.js",
             "lineno": 28,
             "columnno": 0,
@@ -1943,9 +1684,7 @@
         "name": "MdTimePickerComponent",
         "longname": "MdTimePickerComponent",
         "kind": "class",
-        "augments": [
-            "MdComponent"
-        ],
+        "augments": ["MdComponent"],
         "tags": [
             {
                 "originalTitle": "element",
@@ -1954,31 +1693,13 @@
                 "value": "md-time-picker"
             }
         ],
-        "fires": [
-            "MdTimePickerComponent#event:onTimePickerShow",
-            "MdTimePickerComponent#event:onTimePickerClose",
-            "MdTimePickerComponent#event:onTimePickerHourItemClick",
-            "MdTimePickerComponent#event:onTimePickerMinuteItemClick",
-            "MdTimePickerComponent#event:onTimePickerScrimClose",
-            "MdTimePickerComponent#event:onTimePickerShown",
-            "MdTimePickerComponent#event:onTimePickerClosed",
-            "MdTimePickerComponent#event:onTimePickerIconButtonPrevClick",
-            "MdTimePickerComponent#event:onTimePickerIconButtonNextClick",
-            "MdTimePickerComponent#event:onTimePickerIconButtonClick",
-            "MdTimePickerComponent#event:onTimePickerButtonCancelClick",
-            "MdTimePickerComponent#event:onTimePickerButtonOkClick",
-            "MdTimePickerComponent#event:onTimePickerButtonLabelClick",
-            "MdTimePickerComponent#event:onTimePickerButtonClick"
-        ],
+        "fires": ["MdTimePickerComponent#event:onTimePickerShow", "MdTimePickerComponent#event:onTimePickerClose", "MdTimePickerComponent#event:onTimePickerHourItemClick", "MdTimePickerComponent#event:onTimePickerMinuteItemClick", "MdTimePickerComponent#event:onTimePickerScrimClose", "MdTimePickerComponent#event:onTimePickerShown", "MdTimePickerComponent#event:onTimePickerClosed", "MdTimePickerComponent#event:onTimePickerIconButtonPrevClick", "MdTimePickerComponent#event:onTimePickerIconButtonNextClick", "MdTimePickerComponent#event:onTimePickerIconButtonClick", "MdTimePickerComponent#event:onTimePickerButtonCancelClick", "MdTimePickerComponent#event:onTimePickerButtonOkClick", "MdTimePickerComponent#event:onTimePickerButtonLabelClick", "MdTimePickerComponent#event:onTimePickerButtonClick"],
         "scope": "global"
     },
     {
         "comment": "",
         "meta": {
-            "range": [
-                5275,
-                5300
-            ],
+            "range": [5275, 5300],
             "filename": "time-picker.js",
             "lineno": 136,
             "columnno": 8,
@@ -2001,10 +1722,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5310,
-                5333
-            ],
+            "range": [5310, 5333],
             "filename": "time-picker.js",
             "lineno": 137,
             "columnno": 8,
@@ -2027,10 +1745,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5343,
-                5370
-            ],
+            "range": [5343, 5370],
             "filename": "time-picker.js",
             "lineno": 138,
             "columnno": 8,
@@ -2053,10 +1768,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                5380,
-                5394
-            ],
+            "range": [5380, 5394],
             "filename": "time-picker.js",
             "lineno": 139,
             "columnno": 8,
@@ -2079,10 +1791,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     */",
         "meta": {
-            "range": [
-                5450,
-                5625
-            ],
+            "range": [5450, 5625],
             "filename": "time-picker.js",
             "lineno": 145,
             "columnno": 4,
@@ -2091,9 +1800,7 @@
                 "id": "astnode100000602",
                 "name": "MdTimePickerComponent#renderIcon",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item"
-                ]
+                "paramnames": ["item"]
             },
             "vars": {
                 "": null
@@ -2102,9 +1809,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
@@ -2119,10 +1824,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     */",
         "meta": {
-            "range": [
-                5674,
-                6236
-            ],
+            "range": [5674, 6236],
             "filename": "time-picker.js",
             "lineno": 157,
             "columnno": 4,
@@ -2131,9 +1833,7 @@
                 "id": "astnode100000618",
                 "name": "MdTimePickerComponent#renderIconButton",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item"
-                ]
+                "paramnames": ["item"]
             },
             "vars": {
                 "": null
@@ -2142,9 +1842,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
@@ -2159,10 +1857,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     */",
         "meta": {
-            "range": [
-                6285,
-                6827
-            ],
+            "range": [6285, 6827],
             "filename": "time-picker.js",
             "lineno": 176,
             "columnno": 4,
@@ -2171,9 +1866,7 @@
                 "id": "astnode100000670",
                 "name": "MdTimePickerComponent#renderButton",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item"
-                ]
+                "paramnames": ["item"]
             },
             "vars": {
                 "": null
@@ -2182,9 +1875,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
@@ -2199,10 +1890,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     */",
         "meta": {
-            "range": [
-                6876,
-                7049
-            ],
+            "range": [6876, 7049],
             "filename": "time-picker.js",
             "lineno": 195,
             "columnno": 4,
@@ -2211,9 +1899,7 @@
                 "id": "astnode100000722",
                 "name": "MdTimePickerComponent#renderSpacer",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item"
-                ]
+                "paramnames": ["item"]
             },
             "vars": {
                 "": null
@@ -2222,9 +1908,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
@@ -2239,10 +1923,7 @@
     {
         "comment": "/**\n     * @param {Any} [item]\n     * @param {Any} [component=\"icon\"]\n     */",
         "meta": {
-            "range": [
-                7137,
-                7530
-            ],
+            "range": [7137, 7530],
             "filename": "time-picker.js",
             "lineno": 208,
             "columnno": 4,
@@ -2251,10 +1932,7 @@
                 "id": "astnode100000732",
                 "name": "MdTimePickerComponent#renderComponent",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "item",
-                    "component"
-                ]
+                "paramnames": ["item", "component"]
             },
             "vars": {
                 "": null
@@ -2263,18 +1941,14 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "item"
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "defaultvalue": "\"icon\"",
@@ -2290,10 +1964,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                7195,
-                7444
-            ],
+            "range": [7195, 7444],
             "filename": "time-picker.js",
             "lineno": 209,
             "columnno": 14,
@@ -2316,10 +1987,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                7552,
-                8156
-            ],
+            "range": [7552, 8156],
             "filename": "time-picker.js",
             "lineno": 220,
             "columnno": 4,
@@ -2344,10 +2012,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                8178,
-                8790
-            ],
+            "range": [8178, 8790],
             "filename": "time-picker.js",
             "lineno": 239,
             "columnno": 4,
@@ -2372,10 +2037,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                8812,
-                10269
-            ],
+            "range": [8812, 10269],
             "filename": "time-picker.js",
             "lineno": 258,
             "columnno": 4,
@@ -2400,10 +2062,7 @@
     {
         "comment": "/**\n     * @async\n     */",
         "meta": {
-            "range": [
-                10305,
-                11210
-            ],
+            "range": [10305, 11210],
             "filename": "time-picker.js",
             "lineno": 290,
             "columnno": 4,
@@ -2429,10 +2088,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                10376,
-                10426
-            ],
+            "range": [10376, 10426],
             "filename": "time-picker.js",
             "lineno": 292,
             "columnno": 8,
@@ -2455,10 +2111,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                10436,
-                10466
-            ],
+            "range": [10436, 10466],
             "filename": "time-picker.js",
             "lineno": 293,
             "columnno": 8,
@@ -2481,10 +2134,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                10597,
-                10654
-            ],
+            "range": [10597, 10654],
             "filename": "time-picker.js",
             "lineno": 296,
             "columnno": 8,
@@ -2507,10 +2157,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                10752,
-                10828
-            ],
+            "range": [10752, 10828],
             "filename": "time-picker.js",
             "lineno": 298,
             "columnno": 8,
@@ -2533,10 +2180,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                11232,
-                11438
-            ],
+            "range": [11232, 11438],
             "filename": "time-picker.js",
             "lineno": 308,
             "columnno": 4,
@@ -2561,10 +2205,7 @@
     {
         "comment": "/**\n     * @async\n     * @param {Any} [changedProperties]\n     */",
         "meta": {
-            "range": [
-                11514,
-                12017
-            ],
+            "range": [11514, 12017],
             "filename": "time-picker.js",
             "lineno": 318,
             "columnno": 4,
@@ -2573,9 +2214,7 @@
                 "id": "astnode100001152",
                 "name": "MdTimePickerComponent#updated",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "changedProperties"
-                ]
+                "paramnames": ["changedProperties"]
             },
             "vars": {
                 "": null
@@ -2585,9 +2224,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "changedProperties"
@@ -2602,10 +2239,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                11953,
-                12000
-            ],
+            "range": [11953, 12000],
             "filename": "time-picker.js",
             "lineno": 328,
             "columnno": 12,
@@ -2628,10 +2262,7 @@
     {
         "comment": "/**\n     * @param {Any} [options]\n     */",
         "meta": {
-            "range": [
-                12069,
-                12866
-            ],
+            "range": [12069, 12866],
             "filename": "time-picker.js",
             "lineno": 335,
             "columnno": 4,
@@ -2640,9 +2271,7 @@
                 "id": "astnode100001227",
                 "name": "MdTimePickerComponent#show",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "options"
-                ]
+                "paramnames": ["options"]
             },
             "vars": {
                 "": null
@@ -2651,9 +2280,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "options"
@@ -2668,10 +2295,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                12093,
-                12123
-            ],
+            "range": [12093, 12123],
             "filename": "time-picker.js",
             "lineno": 336,
             "columnno": 8,
@@ -2694,10 +2318,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                12133,
-                12199
-            ],
+            "range": [12133, 12199],
             "filename": "time-picker.js",
             "lineno": 337,
             "columnno": 8,
@@ -2720,10 +2341,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                12380,
-                12395
-            ],
+            "range": [12380, 12395],
             "filename": "time-picker.js",
             "lineno": 341,
             "columnno": 12,
@@ -2744,10 +2362,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                12409,
-                12422
-            ],
+            "range": [12409, 12422],
             "filename": "time-picker.js",
             "lineno": 342,
             "columnno": 12,
@@ -2768,10 +2383,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                12470,
-                12705
-            ],
+            "range": [12470, 12705],
             "filename": "time-picker.js",
             "lineno": 344,
             "columnno": 12,
@@ -2792,10 +2404,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                12751,
-                12767
-            ],
+            "range": [12751, 12767],
             "filename": "time-picker.js",
             "lineno": 352,
             "columnno": 8,
@@ -2818,10 +2427,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                12888,
-                13248
-            ],
+            "range": [12888, 13248],
             "filename": "time-picker.js",
             "lineno": 359,
             "columnno": 4,
@@ -2846,10 +2452,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                12906,
-                12974
-            ],
+            "range": [12906, 12974],
             "filename": "time-picker.js",
             "lineno": 360,
             "columnno": 8,
@@ -2872,10 +2475,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                13130,
-                13147
-            ],
+            "range": [13130, 13147],
             "filename": "time-picker.js",
             "lineno": 363,
             "columnno": 8,
@@ -2898,10 +2498,7 @@
     {
         "comment": "/**\n     * @param {Any} [options]\n     */",
         "meta": {
-            "range": [
-                13300,
-                13393
-            ],
+            "range": [13300, 13393],
             "filename": "time-picker.js",
             "lineno": 371,
             "columnno": 4,
@@ -2910,9 +2507,7 @@
                 "id": "astnode100001374",
                 "name": "MdTimePickerComponent#toggle",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "options"
-                ]
+                "paramnames": ["options"]
             },
             "vars": {
                 "": null
@@ -2921,9 +2516,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "options"
@@ -2938,10 +2531,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                13443,
-                13701
-            ],
+            "range": [13443, 13701],
             "filename": "time-picker.js",
             "lineno": 379,
             "columnno": 4,
@@ -2950,9 +2540,7 @@
                 "id": "astnode100001394",
                 "name": "MdTimePickerComponent#handleTimePickerHourItemClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -2961,9 +2549,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -2978,10 +2564,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                13496,
-                13527
-            ],
+            "range": [13496, 13527],
             "filename": "time-picker.js",
             "lineno": 380,
             "columnno": 14,
@@ -3004,10 +2587,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                13621,
-                13635
-            ],
+            "range": [13621, 13635],
             "filename": "time-picker.js",
             "lineno": 383,
             "columnno": 8,
@@ -3030,10 +2610,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                13686,
-                13691
-            ],
+            "range": [13686, 13691],
             "filename": "time-picker.js",
             "lineno": 384,
             "columnno": 49,
@@ -3054,10 +2631,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                13751,
-                14021
-            ],
+            "range": [13751, 14021],
             "filename": "time-picker.js",
             "lineno": 390,
             "columnno": 4,
@@ -3066,9 +2640,7 @@
                 "id": "astnode100001442",
                 "name": "MdTimePickerComponent#handleTimePickerMinuteItemClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -3077,9 +2649,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -3094,10 +2664,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                13806,
-                13837
-            ],
+            "range": [13806, 13837],
             "filename": "time-picker.js",
             "lineno": 391,
             "columnno": 14,
@@ -3120,10 +2687,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                13939,
-                13953
-            ],
+            "range": [13939, 13953],
             "filename": "time-picker.js",
             "lineno": 394,
             "columnno": 8,
@@ -3146,10 +2710,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                14006,
-                14011
-            ],
+            "range": [14006, 14011],
             "filename": "time-picker.js",
             "lineno": 395,
             "columnno": 51,
@@ -3170,10 +2731,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                14071,
-                14205
-            ],
+            "range": [14071, 14205],
             "filename": "time-picker.js",
             "lineno": 401,
             "columnno": 4,
@@ -3182,9 +2740,7 @@
                 "id": "astnode100001490",
                 "name": "MdTimePickerComponent#handleTimePickerScrimClose",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -3193,9 +2749,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -3210,10 +2764,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                14190,
-                14195
-            ],
+            "range": [14190, 14195],
             "filename": "time-picker.js",
             "lineno": 403,
             "columnno": 46,
@@ -3234,10 +2785,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                14255,
-                14409
-            ],
+            "range": [14255, 14409],
             "filename": "time-picker.js",
             "lineno": 409,
             "columnno": 4,
@@ -3246,9 +2794,7 @@
                 "id": "astnode100001513",
                 "name": "MdTimePickerComponent#handleTimePickerShown",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -3257,9 +2803,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -3274,10 +2818,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                14459,
-                14616
-            ],
+            "range": [14459, 14616],
             "filename": "time-picker.js",
             "lineno": 417,
             "columnno": 4,
@@ -3286,9 +2827,7 @@
                 "id": "astnode100001533",
                 "name": "MdTimePickerComponent#handleTimePickerClosed",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -3297,9 +2836,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -3314,10 +2851,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                14666,
-                15029
-            ],
+            "range": [14666, 15029],
             "filename": "time-picker.js",
             "lineno": 425,
             "columnno": 4,
@@ -3326,9 +2860,7 @@
                 "id": "astnode100001553",
                 "name": "MdTimePickerComponent#handleTimePickerIconButtonPrevClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -3337,9 +2869,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -3354,10 +2884,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                14725,
-                14900
-            ],
+            "range": [14725, 14900],
             "filename": "time-picker.js",
             "lineno": 426,
             "columnno": 14,
@@ -3380,10 +2907,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                14745,
-                14808
-            ],
+            "range": [14745, 14808],
             "filename": "time-picker.js",
             "lineno": 427,
             "columnno": 12,
@@ -3403,10 +2927,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                14822,
-                14889
-            ],
+            "range": [14822, 14889],
             "filename": "time-picker.js",
             "lineno": 428,
             "columnno": 12,
@@ -3427,10 +2948,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                15014,
-                15019
-            ],
+            "range": [15014, 15019],
             "filename": "time-picker.js",
             "lineno": 432,
             "columnno": 55,
@@ -3451,10 +2969,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                15079,
-                15442
-            ],
+            "range": [15079, 15442],
             "filename": "time-picker.js",
             "lineno": 438,
             "columnno": 4,
@@ -3463,9 +2978,7 @@
                 "id": "astnode100001615",
                 "name": "MdTimePickerComponent#handleTimePickerIconButtonNextClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -3474,9 +2987,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -3491,10 +3002,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                15138,
-                15313
-            ],
+            "range": [15138, 15313],
             "filename": "time-picker.js",
             "lineno": 439,
             "columnno": 14,
@@ -3517,10 +3025,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                15158,
-                15221
-            ],
+            "range": [15158, 15221],
             "filename": "time-picker.js",
             "lineno": 440,
             "columnno": 12,
@@ -3540,10 +3045,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                15235,
-                15302
-            ],
+            "range": [15235, 15302],
             "filename": "time-picker.js",
             "lineno": 441,
             "columnno": 12,
@@ -3564,10 +3066,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                15427,
-                15432
-            ],
+            "range": [15427, 15432],
             "filename": "time-picker.js",
             "lineno": 445,
             "columnno": 55,
@@ -3588,10 +3087,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                15492,
-                15888
-            ],
+            "range": [15492, 15888],
             "filename": "time-picker.js",
             "lineno": 451,
             "columnno": 4,
@@ -3600,9 +3096,7 @@
                 "id": "astnode100001677",
                 "name": "MdTimePickerComponent#handleTimePickerIconButtonClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -3611,9 +3105,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -3628,10 +3120,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                15547,
-                15578
-            ],
+            "range": [15547, 15578],
             "filename": "time-picker.js",
             "lineno": 452,
             "columnno": 14,
@@ -3654,10 +3143,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                15594,
-                15753
-            ],
+            "range": [15594, 15753],
             "filename": "time-picker.js",
             "lineno": 453,
             "columnno": 14,
@@ -3680,10 +3166,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                15614,
-                15671
-            ],
+            "range": [15614, 15671],
             "filename": "time-picker.js",
             "lineno": 454,
             "columnno": 12,
@@ -3705,10 +3188,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                15685,
-                15742
-            ],
+            "range": [15685, 15742],
             "filename": "time-picker.js",
             "lineno": 455,
             "columnno": 12,
@@ -3730,10 +3210,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                15769,
-                15786
-            ],
+            "range": [15769, 15786],
             "filename": "time-picker.js",
             "lineno": 457,
             "columnno": 14,
@@ -3756,10 +3233,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                15873,
-                15878
-            ],
+            "range": [15873, 15878],
             "filename": "time-picker.js",
             "lineno": 459,
             "columnno": 51,
@@ -3780,10 +3254,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                15938,
-                16134
-            ],
+            "range": [15938, 16134],
             "filename": "time-picker.js",
             "lineno": 465,
             "columnno": 4,
@@ -3792,9 +3263,7 @@
                 "id": "astnode100001733",
                 "name": "MdTimePickerComponent#handleTimePickerButtonCancelClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -3803,9 +3272,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -3820,10 +3287,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                15989,
-                16039
-            ],
+            "range": [15989, 16039],
             "filename": "time-picker.js",
             "lineno": 466,
             "columnno": 8,
@@ -3846,10 +3310,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                16119,
-                16124
-            ],
+            "range": [16119, 16124],
             "filename": "time-picker.js",
             "lineno": 468,
             "columnno": 53,
@@ -3870,10 +3331,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                16184,
-                16312
-            ],
+            "range": [16184, 16312],
             "filename": "time-picker.js",
             "lineno": 474,
             "columnno": 4,
@@ -3882,9 +3340,7 @@
                 "id": "astnode100001760",
                 "name": "MdTimePickerComponent#handleTimePickerButtonOkClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -3893,9 +3349,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -3910,10 +3364,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                16297,
-                16302
-            ],
+            "range": [16297, 16302],
             "filename": "time-picker.js",
             "lineno": 476,
             "columnno": 49,
@@ -3934,10 +3385,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                16362,
-                16578
-            ],
+            "range": [16362, 16578],
             "filename": "time-picker.js",
             "lineno": 482,
             "columnno": 4,
@@ -3946,9 +3394,7 @@
                 "id": "astnode100001774",
                 "name": "MdTimePickerComponent#handleTimePickerButtonLabelClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -3957,9 +3403,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -3974,10 +3418,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                16418,
-                16471
-            ],
+            "range": [16418, 16471],
             "filename": "time-picker.js",
             "lineno": 483,
             "columnno": 14,
@@ -4000,10 +3441,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                16438,
-                16442
-            ],
+            "range": [16438, 16442],
             "filename": "time-picker.js",
             "lineno": 484,
             "columnno": 12,
@@ -4024,10 +3462,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                16456,
-                16460
-            ],
+            "range": [16456, 16460],
             "filename": "time-picker.js",
             "lineno": 485,
             "columnno": 12,
@@ -4049,10 +3484,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                16481,
-                16509
-            ],
+            "range": [16481, 16509],
             "filename": "time-picker.js",
             "lineno": 487,
             "columnno": 8,
@@ -4075,10 +3507,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                16563,
-                16568
-            ],
+            "range": [16563, 16568],
             "filename": "time-picker.js",
             "lineno": 488,
             "columnno": 52,
@@ -4099,10 +3528,7 @@
     {
         "comment": "/**\n     * @param {Any} [event]\n     */",
         "meta": {
-            "range": [
-                16628,
-                17077
-            ],
+            "range": [16628, 17077],
             "filename": "time-picker.js",
             "lineno": 494,
             "columnno": 4,
@@ -4111,9 +3537,7 @@
                 "id": "astnode100001806",
                 "name": "MdTimePickerComponent#handleTimePickerButtonClick",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
+                "paramnames": ["event"]
             },
             "vars": {
                 "": null
@@ -4122,9 +3546,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "event"
@@ -4139,10 +3561,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                16679,
-                16710
-            ],
+            "range": [16679, 16710],
             "filename": "time-picker.js",
             "lineno": 495,
             "columnno": 14,
@@ -4165,10 +3584,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                16726,
-                16946
-            ],
+            "range": [16726, 16946],
             "filename": "time-picker.js",
             "lineno": 496,
             "columnno": 14,
@@ -4191,10 +3607,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                16746,
-                16803
-            ],
+            "range": [16746, 16803],
             "filename": "time-picker.js",
             "lineno": 497,
             "columnno": 12,
@@ -4216,10 +3629,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                16817,
-                16866
-            ],
+            "range": [16817, 16866],
             "filename": "time-picker.js",
             "lineno": 498,
             "columnno": 12,
@@ -4241,10 +3651,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                16880,
-                16935
-            ],
+            "range": [16880, 16935],
             "filename": "time-picker.js",
             "lineno": 499,
             "columnno": 12,
@@ -4266,10 +3673,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                16962,
-                16979
-            ],
+            "range": [16962, 16979],
             "filename": "time-picker.js",
             "lineno": 501,
             "columnno": 14,
@@ -4292,10 +3696,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                17062,
-                17067
-            ],
+            "range": [17062, 17067],
             "filename": "time-picker.js",
             "lineno": 503,
             "columnno": 47,
@@ -4316,10 +3717,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                17153,
-                17174
-            ],
+            "range": [17153, 17174],
             "filename": "time-picker.js",
             "lineno": 507,
             "columnno": 9,
@@ -4339,8 +3737,6 @@
     {
         "kind": "package",
         "longname": "package:undefined",
-        "files": [
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker\\time-picker.js"
-        ]
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\time-picker\\time-picker.js"]
     }
 ]

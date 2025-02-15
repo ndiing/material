@@ -2,10 +2,7 @@
     {
         "comment": "/**\n */",
         "meta": {
-            "range": [
-                8,
-                958
-            ],
+            "range": [8, 958],
             "filename": "layout.js",
             "lineno": 3,
             "columnno": 0,
@@ -14,9 +11,7 @@
                 "id": "astnode100000002",
                 "name": "Layout",
                 "type": "ClassDeclaration",
-                "paramnames": [
-                    "callback"
-                ]
+                "paramnames": ["callback"]
             }
         },
         "name": "Layout",
@@ -28,10 +23,7 @@
     {
         "comment": "/**\n     * @readonly\n     */",
         "meta": {
-            "range": [
-                60,
-                330
-            ],
+            "range": [60, 330],
             "filename": "layout.js",
             "lineno": 7,
             "columnno": 4,
@@ -52,10 +44,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                80,
-                96
-            ],
+            "range": [80, 96],
             "filename": "layout.js",
             "lineno": 8,
             "columnno": 10,
@@ -76,10 +65,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                98,
-                144
-            ],
+            "range": [98, 144],
             "filename": "layout.js",
             "lineno": 8,
             "columnno": 28,
@@ -100,10 +86,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                158,
-                172
-            ],
+            "range": [158, 172],
             "filename": "layout.js",
             "lineno": 9,
             "columnno": 10,
@@ -124,10 +107,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                174,
-                243
-            ],
+            "range": [174, 243],
             "filename": "layout.js",
             "lineno": 9,
             "columnno": 26,
@@ -148,10 +128,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                257,
-                272
-            ],
+            "range": [257, 272],
             "filename": "layout.js",
             "lineno": 10,
             "columnno": 10,
@@ -172,10 +149,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                274,
-                320
-            ],
+            "range": [274, 320],
             "filename": "layout.js",
             "lineno": 10,
             "columnno": 27,
@@ -196,10 +170,7 @@
     {
         "comment": "/**\n     * @param {Any} [callback]\n     */",
         "meta": {
-            "range": [
-                383,
-                515
-            ],
+            "range": [383, 515],
             "filename": "layout.js",
             "lineno": 16,
             "columnno": 4,
@@ -208,9 +179,7 @@
                 "id": "astnode100000034",
                 "name": "Layout",
                 "type": "MethodDefinition",
-                "paramnames": [
-                    "callback"
-                ]
+                "paramnames": ["callback"]
             },
             "vars": {
                 "": null
@@ -219,9 +188,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "callback"
@@ -236,10 +203,7 @@
     {
         "comment": "/**\n */",
         "meta": {
-            "range": [
-                8,
-                958
-            ],
+            "range": [8, 958],
             "filename": "layout.js",
             "lineno": 3,
             "columnno": 0,
@@ -248,9 +212,7 @@
                 "id": "astnode100000002",
                 "name": "Layout",
                 "type": "ClassDeclaration",
-                "paramnames": [
-                    "callback"
-                ]
+                "paramnames": ["callback"]
             }
         },
         "name": "Layout",
@@ -260,9 +222,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "callback"
@@ -272,10 +232,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                415,
-                450
-            ],
+            "range": [415, 450],
             "filename": "layout.js",
             "lineno": 17,
             "columnno": 8,
@@ -298,10 +255,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                460,
-                508
-            ],
+            "range": [460, 508],
             "filename": "layout.js",
             "lineno": 18,
             "columnno": 8,
@@ -324,10 +278,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                537,
-                604
-            ],
+            "range": [537, 604],
             "filename": "layout.js",
             "lineno": 23,
             "columnno": 4,
@@ -352,10 +303,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                626,
-                812
-            ],
+            "range": [626, 812],
             "filename": "layout.js",
             "lineno": 30,
             "columnno": 4,
@@ -380,10 +328,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                643,
-                700
-            ],
+            "range": [643, 700],
             "filename": "layout.js",
             "lineno": 31,
             "columnno": 8,
@@ -406,10 +351,7 @@
     {
         "comment": "/**\n     */",
         "meta": {
-            "range": [
-                834,
-                956
-            ],
+            "range": [834, 956],
             "filename": "layout.js",
             "lineno": 38,
             "columnno": 4,
@@ -434,10 +376,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                928,
-                949
-            ],
+            "range": [928, 949],
             "filename": "layout.js",
             "lineno": 40,
             "columnno": 8,
@@ -460,10 +399,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                968,
-                974
-            ],
+            "range": [968, 974],
             "filename": "layout.js",
             "lineno": 43,
             "columnno": 9,
@@ -483,8 +419,6 @@
     {
         "kind": "package",
         "longname": "package:undefined",
-        "files": [
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout\\layout.js"
-        ]
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout\\layout.js"]
     }
 ]

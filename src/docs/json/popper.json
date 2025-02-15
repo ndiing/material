@@ -2,10 +2,7 @@
     {
         "comment": "/**\n * @param {Any} [placement]\n * @param {Any} [options={}]\n */",
         "meta": {
-            "range": [
-                123,
-                1861
-            ],
+            "range": [123, 1861],
             "filename": "popper.js",
             "lineno": 7,
             "columnno": 0,
@@ -14,10 +11,7 @@
                 "id": "astnode100000006",
                 "name": "calculatePosition",
                 "type": "FunctionDeclaration",
-                "paramnames": [
-                    "placement",
-                    "options"
-                ]
+                "paramnames": ["placement", "options"]
             },
             "vars": {
                 "undefined": null,
@@ -30,18 +24,14 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "placement"
             },
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "defaultvalue": "{}",
@@ -56,10 +46,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                189,
-                202
-            ],
+            "range": [189, 202],
             "filename": "popper.js",
             "lineno": 8,
             "columnno": 12,
@@ -80,10 +67,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                204,
-                215
-            ],
+            "range": [204, 215],
             "filename": "popper.js",
             "lineno": 8,
             "columnno": 27,
@@ -104,10 +88,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                217,
-                223
-            ],
+            "range": [217, 223],
             "filename": "popper.js",
             "lineno": 8,
             "columnno": 40,
@@ -128,10 +109,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                249,
-                253
-            ],
+            "range": [249, 253],
             "filename": "popper.js",
             "lineno": 9,
             "columnno": 12,
@@ -152,10 +130,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                255,
-                258
-            ],
+            "range": [255, 258],
             "filename": "popper.js",
             "lineno": 9,
             "columnno": 18,
@@ -176,10 +151,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                260,
-                265
-            ],
+            "range": [260, 265],
             "filename": "popper.js",
             "lineno": 9,
             "columnno": 23,
@@ -200,10 +172,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                267,
-                273
-            ],
+            "range": [267, 273],
             "filename": "popper.js",
             "lineno": 9,
             "columnno": 30,
@@ -224,10 +193,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                275,
-                280
-            ],
+            "range": [275, 280],
             "filename": "popper.js",
             "lineno": 9,
             "columnno": 38,
@@ -248,10 +214,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                282,
-                288
-            ],
+            "range": [282, 288],
             "filename": "popper.js",
             "lineno": 9,
             "columnno": 45,
@@ -272,10 +235,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                316,
-                344
-            ],
+            "range": [316, 344],
             "filename": "popper.js",
             "lineno": 10,
             "columnno": 10,
@@ -298,10 +258,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                356,
-                386
-            ],
+            "range": [356, 386],
             "filename": "popper.js",
             "lineno": 11,
             "columnno": 10,
@@ -324,10 +281,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                398,
-                1804
-            ],
+            "range": [398, 1804],
             "filename": "popper.js",
             "lineno": 12,
             "columnno": 10,
@@ -350,10 +304,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                420,
-                499
-            ],
+            "range": [420, 499],
             "filename": "popper.js",
             "lineno": 13,
             "columnno": 8,
@@ -374,10 +325,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                440,
-                460
-            ],
+            "range": [440, 460],
             "filename": "popper.js",
             "lineno": 13,
             "columnno": 28,
@@ -398,10 +346,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                462,
-                496
-            ],
+            "range": [462, 496],
             "filename": "popper.js",
             "lineno": 13,
             "columnno": 50,
@@ -422,10 +367,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                509,
-                595
-            ],
+            "range": [509, 595],
             "filename": "popper.js",
             "lineno": 14,
             "columnno": 8,
@@ -446,10 +388,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                523,
-                556
-            ],
+            "range": [523, 556],
             "filename": "popper.js",
             "lineno": 14,
             "columnno": 22,
@@ -470,10 +409,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                558,
-                592
-            ],
+            "range": [558, 592],
             "filename": "popper.js",
             "lineno": 14,
             "columnno": 57,
@@ -494,10 +430,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                605,
-                670
-            ],
+            "range": [605, 670],
             "filename": "popper.js",
             "lineno": 15,
             "columnno": 8,
@@ -518,10 +451,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                627,
-                631
-            ],
+            "range": [627, 631],
             "filename": "popper.js",
             "lineno": 15,
             "columnno": 30,
@@ -542,10 +472,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                633,
-                667
-            ],
+            "range": [633, 667],
             "filename": "popper.js",
             "lineno": 15,
             "columnno": 36,
@@ -566,10 +493,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                680,
-                766
-            ],
+            "range": [680, 766],
             "filename": "popper.js",
             "lineno": 16,
             "columnno": 8,
@@ -590,10 +514,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                702,
-                727
-            ],
+            "range": [702, 727],
             "filename": "popper.js",
             "lineno": 16,
             "columnno": 30,
@@ -614,10 +535,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                729,
-                763
-            ],
+            "range": [729, 763],
             "filename": "popper.js",
             "lineno": 16,
             "columnno": 57,
@@ -638,10 +556,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                776,
-                849
-            ],
+            "range": [776, 849],
             "filename": "popper.js",
             "lineno": 17,
             "columnno": 8,
@@ -662,10 +577,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                798,
-                823
-            ],
+            "range": [798, 823],
             "filename": "popper.js",
             "lineno": 17,
             "columnno": 30,
@@ -686,10 +598,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                825,
-                846
-            ],
+            "range": [825, 846],
             "filename": "popper.js",
             "lineno": 17,
             "columnno": 57,
@@ -710,10 +619,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                859,
-                938
-            ],
+            "range": [859, 938],
             "filename": "popper.js",
             "lineno": 18,
             "columnno": 8,
@@ -734,10 +640,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                875,
-                900
-            ],
+            "range": [875, 900],
             "filename": "popper.js",
             "lineno": 18,
             "columnno": 24,
@@ -758,10 +661,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                902,
-                935
-            ],
+            "range": [902, 935],
             "filename": "popper.js",
             "lineno": 18,
             "columnno": 51,
@@ -782,10 +682,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                948,
-                1005
-            ],
+            "range": [948, 1005],
             "filename": "popper.js",
             "lineno": 19,
             "columnno": 8,
@@ -806,10 +703,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                972,
-                997
-            ],
+            "range": [972, 997],
             "filename": "popper.js",
             "lineno": 19,
             "columnno": 32,
@@ -830,10 +724,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                999,
-                1002
-            ],
+            "range": [999, 1002],
             "filename": "popper.js",
             "lineno": 19,
             "columnno": 59,
@@ -854,10 +745,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1015,
-                1094
-            ],
+            "range": [1015, 1094],
             "filename": "popper.js",
             "lineno": 20,
             "columnno": 8,
@@ -878,10 +766,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1040,
-                1065
-            ],
+            "range": [1040, 1065],
             "filename": "popper.js",
             "lineno": 20,
             "columnno": 33,
@@ -902,10 +787,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1067,
-                1091
-            ],
+            "range": [1067, 1091],
             "filename": "popper.js",
             "lineno": 20,
             "columnno": 60,
@@ -926,10 +808,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1104,
-                1162
-            ],
+            "range": [1104, 1162],
             "filename": "popper.js",
             "lineno": 21,
             "columnno": 8,
@@ -950,10 +829,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1129,
-                1133
-            ],
+            "range": [1129, 1133],
             "filename": "popper.js",
             "lineno": 21,
             "columnno": 33,
@@ -974,10 +850,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1135,
-                1159
-            ],
+            "range": [1135, 1159],
             "filename": "popper.js",
             "lineno": 21,
             "columnno": 39,
@@ -998,10 +871,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1172,
-                1251
-            ],
+            "range": [1172, 1251],
             "filename": "popper.js",
             "lineno": 22,
             "columnno": 8,
@@ -1022,10 +892,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1189,
-                1222
-            ],
+            "range": [1189, 1222],
             "filename": "popper.js",
             "lineno": 22,
             "columnno": 25,
@@ -1046,10 +913,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1224,
-                1248
-            ],
+            "range": [1224, 1248],
             "filename": "popper.js",
             "lineno": 22,
             "columnno": 60,
@@ -1070,10 +934,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1261,
-                1333
-            ],
+            "range": [1261, 1333],
             "filename": "popper.js",
             "lineno": 23,
             "columnno": 8,
@@ -1094,10 +955,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1284,
-                1304
-            ],
+            "range": [1284, 1304],
             "filename": "popper.js",
             "lineno": 23,
             "columnno": 31,
@@ -1118,10 +976,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1306,
-                1330
-            ],
+            "range": [1306, 1330],
             "filename": "popper.js",
             "lineno": 23,
             "columnno": 53,
@@ -1142,10 +997,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1343,
-                1430
-            ],
+            "range": [1343, 1430],
             "filename": "popper.js",
             "lineno": 24,
             "columnno": 8,
@@ -1166,10 +1018,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1367,
-                1401
-            ],
+            "range": [1367, 1401],
             "filename": "popper.js",
             "lineno": 24,
             "columnno": 32,
@@ -1190,10 +1039,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1403,
-                1427
-            ],
+            "range": [1403, 1427],
             "filename": "popper.js",
             "lineno": 24,
             "columnno": 68,
@@ -1214,10 +1060,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1440,
-                1505
-            ],
+            "range": [1440, 1505],
             "filename": "popper.js",
             "lineno": 25,
             "columnno": 8,
@@ -1238,10 +1081,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1463,
-                1497
-            ],
+            "range": [1463, 1497],
             "filename": "popper.js",
             "lineno": 25,
             "columnno": 31,
@@ -1262,10 +1102,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1499,
-                1502
-            ],
+            "range": [1499, 1502],
             "filename": "popper.js",
             "lineno": 25,
             "columnno": 67,
@@ -1286,10 +1123,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1515,
-                1602
-            ],
+            "range": [1515, 1602],
             "filename": "popper.js",
             "lineno": 26,
             "columnno": 8,
@@ -1310,10 +1144,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1530,
-                1564
-            ],
+            "range": [1530, 1564],
             "filename": "popper.js",
             "lineno": 26,
             "columnno": 23,
@@ -1334,10 +1165,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1566,
-                1599
-            ],
+            "range": [1566, 1599],
             "filename": "popper.js",
             "lineno": 26,
             "columnno": 59,
@@ -1358,10 +1186,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1612,
-                1693
-            ],
+            "range": [1612, 1693],
             "filename": "popper.js",
             "lineno": 27,
             "columnno": 8,
@@ -1382,10 +1207,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1633,
-                1667
-            ],
+            "range": [1633, 1667],
             "filename": "popper.js",
             "lineno": 27,
             "columnno": 29,
@@ -1406,10 +1228,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1669,
-                1690
-            ],
+            "range": [1669, 1690],
             "filename": "popper.js",
             "lineno": 27,
             "columnno": 65,
@@ -1430,10 +1249,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1703,
-                1797
-            ],
+            "range": [1703, 1797],
             "filename": "popper.js",
             "lineno": 28,
             "columnno": 8,
@@ -1454,10 +1270,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1724,
-                1758
-            ],
+            "range": [1724, 1758],
             "filename": "popper.js",
             "lineno": 28,
             "columnno": 29,
@@ -1478,10 +1291,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                1760,
-                1794
-            ],
+            "range": [1760, 1794],
             "filename": "popper.js",
             "lineno": 28,
             "columnno": 65,
@@ -1502,10 +1312,7 @@
     {
         "comment": "/**\n * @param {Any} [offset]\n */",
         "meta": {
-            "range": [
-                1896,
-                2129
-            ],
+            "range": [1896, 2129],
             "filename": "popper.js",
             "lineno": 36,
             "columnno": 0,
@@ -1514,9 +1321,7 @@
                 "id": "astnode100000308",
                 "name": "parseOffset",
                 "type": "FunctionDeclaration",
-                "paramnames": [
-                    "offset"
-                ]
+                "paramnames": ["offset"]
             },
             "vars": {
                 "undefined": null,
@@ -1528,9 +1333,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "name": "offset"
@@ -1544,10 +1347,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2011,
-                2031
-            ],
+            "range": [2011, 2031],
             "filename": "popper.js",
             "lineno": 38,
             "columnno": 4,
@@ -1571,10 +1371,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2037,
-                2059
-            ],
+            "range": [2037, 2059],
             "filename": "popper.js",
             "lineno": 39,
             "columnno": 4,
@@ -1598,10 +1395,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2065,
-                2085
-            ],
+            "range": [2065, 2085],
             "filename": "popper.js",
             "lineno": 40,
             "columnno": 4,
@@ -1625,10 +1419,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2100,
-                2103
-            ],
+            "range": [2100, 2103],
             "filename": "popper.js",
             "lineno": 41,
             "columnno": 13,
@@ -1649,10 +1440,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2105,
-                2110
-            ],
+            "range": [2105, 2110],
             "filename": "popper.js",
             "lineno": 41,
             "columnno": 18,
@@ -1673,10 +1461,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2112,
-                2118
-            ],
+            "range": [2112, 2118],
             "filename": "popper.js",
             "lineno": 41,
             "columnno": 25,
@@ -1697,10 +1482,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2120,
-                2124
-            ],
+            "range": [2120, 2124],
             "filename": "popper.js",
             "lineno": 41,
             "columnno": 33,
@@ -1721,10 +1503,7 @@
     {
         "comment": "/**\n * @param {Any} [options={}]\n */",
         "meta": {
-            "range": [
-                2168,
-                3809
-            ],
+            "range": [2168, 3809],
             "filename": "popper.js",
             "lineno": 47,
             "columnno": 0,
@@ -1733,9 +1512,7 @@
                 "id": "astnode100000357",
                 "name": "setPosition",
                 "type": "FunctionDeclaration",
-                "paramnames": [
-                    "options"
-                ]
+                "paramnames": ["options"]
             },
             "vars": {
                 "undefined": null,
@@ -1759,9 +1536,7 @@
         "params": [
             {
                 "type": {
-                    "names": [
-                        "Any"
-                    ]
+                    "names": ["Any"]
                 },
                 "optional": true,
                 "defaultvalue": "{}",
@@ -1776,10 +1551,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2217,
-                2226
-            ],
+            "range": [2217, 2226],
             "filename": "popper.js",
             "lineno": 48,
             "columnno": 12,
@@ -1800,10 +1572,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2228,
-                2235
-            ],
+            "range": [2228, 2235],
             "filename": "popper.js",
             "lineno": 48,
             "columnno": 23,
@@ -1824,10 +1593,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2237,
-                2245
-            ],
+            "range": [2237, 2245],
             "filename": "popper.js",
             "lineno": 48,
             "columnno": 32,
@@ -1848,10 +1614,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2247,
-                2259
-            ],
+            "range": [2247, 2259],
             "filename": "popper.js",
             "lineno": 48,
             "columnno": 42,
@@ -1872,10 +1635,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2261,
-                2271
-            ],
+            "range": [2261, 2271],
             "filename": "popper.js",
             "lineno": 48,
             "columnno": 56,
@@ -1896,10 +1656,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2295,
-                2355
-            ],
+            "range": [2295, 2355],
             "filename": "popper.js",
             "lineno": 49,
             "columnno": 10,
@@ -1922,10 +1679,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2367,
-                2401
-            ],
+            "range": [2367, 2401],
             "filename": "popper.js",
             "lineno": 50,
             "columnno": 10,
@@ -1948,10 +1702,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2413,
-                2462
-            ],
+            "range": [2413, 2462],
             "filename": "popper.js",
             "lineno": 51,
             "columnno": 10,
@@ -1974,10 +1725,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2474,
-                2519
-            ],
+            "range": [2474, 2519],
             "filename": "popper.js",
             "lineno": 52,
             "columnno": 10,
@@ -2000,10 +1748,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2531,
-                2580
-            ],
+            "range": [2531, 2580],
             "filename": "popper.js",
             "lineno": 53,
             "columnno": 10,
@@ -2026,10 +1771,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2590,
-                2605
-            ],
+            "range": [2590, 2605],
             "filename": "popper.js",
             "lineno": 54,
             "columnno": 8,
@@ -2052,10 +1794,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2615,
-                2629
-            ],
+            "range": [2615, 2629],
             "filename": "popper.js",
             "lineno": 55,
             "columnno": 8,
@@ -2078,10 +1817,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2639,
-                2661
-            ],
+            "range": [2639, 2661],
             "filename": "popper.js",
             "lineno": 56,
             "columnno": 8,
@@ -2104,10 +1840,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2678,
-                2687
-            ],
+            "range": [2678, 2687],
             "filename": "popper.js",
             "lineno": 57,
             "columnno": 15,
@@ -2128,10 +1861,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2721,
-                2725
-            ],
+            "range": [2721, 2725],
             "filename": "popper.js",
             "lineno": 58,
             "columnno": 16,
@@ -2152,10 +1882,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2727,
-                2730
-            ],
+            "range": [2727, 2730],
             "filename": "popper.js",
             "lineno": 58,
             "columnno": 22,
@@ -2176,10 +1903,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2766,
-                2777
-            ],
+            "range": [2766, 2777],
             "filename": "popper.js",
             "lineno": 58,
             "columnno": 61,
@@ -2200,10 +1924,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2779,
-                2792
-            ],
+            "range": [2779, 2792],
             "filename": "popper.js",
             "lineno": 58,
             "columnno": 74,
@@ -2224,10 +1945,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2794,
-                2814
-            ],
+            "range": [2794, 2814],
             "filename": "popper.js",
             "lineno": 58,
             "columnno": 89,
@@ -2248,10 +1966,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2833,
-                2867
-            ],
+            "range": [2833, 2867],
             "filename": "popper.js",
             "lineno": 59,
             "columnno": 14,
@@ -2274,10 +1989,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2883,
-                2918
-            ],
+            "range": [2883, 2918],
             "filename": "popper.js",
             "lineno": 60,
             "columnno": 14,
@@ -2300,10 +2012,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                2934,
-                3055
-            ],
+            "range": [2934, 3055],
             "filename": "popper.js",
             "lineno": 61,
             "columnno": 14,
@@ -2326,10 +2035,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3071,
-                3248
-            ],
+            "range": [3071, 3248],
             "filename": "popper.js",
             "lineno": 62,
             "columnno": 14,
@@ -2352,10 +2058,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3285,
-                3300
-            ],
+            "range": [3285, 3300],
             "filename": "popper.js",
             "lineno": 64,
             "columnno": 12,
@@ -2379,10 +2082,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3314,
-                3327
-            ],
+            "range": [3314, 3327],
             "filename": "popper.js",
             "lineno": 65,
             "columnno": 12,
@@ -2406,10 +2106,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3410,
-                3437
-            ],
+            "range": [3410, 3437],
             "filename": "popper.js",
             "lineno": 68,
             "columnno": 12,
@@ -2433,10 +2130,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3451,
-                3466
-            ],
+            "range": [3451, 3466],
             "filename": "popper.js",
             "lineno": 69,
             "columnno": 12,
@@ -2460,10 +2154,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3480,
-                3493
-            ],
+            "range": [3480, 3493],
             "filename": "popper.js",
             "lineno": 70,
             "columnno": 12,
@@ -2487,10 +2178,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3515,
-                3615
-            ],
+            "range": [3515, 3615],
             "filename": "popper.js",
             "lineno": 73,
             "columnno": 4,
@@ -2514,10 +2202,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3621,
-                3720
-            ],
+            "range": [3621, 3720],
             "filename": "popper.js",
             "lineno": 74,
             "columnno": 4,
@@ -2541,10 +2226,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3726,
-                3764
-            ],
+            "range": [3726, 3764],
             "filename": "popper.js",
             "lineno": 75,
             "columnno": 4,
@@ -2567,10 +2249,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3770,
-                3806
-            ],
+            "range": [3770, 3806],
             "filename": "popper.js",
             "lineno": 76,
             "columnno": 4,
@@ -2593,10 +2272,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3819,
-                3836
-            ],
+            "range": [3819, 3836],
             "filename": "popper.js",
             "lineno": 78,
             "columnno": 9,
@@ -2616,10 +2292,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3838,
-                3849
-            ],
+            "range": [3838, 3849],
             "filename": "popper.js",
             "lineno": 78,
             "columnno": 28,
@@ -2639,10 +2312,7 @@
     {
         "comment": "",
         "meta": {
-            "range": [
-                3851,
-                3862
-            ],
+            "range": [3851, 3862],
             "filename": "popper.js",
             "lineno": 78,
             "columnno": 41,
@@ -2662,8 +2332,6 @@
     {
         "kind": "package",
         "longname": "package:undefined",
-        "files": [
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper\\popper.js"
-        ]
+        "files": ["C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper\\popper.js"]
     }
 ]
