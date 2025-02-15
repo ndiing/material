@@ -11,7 +11,7 @@ class MdTabsComponent extends MdComponent {
     /**
      * @property {Array} [items]
      * @property {Object} [rippleOptions]
-     * @property {String} [variant]
+     * @property {primary|secondary} [variant]
      */
     static properties = {
         items: { type: Array },

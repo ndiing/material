@@ -11,7 +11,7 @@ import { Ripple } from "../ripple/ripple";
 class MdChipsComponent extends MdComponent {
     /**
      * @property {Array} [items]
-     * @property {String} [type]
+     * @property {single-select|multi-select} [type]
      */
     static properties = {
         items: { type: Array },

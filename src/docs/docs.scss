@@ -18,9 +18,9 @@ docs-page {
     }
     th {
         text-align: left;
-        height: 56px;
-        padding: 0 16px;
-        width: 1%;
+        // height: 56px;
+        padding: 16px 16px;
+        // width: 1%;
         background-color: var(--md-sys-color-surface-container-highest);
         border-bottom: 1px solid var(--md-sys-color-outline-variant);
         border-right: 1px solid var(--md-sys-color-outline-variant);
@@ -29,9 +29,9 @@ docs-page {
         }
     }
     td {
-        max-width: 0;
-        height: 56px;
-        padding: 0 16px;
+        // max-width: 0;
+        // height: 56px;
+        padding: 16px 16px;
         border-bottom: 1px solid var(--md-sys-color-outline-variant);
         border-right: 1px solid var(--md-sys-color-outline-variant);
         &:last-child {
@@ -48,10 +48,10 @@ docs-page {
         }
     }
 
-    code{
+    code {
         border-radius: var(--md-sys-shape-corner-extra-small);
         padding: 0 4px;
         background-color: var(--md-sys-color-surface-container-highest);
-        font-family: Consolas, 'Courier New', monospace;
+        font-family: Consolas, "Courier New", monospace;
     }
 }

@@ -40,7 +40,7 @@ class MdTextFieldComponent extends MdComponent {
      * @property {Number} [minLength]
      * @property {Number} [maxLength]
      * @property {String} [pattern]
-     * @property {String} [variant]
+     * @property {outlined|filled} [variant]
      * @property {Boolean} [disabled]
      * @property {Boolean} [errorIcon]
      * @property {Boolean} [cancelAction]

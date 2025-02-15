@@ -11,9 +11,9 @@ class MdFabComponent extends MdComponent {
     /**
      * @property {String} [icon]
      * @property {String} [label]
-     * @property {String} [type]
-     * @property {String} [size]
-     * @property {String} [variant]
+     * @property {extended} [type]
+     * @property {small|large} [size]
+     * @property {unelevated} [variant]
      */
     static properties = {
         icon: { type: String },

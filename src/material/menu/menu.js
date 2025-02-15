@@ -7,7 +7,6 @@ import { closestScrollableElement } from "../util/util";
 
 /**
  * @extends MdComponent
- * @requires MdNavigationList
  * @element md-menu
  * @fires MdMenuComponent#onMenuShow
  * @fires MdMenuComponent#onMenuClose

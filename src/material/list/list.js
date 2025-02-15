@@ -13,7 +13,7 @@ import { ifDefined } from "lit/directives/if-defined.js";
 class MdListComponent extends MdComponent {
     /**
      * @property {Array} [items]
-     * @property {String} [type]
+     * @property {single-select|multi-select} [type]
      * @property {Object} [fieldMap]
      * @property {Object} [rippleOptions]
      */

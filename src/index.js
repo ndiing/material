@@ -26,17 +26,17 @@ Router.use(routes);
 
 const progress = new Progress();
 
-const fetch = window.fetch
-window.fetch = async function(){
+const fetch = window.fetch;
+window.fetch = async function () {
     performance.mark("mark-fetch-1");
-    const res= await fetch(arguments)
+    const res = await fetch(arguments);
     performance.mark("mark-fetch-2");
     performance.measure("measure-fetch-1", "mark-fetch-1", "mark-fetch-2");
     performance.clearMarks("mark-fetch-1");
     performance.clearMarks("mark-fetch-2");
     performance.clearMeasures("measure-fetch-1");
-    return res
-}
+    return res;
+};
 
 const observer = new PerformanceObserver((entries) => {
     entries.getEntries().forEach((entry) => progress.start(entry.duration));

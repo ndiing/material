@@ -10,7 +10,6 @@ import { choose } from "lit/directives/choose.js";
  * @fires MdNavigationDrawerComponent#onNavigationDrawerClose
  * @fires MdNavigationDrawerComponent#onNavigationDrawerIconButtonClick
  * @fires MdNavigationDrawerComponent#onNavigationDrawerScrimClose
- * @fires MdNavigationDrawerComponent#onNavigationDrawerItemClick
  */
 class MdNavigationDrawerComponent extends MdComponent {
     /**
@@ -21,7 +20,7 @@ class MdNavigationDrawerComponent extends MdComponent {
      * @property {Array} [items]
      * @property {Boolean} [open]
      * @property {Boolean} [modal]
-     * @property {String} [type]
+     * @property {navigation-list|tree} [type]
      */
     static properties = {
         icons: { type: Array },

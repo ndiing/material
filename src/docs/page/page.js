@@ -1,6 +1,7 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../../material/component/component";
 import { Router } from "../../material/router/router";
+import { keys, values } from "../jsdoc/jsdoc";
 
 class DocsPage extends MdComponent {
     constructor() {
@@ -10,8 +11,6 @@ class DocsPage extends MdComponent {
 
     render() {
         return html`
-        
-        
             <div class="md-layout">
                 ${this.data.class?.map(
                     (item) => html`
@@ -40,6 +39,8 @@ class DocsPage extends MdComponent {
                                           <thead>
                                               <tr>
                                                   <th>Name</th>
+                                                  <th>Params</th>
+                                                  <th>Description</th>
                                               </tr>
                                           </thead>
                                           <tbody>
@@ -47,6 +48,8 @@ class DocsPage extends MdComponent {
                                                   (fire) => html`
                                                       <tr>
                                                           <td><code>${fire.replace(/.*?event\:/, "")}</code></td>
+                                                          <td>event</td>
+                                                          <td></td>
                                                       </tr>
                                                   `,
                                               )}
@@ -78,6 +81,7 @@ class DocsPage extends MdComponent {
                                               <tr>
                                                   <th>Name</th>
                                                   <th>Type</th>
+                                                  <th>Description</th>
                                               </tr>
                                           </thead>
                                           <tbody>
@@ -85,7 +89,8 @@ class DocsPage extends MdComponent {
                                                   (property) => html`
                                                       <tr>
                                                           <td><code>${property.name}</code></td>
-                                                          <td>${property.type?.names}</td>
+                                                          <td>${property.type?.names.join("|")}</td>
+                                                          <td>${property.description}</td>
                                                       </tr>
                                                   `,
                                               )}
@@ -106,7 +111,7 @@ class DocsPage extends MdComponent {
                     : nothing}
                 ${this.data.function?.map(
                     (item) => html`
-                        <div><code>${item.name}(${item.params?.map((param) => param.name).join(', ')})</code></div>
+                        <div><code>${item.name}(${item.params?.map((param) => param.name).join(", ")})</code></div>
                         <br />
                         ${item.params?.length
                             ? html`
@@ -116,6 +121,7 @@ class DocsPage extends MdComponent {
                                               <tr>
                                                   <th>Name</th>
                                                   <th>Type</th>
+                                                  <th>Description</th>
                                               </tr>
                                           </thead>
                                           <tbody>
@@ -124,6 +130,7 @@ class DocsPage extends MdComponent {
                                                       <tr>
                                                           <td><code>${param.name}</code></td>
                                                           <td>${param.type?.names}</td>
+                                                          <td></td>
                                                       </tr>
                                                   `,
                                               )}
@@ -154,11 +161,13 @@ class DocsPage extends MdComponent {
 
     async handleDocsPageRouterNavigateSuccess(event) {
         const name = Router.pathname.split("/").slice(2).join("/");
-        const module = await import(`../json/${name}.json`);
-        this.data = Object.groupBy(
-            module.default.filter((item) => !item.undocumented),
-            (item) => item.kind,
-        );
+        const index = keys.findIndex((key) => key === name + ".js");
+        this.data = values[index];
+        // const module = await import(`../json/${name}.json`);
+        // this.data = Object.groupBy(
+        //     module.default.filter((item) => !item.undocumented),
+        //     (item) => item.kind,
+        // );
         console.log(this.data);
         this.requestUpdate();
     }
