@@ -4,12 +4,10 @@ setlocal enabledelayedexpansion
 git add .
 git commit -m "Commit"
 
-npm version patch
+npm version patch --no-git-tag-version
 git add .
 git commit -m "Bump version"
 
-git pull origin main --rebase
 git push origin main
-
 
 pause
