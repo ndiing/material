@@ -50015,14 +50015,14 @@
         "scope": "global"
     },
     {
-        "comment": "/**\n * Router class responsible for managing client-side routing.\n * @fires Router#onRouterCurrentEntryChange\n * @fires Router#onRouterNavigate\n * @fires Router#onRouterNavigateError\n * @fires Router#onRouterNavigateSuccess\n */",
+        "comment": "/**\n * Router class responsible for managing client-side routing.\n * @fires Router#onRouterCurrentEntryChange\n * @fires Router#onRouterNavigate\n * @fires Router#onRouterNavigateError\n * @fires Router#onRouterNavigateSuccess\n * @example\n * import { Router } from \"./material/router/router\";\n * const sessionCheck = async (next) => {\n *     if(hasSession){\n *         next()\n *     }else{\n *         Router.navigate('/login')\n *     }\n * }\n * Router.use([\n *     {path:'',component:AppMain,children:[\n *         {path:'users',beforeLoad:sessionCheck,component:AppUsers,children:[\n *             {path:':id',component:AppUser,children:[]},\n *         ]},\n *         {path:'login',load:() => import('./login/login.js').then(module=>module.default),children:[]},\n *     ]},\n *     {path:'*',component:AppFallback},\n * ]);\n */",
         "meta": {
             "range": [
-                228,
-                10376
+                821,
+                10969
             ],
             "filename": "router.js",
-            "lineno": 8,
+            "lineno": 26,
             "columnno": 0,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50039,6 +50039,9 @@
             "Router#event:onRouterNavigateError",
             "Router#event:onRouterNavigateSuccess"
         ],
+        "examples": [
+            "import { Router } from \"./material/router/router\";\nconst sessionCheck = async (next) => {\n    if(hasSession){\n        next()\n    }else{\n        Router.navigate('/login')\n    }\n}\nRouter.use([\n    {path:'',component:AppMain,children:[\n        {path:'users',beforeLoad:sessionCheck,component:AppUsers,children:[\n            {path:':id',component:AppUser,children:[]},\n        ]},\n        {path:'login',load:() => import('./login/login.js').then(module=>module.default),children:[]},\n    ]},\n    {path:'*',component:AppFallback},\n]);"
+        ],
         "name": "Router",
         "longname": "Router",
         "kind": "class",
@@ -50048,11 +50051,11 @@
         "comment": "/**\n     * Parameters extracted from the current route.\n     * @static\n     * @type {Object}\n     */",
         "meta": {
             "range": [
-                352,
-                371
+                945,
+                964
             ],
             "filename": "router.js",
-            "lineno": 14,
+            "lineno": 32,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50077,11 +50080,11 @@
         "comment": "",
         "meta": {
             "range": [
-                846,
-                1747
+                1439,
+                2340
             ],
             "filename": "router.js",
-            "lineno": 24,
+            "lineno": 42,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50111,11 +50114,11 @@
         "comment": "",
         "meta": {
             "range": [
-                954,
-                959
+                1547,
+                1552
             ],
             "filename": "router.js",
-            "lineno": 25,
+            "lineno": 43,
             "columnno": 19,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50135,11 +50138,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1022,
-                1043
+                1615,
+                1636
             ],
             "filename": "router.js",
-            "lineno": 27,
+            "lineno": 45,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50162,11 +50165,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1061,
-                1144
+                1654,
+                1737
             ],
             "filename": "router.js",
-            "lineno": 28,
+            "lineno": 46,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50189,11 +50192,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1162,
-                1286
+                1755,
+                1879
             ],
             "filename": "router.js",
-            "lineno": 29,
+            "lineno": 47,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50216,11 +50219,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1320,
-                1358
+                1913,
+                1951
             ],
             "filename": "router.js",
-            "lineno": 31,
+            "lineno": 49,
             "columnno": 18,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50242,11 +50245,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1403,
-                1476
+                1996,
+                2069
             ],
             "filename": "router.js",
-            "lineno": 33,
+            "lineno": 51,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50268,11 +50271,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1600,
-                1671
+                2193,
+                2264
             ],
             "filename": "router.js",
-            "lineno": 39,
+            "lineno": 57,
             "columnno": 22,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50294,11 +50297,11 @@
         "comment": "/**\n     * Retrieves the current pathname.\n     * @static\n     * @readonly\n     * @returns {string} The current pathname.\n     */",
         "meta": {
             "range": [
-                1887,
-                2125
+                2480,
+                2718
             ],
             "filename": "router.js",
-            "lineno": 51,
+            "lineno": 69,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50334,11 +50337,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2300,
-                3385
+                2893,
+                3978
             ],
             "filename": "router.js",
-            "lineno": 64,
+            "lineno": 82,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50366,11 +50369,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2468,
-                2487
+                3061,
+                3080
             ],
             "filename": "router.js",
-            "lineno": 68,
+            "lineno": 86,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50392,11 +50395,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2547,
-                2552
+                3140,
+                3145
             ],
             "filename": "router.js",
-            "lineno": 70,
+            "lineno": 88,
             "columnno": 19,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50416,11 +50419,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2898,
-                2934
+                3491,
+                3527
             ],
             "filename": "router.js",
-            "lineno": 80,
+            "lineno": 98,
             "columnno": 18,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50442,11 +50445,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2954,
-                3001
+                3547,
+                3594
             ],
             "filename": "router.js",
-            "lineno": 81,
+            "lineno": 99,
             "columnno": 18,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50468,11 +50471,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3571,
-                4072
+                4164,
+                4665
             ],
             "filename": "router.js",
-            "lineno": 98,
+            "lineno": 116,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50499,11 +50502,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3618,
-                3683
+                4211,
+                4276
             ],
             "filename": "router.js",
-            "lineno": 99,
+            "lineno": 117,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50525,11 +50528,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3704,
-                3710
+                4297,
+                4303
             ],
             "filename": "router.js",
-            "lineno": 100,
+            "lineno": 118,
             "columnno": 19,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50549,11 +50552,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3741,
-                3776
+                4334,
+                4369
             ],
             "filename": "router.js",
-            "lineno": 101,
+            "lineno": 119,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50575,11 +50578,11 @@
         "comment": "",
         "meta": {
             "range": [
-                4005,
-                4041
+                4598,
+                4634
             ],
             "filename": "router.js",
-            "lineno": 106,
+            "lineno": 124,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50602,11 +50605,11 @@
         "comment": "",
         "meta": {
             "range": [
-                4392,
-                4558
+                4985,
+                5151
             ],
             "filename": "router.js",
-            "lineno": 117,
+            "lineno": 135,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50634,11 +50637,11 @@
         "comment": "",
         "meta": {
             "range": [
-                4933,
-                5778
+                5526,
+                6371
             ],
             "filename": "router.js",
-            "lineno": 128,
+            "lineno": 146,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50667,11 +50670,11 @@
         "comment": "",
         "meta": {
             "range": [
-                5040,
-                5048
+                5633,
+                5641
             ],
             "filename": "router.js",
-            "lineno": 130,
+            "lineno": 148,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50691,11 +50694,11 @@
         "comment": "",
         "meta": {
             "range": [
-                5066,
-                5072
+                5659,
+                5665
             ],
             "filename": "router.js",
-            "lineno": 131,
+            "lineno": 149,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50715,11 +50718,11 @@
         "comment": "",
         "meta": {
             "range": [
-                5090,
-                5124
+                5683,
+                5717
             ],
             "filename": "router.js",
-            "lineno": 132,
+            "lineno": 150,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50741,11 +50744,11 @@
         "comment": "",
         "meta": {
             "range": [
-                5142,
-                5160
+                5735,
+                5753
             ],
             "filename": "router.js",
-            "lineno": 133,
+            "lineno": 151,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50767,11 +50770,11 @@
         "comment": "",
         "meta": {
             "range": [
-                5210,
-                5256
+                5803,
+                5849
             ],
             "filename": "router.js",
-            "lineno": 135,
+            "lineno": 153,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50794,11 +50797,11 @@
         "comment": "",
         "meta": {
             "range": [
-                5274,
-                5296
+                5867,
+                5889
             ],
             "filename": "router.js",
-            "lineno": 136,
+            "lineno": 154,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50821,11 +50824,11 @@
         "comment": "",
         "meta": {
             "range": [
-                5330,
-                5561
+                5923,
+                6154
             ],
             "filename": "router.js",
-            "lineno": 138,
+            "lineno": 156,
             "columnno": 18,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50849,11 +50852,11 @@
         "comment": "",
         "meta": {
             "range": [
-                5365,
-                5404
+                5958,
+                5997
             ],
             "filename": "router.js",
-            "lineno": 139,
+            "lineno": 157,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50876,11 +50879,11 @@
         "comment": "",
         "meta": {
             "range": [
-                5575,
-                5616
+                6168,
+                6209
             ],
             "filename": "router.js",
-            "lineno": 145,
+            "lineno": 163,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50903,11 +50906,11 @@
         "comment": "",
         "meta": {
             "range": [
-                5673,
-                5686
+                6266,
+                6279
             ],
             "filename": "router.js",
-            "lineno": 147,
+            "lineno": 165,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50927,11 +50930,11 @@
         "comment": "",
         "meta": {
             "range": [
-                5704,
-                5719
+                6297,
+                6312
             ],
             "filename": "router.js",
-            "lineno": 148,
+            "lineno": 166,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50951,11 +50954,11 @@
         "comment": "",
         "meta": {
             "range": [
-                5986,
-                6077
+                6579,
+                6670
             ],
             "filename": "router.js",
-            "lineno": 160,
+            "lineno": 178,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50982,11 +50985,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6293,
-                6426
+                6886,
+                7019
             ],
             "filename": "router.js",
-            "lineno": 170,
+            "lineno": 188,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -51014,11 +51017,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6373,
-                6409
+                6966,
+                7002
             ],
             "filename": "router.js",
-            "lineno": 172,
+            "lineno": 190,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -51040,11 +51043,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6657,
-                7005
+                7250,
+                7598
             ],
             "filename": "router.js",
-            "lineno": 182,
+            "lineno": 200,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -51072,11 +51075,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6763,
-                6874
+                7356,
+                7467
             ],
             "filename": "router.js",
-            "lineno": 184,
+            "lineno": 202,
             "columnno": 18,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -51097,11 +51100,11 @@
         "comment": "",
         "meta": {
             "range": [
-                7120,
-                7365
+                7713,
+                7958
             ],
             "filename": "router.js",
-            "lineno": 197,
+            "lineno": 215,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -51126,11 +51129,11 @@
         "comment": "",
         "meta": {
             "range": [
-                7319,
-                7358
+                7912,
+                7951
             ],
             "filename": "router.js",
-            "lineno": 199,
+            "lineno": 217,
             "columnno": 85,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -51152,11 +51155,11 @@
         "comment": "/**\n     * Navigates to the specified URL.\n     * @static\n     * @param {string} [url] - The URL to navigate to.\n     */",
         "meta": {
             "range": [
-                7496,
-                7689
+                8089,
+                8282
             ],
             "filename": "router.js",
-            "lineno": 207,
+            "lineno": 225,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -51194,11 +51197,11 @@
         "comment": "",
         "meta": {
             "range": [
-                7646,
-                7672
+                8239,
+                8265
             ],
             "filename": "router.js",
-            "lineno": 211,
+            "lineno": 229,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -51220,11 +51223,11 @@
         "comment": "",
         "meta": {
             "range": [
-                7854,
-                8079
+                8447,
+                8672
             ],
             "filename": "router.js",
-            "lineno": 220,
+            "lineno": 238,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -51251,11 +51254,11 @@
         "comment": "",
         "meta": {
             "range": [
-                7899,
-                7945
+                8492,
+                8538
             ],
             "filename": "router.js",
-            "lineno": 221,
+            "lineno": 239,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -51277,11 +51280,11 @@
         "comment": "",
         "meta": {
             "range": [
-                7988,
-                8028
+                8581,
+                8621
             ],
             "filename": "router.js",
-            "lineno": 223,
+            "lineno": 241,
             "columnno": 18,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -51303,11 +51306,11 @@
         "comment": "",
         "meta": {
             "range": [
-                8304,
-                8509
+                8897,
+                9102
             ],
             "filename": "router.js",
-            "lineno": 234,
+            "lineno": 252,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -51335,11 +51338,11 @@
         "comment": "",
         "meta": {
             "range": [
-                8346,
-                8465
+                8939,
+                9058
             ],
             "filename": "router.js",
-            "lineno": 235,
+            "lineno": 253,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -51361,11 +51364,11 @@
         "comment": "",
         "meta": {
             "range": [
-                8390,
-                8403
+                8983,
+                8996
             ],
             "filename": "router.js",
-            "lineno": 236,
+            "lineno": 254,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -51385,11 +51388,11 @@
         "comment": "",
         "meta": {
             "range": [
-                8417,
-                8433
+                9010,
+                9026
             ],
             "filename": "router.js",
-            "lineno": 237,
+            "lineno": 255,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -51409,11 +51412,11 @@
         "comment": "",
         "meta": {
             "range": [
-                8447,
-                8453
+                9040,
+                9046
             ],
             "filename": "router.js",
-            "lineno": 238,
+            "lineno": 256,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -51433,11 +51436,11 @@
         "comment": "/**\n     * The array of defined routes.\n     * @static\n     * @type {Array}\n     */",
         "meta": {
             "range": [
-                8603,
-                8622
+                9196,
+                9215
             ],
             "filename": "router.js",
-            "lineno": 248,
+            "lineno": 266,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -51462,11 +51465,11 @@
         "comment": "",
         "meta": {
             "range": [
-                8723,
-                8743
+                9316,
+                9336
             ],
             "filename": "router.js",
-            "lineno": 255,
+            "lineno": 273,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -51486,7 +51489,7 @@
         "comment": "/**\n     * @typedef {Object} RouterUseRoutes\n     * @property {string} path - The path of the route.\n     * @property {HTMLElement} [component] - The component to render for the route.\n     * @property {Function} [load] - The function to load the component.\n     * @property {Function} [beforeLoad] - The function to call before loading the component.\n     * @property {RouterUseRoutes.<Array>} [children] - The child routes.\n     */",
         "meta": {
             "filename": "router.js",
-            "lineno": 257,
+            "lineno": 275,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {}
@@ -51556,7 +51559,7 @@
         "comment": "/**\n     * @typedef {Object} RouterUseOptions\n     * @property {boolean} [historyApiFallback=false] - Whether to use the History API for navigation.\n     */",
         "meta": {
             "filename": "router.js",
-            "lineno": 266,
+            "lineno": 284,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {}
@@ -51588,11 +51591,11 @@
         "comment": "/**\n     * Initializes the router with the specified routes and options.\n     * @static\n     * @param {RouterUseRoutes.<Array>} [routes=[]] - The array of routes.\n     * @param {RouterUseOptions} [options={}] - The router options.\n     */",
         "meta": {
             "range": [
-                9593,
-                10374
+                10186,
+                10967
             ],
             "filename": "router.js",
-            "lineno": 277,
+            "lineno": 295,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -51643,11 +51646,11 @@
         "comment": "",
         "meta": {
             "range": [
-                9641,
-                9661
+                10234,
+                10254
             ],
             "filename": "router.js",
-            "lineno": 278,
+            "lineno": 296,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -51669,11 +51672,11 @@
         "comment": "",
         "meta": {
             "range": [
-                9671,
-                9760
+                10264,
+                10353
             ],
             "filename": "router.js",
-            "lineno": 279,
+            "lineno": 297,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -51695,11 +51698,11 @@
         "comment": "",
         "meta": {
             "range": [
-                9700,
-                9725
+                10293,
+                10318
             ],
             "filename": "router.js",
-            "lineno": 280,
+            "lineno": 298,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -51720,11 +51723,11 @@
         "comment": "",
         "meta": {
             "range": [
-                9985,
-                10021
+                10578,
+                10614
             ],
             "filename": "router.js",
-            "lineno": 286,
+            "lineno": 304,
             "columnno": 18,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -51746,11 +51749,11 @@
         "comment": "",
         "meta": {
             "range": [
-                10036,
-                10181
+                10629,
+                10774
             ],
             "filename": "router.js",
-            "lineno": 288,
+            "lineno": 306,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -51771,11 +51774,11 @@
         "comment": "",
         "meta": {
             "range": [
-                10386,
-                10392
+                10979,
+                10985
             ],
             "filename": "router.js",
-            "lineno": 298,
+            "lineno": 316,
             "columnno": 9,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {

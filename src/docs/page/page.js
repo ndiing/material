@@ -43,6 +43,15 @@ class DocsPage extends MdComponent {
                 })))}</div>
                 <br>
             `:nothing}
+
+            ${item.examples?.length?html`
+                <h2>Examples</h2>
+                <br>
+                ${item.examples?.map(example=>html`
+                    <pre>${example}</pre>
+                    <br>
+                `)}
+            `:nothing}
             
         `)
     }
@@ -212,7 +221,6 @@ class DocsPage extends MdComponent {
     async handleDocsPageRouterNavigateSuccess(event) {
         const index = keys.findIndex((key) => key.routerLink === Router.pathname);
         this.data = values[index];
-        console.log(name, index, this.data);
         this.requestUpdate();
     }
 }

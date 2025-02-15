@@ -4,54 +4,58 @@ docs-page {
     h1 {
         @include mixins.typescale-headline-large();
     }
+
     h2 {
         @include mixins.typescale-headline-small();
     }
 
     table {
-        width: 100%;
         border-collapse: separate;
         border-spacing: 0;
-        border-radius: var(--md-sys-shape-corner-large);
+        width: 100%;
         overflow: hidden;
+        border-radius: var(--md-sys-shape-corner-large);
         border: 1px solid var(--md-sys-color-outline-variant);
-    }
-    th {
-        text-align: left;
-        // height: 56px;
-        padding: 16px 16px;
-        // width: 1%;
-        background-color: var(--md-sys-color-surface-container-highest);
-        border-bottom: 1px solid var(--md-sys-color-outline-variant);
-        border-right: 1px solid var(--md-sys-color-outline-variant);
-        &:last-child {
-            border-right: 0;
-        }
-    }
-    td {
-        // max-width: 0;
-        // height: 56px;
-        padding: 16px 16px;
-        border-bottom: 1px solid var(--md-sys-color-outline-variant);
-        border-right: 1px solid var(--md-sys-color-outline-variant);
-        &:last-child {
-            border-right: 0;
-        }
-    }
-    tbody {
-        tr {
-            &:last-child {
-                td {
-                    border-bottom: 0;
+        tbody {
+            tr {
+                &:last-child {
+                    td {
+                        border-bottom: 0;
+                    }
                 }
+            }
+        }
+        th {
+            text-align: left;
+            padding: 16px 16px;
+            background-color: var(--md-sys-color-surface-container-highest);
+            border-bottom: 1px solid var(--md-sys-color-outline-variant);
+            border-right: 1px solid var(--md-sys-color-outline-variant);
+            &:last-child {
+                border-right: 0;
+            }
+        }
+        td {
+            padding: 16px 16px;
+            border-bottom: 1px solid var(--md-sys-color-outline-variant);
+            border-right: 1px solid var(--md-sys-color-outline-variant);
+            &:last-child {
+                border-right: 0;
             }
         }
     }
 
+    pre,
     code {
-        border-radius: var(--md-sys-shape-corner-extra-small);
         padding: 0 4px;
+        border-radius: var(--md-sys-shape-corner-extra-small);
         background-color: var(--md-sys-color-surface-container-highest);
-        font-family: Consolas, "Courier New", monospace;
+        font-family: "Noto Sans Mono", serif;
+        white-space: pre-wrap;
+        word-break: break-word;
+    }
+
+    pre {
+        padding: 16px;
     }
 }
