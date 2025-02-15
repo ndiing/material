@@ -7,13 +7,17 @@ const localization = configureLocalization({
 });
 
 /**
+ * Retrieves the current locale.
+ * @returns {string} The current locale.
  */
 function getLocale() {
     return localization.getLocale(arguments);
 }
 
 /**
- * @param {Any} [locale]
+ * Sets the specified locale.
+ * @param {string} [locale] - The locale to set.
+ * @returns {Promise<void>} A promise that resolves when the locale is set.
  */
 function setLocale(locale) {
     return localization.setLocale(locale);

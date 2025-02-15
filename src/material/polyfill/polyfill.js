@@ -1,5 +1,7 @@
 /**
- * @param {Any} [week]
+ * Sets the date to the specified week of the year.
+ * @param {number} week - The week number to set.
+ * @returns {Date} The updated date object.
  */
 Date.prototype.setWeek = function (week) {
     const year = this.getFullYear();
@@ -11,6 +13,8 @@ Date.prototype.setWeek = function (week) {
 };
 
 /**
+ * Gets the current week number of the year.
+ * @returns {number} The week number.
  */
 Date.prototype.getWeek = function () {
     const target = new Date(this.valueOf());

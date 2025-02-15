@@ -13,6 +13,14 @@ class Router {
      */
     static params = {};
 
+    // /**
+    //  * Retrieves the matching route(s) based on the provided pathname.
+    //  * @param {string} [pathname=this.pathname] - The current pathname to match against.
+    //  * @param {Array} [routes=this.routes] - The array of routes to search within.
+    //  * @param {Object} [parent=null] - The parent route, if any.
+    //  * @param {Array} [result=[]] - The accumulated matched routes.
+    //  * @returns {Array} The array of matched routes.
+    //  */
     static get(pathname = this.pathname, routes = this.routes, parent = null, result = []) {
         for (const route of routes) {
             if (!route.regexp) {
@@ -48,6 +56,11 @@ class Router {
         }
     }
 
+    // /**
+    //  * Handles navigation events, triggering the route change process.
+    //  * @static
+    //  * @param {Event} event - The navigation event.
+    //  */
     static async handleNavigation(event) {
         performance.mark("mark-1");
         this.emit("onRouterCurrentEntryChange");
@@ -77,6 +90,11 @@ class Router {
         this.emit("onRouterNavigateSuccess");
     }
 
+    // /**
+    //  * Removes components from previous routes that are no longer in use.
+    //  * @static
+    //  * @param {Array} routes - The array of current routes.
+    //  */
     static removeComponent(routes) {
         const outlets = Array.from(document.body.querySelectorAll("md-outlet"));
         for (const outlet of outlets) {
@@ -90,10 +108,23 @@ class Router {
         }
     }
 
+    // /**
+    //  * Renders the specified component for the given route into the provided outlet.
+    //  * @static
+    //  * @param {Object} route - The route object containing the component to render.
+    //  * @param {HTMLElement} outlet - The outlet element where the component should be rendered.
+    //  */
     static renderComponent(route, outlet) {
         if (!route.component.isConnected) outlet.parentElement.insertBefore(route.component, outlet.nextElementSibling);
     }
 
+    // /**
+    //  * Retrieves the outlet element for the specified route.
+    //  * @static
+    //  * @param {HTMLElement} container - The container element where the outlet is located.
+    //  * @param {Object} route - The route object containing outlet information.
+    //  * @returns {Promise<HTMLElement>} A promise that resolves to the outlet element.
+    //  */
     static async getOutlet(container, route) {
         return await new Promise((resolve) => {
             let observer;
@@ -120,16 +151,34 @@ class Router {
         });
     }
 
+    // /**
+    //  * Sets the container for the specified route.
+    //  * @static
+    //  * @param {Object} route - The route object.
+    //  * @returns {HTMLElement} The container element.
+    //  */
     static setContainer(route) {
         return route.parent?.component || document.body;
     }
 
+    // /**
+    //  * Loads the component for the specified route.
+    //  * @static
+    //  * @param {Object} route - The route object containing load information.
+    //  * @returns {Promise<void>}
+    //  */
     static async loadComponent(route) {
         if (!route.component) {
             route.component = await route.load();
         }
     }
 
+    // /**
+    //  * Handles the beforeLoad event for the specified route.
+    //  * @static
+    //  * @param {Object} route - The route object containing beforeLoad information.
+    //  * @returns {Promise<void>}
+    //  */
     static async handleBeforeLoad(route) {
         await new Promise((resolve, reject) => {
             const callback = (error) => {
@@ -141,6 +190,10 @@ class Router {
         });
     }
 
+    // /**
+    //  * Sets the AbortController for handling route cancellations.
+    //  * @static
+    //  */
     static setController() {
         if (this.controller && !this.controller.signal.aborted) this.controller.abort();
         if (!this.controller || (this.controller && this.controller.signal.aborted)) this.controller = new AbortController();
@@ -159,6 +212,11 @@ class Router {
         }
     }
 
+    // /**
+    //  * Handles navigate events triggered by user interactions.
+    //  * @static
+    //  * @param {Event} event - The navigate event.
+    //  */
     static handleNavigate(event) {
         const element = event.target.closest("[routerLink]");
         if (element) {
@@ -167,6 +225,12 @@ class Router {
         }
     }
 
+    // /**
+    //  * Emits a custom event of the specified type.
+    //  * @static
+    //  * @param {string} type - The type of event to emit.
+    //  * @param {Object} [detail] - The optional event details.
+    //  */
     static emit(type, detail) {
         const event = new CustomEvent(type, {
             bubbles: true,
@@ -175,7 +239,19 @@ class Router {
         });
         window.dispatchEvent(event);
     }
+
+    /**
+     * The array of defined routes.
+     * @static
+     * @type {Array}
+     */
     static routes = [];
+
+    // /**
+    //  * The router options.
+    //  * @static
+    //  * @type {Object}
+    //  */
     static options = {};
 
     /**

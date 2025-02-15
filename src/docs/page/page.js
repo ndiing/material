@@ -23,6 +23,25 @@ class DocsPage extends MdComponent {
                 <div><code>&lt;${item.tags?.map(tag=>tag.value)}&gt;</code></div>
                 <br>
             `:nothing}
+
+            <div><code>new ${item.name}(${item.params?.map(param=>param.name).join(', ')})</code></div>
+            <br>
+            ${item.description?html`
+                <div>${item.description}</div>
+                <br>
+            `:nothing}
+            ${item.params?.length?html`
+                <div>${this.renderTable([
+                    {name:'name',label:'Label'},
+                    {name:'type',label:'Type'},
+                    {name:'description',label:'Description'},
+                ],item.params.map(prop=>({
+                    name:prop.name,
+                    type:prop.type?.names.join('|'),
+                    description:prop.description,
+                })))}</div>
+                <br>
+            `:nothing}
             
         `)
     }
@@ -195,6 +214,7 @@ class DocsPage extends MdComponent {
         const name = Router.pathname.split("/").slice(2).join("/");
         const index = keys.findIndex((key) => key === name + ".js");
         this.data = values[index];
+        console.log(this.data)
         this.requestUpdate();
     }
 }

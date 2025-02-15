@@ -1,13 +1,13 @@
 [
     {
-        "comment": "/**\n * @extends MdComponent\n * @element md-badge\n */",
+        "comment": "/**\n * MdBadgeComponent class responsible for displaying a badge with a label.\n * @extends MdComponent\n * @element md-badge\n */",
         "meta": {
             "range": [
-                145,
-                661
+                220,
+                1218
             ],
             "filename": "badge.js",
-            "lineno": 8,
+            "lineno": 9,
             "columnno": 0,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\badge",
             "code": {
@@ -17,6 +17,7 @@
                 "paramnames": []
             }
         },
+        "classdesc": "MdBadgeComponent class responsible for displaying a badge with a label.",
         "augments": [
             "MdComponent"
         ],
@@ -35,14 +36,14 @@
         "undocumented": true
     },
     {
-        "comment": "/**\n     * @property {Number} [label]\n     * @property {Number} [max]\n     */",
+        "comment": "/**\n     * The properties of the component.\n     * @property {number} [label] - The label to display in the badge.\n     * @property {number} [max=999] - The maximum value to display.\n     */",
         "meta": {
             "range": [
-                276,
-                368
+                464,
+                556
             ],
             "filename": "badge.js",
-            "lineno": 13,
+            "lineno": 15,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\badge",
             "code": {
@@ -51,23 +52,27 @@
                 "type": "ClassProperty"
             }
         },
+        "description": "The properties of the component.",
         "properties": [
             {
                 "type": {
                     "names": [
-                        "Number"
+                        "number"
                     ]
                 },
                 "optional": true,
+                "description": "The label to display in the badge.",
                 "name": "label"
             },
             {
                 "type": {
                     "names": [
-                        "Number"
+                        "number"
                     ]
                 },
                 "optional": true,
+                "defaultvalue": 999,
+                "description": "The maximum value to display.",
                 "name": "max"
             }
         ],
@@ -81,11 +86,11 @@
         "comment": "",
         "meta": {
             "range": [
-                306,
-                329
+                494,
+                517
             ],
             "filename": "badge.js",
-            "lineno": 14,
+            "lineno": 16,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\badge",
             "code": {
@@ -105,11 +110,11 @@
         "comment": "",
         "meta": {
             "range": [
-                315,
-                327
+                503,
+                515
             ],
             "filename": "badge.js",
-            "lineno": 14,
+            "lineno": 16,
             "columnno": 17,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\badge",
             "code": {
@@ -130,11 +135,11 @@
         "comment": "",
         "meta": {
             "range": [
-                339,
-                360
+                527,
+                548
             ],
             "filename": "badge.js",
-            "lineno": 15,
+            "lineno": 17,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\badge",
             "code": {
@@ -154,11 +159,11 @@
         "comment": "",
         "meta": {
             "range": [
-                346,
-                358
+                534,
+                546
             ],
             "filename": "badge.js",
-            "lineno": 15,
+            "lineno": 17,
             "columnno": 15,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\badge",
             "code": {
@@ -176,14 +181,14 @@
         "scope": "static"
     },
     {
-        "comment": "",
+        "comment": "/**\n     * Creates an instance of the MdBadgeComponent class.\n     */",
         "meta": {
             "range": [
-                374,
-                436
+                636,
+                698
             ],
             "filename": "badge.js",
-            "lineno": 18,
+            "lineno": 23,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\badge",
             "code": {
@@ -196,22 +201,23 @@
                 "": null
             }
         },
-        "undocumented": true,
+        "description": "Creates an instance of the MdBadgeComponent class.",
         "name": "MdBadgeComponent",
         "longname": "MdBadgeComponent",
         "kind": "class",
         "scope": "global",
-        "params": []
+        "params": [],
+        "undocumented": true
     },
     {
-        "comment": "/**\n * @extends MdComponent\n * @element md-badge\n */",
+        "comment": "/**\n * MdBadgeComponent class responsible for displaying a badge with a label.\n * @extends MdComponent\n * @element md-badge\n */",
         "meta": {
             "range": [
-                145,
-                661
+                220,
+                1218
             ],
             "filename": "badge.js",
-            "lineno": 8,
+            "lineno": 9,
             "columnno": 0,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\badge",
             "code": {
@@ -224,6 +230,7 @@
         "name": "MdBadgeComponent",
         "longname": "MdBadgeComponent",
         "kind": "class",
+        "classdesc": "MdBadgeComponent class responsible for displaying a badge with a label.",
         "augments": [
             "MdComponent"
         ],
@@ -235,17 +242,18 @@
                 "value": "md-badge"
             }
         ],
-        "scope": "global"
+        "scope": "global",
+        "description": "Creates an instance of the MdBadgeComponent class."
     },
     {
         "comment": "",
         "meta": {
             "range": [
-                415,
-                429
+                677,
+                691
             ],
             "filename": "badge.js",
-            "lineno": 20,
+            "lineno": 25,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\badge",
             "code": {
@@ -267,11 +275,11 @@
         "comment": "",
         "meta": {
             "range": [
-                442,
-                551
+                866,
+                975
             ],
             "filename": "badge.js",
-            "lineno": 23,
+            "lineno": 32,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\badge",
             "code": {
@@ -296,11 +304,11 @@
         "comment": "",
         "meta": {
             "range": [
-                557,
-                659
+                1114,
+                1216
             ],
             "filename": "badge.js",
-            "lineno": 27,
+            "lineno": 40,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\badge",
             "code": {
@@ -325,11 +333,11 @@
         "comment": "",
         "meta": {
             "range": [
-                724,
-                740
+                1281,
+                1297
             ],
             "filename": "badge.js",
-            "lineno": 33,
+            "lineno": 46,
             "columnno": 9,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\badge",
             "code": {
@@ -6321,14 +6329,14 @@
         "scope": "global"
     },
     {
-        "comment": "/**\n * @param {Any} [input]\n * @param {Any} [customColors]\n */",
+        "comment": "/**\n * Sets the theme based on the provided input and custom colors.\n * @param {HTMLImageElement|string} input - The input for generating the theme. Can be an HTMLImageElement for image-based themes or a hex color string.\n * @param {Object} [customColors] - Optional custom colors to use in the theme.\n * @returns {Promise<void>} A promise that resolves when the theme is applied.\n */",
         "meta": {
             "range": [
-                180,
-                1750
+                502,
+                2072
             ],
             "filename": "color.js",
-            "lineno": 7,
+            "lineno": 9,
             "columnno": 0,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\color",
             "code": {
@@ -6359,24 +6367,37 @@
                 "systemDark": "setTheme~systemDark"
             }
         },
+        "description": "Sets the theme based on the provided input and custom colors.",
         "params": [
             {
                 "type": {
                     "names": [
-                        "Any"
+                        "HTMLImageElement",
+                        "string"
                     ]
                 },
-                "optional": true,
+                "description": "The input for generating the theme. Can be an HTMLImageElement for image-based themes or a hex color string.",
                 "name": "input"
             },
             {
                 "type": {
                     "names": [
-                        "Any"
+                        "Object"
                     ]
                 },
                 "optional": true,
+                "description": "Optional custom colors to use in the theme.",
                 "name": "customColors"
+            }
+        ],
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "Promise.<void>"
+                    ]
+                },
+                "description": "A promise that resolves when the theme is applied."
             }
         ],
         "name": "setTheme",
@@ -6389,11 +6410,11 @@
         "comment": "",
         "meta": {
             "range": [
-                235,
-                240
+                557,
+                562
             ],
             "filename": "color.js",
-            "lineno": 8,
+            "lineno": 10,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\color",
             "code": {
@@ -6413,11 +6434,11 @@
         "comment": "",
         "meta": {
             "range": [
-                295,
-                344
+                617,
+                666
             ],
             "filename": "color.js",
-            "lineno": 10,
+            "lineno": 12,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\color",
             "code": {
@@ -6440,11 +6461,11 @@
         "comment": "",
         "meta": {
             "range": [
-                367,
-                429
+                689,
+                751
             ],
             "filename": "color.js",
-            "lineno": 12,
+            "lineno": 14,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\color",
             "code": {
@@ -6467,11 +6488,11 @@
         "comment": "",
         "meta": {
             "range": [
-                441,
-                509
+                763,
+                831
             ],
             "filename": "color.js",
-            "lineno": 14,
+            "lineno": 16,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\color",
             "code": {
@@ -6494,11 +6515,11 @@
         "comment": "",
         "meta": {
             "range": [
-                515,
-                587
+                837,
+                909
             ],
             "filename": "color.js",
-            "lineno": 15,
+            "lineno": 17,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\color",
             "code": {
@@ -6521,11 +6542,11 @@
         "comment": "",
         "meta": {
             "range": [
-                593,
-                673
+                915,
+                995
             ],
             "filename": "color.js",
-            "lineno": 16,
+            "lineno": 18,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\color",
             "code": {
@@ -6548,11 +6569,11 @@
         "comment": "",
         "meta": {
             "range": [
-                679,
-                757
+                1001,
+                1079
             ],
             "filename": "color.js",
-            "lineno": 17,
+            "lineno": 19,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\color",
             "code": {
@@ -6575,11 +6596,11 @@
         "comment": "",
         "meta": {
             "range": [
-                763,
-                838
+                1085,
+                1160
             ],
             "filename": "color.js",
-            "lineno": 18,
+            "lineno": 20,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\color",
             "code": {
@@ -6602,11 +6623,11 @@
         "comment": "",
         "meta": {
             "range": [
-                844,
-                923
+                1166,
+                1245
             ],
             "filename": "color.js",
-            "lineno": 19,
+            "lineno": 21,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\color",
             "code": {
@@ -6629,11 +6650,11 @@
         "comment": "",
         "meta": {
             "range": [
-                929,
-                1011
+                1251,
+                1333
             ],
             "filename": "color.js",
-            "lineno": 20,
+            "lineno": 22,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\color",
             "code": {
@@ -6656,11 +6677,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1017,
-                1087
+                1339,
+                1409
             ],
             "filename": "color.js",
-            "lineno": 21,
+            "lineno": 23,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\color",
             "code": {
@@ -6683,11 +6704,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1093,
-                1166
+                1415,
+                1488
             ],
             "filename": "color.js",
-            "lineno": 22,
+            "lineno": 24,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\color",
             "code": {
@@ -6710,11 +6731,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1172,
-                1255
+                1494,
+                1577
             ],
             "filename": "color.js",
-            "lineno": 23,
+            "lineno": 25,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\color",
             "code": {
@@ -6737,11 +6758,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1261,
-                1340
+                1583,
+                1662
             ],
             "filename": "color.js",
-            "lineno": 24,
+            "lineno": 26,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\color",
             "code": {
@@ -6764,11 +6785,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1346,
-                1422
+                1668,
+                1744
             ],
             "filename": "color.js",
-            "lineno": 25,
+            "lineno": 27,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\color",
             "code": {
@@ -6791,11 +6812,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1428,
-                1508
+                1750,
+                1830
             ],
             "filename": "color.js",
-            "lineno": 26,
+            "lineno": 28,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\color",
             "code": {
@@ -6818,11 +6839,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1514,
-                1597
+                1836,
+                1919
             ],
             "filename": "color.js",
-            "lineno": 27,
+            "lineno": 29,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\color",
             "code": {
@@ -6845,11 +6866,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1609,
-                1679
+                1931,
+                2001
             ],
             "filename": "color.js",
-            "lineno": 28,
+            "lineno": 30,
             "columnno": 10,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\color",
             "code": {
@@ -6871,11 +6892,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1705,
-                1726
+                2027,
+                2048
             ],
             "filename": "color.js",
-            "lineno": 29,
+            "lineno": 31,
             "columnno": 24,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\color",
             "code": {
@@ -6895,11 +6916,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1728,
-                1744
+                2050,
+                2066
             ],
             "filename": "color.js",
-            "lineno": 29,
+            "lineno": 31,
             "columnno": 47,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\color",
             "code": {
@@ -6919,11 +6940,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1760,
-                1768
+                2082,
+                2090
             ],
             "filename": "color.js",
-            "lineno": 31,
+            "lineno": 33,
             "columnno": 9,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\color",
             "code": {
@@ -27753,14 +27774,14 @@
         "scope": "global"
     },
     {
-        "comment": "/**\n */",
+        "comment": "/**\n * Layout class responsible for managing layout changes based on media queries.\n */",
         "meta": {
             "range": [
-                8,
-                925
+                88,
+                1527
             ],
             "filename": "layout.js",
-            "lineno": 3,
+            "lineno": 4,
             "columnno": 0,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout",
             "code": {
@@ -27772,6 +27793,7 @@
                 ]
             }
         },
+        "classdesc": "Layout class responsible for managing layout changes based on media queries.",
         "name": "Layout",
         "longname": "Layout",
         "kind": "class",
@@ -27779,14 +27801,14 @@
         "undocumented": true
     },
     {
-        "comment": "",
+        "comment": "/**\n     * An array of layout items, each containing a name and a media query.\n     * @type {Array<Object>}\n     */",
         "meta": {
             "range": [
-                27,
-                297
+                227,
+                497
             ],
             "filename": "layout.js",
-            "lineno": 4,
+            "lineno": 9,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout",
             "code": {
@@ -27795,7 +27817,12 @@
                 "type": "ClassProperty"
             }
         },
-        "undocumented": true,
+        "description": "An array of layout items, each containing a name and a media query.",
+        "type": {
+            "names": [
+                "Array.<Object>"
+            ]
+        },
         "name": "items",
         "longname": "Layout#items",
         "kind": "member",
@@ -27806,11 +27833,11 @@
         "comment": "",
         "meta": {
             "range": [
-                47,
-                63
+                247,
+                263
             ],
             "filename": "layout.js",
-            "lineno": 5,
+            "lineno": 10,
             "columnno": 10,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout",
             "code": {
@@ -27830,11 +27857,11 @@
         "comment": "",
         "meta": {
             "range": [
-                65,
-                111
+                265,
+                311
             ],
             "filename": "layout.js",
-            "lineno": 5,
+            "lineno": 10,
             "columnno": 28,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout",
             "code": {
@@ -27854,11 +27881,11 @@
         "comment": "",
         "meta": {
             "range": [
-                125,
-                139
+                325,
+                339
             ],
             "filename": "layout.js",
-            "lineno": 6,
+            "lineno": 11,
             "columnno": 10,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout",
             "code": {
@@ -27878,11 +27905,11 @@
         "comment": "",
         "meta": {
             "range": [
-                141,
-                210
+                341,
+                410
             ],
             "filename": "layout.js",
-            "lineno": 6,
+            "lineno": 11,
             "columnno": 26,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout",
             "code": {
@@ -27902,11 +27929,11 @@
         "comment": "",
         "meta": {
             "range": [
-                224,
-                239
+                424,
+                439
             ],
             "filename": "layout.js",
-            "lineno": 7,
+            "lineno": 12,
             "columnno": 10,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout",
             "code": {
@@ -27926,11 +27953,11 @@
         "comment": "",
         "meta": {
             "range": [
-                241,
-                287
+                441,
+                487
             ],
             "filename": "layout.js",
-            "lineno": 7,
+            "lineno": 12,
             "columnno": 27,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout",
             "code": {
@@ -27947,14 +27974,14 @@
         "scope": "global"
     },
     {
-        "comment": "/**\n     * @param {Any} [callback]\n     */",
+        "comment": "/**\n     * Creates an instance of Layout.\n     * @param {Function} callback - The callback function to be executed when the layout changes.\n     */",
         "meta": {
             "range": [
-                350,
-                482
+                655,
+                787
             ],
             "filename": "layout.js",
-            "lineno": 13,
+            "lineno": 19,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout",
             "code": {
@@ -27969,14 +27996,15 @@
                 "": null
             }
         },
+        "description": "Creates an instance of Layout.",
         "params": [
             {
                 "type": {
                     "names": [
-                        "Any"
+                        "function"
                     ]
                 },
-                "optional": true,
+                "description": "The callback function to be executed when the layout changes.",
                 "name": "callback"
             }
         ],
@@ -27987,14 +28015,14 @@
         "undocumented": true
     },
     {
-        "comment": "/**\n */",
+        "comment": "/**\n * Layout class responsible for managing layout changes based on media queries.\n */",
         "meta": {
             "range": [
-                8,
-                925
+                88,
+                1527
             ],
             "filename": "layout.js",
-            "lineno": 3,
+            "lineno": 4,
             "columnno": 0,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout",
             "code": {
@@ -28009,15 +28037,17 @@
         "name": "Layout",
         "longname": "Layout",
         "kind": "class",
+        "classdesc": "Layout class responsible for managing layout changes based on media queries.",
         "scope": "global",
+        "description": "Creates an instance of Layout.",
         "params": [
             {
                 "type": {
                     "names": [
-                        "Any"
+                        "function"
                     ]
                 },
-                "optional": true,
+                "description": "The callback function to be executed when the layout changes.",
                 "name": "callback"
             }
         ]
@@ -28026,11 +28056,11 @@
         "comment": "",
         "meta": {
             "range": [
-                382,
-                417
+                687,
+                722
             ],
             "filename": "layout.js",
-            "lineno": 14,
+            "lineno": 20,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout",
             "code": {
@@ -28052,11 +28082,11 @@
         "comment": "",
         "meta": {
             "range": [
-                427,
-                475
+                732,
+                780
             ],
             "filename": "layout.js",
-            "lineno": 15,
+            "lineno": 21,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout",
             "code": {
@@ -28075,14 +28105,14 @@
         "scope": "instance"
     },
     {
-        "comment": "/**\n     */",
+        "comment": "",
         "meta": {
             "range": [
-                504,
-                571
+                915,
+                982
             ],
             "filename": "layout.js",
-            "lineno": 20,
+            "lineno": 27,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout",
             "code": {
@@ -28095,6 +28125,7 @@
                 "": null
             }
         },
+        "undocumented": true,
         "name": "handleChange",
         "longname": "Layout#handleChange",
         "kind": "function",
@@ -28103,14 +28134,14 @@
         "params": []
     },
     {
-        "comment": "/**\n     */",
+        "comment": "/**\n     * Initializes the layout by finding the matching media query and executing the callback.\n     */",
         "meta": {
             "range": [
-                593,
-                779
+                1098,
+                1284
             ],
             "filename": "layout.js",
-            "lineno": 27,
+            "lineno": 35,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout",
             "code": {
@@ -28123,6 +28154,7 @@
                 "": null
             }
         },
+        "description": "Initializes the layout by finding the matching media query and executing the callback.",
         "name": "init",
         "longname": "Layout#init",
         "kind": "function",
@@ -28134,11 +28166,11 @@
         "comment": "",
         "meta": {
             "range": [
-                610,
-                667
+                1115,
+                1172
             ],
             "filename": "layout.js",
-            "lineno": 28,
+            "lineno": 36,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout",
             "code": {
@@ -28157,14 +28189,14 @@
         "scope": "instance"
     },
     {
-        "comment": "/**\n     */",
+        "comment": "/**\n     * Destroys the current layout by removing the event listener from the matching media query.\n     */",
         "meta": {
             "range": [
-                801,
-                923
+                1403,
+                1525
             ],
             "filename": "layout.js",
-            "lineno": 35,
+            "lineno": 44,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout",
             "code": {
@@ -28177,6 +28209,7 @@
                 "": null
             }
         },
+        "description": "Destroys the current layout by removing the event listener from the matching media query.",
         "name": "destroy",
         "longname": "Layout#destroy",
         "kind": "function",
@@ -28188,11 +28221,11 @@
         "comment": "",
         "meta": {
             "range": [
-                895,
-                916
+                1497,
+                1518
             ],
             "filename": "layout.js",
-            "lineno": 37,
+            "lineno": 46,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout",
             "code": {
@@ -28214,11 +28247,11 @@
         "comment": "",
         "meta": {
             "range": [
-                935,
-                941
+                1537,
+                1543
             ],
             "filename": "layout.js",
-            "lineno": 40,
+            "lineno": 49,
             "columnno": 9,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout",
             "code": {
@@ -31022,14 +31055,14 @@
         "scope": "global"
     },
     {
-        "comment": "/**\n */",
+        "comment": "/**\n * Retrieves the current locale.\n * @returns {string} The current locale.\n */",
         "meta": {
             "range": [
-                305,
-                375
+                379,
+                449
             ],
             "filename": "localization.js",
-            "lineno": 11,
+            "lineno": 13,
             "columnno": 0,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\localization",
             "code": {
@@ -31039,6 +31072,17 @@
                 "paramnames": []
             }
         },
+        "description": "Retrieves the current locale.",
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "string"
+                    ]
+                },
+                "description": "The current locale."
+            }
+        ],
         "name": "getLocale",
         "longname": "getLocale",
         "kind": "function",
@@ -31046,14 +31090,14 @@
         "params": []
     },
     {
-        "comment": "/**\n * @param {Any} [locale]\n */",
+        "comment": "/**\n * Sets the specified locale.\n * @param {string} [locale] - The locale to set.\n * @returns {Promise<void>} A promise that resolves when the locale is set.\n */",
         "meta": {
             "range": [
-                410,
-                483
+                614,
+                687
             ],
             "filename": "localization.js",
-            "lineno": 18,
+            "lineno": 22,
             "columnno": 0,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\localization",
             "code": {
@@ -31065,15 +31109,27 @@
                 ]
             }
         },
+        "description": "Sets the specified locale.",
         "params": [
             {
                 "type": {
                     "names": [
-                        "Any"
+                        "string"
                     ]
                 },
                 "optional": true,
+                "description": "The locale to set.",
                 "name": "locale"
+            }
+        ],
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "Promise.<void>"
+                    ]
+                },
+                "description": "A promise that resolves when the locale is set."
             }
         ],
         "name": "setLocale",
@@ -31085,11 +31141,11 @@
         "comment": "",
         "meta": {
             "range": [
-                493,
-                502
+                697,
+                706
             ],
             "filename": "localization.js",
-            "lineno": 21,
+            "lineno": 25,
             "columnno": 9,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\localization",
             "code": {
@@ -31108,11 +31164,11 @@
         "comment": "",
         "meta": {
             "range": [
-                504,
-                513
+                708,
+                717
             ],
             "filename": "localization.js",
-            "lineno": 21,
+            "lineno": 25,
             "columnno": 20,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\localization",
             "code": {
@@ -43504,14 +43560,14 @@
         "scope": "global"
     },
     {
-        "comment": "/**\n * @param {Any} [week]\n */",
+        "comment": "/**\n * Sets the date to the specified week of the year.\n * @param {number} week - The week number to set.\n * @returns {Date} The updated date object.\n */",
         "meta": {
             "range": [
-                31,
-                349
+                154,
+                472
             ],
             "filename": "polyfill.js",
-            "lineno": 4,
+            "lineno": 6,
             "columnno": 0,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\polyfill",
             "code": {
@@ -43529,15 +43585,26 @@
                 "weekStartTime": "Date#setWeek~weekStartTime"
             }
         },
+        "description": "Sets the date to the specified week of the year.",
         "params": [
             {
                 "type": {
                     "names": [
-                        "Any"
+                        "number"
                     ]
                 },
-                "optional": true,
+                "description": "The week number to set.",
                 "name": "week"
+            }
+        ],
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "Date"
+                    ]
+                },
+                "description": "The updated date object."
             }
         ],
         "name": "setWeek",
@@ -43550,11 +43617,11 @@
         "comment": "",
         "meta": {
             "range": [
-                84,
-                109
+                207,
+                232
             ],
             "filename": "polyfill.js",
-            "lineno": 5,
+            "lineno": 7,
             "columnno": 10,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\polyfill",
             "code": {
@@ -43576,11 +43643,11 @@
         "comment": "",
         "meta": {
             "range": [
-                121,
-                157
+                244,
+                280
             ],
             "filename": "polyfill.js",
-            "lineno": 6,
+            "lineno": 8,
             "columnno": 10,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\polyfill",
             "code": {
@@ -43602,11 +43669,11 @@
         "comment": "",
         "meta": {
             "range": [
-                169,
-                212
+                292,
+                335
             ],
             "filename": "polyfill.js",
-            "lineno": 7,
+            "lineno": 9,
             "columnno": 10,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\polyfill",
             "code": {
@@ -43628,11 +43695,11 @@
         "comment": "",
         "meta": {
             "range": [
-                224,
-                296
+                347,
+                419
             ],
             "filename": "polyfill.js",
-            "lineno": 8,
+            "lineno": 10,
             "columnno": 10,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\polyfill",
             "code": {
@@ -43651,14 +43718,14 @@
         "params": []
     },
     {
-        "comment": "/**\n */",
+        "comment": "/**\n * Gets the current week number of the year.\n * @returns {number} The week number.\n */",
         "meta": {
             "range": [
-                360,
-                718
+                566,
+                924
             ],
             "filename": "polyfill.js",
-            "lineno": 15,
+            "lineno": 19,
             "columnno": 0,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\polyfill",
             "code": {
@@ -43674,6 +43741,17 @@
                 "weekNumber": "Date#getWeek~weekNumber"
             }
         },
+        "description": "Gets the current week number of the year.",
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "number"
+                    ]
+                },
+                "description": "The week number."
+            }
+        ],
         "name": "getWeek",
         "longname": "Date#getWeek",
         "kind": "function",
@@ -43684,11 +43762,11 @@
         "comment": "",
         "meta": {
             "range": [
-                409,
-                442
+                615,
+                648
             ],
             "filename": "polyfill.js",
-            "lineno": 16,
+            "lineno": 20,
             "columnno": 10,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\polyfill",
             "code": {
@@ -43710,11 +43788,11 @@
         "comment": "",
         "meta": {
             "range": [
-                454,
-                485
+                660,
+                691
             ],
             "filename": "polyfill.js",
-            "lineno": 17,
+            "lineno": 21,
             "columnno": 10,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\polyfill",
             "code": {
@@ -43736,11 +43814,11 @@
         "comment": "",
         "meta": {
             "range": [
-                547,
-                599
+                753,
+                805
             ],
             "filename": "polyfill.js",
-            "lineno": 19,
+            "lineno": 23,
             "columnno": 10,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\polyfill",
             "code": {
@@ -43762,11 +43840,11 @@
         "comment": "",
         "meta": {
             "range": [
-                611,
-                692
+                817,
+                898
             ],
             "filename": "polyfill.js",
-            "lineno": 20,
+            "lineno": 24,
             "columnno": 10,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\polyfill",
             "code": {
@@ -43788,11 +43866,11 @@
         "comment": "",
         "meta": {
             "range": [
-                58,
-                1796
+                894,
+                2632
             ],
             "filename": "popper.js",
-            "lineno": 3,
+            "lineno": 14,
             "columnno": 0,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -43823,11 +43901,11 @@
         "comment": "",
         "meta": {
             "range": [
-                124,
-                137
+                960,
+                973
             ],
             "filename": "popper.js",
-            "lineno": 4,
+            "lineno": 15,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -43847,11 +43925,11 @@
         "comment": "",
         "meta": {
             "range": [
-                139,
-                150
+                975,
+                986
             ],
             "filename": "popper.js",
-            "lineno": 4,
+            "lineno": 15,
             "columnno": 27,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -43871,11 +43949,11 @@
         "comment": "",
         "meta": {
             "range": [
-                152,
-                158
+                988,
+                994
             ],
             "filename": "popper.js",
-            "lineno": 4,
+            "lineno": 15,
             "columnno": 40,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -43895,11 +43973,11 @@
         "comment": "",
         "meta": {
             "range": [
-                184,
-                188
+                1020,
+                1024
             ],
             "filename": "popper.js",
-            "lineno": 5,
+            "lineno": 16,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -43919,11 +43997,11 @@
         "comment": "",
         "meta": {
             "range": [
-                190,
-                193
+                1026,
+                1029
             ],
             "filename": "popper.js",
-            "lineno": 5,
+            "lineno": 16,
             "columnno": 18,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -43943,11 +44021,11 @@
         "comment": "",
         "meta": {
             "range": [
-                195,
-                200
+                1031,
+                1036
             ],
             "filename": "popper.js",
-            "lineno": 5,
+            "lineno": 16,
             "columnno": 23,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -43967,11 +44045,11 @@
         "comment": "",
         "meta": {
             "range": [
-                202,
-                208
+                1038,
+                1044
             ],
             "filename": "popper.js",
-            "lineno": 5,
+            "lineno": 16,
             "columnno": 30,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -43991,11 +44069,11 @@
         "comment": "",
         "meta": {
             "range": [
-                210,
-                215
+                1046,
+                1051
             ],
             "filename": "popper.js",
-            "lineno": 5,
+            "lineno": 16,
             "columnno": 38,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -44015,11 +44093,11 @@
         "comment": "",
         "meta": {
             "range": [
-                217,
-                223
+                1053,
+                1059
             ],
             "filename": "popper.js",
-            "lineno": 5,
+            "lineno": 16,
             "columnno": 45,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -44039,11 +44117,11 @@
         "comment": "",
         "meta": {
             "range": [
-                251,
-                279
+                1087,
+                1115
             ],
             "filename": "popper.js",
-            "lineno": 6,
+            "lineno": 17,
             "columnno": 10,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -44065,11 +44143,11 @@
         "comment": "",
         "meta": {
             "range": [
-                291,
-                321
+                1127,
+                1157
             ],
             "filename": "popper.js",
-            "lineno": 7,
+            "lineno": 18,
             "columnno": 10,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -44091,11 +44169,11 @@
         "comment": "",
         "meta": {
             "range": [
-                333,
-                1739
+                1169,
+                2575
             ],
             "filename": "popper.js",
-            "lineno": 8,
+            "lineno": 19,
             "columnno": 10,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -44117,11 +44195,11 @@
         "comment": "",
         "meta": {
             "range": [
-                355,
-                434
+                1191,
+                1270
             ],
             "filename": "popper.js",
-            "lineno": 9,
+            "lineno": 20,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -44141,11 +44219,11 @@
         "comment": "",
         "meta": {
             "range": [
-                375,
-                395
+                1211,
+                1231
             ],
             "filename": "popper.js",
-            "lineno": 9,
+            "lineno": 20,
             "columnno": 28,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -44165,11 +44243,11 @@
         "comment": "",
         "meta": {
             "range": [
-                397,
-                431
+                1233,
+                1267
             ],
             "filename": "popper.js",
-            "lineno": 9,
+            "lineno": 20,
             "columnno": 50,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -44189,11 +44267,11 @@
         "comment": "",
         "meta": {
             "range": [
-                444,
-                530
+                1280,
+                1366
             ],
             "filename": "popper.js",
-            "lineno": 10,
+            "lineno": 21,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -44213,11 +44291,11 @@
         "comment": "",
         "meta": {
             "range": [
-                458,
-                491
+                1294,
+                1327
             ],
             "filename": "popper.js",
-            "lineno": 10,
+            "lineno": 21,
             "columnno": 22,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -44237,11 +44315,11 @@
         "comment": "",
         "meta": {
             "range": [
-                493,
-                527
+                1329,
+                1363
             ],
             "filename": "popper.js",
-            "lineno": 10,
+            "lineno": 21,
             "columnno": 57,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -44261,11 +44339,11 @@
         "comment": "",
         "meta": {
             "range": [
-                540,
-                605
+                1376,
+                1441
             ],
             "filename": "popper.js",
-            "lineno": 11,
+            "lineno": 22,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -44285,11 +44363,11 @@
         "comment": "",
         "meta": {
             "range": [
-                562,
-                566
+                1398,
+                1402
             ],
             "filename": "popper.js",
-            "lineno": 11,
+            "lineno": 22,
             "columnno": 30,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -44309,11 +44387,11 @@
         "comment": "",
         "meta": {
             "range": [
-                568,
-                602
+                1404,
+                1438
             ],
             "filename": "popper.js",
-            "lineno": 11,
+            "lineno": 22,
             "columnno": 36,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -44333,11 +44411,11 @@
         "comment": "",
         "meta": {
             "range": [
-                615,
-                701
+                1451,
+                1537
             ],
             "filename": "popper.js",
-            "lineno": 12,
+            "lineno": 23,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -44357,11 +44435,11 @@
         "comment": "",
         "meta": {
             "range": [
-                637,
-                662
+                1473,
+                1498
             ],
             "filename": "popper.js",
-            "lineno": 12,
+            "lineno": 23,
             "columnno": 30,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -44381,11 +44459,11 @@
         "comment": "",
         "meta": {
             "range": [
-                664,
-                698
+                1500,
+                1534
             ],
             "filename": "popper.js",
-            "lineno": 12,
+            "lineno": 23,
             "columnno": 57,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -44405,11 +44483,11 @@
         "comment": "",
         "meta": {
             "range": [
-                711,
-                784
+                1547,
+                1620
             ],
             "filename": "popper.js",
-            "lineno": 13,
+            "lineno": 24,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -44429,11 +44507,11 @@
         "comment": "",
         "meta": {
             "range": [
-                733,
-                758
+                1569,
+                1594
             ],
             "filename": "popper.js",
-            "lineno": 13,
+            "lineno": 24,
             "columnno": 30,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -44453,11 +44531,11 @@
         "comment": "",
         "meta": {
             "range": [
-                760,
-                781
+                1596,
+                1617
             ],
             "filename": "popper.js",
-            "lineno": 13,
+            "lineno": 24,
             "columnno": 57,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -44477,11 +44555,11 @@
         "comment": "",
         "meta": {
             "range": [
-                794,
-                873
+                1630,
+                1709
             ],
             "filename": "popper.js",
-            "lineno": 14,
+            "lineno": 25,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -44501,11 +44579,11 @@
         "comment": "",
         "meta": {
             "range": [
-                810,
-                835
+                1646,
+                1671
             ],
             "filename": "popper.js",
-            "lineno": 14,
+            "lineno": 25,
             "columnno": 24,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -44525,11 +44603,11 @@
         "comment": "",
         "meta": {
             "range": [
-                837,
-                870
+                1673,
+                1706
             ],
             "filename": "popper.js",
-            "lineno": 14,
+            "lineno": 25,
             "columnno": 51,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -44549,11 +44627,11 @@
         "comment": "",
         "meta": {
             "range": [
-                883,
-                940
+                1719,
+                1776
             ],
             "filename": "popper.js",
-            "lineno": 15,
+            "lineno": 26,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -44573,11 +44651,11 @@
         "comment": "",
         "meta": {
             "range": [
-                907,
-                932
+                1743,
+                1768
             ],
             "filename": "popper.js",
-            "lineno": 15,
+            "lineno": 26,
             "columnno": 32,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -44597,11 +44675,11 @@
         "comment": "",
         "meta": {
             "range": [
-                934,
-                937
+                1770,
+                1773
             ],
             "filename": "popper.js",
-            "lineno": 15,
+            "lineno": 26,
             "columnno": 59,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -44621,11 +44699,11 @@
         "comment": "",
         "meta": {
             "range": [
-                950,
-                1029
+                1786,
+                1865
             ],
             "filename": "popper.js",
-            "lineno": 16,
+            "lineno": 27,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -44645,11 +44723,11 @@
         "comment": "",
         "meta": {
             "range": [
-                975,
-                1000
+                1811,
+                1836
             ],
             "filename": "popper.js",
-            "lineno": 16,
+            "lineno": 27,
             "columnno": 33,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -44669,11 +44747,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1002,
-                1026
+                1838,
+                1862
             ],
             "filename": "popper.js",
-            "lineno": 16,
+            "lineno": 27,
             "columnno": 60,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -44693,11 +44771,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1039,
-                1097
+                1875,
+                1933
             ],
             "filename": "popper.js",
-            "lineno": 17,
+            "lineno": 28,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -44717,11 +44795,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1064,
-                1068
+                1900,
+                1904
             ],
             "filename": "popper.js",
-            "lineno": 17,
+            "lineno": 28,
             "columnno": 33,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -44741,11 +44819,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1070,
-                1094
+                1906,
+                1930
             ],
             "filename": "popper.js",
-            "lineno": 17,
+            "lineno": 28,
             "columnno": 39,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -44765,11 +44843,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1107,
-                1186
+                1943,
+                2022
             ],
             "filename": "popper.js",
-            "lineno": 18,
+            "lineno": 29,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -44789,11 +44867,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1124,
-                1157
+                1960,
+                1993
             ],
             "filename": "popper.js",
-            "lineno": 18,
+            "lineno": 29,
             "columnno": 25,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -44813,11 +44891,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1159,
-                1183
+                1995,
+                2019
             ],
             "filename": "popper.js",
-            "lineno": 18,
+            "lineno": 29,
             "columnno": 60,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -44837,11 +44915,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1196,
-                1268
+                2032,
+                2104
             ],
             "filename": "popper.js",
-            "lineno": 19,
+            "lineno": 30,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -44861,11 +44939,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1219,
-                1239
+                2055,
+                2075
             ],
             "filename": "popper.js",
-            "lineno": 19,
+            "lineno": 30,
             "columnno": 31,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -44885,11 +44963,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1241,
-                1265
+                2077,
+                2101
             ],
             "filename": "popper.js",
-            "lineno": 19,
+            "lineno": 30,
             "columnno": 53,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -44909,11 +44987,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1278,
-                1365
+                2114,
+                2201
             ],
             "filename": "popper.js",
-            "lineno": 20,
+            "lineno": 31,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -44933,11 +45011,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1302,
-                1336
+                2138,
+                2172
             ],
             "filename": "popper.js",
-            "lineno": 20,
+            "lineno": 31,
             "columnno": 32,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -44957,11 +45035,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1338,
-                1362
+                2174,
+                2198
             ],
             "filename": "popper.js",
-            "lineno": 20,
+            "lineno": 31,
             "columnno": 68,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -44981,11 +45059,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1375,
-                1440
+                2211,
+                2276
             ],
             "filename": "popper.js",
-            "lineno": 21,
+            "lineno": 32,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -45005,11 +45083,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1398,
-                1432
+                2234,
+                2268
             ],
             "filename": "popper.js",
-            "lineno": 21,
+            "lineno": 32,
             "columnno": 31,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -45029,11 +45107,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1434,
-                1437
+                2270,
+                2273
             ],
             "filename": "popper.js",
-            "lineno": 21,
+            "lineno": 32,
             "columnno": 67,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -45053,11 +45131,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1450,
-                1537
+                2286,
+                2373
             ],
             "filename": "popper.js",
-            "lineno": 22,
+            "lineno": 33,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -45077,11 +45155,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1465,
-                1499
+                2301,
+                2335
             ],
             "filename": "popper.js",
-            "lineno": 22,
+            "lineno": 33,
             "columnno": 23,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -45101,11 +45179,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1501,
-                1534
+                2337,
+                2370
             ],
             "filename": "popper.js",
-            "lineno": 22,
+            "lineno": 33,
             "columnno": 59,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -45125,11 +45203,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1547,
-                1628
+                2383,
+                2464
             ],
             "filename": "popper.js",
-            "lineno": 23,
+            "lineno": 34,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -45149,11 +45227,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1568,
-                1602
+                2404,
+                2438
             ],
             "filename": "popper.js",
-            "lineno": 23,
+            "lineno": 34,
             "columnno": 29,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -45173,11 +45251,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1604,
-                1625
+                2440,
+                2461
             ],
             "filename": "popper.js",
-            "lineno": 23,
+            "lineno": 34,
             "columnno": 65,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -45197,11 +45275,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1638,
-                1732
+                2474,
+                2568
             ],
             "filename": "popper.js",
-            "lineno": 24,
+            "lineno": 35,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -45221,11 +45299,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1659,
-                1693
+                2495,
+                2529
             ],
             "filename": "popper.js",
-            "lineno": 24,
+            "lineno": 35,
             "columnno": 29,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -45245,11 +45323,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1695,
-                1729
+                2531,
+                2565
             ],
             "filename": "popper.js",
-            "lineno": 24,
+            "lineno": 35,
             "columnno": 65,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -45269,11 +45347,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1798,
-                2031
+                3083,
+                3316
             ],
             "filename": "popper.js",
-            "lineno": 29,
+            "lineno": 47,
             "columnno": 0,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -45302,11 +45380,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1913,
-                1933
+                3198,
+                3218
             ],
             "filename": "popper.js",
-            "lineno": 31,
+            "lineno": 49,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -45329,11 +45407,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1939,
-                1961
+                3224,
+                3246
             ],
             "filename": "popper.js",
-            "lineno": 32,
+            "lineno": 50,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -45356,11 +45434,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1967,
-                1987
+                3252,
+                3272
             ],
             "filename": "popper.js",
-            "lineno": 33,
+            "lineno": 51,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -45383,11 +45461,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2002,
-                2005
+                3287,
+                3290
             ],
             "filename": "popper.js",
-            "lineno": 34,
+            "lineno": 52,
             "columnno": 13,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -45407,11 +45485,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2007,
-                2012
+                3292,
+                3297
             ],
             "filename": "popper.js",
-            "lineno": 34,
+            "lineno": 52,
             "columnno": 18,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -45431,11 +45509,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2014,
-                2020
+                3299,
+                3305
             ],
             "filename": "popper.js",
-            "lineno": 34,
+            "lineno": 52,
             "columnno": 25,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -45455,11 +45533,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2022,
-                2026
+                3307,
+                3311
             ],
             "filename": "popper.js",
-            "lineno": 34,
+            "lineno": 52,
             "columnno": 33,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -45476,14 +45554,83 @@
         "scope": "global"
     },
     {
-        "comment": "/**\n * @param {Any} [options={}]\n */",
+        "comment": "/**\n * @typedef {Object} PopperSetPositionOptions\n * @property {HTMLElement} container - The container element to position.\n * @property {HTMLElement} trigger - The trigger element.\n * @property {HTMLElement} [boundary] - The boundary element to contain the container element.\n * @property {string} [offset=\"0\"] - The offset values as a string (e.g., \"10 20 30 40\").\n * @property {Array<string>} placements - The array of placement types to try.\n */",
+        "meta": {
+            "filename": "popper.js",
+            "lineno": 55,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
+            "code": {}
+        },
+        "kind": "typedef",
+        "name": "PopperSetPositionOptions",
+        "type": {
+            "names": [
+                "Object"
+            ]
+        },
+        "properties": [
+            {
+                "type": {
+                    "names": [
+                        "HTMLElement"
+                    ]
+                },
+                "description": "The container element to position.",
+                "name": "container"
+            },
+            {
+                "type": {
+                    "names": [
+                        "HTMLElement"
+                    ]
+                },
+                "description": "The trigger element.",
+                "name": "trigger"
+            },
+            {
+                "type": {
+                    "names": [
+                        "HTMLElement"
+                    ]
+                },
+                "optional": true,
+                "description": "The boundary element to contain the container element.",
+                "name": "boundary"
+            },
+            {
+                "type": {
+                    "names": [
+                        "string"
+                    ]
+                },
+                "optional": true,
+                "defaultvalue": "\"0\"",
+                "description": "The offset values as a string (e.g., \"10 20 30 40\").",
+                "name": "offset"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Array.<string>"
+                    ]
+                },
+                "description": "The array of placement types to try.",
+                "name": "placements"
+            }
+        ],
+        "longname": "PopperSetPositionOptions",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n * Sets the position of a container element based on the provided options.\n * @param {PopperSetPositionOptions} options - The options for setting the position.\n */",
         "meta": {
             "range": [
-                2070,
-                3711
+                3937,
+                5578
             ],
             "filename": "popper.js",
-            "lineno": 40,
+            "lineno": 68,
             "columnno": 0,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -45513,15 +45660,15 @@
                 "container.style.top": "container.style.top"
             }
         },
+        "description": "Sets the position of a container element based on the provided options.",
         "params": [
             {
                 "type": {
                     "names": [
-                        "Any"
+                        "PopperSetPositionOptions"
                     ]
                 },
-                "optional": true,
-                "defaultvalue": "{}",
+                "description": "The options for setting the position.",
                 "name": "options"
             }
         ],
@@ -45534,11 +45681,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2119,
-                2128
+                3986,
+                3995
             ],
             "filename": "popper.js",
-            "lineno": 41,
+            "lineno": 69,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -45558,11 +45705,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2130,
-                2137
+                3997,
+                4004
             ],
             "filename": "popper.js",
-            "lineno": 41,
+            "lineno": 69,
             "columnno": 23,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -45582,11 +45729,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2139,
-                2147
+                4006,
+                4014
             ],
             "filename": "popper.js",
-            "lineno": 41,
+            "lineno": 69,
             "columnno": 32,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -45606,11 +45753,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2149,
-                2161
+                4016,
+                4028
             ],
             "filename": "popper.js",
-            "lineno": 41,
+            "lineno": 69,
             "columnno": 42,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -45630,11 +45777,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2163,
-                2173
+                4030,
+                4040
             ],
             "filename": "popper.js",
-            "lineno": 41,
+            "lineno": 69,
             "columnno": 56,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -45654,11 +45801,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2197,
-                2257
+                4064,
+                4124
             ],
             "filename": "popper.js",
-            "lineno": 42,
+            "lineno": 70,
             "columnno": 10,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -45680,11 +45827,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2269,
-                2303
+                4136,
+                4170
             ],
             "filename": "popper.js",
-            "lineno": 43,
+            "lineno": 71,
             "columnno": 10,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -45706,11 +45853,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2315,
-                2364
+                4182,
+                4231
             ],
             "filename": "popper.js",
-            "lineno": 44,
+            "lineno": 72,
             "columnno": 10,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -45732,11 +45879,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2376,
-                2421
+                4243,
+                4288
             ],
             "filename": "popper.js",
-            "lineno": 45,
+            "lineno": 73,
             "columnno": 10,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -45758,11 +45905,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2433,
-                2482
+                4300,
+                4349
             ],
             "filename": "popper.js",
-            "lineno": 46,
+            "lineno": 74,
             "columnno": 10,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -45784,11 +45931,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2492,
-                2507
+                4359,
+                4374
             ],
             "filename": "popper.js",
-            "lineno": 47,
+            "lineno": 75,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -45810,11 +45957,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2517,
-                2531
+                4384,
+                4398
             ],
             "filename": "popper.js",
-            "lineno": 48,
+            "lineno": 76,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -45836,11 +45983,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2541,
-                2563
+                4408,
+                4430
             ],
             "filename": "popper.js",
-            "lineno": 49,
+            "lineno": 77,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -45862,11 +46009,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2580,
-                2589
+                4447,
+                4456
             ],
             "filename": "popper.js",
-            "lineno": 50,
+            "lineno": 78,
             "columnno": 15,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -45886,11 +46033,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2623,
-                2627
+                4490,
+                4494
             ],
             "filename": "popper.js",
-            "lineno": 51,
+            "lineno": 79,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -45910,11 +46057,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2629,
-                2632
+                4496,
+                4499
             ],
             "filename": "popper.js",
-            "lineno": 51,
+            "lineno": 79,
             "columnno": 22,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -45934,11 +46081,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2668,
-                2679
+                4535,
+                4546
             ],
             "filename": "popper.js",
-            "lineno": 51,
+            "lineno": 79,
             "columnno": 61,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -45958,11 +46105,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2681,
-                2694
+                4548,
+                4561
             ],
             "filename": "popper.js",
-            "lineno": 51,
+            "lineno": 79,
             "columnno": 74,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -45982,11 +46129,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2696,
-                2716
+                4563,
+                4583
             ],
             "filename": "popper.js",
-            "lineno": 51,
+            "lineno": 79,
             "columnno": 89,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -46006,11 +46153,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2735,
-                2769
+                4602,
+                4636
             ],
             "filename": "popper.js",
-            "lineno": 52,
+            "lineno": 80,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -46032,11 +46179,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2785,
-                2820
+                4652,
+                4687
             ],
             "filename": "popper.js",
-            "lineno": 53,
+            "lineno": 81,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -46058,11 +46205,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2836,
-                2957
+                4703,
+                4824
             ],
             "filename": "popper.js",
-            "lineno": 54,
+            "lineno": 82,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -46084,11 +46231,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2973,
-                3150
+                4840,
+                5017
             ],
             "filename": "popper.js",
-            "lineno": 55,
+            "lineno": 83,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -46110,11 +46257,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3187,
-                3202
+                5054,
+                5069
             ],
             "filename": "popper.js",
-            "lineno": 57,
+            "lineno": 85,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -46137,11 +46284,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3216,
-                3229
+                5083,
+                5096
             ],
             "filename": "popper.js",
-            "lineno": 58,
+            "lineno": 86,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -46164,11 +46311,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3312,
-                3339
+                5179,
+                5206
             ],
             "filename": "popper.js",
-            "lineno": 61,
+            "lineno": 89,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -46191,11 +46338,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3353,
-                3368
+                5220,
+                5235
             ],
             "filename": "popper.js",
-            "lineno": 62,
+            "lineno": 90,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -46218,11 +46365,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3382,
-                3395
+                5249,
+                5262
             ],
             "filename": "popper.js",
-            "lineno": 63,
+            "lineno": 91,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -46245,11 +46392,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3417,
-                3517
+                5284,
+                5384
             ],
             "filename": "popper.js",
-            "lineno": 66,
+            "lineno": 94,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -46272,11 +46419,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3523,
-                3622
+                5390,
+                5489
             ],
             "filename": "popper.js",
-            "lineno": 67,
+            "lineno": 95,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -46299,11 +46446,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3628,
-                3666
+                5495,
+                5533
             ],
             "filename": "popper.js",
-            "lineno": 68,
+            "lineno": 96,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -46325,11 +46472,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3672,
-                3708
+                5539,
+                5575
             ],
             "filename": "popper.js",
-            "lineno": 69,
+            "lineno": 97,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -46351,11 +46498,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3721,
-                3738
+                5588,
+                5605
             ],
             "filename": "popper.js",
-            "lineno": 71,
+            "lineno": 99,
             "columnno": 9,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -46374,11 +46521,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3740,
-                3751
+                5607,
+                5618
             ],
             "filename": "popper.js",
-            "lineno": 71,
+            "lineno": 99,
             "columnno": 28,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -46397,11 +46544,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3753,
-                3764
+                5620,
+                5631
             ],
             "filename": "popper.js",
-            "lineno": 71,
+            "lineno": 99,
             "columnno": 41,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\popper",
             "code": {
@@ -46417,14 +46564,14 @@
         "scope": "global"
     },
     {
-        "comment": "/**\n */",
+        "comment": "/**\n * Progress class responsible for managing and displaying a progress indicator.\n */",
         "meta": {
             "range": [
-                8,
-                1594
+                88,
+                2304
             ],
             "filename": "progress.js",
-            "lineno": 3,
+            "lineno": 4,
             "columnno": 0,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress",
             "code": {
@@ -46434,6 +46581,7 @@
                 "paramnames": []
             }
         },
+        "classdesc": "Progress class responsible for managing and displaying a progress indicator.",
         "name": "Progress",
         "longname": "Progress",
         "kind": "class",
@@ -46441,14 +46589,14 @@
         "undocumented": true
     },
     {
-        "comment": "",
+        "comment": "/**\n     * Creates an instance of the Progress class.\n     */",
         "meta": {
             "range": [
-                29,
-                178
+                175,
+                324
             ],
             "filename": "progress.js",
-            "lineno": 4,
+            "lineno": 8,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress",
             "code": {
@@ -46461,22 +46609,23 @@
                 "": null
             }
         },
-        "undocumented": true,
+        "description": "Creates an instance of the Progress class.",
         "name": "Progress",
         "longname": "Progress",
         "kind": "class",
         "scope": "global",
-        "params": []
+        "params": [],
+        "undocumented": true
     },
     {
-        "comment": "/**\n */",
+        "comment": "/**\n * Progress class responsible for managing and displaying a progress indicator.\n */",
         "meta": {
             "range": [
-                8,
-                1594
+                88,
+                2304
             ],
             "filename": "progress.js",
-            "lineno": 3,
+            "lineno": 4,
             "columnno": 0,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress",
             "code": {
@@ -46489,17 +46638,19 @@
         "name": "Progress",
         "longname": "Progress",
         "kind": "class",
-        "scope": "global"
+        "classdesc": "Progress class responsible for managing and displaying a progress indicator.",
+        "scope": "global",
+        "description": "Creates an instance of the Progress class."
     },
     {
         "comment": "",
         "meta": {
             "range": [
-                53,
-                74
+                199,
+                220
             ],
             "filename": "progress.js",
-            "lineno": 5,
+            "lineno": 9,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress",
             "code": {
@@ -46521,11 +46672,11 @@
         "comment": "",
         "meta": {
             "range": [
-                84,
-                101
+                230,
+                247
             ],
             "filename": "progress.js",
-            "lineno": 6,
+            "lineno": 10,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress",
             "code": {
@@ -46547,11 +46698,11 @@
         "comment": "",
         "meta": {
             "range": [
-                111,
-                132
+                257,
+                278
             ],
             "filename": "progress.js",
-            "lineno": 7,
+            "lineno": 11,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress",
             "code": {
@@ -46573,11 +46724,11 @@
         "comment": "",
         "meta": {
             "range": [
-                142,
-                171
+                288,
+                317
             ],
             "filename": "progress.js",
-            "lineno": 8,
+            "lineno": 12,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress",
             "code": {
@@ -46599,11 +46750,11 @@
         "comment": "",
         "meta": {
             "range": [
-                184,
-                498
+                431,
+                745
             ],
             "filename": "progress.js",
-            "lineno": 11,
+            "lineno": 18,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress",
             "code": {
@@ -46628,11 +46779,11 @@
         "comment": "",
         "meta": {
             "range": [
-                246,
-                318
+                493,
+                565
             ],
             "filename": "progress.js",
-            "lineno": 13,
+            "lineno": 20,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress",
             "code": {
@@ -46651,14 +46802,14 @@
         "scope": "instance"
     },
     {
-        "comment": "/**\n     * @param {Any} [newDuration]\n     */",
+        "comment": "/**\n     * Starts the progress indicator with the specified duration.\n     * @param {number} [newDuration] - The duration for the progress indicator.\n     */",
         "meta": {
             "range": [
-                554,
-                857
+                913,
+                1216
             ],
             "filename": "progress.js",
-            "lineno": 22,
+            "lineno": 30,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress",
             "code": {
@@ -46673,14 +46824,16 @@
                 "": null
             }
         },
+        "description": "Starts the progress indicator with the specified duration.",
         "params": [
             {
                 "type": {
                     "names": [
-                        "Any"
+                        "number"
                     ]
                 },
                 "optional": true,
+                "description": "The duration for the progress indicator.",
                 "name": "newDuration"
             }
         ],
@@ -46694,11 +46847,11 @@
         "comment": "",
         "meta": {
             "range": [
-                583,
-                611
+                942,
+                970
             ],
             "filename": "progress.js",
-            "lineno": 23,
+            "lineno": 31,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress",
             "code": {
@@ -46720,11 +46873,11 @@
         "comment": "",
         "meta": {
             "range": [
-                664,
-                698
+                1023,
+                1057
             ],
             "filename": "progress.js",
-            "lineno": 25,
+            "lineno": 33,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress",
             "code": {
@@ -46746,11 +46899,11 @@
         "comment": "",
         "meta": {
             "range": [
-                780,
-                840
+                1139,
+                1199
             ],
             "filename": "progress.js",
-            "lineno": 29,
+            "lineno": 37,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress",
             "code": {
@@ -46772,11 +46925,11 @@
         "comment": "",
         "meta": {
             "range": [
-                863,
-                1301
+                1404,
+                1842
             ],
             "filename": "progress.js",
-            "lineno": 33,
+            "lineno": 45,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress",
             "code": {
@@ -46803,11 +46956,11 @@
         "comment": "",
         "meta": {
             "range": [
-                940,
-                978
+                1481,
+                1519
             ],
             "filename": "progress.js",
-            "lineno": 35,
+            "lineno": 47,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress",
             "code": {
@@ -46829,11 +46982,11 @@
         "comment": "",
         "meta": {
             "range": [
-                992,
-                1039
+                1533,
+                1580
             ],
             "filename": "progress.js",
-            "lineno": 36,
+            "lineno": 48,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress",
             "code": {
@@ -46855,11 +47008,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1049,
-                1091
+                1590,
+                1632
             ],
             "filename": "progress.js",
-            "lineno": 37,
+            "lineno": 49,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress",
             "code": {
@@ -46881,11 +47034,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1101,
-                1139
+                1642,
+                1680
             ],
             "filename": "progress.js",
-            "lineno": 38,
+            "lineno": 50,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress",
             "code": {
@@ -46907,11 +47060,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1181,
-                1241
+                1722,
+                1782
             ],
             "filename": "progress.js",
-            "lineno": 40,
+            "lineno": 52,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress",
             "code": {
@@ -46933,11 +47086,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1307,
-                1459
+                1933,
+                2085
             ],
             "filename": "progress.js",
-            "lineno": 46,
+            "lineno": 61,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress",
             "code": {
@@ -46962,11 +47115,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1413,
-                1442
+                2039,
+                2068
             ],
             "filename": "progress.js",
-            "lineno": 49,
+            "lineno": 64,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress",
             "code": {
@@ -46988,11 +47141,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1465,
-                1592
+                2175,
+                2302
             ],
             "filename": "progress.js",
-            "lineno": 53,
+            "lineno": 71,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress",
             "code": {
@@ -47017,11 +47170,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1483,
-                1504
+                2193,
+                2214
             ],
             "filename": "progress.js",
-            "lineno": 54,
+            "lineno": 72,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress",
             "code": {
@@ -47043,11 +47196,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1514,
-                1531
+                2224,
+                2241
             ],
             "filename": "progress.js",
-            "lineno": 55,
+            "lineno": 73,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress",
             "code": {
@@ -47069,11 +47222,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1541,
-                1562
+                2251,
+                2272
             ],
             "filename": "progress.js",
-            "lineno": 56,
+            "lineno": 74,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress",
             "code": {
@@ -47095,11 +47248,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1604,
-                1612
+                2314,
+                2322
             ],
             "filename": "progress.js",
-            "lineno": 60,
+            "lineno": 78,
             "columnno": 9,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress",
             "code": {
@@ -49866,7 +50019,7 @@
         "meta": {
             "range": [
                 228,
-                7566
+                10376
             ],
             "filename": "router.js",
             "lineno": 8,
@@ -49924,11 +50077,11 @@
         "comment": "",
         "meta": {
             "range": [
-                377,
-                1278
+                846,
+                1747
             ],
             "filename": "router.js",
-            "lineno": 16,
+            "lineno": 24,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -49958,11 +50111,11 @@
         "comment": "",
         "meta": {
             "range": [
-                485,
-                490
+                954,
+                959
             ],
             "filename": "router.js",
-            "lineno": 17,
+            "lineno": 25,
             "columnno": 19,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -49982,11 +50135,11 @@
         "comment": "",
         "meta": {
             "range": [
-                553,
-                574
+                1022,
+                1043
             ],
             "filename": "router.js",
-            "lineno": 19,
+            "lineno": 27,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50009,11 +50162,11 @@
         "comment": "",
         "meta": {
             "range": [
-                592,
-                675
+                1061,
+                1144
             ],
             "filename": "router.js",
-            "lineno": 20,
+            "lineno": 28,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50036,11 +50189,11 @@
         "comment": "",
         "meta": {
             "range": [
-                693,
-                817
+                1162,
+                1286
             ],
             "filename": "router.js",
-            "lineno": 21,
+            "lineno": 29,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50063,11 +50216,11 @@
         "comment": "",
         "meta": {
             "range": [
-                851,
-                889
+                1320,
+                1358
             ],
             "filename": "router.js",
-            "lineno": 23,
+            "lineno": 31,
             "columnno": 18,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50089,11 +50242,11 @@
         "comment": "",
         "meta": {
             "range": [
-                934,
-                1007
+                1403,
+                1476
             ],
             "filename": "router.js",
-            "lineno": 25,
+            "lineno": 33,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50115,11 +50268,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1131,
-                1202
+                1600,
+                1671
             ],
             "filename": "router.js",
-            "lineno": 31,
+            "lineno": 39,
             "columnno": 22,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50141,11 +50294,11 @@
         "comment": "/**\n     * Retrieves the current pathname.\n     * @static\n     * @readonly\n     * @returns {string} The current pathname.\n     */",
         "meta": {
             "range": [
-                1418,
-                1656
+                1887,
+                2125
             ],
             "filename": "router.js",
-            "lineno": 43,
+            "lineno": 51,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50181,11 +50334,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1662,
-                2747
+                2300,
+                3385
             ],
             "filename": "router.js",
-            "lineno": 51,
+            "lineno": 64,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50213,11 +50366,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1830,
-                1849
+                2468,
+                2487
             ],
             "filename": "router.js",
-            "lineno": 55,
+            "lineno": 68,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50239,11 +50392,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1909,
-                1914
+                2547,
+                2552
             ],
             "filename": "router.js",
-            "lineno": 57,
+            "lineno": 70,
             "columnno": 19,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50263,11 +50416,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2260,
-                2296
+                2898,
+                2934
             ],
             "filename": "router.js",
-            "lineno": 67,
+            "lineno": 80,
             "columnno": 18,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50289,11 +50442,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2316,
-                2363
+                2954,
+                3001
             ],
             "filename": "router.js",
-            "lineno": 68,
+            "lineno": 81,
             "columnno": 18,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50315,11 +50468,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2753,
-                3254
+                3571,
+                4072
             ],
             "filename": "router.js",
-            "lineno": 80,
+            "lineno": 98,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50346,11 +50499,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2800,
-                2865
+                3618,
+                3683
             ],
             "filename": "router.js",
-            "lineno": 81,
+            "lineno": 99,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50372,11 +50525,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2886,
-                2892
+                3704,
+                3710
             ],
             "filename": "router.js",
-            "lineno": 82,
+            "lineno": 100,
             "columnno": 19,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50396,11 +50549,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2923,
-                2958
+                3741,
+                3776
             ],
             "filename": "router.js",
-            "lineno": 83,
+            "lineno": 101,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50422,11 +50575,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3187,
-                3223
+                4005,
+                4041
             ],
             "filename": "router.js",
-            "lineno": 88,
+            "lineno": 106,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50449,11 +50602,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3260,
-                3426
+                4392,
+                4558
             ],
             "filename": "router.js",
-            "lineno": 93,
+            "lineno": 117,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50481,11 +50634,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3432,
-                4277
+                4933,
+                5778
             ],
             "filename": "router.js",
-            "lineno": 97,
+            "lineno": 128,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50514,11 +50667,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3539,
-                3547
+                5040,
+                5048
             ],
             "filename": "router.js",
-            "lineno": 99,
+            "lineno": 130,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50538,11 +50691,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3565,
-                3571
+                5066,
+                5072
             ],
             "filename": "router.js",
-            "lineno": 100,
+            "lineno": 131,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50562,11 +50715,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3589,
-                3623
+                5090,
+                5124
             ],
             "filename": "router.js",
-            "lineno": 101,
+            "lineno": 132,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50588,11 +50741,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3641,
-                3659
+                5142,
+                5160
             ],
             "filename": "router.js",
-            "lineno": 102,
+            "lineno": 133,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50614,11 +50767,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3709,
-                3755
+                5210,
+                5256
             ],
             "filename": "router.js",
-            "lineno": 104,
+            "lineno": 135,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50641,11 +50794,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3773,
-                3795
+                5274,
+                5296
             ],
             "filename": "router.js",
-            "lineno": 105,
+            "lineno": 136,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50668,11 +50821,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3829,
-                4060
+                5330,
+                5561
             ],
             "filename": "router.js",
-            "lineno": 107,
+            "lineno": 138,
             "columnno": 18,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50696,11 +50849,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3864,
-                3903
+                5365,
+                5404
             ],
             "filename": "router.js",
-            "lineno": 108,
+            "lineno": 139,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50723,11 +50876,11 @@
         "comment": "",
         "meta": {
             "range": [
-                4074,
-                4115
+                5575,
+                5616
             ],
             "filename": "router.js",
-            "lineno": 114,
+            "lineno": 145,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50750,11 +50903,11 @@
         "comment": "",
         "meta": {
             "range": [
-                4172,
-                4185
+                5673,
+                5686
             ],
             "filename": "router.js",
-            "lineno": 116,
+            "lineno": 147,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50774,11 +50927,11 @@
         "comment": "",
         "meta": {
             "range": [
-                4203,
-                4218
+                5704,
+                5719
             ],
             "filename": "router.js",
-            "lineno": 117,
+            "lineno": 148,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50798,11 +50951,11 @@
         "comment": "",
         "meta": {
             "range": [
-                4283,
-                4374
+                5986,
+                6077
             ],
             "filename": "router.js",
-            "lineno": 123,
+            "lineno": 160,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50829,11 +50982,11 @@
         "comment": "",
         "meta": {
             "range": [
-                4380,
-                4513
+                6293,
+                6426
             ],
             "filename": "router.js",
-            "lineno": 127,
+            "lineno": 170,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50861,11 +51014,11 @@
         "comment": "",
         "meta": {
             "range": [
-                4460,
-                4496
+                6373,
+                6409
             ],
             "filename": "router.js",
-            "lineno": 129,
+            "lineno": 172,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50887,11 +51040,11 @@
         "comment": "",
         "meta": {
             "range": [
-                4519,
-                4867
+                6657,
+                7005
             ],
             "filename": "router.js",
-            "lineno": 133,
+            "lineno": 182,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50919,11 +51072,11 @@
         "comment": "",
         "meta": {
             "range": [
-                4625,
-                4736
+                6763,
+                6874
             ],
             "filename": "router.js",
-            "lineno": 135,
+            "lineno": 184,
             "columnno": 18,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50944,11 +51097,11 @@
         "comment": "",
         "meta": {
             "range": [
-                4873,
-                5118
+                7120,
+                7365
             ],
             "filename": "router.js",
-            "lineno": 144,
+            "lineno": 197,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50973,11 +51126,11 @@
         "comment": "",
         "meta": {
             "range": [
-                5072,
-                5111
+                7319,
+                7358
             ],
             "filename": "router.js",
-            "lineno": 146,
+            "lineno": 199,
             "columnno": 85,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -50999,11 +51152,11 @@
         "comment": "/**\n     * Navigates to the specified URL.\n     * @static\n     * @param {string} [url] - The URL to navigate to.\n     */",
         "meta": {
             "range": [
-                5249,
-                5442
+                7496,
+                7689
             ],
             "filename": "router.js",
-            "lineno": 154,
+            "lineno": 207,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -51041,11 +51194,11 @@
         "comment": "",
         "meta": {
             "range": [
-                5399,
-                5425
+                7646,
+                7672
             ],
             "filename": "router.js",
-            "lineno": 158,
+            "lineno": 211,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -51067,11 +51220,11 @@
         "comment": "",
         "meta": {
             "range": [
-                5448,
-                5673
+                7854,
+                8079
             ],
             "filename": "router.js",
-            "lineno": 162,
+            "lineno": 220,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -51098,11 +51251,11 @@
         "comment": "",
         "meta": {
             "range": [
-                5493,
-                5539
+                7899,
+                7945
             ],
             "filename": "router.js",
-            "lineno": 163,
+            "lineno": 221,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -51124,11 +51277,11 @@
         "comment": "",
         "meta": {
             "range": [
-                5582,
-                5622
+                7988,
+                8028
             ],
             "filename": "router.js",
-            "lineno": 165,
+            "lineno": 223,
             "columnno": 18,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -51150,11 +51303,11 @@
         "comment": "",
         "meta": {
             "range": [
-                5679,
-                5884
+                8304,
+                8509
             ],
             "filename": "router.js",
-            "lineno": 170,
+            "lineno": 234,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -51182,11 +51335,11 @@
         "comment": "",
         "meta": {
             "range": [
-                5721,
-                5840
+                8346,
+                8465
             ],
             "filename": "router.js",
-            "lineno": 171,
+            "lineno": 235,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -51208,11 +51361,11 @@
         "comment": "",
         "meta": {
             "range": [
-                5765,
-                5778
+                8390,
+                8403
             ],
             "filename": "router.js",
-            "lineno": 172,
+            "lineno": 236,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -51232,11 +51385,11 @@
         "comment": "",
         "meta": {
             "range": [
-                5792,
-                5808
+                8417,
+                8433
             ],
             "filename": "router.js",
-            "lineno": 173,
+            "lineno": 237,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -51256,11 +51409,11 @@
         "comment": "",
         "meta": {
             "range": [
-                5822,
-                5828
+                8447,
+                8453
             ],
             "filename": "router.js",
-            "lineno": 174,
+            "lineno": 238,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -51277,14 +51430,14 @@
         "scope": "global"
     },
     {
-        "comment": "",
+        "comment": "/**\n     * The array of defined routes.\n     * @static\n     * @type {Array}\n     */",
         "meta": {
             "range": [
-                5889,
-                5908
+                8603,
+                8622
             ],
             "filename": "router.js",
-            "lineno": 178,
+            "lineno": 248,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -51293,22 +51446,27 @@
                 "type": "ClassProperty"
             }
         },
-        "undocumented": true,
+        "description": "The array of defined routes.",
+        "scope": "instance",
+        "type": {
+            "names": [
+                "Array"
+            ]
+        },
         "name": "routes",
         "longname": "Router#routes",
         "kind": "member",
-        "memberof": "Router",
-        "scope": "instance"
+        "memberof": "Router"
     },
     {
         "comment": "",
         "meta": {
             "range": [
-                5913,
-                5933
+                8723,
+                8743
             ],
             "filename": "router.js",
-            "lineno": 179,
+            "lineno": 255,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -51328,7 +51486,7 @@
         "comment": "/**\n     * @typedef {Object} RouterUseRoutes\n     * @property {string} path - The path of the route.\n     * @property {HTMLElement} [component] - The component to render for the route.\n     * @property {Function} [load] - The function to load the component.\n     * @property {Function} [beforeLoad] - The function to call before loading the component.\n     * @property {RouterUseRoutes.<Array>} [children] - The child routes.\n     */",
         "meta": {
             "filename": "router.js",
-            "lineno": 181,
+            "lineno": 257,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {}
@@ -51398,7 +51556,7 @@
         "comment": "/**\n     * @typedef {Object} RouterUseOptions\n     * @property {boolean} [historyApiFallback=false] - Whether to use the History API for navigation.\n     */",
         "meta": {
             "filename": "router.js",
-            "lineno": 190,
+            "lineno": 266,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {}
@@ -51430,11 +51588,11 @@
         "comment": "/**\n     * Initializes the router with the specified routes and options.\n     * @static\n     * @param {RouterUseRoutes.<Array>} [routes=[]] - The array of routes.\n     * @param {RouterUseOptions} [options={}] - The router options.\n     */",
         "meta": {
             "range": [
-                6783,
-                7564
+                9593,
+                10374
             ],
             "filename": "router.js",
-            "lineno": 201,
+            "lineno": 277,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -51485,11 +51643,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6831,
-                6851
+                9641,
+                9661
             ],
             "filename": "router.js",
-            "lineno": 202,
+            "lineno": 278,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -51511,11 +51669,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6861,
-                6950
+                9671,
+                9760
             ],
             "filename": "router.js",
-            "lineno": 203,
+            "lineno": 279,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -51537,11 +51695,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6890,
-                6915
+                9700,
+                9725
             ],
             "filename": "router.js",
-            "lineno": 204,
+            "lineno": 280,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -51562,11 +51720,11 @@
         "comment": "",
         "meta": {
             "range": [
-                7175,
-                7211
+                9985,
+                10021
             ],
             "filename": "router.js",
-            "lineno": 210,
+            "lineno": 286,
             "columnno": 18,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -51588,11 +51746,11 @@
         "comment": "",
         "meta": {
             "range": [
-                7226,
-                7371
+                10036,
+                10181
             ],
             "filename": "router.js",
-            "lineno": 212,
+            "lineno": 288,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -51613,11 +51771,11 @@
         "comment": "",
         "meta": {
             "range": [
-                7576,
-                7582
+                10386,
+                10392
             ],
             "filename": "router.js",
-            "lineno": 222,
+            "lineno": 298,
             "columnno": 9,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {

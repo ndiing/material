@@ -1,8 +1,10 @@
 import { argbFromHex, themeFromSourceColor, themeFromImage, applyTheme } from "@material/material-color-utilities";
 
 /**
- * @param {Any} [input]
- * @param {Any} [customColors]
+ * Sets the theme based on the provided input and custom colors.
+ * @param {HTMLImageElement|string} input - The input for generating the theme. Can be an HTMLImageElement for image-based themes or a hex color string.
+ * @param {Object} [customColors] - Optional custom colors to use in the theme.
+ * @returns {Promise<void>} A promise that resolves when the theme is applied.
  */
 async function setTheme(input, customColors) {
     let theme;

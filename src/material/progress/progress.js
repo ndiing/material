@@ -1,6 +1,10 @@
 /**
+ * Progress class responsible for managing and displaying a progress indicator.
  */
 class Progress {
+    /**
+     * Creates an instance of the Progress class.
+     */
     constructor() {
         this.startTime = null;
         this.duration = 0;
@@ -8,6 +12,9 @@ class Progress {
         this.progressIndicator = null;
     }
 
+    // /**
+    //  * Renders the progress indicator element if it does not already exist.
+    //  */
     render() {
         if (!this.progressIndicator) {
             this.progressIndicator = document.createElement("md-progress-indicator");
@@ -17,7 +24,8 @@ class Progress {
     }
 
     /**
-     * @param {Any} [newDuration]
+     * Starts the progress indicator with the specified duration.
+     * @param {number} [newDuration] - The duration for the progress indicator.
      */
     start(newDuration) {
         this.duration += newDuration;
@@ -30,6 +38,10 @@ class Progress {
         }
     }
 
+    // /**
+    //  * Updates the progress indicator at each animation frame.
+    //  * @param {DOMHighResTimeStamp} currentTime - The current time of the animation frame.
+    //  */
     step(currentTime) {
         if (!this.progressIndicator) return;
         let elapsed = currentTime - this.startTime;
@@ -43,6 +55,9 @@ class Progress {
         }
     }
 
+    // /**
+    //  * Removes the progress indicator element from the DOM.
+    //  */
     remove() {
         if (this.progressIndicator) {
             this.progressIndicator.remove();
@@ -50,6 +65,9 @@ class Progress {
         }
     }
 
+    // /**
+    //  * Resets the progress indicator and clears its state.
+    //  */
     reset() {
         this.startTime = null;
         this.duration = 0;
