@@ -74,8 +74,8 @@ class DemoMain extends MdComponent {
             {
                 label: "Chips",
                 children: [
-                    // { label: "Chips", routerLink: "/demo/chips" },
-                    { label: "Chips Single Select", routerLink: "/demo/chips-single-select" },
+                    { label: "Chips", routerLink: "/demo/chips" },
+                    // { label: "Chips Single Select", routerLink: "/demo/chips-single-select" },
                     { label: "Chips Multi Select", routerLink: "/demo/chips-multi-select" },
                 ],
             },
