@@ -1,12 +1,12 @@
-import "./material/material.scss";
+import "./material/material.scss"; /* built-in module */
 import "./app/app.scss";
 import "./demo/demo.scss";
 import "./docs/docs.scss";
 
-import "./material/material.js";
-import { Router } from "./material/router/router";
-import { Progress } from "./material/progress/progress.js";
-import { setTheme } from "./material/color/color.js";
+import "./material/material.js"; /* built-in module */
+import { Router } from "./material/router/router"; /* built-in module */
+import { Progress } from "./material/progress/progress.js"; /* built-in module */
+import { setTheme } from "./material/color/color.js"; /* built-in module */
 import AppRoutes from "./app/app.js";
 
 const routes = [AppRoutes];
