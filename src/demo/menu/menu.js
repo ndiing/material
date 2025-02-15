@@ -18,9 +18,9 @@ class DemoMenu extends MdComponent {
                             .items="${[{ label: "Label" }, { label: "Label" }, { label: "Label" }, { label: "Label" }]}"
                             @onMenuShow="${console.log}"
                             @onMenuClose="${console.log}"
-                            @onMenuWindowClick="${event => {
-                                if(!menu.contains(event.detail.target)&&!button.contains(event.detail.target)){
-                                    menu.close()
+                            @onMenuWindowClick="${(event) => {
+                                if (!menu.contains(event.detail.target) && !button.contains(event.detail.target)) {
+                                    menu.close();
                                 }
                             }}"
                             @onMenuWindowScroll="${() => menu.close()}"
@@ -42,9 +42,9 @@ class DemoMenu extends MdComponent {
                             .items="${[{ label: "Label" }, { label: "Label" }, { label: "Label" }, { label: "Label", selected: true }]}"
                             @onMenuShow="${console.log}"
                             @onMenuClose="${console.log}"
-                            @onMenuWindowClick="${event => {
-                                if(!menu2.contains(event.detail.target)&&!button2.contains(event.detail.target)){
-                                    menu2.close()
+                            @onMenuWindowClick="${(event) => {
+                                if (!menu2.contains(event.detail.target) && !button2.contains(event.detail.target)) {
+                                    menu2.close();
                                 }
                             }}"
                             @onMenuWindowScroll="${() => menu2.close()}"

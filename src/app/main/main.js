@@ -2,7 +2,6 @@ import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
 
 class AppMain extends MdComponent {
-
     render() {
         return html`
             <md-layout-border>
@@ -12,8 +11,6 @@ class AppMain extends MdComponent {
             </md-layout-border>
         `;
     }
-
-
 }
 
 customElements.define("app-main", AppMain);

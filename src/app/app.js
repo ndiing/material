@@ -5,8 +5,5 @@ import DocsRoutes from "../docs/docs.js";
 export default {
     path: "",
     component: AppMain,
-    children:[
-        DemoRoutes,
-        DocsRoutes
-    ]
+    children: [DemoRoutes, DocsRoutes],
 };

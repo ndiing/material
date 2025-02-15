@@ -6,10 +6,9 @@ const docs = Object.groupBy(
 const keys = Object.keys(docs).map((key) => {
     const name = key.replace(/\.js$/, "");
     return {
-        label: name.replace(/(^|[^a-zA-Z])([a-zA-Z])/g,($,$1,$2,$$)=>($$===0?'':' ')+$2.toUpperCase()),
+        label: name.replace(/(^|[^a-zA-Z])([a-zA-Z])/g, ($, $1, $2, $$) => ($$ === 0 ? "" : " ") + $2.toUpperCase()),
         routerLink: `/docs/${name}`,
     };
 });
-const values = Object.values(docs)
-    .map((doc) => Object.groupBy(doc, (item) => item.kind))
+const values = Object.values(docs).map((doc) => Object.groupBy(doc, (item) => item.kind));
 export { keys, values };

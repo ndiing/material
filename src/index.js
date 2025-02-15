@@ -12,7 +12,7 @@ import AppRoutes from "./app/app.js";
 const routes = [AppRoutes];
 Router.use(routes);
 
-function demoProgress(){
+function demoProgress() {
     const progress = new Progress();
 
     const fetch = window.fetch;
@@ -26,7 +26,7 @@ function demoProgress(){
         performance.clearMeasures("measure-fetch-1");
         return res;
     };
-    
+
     const observer = new PerformanceObserver((entries) => {
         entries.getEntries().forEach((entry) => progress.start(entry.duration));
     });
@@ -35,16 +35,14 @@ function demoProgress(){
     });
 }
 
-function demoTheme(){
-
+function demoTheme() {
     function getRandomHexColor() {
         return `#${Math.floor(Math.random() * 16777215)
             .toString(16)
             .padStart(6, "0")}`;
     }
     setTheme(getRandomHexColor());
-    
 }
 
-demoProgress()
-demoTheme()
+demoProgress();
+demoTheme();

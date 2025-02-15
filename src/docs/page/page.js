@@ -9,7 +9,7 @@ class DocsPage extends MdComponent {
         this.data = {};
     }
 
-    renderClass(data){
+    renderClass(data) {
         /* prettier-ignore */
         return data?.map(item=>html`
 
@@ -47,7 +47,7 @@ class DocsPage extends MdComponent {
         `)
     }
 
-    renderFires(data){
+    renderFires(data) {
         /* prettier-ignore */
         return data?.map(item=>html`
         
@@ -59,7 +59,7 @@ class DocsPage extends MdComponent {
         `)
     }
 
-    renderAugments(data){
+    renderAugments(data) {
         /* prettier-ignore */
         return data?.map(item=>html`
         
@@ -67,7 +67,7 @@ class DocsPage extends MdComponent {
             <br>
         `)
     }
-    renderMember(data){
+    renderMember(data) {
         /* prettier-ignore */
         return data?.map(item=>html`
             ${item.name?html`
@@ -91,7 +91,7 @@ class DocsPage extends MdComponent {
             `:nothing}
         `)
     }
-    renderFunction(data){
+    renderFunction(data) {
         /* prettier-ignore */
         return data?.map(item=>html`
             <div><code>${item.name}(${item.params?.map(param=>param.name).join(', ')})</code></div>
@@ -113,7 +113,7 @@ class DocsPage extends MdComponent {
             `:nothing}
         `)
     }
-    renderTypedef(data){
+    renderTypedef(data) {
         /* prettier-ignore */
         return data?.map(item=>html`
             <div><code>${item.name}</code></div>
@@ -133,7 +133,7 @@ class DocsPage extends MdComponent {
         `)
     }
 
-    renderTable(columns=[],data=[]){
+    renderTable(columns = [], data = []) {
         /* prettier-ignore */
         return html`
             <table>
@@ -212,8 +212,7 @@ class DocsPage extends MdComponent {
     async handleDocsPageRouterNavigateSuccess(event) {
         const index = keys.findIndex((key) => key.routerLink === Router.pathname);
         this.data = values[index];
-        console.log(name,
-            index,this.data)
+        console.log(name, index, this.data);
         this.requestUpdate();
     }
 }
