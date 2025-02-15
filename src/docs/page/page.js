@@ -179,16 +179,20 @@ class DocsPage extends MdComponent {
                 ${this.data.member?.length?html`
                     <h2>Instance properties</h2>
                     <br>
-                    <div>This interface also inherits properties from its parent, <code>HTMLElement</code>.</div>
-                    <br>
+                    ${this.data.class?.filter(item=>item.tags)?.length?html`
+                        <div>This interface also inherits properties from its parent, <code>HTMLElement</code>.</div>
+                        <br>
+                    `:nothing}
                     ${this.renderMember(this.data.member)}
                 `:nothing}
 
                 ${this.data.function?.length?html`
                     <h2>Instance methods</h2>
                     <br>
-                    <div>This interface also inherits methods from its parent, <code>HTMLElement</code>.</div>
-                    <br>
+                    ${this.data.class?.filter(item=>item.tags)?.length?html`
+                        <div>This interface also inherits methods from its parent, <code>HTMLElement</code>.</div>
+                        <br>
+                    `:nothing}
                     ${this.renderFunction(this.data.function)}
                 `:nothing}
 
