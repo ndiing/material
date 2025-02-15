@@ -4,7 +4,6 @@ setlocal enabledelayedexpansion
 git add .
 git commit -m "Commit"
 
-echo Running npm version patch...
 call npm version patch
 
 git add .
