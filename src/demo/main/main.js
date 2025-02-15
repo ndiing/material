@@ -124,8 +124,8 @@ class DemoMain extends MdComponent {
                 label: "List",
                 children: [
                     { label: "List", routerLink: "/list" },
-                    { label: "List Single Select", routerLink: "/list-single-select" },
-                    { label: "List Multi Select", routerLink: "/list-multi-select" },
+                    // { label: "List Single Select", routerLink: "/list-single-select" },
+                    // { label: "List Multi Select", routerLink: "/list-multi-select" },
                 ],
             },
             { label: "Menu", routerLink: "/menu" },
