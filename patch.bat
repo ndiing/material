@@ -8,6 +8,6 @@ npm version patch
 git add .
 git commit -m "Bump version"
 
-git push origin main
+git push --force origin main
 
 pause
