@@ -34,23 +34,15 @@ class MdBottomSheetComponent extends MdComponent {
         modal: { type: Boolean, reflect: true },
     };
 
-    /**
-     */
     constructor() {
         super();
         this.body = Array.from(this.childNodes);
     }
 
-    /**
-     * @param {Any} [item]
-     */
     renderIcon(item) {
         return html` <md-icon .data="${item}">${item.icon}</md-icon> `;
     }
 
-    /**
-     * @param {Any} [item]
-     */
     renderIconButton(item) {
         return html`
             <md-icon-button
@@ -66,9 +58,6 @@ class MdBottomSheetComponent extends MdComponent {
         `;
     }
 
-    /**
-     * @param {Any} [item]
-     */
     renderButton(item) {
         return html`
             <md-button
@@ -84,17 +73,10 @@ class MdBottomSheetComponent extends MdComponent {
         `;
     }
 
-    /**
-     * @param {Any} [item]
-     */
     renderSpacer(item) {
         return html` <div class="md-bottom-sheet__spacer"></div> `;
     }
 
-    /**
-     * @param {Any} [item]
-     * @param {Any} [component="icon"]
-     */
     renderComponent(item, component = "icon") {
         const components = [
             ["icon", () => this.renderIcon(item)],
@@ -105,15 +87,10 @@ class MdBottomSheetComponent extends MdComponent {
         return choose(item.component || component, components, () => nothing);
     }
 
-    /**
-     */
     render() {
         return html` ${this.icons?.length || this.label || this.sublabel || this.actions?.length ? html` <div class="md-bottom-sheet__header">${this.icons?.length ? html` <div class="md-bottom-sheet__icons">${this.icons.map((icon) => this.renderComponent(icon, "icon"))}</div> ` : nothing} ${this.label || this.sublabel ? html` <div class="md-bottom-sheet__labels">${this.label ? html`<div class="md-bottom-sheet__label">${this.label}</div>` : nothing} ${this.sublabel ? html`<div class="md-bottom-sheet__sublabel">${this.sublabel}</div>` : nothing}</div> ` : nothing} ${this.actions?.length ? html` <div class="md-bottom-sheet__actions">${this.actions.map((action) => this.renderComponent(action, "icon-button"))}</div> ` : nothing}</div> ` : nothing} ${this.body?.length || this.buttons?.length ? html` <div class="md-bottom-sheet__wrapper">${this.body?.length ? html`<div class="md-bottom-sheet__body">${this.body}</div>` : nothing} ${this.buttons?.length ? html` <div class="md-bottom-sheet__footer">${this.buttons?.length ? html` <div class="md-bottom-sheet__buttons">${this.buttons.map((button) => this.renderComponent(button, "button"))}</div> ` : nothing}</div> ` : nothing}</div> ` : nothing} `;
     }
 
-    /**
-     * @async
-     */
     async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-bottom-sheet");
@@ -128,17 +105,12 @@ class MdBottomSheetComponent extends MdComponent {
         this.style.setProperty("--md-comp-bottom-sheet-height", this.clientHeight + "px");
     }
 
-    /**
-     */
     disconnectedCallback() {
         super.disconnectedCallback();
         this.bottomSheetScrim.removeEventListener("onScrimClose", this.handleBottomSheetScrimClose);
         this.bottomSheetScrim.remove();
     }
 
-    /**
-     * @param {Any} [changedProperties]
-     */
     updated(changedProperties) {
         super.updated(changedProperties);
         if (changedProperties.has("modal")) {
@@ -175,9 +147,6 @@ class MdBottomSheetComponent extends MdComponent {
         else this.show();
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleBottomSheetShown(event) {
         if (event.animationName === "bottom-sheet-modal-out" || event.animationName === "bottom-sheet-out") {
             this.removeEventListener("animationend", this.handleBottomSheetShown);
@@ -185,9 +154,6 @@ class MdBottomSheetComponent extends MdComponent {
         }
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleBottomSheetClosed(event) {
         if (event.animationName === "bottom-sheet-modal-in" || event.animationName === "bottom-sheet-in") {
             this.removeEventListener("animationend", this.handleBottomSheetClosed);
@@ -195,24 +161,15 @@ class MdBottomSheetComponent extends MdComponent {
         }
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleBottomSheetScrimClose(event) {
         if (this.open) this.close();
         this.emit("onBottomSheetScrimClose", { event });
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleBottomSheetIconButtonClick(event) {
         this.emit("onBottomSheetIconButtonClick", { event });
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleBottomSheetButtonClick(event) {
         this.emit("onBottomSheetButtonClick", { event });
     }

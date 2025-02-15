@@ -19,22 +19,14 @@ class MdTabsComponent extends MdComponent {
         variant: { type: String },
     };
 
-    /**
-     * @readonly
-     */
     variants = ["primary", "secondary"];
 
-    /**
-     */
     constructor() {
         super();
         this.items = [];
         this.variant = "primary";
     }
 
-    /**
-     * @param {Any} [item]
-     */
     renderTab(item) {
         return html`
             <md-tab
@@ -52,23 +44,16 @@ class MdTabsComponent extends MdComponent {
         `;
     }
 
-    /**
-     */
     render() {
         return this.items.map((item) => this.renderTab(item));
     }
 
-    /**
-     */
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-tabs");
         this.style.setProperty("--md-comp-tabs-indicator-transition-property", "none");
     }
 
-    /**
-     * @param {Any} [changedProperties]
-     */
     updated(changedProperties) {
         super.updated(changedProperties);
         if (changedProperties.has("variant")) {
@@ -78,9 +63,6 @@ class MdTabsComponent extends MdComponent {
         }
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleTabClick(event) {
         this.style.removeProperty("--md-comp-tabs-indicator-transition-property");
         const data = event.currentTarget.data;
@@ -91,10 +73,6 @@ class MdTabsComponent extends MdComponent {
         this.emit("onTabClick", { event });
     }
 
-    /**
-     * @async
-     * @param {Any} [event]
-     */
     async handleTabSelected(event) {
         if (this.classList.contains("md-tabs")) {
             const tab = event.detail.tab;

@@ -17,22 +17,14 @@ class MdSegmentedButtonComponent extends MdComponent {
         type: { type: String },
     };
 
-    /**
-     * @readonly
-     */
     types = ["single-select", "multi-select"];
 
-    /**
-     */
     constructor() {
         super();
         this.items = [];
         this.type = "single-select";
     }
 
-    /**
-     * @param {Any} [item]
-     */
     renderButton(item) {
         return html`
             <md-button
@@ -49,22 +41,15 @@ class MdSegmentedButtonComponent extends MdComponent {
         `;
     }
 
-    /**
-     */
     render() {
         return this.items.map((item) => this.renderButton(item));
     }
 
-    /**
-     */
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-segmented-button");
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleSegmentedButtonItemClick(event) {
         const data = event.currentTarget.data;
         if (this.type === "single-select") {

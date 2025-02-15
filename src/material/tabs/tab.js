@@ -30,15 +30,11 @@ class MdTabComponent extends MdComponent {
         badge: { type: Number },
     };
 
-    /**
-     */
     constructor() {
         super();
         this.rippleOptions = {};
     }
 
-    /**
-     */
     render() {
         return html`
             ${this.icon ? html`<md-icon class="md-tab__icon">${this.icon}</md-icon>` : nothing} ${this.label || this.sublabel ? html` <div class="md-tab__labels">${this.label ? html`<div class="md-tab__label">${this.label}</div>` : nothing} ${this.sublabel ? html`<div class="md-tab__sublabel">${this.sublabel}</div>` : nothing}</div> ` : nothing} ${this.text ? html`<div class="md-tab__text">${this.text}</div>` : nothing}
@@ -51,9 +47,6 @@ class MdTabComponent extends MdComponent {
         `;
     }
 
-    /**
-     * @async
-     */
     async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-tab");
@@ -61,18 +54,11 @@ class MdTabComponent extends MdComponent {
         this.ripple = new Ripple(this, this.rippleOptions);
     }
 
-    /**
-     * @async
-     */
     async disconnectedCallback() {
         super.disconnectedCallback();
         if (this.ripple) this.ripple.destroy();
     }
 
-    /**
-     * @async
-     * @param {Any} [changedProperties]
-     */
     async updated(changedProperties) {
         super.updated(changedProperties);
         if (changedProperties.has("icon")) {

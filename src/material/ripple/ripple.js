@@ -82,23 +82,14 @@ class Ripple {
         this.trigger = null;
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleRippleHoverIn(event) {
         this.container.classList.add("md-ripple--hover");
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleRippleHoverOut(event) {
         this.container.classList.remove("md-ripple--hover");
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleRipplePressIn(event) {
         window.addEventListener("pointerup", this.handleRipplePressOut, { passive: true });
         window.addEventListener("touchend", this.handleRipplePressOut, { passive: true });
@@ -117,25 +108,16 @@ class Ripple {
         }
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleRipplePressOut(event) {
         window.removeEventListener("pointerup", this.handleRipplePressOut);
         window.removeEventListener("touchend", this.handleRipplePressOut);
         this.container.classList.remove("md-ripple--press");
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleRippleFocusIn(event) {
         this.container.classList.add("md-ripple--focus");
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleRippleFocusOut(event) {
         this.container.classList.remove("md-ripple--focus");
     }

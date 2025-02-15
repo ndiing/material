@@ -8,16 +8,11 @@ import { closestScrollableElement, parseWeek, stringifyWeek } from "../util/util
  * @element md-week-field
  */
 class MdWeekFieldComponent extends MdTextFieldComponent {
-    /**
-     */
     constructor() {
         super();
         this.type = "week";
     }
 
-    /**
-     * @readonly
-     */
     get trailingActions() {
         let actions = [
             {
@@ -29,23 +24,16 @@ class MdWeekFieldComponent extends MdTextFieldComponent {
         return actions;
     }
 
-    /**
-     */
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-week-field");
     }
 
-    /**
-     */
     disconnectedCallback() {
         super.disconnectedCallback();
         this.removePicker();
     }
 
-    /**
-     * @async
-     */
     async createPicker() {
         if (!this.picker) {
             this.picker = document.createElement("md-week-picker");
@@ -58,8 +46,6 @@ class MdWeekFieldComponent extends MdTextFieldComponent {
         }
     }
 
-    /**
-     */
     removePicker() {
         if (this.picker) {
             this.picker.removeEventListener("onWeekPickerButtonCancelClick", this.handleWeekFieldPickerButtonCancelClick);
@@ -104,9 +90,6 @@ class MdWeekFieldComponent extends MdTextFieldComponent {
         }
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleWeekFieldWindowClick(event) {
         const target = document.elementFromPoint(event.clientX, event.clientY);
         if (!this.pickerTrigger.contains(target) && !this.picker.contains(target)) {
@@ -114,42 +97,26 @@ class MdWeekFieldComponent extends MdTextFieldComponent {
         }
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleWeekFieldWindowScroll(event) {
         this.closePicker();
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleWeekFieldPickerButtonCancelClick(event) {
         this.closePicker();
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleWeekFieldPickerButtonOkClick(event) {
         this.textFieldNative.value = stringifyWeek(this.picker.value);
         this.updateValue();
         this.closePicker();
     }
 
-    /**
-     * @async
-     * @param {Any} [event]
-     */
     async handleTextFieldIconButtonPickerClick(event) {
         this.pickerTrigger = event.currentTarget;
         await this.createPicker();
         this.togglePicker({ trigger: this.textFieldContainer });
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleTextFieldIconButtonClick(event) {
         const data = event.currentTarget.data;
         if (data.id === "date_range") return this.handleTextFieldIconButtonPickerClick(event);

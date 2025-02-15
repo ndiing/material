@@ -6,8 +6,6 @@ import { MdComponent } from "../component/component";
  * @element md-divider
  */
 class MdDividerComponent extends MdComponent {
-    /**
-     */
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-divider");

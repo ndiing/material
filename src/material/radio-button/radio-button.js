@@ -23,14 +23,10 @@ class MdRadioButtonComponent extends MdComponent {
         checked: { type: Boolean },
     };
 
-    /**
-     */
     constructor() {
         super();
     }
 
-    /**
-     */
     render() {
         return html`
             <input
@@ -52,9 +48,6 @@ class MdRadioButtonComponent extends MdComponent {
         `;
     }
 
-    /**
-     * @async
-     */
     async connectedCallback() {
         super.connectedCallback();
         this.defaultValue = this.value;
@@ -70,17 +63,11 @@ class MdRadioButtonComponent extends MdComponent {
         });
     }
 
-    /**
-     * @async
-     */
     async disconnectedCallback() {
         super.disconnectedCallback();
         if (this.ripple) this.ripple.destroy();
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleRadioButtonNativeInput(event) {
         const native = event.currentTarget;
         this.indeterminate = native.indeterminate;
@@ -88,9 +75,6 @@ class MdRadioButtonComponent extends MdComponent {
         this.emit("onRadioButtonNativeInput", { event });
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleRadioButtonNativeReset(event) {
         this.value = this.defaultValue;
         this.indeterminate = this.defaultIndeterminate;

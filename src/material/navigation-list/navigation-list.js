@@ -22,8 +22,6 @@ class MdNavigationListComponent extends MdComponent {
         rippleOptions: { type: Object },
     };
 
-    /**
-     */
     constructor() {
         super();
         this.items = [];
@@ -31,9 +29,6 @@ class MdNavigationListComponent extends MdComponent {
         this.storeItems = [];
     }
 
-    /**
-     * @param {Any} [item]
-     */
     renderNavigationListItem(item) {
         return html`
             <md-navigation-list-row>
@@ -52,15 +47,10 @@ class MdNavigationListComponent extends MdComponent {
         `;
     }
 
-    /**
-     */
     render() {
         return this.items.map((item) => this.renderNavigationListItem(item));
     }
 
-    /**
-     * @async
-     */
     async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-navigation-list");
@@ -69,18 +59,11 @@ class MdNavigationListComponent extends MdComponent {
         window.addEventListener("keydown", this.handleNavigationListKeydown);
     }
 
-    /**
-     * @async
-     */
     async disconnectedCallback() {
         super.disconnectedCallback();
         window.removeEventListener("keydown", this.handleNavigationListKeydown);
     }
 
-    /**
-     * @async
-     * @param {Any} [changedProperties]
-     */
     async updated(changedProperties) {
         super.updated(changedProperties);
         if (changedProperties.has("items")) {
@@ -90,17 +73,12 @@ class MdNavigationListComponent extends MdComponent {
         }
     }
 
-    /**
-     */
     updateStore() {
         const result = this.store.get({});
         this.storeItems = result.data;
         this.requestUpdate();
     }
 
-    /**
-     * @async
-     */
     async updateScroll() {
         await this.updateComplete;
         const navigationListItemSelected = this.querySelector("md-navigation-list-item[selected]");
@@ -112,9 +90,6 @@ class MdNavigationListComponent extends MdComponent {
         });
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleNavigationListKeydownArrowUp(event) {
         event.preventDefault();
         const selectedIndex = this.storeItems.findIndex((item) => item.selected);
@@ -128,10 +103,6 @@ class MdNavigationListComponent extends MdComponent {
         this.emit("onNavigationListKeydownArrowUp", { event });
     }
 
-    /**
-     * @async
-     * @param {Any} [event]
-     */
     async handleNavigationListKeydownArrowDown(event) {
         event.preventDefault();
         const selectedIndex = this.storeItems.findIndex((item) => item.selected);
@@ -145,9 +116,6 @@ class MdNavigationListComponent extends MdComponent {
         this.emit("onNavigationListKeydownArrowDown", { event });
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleNavigationListKeydownEnter(event) {
         event.preventDefault();
         // const navigationListItemSelected = this.querySelector("md-navigation-list-item[selected]");
@@ -155,9 +123,6 @@ class MdNavigationListComponent extends MdComponent {
         this.emit("onNavigationListKeydownEnter", { event });
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleNavigationListKeydown(event) {
         if (this.contains(document.activeElement)) {
             if (event.key === "ArrowUp") return this.handleNavigationListKeydownArrowUp(event);
@@ -167,9 +132,6 @@ class MdNavigationListComponent extends MdComponent {
         this.emit("onNavigationListKeydown", { event });
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleNavigationListItemClick(event) {
         this.style.removeProperty("--md-comp-navigation-list-icon-animation");
         const data = event.currentTarget.data;

@@ -8,6 +8,7 @@ class DemoMenu extends MdComponent {
                 <div class="md-layout__grid">
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                         <md-button
+                            id="button"
                             variant="filled-tonal"
                             label="Toggle Menu"
                             @click="${(event) => menu.toggle({ trigger: event.currentTarget })}"
@@ -15,17 +16,23 @@ class DemoMenu extends MdComponent {
                         <md-menu
                             id="menu"
                             .items="${[{ label: "Label" }, { label: "Label" }, { label: "Label" }, { label: "Label" }]}"
-                            @onNavigationListKeydownEnter="${console.log}"
-                            @onNavigationListItemClick="${(event) => console.log(event.detail.event.currentTarget.data)}"
                             @onMenuShow="${console.log}"
                             @onMenuClose="${console.log}"
+                            @onMenuWindowClick="${event => {
+                                if(!menu.contains(event.detail.target)&&!button.contains(event.detail.target)){
+                                    menu.close()
+                                }
+                            }}"
+                            @onMenuWindowScroll="${() => menu.close()}"
                             @onMenuShown="${console.log}"
                             @onMenuClosed="${console.log}"
+                            @onNavigationListItemClick="${() => menu.close()}"
                         ></md-menu>
                     </div>
 
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                         <md-button
+                            id="button2"
                             variant="filled-tonal"
                             label="Toggle Menu"
                             @click="${(event) => menu2.toggle({ trigger: event.currentTarget })}"
@@ -33,12 +40,17 @@ class DemoMenu extends MdComponent {
                         <md-menu
                             id="menu2"
                             .items="${[{ label: "Label" }, { label: "Label" }, { label: "Label" }, { label: "Label", selected: true }]}"
-                            @onNavigationListKeydownEnter="${console.log}"
-                            @onNavigationListItemClick="${(event) => console.log(event.detail.event.currentTarget.data)}"
                             @onMenuShow="${console.log}"
                             @onMenuClose="${console.log}"
+                            @onMenuWindowClick="${event => {
+                                if(!menu2.contains(event.detail.target)&&!button2.contains(event.detail.target)){
+                                    menu2.close()
+                                }
+                            }}"
+                            @onMenuWindowScroll="${() => menu2.close()}"
                             @onMenuShown="${console.log}"
                             @onMenuClosed="${console.log}"
+                            @onNavigationListItemClick="${() => menu2.close()}"
                         ></md-menu>
                     </div>
 

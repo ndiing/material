@@ -6,8 +6,6 @@ import { MdComponent } from "../component/component";
  * @element md-list-row
  */
 class MdListRowComponent extends MdComponent {
-    /**
-     */
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-list__row");

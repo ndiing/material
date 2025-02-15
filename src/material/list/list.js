@@ -24,22 +24,14 @@ class MdListComponent extends MdComponent {
         rippleOptions: { type: Object },
     };
 
-    /**
-     * @readonly
-     */
     types = ["single-select", "multi-select"];
 
-    /**
-     */
     constructor() {
         super();
         this.items = [];
         this.type = "single-select";
     }
 
-    /**
-     * @param {Any} [item]
-     */
     renderListItem(item) {
         if (this.fieldMap) {
             for (const name in this.fieldMap) {
@@ -78,22 +70,15 @@ class MdListComponent extends MdComponent {
         `;
     }
 
-    /**
-     */
     render() {
         return this.items.map((item) => this.renderListItem(item));
     }
 
-    /**
-     */
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-list");
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleListItemClick(event) {
         const action = event.target.closest(".md-list__checkbox,.md-list__radio-button,.md-list__switch");
         if (action) return;
@@ -109,9 +94,6 @@ class MdListComponent extends MdComponent {
         this.emit("onListItemClick", { event });
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleListItemCheckboxNativeInput(event) {
         const data = event.currentTarget.data;
         data.selected = !data.selected;
@@ -119,9 +101,6 @@ class MdListComponent extends MdComponent {
         this.emit("onListItemCheckboxNativeInput", { event });
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleListItemRadioButtonNativeInput(event) {
         const data = event.currentTarget.data;
         this.items.forEach((item) => {
@@ -131,9 +110,6 @@ class MdListComponent extends MdComponent {
         this.emit("onListItemRadioButtonNativeInput", { event });
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleListItemSwitchNativeInput(event) {
         const data = event.currentTarget.data;
         data.selected = !data.selected;

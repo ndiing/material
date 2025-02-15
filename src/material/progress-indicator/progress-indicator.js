@@ -17,21 +17,14 @@ class MdProgressIndicatorComponent extends MdComponent {
         value: { type: Number },
     };
 
-    /**
-     * @readonly
-     */
     variants = ["circular"];
 
-    /**
-     */
     constructor() {
         super();
         this.max = 100;
         this.value = 0;
     }
 
-    /**
-     */
     renderProgressIndicatorNative() {
         return html`
             <progress
@@ -42,8 +35,6 @@ class MdProgressIndicatorComponent extends MdComponent {
         `;
     }
 
-    /**
-     */
     renderProgressIndicatorCircular() {
         this.r = ((36 / 40) * 100) / 2;
         this.strokeWidth = (4 / 40) * 100;
@@ -89,23 +80,16 @@ class MdProgressIndicatorComponent extends MdComponent {
         `;
     }
 
-    /**
-     */
     render() {
         if (this.variant === "circular") return this.renderProgressIndicatorCircular();
         else return this.renderProgressIndicatorNative();
     }
 
-    /**
-     */
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-progress-indicator");
     }
 
-    /**
-     * @param {Any} [changedProperties]
-     */
     updated(changedProperties) {
         super.updated(changedProperties);
         if (changedProperties.has("variant")) {

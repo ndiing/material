@@ -1,9 +1,6 @@
 /**
  */
 class Layout {
-    /**
-     * @readonly
-     */
     items = [
         { name: "expanded", media: window.matchMedia("(min-width: 840px)") },
         { name: "medium", media: window.matchMedia("(min-width: 600px) and (max-width: 839px)") },

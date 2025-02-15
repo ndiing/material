@@ -8,16 +8,11 @@ import { closestScrollableElement, parseMonth, stringifyMonth } from "../util/ut
  * @element md-month-field
  */
 class MdMonthFieldComponent extends MdTextFieldComponent {
-    /**
-     */
     constructor() {
         super();
         this.type = "month";
     }
 
-    /**
-     * @readonly
-     */
     get trailingActions() {
         let actions = [
             {
@@ -29,23 +24,16 @@ class MdMonthFieldComponent extends MdTextFieldComponent {
         return actions;
     }
 
-    /**
-     */
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-month-field");
     }
 
-    /**
-     */
     disconnectedCallback() {
         super.disconnectedCallback();
         this.removePicker();
     }
 
-    /**
-     * @async
-     */
     async createPicker() {
         if (!this.picker) {
             this.picker = document.createElement("md-month-picker");
@@ -58,8 +46,6 @@ class MdMonthFieldComponent extends MdTextFieldComponent {
         }
     }
 
-    /**
-     */
     removePicker() {
         if (this.picker) {
             this.picker.removeEventListener("onMonthPickerButtonCancelClick", this.handleMonthFieldPickerButtonCancelClick);
@@ -104,9 +90,6 @@ class MdMonthFieldComponent extends MdTextFieldComponent {
         }
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleMonthFieldWindowClick(event) {
         const target = document.elementFromPoint(event.clientX, event.clientY);
         if (!this.pickerTrigger.contains(target) && !this.picker.contains(target)) {
@@ -114,42 +97,26 @@ class MdMonthFieldComponent extends MdTextFieldComponent {
         }
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleMonthFieldWindowScroll(event) {
         this.closePicker();
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleMonthFieldPickerButtonCancelClick(event) {
         this.closePicker();
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleMonthFieldPickerButtonOkClick(event) {
         this.textFieldNative.value = stringifyMonth(this.picker.value);
         this.updateValue();
         this.closePicker();
     }
 
-    /**
-     * @async
-     * @param {Any} [event]
-     */
     async handleTextFieldIconButtonPickerClick(event) {
         this.pickerTrigger = event.currentTarget;
         await this.createPicker();
         this.togglePicker({ trigger: this.textFieldContainer });
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleTextFieldIconButtonClick(event) {
         const data = event.currentTarget.data;
         if (data.id === "calendar_month") return this.handleTextFieldIconButtonPickerClick(event);

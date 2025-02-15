@@ -29,14 +29,10 @@ class MdDataTableCellComponent extends MdComponent {
         checked: { type: Boolean },
     };
 
-    /**
-     */
     constructor() {
         super();
     }
 
-    /**
-     */
     render() {
         return html`
             ${this.checkbox
@@ -57,9 +53,6 @@ class MdDataTableCellComponent extends MdComponent {
         `;
     }
 
-    /**
-     * @async
-     */
     async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-data-table__cell");
@@ -74,10 +67,6 @@ class MdDataTableCellComponent extends MdComponent {
         }
     }
 
-    /**
-     * @async
-     * @param {Any} [changedProperties]
-     */
     async updated(changedProperties) {
         super.updated(changedProperties);
         if (changedProperties.has("icon")) {

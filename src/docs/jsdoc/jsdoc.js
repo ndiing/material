@@ -1,6 +1,9 @@
-import jsdoc from "../jsdoc.json";
+import jsdoc from "./jsdoc.json";
 const docs = Object.groupBy(
-    jsdoc.filter((item) => !item.undocumented&&item.meta?.filename),
+    jsdoc.filter((item) => 
+        !item.undocumented
+    &&item.meta?.filename
+    &&!item.inherited),
     (item) => item.meta.filename,
 );
 const keys = Object.keys(docs);

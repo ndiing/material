@@ -1,14 +1,14 @@
 import "./material/material.scss";
-import "./demo/demo.scss";
-import "./docs/docs.scss";
-
 import "./material/material.js";
-import { Router } from "./material/router/router";
 
+import { Router } from "./material/router/router";
 import { Progress } from "./material/progress/progress.js";
 import { setTheme } from "./material/color/color.js";
 
+import "./demo/demo.scss";
 import DemoRoutes from "./demo/demo.js";
+
+import "./docs/docs.scss";
 import DocsRoutes from "./docs/docs.js";
 
 const component = document.createElement("div");

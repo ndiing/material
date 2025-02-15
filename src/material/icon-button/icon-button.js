@@ -26,20 +26,13 @@ class MdIconButtonComponent extends MdComponent {
         disabled: { type: Boolean, reflect: true },
     };
 
-    /**
-     * @readonly
-     */
     variants = ["filled", "filled-tonal", "outlined"];
 
-    /**
-     */
     constructor() {
         super();
         this.type = "button";
     }
 
-    /**
-     */
     render() {
         return html`
             <button
@@ -52,9 +45,6 @@ class MdIconButtonComponent extends MdComponent {
         `;
     }
 
-    /**
-     * @async
-     */
     async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-icon-button");
@@ -69,17 +59,12 @@ class MdIconButtonComponent extends MdComponent {
         });
     }
 
-    /**
-     */
     disconnectedCallback() {
         super.disconnectedCallback();
         this.removeEventListener("click", this.handleIconButtonClick);
         if (this.ripple) this.ripple.destroy();
     }
 
-    /**
-     * @param {Any} [changedProperties]
-     */
     updated(changedProperties) {
         super.updated(changedProperties);
         if (changedProperties.has("variant")) {
@@ -89,9 +74,6 @@ class MdIconButtonComponent extends MdComponent {
         }
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleIconButtonClick(event) {
         if (this.toggle) {
             this.selected = !this.selected;

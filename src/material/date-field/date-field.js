@@ -8,16 +8,11 @@ import { closestScrollableElement, parseDate, stringifyDate } from "../util/util
  * @element md-date-field
  */
 class MdDateFieldComponent extends MdTextFieldComponent {
-    /**
-     */
     constructor() {
         super();
         this.type = "date";
     }
 
-    /**
-     * @readonly
-     */
     get trailingActions() {
         let actions = [
             {
@@ -29,23 +24,16 @@ class MdDateFieldComponent extends MdTextFieldComponent {
         return actions;
     }
 
-    /**
-     */
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-date-field");
     }
 
-    /**
-     */
     disconnectedCallback() {
         super.disconnectedCallback();
         this.removePicker();
     }
 
-    /**
-     * @async
-     */
     async createPicker() {
         if (!this.picker) {
             this.picker = document.createElement("md-date-picker");
@@ -58,8 +46,6 @@ class MdDateFieldComponent extends MdTextFieldComponent {
         }
     }
 
-    /**
-     */
     removePicker() {
         if (this.picker) {
             this.picker.removeEventListener("onDatePickerButtonCancelClick", this.handleDateFieldPickerButtonCancelClick);
@@ -104,9 +90,6 @@ class MdDateFieldComponent extends MdTextFieldComponent {
         }
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleDateFieldWindowClick(event) {
         const target = document.elementFromPoint(event.clientX, event.clientY);
         if (!this.pickerTrigger.contains(target) && !this.picker.contains(target)) {
@@ -114,42 +97,26 @@ class MdDateFieldComponent extends MdTextFieldComponent {
         }
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleDateFieldWindowScroll(event) {
         this.closePicker();
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleDateFieldPickerButtonCancelClick(event) {
         this.closePicker();
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleDateFieldPickerButtonOkClick(event) {
         this.textFieldNative.value = stringifyDate(this.picker.value);
         this.updateValue();
         this.closePicker();
     }
 
-    /**
-     * @async
-     * @param {Any} [event]
-     */
     async handleTextFieldIconButtonPickerClick(event) {
         this.pickerTrigger = event.currentTarget;
         await this.createPicker();
         this.togglePicker({ trigger: this.textFieldContainer });
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleTextFieldIconButtonClick(event) {
         const data = event.currentTarget.data;
         if (data.id === "calendar_today") return this.handleTextFieldIconButtonPickerClick(event);

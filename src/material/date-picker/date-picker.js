@@ -67,16 +67,10 @@ class MdDatePickerComponent extends MdComponent {
     weekdayFormat = new Intl.DateTimeFormat(undefined, { weekday: "narrow" }).format;
     dayFormat = new Intl.DateTimeFormat(undefined, { day: "numeric" }).format;
 
-    /**
-     * @readonly
-     */
     get startOfDay() {
         return new Date(this.selection.getFullYear(), this.selection.getMonth()).getDay();
     }
 
-    /**
-     * @readonly
-     */
     get years() {
         let year = this.selection.getFullYear();
         year = Math.floor(year / 10) * 10;
@@ -91,9 +85,6 @@ class MdDatePickerComponent extends MdComponent {
         });
     }
 
-    /**
-     * @readonly
-     */
     get months() {
         return Array.from({ length: 12 }, (v, k) => {
             const date = new Date(this.selection.getFullYear(), k);
@@ -107,9 +98,6 @@ class MdDatePickerComponent extends MdComponent {
         });
     }
 
-    /**
-     * @readonly
-     */
     get weekdays() {
         return Array.from({ length: 7 }, (v, k) => {
             const date = new Date(0, 0, k);
@@ -119,9 +107,6 @@ class MdDatePickerComponent extends MdComponent {
         });
     }
 
-    /**
-     * @readonly
-     */
     get days() {
         return Array.from({ length: 6 }, (v, k) => {
             return Array.from({ length: 7 }, (v2, k2) => {
@@ -140,9 +125,6 @@ class MdDatePickerComponent extends MdComponent {
         });
     }
 
-    /**
-     * @readonly
-     */
     get icons() {
         const map = {
             0: () => [this.years[0].label, this.years[this.years.length - 1].label].join(" - "),
@@ -152,9 +134,6 @@ class MdDatePickerComponent extends MdComponent {
         return [{ component: "button", id: "label", label: map[this.index]() }];
     }
 
-    /**
-     * @readonly
-     */
     get actions() {
         return [
             { id: "prev", icon: "keyboard_arrow_left" },
@@ -162,15 +141,10 @@ class MdDatePickerComponent extends MdComponent {
         ];
     }
 
-    /**
-     * @readonly
-     */
     get buttons() {
         return [{ component: "spacer" }, { id: "cancel", label: "Cancel" }, { id: "ok", label: "Ok" }];
     }
 
-    /**
-     */
     constructor() {
         super();
         this.current = new Date();
@@ -179,9 +153,6 @@ class MdDatePickerComponent extends MdComponent {
         this.index = 2;
     }
 
-    /**
-     * @param {Any} [item]
-     */
     renderIcon(item) {
         /* prettier-ignore */
         return html`
@@ -191,9 +162,6 @@ class MdDatePickerComponent extends MdComponent {
         `;
     }
 
-    /**
-     * @param {Any} [item]
-     */
     renderIconButton(item) {
         /* prettier-ignore */
         return html`
@@ -210,9 +178,6 @@ class MdDatePickerComponent extends MdComponent {
         `;
     }
 
-    /**
-     * @param {Any} [item]
-     */
     renderButton(item) {
         /* prettier-ignore */
         return html`
@@ -229,9 +194,6 @@ class MdDatePickerComponent extends MdComponent {
         `;
     }
 
-    /**
-     * @param {Any} [item]
-     */
     renderSpacer(item) {
         /* prettier-ignore */
         return html`
@@ -241,10 +203,6 @@ class MdDatePickerComponent extends MdComponent {
         `;
     }
 
-    /**
-     * @param {Any} [item]
-     * @param {Any} [component="icon"]
-     */
     renderComponent(item, component = "icon") {
         const components = [
             ["icon", () => this.renderIcon(item)],
@@ -255,8 +213,6 @@ class MdDatePickerComponent extends MdComponent {
         return choose(item.component || component, components, () => nothing);
     }
 
-    /**
-     */
     renderDatePickerYear() {
         /* prettier-ignore */
         return html`
@@ -274,8 +230,6 @@ class MdDatePickerComponent extends MdComponent {
         `;
     }
 
-    /**
-     */
     renderDatePickerMonth() {
         /* prettier-ignore */
         return html`
@@ -293,8 +247,6 @@ class MdDatePickerComponent extends MdComponent {
         `;
     }
 
-    /**
-     */
     renderDatePickerDay() {
         /* prettier-ignore */
         return html`
@@ -329,8 +281,6 @@ class MdDatePickerComponent extends MdComponent {
         `;
     }
 
-    /**
-     */
     render() {
         /* prettier-ignore */
         return html`
@@ -361,9 +311,6 @@ class MdDatePickerComponent extends MdComponent {
         `;
     }
 
-    /**
-     * @async
-     */
     async connectedCallback() {
         super.connectedCallback();
         this.defaultValue = new Date(this.value.valueOf());
@@ -380,18 +327,12 @@ class MdDatePickerComponent extends MdComponent {
         this.style.setProperty("--md-comp-date-picker-width", this.clientWidth + "px");
     }
 
-    /**
-     */
     disconnectedCallback() {
         super.disconnectedCallback();
         this.datePickerScrim.removeEventListener("onScrimClose", this.handleDatePickerScrimClose);
         this.datePickerScrim.remove();
     }
 
-    /**
-     * @async
-     * @param {Any} [changedProperties]
-     */
     async updated(changedProperties) {
         super.updated(changedProperties);
         if (changedProperties.has("index")) {
@@ -450,9 +391,6 @@ class MdDatePickerComponent extends MdComponent {
         else this.show(options);
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleDatePickerYearItemClick(event) {
         const data = event.currentTarget.data;
         this.selection.setFullYear(data.year);
@@ -460,9 +398,6 @@ class MdDatePickerComponent extends MdComponent {
         this.emit("onDatePickerYearItemClick", { event });
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleDatePickerMonthItemClick(event) {
         const data = event.currentTarget.data;
         this.selection.setFullYear(data.year);
@@ -471,9 +406,6 @@ class MdDatePickerComponent extends MdComponent {
         this.emit("onDatePickerMonthItemClick", { event });
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleDatePickerDayItemClick(event) {
         const data = event.currentTarget.data;
         this.selection.setFullYear(data.year);
@@ -486,33 +418,21 @@ class MdDatePickerComponent extends MdComponent {
         this.emit("onDatePickerDayItemClick", { event });
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleDatePickerScrimClose(event) {
         if (this.open) this.close();
         this.emit("onDatePickerScrimClose", { event });
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleDatePickerShown(event) {
         this.removeEventListener("animationend", this.handleDatePickerShown);
         this.emit("onDatePickerShown");
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleDatePickerClosed(event) {
         this.removeEventListener("animationend", this.handleDatePickerClosed);
         this.emit("onDatePickerClosed");
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleDatePickerIconButtonPrevClick(event) {
         const map = {
             0: () => this.selection.setFullYear(this.selection.getFullYear() - 10),
@@ -524,9 +444,6 @@ class MdDatePickerComponent extends MdComponent {
         this.emit("onDatePickerIconButtonPrevClick", { event });
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleDatePickerIconButtonNextClick(event) {
         const map = {
             0: () => this.selection.setFullYear(this.selection.getFullYear() + 10),
@@ -538,9 +455,6 @@ class MdDatePickerComponent extends MdComponent {
         this.emit("onDatePickerIconButtonNextClick", { event });
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleDatePickerIconButtonClick(event) {
         const data = event.currentTarget.data;
         const map = {
@@ -552,26 +466,17 @@ class MdDatePickerComponent extends MdComponent {
         this.emit("onDatePickerIconButtonClick", { event });
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleDatePickerButtonCancelClick(event) {
         this.value = new Date(this.defaultValue.valueOf());
         // this.close();
         this.emit("onDatePickerButtonCancelClick", { event });
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleDatePickerButtonOkClick(event) {
         // this.close();
         this.emit("onDatePickerButtonOkClick", { event });
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleDatePickerButtonLabelClick(event) {
         const map = {
             0: 1,
@@ -582,9 +487,6 @@ class MdDatePickerComponent extends MdComponent {
         this.emit("onDatePickerButtonLabelClick", { event });
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleDatePickerButtonClick(event) {
         const data = event.currentTarget.data;
         const map = {

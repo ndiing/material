@@ -41,8 +41,8 @@ class DocsMain extends MdComponent {
             };
         });
 
-        // sortItems(this.items);
-        // select(this.items);
+        sortItems(this.items);
+        select(this.items);
     }
 
     render() {

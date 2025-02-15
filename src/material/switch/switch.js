@@ -25,14 +25,10 @@ class MdSwitchComponent extends MdComponent {
         icons: { type: Array },
     };
 
-    /**
-     */
     constructor() {
         super();
     }
 
-    /**
-     */
     render() {
         return html`
             <input
@@ -54,9 +50,6 @@ class MdSwitchComponent extends MdComponent {
         `;
     }
 
-    /**
-     * @async
-     */
     async connectedCallback() {
         super.connectedCallback();
         this.defaultValue = this.value;
@@ -74,17 +67,11 @@ class MdSwitchComponent extends MdComponent {
         });
     }
 
-    /**
-     * @async
-     */
     async disconnectedCallback() {
         super.disconnectedCallback();
         if (this.ripple) this.ripple.destroy();
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleSwitchNativeInput(event) {
         this.style.removeProperty("--md-comp-switch-thumb-transition-property");
         const native = event.currentTarget;
@@ -93,9 +80,6 @@ class MdSwitchComponent extends MdComponent {
         this.emit("onSwitchNativeInput", { event });
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleSwitchNativeReset(event) {
         this.value = this.defaultValue;
         this.indeterminate = this.defaultIndeterminate;

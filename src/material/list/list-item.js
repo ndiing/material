@@ -50,15 +50,11 @@ class MdListItemComponent extends MdComponent {
         badge: { type: Number },
     };
 
-    /**
-     */
     constructor() {
         super();
         this.rippleOptions = {};
     }
 
-    /**
-     */
     render() {
         return html`
             ${this.leadingCheckbox
@@ -127,9 +123,6 @@ class MdListItemComponent extends MdComponent {
         `;
     }
 
-    /**
-     * @async
-     */
     async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-list__item");
@@ -145,18 +138,11 @@ class MdListItemComponent extends MdComponent {
         this.ripple = new Ripple(this, this.rippleOptions);
     }
 
-    /**
-     * @async
-     */
     async disconnectedCallback() {
         super.disconnectedCallback();
         if (this.ripple) this.ripple.destroy();
     }
 
-    /**
-     * @async
-     * @param {Any} [changedProperties]
-     */
     async updated(changedProperties) {
         super.updated(changedProperties);
         if (changedProperties.has("icon")) {

@@ -23,36 +23,20 @@ class MdFabComponent extends MdComponent {
         variant: { type: String },
     };
 
-    /**
-     * @readonly
-     */
     sizes = ["small", "large"];
 
-    /**
-     * @readonly
-     */
     types = ["extended"];
 
-    /**
-     * @readonly
-     */
     variants = ["unelevated"];
 
-    /**
-     */
     constructor() {
         super();
     }
 
-    /**
-     */
     render() {
         return html` ${this.icon ? html`<md-icon class="md-fab__icon">${this.icon}</md-icon>` : nothing} ${this.label ? html`<div class="md-fab__label">${this.label}</div>` : nothing} `;
     }
 
-    /**
-     * @async
-     */
     async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-fab");
@@ -60,17 +44,11 @@ class MdFabComponent extends MdComponent {
         this.ripple = new Ripple(this, {});
     }
 
-    /**
-     * @async
-     */
     async disconnectedCallback() {
         super.disconnectedCallback();
         if (this.ripple) this.ripple.destroy();
     }
 
-    /**
-     * @param {Any} [changedProperties]
-     */
     updated(changedProperties) {
         super.updated(changedProperties);
         if (changedProperties.has("type")) {

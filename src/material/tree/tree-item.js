@@ -30,26 +30,18 @@ class MdTreeItemComponent extends MdComponent {
         routerLink: { type: String, reflect: true },
     };
 
-    /**
-     * @readonly
-     */
     get action() {
         if (!this.actions?.length) return;
         if (this.data.children?.length) return this.actions[~~this.expanded];
         else return [" ", ""][~~(this.indent === 0)];
     }
 
-    /**
-     * @readonly
-     */
     get icon() {
         if (!this.leafIcons?.length) return;
         if (this.data.children?.length) return this.nodeIcons[~~this.expanded];
         else return this.leafIcons[~~this.selected];
     }
 
-    /**
-     */
     constructor() {
         super();
         this.actions = ["keyboard_arrow_right", "keyboard_arrow_down"];
@@ -57,15 +49,10 @@ class MdTreeItemComponent extends MdComponent {
         this.leafIcons = ["draft", "draft"];
     }
 
-    /**
-     */
     render() {
         return html` ${Array.from({ length: this.indent }, () => html`<div class="md-tree__indent"></div>`)} ${this.action ? html`<md-icon class="md-tree__action">${this.action}</md-icon>` : nothing} ${this.icon ? html`<md-icon class="md-tree__icon">${this.icon}</md-icon>` : nothing} ${this.label ? html`<div class="md-tree__label">${this.label}</div>` : nothing} `;
     }
 
-    /**
-     * @async
-     */
     async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-tree__item");
@@ -73,18 +60,11 @@ class MdTreeItemComponent extends MdComponent {
         this.ripple = new Ripple(this, {});
     }
 
-    /**
-     * @async
-     */
     async disconnectedCallback() {
         super.disconnectedCallback();
         if (this.ripple) this.ripple.destroy();
     }
 
-    /**
-     * @async
-     * @param {Any} [changedProperties]
-     */
     async updated(changedProperties) {
         super.updated(changedProperties);
         if (changedProperties.has("selected") && this.selected) {

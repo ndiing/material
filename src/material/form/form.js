@@ -30,22 +30,15 @@ class MdFormComponent extends MdComponent {
         noValidate: { type: Boolean },
     };
 
-    /**
-     * @readonly
-     */
     get formNative() {
         return this.querySelector(".md-form__native");
     }
 
-    /**
-     */
     constructor() {
         super();
         this.body = Array.from(this.childNodes);
     }
 
-    /**
-     */
     render() {
         return html`
             <form
@@ -66,8 +59,6 @@ class MdFormComponent extends MdComponent {
         `;
     }
 
-    /**
-     */
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-form");
@@ -94,16 +85,10 @@ class MdFormComponent extends MdComponent {
         }
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleFormNativeFormdata(event) {
         this.emit("onFormNativeFormdata", { event });
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleFormNativeReset(event) {
         for (const element of this.formNative.elements) {
             const event = new CustomEvent("reset", {
@@ -115,9 +100,6 @@ class MdFormComponent extends MdComponent {
         this.emit("onFormNativeReset", { event });
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleFormNativeSubmit(event) {
         event.preventDefault();
         new FormData(this.formNative);

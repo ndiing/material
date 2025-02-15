@@ -35,10 +35,6 @@ class Store {
         });
     }
 
-    /**
-     * @param {Any} [item]
-     * @param {Any} [q]
-     */
     deepSearch(item, q) {
         if (!item) return false;
         if (typeof item === "string" || typeof item === "number") {
@@ -62,10 +58,6 @@ class Store {
         return data.filter((item) => this.deepSearch(item, q));
     }
 
-    /**
-     * @param {Any} [item]
-     * @param {Any} [name]
-     */
     getNestedValue(item, name) {
         return name.split(".").reduce((acc, key) => (acc && acc[key] !== undefined ? acc[key] : undefined), item);
     }

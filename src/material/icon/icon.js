@@ -6,8 +6,6 @@ import { MdComponent } from "../component/component";
  * @element md-icon
  */
 class MdIconComponent extends MdComponent {
-    /**
-     */
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-icon");

@@ -25,20 +25,13 @@ class MdButtonComponent extends MdComponent {
         selected: { type: Boolean, reflect: true },
     };
 
-    /**
-     * @readonly
-     */
     variants = ["elevated", "filled", "filled-tonal", "outlined"];
 
-    /**
-     */
     constructor() {
         super();
         this.type = "button";
     }
 
-    /**
-     */
     render() {
         return html`
             <button
@@ -51,9 +44,6 @@ class MdButtonComponent extends MdComponent {
         `;
     }
 
-    /**
-     * @async
-     */
     async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-button");
@@ -63,17 +53,11 @@ class MdButtonComponent extends MdComponent {
         });
     }
 
-    /**
-     * @async
-     */
     async disconnectedCallback() {
         super.disconnectedCallback();
         if (this.ripple) this.ripple.destroy();
     }
 
-    /**
-     * @param {Any} [changedProperties]
-     */
     updated(changedProperties) {
         super.updated(changedProperties);
         if (changedProperties.has("variant")) {

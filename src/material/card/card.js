@@ -25,23 +25,15 @@ class MdCardComponent extends MdComponent {
         buttons: { type: Array },
     };
 
-    /**
-     */
     constructor() {
         super();
         this.body = Array.from(this.childNodes);
     }
 
-    /**
-     * @param {Any} [item]
-     */
     renderIcon(item) {
         return html` <md-icon .data="${item}">${item.icon}</md-icon> `;
     }
 
-    /**
-     * @param {Any} [item]
-     */
     renderIconButton(item) {
         return html`
             <md-icon-button
@@ -57,9 +49,6 @@ class MdCardComponent extends MdComponent {
         `;
     }
 
-    /**
-     * @param {Any} [item]
-     */
     renderButton(item) {
         return html`
             <md-button
@@ -75,17 +64,10 @@ class MdCardComponent extends MdComponent {
         `;
     }
 
-    /**
-     * @param {Any} [item]
-     */
     renderSpacer(item) {
         return html` <div class="md-card__spacer"></div> `;
     }
 
-    /**
-     * @param {Any} [item]
-     * @param {Any} [component="icon"]
-     */
     renderComponent(item, component = "icon") {
         const components = [
             ["icon", () => this.renderIcon(item)],
@@ -96,29 +78,19 @@ class MdCardComponent extends MdComponent {
         return choose(item.component || component, components, () => nothing);
     }
 
-    /**
-     */
     render() {
         return html` ${this.icons?.length || this.label || this.sublabel || this.actions?.length ? html` <div class="md-card__header">${this.icons?.length ? html` <div class="md-card__icons">${this.icons.map((icon) => this.renderComponent(icon, "icon"))}</div> ` : nothing} ${this.label || this.sublabel ? html` <div class="md-card__labels">${this.label ? html`<div class="md-card__label">${this.label}</div>` : nothing} ${this.sublabel ? html`<div class="md-card__sublabel">${this.sublabel}</div>` : nothing}</div> ` : nothing} ${this.actions?.length ? html` <div class="md-card__actions">${this.actions.map((action) => this.renderComponent(action, "icon-button"))}</div> ` : nothing}</div> ` : nothing} ${this.body?.length || this.buttons?.length ? html` <div class="md-card__wrapper">${this.body?.length ? html`<div class="md-card__body">${this.body}</div>` : nothing} ${this.buttons?.length ? html` <div class="md-card__footer">${this.buttons?.length ? html` <div class="md-card__buttons">${this.buttons.map((button) => this.renderComponent(button, "button"))}</div> ` : nothing}</div> ` : nothing}</div> ` : nothing} `;
     }
 
-    /**
-     */
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-card");
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleCardIconButtonClick(event) {
         this.emit("onCardIconButtonClick", { event });
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleCardButtonClick(event) {
         this.emit("onCardButtonClick", { event });
     }

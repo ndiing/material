@@ -25,14 +25,10 @@ class MdChipComponent extends MdComponent {
         disabled: { type: Boolean, reflect: true },
     };
 
-    /**
-     */
     constructor() {
         super();
     }
 
-    /**
-     */
     render() {
         return html`
             ${this.icon ? html`<md-icon class="md-chip__icon">${this.icon}</md-icon>` : nothing}
@@ -55,9 +51,6 @@ class MdChipComponent extends MdComponent {
         `;
     }
 
-    /**
-     * @async
-     */
     async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-chip");
@@ -65,17 +58,11 @@ class MdChipComponent extends MdComponent {
         this.ripple = new Ripple(this, {});
     }
 
-    /**
-     * @async
-     */
     async disconnectedCallback() {
         super.disconnectedCallback();
         if (this.ripple) this.ripple.destroy();
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleChipActionClick(event) {
         this.emit("onChipActionClick", { event });
     }

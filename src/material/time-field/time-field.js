@@ -8,16 +8,11 @@ import { closestScrollableElement, parseTime, stringifyTime } from "../util/util
  * @element md-time-field
  */
 class MdTimeFieldComponent extends MdTextFieldComponent {
-    /**
-     */
     constructor() {
         super();
         this.type = "time";
     }
 
-    /**
-     * @readonly
-     */
     get trailingActions() {
         let actions = [
             {
@@ -29,23 +24,16 @@ class MdTimeFieldComponent extends MdTextFieldComponent {
         return actions;
     }
 
-    /**
-     */
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-time-field");
     }
 
-    /**
-     */
     disconnectedCallback() {
         super.disconnectedCallback();
         this.removePicker();
     }
 
-    /**
-     * @async
-     */
     async createPicker() {
         if (!this.picker) {
             this.picker = document.createElement("md-time-picker");
@@ -58,8 +46,6 @@ class MdTimeFieldComponent extends MdTextFieldComponent {
         }
     }
 
-    /**
-     */
     removePicker() {
         if (this.picker) {
             this.picker.removeEventListener("onTimePickerButtonCancelClick", this.handleTimeFieldPickerButtonCancelClick);
@@ -104,9 +90,6 @@ class MdTimeFieldComponent extends MdTextFieldComponent {
         }
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleTimeFieldWindowClick(event) {
         const target = document.elementFromPoint(event.clientX, event.clientY);
         if (!this.pickerTrigger.contains(target) && !this.picker.contains(target)) {
@@ -114,42 +97,26 @@ class MdTimeFieldComponent extends MdTextFieldComponent {
         }
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleTimeFieldWindowScroll(event) {
         this.closePicker();
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleTimeFieldPickerButtonCancelClick(event) {
         this.closePicker();
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleTimeFieldPickerButtonOkClick(event) {
         this.textFieldNative.value = stringifyTime(this.picker.value);
         this.updateValue();
         this.closePicker();
     }
 
-    /**
-     * @async
-     * @param {Any} [event]
-     */
     async handleTextFieldIconButtonPickerClick(event) {
         this.pickerTrigger = event.currentTarget;
         await this.createPicker();
         this.togglePicker({ trigger: this.textFieldContainer });
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleTextFieldIconButtonClick(event) {
         const data = event.currentTarget.data;
         if (data.id === "schedule") return this.handleTextFieldIconButtonPickerClick(event);

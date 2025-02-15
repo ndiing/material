@@ -1,8 +1,6 @@
 /**
  */
 class Progress {
-    /**
-     */
     constructor() {
         this.startTime = null;
         this.duration = 0;
@@ -10,8 +8,6 @@ class Progress {
         this.progressIndicator = null;
     }
 
-    /**
-     */
     render() {
         if (!this.progressIndicator) {
             this.progressIndicator = document.createElement("md-progress-indicator");
@@ -34,9 +30,6 @@ class Progress {
         }
     }
 
-    /**
-     * @param {Any} [currentTime]
-     */
     step(currentTime) {
         if (!this.progressIndicator) return;
         let elapsed = currentTime - this.startTime;
@@ -50,8 +43,6 @@ class Progress {
         }
     }
 
-    /**
-     */
     remove() {
         if (this.progressIndicator) {
             this.progressIndicator.remove();
@@ -59,8 +50,6 @@ class Progress {
         }
     }
 
-    /**
-     */
     reset() {
         this.startTime = null;
         this.duration = 0;

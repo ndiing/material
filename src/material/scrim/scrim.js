@@ -18,8 +18,6 @@ class MdScrimComponent extends MdComponent {
         open: { type: Boolean, reflect: true },
     };
 
-    /**
-     */
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-scrim");
@@ -27,8 +25,6 @@ class MdScrimComponent extends MdComponent {
         this.addEventListener("click", this.handleScrimClick);
     }
 
-    /**
-     */
     disconnectedCallback() {
         super.disconnectedCallback();
         this.removeEventListener("click", this.handleScrimClick);
@@ -59,17 +55,11 @@ class MdScrimComponent extends MdComponent {
         else this.show();
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleScrimClick(event) {
         this.close();
         this.emit("onScrimClick", { event });
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleScrimShown(event) {
         if (event.animationName === "scrim-out") {
             this.removeEventListener("animationend", this.handleScrimShown);
@@ -77,9 +67,6 @@ class MdScrimComponent extends MdComponent {
         }
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleScrimClosed(event) {
         if (event.animationName === "scrim-in") {
             this.removeEventListener("animationend", this.handleScrimClosed);

@@ -41,24 +41,16 @@ class MdSnackbarComponent extends MdComponent {
         autoDismiss: { type: Number },
     };
 
-    /**
-     */
     constructor() {
         super();
         this.body = Array.from(this.childNodes);
         this.autoDismiss = 1000 * 4;
     }
 
-    /**
-     * @param {Any} [item]
-     */
     renderIcon(item) {
         return html` <md-icon .data="${item}">${item.icon}</md-icon> `;
     }
 
-    /**
-     * @param {Any} [item]
-     */
     renderIconButton(item) {
         return html`
             <md-icon-button
@@ -74,9 +66,6 @@ class MdSnackbarComponent extends MdComponent {
         `;
     }
 
-    /**
-     * @param {Any} [item]
-     */
     renderButton(item) {
         return html`
             <md-button
@@ -92,17 +81,10 @@ class MdSnackbarComponent extends MdComponent {
         `;
     }
 
-    /**
-     * @param {Any} [item]
-     */
     renderSpacer(item) {
         return html` <div class="md-snackbar__spacer"></div> `;
     }
 
-    /**
-     * @param {Any} [item]
-     * @param {Any} [component="icon"]
-     */
     renderComponent(item, component = "icon") {
         const components = [
             ["icon", () => this.renderIcon(item)],
@@ -113,15 +95,10 @@ class MdSnackbarComponent extends MdComponent {
         return choose(item.component || component, components, () => nothing);
     }
 
-    /**
-     */
     render() {
         return html` ${this.body?.length ? html`<div class="md-snackbar__body">${this.body}</div>` : nothing} ${this.buttons?.length ? html` <div class="md-snackbar__footer">${this.buttons?.length ? html` <div class="md-snackbar__buttons">${this.buttons.map((button) => this.renderComponent(button, "button"))}</div> ` : nothing}</div> ` : nothing} `;
     }
 
-    /**
-     * @async
-     */
     async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-snackbar");
@@ -173,9 +150,6 @@ class MdSnackbarComponent extends MdComponent {
         else this.show();
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleSnackbarShown(event) {
         if (event.animationName === "snackbar-out") {
             this.removeEventListener("animationend", this.handleSnackbarShown);
@@ -183,9 +157,6 @@ class MdSnackbarComponent extends MdComponent {
         }
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleSnackbarClosed(event) {
         if (event.animationName === "snackbar-in") {
             this.removeEventListener("animationend", this.handleSnackbarClosed);
@@ -193,16 +164,10 @@ class MdSnackbarComponent extends MdComponent {
         }
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleSnackbarIconButtonClick(event) {
         this.emit("onSnackbarIconButtonClick", { event });
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleSnackbarButtonClick(event) {
         this.emit("onSnackbarButtonClick", { event });
     }

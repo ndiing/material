@@ -6,8 +6,6 @@ import { MdComponent } from "../component/component";
  * @element md-navigation-list-row
  */
 class MdNavigationListRowComponent extends MdComponent {
-    /**
-     */
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-navigation-list__row");

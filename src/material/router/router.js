@@ -7,13 +7,6 @@
 class Router {
     static params = {};
 
-    /**
-     * @static
-     * @param {Any} [pathname=this.pathname]
-     * @param {Any} [routes=this.routes]
-     * @param {Any} [parent=null]
-     * @param {Any} [result=[]]
-     */
     static get(pathname = this.pathname, routes = this.routes, parent = null, result = []) {
         for (const route of routes) {
             if (!route.regexp) {
@@ -47,11 +40,6 @@ class Router {
         }
     }
 
-    /**
-     * @static
-     * @async
-     * @param {Any} [event]
-     */
     static async handleNavigation(event) {
         performance.mark("mark-1");
         this.emit("onRouterCurrentEntryChange");
@@ -81,10 +69,6 @@ class Router {
         this.emit("onRouterNavigateSuccess");
     }
 
-    /**
-     * @static
-     * @param {Any} [routes]
-     */
     static removeComponent(routes) {
         const outlets = Array.from(document.body.querySelectorAll("md-outlet"));
         for (const outlet of outlets) {
@@ -98,21 +82,10 @@ class Router {
         }
     }
 
-    /**
-     * @static
-     * @param {Any} [route]
-     * @param {Any} [outlet]
-     */
     static renderComponent(route, outlet) {
         if (!route.component.isConnected) outlet.parentElement.insertBefore(route.component, outlet.nextElementSibling);
     }
 
-    /**
-     * @static
-     * @async
-     * @param {Any} [container]
-     * @param {Any} [route]
-     */
     static async getOutlet(container, route) {
         return await new Promise((resolve) => {
             let observer;
@@ -139,30 +112,16 @@ class Router {
         });
     }
 
-    /**
-     * @static
-     * @param {Any} [route]
-     */
     static setContainer(route) {
         return route.parent?.component || document.body;
     }
 
-    /**
-     * @static
-     * @async
-     * @param {Any} [route]
-     */
     static async loadComponent(route) {
         if (!route.component) {
             route.component = await route.load();
         }
     }
 
-    /**
-     * @static
-     * @async
-     * @param {Any} [route]
-     */
     static async handleBeforeLoad(route) {
         await new Promise((resolve, reject) => {
             const callback = (error) => {
@@ -174,9 +133,6 @@ class Router {
         });
     }
 
-    /**
-     * @static
-     */
     static setController() {
         if (this.controller && !this.controller.signal.aborted) this.controller.abort();
         if (!this.controller || (this.controller && this.controller.signal.aborted)) this.controller = new AbortController();
@@ -194,10 +150,6 @@ class Router {
         }
     }
 
-    /**
-     * @static
-     * @param {Any} [event]
-     */
     static handleNavigate(event) {
         const element = event.target.closest("[routerLink]");
         if (element) {
@@ -206,11 +158,6 @@ class Router {
         }
     }
 
-    /**
-     * @static
-     * @param {Any} [type]
-     * @param {Any} [detail]
-     */
     static emit(type, detail) {
         const event = new CustomEvent(type, {
             bubbles: true,
@@ -238,8 +185,6 @@ class Router {
             window.addEventListener("popstate", this.handleNavigation.bind(this));
             const pushState = window.history.pushState;
 
-            /**
-             */
             window.history.pushState = function () {
                 pushState.apply(this, arguments);
                 Router.emit("popstate");

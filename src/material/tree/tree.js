@@ -22,8 +22,6 @@ class MdTreeComponent extends MdComponent {
         items: { type: Array },
     };
 
-    /**
-     */
     constructor() {
         super();
         this.items = [];
@@ -32,9 +30,6 @@ class MdTreeComponent extends MdComponent {
         this.storeItems = [];
     }
 
-    /**
-     * @param {Any} [item]
-     */
     renderTreeItem(item) {
         return html`
             <md-tree-row>
@@ -54,14 +49,10 @@ class MdTreeComponent extends MdComponent {
         `;
     }
 
-    /**
-     */
     render() {
         return this.storeItems.filter((item) => item.visible).map((item) => this.renderTreeItem(item));
     }
 
-    /**
-     */
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-tree");
@@ -69,10 +60,6 @@ class MdTreeComponent extends MdComponent {
         window.addEventListener("keydown", this.handleTreeKeydown);
     }
 
-    /**
-     * @async
-     * @param {Any} [changedProperties]
-     */
     async updated(changedProperties) {
         super.updated(changedProperties);
         if (changedProperties.has("items")) {
@@ -85,11 +72,6 @@ class MdTreeComponent extends MdComponent {
         }
     }
 
-    /**
-     * @param {Any} [items]
-     * @param {Any} [parent]
-     * @param {Any} [indent=0]
-     */
     flatten(items, parent, indent = 0) {
         let expanded;
         let flatItems = [];
@@ -112,9 +94,6 @@ class MdTreeComponent extends MdComponent {
         return { expanded, flatItems };
     }
 
-    /**
-     * @param {Any} [data]
-     */
     updateVisibility(data) {
         data.children.forEach((item) => {
             item.visible = data.expanded;
@@ -123,10 +102,6 @@ class MdTreeComponent extends MdComponent {
         });
     }
 
-    /**
-     * @async
-     * @param {Any} [arg]
-     */
     async updateScroll(arg) {
         await this.updateComplete;
         const treeItemSelected = this.querySelector("md-tree-item[selected]");
@@ -138,9 +113,6 @@ class MdTreeComponent extends MdComponent {
         });
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleTreeKeydownArrowDown(event) {
         event.preventDefault();
         const visibleItems = this.storeItems.filter((item) => item.visible);
@@ -155,9 +127,6 @@ class MdTreeComponent extends MdComponent {
         this.emit("onTreeKeydownArrowDown", { event });
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleTreeKeydownArrowUp(event) {
         event.preventDefault();
         const visibleItems = this.storeItems.filter((item) => item.visible);
@@ -172,9 +141,6 @@ class MdTreeComponent extends MdComponent {
         this.emit("onTreeKeydownArrowUp", { event });
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleTreeKeydownArrowRight(event) {
         event.preventDefault();
         const selectedItem = this.storeItems.find((item) => item.selected);
@@ -194,9 +160,6 @@ class MdTreeComponent extends MdComponent {
         this.emit("onTreeKeydownArrowRight", { event });
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleTreeKeydownArrowLeft(event) {
         event.preventDefault();
         const selectedItem = this.storeItems.find((item) => item.selected);
@@ -215,9 +178,6 @@ class MdTreeComponent extends MdComponent {
         this.emit("onTreeKeydownArrowLeft", { event });
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleTreeKeydownEnter(event) {
         event.preventDefault();
         // const treeItemSelected = this.querySelector("md-tree-item[selected]");
@@ -225,9 +185,6 @@ class MdTreeComponent extends MdComponent {
         this.emit("onTreeKeydownEnter", { event });
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleTreeKeydown(event) {
         if (this.contains(document.activeElement)) {
             if (event.key === "ArrowLeft") return this.handleTreeKeydownArrowLeft(event);
@@ -239,9 +196,6 @@ class MdTreeComponent extends MdComponent {
         this.emit("onTreeKeydown", { event });
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleTreeItemClick(event) {
         const action = event.target.closest(".md-tree__action");
         const data = event.currentTarget.data;

@@ -10,6 +10,8 @@ import { closestScrollableElement } from "../util/util";
  * @element md-menu
  * @fires MdMenuComponent#onMenuShow
  * @fires MdMenuComponent#onMenuClose
+ * @fires MdMenuComponent#onMenuWindowClick
+ * @fires MdMenuComponent#onMenuWindowScroll
  * @fires MdMenuComponent#onMenuShown
  * @fires MdMenuComponent#onMenuClosed
  */
@@ -23,15 +25,11 @@ class MdMenuComponent extends MdComponent {
         items: { type: Array },
     };
 
-    /**
-     */
     constructor() {
         super();
         this.items = [];
     }
 
-    /**
-     */
     render() {
         /* prettier-ignore */
         return html`
@@ -41,9 +39,6 @@ class MdMenuComponent extends MdComponent {
         `;
     }
 
-    /**
-     * @async
-     */
     async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-menu");
@@ -58,17 +53,13 @@ class MdMenuComponent extends MdComponent {
      */
     show(options = {}) {
         this.style.removeProperty("--md-comp-menu-animation");
-        this.menuWindow = closestScrollableElement(this);
-        this.menuTrigger = options.trigger;
         this.handleMenuShown = this.handleMenuShown.bind(this);
         this.addEventListener("animationend", this.handleMenuShown);
+        this.menuWindow = closestScrollableElement(this);
         this.handleMenuWindowScroll = this.handleMenuWindowScroll.bind(this);
         this.menuWindow.addEventListener("scroll", this.handleMenuWindowScroll);
         this.handleMenuWindowClick = this.handleMenuWindowClick.bind(this);
         window.addEventListener("click", this.handleMenuWindowClick);
-        this.navigationListItem = this.querySelector("md-navigation-list-item[selected]");
-        if (!this.navigationListItem) this.navigationListItem = this.querySelector("md-navigation-list-item");
-        this.navigationListItem.focus();
         setPosition({
             container: this,
             /* prettier-ignore */
@@ -104,34 +95,20 @@ class MdMenuComponent extends MdComponent {
         else this.show(options);
     }
 
-    /**
-     * @param {Any} [event]
-     */
-    handleMenuWindowScroll(event) {
-        this.close();
-    }
-
-    /**
-     * @param {Any} [event]
-     */
     handleMenuWindowClick(event) {
         const target = document.elementFromPoint(event.clientX, event.clientY);
-        if (!this.contains(target) && !this.menuTrigger.contains(target)) {
-            this.close();
-        }
+        this.emit("onMenuWindowClick", { event, target });
     }
 
-    /**
-     * @param {Any} [event]
-     */
+    handleMenuWindowScroll(event) {
+        this.emit("onMenuWindowScroll", { event });
+    }
+
     handleMenuShown(event) {
         this.removeEventListener("animationend", this.handleMenuShown);
         this.emit("onMenuShown", { event });
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleMenuClosed(event) {
         this.removeEventListener("animationend", this.handleMenuClosed);
         this.emit("onMenuClosed", { event });

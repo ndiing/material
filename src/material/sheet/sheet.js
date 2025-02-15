@@ -36,29 +36,18 @@ class MdSheetComponent extends MdComponent {
         modal: { type: Boolean, reflect: true },
     };
 
-    /**
-     * @readonly
-     */
     regions = ["north", "east", "south", "west", "center"];
 
-    /**
-     */
     constructor() {
         super();
         this.body = Array.from(this.childNodes);
         this.region = "center";
     }
 
-    /**
-     * @param {Any} [item]
-     */
     renderIcon(item) {
         return html` <md-icon .data="${item}">${item.icon}</md-icon> `;
     }
 
-    /**
-     * @param {Any} [item]
-     */
     renderIconButton(item) {
         return html`
             <md-icon-button
@@ -74,9 +63,6 @@ class MdSheetComponent extends MdComponent {
         `;
     }
 
-    /**
-     * @param {Any} [item]
-     */
     renderButton(item) {
         return html`
             <md-button
@@ -92,17 +78,10 @@ class MdSheetComponent extends MdComponent {
         `;
     }
 
-    /**
-     * @param {Any} [item]
-     */
     renderSpacer(item) {
         return html` <div class="md-sheet__spacer"></div> `;
     }
 
-    /**
-     * @param {Any} [item]
-     * @param {Any} [component="icon"]
-     */
     renderComponent(item, component = "icon") {
         const components = [
             ["icon", () => this.renderIcon(item)],
@@ -113,15 +92,10 @@ class MdSheetComponent extends MdComponent {
         return choose(item.component || component, components, () => nothing);
     }
 
-    /**
-     */
     render() {
         return html` ${this.icons?.length || this.label || this.sublabel || this.actions?.length ? html` <div class="md-sheet__header">${this.icons?.length ? html` <div class="md-sheet__icons">${this.icons.map((icon) => this.renderComponent(icon, "icon"))}</div> ` : nothing} ${this.label || this.sublabel ? html` <div class="md-sheet__labels">${this.label ? html`<div class="md-sheet__label">${this.label}</div>` : nothing} ${this.sublabel ? html`<div class="md-sheet__sublabel">${this.sublabel}</div>` : nothing}</div> ` : nothing} ${this.actions?.length ? html` <div class="md-sheet__actions">${this.actions.map((action) => this.renderComponent(action, "icon-button"))}</div> ` : nothing}</div> ` : nothing} ${this.body?.length || this.buttons?.length ? html` <div class="md-sheet__wrapper">${this.body?.length ? html`<div class="md-sheet__body">${this.body}</div>` : nothing} ${this.buttons?.length ? html` <div class="md-sheet__footer">${this.buttons?.length ? html` <div class="md-sheet__buttons">${this.buttons.map((button) => this.renderComponent(button, "button"))}</div> ` : nothing}</div> ` : nothing}</div> ` : nothing} `;
     }
 
-    /**
-     * @async
-     */
     async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-sheet");
@@ -136,17 +110,12 @@ class MdSheetComponent extends MdComponent {
         this.style.setProperty("--md-comp-sheet-height", this.clientHeight + "px");
     }
 
-    /**
-     */
     disconnectedCallback() {
         super.disconnectedCallback();
         this.sheetScrim.removeEventListener("onScrimClose", this.handleSheetScrimClose);
         this.sheetScrim.remove();
     }
 
-    /**
-     * @param {Any} [changedProperties]
-     */
     updated(changedProperties) {
         super.updated(changedProperties);
         if (changedProperties.has("region")) {
@@ -188,40 +157,25 @@ class MdSheetComponent extends MdComponent {
         else this.show();
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleSheetShown(event) {
         this.removeEventListener("animationend", this.handleSheetShown);
         this.emit("onSheetShown");
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleSheetClosed(event) {
         this.removeEventListener("animationend", this.handleSheetClosed);
         this.emit("onSheetClosed");
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleSheetScrimClose(event) {
         if (this.open) this.close();
         this.emit("onSheetScrimClose", { event });
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleSheetIconButtonClick(event) {
         this.emit("onSheetIconButtonClick", { event });
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleSheetButtonClick(event) {
         this.emit("onSheetButtonClick", { event });
     }

@@ -33,28 +33,17 @@ class MdNavigationDrawerComponent extends MdComponent {
         type: { type: String },
     };
 
-    /**
-     * @readonly
-     */
     types = ["navigation-list", "tree"];
 
-    /**
-     */
     constructor() {
         super();
         this.type = "navigation-list";
     }
 
-    /**
-     * @param {Any} [item]
-     */
     renderIcon(item) {
         return html` <md-icon .data="${item}">${item.icon}</md-icon> `;
     }
 
-    /**
-     * @param {Any} [item]
-     */
     renderIconButton(item) {
         return html`
             <md-icon-button
@@ -70,10 +59,6 @@ class MdNavigationDrawerComponent extends MdComponent {
         `;
     }
 
-    /**
-     * @param {Any} [item]
-     * @param {Any} [component="icon"]
-     */
     renderComponent(item, component = "icon") {
         return choose(
             item.component || component,
@@ -85,8 +70,6 @@ class MdNavigationDrawerComponent extends MdComponent {
         );
     }
 
-    /**
-     */
     render() {
         return html`
             ${this.icons?.length || this.label || this.sublabel || this.actions?.length ? html` <div class="md-navigation-drawer__header">${this.icons?.length ? html` <div class="md-navigation-drawer__icons">${this.icons.map((icon) => this.renderComponent(icon, "icon"))}</div> ` : nothing} ${this.label || this.sublabel ? html` <div class="md-navigation-drawer__labels">${this.label ? html`<div class="md-navigation-drawer__label">${this.label}</div>` : nothing} ${this.sublabel ? html`<div class="md-navigation-drawer__sublabel">${this.sublabel}</div>` : nothing}</div> ` : nothing} ${this.actions?.length ? html` <div class="md-navigation-drawer__actions">${this.actions.map((action) => this.renderComponent(action, "icon-button"))}</div> ` : nothing}</div> ` : nothing}
@@ -96,9 +79,6 @@ class MdNavigationDrawerComponent extends MdComponent {
         `;
     }
 
-    /**
-     * @async
-     */
     async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-navigation-drawer");
@@ -113,17 +93,12 @@ class MdNavigationDrawerComponent extends MdComponent {
         this.style.setProperty("--md-comp-sheet-height", this.clientHeight + "px");
     }
 
-    /**
-     */
     disconnectedCallback() {
         super.disconnectedCallback();
         this.navigationDrawerScrim.removeEventListener("onScrimClose", this.handleNavigationDrawerScrimClose);
         this.navigationDrawerScrim.remove();
     }
 
-    /**
-     * @param {Any} [changedProperties]
-     */
     updated(changedProperties) {
         super.updated(changedProperties);
         if (changedProperties.has("region")) {
@@ -161,16 +136,10 @@ class MdNavigationDrawerComponent extends MdComponent {
         else this.show();
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleNavigationDrawerIconButtonClick(event) {
         this.emit("onNavigationDrawerIconButtonClick", { event });
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleNavigationDrawerScrimClose(event) {
         if (this.open) this.close();
         this.emit("onNavigationDrawerScrimClose", { event });

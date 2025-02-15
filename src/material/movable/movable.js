@@ -18,9 +18,6 @@ class Movable {
         this.init();
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handlePointerdown(event) {
         this.handle = event.target.closest(".md-resizable__handle") && event.target.className.match(/--(\w+)/)[1];
         document.body.classList.add("md-user-select--none");
@@ -35,9 +32,6 @@ class Movable {
         this.emit("onMovablePointerdown");
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handlePointermove(event) {
         const currentX = event.clientX - this.startX;
         const currentY = event.clientY - this.startY;
@@ -72,9 +66,6 @@ class Movable {
         this.emit("onMovablePointermove");
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handlePointerup(event) {
         this.endX = this.currentX;
         this.endY = this.currentY;
@@ -84,10 +75,6 @@ class Movable {
         this.emit("onMovablePointerup");
     }
 
-    /**
-     * @param {Any} [type]
-     * @param {Any} [detail]
-     */
     emit(type, detail) {
         const event = new CustomEvent(type, {
             bubbles: true,

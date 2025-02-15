@@ -6,8 +6,8 @@ import { choose } from "lit/directives/choose.js";
 /**
  * @extends MdComponent
  * @element md-navigation-rail
- * @fires MdNavigationRailComponent#onNavigationRailShown
- * @fires MdNavigationRailComponent#onNavigationRailClosed
+ * @fires MdNavigationRailComponent#onNavigationRailShow
+ * @fires MdNavigationRailComponent#onNavigationRailClose
  * @fires MdNavigationRailComponent#onNavigationRailIconButtonClick
  */
 class MdNavigationRailComponent extends MdComponent {
@@ -28,24 +28,16 @@ class MdNavigationRailComponent extends MdComponent {
         open: { type: Boolean, reflect: true },
     };
 
-    /**
-     */
     constructor() {
         super();
         this.items = [];
         this.rippleOptions = { container: ".md-navigation-list__icon" };
     }
 
-    /**
-     * @param {Any} [item]
-     */
     renderIcon(item) {
         return html` <md-icon .data="${item}">${item.icon}</md-icon> `;
     }
 
-    /**
-     * @param {Any} [item]
-     */
     renderIconButton(item) {
         return html`
             <md-icon-button
@@ -61,10 +53,6 @@ class MdNavigationRailComponent extends MdComponent {
         `;
     }
 
-    /**
-     * @param {Any} [item]
-     * @param {Any} [component="icon"]
-     */
     renderComponent(item, component = "icon") {
         return choose(
             item.component || component,
@@ -76,8 +64,6 @@ class MdNavigationRailComponent extends MdComponent {
         );
     }
 
-    /**
-     */
     render() {
         return html`
             ${this.icons?.length || this.label || this.sublabel || this.actions?.length ? html` <div class="md-navigation-rail__header">${this.icons?.length ? html` <div class="md-navigation-rail__icons">${this.icons.map((icon) => this.renderComponent(icon, "icon"))}</div> ` : nothing} ${this.label || this.sublabel ? html` <div class="md-navigation-rail__labels">${this.label ? html`<div class="md-navigation-rail__label">${this.label}</div>` : nothing} ${this.sublabel ? html`<div class="md-navigation-rail__sublabel">${this.sublabel}</div>` : nothing}</div> ` : nothing} ${this.actions?.length ? html` <div class="md-navigation-rail__actions">${this.actions.map((action) => this.renderComponent(action, "icon-button"))}</div> ` : nothing}</div> ` : nothing}
@@ -92,9 +78,6 @@ class MdNavigationRailComponent extends MdComponent {
         `;
     }
 
-    /**
-     * @async
-     */
     async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-navigation-rail");
@@ -104,9 +87,6 @@ class MdNavigationRailComponent extends MdComponent {
         this.style.setProperty("--md-comp-sheet-height", this.clientHeight + "px");
     }
 
-    /**
-     * @param {Any} [changedProperties]
-     */
     updated(changedProperties) {
         super.updated(changedProperties);
     }
@@ -116,7 +96,7 @@ class MdNavigationRailComponent extends MdComponent {
     show() {
         this.style.removeProperty("--md-comp-sheet-animation");
         this.open = true;
-        this.emit("onNavigationRailShown");
+        this.emit("onNavigationRailShow");
     }
 
     /**
@@ -124,7 +104,7 @@ class MdNavigationRailComponent extends MdComponent {
     close() {
         this.style.removeProperty("--md-comp-sheet-animation");
         this.open = false;
-        this.emit("onNavigationRailClosed");
+        this.emit("onNavigationRailClose");
     }
 
     /**
@@ -134,9 +114,6 @@ class MdNavigationRailComponent extends MdComponent {
         else this.show();
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleNavigationRailIconButtonClick(event) {
         this.emit("onNavigationRailIconButtonClick", { event });
     }

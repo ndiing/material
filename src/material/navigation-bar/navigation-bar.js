@@ -6,8 +6,8 @@ import { choose } from "lit/directives/choose.js";
 /**
  * @extends MdComponent
  * @element md-navigation-bar
- * @fires MdNavigationBarComponent#onNavigationBarShown
- * @fires MdNavigationBarComponent#onNavigationBarClosed
+ * @fires MdNavigationBarComponent#onNavigationBarShow
+ * @fires MdNavigationBarComponent#onNavigationBarClose
  */
 class MdNavigationBarComponent extends MdComponent {
     /**
@@ -19,16 +19,12 @@ class MdNavigationBarComponent extends MdComponent {
         items: { type: Array },
     };
 
-    /**
-     */
     constructor() {
         super();
         this.items = [];
         this.rippleOptions = { container: ".md-navigation-list__icon" };
     }
 
-    /**
-     */
     render() {
         return html`
             <md-navigation-list
@@ -38,9 +34,6 @@ class MdNavigationBarComponent extends MdComponent {
         `;
     }
 
-    /**
-     * @async
-     */
     async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-navigation-bar");
@@ -50,9 +43,6 @@ class MdNavigationBarComponent extends MdComponent {
         this.style.setProperty("--md-comp-sheet-height", this.clientHeight + "px");
     }
 
-    /**
-     * @param {Any} [changedProperties]
-     */
     updated(changedProperties) {
         super.updated(changedProperties);
     }
@@ -62,7 +52,7 @@ class MdNavigationBarComponent extends MdComponent {
     show() {
         this.style.removeProperty("--md-comp-sheet-animation");
         this.open = true;
-        this.emit("onNavigationBarShown");
+        this.emit("onNavigationBarShow");
     }
 
     /**
@@ -70,7 +60,7 @@ class MdNavigationBarComponent extends MdComponent {
     close() {
         this.style.removeProperty("--md-comp-sheet-animation");
         this.open = false;
-        this.emit("onNavigationBarClosed");
+        this.emit("onNavigationBarClose");
     }
 
     /**

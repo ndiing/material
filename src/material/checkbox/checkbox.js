@@ -23,14 +23,10 @@ class MdCheckboxComponent extends MdComponent {
         checked: { type: Boolean },
     };
 
-    /**
-     */
     constructor() {
         super();
     }
 
-    /**
-     */
     render() {
         return html`
             <input
@@ -52,9 +48,6 @@ class MdCheckboxComponent extends MdComponent {
         `;
     }
 
-    /**
-     * @async
-     */
     async connectedCallback() {
         super.connectedCallback();
         this.defaultValue = this.value;
@@ -70,17 +63,11 @@ class MdCheckboxComponent extends MdComponent {
         });
     }
 
-    /**
-     * @async
-     */
     async disconnectedCallback() {
         super.disconnectedCallback();
         if (this.ripple) this.ripple.destroy();
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleCheckboxNativeInput(event) {
         const native = event.currentTarget;
         this.indeterminate = native.indeterminate;
@@ -88,9 +75,6 @@ class MdCheckboxComponent extends MdComponent {
         this.emit("onCheckboxNativeInput", { event });
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleCheckboxNativeReset(event) {
         this.value = this.defaultValue;
         this.indeterminate = this.defaultIndeterminate;

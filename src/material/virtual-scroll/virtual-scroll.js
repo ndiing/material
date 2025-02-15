@@ -31,9 +31,6 @@ class VirtualScroll {
         this.handleScroll();
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleScroll(event) {
         const total = this.options.total;
         const rowHeight = this.options.rowHeight;
@@ -57,10 +54,6 @@ class VirtualScroll {
         });
     }
 
-    /**
-     * @param {Any} [type]
-     * @param {Any} [detail]
-     */
     emit(type, detail) {
         const event = new CustomEvent(type, {
             bubbles: true,

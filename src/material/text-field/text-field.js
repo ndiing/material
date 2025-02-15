@@ -74,14 +74,8 @@ class MdTextFieldComponent extends MdComponent {
         cancelAction: { type: Boolean },
     };
 
-    /**
-     * @readonly
-     */
     variants = ["outlined", "filled"];
 
-    /**
-     * @readonly
-     */
     get leadingActions() {
         let actions = [];
         if (this.errorIcon && this.error)
@@ -104,29 +98,18 @@ class MdTextFieldComponent extends MdComponent {
         return actions;
     }
 
-    /**
-     * @readonly
-     */
     get trailingActions() {
         return [];
     }
 
-    /**
-     * @readonly
-     */
     get textFieldNative() {
         return this.querySelector(".md-text-field__native");
     }
 
-    /**
-     * @readonly
-     */
     get textFieldContainer() {
         return this.querySelector(".md-text-field__container");
     }
 
-    /**
-     */
     constructor() {
         super();
         this.type = "text";
@@ -135,9 +118,6 @@ class MdTextFieldComponent extends MdComponent {
         this.actions = [];
     }
 
-    /**
-     * @param {Any} [item]
-     */
     renderIcon(item) {
         return html`
             <md-icon
@@ -148,9 +128,6 @@ class MdTextFieldComponent extends MdComponent {
         `;
     }
 
-    /**
-     * @param {Any} [item]
-     */
     renderIconButton(item) {
         return html`
             <md-icon-button
@@ -167,10 +144,6 @@ class MdTextFieldComponent extends MdComponent {
         `;
     }
 
-    /**
-     * @param {Any} [item]
-     * @param {Any} [component="icon"]
-     */
     renderComponent(item, component = "icon") {
         return choose(
             item.component || component,
@@ -182,8 +155,6 @@ class MdTextFieldComponent extends MdComponent {
         );
     }
 
-    /**
-     */
     render() {
         const actions = this.leadingActions.concat(this.actions).concat(this.trailingActions);
         /* prettier-ignore */
@@ -265,9 +236,6 @@ class MdTextFieldComponent extends MdComponent {
         `;
     }
 
-    /**
-     * @async
-     */
     async connectedCallback() {
         super.connectedCallback();
         this.defaultValue = this.value;
@@ -278,9 +246,6 @@ class MdTextFieldComponent extends MdComponent {
         this.style.setProperty("--md-comp-text-field-offset-left", this.textFieldOffset.offsetLeft + "px");
     }
 
-    /**
-     * @param {Any} [changedProperties]
-     */
     updated(changedProperties) {
         super.updated(changedProperties);
         if (changedProperties.has("variant")) {
@@ -296,25 +261,16 @@ class MdTextFieldComponent extends MdComponent {
         }
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleTextFieldFocus(event) {
         this.classList.add("md-text-field--focus");
         this.emit("onTextFieldFocus", { event });
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleTextFieldBlur(event) {
         this.classList.remove("md-text-field--focus");
         this.emit("onTextFieldBlur", { event });
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleTextFieldInput(event) {
         this.updateValue();
         this.emit("onTextFieldInput", { event });
@@ -329,9 +285,6 @@ class MdTextFieldComponent extends MdComponent {
         this.classList.toggle("md-text-field--error", !!this.error);
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleTextFieldInvalid(event) {
         event.preventDefault();
         this.error = this.textFieldNative.validationMessage;
@@ -339,9 +292,6 @@ class MdTextFieldComponent extends MdComponent {
         this.emit("onTextFieldInvalid", { event });
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleTextFieldReset(event) {
         this.value = this.defaultValue;
         this.error = undefined;
@@ -350,9 +300,6 @@ class MdTextFieldComponent extends MdComponent {
         this.emit("onTextFieldReset", { event });
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleTextFieldIconButtonCancelClick(event) {
         this.textFieldNative.value = "";
         this.value = this.textFieldNative.value;
@@ -362,18 +309,12 @@ class MdTextFieldComponent extends MdComponent {
         this.emit("onTextFieldIconButtonCancelClick", { event });
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleTextFieldIconButtonClick(event) {
         const data = event.currentTarget.data;
         if (data.id === "cancel") return this.handleTextFieldIconButtonCancelClick(event);
         this.emit("onTextFieldIconButtonClick", { event });
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleTextFieldClick(event) {
         event.preventDefault();
         this.emit("onTextFieldClick", { event });

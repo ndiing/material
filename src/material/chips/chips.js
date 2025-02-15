@@ -18,21 +18,13 @@ class MdChipsComponent extends MdComponent {
         type: { type: String },
     };
 
-    /**
-     * @readonly
-     */
     types = ["single-select", "multi-select"];
 
-    /**
-     */
     constructor() {
         super();
         this.type = "single-select";
     }
 
-    /**
-     * @param {Any} [item]
-     */
     renderChip(item) {
         return html`
             <md-chip
@@ -48,22 +40,15 @@ class MdChipsComponent extends MdComponent {
         `;
     }
 
-    /**
-     */
     render() {
         return this.items.map((item) => this.renderChip(item));
     }
 
-    /**
-     */
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-chips");
     }
 
-    /**
-     * @param {Any} [event]
-     */
     handleChipClick(event) {
         const data = event.currentTarget.data;
         if (this.type === "single-select") {

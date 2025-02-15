@@ -15,21 +15,15 @@ class MdBadgeComponent extends MdComponent {
         max: { type: Number },
     };
 
-    /**
-     */
     constructor() {
         super();
         this.max = 999;
     }
 
-    /**
-     */
     render() {
         return this.label ? (this.label > this.max ? `${this.max}+` : this.label) : nothing;
     }
 
-    /**
-     */
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-badge");

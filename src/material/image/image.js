@@ -21,15 +21,10 @@ class MdImageComponent extends MdComponent {
         circular: { type: Boolean },
     };
 
-    /**
-     */
     constructor() {
         super();
     }
 
-    /**
-     * @readonly
-     */
     get styleImageNative() {
         const style = {};
         if (this.ratio) {
@@ -46,8 +41,6 @@ class MdImageComponent extends MdComponent {
         return style;
     }
 
-    /**
-     */
     render() {
         return html`
             <img
@@ -59,8 +52,6 @@ class MdImageComponent extends MdComponent {
         `;
     }
 
-    /**
-     */
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-image");
