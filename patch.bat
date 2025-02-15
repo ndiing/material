@@ -2,9 +2,8 @@
 setlocal enabledelayedexpansion
 
 git add .
-git commit -m "commit"
-npm version patch
-git commit -m "commit"
-git push
+git commit -m "Commit"
+git push origin main
+
 
 pause
