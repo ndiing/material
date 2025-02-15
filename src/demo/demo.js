@@ -1,289 +1,289 @@
 import DemoMain from "./main/main.js";
 
-const DemoBadge = () => import("./badge/badge.js").then((m) => m.default);
+import DemoBadge from "./badge/badge.js"
 
-const DemoBottomAppBar = () => import("./bottom-app-bar/bottom-app-bar.js").then((m) => m.default);
-const DemoBottomAppBarNoFab = () => import("./bottom-app-bar/bottom-app-bar-no-fab.js").then((m) => m.default);
+import DemoBottomAppBar from "./bottom-app-bar/bottom-app-bar.js"
+import DemoBottomAppBarNoFab from "./bottom-app-bar/bottom-app-bar-no-fab.js"
 
-const DemoBottomSheet = () => import("./bottom-sheet/bottom-sheet.js").then((m) => m.default);
-const DemoBottomSheetModal = () => import("./bottom-sheet/bottom-sheet-modal.js").then((m) => m.default);
+import DemoBottomSheet from "./bottom-sheet/bottom-sheet.js"
+import DemoBottomSheetModal from "./bottom-sheet/bottom-sheet-modal.js"
 
-const DemoButton = () => import("./button/button.js").then((m) => m.default);
-const DemoButtonElevated = () => import("./button/button-elevated.js").then((m) => m.default);
-const DemoButtonFilled = () => import("./button/button-filled.js").then((m) => m.default);
-const DemoButtonFilledTonal = () => import("./button/button-filled-tonal.js").then((m) => m.default);
-const DemoButtonOutlined = () => import("./button/button-outlined.js").then((m) => m.default);
+import DemoButton from "./button/button.js"
+import DemoButtonElevated from "./button/button-elevated.js"
+import DemoButtonFilled from "./button/button-filled.js"
+import DemoButtonFilledTonal from "./button/button-filled-tonal.js"
+import DemoButtonOutlined from "./button/button-outlined.js"
 
-const DemoCard = () => import("./card/card.js").then((m) => m.default);
+import DemoCard from "./card/card.js"
 
-const DemoCheckbox = () => import("./checkbox/checkbox.js").then((m) => m.default);
+import DemoCheckbox from "./checkbox/checkbox.js"
 
-const DemoChips = () => import("./chips/chips.js").then((m) => m.default);
-const DemoChipsSingleSelect = () => import("./chips/chips-single-select.js").then((m) => m.default);
-const DemoChipsMultiSelect = () => import("./chips/chips-multi-select.js").then((m) => m.default);
+import DemoChips from "./chips/chips.js"
+import DemoChipsSingleSelect from "./chips/chips-single-select.js"
+import DemoChipsMultiSelect from "./chips/chips-multi-select.js"
 
-const DemoDataTableCell = () => import("./data-table/data-table-cell.js").then((m) => m.default);
-const DemoDataTable = () => import("./data-table/data-table.js").then((m) => m.default);
-const DemoDataTableCheckbox = () => import("./data-table/data-table-checkbox.js").then((m) => m.default);
-const DemoDataTableSortable = () => import("./data-table/data-table-sortable.js").then((m) => m.default);
+import DemoDataTableCell from "./data-table/data-table-cell.js"
+import DemoDataTable from "./data-table/data-table.js"
+import DemoDataTableCheckbox from "./data-table/data-table-checkbox.js"
+import DemoDataTableSortable from "./data-table/data-table-sortable.js"
 
-const DemoDialog = () => import("./dialog/dialog.js").then((m) => m.default);
+import DemoDialog from "./dialog/dialog.js"
 
-const DemoDivider = () => import("./divider/divider.js").then((m) => m.default);
+import DemoDivider from "./divider/divider.js"
 
-const DemoFab = () => import("./fab/fab.js").then((m) => m.default);
-const DemoFabUnelevated = () => import("./fab/fab-unelevated.js").then((m) => m.default);
-const DemoFabExtended = () => import("./fab/fab-extended.js").then((m) => m.default);
-const DemoFabSmall = () => import("./fab/fab-small.js").then((m) => m.default);
-const DemoFabLarge = () => import("./fab/fab-large.js").then((m) => m.default);
+import DemoFab from "./fab/fab.js"
+import DemoFabUnelevated from "./fab/fab-unelevated.js"
+import DemoFabExtended from "./fab/fab-extended.js"
+import DemoFabSmall from "./fab/fab-small.js"
+import DemoFabLarge from "./fab/fab-large.js"
 
-const DemoForm = () => import("./form/form.js").then((m) => m.default);
+import DemoForm from "./form/form.js"
 
-const DemoIcon = () => import("./icon/icon.js").then((m) => m.default);
-const DemoIconButton = () => import("./icon-button/icon-button.js").then((m) => m.default);
-const DemoIconButtonFilled = () => import("./icon-button/icon-button-filled.js").then((m) => m.default);
-const DemoIconButtonFilledTonal = () => import("./icon-button/icon-button-filled-tonal.js").then((m) => m.default);
-const DemoIconButtonOutlined = () => import("./icon-button/icon-button-outlined.js").then((m) => m.default);
+import DemoIcon from "./icon/icon.js"
+import DemoIconButton from "./icon-button/icon-button.js"
+import DemoIconButtonFilled from "./icon-button/icon-button-filled.js"
+import DemoIconButtonFilledTonal from "./icon-button/icon-button-filled-tonal.js"
+import DemoIconButtonOutlined from "./icon-button/icon-button-outlined.js"
 
-const DemoImage = () => import("./image/image.js").then((m) => m.default);
+import DemoImage from "./image/image.js"
 
-const DemoListItem = () => import("./list/list-item.js").then((m) => m.default);
-const DemoListRow = () => import("./list/list-row.js").then((m) => m.default);
-const DemoList = () => import("./list/list.js").then((m) => m.default);
-const DemoListSingleSelect = () => import("./list/list-single-select.js").then((m) => m.default);
-const DemoListMultiSelect = () => import("./list/list-multi-select.js").then((m) => m.default);
+import DemoListItem from "./list/list-item.js"
+import DemoListRow from "./list/list-row.js"
+import DemoList from "./list/list.js"
+import DemoListSingleSelect from "./list/list-single-select.js"
+import DemoListMultiSelect from "./list/list-multi-select.js"
 
-const DemoMenu = () => import("./menu/menu.js").then((m) => m.default);
+import DemoMenu from "./menu/menu.js"
 
-const DemoNavigationBar = () => import("./navigation-bar/navigation-bar.js").then((m) => m.default);
-const DemoNavigationBarNoLabel = () => import("./navigation-bar/navigation-bar-no-label.js").then((m) => m.default);
+import DemoNavigationBar from "./navigation-bar/navigation-bar.js"
+import DemoNavigationBarNoLabel from "./navigation-bar/navigation-bar-no-label.js"
 
-const DemoNavigationDrawer = () => import("./navigation-drawer/navigation-drawer.js").then((m) => m.default);
-const DemoNavigationDrawerModal = () => import("./navigation-drawer/navigation-drawer-modal.js").then((m) => m.default);
+import DemoNavigationDrawer from "./navigation-drawer/navigation-drawer.js"
+import DemoNavigationDrawerModal from "./navigation-drawer/navigation-drawer-modal.js"
 
-const DemoNavigationListItem = () => import("./navigation-list/navigation-list-item.js").then((m) => m.default);
-const DemoNavigationListRow = () => import("./navigation-list/navigation-list-row.js").then((m) => m.default);
-const DemoNavigationList = () => import("./navigation-list/navigation-list.js").then((m) => m.default);
+import DemoNavigationListItem from "./navigation-list/navigation-list-item.js"
+import DemoNavigationListRow from "./navigation-list/navigation-list-row.js"
+import DemoNavigationList from "./navigation-list/navigation-list.js"
 
-const DemoNavigationRail = () => import("./navigation-rail/navigation-rail.js").then((m) => m.default);
-const DemoNavigationRailNoLabel = () => import("./navigation-rail/navigation-rail-no-label.js").then((m) => m.default);
+import DemoNavigationRail from "./navigation-rail/navigation-rail.js"
+import DemoNavigationRailNoLabel from "./navigation-rail/navigation-rail-no-label.js"
 
-const DemoProgressIndicator = () => import("./progress-indicator/progress-indicator.js").then((m) => m.default);
-const DemoProgressIndicatorCircular = () => import("./progress-indicator/progress-indicator-circular.js").then((m) => m.default);
+import DemoProgressIndicator from "./progress-indicator/progress-indicator.js"
+import DemoProgressIndicatorCircular from "./progress-indicator/progress-indicator-circular.js"
 
-const DemoRadioButton = () => import("./radio-button/radio-button.js").then((m) => m.default);
+import DemoRadioButton from "./radio-button/radio-button.js"
 
-const DemoScrim = () => import("./scrim/scrim.js").then((m) => m.default);
+import DemoScrim from "./scrim/scrim.js"
 
-const DemoSegmentedButton = () => import("./segmented-button/segmented-button.js").then((m) => m.default);
-const DemoSegmentedButtonSingleSelect = () => import("./segmented-button/segmented-button-single-select.js").then((m) => m.default);
-const DemoSegmentedButtonMultiSelect = () => import("./segmented-button/segmented-button-multi-select.js").then((m) => m.default);
+import DemoSegmentedButton from "./segmented-button/segmented-button.js"
+import DemoSegmentedButtonSingleSelect from "./segmented-button/segmented-button-single-select.js"
+import DemoSegmentedButtonMultiSelect from "./segmented-button/segmented-button-multi-select.js"
 
-const DemoSheet = () => import("./sheet/sheet.js").then((m) => m.default);
-const DemoSheetNorth = () => import("./sheet/sheet-north.js").then((m) => m.default);
-const DemoSheetNorthModal = () => import("./sheet/sheet-north-modal.js").then((m) => m.default);
-const DemoSheetEast = () => import("./sheet/sheet-east.js").then((m) => m.default);
-const DemoSheetEastModal = () => import("./sheet/sheet-east-modal.js").then((m) => m.default);
-const DemoSheetSouth = () => import("./sheet/sheet-south.js").then((m) => m.default);
-const DemoSheetSouthModal = () => import("./sheet/sheet-south-modal.js").then((m) => m.default);
-const DemoSheetWest = () => import("./sheet/sheet-west.js").then((m) => m.default);
-const DemoSheetWestModal = () => import("./sheet/sheet-west-modal.js").then((m) => m.default);
-const DemoSheetCenter = () => import("./sheet/sheet-center.js").then((m) => m.default);
-const DemoSideSheet = () => import("./side-sheet/side-sheet.js").then((m) => m.default);
-const DemoSideSheetModal = () => import("./side-sheet/side-sheet-modal.js").then((m) => m.default);
+import DemoSheet from "./sheet/sheet.js"
+import DemoSheetNorth from "./sheet/sheet-north.js"
+import DemoSheetNorthModal from "./sheet/sheet-north-modal.js"
+import DemoSheetEast from "./sheet/sheet-east.js"
+import DemoSheetEastModal from "./sheet/sheet-east-modal.js"
+import DemoSheetSouth from "./sheet/sheet-south.js"
+import DemoSheetSouthModal from "./sheet/sheet-south-modal.js"
+import DemoSheetWest from "./sheet/sheet-west.js"
+import DemoSheetWestModal from "./sheet/sheet-west-modal.js"
+import DemoSheetCenter from "./sheet/sheet-center.js"
+import DemoSideSheet from "./side-sheet/side-sheet.js"
+import DemoSideSheetModal from "./side-sheet/side-sheet-modal.js"
 
-const DemoSlider = () => import("./slider/slider.js").then((m) => m.default);
-const DemoSliderCentered = () => import("./slider/slider-centered.js").then((m) => m.default);
-const DemoSliderContinuous = () => import("./slider/slider-continuous.js").then((m) => m.default);
-const DemoSliderDiscrete = () => import("./slider/slider-discrete.js").then((m) => m.default);
-const DemoSliderRangeSelection = () => import("./slider/slider-range-selection.js").then((m) => m.default);
+import DemoSlider from "./slider/slider.js"
+import DemoSliderCentered from "./slider/slider-centered.js"
+import DemoSliderContinuous from "./slider/slider-continuous.js"
+import DemoSliderDiscrete from "./slider/slider-discrete.js"
+import DemoSliderRangeSelection from "./slider/slider-range-selection.js"
 
-const DemoSnackbar = () => import("./snackbar/snackbar.js").then((m) => m.default);
+import DemoSnackbar from "./snackbar/snackbar.js"
 
-const DemoSwitch = () => import("./switch/switch.js").then((m) => m.default);
+import DemoSwitch from "./switch/switch.js"
 
-const DemoTab = () => import("./tabs/tab.js").then((m) => m.default);
-const DemoTabs = () => import("./tabs/tabs.js").then((m) => m.default);
-const DemoTabsPrimary = () => import("./tabs/tabs-primary.js").then((m) => m.default);
-const DemoTabsSecondary = () => import("./tabs/tabs-secondary.js").then((m) => m.default);
+import DemoTab from "./tabs/tab.js"
+import DemoTabs from "./tabs/tabs.js"
+import DemoTabsPrimary from "./tabs/tabs-primary.js"
+import DemoTabsSecondary from "./tabs/tabs-secondary.js"
 
-const DemoTextField = () => import("./text-field/text-field.js").then((m) => m.default);
-const DemoTextFieldOutlined = () => import("./text-field/text-field-outlined.js").then((m) => m.default);
-const DemoTextFieldFilled = () => import("./text-field/text-field-filled.js").then((m) => m.default);
+import DemoTextField from "./text-field/text-field.js"
+import DemoTextFieldOutlined from "./text-field/text-field-outlined.js"
+import DemoTextFieldFilled from "./text-field/text-field-filled.js"
 
-const DemoTooltip = () => import("./tooltip/tooltip.js").then((m) => m.default);
+import DemoTooltip from "./tooltip/tooltip.js"
 
-const DemoTopAppBar = () => import("./top-app-bar/top-app-bar.js").then((m) => m.default);
+import DemoTopAppBar from "./top-app-bar/top-app-bar.js"
 
-const DemoTreeItem = () => import("./tree/tree-item.js").then((m) => m.default);
-const DemoTreeRow = () => import("./tree/tree-row.js").then((m) => m.default);
-const DemoTree = () => import("./tree/tree.js").then((m) => m.default);
+import DemoTreeItem from "./tree/tree-item.js"
+import DemoTreeRow from "./tree/tree-row.js"
+import DemoTree from "./tree/tree.js"
 
-const DemoDatetimePicker = () => import("./datetime-picker/datetime-picker.js").then((m) => m.default);
-const DemoDatetimePickerModal = () => import("./datetime-picker/datetime-picker-modal.js").then((m) => m.default);
+import DemoDatetimePicker from "./datetime-picker/datetime-picker.js"
+import DemoDatetimePickerModal from "./datetime-picker/datetime-picker-modal.js"
 
-const DemoDatePicker = () => import("./date-picker/date-picker.js").then((m) => m.default);
-const DemoDatePickerModal = () => import("./date-picker/date-picker-modal.js").then((m) => m.default);
+import DemoDatePicker from "./date-picker/date-picker.js"
+import DemoDatePickerModal from "./date-picker/date-picker-modal.js"
 
-const DemoTimePicker = () => import("./time-picker/time-picker.js").then((m) => m.default);
-const DemoTimePickerModal = () => import("./time-picker/time-picker-modal.js").then((m) => m.default);
+import DemoTimePicker from "./time-picker/time-picker.js"
+import DemoTimePickerModal from "./time-picker/time-picker-modal.js"
 
-const DemoMonthPicker = () => import("./month-picker/month-picker.js").then((m) => m.default);
-const DemoMonthPickerModal = () => import("./month-picker/month-picker-modal.js").then((m) => m.default);
+import DemoMonthPicker from "./month-picker/month-picker.js"
+import DemoMonthPickerModal from "./month-picker/month-picker-modal.js"
 
-const DemoWeekPicker = () => import("./week-picker/week-picker.js").then((m) => m.default);
-const DemoWeekPickerModal = () => import("./week-picker/week-picker-modal.js").then((m) => m.default);
+import DemoWeekPicker from "./week-picker/week-picker.js"
+import DemoWeekPickerModal from "./week-picker/week-picker-modal.js"
 
-const DemoDatetimeField = () => import("./datetime-field/datetime-field.js").then((m) => m.default);
-const DemoDateField = () => import("./date-field/date-field.js").then((m) => m.default);
-const DemoTimeField = () => import("./time-field/time-field.js").then((m) => m.default);
-const DemoMonthField = () => import("./month-field/month-field.js").then((m) => m.default);
-const DemoWeekField = () => import("./week-field/week-field.js").then((m) => m.default);
+import DemoDatetimeField from "./datetime-field/datetime-field.js"
+import DemoDateField from "./date-field/date-field.js"
+import DemoTimeField from "./time-field/time-field.js"
+import DemoMonthField from "./month-field/month-field.js"
+import DemoWeekField from "./week-field/week-field.js"
 
 export default {
     path: "demo",
     component: DemoMain,
     children: [
-        { path: "badge", load: DemoBadge },
+        { path: "badge", component: DemoBadge },
 
-        { path: "bottom-app-bar", load: DemoBottomAppBar },
-        { path: "bottom-app-bar-no-fab", load: DemoBottomAppBarNoFab },
+        { path: "bottom-app-bar", component: DemoBottomAppBar },
+        { path: "bottom-app-bar-no-fab", component: DemoBottomAppBarNoFab },
 
-        { path: "bottom-sheet", load: DemoBottomSheet },
-        { path: "bottom-sheet-modal", load: DemoBottomSheetModal },
+        { path: "bottom-sheet", component: DemoBottomSheet },
+        { path: "bottom-sheet-modal", component: DemoBottomSheetModal },
 
-        { path: "button", load: DemoButton },
-        { path: "button-elevated", load: DemoButtonElevated },
-        { path: "button-filled", load: DemoButtonFilled },
-        { path: "button-filled-tonal", load: DemoButtonFilledTonal },
-        { path: "button-outlined", load: DemoButtonOutlined },
+        { path: "button", component: DemoButton },
+        { path: "button-elevated", component: DemoButtonElevated },
+        { path: "button-filled", component: DemoButtonFilled },
+        { path: "button-filled-tonal", component: DemoButtonFilledTonal },
+        { path: "button-outlined", component: DemoButtonOutlined },
 
-        { path: "card", load: DemoCard },
+        { path: "card", component: DemoCard },
 
-        { path: "checkbox", load: DemoCheckbox },
+        { path: "checkbox", component: DemoCheckbox },
 
-        { path: "chips", load: DemoChips },
-        { path: "chips-single-select", load: DemoChipsSingleSelect },
-        { path: "chips-multi-select", load: DemoChipsMultiSelect },
+        { path: "chips", component: DemoChips },
+        { path: "chips-single-select", component: DemoChipsSingleSelect },
+        { path: "chips-multi-select", component: DemoChipsMultiSelect },
 
-        { path: "data-table-cell", load: DemoDataTableCell },
-        { path: "data-table", load: DemoDataTable },
-        { path: "data-table-checkbox", load: DemoDataTableCheckbox },
-        { path: "data-table-sortable", load: DemoDataTableSortable },
+        { path: "data-table-cell", component: DemoDataTableCell },
+        { path: "data-table", component: DemoDataTable },
+        { path: "data-table-checkbox", component: DemoDataTableCheckbox },
+        { path: "data-table-sortable", component: DemoDataTableSortable },
 
-        { path: "dialog", load: DemoDialog },
+        { path: "dialog", component: DemoDialog },
 
-        { path: "divider", load: DemoDivider },
+        { path: "divider", component: DemoDivider },
 
-        { path: "fab", load: DemoFab },
-        { path: "fab-unelevated", load: DemoFabUnelevated },
-        { path: "fab-extended", load: DemoFabExtended },
-        { path: "fab-small", load: DemoFabSmall },
-        { path: "fab-large", load: DemoFabLarge },
+        { path: "fab", component: DemoFab },
+        { path: "fab-unelevated", component: DemoFabUnelevated },
+        { path: "fab-extended", component: DemoFabExtended },
+        { path: "fab-small", component: DemoFabSmall },
+        { path: "fab-large", component: DemoFabLarge },
 
-        { path: "form", load: DemoForm },
+        { path: "form", component: DemoForm },
 
-        { path: "icon", load: DemoIcon },
+        { path: "icon", component: DemoIcon },
 
-        { path: "icon-button", load: DemoIconButton },
-        { path: "icon-button-filled", load: DemoIconButtonFilled },
-        { path: "icon-button-filled-tonal", load: DemoIconButtonFilledTonal },
-        { path: "icon-button-outlined", load: DemoIconButtonOutlined },
+        { path: "icon-button", component: DemoIconButton },
+        { path: "icon-button-filled", component: DemoIconButtonFilled },
+        { path: "icon-button-filled-tonal", component: DemoIconButtonFilledTonal },
+        { path: "icon-button-outlined", component: DemoIconButtonOutlined },
 
-        { path: "image", load: DemoImage },
+        { path: "image", component: DemoImage },
 
-        { path: "list-item", load: DemoListItem },
-        { path: "list-row", load: DemoListRow },
-        { path: "list", load: DemoList },
-        { path: "list-single-select", load: DemoListSingleSelect },
-        { path: "list-multi-select", load: DemoListMultiSelect },
+        { path: "list-item", component: DemoListItem },
+        { path: "list-row", component: DemoListRow },
+        { path: "list", component: DemoList },
+        { path: "list-single-select", component: DemoListSingleSelect },
+        { path: "list-multi-select", component: DemoListMultiSelect },
 
-        { path: "menu", load: DemoMenu },
+        { path: "menu", component: DemoMenu },
 
-        { path: "navigation-bar", load: DemoNavigationBar },
-        { path: "navigation-bar-no-label", load: DemoNavigationBarNoLabel },
+        { path: "navigation-bar", component: DemoNavigationBar },
+        { path: "navigation-bar-no-label", component: DemoNavigationBarNoLabel },
 
-        { path: "navigation-drawer", load: DemoNavigationDrawer },
-        { path: "navigation-drawer-modal", load: DemoNavigationDrawerModal },
+        { path: "navigation-drawer", component: DemoNavigationDrawer },
+        { path: "navigation-drawer-modal", component: DemoNavigationDrawerModal },
 
-        { path: "navigation-list-item", load: DemoNavigationListItem },
-        { path: "navigation-list-row", load: DemoNavigationListRow },
-        { path: "navigation-list", load: DemoNavigationList },
+        { path: "navigation-list-item", component: DemoNavigationListItem },
+        { path: "navigation-list-row", component: DemoNavigationListRow },
+        { path: "navigation-list", component: DemoNavigationList },
 
-        { path: "navigation-rail", load: DemoNavigationRail },
-        { path: "navigation-rail-no-label", load: DemoNavigationRailNoLabel },
+        { path: "navigation-rail", component: DemoNavigationRail },
+        { path: "navigation-rail-no-label", component: DemoNavigationRailNoLabel },
 
-        { path: "progress-indicator", load: DemoProgressIndicator },
-        { path: "progress-indicator-circular", load: DemoProgressIndicatorCircular },
+        { path: "progress-indicator", component: DemoProgressIndicator },
+        { path: "progress-indicator-circular", component: DemoProgressIndicatorCircular },
 
-        { path: "radio-button", load: DemoRadioButton },
+        { path: "radio-button", component: DemoRadioButton },
 
-        { path: "scrim", load: DemoScrim },
+        { path: "scrim", component: DemoScrim },
 
-        { path: "segmented-button", load: DemoSegmentedButton },
-        { path: "segmented-button-single-select", load: DemoSegmentedButtonSingleSelect },
-        { path: "segmented-button-multi-select", load: DemoSegmentedButtonMultiSelect },
+        { path: "segmented-button", component: DemoSegmentedButton },
+        { path: "segmented-button-single-select", component: DemoSegmentedButtonSingleSelect },
+        { path: "segmented-button-multi-select", component: DemoSegmentedButtonMultiSelect },
 
-        { path: "sheet", load: DemoSheet },
-        { path: "sheet-north", load: DemoSheetNorth },
-        { path: "sheet-north-modal", load: DemoSheetNorthModal },
-        { path: "sheet-east", load: DemoSheetEast },
-        { path: "sheet-east-modal", load: DemoSheetEastModal },
-        { path: "sheet-south", load: DemoSheetSouth },
-        { path: "sheet-south-modal", load: DemoSheetSouthModal },
-        { path: "sheet-west", load: DemoSheetWest },
-        { path: "sheet-west-modal", load: DemoSheetWestModal },
-        { path: "sheet-center", load: DemoSheetCenter },
+        { path: "sheet", component: DemoSheet },
+        { path: "sheet-north", component: DemoSheetNorth },
+        { path: "sheet-north-modal", component: DemoSheetNorthModal },
+        { path: "sheet-east", component: DemoSheetEast },
+        { path: "sheet-east-modal", component: DemoSheetEastModal },
+        { path: "sheet-south", component: DemoSheetSouth },
+        { path: "sheet-south-modal", component: DemoSheetSouthModal },
+        { path: "sheet-west", component: DemoSheetWest },
+        { path: "sheet-west-modal", component: DemoSheetWestModal },
+        { path: "sheet-center", component: DemoSheetCenter },
 
-        { path: "side-sheet", load: DemoSideSheet },
-        { path: "side-sheet-modal", load: DemoSideSheetModal },
+        { path: "side-sheet", component: DemoSideSheet },
+        { path: "side-sheet-modal", component: DemoSideSheetModal },
 
-        { path: "slider", load: DemoSlider },
-        { path: "slider-centered", load: DemoSliderCentered },
-        { path: "slider-continuous", load: DemoSliderContinuous },
-        { path: "slider-discrete", load: DemoSliderDiscrete },
-        { path: "slider-range-selection", load: DemoSliderRangeSelection },
+        { path: "slider", component: DemoSlider },
+        { path: "slider-centered", component: DemoSliderCentered },
+        { path: "slider-continuous", component: DemoSliderContinuous },
+        { path: "slider-discrete", component: DemoSliderDiscrete },
+        { path: "slider-range-selection", component: DemoSliderRangeSelection },
 
-        { path: "snackbar", load: DemoSnackbar },
+        { path: "snackbar", component: DemoSnackbar },
 
-        { path: "switch", load: DemoSwitch },
+        { path: "switch", component: DemoSwitch },
 
-        { path: "tab", load: DemoTab },
-        { path: "tabs", load: DemoTabs },
-        { path: "tabs-primary", load: DemoTabsPrimary },
-        { path: "tabs-secondary", load: DemoTabsSecondary },
+        { path: "tab", component: DemoTab },
+        { path: "tabs", component: DemoTabs },
+        { path: "tabs-primary", component: DemoTabsPrimary },
+        { path: "tabs-secondary", component: DemoTabsSecondary },
 
-        { path: "text-field", load: DemoTextField },
-        { path: "text-field-outlined", load: DemoTextFieldOutlined },
-        { path: "text-field-filled", load: DemoTextFieldFilled },
+        { path: "text-field", component: DemoTextField },
+        { path: "text-field-outlined", component: DemoTextFieldOutlined },
+        { path: "text-field-filled", component: DemoTextFieldFilled },
 
-        { path: "tooltip", load: DemoTooltip },
+        { path: "tooltip", component: DemoTooltip },
 
-        { path: "top-app-bar", load: DemoTopAppBar },
+        { path: "top-app-bar", component: DemoTopAppBar },
 
-        { path: "tree-item", load: DemoTreeItem },
-        { path: "tree-row", load: DemoTreeRow },
-        { path: "tree", load: DemoTree },
+        { path: "tree-item", component: DemoTreeItem },
+        { path: "tree-row", component: DemoTreeRow },
+        { path: "tree", component: DemoTree },
 
-        { path: "datetime-picker", load: DemoDatetimePicker },
-        { path: "datetime-picker-modal", load: DemoDatetimePickerModal },
+        { path: "datetime-picker", component: DemoDatetimePicker },
+        { path: "datetime-picker-modal", component: DemoDatetimePickerModal },
 
-        { path: "date-picker", load: DemoDatePicker },
-        { path: "date-picker-modal", load: DemoDatePickerModal },
+        { path: "date-picker", component: DemoDatePicker },
+        { path: "date-picker-modal", component: DemoDatePickerModal },
 
-        { path: "time-picker", load: DemoTimePicker },
-        { path: "time-picker-modal", load: DemoTimePickerModal },
+        { path: "time-picker", component: DemoTimePicker },
+        { path: "time-picker-modal", component: DemoTimePickerModal },
 
-        { path: "week-picker", load: DemoWeekPicker },
-        { path: "week-picker-modal", load: DemoWeekPickerModal },
+        { path: "week-picker", component: DemoWeekPicker },
+        { path: "week-picker-modal", component: DemoWeekPickerModal },
 
-        { path: "month-picker", load: DemoMonthPicker },
-        { path: "month-picker-modal", load: DemoMonthPickerModal },
+        { path: "month-picker", component: DemoMonthPicker },
+        { path: "month-picker-modal", component: DemoMonthPickerModal },
 
-        { path: "datetime-field", load: DemoDatetimeField },
-        { path: "date-field", load: DemoDateField },
-        { path: "time-field", load: DemoTimeField },
-        { path: "month-field", load: DemoMonthField },
-        { path: "week-field", load: DemoWeekField },
+        { path: "datetime-field", component: DemoDatetimeField },
+        { path: "date-field", component: DemoDateField },
+        { path: "time-field", component: DemoTimeField },
+        { path: "month-field", component: DemoMonthField },
+        { path: "week-field", component: DemoWeekField },
     ],
 };
