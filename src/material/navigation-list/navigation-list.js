@@ -150,8 +150,8 @@ class MdNavigationListComponent extends MdComponent {
      */
     handleNavigationListKeydownEnter(event) {
         event.preventDefault();
-        const navigationListItemSelected = this.querySelector("md-navigation-list-item[selected]");
-        navigationListItemSelected.click();
+        // const navigationListItemSelected = this.querySelector("md-navigation-list-item[selected]");
+        // navigationListItemSelected.click();
         this.emit("onNavigationListKeydownEnter", { event });
     }
 

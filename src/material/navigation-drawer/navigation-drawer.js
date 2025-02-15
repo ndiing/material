@@ -97,13 +97,11 @@ class MdNavigationDrawerComponent extends MdComponent {
                         ? html`
                               <md-navigation-list
                                   .items="${this.items}"
-                                  @onNavigationListItemClick="${this.handleNavigationDrawerItemClick}"
                               ></md-navigation-list>
                           `
                         : html`
                               <md-tree
                                   .items="${this.items}"
-                                  @onTreeItemClick="${this.handleNavigationDrawerItemClick}"
                               ></md-tree>
                           `}
                 </div>
@@ -191,12 +189,7 @@ class MdNavigationDrawerComponent extends MdComponent {
         this.emit("onNavigationDrawerScrimClose", { event });
     }
 
-    /**
-     * @param {Any} [event]
-     */
-    handleNavigationDrawerItemClick(event) {
-        this.emit("onNavigationDrawerItemClick", { event: event.detail.event });
-    }
+    
 }
 customElements.define("md-navigation-drawer", MdNavigationDrawerComponent);
 export { MdNavigationDrawerComponent };

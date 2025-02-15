@@ -129,9 +129,9 @@ class MdTreeComponent extends MdComponent {
      */
     async updateScroll(arg) {
         await this.updateComplete;
-        const selectedElement = this.querySelector("md-tree-item[selected]");
-        selectedElement.focus();
-        selectedElement.scrollIntoView({
+        const treeItemSelected = this.querySelector("md-tree-item[selected]");
+        treeItemSelected.focus();
+        treeItemSelected.scrollIntoView({
             behavior: "instant",
             block: "nearest",
             inline: "nearest",
@@ -220,8 +220,8 @@ class MdTreeComponent extends MdComponent {
      */
     handleTreeKeydownEnter(event) {
         event.preventDefault();
-        const selectedElement = this.querySelector("md-tree-item[selected]");
-        if (selectedElement) selectedElement.click();
+        // const treeItemSelected = this.querySelector("md-tree-item[selected]");
+        // if (treeItemSelected) treeItemSelected.click();
         this.emit("onTreeKeydownEnter", { event });
     }
 
