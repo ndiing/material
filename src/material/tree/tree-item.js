@@ -69,7 +69,7 @@ class MdTreeItemComponent extends MdComponent {
         if (changedProperties.has("selected") && this.selected) {
             /**
              * @event onTreeItemSelected
-             * @type \{Object\}
+             * @type {Object}
              */
             this.emit("onTreeItemSelected", { treeItem: this });
         }

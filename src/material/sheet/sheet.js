@@ -131,7 +131,7 @@ class MdSheetComponent extends MdComponent {
         if (this.modal) this.sheetScrim.show();
         /**
          * @event onSheetShow
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onSheetShow");
     }
@@ -146,7 +146,7 @@ class MdSheetComponent extends MdComponent {
         if (this.sheetScrim.open) this.sheetScrim.close();
         /**
          * @event onSheetClose
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onSheetClose");
     }
@@ -162,7 +162,7 @@ class MdSheetComponent extends MdComponent {
         this.removeEventListener("animationend", this.handleSheetShown);
         /**
          * @event onSheetShown
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onSheetShown");
     }
@@ -171,7 +171,7 @@ class MdSheetComponent extends MdComponent {
         this.removeEventListener("animationend", this.handleSheetClosed);
         /**
          * @event onSheetClosed
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onSheetClosed");
     }
@@ -180,7 +180,7 @@ class MdSheetComponent extends MdComponent {
         if (this.open) this.close();
         /**
          * @event onSheetScrimClose
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onSheetScrimClose", { event });
     }
@@ -188,7 +188,7 @@ class MdSheetComponent extends MdComponent {
     handleSheetIconButtonClick(event) {
         /**
          * @event onSheetIconButtonClick
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onSheetIconButtonClick", { event });
     }
@@ -196,7 +196,7 @@ class MdSheetComponent extends MdComponent {
     handleSheetButtonClick(event) {
         /**
          * @event onSheetButtonClick
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onSheetButtonClick", { event });
     }

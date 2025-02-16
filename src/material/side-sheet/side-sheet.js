@@ -121,7 +121,7 @@ class MdSideSheetComponent extends MdComponent {
         if (this.modal) this.sideSheetScrim.show();
         /**
          * @event onSideSheetShow
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onSideSheetShow");
     }
@@ -136,7 +136,7 @@ class MdSideSheetComponent extends MdComponent {
         if (this.sideSheetScrim.open) this.sideSheetScrim.close();
         /**
          * @event onSideSheetClose
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onSideSheetClose");
     }
@@ -153,7 +153,7 @@ class MdSideSheetComponent extends MdComponent {
             this.removeEventListener("animationend", this.handleSideSheetShown);
             /**
              * @event onSideSheetShown
-             * @type \{Object\}
+             * @type {Object}
              */
             this.emit("onSideSheetShown");
         }
@@ -164,7 +164,7 @@ class MdSideSheetComponent extends MdComponent {
             this.removeEventListener("animationend", this.handleSideSheetClosed);
             /**
              * @event onSideSheetClosed
-             * @type \{Object\}
+             * @type {Object}
              */
             this.emit("onSideSheetClosed");
         }
@@ -174,7 +174,7 @@ class MdSideSheetComponent extends MdComponent {
         if (this.open) this.close();
         /**
          * @event onSideSheetScrimClose
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onSideSheetScrimClose", { event });
     }
@@ -182,7 +182,7 @@ class MdSideSheetComponent extends MdComponent {
     handleSideSheetIconButtonClick(event) {
         /**
          * @event onSideSheetIconButtonClick
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onSideSheetIconButtonClick", { event });
     }
@@ -190,7 +190,7 @@ class MdSideSheetComponent extends MdComponent {
     handleSideSheetButtonClick(event) {
         /**
          * @event onSideSheetButtonClick
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onSideSheetButtonClick", { event });
     }

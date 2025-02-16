@@ -33,7 +33,7 @@ class MdScrimComponent extends MdComponent {
         this.open = true;
         /**
          * @event onScrimShow
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onScrimShow");
     }
@@ -46,7 +46,7 @@ class MdScrimComponent extends MdComponent {
         this.open = false;
         /**
          * @event onScrimClose
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onScrimClose");
     }
@@ -62,7 +62,7 @@ class MdScrimComponent extends MdComponent {
         this.close();
         /**
          * @event onScrimClick
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onScrimClick", { event });
     }
@@ -72,7 +72,7 @@ class MdScrimComponent extends MdComponent {
             this.removeEventListener("animationend", this.handleScrimShown);
             /**
              * @event onScrimShown
-             * @type \{Object\}
+             * @type {Object}
              */
             this.emit("onScrimShown", { event });
         }
@@ -83,7 +83,7 @@ class MdScrimComponent extends MdComponent {
             this.removeEventListener("animationend", this.handleScrimClosed);
             /**
              * @event onScrimClosed
-             * @type \{Object\}
+             * @type {Object}
              */
             this.emit("onScrimClosed", { event });
         }

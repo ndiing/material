@@ -85,7 +85,7 @@ class MdFormComponent extends MdComponent {
     handleFormNativeFormdata(event) {
         /**
          * @event onFormNativeFormdata
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onFormNativeFormdata", { event });
     }
@@ -100,7 +100,7 @@ class MdFormComponent extends MdComponent {
         }
         /**
          * @event onFormNativeReset
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onFormNativeReset", { event });
     }
@@ -110,7 +110,7 @@ class MdFormComponent extends MdComponent {
         new FormData(this.formNative);
         /**
          * @event onFormNativeSubmit
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onFormNativeSubmit", { event });
     }

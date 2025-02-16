@@ -88,7 +88,7 @@ class MdCardComponent extends MdComponent {
     handleCardIconButtonClick(event) {
         /**
          * @event onCardIconButtonClick
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onCardIconButtonClick", { event });
     }
@@ -96,7 +96,7 @@ class MdCardComponent extends MdComponent {
     handleCardButtonClick(event) {
         /**
          * @event onCardButtonClick
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onCardButtonClick", { event });
     }

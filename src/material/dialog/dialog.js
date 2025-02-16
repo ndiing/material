@@ -115,7 +115,7 @@ class MdDialogComponent extends MdComponent {
         this.open = true;
         /**
          * @event onDialogShow
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onDialogShow");
     }
@@ -130,7 +130,7 @@ class MdDialogComponent extends MdComponent {
         this.open = false;
         /**
          * @event onDialogClose
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onDialogClose");
     }
@@ -146,7 +146,7 @@ class MdDialogComponent extends MdComponent {
         if (this.open) this.close();
         /**
          * @event onDialogScrimClose
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onDialogScrimClose", { event });
     }
@@ -156,7 +156,7 @@ class MdDialogComponent extends MdComponent {
             this.removeEventListener("animationend", this.handleDialogShown);
             /**
              * @event onDialogShown
-             * @type \{Object\}
+             * @type {Object}
              */
             this.emit("onDialogShown");
         }
@@ -167,7 +167,7 @@ class MdDialogComponent extends MdComponent {
             this.removeEventListener("animationend", this.handleDialogClosed);
             /**
              * @event onDialogClosed
-             * @type \{Object\}
+             * @type {Object}
              */
             this.emit("onDialogClosed");
         }
@@ -176,7 +176,7 @@ class MdDialogComponent extends MdComponent {
     handleDialogIconButtonClick(event) {
         /**
          * @event onDialogIconButtonClick
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onDialogIconButtonClick", { event });
     }
@@ -184,7 +184,7 @@ class MdDialogComponent extends MdComponent {
     handleDialogButtonClick(event) {
         /**
          * @event onDialogButtonClick
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onDialogButtonClick", { event });
     }

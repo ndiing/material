@@ -42,6 +42,12 @@ class MdTimeFieldComponent extends MdTextFieldComponent {
             this.handleTimeFieldPickerButtonOkClick = this.handleTimeFieldPickerButtonOkClick.bind(this);
             this.picker.addEventListener("onTimePickerButtonCancelClick", this.handleTimeFieldPickerButtonCancelClick);
             this.picker.addEventListener("onTimePickerButtonOkClick", this.handleTimeFieldPickerButtonOkClick);
+
+            this.handleTimeFieldPickerWindowScroll = this.handleTimeFieldPickerWindowScroll.bind(this);
+            this.handleTimeFieldPickerWindowClick = this.handleTimeFieldPickerWindowClick.bind(this);
+            this.picker.addEventListener("onTimePickerWindowScroll", this.handleTimeFieldPickerWindowScroll);
+            this.picker.addEventListener("onTimePickerWindowClick", this.handleTimeFieldPickerWindowClick);
+
             await this.picker.updateComplete;
         }
     }
@@ -50,6 +56,10 @@ class MdTimeFieldComponent extends MdTextFieldComponent {
         if (this.picker) {
             this.picker.removeEventListener("onTimePickerButtonCancelClick", this.handleTimeFieldPickerButtonCancelClick);
             this.picker.removeEventListener("onTimePickerButtonOkClick", this.handleTimeFieldPickerButtonOkClick);
+
+            this.picker.removeEventListener("onTimePickerWindowScroll", this.handleTimeFieldPickerWindowScroll);
+            this.picker.removeEventListener("onTimePickerWindowClick", this.handleTimeFieldPickerWindowClick);
+
             this.picker.remove();
             this.picker = undefined;
         }
@@ -60,11 +70,6 @@ class MdTimeFieldComponent extends MdTextFieldComponent {
      */
     showPicker(options = {}) {
         if (this.picker) {
-            this.pickerWindow = closestScrollableElement(this);
-            this.handleTimeFieldWindowClick = this.handleTimeFieldWindowClick.bind(this);
-            this.handleTimeFieldWindowScroll = this.handleTimeFieldWindowScroll.bind(this);
-            window.addEventListener("click", this.handleTimeFieldWindowClick);
-            this.pickerWindow.addEventListener("scroll", this.handleTimeFieldWindowScroll);
             if (this.textFieldNative.value) this.picker.value = parseTime(this.textFieldNative.value);
             this.picker.show(options);
         }
@@ -74,8 +79,6 @@ class MdTimeFieldComponent extends MdTextFieldComponent {
      */
     closePicker() {
         if (this.picker) {
-            window.removeEventListener("click", this.handleTimeFieldWindowClick);
-            this.pickerWindow.removeEventListener("scroll", this.handleTimeFieldWindowScroll);
             this.picker.close();
         }
     }
@@ -90,14 +93,15 @@ class MdTimeFieldComponent extends MdTextFieldComponent {
         }
     }
 
-    handleTimeFieldWindowClick(event) {
-        const target = document.elementFromPoint(event.clientX, event.clientY);
+    handleTimeFieldPickerWindowClick(event) {
+        const { clientX, clientY } = event.detail.event;
+        const target = document.elementFromPoint(clientX, clientY);
         if (!this.pickerTrigger.contains(target) && !this.picker.contains(target)) {
             this.closePicker();
         }
     }
 
-    handleTimeFieldWindowScroll(event) {
+    handleTimeFieldPickerWindowScroll(event) {
         this.closePicker();
     }
 

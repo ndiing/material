@@ -119,7 +119,7 @@ class MdTreeComponent extends MdComponent {
         this.updateScroll();
         /**
          * @event onTreeKeydownArrowDown
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onTreeKeydownArrowDown", { event });
     }
@@ -137,7 +137,7 @@ class MdTreeComponent extends MdComponent {
         this.updateScroll();
         /**
          * @event onTreeKeydownArrowUp
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onTreeKeydownArrowUp", { event });
     }
@@ -160,7 +160,7 @@ class MdTreeComponent extends MdComponent {
         }
         /**
          * @event onTreeKeydownArrowRight
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onTreeKeydownArrowRight", { event });
     }
@@ -182,7 +182,7 @@ class MdTreeComponent extends MdComponent {
         }
         /**
          * @event onTreeKeydownArrowLeft
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onTreeKeydownArrowLeft", { event });
     }
@@ -193,7 +193,7 @@ class MdTreeComponent extends MdComponent {
         // if (treeItemSelected) treeItemSelected.click();
         /**
          * @event onTreeKeydownEnter
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onTreeKeydownEnter", { event });
     }
@@ -208,7 +208,7 @@ class MdTreeComponent extends MdComponent {
         }
         /**
          * @event onTreeKeydown
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onTreeKeydown", { event });
     }
@@ -226,7 +226,7 @@ class MdTreeComponent extends MdComponent {
         this.requestUpdate();
         /**
          * @event onTreeItemClick
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onTreeItemClick", { event });
     }

@@ -2,7 +2,7 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
-import { parseDate, stringifyDate } from "../util/util";
+import { closestScrollableElement, parseDate, stringifyDate } from "../util/util";
 import { setPosition } from "../popper/popper";
 import { classMap } from "lit/directives/class-map.js";
 import { cache } from "lit/directives/cache.js";
@@ -339,6 +339,15 @@ class MdDatePickerComponent extends MdComponent {
         this.index = this.defaultIndex;
         this.handleDatePickerShown = this.handleDatePickerShown.bind(this);
         this.addEventListener("animationend", this.handleDatePickerShown);
+
+        this.datePickerWindow = closestScrollableElement(this);
+
+        this.handleDatePickerWindowScroll = this.handleDatePickerWindowScroll.bind(this);
+        this.datePickerWindow.addEventListener("scroll", this.handleDatePickerWindowScroll);
+
+        this.handleDatePickerWindowClick = this.handleDatePickerWindowClick.bind(this);
+        window.addEventListener("click", this.handleDatePickerWindowClick);
+
         this.style.removeProperty("--md-comp-date-picker-animation");
         setPosition({
             container: this,
@@ -356,7 +365,7 @@ class MdDatePickerComponent extends MdComponent {
         if (this.modal) this.datePickerScrim.show();
         /**
          * @event onDatePickerShow
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onDatePickerShow");
     }
@@ -366,12 +375,16 @@ class MdDatePickerComponent extends MdComponent {
     close() {
         this.handleDatePickerClosed = this.handleDatePickerClosed.bind(this);
         this.addEventListener("animationend", this.handleDatePickerClosed);
+
+        this.datePickerWindow.removeEventListener("scroll", this.handleDatePickerWindowScroll);
+        window.removeEventListener("click", this.handleDatePickerWindowClick);
+
         this.style.removeProperty("--md-comp-date-picker-animation");
         this.open = false;
         if (this.modal) this.datePickerScrim.close();
         /**
          * @event onDatePickerClose
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onDatePickerClose");
     }
@@ -384,13 +397,29 @@ class MdDatePickerComponent extends MdComponent {
         else this.show(options);
     }
 
+    handleDatePickerWindowScroll(event) {
+        /**
+         * @event onDatePickerWindowScroll
+         * @type {Object}
+         */
+        this.emit("onDatePickerWindowScroll", { event });
+    }
+
+    handleDatePickerWindowClick(event) {
+        /**
+         * @event onDatePickerWindowClick
+         * @type {Object}
+         */
+        this.emit("onDatePickerWindowClick", { event });
+    }
+
     handleDatePickerYearItemClick(event) {
         const data = event.currentTarget.data;
         this.selection.setFullYear(data.year);
         this.index = 1;
         /**
          * @event onDatePickerYearItemClick
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onDatePickerYearItemClick", { event });
     }
@@ -402,7 +431,7 @@ class MdDatePickerComponent extends MdComponent {
         this.index = 2;
         /**
          * @event onDatePickerMonthItemClick
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onDatePickerMonthItemClick", { event });
     }
@@ -418,7 +447,7 @@ class MdDatePickerComponent extends MdComponent {
         this.requestUpdate();
         /**
          * @event onDatePickerDayItemClick
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onDatePickerDayItemClick", { event });
     }
@@ -427,7 +456,7 @@ class MdDatePickerComponent extends MdComponent {
         if (this.open) this.close();
         /**
          * @event onDatePickerScrimClose
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onDatePickerScrimClose", { event });
     }
@@ -436,7 +465,7 @@ class MdDatePickerComponent extends MdComponent {
         this.removeEventListener("animationend", this.handleDatePickerShown);
         /**
          * @event onDatePickerShown
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onDatePickerShown");
     }
@@ -445,7 +474,7 @@ class MdDatePickerComponent extends MdComponent {
         this.removeEventListener("animationend", this.handleDatePickerClosed);
         /**
          * @event onDatePickerClosed
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onDatePickerClosed");
     }
@@ -460,7 +489,7 @@ class MdDatePickerComponent extends MdComponent {
         this.requestUpdate();
         /**
          * @event onDatePickerIconButtonPrevClick
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onDatePickerIconButtonPrevClick", { event });
     }
@@ -475,7 +504,7 @@ class MdDatePickerComponent extends MdComponent {
         this.requestUpdate();
         /**
          * @event onDatePickerIconButtonNextClick
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onDatePickerIconButtonNextClick", { event });
     }
@@ -490,7 +519,7 @@ class MdDatePickerComponent extends MdComponent {
         if (fn) return fn(event);
         /**
          * @event onDatePickerIconButtonClick
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onDatePickerIconButtonClick", { event });
     }
@@ -500,7 +529,7 @@ class MdDatePickerComponent extends MdComponent {
         // this.close();
         /**
          * @event onDatePickerButtonCancelClick
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onDatePickerButtonCancelClick", { event });
     }
@@ -509,7 +538,7 @@ class MdDatePickerComponent extends MdComponent {
         // this.close();
         /**
          * @event onDatePickerButtonOkClick
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onDatePickerButtonOkClick", { event });
     }
@@ -523,7 +552,7 @@ class MdDatePickerComponent extends MdComponent {
         this.index = map[this.index];
         /**
          * @event onDatePickerButtonLabelClick
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onDatePickerButtonLabelClick", { event });
     }
@@ -539,7 +568,7 @@ class MdDatePickerComponent extends MdComponent {
         if (fn) return fn(event);
         /**
          * @event onDatePickerButtonClick
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onDatePickerButtonClick", { event });
     }

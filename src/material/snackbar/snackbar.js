@@ -124,7 +124,7 @@ class MdSnackbarComponent extends MdComponent {
                     this.open = true;
                     /**
                      * @event onSnackbarShow
-                     * @type \{Object\}
+                     * @type {Object}
                      */
                     this.emit("onSnackbarShow");
                 }),
@@ -140,7 +140,7 @@ class MdSnackbarComponent extends MdComponent {
         this.open = false;
         /**
          * @event onSnackbarClose
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onSnackbarClose");
     }
@@ -157,7 +157,7 @@ class MdSnackbarComponent extends MdComponent {
             this.removeEventListener("animationend", this.handleSnackbarShown);
             /**
              * @event onSnackbarShown
-             * @type \{Object\}
+             * @type {Object}
              */
             this.emit("onSnackbarShown");
         }
@@ -168,7 +168,7 @@ class MdSnackbarComponent extends MdComponent {
             this.removeEventListener("animationend", this.handleSnackbarClosed);
             /**
              * @event onSnackbarClosed
-             * @type \{Object\}
+             * @type {Object}
              */
             this.emit("onSnackbarClosed");
         }
@@ -177,7 +177,7 @@ class MdSnackbarComponent extends MdComponent {
     handleSnackbarIconButtonClick(event) {
         /**
          * @event onSnackbarIconButtonClick
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onSnackbarIconButtonClick", { event });
     }
@@ -185,7 +185,7 @@ class MdSnackbarComponent extends MdComponent {
     handleSnackbarButtonClick(event) {
         /**
          * @event onSnackbarButtonClick
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onSnackbarButtonClick", { event });
     }

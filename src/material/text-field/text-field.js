@@ -257,7 +257,7 @@ class MdTextFieldComponent extends MdComponent {
         this.classList.add("md-text-field--focus");
         /**
          * @event onTextFieldFocus
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onTextFieldFocus", { event });
     }
@@ -266,7 +266,7 @@ class MdTextFieldComponent extends MdComponent {
         this.classList.remove("md-text-field--focus");
         /**
          * @event onTextFieldBlur
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onTextFieldBlur", { event });
     }
@@ -275,7 +275,7 @@ class MdTextFieldComponent extends MdComponent {
         this.updateValue();
         /**
          * @event onTextFieldInput
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onTextFieldInput", { event });
     }
@@ -295,7 +295,7 @@ class MdTextFieldComponent extends MdComponent {
         this.classList.toggle("md-text-field--error", !!this.error);
         /**
          * @event onTextFieldInvalid
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onTextFieldInvalid", { event });
     }
@@ -307,7 +307,7 @@ class MdTextFieldComponent extends MdComponent {
         this.classList.toggle("md-text-field--error", !!this.error);
         /**
          * @event onTextFieldReset
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onTextFieldReset", { event });
     }
@@ -320,7 +320,7 @@ class MdTextFieldComponent extends MdComponent {
         this.classList.toggle("md-text-field--error", !!this.error);
         /**
          * @event onTextFieldIconButtonCancelClick
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onTextFieldIconButtonCancelClick", { event });
     }
@@ -330,7 +330,7 @@ class MdTextFieldComponent extends MdComponent {
         if (data.id === "cancel") return this.handleTextFieldIconButtonCancelClick(event);
         /**
          * @event onTextFieldIconButtonClick
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onTextFieldIconButtonClick", { event });
     }
@@ -339,7 +339,7 @@ class MdTextFieldComponent extends MdComponent {
         event.preventDefault();
         /**
          * @event onTextFieldClick
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onTextFieldClick", { event });
     }

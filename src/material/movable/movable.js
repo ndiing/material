@@ -28,7 +28,7 @@ class Movable {
         this.startHeight = this.host.clientHeight;
         /**
          * @event onMovablePointerdown
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onMovablePointerdown");
     }
@@ -66,7 +66,7 @@ class Movable {
         this.host.style.setProperty("height", (this.currentHeight ?? this.startHeight) + "px");
         /**
          * @event onMovablePointermove
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onMovablePointermove");
     }
@@ -79,7 +79,7 @@ class Movable {
         window.removeEventListener("pointerup", this.handlePointerup);
         /**
          * @event onMovablePointerup
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onMovablePointerup");
     }

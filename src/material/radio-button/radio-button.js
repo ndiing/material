@@ -72,7 +72,7 @@ class MdRadioButtonComponent extends MdComponent {
         this.checked = native.checked;
         /**
          * @event onRadioButtonNativeInput
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onRadioButtonNativeInput", { event });
     }
@@ -83,7 +83,7 @@ class MdRadioButtonComponent extends MdComponent {
         this.checked = this.defaultChecked;
         /**
          * @event onRadioButtonNativeReset
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onRadioButtonNativeReset", { event });
     }

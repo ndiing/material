@@ -42,6 +42,15 @@ class MdMonthFieldComponent extends MdTextFieldComponent {
             this.handleMonthFieldPickerButtonOkClick = this.handleMonthFieldPickerButtonOkClick.bind(this);
             this.picker.addEventListener("onMonthPickerButtonCancelClick", this.handleMonthFieldPickerButtonCancelClick);
             this.picker.addEventListener("onMonthPickerButtonOkClick", this.handleMonthFieldPickerButtonOkClick);
+
+            this.picker.addEventListener("onMonthPickerButtonCancelClick", this.handleMonthFieldPickerButtonCancelClick);
+            this.picker.addEventListener("onMonthPickerButtonOkClick", this.handleMonthFieldPickerButtonOkClick);
+
+            this.handleMonthFieldPickerWindowScroll = this.handleMonthFieldPickerWindowScroll.bind(this);
+            this.handleMonthFieldPickerWindowClick = this.handleMonthFieldPickerWindowClick.bind(this);
+            this.picker.addEventListener("onMonthPickerWindowScroll", this.handleMonthFieldPickerWindowScroll);
+            this.picker.addEventListener("onMonthPickerWindowClick", this.handleMonthFieldPickerWindowClick);
+
             await this.picker.updateComplete;
         }
     }
@@ -50,6 +59,10 @@ class MdMonthFieldComponent extends MdTextFieldComponent {
         if (this.picker) {
             this.picker.removeEventListener("onMonthPickerButtonCancelClick", this.handleMonthFieldPickerButtonCancelClick);
             this.picker.removeEventListener("onMonthPickerButtonOkClick", this.handleMonthFieldPickerButtonOkClick);
+
+            this.picker.removeEventListener("onMonthPickerWindowScroll", this.handleMonthFieldPickerWindowScroll);
+            this.picker.removeEventListener("onMonthPickerWindowClick", this.handleMonthFieldPickerWindowClick);
+
             this.picker.remove();
             this.picker = undefined;
         }
@@ -60,11 +73,6 @@ class MdMonthFieldComponent extends MdTextFieldComponent {
      */
     showPicker(options = {}) {
         if (this.picker) {
-            this.pickerWindow = closestScrollableElement(this);
-            this.handleMonthFieldWindowClick = this.handleMonthFieldWindowClick.bind(this);
-            this.handleMonthFieldWindowScroll = this.handleMonthFieldWindowScroll.bind(this);
-            window.addEventListener("click", this.handleMonthFieldWindowClick);
-            this.pickerWindow.addEventListener("scroll", this.handleMonthFieldWindowScroll);
             if (this.textFieldNative.value) this.picker.value = parseMonth(this.textFieldNative.value);
             this.picker.show(options);
         }
@@ -74,8 +82,6 @@ class MdMonthFieldComponent extends MdTextFieldComponent {
      */
     closePicker() {
         if (this.picker) {
-            window.removeEventListener("click", this.handleMonthFieldWindowClick);
-            this.pickerWindow.removeEventListener("scroll", this.handleMonthFieldWindowScroll);
             this.picker.close();
         }
     }
@@ -90,14 +96,15 @@ class MdMonthFieldComponent extends MdTextFieldComponent {
         }
     }
 
-    handleMonthFieldWindowClick(event) {
-        const target = document.elementFromPoint(event.clientX, event.clientY);
+    handleMonthFieldPickerWindowClick(event) {
+        const { clientX, clientY } = event.detail.event;
+        const target = document.elementFromPoint(clientX, clientY);
         if (!this.pickerTrigger.contains(target) && !this.picker.contains(target)) {
             this.closePicker();
         }
     }
 
-    handleMonthFieldWindowScroll(event) {
+    handleMonthFieldPickerWindowScroll(event) {
         this.closePicker();
     }
 

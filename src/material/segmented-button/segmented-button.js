@@ -61,7 +61,7 @@ class MdSegmentedButtonComponent extends MdComponent {
         this.requestUpdate();
         /**
          * @event onSegmentedButtonItemClick
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onSegmentedButtonItemClick", { event });
     }

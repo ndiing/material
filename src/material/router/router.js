@@ -61,14 +61,14 @@ class Router {
         performance.mark("mark-1");
         /**
          * @event onRouterCurrentEntryChange
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onRouterCurrentEntryChange", {});
         this.setController();
         const routes = this.get();
         /**
          * @event onRouterNavigate
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onRouterNavigate", {});
         for (const route of routes ?? []) {
@@ -78,7 +78,7 @@ class Router {
                 } catch (error) {
                     /**
                      * @event onRouterNavigateError
-                     * @type \{Object\}
+                     * @type {Object}
                      */
                     this.emit("onRouterNavigateError", {});
                     break;
@@ -97,7 +97,7 @@ class Router {
         performance.clearMeasures("measure-1");
         /**
          * @event onRouterNavigateSuccess
-         * @type \{Object\}
+         * @type {Object}
          */
         this.emit("onRouterNavigateSuccess", {});
     }

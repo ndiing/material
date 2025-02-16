@@ -40,8 +40,14 @@ class MdDateFieldComponent extends MdTextFieldComponent {
             this.parentElement.insertBefore(this.picker, this.nextElementSibling);
             this.handleDateFieldPickerButtonCancelClick = this.handleDateFieldPickerButtonCancelClick.bind(this);
             this.handleDateFieldPickerButtonOkClick = this.handleDateFieldPickerButtonOkClick.bind(this);
+            this.handleDateFieldPickerWindowScroll = this.handleDateFieldPickerWindowScroll.bind(this);
+            this.handleDateFieldPickerWindowClick = this.handleDateFieldPickerWindowClick.bind(this);
             this.picker.addEventListener("onDatePickerButtonCancelClick", this.handleDateFieldPickerButtonCancelClick);
             this.picker.addEventListener("onDatePickerButtonOkClick", this.handleDateFieldPickerButtonOkClick);
+
+            this.picker.addEventListener("onDatePickerWindowScroll", this.handleDateFieldPickerWindowScroll);
+            this.picker.addEventListener("onDatePickerWindowClick", this.handleDateFieldPickerWindowClick);
+
             await this.picker.updateComplete;
         }
     }
@@ -50,6 +56,10 @@ class MdDateFieldComponent extends MdTextFieldComponent {
         if (this.picker) {
             this.picker.removeEventListener("onDatePickerButtonCancelClick", this.handleDateFieldPickerButtonCancelClick);
             this.picker.removeEventListener("onDatePickerButtonOkClick", this.handleDateFieldPickerButtonOkClick);
+
+            this.picker.removeEventListener("onDatePickerWindowScroll", this.handleDateFieldPickerWindowScroll);
+            this.picker.removeEventListener("onDatePickerWindowClick", this.handleDateFieldPickerWindowClick);
+
             this.picker.remove();
             this.picker = undefined;
         }
@@ -60,11 +70,6 @@ class MdDateFieldComponent extends MdTextFieldComponent {
      */
     showPicker(options = {}) {
         if (this.picker) {
-            this.pickerWindow = closestScrollableElement(this);
-            this.handleDateFieldWindowClick = this.handleDateFieldWindowClick.bind(this);
-            this.handleDateFieldWindowScroll = this.handleDateFieldWindowScroll.bind(this);
-            window.addEventListener("click", this.handleDateFieldWindowClick);
-            this.pickerWindow.addEventListener("scroll", this.handleDateFieldWindowScroll);
             if (this.textFieldNative.value) this.picker.value = parseDate(this.textFieldNative.value);
             this.picker.show(options);
         }
@@ -74,8 +79,6 @@ class MdDateFieldComponent extends MdTextFieldComponent {
      */
     closePicker() {
         if (this.picker) {
-            window.removeEventListener("click", this.handleDateFieldWindowClick);
-            this.pickerWindow.removeEventListener("scroll", this.handleDateFieldWindowScroll);
             this.picker.close();
         }
     }
@@ -90,14 +93,15 @@ class MdDateFieldComponent extends MdTextFieldComponent {
         }
     }
 
-    handleDateFieldWindowClick(event) {
-        const target = document.elementFromPoint(event.clientX, event.clientY);
+    handleDateFieldPickerWindowClick(event) {
+        const { clientX, clientY } = event.detail.event;
+        const target = document.elementFromPoint(clientX, clientY);
         if (!this.pickerTrigger.contains(target) && !this.picker.contains(target)) {
             this.closePicker();
         }
     }
 
-    handleDateFieldWindowScroll(event) {
+    handleDateFieldPickerWindowScroll(event) {
         this.closePicker();
     }
 

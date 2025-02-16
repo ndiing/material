@@ -66,7 +66,7 @@ class MdTabComponent extends MdComponent {
         if (changedProperties.has("selected") && this.selected) {
             /**
              * @event onTabSelected
-             * @type \{Object\}
+             * @type {Object}
              */
             this.emit("onTabSelected", { tab: this });
         }
