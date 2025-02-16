@@ -192,6 +192,7 @@ class DemoMain extends MdComponent {
                     { label: "Month Field", routerLink: "/demo/month-field" },
                     { label: "Week Field", routerLink: "/demo/week-field" },
                     { label: "Password Field", routerLink: "/demo/password-field" },
+                    { label: "Number Field", routerLink: "/demo/number-field" },
                 ],
             },
             { label: "Tooltip", routerLink: "/demo/tooltip" },

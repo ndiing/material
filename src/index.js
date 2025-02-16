@@ -13,6 +13,9 @@ import { Scheme } from "./material/scheme/scheme.js";
 import "./app/app.scss";
 import AppRoutes from "./app/app.js";
 
+const routes = [AppRoutes];
+Router.use(routes);
+
 {
     const progress = new Progress();
     const observer = new PerformanceObserver((entries) => {
@@ -33,6 +36,3 @@ import AppRoutes from "./app/app.js";
     });
     scheme.init();
 }
-
-const routes = [AppRoutes];
-Router.use(routes);

@@ -159,24 +159,26 @@ class DocsPage extends MdComponent {
     renderTable(columns = [], data = []) {
         /* prettier-ignore */
         return html`
-            <table>
-                <tr>
-                    ${columns.map(column => html`
-                        <th>
-                            ${column.label}
-                        </th>
-                    `)}
-                </tr>
-                ${data.map(item=>html`
+            <section>
+                <table>
                     <tr>
                         ${columns.map(column => html`
-                            <td>
-                                ${column.name==='name'?html`<code>${item[column.name]}</code>`:item[column.name]}
-                            </td>
+                            <th>
+                                ${column.label}
+                            </th>
                         `)}
                     </tr>
-                `)}
-            </table>
+                    ${data.map(item=>html`
+                        <tr>
+                            ${columns.map(column => html`
+                                <td>
+                                    ${column.name==='name'?html`<code>${item[column.name]}</code>`:item[column.name]}
+                                </td>
+                            `)}
+                        </tr>
+                    `)}
+                </table>
+            </section>
         `
     }
 

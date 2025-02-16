@@ -3,22 +3,26 @@
 docs-page {
     h1 {
         @include mixins.typescale-headline-large();
+        overflow-wrap: anywhere;
+        word-break: break-word;
     }
 
     h2 {
         @include mixins.typescale-headline-small();
     }
 
+    section {
+        max-height: 336px;
+        overflow: auto;
+        border-radius: var(--md-sys-shape-corner-large);
+        border: 1px solid var(--md-sys-color-outline-variant);
+    }
+
     table {
         border-collapse: separate;
         border-spacing: 0;
-        display: block;
-        max-height: 360px;
-        // width: 100%;
-        overflow: auto;
-        // overflow: hidden;
-        border-radius: var(--md-sys-shape-corner-large);
-        border: 1px solid var(--md-sys-color-outline-variant);
+        min-width: 100%;
+
         tbody {
             tr {
                 &:last-child {
@@ -30,7 +34,6 @@ docs-page {
         }
         th {
             text-align: left;
-            // width: 1%;
             padding: 16px 16px;
             background-color: var(--md-sys-color-surface-container-highest);
             border-bottom: 1px solid var(--md-sys-color-outline-variant);
@@ -43,7 +46,6 @@ docs-page {
             }
         }
         td {
-            // max-width: 0;
             padding: 16px 16px;
             border-bottom: 1px solid var(--md-sys-color-outline-variant);
             border-right: 1px solid var(--md-sys-color-outline-variant);

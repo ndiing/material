@@ -69,6 +69,7 @@ import "./slider/slider.js";
 
 import "./text-field/text-field.js";
 import "./password-field/password-field.js";
+import "./number-field/number-field.js";
 
 import "./datetime-field/datetime-field.js";
 import "./date-field/date-field.js";

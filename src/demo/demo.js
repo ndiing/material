@@ -141,6 +141,7 @@ import DemoMonthField from "./month-field/month-field.js";
 import DemoWeekField from "./week-field/week-field.js";
 
 import DemoPasswordField from "./password-field/password-field.js";
+import DemoNumberField from "./number-field/number-field.js";
 
 export default {
     path: "demo",
@@ -289,5 +290,6 @@ export default {
         { path: "week-field", component: DemoWeekField },
 
         { path: "password-field", component: DemoPasswordField },
+        { path: "number-field", component: DemoNumberField },
     ],
 };
