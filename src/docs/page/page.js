@@ -233,8 +233,7 @@ class DocsPage extends MdComponent {
     }
 
     async handleDocsPageRouterNavigateSuccess(event) {
-        const index = keys.findIndex((key) => key.routerLink === Router.pathname);
-        this.data = values[index];
+        this.data = values.find((value) => `/docs/${value.key.replace(/\.js$/, "")}` === Router.pathname);
         console.log(this.data);
         this.requestUpdate();
     }

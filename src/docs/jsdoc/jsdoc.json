@@ -18154,7 +18154,7 @@
         "meta": {
             "range": [
                 518,
-                26128
+                26149
             ],
             "filename": "datetime-picker.js",
             "lineno": 14,
@@ -21176,7 +21176,7 @@
         "meta": {
             "range": [
                 518,
-                26128
+                26149
             ],
             "filename": "datetime-picker.js",
             "lineno": 14,
@@ -21962,11 +21962,11 @@
         "scope": "instance"
     },
     {
-        "comment": "/**\n     * @param {Any} [options]\n     */",
+        "comment": "/**\n     * @param {PopperSetPositionOptions} [options]\n     */",
         "meta": {
             "range": [
-                16936,
-                18308
+                16957,
+                18329
             ],
             "filename": "datetime-picker.js",
             "lineno": 409,
@@ -21988,7 +21988,7 @@
             {
                 "type": {
                     "names": [
-                        "Any"
+                        "PopperSetPositionOptions"
                     ]
                 },
                 "optional": true,
@@ -22005,8 +22005,8 @@
         "comment": "",
         "meta": {
             "range": [
-                16960,
-                16990
+                16981,
+                17011
             ],
             "filename": "datetime-picker.js",
             "lineno": 410,
@@ -22031,8 +22031,8 @@
         "comment": "",
         "meta": {
             "range": [
-                17001,
-                17075
+                17022,
+                17096
             ],
             "filename": "datetime-picker.js",
             "lineno": 412,
@@ -22057,8 +22057,8 @@
         "comment": "",
         "meta": {
             "range": [
-                17165,
-                17223
+                17186,
+                17244
             ],
             "filename": "datetime-picker.js",
             "lineno": 415,
@@ -22083,8 +22083,8 @@
         "comment": "",
         "meta": {
             "range": [
-                17234,
-                17322
+                17255,
+                17343
             ],
             "filename": "datetime-picker.js",
             "lineno": 417,
@@ -22109,8 +22109,8 @@
         "comment": "",
         "meta": {
             "range": [
-                17434,
-                17520
+                17455,
+                17541
             ],
             "filename": "datetime-picker.js",
             "lineno": 420,
@@ -22135,8 +22135,8 @@
         "comment": "",
         "meta": {
             "range": [
-                17712,
-                17727
+                17733,
+                17748
             ],
             "filename": "datetime-picker.js",
             "lineno": 426,
@@ -22159,8 +22159,8 @@
         "comment": "",
         "meta": {
             "range": [
-                17741,
-                17754
+                17762,
+                17775
             ],
             "filename": "datetime-picker.js",
             "lineno": 427,
@@ -22183,8 +22183,8 @@
         "comment": "",
         "meta": {
             "range": [
-                17802,
-                18037
+                17823,
+                18058
             ],
             "filename": "datetime-picker.js",
             "lineno": 429,
@@ -22207,8 +22207,8 @@
         "comment": "",
         "meta": {
             "range": [
-                18084,
-                18100
+                18105,
+                18121
             ],
             "filename": "datetime-picker.js",
             "lineno": 438,
@@ -22257,8 +22257,8 @@
         "comment": "/**\n     */",
         "meta": {
             "range": [
-                18330,
-                19006
+                18351,
+                19027
             ],
             "filename": "datetime-picker.js",
             "lineno": 451,
@@ -22285,8 +22285,8 @@
         "comment": "",
         "meta": {
             "range": [
-                18348,
-                18424
+                18369,
+                18445
             ],
             "filename": "datetime-picker.js",
             "lineno": 452,
@@ -22311,8 +22311,8 @@
         "comment": "",
         "meta": {
             "range": [
-                18778,
-                18795
+                18799,
+                18816
             ],
             "filename": "datetime-picker.js",
             "lineno": 460,
@@ -22361,8 +22361,8 @@
         "comment": "/**\n     * @param {Any} [options]\n     */",
         "meta": {
             "range": [
-                19058,
-                19151
+                19079,
+                19172
             ],
             "filename": "datetime-picker.js",
             "lineno": 474,
@@ -22401,8 +22401,8 @@
         "comment": "",
         "meta": {
             "range": [
-                19157,
-                19373
+                19178,
+                19394
             ],
             "filename": "datetime-picker.js",
             "lineno": 479,
@@ -22456,8 +22456,8 @@
         "comment": "",
         "meta": {
             "range": [
-                19358,
-                19363
+                19379,
+                19384
             ],
             "filename": "datetime-picker.js",
             "lineno": 484,
@@ -22480,8 +22480,8 @@
         "comment": "",
         "meta": {
             "range": [
-                19379,
-                19722
+                19400,
+                19743
             ],
             "filename": "datetime-picker.js",
             "lineno": 487,
@@ -22511,8 +22511,8 @@
         "comment": "",
         "meta": {
             "range": [
-                19434,
-                19498
+                19455,
+                19519
             ],
             "filename": "datetime-picker.js",
             "lineno": 488,
@@ -22569,8 +22569,8 @@
         "comment": "",
         "meta": {
             "range": [
-                19699,
-                19704
+                19720,
+                19725
             ],
             "filename": "datetime-picker.js",
             "lineno": 494,
@@ -22593,8 +22593,8 @@
         "comment": "",
         "meta": {
             "range": [
-                19706,
-                19712
+                19727,
+                19733
             ],
             "filename": "datetime-picker.js",
             "lineno": 494,
@@ -22617,8 +22617,8 @@
         "comment": "",
         "meta": {
             "range": [
-                19728,
-                20065
+                19749,
+                20086
             ],
             "filename": "datetime-picker.js",
             "lineno": 497,
@@ -22648,8 +22648,8 @@
         "comment": "",
         "meta": {
             "range": [
-                19785,
-                19816
+                19806,
+                19837
             ],
             "filename": "datetime-picker.js",
             "lineno": 498,
@@ -22674,8 +22674,8 @@
         "comment": "",
         "meta": {
             "range": [
-                19873,
-                19887
+                19894,
+                19908
             ],
             "filename": "datetime-picker.js",
             "lineno": 500,
@@ -22724,8 +22724,8 @@
         "comment": "",
         "meta": {
             "range": [
-                20050,
-                20055
+                20071,
+                20076
             ],
             "filename": "datetime-picker.js",
             "lineno": 505,
@@ -22748,8 +22748,8 @@
         "comment": "",
         "meta": {
             "range": [
-                20071,
-                20456
+                20092,
+                20477
             ],
             "filename": "datetime-picker.js",
             "lineno": 508,
@@ -22779,8 +22779,8 @@
         "comment": "",
         "meta": {
             "range": [
-                20129,
-                20160
+                20150,
+                20181
             ],
             "filename": "datetime-picker.js",
             "lineno": 509,
@@ -22805,8 +22805,8 @@
         "comment": "",
         "meta": {
             "range": [
-                20262,
-                20276
+                20283,
+                20297
             ],
             "filename": "datetime-picker.js",
             "lineno": 512,
@@ -22855,8 +22855,8 @@
         "comment": "",
         "meta": {
             "range": [
-                20441,
-                20446
+                20462,
+                20467
             ],
             "filename": "datetime-picker.js",
             "lineno": 517,
@@ -22879,8 +22879,8 @@
         "comment": "",
         "meta": {
             "range": [
-                20462,
-                21005
+                20483,
+                21026
             ],
             "filename": "datetime-picker.js",
             "lineno": 520,
@@ -22910,8 +22910,8 @@
         "comment": "",
         "meta": {
             "range": [
-                20518,
-                20549
+                20539,
+                20570
             ],
             "filename": "datetime-picker.js",
             "lineno": 521,
@@ -22936,8 +22936,8 @@
         "comment": "",
         "meta": {
             "range": [
-                20815,
-                20829
+                20836,
+                20850
             ],
             "filename": "datetime-picker.js",
             "lineno": 528,
@@ -22986,8 +22986,8 @@
         "comment": "",
         "meta": {
             "range": [
-                20990,
-                20995
+                21011,
+                21016
             ],
             "filename": "datetime-picker.js",
             "lineno": 533,
@@ -23010,8 +23010,8 @@
         "comment": "",
         "meta": {
             "range": [
-                21011,
-                21385
+                21032,
+                21406
             ],
             "filename": "datetime-picker.js",
             "lineno": 536,
@@ -23041,8 +23041,8 @@
         "comment": "",
         "meta": {
             "range": [
-                21068,
-                21099
+                21089,
+                21120
             ],
             "filename": "datetime-picker.js",
             "lineno": 537,
@@ -23067,8 +23067,8 @@
         "comment": "",
         "meta": {
             "range": [
-                21193,
-                21207
+                21214,
+                21228
             ],
             "filename": "datetime-picker.js",
             "lineno": 540,
@@ -23117,8 +23117,8 @@
         "comment": "",
         "meta": {
             "range": [
-                21370,
-                21375
+                21391,
+                21396
             ],
             "filename": "datetime-picker.js",
             "lineno": 545,
@@ -23141,8 +23141,8 @@
         "comment": "",
         "meta": {
             "range": [
-                21391,
-                21779
+                21412,
+                21800
             ],
             "filename": "datetime-picker.js",
             "lineno": 548,
@@ -23172,8 +23172,8 @@
         "comment": "",
         "meta": {
             "range": [
-                21450,
-                21481
+                21471,
+                21502
             ],
             "filename": "datetime-picker.js",
             "lineno": 549,
@@ -23198,8 +23198,8 @@
         "comment": "",
         "meta": {
             "range": [
-                21583,
-                21597
+                21604,
+                21618
             ],
             "filename": "datetime-picker.js",
             "lineno": 552,
@@ -23248,8 +23248,8 @@
         "comment": "",
         "meta": {
             "range": [
-                21764,
-                21769
+                21785,
+                21790
             ],
             "filename": "datetime-picker.js",
             "lineno": 557,
@@ -23272,8 +23272,8 @@
         "comment": "",
         "meta": {
             "range": [
-                21785,
-                22032
+                21806,
+                22053
             ],
             "filename": "datetime-picker.js",
             "lineno": 560,
@@ -23327,8 +23327,8 @@
         "comment": "",
         "meta": {
             "range": [
-                22017,
-                22022
+                22038,
+                22043
             ],
             "filename": "datetime-picker.js",
             "lineno": 566,
@@ -23351,8 +23351,8 @@
         "comment": "",
         "meta": {
             "range": [
-                22038,
-                22304
+                22059,
+                22325
             ],
             "filename": "datetime-picker.js",
             "lineno": 569,
@@ -23406,8 +23406,8 @@
         "comment": "",
         "meta": {
             "range": [
-                22310,
-                22580
+                22331,
+                22601
             ],
             "filename": "datetime-picker.js",
             "lineno": 578,
@@ -23461,8 +23461,8 @@
         "comment": "",
         "meta": {
             "range": [
-                22586,
-                23315
+                22607,
+                23336
             ],
             "filename": "datetime-picker.js",
             "lineno": 587,
@@ -23492,8 +23492,8 @@
         "comment": "",
         "meta": {
             "range": [
-                22649,
-                23068
+                22670,
+                23089
             ],
             "filename": "datetime-picker.js",
             "lineno": 588,
@@ -23518,8 +23518,8 @@
         "comment": "",
         "meta": {
             "range": [
-                22669,
-                22739
+                22690,
+                22760
             ],
             "filename": "datetime-picker.js",
             "lineno": 589,
@@ -23541,8 +23541,8 @@
         "comment": "",
         "meta": {
             "range": [
-                22753,
-                22822
+                22774,
+                22843
             ],
             "filename": "datetime-picker.js",
             "lineno": 590,
@@ -23565,8 +23565,8 @@
         "comment": "",
         "meta": {
             "range": [
-                22836,
-                22899
+                22857,
+                22920
             ],
             "filename": "datetime-picker.js",
             "lineno": 591,
@@ -23589,8 +23589,8 @@
         "comment": "",
         "meta": {
             "range": [
-                22913,
-                22976
+                22934,
+                22997
             ],
             "filename": "datetime-picker.js",
             "lineno": 592,
@@ -23613,8 +23613,8 @@
         "comment": "",
         "meta": {
             "range": [
-                22990,
-                23057
+                23011,
+                23078
             ],
             "filename": "datetime-picker.js",
             "lineno": 593,
@@ -23661,8 +23661,8 @@
         "comment": "",
         "meta": {
             "range": [
-                23300,
-                23305
+                23321,
+                23326
             ],
             "filename": "datetime-picker.js",
             "lineno": 601,
@@ -23685,8 +23685,8 @@
         "comment": "",
         "meta": {
             "range": [
-                23321,
-                24050
+                23342,
+                24071
             ],
             "filename": "datetime-picker.js",
             "lineno": 604,
@@ -23716,8 +23716,8 @@
         "comment": "",
         "meta": {
             "range": [
-                23384,
-                23803
+                23405,
+                23824
             ],
             "filename": "datetime-picker.js",
             "lineno": 605,
@@ -23742,8 +23742,8 @@
         "comment": "",
         "meta": {
             "range": [
-                23404,
-                23474
+                23425,
+                23495
             ],
             "filename": "datetime-picker.js",
             "lineno": 606,
@@ -23765,8 +23765,8 @@
         "comment": "",
         "meta": {
             "range": [
-                23488,
-                23557
+                23509,
+                23578
             ],
             "filename": "datetime-picker.js",
             "lineno": 607,
@@ -23789,8 +23789,8 @@
         "comment": "",
         "meta": {
             "range": [
-                23571,
-                23634
+                23592,
+                23655
             ],
             "filename": "datetime-picker.js",
             "lineno": 608,
@@ -23813,8 +23813,8 @@
         "comment": "",
         "meta": {
             "range": [
-                23648,
-                23711
+                23669,
+                23732
             ],
             "filename": "datetime-picker.js",
             "lineno": 609,
@@ -23837,8 +23837,8 @@
         "comment": "",
         "meta": {
             "range": [
-                23725,
-                23792
+                23746,
+                23813
             ],
             "filename": "datetime-picker.js",
             "lineno": 610,
@@ -23885,8 +23885,8 @@
         "comment": "",
         "meta": {
             "range": [
-                24035,
-                24040
+                24056,
+                24061
             ],
             "filename": "datetime-picker.js",
             "lineno": 618,
@@ -23909,8 +23909,8 @@
         "comment": "",
         "meta": {
             "range": [
-                24056,
-                24578
+                24077,
+                24599
             ],
             "filename": "datetime-picker.js",
             "lineno": 621,
@@ -23940,8 +23940,8 @@
         "comment": "",
         "meta": {
             "range": [
-                24115,
-                24146
+                24136,
+                24167
             ],
             "filename": "datetime-picker.js",
             "lineno": 622,
@@ -23966,8 +23966,8 @@
         "comment": "",
         "meta": {
             "range": [
-                24162,
-                24329
+                24183,
+                24350
             ],
             "filename": "datetime-picker.js",
             "lineno": 623,
@@ -23992,8 +23992,8 @@
         "comment": "",
         "meta": {
             "range": [
-                24182,
-                24243
+                24203,
+                24264
             ],
             "filename": "datetime-picker.js",
             "lineno": 624,
@@ -24017,8 +24017,8 @@
         "comment": "",
         "meta": {
             "range": [
-                24257,
-                24318
+                24278,
+                24339
             ],
             "filename": "datetime-picker.js",
             "lineno": 625,
@@ -24042,8 +24042,8 @@
         "comment": "",
         "meta": {
             "range": [
-                24345,
-                24362
+                24366,
+                24383
             ],
             "filename": "datetime-picker.js",
             "lineno": 627,
@@ -24092,8 +24092,8 @@
         "comment": "",
         "meta": {
             "range": [
-                24563,
-                24568
+                24584,
+                24589
             ],
             "filename": "datetime-picker.js",
             "lineno": 633,
@@ -24116,8 +24116,8 @@
         "comment": "",
         "meta": {
             "range": [
-                24584,
-                24900
+                24605,
+                24921
             ],
             "filename": "datetime-picker.js",
             "lineno": 636,
@@ -24147,8 +24147,8 @@
         "comment": "",
         "meta": {
             "range": [
-                24639,
-                24689
+                24660,
+                24710
             ],
             "filename": "datetime-picker.js",
             "lineno": 637,
@@ -24197,8 +24197,8 @@
         "comment": "",
         "meta": {
             "range": [
-                24885,
-                24890
+                24906,
+                24911
             ],
             "filename": "datetime-picker.js",
             "lineno": 643,
@@ -24221,8 +24221,8 @@
         "comment": "",
         "meta": {
             "range": [
-                24906,
-                25150
+                24927,
+                25171
             ],
             "filename": "datetime-picker.js",
             "lineno": 646,
@@ -24276,8 +24276,8 @@
         "comment": "",
         "meta": {
             "range": [
-                25135,
-                25140
+                25156,
+                25161
             ],
             "filename": "datetime-picker.js",
             "lineno": 652,
@@ -24300,8 +24300,8 @@
         "comment": "",
         "meta": {
             "range": [
-                25156,
-                25545
+                25177,
+                25566
             ],
             "filename": "datetime-picker.js",
             "lineno": 655,
@@ -24331,8 +24331,8 @@
         "comment": "",
         "meta": {
             "range": [
-                25216,
-                25323
+                25237,
+                25344
             ],
             "filename": "datetime-picker.js",
             "lineno": 656,
@@ -24357,8 +24357,8 @@
         "comment": "",
         "meta": {
             "range": [
-                25236,
-                25240
+                25257,
+                25261
             ],
             "filename": "datetime-picker.js",
             "lineno": 657,
@@ -24381,8 +24381,8 @@
         "comment": "",
         "meta": {
             "range": [
-                25254,
-                25258
+                25275,
+                25279
             ],
             "filename": "datetime-picker.js",
             "lineno": 658,
@@ -24406,8 +24406,8 @@
         "comment": "",
         "meta": {
             "range": [
-                25272,
-                25276
+                25293,
+                25297
             ],
             "filename": "datetime-picker.js",
             "lineno": 659,
@@ -24431,8 +24431,8 @@
         "comment": "",
         "meta": {
             "range": [
-                25290,
-                25294
+                25311,
+                25315
             ],
             "filename": "datetime-picker.js",
             "lineno": 660,
@@ -24456,8 +24456,8 @@
         "comment": "",
         "meta": {
             "range": [
-                25308,
-                25312
+                25329,
+                25333
             ],
             "filename": "datetime-picker.js",
             "lineno": 661,
@@ -24481,8 +24481,8 @@
         "comment": "",
         "meta": {
             "range": [
-                25333,
-                25361
+                25354,
+                25382
             ],
             "filename": "datetime-picker.js",
             "lineno": 663,
@@ -24531,8 +24531,8 @@
         "comment": "",
         "meta": {
             "range": [
-                25530,
-                25535
+                25551,
+                25556
             ],
             "filename": "datetime-picker.js",
             "lineno": 668,
@@ -24555,8 +24555,8 @@
         "comment": "",
         "meta": {
             "range": [
-                25551,
-                26126
+                25572,
+                26147
             ],
             "filename": "datetime-picker.js",
             "lineno": 671,
@@ -24586,8 +24586,8 @@
         "comment": "",
         "meta": {
             "range": [
-                25606,
-                25637
+                25627,
+                25658
             ],
             "filename": "datetime-picker.js",
             "lineno": 672,
@@ -24612,8 +24612,8 @@
         "comment": "",
         "meta": {
             "range": [
-                25653,
-                25885
+                25674,
+                25906
             ],
             "filename": "datetime-picker.js",
             "lineno": 673,
@@ -24638,8 +24638,8 @@
         "comment": "",
         "meta": {
             "range": [
-                25673,
-                25734
+                25694,
+                25755
             ],
             "filename": "datetime-picker.js",
             "lineno": 674,
@@ -24663,8 +24663,8 @@
         "comment": "",
         "meta": {
             "range": [
-                25748,
-                25801
+                25769,
+                25822
             ],
             "filename": "datetime-picker.js",
             "lineno": 675,
@@ -24688,8 +24688,8 @@
         "comment": "",
         "meta": {
             "range": [
-                25815,
-                25874
+                25836,
+                25895
             ],
             "filename": "datetime-picker.js",
             "lineno": 676,
@@ -24713,8 +24713,8 @@
         "comment": "",
         "meta": {
             "range": [
-                25901,
-                25918
+                25922,
+                25939
             ],
             "filename": "datetime-picker.js",
             "lineno": 678,
@@ -24763,8 +24763,8 @@
         "comment": "",
         "meta": {
             "range": [
-                26111,
-                26116
+                26132,
+                26137
             ],
             "filename": "datetime-picker.js",
             "lineno": 684,
@@ -24787,8 +24787,8 @@
         "comment": "",
         "meta": {
             "range": [
-                26210,
-                26235
+                26231,
+                26256
             ],
             "filename": "datetime-picker.js",
             "lineno": 688,

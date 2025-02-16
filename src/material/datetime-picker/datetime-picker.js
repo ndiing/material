@@ -404,7 +404,7 @@ class MdDatetimePickerComponent extends MdComponent {
     }
 
     /**
-     * @param {Any} [options]
+     * @param {PopperSetPositionOptions} [options]
      */
     show(options) {
         this.index = this.defaultIndex;

@@ -4,46 +4,13 @@ import { Router } from "../../material/router/router";
 import { Layout } from "../../material/layout/layout";
 import { keys } from "../jsdoc/jsdoc";
 
-function select(items) {
-    items.forEach((item) => {
-        item.selected = item.routerLink === Router.pathname;
-
-        if (item.children?.length) {
-            select(item.children);
-        }
-    });
-}
-
-function sortItems(items) {
-    items.sort((a, b) => {
-        if (a.children && !b.children) return -1;
-        if (!a.children && b.children) return 1;
-
-        if (a.type && b.type) {
-            return a.type.localeCompare(b.type);
-        }
-
-        const labelComparison = a.label.localeCompare(b.label);
-        if (labelComparison !== 0) return labelComparison;
-
-        return 0;
-    });
-
-    items.forEach((item) => {
-        if (item.children) {
-            sortItems(item.children);
-        }
-    });
-}
-
 class DocsMain extends MdComponent {
     constructor() {
         super();
 
         this.items = keys;
 
-        // sortItems(this.items);
-        select(this.items);
+        this.sortItems(this.items);
     }
 
     render() {
@@ -62,6 +29,43 @@ class DocsMain extends MdComponent {
                 </md-layout-border-item>
             </md-layout-border>
         `;
+    }
+
+    select(items) {
+        items.forEach((item) => {
+            item.selected = item.routerLink === Router.pathname;
+
+            if (item.children?.length) {
+                this.select(item.children);
+            }
+        });
+    }
+
+    sortItems(items) {
+        items.sort((a, b) => {
+            if (a.children && !b.children) return -1;
+            if (!a.children && b.children) return 1;
+
+            if (a.type && b.type) {
+                return a.type.localeCompare(b.type);
+            }
+
+            const labelComparison = a.label.localeCompare(b.label);
+            if (labelComparison !== 0) return labelComparison;
+
+            return 0;
+        });
+
+        items.forEach((item) => {
+            if (item.children) {
+                this.sortItems(item.children);
+            }
+        });
+    }
+
+    connectedCallback() {
+        super.connectedCallback();
+        this.select(this.items);
     }
 
     handleDemoMainNavigationDrawerTreeKeydownEnter(event) {

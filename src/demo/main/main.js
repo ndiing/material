@@ -3,33 +3,6 @@ import { MdComponent } from "../../material/component/component";
 import { Router } from "../../material/router/router";
 import { Layout } from "../../material/layout/layout";
 
-// Fungsi untuk menandai item yang sesuai dengan path saat ini
-function select(items) {
-    items.forEach((item) => {
-        item.selected = item.routerLink === Router.pathname;
-
-        if (item.children?.length) {
-            select(item.children);
-        }
-    });
-}
-
-// Fungsi untuk mengurutkan item berdasarkan label, dengan prioritas pada item yang memiliki anak
-function sortItems(items) {
-    items.sort((a, b) => {
-        if (a.children && !b.children) return -1;
-        if (!a.children && b.children) return 1;
-
-        return a.label.localeCompare(b.label);
-    });
-
-    items.forEach((item) => {
-        if (item.children) {
-            sortItems(item.children);
-        }
-    });
-}
-
 class DemoMain extends MdComponent {
     get demoMainTopAppBar() {
         return this.querySelector("#demoMainTopAppBar");
@@ -269,8 +242,7 @@ class DemoMain extends MdComponent {
         ];
 
         // Urutkan dan tandai item navigasi
-        sortItems(this.items);
-        select(this.items);
+        this.sortItems(this.items);
 
         // Konfigurasi tindakan pada Top App Bar
         this.demoMainTopAppBarLeadingActions = [{ icon: "menu" }];
@@ -301,10 +273,39 @@ class DemoMain extends MdComponent {
         `;
     }
 
+    // Fungsi untuk mengurutkan item berdasarkan label, dengan prioritas pada item yang memiliki anak
+    sortItems(items) {
+        items.sort((a, b) => {
+            if (a.children && !b.children) return -1;
+            if (!a.children && b.children) return 1;
+
+            return a.label.localeCompare(b.label);
+        });
+
+        items.forEach((item) => {
+            if (item.children) {
+                this.sortItems(item.children);
+            }
+        });
+    }
+
+    // Fungsi untuk menandai item yang sesuai dengan path saat ini
+    select(items) {
+        items.forEach((item) => {
+            item.selected = item.routerLink === Router.pathname;
+
+            if (item.children?.length) {
+                this.select(item.children);
+            }
+        });
+    }
+
     async connectedCallback() {
         super.connectedCallback();
 
         await this.updateComplete;
+
+        this.select(this.items);
 
         // Observasi perubahan tata letak (desktop/tablet/mobile)
         this.handleMainLayoutCallback = this.handleMainLayoutCallback.bind(this);
