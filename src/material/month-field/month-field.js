@@ -16,7 +16,7 @@ class MdMonthFieldComponent extends MdTextFieldComponent {
     get trailingActions() {
         let actions = [
             {
-                id: "calendar_month",
+                id: "picker",
                 component: "icon-button",
                 icon: "calendar_month",
             },
@@ -116,7 +116,7 @@ class MdMonthFieldComponent extends MdTextFieldComponent {
         this.closePicker();
     }
 
-    async handleTextFieldIconButtonPickerClick(event) {
+    async handleMonthFieldIconButtonPickerClick(event) {
         this.pickerTrigger = event.currentTarget;
         await this.createPicker();
         this.togglePicker({ trigger: this.textFieldContainer });
@@ -124,7 +124,7 @@ class MdMonthFieldComponent extends MdTextFieldComponent {
 
     handleTextFieldIconButtonClick(event) {
         const data = event.currentTarget.data;
-        if (data.id === "calendar_month") return this.handleTextFieldIconButtonPickerClick(event);
+        if (data.id === "picker") return this.handleMonthFieldIconButtonPickerClick(event);
         super.handleTextFieldIconButtonClick(event);
     }
 }

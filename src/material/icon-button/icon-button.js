@@ -27,6 +27,16 @@ class MdIconButtonComponent extends MdComponent {
 
     variants = ["filled", "filled-tonal", "outlined"];
 
+    get icons() {
+        if (typeof this.icon === "string") {
+            if (/^\[/.test(this.icon)) {
+                return JSON.parse(this.icon);
+            }
+            return [this.icon];
+        }
+        return this.icon;
+    }
+
     constructor() {
         super();
         this.type = "button";
@@ -40,7 +50,7 @@ class MdIconButtonComponent extends MdComponent {
             >
                 icon-button
             </button>
-            ${this.icon ? html`<md-icon class="md-icon-button__icon">${this.icon}</md-icon>` : nothing}
+            <md-icon class="md-icon-button__icon">${this.toggle ? this.icons[~~this.selected] : this.icons[0]}</md-icon>
         `;
     }
 

@@ -16,7 +16,7 @@ class MdWeekFieldComponent extends MdTextFieldComponent {
     get trailingActions() {
         let actions = [
             {
-                id: "date_range",
+                id: "picker",
                 component: "icon-button",
                 icon: "date_range",
             },
@@ -113,7 +113,7 @@ class MdWeekFieldComponent extends MdTextFieldComponent {
         this.closePicker();
     }
 
-    async handleTextFieldIconButtonPickerClick(event) {
+    async handleWeekFieldIconButtonPickerClick(event) {
         this.pickerTrigger = event.currentTarget;
         await this.createPicker();
         this.togglePicker({ trigger: this.textFieldContainer });
@@ -121,7 +121,7 @@ class MdWeekFieldComponent extends MdTextFieldComponent {
 
     handleTextFieldIconButtonClick(event) {
         const data = event.currentTarget.data;
-        if (data.id === "date_range") return this.handleTextFieldIconButtonPickerClick(event);
+        if (data.id === "picker") return this.handleWeekFieldIconButtonPickerClick(event);
         super.handleTextFieldIconButtonClick(event);
     }
 }

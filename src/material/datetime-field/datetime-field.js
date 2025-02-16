@@ -16,7 +16,7 @@ class MdDatetimeFieldComponent extends MdTextFieldComponent {
     get trailingActions() {
         let actions = [
             {
-                id: "calendar_clock",
+                id: "picker",
                 component: "icon-button",
                 icon: "calendar_clock",
             },
@@ -116,7 +116,7 @@ class MdDatetimeFieldComponent extends MdTextFieldComponent {
         this.closePicker();
     }
 
-    async handleTextFieldIconButtonPickerClick(event) {
+    async handleDatetimeFieldIconButtonPickerClick(event) {
         this.pickerTrigger = event.currentTarget;
         await this.createPicker();
         this.togglePicker({ trigger: this.textFieldContainer });
@@ -124,7 +124,7 @@ class MdDatetimeFieldComponent extends MdTextFieldComponent {
 
     handleTextFieldIconButtonClick(event) {
         const data = event.currentTarget.data;
-        if (data.id === "calendar_clock") return this.handleTextFieldIconButtonPickerClick(event);
+        if (data.id === "picker") return this.handleDatetimeFieldIconButtonPickerClick(event);
         super.handleTextFieldIconButtonClick(event);
     }
 }

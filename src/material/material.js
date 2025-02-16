@@ -67,6 +67,8 @@ import "./switch/switch.js";
 import "./slider/slider.js";
 
 import "./text-field/text-field.js";
+import "./password-field/password-field.js";
+
 import "./datetime-field/datetime-field.js";
 import "./date-field/date-field.js";
 import "./time-field/time-field.js";

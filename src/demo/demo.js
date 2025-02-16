@@ -140,6 +140,8 @@ import DemoTimeField from "./time-field/time-field.js";
 import DemoMonthField from "./month-field/month-field.js";
 import DemoWeekField from "./week-field/week-field.js";
 
+import DemoPasswordField from "./password-field/password-field.js";
+
 export default {
     path: "demo",
     component: DemoMain,
@@ -285,5 +287,7 @@ export default {
         { path: "time-field", component: DemoTimeField },
         { path: "month-field", component: DemoMonthField },
         { path: "week-field", component: DemoWeekField },
+
+        { path: "password-field", component: DemoPasswordField },
     ],
 };

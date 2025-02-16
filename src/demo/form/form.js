@@ -33,14 +33,13 @@ class DemoForm extends MdComponent {
                             ></md-text-field>
                         </div>
                         <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
-                            <md-text-field
-                                type="password"
+                            <md-password-field
                                 label="password"
                                 name="password"
                                 required
                                 value="password"
                                 cancelAction
-                            ></md-text-field>
+                            ></md-password-field>
                         </div>
 
                         <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
