@@ -65,11 +65,24 @@ class MdNavigationDrawerComponent extends MdComponent {
         );
     }
 
+    renderNavigationList(item) {
+        return html`<md-navigation-list .items="${this.items}"></md-navigation-list>`;
+    }
+
+    renderTree(item) {
+        return html`<md-tree .items="${this.items}"></md-tree>`;
+    }
+
     render() {
         return html`
             ${this.icons?.length || this.label || this.sublabel || this.actions?.length ? html` <div class="md-navigation-drawer__header">${this.icons?.length ? html` <div class="md-navigation-drawer__icons">${this.icons.map((icon) => this.renderComponent(icon, "icon"))}</div> ` : nothing} ${this.label || this.sublabel ? html` <div class="md-navigation-drawer__labels">${this.label ? html`<div class="md-navigation-drawer__label">${this.label}</div>` : nothing} ${this.sublabel ? html`<div class="md-navigation-drawer__sublabel">${this.sublabel}</div>` : nothing}</div> ` : nothing} ${this.actions?.length ? html` <div class="md-navigation-drawer__actions">${this.actions.map((action) => this.renderComponent(action, "icon-button"))}</div> ` : nothing}</div> ` : nothing}
             <div class="md-navigation-drawer__wrapper">
-                <div class="md-navigation-drawer__body">${this.type === "navigation-list" ? html` <md-navigation-list .items="${this.items}"></md-navigation-list> ` : html` <md-tree .items="${this.items}"></md-tree> `}</div>
+                <div class="md-navigation-drawer__body">
+                    ${{
+                        "navigation-list": this.renderNavigationList.bind(this),
+                        tree: this.renderTree.bind(this),
+                    }[this.type](this.items)}
+                </div>
             </div>
         `;
     }

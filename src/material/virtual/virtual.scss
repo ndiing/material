@@ -1,0 +1,22 @@
+.md-virtual {
+    position: relative;
+    overflow: auto;
+}
+.md-virtual__track {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1px;
+    height: 1px;
+    pointer-events: none;
+}
+
+.demo-virtual {
+    height: 336px;
+}
+.demo-virtual__item {
+    display: flex;
+    align-items: center;
+    height: 56px;
+    padding: 0 16px;
+}

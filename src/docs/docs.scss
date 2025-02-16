@@ -16,7 +16,7 @@ docs-page {
         border-spacing: 0;
         display: block;
         overflow: auto;
-        max-height: 336px;
+        // max-height: 336px;
         min-width: 100%;
         border-radius: var(--md-sys-shape-corner-large);
         border: 1px solid var(--md-sys-color-outline-variant);
@@ -41,7 +41,7 @@ docs-page {
             z-index: 1;
             &:last-child {
                 border-right: 0;
-                width: 1%;
+                width: 100%;
             }
         }
         td {
