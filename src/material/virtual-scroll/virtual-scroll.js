@@ -4,12 +4,12 @@
 class VirtualScroll {
     /**
      * @typedef {Object} VirtualScrollOptions
-     * @param {number} [total] - The total number of items in the list.
-     * @param {number} [rowHeight=56] - The height of each row/item in pixels.
-     * @param {number} [nodePadding=2] - The number of nodes to pad above and below the visible area.
-     * @param {number} [viewportHeight] - The height of the viewport in pixels.
-     * @param {string} [track=".md-virtual-scroll__track"] - The selector for the track element.
-     * @param {string} [item=".md-virtual-scroll__item"] - The selector for the item elements.
+     * @property {number} [total] - The total number of items in the list.
+     * @property {number} [rowHeight=56] - The height of each row/item in pixels.
+     * @property {number} [nodePadding=2] - The number of nodes to pad above and below the visible area.
+     * @property {number} [viewportHeight] - The height of the viewport in pixels.
+     * @property {string} [track=".md-virtual-scroll__track"] - The selector for the track element.
+     * @property {string} [item=".md-virtual-scroll__item"] - The selector for the item elements.
      */
     /**
      * Creates an instance of the VirtualScroll class.

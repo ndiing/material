@@ -53,7 +53,7 @@ function parseOffset(offset) {
 }
 
 /**
- * @typedef {Object} PopperSetPositionOptions
+ * @typedef {Object} PopperOptions
  * @property {HTMLElement} container - The container element to position.
  * @property {HTMLElement} trigger - The trigger element.
  * @property {HTMLElement} [boundary] - The boundary element to contain the container element.
@@ -63,7 +63,7 @@ function parseOffset(offset) {
 
 /**
  * Sets the position of a container element based on the provided options.
- * @param {PopperSetPositionOptions} options - The options for setting the position.
+ * @param {PopperOptions} options - The options for setting the position.
  */
 function setPosition(options = {}) {
     const { container, trigger, boundary, offset = "0", placements } = options;

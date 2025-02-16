@@ -3,11 +3,15 @@
  */
 class Movable {
     /**
+     * @typedef {Object} MovableOptions
+     * @property {Array<string>} [axis=["x", "y"]] - The axis along which the element can be moved.
+     * @property {Array<string>} [handles=["n", "e", "s", "w", "nw", "ne", "sw", "se"]] - The resize handles.
+     */
+
+    /**
      * Creates an instance of the Movable class.
      * @param {HTMLElement} host - The host element.
-     * @param {Object} [options={}] - Additional options for the movable element.
-     * @param {Array<string>} [options.axis=["x", "y"]] - The axis along which the element can be moved.
-     * @param {Array<string>} [options.handles=["n", "e", "s", "w", "nw", "ne", "sw", "se"]] - The resize handles.
+     * @param {MovableOptions} [options={}] - Additional options for the movable element.
      */
     constructor(host, options = {}) {
         this.host = host;
@@ -23,11 +27,11 @@ class Movable {
     //  * Handles the pointer down event for dragging and resizing.
     //  * @param {PointerEvent} event - The pointer down event.
     //  */
-    handlePointerdown(event) {
+    handleMovableStart(event) {
         this.handle = event.target.closest(".md-resizable__handle") && event.target.className.match(/--(\w+)/)[1];
         document.body.classList.add("md-user-select--none");
-        window.addEventListener("pointermove", this.handlePointermove);
-        window.addEventListener("pointerup", this.handlePointerup);
+        window.addEventListener("pointermove", this.handleMovableMove);
+        window.addEventListener("pointerup", this.handleMovableEnd);
         this.endX = this.endX ?? 0;
         this.endY = this.endY ?? 0;
         this.startX = event.clientX - this.endX;
@@ -35,17 +39,17 @@ class Movable {
         this.startWidth = this.host.clientWidth;
         this.startHeight = this.host.clientHeight;
         /**
-         * @event onMovablePointerdown
+         * @event onMovableStart
          * @property {Object} event - The pointer down event.
          */
-        this.emit("onMovablePointerdown");
+        this.emit("onMovableStart");
     }
 
     // /**
     //  * Handles the pointer move event for dragging and resizing.
     //  * @param {PointerEvent} event - The pointer move event.
     //  */
-    handlePointermove(event) {
+    handleMovableMove(event) {
         const currentX = event.clientX - this.startX;
         const currentY = event.clientY - this.startY;
         if (this.handle) {
@@ -77,27 +81,27 @@ class Movable {
         this.host.style.setProperty("width", (this.currentWidth ?? this.startWidth) + "px");
         this.host.style.setProperty("height", (this.currentHeight ?? this.startHeight) + "px");
         /**
-         * @event onMovablePointermove
+         * @event onMovableMove
          * @property {Object} event - The pointer move event.
          */
-        this.emit("onMovablePointermove");
+        this.emit("onMovableMove");
     }
 
     // /**
     //  * Handles the pointer up event for dragging and resizing.
     //  * @param {PointerEvent} event - The pointer up event.
     //  */
-    handlePointerup(event) {
+    handleMovableEnd(event) {
         this.endX = this.currentX;
         this.endY = this.currentY;
         document.body.classList.remove("md-user-select--none");
-        window.removeEventListener("pointermove", this.handlePointermove);
-        window.removeEventListener("pointerup", this.handlePointerup);
+        window.removeEventListener("pointermove", this.handleMovableMove);
+        window.removeEventListener("pointerup", this.handleMovableEnd);
         /**
-         * @event onMovablePointerup
+         * @event onMovableEnd
          * @property {Object} event - The pointer up event.
          */
-        this.emit("onMovablePointerup");
+        this.emit("onMovableEnd");
     }
 
     // /**
@@ -125,10 +129,10 @@ class Movable {
         }
         text += "</div>";
         this.host.insertAdjacentHTML("afterbegin", text);
-        this.handlePointerdown = this.handlePointerdown.bind(this);
-        this.handlePointermove = this.handlePointermove.bind(this);
-        this.handlePointerup = this.handlePointerup.bind(this);
-        this.host.addEventListener("pointerdown", this.handlePointerdown);
+        this.handleMovableStart = this.handleMovableStart.bind(this);
+        this.handleMovableMove = this.handleMovableMove.bind(this);
+        this.handleMovableEnd = this.handleMovableEnd.bind(this);
+        this.host.addEventListener("pointerdown", this.handleMovableStart);
     }
 
     /**
@@ -139,10 +143,10 @@ class Movable {
         if (resizable) {
             resizable.remove();
         }
-        this.host.removeEventListener("pointerdown", this.handlePointerdown);
-        this.handlePointerdown = null;
-        this.handlePointermove = null;
-        this.handlePointerup = null;
+        this.host.removeEventListener("pointerdown", this.handleMovableStart);
+        this.handleMovableStart = null;
+        this.handleMovableMove = null;
+        this.handleMovableEnd = null;
     }
 }
 export { Movable };
