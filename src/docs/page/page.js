@@ -35,10 +35,12 @@ class DocsPage extends MdComponent {
                 <div>${this.renderTable([
                     {name:'name',label:'Name'},
                     {name:'type',label:'Type'},
+                    {name:'defaultvalue',label:'Default'},
                     {name:'description',label:'Description'},
                 ],item.params.map(prop=>({
                     name:prop.name,
                     type:prop.type?.names.join('|'),
+                    defaultvalue:prop.defaultvalue,
                     description:prop.description,
                 })))}</div>
                 <br>
@@ -62,10 +64,12 @@ class DocsPage extends MdComponent {
             <div>${this.renderTable([
                 {name:'name',label:'Name'},
                 {name:'event',label:'Event'},
+                {name:'defaultvalue',label:'Default'},
                 {name:'description',label:'Description'},
             ],data.map(prop=>({
                 name:prop.name,
                 event:prop.properties?.map(p=>p.name).join(', '),
+                defaultvalue:prop.defaultvalue,
                 description:prop.description,
             })))}</div>
             <br>
@@ -94,10 +98,12 @@ class DocsPage extends MdComponent {
                 <div>${this.renderTable([
                     {name:'name',label:'Name'},
                     {name:'type',label:'Type'},
+                    {name:'defaultvalue',label:'Default'},
                     {name:'description',label:'Description'},
                 ],item.properties.map(prop=>({
                     name:prop.name,
                     type:prop.type?.names.join('|'),
+                    defaultvalue:prop.defaultvalue,
                     description:prop.description,
                 })))}</div>
                 <br>
@@ -116,10 +122,12 @@ class DocsPage extends MdComponent {
                 <div>${this.renderTable([
                     {name:'name',label:'Name'},
                     {name:'type',label:'Type'},
+                    {name:'defaultvalue',label:'Default'},
                     {name:'description',label:'Description'},
                 ],item.params.map(prop=>({
                     name:prop.name,
                     type:prop.type?.names.join('|'),
+                    defaultvalue:prop.defaultvalue,
                     description:prop.description,
                 })))}</div>
                 <br>
@@ -135,10 +143,12 @@ class DocsPage extends MdComponent {
                 <div>${this.renderTable([
                     {name:'name',label:'Name'},
                     {name:'type',label:'Type'},
+                    {name:'defaultvalue',label:'Default'},
                     {name:'description',label:'Description'},
                 ],item.properties.map(prop=>({
                     name:prop.name,
                     type:prop.type?.names.join('|'),
+                    defaultvalue:prop.defaultvalue,
                     description:prop.description,
                 })))}</div>
                 <br>

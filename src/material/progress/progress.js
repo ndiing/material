@@ -25,10 +25,10 @@ class Progress {
 
     /**
      * Starts the progress indicator with the specified duration.
-     * @param {number} [newDuration] - The duration for the progress indicator.
+     * @param {number} [duration] - The duration for the progress indicator.
      */
-    start(newDuration) {
-        this.duration += newDuration;
+    start(duration) {
+        this.duration += duration;
         if (this.startTime === null) {
             this.startTime = performance.now();
             this.render();

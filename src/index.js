@@ -44,8 +44,8 @@ function demoTheme() {
     setTheme(getRandomHexColor());
 }
 
-// demoProgress();
-// demoTheme();
+demoProgress();
+demoTheme();
 
 const routes = [AppRoutes];
 Router.use(routes);

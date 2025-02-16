@@ -8303,7 +8303,7 @@
         "meta": {
             "range": [
                 304,
-                10527
+                10671
             ],
             "filename": "data-table.js",
             "lineno": 11,
@@ -8845,7 +8845,7 @@
         "meta": {
             "range": [
                 304,
-                10527
+                10671
             ],
             "filename": "data-table.js",
             "lineno": 11,
@@ -9035,7 +9035,7 @@
         "meta": {
             "range": [
                 1414,
-                1694
+                1700
             ],
             "filename": "data-table.js",
             "lineno": 56,
@@ -9043,7 +9043,7 @@
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
                 "id": "astnode100003585",
-                "name": "MdDataTableComponent#styleDataTableHeaderCell",
+                "name": "MdDataTableComponent#styleDataTableNativeHeaderCell",
                 "type": "MethodDefinition",
                 "paramnames": [
                     "th"
@@ -9054,8 +9054,8 @@
             }
         },
         "undocumented": true,
-        "name": "styleDataTableHeaderCell",
-        "longname": "MdDataTableComponent#styleDataTableHeaderCell",
+        "name": "styleDataTableNativeHeaderCell",
+        "longname": "MdDataTableComponent#styleDataTableNativeHeaderCell",
         "kind": "function",
         "memberof": "MdDataTableComponent",
         "scope": "instance",
@@ -9065,8 +9065,8 @@
         "comment": "",
         "meta": {
             "range": [
-                1474,
-                1492
+                1480,
+                1498
             ],
             "filename": "data-table.js",
             "lineno": 58,
@@ -9089,8 +9089,8 @@
         "comment": "",
         "meta": {
             "range": [
-                1506,
-                1512
+                1512,
+                1518
             ],
             "filename": "data-table.js",
             "lineno": 59,
@@ -9113,8 +9113,8 @@
         "comment": "",
         "meta": {
             "range": [
-                1526,
-                1538
+                1532,
+                1544
             ],
             "filename": "data-table.js",
             "lineno": 60,
@@ -9137,8 +9137,8 @@
         "comment": "",
         "meta": {
             "range": [
-                1587,
-                1605
+                1593,
+                1611
             ],
             "filename": "data-table.js",
             "lineno": 62,
@@ -9161,8 +9161,8 @@
         "comment": "",
         "meta": {
             "range": [
-                1623,
-                1630
+                1629,
+                1636
             ],
             "filename": "data-table.js",
             "lineno": 63,
@@ -9185,8 +9185,8 @@
         "comment": "",
         "meta": {
             "range": [
-                1648,
-                1660
+                1654,
+                1666
             ],
             "filename": "data-table.js",
             "lineno": 64,
@@ -9209,8 +9209,8 @@
         "comment": "",
         "meta": {
             "range": [
-                1700,
-                1900
+                1706,
+                1912
             ],
             "filename": "data-table.js",
             "lineno": 69,
@@ -9218,7 +9218,7 @@
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
                 "id": "astnode100003610",
-                "name": "MdDataTableComponent#styleDataTableBodyCell",
+                "name": "MdDataTableComponent#styleDataTableNativeBodyCell",
                 "type": "MethodDefinition",
                 "paramnames": [
                     "td"
@@ -9229,8 +9229,8 @@
             }
         },
         "undocumented": true,
-        "name": "styleDataTableBodyCell",
-        "longname": "MdDataTableComponent#styleDataTableBodyCell",
+        "name": "styleDataTableNativeBodyCell",
+        "longname": "MdDataTableComponent#styleDataTableNativeBodyCell",
         "kind": "function",
         "memberof": "MdDataTableComponent",
         "scope": "instance",
@@ -9240,8 +9240,8 @@
         "comment": "",
         "meta": {
             "range": [
-                1793,
-                1811
+                1805,
+                1823
             ],
             "filename": "data-table.js",
             "lineno": 72,
@@ -9264,8 +9264,8 @@
         "comment": "",
         "meta": {
             "range": [
-                1829,
-                1836
+                1841,
+                1848
             ],
             "filename": "data-table.js",
             "lineno": 73,
@@ -9288,8 +9288,8 @@
         "comment": "",
         "meta": {
             "range": [
-                1854,
-                1866
+                1866,
+                1878
             ],
             "filename": "data-table.js",
             "lineno": 74,
@@ -9312,8 +9312,8 @@
         "comment": "",
         "meta": {
             "range": [
-                1906,
-                5958
+                1918,
+                6012
             ],
             "filename": "data-table.js",
             "lineno": 79,
@@ -9341,8 +9341,8 @@
         "comment": "",
         "meta": {
             "range": [
-                5964,
-                6222
+                6018,
+                6276
             ],
             "filename": "data-table.js",
             "lineno": 160,
@@ -9370,8 +9370,8 @@
         "comment": "",
         "meta": {
             "range": [
-                6074,
-                6142
+                6128,
+                6196
             ],
             "filename": "data-table.js",
             "lineno": 163,
@@ -9396,8 +9396,8 @@
         "comment": "",
         "meta": {
             "range": [
-                6228,
-                6372
+                6282,
+                6426
             ],
             "filename": "data-table.js",
             "lineno": 167,
@@ -9425,8 +9425,8 @@
         "comment": "",
         "meta": {
             "range": [
-                6378,
-                6626
+                6432,
+                6680
             ],
             "filename": "data-table.js",
             "lineno": 172,
@@ -9457,8 +9457,8 @@
         "comment": "/**\n     */",
         "meta": {
             "range": [
-                6648,
-                6860
+                6702,
+                6914
             ],
             "filename": "data-table.js",
             "lineno": 183,
@@ -9485,8 +9485,8 @@
         "comment": "",
         "meta": {
             "range": [
-                6678,
-                6785
+                6732,
+                6839
             ],
             "filename": "data-table.js",
             "lineno": 184,
@@ -9511,8 +9511,8 @@
         "comment": "",
         "meta": {
             "range": [
-                6716,
-                6773
+                6770,
+                6827
             ],
             "filename": "data-table.js",
             "lineno": 185,
@@ -9535,8 +9535,8 @@
         "comment": "",
         "meta": {
             "range": [
-                6795,
-                6823
+                6849,
+                6877
             ],
             "filename": "data-table.js",
             "lineno": 187,
@@ -9561,8 +9561,8 @@
         "comment": "",
         "meta": {
             "range": [
-                6866,
-                7278
+                6920,
+                7332
             ],
             "filename": "data-table.js",
             "lineno": 191,
@@ -9592,8 +9592,8 @@
         "comment": "",
         "meta": {
             "range": [
-                7042,
-                7062
+                7096,
+                7116
             ],
             "filename": "data-table.js",
             "lineno": 195,
@@ -9642,8 +9642,8 @@
         "comment": "",
         "meta": {
             "range": [
-                7263,
-                7268
+                7317,
+                7322
             ],
             "filename": "data-table.js",
             "lineno": 203,
@@ -9666,8 +9666,8 @@
         "comment": "",
         "meta": {
             "range": [
-                7284,
-                8004
+                7338,
+                8076
             ],
             "filename": "data-table.js",
             "lineno": 206,
@@ -9675,7 +9675,7 @@
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
                 "id": "astnode100004022",
-                "name": "MdDataTableComponent#handleDataTableHeaderCellClick",
+                "name": "MdDataTableComponent#handleDataTableNativeHeaderCellClick",
                 "type": "MethodDefinition",
                 "paramnames": [
                     "event"
@@ -9686,8 +9686,8 @@
             }
         },
         "undocumented": true,
-        "name": "handleDataTableHeaderCellClick",
-        "longname": "MdDataTableComponent#handleDataTableHeaderCellClick",
+        "name": "handleDataTableNativeHeaderCellClick",
+        "longname": "MdDataTableComponent#handleDataTableNativeHeaderCellClick",
         "kind": "function",
         "memberof": "MdDataTableComponent",
         "scope": "instance",
@@ -9697,8 +9697,8 @@
         "comment": "",
         "meta": {
             "range": [
-                7338,
-                7369
+                7398,
+                7429
             ],
             "filename": "data-table.js",
             "lineno": 207,
@@ -9723,8 +9723,8 @@
         "comment": "",
         "meta": {
             "range": [
-                7418,
-                7558
+                7478,
+                7618
             ],
             "filename": "data-table.js",
             "lineno": 209,
@@ -9749,8 +9749,8 @@
         "comment": "",
         "meta": {
             "range": [
-                7446,
-                7471
+                7506,
+                7531
             ],
             "filename": "data-table.js",
             "lineno": 210,
@@ -9774,8 +9774,8 @@
         "comment": "",
         "meta": {
             "range": [
-                7489,
-                7510
+                7549,
+                7570
             ],
             "filename": "data-table.js",
             "lineno": 211,
@@ -9799,8 +9799,8 @@
         "comment": "",
         "meta": {
             "range": [
-                7528,
-                7543
+                7588,
+                7603
             ],
             "filename": "data-table.js",
             "lineno": 212,
@@ -9824,8 +9824,8 @@
         "comment": "",
         "meta": {
             "range": [
-                7572,
-                7605
+                7632,
+                7665
             ],
             "filename": "data-table.js",
             "lineno": 214,
@@ -9851,8 +9851,8 @@
         "comment": "",
         "meta": {
             "range": [
-                7625,
-                7745
+                7685,
+                7805
             ],
             "filename": "data-table.js",
             "lineno": 215,
@@ -9877,8 +9877,8 @@
         "comment": "",
         "meta": {
             "range": [
-                7652,
-                7668
+                7712,
+                7728
             ],
             "filename": "data-table.js",
             "lineno": 216,
@@ -9902,8 +9902,8 @@
         "comment": "",
         "meta": {
             "range": [
-                7686,
-                7697
+                7746,
+                7757
             ],
             "filename": "data-table.js",
             "lineno": 217,
@@ -9927,8 +9927,8 @@
         "comment": "",
         "meta": {
             "range": [
-                7715,
-                7730
+                7775,
+                7790
             ],
             "filename": "data-table.js",
             "lineno": 218,
@@ -9952,8 +9952,8 @@
         "comment": "",
         "meta": {
             "range": [
-                7759,
-                7790
+                7819,
+                7850
             ],
             "filename": "data-table.js",
             "lineno": 220,
@@ -9976,7 +9976,7 @@
         "scope": "static"
     },
     {
-        "comment": "/**\n         * @event onDataTableHeaderCellClick\n         * @property {Object} event\n         */",
+        "comment": "/**\n         * @event onDataTableNativeHeaderCellClick\n         * @property {Object} event\n         */",
         "meta": {
             "filename": "data-table.js",
             "lineno": 223,
@@ -9985,7 +9985,7 @@
             "code": {}
         },
         "kind": "event",
-        "name": "onDataTableHeaderCellClick",
+        "name": "onDataTableNativeHeaderCellClick",
         "properties": [
             {
                 "type": {
@@ -9996,19 +9996,19 @@
                 "name": "event"
             }
         ],
-        "longname": "event:onDataTableHeaderCellClick",
+        "longname": "event:onDataTableNativeHeaderCellClick",
         "scope": "global"
     },
     {
         "comment": "",
         "meta": {
             "range": [
-                7989,
-                7994
+                8061,
+                8066
             ],
             "filename": "data-table.js",
             "lineno": 227,
-            "columnno": 50,
+            "columnno": 56,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
                 "id": "astnode100004092",
@@ -10027,8 +10027,8 @@
         "comment": "",
         "meta": {
             "range": [
-                8010,
-                8214
+                8082,
+                8304
             ],
             "filename": "data-table.js",
             "lineno": 230,
@@ -10036,7 +10036,7 @@
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
                 "id": "astnode100004094",
-                "name": "MdDataTableComponent#handleDataTableBodyCellClick",
+                "name": "MdDataTableComponent#handleDataTableNativeBodyCellClick",
                 "type": "MethodDefinition",
                 "paramnames": [
                     "event"
@@ -10047,15 +10047,15 @@
             }
         },
         "undocumented": true,
-        "name": "handleDataTableBodyCellClick",
-        "longname": "MdDataTableComponent#handleDataTableBodyCellClick",
+        "name": "handleDataTableNativeBodyCellClick",
+        "longname": "MdDataTableComponent#handleDataTableNativeBodyCellClick",
         "kind": "function",
         "memberof": "MdDataTableComponent",
         "scope": "instance",
         "params": []
     },
     {
-        "comment": "/**\n         * @event onDataTableBodyCellClick\n         * @property {Object} event\n         */",
+        "comment": "/**\n         * @event onDataTableNativeBodyCellClick\n         * @property {Object} event\n         */",
         "meta": {
             "filename": "data-table.js",
             "lineno": 231,
@@ -10064,7 +10064,7 @@
             "code": {}
         },
         "kind": "event",
-        "name": "onDataTableBodyCellClick",
+        "name": "onDataTableNativeBodyCellClick",
         "properties": [
             {
                 "type": {
@@ -10075,19 +10075,19 @@
                 "name": "event"
             }
         ],
-        "longname": "event:onDataTableBodyCellClick",
+        "longname": "event:onDataTableNativeBodyCellClick",
         "scope": "global"
     },
     {
         "comment": "",
         "meta": {
             "range": [
-                8199,
-                8204
+                8289,
+                8294
             ],
             "filename": "data-table.js",
             "lineno": 235,
-            "columnno": 48,
+            "columnno": 54,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
                 "id": "astnode100004106",
@@ -10106,8 +10106,8 @@
         "comment": "",
         "meta": {
             "range": [
-                8220,
-                8681
+                8310,
+                8789
             ],
             "filename": "data-table.js",
             "lineno": 238,
@@ -10115,7 +10115,7 @@
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
                 "id": "astnode100004108",
-                "name": "MdDataTableComponent#handleDataTableHeaderCellCheckboxClick",
+                "name": "MdDataTableComponent#handleDataTableNativeHeaderCellCheckboxClick",
                 "type": "MethodDefinition",
                 "paramnames": [
                     "event"
@@ -10126,8 +10126,8 @@
             }
         },
         "undocumented": true,
-        "name": "handleDataTableHeaderCellCheckboxClick",
-        "longname": "MdDataTableComponent#handleDataTableHeaderCellCheckboxClick",
+        "name": "handleDataTableNativeHeaderCellCheckboxClick",
+        "longname": "MdDataTableComponent#handleDataTableNativeHeaderCellCheckboxClick",
         "kind": "function",
         "memberof": "MdDataTableComponent",
         "scope": "instance",
@@ -10137,8 +10137,8 @@
         "comment": "",
         "meta": {
             "range": [
-                8282,
-                8313
+                8378,
+                8409
             ],
             "filename": "data-table.js",
             "lineno": 239,
@@ -10163,8 +10163,8 @@
         "comment": "",
         "meta": {
             "range": [
-                8329,
-                8375
+                8425,
+                8471
             ],
             "filename": "data-table.js",
             "lineno": 240,
@@ -10189,8 +10189,8 @@
         "comment": "",
         "meta": {
             "range": [
-                8427,
-                8451
+                8523,
+                8547
             ],
             "filename": "data-table.js",
             "lineno": 242,
@@ -10212,7 +10212,7 @@
         "scope": "static"
     },
     {
-        "comment": "/**\n         * @event onDataTableHeaderCellCheckboxClick\n         * @property {Object} event\n         */",
+        "comment": "/**\n         * @event onDataTableNativeHeaderCellCheckboxClick\n         * @property {Object} event\n         */",
         "meta": {
             "filename": "data-table.js",
             "lineno": 245,
@@ -10221,7 +10221,7 @@
             "code": {}
         },
         "kind": "event",
-        "name": "onDataTableHeaderCellCheckboxClick",
+        "name": "onDataTableNativeHeaderCellCheckboxClick",
         "properties": [
             {
                 "type": {
@@ -10232,19 +10232,19 @@
                 "name": "event"
             }
         ],
-        "longname": "event:onDataTableHeaderCellCheckboxClick",
+        "longname": "event:onDataTableNativeHeaderCellCheckboxClick",
         "scope": "global"
     },
     {
         "comment": "",
         "meta": {
             "range": [
-                8666,
-                8671
+                8774,
+                8779
             ],
             "filename": "data-table.js",
             "lineno": 249,
-            "columnno": 58,
+            "columnno": 64,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
                 "id": "astnode100004160",
@@ -10263,8 +10263,8 @@
         "comment": "",
         "meta": {
             "range": [
-                8687,
-                10105
+                8795,
+                10231
             ],
             "filename": "data-table.js",
             "lineno": 252,
@@ -10272,7 +10272,7 @@
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
                 "id": "astnode100004162",
-                "name": "MdDataTableComponent#handleDataTableBodyClick",
+                "name": "MdDataTableComponent#handleDataTableNativeBodyClick",
                 "type": "MethodDefinition",
                 "paramnames": [
                     "event"
@@ -10283,8 +10283,8 @@
             }
         },
         "undocumented": true,
-        "name": "handleDataTableBodyClick",
-        "longname": "MdDataTableComponent#handleDataTableBodyClick",
+        "name": "handleDataTableNativeBodyClick",
+        "longname": "MdDataTableComponent#handleDataTableNativeBodyClick",
         "kind": "function",
         "memberof": "MdDataTableComponent",
         "scope": "instance",
@@ -10294,8 +10294,8 @@
         "comment": "",
         "meta": {
             "range": [
-                8735,
-                8778
+                8849,
+                8892
             ],
             "filename": "data-table.js",
             "lineno": 253,
@@ -10320,8 +10320,8 @@
         "comment": "",
         "meta": {
             "range": [
-                8834,
-                8865
+                8948,
+                8979
             ],
             "filename": "data-table.js",
             "lineno": 255,
@@ -10346,8 +10346,8 @@
         "comment": "",
         "meta": {
             "range": [
-                8908,
-                8938
+                9022,
+                9052
             ],
             "filename": "data-table.js",
             "lineno": 257,
@@ -10373,8 +10373,8 @@
         "comment": "",
         "meta": {
             "range": [
-                8989,
-                9041
+                9103,
+                9155
             ],
             "filename": "data-table.js",
             "lineno": 259,
@@ -10399,8 +10399,8 @@
         "comment": "",
         "meta": {
             "range": [
-                9055,
-                9106
+                9169,
+                9220
             ],
             "filename": "data-table.js",
             "lineno": 260,
@@ -10425,8 +10425,8 @@
         "comment": "",
         "meta": {
             "range": [
-                9120,
-                9195
+                9234,
+                9309
             ],
             "filename": "data-table.js",
             "lineno": 261,
@@ -10451,8 +10451,8 @@
         "comment": "",
         "meta": {
             "range": [
-                9441,
-                9526
+                9555,
+                9640
             ],
             "filename": "data-table.js",
             "lineno": 266,
@@ -10477,8 +10477,8 @@
         "comment": "",
         "meta": {
             "range": [
-                9798,
-                9827
+                9912,
+                9941
             ],
             "filename": "data-table.js",
             "lineno": 273,
@@ -10503,8 +10503,8 @@
         "comment": "",
         "meta": {
             "range": [
-                9857,
-                9905
+                9971,
+                10019
             ],
             "filename": "data-table.js",
             "lineno": 275,
@@ -10526,7 +10526,7 @@
         "scope": "instance"
     },
     {
-        "comment": "/**\n         * @event onDataTableBodyClick\n         * @property {Object} event\n         */",
+        "comment": "/**\n         * @event onDataTableNativeBodyClick\n         * @property {Object} event\n         */",
         "meta": {
             "filename": "data-table.js",
             "lineno": 278,
@@ -10535,7 +10535,7 @@
             "code": {}
         },
         "kind": "event",
-        "name": "onDataTableBodyClick",
+        "name": "onDataTableNativeBodyClick",
         "properties": [
             {
                 "type": {
@@ -10546,19 +10546,19 @@
                 "name": "event"
             }
         ],
-        "longname": "event:onDataTableBodyClick",
+        "longname": "event:onDataTableNativeBodyClick",
         "scope": "global"
     },
     {
         "comment": "",
         "meta": {
             "range": [
-                10090,
-                10095
+                10216,
+                10221
             ],
             "filename": "data-table.js",
             "lineno": 282,
-            "columnno": 44,
+            "columnno": 50,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
                 "id": "astnode100004347",
@@ -10577,8 +10577,8 @@
         "comment": "",
         "meta": {
             "range": [
-                10111,
-                10525
+                10237,
+                10669
             ],
             "filename": "data-table.js",
             "lineno": 285,
@@ -10586,7 +10586,7 @@
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
                 "id": "astnode100004349",
-                "name": "MdDataTableComponent#handleDataTableBodyCellCheckboxClick",
+                "name": "MdDataTableComponent#handleDataTableNativeBodyCellCheckboxClcik",
                 "type": "MethodDefinition",
                 "paramnames": [
                     "event"
@@ -10597,8 +10597,8 @@
             }
         },
         "undocumented": true,
-        "name": "handleDataTableBodyCellCheckboxClick",
-        "longname": "MdDataTableComponent#handleDataTableBodyCellCheckboxClick",
+        "name": "handleDataTableNativeBodyCellCheckboxClcik",
+        "longname": "MdDataTableComponent#handleDataTableNativeBodyCellCheckboxClcik",
         "kind": "function",
         "memberof": "MdDataTableComponent",
         "scope": "instance",
@@ -10608,8 +10608,8 @@
         "comment": "",
         "meta": {
             "range": [
-                10171,
-                10202
+                10303,
+                10334
             ],
             "filename": "data-table.js",
             "lineno": 286,
@@ -10634,8 +10634,8 @@
         "comment": "",
         "meta": {
             "range": [
-                10218,
-                10263
+                10350,
+                10395
             ],
             "filename": "data-table.js",
             "lineno": 287,
@@ -10660,8 +10660,8 @@
         "comment": "",
         "meta": {
             "range": [
-                10273,
-                10311
+                10405,
+                10443
             ],
             "filename": "data-table.js",
             "lineno": 288,
@@ -10684,7 +10684,7 @@
         "scope": "static"
     },
     {
-        "comment": "/**\n         * @event onDataTableBodyCellCheckboxClick\n         * @property {Object} event\n         */",
+        "comment": "/**\n         * @event onDataTableNativeBodyCellCheckboxClcik\n         * @property {Object} event\n         */",
         "meta": {
             "filename": "data-table.js",
             "lineno": 290,
@@ -10693,7 +10693,7 @@
             "code": {}
         },
         "kind": "event",
-        "name": "onDataTableBodyCellCheckboxClick",
+        "name": "onDataTableNativeBodyCellCheckboxClcik",
         "properties": [
             {
                 "type": {
@@ -10704,19 +10704,19 @@
                 "name": "event"
             }
         ],
-        "longname": "event:onDataTableBodyCellCheckboxClick",
+        "longname": "event:onDataTableNativeBodyCellCheckboxClcik",
         "scope": "global"
     },
     {
         "comment": "",
         "meta": {
             "range": [
-                10510,
-                10515
+                10654,
+                10659
             ],
             "filename": "data-table.js",
             "lineno": 294,
-            "columnno": 56,
+            "columnno": 62,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
                 "id": "astnode100004395",
@@ -10735,8 +10735,8 @@
         "comment": "",
         "meta": {
             "range": [
-                10599,
-                10619
+                10743,
+                10763
             ],
             "filename": "data-table.js",
             "lineno": 298,
@@ -50224,7 +50224,7 @@
         "meta": {
             "range": [
                 88,
-                2304
+                2295
             ],
             "filename": "progress.js",
             "lineno": 4,
@@ -50278,7 +50278,7 @@
         "meta": {
             "range": [
                 88,
-                2304
+                2295
             ],
             "filename": "progress.js",
             "lineno": 4,
@@ -50458,11 +50458,11 @@
         "scope": "instance"
     },
     {
-        "comment": "/**\n     * Starts the progress indicator with the specified duration.\n     * @param {number} [newDuration] - The duration for the progress indicator.\n     */",
+        "comment": "/**\n     * Starts the progress indicator with the specified duration.\n     * @param {number} [duration] - The duration for the progress indicator.\n     */",
         "meta": {
             "range": [
-                913,
-                1216
+                910,
+                1207
             ],
             "filename": "progress.js",
             "lineno": 30,
@@ -50473,7 +50473,7 @@
                 "name": "Progress#start",
                 "type": "MethodDefinition",
                 "paramnames": [
-                    "newDuration"
+                    "duration"
                 ]
             },
             "vars": {
@@ -50490,7 +50490,7 @@
                 },
                 "optional": true,
                 "description": "The duration for the progress indicator.",
-                "name": "newDuration"
+                "name": "duration"
             }
         ],
         "name": "start",
@@ -50503,8 +50503,8 @@
         "comment": "",
         "meta": {
             "range": [
-                942,
-                970
+                936,
+                961
             ],
             "filename": "progress.js",
             "lineno": 31,
@@ -50514,7 +50514,7 @@
                 "id": "astnode100020830",
                 "name": "this.duration",
                 "type": "Identifier",
-                "value": "newDuration",
+                "value": "duration",
                 "paramnames": []
             }
         },
@@ -50529,8 +50529,8 @@
         "comment": "",
         "meta": {
             "range": [
-                1023,
-                1057
+                1014,
+                1048
             ],
             "filename": "progress.js",
             "lineno": 33,
@@ -50555,8 +50555,8 @@
         "comment": "",
         "meta": {
             "range": [
-                1139,
-                1199
+                1130,
+                1190
             ],
             "filename": "progress.js",
             "lineno": 37,
@@ -50581,8 +50581,8 @@
         "comment": "",
         "meta": {
             "range": [
-                1404,
-                1842
+                1395,
+                1833
             ],
             "filename": "progress.js",
             "lineno": 45,
@@ -50612,8 +50612,8 @@
         "comment": "",
         "meta": {
             "range": [
-                1481,
-                1519
+                1472,
+                1510
             ],
             "filename": "progress.js",
             "lineno": 47,
@@ -50638,8 +50638,8 @@
         "comment": "",
         "meta": {
             "range": [
-                1533,
-                1580
+                1524,
+                1571
             ],
             "filename": "progress.js",
             "lineno": 48,
@@ -50664,8 +50664,8 @@
         "comment": "",
         "meta": {
             "range": [
-                1590,
-                1632
+                1581,
+                1623
             ],
             "filename": "progress.js",
             "lineno": 49,
@@ -50690,8 +50690,8 @@
         "comment": "",
         "meta": {
             "range": [
-                1642,
-                1680
+                1633,
+                1671
             ],
             "filename": "progress.js",
             "lineno": 50,
@@ -50716,8 +50716,8 @@
         "comment": "",
         "meta": {
             "range": [
-                1722,
-                1782
+                1713,
+                1773
             ],
             "filename": "progress.js",
             "lineno": 52,
@@ -50742,8 +50742,8 @@
         "comment": "",
         "meta": {
             "range": [
-                1933,
-                2085
+                1924,
+                2076
             ],
             "filename": "progress.js",
             "lineno": 61,
@@ -50771,8 +50771,8 @@
         "comment": "",
         "meta": {
             "range": [
-                2039,
-                2068
+                2030,
+                2059
             ],
             "filename": "progress.js",
             "lineno": 64,
@@ -50797,8 +50797,8 @@
         "comment": "",
         "meta": {
             "range": [
-                2175,
-                2302
+                2166,
+                2293
             ],
             "filename": "progress.js",
             "lineno": 71,
@@ -50826,8 +50826,8 @@
         "comment": "",
         "meta": {
             "range": [
-                2193,
-                2214
+                2184,
+                2205
             ],
             "filename": "progress.js",
             "lineno": 72,
@@ -50852,8 +50852,8 @@
         "comment": "",
         "meta": {
             "range": [
-                2224,
-                2241
+                2215,
+                2232
             ],
             "filename": "progress.js",
             "lineno": 73,
@@ -50878,8 +50878,8 @@
         "comment": "",
         "meta": {
             "range": [
-                2251,
-                2272
+                2242,
+                2263
             ],
             "filename": "progress.js",
             "lineno": 74,
@@ -50904,8 +50904,8 @@
         "comment": "",
         "meta": {
             "range": [
-                2314,
-                2322
+                2305,
+                2313
             ],
             "filename": "progress.js",
             "lineno": 78,

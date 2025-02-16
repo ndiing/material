@@ -53,7 +53,7 @@ class MdDataTableComponent extends MdComponent {
         this.store = new Store();
     }
 
-    styleDataTableHeaderCell(th) {
+    styleDataTableNativeHeaderCell(th) {
         return {
             position: "sticky",
             top: 0,
@@ -66,7 +66,7 @@ class MdDataTableComponent extends MdComponent {
         };
     }
 
-    styleDataTableBodyCell(td) {
+    styleDataTableNativeBodyCell(td) {
         return {
             ...(td.sticky && {
                 position: "sticky",
@@ -87,8 +87,8 @@ class MdDataTableComponent extends MdComponent {
                                     (th) => html`
                                         <th
                                             .data="${th}"
-                                            style="${styleMap(this.styleDataTableHeaderCell(th))}"
-                                            @click="${th.checkbox ? this.handleDataTableHeaderCellCheckboxClick : this.handleDataTableHeaderCellClick}"
+                                            style="${styleMap(this.styleDataTableNativeHeaderCell(th))}"
+                                            @click="${th.checkbox ? this.handleDataTableNativeHeaderCellCheckboxClick : this.handleDataTableNativeHeaderCellClick}"
                                         >
                                             <md-data-table-cell
                                                 .label="${th.label}"
@@ -110,7 +110,7 @@ class MdDataTableComponent extends MdComponent {
                         <tbody
                             .data="${item}"
                             ?selected="${item.selected}"
-                            @click="${this.handleDataTableBodyClick}"
+                            @click="${this.handleDataTableNativeBodyClick}"
                         >
                             ${this.bodies.map(
                                 (tr) => html`
@@ -119,8 +119,8 @@ class MdDataTableComponent extends MdComponent {
                                             (td) => html`
                                                 <td
                                                     .data="${td}"
-                                                    style="${styleMap(this.styleDataTableBodyCell(td))}"
-                                                    @click="${td.checkbox ? this.handleDataTableBodyCellCheckboxClick : this.handleDataTableBodyCellClick}"
+                                                    style="${styleMap(this.styleDataTableNativeBodyCell(td))}"
+                                                    @click="${td.checkbox ? this.handleDataTableNativeBodyCellCheckboxClcik : this.handleDataTableNativeBodyCellClick}"
                                                 >
                                                     <md-data-table-cell
                                                         .label="${item[td.name]}"
@@ -203,7 +203,7 @@ class MdDataTableComponent extends MdComponent {
         this.emit("onDataTableKeydown", { event });
     }
 
-    handleDataTableHeaderCellClick(event) {
+    handleDataTableNativeHeaderCellClick(event) {
         const data = event.currentTarget.data;
         if (data.sortable) {
             const actions = {
@@ -221,21 +221,21 @@ class MdDataTableComponent extends MdComponent {
             this.updateStore();
         }
         /**
-         * @event onDataTableHeaderCellClick
+         * @event onDataTableNativeHeaderCellClick
          * @property {Object} event
          */
-        this.emit("onDataTableHeaderCellClick", { event });
+        this.emit("onDataTableNativeHeaderCellClick", { event });
     }
 
-    handleDataTableBodyCellClick(event) {
+    handleDataTableNativeBodyCellClick(event) {
         /**
-         * @event onDataTableBodyCellClick
+         * @event onDataTableNativeBodyCellClick
          * @property {Object} event
          */
-        this.emit("onDataTableBodyCellClick", { event });
+        this.emit("onDataTableNativeBodyCellClick", { event });
     }
 
-    handleDataTableHeaderCellCheckboxClick(event) {
+    handleDataTableNativeHeaderCellCheckboxClick(event) {
         const data = event.currentTarget.data;
         const selected = !this.checked || this.indeterminate;
         this.data.forEach((item) => {
@@ -243,13 +243,13 @@ class MdDataTableComponent extends MdComponent {
         });
         this.requestUpdate();
         /**
-         * @event onDataTableHeaderCellCheckboxClick
+         * @event onDataTableNativeHeaderCellCheckboxClick
          * @property {Object} event
          */
-        this.emit("onDataTableHeaderCellCheckboxClick", { event });
+        this.emit("onDataTableNativeHeaderCellCheckboxClick", { event });
     }
 
-    handleDataTableBodyClick(event) {
+    handleDataTableNativeBodyClick(event) {
         const bodyData = event.target.closest("td")?.data;
         if (bodyData?.checkbox) return;
         const data = event.currentTarget.data;
@@ -276,22 +276,22 @@ class MdDataTableComponent extends MdComponent {
         }
         this.requestUpdate();
         /**
-         * @event onDataTableBodyClick
+         * @event onDataTableNativeBodyClick
          * @property {Object} event
          */
-        this.emit("onDataTableBodyClick", { event });
+        this.emit("onDataTableNativeBodyClick", { event });
     }
 
-    handleDataTableBodyCellCheckboxClick(event) {
+    handleDataTableNativeBodyCellCheckboxClcik(event) {
         const data = event.currentTarget.data;
         const bodyData = event.target.closest("tbody").data;
         bodyData.selected = !bodyData.selected;
         this.requestUpdate();
         /**
-         * @event onDataTableBodyCellCheckboxClick
+         * @event onDataTableNativeBodyCellCheckboxClcik
          * @property {Object} event
          */
-        this.emit("onDataTableBodyCellCheckboxClick", { event });
+        this.emit("onDataTableNativeBodyCellCheckboxClcik", { event });
     }
 }
 customElements.define("md-data-table", MdDataTableComponent);
