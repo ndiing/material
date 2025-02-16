@@ -15,7 +15,6 @@ class DemoMain extends MdComponent {
     constructor() {
         super();
 
-        // Daftar item navigasi
         this.items = [
             { label: "Badge", routerLink: "/demo/badge" },
             {
@@ -242,10 +241,8 @@ class DemoMain extends MdComponent {
             },
         ];
 
-        // Urutkan dan tandai item navigasi
         this.sortItems(this.items);
 
-        // Konfigurasi tindakan pada Top App Bar
         this.demoMainTopAppBarLeadingActions = [{ icon: "menu" }];
     }
 
@@ -274,7 +271,6 @@ class DemoMain extends MdComponent {
         `;
     }
 
-    // Fungsi untuk mengurutkan item berdasarkan label, dengan prioritas pada item yang memiliki anak
     sortItems(items) {
         items.sort((a, b) => {
             if (a.children && !b.children) return -1;
@@ -290,7 +286,6 @@ class DemoMain extends MdComponent {
         });
     }
 
-    // Fungsi untuk menandai item yang sesuai dengan path saat ini
     select(items) {
         items.forEach((item) => {
             item.selected = item.routerLink === Router.pathname;
@@ -308,7 +303,6 @@ class DemoMain extends MdComponent {
 
         this.select(this.items);
 
-        // Observasi perubahan tata letak (desktop/tablet/mobile)
         this.handleMainLayoutCallback = this.handleMainLayoutCallback.bind(this);
         this.layout = new Layout(this.handleMainLayoutCallback);
         this.layout.init();
@@ -324,14 +318,12 @@ class DemoMain extends MdComponent {
 
     handleMainLayoutCallback(item) {
         if (item.name === "expanded") {
-            // Pengaturan untuk desktop
             this.demoMainTopAppBar.open = false;
 
             this.demoMainNavigationDrawer.modal = false;
             this.demoMainNavigationDrawer.open = true;
             this.demoMainNavigationDrawer.navigationDrawerScrim.open = false;
         } else {
-            // Pengaturan untuk tablet/mobile
             this.demoMainTopAppBar.open = true;
 
             this.demoMainNavigationDrawer.modal = true;
@@ -340,19 +332,16 @@ class DemoMain extends MdComponent {
         }
     }
 
-    // Menangani klik tombol ikon pada Top App Bar.
     handleDemoMainTopAppBarIconButtonClick(event) {
         this.demoMainNavigationDrawer.toggle();
     }
 
-    // Menangani klik pada item navigasi dalam Navigation Drawer.
     handleDemoMainNavigationDrawerTreeItemClick(event) {
         if (this.demoMainNavigationDrawer.modal && event.detail.event.currentTarget.data.routerLink) {
             this.demoMainNavigationDrawer.toggle();
         }
     }
 
-    // Menangani navigasi menggunakan tombol Enter pada Navigation Drawer.
     handleDemoMainNavigationDrawerTreeKeydownEnter(event) {
         const treeItemSelected = this.demoMainNavigationDrawer.querySelector("md-tree-item[selected]");
         treeItemSelected.click();
