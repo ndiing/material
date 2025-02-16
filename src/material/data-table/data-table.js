@@ -48,7 +48,7 @@ class MdDataTableComponent extends MdComponent {
         this.bodies = [];
         this.footers = [];
         this.data = [];
-        this.storeData = [];
+        this.dataStore = [];
         this.store = new Store();
     }
 
@@ -104,7 +104,7 @@ class MdDataTableComponent extends MdComponent {
                         `,
                     )}
                 </thead>
-                ${this.storeData.map(
+                ${this.dataStore.map(
                     (item) => html`
                         <tbody
                             .data="${item}"
@@ -183,7 +183,7 @@ class MdDataTableComponent extends MdComponent {
         const result = this.store.get({
             sorters: this.headers.flat().filter((item) => item.order),
         });
-        this.storeData = result.data;
+        this.dataStore = result.data;
         this.requestUpdate();
     }
 

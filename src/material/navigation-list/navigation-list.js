@@ -20,7 +20,7 @@ class MdNavigationListComponent extends MdComponent {
         super();
         this.items = [];
         this.store = new Store();
-        this.storeItems = [];
+        this.itemsStore = [];
     }
 
     renderNavigationListItem(item) {
@@ -69,7 +69,7 @@ class MdNavigationListComponent extends MdComponent {
 
     updateStore() {
         const result = this.store.get({});
-        this.storeItems = result.data;
+        this.itemsStore = result.data;
         this.requestUpdate();
     }
 
@@ -86,10 +86,10 @@ class MdNavigationListComponent extends MdComponent {
 
     handleNavigationListKeydownArrowUp(event) {
         event.preventDefault();
-        const selectedIndex = this.storeItems.findIndex((item) => item.selected);
+        const selectedIndex = this.itemsStore.findIndex((item) => item.selected);
         const prevIndex = selectedIndex - 1;
         if (prevIndex === -1) return;
-        this.storeItems.forEach((item, index) => {
+        this.itemsStore.forEach((item, index) => {
             item.selected = index === prevIndex;
         });
         this.requestUpdate();
@@ -103,10 +103,10 @@ class MdNavigationListComponent extends MdComponent {
 
     async handleNavigationListKeydownArrowDown(event) {
         event.preventDefault();
-        const selectedIndex = this.storeItems.findIndex((item) => item.selected);
+        const selectedIndex = this.itemsStore.findIndex((item) => item.selected);
         const nextIndex = selectedIndex + 1;
-        if (nextIndex === this.storeItems.length) return;
-        this.storeItems.forEach((item, index) => {
+        if (nextIndex === this.itemsStore.length) return;
+        this.itemsStore.forEach((item, index) => {
             item.selected = index === nextIndex;
         });
         this.requestUpdate();
