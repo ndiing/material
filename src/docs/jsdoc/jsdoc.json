@@ -55786,14 +55786,14 @@
         "scope": "global"
     },
     {
-        "comment": "",
+        "comment": "/**\n * Scheme class responsible for managing color scheme changes based on media queries.\n */",
         "meta": {
             "range": [
-                189,
-                800
+                283,
+                1532
             ],
             "filename": "scheme.js",
-            "lineno": 6,
+            "lineno": 9,
             "columnno": 0,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme",
             "code": {
@@ -55805,21 +55805,22 @@
                 ]
             }
         },
-        "undocumented": true,
+        "classdesc": "Scheme class responsible for managing color scheme changes based on media queries.",
         "name": "Scheme",
         "longname": "Scheme",
         "kind": "class",
-        "scope": "global"
+        "scope": "global",
+        "undocumented": true
     },
     {
-        "comment": "",
+        "comment": "/**\n     * Creates an instance of the Scheme class.\n     * @param {Function} callback - The callback function to be executed when the color scheme changes.\n     */",
         "meta": {
             "range": [
-                208,
-                340
+                470,
+                602
             ],
             "filename": "scheme.js",
-            "lineno": 7,
+            "lineno": 14,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme",
             "code": {
@@ -55834,22 +55835,71 @@
                 "": null
             }
         },
-        "undocumented": true,
+        "description": "Creates an instance of the Scheme class.",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "function"
+                    ]
+                },
+                "description": "The callback function to be executed when the color scheme changes.",
+                "name": "callback"
+            }
+        ],
         "name": "Scheme",
         "longname": "Scheme",
         "kind": "class",
         "scope": "global",
-        "params": []
+        "undocumented": true
+    },
+    {
+        "comment": "/**\n * Scheme class responsible for managing color scheme changes based on media queries.\n */",
+        "meta": {
+            "range": [
+                283,
+                1532
+            ],
+            "filename": "scheme.js",
+            "lineno": 9,
+            "columnno": 0,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme",
+            "code": {
+                "id": "astnode100023187",
+                "name": "Scheme",
+                "type": "ClassDeclaration",
+                "paramnames": [
+                    "callback"
+                ]
+            }
+        },
+        "name": "Scheme",
+        "longname": "Scheme",
+        "kind": "class",
+        "classdesc": "Scheme class responsible for managing color scheme changes based on media queries.",
+        "scope": "global",
+        "description": "Creates an instance of the Scheme class.",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "function"
+                    ]
+                },
+                "description": "The callback function to be executed when the color scheme changes.",
+                "name": "callback"
+            }
+        ]
     },
     {
         "comment": "",
         "meta": {
             "range": [
-                240,
-                275
+                502,
+                537
             ],
             "filename": "scheme.js",
-            "lineno": 8,
+            "lineno": 15,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme",
             "code": {
@@ -55871,11 +55921,11 @@
         "comment": "",
         "meta": {
             "range": [
-                285,
-                333
+                547,
+                595
             ],
             "filename": "scheme.js",
-            "lineno": 9,
+            "lineno": 16,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme",
             "code": {
@@ -55894,14 +55944,14 @@
         "scope": "instance"
     },
     {
-        "comment": "",
+        "comment": "/**\n     * Handles color scheme change events by destroying the current scheme and initializing a new one.\n     */",
         "meta": {
             "range": [
-                346,
-                413
+                727,
+                794
             ],
             "filename": "scheme.js",
-            "lineno": 12,
+            "lineno": 22,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme",
             "code": {
@@ -55914,7 +55964,7 @@
                 "": null
             }
         },
-        "undocumented": true,
+        "description": "Handles color scheme change events by destroying the current scheme and initializing a new one.",
         "name": "handleChange",
         "longname": "Scheme#handleChange",
         "kind": "function",
@@ -55923,14 +55973,14 @@
         "params": []
     },
     {
-        "comment": "",
+        "comment": "/**\n     * Initializes the color scheme by finding the matching media query and executing the callback.\n     * @param {Array<Object>} [items=defaultItems] - The array of scheme items, each containing a name and a media query.\n     */",
         "meta": {
             "range": [
-                419,
-                670
+                1038,
+                1289
             ],
             "filename": "scheme.js",
-            "lineno": 17,
+            "lineno": 31,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme",
             "code": {
@@ -55945,23 +55995,35 @@
                 "": null
             }
         },
-        "undocumented": true,
+        "description": "Initializes the color scheme by finding the matching media query and executing the callback.",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Array.<Object>"
+                    ]
+                },
+                "optional": true,
+                "defaultvalue": "defaultItems",
+                "description": "The array of scheme items, each containing a name and a media query.",
+                "name": "items"
+            }
+        ],
         "name": "init",
         "longname": "Scheme#init",
         "kind": "function",
         "memberof": "Scheme",
-        "scope": "instance",
-        "params": []
+        "scope": "instance"
     },
     {
         "comment": "",
         "meta": {
             "range": [
-                473,
-                491
+                1092,
+                1110
             ],
             "filename": "scheme.js",
-            "lineno": 18,
+            "lineno": 32,
             "columnno": 25,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme",
             "code": {
@@ -55983,11 +56045,11 @@
         "comment": "",
         "meta": {
             "range": [
-                501,
-                558
+                1120,
+                1177
             ],
             "filename": "scheme.js",
-            "lineno": 19,
+            "lineno": 33,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme",
             "code": {
@@ -56006,14 +56068,14 @@
         "scope": "instance"
     },
     {
-        "comment": "",
+        "comment": "/**\n     * Destroys the current scheme by removing the event listener from the matching media query.\n     */",
         "meta": {
             "range": [
-                676,
-                798
+                1408,
+                1530
             ],
             "filename": "scheme.js",
-            "lineno": 24,
+            "lineno": 41,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme",
             "code": {
@@ -56026,7 +56088,7 @@
                 "": null
             }
         },
-        "undocumented": true,
+        "description": "Destroys the current scheme by removing the event listener from the matching media query.",
         "name": "destroy",
         "longname": "Scheme#destroy",
         "kind": "function",
@@ -56038,11 +56100,11 @@
         "comment": "",
         "meta": {
             "range": [
-                770,
-                791
+                1502,
+                1523
             ],
             "filename": "scheme.js",
-            "lineno": 26,
+            "lineno": 43,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme",
             "code": {
@@ -56064,11 +56126,11 @@
         "comment": "",
         "meta": {
             "range": [
-                810,
-                816
+                1543,
+                1549
             ],
             "filename": "scheme.js",
-            "lineno": 29,
+            "lineno": 47,
             "columnno": 9,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme",
             "code": {
