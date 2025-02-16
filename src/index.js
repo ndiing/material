@@ -3,18 +3,14 @@
 // It is recommended to use better coding approaches for production use.
 
 import "./material/material.scss";
-import "./app/app.scss";
-import "./demo/demo.scss";
-import "./docs/docs.scss";
-
 import "./material/material.js";
+
 import { Router } from "./material/router/router";
 import { Progress } from "./material/progress/progress.js";
 import { setTheme } from "./material/color/color.js";
-import AppRoutes from "./app/app.js";
 
-const routes = [AppRoutes];
-Router.use(routes);
+import "./app/app.scss";
+import AppRoutes from "./app/app.js";
 
 function demoProgress() {
     const progress = new Progress();
@@ -50,3 +46,6 @@ function demoTheme() {
 
 // demoProgress();
 // demoTheme();
+
+const routes = [AppRoutes];
+Router.use(routes);
