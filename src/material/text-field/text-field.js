@@ -184,6 +184,7 @@ class MdTextFieldComponent extends MdComponent {
                     @invalid="${this.handleTextFieldInvalid}"
                     @reset="${this.handleTextFieldReset}"
                     @click="${this.handleTextFieldClick}"
+                    @keydown="${this.handleTextFieldKeydown}"
                     class="md-text-field__native"
                 />
                 ${this.suffix
@@ -342,6 +343,17 @@ class MdTextFieldComponent extends MdComponent {
          * @property {Object} event
          */
         this.emit("onTextFieldClick", { event });
+    }
+
+    handleTextFieldKeydown(event) {
+        if (["datetime-local", "date", "time", "time", "month", "week"].includes(this.type) && event.code === "Space") {
+            event.preventDefault();
+        }
+        /**
+         * @event onTextFieldKeydown
+         * @property {Object} event
+         */
+        this.emit("onTextFieldKeydown", { event });
     }
 }
 customElements.define("md-text-field", MdTextFieldComponent);
