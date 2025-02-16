@@ -198,7 +198,7 @@ class MdDataTableComponent extends MdComponent {
         }
         /**
          * @event onDataTableKeydown
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onDataTableKeydown", { event });
     }
@@ -222,7 +222,7 @@ class MdDataTableComponent extends MdComponent {
         }
         /**
          * @event onDataTableHeaderCellClick
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onDataTableHeaderCellClick", { event });
     }
@@ -230,7 +230,7 @@ class MdDataTableComponent extends MdComponent {
     handleDataTableBodyCellClick(event) {
         /**
          * @event onDataTableBodyCellClick
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onDataTableBodyCellClick", { event });
     }
@@ -244,7 +244,7 @@ class MdDataTableComponent extends MdComponent {
         this.requestUpdate();
         /**
          * @event onDataTableHeaderCellCheckboxClick
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onDataTableHeaderCellCheckboxClick", { event });
     }
@@ -277,7 +277,7 @@ class MdDataTableComponent extends MdComponent {
         this.requestUpdate();
         /**
          * @event onDataTableBodyClick
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onDataTableBodyClick", { event });
     }
@@ -289,7 +289,7 @@ class MdDataTableComponent extends MdComponent {
         this.requestUpdate();
         /**
          * @event onDataTableBodyCellCheckboxClick
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onDataTableBodyCellCheckboxClick", { event });
     }

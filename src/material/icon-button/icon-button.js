@@ -79,7 +79,7 @@ class MdIconButtonComponent extends MdComponent {
         }
         /**
          * @event onIconButtonClick
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onIconButtonClick", { event });
     }

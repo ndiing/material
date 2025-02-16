@@ -52,7 +52,7 @@ class MdNavigationBarComponent extends MdComponent {
         this.open = true;
         /**
          * @event onNavigationBarShow
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onNavigationBarShow");
     }
@@ -64,7 +64,7 @@ class MdNavigationBarComponent extends MdComponent {
         this.open = false;
         /**
          * @event onNavigationBarClose
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onNavigationBarClose");
     }

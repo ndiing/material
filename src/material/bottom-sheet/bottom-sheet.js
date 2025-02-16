@@ -121,7 +121,7 @@ class MdBottomSheetComponent extends MdComponent {
         if (this.modal) this.bottomSheetScrim.show();
         /**
          * @event onBottomSheetShow
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onBottomSheetShow");
     }
@@ -136,7 +136,7 @@ class MdBottomSheetComponent extends MdComponent {
         if (this.bottomSheetScrim.open) this.bottomSheetScrim.close();
         /**
          * @event onBottomSheetClose
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onBottomSheetClose");
     }
@@ -153,7 +153,7 @@ class MdBottomSheetComponent extends MdComponent {
             this.removeEventListener("animationend", this.handleBottomSheetShown);
             /**
              * @event onBottomSheetShown
-             * @type {Object}
+             * @property {Object} event
              */
             this.emit("onBottomSheetShown");
         }
@@ -164,7 +164,7 @@ class MdBottomSheetComponent extends MdComponent {
             this.removeEventListener("animationend", this.handleBottomSheetClosed);
             /**
              * @event onBottomSheetClosed
-             * @type {Object}
+             * @property {Object} event
              */
             this.emit("onBottomSheetClosed");
         }
@@ -174,7 +174,7 @@ class MdBottomSheetComponent extends MdComponent {
         if (this.open) this.close();
         /**
          * @event onBottomSheetScrimClose
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onBottomSheetScrimClose", { event });
     }
@@ -182,7 +182,7 @@ class MdBottomSheetComponent extends MdComponent {
     handleBottomSheetIconButtonClick(event) {
         /**
          * @event onBottomSheetIconButtonClick
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onBottomSheetIconButtonClick", { event });
     }
@@ -190,7 +190,7 @@ class MdBottomSheetComponent extends MdComponent {
     handleBottomSheetButtonClick(event) {
         /**
          * @event onBottomSheetButtonClick
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onBottomSheetButtonClick", { event });
     }

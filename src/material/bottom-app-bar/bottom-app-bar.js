@@ -78,7 +78,7 @@ class MdBottomAppBarComponent extends MdComponent {
         this.open = true;
         /**
          * @event onBottomAppBarShow
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onBottomAppBarShow");
     }
@@ -90,7 +90,7 @@ class MdBottomAppBarComponent extends MdComponent {
         this.open = false;
         /**
          * @event onBottomAppBarClose
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onBottomAppBarClose");
     }
@@ -105,7 +105,7 @@ class MdBottomAppBarComponent extends MdComponent {
     handleBottomAppBarIconButtonClick(event) {
         /**
          * @event onBottomAppBarIconButtonClick
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onBottomAppBarIconButtonClick", { event });
     }
@@ -113,7 +113,7 @@ class MdBottomAppBarComponent extends MdComponent {
     handleBottomAppBarFabClick(event) {
         /**
          * @event onBottomAppBarFabClick
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onBottomAppBarFabClick", { event });
     }

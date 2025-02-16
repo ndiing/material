@@ -441,7 +441,7 @@ class MdDatetimePickerComponent extends MdComponent {
 
         /**
          * @event onDatetimePickerShow
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onDatetimePickerShow");
     }
@@ -463,7 +463,7 @@ class MdDatetimePickerComponent extends MdComponent {
 
         /**
          * @event onDatetimePickerClose
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onDatetimePickerClose");
     }
@@ -479,17 +479,19 @@ class MdDatetimePickerComponent extends MdComponent {
     handleDatetimePickerWindowScroll(event) {
         /**
          * @event onDatetimePickerWindowScroll
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onDatetimePickerWindowScroll", { event });
     }
 
     handleDatetimePickerWindowClick(event) {
+        const target = document.elementFromPoint(event.clientX, event.clientY);
         /**
          * @event onDatetimePickerWindowClick
-         * @type {Object}
+         * @property {Object} event
+         * @property {HTMLElement} target
          */
-        this.emit("onDatetimePickerWindowClick", { event });
+        this.emit("onDatetimePickerWindowClick", { event, target });
     }
 
     handleDatetimePickerYearItemClick(event) {
@@ -498,7 +500,7 @@ class MdDatetimePickerComponent extends MdComponent {
         this.index = 1;
         /**
          * @event onDatetimePickerYearItemClick
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onDatetimePickerYearItemClick", { event });
     }
@@ -510,7 +512,7 @@ class MdDatetimePickerComponent extends MdComponent {
         this.index = 2;
         /**
          * @event onDatetimePickerMonthItemClick
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onDatetimePickerMonthItemClick", { event });
     }
@@ -526,7 +528,7 @@ class MdDatetimePickerComponent extends MdComponent {
         this.index = 3;
         /**
          * @event onDatetimePickerDayItemClick
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onDatetimePickerDayItemClick", { event });
     }
@@ -538,7 +540,7 @@ class MdDatetimePickerComponent extends MdComponent {
         this.index = 4;
         /**
          * @event onDatetimePickerHourItemClick
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onDatetimePickerHourItemClick", { event });
     }
@@ -550,7 +552,7 @@ class MdDatetimePickerComponent extends MdComponent {
         this.index = 2;
         /**
          * @event onDatetimePickerMinuteItemClick
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onDatetimePickerMinuteItemClick", { event });
     }
@@ -559,7 +561,7 @@ class MdDatetimePickerComponent extends MdComponent {
         if (this.open) this.close();
         /**
          * @event onDatetimePickerScrimClose
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onDatetimePickerScrimClose", { event });
     }
@@ -568,7 +570,7 @@ class MdDatetimePickerComponent extends MdComponent {
         this.removeEventListener("animationend", this.handleDatetimePickerShown);
         /**
          * @event onDatetimePickerShown
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onDatetimePickerShown");
     }
@@ -577,7 +579,7 @@ class MdDatetimePickerComponent extends MdComponent {
         this.removeEventListener("animationend", this.handleDatetimePickerClosed);
         /**
          * @event onDatetimePickerClosed
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onDatetimePickerClosed");
     }
@@ -594,7 +596,7 @@ class MdDatetimePickerComponent extends MdComponent {
         this.requestUpdate();
         /**
          * @event onDatetimePickerIconButtonPrevClick
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onDatetimePickerIconButtonPrevClick", { event });
     }
@@ -611,7 +613,7 @@ class MdDatetimePickerComponent extends MdComponent {
         this.requestUpdate();
         /**
          * @event onDatetimePickerIconButtonNextClick
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onDatetimePickerIconButtonNextClick", { event });
     }
@@ -626,7 +628,7 @@ class MdDatetimePickerComponent extends MdComponent {
         if (fn) return fn(event);
         /**
          * @event onDatetimePickerIconButtonClick
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onDatetimePickerIconButtonClick", { event });
     }
@@ -636,7 +638,7 @@ class MdDatetimePickerComponent extends MdComponent {
         // this.close();
         /**
          * @event onDatetimePickerButtonCancelClick
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onDatetimePickerButtonCancelClick", { event });
     }
@@ -645,7 +647,7 @@ class MdDatetimePickerComponent extends MdComponent {
         // this.close();
         /**
          * @event onDatetimePickerButtonOkClick
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onDatetimePickerButtonOkClick", { event });
     }
@@ -661,7 +663,7 @@ class MdDatetimePickerComponent extends MdComponent {
         this.index = map[this.index];
         /**
          * @event onDatetimePickerButtonLabelClick
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onDatetimePickerButtonLabelClick", { event });
     }
@@ -677,7 +679,7 @@ class MdDatetimePickerComponent extends MdComponent {
         if (fn) return fn(event);
         /**
          * @event onDatetimePickerButtonClick
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onDatetimePickerButtonClick", { event });
     }

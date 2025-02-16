@@ -61,11 +61,11 @@ class DocsPage extends MdComponent {
         return html`
             <div>${this.renderTable([
                 {name:'name',label:'Name'},
-                {name:'type',label:'Type'},
+                {name:'event',label:'Event'},
                 {name:'description',label:'Description'},
             ],data.map(prop=>({
                 name:prop.name,
-                type:prop.type?.names.join('|'),
+                event:prop.properties?.map(p=>p.name).join(', '),
                 description:prop.description,
             })))}</div>
             <br>

@@ -77,7 +77,7 @@ class MdSwitchComponent extends MdComponent {
         this.checked = native.checked;
         /**
          * @event onSwitchNativeInput
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onSwitchNativeInput", { event });
     }
@@ -88,7 +88,7 @@ class MdSwitchComponent extends MdComponent {
         this.checked = this.defaultChecked;
         /**
          * @event onSwitchNativeReset
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onSwitchNativeReset", { event });
     }

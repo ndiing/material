@@ -5,7 +5,7 @@ class Router {
     /**
      * Parameters extracted from the current route.
      * @static
-     * @type {Object}
+     * @property {Object} event
      */
     static params = {};
 
@@ -61,14 +61,14 @@ class Router {
         performance.mark("mark-1");
         /**
          * @event onRouterCurrentEntryChange
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onRouterCurrentEntryChange", {});
         this.setController();
         const routes = this.get();
         /**
          * @event onRouterNavigate
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onRouterNavigate", {});
         for (const route of routes ?? []) {
@@ -78,7 +78,7 @@ class Router {
                 } catch (error) {
                     /**
                      * @event onRouterNavigateError
-                     * @type {Object}
+                     * @property {Object} event
                      */
                     this.emit("onRouterNavigateError", {});
                     break;
@@ -97,7 +97,7 @@ class Router {
         performance.clearMeasures("measure-1");
         /**
          * @event onRouterNavigateSuccess
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onRouterNavigateSuccess", {});
     }
@@ -262,7 +262,7 @@ class Router {
     // /**
     //  * The router options.
     //  * @static
-    //  * @type {Object}
+    //  * @property {Object} event
     //  */
     static options = {};
 

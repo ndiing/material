@@ -72,7 +72,7 @@ class MdCheckboxComponent extends MdComponent {
         this.checked = native.checked;
         /**
          * @event onCheckboxNativeInput
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onCheckboxNativeInput", { event });
     }
@@ -83,7 +83,7 @@ class MdCheckboxComponent extends MdComponent {
         this.checked = this.defaultChecked;
         /**
          * @event onCheckboxNativeReset
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onCheckboxNativeReset", { event });
     }

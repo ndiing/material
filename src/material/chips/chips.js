@@ -60,7 +60,7 @@ class MdChipsComponent extends MdComponent {
         this.requestUpdate();
         /**
          * @event onChipClick
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onChipClick", { event });
     }

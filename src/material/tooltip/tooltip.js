@@ -101,7 +101,7 @@ class MdTooltipComponent extends MdComponent {
         this.open = true;
         /**
          * @event onTooltipShow
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onTooltipShow");
     }
@@ -112,7 +112,7 @@ class MdTooltipComponent extends MdComponent {
         this.open = false;
         /**
          * @event onTooltipClose
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onTooltipClose");
     }
@@ -128,7 +128,7 @@ class MdTooltipComponent extends MdComponent {
     handleTooltipIconButtonClick(event) {
         /**
          * @event onTooltipIconButtonClick
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onTooltipIconButtonClick", { event });
     }
@@ -136,7 +136,7 @@ class MdTooltipComponent extends MdComponent {
     handleTooltipButtonClick(event) {
         /**
          * @event onTooltipButtonClick
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onTooltipButtonClick", { event });
     }

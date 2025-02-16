@@ -150,7 +150,7 @@ class MdListItemComponent extends MdComponent {
         if (changedProperties.has("selected") && this.selected) {
             /**
              * @event onListItemSelected
-             * @type {Object}
+             * @property {HTMLElement} listItem
              */
             this.emit("onListItemSelected", { listItem: this });
         }

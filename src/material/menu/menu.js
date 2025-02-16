@@ -68,7 +68,7 @@ class MdMenuComponent extends MdComponent {
         this.open = true;
         /**
          * @event onMenuShow
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onMenuShow");
     }
@@ -84,7 +84,7 @@ class MdMenuComponent extends MdComponent {
         this.open = false;
         /**
          * @event onMenuClose
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onMenuClose");
     }
@@ -101,7 +101,8 @@ class MdMenuComponent extends MdComponent {
         const target = document.elementFromPoint(event.clientX, event.clientY);
         /**
          * @event onMenuWindowClick
-         * @type {Object}
+         * @property {Object} event
+         * @property {HTMLElement} target
          */
         this.emit("onMenuWindowClick", { event, target });
     }
@@ -109,7 +110,7 @@ class MdMenuComponent extends MdComponent {
     handleMenuWindowScroll(event) {
         /**
          * @event onMenuWindowScroll
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onMenuWindowScroll", { event });
     }
@@ -118,7 +119,7 @@ class MdMenuComponent extends MdComponent {
         this.removeEventListener("animationend", this.handleMenuShown);
         /**
          * @event onMenuShown
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onMenuShown", { event });
     }
@@ -127,7 +128,7 @@ class MdMenuComponent extends MdComponent {
         this.removeEventListener("animationend", this.handleMenuClosed);
         /**
          * @event onMenuClosed
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onMenuClosed", { event });
     }

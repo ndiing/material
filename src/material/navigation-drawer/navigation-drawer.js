@@ -115,7 +115,7 @@ class MdNavigationDrawerComponent extends MdComponent {
         this.open = true;
         /**
          * @event onNavigationDrawerShow
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onNavigationDrawerShow");
     }
@@ -128,7 +128,7 @@ class MdNavigationDrawerComponent extends MdComponent {
         if (this.navigationDrawerScrim.open) this.navigationDrawerScrim.close();
         /**
          * @event onNavigationDrawerClose
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onNavigationDrawerClose");
     }
@@ -143,7 +143,7 @@ class MdNavigationDrawerComponent extends MdComponent {
     handleNavigationDrawerIconButtonClick(event) {
         /**
          * @event onNavigationDrawerIconButtonClick
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onNavigationDrawerIconButtonClick", { event });
     }
@@ -152,7 +152,7 @@ class MdNavigationDrawerComponent extends MdComponent {
         if (this.open) this.close();
         /**
          * @event onNavigationDrawerScrimClose
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onNavigationDrawerScrimClose", { event });
     }

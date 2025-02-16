@@ -97,9 +97,7 @@ class MdMonthFieldComponent extends MdTextFieldComponent {
     }
 
     handleMonthFieldPickerWindowClick(event) {
-        const { clientX, clientY } = event.detail.event;
-        const target = document.elementFromPoint(clientX, clientY);
-        if (!this.pickerTrigger.contains(target) && !this.picker.contains(target)) {
+        if (!this.pickerTrigger.contains(event.detail.target) && !this.picker.contains(event.detail.target)) {
             this.closePicker();
         }
     }

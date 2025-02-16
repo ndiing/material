@@ -154,7 +154,7 @@ class MdSliderComponent extends MdComponent {
         this.requestUpdate();
         /**
          * @event onSliderNativeInput
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onSliderNativeInput", { event });
     }
@@ -165,7 +165,7 @@ class MdSliderComponent extends MdComponent {
         this.requestUpdate();
         /**
          * @event onSliderNativeReset
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onSliderNativeReset", { event });
     }

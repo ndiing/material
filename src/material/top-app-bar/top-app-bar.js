@@ -66,7 +66,7 @@ class MdTopAppBarComponent extends MdComponent {
         this.open = true;
         /**
          * @event onTopAppBarShow
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onTopAppBarShow");
     }
@@ -78,7 +78,7 @@ class MdTopAppBarComponent extends MdComponent {
         this.open = false;
         /**
          * @event onTopAppBarClose
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onTopAppBarClose");
     }
@@ -93,7 +93,7 @@ class MdTopAppBarComponent extends MdComponent {
     handleTopAppBarIconButtonClick(event) {
         /**
          * @event onTopAppBarIconButtonClick
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onTopAppBarIconButtonClick", { event });
     }

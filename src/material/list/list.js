@@ -89,7 +89,7 @@ class MdListComponent extends MdComponent {
         this.requestUpdate();
         /**
          * @event onListItemClick
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onListItemClick", { event });
     }
@@ -100,7 +100,7 @@ class MdListComponent extends MdComponent {
         this.requestUpdate();
         /**
          * @event onListItemCheckboxNativeInput
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onListItemCheckboxNativeInput", { event });
     }
@@ -113,7 +113,7 @@ class MdListComponent extends MdComponent {
         this.requestUpdate();
         /**
          * @event onListItemRadioButtonNativeInput
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onListItemRadioButtonNativeInput", { event });
     }
@@ -124,7 +124,7 @@ class MdListComponent extends MdComponent {
         this.requestUpdate();
         /**
          * @event onListItemSwitchNativeInput
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onListItemSwitchNativeInput", { event });
     }

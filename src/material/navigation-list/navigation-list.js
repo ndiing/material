@@ -97,7 +97,7 @@ class MdNavigationListComponent extends MdComponent {
         this.updateScroll();
         /**
          * @event onNavigationListKeydownArrowUp
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onNavigationListKeydownArrowUp", { event });
     }
@@ -114,7 +114,7 @@ class MdNavigationListComponent extends MdComponent {
         this.updateScroll();
         /**
          * @event onNavigationListKeydownArrowDown
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onNavigationListKeydownArrowDown", { event });
     }
@@ -125,7 +125,7 @@ class MdNavigationListComponent extends MdComponent {
         // navigationListItemSelected.click();
         /**
          * @event onNavigationListKeydownEnter
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onNavigationListKeydownEnter", { event });
     }
@@ -138,7 +138,7 @@ class MdNavigationListComponent extends MdComponent {
         }
         /**
          * @event onNavigationListKeydown
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onNavigationListKeydown", { event });
     }
@@ -152,7 +152,7 @@ class MdNavigationListComponent extends MdComponent {
         this.requestUpdate();
         /**
          * @event onNavigationListItemClick
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onNavigationListItemClick", { event });
     }

@@ -95,7 +95,7 @@ class MdNavigationRailComponent extends MdComponent {
         this.open = true;
         /**
          * @event onNavigationRailShow
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onNavigationRailShow");
     }
@@ -107,7 +107,7 @@ class MdNavigationRailComponent extends MdComponent {
         this.open = false;
         /**
          * @event onNavigationRailClose
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onNavigationRailClose");
     }
@@ -122,7 +122,7 @@ class MdNavigationRailComponent extends MdComponent {
     handleNavigationRailIconButtonClick(event) {
         /**
          * @event onNavigationRailIconButtonClick
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onNavigationRailIconButtonClick", { event });
     }

@@ -296,7 +296,7 @@ class MdMonthPickerComponent extends MdComponent {
         if (this.modal) this.monthPickerScrim.show();
         /**
          * @event onMonthPickerShow
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onMonthPickerShow");
     }
@@ -315,7 +315,7 @@ class MdMonthPickerComponent extends MdComponent {
         if (this.modal) this.monthPickerScrim.close();
         /**
          * @event onMonthPickerClose
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onMonthPickerClose");
     }
@@ -331,17 +331,19 @@ class MdMonthPickerComponent extends MdComponent {
     handleMonthPickerWindowScroll(event) {
         /**
          * @event onMonthPickerWindowScroll
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onMonthPickerWindowScroll", { event });
     }
 
     handleMonthPickerWindowClick(event) {
+        3;
+        const target = document.elementFromPoint(event.clientX, event.clientY);
         /**
          * @event onMonthPickerWindowClick
-         * @type {Object}
+         * @property {Object} event
          */
-        this.emit("onMonthPickerWindowClick", { event });
+        this.emit("onMonthPickerWindowClick", { event, target });
     }
 
     handleMonthPickerYearItemClick(event) {
@@ -350,7 +352,7 @@ class MdMonthPickerComponent extends MdComponent {
         this.index = 1;
         /**
          * @event onMonthPickerYearItemClick
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onMonthPickerYearItemClick", { event });
     }
@@ -365,7 +367,7 @@ class MdMonthPickerComponent extends MdComponent {
         this.requestUpdate();
         /**
          * @event onMonthPickerMonthItemClick
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onMonthPickerMonthItemClick", { event });
     }
@@ -374,7 +376,7 @@ class MdMonthPickerComponent extends MdComponent {
         if (this.open) this.close();
         /**
          * @event onMonthPickerScrimClose
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onMonthPickerScrimClose", { event });
     }
@@ -383,7 +385,7 @@ class MdMonthPickerComponent extends MdComponent {
         this.removeEventListener("animationend", this.handleMonthPickerShown);
         /**
          * @event onMonthPickerShown
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onMonthPickerShown");
     }
@@ -392,7 +394,7 @@ class MdMonthPickerComponent extends MdComponent {
         this.removeEventListener("animationend", this.handleMonthPickerClosed);
         /**
          * @event onMonthPickerClosed
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onMonthPickerClosed");
     }
@@ -406,7 +408,7 @@ class MdMonthPickerComponent extends MdComponent {
         this.requestUpdate();
         /**
          * @event onMonthPickerIconButtonPrevClick
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onMonthPickerIconButtonPrevClick", { event });
     }
@@ -420,7 +422,7 @@ class MdMonthPickerComponent extends MdComponent {
         this.requestUpdate();
         /**
          * @event onMonthPickerIconButtonNextClick
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onMonthPickerIconButtonNextClick", { event });
     }
@@ -435,7 +437,7 @@ class MdMonthPickerComponent extends MdComponent {
         if (fn) return fn(event);
         /**
          * @event onMonthPickerIconButtonClick
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onMonthPickerIconButtonClick", { event });
     }
@@ -445,7 +447,7 @@ class MdMonthPickerComponent extends MdComponent {
         // this.close();
         /**
          * @event onMonthPickerButtonCancelClick
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onMonthPickerButtonCancelClick", { event });
     }
@@ -454,7 +456,7 @@ class MdMonthPickerComponent extends MdComponent {
         // this.close();
         /**
          * @event onMonthPickerButtonOkClick
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onMonthPickerButtonOkClick", { event });
     }
@@ -467,7 +469,7 @@ class MdMonthPickerComponent extends MdComponent {
         this.index = map[this.index];
         /**
          * @event onMonthPickerButtonLabelClick
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onMonthPickerButtonLabelClick", { event });
     }
@@ -483,7 +485,7 @@ class MdMonthPickerComponent extends MdComponent {
         if (fn) return fn(event);
         /**
          * @event onMonthPickerButtonClick
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onMonthPickerButtonClick", { event });
     }

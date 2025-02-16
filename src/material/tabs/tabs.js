@@ -71,7 +71,7 @@ class MdTabsComponent extends MdComponent {
         this.requestUpdate();
         /**
          * @event onTabClick
-         * @type {Object}
+         * @property {Object} event
          */
         this.emit("onTabClick", { event });
     }
