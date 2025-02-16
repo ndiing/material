@@ -29809,10 +29809,10 @@
                 6,
                 266
             ],
-            "filename": "layout.js",
+            "filename": "layout-observer.js",
             "lineno": 1,
             "columnno": 6,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout",
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout-observer",
             "code": {
                 "id": "astnode100012683",
                 "name": "defaultItems",
@@ -29834,10 +29834,10 @@
                 29,
                 45
             ],
-            "filename": "layout.js",
+            "filename": "layout-observer.js",
             "lineno": 2,
             "columnno": 6,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout",
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout-observer",
             "code": {
                 "id": "astnode100012687",
                 "name": "name",
@@ -29858,10 +29858,10 @@
                 47,
                 93
             ],
-            "filename": "layout.js",
+            "filename": "layout-observer.js",
             "lineno": 2,
             "columnno": 24,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout",
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout-observer",
             "code": {
                 "id": "astnode100012689",
                 "name": "media",
@@ -29882,10 +29882,10 @@
                 103,
                 117
             ],
-            "filename": "layout.js",
+            "filename": "layout-observer.js",
             "lineno": 3,
             "columnno": 6,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout",
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout-observer",
             "code": {
                 "id": "astnode100012696",
                 "name": "name",
@@ -29906,10 +29906,10 @@
                 119,
                 188
             ],
-            "filename": "layout.js",
+            "filename": "layout-observer.js",
             "lineno": 3,
             "columnno": 22,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout",
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout-observer",
             "code": {
                 "id": "astnode100012698",
                 "name": "media",
@@ -29930,10 +29930,10 @@
                 198,
                 213
             ],
-            "filename": "layout.js",
+            "filename": "layout-observer.js",
             "lineno": 4,
             "columnno": 6,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout",
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout-observer",
             "code": {
                 "id": "astnode100012705",
                 "name": "name",
@@ -29954,10 +29954,10 @@
                 215,
                 261
             ],
-            "filename": "layout.js",
+            "filename": "layout-observer.js",
             "lineno": 4,
             "columnno": 23,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout",
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout-observer",
             "code": {
                 "id": "astnode100012707",
                 "name": "media",
@@ -29972,46 +29972,46 @@
         "scope": "global"
     },
     {
-        "comment": "/**\n * Layout class responsible for managing layout changes based on media queries.\n */",
+        "comment": "/**\n * LayoutObserver class responsible for managing layout changes based on media queries.\n */",
         "meta": {
             "range": [
-                357,
-                1573
+                365,
+                1597
             ],
-            "filename": "layout.js",
+            "filename": "layout-observer.js",
             "lineno": 10,
             "columnno": 0,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout",
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout-observer",
             "code": {
                 "id": "astnode100012713",
-                "name": "Layout",
+                "name": "LayoutObserver",
                 "type": "ClassDeclaration",
                 "paramnames": [
                     "callback"
                 ]
             }
         },
-        "classdesc": "Layout class responsible for managing layout changes based on media queries.",
-        "name": "Layout",
-        "longname": "Layout",
+        "classdesc": "LayoutObserver class responsible for managing layout changes based on media queries.",
+        "name": "LayoutObserver",
+        "longname": "LayoutObserver",
         "kind": "class",
         "scope": "global",
         "undocumented": true
     },
     {
-        "comment": "/**\n     * Creates an instance of Layout.\n     * @param {Function} callback - The callback function to be executed when the layout changes.\n     */",
+        "comment": "/**\n     * Creates an instance of LayoutObserver.\n     * @param {Function} callback - The callback function to be executed when the layout changes.\n     */",
         "meta": {
             "range": [
-                528,
-                660
+                552,
+                684
             ],
-            "filename": "layout.js",
+            "filename": "layout-observer.js",
             "lineno": 15,
             "columnno": 4,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout",
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout-observer",
             "code": {
                 "id": "astnode100012716",
-                "name": "Layout",
+                "name": "LayoutObserver",
                 "type": "MethodDefinition",
                 "paramnames": [
                     "callback"
@@ -30021,7 +30021,7 @@
                 "": null
             }
         },
-        "description": "Creates an instance of Layout.",
+        "description": "Creates an instance of LayoutObserver.",
         "params": [
             {
                 "type": {
@@ -30033,38 +30033,38 @@
                 "name": "callback"
             }
         ],
-        "name": "Layout",
-        "longname": "Layout",
+        "name": "LayoutObserver",
+        "longname": "LayoutObserver",
         "kind": "class",
         "scope": "global",
         "undocumented": true
     },
     {
-        "comment": "/**\n * Layout class responsible for managing layout changes based on media queries.\n */",
+        "comment": "/**\n * LayoutObserver class responsible for managing layout changes based on media queries.\n */",
         "meta": {
             "range": [
-                357,
-                1573
+                365,
+                1597
             ],
-            "filename": "layout.js",
+            "filename": "layout-observer.js",
             "lineno": 10,
             "columnno": 0,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout",
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout-observer",
             "code": {
                 "id": "astnode100012713",
-                "name": "Layout",
+                "name": "LayoutObserver",
                 "type": "ClassDeclaration",
                 "paramnames": [
                     "callback"
                 ]
             }
         },
-        "name": "Layout",
-        "longname": "Layout",
+        "name": "LayoutObserver",
+        "longname": "LayoutObserver",
         "kind": "class",
-        "classdesc": "Layout class responsible for managing layout changes based on media queries.",
+        "classdesc": "LayoutObserver class responsible for managing layout changes based on media queries.",
         "scope": "global",
-        "description": "Creates an instance of Layout.",
+        "description": "Creates an instance of LayoutObserver.",
         "params": [
             {
                 "type": {
@@ -30081,13 +30081,13 @@
         "comment": "",
         "meta": {
             "range": [
-                560,
-                595
+                584,
+                619
             ],
-            "filename": "layout.js",
+            "filename": "layout-observer.js",
             "lineno": 16,
             "columnno": 8,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout",
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout-observer",
             "code": {
                 "id": "astnode100012722",
                 "name": "this.callback",
@@ -30098,22 +30098,22 @@
         },
         "undocumented": true,
         "name": "callback",
-        "longname": "Layout#callback",
+        "longname": "LayoutObserver#callback",
         "kind": "member",
-        "memberof": "Layout",
+        "memberof": "LayoutObserver",
         "scope": "instance"
     },
     {
         "comment": "",
         "meta": {
             "range": [
-                605,
-                653
+                629,
+                677
             ],
-            "filename": "layout.js",
+            "filename": "layout-observer.js",
             "lineno": 17,
             "columnno": 8,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout",
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout-observer",
             "code": {
                 "id": "astnode100012732",
                 "name": "this.handleChange",
@@ -30124,25 +30124,25 @@
         },
         "undocumented": true,
         "name": "handleChange",
-        "longname": "Layout#handleChange",
+        "longname": "LayoutObserver#handleChange",
         "kind": "member",
-        "memberof": "Layout",
+        "memberof": "LayoutObserver",
         "scope": "instance"
     },
     {
         "comment": "",
         "meta": {
             "range": [
-                788,
-                855
+                812,
+                879
             ],
-            "filename": "layout.js",
+            "filename": "layout-observer.js",
             "lineno": 23,
             "columnno": 4,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout",
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout-observer",
             "code": {
                 "id": "astnode100012743",
-                "name": "Layout#handleChange",
+                "name": "LayoutObserver#handleChange",
                 "type": "MethodDefinition",
                 "paramnames": []
             },
@@ -30152,9 +30152,9 @@
         },
         "undocumented": true,
         "name": "handleChange",
-        "longname": "Layout#handleChange",
+        "longname": "LayoutObserver#handleChange",
         "kind": "function",
-        "memberof": "Layout",
+        "memberof": "LayoutObserver",
         "scope": "instance",
         "params": []
     },
@@ -30162,16 +30162,16 @@
         "comment": "/**\n     * Initializes the layout by finding the matching media query and executing the callback.\n     * @param {Array<Object>} [items] - An array of layout items, each containing a name and a media query.\n     */",
         "meta": {
             "range": [
-                1079,
-                1330
+                1103,
+                1354
             ],
-            "filename": "layout.js",
+            "filename": "layout-observer.js",
             "lineno": 32,
             "columnno": 4,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout",
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout-observer",
             "code": {
                 "id": "astnode100012757",
-                "name": "Layout#init",
+                "name": "LayoutObserver#init",
                 "type": "MethodDefinition",
                 "paramnames": [
                     "items"
@@ -30195,22 +30195,22 @@
             }
         ],
         "name": "init",
-        "longname": "Layout#init",
+        "longname": "LayoutObserver#init",
         "kind": "function",
-        "memberof": "Layout",
+        "memberof": "LayoutObserver",
         "scope": "instance"
     },
     {
         "comment": "",
         "meta": {
             "range": [
-                1133,
-                1151
+                1157,
+                1175
             ],
-            "filename": "layout.js",
+            "filename": "layout-observer.js",
             "lineno": 33,
             "columnno": 25,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout",
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout-observer",
             "code": {
                 "id": "astnode100012770",
                 "name": "this.items",
@@ -30221,22 +30221,22 @@
         },
         "undocumented": true,
         "name": "items",
-        "longname": "Layout#items",
+        "longname": "LayoutObserver#items",
         "kind": "member",
-        "memberof": "Layout",
+        "memberof": "LayoutObserver",
         "scope": "instance"
     },
     {
         "comment": "",
         "meta": {
             "range": [
-                1161,
-                1218
+                1185,
+                1242
             ],
-            "filename": "layout.js",
+            "filename": "layout-observer.js",
             "lineno": 34,
             "columnno": 8,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout",
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout-observer",
             "code": {
                 "id": "astnode100012776",
                 "name": "this.item",
@@ -30247,25 +30247,25 @@
         },
         "undocumented": true,
         "name": "item",
-        "longname": "Layout#item",
+        "longname": "LayoutObserver#item",
         "kind": "member",
-        "memberof": "Layout",
+        "memberof": "LayoutObserver",
         "scope": "instance"
     },
     {
         "comment": "/**\n     * Destroys the current layout by removing the event listener from the matching media query.\n     */",
         "meta": {
             "range": [
-                1449,
-                1571
+                1473,
+                1595
             ],
-            "filename": "layout.js",
+            "filename": "layout-observer.js",
             "lineno": 42,
             "columnno": 4,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout",
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout-observer",
             "code": {
                 "id": "astnode100012814",
-                "name": "Layout#destroy",
+                "name": "LayoutObserver#destroy",
                 "type": "MethodDefinition",
                 "paramnames": []
             },
@@ -30275,9 +30275,9 @@
         },
         "description": "Destroys the current layout by removing the event listener from the matching media query.",
         "name": "destroy",
-        "longname": "Layout#destroy",
+        "longname": "LayoutObserver#destroy",
         "kind": "function",
-        "memberof": "Layout",
+        "memberof": "LayoutObserver",
         "scope": "instance",
         "params": []
     },
@@ -30285,13 +30285,13 @@
         "comment": "",
         "meta": {
             "range": [
-                1543,
-                1564
+                1567,
+                1588
             ],
-            "filename": "layout.js",
+            "filename": "layout-observer.js",
             "lineno": 44,
             "columnno": 8,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout",
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout-observer",
             "code": {
                 "id": "astnode100012832",
                 "name": "this.item",
@@ -30302,31 +30302,31 @@
         },
         "undocumented": true,
         "name": "item",
-        "longname": "Layout#item",
+        "longname": "LayoutObserver#item",
         "kind": "member",
-        "memberof": "Layout",
+        "memberof": "LayoutObserver",
         "scope": "instance"
     },
     {
         "comment": "",
         "meta": {
             "range": [
-                1583,
-                1589
+                1607,
+                1621
             ],
-            "filename": "layout.js",
+            "filename": "layout-observer.js",
             "lineno": 47,
             "columnno": 9,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout",
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout-observer",
             "code": {
                 "id": "astnode100012838",
-                "name": "exports.Layout",
+                "name": "exports.LayoutObserver",
                 "type": "Identifier"
             }
         },
         "undocumented": true,
-        "name": "Layout",
-        "longname": "Layout",
+        "name": "LayoutObserver",
+        "longname": "LayoutObserver",
         "kind": "member",
         "scope": "global"
     },
@@ -56109,10 +56109,10 @@
                 6,
                 186
             ],
-            "filename": "scheme.js",
+            "filename": "scheme-observer.js",
             "lineno": 1,
             "columnno": 6,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme",
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme-observer",
             "code": {
                 "id": "astnode100023283",
                 "name": "defaultItems",
@@ -56134,10 +56134,10 @@
                 29,
                 42
             ],
-            "filename": "scheme.js",
+            "filename": "scheme-observer.js",
             "lineno": 2,
             "columnno": 6,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme",
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme-observer",
             "code": {
                 "id": "astnode100023287",
                 "name": "name",
@@ -56158,10 +56158,10 @@
                 44,
                 101
             ],
-            "filename": "scheme.js",
+            "filename": "scheme-observer.js",
             "lineno": 2,
             "columnno": 21,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme",
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme-observer",
             "code": {
                 "id": "astnode100023289",
                 "name": "media",
@@ -56182,10 +56182,10 @@
                 111,
                 123
             ],
-            "filename": "scheme.js",
+            "filename": "scheme-observer.js",
             "lineno": 3,
             "columnno": 6,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme",
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme-observer",
             "code": {
                 "id": "astnode100023296",
                 "name": "name",
@@ -56206,10 +56206,10 @@
                 125,
                 181
             ],
-            "filename": "scheme.js",
+            "filename": "scheme-observer.js",
             "lineno": 3,
             "columnno": 20,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme",
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme-observer",
             "code": {
                 "id": "astnode100023298",
                 "name": "media",
@@ -56224,46 +56224,46 @@
         "scope": "global"
     },
     {
-        "comment": "/**\n * Scheme class responsible for managing color scheme changes based on media queries.\n */",
+        "comment": "/**\n * SchemeObserver class responsible for managing color scheme changes based on media queries.\n */",
         "meta": {
             "range": [
-                283,
-                1541
+                291,
+                1565
             ],
-            "filename": "scheme.js",
+            "filename": "scheme-observer.js",
             "lineno": 9,
             "columnno": 0,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme",
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme-observer",
             "code": {
                 "id": "astnode100023304",
-                "name": "Scheme",
+                "name": "SchemeObserver",
                 "type": "ClassDeclaration",
                 "paramnames": [
                     "callback"
                 ]
             }
         },
-        "classdesc": "Scheme class responsible for managing color scheme changes based on media queries.",
-        "name": "Scheme",
-        "longname": "Scheme",
+        "classdesc": "SchemeObserver class responsible for managing color scheme changes based on media queries.",
+        "name": "SchemeObserver",
+        "longname": "SchemeObserver",
         "kind": "class",
         "scope": "global",
         "undocumented": true
     },
     {
-        "comment": "/**\n     * Creates an instance of the Scheme class.\n     * @param {Function} callback - The callback function to be executed when the color scheme changes.\n     */",
+        "comment": "/**\n     * Creates an instance of the SchemeObserver class.\n     * @param {Function} callback - The callback function to be executed when the color scheme changes.\n     */",
         "meta": {
             "range": [
-                470,
-                602
+                494,
+                626
             ],
-            "filename": "scheme.js",
+            "filename": "scheme-observer.js",
             "lineno": 14,
             "columnno": 4,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme",
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme-observer",
             "code": {
                 "id": "astnode100023307",
-                "name": "Scheme",
+                "name": "SchemeObserver",
                 "type": "MethodDefinition",
                 "paramnames": [
                     "callback"
@@ -56273,7 +56273,7 @@
                 "": null
             }
         },
-        "description": "Creates an instance of the Scheme class.",
+        "description": "Creates an instance of the SchemeObserver class.",
         "params": [
             {
                 "type": {
@@ -56285,38 +56285,38 @@
                 "name": "callback"
             }
         ],
-        "name": "Scheme",
-        "longname": "Scheme",
+        "name": "SchemeObserver",
+        "longname": "SchemeObserver",
         "kind": "class",
         "scope": "global",
         "undocumented": true
     },
     {
-        "comment": "/**\n * Scheme class responsible for managing color scheme changes based on media queries.\n */",
+        "comment": "/**\n * SchemeObserver class responsible for managing color scheme changes based on media queries.\n */",
         "meta": {
             "range": [
-                283,
-                1541
+                291,
+                1565
             ],
-            "filename": "scheme.js",
+            "filename": "scheme-observer.js",
             "lineno": 9,
             "columnno": 0,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme",
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme-observer",
             "code": {
                 "id": "astnode100023304",
-                "name": "Scheme",
+                "name": "SchemeObserver",
                 "type": "ClassDeclaration",
                 "paramnames": [
                     "callback"
                 ]
             }
         },
-        "name": "Scheme",
-        "longname": "Scheme",
+        "name": "SchemeObserver",
+        "longname": "SchemeObserver",
         "kind": "class",
-        "classdesc": "Scheme class responsible for managing color scheme changes based on media queries.",
+        "classdesc": "SchemeObserver class responsible for managing color scheme changes based on media queries.",
         "scope": "global",
-        "description": "Creates an instance of the Scheme class.",
+        "description": "Creates an instance of the SchemeObserver class.",
         "params": [
             {
                 "type": {
@@ -56333,13 +56333,13 @@
         "comment": "",
         "meta": {
             "range": [
-                502,
-                537
+                526,
+                561
             ],
-            "filename": "scheme.js",
+            "filename": "scheme-observer.js",
             "lineno": 15,
             "columnno": 8,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme",
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme-observer",
             "code": {
                 "id": "astnode100023313",
                 "name": "this.callback",
@@ -56350,22 +56350,22 @@
         },
         "undocumented": true,
         "name": "callback",
-        "longname": "Scheme#callback",
+        "longname": "SchemeObserver#callback",
         "kind": "member",
-        "memberof": "Scheme",
+        "memberof": "SchemeObserver",
         "scope": "instance"
     },
     {
         "comment": "",
         "meta": {
             "range": [
-                547,
-                595
+                571,
+                619
             ],
-            "filename": "scheme.js",
+            "filename": "scheme-observer.js",
             "lineno": 16,
             "columnno": 8,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme",
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme-observer",
             "code": {
                 "id": "astnode100023323",
                 "name": "this.handleChange",
@@ -56376,25 +56376,25 @@
         },
         "undocumented": true,
         "name": "handleChange",
-        "longname": "Scheme#handleChange",
+        "longname": "SchemeObserver#handleChange",
         "kind": "member",
-        "memberof": "Scheme",
+        "memberof": "SchemeObserver",
         "scope": "instance"
     },
     {
         "comment": "",
         "meta": {
             "range": [
-                736,
-                803
+                760,
+                827
             ],
-            "filename": "scheme.js",
+            "filename": "scheme-observer.js",
             "lineno": 22,
             "columnno": 4,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme",
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme-observer",
             "code": {
                 "id": "astnode100023334",
-                "name": "Scheme#handleChange",
+                "name": "SchemeObserver#handleChange",
                 "type": "MethodDefinition",
                 "paramnames": []
             },
@@ -56404,9 +56404,9 @@
         },
         "undocumented": true,
         "name": "handleChange",
-        "longname": "Scheme#handleChange",
+        "longname": "SchemeObserver#handleChange",
         "kind": "function",
-        "memberof": "Scheme",
+        "memberof": "SchemeObserver",
         "scope": "instance",
         "params": []
     },
@@ -56414,16 +56414,16 @@
         "comment": "/**\n     * Initializes the color scheme by finding the matching media query and executing the callback.\n     * @param {Array<Object>} [items=defaultItems] - The array of scheme items, each containing a name and a media query.\n     */",
         "meta": {
             "range": [
-                1047,
-                1298
+                1071,
+                1322
             ],
-            "filename": "scheme.js",
+            "filename": "scheme-observer.js",
             "lineno": 31,
             "columnno": 4,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme",
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme-observer",
             "code": {
                 "id": "astnode100023348",
-                "name": "Scheme#init",
+                "name": "SchemeObserver#init",
                 "type": "MethodDefinition",
                 "paramnames": [
                     "items"
@@ -56448,22 +56448,22 @@
             }
         ],
         "name": "init",
-        "longname": "Scheme#init",
+        "longname": "SchemeObserver#init",
         "kind": "function",
-        "memberof": "Scheme",
+        "memberof": "SchemeObserver",
         "scope": "instance"
     },
     {
         "comment": "",
         "meta": {
             "range": [
-                1101,
-                1119
+                1125,
+                1143
             ],
-            "filename": "scheme.js",
+            "filename": "scheme-observer.js",
             "lineno": 32,
             "columnno": 25,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme",
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme-observer",
             "code": {
                 "id": "astnode100023361",
                 "name": "this.items",
@@ -56474,22 +56474,22 @@
         },
         "undocumented": true,
         "name": "items",
-        "longname": "Scheme#items",
+        "longname": "SchemeObserver#items",
         "kind": "member",
-        "memberof": "Scheme",
+        "memberof": "SchemeObserver",
         "scope": "instance"
     },
     {
         "comment": "",
         "meta": {
             "range": [
-                1129,
-                1186
+                1153,
+                1210
             ],
-            "filename": "scheme.js",
+            "filename": "scheme-observer.js",
             "lineno": 33,
             "columnno": 8,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme",
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme-observer",
             "code": {
                 "id": "astnode100023367",
                 "name": "this.item",
@@ -56500,25 +56500,25 @@
         },
         "undocumented": true,
         "name": "item",
-        "longname": "Scheme#item",
+        "longname": "SchemeObserver#item",
         "kind": "member",
-        "memberof": "Scheme",
+        "memberof": "SchemeObserver",
         "scope": "instance"
     },
     {
         "comment": "/**\n     * Destroys the current scheme by removing the event listener from the matching media query.\n     */",
         "meta": {
             "range": [
-                1417,
-                1539
+                1441,
+                1563
             ],
-            "filename": "scheme.js",
+            "filename": "scheme-observer.js",
             "lineno": 41,
             "columnno": 4,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme",
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme-observer",
             "code": {
                 "id": "astnode100023405",
-                "name": "Scheme#destroy",
+                "name": "SchemeObserver#destroy",
                 "type": "MethodDefinition",
                 "paramnames": []
             },
@@ -56528,9 +56528,9 @@
         },
         "description": "Destroys the current scheme by removing the event listener from the matching media query.",
         "name": "destroy",
-        "longname": "Scheme#destroy",
+        "longname": "SchemeObserver#destroy",
         "kind": "function",
-        "memberof": "Scheme",
+        "memberof": "SchemeObserver",
         "scope": "instance",
         "params": []
     },
@@ -56538,13 +56538,13 @@
         "comment": "",
         "meta": {
             "range": [
-                1511,
-                1532
+                1535,
+                1556
             ],
-            "filename": "scheme.js",
+            "filename": "scheme-observer.js",
             "lineno": 43,
             "columnno": 8,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme",
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme-observer",
             "code": {
                 "id": "astnode100023423",
                 "name": "this.item",
@@ -56555,31 +56555,31 @@
         },
         "undocumented": true,
         "name": "item",
-        "longname": "Scheme#item",
+        "longname": "SchemeObserver#item",
         "kind": "member",
-        "memberof": "Scheme",
+        "memberof": "SchemeObserver",
         "scope": "instance"
     },
     {
         "comment": "",
         "meta": {
             "range": [
-                1552,
-                1558
+                1576,
+                1590
             ],
-            "filename": "scheme.js",
+            "filename": "scheme-observer.js",
             "lineno": 47,
             "columnno": 9,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme",
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme-observer",
             "code": {
                 "id": "astnode100023429",
-                "name": "exports.Scheme",
+                "name": "exports.SchemeObserver",
                 "type": "Identifier"
             }
         },
         "undocumented": true,
-        "name": "Scheme",
-        "longname": "Scheme",
+        "name": "SchemeObserver",
+        "longname": "SchemeObserver",
         "kind": "member",
         "scope": "global"
     },
@@ -92166,7 +92166,7 @@
             "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\icon\\icon.js",
             "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\icon-button\\icon-button.js",
             "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\image\\image.js",
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout\\layout.js",
+            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout-observer\\layout-observer.js",
             "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list\\list-item.js",
             "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list\\list-row.js",
             "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list\\list.js",
@@ -92191,7 +92191,7 @@
             "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\radio-button\\radio-button.js",
             "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple\\ripple.js",
             "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router\\router.js",
-            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme\\scheme.js",
+            "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme-observer\\scheme-observer.js",
             "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scrim\\scrim.js",
             "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\segmented-button\\segmented-button.js",
             "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\sheet\\sheet.js",

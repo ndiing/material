@@ -150,7 +150,7 @@ export default {
     component: DemoMain,
     children: [
         { path: "test", component: DemoTest },
-        
+
         { path: "badge", component: DemoBadge },
 
         { path: "bottom-app-bar", component: DemoBottomAppBar },

@@ -7,10 +7,8 @@ import "./material/material.js";
 
 import { Router } from "./material/router/router";
 
-
 import "./app/app.scss";
 import AppRoutes from "./app/app.js";
 
 const routes = [AppRoutes];
 Router.use(routes);
-
