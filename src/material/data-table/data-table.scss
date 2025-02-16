@@ -1,5 +1,4 @@
 @use "../mixins/mixins.scss";
-
 .md-data-table {
     --md-comp-data-table-density: 0;
     --md-comp-data-table-height: calc(56px + (var(--md-comp-data-table-density) * 4px));
@@ -11,7 +10,6 @@
     min-width: 0;
     min-height: 0;
 }
-
 .md-data-table__native {
     border-collapse: separate;
     border-spacing: 0;
@@ -19,38 +17,32 @@
     width: 100%;
     height: 100%;
     overflow: auto;
-
     thead {
         .md-data-table__cell {
             user-select: none;
             -webkit-tap-highlight-color: transparent;
         }
     }
-
     tbody {
         .md-data-table__cell {
             user-select: none;
             -webkit-tap-highlight-color: transparent;
         }
-
         &:focus {
             .md-data-table__cell {
                 background-color: var(--md-sys-color-primary10);
             }
         }
-
         &:active {
             .md-data-table__cell {
                 background-color: var(--md-sys-color-primary10);
             }
         }
-
         &:hover {
             .md-data-table__cell {
                 background-color: var(--md-sys-color-primary8);
             }
         }
-
         &[selected] {
             .md-data-table__cell {
                 background-color: var(--md-sys-color-secondary-container);
@@ -58,21 +50,16 @@
             }
         }
     }
-
     tfoot {
     }
-
     tr {
     }
-
     th {
         text-align: left;
     }
-
     td {
     }
 }
-
 .md-data-table__cell {
     display: flex;
     align-items: center;
@@ -83,12 +70,10 @@
     color: var(--md-sys-color-on-surface);
     border-bottom: 1px solid var(--md-sys-color-outline);
 }
-
 .md-data-table__avatar {
     width: 40px;
     height: 40px;
 }
-
 .md-data-table__labels {
     flex: 1;
     display: flex;
@@ -96,31 +81,26 @@
     min-width: 0;
     max-width: 100%;
 }
-
 .md-data-table__label {
     @include mixins.typescale-body-large();
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
-
 .md-data-table__sublabel {
     @include mixins.typescale-body-medium();
     height: var(--md-sys-typescale-body-medium-line-height);
     overflow: hidden;
     color: var(--md-sys-color-on-surface-variant);
 }
-
 .md-data-table__cell--two-line {
     min-height: 72px;
 }
-
 .md-data-table__cell--three-line {
     align-items: flex-start;
     padding-top: 12px;
     padding-bottom: 12px;
     min-height: 88px;
-
     .md-data-table__sublabel {
         height: calc(var(--md-sys-typescale-body-medium-line-height) * 2);
     }

@@ -6,7 +6,6 @@ import { closestScrollableElement, parseDate, stringifyDate } from "../util/util
 import { setPosition } from "../popper/popper";
 import { classMap } from "lit/directives/class-map.js";
 import { cache } from "lit/directives/cache.js";
-
 /**
  * @extends MdComponent
  * @element md-date-picker
@@ -47,9 +46,13 @@ class MdDatePickerComponent extends MdComponent {
         index: { state: true },
         selection: { state: true },
     };
+
     yearFormat = new Intl.DateTimeFormat(undefined, { year: "numeric" }).format;
+
     monthFormat = new Intl.DateTimeFormat(undefined, { month: "long" }).format;
+
     weekdayFormat = new Intl.DateTimeFormat(undefined, { weekday: "narrow" }).format;
+
     dayFormat = new Intl.DateTimeFormat(undefined, { day: "numeric" }).format;
 
     get startOfDay() {
@@ -158,7 +161,7 @@ class MdDatePickerComponent extends MdComponent {
                 .toggle="${ifDefined(item.toggle)}"
                 .selected="${ifDefined(item.selected)}"
                 .disabled="${ifDefined(item.disabled)}"
-                @click="${this.handleDatePickerIconButtonClick}"
+                @onIconButtonClick="${this.handleDatePickerIconButtonClick}"
             ></md-icon-button>
         `;
     }
@@ -307,6 +310,7 @@ class MdDatePickerComponent extends MdComponent {
         this.handleDatePickerScrimClose = this.handleDatePickerScrimClose.bind(this);
         this.datePickerScrim.addEventListener("onScrimClose", this.handleDatePickerScrimClose);
         if (this.modal && this.open) this.datePickerScrim.show();
+
         await this.updateComplete;
         this.style.setProperty("--md-comp-date-picker-height", this.clientHeight + "px");
         this.style.setProperty("--md-comp-date-picker-width", this.clientWidth + "px");
@@ -339,15 +343,11 @@ class MdDatePickerComponent extends MdComponent {
         this.index = this.defaultIndex;
         this.handleDatePickerShown = this.handleDatePickerShown.bind(this);
         this.addEventListener("animationend", this.handleDatePickerShown);
-
         this.datePickerWindow = closestScrollableElement(this);
-
         this.handleDatePickerWindowScroll = this.handleDatePickerWindowScroll.bind(this);
         this.datePickerWindow.addEventListener("scroll", this.handleDatePickerWindowScroll);
-
         this.handleDatePickerWindowClick = this.handleDatePickerWindowClick.bind(this);
         window.addEventListener("click", this.handleDatePickerWindowClick);
-
         this.style.removeProperty("--md-comp-date-picker-animation");
         setPosition({
             container: this,
@@ -375,10 +375,8 @@ class MdDatePickerComponent extends MdComponent {
     close() {
         this.handleDatePickerClosed = this.handleDatePickerClosed.bind(this);
         this.addEventListener("animationend", this.handleDatePickerClosed);
-
         this.datePickerWindow.removeEventListener("scroll", this.handleDatePickerWindowScroll);
         window.removeEventListener("click", this.handleDatePickerWindowClick);
-
         this.style.removeProperty("--md-comp-date-picker-animation");
         this.open = false;
         if (this.modal) this.datePickerScrim.close();
@@ -573,5 +571,7 @@ class MdDatePickerComponent extends MdComponent {
         this.emit("onDatePickerButtonClick", { event });
     }
 }
+
 customElements.define("md-date-picker", MdDatePickerComponent);
+
 export { MdDatePickerComponent };

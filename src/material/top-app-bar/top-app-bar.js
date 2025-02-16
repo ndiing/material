@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
-
 /**
  * @extends MdComponent
  * @element md-top-app-bar
@@ -50,6 +49,7 @@ class MdTopAppBarComponent extends MdComponent {
         super.connectedCallback();
         this.classList.add("md-top-app-bar");
         this.style.setProperty("--md-comp-sheet-animation", "none");
+
         await this.updateComplete;
         this.style.setProperty("--md-comp-sheet-width", this.clientWidth + "px");
         this.style.setProperty("--md-comp-sheet-height", this.clientHeight + "px");
@@ -98,5 +98,7 @@ class MdTopAppBarComponent extends MdComponent {
         this.emit("onTopAppBarIconButtonClick", { event });
     }
 }
+
 customElements.define("md-top-app-bar", MdTopAppBarComponent);
+
 export { MdTopAppBarComponent };

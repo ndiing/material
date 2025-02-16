@@ -11,7 +11,6 @@ md-layout-border,
     height: 100%;
     overflow: hidden;
 }
-
 md-layout-border-item,
 .md-layout__north,
 .md-layout__east,
@@ -20,27 +19,22 @@ md-layout-border-item,
 .md-layout__center {
     overflow: auto;
 }
-
 md-layout-border-item[region="north"],
 .md-layout__north {
     grid-area: north;
 }
-
 md-layout-border-item[region="east"],
 .md-layout__east {
     grid-area: east;
 }
-
 md-layout-border-item[region="south"],
 .md-layout__south {
     grid-area: south;
 }
-
 md-layout-border-item[region="west"],
 .md-layout__west {
     grid-area: west;
 }
-
 md-layout-border-item[region="center"],
 .md-layout__center {
     grid-area: center;

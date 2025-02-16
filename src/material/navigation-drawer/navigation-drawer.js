@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
-
 /**
  * @extends MdComponent
  * @element md-navigation-drawer
@@ -50,7 +49,7 @@ class MdNavigationDrawerComponent extends MdComponent {
                 .toggle="${ifDefined(item.toggle)}"
                 .selected="${ifDefined(item.selected)}"
                 .disabled="${ifDefined(item.disabled)}"
-                @click="${this.handleNavigationDrawerIconButtonClick}"
+                @onIconButtonClick="${this.handleNavigationDrawerIconButtonClick}"
             ></md-icon-button>
         `;
     }
@@ -84,6 +83,7 @@ class MdNavigationDrawerComponent extends MdComponent {
         this.handleNavigationDrawerScrimClose = this.handleNavigationDrawerScrimClose.bind(this);
         this.navigationDrawerScrim.addEventListener("onScrimClose", this.handleNavigationDrawerScrimClose);
         if (this.modal && this.open) this.navigationDrawerScrim.show();
+
         await this.updateComplete;
         this.style.setProperty("--md-comp-sheet-width", this.clientWidth + "px");
         this.style.setProperty("--md-comp-sheet-height", this.clientHeight + "px");
@@ -157,5 +157,7 @@ class MdNavigationDrawerComponent extends MdComponent {
         this.emit("onNavigationDrawerScrimClose", { event });
     }
 }
+
 customElements.define("md-navigation-drawer", MdNavigationDrawerComponent);
+
 export { MdNavigationDrawerComponent };

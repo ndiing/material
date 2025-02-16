@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { Ripple } from "../ripple/ripple";
-
 /**
  * @extends MdComponent
  * @element md-switch
@@ -55,6 +54,7 @@ class MdSwitchComponent extends MdComponent {
         this.defaultChecked = this.checked;
         this.classList.add("md-switch");
         this.style.setProperty("--md-comp-switch-thumb-transition-property", "none");
+
         await this.updateComplete;
         this.ripple = new Ripple(this, {
             container: ".md-switch__thumb",
@@ -93,5 +93,7 @@ class MdSwitchComponent extends MdComponent {
         this.emit("onSwitchNativeReset", { event });
     }
 }
+
 customElements.define("md-switch", MdSwitchComponent);
+
 export { MdSwitchComponent };

@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { Ripple } from "../ripple/ripple";
-
 /**
  * @extends MdComponent
  * @element md-list-item
@@ -125,6 +124,7 @@ class MdListItemComponent extends MdComponent {
     async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-list__item");
+
         await this.updateComplete;
         if (this.sublabel) {
             const sublabel = this.querySelector(".md-list__sublabel");
@@ -156,5 +156,7 @@ class MdListItemComponent extends MdComponent {
         }
     }
 }
+
 customElements.define("md-list-item", MdListItemComponent);
+
 export { MdListItemComponent };

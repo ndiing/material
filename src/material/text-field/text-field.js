@@ -3,7 +3,6 @@ import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
 import { classMap } from "lit/directives/class-map.js";
-
 /**
  * @extends MdComponent
  * @element md-text-field
@@ -231,14 +230,11 @@ class MdTextFieldComponent extends MdComponent {
 
     async connectedCallback() {
         super.connectedCallback();
-
         this.defaultValue = this.value;
-
         this.classList.add("md-text-field");
         this.classList.toggle("md-text-field--populated", !!this.value);
 
         await this.updateComplete;
-
         this.textFieldOffset = this.querySelector(".md-text-field__prefix,.md-text-field__native");
         this.style.setProperty("--md-comp-text-field-offset-left", this.textFieldOffset.offsetLeft + "px");
     }
@@ -360,5 +356,7 @@ class MdTextFieldComponent extends MdComponent {
         this.emit("onTextFieldKeydown", { event });
     }
 }
+
 customElements.define("md-text-field", MdTextFieldComponent);
+
 export { MdTextFieldComponent };

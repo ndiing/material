@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
-
 /**
  * @extends MdComponent
  * @element md-bottom-sheet
@@ -46,7 +45,7 @@ class MdBottomSheetComponent extends MdComponent {
                 .toggle="${ifDefined(item.toggle)}"
                 .selected="${ifDefined(item.selected)}"
                 .disabled="${ifDefined(item.disabled)}"
-                @click="${this.handleBottomSheetIconButtonClick}"
+                @onIconButtonClick="${this.handleBottomSheetIconButtonClick}"
             ></md-icon-button>
         `;
     }
@@ -93,6 +92,7 @@ class MdBottomSheetComponent extends MdComponent {
         this.handleBottomSheetScrimClose = this.handleBottomSheetScrimClose.bind(this);
         this.bottomSheetScrim.addEventListener("onScrimClose", this.handleBottomSheetScrimClose);
         if (this.modal && this.open) this.bottomSheetScrim.show();
+
         await this.updateComplete;
         this.style.setProperty("--md-comp-bottom-sheet-width", this.clientWidth + "px");
         this.style.setProperty("--md-comp-bottom-sheet-height", this.clientHeight + "px");
@@ -195,5 +195,7 @@ class MdBottomSheetComponent extends MdComponent {
         this.emit("onBottomSheetButtonClick", { event });
     }
 }
+
 customElements.define("md-bottom-sheet", MdBottomSheetComponent);
+
 export { MdBottomSheetComponent };

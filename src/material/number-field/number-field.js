@@ -1,7 +1,6 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { MdTextFieldComponent } from "../text-field/text-field";
-
 /**
  * @extends MdTextFieldComponent
  * @element md-number-field
@@ -36,5 +35,7 @@ class MdNumberFieldComponent extends MdTextFieldComponent {
         super.handleTextFieldIconButtonClick(event);
     }
 }
+
 customElements.define("md-number-field", MdNumberFieldComponent);
+
 export { MdNumberFieldComponent };

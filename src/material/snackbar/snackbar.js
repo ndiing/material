@@ -14,7 +14,6 @@ const queue = () => {
     return (callback) => (pending = execute(callback));
 };
 const task = queue();
-
 /**
  * @extends MdComponent
  * @element md-snackbar
@@ -55,7 +54,7 @@ class MdSnackbarComponent extends MdComponent {
                 .toggle="${ifDefined(item.toggle)}"
                 .selected="${ifDefined(item.selected)}"
                 .disabled="${ifDefined(item.disabled)}"
-                @click="${this.handleSnackbarIconButtonClick}"
+                @onIconButtonClick="${this.handleSnackbarIconButtonClick}"
             ></md-icon-button>
         `;
     }
@@ -97,6 +96,7 @@ class MdSnackbarComponent extends MdComponent {
         super.connectedCallback();
         this.classList.add("md-snackbar");
         this.style.setProperty("--md-comp-snackbar-animation", "none");
+
         await this.updateComplete;
         this.style.setProperty("--md-comp-snackbar-height", this.clientHeight + "px");
         this.style.setProperty("--md-comp-snackbar-width", this.clientWidth + "px");
@@ -190,5 +190,7 @@ class MdSnackbarComponent extends MdComponent {
         this.emit("onSnackbarButtonClick", { event });
     }
 }
+
 customElements.define("md-snackbar", MdSnackbarComponent);
+
 export { MdSnackbarComponent };

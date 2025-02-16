@@ -1,5 +1,4 @@
 @use "../mixins/mixins.scss";
-
 md-layout,
 .md-layout {
     width: 100%;
@@ -8,7 +7,6 @@ md-layout,
     min-height: 0;
     padding: 24px;
 }
-
 @include mixins.layout-compact() {
     md-layout-grid,
     .md-layout__grid {
@@ -16,7 +14,6 @@ md-layout,
         grid-template-columns: repeat(4, minmax(0, 1fr));
         grid-gap: 8px;
     }
-
     @for $i from 1 through 4 {
         md-layout-column[compact="#{$i}"],
         .md-layout__column--compact#{$i} {
@@ -24,7 +21,6 @@ md-layout,
         }
     }
 }
-
 @include mixins.layout-medium() {
     md-layout-grid,
     .md-layout__grid {
@@ -32,7 +28,6 @@ md-layout,
         grid-template-columns: repeat(8, minmax(0, 1fr));
         grid-gap: 16px;
     }
-
     @for $i from 1 through 8 {
         md-layout-column[medium="#{$i}"],
         .md-layout__column--medium#{$i} {
@@ -40,7 +35,6 @@ md-layout,
         }
     }
 }
-
 @include mixins.layout-expanded() {
     md-layout-grid,
     .md-layout__grid {
@@ -48,7 +42,6 @@ md-layout,
         grid-template-columns: repeat(12, minmax(0, 1fr));
         grid-gap: 24px;
     }
-
     @for $i from 1 through 12 {
         md-layout-column[expanded="#{$i}"],
         .md-layout__column--expanded#{$i} {

@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { Ripple } from "../ripple/ripple";
 import { ifDefined } from "lit/directives/if-defined.js";
-
 /**
  * @extends MdComponent
  * @element md-icon-button
@@ -59,6 +58,7 @@ class MdIconButtonComponent extends MdComponent {
         this.classList.add("md-icon-button");
         this.handleIconButtonClick = this.handleIconButtonClick.bind(this);
         this.addEventListener("click", this.handleIconButtonClick);
+
         await this.updateComplete;
         this.ripple = new Ripple(this, {
             trigger: ".md-icon-button__native",
@@ -94,5 +94,7 @@ class MdIconButtonComponent extends MdComponent {
         this.emit("onIconButtonClick", { event });
     }
 }
+
 customElements.define("md-icon-button", MdIconButtonComponent);
+
 export { MdIconButtonComponent };

@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { Ripple } from "../ripple/ripple";
-
 /**
  * @extends MdComponent
  * @element md-chips
@@ -65,5 +64,7 @@ class MdChipsComponent extends MdComponent {
         this.emit("onChipClick", { event });
     }
 }
+
 customElements.define("md-chips", MdChipsComponent);
+
 export { MdChipsComponent };

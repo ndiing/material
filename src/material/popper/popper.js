@@ -1,5 +1,4 @@
 import { closestScrollableElement } from "../util/util";
-
 // Calculates the position of an element based on the specified placement and options.
 // @param {string} placement - The placement type (e.g., 'top', 'bottom-end', etc.).
 // @param {Object} options - The options for calculating the position.
@@ -36,7 +35,6 @@ function calculatePosition(placement, options = {}) {
     };
     return (positions[placement] || positions.top)();
 }
-
 // Parses the offset string into an object with top, right, bottom, and left properties.
 // @param {string} offset - The offset string (e.g., "10 20 30 40").
 // @returns {Object} The parsed offset values.
@@ -46,12 +44,15 @@ function calculatePosition(placement, options = {}) {
 // @returns {number} [return.left] - The left offset value.
 function parseOffset(offset) {
     let [top = 0, right, bottom, left] = String(offset).split(" ").map(Number);
+
     right = right ?? top;
+
     bottom = bottom ?? top;
+
     left = left ?? right;
+
     return { top, right, bottom, left };
 }
-
 /**
  * @typedef {Object} PopperOptions
  * @property {HTMLElement} container - The container element to position.
@@ -60,7 +61,6 @@ function parseOffset(offset) {
  * @property {string} [offset="0"] - The offset values as a string (e.g., "10 20 30 40").
  * @property {Array<string>} placements - The array of placement types to try.
  */
-
 /**
  * Sets the position of a container element based on the provided options.
  * @param {PopperOptions} options - The options for setting the position.
@@ -91,8 +91,11 @@ function setPosition(options = {}) {
             bestTop = top;
         }
     }
+
     bestLeft = Math.max(boundaryRect.left, Math.min(bestLeft, boundaryRect.right - containerRect.width));
+
     bestTop = Math.max(boundaryRect.top, Math.min(bestTop, boundaryRect.bottom - containerRect.height));
+
     container.style.left = `${bestLeft}px`;
     container.style.top = `${bestTop}px`;
 }

@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
-
 /**
  * @extends MdComponent
  * @element md-card
@@ -42,7 +41,7 @@ class MdCardComponent extends MdComponent {
                 .toggle="${ifDefined(item.toggle)}"
                 .selected="${ifDefined(item.selected)}"
                 .disabled="${ifDefined(item.disabled)}"
-                @click="${this.handleCardIconButtonClick}"
+                @onIconButtonClick="${this.handleCardIconButtonClick}"
             ></md-icon-button>
         `;
     }
@@ -101,5 +100,7 @@ class MdCardComponent extends MdComponent {
         this.emit("onCardButtonClick", { event });
     }
 }
+
 customElements.define("md-card", MdCardComponent);
+
 export { MdCardComponent };

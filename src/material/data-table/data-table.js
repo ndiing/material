@@ -3,7 +3,6 @@ import { MdComponent } from "../component/component";
 import { styleMap } from "lit/directives/style-map.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { Store } from "../store/store";
-
 /**
  * @extends MdComponent
  * @element md-data-table
@@ -294,5 +293,7 @@ class MdDataTableComponent extends MdComponent {
         this.emit("onDataTableNativeBodyCellCheckboxClcik", { event });
     }
 }
+
 customElements.define("md-data-table", MdDataTableComponent);
+
 export { MdDataTableComponent };

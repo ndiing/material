@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { MdTextFieldComponent } from "../text-field/text-field";
 import { closestScrollableElement, parseWeek, stringifyWeek } from "../util/util";
-
 /**
  * @extends MdTextFieldComponent
  * @element md-week-field
@@ -42,7 +41,6 @@ class MdWeekFieldComponent extends MdTextFieldComponent {
             this.handleWeekFieldPickerButtonOkClick = this.handleWeekFieldPickerButtonOkClick.bind(this);
             this.picker.addEventListener("onWeekPickerButtonCancelClick", this.handleWeekFieldPickerButtonCancelClick);
             this.picker.addEventListener("onWeekPickerButtonOkClick", this.handleWeekFieldPickerButtonOkClick);
-
             this.handleWeekFieldPickerWindowScroll = this.handleWeekFieldPickerWindowScroll.bind(this);
             this.handleWeekFieldPickerWindowClick = this.handleWeekFieldPickerWindowClick.bind(this);
             this.picker.addEventListener("onWeekPickerWindowScroll", this.handleWeekFieldPickerWindowScroll);
@@ -56,10 +54,8 @@ class MdWeekFieldComponent extends MdTextFieldComponent {
         if (this.picker) {
             this.picker.removeEventListener("onWeekPickerButtonCancelClick", this.handleWeekFieldPickerButtonCancelClick);
             this.picker.removeEventListener("onWeekPickerButtonOkClick", this.handleWeekFieldPickerButtonOkClick);
-
             this.picker.removeEventListener("onWeekPickerWindowScroll", this.handleWeekFieldPickerWindowScroll);
             this.picker.removeEventListener("onWeekPickerWindowClick", this.handleWeekFieldPickerWindowClick);
-
             this.picker.remove();
             this.picker = undefined;
         }
@@ -115,6 +111,7 @@ class MdWeekFieldComponent extends MdTextFieldComponent {
 
     async handleWeekFieldIconButtonPickerClick(event) {
         this.pickerTrigger = event.currentTarget;
+
         await this.createPicker();
         this.togglePicker({ trigger: this.textFieldContainer });
     }
@@ -125,5 +122,7 @@ class MdWeekFieldComponent extends MdTextFieldComponent {
         super.handleTextFieldIconButtonClick(event);
     }
 }
+
 customElements.define("md-week-field", MdWeekFieldComponent);
+
 export { MdWeekFieldComponent };

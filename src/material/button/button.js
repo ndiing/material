@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { Ripple } from "../ripple/ripple";
 import { ifDefined } from "lit/directives/if-defined.js";
-
 /**
  * @extends MdComponent
  * @element md-button
@@ -47,6 +46,7 @@ class MdButtonComponent extends MdComponent {
     async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-button");
+
         await this.updateComplete;
         this.ripple = new Ripple(this, {
             trigger: ".md-button__native",
@@ -67,5 +67,7 @@ class MdButtonComponent extends MdComponent {
         }
     }
 }
+
 customElements.define("md-button", MdButtonComponent);
+
 export { MdButtonComponent };

@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { Ripple } from "../ripple/ripple";
-
 /**
  * @extends MdComponent
  * @element md-data-table-cell
@@ -56,6 +55,7 @@ class MdDataTableCellComponent extends MdComponent {
     async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-data-table__cell");
+
         await this.updateComplete;
         if (this.sublabel) {
             const sublabel = this.querySelector(".md-data-table__sublabel");
@@ -74,5 +74,7 @@ class MdDataTableCellComponent extends MdComponent {
         }
     }
 }
+
 customElements.define("md-data-table-cell", MdDataTableCellComponent);
+
 export { MdDataTableCellComponent };

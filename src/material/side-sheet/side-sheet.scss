@@ -1,37 +1,31 @@
 @use "../mixins/mixins.scss";
-
 .md-side-sheet {
     display: inline-flex;
     flex-direction: column;
     background-color: var(--md-sys-color-surface);
 }
-
 .md-side-sheet__header {
     display: flex;
     align-items: center;
     padding: 24px;
     gap: 0 16px;
 }
-
 .md-side-sheet__icons {
     display: flex;
     align-items: center;
     gap: 0 16px;
 }
-
 .md-side-sheet__labels {
     flex: 1;
     display: flex;
     flex-direction: column;
 }
-
 .md-side-sheet__label {
     @include mixins.typescale-title-large();
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
-
 .md-side-sheet__sublabel {
     @include mixins.typescale-body-medium();
     white-space: nowrap;
@@ -39,14 +33,12 @@
     text-overflow: ellipsis;
     color: var(--md-sys-color-on-surface-variant);
 }
-
 .md-side-sheet__actions {
     display: flex;
     align-items: center;
     gap: 0 16px;
     margin-left: auto;
 }
-
 .md-side-sheet__wrapper {
     flex: 1;
     display: flex;
@@ -54,29 +46,24 @@
     max-height: 100%;
     min-height: 0;
 }
-
 .md-side-sheet__body {
     flex: 1;
     overflow: auto;
 }
-
 .md-side-sheet__footer {
     display: flex;
     align-items: center;
     padding: 24px;
 }
-
 .md-side-sheet__buttons {
     flex: 1;
     display: flex;
     align-items: center;
     gap: 0 8px;
 }
-
 .md-side-sheet__spacer {
     flex: 1;
 }
-
 .md-side-sheet {
     grid-area: east;
     width: 256px;
@@ -85,7 +72,6 @@
     animation-name: var(--md-comp-side-sheet-animation);
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
     animation-duration: var(--md-sys-motion-duration-short3);
-
     &[open] {
         margin-right: 0;
         --md-comp-side-sheet-animation: side-sheet-out;
@@ -93,13 +79,11 @@
         animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
     }
 }
-
 .md-side-sheet--modal {
     background-color: var(--md-sys-color-surface-container-low);
     box-shadow: var(--md-sys-elevation-level1);
     position: absolute;
     z-index: 11;
-
     &.md-side-sheet {
         margin-right: 0;
         top: 0;
@@ -108,7 +92,6 @@
         border-radius: var(--md-sys-shape-corner-extra-large) 0 0 var(--md-sys-shape-corner-extra-large);
         transform: translate3d(100%, 0, 0);
         --md-comp-side-sheet-animation: side-sheet-modal-in;
-
         &[open] {
             transform: translate3d(0, 0, 0);
             --md-comp-side-sheet-animation: side-sheet-modal-out;

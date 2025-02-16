@@ -7,6 +7,7 @@ class Router {
      * @static
      * @property {Object} event
      */
+
     static params = {};
 
     // /**
@@ -84,8 +85,10 @@ class Router {
                     break;
                 }
             }
+
             await this.loadComponent(route);
             const container = this.setContainer(route);
+
             const outlet = await this.getOutlet(container, route);
             this.renderComponent(route, outlet);
             this.removeComponent(routes);
@@ -257,6 +260,7 @@ class Router {
      * @static
      * @type {Array}
      */
+
     static routes = [];
 
     // /**
@@ -264,6 +268,7 @@ class Router {
     //  * @static
     //  * @property {Object} event
     //  */
+
     static options = {};
 
     /**
@@ -274,12 +279,10 @@ class Router {
      * @property {Function} [beforeLoad] - The function to call before loading the component.
      * @property {RouterUseRoutes.<Array>} [children] - The child routes.
      */
-
     /**
      * @typedef {Object} RouterUseOptions
      * @property {boolean} [historyApiFallback=false] - Whether to use the History API for navigation.
      */
-
     /**
      * Initializes the router with the specified routes and options.
      * @static
@@ -296,7 +299,6 @@ class Router {
         if (this.options.historyApiFallback) {
             window.addEventListener("popstate", this.handleNavigation.bind(this));
             const pushState = window.history.pushState;
-
             window.history.pushState = function () {
                 pushState.apply(this, arguments);
                 Router.emit("popstate");

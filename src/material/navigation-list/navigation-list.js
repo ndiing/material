@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { Store } from "../store/store";
-
 /**
  * @extends MdComponent
  * @element md-navigation-list
@@ -155,5 +154,7 @@ class MdNavigationListComponent extends MdComponent {
         this.emit("onNavigationListItemClick", { event });
     }
 }
+
 customElements.define("md-navigation-list", MdNavigationListComponent);
+
 export { MdNavigationListComponent };

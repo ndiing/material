@@ -1,6 +1,5 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
-
 /**
  * @extends MdComponent
  * @element md-scrim
@@ -89,5 +88,7 @@ class MdScrimComponent extends MdComponent {
         }
     }
 }
+
 customElements.define("md-scrim", MdScrimComponent);
+
 export { MdScrimComponent };

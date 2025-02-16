@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { Ripple } from "../ripple/ripple";
-
 /**
  * @extends MdComponent
  * @element md-radio-button
@@ -52,6 +51,7 @@ class MdRadioButtonComponent extends MdComponent {
         this.defaultIndeterminate = this.indeterminate;
         this.defaultChecked = this.checked;
         this.classList.add("md-radio-button");
+
         await this.updateComplete;
         this.ripple = new Ripple(this, {
             container: ".md-radio-button__track",
@@ -88,5 +88,7 @@ class MdRadioButtonComponent extends MdComponent {
         this.emit("onRadioButtonNativeReset", { event });
     }
 }
+
 customElements.define("md-radio-button", MdRadioButtonComponent);
+
 export { MdRadioButtonComponent };

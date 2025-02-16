@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
-
 /**
  * @extends MdComponent
  * @element md-dialog
@@ -44,7 +43,7 @@ class MdDialogComponent extends MdComponent {
                 .toggle="${ifDefined(item.toggle)}"
                 .selected="${ifDefined(item.selected)}"
                 .disabled="${ifDefined(item.disabled)}"
-                @click="${this.handleDialogIconButtonClick}"
+                @onIconButtonClick="${this.handleDialogIconButtonClick}"
             ></md-icon-button>
         `;
     }
@@ -94,6 +93,7 @@ class MdDialogComponent extends MdComponent {
         this.handleDialogScrimClose = this.handleDialogScrimClose.bind(this);
         this.dialogScrim.addEventListener("onScrimClose", this.handleDialogScrimClose);
         if (this.open) this.dialogScrim.show();
+
         await this.updateComplete;
         this.style.setProperty("--md-comp-dialog-height", this.clientHeight + "px");
         this.style.setProperty("--md-comp-dialog-width", this.clientWidth + "px");
@@ -189,5 +189,7 @@ class MdDialogComponent extends MdComponent {
         this.emit("onDialogButtonClick", { event });
     }
 }
+
 customElements.define("md-dialog", MdDialogComponent);
+
 export { MdDialogComponent };

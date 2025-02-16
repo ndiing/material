@@ -7,24 +7,19 @@
     min-width: 0;
     max-width: 100%;
 }
-
 .md-segmented-button__button {
     --md-comp-button-density: var(--md-comp-segmented-button-density);
-
     &:first-child:not(:last-child) {
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
     }
-
     &:last-child:not(:first-child) {
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
     }
-
     &:not(:first-child):not(:last-child) {
         border-radius: 0;
     }
-
     + .md-segmented-button__button {
         margin-left: -1px;
     }

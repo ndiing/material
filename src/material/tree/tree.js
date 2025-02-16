@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { Store } from "../store/store";
-
 /**
  * @extends MdComponent
  * @element md-tree
@@ -229,5 +228,7 @@ class MdTreeComponent extends MdComponent {
         this.emit("onTreeItemClick", { event });
     }
 }
+
 customElements.define("md-tree", MdTreeComponent);
+
 export { MdTreeComponent };

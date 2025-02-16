@@ -1,6 +1,5 @@
 import { LitElement } from "lit";
 import { updateWhenLocaleChanges } from "@lit/localize";
-
 /**
  * @extends LitElement
  */

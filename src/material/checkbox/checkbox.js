@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { Ripple } from "../ripple/ripple";
-
 /**
  * @extends MdComponent
  * @element md-checkbox
@@ -52,6 +51,7 @@ class MdCheckboxComponent extends MdComponent {
         this.defaultIndeterminate = this.indeterminate;
         this.defaultChecked = this.checked;
         this.classList.add("md-checkbox");
+
         await this.updateComplete;
         this.ripple = new Ripple(this, {
             container: ".md-checkbox__track",
@@ -88,5 +88,7 @@ class MdCheckboxComponent extends MdComponent {
         this.emit("onCheckboxNativeReset", { event });
     }
 }
+
 customElements.define("md-checkbox", MdCheckboxComponent);
+
 export { MdCheckboxComponent };

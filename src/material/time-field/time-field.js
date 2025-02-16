@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { MdTextFieldComponent } from "../text-field/text-field";
 import { closestScrollableElement, parseTime, stringifyTime } from "../util/util";
-
 /**
  * @extends MdTextFieldComponent
  * @element md-time-field
@@ -42,7 +41,6 @@ class MdTimeFieldComponent extends MdTextFieldComponent {
             this.handleTimeFieldPickerButtonOkClick = this.handleTimeFieldPickerButtonOkClick.bind(this);
             this.picker.addEventListener("onTimePickerButtonCancelClick", this.handleTimeFieldPickerButtonCancelClick);
             this.picker.addEventListener("onTimePickerButtonOkClick", this.handleTimeFieldPickerButtonOkClick);
-
             this.handleTimeFieldPickerWindowScroll = this.handleTimeFieldPickerWindowScroll.bind(this);
             this.handleTimeFieldPickerWindowClick = this.handleTimeFieldPickerWindowClick.bind(this);
             this.picker.addEventListener("onTimePickerWindowScroll", this.handleTimeFieldPickerWindowScroll);
@@ -56,10 +54,8 @@ class MdTimeFieldComponent extends MdTextFieldComponent {
         if (this.picker) {
             this.picker.removeEventListener("onTimePickerButtonCancelClick", this.handleTimeFieldPickerButtonCancelClick);
             this.picker.removeEventListener("onTimePickerButtonOkClick", this.handleTimeFieldPickerButtonOkClick);
-
             this.picker.removeEventListener("onTimePickerWindowScroll", this.handleTimeFieldPickerWindowScroll);
             this.picker.removeEventListener("onTimePickerWindowClick", this.handleTimeFieldPickerWindowClick);
-
             this.picker.remove();
             this.picker = undefined;
         }
@@ -115,6 +111,7 @@ class MdTimeFieldComponent extends MdTextFieldComponent {
 
     async handleTimeFieldIconButtonPickerClick(event) {
         this.pickerTrigger = event.currentTarget;
+
         await this.createPicker();
         this.togglePicker({ trigger: this.textFieldContainer });
     }
@@ -125,5 +122,7 @@ class MdTimeFieldComponent extends MdTextFieldComponent {
         super.handleTextFieldIconButtonClick(event);
     }
 }
+
 customElements.define("md-time-field", MdTimeFieldComponent);
+
 export { MdTimeFieldComponent };

@@ -11,7 +11,6 @@ Date.prototype.setWeek = function (week) {
     this.setTime(weekStartTime);
     return this;
 };
-
 /**
  * Gets the current week number of the year.
  * @returns {number} The week number.

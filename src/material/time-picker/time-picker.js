@@ -6,7 +6,6 @@ import { closestScrollableElement, parseTime, stringifyTime } from "../util/util
 import { setPosition } from "../popper/popper";
 import { classMap } from "lit/directives/class-map.js";
 import { cache } from "lit/directives/cache.js";
-
 /**
  * @extends MdComponent
  * @element md-time-picker
@@ -47,7 +46,9 @@ class MdTimePickerComponent extends MdComponent {
         index: { state: true },
         selection: { state: true },
     };
+
     hourFormat = new Intl.DateTimeFormat(undefined, { hour: "numeric", hour12: false }).format;
+
     minuteFormat = new Intl.DateTimeFormat(undefined, { minute: "numeric", hour12: false }).format;
 
     get hours() {
@@ -128,7 +129,7 @@ class MdTimePickerComponent extends MdComponent {
                 .toggle="${ifDefined(item.toggle)}"
                 .selected="${ifDefined(item.selected)}"
                 .disabled="${ifDefined(item.disabled)}"
-                @click="${this.handleTimePickerIconButtonClick}"
+                @onIconButtonClick="${this.handleTimePickerIconButtonClick}"
             ></md-icon-button>
         `;
     }
@@ -242,6 +243,7 @@ class MdTimePickerComponent extends MdComponent {
         this.handleTimePickerScrimClose = this.handleTimePickerScrimClose.bind(this);
         this.timePickerScrim.addEventListener("onScrimClose", this.handleTimePickerScrimClose);
         if (this.modal && this.open) this.timePickerScrim.show();
+
         await this.updateComplete;
         this.style.setProperty("--md-comp-time-picker-height", this.clientHeight + "px");
         this.style.setProperty("--md-comp-time-picker-width", this.clientWidth + "px");
@@ -274,15 +276,11 @@ class MdTimePickerComponent extends MdComponent {
         this.index = this.defaultIndex;
         this.handleTimePickerShown = this.handleTimePickerShown.bind(this);
         this.addEventListener("animationend", this.handleTimePickerShown);
-
         this.timePickerWindow = closestScrollableElement(this);
-
         this.handleTimePickerWindowScroll = this.handleTimePickerWindowScroll.bind(this);
         this.timePickerWindow.addEventListener("scroll", this.handleTimePickerWindowScroll);
-
         this.handleTimePickerWindowClick = this.handleTimePickerWindowClick.bind(this);
         window.addEventListener("click", this.handleTimePickerWindowClick);
-
         this.style.removeProperty("--md-comp-time-picker-animation");
         setPosition({
             container: this,
@@ -310,10 +308,8 @@ class MdTimePickerComponent extends MdComponent {
     close() {
         this.handleTimePickerClosed = this.handleTimePickerClosed.bind(this);
         this.addEventListener("animationend", this.handleTimePickerClosed);
-
         this.timePickerWindow.removeEventListener("scroll", this.handleTimePickerWindowScroll);
         window.removeEventListener("click", this.handleTimePickerWindowClick);
-
         this.style.removeProperty("--md-comp-time-picker-animation");
         this.open = false;
         if (this.modal) this.timePickerScrim.close();
@@ -490,5 +486,7 @@ class MdTimePickerComponent extends MdComponent {
         this.emit("onTimePickerButtonClick", { event });
     }
 }
+
 customElements.define("md-time-picker", MdTimePickerComponent);
+
 export { MdTimePickerComponent };

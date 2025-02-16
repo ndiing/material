@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
-
 /**
  * @extends MdComponent
  * @element md-navigation-bar
@@ -36,6 +35,7 @@ class MdNavigationBarComponent extends MdComponent {
         super.connectedCallback();
         this.classList.add("md-navigation-bar");
         this.style.setProperty("--md-comp-sheet-animation", "none");
+
         await this.updateComplete;
         this.style.setProperty("--md-comp-sheet-width", this.clientWidth + "px");
         this.style.setProperty("--md-comp-sheet-height", this.clientHeight + "px");
@@ -76,5 +76,7 @@ class MdNavigationBarComponent extends MdComponent {
         else this.show();
     }
 }
+
 customElements.define("md-navigation-bar", MdNavigationBarComponent);
+
 export { MdNavigationBarComponent };

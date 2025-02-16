@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { createRef, ref } from "lit/directives/ref.js";
-
 /**
  * @extends MdComponent
  * @element md-form
@@ -115,5 +114,7 @@ class MdFormComponent extends MdComponent {
         this.emit("onFormNativeSubmit", { event });
     }
 }
+
 customElements.define("md-form", MdFormComponent);
+
 export { MdFormComponent };

@@ -6,7 +6,6 @@ import { closestScrollableElement, parseDatetimeLocal, stringifyDatetimeLocal } 
 import { setPosition } from "../popper/popper";
 import { classMap } from "lit/directives/class-map.js";
 import { cache } from "lit/directives/cache.js";
-
 /**
  * @extends MdComponent
  * @element md-datetime-picker
@@ -47,11 +46,17 @@ class MdDatetimePickerComponent extends MdComponent {
         index: { state: true },
         selection: { state: true },
     };
+
     yearFormat = new Intl.DateTimeFormat(undefined, { year: "numeric" }).format;
+
     monthFormat = new Intl.DateTimeFormat(undefined, { month: "long" }).format;
+
     weekdayFormat = new Intl.DateTimeFormat(undefined, { weekday: "narrow" }).format;
+
     dayFormat = new Intl.DateTimeFormat(undefined, { day: "numeric" }).format;
+
     hourFormat = new Intl.DateTimeFormat(undefined, { hour: "numeric", hour12: false }).format;
+
     minuteFormat = new Intl.DateTimeFormat(undefined, { minute: "numeric", hour12: false }).format;
 
     get startOfDay() {
@@ -193,7 +198,7 @@ class MdDatetimePickerComponent extends MdComponent {
                 .toggle="${ifDefined(item.toggle)}"
                 .selected="${ifDefined(item.selected)}"
                 .disabled="${ifDefined(item.disabled)}"
-                @click="${this.handleDatetimePickerIconButtonClick}"
+                @onIconButtonClick="${this.handleDatetimePickerIconButtonClick}"
             ></md-icon-button>
         `;
     }
@@ -378,6 +383,7 @@ class MdDatetimePickerComponent extends MdComponent {
         this.handleDatetimePickerScrimClose = this.handleDatetimePickerScrimClose.bind(this);
         this.datetimePickerScrim.addEventListener("onScrimClose", this.handleDatetimePickerScrimClose);
         if (this.modal && this.open) this.datetimePickerScrim.show();
+
         await this.updateComplete;
         this.style.setProperty("--md-comp-datetime-picker-height", this.clientHeight + "px");
         this.style.setProperty("--md-comp-datetime-picker-width", this.clientWidth + "px");
@@ -408,20 +414,14 @@ class MdDatetimePickerComponent extends MdComponent {
      */
     show(options) {
         this.index = this.defaultIndex;
-
         this.handleDatetimePickerShown = this.handleDatetimePickerShown.bind(this);
         this.addEventListener("animationend", this.handleDatetimePickerShown);
-
         this.datetimePickerWindow = closestScrollableElement(this);
-
         this.handleDatetimePickerWindowScroll = this.handleDatetimePickerWindowScroll.bind(this);
         this.datetimePickerWindow.addEventListener("scroll", this.handleDatetimePickerWindowScroll);
-
         this.handleDatetimePickerWindowClick = this.handleDatetimePickerWindowClick.bind(this);
         window.addEventListener("click", this.handleDatetimePickerWindowClick);
-
         this.style.removeProperty("--md-comp-datetime-picker-animation");
-
         setPosition({
             container: this,
             offset: 4 + 4,
@@ -434,11 +434,8 @@ class MdDatetimePickerComponent extends MdComponent {
             ],
             ...options,
         });
-
         this.open = true;
-
         if (this.modal) this.datetimePickerScrim.show();
-
         /**
          * @event onDatetimePickerShow
          * @property {Object} event
@@ -451,16 +448,11 @@ class MdDatetimePickerComponent extends MdComponent {
     close() {
         this.handleDatetimePickerClosed = this.handleDatetimePickerClosed.bind(this);
         this.addEventListener("animationend", this.handleDatetimePickerClosed);
-
         this.datetimePickerWindow.removeEventListener("scroll", this.handleDatetimePickerWindowScroll);
         window.removeEventListener("click", this.handleDatetimePickerWindowClick);
-
         this.style.removeProperty("--md-comp-datetime-picker-animation");
-
         this.open = false;
-
         if (this.modal) this.datetimePickerScrim.close();
-
         /**
          * @event onDatetimePickerClose
          * @property {Object} event
@@ -682,5 +674,7 @@ class MdDatetimePickerComponent extends MdComponent {
         this.emit("onDatetimePickerButtonClick", { event });
     }
 }
+
 customElements.define("md-datetime-picker", MdDatetimePickerComponent);
+
 export { MdDatetimePickerComponent };

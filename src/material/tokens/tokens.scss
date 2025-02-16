@@ -1,5 +1,4 @@
 @use "../mixins/mixins.scss";
-
 @include mixins.scheme-light() {
     :root {
         --md-sys-color-primary: #6750a4;
@@ -54,7 +53,6 @@
         --md-sys-color-shadow: #000000;
     }
 }
-
 @include mixins.scheme-dark() {
     :root {
         --md-sys-color-primary: #d0bcff;
@@ -109,7 +107,6 @@
         --md-sys-color-shadow: #000000;
     }
 }
-
 :root {
     --md-sys-elevation-surface-tint-color: ;
     --md-sys-elevation-level5: rgba(0, 0, 0, 0.2) 0px 7px 8px -4px, rgba(0, 0, 0, 0.14) 0px 12px 17px 2px, rgba(0, 0, 0, 0.12) 0px 5px 22px 4px;
@@ -120,7 +117,6 @@
     --md-sys-elevation-level0: rgba(0, 0, 0, 0.2) 0px 0px 0px 0px, rgba(0, 0, 0, 0.14) 0px 0px 0px 0px, rgba(0, 0, 0, 0.12) 0px 0px 0px 0px;
     --md-sys-elevation-level5: rgba(0, 0, 0, 0.2) 0px 7px 8px -4px, rgba(0, 0, 0, 0.14) 0px 12px 17px 2px, rgba(0, 0, 0, 0.12) 0px 5px 22px 4px;
 }
-
 :root {
     --md-sys-motion-easing-emphasized: 0.2, 0, 0, 1;
     --md-sys-motion-easing-emphasized-accelerate: 0.3, 0, 0.8, 0.15;
@@ -151,7 +147,6 @@
     --md-sys-motion-duration-extra-long4: 1000ms;
     --md-sys-motion-path: Linear;
 }
-
 :root {
     --md-sys-shape-corner-full: Circular;
     --md-sys-shape-corner-extra-large-top: 28px 28px 0 0;
@@ -166,7 +161,6 @@
     --md-sys-shape-corner-extra-small: 4px;
     --md-sys-shape-corner-none: 0;
 }
-
 :root {
     --md-sys-typescale-display-large-font: "Noto Sans";
     --md-sys-typescale-display-large-weight: 400;
@@ -247,7 +241,6 @@
     --md-sys-typescale-label-small-tracking: 0.5px;
     --md-sys-typescale-label-small-line-height: 16px;
 }
-
 body {
     --md-sys-color-error38: color-mix(in srgb, var(--md-sys-color-error) 38%, transparent);
     --md-sys-color-on-surface12: color-mix(in srgb, var(--md-sys-color-on-surface) 12%, transparent);

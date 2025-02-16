@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { Ripple } from "../ripple/ripple";
-
 /**
  * @extends MdComponent
  * @element md-navigation-list-item
@@ -49,6 +48,7 @@ class MdNavigationListItemComponent extends MdComponent {
     async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-navigation-list__item");
+
         await this.updateComplete;
         this.ripple = new Ripple(this, this.rippleOptions);
     }
@@ -70,5 +70,7 @@ class MdNavigationListItemComponent extends MdComponent {
         }
     }
 }
+
 customElements.define("md-navigation-list-item", MdNavigationListItemComponent);
+
 export { MdNavigationListItemComponent };

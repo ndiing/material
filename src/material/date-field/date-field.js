@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { MdTextFieldComponent } from "../text-field/text-field";
 import { closestScrollableElement, parseDate, stringifyDate } from "../util/util";
-
 /**
  * @extends MdTextFieldComponent
  * @element md-date-field
@@ -44,7 +43,6 @@ class MdDateFieldComponent extends MdTextFieldComponent {
             this.handleDateFieldPickerWindowClick = this.handleDateFieldPickerWindowClick.bind(this);
             this.picker.addEventListener("onDatePickerButtonCancelClick", this.handleDateFieldPickerButtonCancelClick);
             this.picker.addEventListener("onDatePickerButtonOkClick", this.handleDateFieldPickerButtonOkClick);
-
             this.picker.addEventListener("onDatePickerWindowScroll", this.handleDateFieldPickerWindowScroll);
             this.picker.addEventListener("onDatePickerWindowClick", this.handleDateFieldPickerWindowClick);
 
@@ -56,10 +54,8 @@ class MdDateFieldComponent extends MdTextFieldComponent {
         if (this.picker) {
             this.picker.removeEventListener("onDatePickerButtonCancelClick", this.handleDateFieldPickerButtonCancelClick);
             this.picker.removeEventListener("onDatePickerButtonOkClick", this.handleDateFieldPickerButtonOkClick);
-
             this.picker.removeEventListener("onDatePickerWindowScroll", this.handleDateFieldPickerWindowScroll);
             this.picker.removeEventListener("onDatePickerWindowClick", this.handleDateFieldPickerWindowClick);
-
             this.picker.remove();
             this.picker = undefined;
         }
@@ -115,6 +111,7 @@ class MdDateFieldComponent extends MdTextFieldComponent {
 
     async handleDateFieldIconButtonPickerClick(event) {
         this.pickerTrigger = event.currentTarget;
+
         await this.createPicker();
         this.togglePicker({ trigger: this.textFieldContainer });
     }
@@ -125,5 +122,7 @@ class MdDateFieldComponent extends MdTextFieldComponent {
         super.handleTextFieldIconButtonClick(event);
     }
 }
+
 customElements.define("md-date-field", MdDateFieldComponent);
+
 export { MdDateFieldComponent };

@@ -1,6 +1,5 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
-
 /**
  * @extends MdComponent
  * @element md-progress-indicator
@@ -99,5 +98,7 @@ class MdProgressIndicatorComponent extends MdComponent {
         }
     }
 }
+
 customElements.define("md-progress-indicator", MdProgressIndicatorComponent);
+
 export { MdProgressIndicatorComponent };

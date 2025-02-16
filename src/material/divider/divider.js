@@ -1,6 +1,5 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
-
 /**
  * MdDividerComponent class responsible for displaying a divider.
  * @extends MdComponent
@@ -26,4 +25,5 @@ class MdDividerComponent extends MdComponent {
 }
 
 customElements.define("md-divider", MdDividerComponent);
+
 export { MdDividerComponent };

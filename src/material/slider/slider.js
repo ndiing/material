@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { classMap } from "lit/directives/class-map.js";
-
 /**
  * @extends MdComponent
  * @element md-slider
@@ -117,6 +116,7 @@ class MdSliderComponent extends MdComponent {
         else if (this.step > 1) this.variant = "discrete";
         else if (this.value.length > 1) this.variant = "range-selection";
         else this.variant = "continuous";
+
         await this.updateComplete;
         this.updateValue();
     }
@@ -170,5 +170,7 @@ class MdSliderComponent extends MdComponent {
         this.emit("onSliderNativeReset", { event });
     }
 }
+
 customElements.define("md-slider", MdSliderComponent);
+
 export { MdSliderComponent };

@@ -3,7 +3,6 @@ import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
 import { setPosition } from "../popper/popper";
-
 /**
  * @extends MdComponent
  * @element md-tooltip
@@ -45,7 +44,7 @@ class MdTooltipComponent extends MdComponent {
                 .toggle="${ifDefined(item.toggle)}"
                 .selected="${ifDefined(item.selected)}"
                 .disabled="${ifDefined(item.disabled)}"
-                @click="${this.handleTooltipIconButtonClick}"
+                @onIconButtonClick="${this.handleTooltipIconButtonClick}"
             ></md-icon-button>
         `;
     }
@@ -141,5 +140,7 @@ class MdTooltipComponent extends MdComponent {
         this.emit("onTooltipButtonClick", { event });
     }
 }
+
 customElements.define("md-tooltip", MdTooltipComponent);
+
 export { MdTooltipComponent };

@@ -4,7 +4,6 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
 import { setPosition } from "../popper/popper";
 import { closestScrollableElement } from "../util/util";
-
 /**
  * @extends MdComponent
  * @element md-menu
@@ -37,6 +36,7 @@ class MdMenuComponent extends MdComponent {
         super.connectedCallback();
         this.classList.add("md-menu");
         this.style.setProperty("--md-comp-menu-animation", "none");
+
         await this.updateComplete;
         this.style.setProperty("--md-comp-menu-height", this.clientHeight + "px");
         this.style.setProperty("--md-comp-menu-width", this.clientWidth + "px");
@@ -133,5 +133,7 @@ class MdMenuComponent extends MdComponent {
         this.emit("onMenuClosed", { event });
     }
 }
+
 customElements.define("md-menu", MdMenuComponent);
+
 export { MdMenuComponent };

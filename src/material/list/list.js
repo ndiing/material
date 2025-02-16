@@ -1,7 +1,6 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
-
 /**
  * @extends MdComponent
  * @element md-list
@@ -129,5 +128,7 @@ class MdListComponent extends MdComponent {
         this.emit("onListItemSwitchNativeInput", { event });
     }
 }
+
 customElements.define("md-list", MdListComponent);
+
 export { MdListComponent };

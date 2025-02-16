@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
-
 /**
  * @extends MdComponent
  * @element md-navigation-rail
@@ -45,7 +44,7 @@ class MdNavigationRailComponent extends MdComponent {
                 .toggle="${ifDefined(item.toggle)}"
                 .selected="${ifDefined(item.selected)}"
                 .disabled="${ifDefined(item.disabled)}"
-                @click="${this.handleNavigationRailIconButtonClick}"
+                @onIconButtonClick="${this.handleNavigationRailIconButtonClick}"
             ></md-icon-button>
         `;
     }
@@ -79,6 +78,7 @@ class MdNavigationRailComponent extends MdComponent {
         super.connectedCallback();
         this.classList.add("md-navigation-rail");
         this.style.setProperty("--md-comp-sheet-animation", "none");
+
         await this.updateComplete;
         this.style.setProperty("--md-comp-sheet-width", this.clientWidth + "px");
         this.style.setProperty("--md-comp-sheet-height", this.clientHeight + "px");
@@ -127,5 +127,7 @@ class MdNavigationRailComponent extends MdComponent {
         this.emit("onNavigationRailIconButtonClick", { event });
     }
 }
+
 customElements.define("md-navigation-rail", MdNavigationRailComponent);
+
 export { MdNavigationRailComponent };

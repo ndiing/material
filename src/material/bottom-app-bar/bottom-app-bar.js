@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
-
 /**
  * @extends MdComponent
  * @element md-bottom-app-bar
@@ -34,7 +33,7 @@ class MdBottomAppBarComponent extends MdComponent {
                 .toggle="${ifDefined(item.toggle)}"
                 .selected="${ifDefined(item.selected)}"
                 .disabled="${ifDefined(item.disabled)}"
-                @click="${this.handleBottomAppBarIconButtonClick}"
+                @onIconButtonClick="${this.handleBottomAppBarIconButtonClick}"
             ></md-icon-button>
         `;
     }
@@ -62,6 +61,7 @@ class MdBottomAppBarComponent extends MdComponent {
         super.connectedCallback();
         this.classList.add("md-bottom-app-bar");
         this.style.setProperty("--md-comp-sheet-animation", "none");
+
         await this.updateComplete;
         this.style.setProperty("--md-comp-sheet-width", this.clientWidth + "px");
         this.style.setProperty("--md-comp-sheet-height", this.clientHeight + "px");
@@ -118,5 +118,7 @@ class MdBottomAppBarComponent extends MdComponent {
         this.emit("onBottomAppBarFabClick", { event });
     }
 }
+
 customElements.define("md-bottom-app-bar", MdBottomAppBarComponent);
+
 export { MdBottomAppBarComponent };

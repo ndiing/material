@@ -6,7 +6,6 @@ import { closestScrollableElement, parseWeek, stringifyWeek } from "../util/util
 import { setPosition } from "../popper/popper";
 import { classMap } from "lit/directives/class-map.js";
 import { cache } from "lit/directives/cache.js";
-
 /**
  * @extends MdComponent
  * @element md-week-picker
@@ -47,9 +46,13 @@ class MdWeekPickerComponent extends MdComponent {
         index: { state: true },
         selection: { state: true },
     };
+
     yearFormat = new Intl.DateTimeFormat(undefined, { year: "numeric" }).format;
+
     monthFormat = new Intl.DateTimeFormat(undefined, { month: "long" }).format;
+
     weekdayFormat = new Intl.DateTimeFormat(undefined, { weekday: "narrow" }).format;
+
     dayFormat = new Intl.DateTimeFormat(undefined, { day: "numeric" }).format;
 
     get startOfDay() {
@@ -163,7 +166,7 @@ class MdWeekPickerComponent extends MdComponent {
                 .toggle="${ifDefined(item.toggle)}"
                 .selected="${ifDefined(item.selected)}"
                 .disabled="${ifDefined(item.disabled)}"
-                @click="${this.handleWeekPickerIconButtonClick}"
+                @onIconButtonClick="${this.handleWeekPickerIconButtonClick}"
             ></md-icon-button>
         `;
     }
@@ -314,6 +317,7 @@ class MdWeekPickerComponent extends MdComponent {
         this.handleWeekPickerScrimClose = this.handleWeekPickerScrimClose.bind(this);
         this.weekPickerScrim.addEventListener("onScrimClose", this.handleWeekPickerScrimClose);
         if (this.modal && this.open) this.weekPickerScrim.show();
+
         await this.updateComplete;
         this.style.setProperty("--md-comp-week-picker-height", this.clientHeight + "px");
         this.style.setProperty("--md-comp-week-picker-width", this.clientWidth + "px");
@@ -346,15 +350,11 @@ class MdWeekPickerComponent extends MdComponent {
         this.index = this.defaultIndex;
         this.handleWeekPickerShown = this.handleWeekPickerShown.bind(this);
         this.addEventListener("animationend", this.handleWeekPickerShown);
-
         this.weekPickerWindow = closestScrollableElement(this);
-
         this.handleWeekPickerWindowScroll = this.handleWeekPickerWindowScroll.bind(this);
         this.weekPickerWindow.addEventListener("scroll", this.handleWeekPickerWindowScroll);
-
         this.handleWeekPickerWindowClick = this.handleWeekPickerWindowClick.bind(this);
         window.addEventListener("click", this.handleWeekPickerWindowClick);
-
         this.style.removeProperty("--md-comp-week-picker-animation");
         setPosition({
             container: this,
@@ -382,10 +382,8 @@ class MdWeekPickerComponent extends MdComponent {
     close() {
         this.handleWeekPickerClosed = this.handleWeekPickerClosed.bind(this);
         this.addEventListener("animationend", this.handleWeekPickerClosed);
-
         this.weekPickerWindow.removeEventListener("scroll", this.handleWeekPickerWindowScroll);
         window.removeEventListener("click", this.handleWeekPickerWindowClick);
-
         this.style.removeProperty("--md-comp-week-picker-animation");
         this.open = false;
         if (this.modal) this.weekPickerScrim.close();
@@ -580,5 +578,7 @@ class MdWeekPickerComponent extends MdComponent {
         this.emit("onWeekPickerButtonClick", { event });
     }
 }
+
 customElements.define("md-week-picker", MdWeekPickerComponent);
+
 export { MdWeekPickerComponent };

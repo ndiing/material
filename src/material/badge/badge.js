@@ -1,6 +1,5 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
-
 /**
  * MdBadgeComponent class responsible for displaying a badge with a label.
  * @extends MdComponent
@@ -42,5 +41,7 @@ class MdBadgeComponent extends MdComponent {
         this.classList.add("md-badge");
     }
 }
+
 customElements.define("md-badge", MdBadgeComponent);
+
 export { MdBadgeComponent };

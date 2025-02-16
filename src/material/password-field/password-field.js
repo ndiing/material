@@ -1,7 +1,6 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { MdTextFieldComponent } from "../text-field/text-field";
-
 /**
  * @extends MdTextFieldComponent
  * @element md-password-field
@@ -31,5 +30,7 @@ class MdPasswordFieldComponent extends MdTextFieldComponent {
         super.handleTextFieldIconButtonClick(event);
     }
 }
+
 customElements.define("md-password-field", MdPasswordFieldComponent);
+
 export { MdPasswordFieldComponent };

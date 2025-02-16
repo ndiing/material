@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
-
 /**
  * @extends MdComponent
  * @element md-sheet
@@ -51,7 +50,7 @@ class MdSheetComponent extends MdComponent {
                 .toggle="${ifDefined(item.toggle)}"
                 .selected="${ifDefined(item.selected)}"
                 .disabled="${ifDefined(item.disabled)}"
-                @click="${this.handleSheetIconButtonClick}"
+                @onIconButtonClick="${this.handleSheetIconButtonClick}"
             ></md-icon-button>
         `;
     }
@@ -98,6 +97,7 @@ class MdSheetComponent extends MdComponent {
         this.handleSheetScrimClose = this.handleSheetScrimClose.bind(this);
         this.sheetScrim.addEventListener("onScrimClose", this.handleSheetScrimClose);
         if (this.modal && this.open) this.sheetScrim.show();
+
         await this.updateComplete;
         this.style.setProperty("--md-comp-sheet-width", this.clientWidth + "px");
         this.style.setProperty("--md-comp-sheet-height", this.clientHeight + "px");
@@ -201,5 +201,7 @@ class MdSheetComponent extends MdComponent {
         this.emit("onSheetButtonClick", { event });
     }
 }
+
 customElements.define("md-sheet", MdSheetComponent);
+
 export { MdSheetComponent };

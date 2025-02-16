@@ -1,5 +1,4 @@
 @use "../mixins/mixins.scss";
-
 .md-fab {
     display: inline-flex;
     align-items: center;
@@ -15,46 +14,39 @@
     color: var(--md-sys-color-on-primary-container);
     box-shadow: var(--md-sys-elevation-level1);
 }
-
 .md-fab__label {
     @include mixins.typescale-label-large();
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
-
 .md-fab--small {
     width: 40px;
     height: 40px;
     border-radius: var(--md-sys-shape-corner-medium);
 }
-
 .md-fab--large {
     width: 96px;
     height: 96px;
     border-radius: var(--md-sys-shape-corner-extra-large);
-
     .md-fab__icon {
         width: 36px;
         height: 36px;
         font-size: 36px;
     }
 }
-
 .md-fab--extended {
     gap: 8px;
     width: auto;
     height: 56px;
     border-radius: var(--md-sys-shape-corner-large);
     min-width: 80px;
-
     .md-fab__icon {
         width: 24px;
         height: 24px;
         font-size: 24px;
     }
 }
-
 .md-fab--unelevated {
     box-shadow: none;
 }

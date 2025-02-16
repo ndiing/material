@@ -7,7 +7,6 @@ class Movable {
      * @property {Array<string>} [axis=["x", "y"]] - The axis along which the element can be moved.
      * @property {Array<string>} [handles=["n", "e", "s", "w", "nw", "ne", "sw", "se"]] - The resize handles.
      */
-
     /**
      * Creates an instance of the Movable class.
      * @param {HTMLElement} host - The host element.

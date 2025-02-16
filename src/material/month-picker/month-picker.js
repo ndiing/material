@@ -6,7 +6,6 @@ import { closestScrollableElement, parseMonth, stringifyMonth } from "../util/ut
 import { setPosition } from "../popper/popper";
 import { classMap } from "lit/directives/class-map.js";
 import { cache } from "lit/directives/cache.js";
-
 /**
  * @extends MdComponent
  * @element md-month-picker
@@ -47,7 +46,9 @@ class MdMonthPickerComponent extends MdComponent {
         index: { state: true },
         selection: { state: true },
     };
+
     yearFormat = new Intl.DateTimeFormat(undefined, { year: "numeric" }).format;
+
     monthFormat = new Intl.DateTimeFormat(undefined, { month: "long" }).format;
 
     get years() {
@@ -124,7 +125,7 @@ class MdMonthPickerComponent extends MdComponent {
                 .toggle="${ifDefined(item.toggle)}"
                 .selected="${ifDefined(item.selected)}"
                 .disabled="${ifDefined(item.disabled)}"
-                @click="${this.handleMonthPickerIconButtonClick}"
+                @onIconButtonClick="${this.handleMonthPickerIconButtonClick}"
             ></md-icon-button>
         `;
     }
@@ -238,6 +239,7 @@ class MdMonthPickerComponent extends MdComponent {
         this.handleMonthPickerScrimClose = this.handleMonthPickerScrimClose.bind(this);
         this.monthPickerScrim.addEventListener("onScrimClose", this.handleMonthPickerScrimClose);
         if (this.modal && this.open) this.monthPickerScrim.show();
+
         await this.updateComplete;
         this.style.setProperty("--md-comp-month-picker-height", this.clientHeight + "px");
         this.style.setProperty("--md-comp-month-picker-width", this.clientWidth + "px");
@@ -270,15 +272,11 @@ class MdMonthPickerComponent extends MdComponent {
         this.index = this.defaultIndex;
         this.handleMonthPickerShown = this.handleMonthPickerShown.bind(this);
         this.addEventListener("animationend", this.handleMonthPickerShown);
-
         this.monthPickerWindow = closestScrollableElement(this);
-
         this.handleMonthPickerWindowScroll = this.handleMonthPickerWindowScroll.bind(this);
         this.monthPickerWindow.addEventListener("scroll", this.handleMonthPickerWindowScroll);
-
         this.handleMonthPickerWindowClick = this.handleMonthPickerWindowClick.bind(this);
         window.addEventListener("click", this.handleMonthPickerWindowClick);
-
         this.style.removeProperty("--md-comp-month-picker-animation");
         setPosition({
             container: this,
@@ -306,10 +304,8 @@ class MdMonthPickerComponent extends MdComponent {
     close() {
         this.handleMonthPickerClosed = this.handleMonthPickerClosed.bind(this);
         this.addEventListener("animationend", this.handleMonthPickerClosed);
-
         this.monthPickerWindow.removeEventListener("scroll", this.handleMonthPickerWindowScroll);
         window.removeEventListener("click", this.handleMonthPickerWindowClick);
-
         this.style.removeProperty("--md-comp-month-picker-animation");
         this.open = false;
         if (this.modal) this.monthPickerScrim.close();
@@ -488,5 +484,7 @@ class MdMonthPickerComponent extends MdComponent {
         this.emit("onMonthPickerButtonClick", { event });
     }
 }
+
 customElements.define("md-month-picker", MdMonthPickerComponent);
+
 export { MdMonthPickerComponent };

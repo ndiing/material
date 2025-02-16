@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { MdTextFieldComponent } from "../text-field/text-field";
 import { closestScrollableElement, parseMonth, stringifyMonth } from "../util/util";
-
 /**
  * @extends MdTextFieldComponent
  * @element md-month-field
@@ -42,10 +41,8 @@ class MdMonthFieldComponent extends MdTextFieldComponent {
             this.handleMonthFieldPickerButtonOkClick = this.handleMonthFieldPickerButtonOkClick.bind(this);
             this.picker.addEventListener("onMonthPickerButtonCancelClick", this.handleMonthFieldPickerButtonCancelClick);
             this.picker.addEventListener("onMonthPickerButtonOkClick", this.handleMonthFieldPickerButtonOkClick);
-
             this.picker.addEventListener("onMonthPickerButtonCancelClick", this.handleMonthFieldPickerButtonCancelClick);
             this.picker.addEventListener("onMonthPickerButtonOkClick", this.handleMonthFieldPickerButtonOkClick);
-
             this.handleMonthFieldPickerWindowScroll = this.handleMonthFieldPickerWindowScroll.bind(this);
             this.handleMonthFieldPickerWindowClick = this.handleMonthFieldPickerWindowClick.bind(this);
             this.picker.addEventListener("onMonthPickerWindowScroll", this.handleMonthFieldPickerWindowScroll);
@@ -59,10 +56,8 @@ class MdMonthFieldComponent extends MdTextFieldComponent {
         if (this.picker) {
             this.picker.removeEventListener("onMonthPickerButtonCancelClick", this.handleMonthFieldPickerButtonCancelClick);
             this.picker.removeEventListener("onMonthPickerButtonOkClick", this.handleMonthFieldPickerButtonOkClick);
-
             this.picker.removeEventListener("onMonthPickerWindowScroll", this.handleMonthFieldPickerWindowScroll);
             this.picker.removeEventListener("onMonthPickerWindowClick", this.handleMonthFieldPickerWindowClick);
-
             this.picker.remove();
             this.picker = undefined;
         }
@@ -118,6 +113,7 @@ class MdMonthFieldComponent extends MdTextFieldComponent {
 
     async handleMonthFieldIconButtonPickerClick(event) {
         this.pickerTrigger = event.currentTarget;
+
         await this.createPicker();
         this.togglePicker({ trigger: this.textFieldContainer });
     }
@@ -128,5 +124,7 @@ class MdMonthFieldComponent extends MdTextFieldComponent {
         super.handleTextFieldIconButtonClick(event);
     }
 }
+
 customElements.define("md-month-field", MdMonthFieldComponent);
+
 export { MdMonthFieldComponent };

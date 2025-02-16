@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { Ripple } from "../ripple/ripple";
 import { ifDefined } from "lit/directives/if-defined.js";
-
 /**
  * @extends MdComponent
  * @element md-fab
@@ -40,6 +39,7 @@ class MdFabComponent extends MdComponent {
     async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-fab");
+
         await this.updateComplete;
         this.ripple = new Ripple(this, {});
     }
@@ -68,5 +68,7 @@ class MdFabComponent extends MdComponent {
         }
     }
 }
+
 customElements.define("md-fab", MdFabComponent);
+
 export { MdFabComponent };

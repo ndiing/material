@@ -5,7 +5,6 @@ const localization = configureLocalization({
     targetLocales,
     loadLocale: (locale) => import(`../../generated/locales/${locale}.js`),
 });
-
 /**
  * Retrieves the current locale.
  * @returns {string} The current locale.
@@ -13,7 +12,6 @@ const localization = configureLocalization({
 function getLocale() {
     return localization.getLocale(arguments);
 }
-
 /**
  * Sets the specified locale.
  * @param {string} [locale] - The locale to set.
