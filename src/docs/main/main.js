@@ -27,6 +27,7 @@ class DocsMain extends MdComponent {
                     id="docsMainNavigationDrawer"
                     type="tree"
                     .items="${this.items}"
+                    @onTreeItemClick="${this.handleDocsMainNavigationDrawerTreeItemClick}"
                     @onTreeKeydownEnter="${this.handleDocsMainNavigationDrawerTreeKeydownEnter}"
                 ></md-navigation-drawer>
 
@@ -99,6 +100,13 @@ class DocsMain extends MdComponent {
 
     handleDocsMainTopAppBarIconButtonClick(event) {
         docsMainNavigationDrawer.toggle();
+    }
+
+    handleDocsMainNavigationDrawerTreeItemClick(event) {
+        const data = event.detail.event.currentTarget.data;
+        if (docsMainNavigationDrawer.modal && data.routerLink) {
+            docsMainNavigationDrawer.close();
+        }
     }
 }
 
