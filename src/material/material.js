@@ -1,19 +1,17 @@
 import "./polyfill/polyfill.js";
-
-import "./util/util.js";
-import "./localization/localization.js";
-import "./color/color.js";
-import "./store/store.js";
-import "./layout-observer/layout-observer.js";
-import "./scheme-observer/scheme-observer.js";
-import "./popper/popper.js";
-import "./ripple/ripple.js";
-import "./movable/movable.js";
-import "./virtual/virtual.js";
-import "./component/component.js";
-import "./progress/progress.js";
-import "./router/router.js";
-
+// import "./util/util.js";
+// import "./localization/localization.js";
+// import "./color/color.js";
+// import "./store/store.js";
+// import "./layout-observer/layout-observer.js";
+// import "./scheme-observer/scheme-observer.js";
+// import "./popper/popper.js";
+// import "./ripple/ripple.js";
+// import "./movable/movable.js";
+// import "./virtual/virtual.js";
+// import "./component/component.js";
+// import "./progress/progress.js";
+// import "./router/router.js";
 import "./icon/icon.js";
 import "./image/image.js";
 import "./divider/divider.js";
