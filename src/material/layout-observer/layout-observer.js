@@ -5,11 +5,11 @@ const defaultItems = [
 ];
 
 /**
- * Layout class responsible for managing layout changes based on media queries.
+ * LayoutObserver class responsible for managing layout changes based on media queries.
  */
-class Layout {
+class LayoutObserver {
     /**
-     * Creates an instance of Layout.
+     * Creates an instance of LayoutObserver.
      * @param {Function} callback - The callback function to be executed when the layout changes.
      */
     constructor(callback) {
@@ -44,4 +44,4 @@ class Layout {
         this.item = undefined;
     }
 }
-export { Layout };
+export { LayoutObserver };

@@ -4,11 +4,11 @@ const defaultItems = [
 ];
 
 /**
- * Scheme class responsible for managing color scheme changes based on media queries.
+ * SchemeObserver class responsible for managing color scheme changes based on media queries.
  */
-class Scheme {
+class SchemeObserver {
     /**
-     * Creates an instance of the Scheme class.
+     * Creates an instance of the SchemeObserver class.
      * @param {Function} callback - The callback function to be executed when the color scheme changes.
      */
     constructor(callback) {
@@ -44,4 +44,4 @@ class Scheme {
     }
 }
 
-export { Scheme };
+export { SchemeObserver };

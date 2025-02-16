@@ -1,7 +1,7 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
 import { Router } from "../../material/router/router";
-import { Layout } from "../../material/layout/layout";
+import { LayoutObserver } from "../../material/layout-observer/layout-observer";
 
 class DemoMain extends MdComponent {
     get demoMainTopAppBar() {
@@ -305,7 +305,7 @@ class DemoMain extends MdComponent {
         this.select(this.items);
 
         this.handleMainLayoutCallback = this.handleMainLayoutCallback.bind(this);
-        this.layout = new Layout(this.handleMainLayoutCallback);
+        this.layout = new LayoutObserver(this.handleMainLayoutCallback);
         this.layout.init();
     }
 

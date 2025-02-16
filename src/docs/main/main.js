@@ -1,7 +1,7 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
 import { Router } from "../../material/router/router";
-import { Layout } from "../../material/layout/layout";
+import { LayoutObserver } from "../../material/layout-observer/layout-observer";
 import { keys } from "../jsdoc/jsdoc";
 
 class DocsMain extends MdComponent {
@@ -74,7 +74,7 @@ class DocsMain extends MdComponent {
         super.connectedCallback();
         this.select(this.items);
         await this.updateComplete;
-        this.layout = new Layout((item) => {
+        this.layout = new LayoutObserver((item) => {
             if (item.name === "expanded") {
                 docsMainTopAppBar.open = false;
                 docsMainNavigationDrawer.modal = false;

@@ -3,7 +3,7 @@ import "./polyfill/polyfill.js";
 // import "./localization/localization.js";
 // import "./color/color.js";
 // import "./store/store.js";
-// import "./layout/layout.js";
+// import "./layout-observer/layout-observer.js";
 // import "./router/router.js";
 // import "./ripple/ripple.js";
 // import "./popper/popper.js";
@@ -11,7 +11,7 @@ import "./polyfill/polyfill.js";
 // import "./virtual-scroll/virtual-scroll.js";
 // import "./component/component.js";
 // import "./progress/progress.js";
-// import "./scheme/scheme.js";
+// import "./scheme-observer/scheme-observer.js";
 
 import "./icon/icon.js";
 import "./image/image.js";

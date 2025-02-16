@@ -143,10 +143,14 @@ import DemoWeekField from "./week-field/week-field.js";
 import DemoPasswordField from "./password-field/password-field.js";
 import DemoNumberField from "./number-field/number-field.js";
 
+import DemoTest from "./test/test.js";
+
 export default {
     path: "demo",
     component: DemoMain,
     children: [
+        { path: "test", component: DemoTest },
+        
         { path: "badge", component: DemoBadge },
 
         { path: "bottom-app-bar", component: DemoBottomAppBar },
