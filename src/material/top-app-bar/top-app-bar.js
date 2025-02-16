@@ -37,7 +37,7 @@ class MdTopAppBarComponent extends MdComponent {
                 .toggle="${ifDefined(item.toggle)}"
                 .selected="${ifDefined(item.selected)}"
                 .disabled="${ifDefined(item.disabled)}"
-                @click="${this.handleTopAppBarIconButtonClick}"
+                @onIconButtonClick="${this.handleTopAppBarIconButtonClick}"
             ></md-icon-button>
         `;
     }

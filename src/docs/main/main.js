@@ -16,12 +16,18 @@ class DocsMain extends MdComponent {
     render() {
         return html`
             <md-layout-border>
+                <md-top-app-bar
+                    id="docsMainTopAppBar"
+                    label="Docs"
+                    .leadingActions="${[{ icon: "menu" }]}"
+                    @onTopAppBarIconButtonClick="${this.handleDocsMainTopAppBarIconButtonClick}"
+                ></md-top-app-bar>
+
                 <md-navigation-drawer
                     id="docsMainNavigationDrawer"
                     type="tree"
-                    open
                     .items="${this.items}"
-                    @onTreeKeydownEnter="${this.handleDemoMainNavigationDrawerTreeKeydownEnter}"
+                    @onTreeKeydownEnter="${this.handleDocsMainNavigationDrawerTreeKeydownEnter}"
                 ></md-navigation-drawer>
 
                 <md-layout-border-item region="center">
@@ -63,14 +69,36 @@ class DocsMain extends MdComponent {
         });
     }
 
-    connectedCallback() {
+    async connectedCallback() {
         super.connectedCallback();
         this.select(this.items);
+        await this.updateComplete;
+        this.layout = new Layout((item) => {
+            if (item.name === "expanded") {
+                docsMainTopAppBar.open = false;
+                docsMainNavigationDrawer.modal = false;
+                docsMainNavigationDrawer.open = true;
+            } else {
+                docsMainTopAppBar.open = true;
+                docsMainNavigationDrawer.modal = true;
+                docsMainNavigationDrawer.open = false;
+            }
+        });
+        this.layout.init();
     }
 
-    handleDemoMainNavigationDrawerTreeKeydownEnter(event) {
+    disconnectedCallback() {
+        super.disconnectedCallback();
+        if (this.layout) this.layout.destroy();
+    }
+
+    handleDocsMainNavigationDrawerTreeKeydownEnter(event) {
         const treeItemSelected = docsMainNavigationDrawer.querySelector("md-tree-item[selected]");
         treeItemSelected.click();
+    }
+
+    handleDocsMainTopAppBarIconButtonClick(event) {
+        docsMainNavigationDrawer.toggle();
     }
 }
 

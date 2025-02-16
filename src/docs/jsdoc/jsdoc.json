@@ -78603,7 +78603,7 @@
         "meta": {
             "range": [
                 260,
-                3291
+                3303
             ],
             "filename": "top-app-bar.js",
             "lineno": 10,
@@ -79006,7 +79006,7 @@
         "meta": {
             "range": [
                 260,
-                3291
+                3303
             ],
             "filename": "top-app-bar.js",
             "lineno": 10,
@@ -79040,7 +79040,7 @@
         "meta": {
             "range": [
                 797,
-                1328
+                1340
             ],
             "filename": "top-app-bar.js",
             "lineno": 30,
@@ -79070,8 +79070,8 @@
         "comment": "",
         "meta": {
             "range": [
-                1334,
-                1980
+                1346,
+                1992
             ],
             "filename": "top-app-bar.js",
             "lineno": 45,
@@ -79099,8 +79099,8 @@
         "comment": "",
         "meta": {
             "range": [
-                1986,
-                2370
+                1998,
+                2382
             ],
             "filename": "top-app-bar.js",
             "lineno": 49,
@@ -79129,8 +79129,8 @@
         "comment": "",
         "meta": {
             "range": [
-                2376,
-                2452
+                2388,
+                2464
             ],
             "filename": "top-app-bar.js",
             "lineno": 58,
@@ -79160,8 +79160,8 @@
         "comment": "/**\n     */",
         "meta": {
             "range": [
-                2474,
-                2710
+                2486,
+                2722
             ],
             "filename": "top-app-bar.js",
             "lineno": 64,
@@ -79188,8 +79188,8 @@
         "comment": "",
         "meta": {
             "range": [
-                2555,
-                2571
+                2567,
+                2583
             ],
             "filename": "top-app-bar.js",
             "lineno": 66,
@@ -79238,8 +79238,8 @@
         "comment": "/**\n     */",
         "meta": {
             "range": [
-                2732,
-                2972
+                2744,
+                2984
             ],
             "filename": "top-app-bar.js",
             "lineno": 76,
@@ -79266,8 +79266,8 @@
         "comment": "",
         "meta": {
             "range": [
-                2814,
-                2831
+                2826,
+                2843
             ],
             "filename": "top-app-bar.js",
             "lineno": 78,
@@ -79316,8 +79316,8 @@
         "comment": "/**\n     */",
         "meta": {
             "range": [
-                2994,
-                3073
+                3006,
+                3085
             ],
             "filename": "top-app-bar.js",
             "lineno": 88,
@@ -79344,8 +79344,8 @@
         "comment": "",
         "meta": {
             "range": [
-                3079,
-                3289
+                3091,
+                3301
             ],
             "filename": "top-app-bar.js",
             "lineno": 93,
@@ -79399,8 +79399,8 @@
         "comment": "",
         "meta": {
             "range": [
-                3274,
-                3279
+                3286,
+                3291
             ],
             "filename": "top-app-bar.js",
             "lineno": 98,
@@ -79423,8 +79423,8 @@
         "comment": "",
         "meta": {
             "range": [
-                3364,
-                3384
+                3376,
+                3396
             ],
             "filename": "top-app-bar.js",
             "lineno": 102,

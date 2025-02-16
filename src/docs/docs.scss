@@ -12,11 +12,11 @@ docs-page {
     table {
         border-collapse: separate;
         border-spacing: 0;
-        // display: block;
-        // max-height: 360px;
-        width: 100%;
-        // overflow: auto;
-        overflow: hidden;
+        display: block;
+        max-height: 360px;
+        // width: 100%;
+        overflow: auto;
+        // overflow: hidden;
         border-radius: var(--md-sys-shape-corner-large);
         border: 1px solid var(--md-sys-color-outline-variant);
         tbody {
@@ -35,9 +35,9 @@ docs-page {
             background-color: var(--md-sys-color-surface-container-highest);
             border-bottom: 1px solid var(--md-sys-color-outline-variant);
             border-right: 1px solid var(--md-sys-color-outline-variant);
-            // position: sticky;
-            // top: 0;
-            // z-index: 1;
+            position: sticky;
+            top: 0;
+            z-index: 1;
             &:last-child {
                 border-right: 0;
             }
@@ -63,7 +63,7 @@ docs-page {
 
     pre {
         padding: 16px;
-        white-space: pre-wrap;
+        overflow-wrap: anywhere;
         word-break: break-word;
     }
 }
