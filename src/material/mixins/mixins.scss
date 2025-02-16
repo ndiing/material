@@ -205,3 +205,16 @@
         @content;
     }
 }
+
+/* scheme */
+@mixin scheme-light() {
+    @media (prefers-color-scheme: light) {
+        @content;
+    }
+}
+
+@mixin scheme-dark() {
+    @media (prefers-color-scheme: dark) {
+        @content;
+    }
+}

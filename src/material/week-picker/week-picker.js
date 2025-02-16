@@ -535,7 +535,6 @@ class MdWeekPickerComponent extends MdComponent {
 
     handleWeekPickerButtonCancelClick(event) {
         this.value = new Date(this.defaultValue.valueOf());
-        // this.close();
         /**
          * @event onWeekPickerButtonCancelClick
          * @property {Object} event
@@ -544,7 +543,6 @@ class MdWeekPickerComponent extends MdComponent {
     }
 
     handleWeekPickerButtonOkClick(event) {
-        // this.close();
         /**
          * @event onWeekPickerButtonOkClick
          * @property {Object} event

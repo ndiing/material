@@ -528,7 +528,6 @@ class MdDatePickerComponent extends MdComponent {
 
     handleDatePickerButtonCancelClick(event) {
         this.value = new Date(this.defaultValue.valueOf());
-        // this.close();
         /**
          * @event onDatePickerButtonCancelClick
          * @property {Object} event
@@ -537,7 +536,6 @@ class MdDatePickerComponent extends MdComponent {
     }
 
     handleDatePickerButtonOkClick(event) {
-        // this.close();
         /**
          * @event onDatePickerButtonOkClick
          * @property {Object} event

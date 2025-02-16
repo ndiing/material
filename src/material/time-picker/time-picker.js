@@ -446,7 +446,6 @@ class MdTimePickerComponent extends MdComponent {
 
     handleTimePickerButtonCancelClick(event) {
         this.value = new Date(this.defaultValue.valueOf());
-        // this.close();
         /**
          * @event onTimePickerButtonCancelClick
          * @property {Object} event
@@ -455,7 +454,6 @@ class MdTimePickerComponent extends MdComponent {
     }
 
     handleTimePickerButtonOkClick(event) {
-        // this.close();
         /**
          * @event onTimePickerButtonOkClick
          * @property {Object} event

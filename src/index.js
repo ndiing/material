@@ -8,25 +8,13 @@ import "./material/material.js";
 import { Router } from "./material/router/router";
 import { Progress } from "./material/progress/progress.js";
 import { setTheme } from "./material/color/color.js";
+import { Scheme } from "./material/scheme/scheme.js";
 
 import "./app/app.scss";
 import AppRoutes from "./app/app.js";
 
-function demoProgress() {
+{
     const progress = new Progress();
-
-    const fetch = window.fetch;
-    window.fetch = async function () {
-        performance.mark("mark-fetch-1");
-        const res = await fetch(arguments);
-        performance.mark("mark-fetch-2");
-        performance.measure("measure-fetch-1", "mark-fetch-1", "mark-fetch-2");
-        performance.clearMarks("mark-fetch-1");
-        performance.clearMarks("mark-fetch-2");
-        performance.clearMeasures("measure-fetch-1");
-        return res;
-    };
-
     const observer = new PerformanceObserver((entries) => {
         entries.getEntries().forEach((entry) => progress.start(entry.duration));
     });
@@ -35,17 +23,16 @@ function demoProgress() {
     });
 }
 
-function demoTheme() {
-    function getRandomHexColor() {
-        return `#${Math.floor(Math.random() * 16777215)
-            .toString(16)
-            .padStart(6, "0")}`;
-    }
-    setTheme(getRandomHexColor());
+{
+    const scheme = new Scheme(() => {
+        setTheme(
+            `#${Math.floor(Math.random() * 16777215)
+                .toString(16)
+                .padStart(6, "0")}`,
+        );
+    });
+    scheme.init();
 }
-
-demoProgress();
-demoTheme();
 
 const routes = [AppRoutes];
 Router.use(routes);

@@ -11,6 +11,7 @@ import "./movable/movable.js";
 import "./virtual-scroll/virtual-scroll.js";
 import "./component/component.js";
 import "./progress/progress.js";
+import "./scheme/scheme.js";
 
 import "./icon/icon.js";
 import "./image/image.js";

@@ -444,7 +444,6 @@ class MdMonthPickerComponent extends MdComponent {
 
     handleMonthPickerButtonCancelClick(event) {
         this.value = new Date(this.defaultValue.valueOf());
-        // this.close();
         /**
          * @event onMonthPickerButtonCancelClick
          * @property {Object} event
@@ -453,7 +452,6 @@ class MdMonthPickerComponent extends MdComponent {
     }
 
     handleMonthPickerButtonOkClick(event) {
-        // this.close();
         /**
          * @event onMonthPickerButtonOkClick
          * @property {Object} event
