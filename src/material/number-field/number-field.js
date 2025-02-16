@@ -14,25 +14,25 @@ class MdNumberFieldComponent extends MdTextFieldComponent {
 
     get trailingActions() {
         return [
-            { component: "icon-button", id: "down", icon: 'remove' },
-            { component: "icon-button", id: "up", icon: 'add' },
+            { component: "icon-button", id: "down", icon: "remove" },
+            { component: "icon-button", id: "up", icon: "add" },
         ];
     }
 
-    handleNumberFieldIconButtonUpClick(event){
-        this.textFieldNative.stepUp()
-        this.updateValue()
+    handleNumberFieldIconButtonUpClick(event) {
+        this.textFieldNative.stepUp();
+        this.updateValue();
     }
 
-    handleNumberFieldIconButtonDownClick(event){
-        this.textFieldNative.stepDown()
-        this.updateValue()
+    handleNumberFieldIconButtonDownClick(event) {
+        this.textFieldNative.stepDown();
+        this.updateValue();
     }
 
     handleTextFieldIconButtonClick(event) {
         const data = event.currentTarget.data;
-        if(data.id==='up')return this.handleNumberFieldIconButtonUpClick(event)
-        else if(data.id==='down')return this.handleNumberFieldIconButtonDownClick(event)
+        if (data.id === "up") return this.handleNumberFieldIconButtonUpClick(event);
+        else if (data.id === "down") return this.handleNumberFieldIconButtonDownClick(event);
         super.handleTextFieldIconButtonClick(event);
     }
 }
