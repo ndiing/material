@@ -1,5 +1,5 @@
 import jsdoc from "./jsdoc.json";
-const modules = ["polyfill", "util", "localization", "color", "store", "layout", "router", "ripple", "popper", "movable", "virtual-scroll", "component", "progress"];
+const modules = ["polyfill", "util", "localization", "color", "store", "layout", "router", "ripple", "popper", "movable", "virtual-scroll", "component", "progress", "scheme"];
 const docs = Object.groupBy(
     jsdoc.filter((item) => !item.undocumented && item.meta?.filename && !item.inherited),
     (item) => item.meta.filename,

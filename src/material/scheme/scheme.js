@@ -16,9 +16,9 @@ class Scheme {
         this.handleChange = this.handleChange.bind(this);
     }
 
-    /**
-     * Handles color scheme change events by destroying the current scheme and initializing a new one.
-     */
+    // /**
+    //  * Handles color scheme change events by destroying the current scheme and initializing a new one.
+    //  */
     handleChange() {
         this.destroy();
         this.init();
@@ -45,4 +45,3 @@ class Scheme {
 }
 
 export { Scheme };
-

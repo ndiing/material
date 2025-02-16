@@ -25,7 +25,11 @@ import AppRoutes from "./app/app.js";
 
 {
     const scheme = new Scheme(() => {
-        setTheme(`#${Math.floor(Math.random() * 16777215).toString(16).padStart(6, "0")}`);
+        setTheme(
+            `#${Math.floor(Math.random() * 16777215)
+                .toString(16)
+                .padStart(6, "0")}`,
+        );
     });
     scheme.init();
 }
