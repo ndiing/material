@@ -1,9 +1,13 @@
 /**
+ * Movable class responsible for enabling drag-and-drop and resize functionality on elements.
  */
 class Movable {
     /**
-     * @param {Any} [host]
-     * @param {Any} [options={}]
+     * Creates an instance of the Movable class.
+     * @param {HTMLElement} host - The host element.
+     * @param {Object} [options={}] - Additional options for the movable element.
+     * @param {Array<string>} [options.axis=["x", "y"]] - The axis along which the element can be moved.
+     * @param {Array<string>} [options.handles=["n", "e", "s", "w", "nw", "ne", "sw", "se"]] - The resize handles.
      */
     constructor(host, options = {}) {
         this.host = host;
@@ -15,6 +19,10 @@ class Movable {
         this.init();
     }
 
+    // /**
+    //  * Handles the pointer down event for dragging and resizing.
+    //  * @param {PointerEvent} event - The pointer down event.
+    //  */
     handlePointerdown(event) {
         this.handle = event.target.closest(".md-resizable__handle") && event.target.className.match(/--(\w+)/)[1];
         document.body.classList.add("md-user-select--none");
@@ -28,11 +36,15 @@ class Movable {
         this.startHeight = this.host.clientHeight;
         /**
          * @event onMovablePointerdown
-         * @property {Object} event
+         * @property {Object} event - The pointer down event.
          */
         this.emit("onMovablePointerdown");
     }
 
+    // /**
+    //  * Handles the pointer move event for dragging and resizing.
+    //  * @param {PointerEvent} event - The pointer move event.
+    //  */
     handlePointermove(event) {
         const currentX = event.clientX - this.startX;
         const currentY = event.clientY - this.startY;
@@ -66,11 +78,15 @@ class Movable {
         this.host.style.setProperty("height", (this.currentHeight ?? this.startHeight) + "px");
         /**
          * @event onMovablePointermove
-         * @property {Object} event
+         * @property {Object} event - The pointer move event.
          */
         this.emit("onMovablePointermove");
     }
 
+    // /**
+    //  * Handles the pointer up event for dragging and resizing.
+    //  * @param {PointerEvent} event - The pointer up event.
+    //  */
     handlePointerup(event) {
         this.endX = this.currentX;
         this.endY = this.currentY;
@@ -79,11 +95,16 @@ class Movable {
         window.removeEventListener("pointerup", this.handlePointerup);
         /**
          * @event onMovablePointerup
-         * @property {Object} event
+         * @property {Object} event - The pointer up event.
          */
         this.emit("onMovablePointerup");
     }
 
+    // /**
+    //  * Emits a custom event from the host element.
+    //  * @param {string} type - The type of event to emit.
+    //  * @param {Object} [detail] - The event detail.
+    //  */
     emit(type, detail) {
         const event = new CustomEvent(type, {
             bubbles: true,
@@ -94,6 +115,7 @@ class Movable {
     }
 
     /**
+     * Initializes the movable functionality by adding resize handles and event listeners.
      */
     init() {
         let text = "";
@@ -110,6 +132,7 @@ class Movable {
     }
 
     /**
+     * Destroys the movable functionality by removing resize handles and event listeners.
      */
     destroy() {
         const resizable = this.host.querySelector(".md-resizable");

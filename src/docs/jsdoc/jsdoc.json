@@ -33209,54 +33209,6 @@
         "scope": "global"
     },
     {
-        "comment": "",
-        "meta": {
-            "range": [
-                0,
-                29
-            ],
-            "filename": "material.js",
-            "lineno": 1,
-            "columnno": 0,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material",
-            "code": {
-                "id": "astnode100013964",
-                "name": "module.exports",
-                "type": "ExportAllDeclaration"
-            }
-        },
-        "undocumented": true,
-        "name": "exports",
-        "longname": "module.exports",
-        "kind": "member",
-        "memberof": "module",
-        "scope": "static"
-    },
-    {
-        "comment": "",
-        "meta": {
-            "range": [
-                30,
-                62
-            ],
-            "filename": "material.js",
-            "lineno": 2,
-            "columnno": 0,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material",
-            "code": {
-                "id": "astnode100013966",
-                "name": "module.exports",
-                "type": "ExportAllDeclaration"
-            }
-        },
-        "undocumented": true,
-        "name": "exports",
-        "longname": "module.exports",
-        "kind": "member",
-        "memberof": "module",
-        "scope": "static"
-    },
-    {
         "comment": "/**\n * @extends MdComponent\n * @element md-menu\n */",
         "meta": {
             "range": [
@@ -34387,318 +34339,6 @@
         "longname": "MdMenuComponent",
         "kind": "member",
         "scope": "global"
-    },
-    {
-        "comment": "",
-        "meta": {
-            "range": [
-                0,
-                39
-            ],
-            "filename": "modules.js",
-            "lineno": 1,
-            "columnno": 0,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material",
-            "code": {
-                "id": "astnode100014404",
-                "name": "module.exports",
-                "type": "ExportAllDeclaration"
-            }
-        },
-        "undocumented": true,
-        "name": "exports",
-        "longname": "module.exports",
-        "kind": "member",
-        "memberof": "module",
-        "scope": "static"
-    },
-    {
-        "comment": "",
-        "meta": {
-            "range": [
-                40,
-                71
-            ],
-            "filename": "modules.js",
-            "lineno": 2,
-            "columnno": 0,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material",
-            "code": {
-                "id": "astnode100014406",
-                "name": "module.exports",
-                "type": "ExportAllDeclaration"
-            }
-        },
-        "undocumented": true,
-        "name": "exports",
-        "longname": "module.exports",
-        "kind": "member",
-        "memberof": "module",
-        "scope": "static"
-    },
-    {
-        "comment": "",
-        "meta": {
-            "range": [
-                72,
-                119
-            ],
-            "filename": "modules.js",
-            "lineno": 3,
-            "columnno": 0,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material",
-            "code": {
-                "id": "astnode100014408",
-                "name": "module.exports",
-                "type": "ExportAllDeclaration"
-            }
-        },
-        "undocumented": true,
-        "name": "exports",
-        "longname": "module.exports",
-        "kind": "member",
-        "memberof": "module",
-        "scope": "static"
-    },
-    {
-        "comment": "",
-        "meta": {
-            "range": [
-                120,
-                153
-            ],
-            "filename": "modules.js",
-            "lineno": 4,
-            "columnno": 0,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material",
-            "code": {
-                "id": "astnode100014410",
-                "name": "module.exports",
-                "type": "ExportAllDeclaration"
-            }
-        },
-        "undocumented": true,
-        "name": "exports",
-        "longname": "module.exports",
-        "kind": "member",
-        "memberof": "module",
-        "scope": "static"
-    },
-    {
-        "comment": "",
-        "meta": {
-            "range": [
-                154,
-                187
-            ],
-            "filename": "modules.js",
-            "lineno": 5,
-            "columnno": 0,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material",
-            "code": {
-                "id": "astnode100014412",
-                "name": "module.exports",
-                "type": "ExportAllDeclaration"
-            }
-        },
-        "undocumented": true,
-        "name": "exports",
-        "longname": "module.exports",
-        "kind": "member",
-        "memberof": "module",
-        "scope": "static"
-    },
-    {
-        "comment": "",
-        "meta": {
-            "range": [
-                188,
-                223
-            ],
-            "filename": "modules.js",
-            "lineno": 6,
-            "columnno": 0,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material",
-            "code": {
-                "id": "astnode100014414",
-                "name": "module.exports",
-                "type": "ExportAllDeclaration"
-            }
-        },
-        "undocumented": true,
-        "name": "exports",
-        "longname": "module.exports",
-        "kind": "member",
-        "memberof": "module",
-        "scope": "static"
-    },
-    {
-        "comment": "",
-        "meta": {
-            "range": [
-                224,
-                259
-            ],
-            "filename": "modules.js",
-            "lineno": 7,
-            "columnno": 0,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material",
-            "code": {
-                "id": "astnode100014416",
-                "name": "module.exports",
-                "type": "ExportAllDeclaration"
-            }
-        },
-        "undocumented": true,
-        "name": "exports",
-        "longname": "module.exports",
-        "kind": "member",
-        "memberof": "module",
-        "scope": "static"
-    },
-    {
-        "comment": "",
-        "meta": {
-            "range": [
-                260,
-                295
-            ],
-            "filename": "modules.js",
-            "lineno": 8,
-            "columnno": 0,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material",
-            "code": {
-                "id": "astnode100014418",
-                "name": "module.exports",
-                "type": "ExportAllDeclaration"
-            }
-        },
-        "undocumented": true,
-        "name": "exports",
-        "longname": "module.exports",
-        "kind": "member",
-        "memberof": "module",
-        "scope": "static"
-    },
-    {
-        "comment": "",
-        "meta": {
-            "range": [
-                296,
-                331
-            ],
-            "filename": "modules.js",
-            "lineno": 9,
-            "columnno": 0,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material",
-            "code": {
-                "id": "astnode100014420",
-                "name": "module.exports",
-                "type": "ExportAllDeclaration"
-            }
-        },
-        "undocumented": true,
-        "name": "exports",
-        "longname": "module.exports",
-        "kind": "member",
-        "memberof": "module",
-        "scope": "static"
-    },
-    {
-        "comment": "",
-        "meta": {
-            "range": [
-                332,
-                369
-            ],
-            "filename": "modules.js",
-            "lineno": 10,
-            "columnno": 0,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material",
-            "code": {
-                "id": "astnode100014422",
-                "name": "module.exports",
-                "type": "ExportAllDeclaration"
-            }
-        },
-        "undocumented": true,
-        "name": "exports",
-        "longname": "module.exports",
-        "kind": "member",
-        "memberof": "module",
-        "scope": "static"
-    },
-    {
-        "comment": "",
-        "meta": {
-            "range": [
-                370,
-                421
-            ],
-            "filename": "modules.js",
-            "lineno": 11,
-            "columnno": 0,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material",
-            "code": {
-                "id": "astnode100014424",
-                "name": "module.exports",
-                "type": "ExportAllDeclaration"
-            }
-        },
-        "undocumented": true,
-        "name": "exports",
-        "longname": "module.exports",
-        "kind": "member",
-        "memberof": "module",
-        "scope": "static"
-    },
-    {
-        "comment": "",
-        "meta": {
-            "range": [
-                422,
-                463
-            ],
-            "filename": "modules.js",
-            "lineno": 12,
-            "columnno": 0,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material",
-            "code": {
-                "id": "astnode100014426",
-                "name": "module.exports",
-                "type": "ExportAllDeclaration"
-            }
-        },
-        "undocumented": true,
-        "name": "exports",
-        "longname": "module.exports",
-        "kind": "member",
-        "memberof": "module",
-        "scope": "static"
-    },
-    {
-        "comment": "",
-        "meta": {
-            "range": [
-                464,
-                503
-            ],
-            "filename": "modules.js",
-            "lineno": 13,
-            "columnno": 0,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material",
-            "code": {
-                "id": "astnode100014428",
-                "name": "module.exports",
-                "type": "ExportAllDeclaration"
-            }
-        },
-        "undocumented": true,
-        "name": "exports",
-        "longname": "module.exports",
-        "kind": "member",
-        "memberof": "module",
-        "scope": "static"
     },
     {
         "comment": "/**\n * @extends MdTextFieldComponent\n * @element md-month-field\n */",
@@ -40266,14 +39906,14 @@
         "scope": "global"
     },
     {
-        "comment": "/**\n */",
+        "comment": "/**\n * Movable class responsible for enabling drag-and-drop and resize functionality on elements.\n */",
         "meta": {
             "range": [
-                8,
-                4515
+                102,
+                5859
             ],
             "filename": "movable.js",
-            "lineno": 3,
+            "lineno": 4,
             "columnno": 0,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
             "code": {
@@ -40286,6 +39926,7 @@
                 ]
             }
         },
+        "classdesc": "Movable class responsible for enabling drag-and-drop and resize functionality on elements.",
         "name": "Movable",
         "longname": "Movable",
         "kind": "class",
@@ -40293,14 +39934,14 @@
         "undocumented": true
     },
     {
-        "comment": "/**\n     * @param {Any} [host]\n     * @param {Any} [options={}]\n     */",
+        "comment": "/**\n     * Creates an instance of the Movable class.\n     * @param {HTMLElement} host - The host element.\n     * @param {Object} [options={}] - Additional options for the movable element.\n     * @param {Array<string>} [options.axis=[\"x\", \"y\"]] - The axis along which the element can be moved.\n     * @param {Array<string>} [options.handles=[\"n\", \"e\", \"s\", \"w\", \"nw\", \"ne\", \"sw\", \"se\"]] - The resize handles.\n     */",
         "meta": {
             "range": [
-                104,
-                347
+                542,
+                785
             ],
             "filename": "movable.js",
-            "lineno": 8,
+            "lineno": 12,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
             "code": {
@@ -40316,25 +39957,49 @@
                 "": null
             }
         },
+        "description": "Creates an instance of the Movable class.",
         "params": [
             {
                 "type": {
                     "names": [
-                        "Any"
+                        "HTMLElement"
                     ]
                 },
-                "optional": true,
+                "description": "The host element.",
                 "name": "host"
             },
             {
                 "type": {
                     "names": [
-                        "Any"
+                        "Object"
                     ]
                 },
                 "optional": true,
                 "defaultvalue": "{}",
+                "description": "Additional options for the movable element.",
                 "name": "options"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Array.<string>"
+                    ]
+                },
+                "optional": true,
+                "defaultvalue": "[\"x\", \"y\"]",
+                "description": "The axis along which the element can be moved.",
+                "name": "options.axis"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Array.<string>"
+                    ]
+                },
+                "optional": true,
+                "defaultvalue": "[\"n\", \"e\", \"s\", \"w\", \"nw\", \"ne\", \"sw\", \"se\"]",
+                "description": "The resize handles.",
+                "name": "options.handles"
             }
         ],
         "name": "Movable",
@@ -40344,14 +40009,14 @@
         "undocumented": true
     },
     {
-        "comment": "/**\n */",
+        "comment": "/**\n * Movable class responsible for enabling drag-and-drop and resize functionality on elements.\n */",
         "meta": {
             "range": [
-                8,
-                4515
+                102,
+                5859
             ],
             "filename": "movable.js",
-            "lineno": 3,
+            "lineno": 4,
             "columnno": 0,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
             "code": {
@@ -40367,26 +40032,51 @@
         "name": "Movable",
         "longname": "Movable",
         "kind": "class",
+        "classdesc": "Movable class responsible for enabling drag-and-drop and resize functionality on elements.",
         "scope": "global",
+        "description": "Creates an instance of the Movable class.",
         "params": [
             {
                 "type": {
                     "names": [
-                        "Any"
+                        "HTMLElement"
                     ]
                 },
-                "optional": true,
+                "description": "The host element.",
                 "name": "host"
             },
             {
                 "type": {
                     "names": [
-                        "Any"
+                        "Object"
                     ]
                 },
                 "optional": true,
                 "defaultvalue": "{}",
+                "description": "Additional options for the movable element.",
                 "name": "options"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Array.<string>"
+                    ]
+                },
+                "optional": true,
+                "defaultvalue": "[\"x\", \"y\"]",
+                "description": "The axis along which the element can be moved.",
+                "name": "options.axis"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Array.<string>"
+                    ]
+                },
+                "optional": true,
+                "defaultvalue": "[\"n\", \"e\", \"s\", \"w\", \"nw\", \"ne\", \"sw\", \"se\"]",
+                "description": "The resize handles.",
+                "name": "options.handles"
             }
         ]
     },
@@ -40394,11 +40084,11 @@
         "comment": "",
         "meta": {
             "range": [
-                146,
-                162
+                584,
+                600
             ],
             "filename": "movable.js",
-            "lineno": 9,
+            "lineno": 13,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
             "code": {
@@ -40420,11 +40110,11 @@
         "comment": "",
         "meta": {
             "range": [
-                172,
-                319
+                610,
+                757
             ],
             "filename": "movable.js",
-            "lineno": 10,
+            "lineno": 14,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
             "code": {
@@ -40446,11 +40136,11 @@
         "comment": "",
         "meta": {
             "range": [
-                201,
-                217
+                639,
+                655
             ],
             "filename": "movable.js",
-            "lineno": 11,
+            "lineno": 15,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
             "code": {
@@ -40471,11 +40161,11 @@
         "comment": "",
         "meta": {
             "range": [
-                231,
-                284
+                669,
+                722
             ],
             "filename": "movable.js",
-            "lineno": 12,
+            "lineno": 16,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
             "code": {
@@ -40496,11 +40186,11 @@
         "comment": "",
         "meta": {
             "range": [
-                353,
-                1113
+                945,
+                1731
             ],
             "filename": "movable.js",
-            "lineno": 18,
+            "lineno": 26,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
             "code": {
@@ -40527,11 +40217,11 @@
         "comment": "",
         "meta": {
             "range": [
-                388,
-                493
+                980,
+                1085
             ],
             "filename": "movable.js",
-            "lineno": 19,
+            "lineno": 27,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
             "code": {
@@ -40553,11 +40243,11 @@
         "comment": "",
         "meta": {
             "range": [
-                704,
-                730
+                1296,
+                1322
             ],
             "filename": "movable.js",
-            "lineno": 23,
+            "lineno": 31,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
             "code": {
@@ -40579,11 +40269,11 @@
         "comment": "",
         "meta": {
             "range": [
-                740,
-                766
+                1332,
+                1358
             ],
             "filename": "movable.js",
-            "lineno": 24,
+            "lineno": 32,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
             "code": {
@@ -40605,11 +40295,11 @@
         "comment": "",
         "meta": {
             "range": [
-                776,
-                815
+                1368,
+                1407
             ],
             "filename": "movable.js",
-            "lineno": 25,
+            "lineno": 33,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
             "code": {
@@ -40631,11 +40321,11 @@
         "comment": "",
         "meta": {
             "range": [
-                825,
-                864
+                1417,
+                1456
             ],
             "filename": "movable.js",
-            "lineno": 26,
+            "lineno": 34,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
             "code": {
@@ -40657,11 +40347,11 @@
         "comment": "",
         "meta": {
             "range": [
-                874,
-                913
+                1466,
+                1505
             ],
             "filename": "movable.js",
-            "lineno": 27,
+            "lineno": 35,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
             "code": {
@@ -40683,11 +40373,11 @@
         "comment": "",
         "meta": {
             "range": [
-                923,
-                964
+                1515,
+                1556
             ],
             "filename": "movable.js",
-            "lineno": 28,
+            "lineno": 36,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
             "code": {
@@ -40706,10 +40396,10 @@
         "scope": "instance"
     },
     {
-        "comment": "/**\n         * @event onMovablePointerdown\n         * @property {Object} event\n         */",
+        "comment": "/**\n         * @event onMovablePointerdown\n         * @property {Object} event - The pointer down event.\n         */",
         "meta": {
             "filename": "movable.js",
-            "lineno": 29,
+            "lineno": 37,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
             "code": {}
@@ -40723,6 +40413,7 @@
                         "Object"
                     ]
                 },
+                "description": "The pointer down event.",
                 "name": "event"
             }
         ],
@@ -40733,11 +40424,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1119,
-                2862
+                1891,
+                3660
             ],
             "filename": "movable.js",
-            "lineno": 36,
+            "lineno": 48,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
             "code": {
@@ -40764,11 +40455,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1160,
-                1198
+                1932,
+                1970
             ],
             "filename": "movable.js",
-            "lineno": 37,
+            "lineno": 49,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
             "code": {
@@ -40790,11 +40481,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1214,
-                1252
+                1986,
+                2024
             ],
             "filename": "movable.js",
-            "lineno": 38,
+            "lineno": 50,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
             "code": {
@@ -40816,11 +40507,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1384,
-                1442
+                2156,
+                2214
             ],
             "filename": "movable.js",
-            "lineno": 41,
+            "lineno": 53,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
             "code": {
@@ -40842,11 +40533,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1561,
-                1585
+                2333,
+                2357
             ],
             "filename": "movable.js",
-            "lineno": 44,
+            "lineno": 56,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
             "code": {
@@ -40868,11 +40559,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1603,
-                1661
+                2375,
+                2433
             ],
             "filename": "movable.js",
-            "lineno": 45,
+            "lineno": 57,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
             "code": {
@@ -40894,11 +40585,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1780,
-                1840
+                2552,
+                2612
             ],
             "filename": "movable.js",
-            "lineno": 48,
+            "lineno": 60,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
             "code": {
@@ -40920,11 +40611,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1959,
-                1983
+                2731,
+                2755
             ],
             "filename": "movable.js",
-            "lineno": 51,
+            "lineno": 63,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
             "code": {
@@ -40946,11 +40637,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2001,
-                2061
+                2773,
+                2833
             ],
             "filename": "movable.js",
-            "lineno": 52,
+            "lineno": 64,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
             "code": {
@@ -40972,11 +40663,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2161,
-                2185
+                2933,
+                2957
             ],
             "filename": "movable.js",
-            "lineno": 56,
+            "lineno": 68,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
             "code": {
@@ -40998,11 +40689,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2268,
-                2292
+                3040,
+                3064
             ],
             "filename": "movable.js",
-            "lineno": 59,
+            "lineno": 71,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
             "code": {
@@ -41021,10 +40712,10 @@
         "scope": "instance"
     },
     {
-        "comment": "/**\n         * @event onMovablePointermove\n         * @property {Object} event\n         */",
+        "comment": "/**\n         * @event onMovablePointermove\n         * @property {Object} event - The pointer move event.\n         */",
         "meta": {
             "filename": "movable.js",
-            "lineno": 67,
+            "lineno": 79,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
             "code": {}
@@ -41038,6 +40729,7 @@
                         "Object"
                     ]
                 },
+                "description": "The pointer move event.",
                 "name": "event"
             }
         ],
@@ -41048,11 +40740,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2868,
-                3316
+                3816,
+                4288
             ],
             "filename": "movable.js",
-            "lineno": 74,
+            "lineno": 90,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
             "code": {
@@ -41079,11 +40771,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2901,
-                2926
+                3849,
+                3874
             ],
             "filename": "movable.js",
-            "lineno": 75,
+            "lineno": 91,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
             "code": {
@@ -41105,11 +40797,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2936,
-                2961
+                3884,
+                3909
             ],
             "filename": "movable.js",
-            "lineno": 76,
+            "lineno": 92,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
             "code": {
@@ -41128,10 +40820,10 @@
         "scope": "instance"
     },
     {
-        "comment": "/**\n         * @event onMovablePointerup\n         * @property {Object} event\n         */",
+        "comment": "/**\n         * @event onMovablePointerup\n         * @property {Object} event - The pointer up event.\n         */",
         "meta": {
             "filename": "movable.js",
-            "lineno": 80,
+            "lineno": 96,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
             "code": {}
@@ -41145,6 +40837,7 @@
                         "Object"
                     ]
                 },
+                "description": "The pointer up event.",
                 "name": "event"
             }
         ],
@@ -41155,11 +40848,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3322,
-                3523
+                4485,
+                4686
             ],
             "filename": "movable.js",
-            "lineno": 87,
+            "lineno": 108,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
             "code": {
@@ -41187,11 +40880,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3357,
-                3476
+                4520,
+                4639
             ],
             "filename": "movable.js",
-            "lineno": 88,
+            "lineno": 109,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
             "code": {
@@ -41213,11 +40906,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3401,
-                3414
+                4564,
+                4577
             ],
             "filename": "movable.js",
-            "lineno": 89,
+            "lineno": 110,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
             "code": {
@@ -41237,11 +40930,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3428,
-                3444
+                4591,
+                4607
             ],
             "filename": "movable.js",
-            "lineno": 90,
+            "lineno": 111,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
             "code": {
@@ -41261,11 +40954,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3458,
-                3464
+                4621,
+                4627
             ],
             "filename": "movable.js",
-            "lineno": 91,
+            "lineno": 112,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
             "code": {
@@ -41282,14 +40975,14 @@
         "scope": "global"
     },
     {
-        "comment": "/**\n     */",
+        "comment": "/**\n     * Initializes the movable functionality by adding resize handles and event listeners.\n     */",
         "meta": {
             "range": [
-                3545,
-                4146
+                4799,
+                5400
             ],
             "filename": "movable.js",
-            "lineno": 98,
+            "lineno": 120,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
             "code": {
@@ -41302,6 +40995,7 @@
                 "": null
             }
         },
+        "description": "Initializes the movable functionality by adding resize handles and event listeners.",
         "name": "init",
         "longname": "Movable#init",
         "kind": "function",
@@ -41313,11 +41007,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3566,
-                3575
+                4820,
+                4829
             ],
             "filename": "movable.js",
-            "lineno": 99,
+            "lineno": 121,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
             "code": {
@@ -41339,11 +41033,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3585,
-                3621
+                4839,
+                4875
             ],
             "filename": "movable.js",
-            "lineno": 100,
+            "lineno": 122,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
             "code": {
@@ -41366,11 +41060,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3642,
-                3648
+                4896,
+                4902
             ],
             "filename": "movable.js",
-            "lineno": 101,
+            "lineno": 123,
             "columnno": 19,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
             "code": {
@@ -41390,11 +41084,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3688,
-                3770
+                4942,
+                5024
             ],
             "filename": "movable.js",
-            "lineno": 102,
+            "lineno": 124,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
             "code": {
@@ -41417,11 +41111,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3790,
-                3806
+                5044,
+                5060
             ],
             "filename": "movable.js",
-            "lineno": 104,
+            "lineno": 126,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
             "code": {
@@ -41444,11 +41138,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3874,
-                3932
+                5128,
+                5186
             ],
             "filename": "movable.js",
-            "lineno": 106,
+            "lineno": 128,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
             "code": {
@@ -41470,11 +41164,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3942,
-                4000
+                5196,
+                5254
             ],
             "filename": "movable.js",
-            "lineno": 107,
+            "lineno": 129,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
             "code": {
@@ -41496,11 +41190,11 @@
         "comment": "",
         "meta": {
             "range": [
-                4010,
-                4064
+                5264,
+                5318
             ],
             "filename": "movable.js",
-            "lineno": 108,
+            "lineno": 130,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
             "code": {
@@ -41519,14 +41213,14 @@
         "scope": "instance"
     },
     {
-        "comment": "/**\n     */",
+        "comment": "/**\n     * Destroys the movable functionality by removing resize handles and event listeners.\n     */",
         "meta": {
             "range": [
-                4168,
-                4513
+                5512,
+                5857
             ],
             "filename": "movable.js",
-            "lineno": 114,
+            "lineno": 137,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
             "code": {
@@ -41539,6 +41233,7 @@
                 "": null
             }
         },
+        "description": "Destroys the movable functionality by removing resize handles and event listeners.",
         "name": "destroy",
         "longname": "Movable#destroy",
         "kind": "function",
@@ -41550,11 +41245,11 @@
         "comment": "",
         "meta": {
             "range": [
-                4194,
-                4246
+                5538,
+                5590
             ],
             "filename": "movable.js",
-            "lineno": 115,
+            "lineno": 138,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
             "code": {
@@ -41576,11 +41271,11 @@
         "comment": "",
         "meta": {
             "range": [
-                4401,
-                4430
+                5745,
+                5774
             ],
             "filename": "movable.js",
-            "lineno": 120,
+            "lineno": 143,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
             "code": {
@@ -41602,11 +41297,11 @@
         "comment": "",
         "meta": {
             "range": [
-                4440,
-                4469
+                5784,
+                5813
             ],
             "filename": "movable.js",
-            "lineno": 121,
+            "lineno": 144,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
             "code": {
@@ -41628,11 +41323,11 @@
         "comment": "",
         "meta": {
             "range": [
-                4479,
-                4506
+                5823,
+                5850
             ],
             "filename": "movable.js",
-            "lineno": 122,
+            "lineno": 145,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
             "code": {
@@ -41654,11 +41349,11 @@
         "comment": "",
         "meta": {
             "range": [
-                4525,
-                4532
+                5869,
+                5876
             ],
             "filename": "movable.js",
-            "lineno": 125,
+            "lineno": 148,
             "columnno": 9,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\movable",
             "code": {
@@ -83171,14 +82866,14 @@
         "scope": "global"
     },
     {
-        "comment": "/**\n */",
+        "comment": "/**\n * VirtualScroll class responsible for managing virtual scrolling of a list.\n */",
         "meta": {
             "range": [
-                8,
-                2434
+                85,
+                4138
             ],
             "filename": "virtual-scroll.js",
-            "lineno": 3,
+            "lineno": 4,
             "columnno": 0,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual-scroll",
             "code": {
@@ -83191,6 +82886,7 @@
                 ]
             }
         },
+        "classdesc": "VirtualScroll class responsible for managing virtual scrolling of a list.",
         "name": "VirtualScroll",
         "longname": "VirtualScroll",
         "kind": "class",
@@ -83198,14 +82894,99 @@
         "undocumented": true
     },
     {
-        "comment": "/**\n     * @param {Any} [host]\n     * @param {Any} [options]\n     */",
+        "comment": "/**\n     * @typedef {Object} VirtualScrollOptions\n     * @param {number} [total] - The total number of items in the list.\n     * @param {number} [rowHeight=56] - The height of each row/item in pixels.\n     * @param {number} [nodePadding=2] - The number of nodes to pad above and below the visible area.\n     * @param {number} [viewportHeight] - The height of the viewport in pixels.\n     * @param {string} [track=\".md-virtual-scroll__track\"] - The selector for the track element.\n     * @param {string} [item=\".md-virtual-scroll__item\"] - The selector for the item elements.\n     */",
+        "meta": {
+            "filename": "virtual-scroll.js",
+            "lineno": 5,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual-scroll",
+            "code": {}
+        },
+        "kind": "typedef",
+        "name": "VirtualScrollOptions",
+        "type": {
+            "names": [
+                "Object"
+            ]
+        },
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "number"
+                    ]
+                },
+                "optional": true,
+                "description": "The total number of items in the list.",
+                "name": "total"
+            },
+            {
+                "type": {
+                    "names": [
+                        "number"
+                    ]
+                },
+                "optional": true,
+                "defaultvalue": 56,
+                "description": "The height of each row/item in pixels.",
+                "name": "rowHeight"
+            },
+            {
+                "type": {
+                    "names": [
+                        "number"
+                    ]
+                },
+                "optional": true,
+                "defaultvalue": 2,
+                "description": "The number of nodes to pad above and below the visible area.",
+                "name": "nodePadding"
+            },
+            {
+                "type": {
+                    "names": [
+                        "number"
+                    ]
+                },
+                "optional": true,
+                "description": "The height of the viewport in pixels.",
+                "name": "viewportHeight"
+            },
+            {
+                "type": {
+                    "names": [
+                        "string"
+                    ]
+                },
+                "optional": true,
+                "defaultvalue": "\".md-virtual-scroll__track\"",
+                "description": "The selector for the track element.",
+                "name": "track"
+            },
+            {
+                "type": {
+                    "names": [
+                        "string"
+                    ]
+                },
+                "optional": true,
+                "defaultvalue": "\".md-virtual-scroll__item\"",
+                "description": "The selector for the item elements.",
+                "name": "item"
+            }
+        ],
+        "longname": "VirtualScrollOptions",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n     * Creates an instance of the VirtualScroll class.\n     * @param {HTMLElement} host - The host element containing the virtual scrollable list.\n     * @param {VirtualScrollOptions} [options] - Additional options for the virtual scroll.\n     */",
         "meta": {
             "range": [
-                107,
-                466
+                953,
+                1312
             ],
             "filename": "virtual-scroll.js",
-            "lineno": 8,
+            "lineno": 19,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual-scroll",
             "code": {
@@ -83221,23 +83002,25 @@
                 "": null
             }
         },
+        "description": "Creates an instance of the VirtualScroll class.",
         "params": [
             {
                 "type": {
                     "names": [
-                        "Any"
+                        "HTMLElement"
                     ]
                 },
-                "optional": true,
+                "description": "The host element containing the virtual scrollable list.",
                 "name": "host"
             },
             {
                 "type": {
                     "names": [
-                        "Any"
+                        "VirtualScrollOptions"
                     ]
                 },
                 "optional": true,
+                "description": "Additional options for the virtual scroll.",
                 "name": "options"
             }
         ],
@@ -83248,14 +83031,14 @@
         "undocumented": true
     },
     {
-        "comment": "/**\n */",
+        "comment": "/**\n * VirtualScroll class responsible for managing virtual scrolling of a list.\n */",
         "meta": {
             "range": [
-                8,
-                2434
+                85,
+                4138
             ],
             "filename": "virtual-scroll.js",
-            "lineno": 3,
+            "lineno": 4,
             "columnno": 0,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual-scroll",
             "code": {
@@ -83271,24 +83054,27 @@
         "name": "VirtualScroll",
         "longname": "VirtualScroll",
         "kind": "class",
+        "classdesc": "VirtualScroll class responsible for managing virtual scrolling of a list.",
         "scope": "global",
+        "description": "Creates an instance of the VirtualScroll class.",
         "params": [
             {
                 "type": {
                     "names": [
-                        "Any"
+                        "HTMLElement"
                     ]
                 },
-                "optional": true,
+                "description": "The host element containing the virtual scrollable list.",
                 "name": "host"
             },
             {
                 "type": {
                     "names": [
-                        "Any"
+                        "VirtualScrollOptions"
                     ]
                 },
                 "optional": true,
+                "description": "Additional options for the virtual scroll.",
                 "name": "options"
             }
         ]
@@ -83297,11 +83083,11 @@
         "comment": "",
         "meta": {
             "range": [
-                144,
-                160
+                990,
+                1006
             ],
             "filename": "virtual-scroll.js",
-            "lineno": 9,
+            "lineno": 20,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual-scroll",
             "code": {
@@ -83323,11 +83109,11 @@
         "comment": "",
         "meta": {
             "range": [
-                170,
-                438
+                1016,
+                1284
             ],
             "filename": "virtual-scroll.js",
-            "lineno": 10,
+            "lineno": 21,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual-scroll",
             "code": {
@@ -83349,11 +83135,11 @@
         "comment": "",
         "meta": {
             "range": [
-                199,
-                215
+                1045,
+                1061
             ],
             "filename": "virtual-scroll.js",
-            "lineno": 11,
+            "lineno": 22,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual-scroll",
             "code": {
@@ -83374,11 +83160,11 @@
         "comment": "",
         "meta": {
             "range": [
-                229,
-                242
+                1075,
+                1088
             ],
             "filename": "virtual-scroll.js",
-            "lineno": 12,
+            "lineno": 23,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual-scroll",
             "code": {
@@ -83399,11 +83185,11 @@
         "comment": "",
         "meta": {
             "range": [
-                256,
-                270
+                1102,
+                1116
             ],
             "filename": "virtual-scroll.js",
-            "lineno": 13,
+            "lineno": 24,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual-scroll",
             "code": {
@@ -83424,11 +83210,11 @@
         "comment": "",
         "meta": {
             "range": [
-                284,
-                309
+                1130,
+                1155
             ],
             "filename": "virtual-scroll.js",
-            "lineno": 14,
+            "lineno": 25,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual-scroll",
             "code": {
@@ -83449,11 +83235,11 @@
         "comment": "",
         "meta": {
             "range": [
-                323,
-                357
+                1169,
+                1203
             ],
             "filename": "virtual-scroll.js",
-            "lineno": 15,
+            "lineno": 26,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual-scroll",
             "code": {
@@ -83474,11 +83260,11 @@
         "comment": "",
         "meta": {
             "range": [
-                371,
-                403
+                1217,
+                1249
             ],
             "filename": "virtual-scroll.js",
-            "lineno": 16,
+            "lineno": 27,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual-scroll",
             "code": {
@@ -83496,14 +83282,14 @@
         "scope": "static"
     },
     {
-        "comment": "/**\n     * @param {Any} [options={}]\n     */",
+        "comment": "/**\n     * Loads the specified options into the virtual scroll instance.\n     * @param {Object} [options={}] - The options to load.\n     */",
         "meta": {
             "range": [
-                521,
-                705
+                1462,
+                1646
             ],
             "filename": "virtual-scroll.js",
-            "lineno": 25,
+            "lineno": 37,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual-scroll",
             "code": {
@@ -83518,15 +83304,17 @@
                 "": null
             }
         },
+        "description": "Loads the specified options into the virtual scroll instance.",
         "params": [
             {
                 "type": {
                     "names": [
-                        "Any"
+                        "Object"
                     ]
                 },
                 "optional": true,
                 "defaultvalue": "{}",
+                "description": "The options to load.",
                 "name": "options"
             }
         ],
@@ -83540,11 +83328,11 @@
         "comment": "",
         "meta": {
             "range": [
-                561,
-                565
+                1502,
+                1506
             ],
             "filename": "virtual-scroll.js",
-            "lineno": 26,
+            "lineno": 38,
             "columnno": 19,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual-scroll",
             "code": {
@@ -83564,11 +83352,11 @@
         "comment": "",
         "meta": {
             "range": [
-                598,
-                619
+                1539,
+                1560
             ],
             "filename": "virtual-scroll.js",
-            "lineno": 27,
+            "lineno": 39,
             "columnno": 18,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual-scroll",
             "code": {
@@ -83590,11 +83378,11 @@
         "comment": "",
         "meta": {
             "range": [
-                633,
-                659
+                1574,
+                1600
             ],
             "filename": "virtual-scroll.js",
-            "lineno": 28,
+            "lineno": 40,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual-scroll",
             "code": {
@@ -83616,11 +83404,11 @@
         "comment": "",
         "meta": {
             "range": [
-                711,
-                1692
+                1813,
+                3000
             ],
             "filename": "virtual-scroll.js",
-            "lineno": 33,
+            "lineno": 49,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual-scroll",
             "code": {
@@ -83647,11 +83435,11 @@
         "comment": "",
         "meta": {
             "range": [
-                747,
-                773
+                1849,
+                1875
             ],
             "filename": "virtual-scroll.js",
-            "lineno": 34,
+            "lineno": 50,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual-scroll",
             "code": {
@@ -83673,11 +83461,11 @@
         "comment": "",
         "meta": {
             "range": [
-                789,
-                823
+                1891,
+                1925
             ],
             "filename": "virtual-scroll.js",
-            "lineno": 35,
+            "lineno": 51,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual-scroll",
             "code": {
@@ -83699,11 +83487,11 @@
         "comment": "",
         "meta": {
             "range": [
-                839,
-                870
+                1941,
+                1972
             ],
             "filename": "virtual-scroll.js",
-            "lineno": 36,
+            "lineno": 52,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual-scroll",
             "code": {
@@ -83725,11 +83513,11 @@
         "comment": "",
         "meta": {
             "range": [
-                886,
-                924
+                1988,
+                2026
             ],
             "filename": "virtual-scroll.js",
-            "lineno": 37,
+            "lineno": 53,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual-scroll",
             "code": {
@@ -83751,11 +83539,11 @@
         "comment": "",
         "meta": {
             "range": [
-                940,
-                1010
+                2042,
+                2112
             ],
             "filename": "virtual-scroll.js",
-            "lineno": 38,
+            "lineno": 54,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual-scroll",
             "code": {
@@ -83777,11 +83565,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1026,
-                1057
+                2128,
+                2159
             ],
             "filename": "virtual-scroll.js",
-            "lineno": 39,
+            "lineno": 55,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual-scroll",
             "code": {
@@ -83803,11 +83591,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1071,
-                1126
+                2173,
+                2228
             ],
             "filename": "virtual-scroll.js",
-            "lineno": 40,
+            "lineno": 56,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual-scroll",
             "code": {
@@ -83829,11 +83617,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1136,
-                1162
+                2238,
+                2264
             ],
             "filename": "virtual-scroll.js",
-            "lineno": 41,
+            "lineno": 57,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual-scroll",
             "code": {
@@ -83856,11 +83644,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1176,
-                1237
+                2278,
+                2339
             ],
             "filename": "virtual-scroll.js",
-            "lineno": 42,
+            "lineno": 58,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual-scroll",
             "code": {
@@ -83882,11 +83670,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1247,
-                1281
+                2349,
+                2383
             ],
             "filename": "virtual-scroll.js",
-            "lineno": 43,
+            "lineno": 59,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual-scroll",
             "code": {
@@ -83909,11 +83697,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1291,
-                1308
+                2393,
+                2410
             ],
             "filename": "virtual-scroll.js",
-            "lineno": 44,
+            "lineno": 60,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual-scroll",
             "code": {
@@ -83936,11 +83724,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1324,
-                1354
+                2426,
+                2456
             ],
             "filename": "virtual-scroll.js",
-            "lineno": 45,
+            "lineno": 61,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual-scroll",
             "code": {
@@ -83959,14 +83747,48 @@
         "params": []
     },
     {
+        "comment": "/**\n         * @event onVirtualScroll\n         * @property {number} start - The start index of the visible items.\n         * @property {number} end - The end index of the visible items.\n         */",
+        "meta": {
+            "filename": "virtual-scroll.js",
+            "lineno": 66,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual-scroll",
+            "code": {}
+        },
+        "kind": "event",
+        "name": "onVirtualScroll",
+        "properties": [
+            {
+                "type": {
+                    "names": [
+                        "number"
+                    ]
+                },
+                "description": "The start index of the visible items.",
+                "name": "start"
+            },
+            {
+                "type": {
+                    "names": [
+                        "number"
+                    ]
+                },
+                "description": "The end index of the visible items.",
+                "name": "end"
+            }
+        ],
+        "longname": "event:onVirtualScroll",
+        "scope": "global"
+    },
+    {
         "comment": "",
         "meta": {
             "range": [
-                1651,
-                1656
+                2959,
+                2964
             ],
             "filename": "virtual-scroll.js",
-            "lineno": 51,
+            "lineno": 72,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual-scroll",
             "code": {
@@ -83986,11 +83808,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1670,
-                1673
+                2978,
+                2981
             ],
             "filename": "virtual-scroll.js",
-            "lineno": 52,
+            "lineno": 73,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual-scroll",
             "code": {
@@ -84010,11 +83832,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1698,
-                1899
+                3197,
+                3398
             ],
             "filename": "virtual-scroll.js",
-            "lineno": 56,
+            "lineno": 82,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual-scroll",
             "code": {
@@ -84042,11 +83864,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1733,
-                1852
+                3232,
+                3351
             ],
             "filename": "virtual-scroll.js",
-            "lineno": 57,
+            "lineno": 83,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual-scroll",
             "code": {
@@ -84068,11 +83890,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1777,
-                1790
+                3276,
+                3289
             ],
             "filename": "virtual-scroll.js",
-            "lineno": 58,
+            "lineno": 84,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual-scroll",
             "code": {
@@ -84092,11 +83914,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1804,
-                1820
+                3303,
+                3319
             ],
             "filename": "virtual-scroll.js",
-            "lineno": 59,
+            "lineno": 85,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual-scroll",
             "code": {
@@ -84116,11 +83938,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1834,
-                1840
+                3333,
+                3339
             ],
             "filename": "virtual-scroll.js",
-            "lineno": 60,
+            "lineno": 86,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual-scroll",
             "code": {
@@ -84137,14 +83959,14 @@
         "scope": "global"
     },
     {
-        "comment": "/**\n     */",
+        "comment": "/**\n     * Initializes the virtual scroll functionality by adding event listeners and setting initial styles.\n     */",
         "meta": {
             "range": [
-                1921,
-                2207
+                3526,
+                3812
             ],
             "filename": "virtual-scroll.js",
-            "lineno": 67,
+            "lineno": 94,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual-scroll",
             "code": {
@@ -84157,6 +83979,7 @@
                 "": null
             }
         },
+        "description": "Initializes the virtual scroll functionality by adding event listeners and setting initial styles.",
         "name": "init",
         "longname": "VirtualScroll#init",
         "kind": "function",
@@ -84168,11 +83991,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1992,
-                2048
+                3597,
+                3653
             ],
             "filename": "virtual-scroll.js",
-            "lineno": 69,
+            "lineno": 96,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual-scroll",
             "code": {
@@ -84194,11 +84017,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2058,
-                2106
+                3663,
+                3711
             ],
             "filename": "virtual-scroll.js",
-            "lineno": 70,
+            "lineno": 97,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual-scroll",
             "code": {
@@ -84217,14 +84040,14 @@
         "scope": "instance"
     },
     {
-        "comment": "/**\n     */",
+        "comment": "/**\n     * Destroys the virtual scroll functionality by removing event listeners and resetting styles.\n     */",
         "meta": {
             "range": [
-                2229,
-                2432
+                3933,
+                4136
             ],
             "filename": "virtual-scroll.js",
-            "lineno": 77,
+            "lineno": 105,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual-scroll",
             "code": {
@@ -84237,6 +84060,7 @@
                 "": null
             }
         },
+        "description": "Destroys the virtual scroll functionality by removing event listeners and resetting styles.",
         "name": "destroy",
         "longname": "VirtualScroll#destroy",
         "kind": "function",
@@ -84248,11 +84072,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2374,
-                2391
+                4078,
+                4095
             ],
             "filename": "virtual-scroll.js",
-            "lineno": 80,
+            "lineno": 108,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual-scroll",
             "code": {
@@ -84274,11 +84098,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2401,
-                2425
+                4105,
+                4129
             ],
             "filename": "virtual-scroll.js",
-            "lineno": 81,
+            "lineno": 109,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual-scroll",
             "code": {
@@ -84300,11 +84124,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2444,
-                2457
+                4148,
+                4161
             ],
             "filename": "virtual-scroll.js",
-            "lineno": 84,
+            "lineno": 112,
             "columnno": 9,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual-scroll",
             "code": {

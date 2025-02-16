@@ -1,2 +1,2 @@
-export * from "./modules.js";
-export * from "./components.js";
+import "./modules.js";
+import "./components.js";
