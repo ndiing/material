@@ -11,17 +11,15 @@ docs-page {
         @include mixins.typescale-headline-small();
     }
 
-    section {
-        max-height: 336px;
-        overflow: auto;
-        border-radius: var(--md-sys-shape-corner-large);
-        border: 1px solid var(--md-sys-color-outline-variant);
-    }
-
     table {
         border-collapse: separate;
         border-spacing: 0;
+        display: block;
+        overflow: auto;
+        max-height: 336px;
         min-width: 100%;
+        border-radius: var(--md-sys-shape-corner-large);
+        border: 1px solid var(--md-sys-color-outline-variant);
 
         tbody {
             tr {
@@ -43,6 +41,7 @@ docs-page {
             z-index: 1;
             &:last-child {
                 border-right: 0;
+                width: 1%;
             }
         }
         td {
