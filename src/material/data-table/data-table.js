@@ -197,6 +197,7 @@ class MdDataTableComponent extends MdComponent {
                 desc: undefined,
             };
             data.order = orders[data.order];
+            this.requestUpdate()
         }
         /**
          * @event onDataTableNativeHeaderCellClick
