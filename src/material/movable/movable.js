@@ -3,7 +3,7 @@
  */
 class Movable {
     /**
-     * @typedef {Object} MovableOptions
+     * @typedef {Object
      * @property {Array<string>} [axis=["x", "y"]] - The axis along which the element can be moved.
      * @property {Array<string>} [handles=["n", "e", "s", "w", "nw", "ne", "sw", "se"]] - The resize handles.
      */
@@ -17,6 +17,7 @@ class Movable {
         this.options = {
             axis: ["x", "y"],
             handles: ["n", "e", "s", "w", "nw", "ne", "sw", "se"],
+            updateStyle: true,
             ...options,
         };
         this.init();
@@ -39,9 +40,11 @@ class Movable {
         this.startHeight = this.host.clientHeight;
         /**
          * @event onMovableStart
-         * @property {Object} event - The pointer down event.
+         * @type {Object}
+         * @property {Object} event
+         * @property {Object} movable
          */
-        this.emit("onMovableStart");
+        this.emit("onMovableStart", { event, movable: this });
     }
 
     // /**
@@ -79,16 +82,22 @@ class Movable {
                 this.currentY = currentY;
             }
         }
-        this.host.style.setProperty("position", "relative");
-        this.host.style.setProperty("left", (this.currentX ?? 0) + "px");
-        this.host.style.setProperty("top", (this.currentY ?? 0) + "px");
-        this.host.style.setProperty("width", (this.currentWidth ?? this.startWidth) + "px");
-        this.host.style.setProperty("height", (this.currentHeight ?? this.startHeight) + "px");
+
+        if (this.options.updateStyle) {
+            this.host.style.setProperty("position", "relative");
+            this.host.style.setProperty("left", (this.currentX ?? 0) + "px");
+            this.host.style.setProperty("top", (this.currentY ?? 0) + "px");
+            this.host.style.setProperty("min-width", (this.currentWidth ?? this.startWidth) + "px");
+            this.host.style.setProperty("min-height", (this.currentHeight ?? this.startHeight) + "px");
+        }
+
         /**
          * @event onMovableMove
-         * @property {Object} event - The pointer move event.
+         * @type {Object}
+         * @property {Object} event
+         * @property {Object} movable
          */
-        this.emit("onMovableMove");
+        this.emit("onMovableMove", { event, movable: this });
     }
 
     // /**
@@ -103,9 +112,11 @@ class Movable {
         window.removeEventListener("pointerup", this.handleMovableEnd);
         /**
          * @event onMovableEnd
-         * @property {Object} event - The pointer up event.
+         * @type {Object}
+         * @property {Object} event
+         * @property {Object} movable
          */
-        this.emit("onMovableEnd");
+        this.emit("onMovableEnd", { event, movable: this });
     }
 
     // /**

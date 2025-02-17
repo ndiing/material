@@ -5,10 +5,10 @@ class DemoDataTableCheckbox extends MdComponent {
         super();
         this.headers = [
             [
-                { name: "userId", label: "User Id" },
-                { name: "id", label: "Id" },
-                { name: "title", label: "Title" },
-                { name: "body", label: "Body" },
+                { name: "userId", label: "User Id", rightAligned: true, width: 128 },
+                { name: "id", label: "Id", rightAligned: true, width: 128 },
+                { name: "title", label: "Title", width: 256 },
+                { name: "body", label: "Body", width: 256 },
             ],
         ];
         this.bodies = this.headers;

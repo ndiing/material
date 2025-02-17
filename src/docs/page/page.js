@@ -166,11 +166,11 @@ class DocsPage extends MdComponent {
         /* prettier-ignore */
         return html`
             <div style="margin:24px;">
-                ${this.renderClass(this.data.class)}
-                ${this.renderMember(this.data.member)}
-                ${this.renderFunction(this.data.function)}
-                ${this.renderTypedef(this.data.typedef)}
-                ${this.renderEvent(this.data.event)}
+                ${this.renderClass(this.data?.class)}
+                ${this.renderMember(this.data?.member)}
+                ${this.renderFunction(this.data?.function)}
+                ${this.renderTypedef(this.data?.typedef)}
+                ${this.renderEvent(this.data?.event)}
             </div>
         `
     }

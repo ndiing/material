@@ -1,10 +1,8 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { styleMap } from "lit/directives/style-map.js";
-import { ifDefined } from "lit/directives/if-defined.js";
-import { Store } from "../store/store";
+
 /**
- * MdDataTableComponent class responsible for displaying a data table.
  * @extends MdComponent
  * @element md-data-table
  */
@@ -13,25 +11,25 @@ class MdDataTableComponent extends MdComponent {
      * @typedef {Object} MdDataTableComponentHeaders
      * @property {String} name
      * @property {String} label
-     * @property {Boolean} resizable
+     * @property {Boolean} rightAligned
      * @property {Boolean} sortable
+     * @property {Boolean} resizable
      */
     /**
      * @typedef {Object} MdDataTableComponentBodies
      * @property {String} name
-     * @property {String} label
+     * @property {Boolean} rightAligned
      */
     /**
      * @typedef {Object} MdDataTableComponentFooters
      * @property {String} label
      */
     /**
-     * The properties of the component.
-     * @property {MdDataTableComponentHeaders.<Array>} [headers=[]] - The headers of the table.
-     * @property {MdDataTableComponentBodies.<Array>} [bodies=[]] - The bodies of the table.
-     * @property {MdDataTableComponentFooters.<Array>} [footers=[]] - The footers of the table.
-     * @property {Array} [data=[]] - The data to be displayed in the table.
-     * @property {boolean} [checkbox=false] - Indicates if checkboxes should be displayed.
+     * @property {MdDataTableComponentHeaders.<Array>} [headers=[]]
+     * @property {MdDataTableComponentBodies.<Array>} [bodies=[]]
+     * @property {MdDataTableComponentFooters.<Array>} [footers=[]]
+     * @property {Array} [data=[]]
+     * @property {Boolean} checkbox
      */
     static properties = {
         headers: { type: Array },
@@ -41,69 +39,58 @@ class MdDataTableComponent extends MdComponent {
         checkbox: { type: Boolean },
     };
 
-    /**
-     * Gets the checkbox column configuration.
-     * @returns {Array} The checkbox column configuration.
-     */
     get checkboxColumn() {
         if (this.checkbox) {
-            return [{ checkbox: true, sticky: true }];
+            return [{ checkbox: true }];
         }
         return [];
     }
 
     /**
-     * Gets the selected items in the data table.
      * @readonly
-     * @returns {Array} The selected items.
+     * @returns {Array}
      */
     get selected() {
         return this.data.filter((item) => item.selected);
     }
 
     /**
-     * Gets the indeterminate state of the checkboxes.
      * @readonly
-     * @returns {boolean} The indeterminate state.
+     * @returns {Boolean}
      */
     get indeterminate() {
         return this.selected.length && this.selected.length < this.data.length;
     }
 
     /**
-     * Gets the checked state of the checkboxes.
      * @readonly
-     * @returns {boolean} The checked state.
+     * @returns {Boolean}
      */
     get checked() {
         return this.selected.length && this.selected.length === this.data.length;
     }
 
-    /**
-     * Creates an instance of the MdDataTableComponent class.
-     */
     constructor() {
         super();
+
         this.headers = [];
         this.bodies = [];
         this.footers = [];
         this.data = [];
-
-        // this.store = new Store()
-        // this.dataStore = []
-        // this.virtual = new Virtual()
-        // this.dataVirtual = []
     }
 
     styleDataTableNativeHeaderCell(th) {
         return {
+            "min-width": th.width + "px",
+            // "max-width": th.width + "px",
             position: "sticky",
-            top: 0,
-            "z-index": 2,
+            top: "0",
+            zIndex: 2,
+
             ...(th.sticky && {
                 position: "sticky",
-                left: 0,
-                "z-index": 3,
+                left: "0",
+                zIndex: 3,
             }),
         };
     }
@@ -112,93 +99,10 @@ class MdDataTableComponent extends MdComponent {
         return {
             ...(td.sticky && {
                 position: "sticky",
-                left: 0,
-                "z-index": 1,
+                left: "0",
+                zIndex: 1,
             }),
         };
-    }
-
-    renderDataTableNativeHeaderRow(tr) {
-        /* prettier-ignore */
-        return html`
-            <tr>
-                ${this.checkboxColumn.concat(tr).map((th) => html`
-                    <th
-                        .data="${th}"
-                        style="${styleMap(this.styleDataTableNativeHeaderCell(th))}"
-                        @click="${this.handleDataTableNativeHeaderCellClick}"
-                    >
-                        <md-data-table-cell
-                            .label="${th.label}"
-                            .checkbox="${th.checkbox}"
-                            .indeterminate="${this.indeterminate}"
-                            .checked="${this.checked}"
-                            .action="${th.action || (th.sortable && " ")}"
-                        ></md-data-table-cell>
-                    </th>
-                `)}
-            </tr>
-        `;
-    }
-
-    renderDataTableNativeBody(item) {
-        /* prettier-ignore */
-        return html`
-            <tbody
-                .data="${item}"
-                ?selected="${item.selected}"
-                @click="${this.handleDataTableNativeBodyClick}"
-            >
-                ${this.bodies.map((tr) => this.renderDataTableBodyRow(tr, item))}
-            </tbody>
-        `;
-    }
-
-    renderDataTableBodyRow(tr, item) {
-        /* prettier-ignore */
-        return html`
-            <tr>
-                ${this.checkboxColumn.concat(tr).map((td) => this.renderDataTableNativeBodyCell(td, item))}
-            </tr>
-        `;
-    }
-
-    renderDataTableNativeBodyCell(td, item) {
-        /* prettier-ignore */
-        return html`
-            <td
-                .data="${td}"
-                style="${styleMap(this.styleDataTableNativeBodyCell(td))}"
-                @click="${this.handleDataTableNativeBodyCellClick}"
-            >
-                <md-data-table-cell
-                    .label="${item[td.name]}"
-                    .checkbox="${td.checkbox}"
-                    .indeterminate="${item.indeterminate}"
-                    .checked="${item.selected}"
-                ></md-data-table-cell>
-            </td>
-        `;
-    }
-
-    renderDataTableNativeFooterRow(tr) {
-        /* prettier-ignore */
-        return html`
-            <tr>
-                ${tr.map((td) => this.renderDataTableNativeFooterCell(td))}
-            </tr>
-        `;
-    }
-
-    renderDataTableNativeFooterCell(td) {
-        /* prettier-ignore */
-        return html`
-            <td>
-                <md-data-table-cell 
-                    .label="${td.label}"
-                ></md-data-table-cell>
-            </td>
-        `;
     }
 
     render() {
@@ -207,153 +111,330 @@ class MdDataTableComponent extends MdComponent {
             <table class="md-data-table__native">
                 <caption></caption>
                 <thead>
-                    ${this.headers.map((tr) => this.renderDataTableNativeHeaderRow(tr))}
+                    ${this.headers.map(tr=>html`
+                        <tr>
+                            ${this.checkboxColumn.concat(tr).map(th=>html`
+                                <th
+                                    is="md-data-table-native-header-cell"
+                                    .data="${th}"
+                                    ?resizable="${th.resizable}"
+                                    style="${styleMap(this.styleDataTableNativeHeaderCell(th))}"
+                                    @click="${this.handleDataTableNativeHeaderCellClick}"
+                                    @dblclick="${this.handleDataTableNativeHeaderCellDblclick}"
+                                    @pointerenter="${this.handleDataTableNativeHeaderCellPointerenter}"
+                                    @pointerleave="${this.handleDataTableNativeHeaderCellPointerleave}"
+                                >
+                                    <md-data-table-cell
+                                        .checkbox="${th.checkbox}"
+                                        .indeterminate="${this.indeterminate}"
+                                        .checked="${this.checked}"
+                                        .label="${th.label}"
+                                        .rightAligned="${th.rightAligned}"
+                                        .sortable="${th.sortable}"
+                                        .sortIcon="${th.sortIcon}"
+                                    ></md-data-table-cell>
+                                </th>
+                            `)}
+                        </tr>
+                    `)}
                 </thead>
-                ${this.data.map((item) => this.renderDataTableNativeBody(item))}
-                <tfoot>
-                    ${this.footers.map((tr) => this.renderDataTableNativeFooterRow(tr))}
-                </tfoot>
+                ${this.data.map(item=>html`
+                    <tbody
+                        .data="${item}"
+                        ?selected="${item.selected}"
+                        @click="${this.handleDataTableNativeBodyClick}"
+                    >
+                        ${this.bodies.map(tr=>html`
+                            <tr>
+                                ${this.checkboxColumn.concat(tr).map(td=>html`
+                                    <td
+                                        .data="${td}"
+                                        style="${styleMap(this.styleDataTableNativeBodyCell(td))}"
+                                        @click="${this.handleDataTableNativeBodyCellClick}"
+                                    >
+                                        <md-data-table-cell
+                                            .checkbox="${td.checkbox}"
+                                            .checked="${item.selected}"
+                                            .label="${item[td.name]}"
+                                            .rightAligned="${td.rightAligned}"
+                                        ></md-data-table-cell>
+                                    </td>
+                                `)}
+                            </tr>
+                        `)}
+                    </tbody>
+                `)}
+                <!-- <tfoot>
+                    <tr>
+                        <td></td>
+                    </tr>
+                </tfoot> -->
             </table>
-        `;
+        `
     }
 
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-data-table");
-        this.handleDataTableKeydown = this.handleDataTableKeydown.bind(this);
-        window.addEventListener("keydown", this.handleDataTableKeydown);
+        this.handleDataTableWindowKeydown = this.handleDataTableWindowKeydown.bind(this);
+        window.addEventListener("keydown", this.handleDataTableWindowKeydown);
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
-        window.removeEventListener("keydown", this.handleDataTableKeydown);
+        window.removeEventListener("keydown", this.handleDataTableWindowKeydown);
     }
 
-    handleDataTableKeydown(event) {
-        if (event.ctrlKey && event.key === "a") {
-            event.preventDefault();
-            this.data.forEach((item) => {
-                item.selected = true;
-            });
-            this.requestUpdate();
-        }
+    handleDataTableWindowKeydownCtrlA(event) {
+        event.preventDefault();
+
+        this.data.forEach((item) => {
+            item.selected = true;
+        });
+
+        this.requestUpdate();
+
         /**
-         * @event onDataTableKeydown
+         * @event onDataTableWindowKeydownCtrlA
+         * @type {Object}
          * @property {Object} event
          */
-        this.emit("onDataTableKeydown", { event });
+        this.emit("onDataTableWindowKeydownCtrlA", { event });
     }
 
-    handleDataTableNativeHeaderCellClick(event) {
+    handleDataTableWindowKeydown(event) {
+        if (event.ctrlKey && event.key === "a") return this.handleDataTableWindowKeydownCtrlA(event);
+
+        /**
+         * @event onDataTableWindowKeydown
+         * @type {Object}
+         * @property {Object} event
+         */
+        this.emit("onDataTableWindowKeydown", { event });
+    }
+
+    handleDataTableNativeHeaderCellSortablePointerenter(event) {
         const data = event.currentTarget.data;
 
-        if (data.checkbox) return this.handleDataTableNativeHeaderCellCheckboxClick(event);
+        if (data.sortable && !data.order) {
+            data.sortIcon = "arrow_upward";
+            this.requestUpdate();
+        }
+
+        /**
+         * @event onDataTableNativeHeaderCellSortablePointerenter
+         * @type {Object}
+         * @property {Object} event
+         */
+        this.emit("onDataTableNativeHeaderCellSortablePointerenter", { event });
+    }
+
+    handleDataTableNativeHeaderCellSortablePointerleave(event) {
+        const data = event.currentTarget.data;
+
+        if (data.sortable && !data.order) {
+            data.sortIcon = "";
+            this.requestUpdate();
+        }
+
+        /**
+         * @event onDataTableNativeHeaderCellSortablePointerleave
+         * @type {Object}
+         * @property {Object} event
+         */
+        this.emit("onDataTableNativeHeaderCellSortablePointerleave", { event });
+    }
+
+    handleDataTableNativeHeaderCellSortableClick(event) {
+        const data = event.currentTarget.data;
 
         if (data.sortable) {
-            const actions = {
+            const sortIcons = {
                 undefined: "arrow_upward",
                 asc: "arrow_downward",
                 desc: undefined,
             };
-            data.action = actions[data.order];
+            data.sortIcon = sortIcons[data.order];
+
             const orders = {
                 undefined: "asc",
                 asc: "desc",
                 desc: undefined,
             };
             data.order = orders[data.order];
+
             this.requestUpdate();
         }
+
         /**
-         * @event onDataTableNativeHeaderCellClick
+         * @event onDataTableNativeHeaderCellSortableClick
+         * @type {Object}
          * @property {Object} event
          */
-        this.emit("onDataTableNativeHeaderCellClick", { event });
+        this.emit("onDataTableNativeHeaderCellSortableClick", { event });
     }
 
     handleDataTableNativeHeaderCellCheckboxClick(event) {
         const data = event.currentTarget.data;
+
         const selected = !this.checked || this.indeterminate;
+
         this.data.forEach((item) => {
             item.selected = selected;
         });
+
         this.requestUpdate();
+
         /**
          * @event onDataTableNativeHeaderCellCheckboxClick
+         * @type {Object}
          * @property {Object} event
          */
         this.emit("onDataTableNativeHeaderCellCheckboxClick", { event });
     }
 
-    handleDataTableNativeBodyClick(event) {
-        const bodyData = event.target.closest("td")?.data;
-
-        if (bodyData?.checkbox) return;
+    handleDataTableNativeBodyCellCheckboxClick(event) {
         const data = event.currentTarget.data;
 
-        if (event.ctrlKey) {
-            data.selected = !data.selected;
-        } else if (event.shiftKey) {
-            this.prevSelectedIndex = this.prevSelectedIndex ?? 0;
-            this.currentSelectedIndex = this.data.indexOf(data);
-            this.swapSelectedIndex = this.prevSelectedIndex > this.currentSelectedIndex;
+        const dataBody = event.target.closest("tbody")?.data;
 
-            if (this.swapSelectedIndex) {
-                [this.prevSelectedIndex, this.currentSelectedIndex] = [this.currentSelectedIndex, this.prevSelectedIndex];
-            }
-            this.data.forEach((item, index) => {
-                item.selected = index >= this.prevSelectedIndex && index <= this.currentSelectedIndex;
-            });
+        dataBody.selected = !dataBody.selected;
 
-            if (this.swapSelectedIndex) {
-                [this.currentSelectedIndex, this.prevSelectedIndex] = [this.prevSelectedIndex, this.currentSelectedIndex];
-            }
-        } else {
-            this.data.forEach((item) => {
-                item.selected = item === data;
-            });
-            this.prevSelectedIndex = this.data.indexOf(data);
-        }
         this.requestUpdate();
+
         /**
-         * @event onDataTableNativeBodyClick
+         * @event onDataTableNativeBodyCellCheckboxClick
+         * @type {Object}
          * @property {Object} event
          */
-        this.emit("onDataTableNativeBodyClick", { event });
+        this.emit("onDataTableNativeBodyCellCheckboxClick", { event });
+    }
+
+    handleDataTableNativeHeaderCellPointerenter(event) {
+        const data = event.currentTarget.data;
+
+        if (data.sortable /* &&event.target.closest('.md-data-table__sortable') */) return this.handleDataTableNativeHeaderCellSortablePointerenter(event);
+
+        /**
+         * @event onDataTableNativeHeaderCellPointerenter
+         * @type {Object}
+         * @property {Object} event
+         */
+        this.emit("onDataTableNativeHeaderCellPointerenter", { event });
+    }
+
+    handleDataTableNativeHeaderCellPointerleave(event) {
+        const data = event.currentTarget.data;
+
+        if (data.sortable /* &&event.target.closest('.md-data-table__sortable') */) return this.handleDataTableNativeHeaderCellSortablePointerleave(event);
+
+        /**
+         * @event onDataTableNativeHeaderCellPointerleave
+         * @type {Object}
+         * @property {Object} event
+         */
+        this.emit("onDataTableNativeHeaderCellPointerleave", { event });
+    }
+
+    handleDataTableNativeHeaderCellClick(event) {
+        const data = event.currentTarget.data;
+
+        if (data.checkbox) return this.handleDataTableNativeHeaderCellCheckboxClick(event);
+        else if (data.resizable && event.target.closest(".md-resizable__handle")) return;
+        else if (data.sortable && event.target.closest(".md-data-table__sortable")) return this.handleDataTableNativeHeaderCellSortableClick(event);
+
+        /**
+         * @event onDataTableNativeHeaderCellClick
+         * @type {Object}
+         * @property {Object} event
+         */
+        this.emit("onDataTableNativeHeaderCellClick", { event });
+    }
+
+    handleDataTableNativeHeaderCellResizableDblclick(event) {
+        const data = event.currentTarget.data;
+
+        const rowIndex = event.currentTarget.parentElement.rowIndex + 1;
+        const cellIndex = event.currentTarget.cellIndex + 1;
+
+        const width = [...this.querySelectorAll(`tr:nth-child(${rowIndex}) td:nth-child(${cellIndex}) .md-data-table__label`)].reduce((max, element) => Math.max(max, element.scrollWidth), 0);
+
+        data.width = width;
+
+        event.currentTarget.style.setProperty("min-width", data.width + "px");
+        // event.currentTarget.style.setProperty('max-width',data.width+'px')
+
+        /**
+         * @event onDataTableNativeHeaderCellResizableDblclick
+         * @type {Object}
+         * @property {Object} event
+         */
+        this.emit("onDataTableNativeHeaderCellResizableDblclick", { event });
+    }
+
+    handleDataTableNativeHeaderCellDblclick(event) {
+        const data = event.currentTarget.data;
+
+        if (data.resizable && event.target.closest(".md-resizable__handle")) return this.handleDataTableNativeHeaderCellResizableDblclick(event);
+
+        /**
+         * @event onDataTableNativeHeaderCellDblclick
+         * @type {Object}
+         * @property {Object} event
+         */
+        this.emit("onDataTableNativeHeaderCellDblclick", { event });
     }
 
     handleDataTableNativeBodyCellClick(event) {
         const data = event.currentTarget.data;
 
-        if (data.checkbox) return this.handleDataTableNativeBodyCellCheckboxClcik(event);
+        if (data.checkbox) return this.handleDataTableNativeBodyCellCheckboxClick(event);
 
         /**
          * @event onDataTableNativeBodyCellClick
+         * @type {Object}
          * @property {Object} event
          */
         this.emit("onDataTableNativeBodyCellClick", { event });
     }
 
-    handleDataTableNativeBodyCellCheckboxClcik(event) {
+    handleDataTableNativeBodyClick(event) {
         const data = event.currentTarget.data;
-        const bodyData = event.target.closest("tbody").data;
-        bodyData.selected = !bodyData.selected;
+
+        const dataTd = event.target.closest("td")?.data;
+
+        if (dataTd.checkbox) return;
+
+        if (event.ctrlKey) {
+            data.selected = !data.selected;
+        } else if (event.shiftKey) {
+            this.prevSelectedIndex = this.prevSelectedIndex || 0;
+            this.currSelectedIndex = this.data.indexOf(data);
+            this.swapSelectedIndex = this.currSelectedIndex > this.prevSelectedIndex;
+            if (this.swapSelectedIndex) {
+                [this.prevSelectedIndex, this.currSelectedIndex] = [this.currSelectedIndex, this.prevSelectedIndex];
+            }
+            this.data.forEach((item, index) => {
+                item.selected = index <= this.prevSelectedIndex && index >= this.currSelectedIndex;
+            });
+            if (this.swapSelectedIndex) {
+                [this.currSelectedIndex, this.prevSelectedIndex] = [this.prevSelectedIndex, this.currSelectedIndex];
+            }
+        } else {
+            this.data.forEach((item, index) => {
+                item.selected = item === data;
+            });
+            this.prevSelectedIndex = this.data.indexOf(data);
+        }
+
         this.requestUpdate();
+
         /**
-         * @event onDataTableNativeBodyCellCheckboxClcik
+         * @event onDataTableNativeBodyClick
+         * @type {Object}
          * @property {Object} event
          */
-        this.emit("onDataTableNativeBodyCellCheckboxClcik", { event });
-    }
-
-    /**
-     * description
-     * @param {Array} data - description
-     * @param {Object} options - description
-     * @returns {Array} description
-     */
-    load(data = [], options = {}) {
-        return [];
+        this.emit("onDataTableNativeBodyClick", { event });
     }
 }
 

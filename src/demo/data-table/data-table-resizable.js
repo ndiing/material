@@ -1,16 +1,16 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
 
-class DemoDataTableSortable extends MdComponent {
+class DemoDataTableResizable extends MdComponent {
     constructor() {
         super();
 
         this.headers = [
             [
-                { name: "userId", label: "User Id", rightAligned: true, width: 128, sortable: true },
-                { name: "id", label: "Id", rightAligned: true, width: 128, sortable: true },
-                { name: "title", label: "Title", width: 256, sortable: true },
-                { name: "body", label: "Body", width: 256, sortable: true },
+                { name: "userId", label: "User Id", rightAligned: true, width: 128, resizable: true },
+                { name: "id", label: "Id", rightAligned: true, width: 128, resizable: true },
+                { name: "title", label: "Title", width: 256, resizable: true },
+                { name: "body", label: "Body", width: 256, resizable: true },
             ],
         ];
         this.bodies = this.headers;
@@ -644,6 +644,6 @@ class DemoDataTableSortable extends MdComponent {
     }
 }
 
-customElements.define("demo-data-table-sortable", DemoDataTableSortable);
+customElements.define("demo-data-table-resizable", DemoDataTableResizable);
 
-export default document.createElement("demo-data-table-sortable");
+export default document.createElement("demo-data-table-resizable");

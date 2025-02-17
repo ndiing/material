@@ -18,6 +18,7 @@ import DemoDataTableCell from "./data-table/data-table-cell.js";
 import DemoDataTable from "./data-table/data-table.js";
 import DemoDataTableCheckbox from "./data-table/data-table-checkbox.js";
 import DemoDataTableSortable from "./data-table/data-table-sortable.js";
+import DemoDataTableResizable from "./data-table/data-table-resizable.js";
 import DemoDialog from "./dialog/dialog.js";
 import DemoDivider from "./divider/divider.js";
 import DemoFab from "./fab/fab.js";
@@ -127,6 +128,7 @@ export default {
         { path: "data-table", component: DemoDataTable },
         { path: "data-table-checkbox", component: DemoDataTableCheckbox },
         { path: "data-table-sortable", component: DemoDataTableSortable },
+        { path: "data-table-resizable", component: DemoDataTableResizable },
         { path: "dialog", component: DemoDialog },
         { path: "divider", component: DemoDivider },
         { path: "fab", component: DemoFab },

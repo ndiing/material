@@ -38,6 +38,7 @@ class MdIconButtonComponent extends MdComponent {
     constructor() {
         super();
         this.type = "button";
+        this.rippleOptions = {};
     }
 
     render() {
