@@ -6,28 +6,41 @@ import { Store } from "../../material/store/store";
 class DemoTest extends MdComponent {
     constructor() {
         super();
+        this.headers=[
+            [
+                {name:'label',label:'Label'}
+            ]
+        ]
+        this.bodies=this.headers
+        this.footers=[]
+        this.data = [];
+        this.dataStore = [];
         this.dataVirtual = [];
     }
     render() {
         return html`
-            <md-layout>
-                <md-layout-grid>
+            <md-layout style="">
+                <md-layout-grid style="min-height:0;height:100%">
                     <md-layout-column
                         expanded="12"
                         medium="4"
                         compact="4"
+                        style="min-height:0;height:100%"
                     >
-                        <div class="demo-virtual">
-                            <div class="demo-virtual__track"></div>
-                            <div class="demo-virtual__container">${this.dataVirtual.map((item) => html` <div class="demo-virtual__item">${item.label}</div> `)}</div>
-                        </div>
+                        <md-data-table
+                            .headers="${this.headers}"
+                            .bodies="${this.bodies}"
+                            .data="${this.dataVirtual}"
+                        ></md-data-table>
                     </md-layout-column>
                 </md-layout-grid>
             </md-layout>
         `;
     }
-    firstUpdated() {
-        this.viewport = this.querySelector(".demo-virtual");
+    async firstUpdated() {
+        await this.updateComplete
+
+        this.viewport = this.querySelector("md-data-table table");
 
         this.viewport.addEventListener("onVirtualScroll", (event) => {
             const detail = event.detail;
@@ -36,11 +49,11 @@ class DemoTest extends MdComponent {
         });
 
         this.virtual = new Virtual(this.viewport, {
-            track: ".demo-virtual__track",
-            item: ".demo-virtual__item",
+            track: "md-data-table caption",
+            item: "md-data-table tbody",
         });
 
-        this.data = Array.from({ length: 1000 }, (v, k) => ({ label: "label " + k }));
+        this.data = Array.from({ length: 10000 }, (v, k) => ({ label: "label " + k }));
 
         this.store = new Store();
         this.store.load(this.data);

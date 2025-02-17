@@ -19,8 +19,6 @@ class MdNavigationListComponent extends MdComponent {
     constructor() {
         super();
         this.items = [];
-        this.store = new Store();
-        this.itemsStore = [];
     }
 
     renderNavigationListItem(item) {
@@ -58,21 +56,8 @@ class MdNavigationListComponent extends MdComponent {
         window.removeEventListener("keydown", this.handleNavigationListKeydown);
     }
 
-    async updated(changedProperties) {
-        super.updated(changedProperties);
-        if (changedProperties.has("items")) {
-            await this.updateComplete;
-            this.store.load(this.items);
-            this.updateStore();
-        }
-    }
-
-    updateStore() {
-        const result = this.store.get({});
-        this.itemsStore = result.data;
-        this.requestUpdate();
-    }
-
+    
+    
     async updateScroll() {
         await this.updateComplete;
         const navigationListItemSelected = this.querySelector("md-navigation-list-item[selected]");
@@ -86,10 +71,10 @@ class MdNavigationListComponent extends MdComponent {
 
     handleNavigationListKeydownArrowUp(event) {
         event.preventDefault();
-        const selectedIndex = this.itemsStore.findIndex((item) => item.selected);
+        const selectedIndex = this.items.findIndex((item) => item.selected);
         const prevIndex = selectedIndex - 1;
         if (prevIndex === -1) return;
-        this.itemsStore.forEach((item, index) => {
+        this.items.forEach((item, index) => {
             item.selected = index === prevIndex;
         });
         this.requestUpdate();
@@ -103,10 +88,10 @@ class MdNavigationListComponent extends MdComponent {
 
     async handleNavigationListKeydownArrowDown(event) {
         event.preventDefault();
-        const selectedIndex = this.itemsStore.findIndex((item) => item.selected);
+        const selectedIndex = this.items.findIndex((item) => item.selected);
         const nextIndex = selectedIndex + 1;
-        if (nextIndex === this.itemsStore.length) return;
-        this.itemsStore.forEach((item, index) => {
+        if (nextIndex === this.items.length) return;
+        this.items.forEach((item, index) => {
             item.selected = index === nextIndex;
         });
         this.requestUpdate();

@@ -18,8 +18,6 @@ class MdTreeComponent extends MdComponent {
         super();
         this.items = [];
         this.itemsFlat = [];
-        this.store = new Store();
-        this.itemsStore = [];
     }
 
     renderTreeItem(item) {
@@ -42,7 +40,7 @@ class MdTreeComponent extends MdComponent {
     }
 
     render() {
-        return this.itemsStore.filter((item) => item.visible).map((item) => this.renderTreeItem(item));
+        return this.itemsFlat.filter((item) => item.visible).map((item) => this.renderTreeItem(item));
     }
 
     connectedCallback() {
@@ -57,9 +55,6 @@ class MdTreeComponent extends MdComponent {
         if (changedProperties.has("items")) {
             await this.updateComplete;
             this.itemsFlat = this.flatten(this.items).itemsFlat;
-            this.store.load(this.itemsFlat);
-            const result = this.store.get();
-            this.itemsStore = result.data;
             this.requestUpdate();
         }
     }
@@ -107,7 +102,7 @@ class MdTreeComponent extends MdComponent {
 
     handleTreeKeydownArrowDown(event) {
         event.preventDefault();
-        const visibleItems = this.itemsStore.filter((item) => item.visible);
+        const visibleItems = this.itemsFlat.filter((item) => item.visible);
         const selectedIndex = visibleItems.findIndex((item) => item.selected);
         if (selectedIndex === visibleItems.filter((item) => item.visible).length - 1) return;
         const nextItem = visibleItems.find((item, index) => item.visible && index > selectedIndex);
@@ -125,7 +120,7 @@ class MdTreeComponent extends MdComponent {
 
     handleTreeKeydownArrowUp(event) {
         event.preventDefault();
-        const visibleItems = this.itemsStore.filter((item) => item.visible);
+        const visibleItems = this.itemsFlat.filter((item) => item.visible);
         const selectedIndex = visibleItems.findLastIndex((item) => item.selected);
         if (selectedIndex === 0) return;
         const nextIndex = visibleItems.findLastIndex((item, index) => item.visible && index < selectedIndex);
@@ -143,11 +138,11 @@ class MdTreeComponent extends MdComponent {
 
     handleTreeKeydownArrowRight(event) {
         event.preventDefault();
-        const selectedItem = this.itemsStore.find((item) => item.selected);
+        const selectedItem = this.itemsFlat.find((item) => item.selected);
         if (selectedItem.children?.length) {
             selectedItem.expanded = true;
             this.updateVisibility(selectedItem);
-            const visibleItems = this.itemsStore.filter((item) => item.visible);
+            const visibleItems = this.itemsFlat.filter((item) => item.visible);
             const selectedIndex = visibleItems.findIndex((item) => item.selected);
             if (selectedIndex === visibleItems.filter((item) => item.visible).length - 1) return;
             const nextIndex = visibleItems.findIndex((item, index) => item.visible && index > selectedIndex);
@@ -166,7 +161,7 @@ class MdTreeComponent extends MdComponent {
 
     handleTreeKeydownArrowLeft(event) {
         event.preventDefault();
-        const selectedItem = this.itemsStore.find((item) => item.selected);
+        const selectedItem = this.itemsFlat.find((item) => item.selected);
         if (selectedItem.expanded) {
             selectedItem.expanded = false;
             this.updateVisibility(selectedItem);

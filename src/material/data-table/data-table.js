@@ -48,8 +48,6 @@ class MdDataTableComponent extends MdComponent {
         this.bodies = [];
         this.footers = [];
         this.data = [];
-        this.dataStore = [];
-        this.store = new Store();
     }
 
     styleDataTableNativeHeaderCell(th) {
@@ -78,6 +76,7 @@ class MdDataTableComponent extends MdComponent {
     render() {
         return html`
             <table class="md-data-table__native">
+                <caption></caption>
                 <thead>
                     ${this.headers.map(
                         (tr) => html`
@@ -104,7 +103,7 @@ class MdDataTableComponent extends MdComponent {
                         `,
                     )}
                 </thead>
-                ${this.dataStore.map(
+                ${this.data.map(
                     (item) => html`
                         <tbody
                             .data="${item}"
@@ -168,25 +167,6 @@ class MdDataTableComponent extends MdComponent {
         window.removeEventListener("keydown", this.handleDataTableKeydown);
     }
 
-    async updated(changedProperties) {
-        super.updated(changedProperties);
-        if (changedProperties.has("data")) {
-            await this.updateComplete;
-            this.store.load(this.data);
-            this.updateStore();
-        }
-    }
-
-    /**
-     */
-    updateStore() {
-        const result = this.store.get({
-            sorters: this.headers.flat().filter((item) => item.order),
-        });
-        this.dataStore = result.data;
-        this.requestUpdate();
-    }
-
     handleDataTableKeydown(event) {
         if (event.ctrlKey && event.key === "a") {
             event.preventDefault();
@@ -217,7 +197,6 @@ class MdDataTableComponent extends MdComponent {
                 desc: undefined,
             };
             data.order = orders[data.order];
-            this.updateStore();
         }
         /**
          * @event onDataTableNativeHeaderCellClick
