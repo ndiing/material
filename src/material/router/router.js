@@ -7,9 +7,7 @@ class Router {
      * @static
      * @property {Object} event
      */
-
     static params = {};
-
     // /**
     //  * Retrieves the matching route(s) based on the provided pathname.
     //  * @param {string} [pathname=this.pathname] - The current pathname to match against.
@@ -26,14 +24,17 @@ class Router {
                 route.regexp = new RegExp("^" + route.pathname.replace(/\:(\w+)/g, "(?<$1>[^/]+)").replace(/\*/, "(?:.*)") + "(?:/?$)", "i");
             }
             const matches = pathname.match(route.regexp);
+
             if (matches) {
                 this.params = {
                     ...matches?.groups,
                 };
                 return [...result, route];
             }
+
             if (route?.children?.length) {
                 const matches = this.get(pathname, route.children, route, [...result, route]);
+
                 if (matches) return matches;
             }
         }
@@ -72,6 +73,7 @@ class Router {
          * @property {Object} event
          */
         this.emit("onRouterNavigate", {});
+
         for (const route of routes ?? []) {
             if (route.beforeLoad) {
                 try {
@@ -85,10 +87,8 @@ class Router {
                     break;
                 }
             }
-
             await this.loadComponent(route);
             const container = this.setContainer(route);
-
             const outlet = await this.getOutlet(container, route);
             this.renderComponent(route, outlet);
             this.removeComponent(routes);
@@ -112,8 +112,10 @@ class Router {
     //  */
     static removeComponent(routes) {
         const outlets = Array.from(document.body.querySelectorAll("md-outlet"));
+
         for (const outlet of outlets) {
             let element = outlet.nextElementSibling;
+
             while (element) {
                 if (!outlets.find((outlet) => outlet === element) && !routes.find((route) => route.component === element)) {
                     element.remove();
@@ -146,12 +148,14 @@ class Router {
             let outlet;
             let selector = "md-outlet:not([name])";
             let target = container;
+
             if (route.outlet) {
                 selector = `md-outlet[name="${route.outlet}"]`;
                 target = document.body;
             }
             const callback = () => {
                 outlet = target.querySelector(selector);
+
                 if (outlet) {
                     if (observer) observer.disconnect();
                     resolve(outlet);
@@ -211,6 +215,7 @@ class Router {
     //  */
     static setController() {
         if (this.controller && !this.controller.signal.aborted) this.controller.abort();
+
         if (!this.controller || (this.controller && this.controller.signal.aborted)) this.controller = new AbortController();
     }
 
@@ -234,6 +239,7 @@ class Router {
     //  */
     static handleNavigate(event) {
         const element = event.target.closest("[routerLink]");
+
         if (element) {
             const url = element.getAttribute("routerLink");
             Router.navigate(url);
@@ -260,17 +266,13 @@ class Router {
      * @static
      * @type {Array}
      */
-
     static routes = [];
-
     // /**
     //  * The router options.
     //  * @static
     //  * @property {Object} event
     //  */
-
     static options = {};
-
     /**
      * @typedef {Object} RouterUseRoutes
      * @property {string} path - The path of the route.
@@ -296,6 +298,7 @@ class Router {
             ...options,
         };
         window.addEventListener("load", this.handleNavigation.bind(this));
+
         if (this.options.historyApiFallback) {
             window.addEventListener("popstate", this.handleNavigation.bind(this));
             const pushState = window.history.pushState;

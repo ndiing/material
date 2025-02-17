@@ -22,7 +22,6 @@ class MdDataTableComponent extends MdComponent {
         data: { type: Array },
         checkbox: { type: Boolean },
     };
-
     get checkboxData() {
         if (this.checkbox) {
             return [{ checkbox: true, sticky: true }];
@@ -184,6 +183,7 @@ class MdDataTableComponent extends MdComponent {
 
     handleDataTableNativeHeaderCellClick(event) {
         const data = event.currentTarget.data;
+
         if (data.sortable) {
             const actions = {
                 undefined: "arrow_upward",
@@ -197,7 +197,7 @@ class MdDataTableComponent extends MdComponent {
                 desc: undefined,
             };
             data.order = orders[data.order];
-            this.requestUpdate()
+            this.requestUpdate();
         }
         /**
          * @event onDataTableNativeHeaderCellClick
@@ -230,20 +230,24 @@ class MdDataTableComponent extends MdComponent {
 
     handleDataTableNativeBodyClick(event) {
         const bodyData = event.target.closest("td")?.data;
+
         if (bodyData?.checkbox) return;
         const data = event.currentTarget.data;
+
         if (event.ctrlKey) {
             data.selected = !data.selected;
         } else if (event.shiftKey) {
             this.prevSelectedIndex = this.prevSelectedIndex ?? 0;
             this.currentSelectedIndex = this.data.indexOf(data);
             this.swapSelectedIndex = this.prevSelectedIndex > this.currentSelectedIndex;
+
             if (this.swapSelectedIndex) {
                 [this.prevSelectedIndex, this.currentSelectedIndex] = [this.currentSelectedIndex, this.prevSelectedIndex];
             }
             this.data.forEach((item, index) => {
                 item.selected = index >= this.prevSelectedIndex && index <= this.currentSelectedIndex;
             });
+
             if (this.swapSelectedIndex) {
                 [this.currentSelectedIndex, this.prevSelectedIndex] = [this.prevSelectedIndex, this.currentSelectedIndex];
             }

@@ -23,7 +23,6 @@ class MdDialogComponent extends MdComponent {
         buttons: { type: Array },
         open: { type: Boolean, reflect: true },
     };
-
     constructor() {
         super();
         this.body = Array.from(this.childNodes);
@@ -92,8 +91,8 @@ class MdDialogComponent extends MdComponent {
         this.parentElement.insertBefore(this.dialogScrim, this.nextElementSibling);
         this.handleDialogScrimClose = this.handleDialogScrimClose.bind(this);
         this.dialogScrim.addEventListener("onScrimClose", this.handleDialogScrimClose);
-        if (this.open) this.dialogScrim.show();
 
+        if (this.open) this.dialogScrim.show();
         await this.updateComplete;
         this.style.setProperty("--md-comp-dialog-height", this.clientHeight + "px");
         this.style.setProperty("--md-comp-dialog-width", this.clientWidth + "px");

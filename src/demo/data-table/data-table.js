@@ -619,6 +619,7 @@ class DemoDataTable extends MdComponent {
             },
         ];
     }
+
     render() {
         return html`
             <div class="md-layout">
@@ -642,5 +643,7 @@ class DemoDataTable extends MdComponent {
         `;
     }
 }
+
 customElements.define("demo-data-table", DemoDataTable);
+
 export default document.createElement("demo-data-table");

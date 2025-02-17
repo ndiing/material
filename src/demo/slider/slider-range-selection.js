@@ -1,6 +1,5 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
-
 class DemoSliderRangeSelection extends MdComponent {
     render() {
         return html`
@@ -20,5 +19,7 @@ class DemoSliderRangeSelection extends MdComponent {
         `;
     }
 }
+
 customElements.define("demo-slider-range-selection", DemoSliderRangeSelection);
+
 export default document.createElement("demo-slider-range-selection");

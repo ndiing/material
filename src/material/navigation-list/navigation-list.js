@@ -15,7 +15,6 @@ class MdNavigationListComponent extends MdComponent {
         items: { type: Array },
         rippleOptions: { type: Object },
     };
-
     constructor() {
         super();
         this.items = [];
@@ -56,8 +55,6 @@ class MdNavigationListComponent extends MdComponent {
         window.removeEventListener("keydown", this.handleNavigationListKeydown);
     }
 
-    
-    
     async updateScroll() {
         await this.updateComplete;
         const navigationListItemSelected = this.querySelector("md-navigation-list-item[selected]");
@@ -73,6 +70,7 @@ class MdNavigationListComponent extends MdComponent {
         event.preventDefault();
         const selectedIndex = this.items.findIndex((item) => item.selected);
         const prevIndex = selectedIndex - 1;
+
         if (prevIndex === -1) return;
         this.items.forEach((item, index) => {
             item.selected = index === prevIndex;
@@ -90,6 +88,7 @@ class MdNavigationListComponent extends MdComponent {
         event.preventDefault();
         const selectedIndex = this.items.findIndex((item) => item.selected);
         const nextIndex = selectedIndex + 1;
+
         if (nextIndex === this.items.length) return;
         this.items.forEach((item, index) => {
             item.selected = index === nextIndex;

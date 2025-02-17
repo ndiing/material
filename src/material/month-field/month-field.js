@@ -47,7 +47,6 @@ class MdMonthFieldComponent extends MdTextFieldComponent {
             this.handleMonthFieldPickerWindowClick = this.handleMonthFieldPickerWindowClick.bind(this);
             this.picker.addEventListener("onMonthPickerWindowScroll", this.handleMonthFieldPickerWindowScroll);
             this.picker.addEventListener("onMonthPickerWindowClick", this.handleMonthFieldPickerWindowClick);
-
             await this.picker.updateComplete;
         }
     }
@@ -113,13 +112,13 @@ class MdMonthFieldComponent extends MdTextFieldComponent {
 
     async handleMonthFieldIconButtonPickerClick(event) {
         this.pickerTrigger = event.currentTarget;
-
         await this.createPicker();
         this.togglePicker({ trigger: this.textFieldContainer });
     }
 
     handleTextFieldIconButtonClick(event) {
         const data = event.currentTarget.data;
+
         if (data.id === "picker") return this.handleMonthFieldIconButtonPickerClick(event);
         super.handleTextFieldIconButtonClick(event);
     }

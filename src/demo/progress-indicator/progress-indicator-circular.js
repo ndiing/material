@@ -1,6 +1,5 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
-
 class DemoProgressIndicatorCircular extends MdComponent {
     render() {
         return html`
@@ -20,5 +19,7 @@ class DemoProgressIndicatorCircular extends MdComponent {
         `;
     }
 }
+
 customElements.define("demo-progress-indicator-circular", DemoProgressIndicatorCircular);
+
 export default document.createElement("demo-progress-indicator-circular");

@@ -1,6 +1,5 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
-
 class DemoSliderContinuous extends MdComponent {
     render() {
         return html`
@@ -20,5 +19,7 @@ class DemoSliderContinuous extends MdComponent {
         `;
     }
 }
+
 customElements.define("demo-slider-continuous", DemoSliderContinuous);
+
 export default document.createElement("demo-slider-continuous");

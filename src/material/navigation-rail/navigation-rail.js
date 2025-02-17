@@ -23,7 +23,6 @@ class MdNavigationRailComponent extends MdComponent {
         items: { type: Array },
         open: { type: Boolean, reflect: true },
     };
-
     constructor() {
         super();
         this.items = [];
@@ -78,7 +77,6 @@ class MdNavigationRailComponent extends MdComponent {
         super.connectedCallback();
         this.classList.add("md-navigation-rail");
         this.style.setProperty("--md-comp-sheet-animation", "none");
-
         await this.updateComplete;
         this.style.setProperty("--md-comp-sheet-width", this.clientWidth + "px");
         this.style.setProperty("--md-comp-sheet-height", this.clientHeight + "px");

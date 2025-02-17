@@ -1,6 +1,5 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
-
 class DemoRadioButton extends MdComponent {
     render() {
         return html`
@@ -28,5 +27,7 @@ class DemoRadioButton extends MdComponent {
         `;
     }
 }
+
 customElements.define("demo-radio-button", DemoRadioButton);
+
 export default document.createElement("demo-radio-button");

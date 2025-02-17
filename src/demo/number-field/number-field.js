@@ -1,6 +1,5 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
-
 class DemoNumberField extends MdComponent {
     render() {
         return html`
@@ -28,7 +27,6 @@ class DemoNumberField extends MdComponent {
                                 cancelAction
                             ></md-number-field>
                         </div>
-
                         <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                             <md-button
                                 variant="filled-tonal"
@@ -47,5 +45,7 @@ class DemoNumberField extends MdComponent {
         `;
     }
 }
+
 customElements.define("demo-number-field", DemoNumberField);
+
 export default document.createElement("demo-number-field");

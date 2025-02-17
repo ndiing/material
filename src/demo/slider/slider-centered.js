@@ -1,6 +1,5 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
-
 class DemoSliderCentered extends MdComponent {
     render() {
         return html`
@@ -22,5 +21,7 @@ class DemoSliderCentered extends MdComponent {
         `;
     }
 }
+
 customElements.define("demo-slider-centered", DemoSliderCentered);
+
 export default document.createElement("demo-slider-centered");

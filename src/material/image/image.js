@@ -19,16 +19,17 @@ class MdImageComponent extends MdComponent {
         ratio: { type: String },
         circular: { type: Boolean },
     };
-
     constructor() {
         super();
     }
 
     get styleImageNative() {
         const style = {};
+
         if (this.ratio) {
             style["aspect-ratio"] = this.ratio;
         }
+
         if (this.circular) {
             if (this.ratio) {
                 const [x, y] = this.ratio.split("/").map(Number);

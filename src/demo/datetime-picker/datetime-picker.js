@@ -1,6 +1,5 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
-
 class DemoDatetimePicker extends MdComponent {
     render() {
         return html`
@@ -66,5 +65,7 @@ class DemoDatetimePicker extends MdComponent {
         `;
     }
 }
+
 customElements.define("demo-datetime-picker", DemoDatetimePicker);
+
 export default document.createElement("demo-datetime-picker");

@@ -23,5 +23,7 @@ class DemoBadge extends MdComponent {
         `;
     }
 }
+
 customElements.define("demo-badge", DemoBadge);
+
 export default document.createElement("demo-badge");

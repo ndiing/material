@@ -23,9 +23,7 @@ class MdIconButtonComponent extends MdComponent {
         selected: { type: Boolean, reflect: true },
         disabled: { type: Boolean, reflect: true },
     };
-
     variants = ["filled", "filled-tonal", "outlined"];
-
     get icons() {
         if (typeof this.icon === "string") {
             if (/^\[/.test(this.icon)) {
@@ -58,7 +56,6 @@ class MdIconButtonComponent extends MdComponent {
         this.classList.add("md-icon-button");
         this.handleIconButtonClick = this.handleIconButtonClick.bind(this);
         this.addEventListener("click", this.handleIconButtonClick);
-
         await this.updateComplete;
         this.ripple = new Ripple(this, {
             trigger: ".md-icon-button__native",
@@ -71,11 +68,13 @@ class MdIconButtonComponent extends MdComponent {
     disconnectedCallback() {
         super.disconnectedCallback();
         this.removeEventListener("click", this.handleIconButtonClick);
+
         if (this.ripple) this.ripple.destroy();
     }
 
     updated(changedProperties) {
         super.updated(changedProperties);
+
         if (changedProperties.has("variant")) {
             this.variants.forEach((variant) => {
                 this.classList.toggle(`md-icon-button--${variant}`, variant === this.variant);

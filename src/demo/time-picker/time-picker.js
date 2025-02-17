@@ -1,6 +1,5 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
-
 class DemoTimePicker extends MdComponent {
     render() {
         return html`
@@ -60,5 +59,7 @@ class DemoTimePicker extends MdComponent {
         `;
     }
 }
+
 customElements.define("demo-time-picker", DemoTimePicker);
+
 export default document.createElement("demo-time-picker");

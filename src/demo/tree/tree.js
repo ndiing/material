@@ -1,10 +1,8 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
-
 class DemoTree extends MdComponent {
     constructor() {
         super();
-
         this.items = [
             {
                 label: "Node 1",
@@ -95,6 +93,7 @@ class DemoTree extends MdComponent {
             },
         ];
     }
+
     render() {
         return html`
             <div class="md-layout">
@@ -110,5 +109,7 @@ class DemoTree extends MdComponent {
         `;
     }
 }
+
 customElements.define("demo-tree", DemoTree);
+
 export default document.createElement("demo-tree");

@@ -22,7 +22,6 @@ class MdChipComponent extends MdComponent {
         selected: { type: Boolean, reflect: true },
         disabled: { type: Boolean, reflect: true },
     };
-
     constructor() {
         super();
     }
@@ -52,13 +51,13 @@ class MdChipComponent extends MdComponent {
     async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-chip");
-
         await this.updateComplete;
         this.ripple = new Ripple(this, {});
     }
 
     async disconnectedCallback() {
         super.disconnectedCallback();
+
         if (this.ripple) this.ripple.destroy();
     }
 

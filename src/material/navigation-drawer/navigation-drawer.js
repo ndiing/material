@@ -27,9 +27,7 @@ class MdNavigationDrawerComponent extends MdComponent {
         modal: { type: Boolean, reflect: true },
         type: { type: String },
     };
-
     types = ["navigation-list", "tree"];
-
     constructor() {
         super();
         this.type = "navigation-list";
@@ -95,8 +93,8 @@ class MdNavigationDrawerComponent extends MdComponent {
         this.parentElement.insertBefore(this.navigationDrawerScrim, this.nextElementSibling);
         this.handleNavigationDrawerScrimClose = this.handleNavigationDrawerScrimClose.bind(this);
         this.navigationDrawerScrim.addEventListener("onScrimClose", this.handleNavigationDrawerScrimClose);
-        if (this.modal && this.open) this.navigationDrawerScrim.show();
 
+        if (this.modal && this.open) this.navigationDrawerScrim.show();
         await this.updateComplete;
         this.style.setProperty("--md-comp-sheet-width", this.clientWidth + "px");
         this.style.setProperty("--md-comp-sheet-height", this.clientHeight + "px");
@@ -110,11 +108,13 @@ class MdNavigationDrawerComponent extends MdComponent {
 
     updated(changedProperties) {
         super.updated(changedProperties);
+
         if (changedProperties.has("region")) {
             this.regions.forEach((region) => {
                 this.classList.toggle(`md-navigation-drawer--${region}`, region === this.region);
             });
         }
+
         if (changedProperties.has("modal")) {
             this.classList.toggle(`md-navigation-drawer--modal`, !!this.modal);
         }
@@ -124,6 +124,7 @@ class MdNavigationDrawerComponent extends MdComponent {
      */
     show() {
         this.style.removeProperty("--md-comp-sheet-animation");
+
         if (this.modal) this.navigationDrawerScrim.show();
         this.open = true;
         /**
@@ -138,6 +139,7 @@ class MdNavigationDrawerComponent extends MdComponent {
     close() {
         this.style.removeProperty("--md-comp-sheet-animation");
         this.open = false;
+
         if (this.navigationDrawerScrim.open) this.navigationDrawerScrim.close();
         /**
          * @event onNavigationDrawerClose

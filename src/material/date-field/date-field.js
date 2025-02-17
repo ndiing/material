@@ -45,7 +45,6 @@ class MdDateFieldComponent extends MdTextFieldComponent {
             this.picker.addEventListener("onDatePickerButtonOkClick", this.handleDateFieldPickerButtonOkClick);
             this.picker.addEventListener("onDatePickerWindowScroll", this.handleDateFieldPickerWindowScroll);
             this.picker.addEventListener("onDatePickerWindowClick", this.handleDateFieldPickerWindowClick);
-
             await this.picker.updateComplete;
         }
     }
@@ -111,13 +110,13 @@ class MdDateFieldComponent extends MdTextFieldComponent {
 
     async handleDateFieldIconButtonPickerClick(event) {
         this.pickerTrigger = event.currentTarget;
-
         await this.createPicker();
         this.togglePicker({ trigger: this.textFieldContainer });
     }
 
     handleTextFieldIconButtonClick(event) {
         const data = event.currentTarget.data;
+
         if (data.id === "picker") return this.handleDateFieldIconButtonPickerClick(event);
         super.handleTextFieldIconButtonClick(event);
     }

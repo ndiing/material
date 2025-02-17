@@ -18,9 +18,7 @@ class MdListComponent extends MdComponent {
         fieldMap: { type: Object },
         rippleOptions: { type: Object },
     };
-
     types = ["single-select", "multi-select"];
-
     constructor() {
         super();
         this.items = [];
@@ -76,8 +74,10 @@ class MdListComponent extends MdComponent {
 
     handleListItemClick(event) {
         const action = event.target.closest(".md-list__checkbox,.md-list__radio-button,.md-list__switch");
+
         if (action) return;
         const data = event.currentTarget.data;
+
         if (this.type === "single-select") {
             this.items.forEach((item) => {
                 item.selected = item === data;

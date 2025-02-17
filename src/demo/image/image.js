@@ -1,6 +1,5 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
-
 class DemoImage extends MdComponent {
     render() {
         return html`
@@ -9,7 +8,6 @@ class DemoImage extends MdComponent {
                     <div class="md-layout__column--expanded2 md-layout__column--medium4 md-layout__column--compact4">
                         <md-image src="https://api.dicebear.com/9.x/dylan/svg?seed=Leah"></md-image>
                     </div>
-
                     <div class="md-layout__column--expanded2 md-layout__column--medium4 md-layout__column--compact4">
                         <md-image
                             src="https://api.dicebear.com/9.x/dylan/svg?seed=Leah"
@@ -46,14 +44,12 @@ class DemoImage extends MdComponent {
                             ratio="2/3"
                         ></md-image>
                     </div>
-
                     <div class="md-layout__column--expanded2 md-layout__column--medium4 md-layout__column--compact4">
                         <md-image
                             src="https://api.dicebear.com/9.x/dylan/svg?seed=Leah"
                             circular
                         ></md-image>
                     </div>
-
                     <div class="md-layout__column--expanded2 md-layout__column--medium4 md-layout__column--compact4">
                         <md-image
                             src="https://api.dicebear.com/9.x/dylan/svg?seed=Leah"
@@ -101,5 +97,7 @@ class DemoImage extends MdComponent {
         `;
     }
 }
+
 customElements.define("demo-image", DemoImage);
+
 export default document.createElement("demo-image");

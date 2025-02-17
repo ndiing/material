@@ -22,5 +22,7 @@ class DemoDataTableCell extends MdComponent {
         `;
     }
 }
+
 customElements.define("demo-data-table-cell", DemoDataTableCell);
+
 export default document.createElement("demo-data-table-cell");

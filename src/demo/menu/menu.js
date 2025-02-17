@@ -1,6 +1,5 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
-
 class DemoMenu extends MdComponent {
     render() {
         return html`
@@ -29,7 +28,6 @@ class DemoMenu extends MdComponent {
                             @onNavigationListItemClick="${() => menu.close()}"
                         ></md-menu>
                     </div>
-
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                         <md-button
                             id="button2"
@@ -53,12 +51,13 @@ class DemoMenu extends MdComponent {
                             @onNavigationListItemClick="${() => menu2.close()}"
                         ></md-menu>
                     </div>
-
                     <div style="height:100vh"></div>
                 </div>
             </div>
         `;
     }
 }
+
 customElements.define("demo-menu", DemoMenu);
+
 export default document.createElement("demo-menu");

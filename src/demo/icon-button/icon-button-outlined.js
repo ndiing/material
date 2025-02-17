@@ -1,6 +1,5 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
-
 class DemoIconButtonOutlined extends MdComponent {
     render() {
         return html`
@@ -43,5 +42,7 @@ class DemoIconButtonOutlined extends MdComponent {
         `;
     }
 }
+
 customElements.define("demo-icon-button-outlined", DemoIconButtonOutlined);
+
 export default document.createElement("demo-icon-button-outlined");

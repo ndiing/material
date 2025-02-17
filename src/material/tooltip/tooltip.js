@@ -24,7 +24,6 @@ class MdTooltipComponent extends MdComponent {
         buttons: { type: Array },
         open: { type: Boolean, reflect: true },
     };
-
     constructor() {
         super();
         this.body = Array.from(this.childNodes);

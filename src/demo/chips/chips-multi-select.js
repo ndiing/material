@@ -66,5 +66,7 @@ class DemoChipsMultiSelect extends MdComponent {
         `;
     }
 }
+
 customElements.define("demo-chips-multi-select", DemoChipsMultiSelect);
+
 export default document.createElement("demo-chips-multi-select");

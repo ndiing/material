@@ -1,6 +1,5 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
-
 class DemoFabExtended extends MdComponent {
     render() {
         return html`
@@ -24,5 +23,7 @@ class DemoFabExtended extends MdComponent {
         `;
     }
 }
+
 customElements.define("demo-fab-extended", DemoFabExtended);
+
 export default document.createElement("demo-fab-extended");

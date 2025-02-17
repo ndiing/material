@@ -47,7 +47,6 @@ class MdListItemComponent extends MdComponent {
         rippleOptions: { type: Object },
         badge: { type: Number },
     };
-
     constructor() {
         super();
         this.rippleOptions = {};
@@ -124,10 +123,11 @@ class MdListItemComponent extends MdComponent {
     async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-list__item");
-
         await this.updateComplete;
+
         if (this.sublabel) {
             const sublabel = this.querySelector(".md-list__sublabel");
+
             if (sublabel.scrollHeight > sublabel.clientHeight) {
                 this.classList.add("md-list__item--three-line");
             } else {
@@ -139,14 +139,17 @@ class MdListItemComponent extends MdComponent {
 
     async disconnectedCallback() {
         super.disconnectedCallback();
+
         if (this.ripple) this.ripple.destroy();
     }
 
     async updated(changedProperties) {
         super.updated(changedProperties);
+
         if (changedProperties.has("icon")) {
             this.classList.toggle("md-list__item--with-icon", !!this.icon);
         }
+
         if (changedProperties.has("selected") && this.selected) {
             /**
              * @event onListItemSelected

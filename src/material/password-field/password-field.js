@@ -26,6 +26,7 @@ class MdPasswordFieldComponent extends MdTextFieldComponent {
 
     handleTextFieldIconButtonClick(event) {
         const data = event.currentTarget.data;
+
         if (data.id === "toggle") return this.handlePasswordFieldIconButtonToggleClick(event);
         super.handleTextFieldIconButtonClick(event);
     }

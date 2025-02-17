@@ -1,6 +1,5 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
-
 class DemoTab extends MdComponent {
     render() {
         return html`
@@ -24,5 +23,7 @@ class DemoTab extends MdComponent {
         `;
     }
 }
+
 customElements.define("demo-tab", DemoTab);
+
 export default document.createElement("demo-tab");

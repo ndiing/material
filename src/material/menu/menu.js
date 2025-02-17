@@ -17,7 +17,6 @@ class MdMenuComponent extends MdComponent {
         open: { type: Boolean, reflect: true },
         items: { type: Array },
     };
-
     constructor() {
         super();
         this.items = [];
@@ -36,7 +35,6 @@ class MdMenuComponent extends MdComponent {
         super.connectedCallback();
         this.classList.add("md-menu");
         this.style.setProperty("--md-comp-menu-animation", "none");
-
         await this.updateComplete;
         this.style.setProperty("--md-comp-menu-height", this.clientHeight + "px");
         this.style.setProperty("--md-comp-menu-width", this.clientWidth + "px");

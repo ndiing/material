@@ -1,6 +1,5 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
-
 class DemoSliderDiscrete extends MdComponent {
     render() {
         return html`
@@ -21,5 +20,7 @@ class DemoSliderDiscrete extends MdComponent {
         `;
     }
 }
+
 customElements.define("demo-slider-discrete", DemoSliderDiscrete);
+
 export default document.createElement("demo-slider-discrete");

@@ -64,11 +64,10 @@ class MdTextFieldComponent extends MdComponent {
         errorIcon: { type: Boolean },
         cancelAction: { type: Boolean },
     };
-
     variants = ["outlined", "filled"];
-
     get leadingActions() {
         let actions = [];
+
         if (this.errorIcon && this.error)
             actions = actions.concat([
                 {
@@ -78,6 +77,7 @@ class MdTextFieldComponent extends MdComponent {
                     classMap: { "md-text-field__icon--error": true },
                 },
             ]);
+
         if (this.cancelAction && this.value)
             actions = actions.concat([
                 {
@@ -233,7 +233,6 @@ class MdTextFieldComponent extends MdComponent {
         this.defaultValue = this.value;
         this.classList.add("md-text-field");
         this.classList.toggle("md-text-field--populated", !!this.value);
-
         await this.updateComplete;
         this.textFieldOffset = this.querySelector(".md-text-field__prefix,.md-text-field__native");
         this.style.setProperty("--md-comp-text-field-offset-left", this.textFieldOffset.offsetLeft + "px");
@@ -241,14 +240,17 @@ class MdTextFieldComponent extends MdComponent {
 
     updated(changedProperties) {
         super.updated(changedProperties);
+
         if (changedProperties.has("variant")) {
             this.variants.forEach((variant) => {
                 this.classList.toggle(`md-text-field--${variant}`, variant === this.variant);
             });
         }
+
         if (changedProperties.has("separateLabel")) {
             this.classList.toggle(`md-text-field--separate-label`, !!this.separateLabel);
         }
+
         if (changedProperties.has("label")) {
             this.classList.toggle(`md-text-field--with-label`, !!this.label);
         }
@@ -328,6 +330,7 @@ class MdTextFieldComponent extends MdComponent {
 
     handleTextFieldIconButtonClick(event) {
         const data = event.currentTarget.data;
+
         if (data.id === "cancel") return this.handleTextFieldIconButtonCancelClick(event);
         /**
          * @event onTextFieldIconButtonClick

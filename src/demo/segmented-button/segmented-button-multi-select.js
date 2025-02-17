@@ -1,11 +1,11 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
-
 class DemoSegmentedButtonMultiSelect extends MdComponent {
     constructor() {
         super();
         this.items = [{ label: "Label", selected: true }, { label: "Label", selected: true }, { label: "Label" }];
     }
+
     render() {
         return html`
             <div class="md-layout">
@@ -22,5 +22,7 @@ class DemoSegmentedButtonMultiSelect extends MdComponent {
         `;
     }
 }
+
 customElements.define("demo-segmented-button-multi-select", DemoSegmentedButtonMultiSelect);
+
 export default document.createElement("demo-segmented-button-multi-select");

@@ -1,6 +1,5 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
-
 class DemoScrim extends MdComponent {
     render() {
         return html`
@@ -18,5 +17,7 @@ class DemoScrim extends MdComponent {
         `;
     }
 }
+
 customElements.define("demo-scrim", DemoScrim);
+
 export default document.createElement("demo-scrim");

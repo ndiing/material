@@ -8,7 +8,7 @@ import "./polyfill/polyfill.js";
 // import "./popper/popper.js";
 // import "./ripple/ripple.js";
 // import "./movable/movable.js";
-import "./virtual/virtual.js";
+// import "./virtual/virtual.js";
 // import "./component/component.js";
 // import "./progress/progress.js";
 // import "./router/router.js";

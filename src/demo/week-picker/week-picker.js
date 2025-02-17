@@ -1,6 +1,5 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
-
 class DemoWeekPicker extends MdComponent {
     render() {
         return html`
@@ -62,5 +61,7 @@ class DemoWeekPicker extends MdComponent {
         `;
     }
 }
+
 customElements.define("demo-week-picker", DemoWeekPicker);
+
 export default document.createElement("demo-week-picker");

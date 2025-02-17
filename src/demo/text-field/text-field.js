@@ -1,6 +1,5 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
-
 class DemoTextField extends MdComponent {
     render() {
         return html`
@@ -89,5 +88,7 @@ class DemoTextField extends MdComponent {
         `;
     }
 }
+
 customElements.define("demo-text-field", DemoTextField);
+
 export default document.createElement("demo-text-field");

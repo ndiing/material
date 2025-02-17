@@ -33,7 +33,6 @@ class MdSnackbarComponent extends MdComponent {
         open: { type: Boolean, reflect: true },
         autoDismiss: { type: Number },
     };
-
     constructor() {
         super();
         this.body = Array.from(this.childNodes);
@@ -96,7 +95,6 @@ class MdSnackbarComponent extends MdComponent {
         super.connectedCallback();
         this.classList.add("md-snackbar");
         this.style.setProperty("--md-comp-snackbar-animation", "none");
-
         await this.updateComplete;
         this.style.setProperty("--md-comp-snackbar-height", this.clientHeight + "px");
         this.style.setProperty("--md-comp-snackbar-width", this.clientWidth + "px");

@@ -45,7 +45,6 @@ class MdTimeFieldComponent extends MdTextFieldComponent {
             this.handleTimeFieldPickerWindowClick = this.handleTimeFieldPickerWindowClick.bind(this);
             this.picker.addEventListener("onTimePickerWindowScroll", this.handleTimeFieldPickerWindowScroll);
             this.picker.addEventListener("onTimePickerWindowClick", this.handleTimeFieldPickerWindowClick);
-
             await this.picker.updateComplete;
         }
     }
@@ -111,13 +110,13 @@ class MdTimeFieldComponent extends MdTextFieldComponent {
 
     async handleTimeFieldIconButtonPickerClick(event) {
         this.pickerTrigger = event.currentTarget;
-
         await this.createPicker();
         this.togglePicker({ trigger: this.textFieldContainer });
     }
 
     handleTextFieldIconButtonClick(event) {
         const data = event.currentTarget.data;
+
         if (data.id === "picker") return this.handleTimeFieldIconButtonPickerClick(event);
         super.handleTextFieldIconButtonClick(event);
     }

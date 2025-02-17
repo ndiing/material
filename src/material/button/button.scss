@@ -26,6 +26,7 @@
                 "opsz" 24;
         }
     }
+
     &[disabled] {
         color: var(--md-sys-color-on-surface38);
     }
@@ -64,6 +65,7 @@
             margin-right: 0;
         }
     }
+
     &[disabled] {
         background-color: var(--md-sys-color-on-surface12);
         color: var(--md-sys-color-on-surface38);
@@ -79,11 +81,13 @@
             margin-right: 0;
         }
     }
+
     &.md-ripple {
         &::after {
             background-color: var(--md-sys-color-on-primary);
         }
     }
+
     &[disabled] {
         background-color: var(--md-sys-color-on-surface12);
         color: var(--md-sys-color-on-surface38);
@@ -98,6 +102,7 @@
             margin-right: 0;
         }
     }
+
     &[disabled] {
         background-color: var(--md-sys-color-on-surface12);
         color: var(--md-sys-color-on-surface38);
@@ -112,6 +117,7 @@
             margin-right: 0;
         }
     }
+
     &[disabled] {
         color: var(--md-sys-color-on-surface38);
         border-color: var(--md-sys-color-on-surface12);

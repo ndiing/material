@@ -1,6 +1,5 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
-
 class DemoSheetSouth extends MdComponent {
     render() {
         return html`
@@ -34,5 +33,7 @@ class DemoSheetSouth extends MdComponent {
         `;
     }
 }
+
 customElements.define("demo-sheet-south", DemoSheetSouth);
+
 export default document.createElement("demo-sheet-south");

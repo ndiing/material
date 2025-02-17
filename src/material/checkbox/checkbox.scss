@@ -26,6 +26,7 @@
             }
         }
     }
+
     &:checked {
         + .md-checkbox__track {
             border-color: var(--md-sys-color-primary);

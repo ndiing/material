@@ -1,6 +1,5 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
-
 class DemoListMultiSelect extends MdComponent {
     render() {
         return html`
@@ -23,5 +22,7 @@ class DemoListMultiSelect extends MdComponent {
         `;
     }
 }
+
 customElements.define("demo-list-multi-select", DemoListMultiSelect);
+
 export default document.createElement("demo-list-multi-select");

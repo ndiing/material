@@ -23,9 +23,7 @@ class MdButtonComponent extends MdComponent {
         disabled: { type: Boolean, reflect: true },
         selected: { type: Boolean, reflect: true },
     };
-
     variants = ["elevated", "filled", "filled-tonal", "outlined"];
-
     constructor() {
         super();
         this.type = "button";
@@ -46,7 +44,6 @@ class MdButtonComponent extends MdComponent {
     async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-button");
-
         await this.updateComplete;
         this.ripple = new Ripple(this, {
             trigger: ".md-button__native",
@@ -55,11 +52,13 @@ class MdButtonComponent extends MdComponent {
 
     async disconnectedCallback() {
         super.disconnectedCallback();
+
         if (this.ripple) this.ripple.destroy();
     }
 
     updated(changedProperties) {
         super.updated(changedProperties);
+
         if (changedProperties.has("variant")) {
             this.variants.forEach((variant) => {
                 this.classList.toggle(`md-button--${variant}`, variant === this.variant);

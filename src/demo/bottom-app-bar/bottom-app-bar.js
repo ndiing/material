@@ -7,6 +7,7 @@ class DemoBottomAppBar extends MdComponent {
         this.actions = [{ icon: "image" }, { icon: "image" }, { icon: "image" }, { icon: "image" }];
         this.fab = "image";
     }
+
     render() {
         return html`
             <div class="md-layout__border">
@@ -37,5 +38,7 @@ class DemoBottomAppBar extends MdComponent {
         `;
     }
 }
+
 customElements.define("demo-bottom-app-bar", DemoBottomAppBar);
+
 export default document.createElement("demo-bottom-app-bar");

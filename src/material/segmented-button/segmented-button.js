@@ -14,9 +14,7 @@ class MdSegmentedButtonComponent extends MdComponent {
         items: { type: Array },
         type: { type: String },
     };
-
     types = ["single-select", "multi-select"];
-
     constructor() {
         super();
         this.items = [];
@@ -50,6 +48,7 @@ class MdSegmentedButtonComponent extends MdComponent {
 
     handleSegmentedButtonItemClick(event) {
         const data = event.currentTarget.data;
+
         if (this.type === "single-select") {
             this.items.forEach((item) => {
                 item.selected = item === data;

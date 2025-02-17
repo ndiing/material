@@ -2,7 +2,6 @@ import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
 import { Router } from "../../material/router/router";
 import { LayoutObserver } from "../../material/layout-observer/layout-observer";
-
 class DemoMain extends MdComponent {
     get demoMainTopAppBar() {
         return this.querySelector("#demoMainTopAppBar");
@@ -14,7 +13,6 @@ class DemoMain extends MdComponent {
 
     constructor() {
         super();
-
         this.items = [
             { label: "Badge", routerLink: "/demo/badge" },
             {
@@ -60,7 +58,6 @@ class DemoMain extends MdComponent {
                     { label: "Data Table Sortable", routerLink: "/demo/data-table-sortable" },
                 ],
             },
-
             { label: "Dialog", routerLink: "/demo/dialog" },
             { label: "Divider", routerLink: "/demo/divider" },
             {
@@ -241,9 +238,7 @@ class DemoMain extends MdComponent {
                 ],
             },
         ];
-
         this.sortItems(this.items);
-
         this.demoMainTopAppBarLeadingActions = [{ icon: "menu" }];
     }
 
@@ -256,7 +251,6 @@ class DemoMain extends MdComponent {
                     .leadingActions="${this.demoMainTopAppBarLeadingActions}"
                     @onTopAppBarIconButtonClick="${this.handleDemoMainTopAppBarIconButtonClick}"
                 ></md-top-app-bar>
-
                 <md-navigation-drawer
                     id="demoMainNavigationDrawer"
                     type="tree"
@@ -264,7 +258,6 @@ class DemoMain extends MdComponent {
                     @onTreeItemClick="${this.handleDemoMainNavigationDrawerTreeItemClick}"
                     @onTreeKeydownEnter="${this.handleDemoMainNavigationDrawerTreeKeydownEnter}"
                 ></md-navigation-drawer>
-
                 <md-layout-border-item region="center">
                     <md-outlet></md-outlet>
                 </md-layout-border-item>
@@ -275,11 +268,10 @@ class DemoMain extends MdComponent {
     sortItems(items) {
         items.sort((a, b) => {
             if (a.children && !b.children) return -1;
-            if (!a.children && b.children) return 1;
 
+            if (!a.children && b.children) return 1;
             return a.label.localeCompare(b.label);
         });
-
         items.forEach((item) => {
             if (item.children) {
                 this.sortItems(item.children);
@@ -299,11 +291,8 @@ class DemoMain extends MdComponent {
 
     async connectedCallback() {
         super.connectedCallback();
-
         await this.updateComplete;
-
         this.select(this.items);
-
         this.handleMainLayoutCallback = this.handleMainLayoutCallback.bind(this);
         this.layout = new LayoutObserver(this.handleMainLayoutCallback);
         this.layout.init();
@@ -320,13 +309,11 @@ class DemoMain extends MdComponent {
     handleMainLayoutCallback(item) {
         if (item.name === "expanded") {
             this.demoMainTopAppBar.open = false;
-
             this.demoMainNavigationDrawer.modal = false;
             this.demoMainNavigationDrawer.open = true;
             this.demoMainNavigationDrawer.navigationDrawerScrim.open = false;
         } else {
             this.demoMainTopAppBar.open = true;
-
             this.demoMainNavigationDrawer.modal = true;
             this.demoMainNavigationDrawer.open = false;
             this.demoMainNavigationDrawer.navigationDrawerScrim.open = false;

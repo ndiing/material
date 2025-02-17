@@ -1,6 +1,5 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
-
 class DemoMonthPickerModal extends MdComponent {
     render() {
         return html`
@@ -62,5 +61,7 @@ class DemoMonthPickerModal extends MdComponent {
         `;
     }
 }
+
 customElements.define("demo-month-picker-modal", DemoMonthPickerModal);
+
 export default document.createElement("demo-month-picker-modal");

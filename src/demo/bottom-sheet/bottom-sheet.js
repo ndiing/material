@@ -32,5 +32,7 @@ class DemoBottomSheet extends MdComponent {
         `;
     }
 }
+
 customElements.define("demo-bottom-sheet", DemoBottomSheet);
+
 export default document.createElement("demo-bottom-sheet");

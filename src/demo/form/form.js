@@ -1,6 +1,5 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
-
 class DemoForm extends MdComponent {
     render() {
         return html`
@@ -21,7 +20,6 @@ class DemoForm extends MdComponent {
                                 cancelAction
                             ></md-text-field>
                         </div>
-
                         <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
                             <md-text-field
                                 type="email"
@@ -41,7 +39,6 @@ class DemoForm extends MdComponent {
                                 cancelAction
                             ></md-password-field>
                         </div>
-
                         <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
                             <md-text-field
                                 type="url"
@@ -62,7 +59,6 @@ class DemoForm extends MdComponent {
                                 cancelAction
                             ></md-text-field>
                         </div>
-
                         <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
                             <md-text-field
                                 type="tel"
@@ -83,7 +79,6 @@ class DemoForm extends MdComponent {
                                 cancelAction
                             ></md-text-field>
                         </div>
-
                         <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
                             <md-date-field
                                 type="date"
@@ -94,7 +89,6 @@ class DemoForm extends MdComponent {
                                 cancelAction
                             ></md-date-field>
                         </div>
-
                         <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
                             <md-datetime-field
                                 type="datetime-local"
@@ -105,7 +99,6 @@ class DemoForm extends MdComponent {
                                 cancelAction
                             ></md-datetime-field>
                         </div>
-
                         <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
                             <md-month-field
                                 type="month"
@@ -136,7 +129,6 @@ class DemoForm extends MdComponent {
                                 cancelAction
                             ></md-week-field>
                         </div>
-
                         <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
                             <md-checkbox name="checkbox"></md-checkbox>
                         </div>
@@ -152,7 +144,6 @@ class DemoForm extends MdComponent {
                                 checked
                             ></md-checkbox>
                         </div>
-
                         <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
                             <md-radio-button name="radio-button"></md-radio-button>
                         </div>
@@ -163,7 +154,6 @@ class DemoForm extends MdComponent {
                             ></md-radio-button>
                         </div>
                         <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4"></div>
-
                         <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
                             <md-switch name="switch"></md-switch>
                         </div>
@@ -188,7 +178,6 @@ class DemoForm extends MdComponent {
                             ></md-switch>
                         </div>
                         <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4"></div>
-
                         <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
                             <md-slider
                                 name="slider"
@@ -213,7 +202,6 @@ class DemoForm extends MdComponent {
                             ></md-slider>
                         </div>
                         <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4"></div>
-
                         <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
                             <md-button
                                 variant="filled-tonal"
@@ -226,7 +214,6 @@ class DemoForm extends MdComponent {
                                 type="submit"
                             ></md-button>
                         </div>
-
                         <div style="height:100vh;"></div>
                     </div>
                 </div>
@@ -234,5 +221,7 @@ class DemoForm extends MdComponent {
         `;
     }
 }
+
 customElements.define("demo-form", DemoForm);
+
 export default document.createElement("demo-form");

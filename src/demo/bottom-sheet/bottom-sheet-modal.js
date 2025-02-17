@@ -32,5 +32,7 @@ class DemoBottomSheetModal extends MdComponent {
         `;
     }
 }
+
 customElements.define("demo-bottom-sheet-modal", DemoBottomSheetModal);
+
 export default document.createElement("demo-bottom-sheet-modal");

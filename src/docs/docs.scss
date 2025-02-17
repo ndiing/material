@@ -1,14 +1,25 @@
 @use "../material/mixins/mixins.scss";
-
 docs-page {
     h1 {
+        margin-bottom: 1em;
         @include mixins.typescale-headline-large();
-        overflow-wrap: anywhere;
-        word-break: break-word;
     }
 
     h2 {
+        margin-bottom: 1em;
         @include mixins.typescale-headline-small();
+    }
+
+    p {
+        margin-bottom: 1em;
+        @include mixins.typescale-body-large();
+    }
+
+    code {
+        padding: 0 4px;
+        border-radius: var(--md-sys-shape-corner-extra-small);
+        font-family: "Noto Sans Mono", serif;
+        background-color: var(--md-sys-color-surface-container-highest);
     }
 
     table {
@@ -16,11 +27,12 @@ docs-page {
         border-spacing: 0;
         display: block;
         overflow: auto;
-        // max-height: 336px;
-        min-width: 100%;
-        border-radius: var(--md-sys-shape-corner-large);
+        margin-bottom: 1em;
+        border-radius: var(--md-sys-shape-corner-medium);
         border: 1px solid var(--md-sys-color-outline-variant);
 
+        // thead {
+        // }
         tbody {
             tr {
                 &:last-child {
@@ -30,41 +42,28 @@ docs-page {
                 }
             }
         }
+        // tfoot {
+        // }
+        // tr {
+        // }
         th {
             text-align: left;
-            padding: 16px 16px;
+            padding: 16px;
             background-color: var(--md-sys-color-surface-container-highest);
             border-bottom: 1px solid var(--md-sys-color-outline-variant);
             border-right: 1px solid var(--md-sys-color-outline-variant);
-            position: sticky;
-            top: 0;
-            z-index: 1;
             &:last-child {
                 border-right: 0;
                 width: 100%;
             }
         }
         td {
-            padding: 16px 16px;
+            padding: 16px;
             border-bottom: 1px solid var(--md-sys-color-outline-variant);
             border-right: 1px solid var(--md-sys-color-outline-variant);
             &:last-child {
                 border-right: 0;
             }
         }
-    }
-
-    pre,
-    code {
-        padding: 0 4px;
-        border-radius: var(--md-sys-shape-corner-extra-small);
-        background-color: var(--md-sys-color-surface-container-highest);
-        font-family: "Noto Sans Mono", serif;
-    }
-
-    pre {
-        padding: 16px;
-        overflow-wrap: anywhere;
-        word-break: break-word;
     }
 }

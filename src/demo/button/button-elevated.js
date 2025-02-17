@@ -39,5 +39,7 @@ class DemoButtonElevated extends MdComponent {
         `;
     }
 }
+
 customElements.define("demo-button-elevated", DemoButtonElevated);
+
 export default document.createElement("demo-button-elevated");

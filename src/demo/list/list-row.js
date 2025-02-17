@@ -1,6 +1,5 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
-
 class DemoListRow extends MdComponent {
     render() {
         return html`
@@ -14,5 +13,7 @@ class DemoListRow extends MdComponent {
         `;
     }
 }
+
 customElements.define("demo-list-row", DemoListRow);
+
 export default document.createElement("demo-list-row");

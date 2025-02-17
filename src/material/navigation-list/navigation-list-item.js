@@ -27,7 +27,6 @@ class MdNavigationListItemComponent extends MdComponent {
         rippleOptions: { type: Object },
         badge: { type: Number },
     };
-
     constructor() {
         super();
         this.rippleOptions = {};
@@ -48,21 +47,23 @@ class MdNavigationListItemComponent extends MdComponent {
     async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-navigation-list__item");
-
         await this.updateComplete;
         this.ripple = new Ripple(this, this.rippleOptions);
     }
 
     async disconnectedCallback() {
         super.disconnectedCallback();
+
         if (this.ripple) this.ripple.destroy();
     }
 
     async updated(changedProperties) {
         super.updated(changedProperties);
+
         if (changedProperties.has("icon")) {
             this.classList.toggle("md-navigation-list__item--with-icon", !!this.icon);
         }
+
         if (changedProperties.has("selected") && this.selected) {
             this.emit("onNavigationListItemSelected", {
                 navigationListItem: this,

@@ -13,7 +13,6 @@ class MdDividerComponent extends MdComponent {
     static properties = {
         vertical: { type: Boolean, reflect: true },
     };
-
     /**
      * Called when the element is connected to the DOM.
      * Adds the 'md-divider' class to the element.

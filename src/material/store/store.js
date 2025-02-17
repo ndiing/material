@@ -32,8 +32,11 @@ class Store {
             for (let sorter of sorters) {
                 let valueA = this.getNestedValue(a, sorter.name);
                 let valueB = this.getNestedValue(b, sorter.name);
+
                 if (valueA == null || valueB == null) continue;
+
                 if (valueA > valueB) return sorter.order === "desc" ? -1 : 1;
+
                 if (valueA < valueB) return sorter.order === "desc" ? 1 : -1;
             }
             return 0;
@@ -48,12 +51,15 @@ class Store {
     //  */
     deepSearch(item, q) {
         if (!item) return false;
+
         if (typeof item === "string" || typeof item === "number") {
             return String(item).toLowerCase().includes(q.toLowerCase());
         }
+
         if (Array.isArray(item)) {
             return item.some((el) => this.deepSearch(el, q));
         }
+
         if (typeof item === "object") {
             return Object.values(item).some((val) => this.deepSearch(val, q));
         }
@@ -162,6 +168,7 @@ class Store {
         data = this.search(data, q);
         data = this.filter(data, filters);
         let total = data.length;
+
         if (_start !== undefined && _end !== undefined) {
             data = this.range(data, _start, _end);
         } else if (_page !== undefined && _limit !== undefined) {

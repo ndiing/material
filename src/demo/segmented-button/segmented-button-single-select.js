@@ -1,6 +1,5 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
-
 class DemoSegmentedButtonSingleSelect extends MdComponent {
     render() {
         return html`
@@ -19,5 +18,7 @@ class DemoSegmentedButtonSingleSelect extends MdComponent {
         `;
     }
 }
+
 customElements.define("demo-segmented-button-single-select", DemoSegmentedButtonSingleSelect);
+
 export default document.createElement("demo-segmented-button-single-select");

@@ -150,6 +150,7 @@
             --md-comp-sheet-animation: sheet-north-modal-out;
         }
     }
+
     &.md-sheet--east {
         margin-right: 0;
         top: 0;
@@ -163,6 +164,7 @@
             --md-comp-sheet-animation: sheet-east-modal-out;
         }
     }
+
     &.md-sheet--south {
         margin-bottom: 0;
         left: 0;
@@ -176,6 +178,7 @@
             --md-comp-sheet-animation: sheet-south-modal-out;
         }
     }
+
     &.md-sheet--west {
         margin-left: 0;
         top: 0;

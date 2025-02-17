@@ -34,6 +34,7 @@ class Ripple {
      */
     async init() {
         this.container = this.host;
+
         if (this.options.container) {
             if (typeof this.options.container === "string") {
                 this.container = this.host.querySelector(this.options.container);
@@ -42,6 +43,7 @@ class Ripple {
             }
         }
         this.trigger = this.host;
+
         if (this.options.trigger) {
             if (typeof this.options.trigger === "string") {
                 this.trigger = this.host.querySelector(this.options.trigger);
@@ -54,6 +56,7 @@ class Ripple {
         this.container.setAttribute("tabIndex", 0);
         this.trigger.classList.add("md-ripple--trigger");
         this.radius = 141.4213562373095;
+
         if (this.options.radius) {
             this.radius = (this.options.radius / this.container.clientWidth) * 100;
         }
@@ -82,6 +85,7 @@ class Ripple {
             this.container.removeAttribute("tabIndex");
             this.container.style.removeProperty("--md-comp-ripple-radius");
         }
+
         if (this.trigger) {
             this.trigger.classList.remove("md-ripple--trigger");
             this.trigger.removeEventListener("pointerenter", this.handleRippleHoverIn);
@@ -119,6 +123,7 @@ class Ripple {
         window.addEventListener("touchend", this.handleRipplePressOut, { passive: true });
         this.container.classList.add("md-ripple--press");
         const rect = this.container.getBoundingClientRect();
+
         if (!this.options.centered) {
             const left = (event.clientX - rect.left) / rect.width;
             const top = (event.clientY - rect.top) / rect.height;

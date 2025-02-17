@@ -39,5 +39,7 @@ class DemoButtonOutlined extends MdComponent {
         `;
     }
 }
+
 customElements.define("demo-button-outlined", DemoButtonOutlined);
+
 export default document.createElement("demo-button-outlined");

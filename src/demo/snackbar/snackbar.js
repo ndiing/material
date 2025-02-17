@@ -1,6 +1,5 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
-
 class DemoSnackbar extends MdComponent {
     render() {
         return html`
@@ -37,7 +36,6 @@ class DemoSnackbar extends MdComponent {
                             >Body</md-snackbar
                         >
                     </div>
-
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                         <md-button
                             variant="filled-tonal"
@@ -69,7 +67,6 @@ class DemoSnackbar extends MdComponent {
                             >Body Body Body Body Body Body Body Body</md-snackbar
                         >
                     </div>
-
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                         <md-button
                             variant="filled-tonal"
@@ -91,5 +88,7 @@ class DemoSnackbar extends MdComponent {
         `;
     }
 }
+
 customElements.define("demo-snackbar", DemoSnackbar);
+
 export default document.createElement("demo-snackbar");

@@ -3,13 +3,10 @@ import { MdComponent } from "../../material/component/component";
 import { Router } from "../../material/router/router";
 import { LayoutObserver } from "../../material/layout-observer/layout-observer";
 import { keys } from "../jsdoc/jsdoc";
-
 class DocsMain extends MdComponent {
     constructor() {
         super();
-
         this.items = keys;
-
         this.sortItems(this.items);
     }
 
@@ -22,7 +19,6 @@ class DocsMain extends MdComponent {
                     .leadingActions="${[{ icon: "menu" }]}"
                     @onTopAppBarIconButtonClick="${this.handleDocsMainTopAppBarIconButtonClick}"
                 ></md-top-app-bar>
-
                 <md-navigation-drawer
                     id="docsMainNavigationDrawer"
                     type="tree"
@@ -30,7 +26,6 @@ class DocsMain extends MdComponent {
                     @onTreeItemClick="${this.handleDocsMainNavigationDrawerTreeItemClick}"
                     @onTreeKeydownEnter="${this.handleDocsMainNavigationDrawerTreeKeydownEnter}"
                 ></md-navigation-drawer>
-
                 <md-layout-border-item region="center">
                     <md-outlet></md-outlet>
                 </md-layout-border-item>
@@ -51,18 +46,17 @@ class DocsMain extends MdComponent {
     sortItems(items) {
         items.sort((a, b) => {
             if (a.children && !b.children) return -1;
+
             if (!a.children && b.children) return 1;
 
             if (a.type && b.type) {
                 return a.type.localeCompare(b.type);
             }
-
             const labelComparison = a.label.localeCompare(b.label);
-            if (labelComparison !== 0) return labelComparison;
 
+            if (labelComparison !== 0) return labelComparison;
             return 0;
         });
-
         items.forEach((item) => {
             if (item.children) {
                 this.sortItems(item.children);
@@ -90,6 +84,7 @@ class DocsMain extends MdComponent {
 
     disconnectedCallback() {
         super.disconnectedCallback();
+
         if (this.layout) this.layout.destroy();
     }
 
@@ -104,6 +99,7 @@ class DocsMain extends MdComponent {
 
     handleDocsMainNavigationDrawerTreeItemClick(event) {
         const data = event.detail.event.currentTarget.data;
+
         if (docsMainNavigationDrawer.modal && data.routerLink) {
             docsMainNavigationDrawer.close();
         }

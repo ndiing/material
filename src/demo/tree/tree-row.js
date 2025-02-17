@@ -1,6 +1,5 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
-
 class DemoTreeRow extends MdComponent {
     render() {
         return html`
@@ -14,5 +13,7 @@ class DemoTreeRow extends MdComponent {
         `;
     }
 }
+
 customElements.define("demo-tree-row", DemoTreeRow);
+
 export default document.createElement("demo-tree-row");

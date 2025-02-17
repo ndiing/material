@@ -27,9 +27,7 @@ class MdSheetComponent extends MdComponent {
         region: { type: String },
         modal: { type: Boolean, reflect: true },
     };
-
     regions = ["north", "east", "south", "west", "center"];
-
     constructor() {
         super();
         this.body = Array.from(this.childNodes);
@@ -96,8 +94,8 @@ class MdSheetComponent extends MdComponent {
         this.parentElement.insertBefore(this.sheetScrim, this.nextElementSibling);
         this.handleSheetScrimClose = this.handleSheetScrimClose.bind(this);
         this.sheetScrim.addEventListener("onScrimClose", this.handleSheetScrimClose);
-        if (this.modal && this.open) this.sheetScrim.show();
 
+        if (this.modal && this.open) this.sheetScrim.show();
         await this.updateComplete;
         this.style.setProperty("--md-comp-sheet-width", this.clientWidth + "px");
         this.style.setProperty("--md-comp-sheet-height", this.clientHeight + "px");
@@ -111,11 +109,13 @@ class MdSheetComponent extends MdComponent {
 
     updated(changedProperties) {
         super.updated(changedProperties);
+
         if (changedProperties.has("region")) {
             this.regions.forEach((region) => {
                 this.classList.toggle(`md-sheet--${region}`, region === this.region);
             });
         }
+
         if (changedProperties.has("modal")) {
             this.classList.toggle(`md-sheet--modal`, !!this.modal);
         }
@@ -128,6 +128,7 @@ class MdSheetComponent extends MdComponent {
         this.handleSheetShown = this.handleSheetShown.bind(this);
         this.addEventListener("animationend", this.handleSheetShown);
         this.open = true;
+
         if (this.modal) this.sheetScrim.show();
         /**
          * @event onSheetShow
@@ -143,6 +144,7 @@ class MdSheetComponent extends MdComponent {
         this.handleSheetClosed = this.handleSheetClosed.bind(this);
         this.addEventListener("animationend", this.handleSheetClosed);
         this.open = false;
+
         if (this.sheetScrim.open) this.sheetScrim.close();
         /**
          * @event onSheetClose

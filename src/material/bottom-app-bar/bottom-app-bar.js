@@ -17,7 +17,6 @@ class MdBottomAppBarComponent extends MdComponent {
         fab: { type: String },
         open: { type: Boolean, reflect: true },
     };
-
     constructor() {
         super();
     }
@@ -61,7 +60,6 @@ class MdBottomAppBarComponent extends MdComponent {
         super.connectedCallback();
         this.classList.add("md-bottom-app-bar");
         this.style.setProperty("--md-comp-sheet-animation", "none");
-
         await this.updateComplete;
         this.style.setProperty("--md-comp-sheet-width", this.clientWidth + "px");
         this.style.setProperty("--md-comp-sheet-height", this.clientHeight + "px");

@@ -61,5 +61,7 @@ class DemoChips extends MdComponent {
         `;
     }
 }
+
 customElements.define("demo-chips", DemoChips);
+
 export default document.createElement("demo-chips");

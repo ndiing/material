@@ -19,5 +19,7 @@ class DemoChipsSingleSelect extends MdComponent {
         `;
     }
 }
+
 customElements.define("demo-chips-single-select", DemoChipsSingleSelect);
+
 export default document.createElement("demo-chips-single-select");

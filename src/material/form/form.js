@@ -25,7 +25,6 @@ class MdFormComponent extends MdComponent {
         name: { type: String },
         noValidate: { type: Boolean },
     };
-
     get formNative() {
         return this.querySelector(".md-form__native");
     }

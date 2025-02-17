@@ -7,11 +7,13 @@ import { argbFromHex, themeFromSourceColor, themeFromImage, applyTheme } from "@
  */
 async function setTheme(input, customColors) {
     let theme;
+
     if (input instanceof HTMLImageElement) {
         theme = await themeFromImage(input, customColors);
     } else {
         theme = themeFromSourceColor(argbFromHex(input), customColors);
     }
+
     theme.schemes.dark.props.surfaceDim = theme.palettes.neutral.tone(6);
     theme.schemes.dark.props.surfaceBright = theme.palettes.neutral.tone(24);
     theme.schemes.dark.props.surfaceContainerLowest = theme.palettes.neutral.tone(4);

@@ -1,6 +1,5 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
-
 class DemoTopAppBar extends MdComponent {
     render() {
         return html`
@@ -31,5 +30,7 @@ class DemoTopAppBar extends MdComponent {
         `;
     }
 }
+
 customElements.define("demo-top-app-bar", DemoTopAppBar);
+
 export default document.createElement("demo-top-app-bar");

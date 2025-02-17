@@ -23,6 +23,7 @@
             -webkit-tap-highlight-color: transparent;
         }
     }
+
     tbody {
         .md-data-table__cell {
             user-select: none;
@@ -50,13 +51,17 @@
             }
         }
     }
+
     tfoot {
     }
+
     tr {
     }
+
     th {
         text-align: left;
     }
+
     td {
     }
 }

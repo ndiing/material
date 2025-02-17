@@ -32,9 +32,7 @@ class MdSliderComponent extends MdComponent {
             },
         },
     };
-
     variants = ["centered", "continuous", "discrete", "range-selection"];
-
     get indicators() {
         const lengths = {
             centered: 3,
@@ -108,21 +106,23 @@ class MdSliderComponent extends MdComponent {
     async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-slider");
+
         if (this.value === undefined) {
             this.value = [this.max < this.min ? this.min : this.min + (this.max - this.min) / 2];
         }
         this.defaultValue = JSON.parse(JSON.stringify(this.value));
+
         if (this.min < 0) this.variant = "centered";
         else if (this.step > 1) this.variant = "discrete";
         else if (this.value.length > 1) this.variant = "range-selection";
         else this.variant = "continuous";
-
         await this.updateComplete;
         this.updateValue();
     }
 
     updated(changedProperties) {
         super.updated(changedProperties);
+
         if (changedProperties.has("variant")) {
             this.variants.forEach((variant) => {
                 this.classList.toggle(`md-slider--${variant}`, variant === this.variant);
@@ -144,6 +144,7 @@ class MdSliderComponent extends MdComponent {
     handleSliderNativeInput(event) {
         const native = event.currentTarget;
         const data = native.data;
+
         if (this.value.length > 1) {
             this.sliderNativeAll[0].value = Math.min(this.sliderNativeAll[0].value, this.value[1]);
             this.sliderNativeAll[1].value = Math.max(this.sliderNativeAll[1].value, this.value[0]);

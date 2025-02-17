@@ -30,6 +30,7 @@
             }
         }
     }
+
     &:active {
         + .md-switch__track {
             .md-switch__thumb {
@@ -79,6 +80,7 @@
             width: 40px;
         }
     }
+
     &:not(:empty) {
         width: 24px;
         height: 24px;

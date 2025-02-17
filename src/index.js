@@ -1,7 +1,6 @@
 // This example code is intended for demonstration purposes only.
 // It may not follow best coding practices.
 // It is recommended to use better coding approaches for production use.
-
 import "./material/material.scss";
 import "./material/material.js";
 

@@ -1,6 +1,5 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
-
 class DemoProgressIndicator extends MdComponent {
     render() {
         return html`
@@ -17,5 +16,7 @@ class DemoProgressIndicator extends MdComponent {
         `;
     }
 }
+
 customElements.define("demo-progress-indicator", DemoProgressIndicator);
+
 export default document.createElement("demo-progress-indicator");

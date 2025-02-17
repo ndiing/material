@@ -27,6 +27,7 @@
         animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
         animation-duration: var(--md-sys-motion-duration-short3);
     }
+
     &[open] {
         opacity: 1;
         pointer-events: all;
@@ -127,21 +128,27 @@
     &:focus {
         @include mixins.ripple-focus();
     }
+
     &:active {
         @include mixins.ripple-press();
     }
+
     &:hover {
         @include mixins.ripple-hover();
     }
+
     &:-moz-drag-over {
         @include mixins.ripple-drag();
     }
+
     &:disabled {
         @include mixins.ripple-disabled();
     }
+
     &[activated] {
         border: 1px solid var(--md-sys-color-outline);
     }
+
     &[selected] {
         background-color: var(--md-sys-color-secondary-container);
         color: var(--md-sys-color-on-secondary-container);

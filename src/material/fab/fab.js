@@ -21,13 +21,9 @@ class MdFabComponent extends MdComponent {
         size: { type: String },
         variant: { type: String },
     };
-
     sizes = ["small", "large"];
-
     types = ["extended"];
-
     variants = ["unelevated"];
-
     constructor() {
         super();
     }
@@ -39,28 +35,31 @@ class MdFabComponent extends MdComponent {
     async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-fab");
-
         await this.updateComplete;
         this.ripple = new Ripple(this, {});
     }
 
     async disconnectedCallback() {
         super.disconnectedCallback();
+
         if (this.ripple) this.ripple.destroy();
     }
 
     updated(changedProperties) {
         super.updated(changedProperties);
+
         if (changedProperties.has("type")) {
             this.types.forEach((type) => {
                 this.classList.toggle(`md-fab--${type}`, type === this.type);
             });
         }
+
         if (changedProperties.has("size")) {
             this.sizes.forEach((size) => {
                 this.classList.toggle(`md-fab--${size}`, size === this.size);
             });
         }
+
         if (changedProperties.has("variant")) {
             this.variants.forEach((variant) => {
                 this.classList.toggle(`md-fab--${variant}`, variant === this.variant);

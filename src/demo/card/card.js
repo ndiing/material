@@ -55,5 +55,7 @@ class DemoCard extends MdComponent {
         `;
     }
 }
+
 customElements.define("demo-card", DemoCard);
+
 export default document.createElement("demo-card");

@@ -24,6 +24,7 @@
         animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
         animation-duration: var(--md-sys-motion-duration-short3);
     }
+
     &[open] {
         opacity: 1;
         pointer-events: all;

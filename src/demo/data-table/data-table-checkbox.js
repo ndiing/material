@@ -1,10 +1,8 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
-
 class DemoDataTableCheckbox extends MdComponent {
     constructor() {
         super();
-
         this.headers = [
             [
                 { name: "userId", label: "User Id" },
@@ -15,7 +13,6 @@ class DemoDataTableCheckbox extends MdComponent {
         ];
         this.bodies = this.headers;
         this.footers = [];
-
         this.data = [
             {
                 userId: 1,
@@ -619,6 +616,7 @@ class DemoDataTableCheckbox extends MdComponent {
             },
         ];
     }
+
     render() {
         return html`
             <div class="md-layout">
@@ -643,5 +641,7 @@ class DemoDataTableCheckbox extends MdComponent {
         `;
     }
 }
+
 customElements.define("demo-data-table-checkbox", DemoDataTableCheckbox);
+
 export default document.createElement("demo-data-table-checkbox");

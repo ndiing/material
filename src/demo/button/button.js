@@ -33,5 +33,7 @@ class DemoButton extends MdComponent {
         `;
     }
 }
+
 customElements.define("demo-button", DemoButton);
+
 export default document.createElement("demo-button");

@@ -619,6 +619,7 @@ class DemoDataTableSortable extends MdComponent {
             },
         ];
     }
+
     render() {
         return html`
             <div class="md-layout">
@@ -643,5 +644,7 @@ class DemoDataTableSortable extends MdComponent {
         `;
     }
 }
+
 customElements.define("demo-data-table-sortable", DemoDataTableSortable);
+
 export default document.createElement("demo-data-table-sortable");

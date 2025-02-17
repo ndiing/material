@@ -27,7 +27,6 @@ class MdDataTableCellComponent extends MdComponent {
         indeterminate: { type: Boolean },
         checked: { type: Boolean },
     };
-
     constructor() {
         super();
     }
@@ -55,10 +54,11 @@ class MdDataTableCellComponent extends MdComponent {
     async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-data-table__cell");
-
         await this.updateComplete;
+
         if (this.sublabel) {
             const sublabel = this.querySelector(".md-data-table__sublabel");
+
             if (sublabel.scrollHeight > sublabel.clientHeight) {
                 this.classList.add("md-data-table__cell--three-line");
             } else {
@@ -69,6 +69,7 @@ class MdDataTableCellComponent extends MdComponent {
 
     async updated(changedProperties) {
         super.updated(changedProperties);
+
         if (changedProperties.has("icon")) {
             this.classList.toggle("md-data-table__cell--with-icon", !!this.icon);
         }

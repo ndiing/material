@@ -39,5 +39,7 @@ class DemoButtonFilled extends MdComponent {
         `;
     }
 }
+
 customElements.define("demo-button-filled", DemoButtonFilled);
+
 export default document.createElement("demo-button-filled");

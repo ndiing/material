@@ -11,7 +11,6 @@ class MdScrimComponent extends MdComponent {
     static properties = {
         open: { type: Boolean, reflect: true },
     };
-
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-scrim");

@@ -9,10 +9,12 @@
     height: 100%;
     &::-webkit-progress-inner-element {
     }
+
     &::-webkit-progress-bar {
         border-radius: 2px;
         background-color: var(--md-sys-color-secondary-container);
     }
+
     &::-webkit-progress-value {
         border-radius: 2px;
         background-color: var(--md-sys-color-primary);

@@ -1,6 +1,5 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
-
 class DemoListItem extends MdComponent {
     render() {
         return html`
@@ -34,5 +33,7 @@ class DemoListItem extends MdComponent {
         `;
     }
 }
+
 customElements.define("demo-list-item", DemoListItem);
+
 export default document.createElement("demo-list-item");

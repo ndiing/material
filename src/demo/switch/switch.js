@@ -1,6 +1,5 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
-
 class DemoSwitch extends MdComponent {
     render() {
         return html`
@@ -47,5 +46,7 @@ class DemoSwitch extends MdComponent {
         `;
     }
 }
+
 customElements.define("demo-switch", DemoSwitch);
+
 export default document.createElement("demo-switch");

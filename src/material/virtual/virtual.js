@@ -36,10 +36,9 @@ class Virtual {
     handleVirtualScrollDebounce() {
         const { rowHeight, total } = this.updateTrackHeight();
         const { start, end } = this.updateItemsPosition(rowHeight, total);
-
         const data = this.options.data.slice(start, end);
-
         const cache = [rowHeight, total, start, end, data].toString();
+
         if (this.cache !== cache) {
             this.cache = cache;
             /**
@@ -65,12 +64,10 @@ class Virtual {
         const scrollTop = this.host.scrollTop;
         const nodePadding = this.options.nodePadding;
         const viewportHeight = this.host.clientHeight;
-
         const start = Math.max(0, Math.floor(scrollTop / rowHeight) - nodePadding);
         const limit = Math.min(total - start, Math.ceil(viewportHeight / rowHeight) + 2 * nodePadding);
         const end = start + limit;
         const translateY = start * rowHeight;
-
         this.items = this.host.querySelectorAll(this.options.item);
         this.items.forEach((item) => {
             item.style.setProperty("transform", "translate3d(0," + translateY + "px,0)");
@@ -89,7 +86,6 @@ class Virtual {
         const total = this.options.total;
         const rowHeight = this.options.rowHeight;
         const trackHeight = total * rowHeight;
-
         this.track.style.setProperty("height", trackHeight + "px");
         return { rowHeight, total };
     }
@@ -122,6 +118,7 @@ class Virtual {
     load(options = {}) {
         for (const name in options) {
             const value = options[name];
+
             if (value === undefined || this.options[name] === value) continue;
             this.options[name] = value;
         }
@@ -133,10 +130,8 @@ class Virtual {
      */
     init() {
         this.host.classList.add("md-virtual");
-
         this.track = this.host.querySelector(this.options.track);
         this.track.classList.add("md-virtual__track");
-
         this.handleVirtualScroll = this.handleVirtualScroll.bind(this);
         this.handleVirtualScrollDebounce = this.handleVirtualScrollDebounce.bind(this);
         this.host.addEventListener("scroll", this.handleVirtualScroll);
@@ -151,5 +146,4 @@ class Virtual {
         this.host.removeEventListener("scroll", this.handleVirtualScroll);
     }
 }
-
 export { Virtual };

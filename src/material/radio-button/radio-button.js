@@ -19,7 +19,6 @@ class MdRadioButtonComponent extends MdComponent {
         indeterminate: { type: Boolean },
         checked: { type: Boolean },
     };
-
     constructor() {
         super();
     }
@@ -51,7 +50,6 @@ class MdRadioButtonComponent extends MdComponent {
         this.defaultIndeterminate = this.indeterminate;
         this.defaultChecked = this.checked;
         this.classList.add("md-radio-button");
-
         await this.updateComplete;
         this.ripple = new Ripple(this, {
             container: ".md-radio-button__track",
@@ -63,6 +61,7 @@ class MdRadioButtonComponent extends MdComponent {
 
     async disconnectedCallback() {
         super.disconnectedCallback();
+
         if (this.ripple) this.ripple.destroy();
     }
 

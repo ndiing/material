@@ -15,9 +15,7 @@ class MdProgressIndicatorComponent extends MdComponent {
         max: { type: Number },
         value: { type: Number },
     };
-
     variants = ["circular"];
-
     constructor() {
         super();
         this.max = 100;
@@ -91,6 +89,7 @@ class MdProgressIndicatorComponent extends MdComponent {
 
     updated(changedProperties) {
         super.updated(changedProperties);
+
         if (changedProperties.has("variant")) {
             this.variants.forEach((variant) => {
                 this.classList.toggle(`md-progress-indicator--${variant}`, this.variant === variant);

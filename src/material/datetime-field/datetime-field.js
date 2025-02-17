@@ -45,7 +45,6 @@ class MdDatetimeFieldComponent extends MdTextFieldComponent {
             this.handleDatetimeFieldPickerWindowClick = this.handleDatetimeFieldPickerWindowClick.bind(this);
             this.picker.addEventListener("onDatetimePickerWindowScroll", this.handleDatetimeFieldPickerWindowScroll);
             this.picker.addEventListener("onDatetimePickerWindowClick", this.handleDatetimeFieldPickerWindowClick);
-
             await this.picker.updateComplete;
         }
     }
@@ -111,13 +110,13 @@ class MdDatetimeFieldComponent extends MdTextFieldComponent {
 
     async handleDatetimeFieldIconButtonPickerClick(event) {
         this.pickerTrigger = event.currentTarget;
-
         await this.createPicker();
         this.togglePicker({ trigger: this.textFieldContainer });
     }
 
     handleTextFieldIconButtonClick(event) {
         const data = event.currentTarget.data;
+
         if (data.id === "picker") return this.handleDatetimeFieldIconButtonPickerClick(event);
         super.handleTextFieldIconButtonClick(event);
     }

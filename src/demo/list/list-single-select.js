@@ -1,6 +1,5 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
-
 class DemoListSingleSelect extends MdComponent {
     render() {
         return html`
@@ -23,5 +22,7 @@ class DemoListSingleSelect extends MdComponent {
         `;
     }
 }
+
 customElements.define("demo-list-single-select", DemoListSingleSelect);
+
 export default document.createElement("demo-list-single-select");

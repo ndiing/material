@@ -15,7 +15,6 @@ class MdNavigationBarComponent extends MdComponent {
         open: { type: Boolean, reflect: true },
         items: { type: Array },
     };
-
     constructor() {
         super();
         this.items = [];
@@ -35,7 +34,6 @@ class MdNavigationBarComponent extends MdComponent {
         super.connectedCallback();
         this.classList.add("md-navigation-bar");
         this.style.setProperty("--md-comp-sheet-animation", "none");
-
         await this.updateComplete;
         this.style.setProperty("--md-comp-sheet-width", this.clientWidth + "px");
         this.style.setProperty("--md-comp-sheet-height", this.clientHeight + "px");

@@ -1,6 +1,5 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
-
 class DemoMonthField extends MdComponent {
     render() {
         return html`
@@ -28,7 +27,6 @@ class DemoMonthField extends MdComponent {
                                 cancelAction
                             ></md-month-field>
                         </div>
-
                         <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                             <md-button
                                 variant="filled-tonal"
@@ -41,7 +39,6 @@ class DemoMonthField extends MdComponent {
                                 type="submit"
                             ></md-button>
                         </div>
-
                         <div style="height:100vh;"></div>
                     </div>
                 </div>
@@ -49,5 +46,7 @@ class DemoMonthField extends MdComponent {
         `;
     }
 }
+
 customElements.define("demo-month-field", DemoMonthField);
+
 export default document.createElement("demo-month-field");

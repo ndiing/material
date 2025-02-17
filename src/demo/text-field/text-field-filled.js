@@ -1,6 +1,5 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
-
 class DemoTextFieldFilled extends MdComponent {
     render() {
         return html`
@@ -108,5 +107,7 @@ class DemoTextFieldFilled extends MdComponent {
         `;
     }
 }
+
 customElements.define("demo-text-field-filled", DemoTextFieldFilled);
+
 export default document.createElement("demo-text-field-filled");

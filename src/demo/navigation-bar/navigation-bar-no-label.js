@@ -1,6 +1,5 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
-
 class DemoNavigationBarNoLabel extends MdComponent {
     render() {
         return html`
@@ -29,5 +28,7 @@ class DemoNavigationBarNoLabel extends MdComponent {
         `;
     }
 }
+
 customElements.define("demo-navigation-bar-no-label", DemoNavigationBarNoLabel);
+
 export default document.createElement("demo-navigation-bar-no-label");

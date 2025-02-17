@@ -1,6 +1,5 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
-
 class DemoNavigationDrawer extends MdComponent {
     render() {
         return html`
@@ -36,5 +35,7 @@ class DemoNavigationDrawer extends MdComponent {
         `;
     }
 }
+
 customElements.define("demo-navigation-drawer", DemoNavigationDrawer);
+
 export default document.createElement("demo-navigation-drawer");

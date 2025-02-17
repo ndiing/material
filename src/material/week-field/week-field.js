@@ -45,7 +45,6 @@ class MdWeekFieldComponent extends MdTextFieldComponent {
             this.handleWeekFieldPickerWindowClick = this.handleWeekFieldPickerWindowClick.bind(this);
             this.picker.addEventListener("onWeekPickerWindowScroll", this.handleWeekFieldPickerWindowScroll);
             this.picker.addEventListener("onWeekPickerWindowClick", this.handleWeekFieldPickerWindowClick);
-
             await this.picker.updateComplete;
         }
     }
@@ -111,13 +110,13 @@ class MdWeekFieldComponent extends MdTextFieldComponent {
 
     async handleWeekFieldIconButtonPickerClick(event) {
         this.pickerTrigger = event.currentTarget;
-
         await this.createPicker();
         this.togglePicker({ trigger: this.textFieldContainer });
     }
 
     handleTextFieldIconButtonClick(event) {
         const data = event.currentTarget.data;
+
         if (data.id === "picker") return this.handleWeekFieldIconButtonPickerClick(event);
         super.handleTextFieldIconButtonClick(event);
     }
