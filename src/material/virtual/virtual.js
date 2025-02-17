@@ -130,8 +130,12 @@ class Virtual {
      */
     init() {
         this.host.classList.add("md-virtual");
-        this.track = this.host.querySelector(this.options.track);
+
+        if (typeof this.options.track === "string") {
+            this.track = this.host.querySelector(this.options.track);
+        }
         this.track.classList.add("md-virtual__track");
+
         this.handleVirtualScroll = this.handleVirtualScroll.bind(this);
         this.handleVirtualScrollDebounce = this.handleVirtualScrollDebounce.bind(this);
         this.host.addEventListener("scroll", this.handleVirtualScroll);
