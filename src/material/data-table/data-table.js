@@ -15,16 +15,16 @@ class MdDataTableComponent extends MdComponent {
      * @property {String} label
      * @property {Boolean} resizable
      * @property {Boolean} sortable
-    */
+     */
     /**
      * @typedef {Object} MdDataTableComponentBodies
      * @property {String} name
      * @property {String} label
-    */
+     */
     /**
      * @typedef {Object} MdDataTableComponentFooters
      * @property {String} label
-    */
+     */
     /**
      * The properties of the component.
      * @property {MdDataTableComponentHeaders.<Array>} [headers=[]] - The headers of the table.
@@ -344,6 +344,16 @@ class MdDataTableComponent extends MdComponent {
          * @property {Object} event
          */
         this.emit("onDataTableNativeBodyCellCheckboxClcik", { event });
+    }
+
+    /**
+     * description
+     * @param {Array} data - description
+     * @param {Object} options - description
+     * @returns {Array} description
+     */
+    load(data = [], options = {}) {
+        return [];
     }
 }
 

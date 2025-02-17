@@ -10,6 +10,11 @@ docs-page {
         @include mixins.typescale-headline-small();
     }
 
+    h3 {
+        margin-bottom: 1em;
+        @include mixins.typescale-title-medium();
+    }
+
     p {
         margin-bottom: 1em;
         @include mixins.typescale-body-large();
