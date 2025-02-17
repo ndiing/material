@@ -22,10 +22,11 @@ class DocsPage extends MdComponent {
                 <p><code>new ${item.name}(${item.params?.map(p=>p.name)?.join(', ')})</code></p>
                 <p>${item.description}</p>
                 ${item?.params?.length?html`
-                    <h3>params</h3>
+                    <h3>Params</h3>
                     ${this.renderTable([
                         {name:'name',label:'name',format:value=>unsafeHTML(`<code>${value}</code>`)},
                         {name:'type',label:'type',format:value=>value.names?.join(', ')},
+                        {name:'defaultvalue',label:'Default'},
                         {name:'description',label:'description'},
                     ],item?.params??[])}
                 `:nothing}
@@ -49,7 +50,9 @@ class DocsPage extends MdComponent {
         /* prettier-ignore */
         return data?.length?html`
             <h2>Instance properties</h2>
-            <p>This interface also inherits properties from its parent, <code>HTMLElement</code>.</p>
+            ${this.data?.class?.some(c=>c.tags)?html`
+                <p>This interface also inherits properties from its parent, <code>HTMLElement</code>.</p>
+            `:nothing}
             ${data?.map(item =>html`
                 <p><code>${item.name}</code></p>
                 <p>${item.description}</p>
@@ -57,15 +60,36 @@ class DocsPage extends MdComponent {
                     ${this.renderTable([
                         {name:'name',label:'name',format:value=>unsafeHTML(`<code>${value}</code>`)},
                         {name:'type',label:'type',format:value=>value.names?.join(', ')},
+                        {name:'defaultvalue',label:'Default'},
                         {name:'description',label:'description'},
                     ],item?.properties??[])}
                 `:nothing}
                 ${item?.returns?.length?html`
-                    <h3>returns</h3>
+                    <h3>Returns</h3>
                     ${this.renderTable([
                         {name:'type',label:'type',format:value=>value.names?.join(', ')},
+                        {name:'defaultvalue',label:'Default'},
                         {name:'description',label:'description'},
                     ],item?.returns??[])}
+                `:nothing}
+            `)}
+        `:nothing
+    }
+
+    renderTypedef(data) {
+        /* prettier-ignore */
+        return data?.length?html`
+            <h2>Types</h2>
+            ${data?.map(item =>html`
+                <p><code>${item.name}</code></p>
+                <p>${item.description}</p>
+                ${item?.properties?.length?html`
+                    ${this.renderTable([
+                        {name:'name',label:'name',format:value=>unsafeHTML(`<code>${value}</code>`)},
+                        {name:'type',label:'type',format:value=>value.names?.join(', ')},
+                        {name:'defaultvalue',label:'Default'},
+                        {name:'description',label:'description'},
+                    ],item?.properties??[])}
                 `:nothing}
             `)}
         `:nothing
@@ -75,20 +99,23 @@ class DocsPage extends MdComponent {
         /* prettier-ignore */
         return data?.length?html`
             <h2>Instance methods</h2>
-            <p>This interface also inherits methods from its parent, <code>HTMLElement</code>.</p>
+            ${this.data?.class?.some(c=>c.tags)?html`
+                <p>This interface also inherits methods from its parent, <code>HTMLElement</code>.</p>
+            `:nothing}
             ${data?.map(item =>html`
                 <p><code>${item.name}(${item.params?.map(p=>p.name)?.join(', ')})</code></p>
                 <p>${item.description}</p>
                 ${item?.params?.length?html`
-                    <h3>params</h3>
+                    <h3>Params</h3>
                     ${this.renderTable([
                         {name:'name',label:'name',format:value=>unsafeHTML(`<code>${value}</code>`)},
                         {name:'type',label:'type',format:value=>value.names?.join(', ')},
+                        {name:'defaultvalue',label:'Default'},
                         {name:'description',label:'description'},
                     ],item?.params??[])}
                 `:nothing}
                 ${item?.returns?.length?html`
-                    <h3>returns</h3>
+                    <h3>Returns</h3>
                     ${this.renderTable([
                         {name:'type',label:'type',format:value=>value.names?.join(', ')},
                         {name:'description',label:'description'},
@@ -129,6 +156,7 @@ class DocsPage extends MdComponent {
                 ${this.renderClass(this.data.class)}
                 ${this.renderMember(this.data.member)}
                 ${this.renderFunction(this.data.function)}
+                ${this.renderTypedef(this.data.typedef)}
                 ${this.renderEvent(this.data.event)}
             </div>
         `
