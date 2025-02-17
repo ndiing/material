@@ -24,10 +24,10 @@ class DocsPage extends MdComponent {
                 ${item?.params?.length?html`
                     <h3>Params</h3>
                     ${this.renderTable([
-                        {name:'name',label:'name',format:value=>unsafeHTML(`<code>${value}</code>`)},
-                        {name:'type',label:'type',format:value=>value.names?.join(', ')},
+                        {name:'name',label:'Name',format:value=>unsafeHTML(`<code>${value}</code>`)},
+                        {name:'type',label:'Type',format:value=>value.names?.join(', ')},
                         {name:'defaultvalue',label:'Default'},
-                        {name:'description',label:'description'},
+                        {name:'description',label:'Description'},
                     ],item?.params??[])}
                 `:nothing}
             `:nothing}
@@ -54,8 +54,8 @@ class DocsPage extends MdComponent {
             <h2>Events</h2>
             <p>Listen to these events using <code>addEventListener()</code>, or by assigning an event listener to the <code>oneventname</code> property of this interface.</p>
             ${this.renderTable([
-                {name:'name',label:'name',format:value=>unsafeHTML(`<code>${value}</code>`)},
-                {name:'properties',label:'properties',format:value=>value?.map(v=>v.name)?.join(', ')},
+                {name:'name',label:'Name',format:value=>unsafeHTML(`<code>${value}</code>`)},
+                {name:'properties',label:'Properties',format:value=>value?.map(v=>v.name)?.join(', ')},
             ],data)}
         `:nothing
     }
@@ -72,18 +72,17 @@ class DocsPage extends MdComponent {
                 <p>${item.description}</p>
                 ${item?.properties?.length?html`
                     ${this.renderTable([
-                        {name:'name',label:'name',format:value=>unsafeHTML(`<code>${value}</code>`)},
-                        {name:'type',label:'type',format:value=>value.names?.join(', ')},
+                        {name:'name',label:'Name',format:value=>unsafeHTML(`<code>${value}</code>`)},
+                        {name:'type',label:'Type',format:value=>value.names?.join(', ')},
                         {name:'defaultvalue',label:'Default'},
-                        {name:'description',label:'description'},
+                        {name:'description',label:'Description'},
                     ],item?.properties??[])}
                 `:nothing}
                 ${item?.returns?.length?html`
                     <h3>Returns</h3>
                     ${this.renderTable([
-                        {name:'type',label:'type',format:value=>value.names?.join(', ')},
-                        {name:'defaultvalue',label:'Default'},
-                        {name:'description',label:'description'},
+                        {name:'type',label:'Type',format:value=>value.names?.join(', ')},
+                        {name:'description',label:'Description'},
                     ],item?.returns??[])}
                 `:nothing}
             `)}
@@ -99,10 +98,10 @@ class DocsPage extends MdComponent {
                 <p>${item.description}</p>
                 ${item?.properties?.length?html`
                     ${this.renderTable([
-                        {name:'name',label:'name',format:value=>unsafeHTML(`<code>${value}</code>`)},
-                        {name:'type',label:'type',format:value=>value.names?.join(', ')},
+                        {name:'name',label:'Name',format:value=>unsafeHTML(`<code>${value}</code>`)},
+                        {name:'type',label:'Type',format:value=>value.names?.join(', ')},
                         {name:'defaultvalue',label:'Default'},
-                        {name:'description',label:'description'},
+                        {name:'description',label:'Description'},
                     ],item?.properties??[])}
                 `:nothing}
             `)}
@@ -122,17 +121,17 @@ class DocsPage extends MdComponent {
                 ${item?.params?.length?html`
                     <h3>Params</h3>
                     ${this.renderTable([
-                        {name:'name',label:'name',format:value=>unsafeHTML(`<code>${value}</code>`)},
-                        {name:'type',label:'type',format:value=>value.names?.join(', ')},
+                        {name:'name',label:'Name',format:value=>unsafeHTML(`<code>${value}</code>`)},
+                        {name:'type',label:'Type',format:value=>value.names?.join(', ')},
                         {name:'defaultvalue',label:'Default'},
-                        {name:'description',label:'description'},
+                        {name:'description',label:'Description'},
                     ],item?.params??[])}
                 `:nothing}
                 ${item?.returns?.length?html`
                     <h3>Returns</h3>
                     ${this.renderTable([
-                        {name:'type',label:'type',format:value=>value.names?.join(', ')},
-                        {name:'description',label:'description'},
+                        {name:'type',label:'Type',format:value=>value.names?.join(', ')},
+                        {name:'description',label:'Description'},
                     ],item?.returns??[])}
                 `:nothing}
             `)}

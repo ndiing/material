@@ -14,6 +14,9 @@ class MdComponent extends LitElement {
     }
 
     emit(type, detail) {
+        // if(typeof this[type] === 'function')
+        //     this[type]({detail})
+
         const event = new CustomEvent(type, {
             bubbles: true,
             cancelable: true,

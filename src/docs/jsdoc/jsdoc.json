@@ -353,14 +353,14 @@
         "scope": "global"
     },
     {
-        "comment": "/**\n * @extends MdComponent\n * @element md-bottom-app-bar\n */",
+        "comment": "/**\n * MdBottomAppBarComponent class responsible for displaying a bottom app bar.\n * @extends MdComponent\n * @element md-bottom-app-bar\n *\n * @example\n * <md-bottom-app-bar\n *     id=\"bottomAppBar\"\n *     actions='[{\"icon\":\"image\"},{\"icon\":\"image\"},{\"icon\":\"image\"},{\"icon\":\"image\"}]'\n *     fab=\"image\"\n *     open\n *     onBottomAppBarIconButtonClick=\"${console.log}\"\n *     onBottomAppBarFabClick=\"${console.log}\"\n *     onBottomAppBarShown=\"${console.log}\"\n *     onBottomAppBarClosed=\"${console.log}\"\n * ></md-bottom-app-bar>\n */",
         "meta": {
             "range": [
-                262,
-                3529
+                735,
+                5668
             ],
             "filename": "bottom-app-bar.js",
-            "lineno": 9,
+            "lineno": 22,
             "columnno": 0,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-app-bar",
             "code": {
@@ -370,6 +370,7 @@
                 "paramnames": []
             }
         },
+        "classdesc": "MdBottomAppBarComponent class responsible for displaying a bottom app bar.",
         "augments": [
             "MdComponent"
         ],
@@ -381,6 +382,9 @@
                 "value": "md-bottom-app-bar"
             }
         ],
+        "examples": [
+            "<md-bottom-app-bar\n    id=\"bottomAppBar\"\n    actions='[{\"icon\":\"image\"},{\"icon\":\"image\"},{\"icon\":\"image\"},{\"icon\":\"image\"}]'\n    fab=\"image\"\n    open\n    onBottomAppBarIconButtonClick=\"${console.log}\"\n    onBottomAppBarFabClick=\"${console.log}\"\n    onBottomAppBarShown=\"${console.log}\"\n    onBottomAppBarClosed=\"${console.log}\"\n></md-bottom-app-bar>"
+        ],
         "name": "MdBottomAppBarComponent",
         "longname": "MdBottomAppBarComponent",
         "kind": "class",
@@ -388,14 +392,14 @@
         "undocumented": true
     },
     {
-        "comment": "/**\n     * @property {Array} [actions]\n     * @property {String} [fab]\n     * @property {Boolean} [open]\n     */",
+        "comment": "/**\n     * The properties of the component.\n     * @property {Array} [actions=[]] - The actions to display in the bottom app bar.\n     * @property {string} [fab] - The floating action button (FAB) to display.\n     * @property {boolean} [open=false] - Indicates if the bottom app bar is open.\n     */",
         "meta": {
             "range": [
-                435,
-                576
+                1095,
+                1236
             ],
             "filename": "bottom-app-bar.js",
-            "lineno": 15,
+            "lineno": 29,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-app-bar",
             "code": {
@@ -404,6 +408,7 @@
                 "type": "ClassProperty"
             }
         },
+        "description": "The properties of the component.",
         "properties": [
             {
                 "type": {
@@ -412,24 +417,29 @@
                     ]
                 },
                 "optional": true,
+                "defaultvalue": "[]",
+                "description": "The actions to display in the bottom app bar.",
                 "name": "actions"
             },
             {
                 "type": {
                     "names": [
-                        "String"
+                        "string"
                     ]
                 },
                 "optional": true,
+                "description": "The floating action button (FAB) to display.",
                 "name": "fab"
             },
             {
                 "type": {
                     "names": [
-                        "Boolean"
+                        "boolean"
                     ]
                 },
                 "optional": true,
+                "defaultvalue": false,
+                "description": "Indicates if the bottom app bar is open.",
                 "name": "open"
             }
         ],
@@ -443,11 +453,11 @@
         "comment": "",
         "meta": {
             "range": [
-                465,
-                489
+                1125,
+                1149
             ],
             "filename": "bottom-app-bar.js",
-            "lineno": 16,
+            "lineno": 30,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-app-bar",
             "code": {
@@ -467,11 +477,11 @@
         "comment": "",
         "meta": {
             "range": [
-                476,
-                487
+                1136,
+                1147
             ],
             "filename": "bottom-app-bar.js",
-            "lineno": 16,
+            "lineno": 30,
             "columnno": 19,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-app-bar",
             "code": {
@@ -492,11 +502,11 @@
         "comment": "",
         "meta": {
             "range": [
-                499,
-                520
+                1159,
+                1180
             ],
             "filename": "bottom-app-bar.js",
-            "lineno": 17,
+            "lineno": 31,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-app-bar",
             "code": {
@@ -516,11 +526,11 @@
         "comment": "",
         "meta": {
             "range": [
-                506,
-                518
+                1166,
+                1178
             ],
             "filename": "bottom-app-bar.js",
-            "lineno": 17,
+            "lineno": 31,
             "columnno": 15,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-app-bar",
             "code": {
@@ -541,11 +551,11 @@
         "comment": "",
         "meta": {
             "range": [
-                530,
-                568
+                1190,
+                1228
             ],
             "filename": "bottom-app-bar.js",
-            "lineno": 18,
+            "lineno": 32,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-app-bar",
             "code": {
@@ -565,11 +575,11 @@
         "comment": "",
         "meta": {
             "range": [
-                538,
-                551
+                1198,
+                1211
             ],
             "filename": "bottom-app-bar.js",
-            "lineno": 18,
+            "lineno": 32,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-app-bar",
             "code": {
@@ -590,11 +600,11 @@
         "comment": "",
         "meta": {
             "range": [
-                553,
-                566
+                1213,
+                1226
             ],
             "filename": "bottom-app-bar.js",
-            "lineno": 18,
+            "lineno": 32,
             "columnno": 31,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-app-bar",
             "code": {
@@ -612,14 +622,14 @@
         "scope": "static"
     },
     {
-        "comment": "",
+        "comment": "/**\n     * Creates an instance of the MdBottomAppBarComponent class.\n     */",
         "meta": {
             "range": [
-                582,
-                620
+                1323,
+                1361
             ],
             "filename": "bottom-app-bar.js",
-            "lineno": 21,
+            "lineno": 38,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-app-bar",
             "code": {
@@ -632,22 +642,23 @@
                 "": null
             }
         },
-        "undocumented": true,
+        "description": "Creates an instance of the MdBottomAppBarComponent class.",
         "name": "MdBottomAppBarComponent",
         "longname": "MdBottomAppBarComponent",
         "kind": "class",
         "scope": "global",
-        "params": []
+        "params": [],
+        "undocumented": true
     },
     {
-        "comment": "/**\n * @extends MdComponent\n * @element md-bottom-app-bar\n */",
+        "comment": "/**\n * MdBottomAppBarComponent class responsible for displaying a bottom app bar.\n * @extends MdComponent\n * @element md-bottom-app-bar\n *\n * @example\n * <md-bottom-app-bar\n *     id=\"bottomAppBar\"\n *     actions='[{\"icon\":\"image\"},{\"icon\":\"image\"},{\"icon\":\"image\"},{\"icon\":\"image\"}]'\n *     fab=\"image\"\n *     open\n *     onBottomAppBarIconButtonClick=\"${console.log}\"\n *     onBottomAppBarFabClick=\"${console.log}\"\n *     onBottomAppBarShown=\"${console.log}\"\n *     onBottomAppBarClosed=\"${console.log}\"\n * ></md-bottom-app-bar>\n */",
         "meta": {
             "range": [
-                262,
-                3529
+                735,
+                5668
             ],
             "filename": "bottom-app-bar.js",
-            "lineno": 9,
+            "lineno": 22,
             "columnno": 0,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-app-bar",
             "code": {
@@ -660,6 +671,7 @@
         "name": "MdBottomAppBarComponent",
         "longname": "MdBottomAppBarComponent",
         "kind": "class",
+        "classdesc": "MdBottomAppBarComponent class responsible for displaying a bottom app bar.",
         "augments": [
             "MdComponent"
         ],
@@ -671,17 +683,21 @@
                 "value": "md-bottom-app-bar"
             }
         ],
-        "scope": "global"
+        "examples": [
+            "<md-bottom-app-bar\n    id=\"bottomAppBar\"\n    actions='[{\"icon\":\"image\"},{\"icon\":\"image\"},{\"icon\":\"image\"},{\"icon\":\"image\"}]'\n    fab=\"image\"\n    open\n    onBottomAppBarIconButtonClick=\"${console.log}\"\n    onBottomAppBarFabClick=\"${console.log}\"\n    onBottomAppBarShown=\"${console.log}\"\n    onBottomAppBarClosed=\"${console.log}\"\n></md-bottom-app-bar>"
+        ],
+        "scope": "global",
+        "description": "Creates an instance of the MdBottomAppBarComponent class."
     },
     {
         "comment": "",
         "meta": {
             "range": [
-                626,
-                1222
+                1570,
+                2166
             ],
             "filename": "bottom-app-bar.js",
-            "lineno": 25,
+            "lineno": 47,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-app-bar",
             "code": {
@@ -708,11 +724,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1228,
-                1742
+                2399,
+                2913
             ],
             "filename": "bottom-app-bar.js",
-            "lineno": 41,
+            "lineno": 68,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-app-bar",
             "code": {
@@ -739,11 +755,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1748,
-                1990
+                3061,
+                3303
             ],
             "filename": "bottom-app-bar.js",
-            "lineno": 56,
+            "lineno": 87,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-app-bar",
             "code": {
@@ -768,11 +784,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1996,
-                2383
+                3473,
+                3860
             ],
             "filename": "bottom-app-bar.js",
-            "lineno": 60,
+            "lineno": 95,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-app-bar",
             "code": {
@@ -798,11 +814,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2389,
-                2465
+                4027,
+                4103
             ],
             "filename": "bottom-app-bar.js",
-            "lineno": 69,
+            "lineno": 108,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-app-bar",
             "code": {
@@ -826,14 +842,14 @@
         "params": []
     },
     {
-        "comment": "/**\n     */",
+        "comment": "/**\n     * Shows the bottom app bar.\n     */",
         "meta": {
             "range": [
-                2487,
-                2729
+                4158,
+                4418
             ],
             "filename": "bottom-app-bar.js",
-            "lineno": 75,
+            "lineno": 115,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-app-bar",
             "code": {
@@ -846,6 +862,7 @@
                 "": null
             }
         },
+        "description": "Shows the bottom app bar.",
         "name": "show",
         "longname": "MdBottomAppBarComponent#show",
         "kind": "function",
@@ -857,11 +874,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2568,
-                2584
+                4239,
+                4255
             ],
             "filename": "bottom-app-bar.js",
-            "lineno": 77,
+            "lineno": 117,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-app-bar",
             "code": {
@@ -880,10 +897,10 @@
         "scope": "instance"
     },
     {
-        "comment": "/**\n         * @event onBottomAppBarShow\n         * @property {Object} event\n         */",
+        "comment": "/**\n         * @event onBottomAppBarShow\n         * @property {Object} event - The show event.\n         */",
         "meta": {
             "filename": "bottom-app-bar.js",
-            "lineno": 78,
+            "lineno": 118,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-app-bar",
             "code": {}
@@ -897,6 +914,7 @@
                         "Object"
                     ]
                 },
+                "description": "The show event.",
                 "name": "event"
             }
         ],
@@ -904,14 +922,14 @@
         "scope": "global"
     },
     {
-        "comment": "/**\n     */",
+        "comment": "/**\n     * Closes the bottom app bar.\n     */",
         "meta": {
             "range": [
-                2751,
-                2997
+                4474,
+                4739
             ],
             "filename": "bottom-app-bar.js",
-            "lineno": 87,
+            "lineno": 128,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-app-bar",
             "code": {
@@ -924,6 +942,7 @@
                 "": null
             }
         },
+        "description": "Closes the bottom app bar.",
         "name": "close",
         "longname": "MdBottomAppBarComponent#close",
         "kind": "function",
@@ -935,11 +954,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2833,
-                2850
+                4556,
+                4573
             ],
             "filename": "bottom-app-bar.js",
-            "lineno": 89,
+            "lineno": 130,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-app-bar",
             "code": {
@@ -958,10 +977,10 @@
         "scope": "instance"
     },
     {
-        "comment": "/**\n         * @event onBottomAppBarClose\n         * @property {Object} event\n         */",
+        "comment": "/**\n         * @event onBottomAppBarClose\n         * @property {Object} event - The close event.\n         */",
         "meta": {
             "filename": "bottom-app-bar.js",
-            "lineno": 90,
+            "lineno": 131,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-app-bar",
             "code": {}
@@ -975,6 +994,7 @@
                         "Object"
                     ]
                 },
+                "description": "The close event.",
                 "name": "event"
             }
         ],
@@ -982,14 +1002,14 @@
         "scope": "global"
     },
     {
-        "comment": "/**\n     */",
+        "comment": "/**\n     * Toggles the visibility of the bottom app bar.\n     */",
         "meta": {
             "range": [
-                3019,
-                3098
+                4814,
+                4893
             ],
             "filename": "bottom-app-bar.js",
-            "lineno": 99,
+            "lineno": 141,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-app-bar",
             "code": {
@@ -1002,6 +1022,7 @@
                 "": null
             }
         },
+        "description": "Toggles the visibility of the bottom app bar.",
         "name": "toggle",
         "longname": "MdBottomAppBarComponent#toggle",
         "kind": "function",
@@ -1013,11 +1034,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3104,
-                3323
+                5052,
+                5302
             ],
             "filename": "bottom-app-bar.js",
-            "lineno": 104,
+            "lineno": 150,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-app-bar",
             "code": {
@@ -1041,10 +1062,10 @@
         "params": []
     },
     {
-        "comment": "/**\n         * @event onBottomAppBarIconButtonClick\n         * @property {Object} event\n         */",
+        "comment": "/**\n         * @event onBottomAppBarIconButtonClick\n         * @property {Object} event - The icon button click event.\n         */",
         "meta": {
             "filename": "bottom-app-bar.js",
-            "lineno": 105,
+            "lineno": 151,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-app-bar",
             "code": {}
@@ -1058,6 +1079,7 @@
                         "Object"
                     ]
                 },
+                "description": "The icon button click event.",
                 "name": "event"
             }
         ],
@@ -1068,11 +1090,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3308,
-                3313
+                5287,
+                5292
             ],
             "filename": "bottom-app-bar.js",
-            "lineno": 109,
+            "lineno": 155,
             "columnno": 53,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-app-bar",
             "code": {
@@ -1092,11 +1114,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3329,
-                3527
+                5445,
+                5666
             ],
             "filename": "bottom-app-bar.js",
-            "lineno": 112,
+            "lineno": 162,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-app-bar",
             "code": {
@@ -1120,10 +1142,10 @@
         "params": []
     },
     {
-        "comment": "/**\n         * @event onBottomAppBarFabClick\n         * @property {Object} event\n         */",
+        "comment": "/**\n         * @event onBottomAppBarFabClick\n         * @property {Object} event - The FAB click event.\n         */",
         "meta": {
             "filename": "bottom-app-bar.js",
-            "lineno": 113,
+            "lineno": 163,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-app-bar",
             "code": {}
@@ -1137,6 +1159,7 @@
                         "Object"
                     ]
                 },
+                "description": "The FAB click event.",
                 "name": "event"
             }
         ],
@@ -1147,11 +1170,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3512,
-                3517
+                5651,
+                5656
             ],
             "filename": "bottom-app-bar.js",
-            "lineno": 117,
+            "lineno": 167,
             "columnno": 46,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-app-bar",
             "code": {
@@ -1171,11 +1194,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3610,
-                3633
+                5749,
+                5772
             ],
             "filename": "bottom-app-bar.js",
-            "lineno": 123,
+            "lineno": 173,
             "columnno": 9,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-app-bar",
             "code": {
@@ -7314,7 +7337,7 @@
         "meta": {
             "range": [
                 122,
-                499
+                584
             ],
             "filename": "component.js",
             "lineno": 6,
@@ -7369,7 +7392,7 @@
         "meta": {
             "range": [
                 122,
-                499
+                584
             ],
             "filename": "component.js",
             "lineno": 6,
@@ -7424,7 +7447,7 @@
         "meta": {
             "range": [
                 301,
-                497
+                582
             ],
             "filename": "component.js",
             "lineno": 16,
@@ -7455,11 +7478,11 @@
         "comment": "",
         "meta": {
             "range": [
-                336,
-                455
+                421,
+                540
             ],
             "filename": "component.js",
-            "lineno": 17,
+            "lineno": 20,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\component",
             "code": {
@@ -7481,11 +7504,11 @@
         "comment": "",
         "meta": {
             "range": [
-                380,
-                393
+                465,
+                478
             ],
             "filename": "component.js",
-            "lineno": 18,
+            "lineno": 21,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\component",
             "code": {
@@ -7505,11 +7528,11 @@
         "comment": "",
         "meta": {
             "range": [
-                407,
-                423
+                492,
+                508
             ],
             "filename": "component.js",
-            "lineno": 19,
+            "lineno": 22,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\component",
             "code": {
@@ -7529,11 +7552,11 @@
         "comment": "",
         "meta": {
             "range": [
-                437,
-                443
+                522,
+                528
             ],
             "filename": "component.js",
-            "lineno": 20,
+            "lineno": 23,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\component",
             "code": {
@@ -7553,11 +7576,11 @@
         "comment": "",
         "meta": {
             "range": [
-                509,
-                520
+                594,
+                605
             ],
             "filename": "component.js",
-            "lineno": 25,
+            "lineno": 28,
             "columnno": 9,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\component",
             "code": {
