@@ -4,16 +4,34 @@ import { styleMap } from "lit/directives/style-map.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { Store } from "../store/store";
 /**
+ * MdDataTableComponent class responsible for displaying a data table.
  * @extends MdComponent
  * @element md-data-table
  */
 class MdDataTableComponent extends MdComponent {
     /**
-     * @property {Array} [headers]
-     * @property {Array} [bodies]
-     * @property {Array} [footers]
-     * @property {Array} [data]
-     * @property {Boolean} [checkbox]
+     * @typedef {Object} MdDataTableComponentHeaders
+     * @property {String} name
+     * @property {String} label
+     * @property {Boolean} resizable
+     * @property {Boolean} sortable
+    */
+    /**
+     * @typedef {Object} MdDataTableComponentBodies
+     * @property {String} name
+     * @property {String} label
+    */
+    /**
+     * @typedef {Object} MdDataTableComponentFooters
+     * @property {String} label
+    */
+    /**
+     * The properties of the component.
+     * @property {MdDataTableComponentHeaders.<Array>} [headers=[]] - The headers of the table.
+     * @property {MdDataTableComponentBodies.<Array>} [bodies=[]] - The bodies of the table.
+     * @property {MdDataTableComponentFooters.<Array>} [footers=[]] - The footers of the table.
+     * @property {Array} [data=[]] - The data to be displayed in the table.
+     * @property {boolean} [checkbox=false] - Indicates if checkboxes should be displayed.
      */
     static properties = {
         headers: { type: Array },
@@ -23,25 +41,47 @@ class MdDataTableComponent extends MdComponent {
         checkbox: { type: Boolean },
     };
 
-    get checkboxData() {
+    /**
+     * Gets the checkbox column configuration.
+     * @returns {Array} The checkbox column configuration.
+     */
+    get checkboxColumn() {
         if (this.checkbox) {
             return [{ checkbox: true, sticky: true }];
         }
         return [];
     }
 
+    /**
+     * Gets the selected items in the data table.
+     * @readonly
+     * @returns {Array} The selected items.
+     */
     get selected() {
         return this.data.filter((item) => item.selected);
     }
 
+    /**
+     * Gets the indeterminate state of the checkboxes.
+     * @readonly
+     * @returns {boolean} The indeterminate state.
+     */
     get indeterminate() {
         return this.selected.length && this.selected.length < this.data.length;
     }
 
+    /**
+     * Gets the checked state of the checkboxes.
+     * @readonly
+     * @returns {boolean} The checked state.
+     */
     get checked() {
         return this.selected.length && this.selected.length === this.data.length;
     }
 
+    /**
+     * Creates an instance of the MdDataTableComponent class.
+     */
     constructor() {
         super();
         this.headers = [];
@@ -82,7 +122,7 @@ class MdDataTableComponent extends MdComponent {
         /* prettier-ignore */
         return html`
             <tr>
-                ${this.checkboxData.concat(tr).map((th) => html`
+                ${this.checkboxColumn.concat(tr).map((th) => html`
                     <th
                         .data="${th}"
                         style="${styleMap(this.styleDataTableNativeHeaderCell(th))}"
@@ -118,7 +158,7 @@ class MdDataTableComponent extends MdComponent {
         /* prettier-ignore */
         return html`
             <tr>
-                ${this.checkboxData.concat(tr).map((td) => this.renderDataTableNativeBodyCell(td, item))}
+                ${this.checkboxColumn.concat(tr).map((td) => this.renderDataTableNativeBodyCell(td, item))}
             </tr>
         `;
     }
@@ -231,18 +271,6 @@ class MdDataTableComponent extends MdComponent {
         this.emit("onDataTableNativeHeaderCellClick", { event });
     }
 
-    handleDataTableNativeBodyCellClick(event) {
-        const data = event.currentTarget.data;
-
-        if (data.checkbox) return this.handleDataTableNativeBodyCellCheckboxClcik(event);
-
-        /**
-         * @event onDataTableNativeBodyCellClick
-         * @property {Object} event
-         */
-        this.emit("onDataTableNativeBodyCellClick", { event });
-    }
-
     handleDataTableNativeHeaderCellCheckboxClick(event) {
         const data = event.currentTarget.data;
         const selected = !this.checked || this.indeterminate;
@@ -292,6 +320,18 @@ class MdDataTableComponent extends MdComponent {
          * @property {Object} event
          */
         this.emit("onDataTableNativeBodyClick", { event });
+    }
+
+    handleDataTableNativeBodyCellClick(event) {
+        const data = event.currentTarget.data;
+
+        if (data.checkbox) return this.handleDataTableNativeBodyCellCheckboxClcik(event);
+
+        /**
+         * @event onDataTableNativeBodyCellClick
+         * @property {Object} event
+         */
+        this.emit("onDataTableNativeBodyCellClick", { event });
     }
 
     handleDataTableNativeBodyCellCheckboxClcik(event) {

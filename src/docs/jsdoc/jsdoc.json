@@ -8299,14 +8299,14 @@
         "scope": "global"
     },
     {
-        "comment": "/**\n * @extends MdComponent\n * @element md-data-table\n */",
+        "comment": "/**\n * MdDataTableComponent class responsible for displaying a data table.\n * @extends MdComponent\n * @element md-data-table\n */",
         "meta": {
             "range": [
-                303,
-                9570
+                374,
+                10992
             ],
             "filename": "data-table.js",
-            "lineno": 10,
+            "lineno": 11,
             "columnno": 0,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -8316,6 +8316,7 @@
                 "paramnames": []
             }
         },
+        "classdesc": "MdDataTableComponent class responsible for displaying a data table.",
         "augments": [
             "MdComponent"
         ],
@@ -8334,14 +8335,133 @@
         "undocumented": true
     },
     {
-        "comment": "/**\n     * @property {Array} [headers]\n     * @property {Array} [bodies]\n     * @property {Array} [footers]\n     * @property {Array} [data]\n     * @property {Boolean} [checkbox]\n     */",
+        "comment": "/**\n     * @typedef {Object} MdDataTableComponentHeaders\n     * @property {String} name\n     * @property {String} label\n     * @property {Boolean} resizable\n     * @property {Boolean} sortable\n    */",
+        "meta": {
+            "filename": "data-table.js",
+            "lineno": 12,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {}
+        },
+        "kind": "typedef",
+        "name": "MdDataTableComponentHeaders",
+        "type": {
+            "names": [
+                "Object"
+            ]
+        },
+        "properties": [
+            {
+                "type": {
+                    "names": [
+                        "String"
+                    ]
+                },
+                "name": "name"
+            },
+            {
+                "type": {
+                    "names": [
+                        "String"
+                    ]
+                },
+                "name": "label"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Boolean"
+                    ]
+                },
+                "name": "resizable"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Boolean"
+                    ]
+                },
+                "name": "sortable"
+            }
+        ],
+        "longname": "MdDataTableComponentHeaders",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n     * @typedef {Object} MdDataTableComponentBodies\n     * @property {String} name\n     * @property {String} label\n    */",
+        "meta": {
+            "filename": "data-table.js",
+            "lineno": 19,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {}
+        },
+        "kind": "typedef",
+        "name": "MdDataTableComponentBodies",
+        "type": {
+            "names": [
+                "Object"
+            ]
+        },
+        "properties": [
+            {
+                "type": {
+                    "names": [
+                        "String"
+                    ]
+                },
+                "name": "name"
+            },
+            {
+                "type": {
+                    "names": [
+                        "String"
+                    ]
+                },
+                "name": "label"
+            }
+        ],
+        "longname": "MdDataTableComponentBodies",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n     * @typedef {Object} MdDataTableComponentFooters\n     * @property {String} label\n    */",
+        "meta": {
+            "filename": "data-table.js",
+            "lineno": 24,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {}
+        },
+        "kind": "typedef",
+        "name": "MdDataTableComponentFooters",
+        "type": {
+            "names": [
+                "Object"
+            ]
+        },
+        "properties": [
+            {
+                "type": {
+                    "names": [
+                        "String"
+                    ]
+                },
+                "name": "label"
+            }
+        ],
+        "longname": "MdDataTableComponentFooters",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n     * The properties of the component.\n     * @property {MdDataTableComponentHeaders.<Array>} [headers=[]] - The headers of the table.\n     * @property {MdDataTableComponentBodies.<Array>} [bodies=[]] - The bodies of the table.\n     * @property {MdDataTableComponentFooters.<Array>} [footers=[]] - The footers of the table.\n     * @property {Array} [data=[]] - The data to be displayed in the table.\n     * @property {boolean} [checkbox=false] - Indicates if checkboxes should be displayed.\n     */",
         "meta": {
             "range": [
-                546,
-                743
+                1369,
+                1566
             ],
             "filename": "data-table.js",
-            "lineno": 18,
+            "lineno": 36,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -8350,32 +8470,39 @@
                 "type": "ClassProperty"
             }
         },
+        "description": "The properties of the component.",
         "properties": [
             {
                 "type": {
                     "names": [
-                        "Array"
+                        "MdDataTableComponentHeaders.<Array>"
                     ]
                 },
                 "optional": true,
+                "defaultvalue": "[]",
+                "description": "The headers of the table.",
                 "name": "headers"
             },
             {
                 "type": {
                     "names": [
-                        "Array"
+                        "MdDataTableComponentBodies.<Array>"
                     ]
                 },
                 "optional": true,
+                "defaultvalue": "[]",
+                "description": "The bodies of the table.",
                 "name": "bodies"
             },
             {
                 "type": {
                     "names": [
-                        "Array"
+                        "MdDataTableComponentFooters.<Array>"
                     ]
                 },
                 "optional": true,
+                "defaultvalue": "[]",
+                "description": "The footers of the table.",
                 "name": "footers"
             },
             {
@@ -8385,15 +8512,19 @@
                     ]
                 },
                 "optional": true,
+                "defaultvalue": "[]",
+                "description": "The data to be displayed in the table.",
                 "name": "data"
             },
             {
                 "type": {
                     "names": [
-                        "Boolean"
+                        "boolean"
                     ]
                 },
                 "optional": true,
+                "defaultvalue": false,
+                "description": "Indicates if checkboxes should be displayed.",
                 "name": "checkbox"
             }
         ],
@@ -8407,11 +8538,11 @@
         "comment": "",
         "meta": {
             "range": [
-                576,
-                600
+                1399,
+                1423
             ],
             "filename": "data-table.js",
-            "lineno": 19,
+            "lineno": 37,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -8431,11 +8562,11 @@
         "comment": "",
         "meta": {
             "range": [
-                587,
-                598
+                1410,
+                1421
             ],
             "filename": "data-table.js",
-            "lineno": 19,
+            "lineno": 37,
             "columnno": 19,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -8456,11 +8587,11 @@
         "comment": "",
         "meta": {
             "range": [
-                610,
-                633
+                1433,
+                1456
             ],
             "filename": "data-table.js",
-            "lineno": 20,
+            "lineno": 38,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -8480,11 +8611,11 @@
         "comment": "",
         "meta": {
             "range": [
-                620,
-                631
+                1443,
+                1454
             ],
             "filename": "data-table.js",
-            "lineno": 20,
+            "lineno": 38,
             "columnno": 18,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -8505,11 +8636,11 @@
         "comment": "",
         "meta": {
             "range": [
-                643,
-                667
+                1466,
+                1490
             ],
             "filename": "data-table.js",
-            "lineno": 21,
+            "lineno": 39,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -8529,11 +8660,11 @@
         "comment": "",
         "meta": {
             "range": [
-                654,
-                665
+                1477,
+                1488
             ],
             "filename": "data-table.js",
-            "lineno": 21,
+            "lineno": 39,
             "columnno": 19,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -8554,11 +8685,11 @@
         "comment": "",
         "meta": {
             "range": [
-                677,
-                698
+                1500,
+                1521
             ],
             "filename": "data-table.js",
-            "lineno": 22,
+            "lineno": 40,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -8578,11 +8709,11 @@
         "comment": "",
         "meta": {
             "range": [
-                685,
-                696
+                1508,
+                1519
             ],
             "filename": "data-table.js",
-            "lineno": 22,
+            "lineno": 40,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -8603,11 +8734,11 @@
         "comment": "",
         "meta": {
             "range": [
-                708,
-                735
+                1531,
+                1558
             ],
             "filename": "data-table.js",
-            "lineno": 23,
+            "lineno": 41,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -8627,11 +8758,11 @@
         "comment": "",
         "meta": {
             "range": [
-                720,
-                733
+                1543,
+                1556
             ],
             "filename": "data-table.js",
-            "lineno": 23,
+            "lineno": 41,
             "columnno": 20,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -8649,19 +8780,19 @@
         "scope": "static"
     },
     {
-        "comment": "",
+        "comment": "/**\n     * Gets the checkbox column configuration.\n     * @returns {Array} The checkbox column configuration.\n     */",
         "meta": {
             "range": [
-                749,
-                888
+                1694,
+                1835
             ],
             "filename": "data-table.js",
-            "lineno": 26,
+            "lineno": 48,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
                 "id": "astnode100003463",
-                "name": "MdDataTableComponent#checkboxData",
+                "name": "MdDataTableComponent#checkboxColumn",
                 "type": "MethodDefinition",
                 "paramnames": []
             },
@@ -8669,9 +8800,19 @@
                 "": null
             }
         },
-        "undocumented": true,
-        "name": "checkboxData",
-        "longname": "MdDataTableComponent#checkboxData",
+        "description": "Gets the checkbox column configuration.",
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "Array"
+                    ]
+                },
+                "description": "The checkbox column configuration."
+            }
+        ],
+        "name": "checkboxColumn",
+        "longname": "MdDataTableComponent#checkboxColumn",
         "kind": "member",
         "memberof": "MdDataTableComponent",
         "scope": "instance",
@@ -8681,11 +8822,11 @@
         "comment": "",
         "meta": {
             "range": [
-                821,
-                835
+                1768,
+                1782
             ],
             "filename": "data-table.js",
-            "lineno": 28,
+            "lineno": 50,
             "columnno": 22,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -8705,11 +8846,11 @@
         "comment": "",
         "meta": {
             "range": [
-                837,
-                849
+                1784,
+                1796
             ],
             "filename": "data-table.js",
-            "lineno": 28,
+            "lineno": 50,
             "columnno": 38,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -8726,14 +8867,14 @@
         "scope": "global"
     },
     {
-        "comment": "",
+        "comment": "/**\n     * Gets the selected items in the data table.\n     * @readonly\n     * @returns {Array} The selected items.\n     */",
         "meta": {
             "range": [
-                894,
-                974
+                1968,
+                2048
             ],
             "filename": "data-table.js",
-            "lineno": 33,
+            "lineno": 60,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -8746,7 +8887,18 @@
                 "": null
             }
         },
-        "undocumented": true,
+        "description": "Gets the selected items in the data table.",
+        "readonly": true,
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "Array"
+                    ]
+                },
+                "description": "The selected items."
+            }
+        ],
         "name": "selected",
         "longname": "MdDataTableComponent#selected",
         "kind": "member",
@@ -8755,14 +8907,14 @@
         "params": []
     },
     {
-        "comment": "",
+        "comment": "/**\n     * Gets the indeterminate state of the checkboxes.\n     * @readonly\n     * @returns {boolean} The indeterminate state.\n     */",
         "meta": {
             "range": [
-                980,
-                1087
+                2193,
+                2300
             ],
             "filename": "data-table.js",
-            "lineno": 37,
+            "lineno": 69,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -8775,7 +8927,18 @@
                 "": null
             }
         },
-        "undocumented": true,
+        "description": "Gets the indeterminate state of the checkboxes.",
+        "readonly": true,
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "boolean"
+                    ]
+                },
+                "description": "The indeterminate state."
+            }
+        ],
         "name": "indeterminate",
         "longname": "MdDataTableComponent#indeterminate",
         "kind": "member",
@@ -8784,14 +8947,14 @@
         "params": []
     },
     {
-        "comment": "",
+        "comment": "/**\n     * Gets the checked state of the checkboxes.\n     * @readonly\n     * @returns {boolean} The checked state.\n     */",
         "meta": {
             "range": [
-                1093,
-                1196
+                2433,
+                2536
             ],
             "filename": "data-table.js",
-            "lineno": 41,
+            "lineno": 78,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -8804,7 +8967,18 @@
                 "": null
             }
         },
-        "undocumented": true,
+        "description": "Gets the checked state of the checkboxes.",
+        "readonly": true,
+        "returns": [
+            {
+                "type": {
+                    "names": [
+                        "boolean"
+                    ]
+                },
+                "description": "The checked state."
+            }
+        ],
         "name": "checked",
         "longname": "MdDataTableComponent#checked",
         "kind": "member",
@@ -8813,14 +8987,14 @@
         "params": []
     },
     {
-        "comment": "",
+        "comment": "/**\n     * Creates an instance of the MdDataTableComponent class.\n     */",
         "meta": {
             "range": [
-                1202,
-                1485
+                2620,
+                2903
             ],
             "filename": "data-table.js",
-            "lineno": 45,
+            "lineno": 85,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -8833,22 +9007,23 @@
                 "": null
             }
         },
-        "undocumented": true,
+        "description": "Creates an instance of the MdDataTableComponent class.",
         "name": "MdDataTableComponent",
         "longname": "MdDataTableComponent",
         "kind": "class",
         "scope": "global",
-        "params": []
+        "params": [],
+        "undocumented": true
     },
     {
-        "comment": "/**\n * @extends MdComponent\n * @element md-data-table\n */",
+        "comment": "/**\n * MdDataTableComponent class responsible for displaying a data table.\n * @extends MdComponent\n * @element md-data-table\n */",
         "meta": {
             "range": [
-                303,
-                9570
+                374,
+                10992
             ],
             "filename": "data-table.js",
-            "lineno": 10,
+            "lineno": 11,
             "columnno": 0,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -8861,6 +9036,7 @@
         "name": "MdDataTableComponent",
         "longname": "MdDataTableComponent",
         "kind": "class",
+        "classdesc": "MdDataTableComponent class responsible for displaying a data table.",
         "augments": [
             "MdComponent"
         ],
@@ -8872,17 +9048,18 @@
                 "value": "md-data-table"
             }
         ],
-        "scope": "global"
+        "scope": "global",
+        "description": "Creates an instance of the MdDataTableComponent class."
     },
     {
         "comment": "",
         "meta": {
             "range": [
-                1243,
-                1260
+                2661,
+                2678
             ],
             "filename": "data-table.js",
-            "lineno": 47,
+            "lineno": 87,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -8904,11 +9081,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1270,
-                1286
+                2688,
+                2704
             ],
             "filename": "data-table.js",
-            "lineno": 48,
+            "lineno": 88,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -8930,11 +9107,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1296,
-                1313
+                2714,
+                2731
             ],
             "filename": "data-table.js",
-            "lineno": 49,
+            "lineno": 89,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -8956,11 +9133,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1323,
-                1337
+                2741,
+                2755
             ],
             "filename": "data-table.js",
-            "lineno": 50,
+            "lineno": 90,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -8982,11 +9159,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1491,
-                1777
+                2909,
+                3195
             ],
             "filename": "data-table.js",
-            "lineno": 58,
+            "lineno": 98,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -9013,11 +9190,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1557,
-                1575
+                2975,
+                2993
             ],
             "filename": "data-table.js",
-            "lineno": 60,
+            "lineno": 100,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -9037,11 +9214,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1589,
-                1595
+                3007,
+                3013
             ],
             "filename": "data-table.js",
-            "lineno": 61,
+            "lineno": 101,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -9061,11 +9238,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1609,
-                1621
+                3027,
+                3039
             ],
             "filename": "data-table.js",
-            "lineno": 62,
+            "lineno": 102,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -9085,11 +9262,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1670,
-                1688
+                3088,
+                3106
             ],
             "filename": "data-table.js",
-            "lineno": 64,
+            "lineno": 104,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -9109,11 +9286,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1706,
-                1713
+                3124,
+                3131
             ],
             "filename": "data-table.js",
-            "lineno": 65,
+            "lineno": 105,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -9133,11 +9310,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1731,
-                1743
+                3149,
+                3161
             ],
             "filename": "data-table.js",
-            "lineno": 66,
+            "lineno": 106,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -9157,11 +9334,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1783,
-                1989
+                3201,
+                3407
             ],
             "filename": "data-table.js",
-            "lineno": 71,
+            "lineno": 111,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -9188,11 +9365,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1882,
-                1900
+                3300,
+                3318
             ],
             "filename": "data-table.js",
-            "lineno": 74,
+            "lineno": 114,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -9212,11 +9389,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1918,
-                1925
+                3336,
+                3343
             ],
             "filename": "data-table.js",
-            "lineno": 75,
+            "lineno": 115,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -9236,11 +9413,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1943,
-                1955
+                3361,
+                3373
             ],
             "filename": "data-table.js",
-            "lineno": 76,
+            "lineno": 116,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -9260,11 +9437,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1995,
-                2884
+                3413,
+                4304
             ],
             "filename": "data-table.js",
-            "lineno": 81,
+            "lineno": 121,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -9291,11 +9468,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2890,
-                3268
+                4310,
+                4688
             ],
             "filename": "data-table.js",
-            "lineno": 104,
+            "lineno": 144,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -9322,11 +9499,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3274,
-                3517
+                4694,
+                4939
             ],
             "filename": "data-table.js",
-            "lineno": 117,
+            "lineno": 157,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -9354,11 +9531,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3523,
-                4128
+                4945,
+                5550
             ],
             "filename": "data-table.js",
-            "lineno": 126,
+            "lineno": 166,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -9386,11 +9563,11 @@
         "comment": "",
         "meta": {
             "range": [
-                4134,
-                4349
+                5556,
+                5771
             ],
             "filename": "data-table.js",
-            "lineno": 144,
+            "lineno": 184,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -9417,11 +9594,11 @@
         "comment": "",
         "meta": {
             "range": [
-                4355,
-                4612
+                5777,
+                6034
             ],
             "filename": "data-table.js",
-            "lineno": 153,
+            "lineno": 193,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -9448,11 +9625,11 @@
         "comment": "",
         "meta": {
             "range": [
-                4618,
-                5160
+                6040,
+                6582
             ],
             "filename": "data-table.js",
-            "lineno": 164,
+            "lineno": 204,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -9477,11 +9654,11 @@
         "comment": "",
         "meta": {
             "range": [
-                5166,
-                5424
+                6588,
+                6846
             ],
             "filename": "data-table.js",
-            "lineno": 180,
+            "lineno": 220,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -9506,11 +9683,11 @@
         "comment": "",
         "meta": {
             "range": [
-                5276,
-                5344
+                6698,
+                6766
             ],
             "filename": "data-table.js",
-            "lineno": 183,
+            "lineno": 223,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -9532,11 +9709,11 @@
         "comment": "",
         "meta": {
             "range": [
-                5430,
-                5574
+                6852,
+                6996
             ],
             "filename": "data-table.js",
-            "lineno": 187,
+            "lineno": 227,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -9561,11 +9738,11 @@
         "comment": "",
         "meta": {
             "range": [
-                5580,
-                5992
+                7002,
+                7414
             ],
             "filename": "data-table.js",
-            "lineno": 192,
+            "lineno": 232,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -9592,11 +9769,11 @@
         "comment": "",
         "meta": {
             "range": [
-                5756,
-                5776
+                7178,
+                7198
             ],
             "filename": "data-table.js",
-            "lineno": 196,
+            "lineno": 236,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -9618,7 +9795,7 @@
         "comment": "/**\n         * @event onDataTableKeydown\n         * @property {Object} event\n         */",
         "meta": {
             "filename": "data-table.js",
-            "lineno": 200,
+            "lineno": 240,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {}
@@ -9642,11 +9819,11 @@
         "comment": "",
         "meta": {
             "range": [
-                5977,
-                5982
+                7399,
+                7404
             ],
             "filename": "data-table.js",
-            "lineno": 204,
+            "lineno": 244,
             "columnno": 42,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -9666,11 +9843,11 @@
         "comment": "",
         "meta": {
             "range": [
-                5998,
-                6832
+                7420,
+                8254
             ],
             "filename": "data-table.js",
-            "lineno": 207,
+            "lineno": 247,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -9697,11 +9874,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6058,
-                6089
+                7480,
+                7511
             ],
             "filename": "data-table.js",
-            "lineno": 208,
+            "lineno": 248,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -9723,11 +9900,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6232,
-                6372
+                7654,
+                7794
             ],
             "filename": "data-table.js",
-            "lineno": 213,
+            "lineno": 253,
             "columnno": 18,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -9749,11 +9926,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6260,
-                6285
+                7682,
+                7707
             ],
             "filename": "data-table.js",
-            "lineno": 214,
+            "lineno": 254,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -9774,11 +9951,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6303,
-                6324
+                7725,
+                7746
             ],
             "filename": "data-table.js",
-            "lineno": 215,
+            "lineno": 255,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -9799,11 +9976,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6342,
-                6357
+                7764,
+                7779
             ],
             "filename": "data-table.js",
-            "lineno": 216,
+            "lineno": 256,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -9824,11 +10001,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6386,
-                6419
+                7808,
+                7841
             ],
             "filename": "data-table.js",
-            "lineno": 218,
+            "lineno": 258,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -9851,11 +10028,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6439,
-                6559
+                7861,
+                7981
             ],
             "filename": "data-table.js",
-            "lineno": 219,
+            "lineno": 259,
             "columnno": 18,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -9877,11 +10054,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6466,
-                6482
+                7888,
+                7904
             ],
             "filename": "data-table.js",
-            "lineno": 220,
+            "lineno": 260,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -9902,11 +10079,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6500,
-                6511
+                7922,
+                7933
             ],
             "filename": "data-table.js",
-            "lineno": 221,
+            "lineno": 261,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -9927,11 +10104,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6529,
-                6544
+                7951,
+                7966
             ],
             "filename": "data-table.js",
-            "lineno": 222,
+            "lineno": 262,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -9952,11 +10129,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6573,
-                6604
+                7995,
+                8026
             ],
             "filename": "data-table.js",
-            "lineno": 224,
+            "lineno": 264,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -9979,7 +10156,7 @@
         "comment": "/**\n         * @event onDataTableNativeHeaderCellClick\n         * @property {Object} event\n         */",
         "meta": {
             "filename": "data-table.js",
-            "lineno": 227,
+            "lineno": 267,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {}
@@ -10003,11 +10180,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6817,
-                6822
+                8239,
+                8244
             ],
             "filename": "data-table.js",
-            "lineno": 231,
+            "lineno": 271,
             "columnno": 56,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -10027,120 +10204,15 @@
         "comment": "",
         "meta": {
             "range": [
-                6838,
-                7199
+                8260,
+                8739
             ],
             "filename": "data-table.js",
-            "lineno": 234,
+            "lineno": 274,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
                 "id": "astnode100004067",
-                "name": "MdDataTableComponent#handleDataTableNativeBodyCellClick",
-                "type": "MethodDefinition",
-                "paramnames": [
-                    "event"
-                ]
-            },
-            "vars": {
-                "": null
-            }
-        },
-        "undocumented": true,
-        "name": "handleDataTableNativeBodyCellClick",
-        "longname": "MdDataTableComponent#handleDataTableNativeBodyCellClick",
-        "kind": "function",
-        "memberof": "MdDataTableComponent",
-        "scope": "instance",
-        "params": []
-    },
-    {
-        "comment": "",
-        "meta": {
-            "range": [
-                6896,
-                6927
-            ],
-            "filename": "data-table.js",
-            "lineno": 235,
-            "columnno": 14,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
-            "code": {
-                "id": "astnode100004073",
-                "name": "data",
-                "type": "MemberExpression",
-                "value": "event.currentTarget.data"
-            }
-        },
-        "undocumented": true,
-        "name": "data",
-        "longname": "<anonymous>~data",
-        "kind": "constant",
-        "memberof": "<anonymous>",
-        "scope": "inner",
-        "params": []
-    },
-    {
-        "comment": "/**\n         * @event onDataTableNativeBodyCellClick\n         * @property {Object} event\n         */",
-        "meta": {
-            "filename": "data-table.js",
-            "lineno": 239,
-            "columnno": 8,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
-            "code": {}
-        },
-        "kind": "event",
-        "name": "onDataTableNativeBodyCellClick",
-        "properties": [
-            {
-                "type": {
-                    "names": [
-                        "Object"
-                    ]
-                },
-                "name": "event"
-            }
-        ],
-        "longname": "event:onDataTableNativeBodyCellClick",
-        "scope": "global"
-    },
-    {
-        "comment": "",
-        "meta": {
-            "range": [
-                7184,
-                7189
-            ],
-            "filename": "data-table.js",
-            "lineno": 243,
-            "columnno": 54,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
-            "code": {
-                "id": "astnode100004097",
-                "name": "event",
-                "type": "Identifier",
-                "value": "event"
-            }
-        },
-        "undocumented": true,
-        "name": "event",
-        "longname": "event",
-        "kind": "member",
-        "scope": "global"
-    },
-    {
-        "comment": "",
-        "meta": {
-            "range": [
-                7205,
-                7684
-            ],
-            "filename": "data-table.js",
-            "lineno": 246,
-            "columnno": 4,
-            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
-            "code": {
-                "id": "astnode100004099",
                 "name": "MdDataTableComponent#handleDataTableNativeHeaderCellCheckboxClick",
                 "type": "MethodDefinition",
                 "paramnames": [
@@ -10163,15 +10235,15 @@
         "comment": "",
         "meta": {
             "range": [
-                7273,
-                7304
+                8328,
+                8359
             ],
             "filename": "data-table.js",
-            "lineno": 247,
+            "lineno": 275,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
-                "id": "astnode100004105",
+                "id": "astnode100004073",
                 "name": "data",
                 "type": "MemberExpression",
                 "value": "event.currentTarget.data"
@@ -10189,15 +10261,15 @@
         "comment": "",
         "meta": {
             "range": [
-                7320,
-                7366
+                8375,
+                8421
             ],
             "filename": "data-table.js",
-            "lineno": 248,
+            "lineno": 276,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
-                "id": "astnode100004113",
+                "id": "astnode100004081",
                 "name": "selected",
                 "type": "LogicalExpression",
                 "value": ""
@@ -10215,15 +10287,15 @@
         "comment": "",
         "meta": {
             "range": [
-                7418,
-                7442
+                8473,
+                8497
             ],
             "filename": "data-table.js",
-            "lineno": 250,
+            "lineno": 278,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
-                "id": "astnode100004134",
+                "id": "astnode100004102",
                 "name": "item.selected",
                 "type": "Identifier",
                 "value": "selected",
@@ -10241,7 +10313,7 @@
         "comment": "/**\n         * @event onDataTableNativeHeaderCellCheckboxClick\n         * @property {Object} event\n         */",
         "meta": {
             "filename": "data-table.js",
-            "lineno": 253,
+            "lineno": 281,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {}
@@ -10265,15 +10337,15 @@
         "comment": "",
         "meta": {
             "range": [
-                7669,
-                7674
+                8724,
+                8729
             ],
             "filename": "data-table.js",
-            "lineno": 257,
+            "lineno": 285,
             "columnno": 64,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
-                "id": "astnode100004151",
+                "id": "astnode100004119",
                 "name": "event",
                 "type": "Identifier",
                 "value": "event"
@@ -10289,15 +10361,15 @@
         "comment": "",
         "meta": {
             "range": [
-                7690,
-                9130
+                8745,
+                10185
             ],
             "filename": "data-table.js",
-            "lineno": 260,
+            "lineno": 288,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
-                "id": "astnode100004153",
+                "id": "astnode100004121",
                 "name": "MdDataTableComponent#handleDataTableNativeBodyClick",
                 "type": "MethodDefinition",
                 "paramnames": [
@@ -10320,15 +10392,15 @@
         "comment": "",
         "meta": {
             "range": [
-                7744,
-                7787
+                8799,
+                8842
             ],
             "filename": "data-table.js",
-            "lineno": 261,
+            "lineno": 289,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
-                "id": "astnode100004159",
+                "id": "astnode100004127",
                 "name": "bodyData",
                 "type": "ChainExpression",
                 "value": ""
@@ -10346,15 +10418,15 @@
         "comment": "",
         "meta": {
             "range": [
-                7844,
-                7875
+                8899,
+                8930
             ],
             "filename": "data-table.js",
-            "lineno": 264,
+            "lineno": 292,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
-                "id": "astnode100004166",
+                "id": "astnode100004134",
                 "name": "data",
                 "type": "MemberExpression",
                 "value": "event.currentTarget.data"
@@ -10372,15 +10444,15 @@
         "comment": "",
         "meta": {
             "range": [
-                7919,
-                7949
+                8974,
+                9004
             ],
             "filename": "data-table.js",
-            "lineno": 267,
+            "lineno": 295,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
-                "id": "astnode100004179",
+                "id": "astnode100004147",
                 "name": "data.selected",
                 "type": "UnaryExpression",
                 "funcscope": "<anonymous>",
@@ -10399,15 +10471,15 @@
         "comment": "",
         "meta": {
             "range": [
-                8000,
-                8052
+                9055,
+                9107
             ],
             "filename": "data-table.js",
-            "lineno": 269,
+            "lineno": 297,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
-                "id": "astnode100004193",
+                "id": "astnode100004161",
                 "name": "this.prevSelectedIndex",
                 "type": "LogicalExpression",
                 "value": "",
@@ -10425,15 +10497,15 @@
         "comment": "",
         "meta": {
             "range": [
-                8066,
-                8117
+                9121,
+                9172
             ],
             "filename": "data-table.js",
-            "lineno": 270,
+            "lineno": 298,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
-                "id": "astnode100004203",
+                "id": "astnode100004171",
                 "name": "this.currentSelectedIndex",
                 "type": "CallExpression",
                 "value": "",
@@ -10451,15 +10523,15 @@
         "comment": "",
         "meta": {
             "range": [
-                8131,
-                8206
+                9186,
+                9261
             ],
             "filename": "data-table.js",
-            "lineno": 271,
+            "lineno": 299,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
-                "id": "astnode100004215",
+                "id": "astnode100004183",
                 "name": "this.swapSelectedIndex",
                 "type": "BinaryExpression",
                 "value": "",
@@ -10477,15 +10549,15 @@
         "comment": "",
         "meta": {
             "range": [
-                8453,
-                8538
+                9508,
+                9593
             ],
             "filename": "data-table.js",
-            "lineno": 277,
+            "lineno": 305,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
-                "id": "astnode100004259",
+                "id": "astnode100004227",
                 "name": "item.selected",
                 "type": "LogicalExpression",
                 "value": "",
@@ -10503,15 +10575,15 @@
         "comment": "",
         "meta": {
             "range": [
-                8811,
-                8840
+                9866,
+                9895
             ],
             "filename": "data-table.js",
-            "lineno": 285,
+            "lineno": 313,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
-                "id": "astnode100004307",
+                "id": "astnode100004275",
                 "name": "item.selected",
                 "type": "BinaryExpression",
                 "value": "",
@@ -10529,15 +10601,15 @@
         "comment": "",
         "meta": {
             "range": [
-                8870,
-                8918
+                9925,
+                9973
             ],
             "filename": "data-table.js",
-            "lineno": 287,
+            "lineno": 315,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
-                "id": "astnode100004315",
+                "id": "astnode100004283",
                 "name": "this.prevSelectedIndex",
                 "type": "CallExpression",
                 "value": "",
@@ -10555,7 +10627,7 @@
         "comment": "/**\n         * @event onDataTableNativeBodyClick\n         * @property {Object} event\n         */",
         "meta": {
             "filename": "data-table.js",
-            "lineno": 290,
+            "lineno": 318,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {}
@@ -10579,12 +10651,117 @@
         "comment": "",
         "meta": {
             "range": [
-                9115,
-                9120
+                10170,
+                10175
             ],
             "filename": "data-table.js",
-            "lineno": 294,
+            "lineno": 322,
             "columnno": 50,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100004306",
+                "name": "event",
+                "type": "Identifier",
+                "value": "event"
+            }
+        },
+        "undocumented": true,
+        "name": "event",
+        "longname": "event",
+        "kind": "member",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                10191,
+                10552
+            ],
+            "filename": "data-table.js",
+            "lineno": 325,
+            "columnno": 4,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100004308",
+                "name": "MdDataTableComponent#handleDataTableNativeBodyCellClick",
+                "type": "MethodDefinition",
+                "paramnames": [
+                    "event"
+                ]
+            },
+            "vars": {
+                "": null
+            }
+        },
+        "undocumented": true,
+        "name": "handleDataTableNativeBodyCellClick",
+        "longname": "MdDataTableComponent#handleDataTableNativeBodyCellClick",
+        "kind": "function",
+        "memberof": "MdDataTableComponent",
+        "scope": "instance",
+        "params": []
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                10249,
+                10280
+            ],
+            "filename": "data-table.js",
+            "lineno": 326,
+            "columnno": 14,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {
+                "id": "astnode100004314",
+                "name": "data",
+                "type": "MemberExpression",
+                "value": "event.currentTarget.data"
+            }
+        },
+        "undocumented": true,
+        "name": "data",
+        "longname": "<anonymous>~data",
+        "kind": "constant",
+        "memberof": "<anonymous>",
+        "scope": "inner",
+        "params": []
+    },
+    {
+        "comment": "/**\n         * @event onDataTableNativeBodyCellClick\n         * @property {Object} event\n         */",
+        "meta": {
+            "filename": "data-table.js",
+            "lineno": 330,
+            "columnno": 8,
+            "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
+            "code": {}
+        },
+        "kind": "event",
+        "name": "onDataTableNativeBodyCellClick",
+        "properties": [
+            {
+                "type": {
+                    "names": [
+                        "Object"
+                    ]
+                },
+                "name": "event"
+            }
+        ],
+        "longname": "event:onDataTableNativeBodyCellClick",
+        "scope": "global"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                10537,
+                10542
+            ],
+            "filename": "data-table.js",
+            "lineno": 334,
+            "columnno": 54,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
                 "id": "astnode100004338",
@@ -10603,11 +10780,11 @@
         "comment": "",
         "meta": {
             "range": [
-                9136,
-                9568
+                10558,
+                10990
             ],
             "filename": "data-table.js",
-            "lineno": 297,
+            "lineno": 337,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -10634,11 +10811,11 @@
         "comment": "",
         "meta": {
             "range": [
-                9202,
-                9233
+                10624,
+                10655
             ],
             "filename": "data-table.js",
-            "lineno": 298,
+            "lineno": 338,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -10660,11 +10837,11 @@
         "comment": "",
         "meta": {
             "range": [
-                9249,
-                9294
+                10671,
+                10716
             ],
             "filename": "data-table.js",
-            "lineno": 299,
+            "lineno": 339,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -10686,11 +10863,11 @@
         "comment": "",
         "meta": {
             "range": [
-                9304,
-                9342
+                10726,
+                10764
             ],
             "filename": "data-table.js",
-            "lineno": 300,
+            "lineno": 340,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -10713,7 +10890,7 @@
         "comment": "/**\n         * @event onDataTableNativeBodyCellCheckboxClcik\n         * @property {Object} event\n         */",
         "meta": {
             "filename": "data-table.js",
-            "lineno": 302,
+            "lineno": 342,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {}
@@ -10737,11 +10914,11 @@
         "comment": "",
         "meta": {
             "range": [
-                9553,
-                9558
+                10975,
+                10980
             ],
             "filename": "data-table.js",
-            "lineno": 306,
+            "lineno": 346,
             "columnno": 62,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
@@ -10761,11 +10938,11 @@
         "comment": "",
         "meta": {
             "range": [
-                9644,
-                9664
+                11066,
+                11086
             ],
             "filename": "data-table.js",
-            "lineno": 312,
+            "lineno": 352,
             "columnno": 9,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\data-table",
             "code": {
