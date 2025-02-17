@@ -1,5 +1,25 @@
 /**
  * Router class responsible for managing client-side routing.
+ * @example
+ * import { Router } from "./material/router/router";
+ *
+ * const sessionCheck = (next) => {
+ *     if(hasSession){
+ *         next()
+ *     }else{
+ *         Router.navigate('/login')
+ *         next('no session')
+ *     }
+ * }
+ *
+ * Router.use([
+ *     {path:'',component:MainComponent,chidlren:[
+ *         {path:'users',beforeLoad:sessionCheck,component:UsersComponent,children:[
+ *             {path:':id',component:UserComponent},
+ *         ]},
+ *     ]},
+ *     {path:'*',laod:() => import('./error/error.js').then(m=>m.default)},
+ * ])
  */
 class Router {
     /**

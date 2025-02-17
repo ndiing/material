@@ -31,6 +31,20 @@ class DocsPage extends MdComponent {
                     ],item?.params??[])}
                 `:nothing}
             `:nothing}
+
+            ${item.augments?.length?html`
+                <h2>Inheritance</h2>
+                <p>${item.augments}</p>
+            `:nothing}
+
+            ${item.examples?.length?html`
+                <h2>Examples</h2>
+                ${item.examples?.map(example => html`
+                    <pre>${example}</pre>
+                `)}
+            `:nothing}
+
+
         `)}`:nothing
     }
 
