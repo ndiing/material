@@ -169,7 +169,7 @@ class DocsPage extends MdComponent {
     render() {
         /* prettier-ignore */
         return html`
-            <div class="md-layout">
+            <div style="margin:24px;">
                 ${this.renderClass(this.data.class)}
                 ${this.data.member?.length?html`
                     <h2>Instance properties</h2>
@@ -215,6 +215,7 @@ class DocsPage extends MdComponent {
 
     async handleDocsPageRouterNavigateSuccess(event) {
         this.data = values.find((value) => value.key === Router.params.name + ".js");
+        console.log(this.data);
         this.requestUpdate();
     }
 }

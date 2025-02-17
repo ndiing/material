@@ -15,7 +15,7 @@ class DemoTest extends MdComponent {
 
     render() {
         return html`
-            <md-layout style="">
+            <md-layout>
                 <md-layout-grid style="min-height:0;height:100%">
                     <md-layout-grid-item
                         expanded="12"

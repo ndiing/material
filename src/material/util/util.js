@@ -1,5 +1,10 @@
 /**
+ * @module Util
+ */
+
+/**
  * Parses a date string and returns a Date object.
+ * @memberof member:Util
  * @param {string} [string] - The date string to parse.
  * @returns {Date} The parsed Date object.
  */
@@ -8,6 +13,7 @@ function parseDate(string) {
 }
 /**
  * Parses a datetime-local string and returns a Date object.
+ * @memberof member:Util
  * @param {string} [string] - The datetime-local string to parse.
  * @returns {Date} The parsed Date object.
  */
@@ -16,6 +22,7 @@ function parseDatetimeLocal(string) {
 }
 /**
  * Parses a month string and returns a Date object set to the first day of the month.
+ * @memberof member:Util
  * @param {string} [string] - The month string to parse.
  * @returns {Date} The parsed Date object.
  */
@@ -24,6 +31,7 @@ function parseMonth(string) {
 }
 /**
  * Parses a time string and returns a Date object with the time set.
+ * @memberof member:Util
  * @param {string} [string] - The time string to parse (HH:MM).
  * @returns {Date} The parsed Date object with the time set.
  */
@@ -35,6 +43,7 @@ function parseTime(string) {
 }
 /**
  * Parses a week string and returns a Date object set to the first day of the week.
+ * @memberof member:Util
  * @param {string} [string] - The week string to parse (YYYY-W##).
  * @returns {Date} The parsed Date object set to the first day of the week.
  */
@@ -47,6 +56,7 @@ function parseWeek(string) {
 }
 /**
  * Converts a Date object to a date string (YYYY-MM-DD).
+ * @memberof member:Util
  * @param {Date} [date] - The Date object to convert.
  * @returns {string} The date string.
  */
@@ -55,6 +65,7 @@ function stringifyDate(date) {
 }
 /**
  * Converts a Date object to a datetime-local string (YYYY-MM-DDTHH:MM).
+ * @memberof member:Util
  * @param {Date} [date] - The Date object to convert.
  * @returns {string} The datetime-local string.
  */
@@ -68,6 +79,7 @@ function stringifyDatetimeLocal(date) {
 }
 /**
  * Converts a Date object to a month string (YYYY-MM).
+ * @memberof member:Util
  * @param {Date} [date] - The Date object to convert.
  * @returns {string} The month string.
  */
@@ -76,6 +88,7 @@ function stringifyMonth(date) {
 }
 /**
  * Converts a Date object to a time string (HH:MM).
+ * @memberof member:Util
  * @param {Date} [date] - The Date object to convert.
  * @returns {string} The time string.
  */
@@ -84,6 +97,7 @@ function stringifyTime(date) {
 }
 /**
  * Converts a Date object to a week string (YYYY-W##).
+ * @memberof member:Util
  * @param {Date} [date] - The Date object to convert.
  * @returns {string} The week string.
  */
@@ -95,6 +109,7 @@ function stringifyWeek(date) {
 }
 /**
  * Finds the closest scrollable ancestor element.
+ * @memberof member:Util
  * @param {HTMLElement} [element] - The element to start the search from.
  * @returns {HTMLElement} The closest scrollable ancestor element.
  */
