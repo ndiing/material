@@ -15,6 +15,7 @@ class MdNavigationListComponent extends MdComponent {
         items: { type: Array },
         rippleOptions: { type: Object },
     };
+
     constructor() {
         super();
         this.items = [];

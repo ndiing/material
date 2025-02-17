@@ -15,6 +15,7 @@ class MdProgressIndicatorComponent extends MdComponent {
         max: { type: Number },
         value: { type: Number },
     };
+
     variants = ["circular"];
     constructor() {
         super();

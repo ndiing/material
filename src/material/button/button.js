@@ -23,6 +23,7 @@ class MdButtonComponent extends MdComponent {
         disabled: { type: Boolean, reflect: true },
         selected: { type: Boolean, reflect: true },
     };
+
     variants = ["elevated", "filled", "filled-tonal", "outlined"];
     constructor() {
         super();

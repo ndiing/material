@@ -23,6 +23,7 @@ class MdIconButtonComponent extends MdComponent {
         selected: { type: Boolean, reflect: true },
         disabled: { type: Boolean, reflect: true },
     };
+
     variants = ["filled", "filled-tonal", "outlined"];
     get icons() {
         if (typeof this.icon === "string") {

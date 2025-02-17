@@ -25,6 +25,7 @@ class MdSideSheetComponent extends MdComponent {
         open: { type: Boolean, reflect: true },
         modal: { type: Boolean, reflect: true },
     };
+
     constructor() {
         super();
         this.body = Array.from(this.childNodes);

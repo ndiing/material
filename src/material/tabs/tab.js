@@ -27,6 +27,7 @@ class MdTabComponent extends MdComponent {
         rippleOptions: { type: Object },
         badge: { type: Number },
     };
+
     constructor() {
         super();
         this.rippleOptions = {};

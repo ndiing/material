@@ -21,6 +21,7 @@ class MdTopAppBarComponent extends MdComponent {
         trailingActions: { type: Array },
         open: { type: Boolean, reflect: true },
     };
+
     constructor() {
         super();
     }

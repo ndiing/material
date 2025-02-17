@@ -21,6 +21,7 @@ class MdCardComponent extends MdComponent {
         sublabel: { type: String },
         buttons: { type: Array },
     };
+
     constructor() {
         super();
         this.body = Array.from(this.childNodes);

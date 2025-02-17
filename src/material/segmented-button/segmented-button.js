@@ -14,6 +14,7 @@ class MdSegmentedButtonComponent extends MdComponent {
         items: { type: Array },
         type: { type: String },
     };
+
     types = ["single-select", "multi-select"];
     constructor() {
         super();

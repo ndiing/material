@@ -33,6 +33,7 @@ function calculatePosition(placement, options = {}) {
         "left-end": () => ({ left: left - cWidth - offset.right, top: bottom - cHeight }),
         "top-left": () => ({ left: left - cWidth - offset.right, top: top - cHeight - offset.bottom }),
     };
+
     return (positions[placement] || positions.top)();
 }
 // Parses the offset string into an object with top, right, bottom, and left properties.

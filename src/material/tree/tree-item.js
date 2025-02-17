@@ -27,6 +27,7 @@ class MdTreeItemComponent extends MdComponent {
         label: { type: String },
         routerLink: { type: String, reflect: true },
     };
+
     get action() {
         if (!this.actions?.length) return;
 

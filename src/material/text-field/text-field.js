@@ -64,6 +64,7 @@ class MdTextFieldComponent extends MdComponent {
         errorIcon: { type: Boolean },
         cancelAction: { type: Boolean },
     };
+
     variants = ["outlined", "filled"];
     get leadingActions() {
         let actions = [];

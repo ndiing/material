@@ -15,6 +15,7 @@ class MdBadgeComponent extends MdComponent {
         label: { type: Number },
         max: { type: Number },
     };
+
     /**
      * Creates an instance of the MdBadgeComponent class.
      */

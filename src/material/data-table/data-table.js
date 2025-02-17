@@ -22,6 +22,7 @@ class MdDataTableComponent extends MdComponent {
         data: { type: Array },
         checkbox: { type: Boolean },
     };
+
     get checkboxData() {
         if (this.checkbox) {
             return [{ checkbox: true, sticky: true }];
@@ -47,6 +48,11 @@ class MdDataTableComponent extends MdComponent {
         this.bodies = [];
         this.footers = [];
         this.data = [];
+
+        // this.store = new Store()
+        // this.dataStore = []
+        // this.virtual = new Virtual()
+        // this.dataVirtual = []
     }
 
     styleDataTableNativeHeaderCell(th) {
@@ -72,83 +78,100 @@ class MdDataTableComponent extends MdComponent {
         };
     }
 
+    renderDataTableNativeHeaderRow(tr) {
+        /* prettier-ignore */
+        return html`
+            <tr>
+                ${this.checkboxData.concat(tr).map((th) => html`
+                    <th
+                        .data="${th}"
+                        style="${styleMap(this.styleDataTableNativeHeaderCell(th))}"
+                        @click="${this.handleDataTableNativeHeaderCellClick}"
+                    >
+                        <md-data-table-cell
+                            .label="${th.label}"
+                            .checkbox="${th.checkbox}"
+                            .indeterminate="${this.indeterminate}"
+                            .checked="${this.checked}"
+                            .action="${th.action || (th.sortable && " ")}"
+                        ></md-data-table-cell>
+                    </th>
+                `)}
+            </tr>
+        `;
+    }
+
+    renderDataTableNativeBody(item) {
+        /* prettier-ignore */
+        return html`
+            <tbody
+                .data="${item}"
+                ?selected="${item.selected}"
+                @click="${this.handleDataTableNativeBodyClick}"
+            >
+                ${this.bodies.map((tr) => this.renderDataTableBodyRow(tr, item))}
+            </tbody>
+        `;
+    }
+
+    renderDataTableBodyRow(tr, item) {
+        /* prettier-ignore */
+        return html`
+            <tr>
+                ${this.checkboxData.concat(tr).map((td) => this.renderDataTableNativeBodyCell(td, item))}
+            </tr>
+        `;
+    }
+
+    renderDataTableNativeBodyCell(td, item) {
+        /* prettier-ignore */
+        return html`
+            <td
+                .data="${td}"
+                style="${styleMap(this.styleDataTableNativeBodyCell(td))}"
+                @click="${this.handleDataTableNativeBodyCellClick}"
+            >
+                <md-data-table-cell
+                    .label="${item[td.name]}"
+                    .checkbox="${td.checkbox}"
+                    .indeterminate="${item.indeterminate}"
+                    .checked="${item.selected}"
+                ></md-data-table-cell>
+            </td>
+        `;
+    }
+
+    renderDataTableNativeFooterRow(tr) {
+        /* prettier-ignore */
+        return html`
+            <tr>
+                ${tr.map((td) => this.renderDataTableNativeFooterCell(td))}
+            </tr>
+        `;
+    }
+
+    renderDataTableNativeFooterCell(td) {
+        /* prettier-ignore */
+        return html`
+            <td>
+                <md-data-table-cell 
+                    .label="${td.label}"
+                ></md-data-table-cell>
+            </td>
+        `;
+    }
+
     render() {
+        /* prettier-ignore */
         return html`
             <table class="md-data-table__native">
                 <caption></caption>
                 <thead>
-                    ${this.headers.map(
-                        (tr) => html`
-                            <tr>
-                                ${this.checkboxData.concat(tr).map(
-                                    (th) => html`
-                                        <th
-                                            .data="${th}"
-                                            style="${styleMap(this.styleDataTableNativeHeaderCell(th))}"
-                                            @click="${th.checkbox ? this.handleDataTableNativeHeaderCellCheckboxClick : this.handleDataTableNativeHeaderCellClick}"
-                                        >
-                                            <md-data-table-cell
-                                                .label="${th.label}"
-                                                .checkbox="${th.checkbox}"
-                                                .indeterminate="${this.indeterminate}"
-                                                .checked="${this.checked}"
-                                                .action="${th.action || (th.sortable && " ")}"
-                                            >
-                                            </md-data-table-cell>
-                                        </th>
-                                    `,
-                                )}
-                            </tr>
-                        `,
-                    )}
+                    ${this.headers.map((tr) => this.renderDataTableNativeHeaderRow(tr))}
                 </thead>
-                ${this.data.map(
-                    (item) => html`
-                        <tbody
-                            .data="${item}"
-                            ?selected="${item.selected}"
-                            @click="${this.handleDataTableNativeBodyClick}"
-                        >
-                            ${this.bodies.map(
-                                (tr) => html`
-                                    <tr>
-                                        ${this.checkboxData.concat(tr).map(
-                                            (td) => html`
-                                                <td
-                                                    .data="${td}"
-                                                    style="${styleMap(this.styleDataTableNativeBodyCell(td))}"
-                                                    @click="${td.checkbox ? this.handleDataTableNativeBodyCellCheckboxClcik : this.handleDataTableNativeBodyCellClick}"
-                                                >
-                                                    <md-data-table-cell
-                                                        .label="${item[td.name]}"
-                                                        .checkbox="${td.checkbox}"
-                                                        .indeterminate="${item.indeterminate}"
-                                                        .checked="${item.selected}"
-                                                    >
-                                                    </md-data-table-cell>
-                                                </td>
-                                            `,
-                                        )}
-                                    </tr>
-                                `,
-                            )}
-                        </tbody>
-                    `,
-                )}
+                ${this.data.map((item) => this.renderDataTableNativeBody(item))}
                 <tfoot>
-                    ${this.footers.map(
-                        (tr) => html`
-                            <tr>
-                                ${tr.map(
-                                    (td) => html`
-                                        <td>
-                                            <md-data-table-cell .label="${td.label}"> </md-data-table-cell>
-                                        </td>
-                                    `,
-                                )}
-                            </tr>
-                        `,
-                    )}
+                    ${this.footers.map((tr) => this.renderDataTableNativeFooterRow(tr))}
                 </tfoot>
             </table>
         `;
@@ -184,6 +207,8 @@ class MdDataTableComponent extends MdComponent {
     handleDataTableNativeHeaderCellClick(event) {
         const data = event.currentTarget.data;
 
+        if (data.checkbox) return this.handleDataTableNativeHeaderCellCheckboxClick(event);
+
         if (data.sortable) {
             const actions = {
                 undefined: "arrow_upward",
@@ -207,6 +232,10 @@ class MdDataTableComponent extends MdComponent {
     }
 
     handleDataTableNativeBodyCellClick(event) {
+        const data = event.currentTarget.data;
+
+        if (data.checkbox) return this.handleDataTableNativeBodyCellCheckboxClcik(event);
+
         /**
          * @event onDataTableNativeBodyCellClick
          * @property {Object} event

@@ -19,6 +19,7 @@ class MdRadioButtonComponent extends MdComponent {
         indeterminate: { type: Boolean },
         checked: { type: Boolean },
     };
+
     constructor() {
         super();
     }

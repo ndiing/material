@@ -23,6 +23,7 @@ class MdNavigationRailComponent extends MdComponent {
         items: { type: Array },
         open: { type: Boolean, reflect: true },
     };
+
     constructor() {
         super();
         this.items = [];

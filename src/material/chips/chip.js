@@ -22,6 +22,7 @@ class MdChipComponent extends MdComponent {
         selected: { type: Boolean, reflect: true },
         disabled: { type: Boolean, reflect: true },
     };
+
     constructor() {
         super();
     }

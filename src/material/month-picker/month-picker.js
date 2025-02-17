@@ -46,6 +46,7 @@ class MdMonthPickerComponent extends MdComponent {
         index: { state: true },
         selection: { state: true },
     };
+
     yearFormat = new Intl.DateTimeFormat(undefined, { year: "numeric" }).format;
     monthFormat = new Intl.DateTimeFormat(undefined, { month: "long" }).format;
     get years() {

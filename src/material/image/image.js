@@ -19,6 +19,7 @@ class MdImageComponent extends MdComponent {
         ratio: { type: String },
         circular: { type: Boolean },
     };
+
     constructor() {
         super();
     }

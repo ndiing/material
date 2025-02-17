@@ -27,6 +27,7 @@ class MdSheetComponent extends MdComponent {
         region: { type: String },
         modal: { type: Boolean, reflect: true },
     };
+
     regions = ["north", "east", "south", "west", "center"];
     constructor() {
         super();

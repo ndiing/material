@@ -18,6 +18,7 @@ class MdListComponent extends MdComponent {
         fieldMap: { type: Object },
         rippleOptions: { type: Object },
     };
+
     types = ["single-select", "multi-select"];
     constructor() {
         super();

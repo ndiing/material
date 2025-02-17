@@ -15,6 +15,7 @@ class MdNavigationBarComponent extends MdComponent {
         open: { type: Boolean, reflect: true },
         items: { type: Array },
     };
+
     constructor() {
         super();
         this.items = [];

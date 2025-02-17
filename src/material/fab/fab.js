@@ -21,6 +21,7 @@ class MdFabComponent extends MdComponent {
         size: { type: String },
         variant: { type: String },
     };
+
     sizes = ["small", "large"];
     types = ["extended"];
     variants = ["unelevated"];

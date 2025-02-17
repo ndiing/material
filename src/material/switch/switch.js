@@ -21,6 +21,7 @@ class MdSwitchComponent extends MdComponent {
         checked: { type: Boolean },
         icons: { type: Array },
     };
+
     constructor() {
         super();
     }

@@ -27,6 +27,7 @@ class MdNavigationDrawerComponent extends MdComponent {
         modal: { type: Boolean, reflect: true },
         type: { type: String },
     };
+
     types = ["navigation-list", "tree"];
     constructor() {
         super();

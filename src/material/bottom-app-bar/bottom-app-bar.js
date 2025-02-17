@@ -17,6 +17,7 @@ class MdBottomAppBarComponent extends MdComponent {
         fab: { type: String },
         open: { type: Boolean, reflect: true },
     };
+
     constructor() {
         super();
     }

@@ -32,6 +32,7 @@ class MdSliderComponent extends MdComponent {
             },
         },
     };
+
     variants = ["centered", "continuous", "discrete", "range-selection"];
     get indicators() {
         const lengths = {

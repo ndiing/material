@@ -46,6 +46,7 @@ class MdTimePickerComponent extends MdComponent {
         index: { state: true },
         selection: { state: true },
     };
+
     hourFormat = new Intl.DateTimeFormat(undefined, { hour: "numeric", hour12: false }).format;
     minuteFormat = new Intl.DateTimeFormat(undefined, { minute: "numeric", hour12: false }).format;
     get hours() {

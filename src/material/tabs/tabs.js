@@ -16,6 +16,7 @@ class MdTabsComponent extends MdComponent {
         rippleOptions: { type: Object },
         variant: { type: String },
     };
+
     variants = ["primary", "secondary"];
     constructor() {
         super();

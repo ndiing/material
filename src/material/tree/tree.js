@@ -13,6 +13,7 @@ class MdTreeComponent extends MdComponent {
     static properties = {
         items: { type: Array },
     };
+
     constructor() {
         super();
         this.items = [];

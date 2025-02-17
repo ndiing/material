@@ -11,6 +11,7 @@ const queue = () => {
             return callback();
         }
     };
+
     return (callback) => (pending = execute(callback));
 };
 const task = queue();
@@ -33,6 +34,7 @@ class MdSnackbarComponent extends MdComponent {
         open: { type: Boolean, reflect: true },
         autoDismiss: { type: Number },
     };
+
     constructor() {
         super();
         this.body = Array.from(this.childNodes);
