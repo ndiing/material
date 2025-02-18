@@ -12,7 +12,7 @@ class MdPasswordFieldComponent extends MdTextFieldComponent {
     }
 
     get trailingActions() {
-        return [{ component: "icon-button", id: "toggle", toggle: true, icon: ["visibility_off", "visibility"] }];
+        return [{ component: "icon-button", id: "toggle", toggle: true, icons: ["visibility_off", "visibility"] }];
     }
 
     connectedCallback() {

@@ -125,6 +125,7 @@ class MdTextFieldComponent extends MdComponent {
                 .data="${item}"
                 class="${classMap({ ...item.classMap })}"
                 .icon="${ifDefined(item.icon)}"
+                .icons="${ifDefined(item.icons)}"
                 .variant="${ifDefined(item.variant)}"
                 .type="${ifDefined(item.type)}"
                 .toggle="${ifDefined(item.toggle)}"

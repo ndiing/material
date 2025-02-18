@@ -5,22 +5,22 @@ class DemoDataTable extends MdComponent {
     constructor() {
         super();
 
-        this.headers = [
-            [
-                { name: "userId", label: "User Id", rightAligned: true, width: 128 },
-                { name: "id", label: "Id", rightAligned: true, width: 128 },
-                { name: "title", label: "Title", width: 256 },
-                { name: "body", label: "Body", width: 256 },
-            ],
-        ];
         // this.headers = [
         //     [
-        //         { name: "userId", label: "User Id", rightAligned:true, width: 128,sortable:true,resizable:true },
-        //         { name: "id", label: "Id", rightAligned:true, width: 128,sortable:true,resizable:true },
-        //         { name: "title", label: "Title", width: 256,sortable:true,resizable:true },
-        //         { name: "body", label: "Body", width: 256,sortable:true,resizable:true },
+        //         { name: "userId", label: "User Id", rightAligned: true, width: 128 },
+        //         { name: "id", label: "Id", rightAligned: true, width: 128 },
+        //         { name: "title", label: "Title", width: 256 },
+        //         { name: "body", label: "Body", width: 256 },
         //     ],
         // ];
+        this.headers = [
+            [
+                { name: "userId", label: "User Id", rightAligned:true, width: 128,sortable:true,resizable:true },
+                { name: "id", label: "Id", rightAligned:true, width: 128,sortable:true,resizable:true },
+                { name: "title", label: "Title", width: 256,sortable:true,resizable:true },
+                { name: "body", label: "Body", width: 256,sortable:true,resizable:true },
+            ],
+        ];
         this.bodies = this.headers;
         this.footers = [];
 
@@ -644,7 +644,8 @@ class DemoDataTable extends MdComponent {
                             .bodies="${this.bodies}"
                             .footers="${this.footers}"
                             .data="${this.data}"
-                            .checkbox="${false}"
+                            .checkbox="${true}"
+                            .virtualize="${true}"
                         ></md-data-table>
                     </div>
                 </div>

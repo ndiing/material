@@ -62,6 +62,7 @@ class MdDataTableNativeHeaderCellComponent extends Mixins(HTMLTableCellElement) 
     }
 
     handleDataTableNativeHeaderCellMovableMove(event) {
+        this.data.width=this.movable.currentWidth
         /**
          * @event onDataTableNativeHeaderCellMovableMove
          * @type {Object}
