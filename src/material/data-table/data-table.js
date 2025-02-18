@@ -54,7 +54,14 @@ class MdDataTableNativeHeaderCellComponent extends Mixins(HTMLTableCellElement) 
     constructor() {
         super();
     }
-    handleDataTableNativeHeaderCellMovableMove(event) {}
+    handleDataTableNativeHeaderCellMovableMove(event) {
+        /**
+         * @event onDataTableNativeHeaderCellMovableMove
+         * @type {Object}
+         * @property {Object} event
+         */
+        this.emit("onDataTableNativeHeaderCellMovableMove", { event });
+    }
     connectedCallback() {
         if (this.resizable) {
             this.handleDataTableNativeHeaderCellMovableMove = this.handleDataTableNativeHeaderCellMovableMove.bind(this);
@@ -89,6 +96,7 @@ class MdDataTableComponent extends MdComponent {
      * @property {Boolean} rightAligned
      * @property {Boolean} sortable
      * @property {Boolean} resizable
+     * @property {Number} width
      */
     /**
      * @typedef {Object} MdDataTableComponentBodies
@@ -105,6 +113,7 @@ class MdDataTableComponent extends MdComponent {
      * @property {MdDataTableComponentFooters.<Array>} [footers=[]]
      * @property {Array} [data=[]]
      * @property {Boolean} checkbox
+     * @property {Boolean} virtualize
      */
     static properties = {
         headers: { type: Array },
@@ -113,9 +122,10 @@ class MdDataTableComponent extends MdComponent {
         data: { type: Array },
         checkbox: { type: Boolean },
         virtualize: { type: Boolean },
-        dataStore: { type: Array },
-        now: { type: Number },
-        dataVirtual: { type: Array },
+
+        dataStore: { type: Array, attribute: false },
+        now: { type: Number, attribute: false },
+        dataVirtual: { type: Array, attribute: false },
     };
 
     get checkboxColumn() {
@@ -156,6 +166,7 @@ class MdDataTableComponent extends MdComponent {
         this.bodies = [];
         this.footers = [];
         this.data = [];
+
         this.dataStore = [];
         this.dataVirtual = [];
         this.store = new Store();
