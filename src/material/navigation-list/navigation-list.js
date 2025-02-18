@@ -40,7 +40,11 @@ class MdNavigationListComponent extends MdComponent {
     }
 
     render() {
-        return this.items.map((item) => this.renderNavigationListItem(item));
+        /* prettier-ignore */
+        return html`
+            <md-navigation-list-track></md-navigation-list-track>
+            ${this.items.map((item) => this.renderNavigationListItem(item))}
+        `
     }
 
     async connectedCallback() {

@@ -1,6 +1,81 @@
 import { html, nothing } from "lit";
-import { MdComponent } from "../component/component";
+import { MdComponent, Mixins } from "../component/component";
 import { styleMap } from "lit/directives/style-map.js";
+import { Store } from "../store/store";
+import { Virtual } from "../virtual/virtual";
+import { Movable } from "../movable/movable";
+
+class MdDataTableNativeComponent extends Mixins(HTMLTableElement) {
+    static observedAttributes = ["now"];
+    get virtualize() {
+        return this.hasAttribute("virtualize");
+    }
+    constructor() {
+        super();
+    }
+    handleDataTableNativeVirtualScroll(event) {
+        /**
+         * @event onDataTableNativeVirtualScroll
+         * @type {Object}
+         * @property {Object} event
+         */
+        this.emit("onDataTableNativeVirtualScroll", { event });
+    }
+    connectedCallback() {
+        if (this.virtualize) {
+            this.handleDataTableNativeVirtualScroll = this.handleDataTableNativeVirtualScroll.bind(this);
+            this.addEventListener("onVirtualScroll", this.handleDataTableNativeVirtualScroll);
+            this.virtual = new Virtual(this, {
+                item: "tbody",
+            });
+            this.virtual.load({ /* total: this.dataStore.length, */ data: this.dataStore });
+        }
+    }
+    disconnectedCallback() {
+        if (this.virtualize) {
+            this.removeEventListener("onVirtualScroll", this.handleDataTableNativeVirtualScroll);
+            this.virtual.destroy();
+        }
+    }
+    adoptedCallback() {}
+    attributeChangedCallback(name, oldValue, newValue) {
+        if (this.virtualize && name === "now") {
+            this.virtual.load({ /* total: this.dataStore.length, */ data: this.dataStore });
+        }
+    }
+}
+customElements.define("md-data-table-native", MdDataTableNativeComponent, { extends: "table" });
+
+class MdDataTableNativeHeaderCellComponent extends Mixins(HTMLTableCellElement) {
+    static observedAttributes = [];
+    get resizable() {
+        return this.hasAttribute("resizable");
+    }
+    constructor() {
+        super();
+    }
+    handleDataTableNativeHeaderCellMovableMove(event) {}
+    connectedCallback() {
+        if (this.resizable) {
+            this.handleDataTableNativeHeaderCellMovableMove = this.handleDataTableNativeHeaderCellMovableMove.bind(this);
+            this.addEventListener("onMovableMove", this.handleDataTableNativeHeaderCellMovableMove);
+            this.movable = new Movable(this, {
+                axis: [],
+                handles: ["e"],
+                updateStyle: true,
+            });
+        }
+    }
+    disconnectedCallback() {
+        if (this.resizable) {
+            this.removeEventListener("onMovableMove", this.handleDataTableNativeHeaderCellMovableMove);
+            this.movable.destroy();
+        }
+    }
+    adoptedCallback() {}
+    attributeChangedCallback(name, oldValue, newValue) {}
+}
+customElements.define("md-data-table-native-header-cell", MdDataTableNativeHeaderCellComponent, { extends: "th" });
 
 /**
  * @extends MdComponent
@@ -37,6 +112,10 @@ class MdDataTableComponent extends MdComponent {
         footers: { type: Array },
         data: { type: Array },
         checkbox: { type: Boolean },
+        virtualize: { type: Boolean },
+        dataStore: { type: Array },
+        now: { type: Number },
+        dataVirtual: { type: Array },
     };
 
     get checkboxColumn() {
@@ -51,7 +130,7 @@ class MdDataTableComponent extends MdComponent {
      * @returns {Array}
      */
     get selected() {
-        return this.data.filter((item) => item.selected);
+        return this.dataStore.filter((item) => item.selected);
     }
 
     /**
@@ -59,7 +138,7 @@ class MdDataTableComponent extends MdComponent {
      * @returns {Boolean}
      */
     get indeterminate() {
-        return this.selected.length && this.selected.length < this.data.length;
+        return this.selected.length && this.selected.length < this.dataStore.length;
     }
 
     /**
@@ -67,7 +146,7 @@ class MdDataTableComponent extends MdComponent {
      * @returns {Boolean}
      */
     get checked() {
-        return this.selected.length && this.selected.length === this.data.length;
+        return this.selected.length && this.selected.length === this.dataStore.length;
     }
 
     constructor() {
@@ -77,6 +156,9 @@ class MdDataTableComponent extends MdComponent {
         this.bodies = [];
         this.footers = [];
         this.data = [];
+        this.dataStore = [];
+        this.dataVirtual = [];
+        this.store = new Store();
     }
 
     styleDataTableNativeHeaderCell(th) {
@@ -108,7 +190,13 @@ class MdDataTableComponent extends MdComponent {
     render() {
         /* prettier-ignore */
         return html`
-            <table class="md-data-table__native">
+            <table 
+                is="md-data-table-native"
+                class="md-data-table__native"
+                ?virtualize="${this.virtualize}"
+                .dataStore="${this.dataStore}"
+                ?now="${this.now}"
+            >
                 <caption></caption>
                 <thead>
                     ${this.headers.map(tr=>html`
@@ -138,7 +226,7 @@ class MdDataTableComponent extends MdComponent {
                         </tr>
                     `)}
                 </thead>
-                ${this.data.map(item=>html`
+                ${this.dataVirtual.map(item=>html`
                     <tbody
                         .data="${item}"
                         ?selected="${item.selected}"
@@ -178,17 +266,37 @@ class MdDataTableComponent extends MdComponent {
         this.classList.add("md-data-table");
         this.handleDataTableWindowKeydown = this.handleDataTableWindowKeydown.bind(this);
         window.addEventListener("keydown", this.handleDataTableWindowKeydown);
+        this.handleDataTableNativeVirtualScroll = this.handleDataTableNativeVirtualScroll.bind(this);
+        this.addEventListener("onDataTableNativeVirtualScroll", this.handleDataTableNativeVirtualScroll);
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
         window.removeEventListener("keydown", this.handleDataTableWindowKeydown);
+        this.removeEventListener("onDataTableNativeVirtualScroll", this.handleDataTableNativeVirtualScroll);
+    }
+
+    async updated(changedProperties) {
+        super.updated(changedProperties);
+        if (changedProperties.has("data")) {
+            await this.updateComplete;
+            this.store.load(this.data);
+
+            const result = this.store.get();
+            this.dataStore = result.data;
+            if (!this.virtualize) this.dataVirtual = this.dataStore;
+            this.now = performance.now();
+        }
+    }
+
+    handleDataTableNativeVirtualScroll(event) {
+        this.dataVirtual = event.detail.event.detail.data;
     }
 
     handleDataTableWindowKeydownCtrlA(event) {
         event.preventDefault();
 
-        this.data.forEach((item) => {
+        this.dataStore.forEach((item) => {
             item.selected = true;
         });
 
@@ -279,7 +387,7 @@ class MdDataTableComponent extends MdComponent {
 
         const selected = !this.checked || this.indeterminate;
 
-        this.data.forEach((item) => {
+        this.dataStore.forEach((item) => {
             item.selected = selected;
         });
 
@@ -409,22 +517,22 @@ class MdDataTableComponent extends MdComponent {
             data.selected = !data.selected;
         } else if (event.shiftKey) {
             this.prevSelectedIndex = this.prevSelectedIndex || 0;
-            this.currSelectedIndex = this.data.indexOf(data);
+            this.currSelectedIndex = this.dataStore.indexOf(data);
             this.swapSelectedIndex = this.currSelectedIndex > this.prevSelectedIndex;
             if (this.swapSelectedIndex) {
                 [this.prevSelectedIndex, this.currSelectedIndex] = [this.currSelectedIndex, this.prevSelectedIndex];
             }
-            this.data.forEach((item, index) => {
+            this.dataStore.forEach((item, index) => {
                 item.selected = index <= this.prevSelectedIndex && index >= this.currSelectedIndex;
             });
             if (this.swapSelectedIndex) {
                 [this.currSelectedIndex, this.prevSelectedIndex] = [this.prevSelectedIndex, this.currSelectedIndex];
             }
         } else {
-            this.data.forEach((item, index) => {
+            this.dataStore.forEach((item, index) => {
                 item.selected = item === data;
             });
-            this.prevSelectedIndex = this.data.indexOf(data);
+            this.prevSelectedIndex = this.dataStore.indexOf(data);
         }
 
         this.requestUpdate();

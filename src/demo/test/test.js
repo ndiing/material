@@ -5,7 +5,15 @@ import { Store } from "../../material/store/store";
 class DemoTest extends MdComponent {
     constructor() {
         super();
-        this.headers = [[{ name: "label", label: "Label" }]];
+        this.headers = [
+            [
+                { name: "postId", label: "postId", width: 128, sortable: true, resizable: true },
+                { name: "id", label: "id", width: 128, sortable: true, resizable: true },
+                { name: "name", label: "name", width: 256, sortable: true, resizable: true },
+                { name: "email", label: "email", width: 256, sortable: true, resizable: true },
+                { name: "body", label: "body", width: 256, sortable: true, resizable: true },
+            ],
+        ];
         this.bodies = this.headers;
         this.footers = [];
         this.data = [];
@@ -23,11 +31,14 @@ class DemoTest extends MdComponent {
                         compact="4"
                         style="min-height:0;height:100%"
                     >
-                        <md-data-table
+                        <md-list
                             .headers="${this.headers}"
                             .bodies="${this.bodies}"
                             .data="${this.dataVirtual}"
-                        ></md-data-table>
+                            .items="${this.dataVirtual}"
+                            .fieldMap="${{ label: "name" }}"
+                            checkbox
+                        ></md-list>
                     </md-layout-grid-item>
                 </md-layout-grid>
             </md-layout>
@@ -36,25 +47,25 @@ class DemoTest extends MdComponent {
 
     async firstUpdated() {
         await this.updateComplete;
-        this.viewport = this.querySelector("md-data-table table");
+        fetch("https://jsonplaceholder.typicode.com/comments")
+            .then((res) => res.json())
+            .then((res) => {
+                this.data = res;
+                this.store = new Store();
+                this.store.load(this.data);
+                const result = this.store.get();
+                this.dataStore = result.data;
+                this.virtual.load(result);
+            });
+        this.viewport = this.querySelector("md-list");
         this.viewport.addEventListener("onVirtualScroll", (event) => {
             const detail = event.detail;
             this.dataVirtual = detail.data;
             this.requestUpdate();
         });
         this.virtual = new Virtual(this.viewport, {
-            track: "md-data-table caption",
-            item: "md-data-table tbody",
-        });
-        this.data = Array.from({ length: 10000 }, (v, k) => ({ label: "label " + k }));
-        this.store = new Store();
-        this.store.load(this.data);
-        const result = this.store.get();
-        this.dataStore = result.data;
-        this.dataStoreTotal = result.total;
-        this.virtual.load({
-            total: this.dataStoreTotal,
-            data: this.dataStore,
+            track: "md-list-track",
+            item: "md-list-item",
         });
     }
 }

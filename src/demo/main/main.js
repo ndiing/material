@@ -57,6 +57,7 @@ class DemoMain extends MdComponent {
                     { label: "Data Table Checkbox", routerLink: "/demo/data-table-checkbox" },
                     { label: "Data Table Sortable", routerLink: "/demo/data-table-sortable" },
                     { label: "Data Table Resizable", routerLink: "/demo/data-table-resizable" },
+                    { label: "Data Table Virtualize", routerLink: "/demo/data-table-virtualize" },
                 ],
             },
             { label: "Dialog", routerLink: "/demo/dialog" },

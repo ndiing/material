@@ -6,7 +6,7 @@ class Virtual {
      * @typedef {Object} VirtualOptions
      * @property {string} [track=".md-virtual__track"] - The selector for the track element.
      * @property {string} [item=".md-virtual__item"] - The selector for the item elements.
-     * @property {number} [total=0] - The total number of items in the list.
+    //  * @property {number} [total=0] - The total number of items in the list.
      * @property {number} [rowHeight=56] - The height of each row/item in pixels.
      * @property {number} [nodePadding=2] - The number of nodes to pad above and below the visible area.
      * @property {Array} [data=[]] - The initial data for the list.
@@ -19,9 +19,9 @@ class Virtual {
     constructor(host, options) {
         this.host = host;
         this.options = {
-            track: ".md-virtual__track",
+            // track: ".md-virtual__track",
             item: ".md-virtual__item",
-            total: 0,
+            // total: 0,
             rowHeight: 56,
             nodePadding: 2,
             data: [],
@@ -41,6 +41,9 @@ class Virtual {
 
         if (this.cache !== cache) {
             this.cache = cache;
+            if (document.activeElement !== document.body) {
+                document.activeElement.blur();
+            }
             /**
              * @event onVirtualScroll
              * @type {Object}
@@ -83,7 +86,7 @@ class Virtual {
     //  * @returns {Object} An object containing the rowHeight and total number of items.
     //  */
     updateTrackHeight() {
-        const total = this.options.total;
+        const total = this.options.data.length;
         const rowHeight = this.options.rowHeight;
         const trackHeight = total * rowHeight;
         this.track.style.setProperty("height", trackHeight + "px");
@@ -131,10 +134,14 @@ class Virtual {
     init() {
         this.host.classList.add("md-virtual");
 
-        if (typeof this.options.track === "string") {
-            this.track = this.host.querySelector(this.options.track);
-        }
+        // if (typeof this.options.track === "string") {
+        //     this.track = this.host.querySelector(this.options.track);
+        // }
+        // this.track.classList.add("md-virtual__track");
+
+        this.track = document.createElement("div");
         this.track.classList.add("md-virtual__track");
+        this.host.prepend(this.track);
 
         this.handleVirtualScroll = this.handleVirtualScroll.bind(this);
         this.handleVirtualScrollDebounce = this.handleVirtualScrollDebounce.bind(this);
@@ -146,7 +153,8 @@ class Virtual {
      */
     destroy() {
         this.host.classList.remove("md-virtual");
-        this.track.classList.remove("md-virtual__track");
+        // this.track.classList.remove("md-virtual__track");
+        this.track.remove();
         this.host.removeEventListener("scroll", this.handleVirtualScroll);
     }
 }

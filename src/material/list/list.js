@@ -65,7 +65,11 @@ class MdListComponent extends MdComponent {
     }
 
     render() {
-        return this.items.map((item) => this.renderListItem(item));
+        /* prettier-ignore */
+        return html`
+            <md-list-track></md-list-track>
+            ${this.items.map((item) => this.renderListItem(item))}
+        `
     }
 
     connectedCallback() {

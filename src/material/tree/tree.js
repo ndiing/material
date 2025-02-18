@@ -40,7 +40,11 @@ class MdTreeComponent extends MdComponent {
     }
 
     render() {
-        return this.itemsFlat.filter((item) => item.visible).map((item) => this.renderTreeItem(item));
+        /* prettier-ignore */
+        return html`
+            <md-tree-track></md-tree-track>
+            ${this.itemsFlat.filter((item) => item.visible).map((item) => this.renderTreeItem(item))}
+        `
     }
 
     connectedCallback() {
