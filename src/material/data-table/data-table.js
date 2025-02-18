@@ -63,6 +63,7 @@ class MdDataTableNativeHeaderCellComponent extends Mixins(HTMLTableCellElement) 
 
     handleDataTableNativeHeaderCellMovableMove(event) {
         this.data.width=this.movable.currentWidth
+        this.style.setProperty('min-width',this.data.width+'px')
         /**
          * @event onDataTableNativeHeaderCellMovableMove
          * @type {Object}
@@ -78,7 +79,7 @@ class MdDataTableNativeHeaderCellComponent extends Mixins(HTMLTableCellElement) 
             this.movable = new Movable(this, {
                 axis: [],
                 handles: ["e"],
-                updateStyle: true,
+                updateStyle: false,
             });
         }
     }
