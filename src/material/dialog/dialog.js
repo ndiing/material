@@ -92,7 +92,6 @@ class MdDialogComponent extends MdComponent {
         this.parentElement.insertBefore(this.dialogScrim, this.nextElementSibling);
         this.handleDialogScrimClose = this.handleDialogScrimClose.bind(this);
         this.dialogScrim.addEventListener("onScrimClose", this.handleDialogScrimClose);
-
         if (this.open) this.dialogScrim.show();
         await this.updateComplete;
         this.style.setProperty("--md-comp-dialog-height", this.clientHeight + "px");

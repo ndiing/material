@@ -7,7 +7,6 @@ import { argbFromHex, themeFromSourceColor, themeFromImage, applyTheme } from "@
  */
 async function setTheme(input, customColors) {
     let theme;
-
     if (input instanceof HTMLImageElement) {
         theme = await themeFromImage(input, customColors);
     } else {

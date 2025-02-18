@@ -56,7 +56,6 @@ class MdTreeComponent extends MdComponent {
 
     async updated(changedProperties) {
         super.updated(changedProperties);
-
         if (changedProperties.has("items")) {
             await this.updateComplete;
             this.itemsFlat = this.flatten(this.items).itemsFlat;
@@ -70,15 +69,11 @@ class MdTreeComponent extends MdComponent {
         items.forEach((item) => {
             item.parent = parent;
             item.indent = indent;
-
             if (indent === 0) item.visible = true;
-
             if (item.expanded || item.selected) expanded = true;
             itemsFlat.push(item);
-
             if (item.children?.length) {
                 const result = this.flatten(item.children, item, indent + 1);
-
                 if (result.expanded) {
                     expanded = result.expanded;
                     item.expanded = expanded;
@@ -93,9 +88,7 @@ class MdTreeComponent extends MdComponent {
     updateVisibility(data) {
         data.children.forEach((item) => {
             item.visible = data.expanded;
-
             if (!data.visible) item.visible = data.visible;
-
             if (item.children?.length) this.updateVisibility(item);
         });
     }
@@ -115,7 +108,6 @@ class MdTreeComponent extends MdComponent {
         event.preventDefault();
         const visibleItems = this.itemsFlat.filter((item) => item.visible);
         const selectedIndex = visibleItems.findIndex((item) => item.selected);
-
         if (selectedIndex === visibleItems.filter((item) => item.visible).length - 1) return;
         const nextItem = visibleItems.find((item, index) => item.visible && index > selectedIndex);
         visibleItems.forEach((item, index) => {
@@ -134,7 +126,6 @@ class MdTreeComponent extends MdComponent {
         event.preventDefault();
         const visibleItems = this.itemsFlat.filter((item) => item.visible);
         const selectedIndex = visibleItems.findLastIndex((item) => item.selected);
-
         if (selectedIndex === 0) return;
         const nextIndex = visibleItems.findLastIndex((item, index) => item.visible && index < selectedIndex);
         visibleItems.forEach((item, index) => {
@@ -152,13 +143,11 @@ class MdTreeComponent extends MdComponent {
     handleTreeKeydownArrowRight(event) {
         event.preventDefault();
         const selectedItem = this.itemsFlat.find((item) => item.selected);
-
         if (selectedItem.children?.length) {
             selectedItem.expanded = true;
             this.updateVisibility(selectedItem);
             const visibleItems = this.itemsFlat.filter((item) => item.visible);
             const selectedIndex = visibleItems.findIndex((item) => item.selected);
-
             if (selectedIndex === visibleItems.filter((item) => item.visible).length - 1) return;
             const nextIndex = visibleItems.findIndex((item, index) => item.visible && index > selectedIndex);
             visibleItems.forEach((item, index) => {
@@ -177,7 +166,6 @@ class MdTreeComponent extends MdComponent {
     handleTreeKeydownArrowLeft(event) {
         event.preventDefault();
         const selectedItem = this.itemsFlat.find((item) => item.selected);
-
         if (selectedItem.expanded) {
             selectedItem.expanded = false;
             this.updateVisibility(selectedItem);
@@ -224,7 +212,6 @@ class MdTreeComponent extends MdComponent {
     handleTreeItemClick(event) {
         const action = event.target.closest(".md-tree__action");
         const data = event.currentTarget.data;
-
         if (action && data.children?.length) {
             data.expanded = !data.expanded;
             this.updateVisibility(data);

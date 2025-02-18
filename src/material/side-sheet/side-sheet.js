@@ -91,7 +91,6 @@ class MdSideSheetComponent extends MdComponent {
         this.parentElement.insertBefore(this.sideSheetScrim, this.nextElementSibling);
         this.handleSideSheetScrimClose = this.handleSideSheetScrimClose.bind(this);
         this.sideSheetScrim.addEventListener("onScrimClose", this.handleSideSheetScrimClose);
-
         if (this.modal && this.open) this.sideSheetScrim.show();
         await this.updateComplete;
         this.style.setProperty("--md-comp-side-sheet-width", this.clientWidth + "px");
@@ -106,7 +105,6 @@ class MdSideSheetComponent extends MdComponent {
 
     updated(changedProperties) {
         super.updated(changedProperties);
-
         if (changedProperties.has("modal")) {
             this.classList.toggle(`md-side-sheet--modal`, !!this.modal);
         }
@@ -119,7 +117,6 @@ class MdSideSheetComponent extends MdComponent {
         this.handleSideSheetShown = this.handleSideSheetShown.bind(this);
         this.addEventListener("animationend", this.handleSideSheetShown);
         this.open = true;
-
         if (this.modal) this.sideSheetScrim.show();
         /**
          * @event onSideSheetShow
@@ -135,7 +132,6 @@ class MdSideSheetComponent extends MdComponent {
         this.handleSideSheetClosed = this.handleSideSheetClosed.bind(this);
         this.addEventListener("animationend", this.handleSideSheetClosed);
         this.open = false;
-
         if (this.sideSheetScrim.open) this.sideSheetScrim.close();
         /**
          * @event onSideSheetClose

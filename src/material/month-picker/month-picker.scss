@@ -1,4 +1,5 @@
 @use "../mixins/mixins.scss";
+
 .md-month-picker {
     --md-comp-month-picker-density: -2;
     --md-comp-month-picker-list-item-height: calc(48px + (var(--md-comp-month-picker-density) * 4px));
@@ -22,6 +23,7 @@
     animation-name: var(--md-comp-month-picker-animation);
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
     animation-duration: var(--md-sys-motion-duration-short3);
+
     .md-month-picker__body {
         animation-name: month-picker-body-in;
         animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
@@ -34,34 +36,40 @@
         --md-comp-month-picker-animation: month-picker-out;
         animation-name: var(--md-comp-month-picker-animation);
         animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
+
         .md-month-picker__body {
             animation-name: month-picker-body-out;
             animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
         }
     }
 }
+
 .md-month-picker__header {
     display: flex;
     align-items: center;
     padding: 12px;
     gap: 0 16px;
 }
+
 .md-month-picker__icons {
     display: flex;
     align-items: center;
     gap: 0 16px;
 }
+
 .md-month-picker__labels {
     flex: 1;
     display: flex;
     flex-direction: column;
 }
+
 .md-month-picker__label {
     @include mixins.typescale-body-medium();
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
 .md-month-picker__sublabel {
     @include mixins.typescale-body-medium();
     white-space: nowrap;
@@ -69,12 +77,14 @@
     text-overflow: ellipsis;
     color: var(--md-sys-color-on-surface-variant);
 }
+
 .md-month-picker__actions {
     display: flex;
     align-items: center;
     gap: 0 16px;
     margin-left: auto;
 }
+
 .md-month-picker__wrapper {
     flex: 1;
     display: flex;
@@ -82,40 +92,48 @@
     max-height: 100%;
     min-height: 0;
 }
+
 .md-month-picker__body {
     flex: 1;
     @include mixins.typescale-body-medium();
     color: var(--md-sys-color-on-surface-variant);
 }
+
 .md-month-picker__footer {
     display: flex;
     align-items: center;
     padding: 12px;
 }
+
 .md-month-picker__buttons {
     flex: 1;
     display: flex;
     align-items: center;
     gap: 0 8px;
 }
+
 .md-month-picker__spacer {
     flex: 1;
 }
+
 .md-month-picker__items {
     display: flex;
     width: var(--md-comp-month-picker-container-width);
     height: var(--md-comp-month-picker-container-height);
     overflow: hidden;
 }
+
 .md-month-picker__item {
     flex: 1 0 100%;
     overflow: auto;
     // transform: translate3d(calc((0 - var(--md-comp-month-picker-index)) * 100%), 0, 0);
 }
+
 .md-month-picker__list {
     display: flex;
     flex-direction: column;
 }
+
 .md-month-picker__list-item {
     display: flex;
     align-items: center;
@@ -125,6 +143,7 @@
     @include mixins.ripple();
     @include mixins.ripple-bounded();
     @include mixins.ripple-trigger();
+
     &:focus {
         @include mixins.ripple-focus();
     }

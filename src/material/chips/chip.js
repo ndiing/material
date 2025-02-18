@@ -58,7 +58,6 @@ class MdChipComponent extends MdComponent {
 
     async disconnectedCallback() {
         super.disconnectedCallback();
-
         if (this.ripple) this.ripple.destroy();
     }
 

@@ -4,15 +4,16 @@ import { styleMap } from "lit/directives/style-map.js";
 import { Store } from "../store/store";
 import { Virtual } from "../virtual/virtual";
 import { Movable } from "../movable/movable";
-
 class MdDataTableNativeComponent extends Mixins(HTMLTableElement) {
     static observedAttributes = ["now"];
     get virtualize() {
         return this.hasAttribute("virtualize");
     }
+
     constructor() {
         super();
     }
+
     handleDataTableNativeVirtualScroll(event) {
         /**
          * @event onDataTableNativeVirtualScroll
@@ -21,6 +22,7 @@ class MdDataTableNativeComponent extends Mixins(HTMLTableElement) {
          */
         this.emit("onDataTableNativeVirtualScroll", { event });
     }
+
     connectedCallback() {
         if (this.virtualize) {
             this.handleDataTableNativeVirtualScroll = this.handleDataTableNativeVirtualScroll.bind(this);
@@ -31,12 +33,14 @@ class MdDataTableNativeComponent extends Mixins(HTMLTableElement) {
             this.virtual.load({ /* total: this.dataStore.length, */ data: this.dataStore });
         }
     }
+
     disconnectedCallback() {
         if (this.virtualize) {
             this.removeEventListener("onVirtualScroll", this.handleDataTableNativeVirtualScroll);
             this.virtual.destroy();
         }
     }
+
     adoptedCallback() {}
     attributeChangedCallback(name, oldValue, newValue) {
         if (this.virtualize && name === "now") {
@@ -44,6 +48,7 @@ class MdDataTableNativeComponent extends Mixins(HTMLTableElement) {
         }
     }
 }
+
 customElements.define("md-data-table-native", MdDataTableNativeComponent, { extends: "table" });
 
 class MdDataTableNativeHeaderCellComponent extends Mixins(HTMLTableCellElement) {
@@ -51,9 +56,11 @@ class MdDataTableNativeHeaderCellComponent extends Mixins(HTMLTableCellElement) 
     get resizable() {
         return this.hasAttribute("resizable");
     }
+
     constructor() {
         super();
     }
+
     handleDataTableNativeHeaderCellMovableMove(event) {
         /**
          * @event onDataTableNativeHeaderCellMovableMove
@@ -62,6 +69,7 @@ class MdDataTableNativeHeaderCellComponent extends Mixins(HTMLTableCellElement) 
          */
         this.emit("onDataTableNativeHeaderCellMovableMove", { event });
     }
+
     connectedCallback() {
         if (this.resizable) {
             this.handleDataTableNativeHeaderCellMovableMove = this.handleDataTableNativeHeaderCellMovableMove.bind(this);
@@ -73,15 +81,18 @@ class MdDataTableNativeHeaderCellComponent extends Mixins(HTMLTableCellElement) 
             });
         }
     }
+
     disconnectedCallback() {
         if (this.resizable) {
             this.removeEventListener("onMovableMove", this.handleDataTableNativeHeaderCellMovableMove);
             this.movable.destroy();
         }
     }
+
     adoptedCallback() {}
     attributeChangedCallback(name, oldValue, newValue) {}
 }
+
 customElements.define("md-data-table-native-header-cell", MdDataTableNativeHeaderCellComponent, { extends: "th" });
 
 /**
@@ -122,7 +133,6 @@ class MdDataTableComponent extends MdComponent {
         data: { type: Array },
         checkbox: { type: Boolean },
         virtualize: { type: Boolean },
-
         dataStore: { type: Array, attribute: false },
         now: { type: Number, attribute: false },
         dataVirtual: { type: Array, attribute: false },
@@ -161,12 +171,10 @@ class MdDataTableComponent extends MdComponent {
 
     constructor() {
         super();
-
         this.headers = [];
         this.bodies = [];
         this.footers = [];
         this.data = [];
-
         this.dataStore = [];
         this.dataVirtual = [];
         this.store = new Store();
@@ -179,7 +187,6 @@ class MdDataTableComponent extends MdComponent {
             position: "sticky",
             top: "0",
             zIndex: 2,
-
             ...(th.sticky && {
                 position: "sticky",
                 left: "0",
@@ -292,7 +299,6 @@ class MdDataTableComponent extends MdComponent {
         if (changedProperties.has("data")) {
             await this.updateComplete;
             this.store.load(this.data);
-
             const result = this.store.get();
             this.dataStore = result.data;
             if (!this.virtualize) this.dataVirtual = this.dataStore;
@@ -306,13 +312,10 @@ class MdDataTableComponent extends MdComponent {
 
     handleDataTableWindowKeydownCtrlA(event) {
         event.preventDefault();
-
         this.dataStore.forEach((item) => {
             item.selected = true;
         });
-
         this.requestUpdate();
-
         /**
          * @event onDataTableWindowKeydownCtrlA
          * @type {Object}
@@ -323,7 +326,6 @@ class MdDataTableComponent extends MdComponent {
 
     handleDataTableWindowKeydown(event) {
         if (event.ctrlKey && event.key === "a") return this.handleDataTableWindowKeydownCtrlA(event);
-
         /**
          * @event onDataTableWindowKeydown
          * @type {Object}
@@ -334,12 +336,10 @@ class MdDataTableComponent extends MdComponent {
 
     handleDataTableNativeHeaderCellSortablePointerenter(event) {
         const data = event.currentTarget.data;
-
         if (data.sortable && !data.order) {
             data.sortIcon = "arrow_upward";
             this.requestUpdate();
         }
-
         /**
          * @event onDataTableNativeHeaderCellSortablePointerenter
          * @type {Object}
@@ -350,12 +350,10 @@ class MdDataTableComponent extends MdComponent {
 
     handleDataTableNativeHeaderCellSortablePointerleave(event) {
         const data = event.currentTarget.data;
-
         if (data.sortable && !data.order) {
             data.sortIcon = "";
             this.requestUpdate();
         }
-
         /**
          * @event onDataTableNativeHeaderCellSortablePointerleave
          * @type {Object}
@@ -366,7 +364,6 @@ class MdDataTableComponent extends MdComponent {
 
     handleDataTableNativeHeaderCellSortableClick(event) {
         const data = event.currentTarget.data;
-
         if (data.sortable) {
             const sortIcons = {
                 undefined: "arrow_upward",
@@ -374,17 +371,14 @@ class MdDataTableComponent extends MdComponent {
                 desc: undefined,
             };
             data.sortIcon = sortIcons[data.order];
-
             const orders = {
                 undefined: "asc",
                 asc: "desc",
                 desc: undefined,
             };
             data.order = orders[data.order];
-
             this.requestUpdate();
         }
-
         /**
          * @event onDataTableNativeHeaderCellSortableClick
          * @type {Object}
@@ -395,15 +389,11 @@ class MdDataTableComponent extends MdComponent {
 
     handleDataTableNativeHeaderCellCheckboxClick(event) {
         const data = event.currentTarget.data;
-
         const selected = !this.checked || this.indeterminate;
-
         this.dataStore.forEach((item) => {
             item.selected = selected;
         });
-
         this.requestUpdate();
-
         /**
          * @event onDataTableNativeHeaderCellCheckboxClick
          * @type {Object}
@@ -414,13 +404,9 @@ class MdDataTableComponent extends MdComponent {
 
     handleDataTableNativeBodyCellCheckboxClick(event) {
         const data = event.currentTarget.data;
-
         const dataBody = event.target.closest("tbody")?.data;
-
         dataBody.selected = !dataBody.selected;
-
         this.requestUpdate();
-
         /**
          * @event onDataTableNativeBodyCellCheckboxClick
          * @type {Object}
@@ -431,9 +417,7 @@ class MdDataTableComponent extends MdComponent {
 
     handleDataTableNativeHeaderCellPointerenter(event) {
         const data = event.currentTarget.data;
-
         if (data.sortable /* &&event.target.closest('.md-data-table__sortable') */) return this.handleDataTableNativeHeaderCellSortablePointerenter(event);
-
         /**
          * @event onDataTableNativeHeaderCellPointerenter
          * @type {Object}
@@ -444,9 +428,7 @@ class MdDataTableComponent extends MdComponent {
 
     handleDataTableNativeHeaderCellPointerleave(event) {
         const data = event.currentTarget.data;
-
         if (data.sortable /* &&event.target.closest('.md-data-table__sortable') */) return this.handleDataTableNativeHeaderCellSortablePointerleave(event);
-
         /**
          * @event onDataTableNativeHeaderCellPointerleave
          * @type {Object}
@@ -457,11 +439,9 @@ class MdDataTableComponent extends MdComponent {
 
     handleDataTableNativeHeaderCellClick(event) {
         const data = event.currentTarget.data;
-
         if (data.checkbox) return this.handleDataTableNativeHeaderCellCheckboxClick(event);
         else if (data.resizable && event.target.closest(".md-resizable__handle")) return;
         else if (data.sortable && event.target.closest(".md-data-table__sortable")) return this.handleDataTableNativeHeaderCellSortableClick(event);
-
         /**
          * @event onDataTableNativeHeaderCellClick
          * @type {Object}
@@ -472,17 +452,12 @@ class MdDataTableComponent extends MdComponent {
 
     handleDataTableNativeHeaderCellResizableDblclick(event) {
         const data = event.currentTarget.data;
-
         const rowIndex = event.currentTarget.parentElement.rowIndex + 1;
         const cellIndex = event.currentTarget.cellIndex + 1;
-
         const width = [...this.querySelectorAll(`tr:nth-child(${rowIndex}) td:nth-child(${cellIndex}) .md-data-table__label`)].reduce((max, element) => Math.max(max, element.scrollWidth), 0);
-
         data.width = width;
-
         event.currentTarget.style.setProperty("min-width", data.width + "px");
         // event.currentTarget.style.setProperty('max-width',data.width+'px')
-
         /**
          * @event onDataTableNativeHeaderCellResizableDblclick
          * @type {Object}
@@ -493,9 +468,7 @@ class MdDataTableComponent extends MdComponent {
 
     handleDataTableNativeHeaderCellDblclick(event) {
         const data = event.currentTarget.data;
-
         if (data.resizable && event.target.closest(".md-resizable__handle")) return this.handleDataTableNativeHeaderCellResizableDblclick(event);
-
         /**
          * @event onDataTableNativeHeaderCellDblclick
          * @type {Object}
@@ -506,9 +479,7 @@ class MdDataTableComponent extends MdComponent {
 
     handleDataTableNativeBodyCellClick(event) {
         const data = event.currentTarget.data;
-
         if (data.checkbox) return this.handleDataTableNativeBodyCellCheckboxClick(event);
-
         /**
          * @event onDataTableNativeBodyCellClick
          * @type {Object}
@@ -519,11 +490,8 @@ class MdDataTableComponent extends MdComponent {
 
     handleDataTableNativeBodyClick(event) {
         const data = event.currentTarget.data;
-
         const dataTd = event.target.closest("td")?.data;
-
         if (dataTd.checkbox) return;
-
         if (event.ctrlKey) {
             data.selected = !data.selected;
         } else if (event.shiftKey) {
@@ -545,9 +513,7 @@ class MdDataTableComponent extends MdComponent {
             });
             this.prevSelectedIndex = this.dataStore.indexOf(data);
         }
-
         this.requestUpdate();
-
         /**
          * @event onDataTableNativeBodyClick
          * @type {Object}

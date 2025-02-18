@@ -33,7 +33,6 @@ function calculatePosition(placement, options = {}) {
         "left-end": () => ({ left: left - cWidth - offset.right, top: bottom - cHeight }),
         "top-left": () => ({ left: left - cWidth - offset.right, top: top - cHeight - offset.bottom }),
     };
-
     return (positions[placement] || positions.top)();
 }
 // Parses the offset string into an object with top, right, bottom, and left properties.
@@ -46,8 +45,11 @@ function calculatePosition(placement, options = {}) {
 function parseOffset(offset) {
     let [top = 0, right, bottom, left] = String(offset).split(" ").map(Number);
     right = right ?? top;
+
     bottom = bottom ?? top;
+
     left = left ?? right;
+
     return { top, right, bottom, left };
 }
 /**
@@ -72,14 +74,12 @@ function setPosition(options = {}) {
     let bestLeft = null,
         bestTop = null,
         minOverflow = Infinity;
-
     for (const placement of placements) {
         const { left, top } = calculatePosition(placement, { triggerRect, containerRect, offset: parsedOffset });
         const right = left + containerRect.width;
         const bottom = top + containerRect.height;
         const exceed = left < boundaryRect.left || top < boundaryRect.top || right > boundaryRect.right || bottom > boundaryRect.bottom;
         const totalOverflow = Math.max(boundaryRect.left - left, 0) + Math.max(top - boundaryRect.top, 0) + Math.max(right - boundaryRect.right, 0) + Math.max(bottom - boundaryRect.bottom, 0);
-
         if (!exceed) {
             bestLeft = left;
             bestTop = top;
@@ -92,7 +92,9 @@ function setPosition(options = {}) {
     }
 
     bestLeft = Math.max(boundaryRect.left, Math.min(bestLeft, boundaryRect.right - containerRect.width));
+
     bestTop = Math.max(boundaryRect.top, Math.min(bestTop, boundaryRect.bottom - containerRect.height));
+
     container.style.left = `${bestLeft}px`;
     container.style.top = `${bestTop}px`;
 }

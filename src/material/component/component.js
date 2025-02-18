@@ -1,6 +1,5 @@
 import { LitElement } from "lit";
 import { updateWhenLocaleChanges } from "@lit/localize";
-
 const Mixins = (Super) =>
     class extends Super {
         emit(type, detail) {
@@ -12,7 +11,6 @@ const Mixins = (Super) =>
             this.dispatchEvent(event);
         }
     };
-
 /**
  * @extends LitElement
  */
@@ -26,7 +24,5 @@ class MdComponent extends Mixins(LitElement) {
         return this;
     }
 }
-
 class MdElement extends Mixins(HTMLElement) {}
-
 export { Mixins, MdComponent, MdElement };

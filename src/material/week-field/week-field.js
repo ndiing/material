@@ -116,7 +116,6 @@ class MdWeekFieldComponent extends MdTextFieldComponent {
 
     handleTextFieldIconButtonClick(event) {
         const data = event.currentTarget.data;
-
         if (data.id === "picker") return this.handleWeekFieldIconButtonPickerClick(event);
         super.handleTextFieldIconButtonClick(event);
     }

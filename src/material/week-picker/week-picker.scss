@@ -1,4 +1,5 @@
 @use "../mixins/mixins.scss";
+
 .md-week-picker {
     --md-comp-week-picker-density: -2;
     --md-comp-week-picker-list-item-height: calc(48px + (var(--md-comp-week-picker-density) * 4px));
@@ -22,6 +23,7 @@
     animation-name: var(--md-comp-week-picker-animation);
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
     animation-duration: var(--md-sys-motion-duration-short3);
+
     .md-week-picker__body {
         animation-name: week-picker-body-in;
         animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
@@ -34,34 +36,40 @@
         --md-comp-week-picker-animation: week-picker-out;
         animation-name: var(--md-comp-week-picker-animation);
         animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
+
         .md-week-picker__body {
             animation-name: week-picker-body-out;
             animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
         }
     }
 }
+
 .md-week-picker__header {
     display: flex;
     align-items: center;
     padding: 12px;
     gap: 0 16px;
 }
+
 .md-week-picker__icons {
     display: flex;
     align-items: center;
     gap: 0 16px;
 }
+
 .md-week-picker__labels {
     flex: 1;
     display: flex;
     flex-direction: column;
 }
+
 .md-week-picker__label {
     @include mixins.typescale-body-medium();
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
 .md-week-picker__sublabel {
     @include mixins.typescale-body-medium();
     white-space: nowrap;
@@ -69,12 +77,14 @@
     text-overflow: ellipsis;
     color: var(--md-sys-color-on-surface-variant);
 }
+
 .md-week-picker__actions {
     display: flex;
     align-items: center;
     gap: 0 16px;
     margin-left: auto;
 }
+
 .md-week-picker__wrapper {
     flex: 1;
     display: flex;
@@ -82,40 +92,48 @@
     max-height: 100%;
     min-height: 0;
 }
+
 .md-week-picker__body {
     flex: 1;
     @include mixins.typescale-body-medium();
     color: var(--md-sys-color-on-surface-variant);
 }
+
 .md-week-picker__footer {
     display: flex;
     align-items: center;
     padding: 12px;
 }
+
 .md-week-picker__buttons {
     flex: 1;
     display: flex;
     align-items: center;
     gap: 0 8px;
 }
+
 .md-week-picker__spacer {
     flex: 1;
 }
+
 .md-week-picker__items {
     display: flex;
     width: var(--md-comp-week-picker-container-width);
     height: var(--md-comp-week-picker-container-height);
     overflow: hidden;
 }
+
 .md-week-picker__item {
     flex: 1 0 100%;
     overflow: auto;
     // transform: translate3d(calc((0 - var(--md-comp-week-picker-index)) * 100%), 0, 0);
 }
+
 .md-week-picker__list {
     display: flex;
     flex-direction: column;
 }
+
 .md-week-picker__list-item {
     display: flex;
     align-items: center;
@@ -125,6 +143,7 @@
     @include mixins.ripple();
     @include mixins.ripple-bounded();
     @include mixins.ripple-trigger();
+
     &:focus {
         @include mixins.ripple-focus();
     }
@@ -154,6 +173,7 @@
         color: var(--md-sys-color-on-secondary-container);
     }
 }
+
 .md-week-picker__table {
     display: inline-flex;
     flex-direction: column;
@@ -161,18 +181,22 @@
     margin: 0 12px;
     gap: 8px 0;
 }
+
 .md-week-picker__table-header {
     display: flex;
     flex-direction: column;
+
     .md-week-picker__table-cell {
         @include mixins.typescale-label-large();
     }
 }
+
 .md-week-picker__table-row {
     display: flex;
     align-items: center;
     gap: 0 8px;
 }
+
 .md-week-picker__table-cell {
     display: inline-flex;
     align-items: center;
@@ -182,30 +206,38 @@
     height: var(--md-comp-week-picker-table-item-height);
     border-radius: calc(var(--md-comp-week-picker-table-item-height) / 2);
 }
+
 .md-week-picker__table-body {
     display: flex;
     flex-direction: column;
     gap: 8px 0;
+
     .md-week-picker__table-row {
         border-radius: calc(var(--md-comp-week-picker-table-item-height) / 2);
         @include mixins.ripple();
         @include mixins.ripple-bounded();
         @include mixins.ripple-trigger();
+
         &:focus {
             @include mixins.ripple-focus();
         }
+
         &:active {
             @include mixins.ripple-press();
         }
+
         &:hover {
             @include mixins.ripple-hover();
         }
+
         &:-moz-drag-over {
             @include mixins.ripple-drag();
         }
+
         &[activated] {
             box-shadow: inset 0 0 0 1px var(--md-sys-color-outline);
         }
+
         &[selected] {
             background-color: var(--md-sys-color-primary);
             color: var(--md-sys-color-on-primary);

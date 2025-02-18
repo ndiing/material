@@ -116,7 +116,6 @@ class MdTimeFieldComponent extends MdTextFieldComponent {
 
     handleTextFieldIconButtonClick(event) {
         const data = event.currentTarget.data;
-
         if (data.id === "picker") return this.handleTimeFieldIconButtonPickerClick(event);
         super.handleTextFieldIconButtonClick(event);
     }

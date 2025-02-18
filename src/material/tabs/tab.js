@@ -54,17 +54,14 @@ class MdTabComponent extends MdComponent {
 
     async disconnectedCallback() {
         super.disconnectedCallback();
-
         if (this.ripple) this.ripple.destroy();
     }
 
     async updated(changedProperties) {
         super.updated(changedProperties);
-
         if (changedProperties.has("icon")) {
             this.classList.toggle("md-tab--with-icon", !!this.icon);
         }
-
         if (changedProperties.has("selected") && this.selected) {
             /**
              * @event onTabSelected

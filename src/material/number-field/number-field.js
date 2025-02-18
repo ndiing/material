@@ -30,7 +30,6 @@ class MdNumberFieldComponent extends MdTextFieldComponent {
 
     handleTextFieldIconButtonClick(event) {
         const data = event.currentTarget.data;
-
         if (data.id === "up") return this.handleNumberFieldIconButtonUpClick(event);
         else if (data.id === "down") return this.handleNumberFieldIconButtonDownClick(event);
         super.handleTextFieldIconButtonClick(event);

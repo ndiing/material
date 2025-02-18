@@ -1,6 +1,5 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
-
 class DemoButtonFilled extends MdComponent {
     render() {
         return html`

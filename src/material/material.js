@@ -12,7 +12,6 @@ import "./polyfill/polyfill.js";
 // import "./component/component.js";
 // import "./progress/progress.js";
 // import "./router/router.js";
-
 import "./icon/icon.js";
 import "./image/image.js";
 import "./divider/divider.js";
@@ -53,10 +52,8 @@ import "./date-picker/date-picker.js";
 import "./time-picker/time-picker.js";
 import "./month-picker/month-picker.js";
 import "./week-picker/week-picker.js";
-
 import "./data-table/data-table-cell.js";
 import "./data-table/data-table.js";
-
 import "./progress-indicator/progress-indicator.js";
 import "./form/form.js";
 import "./checkbox/checkbox.js";

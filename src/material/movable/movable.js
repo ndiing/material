@@ -54,21 +54,17 @@ class Movable {
     handleMovableMove(event) {
         const currentX = event.clientX - this.startX;
         const currentY = event.clientY - this.startY;
-
         if (this.handle) {
             if (this.handle === "e" || this.handle === "ne" || this.handle === "se") {
                 this.currentWidth = this.startWidth + currentX - this.endX;
             }
-
             if (this.handle === "w" || this.handle === "sw" || this.handle === "nw") {
                 this.currentX = currentX;
                 this.currentWidth = this.startWidth - currentX + this.endX;
             }
-
             if (this.handle === "s" || this.handle === "se" || this.handle === "sw") {
                 this.currentHeight = this.startHeight + currentY - this.endY;
             }
-
             if (this.handle === "n" || this.handle === "ne" || this.handle === "nw") {
                 this.currentY = currentY;
                 this.currentHeight = this.startHeight - currentY + this.endY;
@@ -77,12 +73,10 @@ class Movable {
             if (this.options.axis.includes("x")) {
                 this.currentX = currentX;
             }
-
             if (this.options.axis.includes("y")) {
                 this.currentY = currentY;
             }
         }
-
         if (this.options.updateStyle) {
             this.host.style.setProperty("position", "relative");
             this.host.style.setProperty("left", (this.currentX ?? 0) + "px");
@@ -90,7 +84,6 @@ class Movable {
             this.host.style.setProperty("min-width", (this.currentWidth ?? this.startWidth) + "px");
             this.host.style.setProperty("min-height", (this.currentHeight ?? this.startHeight) + "px");
         }
-
         /**
          * @event onMovableMove
          * @type {Object}
@@ -139,7 +132,6 @@ class Movable {
     init() {
         let text = "";
         text += `<div class="md-resizable">`;
-
         for (const handle of this.options.handles) {
             text += `<div class="md-resizable__handle md-resizable__handle--${handle}"></div>`;
         }
@@ -156,7 +148,6 @@ class Movable {
      */
     destroy() {
         const resizable = this.host.querySelector(".md-resizable");
-
         if (resizable) {
             resizable.remove();
         }

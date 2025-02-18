@@ -66,9 +66,9 @@ class MdTextFieldComponent extends MdComponent {
     };
 
     variants = ["outlined", "filled"];
+
     get leadingActions() {
         let actions = [];
-
         if (this.errorIcon && this.error)
             actions = actions.concat([
                 {
@@ -78,7 +78,6 @@ class MdTextFieldComponent extends MdComponent {
                     classMap: { "md-text-field__icon--error": true },
                 },
             ]);
-
         if (this.cancelAction && this.value)
             actions = actions.concat([
                 {
@@ -241,17 +240,14 @@ class MdTextFieldComponent extends MdComponent {
 
     updated(changedProperties) {
         super.updated(changedProperties);
-
         if (changedProperties.has("variant")) {
             this.variants.forEach((variant) => {
                 this.classList.toggle(`md-text-field--${variant}`, variant === this.variant);
             });
         }
-
         if (changedProperties.has("separateLabel")) {
             this.classList.toggle(`md-text-field--separate-label`, !!this.separateLabel);
         }
-
         if (changedProperties.has("label")) {
             this.classList.toggle(`md-text-field--with-label`, !!this.label);
         }
@@ -331,7 +327,6 @@ class MdTextFieldComponent extends MdComponent {
 
     handleTextFieldIconButtonClick(event) {
         const data = event.currentTarget.data;
-
         if (data.id === "cancel") return this.handleTextFieldIconButtonCancelClick(event);
         /**
          * @event onTextFieldIconButtonClick

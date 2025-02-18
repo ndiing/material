@@ -46,9 +46,10 @@ class MdMonthPickerComponent extends MdComponent {
         index: { state: true },
         selection: { state: true },
     };
-
     yearFormat = new Intl.DateTimeFormat(undefined, { year: "numeric" }).format;
+
     monthFormat = new Intl.DateTimeFormat(undefined, { month: "long" }).format;
+
     get years() {
         let year = this.selection.getFullYear();
         year = Math.floor(year / 10) * 10;
@@ -236,7 +237,6 @@ class MdMonthPickerComponent extends MdComponent {
         this.parentElement.insertBefore(this.monthPickerScrim, this.nextElementSibling);
         this.handleMonthPickerScrimClose = this.handleMonthPickerScrimClose.bind(this);
         this.monthPickerScrim.addEventListener("onScrimClose", this.handleMonthPickerScrimClose);
-
         if (this.modal && this.open) this.monthPickerScrim.show();
         await this.updateComplete;
         this.style.setProperty("--md-comp-month-picker-height", this.clientHeight + "px");
@@ -251,15 +251,12 @@ class MdMonthPickerComponent extends MdComponent {
 
     async updated(changedProperties) {
         super.updated(changedProperties);
-
         if (changedProperties.has("index")) {
             this.style.setProperty("--md-comp-month-picker-index", this.index);
         }
-
         if (changedProperties.has("modal")) {
             this.classList.toggle(`md-month-picker--modal`, !!this.modal);
         }
-
         if (changedProperties.has("value")) {
             await this.updateComplete;
             this.selection = new Date(this.value.valueOf());
@@ -292,7 +289,6 @@ class MdMonthPickerComponent extends MdComponent {
             ...options,
         });
         this.open = true;
-
         if (this.modal) this.monthPickerScrim.show();
         /**
          * @event onMonthPickerShow
@@ -310,7 +306,6 @@ class MdMonthPickerComponent extends MdComponent {
         window.removeEventListener("click", this.handleMonthPickerWindowClick);
         this.style.removeProperty("--md-comp-month-picker-animation");
         this.open = false;
-
         if (this.modal) this.monthPickerScrim.close();
         /**
          * @event onMonthPickerClose
@@ -433,7 +428,6 @@ class MdMonthPickerComponent extends MdComponent {
             next: this.handleMonthPickerIconButtonNextClick.bind(this),
         };
         const fn = map[data.id];
-
         if (fn) return fn(event);
         /**
          * @event onMonthPickerIconButtonClick
@@ -480,7 +474,6 @@ class MdMonthPickerComponent extends MdComponent {
             label: this.handleMonthPickerButtonLabelClick.bind(this),
         };
         const fn = map[data.id];
-
         if (fn) return fn(event);
         /**
          * @event onMonthPickerButtonClick

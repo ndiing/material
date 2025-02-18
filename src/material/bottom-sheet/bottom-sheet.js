@@ -91,7 +91,6 @@ class MdBottomSheetComponent extends MdComponent {
         this.parentElement.insertBefore(this.bottomSheetScrim, this.nextElementSibling);
         this.handleBottomSheetScrimClose = this.handleBottomSheetScrimClose.bind(this);
         this.bottomSheetScrim.addEventListener("onScrimClose", this.handleBottomSheetScrimClose);
-
         if (this.modal && this.open) this.bottomSheetScrim.show();
         await this.updateComplete;
         this.style.setProperty("--md-comp-bottom-sheet-width", this.clientWidth + "px");
@@ -106,7 +105,6 @@ class MdBottomSheetComponent extends MdComponent {
 
     updated(changedProperties) {
         super.updated(changedProperties);
-
         if (changedProperties.has("modal")) {
             this.classList.toggle(`md-bottom-sheet--modal`, !!this.modal);
         }
@@ -119,7 +117,6 @@ class MdBottomSheetComponent extends MdComponent {
         this.handleBottomSheetShown = this.handleBottomSheetShown.bind(this);
         this.addEventListener("animationend", this.handleBottomSheetShown);
         this.open = true;
-
         if (this.modal) this.bottomSheetScrim.show();
         /**
          * @event onBottomSheetShow
@@ -135,7 +132,6 @@ class MdBottomSheetComponent extends MdComponent {
         this.handleBottomSheetClosed = this.handleBottomSheetClosed.bind(this);
         this.addEventListener("animationend", this.handleBottomSheetClosed);
         this.open = false;
-
         if (this.bottomSheetScrim.open) this.bottomSheetScrim.close();
         /**
          * @event onBottomSheetClose

@@ -1,10 +1,12 @@
 /* ripple */
+
 @keyframes ripple-out {
     0% {
         width: 0;
     }
 }
 /* sheet */
+
 @keyframes sheet-north-out {
     0% {
         margin-top: calc(0px - var(--md-comp-sheet-height));
@@ -14,6 +16,7 @@
         margin-top: 0;
     }
 }
+
 @keyframes sheet-north-in {
     0% {
         margin-top: 0;
@@ -23,6 +26,7 @@
         margin-top: calc(0px - var(--md-comp-sheet-height));
     }
 }
+
 @keyframes sheet-south-out {
     0% {
         margin-bottom: calc(0px - var(--md-comp-sheet-height));
@@ -32,6 +36,7 @@
         margin-bottom: 0;
     }
 }
+
 @keyframes sheet-south-in {
     0% {
         margin-bottom: 0;
@@ -41,6 +46,7 @@
         margin-bottom: calc(0px - var(--md-comp-sheet-height));
     }
 }
+
 @keyframes sheet-west-out {
     0% {
         margin-left: calc(0px - var(--md-comp-sheet-height));
@@ -50,6 +56,7 @@
         margin-left: 0;
     }
 }
+
 @keyframes sheet-west-in {
     0% {
         margin-left: 0;
@@ -59,6 +66,7 @@
         margin-left: calc(0px - var(--md-comp-sheet-height));
     }
 }
+
 @keyframes sheet-east-out {
     0% {
         margin-right: calc(0px - var(--md-comp-sheet-height));
@@ -68,6 +76,7 @@
         margin-right: 0;
     }
 }
+
 @keyframes sheet-east-in {
     0% {
         margin-right: 0;
@@ -78,6 +87,7 @@
     }
 }
 /* sheet */
+
 @keyframes sheet-north-modal-in {
     0% {
         transform: translate3d(0, 0, 0);
@@ -87,6 +97,7 @@
         transform: translate3d(0, -100%, 0);
     }
 }
+
 @keyframes sheet-north-modal-out {
     0% {
         transform: translate3d(0, -100%, 0);
@@ -96,6 +107,7 @@
         transform: translate3d(0, 0, 0);
     }
 }
+
 @keyframes sheet-south-modal-in {
     0% {
         transform: translate3d(0, 0, 0);
@@ -105,6 +117,7 @@
         transform: translate3d(0, 100%, 0);
     }
 }
+
 @keyframes sheet-south-modal-out {
     0% {
         transform: translate3d(0, 100%, 0);
@@ -114,6 +127,7 @@
         transform: translate3d(0, 0, 0);
     }
 }
+
 @keyframes sheet-west-modal-in {
     0% {
         transform: translate3d(0, 0, 0);
@@ -123,6 +137,7 @@
         transform: translate3d(-100%, 0, 0);
     }
 }
+
 @keyframes sheet-west-modal-out {
     0% {
         transform: translate3d(-100%, 0, 0);
@@ -132,6 +147,7 @@
         transform: translate3d(0, 0, 0);
     }
 }
+
 @keyframes sheet-east-modal-in {
     0% {
         transform: translate3d(0, 0, 0);
@@ -141,6 +157,7 @@
         transform: translate3d(100%, 0, 0);
     }
 }
+
 @keyframes sheet-east-modal-out {
     0% {
         transform: translate3d(100%, 0, 0);
@@ -151,6 +168,7 @@
     }
 }
 /* dialog */
+
 @keyframes dialog-out {
     0% {
         height: 72px;
@@ -164,6 +182,7 @@
         transform: translate3d(-50%, -50%, 0);
     }
 }
+
 @keyframes dialog-in {
     0% {
         height: var(--md-comp-dialog-height);
@@ -177,6 +196,7 @@
         transform: translate3d(-50%, calc(-100% - 72px), 0);
     }
 }
+
 @keyframes dialog-body-out {
     0% {
         overflow: hidden;
@@ -186,6 +206,7 @@
         overflow: hidden;
     }
 }
+
 @keyframes dialog-body-in {
     0% {
         overflow: hidden;
@@ -196,12 +217,14 @@
     }
 }
 /* navigation */
+
 @keyframes navigation-list-icon-out {
     0% {
         width: 32px;
     }
 }
 /* menu */
+
 @keyframes menu-out {
     0% {
         overflow: hidden;
@@ -215,6 +238,7 @@
         height: var(--md-comp-menu-height);
     }
 }
+
 @keyframes menu-in {
     0% {
         overflow: hidden;
@@ -229,6 +253,7 @@
     }
 }
 /* snackbar */
+
 @keyframes snackbar-out {
     0% {
         opacity: 0;
@@ -240,6 +265,7 @@
         height: var(--md-comp-snackbar-height);
     }
 }
+
 @keyframes snackbar-in {
     0% {
         opacity: 1;
@@ -249,6 +275,7 @@
         opacity: 0;
     }
 }
+
 @keyframes snackbar-body-out {
     0% {
         overflow: hidden;
@@ -258,6 +285,7 @@
         overflow: hidden;
     }
 }
+
 @keyframes snackbar-body-in {
     0% {
         overflow: hidden;
@@ -268,6 +296,7 @@
     }
 }
 /* datetime */
+
 @keyframes datetime-picker-out {
     0% {
         height: var(--md-comp-datetime-picker-container-height);
@@ -281,6 +310,7 @@
         transform: translate3d(0%, 0%, 0);
     }
 }
+
 @keyframes datetime-picker-in {
     0% {
         height: var(--md-comp-datetime-picker-height);
@@ -294,6 +324,7 @@
         transform: translate3d(0%, calc((var(--md-comp-datetime-picker-height) - var(--md-comp-datetime-picker-container-height)) / 2), 0);
     }
 }
+
 @keyframes datetime-picker-body-out {
     0% {
         overflow: hidden;
@@ -303,6 +334,7 @@
         overflow: hidden;
     }
 }
+
 @keyframes datetime-picker-body-in {
     0% {
         overflow: hidden;
@@ -313,17 +345,20 @@
     }
 }
 /* scrim */
+
 @keyframes scrim-out {
     0% {
         opacity: 0;
     }
 }
+
 @keyframes scrim-in {
     100% {
         opacity: 0;
     }
 }
 /* date */
+
 @keyframes date-picker-out {
     0% {
         height: var(--md-comp-date-picker-container-height);
@@ -337,6 +372,7 @@
         transform: translate3d(0%, 0%, 0);
     }
 }
+
 @keyframes date-picker-in {
     0% {
         height: var(--md-comp-date-picker-height);
@@ -350,6 +386,7 @@
         transform: translate3d(0%, calc((var(--md-comp-date-picker-height) - var(--md-comp-date-picker-container-height)) / 2), 0);
     }
 }
+
 @keyframes date-picker-body-out {
     0% {
         overflow: hidden;
@@ -359,6 +396,7 @@
         overflow: hidden;
     }
 }
+
 @keyframes date-picker-body-in {
     0% {
         overflow: hidden;
@@ -369,6 +407,7 @@
     }
 }
 /* time */
+
 @keyframes time-picker-out {
     0% {
         height: var(--md-comp-time-picker-container-height);
@@ -382,6 +421,7 @@
         transform: translate3d(0%, 0%, 0);
     }
 }
+
 @keyframes time-picker-in {
     0% {
         height: var(--md-comp-time-picker-height);
@@ -395,6 +435,7 @@
         transform: translate3d(0%, calc((var(--md-comp-time-picker-height) - var(--md-comp-time-picker-container-height)) / 2), 0);
     }
 }
+
 @keyframes time-picker-body-out {
     0% {
         overflow: hidden;
@@ -404,6 +445,7 @@
         overflow: hidden;
     }
 }
+
 @keyframes time-picker-body-in {
     0% {
         overflow: hidden;
@@ -414,6 +456,7 @@
     }
 }
 /* week */
+
 @keyframes week-picker-out {
     0% {
         height: var(--md-comp-week-picker-container-height);
@@ -427,6 +470,7 @@
         transform: translate3d(0%, 0%, 0);
     }
 }
+
 @keyframes week-picker-in {
     0% {
         height: var(--md-comp-week-picker-height);
@@ -440,6 +484,7 @@
         transform: translate3d(0%, calc((var(--md-comp-week-picker-height) - var(--md-comp-week-picker-container-height)) / 2), 0);
     }
 }
+
 @keyframes week-picker-body-out {
     0% {
         overflow: hidden;
@@ -449,6 +494,7 @@
         overflow: hidden;
     }
 }
+
 @keyframes week-picker-body-in {
     0% {
         overflow: hidden;
@@ -459,6 +505,7 @@
     }
 }
 /* month */
+
 @keyframes month-picker-out {
     0% {
         height: var(--md-comp-month-picker-container-height);
@@ -472,6 +519,7 @@
         transform: translate3d(0%, 0%, 0);
     }
 }
+
 @keyframes month-picker-in {
     0% {
         height: var(--md-comp-month-picker-height);
@@ -485,6 +533,7 @@
         transform: translate3d(0%, calc((var(--md-comp-month-picker-height) - var(--md-comp-month-picker-container-height)) / 2), 0);
     }
 }
+
 @keyframes month-picker-body-out {
     0% {
         overflow: hidden;
@@ -494,6 +543,7 @@
         overflow: hidden;
     }
 }
+
 @keyframes month-picker-body-in {
     0% {
         overflow: hidden;
@@ -504,6 +554,7 @@
     }
 }
 /* side-sheet */
+
 @keyframes side-sheet-out {
     0% {
         margin-right: calc(0px - var(--md-comp-side-sheet-height));
@@ -513,6 +564,7 @@
         margin-right: 0;
     }
 }
+
 @keyframes side-sheet-in {
     0% {
         margin-right: 0;
@@ -522,6 +574,7 @@
         margin-right: calc(0px - var(--md-comp-side-sheet-height));
     }
 }
+
 @keyframes side-sheet-modal-in {
     0% {
         transform: translate3d(0, 0, 0);
@@ -531,6 +584,7 @@
         transform: translate3d(100%, 0, 0);
     }
 }
+
 @keyframes side-sheet-modal-out {
     0% {
         transform: translate3d(100%, 0, 0);
@@ -541,6 +595,7 @@
     }
 }
 /* bottom-sheet */
+
 @keyframes bottom-sheet-out {
     0% {
         margin-bottom: calc(0px - var(--md-comp-bottom-sheet-height));
@@ -550,6 +605,7 @@
         margin-bottom: 0;
     }
 }
+
 @keyframes bottom-sheet-in {
     0% {
         margin-bottom: 0;
@@ -559,6 +615,7 @@
         margin-bottom: calc(0px - var(--md-comp-bottom-sheet-height));
     }
 }
+
 @keyframes bottom-sheet-modal-in {
     0% {
         transform: translate3d(0, 0, 0);
@@ -568,6 +625,7 @@
         transform: translate3d(0, 100%, 0);
     }
 }
+
 @keyframes bottom-sheet-modal-out {
     0% {
         transform: translate3d(0, 100%, 0);

@@ -18,6 +18,7 @@ class MdTabsComponent extends MdComponent {
     };
 
     variants = ["primary", "secondary"];
+
     constructor() {
         super();
         this.items = [];
@@ -53,7 +54,6 @@ class MdTabsComponent extends MdComponent {
 
     updated(changedProperties) {
         super.updated(changedProperties);
-
         if (changedProperties.has("variant")) {
             this.variants.forEach((variant) => {
                 this.classList.toggle(`md-tabs--${variant}`, variant === this.variant);
@@ -88,15 +88,12 @@ class MdTabsComponent extends MdComponent {
             this.prevIndex = this.currIndex;
             let left = tab.offsetLeft;
             let right = this.clientWidth - (left + tab.clientWidth);
-
             if (this.classList.contains("md-tabs--primary")) {
                 const label = tab.querySelector(".md-tab__label");
                 left = label.offsetLeft + tab.offsetLeft;
                 right = this.clientWidth - (left + label.clientWidth);
-
                 if (!tab.classList.contains("md-tab--with-icon")) {
                     const badge = tab.querySelector(".md-tab__badge");
-
                     if (badge) {
                         right = this.clientWidth - (badge.offsetLeft + tab.offsetLeft + badge.clientWidth);
                     }

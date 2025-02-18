@@ -270,7 +270,6 @@ class DemoMain extends MdComponent {
     sortItems(items) {
         items.sort((a, b) => {
             if (a.children && !b.children) return -1;
-
             if (!a.children && b.children) return 1;
             return a.label.localeCompare(b.label);
         });
@@ -284,7 +283,6 @@ class DemoMain extends MdComponent {
     select(items) {
         items.forEach((item) => {
             item.selected = item.routerLink === Router.pathname;
-
             if (item.children?.length) {
                 this.select(item.children);
             }
@@ -302,7 +300,6 @@ class DemoMain extends MdComponent {
 
     async disconnectedCallback() {
         super.disconnectedCallback();
-
         if (this.layout) {
             this.layout.destroy();
         }

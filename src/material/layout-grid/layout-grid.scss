@@ -8,6 +8,7 @@ md-layout,
     min-height: 0;
     padding: 24px;
 }
+
 @include mixins.layout-compact() {
     md-layout-grid,
     .md-layout__grid {
@@ -23,6 +24,7 @@ md-layout,
         }
     }
 }
+
 @include mixins.layout-medium() {
     md-layout-grid,
     .md-layout__grid {
@@ -38,6 +40,7 @@ md-layout,
         }
     }
 }
+
 @include mixins.layout-expanded() {
     md-layout-grid,
     .md-layout__grid {

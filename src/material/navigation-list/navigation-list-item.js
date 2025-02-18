@@ -54,17 +54,14 @@ class MdNavigationListItemComponent extends MdComponent {
 
     async disconnectedCallback() {
         super.disconnectedCallback();
-
         if (this.ripple) this.ripple.destroy();
     }
 
     async updated(changedProperties) {
         super.updated(changedProperties);
-
         if (changedProperties.has("icon")) {
             this.classList.toggle("md-navigation-list__item--with-icon", !!this.icon);
         }
-
         if (changedProperties.has("selected") && this.selected) {
             this.emit("onNavigationListItemSelected", {
                 navigationListItem: this,

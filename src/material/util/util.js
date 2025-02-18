@@ -1,7 +1,6 @@
 /**
  * @module Util
  */
-
 /**
  * Parses a date string and returns a Date object.
  * @memberof member:Util
@@ -115,10 +114,8 @@ function stringifyWeek(date) {
  */
 function closestScrollableElement(element) {
     let current = element;
-
     while (current) {
         const style = window.getComputedStyle(current);
-
         if (/(auto|scroll)/.test(style.overflow + style.overflowY)) return current;
         current = current.parentElement;
     }

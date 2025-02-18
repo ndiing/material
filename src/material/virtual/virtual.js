@@ -38,7 +38,6 @@ class Virtual {
         const { start, end } = this.updateItemsPosition(rowHeight, total);
         const data = this.options.data.slice(start, end);
         const cache = [rowHeight, total, start, end, data].toString();
-
         if (this.cache !== cache) {
             this.cache = cache;
             if (document.activeElement !== document.body) {
@@ -121,7 +120,6 @@ class Virtual {
     load(options = {}) {
         for (const name in options) {
             const value = options[name];
-
             if (value === undefined || this.options[name] === value) continue;
             this.options[name] = value;
         }
@@ -133,16 +131,13 @@ class Virtual {
      */
     init() {
         this.host.classList.add("md-virtual");
-
         // if (typeof this.options.track === "string") {
         //     this.track = this.host.querySelector(this.options.track);
         // }
         // this.track.classList.add("md-virtual__track");
-
         this.track = document.createElement("div");
         this.track.classList.add("md-virtual__track");
         this.host.prepend(this.track);
-
         this.handleVirtualScroll = this.handleVirtualScroll.bind(this);
         this.handleVirtualScrollDebounce = this.handleVirtualScrollDebounce.bind(this);
         this.host.addEventListener("scroll", this.handleVirtualScroll);

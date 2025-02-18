@@ -25,6 +25,7 @@ class MdButtonComponent extends MdComponent {
     };
 
     variants = ["elevated", "filled", "filled-tonal", "outlined"];
+
     constructor() {
         super();
         this.type = "button";
@@ -53,13 +54,11 @@ class MdButtonComponent extends MdComponent {
 
     async disconnectedCallback() {
         super.disconnectedCallback();
-
         if (this.ripple) this.ripple.destroy();
     }
 
     updated(changedProperties) {
         super.updated(changedProperties);
-
         if (changedProperties.has("variant")) {
             this.variants.forEach((variant) => {
                 this.classList.toggle(`md-button--${variant}`, variant === this.variant);

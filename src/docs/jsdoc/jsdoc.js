@@ -19,6 +19,7 @@ let keys = Object.entries(
 ).map(([name, value]) => ({ label: name, children: value }));
 const values = Object.entries(docs).map(([key, value]) => {
     value = Object.groupBy(value, (item) => item.kind);
+
     value.key = key;
     return value;
 });

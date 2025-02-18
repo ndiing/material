@@ -7,6 +7,7 @@
     height: 24px;
     position: relative;
 }
+
 .md-checkbox__native {
     appearance: none;
     position: absolute;
@@ -15,10 +16,12 @@
     right: 0;
     bottom: 0;
     z-index: 1;
+
     &:indeterminate {
         + .md-checkbox__track {
             border-color: var(--md-sys-color-primary);
             background-color: var(--md-sys-color-primary);
+
             .md-checkbox__thumb {
                 width: 10px;
                 height: 2px;
@@ -31,6 +34,7 @@
         + .md-checkbox__track {
             border-color: var(--md-sys-color-primary);
             background-color: var(--md-sys-color-primary);
+
             .md-checkbox__thumb {
                 width: 10px;
                 height: 5px;
@@ -42,6 +46,7 @@
         }
     }
 }
+
 .md-checkbox__track {
     display: inline-flex;
     align-items: center;

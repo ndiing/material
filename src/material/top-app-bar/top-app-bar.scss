@@ -1,4 +1,5 @@
 @use "../mixins/mixins.scss";
+
 .md-top-app-bar {
     grid-area: north;
     display: flex;
@@ -12,6 +13,7 @@
     animation-name: var(--md-comp-sheet-animation);
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
     animation-duration: var(--md-sys-motion-duration-short3);
+
     &[open] {
         margin-top: 0;
         --md-comp-sheet-animation: sheet-north-out;
@@ -19,17 +21,20 @@
         animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
     }
 }
+
 .md-top-app-bar__labels {
     flex: 1;
     display: flex;
     flex-direction: column;
 }
+
 .md-top-app-bar__label {
     @include mixins.typescale-title-large();
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
 .md-top-app-bar__sublabel {
     @include mixins.typescale-body-medium();
     white-space: nowrap;
@@ -37,6 +42,7 @@
     text-overflow: ellipsis;
     color: var(--md-sys-color-on-surface-variant);
 }
+
 .md-top-app-bar__actions {
     display: flex;
     align-items: center;

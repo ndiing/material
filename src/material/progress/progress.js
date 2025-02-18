@@ -29,12 +29,10 @@ class Progress {
      */
     start(duration) {
         this.duration += duration;
-
         if (this.startTime === null) {
             this.startTime = performance.now();
             this.render();
         }
-
         if (!this.requestId) {
             this.requestId = requestAnimationFrame(this.step.bind(this));
         }
@@ -50,7 +48,6 @@ class Progress {
         let progress = Math.min(elapsed / this.duration, 1);
         this.progressIndicator.max = this.duration;
         this.progressIndicator.value = elapsed;
-
         if (progress < 1) {
             this.requestId = requestAnimationFrame(this.step.bind(this));
         } else {

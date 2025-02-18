@@ -46,13 +46,18 @@ class MdDatetimePickerComponent extends MdComponent {
         index: { state: true },
         selection: { state: true },
     };
-
     yearFormat = new Intl.DateTimeFormat(undefined, { year: "numeric" }).format;
+
     monthFormat = new Intl.DateTimeFormat(undefined, { month: "long" }).format;
+
     weekdayFormat = new Intl.DateTimeFormat(undefined, { weekday: "narrow" }).format;
+
     dayFormat = new Intl.DateTimeFormat(undefined, { day: "numeric" }).format;
+
     hourFormat = new Intl.DateTimeFormat(undefined, { hour: "numeric", hour12: false }).format;
+
     minuteFormat = new Intl.DateTimeFormat(undefined, { minute: "numeric", hour12: false }).format;
+
     get startOfDay() {
         return new Date(this.selection.getFullYear(), this.selection.getMonth()).getDay();
     }
@@ -376,7 +381,6 @@ class MdDatetimePickerComponent extends MdComponent {
         this.parentElement.insertBefore(this.datetimePickerScrim, this.nextElementSibling);
         this.handleDatetimePickerScrimClose = this.handleDatetimePickerScrimClose.bind(this);
         this.datetimePickerScrim.addEventListener("onScrimClose", this.handleDatetimePickerScrimClose);
-
         if (this.modal && this.open) this.datetimePickerScrim.show();
         await this.updateComplete;
         this.style.setProperty("--md-comp-datetime-picker-height", this.clientHeight + "px");
@@ -391,15 +395,12 @@ class MdDatetimePickerComponent extends MdComponent {
 
     async updated(changedProperties) {
         super.updated(changedProperties);
-
         if (changedProperties.has("index")) {
             this.style.setProperty("--md-comp-datetime-picker-index", this.index);
         }
-
         if (changedProperties.has("modal")) {
             this.classList.toggle(`md-datetime-picker--modal`, !!this.modal);
         }
-
         if (changedProperties.has("value")) {
             await this.updateComplete;
             this.selection = new Date(this.value.valueOf());
@@ -432,7 +433,6 @@ class MdDatetimePickerComponent extends MdComponent {
             ...options,
         });
         this.open = true;
-
         if (this.modal) this.datetimePickerScrim.show();
         /**
          * @event onDatetimePickerShow
@@ -450,7 +450,6 @@ class MdDatetimePickerComponent extends MdComponent {
         window.removeEventListener("click", this.handleDatetimePickerWindowClick);
         this.style.removeProperty("--md-comp-datetime-picker-animation");
         this.open = false;
-
         if (this.modal) this.datetimePickerScrim.close();
         /**
          * @event onDatetimePickerClose
@@ -616,7 +615,6 @@ class MdDatetimePickerComponent extends MdComponent {
             next: this.handleDatetimePickerIconButtonNextClick.bind(this),
         };
         const fn = map[data.id];
-
         if (fn) return fn(event);
         /**
          * @event onDatetimePickerIconButtonClick
@@ -666,7 +664,6 @@ class MdDatetimePickerComponent extends MdComponent {
             label: this.handleDatetimePickerButtonLabelClick.bind(this),
         };
         const fn = map[data.id];
-
         if (fn) return fn(event);
         /**
          * @event onDatetimePickerButtonClick

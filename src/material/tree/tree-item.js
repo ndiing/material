@@ -30,14 +30,12 @@ class MdTreeItemComponent extends MdComponent {
 
     get action() {
         if (!this.actions?.length) return;
-
         if (this.data.children?.length) return this.actions[~~this.expanded];
         else return [" ", ""][~~(this.indent === 0)];
     }
 
     get icon() {
         if (!this.leafIcons?.length) return;
-
         if (this.data.children?.length) return this.nodeIcons[~~this.expanded];
         else return this.leafIcons[~~this.selected];
     }
@@ -62,13 +60,11 @@ class MdTreeItemComponent extends MdComponent {
 
     async disconnectedCallback() {
         super.disconnectedCallback();
-
         if (this.ripple) this.ripple.destroy();
     }
 
     async updated(changedProperties) {
         super.updated(changedProperties);
-
         if (changedProperties.has("selected") && this.selected) {
             /**
              * @event onTreeItemSelected

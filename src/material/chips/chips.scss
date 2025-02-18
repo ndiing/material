@@ -4,6 +4,7 @@
     flex-wrap: wrap;
     gap: 16px 8px;
 }
+
 .md-chip {
     display: inline-flex;
     align-items: center;
@@ -16,10 +17,12 @@
     color: var(--md-sys-color-primary);
     border: 1px solid var(--md-sys-color-outline);
 }
+
 .md-chip[selected] {
     background-color: var(--md-sys-color-secondary-container);
     color: var(--md-sys-color-on-secondary-container);
 }
+
 .md-chip[selected] .md-button__icon {
     color: var(--md-sys-color-primary);
     font-variation-settings:
@@ -28,16 +31,19 @@
         "GRAD" 0,
         "opsz" 24;
 }
+
 .md-chip[disabled] {
     color: var(--md-sys-color-on-surface38);
     border-color: var(--md-sys-color-on-surface12);
 }
+
 .md-chip__icon {
     width: 18px;
     height: 18px;
     font-size: 18px;
     margin-left: -4px;
 }
+
 .md-chip__label {
     font-family: var(--md-sys-typescale-label-large-font);
     font-weight: var(--md-sys-typescale-label-large-weight);
@@ -45,16 +51,19 @@
     letter-spacing: var(--md-sys-typescale-label-large-tracking);
     line-height: var(--md-sys-typescale-label-large-line-height);
 }
+
 .md-chip__avatar {
     width: 24px;
     height: 24px;
     margin-left: -8px;
 }
+
 .md-chip__action {
     width: 18px;
     height: 18px;
     margin-right: -4px;
 }
+
 .md-chip__action .md-icon-button__icon {
     width: 18px;
     height: 18px;

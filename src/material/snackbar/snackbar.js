@@ -11,7 +11,6 @@ const queue = () => {
             return callback();
         }
     };
-
     return (callback) => (pending = execute(callback));
 };
 const task = queue();

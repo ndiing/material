@@ -3,7 +3,6 @@ import { MdComponent } from "../../material/component/component";
 import { Router } from "../../material/router/router";
 import { keys, values } from "../jsdoc/jsdoc";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
-
 class DocsPage extends MdComponent {
     constructor() {
         super();
@@ -16,7 +15,6 @@ class DocsPage extends MdComponent {
             <h1>${item.name}</h1>
             
             <p>${item.tags?.length?html`The <code>${item.name}</code> interface represents a <code><code>&lt;${item.tags?.map(t=>t.text)?.join()}&gt;</code></code> element in the DOM. `:nothing}${item.classdesc}</p>
-
             ${item.description?html`
                 <h2>Constructor</h2>
                 <p><code>new ${item.name}(${item.params?.map(p=>p.name)?.join(', ')})</code></p>
@@ -31,20 +29,16 @@ class DocsPage extends MdComponent {
                     ],item?.params??[])}
                 `:nothing}
             `:nothing}
-
             ${item.augments?.length?html`
                 <h2>Inheritance</h2>
                 <p>${item.augments}</p>
             `:nothing}
-
             ${item.examples?.length?html`
                 <h2>Examples</h2>
                 ${item.examples?.map(example => html`
                     <pre>${example}</pre>
                 `)}
             `:nothing}
-
-
         `)}`:nothing
     }
 

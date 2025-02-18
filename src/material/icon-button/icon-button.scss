@@ -5,10 +5,13 @@
     vertical-align: middle;
     position: relative;
     color: var(--md-sys-color-on-surface-variant);
+
     &[toggle] {
         color: var(--md-sys-color-on-surface-variant);
+
         &[selected] {
             color: var(--md-sys-color-primary);
+
             .md-icon-button__icon {
                 font-variation-settings:
                     "FILL" 1,
@@ -23,6 +26,7 @@
         color: var(--md-sys-color-on-surface38);
     }
 }
+
 .md-icon-button__native {
     position: absolute;
     left: 0;
@@ -33,15 +37,18 @@
     background: transparent;
     color: transparent;
 }
+
 .md-icon-button--filled {
     width: 40px;
     height: 40px;
     border-radius: 20px;
     background-color: var(--md-sys-color-primary);
     color: var(--md-sys-color-on-primary);
+
     &[toggle] {
         background-color: var(--md-sys-color-surface-container-highest);
         color: var(--md-sys-color-primary);
+
         &[selected] {
             background-color: var(--md-sys-color-primary);
             color: var(--md-sys-color-on-primary);
@@ -53,15 +60,18 @@
         color: var(--md-sys-color-on-surface38);
     }
 }
+
 .md-icon-button--filled-tonal {
     width: 40px;
     height: 40px;
     border-radius: 20px;
     background-color: var(--md-sys-color-secondary-container);
     color: var(--md-sys-color-on-secondary-container);
+
     &[toggle] {
         background-color: var(--md-sys-color-surface-container-highest);
         color: var(--md-sys-color-on-surface-variant);
+
         &[selected] {
             background-color: var(--md-sys-color-secondary-container);
             color: var(--md-sys-color-on-secondary-container);
@@ -73,15 +83,18 @@
         color: var(--md-sys-color-on-surface38);
     }
 }
+
 .md-icon-button--outlined {
     width: 40px;
     height: 40px;
     border-radius: 20px;
     border: 1px solid var(--md-sys-color-outline);
     color: var(--md-sys-color-on-surface-variant);
+
     &[toggle] {
         border-color: var(--md-sys-color-outline);
         color: var(--md-sys-color-on-surface-variant);
+
         &[selected] {
             border-color: var(--md-sys-color-inverse-surface);
             background-color: var(--md-sys-color-inverse-surface);
