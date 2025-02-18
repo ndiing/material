@@ -44,7 +44,7 @@ class MdDataTableNativeComponent extends Mixins(HTMLTableElement) {
     adoptedCallback() {}
     attributeChangedCallback(name, oldValue, newValue) {
         if (this.virtualize && name === "now") {
-            this.virtual.load({ /* total: this.dataStore.length, */ data: this.dataStore });
+            this.virtual?.load({ /* total: this.dataStore.length, */ data: this.dataStore });
         }
     }
 }
@@ -215,7 +215,7 @@ class MdDataTableComponent extends MdComponent {
                 class="md-data-table__native"
                 ?virtualize="${this.virtualize}"
                 .dataStore="${this.dataStore}"
-                ?now="${this.now}"
+                now="${this.now}"
             >
                 <caption></caption>
                 <thead>

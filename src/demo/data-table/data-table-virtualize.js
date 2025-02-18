@@ -37,7 +37,7 @@ class DemoDataTableVirtualize extends MdComponent {
             return data;
         }
 
-        this.data = generateRandomData(10000);
+        this.data = generateRandomData(10000)
     }
 
     render() {
