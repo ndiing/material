@@ -147,27 +147,27 @@ class MDDataTableComponent extends MdComponent {
         /* prettier-ignore */
         return html`
             <table 
-                is="md-table"
+                is="md-data-table-native"
                 .instance="${this}"
                 now="${this.now}"
             >
                 <caption 
-                    is="md-table-caption"
+                    is="md-data-table-native-caption"
                     .instance="${this}"
                 ></caption>
                 <thead 
-                    is="md-table-head"
+                    is="md-data-table-native-head"
                     .instance="${this}"
                 >
                     ${this.headers?.map(tr=>html`
                         <tr 
-                            is="md-table-row"
+                            is="md-data-table-native-row"
                             .instance="${this}"
                         >
                             ${this.checkboxCell.concat(tr).map(th=>html`
                             
                                 <th 
-                                    is="md-table-header"
+                                    is="md-data-table-native-header"
                                     .instance="${this}"
                                     .data="${th}"
                                     style="${styleMap(this.styleDataTableNativeHeader(th))}"
@@ -189,7 +189,7 @@ class MDDataTableComponent extends MdComponent {
                 </thead>
                 ${this.dataVirtual?.map(item=>html`
                     <tbody 
-                        is="md-table-body"
+                        is="md-data-table-native-body"
                         .instance="${this}"
                         .data="${item}"
                         ?selected="${item.selected}"
@@ -197,12 +197,12 @@ class MDDataTableComponent extends MdComponent {
                     >
                         ${this.bodies?.map(tr=>html`
                             <tr 
-                                is="md-table-row"
+                                is="md-data-table-native-row"
                                 .instance="${this}"
                             >
                                 ${this.checkboxCell.concat(tr).map(td=>html`
                                     <td 
-                                        is="md-table-data"
+                                        is="md-data-table-native-data"
                                         .instance="${this}"
                                         .data="${td}"
                                         .dataBody="${item}"
@@ -222,17 +222,17 @@ class MDDataTableComponent extends MdComponent {
                     </tbody>
                 `)}
                 <tfoot 
-                    is="md-table-footer"
+                    is="md-data-table-native-footer"
                     .instance="${this}"
                 >
                     ${this.footers?.map(tr=>html`
                         <tr 
-                            is="md-table-row"
+                            is="md-data-table-native-row"
                             .instance="${this}"
                         >
                             ${this.checkboxCell.concat(tr).map(td=>html`
                                 <td 
-                                    is="md-table-data"
+                                    is="md-data-table-native-data"
                                     .instance="${this}"
                                     style="${styleMap(this.styleDataTableNativeFooterData(td))}"
                                 >

@@ -56,7 +56,7 @@ import "./time-picker/time-picker.js";
 import "./month-picker/month-picker.js";
 import "./week-picker/week-picker.js";
 
-import "./data-table/table.js";
+import "./data-table/data-table-native.js";
 import "./data-table/data-table-cell.js";
 import "./data-table/data-table.js";
 
