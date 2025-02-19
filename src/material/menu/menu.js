@@ -17,47 +17,20 @@ class MDMenuComponent extends MdComponent {
     static properties = {
         open: { type: Boolean, reflect: true },
         items: { type: Array },
-        type: { type: String },
     };
-
-    types = ["navigation-list", "list"];
 
     constructor() {
         super();
         this.items = [];
-        this.type = "navigation-list";
-    }
-
-    renderNavigationList(items) {
-        /* prettier-ignore */
-        return html`
-            <md-navigation-list 
-                .items="${items}"
-            ></md-navigation-list>
-        `;
-    }
-
-    renderList(items) {
-        /* prettier-ignore */
-        return html`
-            <md-list 
-                .items="${items}"
-            ></md-list>
-        `;
-    }
-
-    renderItems(type, items) {
-        /* prettier-ignore */
-        return choose(type,[
-
-            ['navigation-list',() => this.renderNavigationList(items)],
-
-        ],() => this.renderList(items));
     }
 
     render() {
         /* prettier-ignore */
-        return this.renderItems(this.type,this.items)
+        return html`
+            <md-list 
+                .items="${this.items}"
+            ></md-list>
+        `
     }
 
     async connectedCallback() {
