@@ -3,6 +3,7 @@ const defaultItems = [
     { name: "medium", media: window.matchMedia("(min-width: 600px) and (max-width: 839px)") },
     { name: "compact", media: window.matchMedia("(max-width: 599px)") },
 ];
+
 /**
  * LayoutObserver class responsible for managing layout changes based on media queries.
  */
@@ -17,6 +18,7 @@ class LayoutObserver {
     }
 
     // /**
+
     //  * Handles layout change events by destroying the current layout and initializing a new one.
     //  */
     handleChange() {
@@ -30,6 +32,7 @@ class LayoutObserver {
      */
     init(items = defaultItems) {
         if (!this.items) this.items = items;
+
         this.item = this.items.find((item) => item.media.matches);
         this.callback(this.item);
         this.item.media.addEventListener("change", this.handleChange);
@@ -43,4 +46,5 @@ class LayoutObserver {
         this.item = undefined;
     }
 }
+
 export { LayoutObserver };

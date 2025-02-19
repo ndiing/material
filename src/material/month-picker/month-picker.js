@@ -6,6 +6,7 @@ import { closestScrollableElement, parseMonth, stringifyMonth } from "../util/ut
 import { setPosition } from "../popper/popper";
 import { classMap } from "lit/directives/class-map.js";
 import { cache } from "lit/directives/cache.js";
+
 /**
  * @extends MdComponent
  * @element md-month-picker
@@ -38,6 +39,7 @@ class MDMonthPickerComponent extends MdComponent {
                 fromAttribute: (value, type) => {
                     return parseMonth(value);
                 },
+
                 toAttribute: (value, type) => {
                     return stringifyMonth(value);
                 },
@@ -54,6 +56,7 @@ class MDMonthPickerComponent extends MdComponent {
     get years() {
         let year = this.selection.getFullYear();
         year = Math.floor(year / 10) * 10;
+
         return Array.from({ length: 10 }, (v, k) => {
             const date = new Date(year + k, 0);
             return {
@@ -81,8 +84,10 @@ class MDMonthPickerComponent extends MdComponent {
     get icons() {
         const map = {
             0: () => [this.years[0].label, this.years[this.years.length - 1].label].join(" - "),
+
             1: () => this.selection.getFullYear(),
         };
+
         return [{ component: "button", id: "label", label: map[this.index]() }];
     }
 
@@ -99,8 +104,11 @@ class MDMonthPickerComponent extends MdComponent {
 
     constructor() {
         super();
+
         this.current = new Date();
+
         this.value = new Date();
+
         this.selection = new Date();
         this.index = 1;
     }
@@ -158,10 +166,14 @@ class MDMonthPickerComponent extends MdComponent {
     renderComponent(item, component = "icon") {
         const components = [
             ["icon", () => this.renderIcon(item)],
+
             ["icon-button", () => this.renderIconButton(item)],
+
             ["button", () => this.renderButton(item)],
+
             ["spacer", () => this.renderSpacer(item)],
         ];
+
         return choose(item.component || component, components, () => nothing);
     }
 
@@ -169,6 +181,7 @@ class MDMonthPickerComponent extends MdComponent {
         /* prettier-ignore */
         return html`
             <div class="md-month-picker__list">
+
                 ${this.years.map((item) => html`
                     <div
                         .data="${item}"
@@ -186,6 +199,7 @@ class MDMonthPickerComponent extends MdComponent {
         /* prettier-ignore */
         return html`
             <div class="md-month-picker__list">
+
                 ${this.months.map((item) => html`
                     <div
                         .data="${item}"
@@ -204,7 +218,9 @@ class MDMonthPickerComponent extends MdComponent {
         return html`
             ${this.icons?.length || this.label || this.sublabel || this.actions?.length? html`
                 <div class="md-month-picker__header">
+
                     <div class="md-month-picker__icons">${this.icons.map((icon) => this.renderComponent(icon, "icon"))}</div>
+
                     ${this.actions?.length ? html` <div class="md-month-picker__actions">${this.actions.map((action) => this.renderComponent(action, "icon-button"))}</div> ` : nothing}
                 </div>
             `: nothing}
@@ -220,6 +236,7 @@ class MDMonthPickerComponent extends MdComponent {
                 ${this.buttons?.length ? html`
                     <div class="md-month-picker__footer">
                         ${this.buttons?.length ? html`
+
                             <div class="md-month-picker__buttons">${this.buttons.map((button) => this.renderComponent(button, "button"))}</div>
                         ` : nothing}
                     </div>    
@@ -230,6 +247,7 @@ class MDMonthPickerComponent extends MdComponent {
 
     async connectedCallback() {
         super.connectedCallback();
+
         this.defaultValue = new Date(this.value.valueOf());
         this.defaultIndex = this.index;
         this.classList.add("md-month-picker");
@@ -264,6 +282,7 @@ class MDMonthPickerComponent extends MdComponent {
 
         if (changedProperties.has("value")) {
             await this.updateComplete;
+
             this.selection = new Date(this.value.valueOf());
         }
     }
@@ -296,6 +315,7 @@ class MDMonthPickerComponent extends MdComponent {
         this.open = true;
 
         if (this.modal) this.monthPickerScrim.show();
+
         /**
          * @event onMonthPickerShow
          * @property {Object} event
@@ -314,6 +334,7 @@ class MDMonthPickerComponent extends MdComponent {
         this.open = false;
 
         if (this.modal) this.monthPickerScrim.close();
+
         /**
          * @event onMonthPickerClose
          * @property {Object} event
@@ -340,6 +361,7 @@ class MDMonthPickerComponent extends MdComponent {
     handleMonthPickerWindowClick(event) {
         3;
         const target = document.elementFromPoint(event.clientX, event.clientY);
+
         /**
          * @event onMonthPickerWindowClick
          * @property {Object} event
@@ -351,6 +373,7 @@ class MDMonthPickerComponent extends MdComponent {
         const data = event.currentTarget.data;
         this.selection.setFullYear(data.year);
         this.index = 1;
+
         /**
          * @event onMonthPickerYearItemClick
          * @property {Object} event
@@ -366,6 +389,7 @@ class MDMonthPickerComponent extends MdComponent {
         this.value.setMonth(data.month);
         console.log(data);
         this.requestUpdate();
+
         /**
          * @event onMonthPickerMonthItemClick
          * @property {Object} event
@@ -375,6 +399,7 @@ class MDMonthPickerComponent extends MdComponent {
 
     handleMonthPickerScrimClose(event) {
         if (this.open) this.close();
+
         /**
          * @event onMonthPickerScrimClose
          * @property {Object} event
@@ -384,6 +409,7 @@ class MDMonthPickerComponent extends MdComponent {
 
     handleMonthPickerShown(event) {
         this.removeEventListener("animationend", this.handleMonthPickerShown);
+
         /**
          * @event onMonthPickerShown
          * @property {Object} event
@@ -393,6 +419,7 @@ class MDMonthPickerComponent extends MdComponent {
 
     handleMonthPickerClosed(event) {
         this.removeEventListener("animationend", this.handleMonthPickerClosed);
+
         /**
          * @event onMonthPickerClosed
          * @property {Object} event
@@ -403,10 +430,13 @@ class MDMonthPickerComponent extends MdComponent {
     handleMonthPickerIconButtonPrevClick(event) {
         const map = {
             0: () => this.selection.setFullYear(this.selection.getFullYear() - 10),
+
             1: () => this.selection.setFullYear(this.selection.getFullYear() - 1),
         };
+
         map[this.index]();
         this.requestUpdate();
+
         /**
          * @event onMonthPickerIconButtonPrevClick
          * @property {Object} event
@@ -417,10 +447,13 @@ class MDMonthPickerComponent extends MdComponent {
     handleMonthPickerIconButtonNextClick(event) {
         const map = {
             0: () => this.selection.setFullYear(this.selection.getFullYear() + 10),
+
             1: () => this.selection.setFullYear(this.selection.getFullYear() + 1),
         };
+
         map[this.index]();
         this.requestUpdate();
+
         /**
          * @event onMonthPickerIconButtonNextClick
          * @property {Object} event
@@ -434,9 +467,11 @@ class MDMonthPickerComponent extends MdComponent {
             prev: this.handleMonthPickerIconButtonPrevClick.bind(this),
             next: this.handleMonthPickerIconButtonNextClick.bind(this),
         };
+
         const fn = map[data.id];
 
         if (fn) return fn(event);
+
         /**
          * @event onMonthPickerIconButtonClick
          * @property {Object} event
@@ -446,6 +481,7 @@ class MDMonthPickerComponent extends MdComponent {
 
     handleMonthPickerButtonCancelClick(event) {
         this.value = new Date(this.defaultValue.valueOf());
+
         /**
          * @event onMonthPickerButtonCancelClick
          * @property {Object} event
@@ -466,7 +502,9 @@ class MDMonthPickerComponent extends MdComponent {
             0: 1,
             1: 0,
         };
+
         this.index = map[this.index];
+
         /**
          * @event onMonthPickerButtonLabelClick
          * @property {Object} event
@@ -481,9 +519,11 @@ class MDMonthPickerComponent extends MdComponent {
             ok: this.handleMonthPickerButtonOkClick.bind(this),
             label: this.handleMonthPickerButtonLabelClick.bind(this),
         };
+
         const fn = map[data.id];
 
         if (fn) return fn(event);
+
         /**
          * @event onMonthPickerButtonClick
          * @property {Object} event

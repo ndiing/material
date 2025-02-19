@@ -4,6 +4,7 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
 import { setPosition } from "../popper/popper";
 import { closestScrollableElement } from "../util/util";
+
 /**
  * @extends MdComponent
  * @element md-menu
@@ -48,7 +49,9 @@ class MDMenuComponent extends MdComponent {
     renderItems(type, items) {
         /* prettier-ignore */
         return choose(type,[
+
             ['navigation-list',() => this.renderNavigationList(items)],
+
         ],() => this.renderList(items));
     }
 
@@ -90,6 +93,7 @@ class MDMenuComponent extends MdComponent {
             ...options,
         });
         this.open = true;
+
         /**
          * @event onMenuShow
          * @property {Object} event
@@ -106,6 +110,7 @@ class MDMenuComponent extends MdComponent {
         this.menuWindow.removeEventListener("scroll", this.handleMenuWindowScroll);
         window.removeEventListener("click", this.handleMenuWindowClick);
         this.open = false;
+
         /**
          * @event onMenuClose
          * @property {Object} event
@@ -123,6 +128,7 @@ class MDMenuComponent extends MdComponent {
 
     handleMenuWindowClick(event) {
         const target = document.elementFromPoint(event.clientX, event.clientY);
+
         /**
          * @event onMenuWindowClick
          * @property {Object} event
@@ -141,6 +147,7 @@ class MDMenuComponent extends MdComponent {
 
     handleMenuShown(event) {
         this.removeEventListener("animationend", this.handleMenuShown);
+
         /**
          * @event onMenuShown
          * @property {Object} event
@@ -150,6 +157,7 @@ class MDMenuComponent extends MdComponent {
 
     handleMenuClosed(event) {
         this.removeEventListener("animationend", this.handleMenuClosed);
+
         /**
          * @event onMenuClosed
          * @property {Object} event

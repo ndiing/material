@@ -1,6 +1,5 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
-
 class DemoBottomSheet extends MdComponent {
     render() {
         return html`

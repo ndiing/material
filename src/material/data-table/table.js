@@ -1,6 +1,7 @@
 import { Mixins } from "../component/component";
 import { Gesture } from "../gesture/gesture";
 import { Virtual } from "../virtual/virtual";
+
 /**
  * @extends HTMLTableElement
  */
@@ -14,6 +15,7 @@ class MDTableComponent extends Mixins(HTMLTableElement) {
 
     handleTableVirtualScroll(event) {
         this.instance.dataVirtual = event.detail.data;
+
         /**
          * @event handleTableVirtualScroll
          * @type {Object}
@@ -55,6 +57,7 @@ customElements.define("md-table-caption", MDTableCaptionComponent, { extends: "c
  * @extends HTMLTableSectionElement
  */
 class MDTableSectionComponent extends Mixins(HTMLTableSectionElement) {}
+
 /**
  * @extends MDTableSectionComponent
  */
@@ -87,6 +90,7 @@ customElements.define("md-table-row", MDTableRowComponent, { extends: "tr" });
  * @extends HTMLTableCellElement
  */
 class MDTableCellComponent extends Mixins(HTMLTableCellElement) {}
+
 /**
  * @extends MDTableCellComponent
  */
@@ -94,6 +98,7 @@ class MDTableHeaderComponent extends MDTableCellComponent {
     handleTableHeaderResize(event) {
         this.data.width = this.gesture.currentWidth;
         this.style.setProperty("min-width", this.data.width + "px");
+
         /**
          * @event onTableHeaderResize
          * @type {Object}
@@ -108,9 +113,11 @@ class MDTableHeaderComponent extends MDTableCellComponent {
         if (!resizeHandleElement) return;
         const rowIndex = this.parentElement.rowIndex + 1;
         const cellIndex = this.cellIndex + 1;
+
         const width = Array.from(this.instance.querySelectorAll(`tr:nth-child(${rowIndex}) td:nth-child(${cellIndex}) .md-data-table__label`)).reduce((prev, curr) => Math.max(prev, curr.scrollWidth), 0) + 16 + 16;
         this.data.width = width;
         this.style.setProperty("min-width", this.data.width + "px");
+
         /**
          * @event onTableHeaderDblclick
          * @type {Object}
@@ -125,6 +132,7 @@ class MDTableHeaderComponent extends MDTableCellComponent {
             this.addEventListener("onResize", this.handleTableHeaderResize);
             this.handleTableHeaderDblclick = this.handleTableHeaderDblclick.bind(this);
             this.addEventListener("dblclick", this.handleTableHeaderDblclick);
+
             this.gesture = new Gesture(this, {
                 resizeHandles: ["e"],
                 dragAxis: [],

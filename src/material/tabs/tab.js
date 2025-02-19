@@ -2,6 +2,7 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { Ripple } from "../ripple/ripple";
+
 /**
  * @extends MdComponent
  * @element md-tab
@@ -49,6 +50,7 @@ class MDTabComponent extends MdComponent {
         super.connectedCallback();
         this.classList.add("md-tab");
         await this.updateComplete;
+
         this.ripple = new Ripple(this, this.rippleOptions);
     }
 

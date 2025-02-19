@@ -2,6 +2,7 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
+
 /**
  * MDBottomAppBarComponent class responsible for displaying a bottom app bar.
  * @extends MdComponent
@@ -115,6 +116,7 @@ class MDBottomAppBarComponent extends MdComponent {
     show() {
         this.style.removeProperty("--md-comp-sheet-animation");
         this.open = true;
+
         /**
          * @event onBottomAppBarShow
          * @property {Object} event - The show event.
@@ -128,6 +130,7 @@ class MDBottomAppBarComponent extends MdComponent {
     close() {
         this.style.removeProperty("--md-comp-sheet-animation");
         this.open = false;
+
         /**
          * @event onBottomAppBarClose
          * @property {Object} event - The close event.

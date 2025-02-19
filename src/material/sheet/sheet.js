@@ -2,6 +2,7 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
+
 /**
  * @extends MdComponent
  * @element md-sheet
@@ -77,10 +78,14 @@ class MDSheetComponent extends MdComponent {
     renderComponent(item, component = "icon") {
         const components = [
             ["icon", () => this.renderIcon(item)],
+
             ["icon-button", () => this.renderIconButton(item)],
+
             ["button", () => this.renderButton(item)],
+
             ["spacer", () => this.renderSpacer(item)],
         ];
+
         return choose(item.component || component, components, () => nothing);
     }
 
@@ -132,6 +137,7 @@ class MDSheetComponent extends MdComponent {
         this.open = true;
 
         if (this.modal) this.sheetScrim.show();
+
         /**
          * @event onSheetShow
          * @property {Object} event
@@ -148,6 +154,7 @@ class MDSheetComponent extends MdComponent {
         this.open = false;
 
         if (this.sheetScrim.open) this.sheetScrim.close();
+
         /**
          * @event onSheetClose
          * @property {Object} event
@@ -164,6 +171,7 @@ class MDSheetComponent extends MdComponent {
 
     handleSheetShown(event) {
         this.removeEventListener("animationend", this.handleSheetShown);
+
         /**
          * @event onSheetShown
          * @property {Object} event
@@ -173,6 +181,7 @@ class MDSheetComponent extends MdComponent {
 
     handleSheetClosed(event) {
         this.removeEventListener("animationend", this.handleSheetClosed);
+
         /**
          * @event onSheetClosed
          * @property {Object} event
@@ -182,6 +191,7 @@ class MDSheetComponent extends MdComponent {
 
     handleSheetScrimClose(event) {
         if (this.open) this.close();
+
         /**
          * @event onSheetScrimClose
          * @property {Object} event

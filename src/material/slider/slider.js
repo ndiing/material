@@ -2,6 +2,7 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { classMap } from "lit/directives/class-map.js";
+
 /**
  * @extends MdComponent
  * @element md-slider
@@ -26,6 +27,7 @@ class MDSliderComponent extends MdComponent {
                 fromAttribute: (value, type) => {
                     return [].concat(JSON.parse(value));
                 },
+
                 toAttribute: (value, type) => {
                     return JSON.stringify(value);
                 },
@@ -42,6 +44,7 @@ class MDSliderComponent extends MdComponent {
             discrete: this.max / this.step + 1,
             "range-selection": 2,
         };
+
         return lengths[this.variant];
     }
 
@@ -78,6 +81,7 @@ class MDSliderComponent extends MdComponent {
                 <div class="md-slider__indicators">
                     ${Array.from(
                         { length: this.indicators },
+
                         (v, k) => html`
                             <div
                                 class="${classMap({
@@ -155,6 +159,7 @@ class MDSliderComponent extends MdComponent {
         native.value = this.value[data.index];
         this.updateValue();
         this.requestUpdate();
+
         /**
          * @event onSliderNativeInput
          * @property {Object} event
@@ -166,6 +171,7 @@ class MDSliderComponent extends MdComponent {
         this.value = JSON.parse(JSON.stringify(this.defaultValue));
         this.updateValue();
         this.requestUpdate();
+
         /**
          * @event onSliderNativeReset
          * @property {Object} event

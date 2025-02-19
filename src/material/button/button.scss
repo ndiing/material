@@ -1,5 +1,4 @@
 @use "../mixins/mixins.scss";
-
 .md-button {
     --md-comp-button-density: 0;
     --md-comp-button-height: calc(40px + (var(--md-comp-button-density) * 4px));
@@ -15,11 +14,9 @@
     min-width: 0;
     max-width: 100%;
     position: relative;
-
     &[selected] {
         background-color: var(--md-sys-color-secondary-container);
         color: var(--md-sys-color-on-secondary-container);
-
         .md-button__icon {
             color: var(--md-sys-color-primary);
             font-variation-settings:
@@ -34,7 +31,6 @@
         color: var(--md-sys-color-on-surface38);
     }
 }
-
 .md-button__native {
     position: absolute;
     left: 0;
@@ -45,30 +41,25 @@
     background: transparent;
     color: transparent;
 }
-
 .md-button__icon {
     width: 18px;
     height: 18px;
     font-size: 18px;
-
     + .md-button__label {
         margin-right: 4px;
     }
 }
-
 .md-button__label {
     @include mixins.typescale-label-large();
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
-
 .md-button--elevated {
     padding: 0 24px;
     background-color: var(--md-sys-color-surface-container-low);
     color: var(--md-sys-color-primary);
     box-shadow: var(--md-sys-elevation-level1);
-
     .md-button__icon {
         + .md-button__label {
             margin-right: 0;
@@ -81,12 +72,10 @@
         box-shadow: none;
     }
 }
-
 .md-button--filled {
     padding: 0 24px;
     background-color: var(--md-sys-color-primary);
     color: var(--md-sys-color-on-primary);
-
     .md-button__icon {
         + .md-button__label {
             margin-right: 0;
@@ -104,12 +93,10 @@
         color: var(--md-sys-color-on-surface38);
     }
 }
-
 .md-button--filled-tonal {
     padding: 0 24px;
     background-color: var(--md-sys-color-secondary-container);
     color: var(--md-sys-color-on-secondary-container);
-
     .md-button__icon {
         + .md-button__label {
             margin-right: 0;
@@ -121,12 +108,10 @@
         color: var(--md-sys-color-on-surface38);
     }
 }
-
 .md-button--outlined {
     padding: 0 24px;
     color: var(--md-sys-color-primary);
     border: 1px solid var(--md-sys-color-outline);
-
     .md-button__icon {
         + .md-button__label {
             margin-right: 0;

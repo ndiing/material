@@ -36,4 +36,5 @@ class MdElement extends Mixins(HTMLElement) {
     adoptedCallback() {}
     attributeChangedCallback(name, oldValue, newValue) {}
 }
+
 export { Mixins, MdComponent, MdElement };

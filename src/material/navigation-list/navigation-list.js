@@ -2,6 +2,7 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { Store } from "../store/store";
+
 /**
  * @extends MdComponent
  * @element md-navigation-list
@@ -42,6 +43,7 @@ class MDNavigationListComponent extends MdComponent {
     render() {
         /* prettier-ignore */
         return html`
+
             ${this.items.map((item) => this.renderNavigationListItem(item))}
         `
     }
@@ -72,15 +74,18 @@ class MDNavigationListComponent extends MdComponent {
 
     handleNavigationListKeydownArrowUp(event) {
         event.preventDefault();
+
         const selectedIndex = this.items.findIndex((item) => item.selected);
         const prevIndex = selectedIndex - 1;
 
         if (prevIndex === -1) return;
+
         this.items.forEach((item, index) => {
             item.selected = index === prevIndex;
         });
         this.requestUpdate();
         this.updateScroll();
+
         /**
          * @event onNavigationListKeydownArrowUp
          * @property {Object} event
@@ -90,15 +95,18 @@ class MDNavigationListComponent extends MdComponent {
 
     async handleNavigationListKeydownArrowDown(event) {
         event.preventDefault();
+
         const selectedIndex = this.items.findIndex((item) => item.selected);
         const nextIndex = selectedIndex + 1;
 
         if (nextIndex === this.items.length) return;
+
         this.items.forEach((item, index) => {
             item.selected = index === nextIndex;
         });
         this.requestUpdate();
         this.updateScroll();
+
         /**
          * @event onNavigationListKeydownArrowDown
          * @property {Object} event
@@ -108,6 +116,7 @@ class MDNavigationListComponent extends MdComponent {
 
     handleNavigationListKeydownEnter(event) {
         event.preventDefault();
+
         /**
          * @event onNavigationListKeydownEnter
          * @property {Object} event
@@ -120,6 +129,7 @@ class MDNavigationListComponent extends MdComponent {
             if (event.key === "ArrowUp") this.handleNavigationListKeydownArrowUp(event);
             else if (event.key === "ArrowDown") this.handleNavigationListKeydownArrowDown(event);
             else if (event.key === "Enter") this.handleNavigationListKeydownEnter(event);
+
             /**
              * @event onNavigationListKeydown
              * @property {Object} event
@@ -131,10 +141,12 @@ class MDNavigationListComponent extends MdComponent {
     handleNavigationListItemClick(event) {
         this.style.removeProperty("--md-comp-navigation-list-icon-animation");
         const data = event.currentTarget.data;
+
         this.items.forEach((item) => {
             item.selected = item === data;
         });
         this.requestUpdate();
+
         /**
          * @event onNavigationListItemClick
          * @property {Object} event

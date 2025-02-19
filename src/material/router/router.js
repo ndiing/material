@@ -3,6 +3,7 @@
  * @example
  * import { Router } from "./material/router/router";
  *
+
  * const sessionCheck = (next) => {
  *     if(hasSession){
  *         next()
@@ -18,6 +19,7 @@
  *             {path:':id',component:UserComponent},
  *         ]},
  *     ]},
+
  *     {path:'*',laod:() => import('./error/error.js').then(m=>m.default)},
  * ])
  */
@@ -28,6 +30,7 @@ class Router {
      * @property {Object} event
      */
     static params = {};
+
     // /**
     //  * Retrieves the matching route(s) based on the provided pathname.
     //  * @param {string} [pathname=this.pathname] - The current pathname to match against.
@@ -41,6 +44,7 @@ class Router {
             if (!route.regexp) {
                 route.parent = parent;
                 route.pathname = ((parent?.pathname ?? "") + "/" + route.path).replace(/\/+/g, "/");
+
                 route.regexp = new RegExp("^" + route.pathname.replace(/\:(\w+)/g, "(?<$1>[^/]+)").replace(/\*/, "(?:.*)") + "(?:/?$)", "i");
             }
             const matches = pathname.match(route.regexp);
@@ -49,6 +53,7 @@ class Router {
                 this.params = {
                     ...matches?.groups,
                 };
+
                 return [...result, route];
             }
 
@@ -81,6 +86,7 @@ class Router {
     //  */
     static async handleNavigation(event) {
         performance.mark("mark-1");
+
         /**
          * @event onRouterCurrentEntryChange
          * @property {Object} event
@@ -88,6 +94,7 @@ class Router {
         this.emit("onRouterCurrentEntryChange", {});
         this.setController();
         const routes = this.get();
+
         /**
          * @event onRouterNavigate
          * @property {Object} event
@@ -118,6 +125,7 @@ class Router {
         performance.clearMarks("mark-1");
         performance.clearMarks("mark-2");
         performance.clearMeasures("measure-1");
+
         /**
          * @event onRouterNavigateSuccess
          * @property {Object} event
@@ -173,6 +181,7 @@ class Router {
                 selector = `md-outlet[name="${route.outlet}"]`;
                 target = document.body;
             }
+
             const callback = () => {
                 outlet = target.querySelector(selector);
 
@@ -181,6 +190,7 @@ class Router {
                     resolve(outlet);
                 }
             };
+
             observer = new MutationObserver(callback);
             observer.observe(target, {
                 subtree: true,
@@ -224,6 +234,7 @@ class Router {
                 if (error) reject(error);
                 else resolve();
             };
+
             this.controller.signal.addEventListener("abort", callback);
             route.beforeLoad(callback);
         });
@@ -287,12 +298,14 @@ class Router {
      * @type {Array}
      */
     static routes = [];
+
     // /**
     //  * The router options.
     //  * @static
     //  * @property {Object} event
     //  */
     static options = {};
+
     /**
      * @typedef {Object} RouterUseRoutes
      * @property {string} path - The path of the route.
@@ -301,10 +314,12 @@ class Router {
      * @property {Function} [beforeLoad] - The function to call before loading the component.
      * @property {RouterUseRoutes.<Array>} [children] - The child routes.
      */
+
     /**
      * @typedef {Object} RouterUseOptions
      * @property {boolean} [historyApiFallback=false] - Whether to use the History API for navigation.
      */
+
     /**
      * Initializes the router with the specified routes and options.
      * @static
@@ -317,6 +332,7 @@ class Router {
             historyApiFallback: false,
             ...options,
         };
+
         window.addEventListener("load", this.handleNavigation.bind(this));
 
         if (this.options.historyApiFallback) {
@@ -332,4 +348,5 @@ class Router {
         window.addEventListener("click", this.handleNavigate.bind(this));
     }
 }
+
 export { Router };

@@ -36,6 +36,7 @@ class DocsMain extends MdComponent {
     select(items) {
         items.forEach((item) => {
             item.selected = item.routerLink === Router.pathname;
+
             if (item.children?.length) {
                 this.select(item.children);
             }
@@ -45,14 +46,18 @@ class DocsMain extends MdComponent {
     sortItems(items) {
         items.sort((a, b) => {
             if (a.children && !b.children) return -1;
+
             if (!a.children && b.children) return 1;
+
             if (a.type && b.type) {
                 return a.type.localeCompare(b.type);
             }
             const labelComparison = a.label.localeCompare(b.label);
+
             if (labelComparison !== 0) return labelComparison;
             return 0;
         });
+
         items.forEach((item) => {
             if (item.children) {
                 this.sortItems(item.children);
@@ -64,6 +69,7 @@ class DocsMain extends MdComponent {
         super.connectedCallback();
         this.select(this.items);
         await this.updateComplete;
+
         this.layout = new LayoutObserver((item) => {
             if (item.name === "expanded") {
                 docsMainTopAppBar.open = false;
@@ -80,6 +86,7 @@ class DocsMain extends MdComponent {
 
     disconnectedCallback() {
         super.disconnectedCallback();
+
         if (this.layout) this.layout.destroy();
     }
 
@@ -94,6 +101,7 @@ class DocsMain extends MdComponent {
 
     handleDocsMainNavigationDrawerTreeItemClick(event) {
         const data = event.detail.event.currentTarget.data;
+
         if (docsMainNavigationDrawer.modal && data.routerLink) {
             docsMainNavigationDrawer.close();
         }

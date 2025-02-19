@@ -78,4 +78,5 @@ class Progress {
         this.remove();
     }
 }
+
 export { Progress };

@@ -7,10 +7,8 @@
     min-width: 0;
     max-width: 100%;
 }
-
 .md-segmented-button__button {
     --md-comp-button-density: var(--md-comp-segmented-button-density);
-
     &:first-child:not(:last-child) {
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;

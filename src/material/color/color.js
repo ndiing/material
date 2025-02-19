@@ -1,4 +1,5 @@
 import { argbFromHex, themeFromSourceColor, themeFromImage, applyTheme } from "@material/material-color-utilities";
+
 /**
  * Sets the theme based on the provided input and custom colors.
  * @param {HTMLImageElement|string} input - The input for generating the theme. Can be an HTMLImageElement for image-based themes or a hex color string.
@@ -31,4 +32,5 @@ async function setTheme(input, customColors) {
     const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     applyTheme(theme, { target: document.body, dark: systemDark });
 }
+
 export { setTheme };

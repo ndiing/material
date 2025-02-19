@@ -2,6 +2,7 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { Store } from "../store/store";
+
 /**
  * @extends MdComponent
  * @element md-tree
@@ -42,6 +43,7 @@ class MDTreeComponent extends MdComponent {
     render() {
         /* prettier-ignore */
         return html`
+
             ${this.itemsFlat.filter((item) => item.visible).map((item) => this.renderTreeItem(item))}
         `
     }
@@ -66,6 +68,7 @@ class MDTreeComponent extends MdComponent {
     flatten(items, parent, indent = 0) {
         let expanded;
         let itemsFlat = [];
+
         items.forEach((item) => {
             item.parent = parent;
             item.indent = indent;
@@ -112,16 +115,21 @@ class MDTreeComponent extends MdComponent {
 
     handleTreeKeydownArrowDown(event) {
         event.preventDefault();
+
         const visibleItems = this.itemsFlat.filter((item) => item.visible);
+
         const selectedIndex = visibleItems.findIndex((item) => item.selected);
 
         if (selectedIndex === visibleItems.filter((item) => item.visible).length - 1) return;
+
         const nextItem = visibleItems.find((item, index) => item.visible && index > selectedIndex);
+
         visibleItems.forEach((item, index) => {
             item.selected = item === nextItem;
         });
         this.requestUpdate();
         this.updateScroll();
+
         /**
          * @event onTreeKeydownArrowDown
          * @property {Object} event
@@ -131,16 +139,21 @@ class MDTreeComponent extends MdComponent {
 
     handleTreeKeydownArrowUp(event) {
         event.preventDefault();
+
         const visibleItems = this.itemsFlat.filter((item) => item.visible);
+
         const selectedIndex = visibleItems.findLastIndex((item) => item.selected);
 
         if (selectedIndex === 0) return;
+
         const nextIndex = visibleItems.findLastIndex((item, index) => item.visible && index < selectedIndex);
+
         visibleItems.forEach((item, index) => {
             item.selected = index === nextIndex;
         });
         this.requestUpdate();
         this.updateScroll();
+
         /**
          * @event onTreeKeydownArrowUp
          * @property {Object} event
@@ -150,22 +163,28 @@ class MDTreeComponent extends MdComponent {
 
     handleTreeKeydownArrowRight(event) {
         event.preventDefault();
+
         const selectedItem = this.itemsFlat.find((item) => item.selected);
 
         if (selectedItem.children?.length) {
             selectedItem.expanded = true;
             this.updateVisibility(selectedItem);
+
             const visibleItems = this.itemsFlat.filter((item) => item.visible);
+
             const selectedIndex = visibleItems.findIndex((item) => item.selected);
 
             if (selectedIndex === visibleItems.filter((item) => item.visible).length - 1) return;
+
             const nextIndex = visibleItems.findIndex((item, index) => item.visible && index > selectedIndex);
+
             visibleItems.forEach((item, index) => {
                 item.selected = index === nextIndex;
             });
             this.requestUpdate();
             this.updateScroll();
         }
+
         /**
          * @event onTreeKeydownArrowRight
          * @property {Object} event
@@ -175,6 +194,7 @@ class MDTreeComponent extends MdComponent {
 
     handleTreeKeydownArrowLeft(event) {
         event.preventDefault();
+
         const selectedItem = this.itemsFlat.find((item) => item.selected);
 
         if (selectedItem.expanded) {
@@ -189,6 +209,7 @@ class MDTreeComponent extends MdComponent {
             this.requestUpdate();
             this.updateScroll();
         }
+
         /**
          * @event onTreeKeydownArrowLeft
          * @property {Object} event
@@ -198,6 +219,7 @@ class MDTreeComponent extends MdComponent {
 
     handleTreeKeydownEnter(event) {
         event.preventDefault();
+
         /**
          * @event onTreeKeydownEnter
          * @property {Object} event
@@ -212,6 +234,7 @@ class MDTreeComponent extends MdComponent {
             else if (event.key === "ArrowRight") this.handleTreeKeydownArrowRight(event);
             else if (event.key === "ArrowDown") this.handleTreeKeydownArrowDown(event);
             else if (event.key === "Enter") this.handleTreeKeydownEnter(event);
+
             /**
              * @event onTreeKeydown
              * @property {Object} event
@@ -228,10 +251,12 @@ class MDTreeComponent extends MdComponent {
             data.expanded = !data.expanded;
             this.updateVisibility(data);
         }
+
         this.itemsFlat.forEach((item) => {
             item.selected = item === data;
         });
         this.requestUpdate();
+
         /**
          * @event onTreeItemClick
          * @property {Object} event

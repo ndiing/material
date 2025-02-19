@@ -2,6 +2,7 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
+
 /**
  * @extends MdComponent
  * @element md-navigation-rail
@@ -54,8 +55,10 @@ class MDNavigationRailComponent extends MdComponent {
             item.component || component,
             [
                 ["icon", () => this.renderIcon(item)],
+
                 ["icon-button", () => this.renderIconButton(item)],
             ],
+
             () => nothing,
         );
     }
@@ -92,6 +95,7 @@ class MDNavigationRailComponent extends MdComponent {
     show() {
         this.style.removeProperty("--md-comp-sheet-animation");
         this.open = true;
+
         /**
          * @event onNavigationRailShow
          * @property {Object} event
@@ -104,6 +108,7 @@ class MDNavigationRailComponent extends MdComponent {
     close() {
         this.style.removeProperty("--md-comp-sheet-animation");
         this.open = false;
+
         /**
          * @event onNavigationRailClose
          * @property {Object} event

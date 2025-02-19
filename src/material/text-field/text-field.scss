@@ -1,5 +1,4 @@
 @use "../mixins/mixins.scss";
-
 .md-text-field {
     --md-comp-text-field-density: 0;
     --md-comp-text-field-height: calc(56px + (var(--md-comp-text-field-density) * 4px));
@@ -9,14 +8,12 @@
     min-width: 0;
     position: relative;
 }
-
 .md-text-field__label {
     margin-bottom: 4px;
     padding: 0 16px;
     gap: 0 16px;
     @include mixins.typescale-body-small();
 }
-
 .md-text-field__container {
     display: flex;
     align-items: center;
@@ -27,12 +24,10 @@
     background-color: var(--md-sys-color-surface-container-highest);
     color: var(--md-sys-color-on-surface-variant);
 }
-
 .md-text-field__prefix {
     margin-right: -16px;
     @include mixins.typescale-body-large();
 }
-
 .md-text-field__native {
     appearance: none;
     background: transparent;
@@ -46,26 +41,22 @@
         color: inherit;
     }
 }
-
 .md-text-field__suffix {
     margin-left: -16px;
     @include mixins.typescale-body-large();
 }
-
 .md-text-field__icons {
     display: inline-flex;
     align-items: center;
     margin-left: -4px;
     gap: 0 12px;
 }
-
 .md-text-field__actions {
     display: inline-flex;
     align-items: center;
     margin-right: -4px;
     gap: 0 8px;
 }
-
 .md-text-field__wrapper {
     display: flex;
     align-items: center;
@@ -73,16 +64,13 @@
     gap: 0 16px;
     margin-top: 4px;
 }
-
 .md-text-field__text {
     @include mixins.typescale-body-small();
 }
-
 .md-text-field__counter {
     margin-left: auto;
     @include mixins.typescale-body-small();
 }
-
 .md-text-field--focus {
     .md-text-field__label {
         color: var(--md-sys-color-primary);
@@ -94,7 +82,6 @@
         }
     }
 }
-
 .md-text-field--error {
     .md-text-field__label {
         color: var(--md-sys-color-error);
@@ -118,7 +105,6 @@
         color: var(--md-sys-color-error);
     }
 }
-
 .md-text-field--filled {
     .md-text-field__container {
         border-radius: var(--md-sys-shape-corner-extra-small) var(--md-sys-shape-corner-extra-small) 0 0;
@@ -139,13 +125,11 @@
         .md-text-field__suffix {
             visibility: hidden;
         }
-
         .md-text-field__native {
             &::placeholder,
             &::-webkit-datetime-edit {
                 visibility: hidden;
             }
-
             &[type="file" i] {
                 color: transparent;
             }
@@ -170,13 +154,11 @@
             .md-text-field__suffix {
                 visibility: visible;
             }
-
             .md-text-field__native {
                 &::placeholder,
                 &::-webkit-datetime-edit {
                     visibility: visible;
                 }
-
                 &[type="file" i] {
                     color: inherit;
                 }
@@ -196,7 +178,6 @@
         }
     }
 }
-
 .md-text-field--outlined {
     .md-text-field__container {
         background-color: transparent;
@@ -220,7 +201,6 @@
             margin-bottom: 0;
             @include mixins.typescale-body-large();
             pointer-events: none;
-
             &::before {
                 content: "";
                 width: 0;
@@ -234,13 +214,11 @@
         .md-text-field__suffix {
             visibility: hidden;
         }
-
         .md-text-field__native {
             &::placeholder,
             &::-webkit-datetime-edit {
                 visibility: hidden;
             }
-
             &[type="file" i] {
                 color: transparent;
             }
@@ -257,7 +235,6 @@
                 margin-right: calc(16px - 4px);
                 top: -8px;
                 @include mixins.typescale-body-small();
-
                 &::before {
                     width: 100%;
                 }
@@ -266,13 +243,11 @@
             .md-text-field__suffix {
                 visibility: visible;
             }
-
             .md-text-field__native {
                 &::placeholder,
                 &::-webkit-datetime-edit {
                     visibility: visible;
                 }
-
                 &[type="file" i] {
                     color: inherit;
                 }
@@ -292,7 +267,6 @@
         }
     }
 }
-
 .md-text-field__native {
     &[type="color" i] {
         height: 24px;

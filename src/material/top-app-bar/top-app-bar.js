@@ -2,6 +2,7 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
+
 /**
  * @extends MdComponent
  * @element md-top-app-bar
@@ -63,6 +64,7 @@ class MDTopAppBarComponent extends MdComponent {
     show() {
         this.style.removeProperty("--md-comp-sheet-animation");
         this.open = true;
+
         /**
          * @event onTopAppBarShow
          * @property {Object} event
@@ -75,6 +77,7 @@ class MDTopAppBarComponent extends MdComponent {
     close() {
         this.style.removeProperty("--md-comp-sheet-animation");
         this.open = false;
+
         /**
          * @event onTopAppBarClose
          * @property {Object} event

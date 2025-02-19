@@ -17,6 +17,7 @@ class DocsPage extends MdComponent {
             <p>${item.tags?.length?html`The <code>${item.name}</code> interface represents a <code><code>&lt;${item.tags?.map(t=>t.text)?.join()}&gt;</code></code> element in the DOM. `:nothing}${item.classdesc}</p>
             ${item.description?html`
                 <h2>Constructor</h2>
+
                 <p><code>new ${item.name}(${item.params?.map(p=>p.name)?.join(', ')})</code></p>
                 <p>${item.description}</p>
                 ${item?.params?.length?html`
@@ -147,6 +148,7 @@ class DocsPage extends MdComponent {
                     ${data?.map(item=>html`
                         <tr>
                             ${columns?.map(th => html`
+
                                 <td>${(th.format||((value) => value))(item[th.name])}</td>
                             `)}
                         </tr>

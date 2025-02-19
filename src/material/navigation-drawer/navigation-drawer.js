@@ -2,6 +2,7 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
+
 /**
  * @extends MdComponent
  * @element md-navigation-drawer
@@ -59,8 +60,10 @@ class MDNavigationDrawerComponent extends MdComponent {
             item.component || component,
             [
                 ["icon", () => this.renderIcon(item)],
+
                 ["icon-button", () => this.renderIconButton(item)],
             ],
+
             () => nothing,
         );
     }
@@ -82,8 +85,10 @@ class MDNavigationDrawerComponent extends MdComponent {
             type,
             [
                 ["tree", () => this.renderTree(items)],
+
                 ["list", () => this.renderList(items)],
             ],
+
             () => this.renderNavigationList(items),
         );
     }
@@ -139,6 +144,7 @@ class MDNavigationDrawerComponent extends MdComponent {
 
         if (this.modal) this.navigationDrawerScrim.show();
         this.open = true;
+
         /**
          * @event onNavigationDrawerShow
          * @property {Object} event
@@ -153,6 +159,7 @@ class MDNavigationDrawerComponent extends MdComponent {
         this.open = false;
 
         if (this.navigationDrawerScrim.open) this.navigationDrawerScrim.close();
+
         /**
          * @event onNavigationDrawerClose
          * @property {Object} event
@@ -177,6 +184,7 @@ class MDNavigationDrawerComponent extends MdComponent {
 
     handleNavigationDrawerScrimClose(event) {
         if (this.open) this.close();
+
         /**
          * @event onNavigationDrawerScrimClose
          * @property {Object} event

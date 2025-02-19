@@ -1,10 +1,8 @@
 @use "../mixins/mixins.scss";
-
 .md-tabs {
     display: flex;
     align-items: center;
 }
-
 .md-tab {
     flex: 1;
     display: flex;
@@ -13,7 +11,6 @@
     padding: 8px 16px;
     min-height: 48px;
     gap: 0 8px;
-
     &[selected] {
         .md-tab__icon {
             color: var(--md-sys-color-primary);
@@ -25,55 +22,45 @@
         }
     }
 }
-
 .md-tab__labels {
     display: flex;
     flex-direction: column;
     min-width: 0;
     max-width: 100%;
 }
-
 .md-tab__label {
     @include mixins.typescale-label-large();
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
-
 .md-tab__sublabel {
     @include mixins.typescale-body-medium();
     height: var(--md-sys-typescale-body-medium-line-height);
     overflow: hidden;
     color: var(--md-sys-color-on-surface-variant);
 }
-
 .md-tab__badge {
     margin-left: -4px;
 }
-
 .md-tabs--left {
     --md-comp-tabs-indicator-transition-property: left, right;
-
     &::after {
         transition-property: var(--md-comp-tabs-indicator-transition-property);
         transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
         transition-duration: var(--md-sys-motion-duration-short3), var(--md-sys-motion-duration-medium2);
     }
 }
-
 .md-tabs--right {
     --md-comp-tabs-indicator-transition-property: left, right;
-
     &::after {
         transition-property: var(--md-comp-tabs-indicator-transition-property);
         transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
         transition-duration: var(--md-sys-motion-duration-medium2), var(--md-sys-motion-duration-short3);
     }
 }
-
 .md-tabs--primary {
     position: relative;
-
     &::after {
         content: "";
         position: absolute;
@@ -87,11 +74,9 @@
 
     .md-tab--with-icon {
         flex-direction: column;
-
         .md-tab__label {
             margin: 2px 0;
         }
-
         .md-tab__badge {
             margin-left: 0;
             margin-top: -8px;
@@ -99,13 +84,11 @@
             left: 50%;
             top: 50%;
             transform: translate3d(0%, -50%, 0);
-
             &:empty {
                 transform: translate3d(-50%, -50%, 0);
                 margin-left: 8px;
             }
         }
-
         .md-tab__icon {
             ~ .md-tab__labels {
                 ~ .md-tab__badge {
@@ -115,10 +98,8 @@
         }
     }
 }
-
 .md-tabs--secondary {
     position: relative;
-
     &::after {
         content: "";
         position: absolute;

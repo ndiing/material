@@ -28,7 +28,6 @@ class DemoTest extends MdComponent {
 
     async connectedCallback() {
         super.connectedCallback();
-
         await this.updateComplete;
 
         this.gesture = new Gesture(this.querySelector(".demo-gesture"), {});

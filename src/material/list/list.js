@@ -1,6 +1,7 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
+
 /**
  * @extends MdComponent
  * @element md-list
@@ -68,6 +69,7 @@ class MDListComponent extends MdComponent {
     render() {
         /* prettier-ignore */
         return html`
+
             ${this.items.map((item) => this.renderListItem(item))}
         `
     }
@@ -91,6 +93,7 @@ class MDListComponent extends MdComponent {
             data.selected = !data.selected;
         }
         this.requestUpdate();
+
         /**
          * @event onListItemClick
          * @property {Object} event
@@ -102,6 +105,7 @@ class MDListComponent extends MdComponent {
         const data = event.currentTarget.data;
         data.selected = !data.selected;
         this.requestUpdate();
+
         /**
          * @event onListItemCheckboxNativeInput
          * @property {Object} event
@@ -111,10 +115,12 @@ class MDListComponent extends MdComponent {
 
     handleListItemRadioButtonNativeInput(event) {
         const data = event.currentTarget.data;
+
         this.items.forEach((item) => {
             item.selected = item === data;
         });
         this.requestUpdate();
+
         /**
          * @event onListItemRadioButtonNativeInput
          * @property {Object} event
@@ -126,6 +132,7 @@ class MDListComponent extends MdComponent {
         const data = event.currentTarget.data;
         data.selected = !data.selected;
         this.requestUpdate();
+
         /**
          * @event onListItemSwitchNativeInput
          * @property {Object} event

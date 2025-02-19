@@ -17,20 +17,35 @@ function calculatePosition(placement, options = {}) {
     const cHeight = containerRect.height;
     const positions = {
         "top-end": () => ({ left: right - cWidth, top: top - cHeight - offset.bottom }),
+
         top: () => ({ left: left - (cWidth - width) / 2, top: top - cHeight - offset.bottom }),
+
         "top-start": () => ({ left, top: top - cHeight - offset.bottom }),
+
         "top-right": () => ({ left: right + offset.left, top: top - cHeight - offset.bottom }),
+
         "right-end": () => ({ left: right + offset.left, top: bottom - cHeight }),
+
         right: () => ({ left: right + offset.left, top: top - (cHeight - height) / 2 }),
+
         "right-start": () => ({ left: right + offset.left, top }),
+
         "bottom-right": () => ({ left: right + offset.left, top: bottom + offset.top }),
+
         "bottom-start": () => ({ left, top: bottom + offset.top }),
+
         bottom: () => ({ left: left - (cWidth - width) / 2, top: bottom + offset.top }),
+
         "bottom-end": () => ({ left: right - cWidth, top: bottom + offset.top }),
+
         "bottom-left": () => ({ left: left - cWidth - offset.right, top: bottom + offset.top }),
+
         "left-start": () => ({ left: left - cWidth - offset.right, top }),
+
         left: () => ({ left: left - cWidth - offset.right, top: top - (cHeight - height) / 2 }),
+
         "left-end": () => ({ left: left - cWidth - offset.right, top: bottom - cHeight }),
+
         "top-left": () => ({ left: left - cWidth - offset.right, top: top - cHeight - offset.bottom }),
     };
 
@@ -53,6 +68,7 @@ function parseOffset(offset) {
 
     return { top, right, bottom, left };
 }
+
 /**
  * @typedef {Object} PopperOptions
  * @property {HTMLElement} container - The container element to position.
@@ -61,6 +77,7 @@ function parseOffset(offset) {
  * @property {string} [offset="0"] - The offset values as a string (e.g., "10 20 30 40").
  * @property {Array<string>} placements - The array of placement types to try.
  */
+
 /**
  * Sets the position of a container element based on the provided options.
  * @param {PopperOptions} options - The options for setting the position.
@@ -101,4 +118,5 @@ function setPosition(options = {}) {
     container.style.left = `${bestLeft}px`;
     container.style.top = `${bestTop}px`;
 }
+
 export { calculatePosition, setPosition, parseOffset };

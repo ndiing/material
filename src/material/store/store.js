@@ -28,6 +28,7 @@ class Store {
      */
     sort(data, sorters) {
         if (!Array.isArray(sorters) || sorters.length === 0) return data;
+
         return data.sort((a, b) => {
             for (let sorter of sorters) {
                 let valueA = this.getNestedValue(a, sorter.name);
@@ -74,6 +75,7 @@ class Store {
      */
     search(data, q) {
         if (!q) return data;
+
         return data.filter((item) => this.deepSearch(item, q));
     }
 
@@ -95,6 +97,7 @@ class Store {
      */
     filter(data, filters) {
         if (!filters || !Array.isArray(filters) || filters.length === 0) return data;
+
         return data.filter((item) => {
             return filters.every((filter) => {
                 let { name, value, operator = "_eq" } = filter;
@@ -177,4 +180,5 @@ class Store {
         return { data, total };
     }
 }
+
 export { Store };

@@ -1,5 +1,4 @@
 @use "../mixins/mixins.scss";
-
 .md-menu {
     display: inline-flex;
     flex-direction: column;
@@ -17,7 +16,6 @@
     animation-name: var(--md-comp-menu-animation);
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
     animation-duration: var(--md-sys-motion-duration-short3);
-
     &[open] {
         opacity: 1;
         pointer-events: all;
@@ -26,7 +24,6 @@
         animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
     }
 }
-
 .md-menu {
     .md-navigation-list {
         .md-navigation-list__item {
@@ -34,7 +31,6 @@
             padding: 0 12px;
             gap: 0 12px;
         }
-
         .md-navigation-list__label {
             @include mixins.typescale-label-large();
         }

@@ -1,37 +1,31 @@
 @use "../mixins/mixins.scss";
-
 .md-bottom-sheet {
     display: inline-flex;
     flex-direction: column;
     background-color: var(--md-sys-color-surface);
 }
-
 .md-bottom-sheet__header {
     display: flex;
     align-items: center;
     padding: 24px;
     gap: 0 16px;
 }
-
 .md-bottom-sheet__icons {
     display: flex;
     align-items: center;
     gap: 0 16px;
 }
-
 .md-bottom-sheet__labels {
     flex: 1;
     display: flex;
     flex-direction: column;
 }
-
 .md-bottom-sheet__label {
     @include mixins.typescale-title-large();
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
-
 .md-bottom-sheet__sublabel {
     @include mixins.typescale-body-medium();
     white-space: nowrap;
@@ -39,14 +33,12 @@
     text-overflow: ellipsis;
     color: var(--md-sys-color-on-surface-variant);
 }
-
 .md-bottom-sheet__actions {
     display: flex;
     align-items: center;
     gap: 0 16px;
     margin-left: auto;
 }
-
 .md-bottom-sheet__wrapper {
     flex: 1;
     display: flex;
@@ -54,29 +46,24 @@
     max-height: 100%;
     min-height: 0;
 }
-
 .md-bottom-sheet__body {
     flex: 1;
     overflow: auto;
 }
-
 .md-bottom-sheet__footer {
     display: flex;
     align-items: center;
     padding: 24px;
 }
-
 .md-bottom-sheet__buttons {
     flex: 1;
     display: flex;
     align-items: center;
     gap: 0 8px;
 }
-
 .md-bottom-sheet__spacer {
     flex: 1;
 }
-
 .md-bottom-sheet--north {
     grid-area: north;
     overflow: auto;
@@ -86,7 +73,6 @@
     animation-name: var(--md-comp-bottom-sheet-animation);
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
     animation-duration: var(--md-sys-motion-duration-short3);
-
     &[open] {
         margin-top: 0;
         --md-comp-bottom-sheet-animation: bottom-sheet-north-out;
@@ -94,7 +80,6 @@
         animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
     }
 }
-
 .md-bottom-sheet {
     grid-area: south;
     height: 80px;
@@ -103,7 +88,6 @@
     animation-name: var(--md-comp-bottom-sheet-animation);
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
     animation-duration: var(--md-sys-motion-duration-short3);
-
     &[open] {
         margin-bottom: 0;
         --md-comp-bottom-sheet-animation: bottom-sheet-out;
@@ -111,13 +95,11 @@
         animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
     }
 }
-
 .md-bottom-sheet {
     background-color: var(--md-sys-color-surface-container-low);
     box-shadow: var(--md-sys-elevation-level1);
     position: absolute;
     z-index: 11;
-
     &.md-bottom-sheet {
         margin-bottom: 0;
         left: 0;
@@ -126,7 +108,6 @@
         border-radius: var(--md-sys-shape-corner-extra-large) var(--md-sys-shape-corner-extra-large) 0 0;
         transform: translate3d(0, 100%, 0);
         --md-comp-bottom-sheet-animation: bottom-sheet-modal-in;
-
         &[open] {
             transform: translate3d(0, 0, 0);
             --md-comp-bottom-sheet-animation: bottom-sheet-modal-out;

@@ -2,6 +2,7 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { MDTextFieldComponent } from "../text-field/text-field";
 import { closestScrollableElement, parseWeek, stringifyWeek } from "../util/util";
+
 /**
  * @extends MDTextFieldComponent
  * @element md-week-field

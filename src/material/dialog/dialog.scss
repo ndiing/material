@@ -1,5 +1,4 @@
 @use "../mixins/mixins.scss";
-
 .md-dialog {
     display: inline-flex;
     flex-direction: column;
@@ -20,7 +19,6 @@
     animation-name: var(--md-comp-dialog-animation);
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
     animation-duration: var(--md-sys-motion-duration-short3);
-
     .md-dialog__body {
         animation-name: dialog-body-in;
         animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
@@ -33,44 +31,37 @@
         --md-comp-dialog-animation: dialog-out;
         animation-name: var(--md-comp-dialog-animation);
         animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
-
         .md-dialog__body {
             animation-name: dialog-body-out;
             animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
         }
     }
 }
-
 .md-dialog__header {
     display: flex;
     align-items: center;
     padding: 24px;
     gap: 0 16px;
-
     + .md-dialog__wrapper {
         margin-top: -32px;
     }
 }
-
 .md-dialog__icons {
     display: flex;
     align-items: center;
     gap: 0 16px;
 }
-
 .md-dialog__labels {
     flex: 1;
     display: flex;
     flex-direction: column;
 }
-
 .md-dialog__label {
     @include mixins.typescale-headline-small();
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
-
 .md-dialog__sublabel {
     @include mixins.typescale-body-medium();
     white-space: nowrap;
@@ -78,14 +69,12 @@
     text-overflow: ellipsis;
     color: var(--md-sys-color-on-surface-variant);
 }
-
 .md-dialog__actions {
     display: flex;
     align-items: center;
     gap: 0 16px;
     margin-left: auto;
 }
-
 .md-dialog__wrapper {
     flex: 1;
     display: flex;
@@ -93,7 +82,6 @@
     max-height: 100%;
     min-height: 0;
 }
-
 .md-dialog__body {
     flex: 1;
     padding: 0 24px;
@@ -101,25 +89,21 @@
     overflow: auto;
     @include mixins.typescale-body-medium();
     color: var(--md-sys-color-on-surface-variant);
-
     + .md-dialog__footer {
         margin-top: -24px;
     }
 }
-
 .md-dialog__footer {
     display: flex;
     align-items: center;
     padding: 24px;
 }
-
 .md-dialog__buttons {
     flex: 1;
     display: flex;
     align-items: center;
     gap: 0 8px;
 }
-
 .md-dialog__spacer {
     flex: 1;
 }

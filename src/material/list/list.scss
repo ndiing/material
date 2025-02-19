@@ -1,27 +1,22 @@
 @use "../mixins/mixins.scss";
-
 .md-list {
     display: flex;
     flex-direction: column;
     padding: 8px 0;
 }
-
 .md-list__row {
     display: flex;
     flex-direction: column;
 }
-
 .md-list__item {
     display: flex;
     align-items: center;
     min-height: 56px;
     padding: 8px 16px;
     gap: 0 16px;
-
     &[selected] {
         background-color: var(--md-sys-color-secondary-container);
         color: var(--md-sys-color-on-secondary-container);
-
         .md-list__icon {
             color: var(--md-sys-color-primary);
             font-variation-settings:
@@ -32,22 +27,18 @@
         }
     }
 }
-
 .md-list__avatar {
     width: 40px;
     height: 40px;
 }
-
 .md-list__image {
     width: 56px;
     height: 56px;
 }
-
 .md-list__video {
     height: 64px;
     margin: 4px 0 4px -16px;
 }
-
 .md-list__labels {
     flex: 1;
     display: flex;
@@ -55,21 +46,18 @@
     min-width: 0;
     max-width: 100%;
 }
-
 .md-list__label {
     @include mixins.typescale-body-large();
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
-
 .md-list__sublabel {
     @include mixins.typescale-body-medium();
     height: var(--md-sys-typescale-body-medium-line-height);
     overflow: hidden;
     color: var(--md-sys-color-on-surface-variant);
 }
-
 .md-list__text {
     @include mixins.typescale-label-small();
     white-space: nowrap;
@@ -77,17 +65,14 @@
     text-overflow: ellipsis;
     color: var(--md-sys-color-on-surface-variant);
 }
-
 .md-list__item--two-line {
     min-height: 72px;
 }
-
 .md-list__item--three-line {
     align-items: flex-start;
     padding-top: 12px;
     padding-bottom: 12px;
     min-height: 88px;
-
     .md-list__sublabel {
         height: calc(var(--md-sys-typescale-body-medium-line-height) * 2);
     }

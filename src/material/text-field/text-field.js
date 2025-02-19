@@ -3,6 +3,7 @@ import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
 import { classMap } from "lit/directives/class-map.js";
+
 /**
  * @extends MdComponent
  * @element md-text-field
@@ -143,8 +144,10 @@ class MDTextFieldComponent extends MdComponent {
             item.component || component,
             [
                 ["icon", () => this.renderIcon(item)],
+
                 ["icon-button", () => this.renderIconButton(item)],
             ],
+
             () => nothing,
         );
     }
@@ -160,6 +163,7 @@ class MDTextFieldComponent extends MdComponent {
                           <div
                             class="md-text-field__icons"
                           >
+
                               ${this.icons.map((item) => this.renderComponent(item, "icon"))}
                           </div>
                       `
@@ -201,6 +205,7 @@ class MDTextFieldComponent extends MdComponent {
                           <div
                               class="md-text-field__actions"
                           >
+
                               ${actions.map((item) => this.renderComponent(item, "icon-button"))}
                           </div>
                       `
@@ -261,6 +266,7 @@ class MDTextFieldComponent extends MdComponent {
 
     handleTextFieldFocus(event) {
         this.classList.add("md-text-field--focus");
+
         /**
          * @event onTextFieldFocus
          * @property {Object} event
@@ -270,6 +276,7 @@ class MDTextFieldComponent extends MdComponent {
 
     handleTextFieldBlur(event) {
         this.classList.remove("md-text-field--focus");
+
         /**
          * @event onTextFieldBlur
          * @property {Object} event
@@ -279,6 +286,7 @@ class MDTextFieldComponent extends MdComponent {
 
     handleTextFieldInput(event) {
         this.updateValue();
+
         /**
          * @event onTextFieldInput
          * @property {Object} event
@@ -299,6 +307,7 @@ class MDTextFieldComponent extends MdComponent {
         event.preventDefault();
         this.error = this.textFieldNative.validationMessage;
         this.classList.toggle("md-text-field--error", !!this.error);
+
         /**
          * @event onTextFieldInvalid
          * @property {Object} event
@@ -311,6 +320,7 @@ class MDTextFieldComponent extends MdComponent {
         this.error = undefined;
         this.classList.toggle("md-text-field--populated", !!this.value);
         this.classList.toggle("md-text-field--error", !!this.error);
+
         /**
          * @event onTextFieldReset
          * @property {Object} event
@@ -324,6 +334,7 @@ class MDTextFieldComponent extends MdComponent {
         this.error = undefined;
         this.classList.toggle("md-text-field--populated", !!this.textFieldNative.value);
         this.classList.toggle("md-text-field--error", !!this.error);
+
         /**
          * @event onTextFieldIconButtonCancelClick
          * @property {Object} event
@@ -335,6 +346,7 @@ class MDTextFieldComponent extends MdComponent {
         const data = event.currentTarget.data;
 
         if (data.id === "cancel") return this.handleTextFieldIconButtonCancelClick(event);
+
         /**
          * @event onTextFieldIconButtonClick
          * @property {Object} event
@@ -344,6 +356,7 @@ class MDTextFieldComponent extends MdComponent {
 
     handleTextFieldClick(event) {
         event.preventDefault();
+
         /**
          * @event onTextFieldClick
          * @property {Object} event
@@ -355,6 +368,7 @@ class MDTextFieldComponent extends MdComponent {
         if (["datetime-local", "date", "time", "time", "month", "week"].includes(this.type) && event.code === "Space") {
             event.preventDefault();
         }
+
         /**
          * @event onTextFieldKeydown
          * @property {Object} event

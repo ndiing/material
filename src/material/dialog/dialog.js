@@ -2,6 +2,7 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
+
 /**
  * @extends MdComponent
  * @element md-dialog
@@ -72,10 +73,14 @@ class MDDialogComponent extends MdComponent {
             item.component || component,
             [
                 ["icon", () => this.renderIcon(item)],
+
                 ["icon-button", () => this.renderIconButton(item)],
+
                 ["button", () => this.renderButton(item)],
+
                 ["spacer", () => this.renderSpacer(item)],
             ],
+
             () => nothing,
         );
     }
@@ -113,6 +118,7 @@ class MDDialogComponent extends MdComponent {
         this.style.removeProperty("--md-comp-dialog-animation");
         this.dialogScrim.show();
         this.open = true;
+
         /**
          * @event onDialogShow
          * @property {Object} event
@@ -128,6 +134,7 @@ class MDDialogComponent extends MdComponent {
         this.style.removeProperty("--md-comp-dialog-animation");
         this.dialogScrim.close();
         this.open = false;
+
         /**
          * @event onDialogClose
          * @property {Object} event
@@ -144,6 +151,7 @@ class MDDialogComponent extends MdComponent {
 
     handleDialogScrimClose(event) {
         if (this.open) this.close();
+
         /**
          * @event onDialogScrimClose
          * @property {Object} event
@@ -154,6 +162,7 @@ class MDDialogComponent extends MdComponent {
     handleDialogShown(event) {
         if (event.animationName === "dialog-body-out") {
             this.removeEventListener("animationend", this.handleDialogShown);
+
             /**
              * @event onDialogShown
              * @property {Object} event
@@ -165,6 +174,7 @@ class MDDialogComponent extends MdComponent {
     handleDialogClosed(event) {
         if (event.animationName === "dialog-body-in") {
             this.removeEventListener("animationend", this.handleDialogClosed);
+
             /**
              * @event onDialogClosed
              * @property {Object} event

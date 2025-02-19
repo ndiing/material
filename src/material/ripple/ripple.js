@@ -10,6 +10,7 @@ class Ripple {
      * @property {boolean} [unbounded=false] - Whether the ripple effect is unbounded.
      * @property {HTMLElement|string} [container] - The container element or selector for the ripple effect.
      */
+
     /**
      * Creates an instance of the Ripple class.
      * @param {HTMLElement} host - The host element.
@@ -25,6 +26,7 @@ class Ripple {
             container: undefined,
             ...options,
         };
+
         this.init();
     }
 
@@ -163,4 +165,5 @@ class Ripple {
         this.container.classList.remove("md-ripple--focus");
     }
 }
+
 export { Ripple };

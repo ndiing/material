@@ -1,5 +1,6 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
+
 /**
  * @extends MdComponent
  * @element md-navigation-list-row

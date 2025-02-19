@@ -2,6 +2,7 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { Ripple } from "../ripple/ripple";
+
 /**
  * @extends MdComponent
  * @element md-list-item
@@ -135,6 +136,7 @@ class MDListItemComponent extends MdComponent {
                 this.classList.add("md-list__item--two-line");
             }
         }
+
         this.ripple = new Ripple(this, this.rippleOptions);
     }
 

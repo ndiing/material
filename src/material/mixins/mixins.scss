@@ -1,5 +1,4 @@
 /* typescale */
-
 @mixin typescale-display-large() {
     font-family: var(--md-sys-typescale-display-large-font);
     font-weight: var(--md-sys-typescale-display-large-weight);
@@ -7,7 +6,6 @@
     letter-spacing: var(--md-sys-typescale-display-large-tracking);
     line-height: var(--md-sys-typescale-display-large-line-height);
 }
-
 @mixin typescale-display-medium() {
     font-family: var(--md-sys-typescale-display-medium-font);
     font-weight: var(--md-sys-typescale-display-medium-weight);
@@ -15,7 +13,6 @@
     letter-spacing: var(--md-sys-typescale-display-medium-tracking);
     line-height: var(--md-sys-typescale-display-medium-line-height);
 }
-
 @mixin typescale-display-small() {
     font-family: var(--md-sys-typescale-display-small-font);
     font-weight: var(--md-sys-typescale-display-small-weight);
@@ -23,7 +20,6 @@
     letter-spacing: var(--md-sys-typescale-display-small-tracking);
     line-height: var(--md-sys-typescale-display-small-line-height);
 }
-
 @mixin typescale-headline-large() {
     font-family: var(--md-sys-typescale-headline-large-font);
     font-weight: var(--md-sys-typescale-headline-large-weight);
@@ -31,7 +27,6 @@
     letter-spacing: var(--md-sys-typescale-headline-large-tracking);
     line-height: var(--md-sys-typescale-headline-large-line-height);
 }
-
 @mixin typescale-headline-medium() {
     font-family: var(--md-sys-typescale-headline-medium-font);
     font-weight: var(--md-sys-typescale-headline-medium-weight);
@@ -39,7 +34,6 @@
     letter-spacing: var(--md-sys-typescale-headline-medium-tracking);
     line-height: var(--md-sys-typescale-headline-medium-line-height);
 }
-
 @mixin typescale-headline-small() {
     font-family: var(--md-sys-typescale-headline-small-font);
     font-weight: var(--md-sys-typescale-headline-small-weight);
@@ -47,7 +41,6 @@
     letter-spacing: var(--md-sys-typescale-headline-small-tracking);
     line-height: var(--md-sys-typescale-headline-small-line-height);
 }
-
 @mixin typescale-title-large() {
     font-family: var(--md-sys-typescale-title-large-font);
     font-weight: var(--md-sys-typescale-title-large-weight);
@@ -55,7 +48,6 @@
     letter-spacing: var(--md-sys-typescale-title-large-tracking);
     line-height: var(--md-sys-typescale-title-large-line-height);
 }
-
 @mixin typescale-title-medium() {
     font-family: var(--md-sys-typescale-title-medium-font);
     font-weight: var(--md-sys-typescale-title-medium-weight);
@@ -63,7 +55,6 @@
     letter-spacing: var(--md-sys-typescale-title-medium-tracking);
     line-height: var(--md-sys-typescale-title-medium-line-height);
 }
-
 @mixin typescale-title-small() {
     font-family: var(--md-sys-typescale-title-small-font);
     font-weight: var(--md-sys-typescale-title-small-weight);
@@ -71,7 +62,6 @@
     letter-spacing: var(--md-sys-typescale-title-small-tracking);
     line-height: var(--md-sys-typescale-title-small-line-height);
 }
-
 @mixin typescale-body-large() {
     font-family: var(--md-sys-typescale-body-large-font);
     font-weight: var(--md-sys-typescale-body-large-weight);
@@ -79,7 +69,6 @@
     letter-spacing: var(--md-sys-typescale-body-large-tracking);
     line-height: var(--md-sys-typescale-body-large-line-height);
 }
-
 @mixin typescale-body-medium() {
     font-family: var(--md-sys-typescale-body-medium-font);
     font-weight: var(--md-sys-typescale-body-medium-weight);
@@ -87,7 +76,6 @@
     letter-spacing: var(--md-sys-typescale-body-medium-tracking);
     line-height: var(--md-sys-typescale-body-medium-line-height);
 }
-
 @mixin typescale-body-small() {
     font-family: var(--md-sys-typescale-body-small-font);
     font-weight: var(--md-sys-typescale-body-small-weight);
@@ -95,7 +83,6 @@
     letter-spacing: var(--md-sys-typescale-body-small-tracking);
     line-height: var(--md-sys-typescale-body-small-line-height);
 }
-
 @mixin typescale-label-large() {
     font-family: var(--md-sys-typescale-label-large-font);
     font-weight: var(--md-sys-typescale-label-large-weight);
@@ -103,7 +90,6 @@
     letter-spacing: var(--md-sys-typescale-label-large-tracking);
     line-height: var(--md-sys-typescale-label-large-line-height);
 }
-
 @mixin typescale-label-medium() {
     font-family: var(--md-sys-typescale-label-medium-font);
     font-weight: var(--md-sys-typescale-label-medium-weight);
@@ -111,7 +97,6 @@
     letter-spacing: var(--md-sys-typescale-label-medium-tracking);
     line-height: var(--md-sys-typescale-label-medium-line-height);
 }
-
 @mixin typescale-label-small() {
     font-family: var(--md-sys-typescale-label-small-font);
     font-weight: var(--md-sys-typescale-label-small-weight);
@@ -120,7 +105,6 @@
     line-height: var(--md-sys-typescale-label-small-line-height);
 }
 /* ripple */
-
 @mixin ripple() {
     position: relative;
     --md-comp-ripple-radius: 141.4213562373095%;
@@ -128,7 +112,6 @@
     --md-comp-ripple-top: 50%;
     --md-comp-ripple-x: 0%;
     --md-comp-ripple-y: 0%;
-
     &:after {
         content: "";
         width: var(--md-comp-ripple-radius);
@@ -144,17 +127,14 @@
         opacity: 0;
     }
 }
-
 @mixin ripple-bounded() {
     overflow: hidden;
 }
-
 @mixin ripple-trigger() {
     cursor: pointer;
     user-select: none;
     -webkit-tap-highlight-color: transparent;
 }
-
 @mixin ripple-focus() {
     &::after {
         opacity: 10%;
@@ -163,56 +143,47 @@
         animation-duration: var(--md-sys-motion-duration-short3);
     }
 }
-
 @mixin ripple-press() {
     &::after {
         opacity: 10%;
         animation-name: none;
     }
 }
-
 @mixin ripple-hover() {
     &::after {
         opacity: 8%;
     }
 }
-
 @mixin ripple-drag() {
     &::after {
         opacity: 16%;
     }
 }
-
 @mixin ripple-disabled() {
     pointer-events: none;
 }
 /* layout */
-
 @mixin layout-compact() {
     @media (max-width: 599px) {
         @content;
     }
 }
-
 @mixin layout-medium() {
     @media (min-width: 600px) and (max-width: 839px) {
         @content;
     }
 }
-
 @mixin layout-expanded() {
     @media (min-width: 840px) {
         @content;
     }
 }
 /* scheme */
-
 @mixin scheme-light() {
     @media (prefers-color-scheme: light) {
         @content;
     }
 }
-
 @mixin scheme-dark() {
     @media (prefers-color-scheme: dark) {
         @content;

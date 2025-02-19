@@ -2,6 +2,7 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
+
 /**
  * @extends MdComponent
  * @element md-bottom-sheet
@@ -72,10 +73,14 @@ class MDBottomSheetComponent extends MdComponent {
     renderComponent(item, component = "icon") {
         const components = [
             ["icon", () => this.renderIcon(item)],
+
             ["icon-button", () => this.renderIconButton(item)],
+
             ["button", () => this.renderButton(item)],
+
             ["spacer", () => this.renderSpacer(item)],
         ];
+
         return choose(item.component || component, components, () => nothing);
     }
 
@@ -121,6 +126,7 @@ class MDBottomSheetComponent extends MdComponent {
         this.open = true;
 
         if (this.modal) this.bottomSheetScrim.show();
+
         /**
          * @event onBottomSheetShow
          * @property {Object} event
@@ -137,6 +143,7 @@ class MDBottomSheetComponent extends MdComponent {
         this.open = false;
 
         if (this.bottomSheetScrim.open) this.bottomSheetScrim.close();
+
         /**
          * @event onBottomSheetClose
          * @property {Object} event
@@ -154,6 +161,7 @@ class MDBottomSheetComponent extends MdComponent {
     handleBottomSheetShown(event) {
         if (event.animationName === "bottom-sheet-modal-out" || event.animationName === "bottom-sheet-out") {
             this.removeEventListener("animationend", this.handleBottomSheetShown);
+
             /**
              * @event onBottomSheetShown
              * @property {Object} event
@@ -165,6 +173,7 @@ class MDBottomSheetComponent extends MdComponent {
     handleBottomSheetClosed(event) {
         if (event.animationName === "bottom-sheet-modal-in" || event.animationName === "bottom-sheet-in") {
             this.removeEventListener("animationend", this.handleBottomSheetClosed);
+
             /**
              * @event onBottomSheetClosed
              * @property {Object} event
@@ -175,6 +184,7 @@ class MDBottomSheetComponent extends MdComponent {
 
     handleBottomSheetScrimClose(event) {
         if (this.open) this.close();
+
         /**
          * @event onBottomSheetScrimClose
          * @property {Object} event

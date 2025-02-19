@@ -1,5 +1,4 @@
 @use "../material/mixins/mixins.scss";
-
 docs-page {
     h1 {
         margin-bottom: 1em;
@@ -22,6 +21,7 @@ docs-page {
         margin-bottom: 1em;
         @include mixins.typescale-body-large();
     }
+
     pre,
     code {
         padding: 0 4px;
@@ -45,10 +45,8 @@ docs-page {
         margin-bottom: 1em;
         border-radius: var(--md-sys-shape-corner-medium);
         border: 1px solid var(--md-sys-color-outline-variant);
-
         // thead {
         // }
-
         tbody {
             tr {
                 &:last-child {
@@ -58,31 +56,25 @@ docs-page {
                 }
             }
         }
-
         // tfoot {
         // }
-
         // tr {
         // }
-
         th {
             text-align: left;
             padding: 16px;
             background-color: var(--md-sys-color-surface-container-highest);
             border-bottom: 1px solid var(--md-sys-color-outline-variant);
             border-right: 1px solid var(--md-sys-color-outline-variant);
-
             &:last-child {
                 border-right: 0;
                 width: 100%;
             }
         }
-
         td {
             padding: 16px;
             border-bottom: 1px solid var(--md-sys-color-outline-variant);
             border-right: 1px solid var(--md-sys-color-outline-variant);
-
             &:last-child {
                 border-right: 0;
             }

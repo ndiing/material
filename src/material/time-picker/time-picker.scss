@@ -1,5 +1,4 @@
 @use "../mixins/mixins.scss";
-
 .md-time-picker {
     --md-comp-time-picker-density: -2;
     --md-comp-time-picker-list-item-height: calc(48px + (var(--md-comp-time-picker-density) * 4px));
@@ -23,7 +22,6 @@
     animation-name: var(--md-comp-time-picker-animation);
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
     animation-duration: var(--md-sys-motion-duration-short3);
-
     .md-time-picker__body {
         animation-name: time-picker-body-in;
         animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
@@ -36,40 +34,34 @@
         --md-comp-time-picker-animation: time-picker-out;
         animation-name: var(--md-comp-time-picker-animation);
         animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
-
         .md-time-picker__body {
             animation-name: time-picker-body-out;
             animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
         }
     }
 }
-
 .md-time-picker__header {
     display: flex;
     align-items: center;
     padding: 12px;
     gap: 0 16px;
 }
-
 .md-time-picker__icons {
     display: flex;
     align-items: center;
     gap: 0 16px;
 }
-
 .md-time-picker__labels {
     flex: 1;
     display: flex;
     flex-direction: column;
 }
-
 .md-time-picker__label {
     @include mixins.typescale-body-medium();
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
-
 .md-time-picker__sublabel {
     @include mixins.typescale-body-medium();
     white-space: nowrap;
@@ -77,14 +69,12 @@
     text-overflow: ellipsis;
     color: var(--md-sys-color-on-surface-variant);
 }
-
 .md-time-picker__actions {
     display: flex;
     align-items: center;
     gap: 0 16px;
     margin-left: auto;
 }
-
 .md-time-picker__wrapper {
     flex: 1;
     display: flex;
@@ -92,43 +82,36 @@
     max-height: 100%;
     min-height: 0;
 }
-
 .md-time-picker__body {
     flex: 1;
     @include mixins.typescale-body-medium();
     color: var(--md-sys-color-on-surface-variant);
 }
-
 .md-time-picker__footer {
     display: flex;
     align-items: center;
     padding: 12px;
 }
-
 .md-time-picker__buttons {
     flex: 1;
     display: flex;
     align-items: center;
     gap: 0 8px;
 }
-
 .md-time-picker__spacer {
     flex: 1;
 }
-
 .md-time-picker__items {
     display: flex;
     width: var(--md-comp-time-picker-container-width);
     height: var(--md-comp-time-picker-container-height);
     overflow: hidden;
 }
-
 .md-time-picker__item {
     flex: 1 0 100%;
     overflow: auto;
     // transform: translate3d(calc((0 - var(--md-comp-time-picker-index)) * 100%), 0, 0);
 }
-
 .md-time-picker__circle {
     position: relative;
     width: 256px;
@@ -136,7 +119,6 @@
     margin: calc((var(--md-comp-time-picker-container-height) - 256px) / 2) calc((var(--md-comp-time-picker-container-width) - 256px) / 2);
     border-radius: calc(256px / 2);
     background-color: var(--md-sys-color-surface-container-highest);
-
     &::before {
         content: "";
         width: 8px;
@@ -149,7 +131,6 @@
         top: 50%;
     }
 }
-
 .md-time-picker__circle-item {
     --md-comp-time-picker-circle-item-offset: calc((256px / 2) - (var(--md-comp-time-picker-circle-item-height) / 2));
     --md-comp-time-picker-circle-item-radius: calc(var(--md-comp-time-picker-circle-item-offset) - 4px);
@@ -165,7 +146,6 @@
     border-radius: calc(var(--md-comp-time-picker-circle-item-height) / 2);
     @include mixins.ripple();
     @include mixins.ripple-trigger();
-
     &:focus {
         @include mixins.ripple-focus();
     }
@@ -193,7 +173,6 @@
     &[selected] {
         background-color: var(--md-sys-color-primary);
         color: var(--md-sys-color-on-primary);
-
         &::before {
             opacity: 1;
         }
@@ -201,7 +180,6 @@
 
     --md-comp-ripple-radius: 100%;
     position: absolute;
-
     &::before {
         content: "";
         height: 2px;
@@ -213,24 +191,20 @@
         top: 50%;
     }
 }
-
 .md-time-picker__circle--hours {
     .md-time-picker__circle-item {
         @for $i from 1 through 12 {
             &:nth-child(#{$i}) {
                 left: calc(var(--md-comp-time-picker-circle-item-radius) * cos((($i - 4) / 12) * 2 * pi) + var(--md-comp-time-picker-circle-item-offset));
                 top: calc(var(--md-comp-time-picker-circle-item-radius) * sin((($i - 4) / 12) * 2 * pi) + var(--md-comp-time-picker-circle-item-offset));
-
                 &::before {
                     width: var(--md-comp-time-picker-circle-item-radius);
                     transform: rotate(calc((360deg / 12) * ($i - 4)));
                 }
             }
-
             &:nth-child(#{$i + 12}) {
                 left: calc(var(--md-comp-time-picker-circle-item-radius2) * cos((($i - 4) / 12) * 2 * pi) + var(--md-comp-time-picker-circle-item-offset));
                 top: calc(var(--md-comp-time-picker-circle-item-radius2) * sin((($i - 4) / 12) * 2 * pi) + var(--md-comp-time-picker-circle-item-offset));
-
                 &::before {
                     width: var(--md-comp-time-picker-circle-item-radius2);
                     transform: rotate(calc((360deg / 12) * ($i - 4)));
@@ -239,20 +213,17 @@
         }
     }
 }
-
 .md-time-picker__circle--minutes {
     .md-time-picker__circle-item {
         @for $i from 1 through 60 {
             &:nth-child(#{$i}) {
                 left: calc(var(--md-comp-time-picker-circle-item-radius) * cos((($i - 16) / 60) * 2 * pi) + var(--md-comp-time-picker-circle-item-offset));
                 top: calc(var(--md-comp-time-picker-circle-item-radius) * sin((($i - 16) / 60) * 2 * pi) + var(--md-comp-time-picker-circle-item-offset));
-
                 &::before {
                     width: var(--md-comp-time-picker-circle-item-radius);
                     transform: rotate(calc((360deg / 60) * ($i - 16)));
                 }
             }
-
             &:nth-child(#{$i}) {
                 @if ((($i - 16) % 5) != 0) {
                     height: var(--md-comp-time-picker-circle-item-height2);

@@ -1,6 +1,7 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { Ripple } from "../ripple/ripple";
+
 /**
  * @extends MdComponent
  * @element md-chip
@@ -53,6 +54,7 @@ class MDChipComponent extends MdComponent {
         super.connectedCallback();
         this.classList.add("md-chip");
         await this.updateComplete;
+
         this.ripple = new Ripple(this, {});
     }
 

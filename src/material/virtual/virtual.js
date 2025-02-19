@@ -10,6 +10,7 @@ class Virtual {
      * @property {number} [nodePadding=2] - The number of nodes to pad above and below the visible area.
      * @property {Array} [data=[]] - The initial data for the list.
      */
+
     /**
      * Creates an instance of the Virtual class.
      * @param {HTMLElement} host - The host element containing the virtual scrollable list.
@@ -24,6 +25,7 @@ class Virtual {
             data: [],
             ...options,
         };
+
         this.init();
     }
 
@@ -42,6 +44,7 @@ class Virtual {
             if (document.activeElement !== document.body) {
                 document.activeElement.blur();
             }
+
             /**
              * @event onVirtualScroll
              * @type {Object}
@@ -70,6 +73,7 @@ class Virtual {
         const end = start + limit;
         const translateY = start * rowHeight;
         this.items = this.host.querySelectorAll(this.options.item);
+
         this.items.forEach((item) => {
             item.style.setProperty("transform", "translate3d(0," + translateY + "px,0)");
             // if(this.options.rowHeight!==item.clientHeight){
@@ -149,4 +153,5 @@ class Virtual {
         this.host.removeEventListener("scroll", this.handleVirtualScroll);
     }
 }
+
 export { Virtual };

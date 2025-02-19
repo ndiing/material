@@ -2,6 +2,7 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
+
 /**
  * @extends MdComponent
  * @element md-side-sheet
@@ -72,10 +73,14 @@ class MDSideSheetComponent extends MdComponent {
     renderComponent(item, component = "icon") {
         const components = [
             ["icon", () => this.renderIcon(item)],
+
             ["icon-button", () => this.renderIconButton(item)],
+
             ["button", () => this.renderButton(item)],
+
             ["spacer", () => this.renderSpacer(item)],
         ];
+
         return choose(item.component || component, components, () => nothing);
     }
 
@@ -121,6 +126,7 @@ class MDSideSheetComponent extends MdComponent {
         this.open = true;
 
         if (this.modal) this.sideSheetScrim.show();
+
         /**
          * @event onSideSheetShow
          * @property {Object} event
@@ -137,6 +143,7 @@ class MDSideSheetComponent extends MdComponent {
         this.open = false;
 
         if (this.sideSheetScrim.open) this.sideSheetScrim.close();
+
         /**
          * @event onSideSheetClose
          * @property {Object} event
@@ -154,6 +161,7 @@ class MDSideSheetComponent extends MdComponent {
     handleSideSheetShown(event) {
         if (event.animationName === "side-sheet-modal-out" || event.animationName === "side-sheet-out") {
             this.removeEventListener("animationend", this.handleSideSheetShown);
+
             /**
              * @event onSideSheetShown
              * @property {Object} event
@@ -165,6 +173,7 @@ class MDSideSheetComponent extends MdComponent {
     handleSideSheetClosed(event) {
         if (event.animationName === "side-sheet-modal-in" || event.animationName === "side-sheet-in") {
             this.removeEventListener("animationend", this.handleSideSheetClosed);
+
             /**
              * @event onSideSheetClosed
              * @property {Object} event
@@ -175,6 +184,7 @@ class MDSideSheetComponent extends MdComponent {
 
     handleSideSheetScrimClose(event) {
         if (this.open) this.close();
+
         /**
          * @event onSideSheetScrimClose
          * @property {Object} event

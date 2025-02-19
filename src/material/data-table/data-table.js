@@ -2,6 +2,7 @@ import { html, nothing } from "lit";
 import { MdComponent, Mixins } from "../component/component";
 import { styleMap } from "lit/directives/style-map.js";
 import { Store } from "../store/store";
+
 /**
  * MDDataTableComponent class responsible for displaying a data table.
  * @extends MdComponent
@@ -16,18 +17,21 @@ class MDDataTableComponent extends MdComponent {
      * @property {number} width - The width of the header.
      * @property {boolean} sortable - Indicates if the header is sortable.
      */
+
     /**
      * @typedef {Object} MDDataTableComponentBodies
      * @property {string} name - The name of the body.
      * @property {boolean} rightAligned - Indicates if the body is right-aligned.
      * @property {number} width - The width of the body.
      */
+
     /**
      * @typedef {Object} MDDataTableComponentFooters
      * @property {string} label - The label of the footer.
      * @property {boolean} rightAligned - Indicates if the footer is right-aligned.
      * @property {number} width - The width of the footer.
      */
+
     /**
      * The properties of the component.
      * @property {MDDataTableComponentHeaders[]} headers - The headers of the table.
@@ -98,6 +102,7 @@ class MDDataTableComponent extends MdComponent {
     constructor() {
         super();
         this.storeOptions = {};
+
         this.store = new Store();
     }
 
@@ -282,6 +287,7 @@ class MDDataTableComponent extends MdComponent {
 
     handleDataTableKeydown(event) {
         if (event.ctrlKey && event.key === "a") this.handleDataTableKeydownCtrlA(event);
+
         /**
          * @event onDataTableKeydown
          * @type {Object}
@@ -292,10 +298,12 @@ class MDDataTableComponent extends MdComponent {
 
     handleDataTableKeydownCtrlA(event) {
         event.preventDefault();
+
         this.dataStore.forEach((item) => {
             item.selected = true;
         });
         this.requestUpdate();
+
         /**
          * @event onDataTableKeydownCtrlA
          * @type {Object}
@@ -312,6 +320,7 @@ class MDDataTableComponent extends MdComponent {
         } else if (data.sortable && event.target.closest(".md-data-table__section--center")) {
             return this.handleDataTableNativeHeaderSortableClick(event);
         }
+
         /**
          * @event onDataTableNativeHeaderClick
          * @type {Object}
@@ -333,6 +342,7 @@ class MDDataTableComponent extends MdComponent {
             if (this.swapIndex) {
                 [this.prevIndex, this.currIndex] = [this.currIndex, this.prevIndex];
             }
+
             this.dataStore.forEach((item, index) => {
                 item.selected = index >= this.prevIndex && index <= this.currIndex;
             });
@@ -350,6 +360,7 @@ class MDDataTableComponent extends MdComponent {
             });
         }
         this.requestUpdate();
+
         /**
          * @event onDataTableNativeBodyClick
          * @type {Object}
@@ -362,10 +373,12 @@ class MDDataTableComponent extends MdComponent {
         event.stopPropagation();
         const data = event.currentTarget.data;
         const selected = !this.checked || this.indeterminate;
+
         this.dataStore.forEach((item) => {
             item.selected = selected;
         });
         this.requestUpdate();
+
         /**
          * @event onDataTableNativeHeaderCheckboxClick
          * @type {Object}
@@ -379,9 +392,11 @@ class MDDataTableComponent extends MdComponent {
         const data = event.currentTarget.data;
         data.sortIcon = this.sortIcons[data.order];
         data.order = this.orders[data.order];
+
         this.storeOptions.sorters = this.headers.flat().filter((item) => item.order);
         this.load();
         this.requestUpdate();
+
         /**
          * @event onDataTableNativeHeaderSortableClick
          * @type {Object}
@@ -395,6 +410,7 @@ class MDDataTableComponent extends MdComponent {
         const data = event.currentTarget.dataBody;
         data.selected = !data.selected;
         this.requestUpdate();
+
         /**
          * @event onDataTableNativeDataCheckboxClick
          * @type {Object}
@@ -409,6 +425,7 @@ class MDDataTableComponent extends MdComponent {
         if (data.checkbox) {
             return this.handleDataTableNativeDataCheckboxClick(event);
         }
+
         /**
          * @event onDataTableNativeDataClick
          * @type {Object}

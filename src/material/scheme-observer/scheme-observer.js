@@ -2,6 +2,7 @@ const defaultItems = [
     { name: "light", media: window.matchMedia("(prefers-color-scheme: light)") },
     { name: "dark", media: window.matchMedia("(prefers-color-scheme: dark)") },
 ];
+
 /**
  * SchemeObserver class responsible for managing color scheme changes based on media queries.
  */
@@ -16,6 +17,7 @@ class SchemeObserver {
     }
 
     // /**
+
     //  * Handles color scheme change events by destroying the current scheme and initializing a new one.
     //  */
     handleChange() {
@@ -29,6 +31,7 @@ class SchemeObserver {
      */
     init(items = defaultItems) {
         if (!this.items) this.items = items;
+
         this.item = this.items.find((item) => item.media.matches);
         this.callback(this.item);
         this.item.media.addEventListener("change", this.handleChange);
@@ -42,4 +45,5 @@ class SchemeObserver {
         this.item = undefined;
     }
 }
+
 export { SchemeObserver };

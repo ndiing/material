@@ -8,7 +8,6 @@
     position: relative;
     --md-comp-switch-thumb-transition-property: left, width, height;
 }
-
 .md-switch__native {
     appearance: none;
     position: absolute;
@@ -17,12 +16,10 @@
     right: 0;
     bottom: 0;
     z-index: 1;
-
     &:checked {
         + .md-switch__track {
             border-color: var(--md-sys-color-primary);
             background-color: var(--md-sys-color-primary);
-
             .md-switch__thumb {
                 width: 24px;
                 height: 24px;
@@ -43,7 +40,6 @@
                 left: 0px;
             }
         }
-
         &:checked {
             + .md-switch__track {
                 .md-switch__thumb {
@@ -53,7 +49,6 @@
         }
     }
 }
-
 .md-switch__track {
     display: inline-flex;
     align-items: center;
@@ -65,7 +60,6 @@
     border-radius: 16px;
     position: relative;
 }
-
 .md-switch__thumb {
     display: inline-flex;
     align-items: center;
@@ -81,7 +75,6 @@
     transition-property: var(--md-comp-switch-thumb-transition-property);
     transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
     transition-duration: var(--md-sys-motion-duration-short3);
-
     &.md-ripple {
         &::after {
             width: 40px;
@@ -95,7 +88,6 @@
         left: 2px;
     }
 }
-
 .md-switch__icon {
     width: 16px;
     height: 16px;

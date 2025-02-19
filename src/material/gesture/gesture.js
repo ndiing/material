@@ -7,6 +7,7 @@ class Gesture {
             updateStyle: true,
             ...options,
         };
+
         this.init();
     }
 
@@ -22,6 +23,7 @@ class Gesture {
         this.startY = event.clientY - this.endY;
         this.startWidth = this.host.clientWidth;
         this.startHeight = this.host.clientHeight;
+
         this.timeout = setTimeout(() => {
             this.emit("onLongPress");
             this.hold = true;
@@ -125,6 +127,7 @@ class Gesture {
         this.host.classList.add("md-gesture");
         this.resizableElement = document.createElement("div");
         this.resizableElement.classList.add("md-resizable");
+
         this.options.resizeHandles.forEach((resizeHandle) => {
             const resizeHandleElement = document.createElement("div");
             resizeHandleElement.classList.add("md-resizable__handle", `md-resizable__handle--${resizeHandle}`);
@@ -143,4 +146,5 @@ class Gesture {
         this.host.classList.remove("md-gesture");
     }
 }
+
 export { Gesture };

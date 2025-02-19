@@ -16,12 +16,13 @@
 @use "./fab/fab.scss";
 @use "./icon-button/icon-button.scss";
 @use "./segmented-button/segmented-button.scss";
-@use "./chips/chips.scss";
 
+@use "./chips/chips.scss";
 @use "./list/list.scss";
 @use "./tree/tree.scss";
 @use "./navigation-list/navigation-list.scss";
 @use "./tabs/tabs.scss";
+
 @use "./card/card.scss";
 @use "./scrim/scrim.scss";
 @use "./dialog/dialog.scss";
@@ -32,10 +33,12 @@
 @use "./side-sheet/side-sheet.scss";
 @use "./bottom-app-bar/bottom-app-bar.scss";
 @use "./top-app-bar/top-app-bar.scss";
+
 @use "./navigation-bar/navigation-bar.scss";
 @use "./navigation-drawer/navigation-drawer.scss";
 @use "./navigation-rail/navigation-rail.scss";
 @use "./menu/menu.scss";
+
 @use "./datetime-picker/datetime-picker.scss";
 @use "./date-picker/date-picker.scss";
 @use "./time-picker/time-picker.scss";
