@@ -89,9 +89,17 @@ class DemoMain extends MdComponent {
             {
                 label: "List",
                 children: [
-                    { label: "List", routerLink: "/demo/list" },
+                    // { label: "List", routerLink: "/demo/list" },
                     // { label: "List Single Select", routerLink: "/demo/list-single-select" },
                     // { label: "List Multi Select", routerLink: "/demo/list-multi-select" },
+                    {label:'List Avatar', routerLink: '/demo/list-avatar'},
+                    {label:'List Image', routerLink: '/demo/list-image'},
+                    {label:'List Video', routerLink: '/demo/list-video'},
+                    {label:'List Icon', routerLink: '/demo/list-icon'},
+                    {label:'List Text', routerLink: '/demo/list-text'},
+                    {label:'List Checkbox', routerLink: '/demo/list-checkbox'},
+                    {label:'List Radio Button', routerLink: '/demo/list-radio-button'},
+                    {label:'List Switch', routerLink: '/demo/list-switch'},
                 ],
             },
             { label: "Menu", routerLink: "/demo/menu" },

@@ -1,4 +1,5 @@
 import DemoMain from "./main/main.js";
+
 import DemoBadge from "./badge/badge.js";
 import DemoBottomAppBar from "./bottom-app-bar/bottom-app-bar.js";
 import DemoBottomAppBarNoFab from "./bottom-app-bar/bottom-app-bar-no-fab.js";
@@ -34,11 +35,23 @@ import DemoIconButtonFilled from "./icon-button/icon-button-filled.js";
 import DemoIconButtonFilledTonal from "./icon-button/icon-button-filled-tonal.js";
 import DemoIconButtonOutlined from "./icon-button/icon-button-outlined.js";
 import DemoImage from "./image/image.js";
+
 import DemoListItem from "./list/list-item.js";
 import DemoListRow from "./list/list-row.js";
 import DemoList from "./list/list.js";
+
+import DemoListAvatar from "./list/list-avatar.js";
+import DemoListImage from "./list/list-image.js";
+import DemoListVideo from "./list/list-video.js";
+import DemoListIcon from "./list/list-icon.js";
+import DemoListText from "./list/list-text.js";
+import DemoListCheckbox from "./list/list-checkbox.js";
+import DemoListRadioButton from "./list/list-radio-button.js";
+import DemoListSwitch from "./list/list-switch.js";
+
 import DemoListSingleSelect from "./list/list-single-select.js";
 import DemoListMultiSelect from "./list/list-multi-select.js";
+
 import DemoMenu from "./menu/menu.js";
 import DemoNavigationBar from "./navigation-bar/navigation-bar.js";
 import DemoNavigationBarNoLabel from "./navigation-bar/navigation-bar-no-label.js";
@@ -143,11 +156,22 @@ export default {
         { path: "icon-button-filled-tonal", component: DemoIconButtonFilledTonal },
         { path: "icon-button-outlined", component: DemoIconButtonOutlined },
         { path: "image", component: DemoImage },
+
         { path: "list-item", component: DemoListItem },
         { path: "list-row", component: DemoListRow },
         { path: "list", component: DemoList },
         { path: "list-single-select", component: DemoListSingleSelect },
         { path: "list-multi-select", component: DemoListMultiSelect },
+
+        {path:'list-avatar',component:DemoListAvatar},
+        {path:'list-image',component:DemoListImage},
+        {path:'list-video',component:DemoListVideo},
+        {path:'list-icon',component:DemoListIcon},
+        {path:'list-text',component:DemoListText},
+        {path:'list-checkbox',component:DemoListCheckbox},
+        {path:'list-radio-button',component:DemoListRadioButton},
+        {path:'list-switch',component:DemoListSwitch},
+
         { path: "menu", component: DemoMenu },
         { path: "navigation-bar", component: DemoNavigationBar },
         { path: "navigation-bar-no-label", component: DemoNavigationBarNoLabel },
