@@ -1,6 +1,8 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
+import { Store } from "../store/store";
+import { Virtual } from "../virtual/virtual";
 
 /**
  * @extends MdComponent
@@ -12,20 +14,30 @@ class MDListComponent extends MdComponent {
      * @property {single-select|multi-select} [type]
      * @property {Object} [fieldMap]
      * @property {Object} [rippleOptions]
+     * @property {Boolean} [virtualize]
      */
     static properties = {
         items: { type: Array },
         type: { type: String },
         fieldMap: { type: Object },
         rippleOptions: { type: Object },
+        virtualize: { type: Boolean },
+
+        itemsStore: { type: Array },
+        itemsVirtual: { type: Array },
+        now: { type: Number },
     };
 
     types = ["single-select", "multi-select"];
 
     constructor() {
         super();
-        this.items = [];
+        this.itemsStore = [];
         this.type = "single-select";
+
+        this.storeOptions={}
+        this.store=new Store(this.storeOptions)
+
     }
 
     renderListItem(item) {
@@ -68,16 +80,55 @@ class MDListComponent extends MdComponent {
 
     render() {
         /* prettier-ignore */
-        return html`
-
-            ${this.items.map((item) => this.renderListItem(item))}
-        `
+        return this.itemsVirtual?.map((item) => this.renderListItem(item))
     }
 
-    connectedCallback() {
+    async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-list");
         this.style.setProperty("--md-comp-list-icon-animation", "none");
+
+        if(this.virtualize){
+            await this.updateComplete
+            this.handleListVirtualScroll=
+            this.handleListVirtualScroll.bind(this)
+            this.addEventListener('onVirtualScroll',this.handleListVirtualScroll)
+            this.virtual = new Virtual(this,{
+                item:'md-list-item'
+            })
+            this.load();
+        }
+    }
+
+    async disconnectedCallback() {
+        super.disconnectedCallback();
+        if(this.virtualize&&this.virtual){
+            this.removeEventListener('onVirtualScroll',this.handleListVirtualScroll)
+            this.virtual.destroy()
+        }
+    }
+
+    async updated(changedProperties) {
+        super.updated(changedProperties);
+        
+        if(changedProperties.has('items')){
+            await this.updateComplete
+
+            this.load();
+        }
+    }
+
+    load() {
+        this.store.load(this.items);
+        const result = this.store.get(this.storeOptios);
+        this.itemsStore = result.data;
+        if (this.virtualize) this.virtual.load({ data: this.itemsStore });
+        else this.itemsVirtual = this.itemsStore;
+    }
+
+    handleListVirtualScroll(event){
+        this.itemsVirtual=(event.detail.data)
+        // console.log(event)
     }
 
     handleListItemClick(event) {
@@ -88,7 +139,7 @@ class MDListComponent extends MdComponent {
         const data = event.currentTarget.data;
 
         if (this.type === "single-select") {
-            this.items.forEach((item) => {
+            this.itemsStore.forEach((item) => {
                 item.selected = item === data;
             });
         } else {
@@ -118,7 +169,7 @@ class MDListComponent extends MdComponent {
     handleListItemRadioButtonNativeInput(event) {
         const data = event.currentTarget.data;
 
-        this.items.forEach((item) => {
+        this.itemsStore.forEach((item) => {
             item.selected = item === data;
         });
         this.requestUpdate();

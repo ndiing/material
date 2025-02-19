@@ -100,6 +100,7 @@ class DemoMain extends MdComponent {
                     {label:'List Checkbox', routerLink: '/demo/list-checkbox'},
                     {label:'List Radio Button', routerLink: '/demo/list-radio-button'},
                     {label:'List Switch', routerLink: '/demo/list-switch'},
+                    {label:'List Virtualize', routerLink: '/demo/list-virtualize'},
                 ],
             },
             { label: "Menu", routerLink: "/demo/menu" },

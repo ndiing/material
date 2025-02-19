@@ -48,6 +48,7 @@ import DemoListText from "./list/list-text.js";
 import DemoListCheckbox from "./list/list-checkbox.js";
 import DemoListRadioButton from "./list/list-radio-button.js";
 import DemoListSwitch from "./list/list-switch.js";
+import DemoListVirtualize from "./list/list-virtualize.js";
 
 import DemoListSingleSelect from "./list/list-single-select.js";
 import DemoListMultiSelect from "./list/list-multi-select.js";
@@ -171,6 +172,7 @@ export default {
         {path:'list-checkbox',component:DemoListCheckbox},
         {path:'list-radio-button',component:DemoListRadioButton},
         {path:'list-switch',component:DemoListSwitch},
+        {path:'list-virtualize',component:DemoListVirtualize},
 
         { path: "menu", component: DemoMenu },
         { path: "navigation-bar", component: DemoNavigationBar },
