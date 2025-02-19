@@ -16,7 +16,7 @@ class MDNavigationDrawerComponent extends MdComponent {
      * @property {Array} [items]
      * @property {Boolean} [open]
      * @property {Boolean} [modal]
-     * @property {navigation-list|tree} [type]
+     * @property {tree} [type]
      */
     static properties = {
         icons: { type: Array },
@@ -29,11 +29,11 @@ class MDNavigationDrawerComponent extends MdComponent {
         type: { type: String },
     };
 
-    types = ["navigation-list", "tree", "list"];
+    types = [ "tree", "list"];
 
     constructor() {
         super();
-        this.type = "navigation-list";
+        this.type = "list";
     }
 
     renderIcon(item) {
@@ -68,10 +68,7 @@ class MDNavigationDrawerComponent extends MdComponent {
         );
     }
 
-    renderNavigationList(items) {
-        return html`<md-navigation-list .items="${items}"></md-navigation-list>`;
-    }
-
+    
     renderTree(items) {
         return html`<md-tree .items="${items}"></md-tree>`;
     }
@@ -86,10 +83,9 @@ class MDNavigationDrawerComponent extends MdComponent {
             [
                 ["tree", () => this.renderTree(items)],
 
-                ["list", () => this.renderList(items)],
             ],
 
-            () => this.renderNavigationList(items),
+            () => this.renderList(items),
         );
     }
 

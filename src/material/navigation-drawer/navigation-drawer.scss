@@ -65,15 +65,15 @@
     overflow: auto;
 }
 .md-navigation-drawer {
-    .md-navigation-list {
-        .md-navigation-list__row {
+    .md-list {
+        .md-list__row {
             margin: 0 12px;
         }
-        .md-navigation-list__item {
+        .md-list__item {
             gap: 0 12px;
             border-radius: 28px;
         }
-        .md-navigation-list__label {
+        .md-list__label {
             @include mixins.typescale-label-large();
         }
     }
