@@ -19,16 +19,16 @@
     }
 }
 .md-navigation-bar {
-    .md-navigation-list {
+    .md-list {
         flex: 1;
         flex-direction: row;
         padding: 0;
         gap: 0 8px;
-        --md-comp-navigation-list-icon-animation: navigation-list-icon-out;
-        .md-navigation-list__row {
+        --md-comp-list-icon-animation: list-icon-out;
+        .md-list__row {
             flex: 1;
         }
-        .md-navigation-list__item {
+        .md-list__item {
             flex-direction: column;
             justify-content: center;
             padding: 12px 0;
@@ -36,25 +36,25 @@
             position: relative;
             &[selected] {
                 background-color: inherit;
-                .md-navigation-list__icon {
+                .md-list__icon {
                     background-color: var(--md-sys-color-secondary-container);
                     color: var(--md-sys-color-primary);
-                    animation-name: var(--md-comp-navigation-list-icon-animation);
+                    animation-name: var(--md-comp-list-icon-animation);
                     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
                     animation-duration: var(--md-sys-motion-duration-short3);
                 }
             }
         }
-        .md-navigation-list__icon {
+        .md-list__icon {
             width: 64px;
             height: 32px;
             border-radius: 16px;
         }
-        .md-navigation-list__label {
+        .md-list__label {
             @include mixins.typescale-label-medium();
             margin: 4px 0;
         }
-        .md-navigation-list__badge {
+        .md-list__badge {
             margin-top: -8px;
             position: absolute;
             left: 50%;
@@ -65,9 +65,9 @@
                 margin-left: 8px;
             }
         }
-        .md-navigation-list__icon {
-            ~ .md-navigation-list__labels {
-                ~ .md-navigation-list__badge {
+        .md-list__icon {
+            ~ .md-list__labels {
+                ~ .md-list__badge {
                     margin-top: -20px;
                 }
             }

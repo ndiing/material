@@ -77,9 +77,14 @@ class MDListComponent extends MdComponent {
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-list");
+        this.style.setProperty("--md-comp-list-icon-animation", "none");
+
+
     }
 
     handleListItemClick(event) {
+        
+        this.style.removeProperty("--md-comp-list-icon-animation");
         const action = event.target.closest(".md-list__checkbox,.md-list__radio-button,.md-list__switch");
 
         if (action) return;

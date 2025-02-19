@@ -2,12 +2,12 @@
 setlocal enabledelayedexpansion
 
 git add .
-git commit -m "Commit"
+git commit -m "Perbarui dokumen dan demo"
 
 call npm version patch
 
 git add .
-git commit -m "Bump version"
+git commit -m "Perbarui versi"
 
 git push origin main
 

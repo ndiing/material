@@ -20,15 +20,15 @@ class MDNavigationBarComponent extends MdComponent {
     constructor() {
         super();
         this.items = [];
-        this.rippleOptions = { container: ".md-navigation-list__icon" };
+        this.rippleOptions = { container: ".md-list__icon" };
     }
 
     render() {
         return html`
-            <md-navigation-list
+            <md-list
                 .rippleOptions="${this.rippleOptions}"
                 .items="${this.items}"
-            ></md-navigation-list>
+            ></md-list>
         `;
     }
 
