@@ -5,8 +5,6 @@ class DemoList extends MdComponent {
         return html`
             <div class="md-layout">
                 <div class="md-layout__grid">
-                    
-                
                     <div class="md-layout__column--expanded6 md-layout__column--medium4 md-layout__column--compact4">
                         <md-list
                             .items="${[{ label: "Label", sublabel: "Sublabel Sublabel Sublabel Sublabel Sublabel" }, { label: "Label", sublabel: "Sublabel" }, { label: "Label" }]}"
@@ -29,8 +27,6 @@ class DemoList extends MdComponent {
                             @onListItemSwitchNativeInput="${console.log}"
                         ></md-list>
                     </div>
-                    
-                    
                 </div>
             </div>
         `;

@@ -35,8 +35,6 @@ class DemoList extends MdComponent {
                             @onListItemSwitchNativeInput="${console.log}"
                         ></md-list>
                     </div>
-                    
-                    
                 </div>
             </div>
         `;

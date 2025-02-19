@@ -1,26 +1,32 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
 class DemoList extends MdComponent {
-    static properties={
-        items:{type:Array}
-    }
-    constructor(){
-        super()
-        this.items=Array.from({length:50000},(v,k) => ({
-            label:`Label ${k+1}`
-        }))
+    static properties = {
+        items: { type: Array },
+    };
+    constructor() {
+        super();
+        this.items = Array.from({ length: 50000 }, (v, k) => ({
+            label: `Label ${k + 1}`,
+        }));
         // setTimeout(() => {
         //     this.items=Array.from({length:50000},(v,k) => ({
         //         label:`Label ${k+1}`
         //     }))
-            
+
         // },1000*5)
     }
     render() {
         return html`
             <div class="md-layout">
-                <div class="md-layout__grid" style="min-height: 0;min-width: 0;height: 100%;width: 100%;">
-                    <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4" style="min-height: 0;min-width: 0;height: 100%;width: 100%;">
+                <div
+                    class="md-layout__grid"
+                    style="min-height: 0;min-width: 0;height: 100%;width: 100%;"
+                >
+                    <div
+                        class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4"
+                        style="min-height: 0;min-width: 0;height: 100%;width: 100%;"
+                    >
                         <md-list
                             .items="${this.items}"
                             virtualize
