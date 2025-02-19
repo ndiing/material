@@ -28,7 +28,7 @@ class MDNavigationRailComponent extends MdComponent {
     constructor() {
         super();
         this.items = [];
-        this.rippleOptions = { container: ".md-navigation-list__icon" };
+        this.rippleOptions = { container: ".md-list__icon" };
     }
 
     renderIcon(item) {
@@ -68,10 +68,10 @@ class MDNavigationRailComponent extends MdComponent {
             ${this.icons?.length || this.label || this.sublabel || this.actions?.length ? html` <div class="md-navigation-rail__header">${this.icons?.length ? html` <div class="md-navigation-rail__icons">${this.icons.map((icon) => this.renderComponent(icon, "icon"))}</div> ` : nothing} ${this.label || this.sublabel ? html` <div class="md-navigation-rail__labels">${this.label ? html`<div class="md-navigation-rail__label">${this.label}</div>` : nothing} ${this.sublabel ? html`<div class="md-navigation-rail__sublabel">${this.sublabel}</div>` : nothing}</div> ` : nothing} ${this.actions?.length ? html` <div class="md-navigation-rail__actions">${this.actions.map((action) => this.renderComponent(action, "icon-button"))}</div> ` : nothing}</div> ` : nothing}
             <div class="md-navigation-rail__wrapper">
                 <div class="md-navigation-rail__body">
-                    <md-navigation-list
+                    <md-list
                         .rippleOptions="${this.rippleOptions}"
                         .items="${this.items}"
-                    ></md-navigation-list>
+                    ></md-list>
                 </div>
             </div>
         `;
