@@ -1,0 +1,43 @@
+.md-radio-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+    position: relative;
+}
+
+.md-radio-button__native {
+    appearance: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+
+    &:checked {
+        + .md-radio-button__track {
+            border-color: var(--md-sys-color-primary);
+
+            .md-radio-button__thumb {
+                width: 10px;
+                height: 10px;
+                border-radius: 5px;
+                background-color: var(--md-sys-color-primary);
+            }
+        }
+    }
+}
+
+.md-radio-button__track {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--md-sys-color-on-surface-variant);
+    border-radius: 10px;
+}

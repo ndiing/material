@@ -1,0 +1,50 @@
+.md-progress-indicator {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 4px;
+}
+
+.md-progress-indicator__native {
+    width: 100%;
+    height: 100%;
+
+    &::-webkit-progress-inner-element {
+    }
+
+    &::-webkit-progress-bar {
+        border-radius: 2px;
+        background-color: var(--md-sys-color-secondary-container);
+    }
+
+    &::-webkit-progress-value {
+        border-radius: 2px;
+        background-color: var(--md-sys-color-primary);
+    }
+}
+
+.md-progress-indicator--circular {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    width: 48px;
+    height: 48px;
+    position: relative;
+}
+
+.md-progress-indicator__wrapper {
+    width: 83.33333333333334%;
+    height: 83.33333333333334%;
+    transform: rotate(-90deg);
+    position: relative;
+}
+
+.md-progress-indicator__track {
+    position: absolute;
+}
+
+.md-progress-indicator__indicator {
+    position: absolute;
+    z-index: 1;
+}

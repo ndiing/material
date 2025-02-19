@@ -1,0 +1,12 @@
+.md-divider {
+    display: block;
+    border-bottom: 1px solid var(--md-sys-color-outline-variant);
+    margin: 8px 0 7px 0;
+}
+
+.md-divider[vertical] {
+    display: inline-block;
+    height: 100%;
+    border-right: 1px solid var(--md-sys-color-outline-variant);
+    margin: 0 8px 0 7px;
+}

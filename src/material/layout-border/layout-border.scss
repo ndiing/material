@@ -1,0 +1,41 @@
+md-layout-border,
+.md-layout__border {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "north north north"
+        "west center east"
+        "south south south";
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+md-layout-border-item,
+.md-layout__north,
+.md-layout__east,
+.md-layout__south,
+.md-layout__west,
+.md-layout__center {
+    overflow: auto;
+}
+md-layout-border-item[region="north"],
+.md-layout__north {
+    grid-area: north;
+}
+md-layout-border-item[region="east"],
+.md-layout__east {
+    grid-area: east;
+}
+md-layout-border-item[region="south"],
+.md-layout__south {
+    grid-area: south;
+}
+md-layout-border-item[region="west"],
+.md-layout__west {
+    grid-area: west;
+}
+md-layout-border-item[region="center"],
+.md-layout__center {
+    grid-area: center;
+}

@@ -1,0 +1,42 @@
+@use "../mixins/mixins.scss";
+
+.md-menu {
+    display: inline-flex;
+    flex-direction: column;
+    min-width: 112px;
+    max-width: 280px;
+    max-height: 100%;
+    border-radius: var(--md-sys-shape-corner-extra-small);
+    background-color: var(--md-sys-color-surface-container);
+    box-shadow: var(--md-sys-elevation-level2);
+    position: absolute;
+    z-index: 11;
+    opacity: 0;
+    pointer-events: none;
+    --md-comp-menu-animation: menu-in;
+    animation-name: var(--md-comp-menu-animation);
+    animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
+    animation-duration: var(--md-sys-motion-duration-short3);
+
+    &[open] {
+        opacity: 1;
+        pointer-events: all;
+        --md-comp-menu-animation: menu-out;
+        animation-name: var(--md-comp-menu-animation);
+        animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
+    }
+}
+
+.md-menu {
+    .md-navigation-list {
+        .md-navigation-list__item {
+            min-height: 48px;
+            padding: 0 12px;
+            gap: 0 12px;
+        }
+
+        .md-navigation-list__label {
+            @include mixins.typescale-label-large();
+        }
+    }
+}

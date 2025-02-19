@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "allowJs": true,
+        "checkJs": false, // Matikan pengecekan TypeScript pada JS
+        "declaration": false, // Jangan buat tipe otomatis
+        "outDir": "types"
+    },
+    "include": ["src/material/**/*"]
+}

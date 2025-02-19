@@ -1,0 +1,58 @@
+@use "../mixins/mixins.scss";
+md-layout,
+.md-layout {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+    padding: 24px;
+}
+
+@include mixins.layout-compact() {
+    md-layout-grid,
+    .md-layout__grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-gap: 8px;
+    }
+
+    @for $i from 1 through 4 {
+        md-layout-grid-item[compact="#{$i}"],
+        .md-layout__column--compact#{$i} {
+            grid-column-end: span $i;
+        }
+    }
+}
+
+@include mixins.layout-medium() {
+    md-layout-grid,
+    .md-layout__grid {
+        display: grid;
+        grid-template-columns: repeat(8, minmax(0, 1fr));
+        grid-gap: 16px;
+    }
+
+    @for $i from 1 through 8 {
+        md-layout-grid-item[medium="#{$i}"],
+        .md-layout__column--medium#{$i} {
+            grid-column-end: span $i;
+        }
+    }
+}
+
+@include mixins.layout-expanded() {
+    md-layout-grid,
+    .md-layout__grid {
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        grid-gap: 24px;
+    }
+
+    @for $i from 1 through 12 {
+        md-layout-grid-item[expanded="#{$i}"],
+        .md-layout__column--expanded#{$i} {
+            grid-column-end: span $i;
+        }
+    }
+}

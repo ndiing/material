@@ -1,0 +1,35 @@
+@use "../mixins/mixins.scss";
+
+.md-bottom-app-bar {
+    grid-area: south;
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    height: 80px;
+    padding: 0 16px;
+    gap: 0 16px;
+    margin-bottom: calc(0px - var(--md-comp-sheet-height));
+    background-color: var(--md-sys-color-surface-container);
+    box-shadow: var(--md-sys-elevation-level2);
+    --md-comp-sheet-animation: sheet-south-in;
+    animation-name: var(--md-comp-sheet-animation);
+    animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
+    animation-duration: var(--md-sys-motion-duration-short3);
+
+    &[open] {
+        margin-bottom: 0;
+        --md-comp-sheet-animation: sheet-south-out;
+        animation-name: var(--md-comp-sheet-animation);
+        animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
+    }
+}
+
+.md-bottom-app-bar__actions {
+    display: flex;
+    align-items: center;
+    gap: 0 16px;
+}
+
+.md-bottom-app-bar__fab {
+    margin-left: auto;
+}

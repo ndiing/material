@@ -1,0 +1,103 @@
+.md-switch {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    width: 52px;
+    height: 32px;
+    position: relative;
+    --md-comp-switch-thumb-transition-property: left, width, height;
+}
+
+.md-switch__native {
+    appearance: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+
+    &:checked {
+        + .md-switch__track {
+            border-color: var(--md-sys-color-primary);
+            background-color: var(--md-sys-color-primary);
+
+            .md-switch__thumb {
+                width: 24px;
+                height: 24px;
+                border-radius: 12px;
+                left: 22px;
+                background-color: var(--md-sys-color-on-primary);
+                color: var(--md-sys-color-primary);
+            }
+        }
+    }
+
+    &:active {
+        + .md-switch__track {
+            .md-switch__thumb {
+                width: 28px;
+                height: 28px;
+                border-radius: 14px;
+                left: 0px;
+            }
+        }
+
+        &:checked {
+            + .md-switch__track {
+                .md-switch__thumb {
+                    left: 20px;
+                }
+            }
+        }
+    }
+}
+
+.md-switch__track {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    width: 52px;
+    height: 32px;
+    border: 2px solid var(--md-sys-color-outline);
+    border-radius: 16px;
+    position: relative;
+}
+
+.md-switch__thumb {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
+    background-color: var(--md-sys-color-outline);
+    color: var(--md-sys-color-surface);
+    position: absolute;
+    left: 6px;
+    transition-property: var(--md-comp-switch-thumb-transition-property);
+    transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
+    transition-duration: var(--md-sys-motion-duration-short3);
+
+    &.md-ripple {
+        &::after {
+            width: 40px;
+        }
+    }
+
+    &:not(:empty) {
+        width: 24px;
+        height: 24px;
+        border-radius: 12px;
+        left: 2px;
+    }
+}
+
+.md-switch__icon {
+    width: 16px;
+    height: 16px;
+    font-size: 16px;
+}

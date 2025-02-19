@@ -1,0 +1,17 @@
+.md-virtual {
+    position: relative;
+    overflow: auto;
+    min-height: 0;
+    min-width: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.md-virtual__track {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1px;
+    height: 1px;
+    pointer-events: none;
+}

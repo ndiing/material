@@ -1,0 +1,246 @@
+@use "../mixins/mixins.scss";
+
+.md-week-picker {
+    --md-comp-week-picker-density: -2;
+    --md-comp-week-picker-list-item-height: calc(48px + (var(--md-comp-week-picker-density) * 4px));
+    --md-comp-week-picker-table-item-height: calc(40px + (var(--md-comp-week-picker-density) * 4px));
+    --md-comp-week-picker-circle-item-height: calc(48px + (var(--md-comp-week-picker-density) * 4px));
+    --md-comp-week-picker-container-width: calc((var(--md-comp-week-picker-table-item-height) * 7) + (8px * 6) + (4px * 2) + (12px * 2));
+    --md-comp-week-picker-container-height: calc((var(--md-comp-week-picker-table-item-height) * 7) + (8px * 6));
+    --md-comp-week-picker-width: var(--md-comp-week-picker-container-width);
+    --md-comp-week-picker-height: calc(var(--md-comp-week-picker-container-height) + (64px * 2));
+    display: inline-flex;
+    flex-direction: column;
+    width: var(--md-comp-week-picker-width);
+    height: var(--md-comp-week-picker-height);
+    border-radius: var(--md-sys-shape-corner-large);
+    background-color: var(--md-sys-color-surface-container-high);
+    position: absolute;
+    z-index: 11;
+    opacity: 0;
+    pointer-events: none;
+    --md-comp-week-picker-animation: week-picker-in;
+    animation-name: var(--md-comp-week-picker-animation);
+    animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
+    animation-duration: var(--md-sys-motion-duration-short3);
+
+    .md-week-picker__body {
+        animation-name: week-picker-body-in;
+        animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
+        animation-duration: var(--md-sys-motion-duration-short3);
+    }
+
+    &[open] {
+        opacity: 1;
+        pointer-events: all;
+        --md-comp-week-picker-animation: week-picker-out;
+        animation-name: var(--md-comp-week-picker-animation);
+        animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
+
+        .md-week-picker__body {
+            animation-name: week-picker-body-out;
+            animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
+        }
+    }
+}
+
+.md-week-picker__header {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    gap: 0 16px;
+}
+
+.md-week-picker__icons {
+    display: flex;
+    align-items: center;
+    gap: 0 16px;
+}
+
+.md-week-picker__labels {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.md-week-picker__label {
+    @include mixins.typescale-body-medium();
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.md-week-picker__sublabel {
+    @include mixins.typescale-body-medium();
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--md-sys-color-on-surface-variant);
+}
+
+.md-week-picker__actions {
+    display: flex;
+    align-items: center;
+    gap: 0 16px;
+    margin-left: auto;
+}
+
+.md-week-picker__wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+    min-height: 0;
+}
+
+.md-week-picker__body {
+    flex: 1;
+    @include mixins.typescale-body-medium();
+    color: var(--md-sys-color-on-surface-variant);
+}
+
+.md-week-picker__footer {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+}
+
+.md-week-picker__buttons {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 0 8px;
+}
+
+.md-week-picker__spacer {
+    flex: 1;
+}
+
+.md-week-picker__items {
+    display: flex;
+    width: var(--md-comp-week-picker-container-width);
+    height: var(--md-comp-week-picker-container-height);
+    overflow: hidden;
+}
+
+.md-week-picker__item {
+    flex: 1 0 100%;
+    overflow: auto;
+    // transform: translate3d(calc((0 - var(--md-comp-week-picker-index)) * 100%), 0, 0);
+}
+
+.md-week-picker__list {
+    display: flex;
+    flex-direction: column;
+}
+
+.md-week-picker__list-item {
+    display: flex;
+    align-items: center;
+    height: var(--md-comp-week-picker-list-item-height);
+    padding: 0 16px;
+    gap: 0 16px;
+    @include mixins.ripple();
+    @include mixins.ripple-bounded();
+    @include mixins.ripple-trigger();
+
+    &:focus {
+        @include mixins.ripple-focus();
+    }
+
+    &:active {
+        @include mixins.ripple-press();
+    }
+
+    &:hover {
+        @include mixins.ripple-hover();
+    }
+
+    &:-moz-drag-over {
+        @include mixins.ripple-drag();
+    }
+
+    &:disabled {
+        @include mixins.ripple-disabled();
+    }
+
+    &[activated] {
+        border: 1px solid var(--md-sys-color-outline);
+    }
+
+    &[selected] {
+        background-color: var(--md-sys-color-secondary-container);
+        color: var(--md-sys-color-on-secondary-container);
+    }
+}
+
+.md-week-picker__table {
+    display: inline-flex;
+    flex-direction: column;
+    padding: 0 4px;
+    margin: 0 12px;
+    gap: 8px 0;
+}
+
+.md-week-picker__table-header {
+    display: flex;
+    flex-direction: column;
+
+    .md-week-picker__table-cell {
+        @include mixins.typescale-label-large();
+    }
+}
+
+.md-week-picker__table-row {
+    display: flex;
+    align-items: center;
+    gap: 0 8px;
+}
+
+.md-week-picker__table-cell {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    width: var(--md-comp-week-picker-table-item-height);
+    height: var(--md-comp-week-picker-table-item-height);
+    border-radius: calc(var(--md-comp-week-picker-table-item-height) / 2);
+}
+
+.md-week-picker__table-body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px 0;
+
+    .md-week-picker__table-row {
+        border-radius: calc(var(--md-comp-week-picker-table-item-height) / 2);
+        @include mixins.ripple();
+        @include mixins.ripple-bounded();
+        @include mixins.ripple-trigger();
+
+        &:focus {
+            @include mixins.ripple-focus();
+        }
+
+        &:active {
+            @include mixins.ripple-press();
+        }
+
+        &:hover {
+            @include mixins.ripple-hover();
+        }
+
+        &:-moz-drag-over {
+            @include mixins.ripple-drag();
+        }
+
+        &[activated] {
+            box-shadow: inset 0 0 0 1px var(--md-sys-color-outline);
+        }
+
+        &[selected] {
+            background-color: var(--md-sys-color-primary);
+            color: var(--md-sys-color-on-primary);
+        }
+    }
+}
