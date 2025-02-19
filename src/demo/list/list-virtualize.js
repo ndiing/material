@@ -6,14 +6,20 @@ class DemoList extends MdComponent {
     };
     constructor() {
         super();
-        this.items = Array.from({ length: 50000 }, (v, k) => ({
-            label: `Label ${k + 1}`,
-        }));
+        function generateLabelData(count) {
+            const data = [];
+            for (let i = 1; i <= count; i++) {
+                data.push({
+                    id: i,
+                    label: `Label ${i}`
+                });
+            }
+            return data;
+        }
+        this.items = generateLabelData(10000)
         // setTimeout(() => {
-        //     this.items=Array.from({length:50000},(v,k) => ({
-        //         label:`Label ${k+1}`
-        //     }))
-
+        //     this.items = generateLabelData(10)
+        //     this.requestUpdate()
         // },1000*5)
     }
     render() {

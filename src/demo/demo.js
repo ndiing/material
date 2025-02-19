@@ -15,12 +15,14 @@ import DemoCheckbox from "./checkbox/checkbox.js";
 import DemoChips from "./chips/chips.js";
 import DemoChipsSingleSelect from "./chips/chips-single-select.js";
 import DemoChipsMultiSelect from "./chips/chips-multi-select.js";
+
 import DemoDataTableCell from "./data-table/data-table-cell.js";
 import DemoDataTable from "./data-table/data-table.js";
 import DemoDataTableCheckbox from "./data-table/data-table-checkbox.js";
 import DemoDataTableSortable from "./data-table/data-table-sortable.js";
 import DemoDataTableResizable from "./data-table/data-table-resizable.js";
 import DemoDataTableVirtualize from "./data-table/data-table-virtualize.js";
+
 import DemoDialog from "./dialog/dialog.js";
 import DemoDivider from "./divider/divider.js";
 import DemoFab from "./fab/fab.js";
@@ -137,12 +139,14 @@ export default {
         { path: "chips", component: DemoChips },
         { path: "chips-single-select", component: DemoChipsSingleSelect },
         { path: "chips-multi-select", component: DemoChipsMultiSelect },
+
         { path: "data-table-cell", component: DemoDataTableCell },
         { path: "data-table", component: DemoDataTable },
         { path: "data-table-checkbox", component: DemoDataTableCheckbox },
         { path: "data-table-sortable", component: DemoDataTableSortable },
         { path: "data-table-resizable", component: DemoDataTableResizable },
         { path: "data-table-virtualize", component: DemoDataTableVirtualize },
+
         { path: "dialog", component: DemoDialog },
         { path: "divider", component: DemoDivider },
         { path: "fab", component: DemoFab },
