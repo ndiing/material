@@ -29,7 +29,7 @@ class MDNavigationDrawerComponent extends MdComponent {
         type: { type: String },
     };
 
-    types = [ "tree", "list"];
+    types = ["tree", "list"];
 
     constructor() {
         super();
@@ -68,7 +68,6 @@ class MDNavigationDrawerComponent extends MdComponent {
         );
     }
 
-    
     renderTree(items) {
         return html`<md-tree .items="${items}"></md-tree>`;
     }
@@ -80,10 +79,7 @@ class MDNavigationDrawerComponent extends MdComponent {
     renderItems(type, items) {
         return choose(
             type,
-            [
-                ["tree", () => this.renderTree(items)],
-
-            ],
+            [["tree", () => this.renderTree(items)]],
 
             () => this.renderList(items),
         );

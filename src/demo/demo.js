@@ -44,9 +44,6 @@ import DemoNavigationBar from "./navigation-bar/navigation-bar.js";
 import DemoNavigationBarNoLabel from "./navigation-bar/navigation-bar-no-label.js";
 import DemoNavigationDrawer from "./navigation-drawer/navigation-drawer.js";
 import DemoNavigationDrawerModal from "./navigation-drawer/navigation-drawer-modal.js";
-import DemoNavigationListItem from "./navigation-list/navigation-list-item.js";
-import DemoNavigationListRow from "./navigation-list/navigation-list-row.js";
-import DemoNavigationList from "./navigation-list/navigation-list.js";
 import DemoNavigationRail from "./navigation-rail/navigation-rail.js";
 import DemoNavigationRailNoLabel from "./navigation-rail/navigation-rail-no-label.js";
 import DemoProgressIndicator from "./progress-indicator/progress-indicator.js";
@@ -156,9 +153,6 @@ export default {
         { path: "navigation-bar-no-label", component: DemoNavigationBarNoLabel },
         { path: "navigation-drawer", component: DemoNavigationDrawer },
         { path: "navigation-drawer-modal", component: DemoNavigationDrawerModal },
-        { path: "navigation-list-item", component: DemoNavigationListItem },
-        { path: "navigation-list-row", component: DemoNavigationListRow },
-        { path: "navigation-list", component: DemoNavigationList },
         { path: "navigation-rail", component: DemoNavigationRail },
         { path: "navigation-rail-no-label", component: DemoNavigationRailNoLabel },
         { path: "progress-indicator", component: DemoProgressIndicator },

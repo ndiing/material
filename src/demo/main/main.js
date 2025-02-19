@@ -109,9 +109,6 @@ class DemoMain extends MdComponent {
                     { label: "Navigation Drawer Modal", routerLink: "/demo/navigation-drawer-modal" },
                 ],
             },
-            // { label: "Navigation List Item", routerLink: "/demo/navigation-list-item" },
-            // { label: "Navigation List Row", routerLink: "/demo/navigation-list-row" },
-            { label: "Navigation List", routerLink: "/demo/navigation-list" },
             {
                 label: "Navigation Rail",
                 children: [
