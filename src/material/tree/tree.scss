@@ -1,14 +1,17 @@
 @use "../mixins/mixins.scss";
+
 .md-tree {
     display: flex;
     flex-direction: column;
     padding: 8px 0;
 }
+
 .md-tree__row {
     display: flex;
     flex-direction: column;
     margin: 0 12px;
 }
+
 .md-tree__item {
     display: flex;
     align-items: center;
@@ -18,9 +21,11 @@
     min-width: 0;
     max-width: 100%;
     border-radius: calc(56px / 2);
+
     &[selected] {
         background-color: var(--md-sys-color-secondary-container);
         color: var(--md-sys-color-on-secondary-container);
+
         .md-tree__icon {
             color: var(--md-sys-color-primary);
             font-variation-settings:
@@ -31,15 +36,18 @@
         }
     }
 }
+
 .md-tree__indent {
     width: 12px;
     height: 12px;
 }
+
 .md-tree__action {
     + .md-tree__icon {
         margin-left: -12px;
     }
 }
+
 .md-tree__label {
     flex: 1;
     @include mixins.typescale-label-large();

@@ -1,25 +1,33 @@
 @use "../mixins/mixins.scss";
+
 .md-ripple {
     @include mixins.ripple();
 }
+
 .md-ripple--bounded {
     @include mixins.ripple-bounded();
 }
+
 .md-ripple--trigger {
     @include mixins.ripple-trigger();
 }
+
 .md-ripple--focus {
     @include mixins.ripple-focus();
 }
+
 .md-ripple--press {
     @include mixins.ripple-press();
 }
+
 .md-ripple--hover {
     @include mixins.ripple-hover();
 }
+
 .md-ripple--drag {
     @include mixins.ripple-drag();
 }
+
 .md-ripple[disabled] {
     @include mixins.ripple-disabled();
 }

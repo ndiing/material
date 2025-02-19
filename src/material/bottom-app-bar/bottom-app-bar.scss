@@ -1,4 +1,5 @@
 @use "../mixins/mixins.scss";
+
 .md-bottom-app-bar {
     grid-area: south;
     overflow: auto;
@@ -14,6 +15,7 @@
     animation-name: var(--md-comp-sheet-animation);
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
     animation-duration: var(--md-sys-motion-duration-short3);
+
     &[open] {
         margin-bottom: 0;
         --md-comp-sheet-animation: sheet-south-out;
@@ -21,11 +23,13 @@
         animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
     }
 }
+
 .md-bottom-app-bar__actions {
     display: flex;
     align-items: center;
     gap: 0 16px;
 }
+
 .md-bottom-app-bar__fab {
     margin-left: auto;
 }

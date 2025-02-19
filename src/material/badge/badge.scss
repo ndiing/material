@@ -1,4 +1,5 @@
 @use "../mixins/mixins.scss";
+
 .md-badge {
     display: inline-flex;
     align-items: center;
@@ -11,6 +12,7 @@
     @include mixins.typescale-label-small();
     background-color: var(--md-sys-color-error);
     color: var(--md-sys-color-on-error);
+
     &:empty {
         width: 6px;
         min-width: 6px;

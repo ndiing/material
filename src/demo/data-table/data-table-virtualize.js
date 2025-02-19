@@ -33,13 +33,13 @@ class DemoDataTableVirtualize extends MdComponent {
                 data.push({
                     albumId: Math.floor(Math.random() * 100) + 1,
                     id: i,
-                    title: `Album Title ${i}`
+                    title: `Album Title ${i}`,
                 });
             }
             return data;
         }
-        
-        this.data=(generateAlbumData(10000));
+
+        this.data = generateAlbumData(10000);
     }
 
     render() {

@@ -11,12 +11,12 @@ class DemoList extends MdComponent {
             for (let i = 1; i <= count; i++) {
                 data.push({
                     id: i,
-                    label: `Label ${i}`
+                    label: `Label ${i}`,
                 });
             }
             return data;
         }
-        this.items = generateLabelData(10000)
+        this.items = generateLabelData(10000);
         // setTimeout(() => {
         //     this.items = generateLabelData(10)
         //     this.requestUpdate()

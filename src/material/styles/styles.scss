@@ -1,5 +1,6 @@
 @use "../mixins/mixins.scss";
 /* global */
+
 * {
     margin: 0;
     padding: 0;
@@ -22,6 +23,7 @@ body {
     height: 100%;
     overflow: hidden;
 }
+
 body {
     overflow: auto;
     @include mixins.typescale-body-large();
@@ -29,48 +31,63 @@ body {
     color: var(--md-sys-color-on-background);
 }
 /* typescale */
+
 .md-typescale--display-large {
     @include mixins.typescale-display-large();
 }
+
 .md-typescale--display-medium {
     @include mixins.typescale-display-medium();
 }
+
 .md-typescale--display-small {
     @include mixins.typescale-display-small();
 }
+
 .md-typescale--headline-large {
     @include mixins.typescale-headline-large();
 }
+
 .md-typescale--headline-medium {
     @include mixins.typescale-headline-medium();
 }
+
 .md-typescale--headline-small {
     @include mixins.typescale-headline-small();
 }
+
 .md-typescale--title-large {
     @include mixins.typescale-title-large();
 }
+
 .md-typescale--title-medium {
     @include mixins.typescale-title-medium();
 }
+
 .md-typescale--title-small {
     @include mixins.typescale-title-small();
 }
+
 .md-typescale--body-large {
     @include mixins.typescale-body-large();
 }
+
 .md-typescale--body-medium {
     @include mixins.typescale-body-medium();
 }
+
 .md-typescale--body-small {
     @include mixins.typescale-body-small();
 }
+
 .md-typescale--label-large {
     @include mixins.typescale-label-large();
 }
+
 .md-typescale--label-medium {
     @include mixins.typescale-label-medium();
 }
+
 .md-typescale--label-small {
     @include mixins.typescale-label-small();
 }

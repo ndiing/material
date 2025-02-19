@@ -1,4 +1,5 @@
 @use "../mixins/mixins.scss";
+
 .md-snackbar {
     display: inline-flex;
     flex-wrap: wrap;
@@ -18,6 +19,7 @@
     animation-name: var(--md-comp-snackbar-animation);
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
     animation-duration: var(--md-sys-motion-duration-short3);
+
     .md-snackbar__body {
         animation-name: snackbar-body-in;
         animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
@@ -30,12 +32,14 @@
         --md-comp-snackbar-animation: snackbar-out;
         animation-name: var(--md-comp-snackbar-animation);
         animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
+
         .md-snackbar__body {
             animation-name: snackbar-body-out;
             animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
         }
     }
 }
+
 .md-snackbar__body {
     width: 72%;
     padding: 0 16px;
@@ -43,21 +47,25 @@
     overflow: auto;
     @include mixins.typescale-body-medium();
 }
+
 .md-snackbar__footer {
     display: flex;
     align-items: center;
     padding: 2px 4px;
     margin-left: auto;
 }
+
 .md-snackbar__buttons {
     flex: 1;
     display: flex;
     align-items: center;
     gap: 0 8px;
+
     .md-button {
         color: var(--md-sys-color-inverse-primary);
     }
 }
+
 .md-snackbar__spacer {
     flex: 1;
 }
