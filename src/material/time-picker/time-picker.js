@@ -46,7 +46,6 @@ class MDTimePickerComponent extends MdComponent {
             },
         },
         index: { state: true },
-        selection: { state: true },
     };
 
     hourFormat = new Intl.DateTimeFormat(undefined, { hour: "numeric", hour12: false }).format;
@@ -277,7 +276,7 @@ class MDTimePickerComponent extends MdComponent {
         this.style.setProperty("--md-comp-time-picker-width", this.clientWidth + "px");
     }
 
-    async updated(changedProperties) {
+     updated(changedProperties) {
         super.updated(changedProperties);
 
         if (changedProperties.has("index")) {
@@ -289,7 +288,6 @@ class MDTimePickerComponent extends MdComponent {
         }
 
         if (changedProperties.has("value")) {
-            await this.updateComplete;
 
             this.selection = new Date(this.value.valueOf());
         }
