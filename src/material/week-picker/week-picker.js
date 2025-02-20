@@ -46,7 +46,6 @@ class MDWeekPickerComponent extends MdComponent {
             },
         },
         index: { state: true },
-        selection: { state: true },
     };
 
     yearFormat = new Intl.DateTimeFormat(undefined, { year: "numeric" }).format;
@@ -330,11 +329,10 @@ class MDWeekPickerComponent extends MdComponent {
         `;
     }
 
-    async connectedCallback() {
+     connectedCallback() {
         super.connectedCallback();
 
-        this.defaultValue = new Date(this.value.valueOf());
-        this.defaultIndex = this.index;
+     
         this.classList.add("md-week-picker");
         this.style.setProperty("--md-comp-week-picker-animation", "none");
         this.weekPickerScrim = document.createElement("md-scrim");
@@ -342,10 +340,9 @@ class MDWeekPickerComponent extends MdComponent {
         this.handleWeekPickerScrimClose = this.handleWeekPickerScrimClose.bind(this);
         this.weekPickerScrim.addEventListener("onScrimClose", this.handleWeekPickerScrimClose);
 
-        if (this.modal && this.open) this.weekPickerScrim.show();
-        await this.updateComplete;
-        this.style.setProperty("--md-comp-week-picker-height", this.clientHeight + "px");
-        this.style.setProperty("--md-comp-week-picker-width", this.clientWidth + "px");
+        if (this.modal ) this.weekPickerScrim.open=this.open
+        
+        
     }
 
     disconnectedCallback() {
@@ -354,7 +351,15 @@ class MDWeekPickerComponent extends MdComponent {
         this.weekPickerScrim.remove();
     }
 
-    async updated(changedProperties) {
+    firstUpdated(changedProperties){
+        super.firstUpdated(changedProperties)
+        this.defaultValue = new Date(this.value.valueOf());
+        this.defaultIndex = this.index;
+        this.style.setProperty("--md-comp-week-picker-height", this.clientHeight + "px");
+        this.style.setProperty("--md-comp-week-picker-width", this.clientWidth + "px");
+    }
+
+     updated(changedProperties) {
         super.updated(changedProperties);
 
         if (changedProperties.has("index")) {
@@ -366,7 +371,6 @@ class MDWeekPickerComponent extends MdComponent {
         }
 
         if (changedProperties.has("value")) {
-            await this.updateComplete;
 
             this.selection = new Date(this.value.valueOf());
         }
