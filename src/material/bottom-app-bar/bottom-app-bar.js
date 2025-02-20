@@ -93,11 +93,14 @@ class MDBottomAppBarComponent extends MdComponent {
     //  * Called when the element is connected to the DOM.
     //  * Adds the 'md-bottom-app-bar' class and updates the component dimensions.
     //  */
-    async connectedCallback() {
+    connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-bottom-app-bar");
         this.style.setProperty("--md-comp-sheet-animation", "none");
-        await this.updateComplete;
+    }
+
+    firstUpdated(changedProperties) {
+        super.firstUpdated(changedProperties);
         this.style.setProperty("--md-comp-sheet-width", this.clientWidth + "px");
         this.style.setProperty("--md-comp-sheet-height", this.clientHeight + "px");
     }
