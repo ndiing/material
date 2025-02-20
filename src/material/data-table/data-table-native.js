@@ -33,7 +33,7 @@ class MDDataTableNativeComponent extends Mixins(HTMLTableElement) {
             this.virtual = new Virtual(this, {
                 item: "tbody",
             });
-            this.virtual.load({ data: this.instance.dataStore });
+            if (this.hasConnected) this.virtual.load({ data: this.instance.dataStore });
         }
     }
 
@@ -41,6 +41,7 @@ class MDDataTableNativeComponent extends Mixins(HTMLTableElement) {
         if (this.instance.virtualize) {
             this.virtual.destroy();
         }
+        this.hasConnected = true;
     }
 }
 
