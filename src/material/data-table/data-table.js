@@ -48,8 +48,13 @@ class MDDataTableComponent extends MdComponent {
         data: { type: Array },
         checkbox: { type: Boolean },
         virtualize: { type: Boolean },
+        
+        storeOptions: { type: Object },
         dataStore: { type: Array },
+
+        virtualOptions: { type: Object },
         dataVirtual: { type: Array },
+
         now: { type: Number },
     };
 
@@ -102,6 +107,7 @@ class MDDataTableComponent extends MdComponent {
     constructor() {
         super();
         this.storeOptions = {};
+        this.virtualOptions={}
 
         this.store = new Store();
     }

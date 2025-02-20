@@ -320,28 +320,38 @@ class MDDatePickerComponent extends MdComponent {
         `;
     }
 
-    async connectedCallback() {
+    connectedCallback() {
         super.connectedCallback();
 
-        this.defaultValue = new Date(this.value.valueOf());
-        this.defaultIndex = this.index;
+        
         this.classList.add("md-date-picker");
         this.style.setProperty("--md-comp-date-picker-animation", "none");
+
         this.datePickerScrim = document.createElement("md-scrim");
         this.parentElement.insertBefore(this.datePickerScrim, this.nextElementSibling);
+
         this.handleDatePickerScrimClose = this.handleDatePickerScrimClose.bind(this);
         this.datePickerScrim.addEventListener("onScrimClose", this.handleDatePickerScrimClose);
 
-        if (this.modal && this.open) this.datePickerScrim.show();
-        await this.updateComplete;
-        this.style.setProperty("--md-comp-date-picker-height", this.clientHeight + "px");
-        this.style.setProperty("--md-comp-date-picker-width", this.clientWidth + "px");
+        if (this.modal ) this.datePickerScrim=this.open
+        
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
+        
         this.datePickerScrim.removeEventListener("onScrimClose", this.handleDatePickerScrimClose);
         this.datePickerScrim.remove();
+    }
+
+    firstUpdated(changedProperties){
+        super.firstUpdated(changedProperties)
+
+        this.defaultValue = new Date(this.value.valueOf());
+        this.defaultIndex = this.index;
+
+        this.style.setProperty("--md-comp-date-picker-height", this.clientHeight + "px");
+        this.style.setProperty("--md-comp-date-picker-width", this.clientWidth + "px");
     }
 
     async updated(changedProperties) {
