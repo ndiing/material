@@ -32,9 +32,8 @@ class Ripple {
 
     /**
      * Initializes the ripple effect.
-     * @async
      */
-    async init() {
+     init() {
         this.container = this.host;
 
         if (this.options.container) {
@@ -78,9 +77,8 @@ class Ripple {
 
     /**
      * Destroys the ripple effect.
-     * @async
      */
-    async destroy() {
+     destroy() {
         if (this.container) {
             this.container.classList.remove("md-ripple");
             this.container.classList.remove("md-ripple--bounded");
