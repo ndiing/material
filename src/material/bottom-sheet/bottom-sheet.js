@@ -88,25 +88,34 @@ class MDBottomSheetComponent extends MdComponent {
         return html` ${this.icons?.length || this.label || this.sublabel || this.actions?.length ? html` <div class="md-bottom-sheet__header">${this.icons?.length ? html` <div class="md-bottom-sheet__icons">${this.icons.map((icon) => this.renderComponent(icon, "icon"))}</div> ` : nothing} ${this.label || this.sublabel ? html` <div class="md-bottom-sheet__labels">${this.label ? html`<div class="md-bottom-sheet__label">${this.label}</div>` : nothing} ${this.sublabel ? html`<div class="md-bottom-sheet__sublabel">${this.sublabel}</div>` : nothing}</div> ` : nothing} ${this.actions?.length ? html` <div class="md-bottom-sheet__actions">${this.actions.map((action) => this.renderComponent(action, "icon-button"))}</div> ` : nothing}</div> ` : nothing} ${this.body?.length || this.buttons?.length ? html` <div class="md-bottom-sheet__wrapper">${this.body?.length ? html`<div class="md-bottom-sheet__body">${this.body}</div>` : nothing} ${this.buttons?.length ? html` <div class="md-bottom-sheet__footer">${this.buttons?.length ? html` <div class="md-bottom-sheet__buttons">${this.buttons.map((button) => this.renderComponent(button, "button"))}</div> ` : nothing}</div> ` : nothing}</div> ` : nothing} `;
     }
 
-    async connectedCallback() {
+    connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-bottom-sheet");
         this.style.setProperty("--md-comp-bottom-sheet-animation", "none");
+
         this.bottomSheetScrim = document.createElement("md-scrim");
         this.parentElement.insertBefore(this.bottomSheetScrim, this.nextElementSibling);
+
         this.handleBottomSheetScrimClose = this.handleBottomSheetScrimClose.bind(this);
         this.bottomSheetScrim.addEventListener("onScrimClose", this.handleBottomSheetScrimClose);
 
-        if (this.modal && this.open) this.bottomSheetScrim.show();
-        await this.updateComplete;
-        this.style.setProperty("--md-comp-bottom-sheet-width", this.clientWidth + "px");
-        this.style.setProperty("--md-comp-bottom-sheet-height", this.clientHeight + "px");
+        if (this.modal) this.bottomSheetScrim.open = this.open;
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
+
         this.bottomSheetScrim.removeEventListener("onScrimClose", this.handleBottomSheetScrimClose);
+        
         this.bottomSheetScrim.remove();
+    }
+
+    firstUpdated(changedProperties) {
+        super.firstUpdated(changedProperties);
+        
+        this.style.setProperty("--md-comp-bottom-sheet-width", this.clientWidth + "px");
+        this.style.setProperty("--md-comp-bottom-sheet-height", this.clientHeight + "px");
     }
 
     updated(changedProperties) {
