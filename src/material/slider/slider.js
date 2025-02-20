@@ -109,7 +109,7 @@ class MDSliderComponent extends MdComponent {
         `;
     }
 
-    async connectedCallback() {
+     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-slider");
 
@@ -122,8 +122,14 @@ class MDSliderComponent extends MdComponent {
         else if (this.step > 1) this.variant = "discrete";
         else if (this.value.length > 1) this.variant = "range-selection";
         else this.variant = "continuous";
-        await this.updateComplete;
-        this.updateValue();
+
+        
+    }
+
+    firstUpdated(changedProperties) {
+        super.firstUpdated(changedProperties);
+
+        this.updateValue()
     }
 
     updated(changedProperties) {
