@@ -144,7 +144,10 @@ class MDListComponent extends MdComponent {
     async updated(changedProperties) {
         super.updated(changedProperties);
 
-        if (changedProperties.has("items")) {
+        if (
+            changedProperties.has("items")
+            // &&changedProperties.get("items")
+        ) {
             await this.updateComplete;
 
             this.load();
@@ -156,8 +159,10 @@ class MDListComponent extends MdComponent {
      */
     load() {
         this.store.load(this.items);
+        
         const result = this.store.get(this.storeOptios);
         this.itemsStore = result.data;
+        
         if (this.virtualize) this.virtual.load({ data: this.itemsStore });
         else this.itemsVirtual = this.itemsStore;
     }
