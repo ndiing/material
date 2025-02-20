@@ -101,11 +101,16 @@ class MDSnackbarComponent extends MdComponent {
         return html` ${this.body?.length ? html`<div class="md-snackbar__body">${this.body}</div>` : nothing} ${this.buttons?.length ? html` <div class="md-snackbar__footer">${this.buttons?.length ? html` <div class="md-snackbar__buttons">${this.buttons.map((button) => this.renderComponent(button, "button"))}</div> ` : nothing}</div> ` : nothing} `;
     }
 
-    async connectedCallback() {
+     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-snackbar");
         this.style.setProperty("--md-comp-snackbar-animation", "none");
-        await this.updateComplete;
+        
+        
+    }
+
+    firstUpdated(changedProperties){
+        super.firstUpdated(changedProperties)
         this.style.setProperty("--md-comp-snackbar-height", this.clientHeight + "px");
         this.style.setProperty("--md-comp-snackbar-width", this.clientWidth + "px");
     }
