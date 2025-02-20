@@ -48,14 +48,23 @@ class MDSwitchComponent extends MdComponent {
         `;
     }
 
-    async connectedCallback() {
+     connectedCallback() {
         super.connectedCallback();
+        
+        this.classList.add("md-switch");
+        this.style.setProperty("--md-comp-switch-thumb-transition-property", "none");
+
+       
+    }
+
+    
+
+    firstUpdated(changedProperties){
+        super.firstUpdated(changedProperties)
+
         this.defaultValue = this.value;
         this.defaultIndeterminate = this.indeterminate;
         this.defaultChecked = this.checked;
-        this.classList.add("md-switch");
-        this.style.setProperty("--md-comp-switch-thumb-transition-property", "none");
-        await this.updateComplete;
 
         this.ripple = new Ripple(this, {
             container: ".md-switch__thumb",
@@ -64,12 +73,6 @@ class MDSwitchComponent extends MdComponent {
             radius: 40,
             centered: true,
         });
-    }
-
-    async disconnectedCallback() {
-        super.disconnectedCallback();
-
-        if (this.ripple) this.ripple.destroy();
     }
 
     handleSwitchNativeInput(event) {
