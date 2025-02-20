@@ -94,25 +94,32 @@ class MDNavigationDrawerComponent extends MdComponent {
         `;
     }
 
-    async connectedCallback() {
+     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-navigation-drawer");
         this.style.setProperty("--md-comp-sheet-animation", "none");
+
         this.navigationDrawerScrim = document.createElement("md-scrim");
         this.parentElement.insertBefore(this.navigationDrawerScrim, this.nextElementSibling);
+
         this.handleNavigationDrawerScrimClose = this.handleNavigationDrawerScrimClose.bind(this);
         this.navigationDrawerScrim.addEventListener("onScrimClose", this.handleNavigationDrawerScrimClose);
 
-        if (this.modal && this.open) this.navigationDrawerScrim.show();
-        await this.updateComplete;
-        this.style.setProperty("--md-comp-sheet-width", this.clientWidth + "px");
-        this.style.setProperty("--md-comp-sheet-height", this.clientHeight + "px");
+        if (this.modal ) this.navigationDrawerScrim.open=this.open
+        
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
         this.navigationDrawerScrim.removeEventListener("onScrimClose", this.handleNavigationDrawerScrimClose);
         this.navigationDrawerScrim.remove();
+    }
+
+    firstUpdated(changedProperties){
+        super.firstUpdated(changedProperties)
+
+        this.style.setProperty("--md-comp-sheet-width", this.clientWidth + "px");
+        this.style.setProperty("--md-comp-sheet-height", this.clientHeight + "px");
     }
 
     updated(changedProperties) {
