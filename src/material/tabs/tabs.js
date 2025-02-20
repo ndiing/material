@@ -79,7 +79,7 @@ class MDTabsComponent extends MdComponent {
         this.emit("onTabClick", { event });
     }
 
-    async handleTabSelected(event) {
+     handleTabSelected(event) {
         if (this.classList.contains("md-tabs")) {
             const currentTarget = event.detail.currentTarget;
             const data = currentTarget.data;
