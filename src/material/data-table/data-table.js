@@ -2,6 +2,7 @@ import { html, nothing } from "lit";
 import { MdComponent, Mixins } from "../component/component";
 import { styleMap } from "lit/directives/style-map.js";
 import { Store } from "../store/store";
+import { ifDefined } from "lit/directives/if-defined.js";
 
 /**
  * MDDataTableComponent class responsible for displaying a data table.

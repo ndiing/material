@@ -1,5 +1,6 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
+import { ifDefined } from "lit/directives/if-defined.js";
 
 /**
  * @extends MdComponent
