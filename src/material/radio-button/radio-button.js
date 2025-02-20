@@ -46,26 +46,26 @@ class MDRadioButtonComponent extends MdComponent {
         `;
     }
 
-    async connectedCallback() {
+     connectedCallback() {
         super.connectedCallback();
+        
+        this.classList.add("md-radio-button");
+
+    }
+
+    
+    firstUpdated(changedProperties){
+        super.firstUpdated(changedProperties)
         this.defaultValue = this.value;
         this.defaultIndeterminate = this.indeterminate;
         this.defaultChecked = this.checked;
-        this.classList.add("md-radio-button");
-        await this.updateComplete;
-
+        
         this.ripple = new Ripple(this, {
             container: ".md-radio-button__track",
             trigger: ".md-radio-button__native",
             unbounded: true,
             radius: 40,
         });
-    }
-
-    async disconnectedCallback() {
-        super.disconnectedCallback();
-
-        if (this.ripple) this.ripple.destroy();
     }
 
     handleRadioButtonNativeInput(event) {
