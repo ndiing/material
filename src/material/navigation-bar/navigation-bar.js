@@ -32,11 +32,17 @@ class MDNavigationBarComponent extends MdComponent {
         `;
     }
 
-    async connectedCallback() {
+     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-navigation-bar");
         this.style.setProperty("--md-comp-sheet-animation", "none");
-        await this.updateComplete;
+        
+        
+    }
+
+    firstUpdated(changedProperties) {
+        super.firstUpdated(changedProperties);
+
         this.style.setProperty("--md-comp-sheet-width", this.clientWidth + "px");
         this.style.setProperty("--md-comp-sheet-height", this.clientHeight + "px");
     }

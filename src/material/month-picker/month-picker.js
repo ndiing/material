@@ -244,7 +244,7 @@ class MDMonthPickerComponent extends MdComponent {
         `;
     }
 
-    async connectedCallback() {
+    connectedCallback() {
         super.connectedCallback();
 
         this.classList.add("md-month-picker");
