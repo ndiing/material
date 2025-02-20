@@ -238,10 +238,18 @@ class MDTextFieldComponent extends MdComponent {
 
     async connectedCallback() {
         super.connectedCallback();
-        this.defaultValue = this.value;
+        
         this.classList.add("md-text-field");
         this.classList.toggle("md-text-field--populated", !!this.value);
-        await this.updateComplete;
+        
+        
+    }
+
+    firstUpdated(changedProperties){
+        super.firstUpdated(changedProperties)
+
+        this.defaultValue = this.value;
+
         this.textFieldOffset = this.querySelector(".md-text-field__prefix,.md-text-field__native");
         this.style.setProperty("--md-comp-text-field-offset-left", this.textFieldOffset.offsetLeft + "px");
     }
