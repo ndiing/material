@@ -46,26 +46,30 @@ class MDIconButtonComponent extends MdComponent {
         `;
     }
 
-    async connectedCallback() {
+     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-icon-button");
         this.handleIconButtonClick = this.handleIconButtonClick.bind(this);
         this.addEventListener("click", this.handleIconButtonClick);
-        await this.updateComplete;
 
-        this.ripple = new Ripple(this, {
-            trigger: ".md-icon-button__native",
-            unbounded: true,
-            radius: 40,
-            ...this.rippleOptions,
-        });
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
         this.removeEventListener("click", this.handleIconButtonClick);
 
-        if (this.ripple) this.ripple.destroy();
+    }
+
+    firstUpdated(changedProperties){
+        super.firstUpdated(changedProperties)
+
+    
+        this.ripple = new Ripple(this, {
+            trigger: ".md-icon-button__native",
+            unbounded: true,
+            radius: 40,
+            ...this.rippleOptions,
+        });
     }
 
     updated(changedProperties) {
