@@ -16,9 +16,9 @@ class DemoList extends MdComponent {
             }
             return data;
         }
-        this.items = generateLabelData(10000);
+        this.items = generateLabelData(10000)
         // setTimeout(() => {
-        //     this.items = generateLabelData(10)
+        //     this.items = generateLabelData(10000)
         //     this.requestUpdate()
         // },1000*5)
     }

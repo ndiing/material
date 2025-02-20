@@ -35,6 +35,8 @@
 /* menu */
 @keyframes menu-out {0% {overflow: hidden;opacity: 0;height: 48px;}100% {overflow: hidden;opacity: 1;height: var(--md-comp-menu-height);}}
 @keyframes menu-in {0% {overflow: hidden;opacity: 1;height: var(--md-comp-menu-height);}100% {overflow: hidden;opacity: 0;height: 48px;}}
+@keyframes menu-list-out {0% {overflow: hidden;}100% {overflow: hidden;}}
+@keyframes menu-list-in {0% {overflow: hidden;}100% {overflow: hidden;}}
 
 /* snackbar */
 @keyframes snackbar-out {0% {opacity: 0;height: 0px;}100% {opacity: 1;height: var(--md-comp-snackbar-height);}}

@@ -20,16 +20,15 @@ class MDListComponent extends MdComponent {
      * @property {boolean} [virtualize=false] - Indicates if the list should use virtualization.
      */
     static properties = {
-        items: { type: Array },
         type: { type: String },
-        fieldMap: { type: Object },
+        items: { type: Array },
         rippleOptions: { type: Object },
-        virtualOptions: { type: Object },
-        virtualize: { type: Boolean },
-
+        fieldMap: { type: Object },
+        storeOptions: { type: Object },
         itemsStore: { type: Array },
+        virtualize: { type: Boolean },
+        virtualOptions: { type: Object },
         itemsVirtual: { type: Array },
-        now: { type: Number },
     };
 
     /**
@@ -43,13 +42,16 @@ class MDListComponent extends MdComponent {
      */
     constructor() {
         super();
-        this.itemsStore = [];
         this.type = "single-select";
-
+        this.fieldMap = {};
         this.storeOptions = {};
-        this.store = new Store(this.storeOptions);
+        this.virtualOptions = {
+            item: "md-list-item",
+        };
+    }
 
-        this.virtualOptions = {};
+    getValue(item, name) {
+        return item[this.fieldMap[name] || name];
     }
 
     // /**
@@ -58,34 +60,28 @@ class MDListComponent extends MdComponent {
     //  * @returns {TemplateResult} The rendered template for the list item.
     //  */
     renderListItem(item) {
-        if (this.fieldMap) {
-            for (const name in this.fieldMap) {
-                const value = this.fieldMap[name];
-                item[name] = item[value];
-            }
-        }
         return html`
             <md-list-row>
                 <md-list-item
                     .data="${item}"
-                    .avatar="${ifDefined(item.avatar)}"
-                    .image="${ifDefined(item.image)}"
-                    .video="${ifDefined(item.video)}"
-                    .icon="${ifDefined(item.icon)}"
-                    .label="${ifDefined(item.label)}"
-                    .sublabel="${ifDefined(item.sublabel)}"
-                    .text="${ifDefined(item.text)}"
-                    .leadingCheckbox="${ifDefined(item.leadingCheckbox)}"
-                    .leadingRadioButton="${ifDefined(item.leadingRadioButton)}"
-                    .leadingSwitch="${ifDefined(item.leadingSwitch)}"
-                    .trailingCheckbox="${ifDefined(item.trailingCheckbox)}"
-                    .trailingRadioButton="${ifDefined(item.trailingRadioButton)}"
-                    .trailingSwitch="${ifDefined(item.trailingSwitch)}"
-                    .selected="${ifDefined(item.selected)}"
-                    .disabled="${ifDefined(item.disabled)}"
-                    .routerLink="${ifDefined(item.routerLink)}"
+                    .avatar="${ifDefined(this.getValue(item, "avatar"))}"
+                    .image="${ifDefined(this.getValue(item, "image"))}"
+                    .video="${ifDefined(this.getValue(item, "video"))}"
+                    .icon="${ifDefined(this.getValue(item, "icon"))}"
+                    .label="${ifDefined(this.getValue(item, "label"))}"
+                    .sublabel="${ifDefined(this.getValue(item, "sublabel"))}"
+                    .text="${ifDefined(this.getValue(item, "text"))}"
+                    .leadingCheckbox="${ifDefined(this.getValue(item, "leadingCheckbox"))}"
+                    .leadingRadioButton="${ifDefined(this.getValue(item, "leadingRadioButton"))}"
+                    .leadingSwitch="${ifDefined(this.getValue(item, "leadingSwitch"))}"
+                    .trailingCheckbox="${ifDefined(this.getValue(item, "trailingCheckbox"))}"
+                    .trailingRadioButton="${ifDefined(this.getValue(item, "trailingRadioButton"))}"
+                    .trailingSwitch="${ifDefined(this.getValue(item, "trailingSwitch"))}"
+                    .selected="${ifDefined(this.getValue(item, "selected"))}"
+                    .disabled="${ifDefined(this.getValue(item, "disabled"))}"
+                    .routerLink="${ifDefined(this.getValue(item, "routerLink"))}"
                     .rippleOptions="${ifDefined(item.rippleOptions || this.rippleOptions)}"
-                    .badge="${ifDefined(item.badge)}"
+                    .badge="${ifDefined(this.getValue(item, "badge"))}"
                     @click="${this.handleListItemClick}"
                     @onCheckboxNativeInput="${this.handleListItemCheckboxNativeInput}"
                     @onRadioButtonNativeInput="${this.handleListItemRadioButtonNativeInput}"
@@ -110,18 +106,19 @@ class MDListComponent extends MdComponent {
     //  */
     async connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-list");
         this.style.setProperty("--md-comp-list-icon-animation", "none");
 
+        this.store = new Store();
+
         if (this.virtualize) {
-            await this.updateComplete;
             this.handleListVirtualScroll = this.handleListVirtualScroll.bind(this);
             this.addEventListener("onVirtualScroll", this.handleListVirtualScroll);
-            this.virtual = new Virtual(this, {
-                item: "md-list-item",
-                ...this.virtualOptions,
-            });
-            this.load();
+
+            this.virtual = new Virtual(this, this.virtualOptions);
+
+            if (this.hasConnected) this.load();
         }
     }
 
@@ -131,10 +128,14 @@ class MDListComponent extends MdComponent {
     //  */
     async disconnectedCallback() {
         super.disconnectedCallback();
-        if (this.virtualize && this.virtual) {
+
+        if (this.virtualize) {
             this.removeEventListener("onVirtualScroll", this.handleListVirtualScroll);
+
             this.virtual.destroy();
         }
+
+        this.hasConnected = true;
     }
 
     // /**
@@ -144,36 +145,28 @@ class MDListComponent extends MdComponent {
     async updated(changedProperties) {
         super.updated(changedProperties);
 
-        if (
-            changedProperties.has("items")
-            // &&changedProperties.get("items")
-        ) {
+        if (changedProperties.has("items")) {
             await this.updateComplete;
-
             this.load();
         }
     }
 
-    /**
-     * Loads the items into the store and updates the virtual list if enabled.
-     */
     load() {
         this.store.load(this.items);
-        
-        const result = this.store.get(this.storeOptios);
+
+        const result = this.store.get(this.storeOptions);
         this.itemsStore = result.data;
-        
-        if (this.virtualize) this.virtual.load({ data: this.itemsStore });
-        else this.itemsVirtual = this.itemsStore;
+
+        if (this.virtualize) {
+            this.virtualOptions.data = this.itemsStore;
+            this.virtual.load(this.virtualOptions);
+        } else {
+            this.itemsVirtual = this.itemsStore;
+        }
     }
 
-    // /**
-    //  * Handles the virtual scroll event.
-    //  * @param {Event} event - The virtual scroll event.
-    //  */
     handleListVirtualScroll(event) {
         this.itemsVirtual = event.detail.data;
-        // console.log(event)
     }
 
     // /**
@@ -181,12 +174,12 @@ class MDListComponent extends MdComponent {
     //  * @param {Event} event - The click event.
     //  */
     handleListItemClick(event) {
-        this.style.removeProperty("--md-comp-list-icon-animation");
         const action = event.target.closest(".md-list__checkbox,.md-list__radio-button,.md-list__switch");
-
         if (action) return;
-        const data = event.currentTarget.data;
 
+        this.style.removeProperty("--md-comp-list-icon-animation");
+
+        const data = event.currentTarget.data;
         if (this.type === "single-select") {
             this.itemsStore.forEach((item) => {
                 item.selected = item === data;
@@ -225,7 +218,6 @@ class MDListComponent extends MdComponent {
     //  */
     handleListItemRadioButtonNativeInput(event) {
         const data = event.currentTarget.data;
-
         this.itemsStore.forEach((item) => {
             item.selected = item === data;
         });
@@ -254,7 +246,5 @@ class MDListComponent extends MdComponent {
         this.emit("onListItemSwitchNativeInput", { event });
     }
 }
-
 customElements.define("md-list", MDListComponent);
-
 export { MDListComponent };

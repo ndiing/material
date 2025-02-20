@@ -38,6 +38,12 @@ class Virtual {
         const data = this.options.data.slice(start, end);
         const cache = [rowHeight, total, start, end, data, this.now].toString();
 
+        this.rowHeight=rowHeight
+        this.total=total
+        this.start=start
+        this.end=end
+        this.data=data
+
         if (this.cache !== cache) {
             this.cache = cache;
 
@@ -72,6 +78,7 @@ class Virtual {
         const limit = Math.min(total - start, Math.ceil(viewportHeight / rowHeight) + 2 * nodePadding);
         const end = start + limit;
         const translateY = start * rowHeight;
+        
         this.items = this.host.querySelectorAll(this.options.item);
 
         this.items.forEach((item) => {

@@ -1,6 +1,20 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
 class DemoMenu extends MdComponent {
+    constructor(){
+        super()
+        function generateLabelData(count) {
+            const data = [];
+            for (let i = 1; i <= count; i++) {
+                data.push({
+                    id: i,
+                    label: `Label ${i}`,
+                });
+            }
+            return data;
+        }
+        this.items = generateLabelData(10000);
+    }
     render() {
         return html`
             <div class="md-layout">
@@ -37,7 +51,7 @@ class DemoMenu extends MdComponent {
                         ></md-button>
                         <md-menu
                             id="menu2"
-                            .items="${[{ label: "Label" }, { label: "Label" }, { label: "Label" }, { label: "Label", selected: true }]}"
+                            .items="${this.items}"
                             @onMenuShow="${console.log}"
                             @onMenuClose="${console.log}"
                             @onMenuWindowClick="${(event) => {

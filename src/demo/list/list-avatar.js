@@ -7,19 +7,7 @@ class DemoList extends MdComponent {
                 <div class="md-layout__grid">
                     <div class="md-layout__column--expanded6 md-layout__column--medium4 md-layout__column--compact4">
                         <md-list
-                            .items="${[
-                                { avatar: "https://api.dicebear.com/9.x/dylan/svg?seed=Leah", title: "Label", subtitle: "Sublabel Sublabel Sublabel Sublabel Sublabel" },
-                                { avatar: "https://api.dicebear.com/9.x/dylan/svg?seed=Leah", title: "Label", subtitle: "Sublabel" },
-                                { avatar: "https://api.dicebear.com/9.x/dylan/svg?seed=Leah", title: "Label" },
-                            ]}"
-                            .fieldMap="${{
-                                label: "title",
-                                sublabel: "subtitle",
-                            }}"
-                            @onListItemClick="${console.log}"
-                            @onListItemCheckboxNativeInput="${console.log}"
-                            @onListItemRadioButtonNativeInput="${console.log}"
-                            @onListItemSwitchNativeInput="${console.log}"
+                            items='[{"avatar":"https://api.dicebear.com/9.x/dylan/svg?seed=Leah","label":"Label","sublabel":"Sublabel Sublabel Sublabel Sublabel Sublabel"},{"avatar":"https://api.dicebear.com/9.x/dylan/svg?seed=Leah","label":"Label","sublabel":"Sublabel"},{"avatar":"https://api.dicebear.com/9.x/dylan/svg?seed=Leah","label":"Label"}]'
                         ></md-list>
                     </div>
                     <div class="md-layout__column--expanded6 md-layout__column--medium4 md-layout__column--compact4">
@@ -44,3 +32,4 @@ class DemoList extends MdComponent {
 customElements.define("demo-list-avatar", DemoList);
 
 export default document.createElement("demo-list-avatar");
+

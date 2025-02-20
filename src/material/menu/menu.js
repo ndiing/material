@@ -22,6 +22,9 @@ class MDMenuComponent extends MdComponent {
     constructor() {
         super();
         this.items = [];
+        this.virtualOptions={
+            rowHeight:48
+        }
     }
 
     render() {
@@ -29,6 +32,8 @@ class MDMenuComponent extends MdComponent {
         return html`
             <md-list 
                 .items="${this.items}"
+                virtualize
+                .virtualOptions="${this.virtualOptions}"
             ></md-list>
         `
     }
@@ -37,15 +42,15 @@ class MDMenuComponent extends MdComponent {
         super.connectedCallback();
         this.classList.add("md-menu");
         this.style.setProperty("--md-comp-menu-animation", "none");
-        await this.updateComplete;
-        this.style.setProperty("--md-comp-menu-height", this.clientHeight + "px");
-        this.style.setProperty("--md-comp-menu-width", this.clientWidth + "px");
+        
     }
 
     /**
      * @param {Any} [options={}]
      */
-    show(options = {}) {
+    async show(options = {}) {
+        this.style.setProperty("--md-comp-menu-height", this.clientHeight + "px");
+        this.style.setProperty("--md-comp-menu-width", this.clientWidth + "px");
         this.style.removeProperty("--md-comp-menu-animation");
         this.handleMenuShown = this.handleMenuShown.bind(this);
         this.addEventListener("animationend", this.handleMenuShown);
