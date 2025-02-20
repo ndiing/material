@@ -17,11 +17,11 @@ class MDDataTableNativeComponent extends Mixins(HTMLTableElement) {
         this.instance.dataVirtual = event.detail.data;
 
         /**
-         * @event handleDataTableNativeVirtualScroll
+         * @event onDataTableNativeVirtualScroll
          * @type {Object}
          * @property {Object} event
          */
-        this.emit("handleDataTableNativeVirtualScroll", { event });
+        this.emit("onDataTableNativeVirtualScroll", { event });
     }
 
     connectedCallback() {

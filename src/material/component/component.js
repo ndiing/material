@@ -8,7 +8,7 @@ const Mixins = (Super) =>
                 cancelable: true,
                 detail,
             });
-            console.log(type, event);
+            // console.log(type, event);
             this.dispatchEvent(event);
         }
     };
