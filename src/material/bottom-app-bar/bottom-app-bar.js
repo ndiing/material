@@ -2,6 +2,7 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
+
 /**
  * MDBottomAppBarComponent class responsible for displaying a bottom app bar.
  * @extends MdComponent
@@ -26,26 +27,27 @@ class MDBottomAppBarComponent extends MdComponent {
      * @property {string} [fab] - The floating action button (FAB) to display.
      * @property {boolean} [open=false] - Indicates if the bottom app bar is open.
      */
-
     static properties = {
         actions: { type: Array },
         fab: { type: String },
         open: { type: Boolean, reflect: true },
     };
+
     /**
      * Creates an instance of the MDBottomAppBarComponent class.
      */
-
     constructor() {
         super();
     }
-    // /**
+
+    //
+    /**
     //  * Renders an icon button.
     //  * @param {Object} item - The item data for the icon button.
     //  * @returns {TemplateResult} The rendered template for the icon button.
     //  */
-
     renderIconButton(item) {
+        /* prettier-ignore */
         return html`
             <md-icon-button
                 class="md-bottom-app-bar__action"
@@ -60,13 +62,15 @@ class MDBottomAppBarComponent extends MdComponent {
             ></md-icon-button>
         `;
     }
-    // /**
+
+    //
+    /**
     //  * Renders a floating action button (FAB).
     //  * @param {Object|string} item - The item data for the FAB or the icon name.
     //  * @returns {TemplateResult} The rendered template for the FAB.
     //  */
-
     renderFab(item) {
+        /* prettier-ignore */
         return html`
             <md-fab
                 class="md-bottom-app-bar__fab"
@@ -80,77 +84,80 @@ class MDBottomAppBarComponent extends MdComponent {
             ></md-fab>
         `;
     }
-    // /**
+
+    //
+    /**
     //  * Renders the bottom app bar.
     //  * @returns {TemplateResult} The rendered template for the bottom app bar.
     //  */
-
     render() {
-        return html` ${this.actions?.length ? html` <div class="md-bottom-app-bar__actions">${this.actions.map((action) => this.renderIconButton(action))}</div> ` : nothing} ${this.fab ? this.renderFab(this.fab) : nothing} `;
+        /* prettier-ignore */
+        return html` 
+            ${this.actions?.length ? html` 
+            <div class="md-bottom-app-bar__actions">${this.actions.map((action) => this.renderIconButton(action))}</div>
+            ` : nothing} 
+            ${this.fab ? this.renderFab(this.fab) : nothing} 
+        `;
     }
-    // /**
+
+    //
+    /**
     //  * Called when the element is connected to the DOM.
     //  * Adds the 'md-bottom-app-bar' class and updates the component dimensions.
     //  */
-
-    connectedCallback() {
+    async connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-bottom-app-bar");
-        this.style.setProperty("--md-comp-sheet-animation", "none");
+        this.style.setProperty("--md-comp-bottom-app-bar-animation", "none");
+
+        await this.updateComplete;
+
+        this.style.setProperty("--md-comp-bottom-app-bar-width", this.clientWidth + "px");
+        this.style.setProperty("--md-comp-bottom-app-bar-height", this.clientHeight + "px");
     }
 
-    firstUpdated(changedProperties) {
-        super.firstUpdated(changedProperties);
-        this.style.setProperty("--md-comp-sheet-width", this.clientWidth + "px");
-        this.style.setProperty("--md-comp-sheet-height", this.clientHeight + "px");
-    }
-    // /**
-    //  * Called when the properties of the component are updated.
-    //  * @param {Map} changedProperties - The properties that changed.
-    //  */
-
-    updated(changedProperties) {
-        super.updated(changedProperties);
-    }
     /**
      * Shows the bottom app bar.
      */
-
     show() {
-        this.style.removeProperty("--md-comp-sheet-animation");
+        this.style.removeProperty("--md-comp-bottom-app-bar-animation");
         this.open = true;
+
         /**
          * @event onBottomAppBarShow
          * @property {Object} event - The show event.
          */
         this.emit("onBottomAppBarShow");
     }
+
     /**
      * Closes the bottom app bar.
      */
-
     close() {
-        this.style.removeProperty("--md-comp-sheet-animation");
+        this.style.removeProperty("--md-comp-bottom-app-bar-animation");
         this.open = false;
+
         /**
          * @event onBottomAppBarClose
          * @property {Object} event - The close event.
          */
         this.emit("onBottomAppBarClose");
     }
+
     /**
      * Toggles the visibility of the bottom app bar.
      */
-
     toggle() {
         if (this.open) this.close();
         else this.show();
     }
-    // /**
+
+    //
+    /**
     //  * Handles the icon button click event in the bottom app bar.
     //  * @param {Event} event - The icon button click event.
     //  */
-
     handleBottomAppBarIconButtonClick(event) {
         /**
          * @event onBottomAppBarIconButtonClick
@@ -158,11 +165,12 @@ class MDBottomAppBarComponent extends MdComponent {
          */
         this.emit("onBottomAppBarIconButtonClick", { event });
     }
-    // /**
+
+    //
+    /**
     //  * Handles the FAB click event in the bottom app bar.
     //  * @param {Event} event - The FAB click event.
     //  */
-
     handleBottomAppBarFabClick(event) {
         /**
          * @event onBottomAppBarFabClick

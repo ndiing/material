@@ -1,6 +1,7 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
+
 /**
  * @extends MdComponent
  * @element md-tabs
@@ -11,7 +12,6 @@ class MDTabsComponent extends MdComponent {
      * @property {Object} [rippleOptions]
      * @property {primary|secondary} [variant]
      */
-
     static properties = {
         items: { type: Array },
         rippleOptions: { type: Object },
@@ -22,11 +22,13 @@ class MDTabsComponent extends MdComponent {
 
     constructor() {
         super();
+
         this.items = [];
         this.variant = "primary";
     }
 
     renderTab(item) {
+        /* prettier-ignore */
         return html`
             <md-tab
                 .data="${item}"
@@ -44,17 +46,19 @@ class MDTabsComponent extends MdComponent {
     }
 
     render() {
-        return this.items.map((item) => this.renderTab(item));
+        return this.items?.map((item) => this.renderTab(item));
     }
 
     connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-tabs");
         this.style.setProperty("--md-comp-tabs-indicator-transition-property", "none");
     }
 
     updated(changedProperties) {
         super.updated(changedProperties);
+
         if (changedProperties.has("variant")) {
             this.variants.forEach((variant) => {
                 this.classList.toggle(`md-tabs--${variant}`, variant === this.variant);
@@ -69,39 +73,44 @@ class MDTabsComponent extends MdComponent {
             item.selected = item === data;
         });
         this.requestUpdate();
+
         /**
          * @event onTabClick
          * @property {Object} event
          */
         this.emit("onTabClick", { event });
     }
-    handleTabSelected(event) {
-        if (this.classList.contains("md-tabs")) {
-            const currentTarget = event.detail.currentTarget;
-            const data = currentTarget.data;
-            this.currIndex = this.items.indexOf(data);
-            this.prevIndex = this.prevIndex ?? this.currIndex;
-            const direction = this.currIndex > this.prevIndex ? "right" : "left";
-            this.classList.remove("md-tabs--left");
-            this.classList.remove("md-tabs--right");
-            this.classList.add("md-tabs--" + direction);
-            this.prevIndex = this.currIndex;
-            let left = currentTarget.offsetLeft;
-            let right = this.clientWidth - (left + currentTarget.clientWidth);
-            if (this.classList.contains("md-tabs--primary")) {
-                const label = currentTarget.querySelector(".md-tab__label");
-                left = label.offsetLeft + currentTarget.offsetLeft;
-                right = this.clientWidth - (left + label.clientWidth);
-                if (!currentTarget.classList.contains("md-tab--with-icon")) {
-                    const badge = currentTarget.querySelector(".md-tab__badge");
-                    if (badge) {
-                        right = this.clientWidth - (badge.offsetLeft + currentTarget.offsetLeft + badge.clientWidth);
-                    }
+
+    async handleTabSelected(event) {
+        await this.updateComplete;
+
+        const currentTarget = event.detail.currentTarget;
+        const data = currentTarget.data;
+        this.currIndex = this.items.indexOf(data);
+        this.prevIndex = this.prevIndex ?? this.currIndex;
+        const direction = this.currIndex > this.prevIndex ? "right" : "left";
+        this.classList.remove("md-tabs--left");
+        this.classList.remove("md-tabs--right");
+        this.classList.add("md-tabs--" + direction);
+        this.prevIndex = this.currIndex;
+        let left = currentTarget.offsetLeft;
+        let right = this.clientWidth - (left + currentTarget.clientWidth);
+
+        if (this.classList.contains("md-tabs--primary")) {
+            const label = currentTarget.querySelector(".md-tab__label");
+            left = label.offsetLeft + currentTarget.offsetLeft;
+            right = this.clientWidth - (left + label.clientWidth);
+
+            if (!currentTarget.classList.contains("md-tab--with-icon")) {
+                const badge = currentTarget.querySelector(".md-tab__badge");
+
+                if (badge) {
+                    right = this.clientWidth - (badge.offsetLeft + currentTarget.offsetLeft + badge.clientWidth);
                 }
             }
-            this.style.setProperty("--md-comp-tabs-indicator-left", left + "px");
-            this.style.setProperty("--md-comp-tabs-indicator-right", right + "px");
         }
+        this.style.setProperty("--md-comp-tabs-indicator-left", left + "px");
+        this.style.setProperty("--md-comp-tabs-indicator-right", right + "px");
     }
 }
 

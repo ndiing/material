@@ -8,18 +8,18 @@
     height: 80px;
     padding: 0 16px;
     gap: 0 16px;
-    margin-bottom: calc(0px - var(--md-comp-sheet-height));
+    margin-bottom: calc(0px - var(--md-comp-bottom-app-bar-height));
     background-color: var(--md-sys-color-surface-container);
     box-shadow: var(--md-sys-elevation-level2);
-    --md-comp-sheet-animation: sheet-south-in;
-    animation-name: var(--md-comp-sheet-animation);
+    --md-comp-bottom-app-bar-animation: bottom-app-bar-in;
+    animation-name: var(--md-comp-bottom-app-bar-animation);
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
     animation-duration: var(--md-sys-motion-duration-short3);
 
     &[open] {
         margin-bottom: 0;
-        --md-comp-sheet-animation: sheet-south-out;
-        animation-name: var(--md-comp-sheet-animation);
+        --md-comp-bottom-app-bar-animation: bottom-app-bar-out;
+        animation-name: var(--md-comp-bottom-app-bar-animation);
         animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
     }
 }

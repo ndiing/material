@@ -2,6 +2,7 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { MDTextFieldComponent } from "../text-field/text-field";
 import { closestScrollableElement, parseMonth, stringifyMonth } from "../util/util";
+
 /**
  * @extends MDTextFieldComponent
  * @element md-month-field
@@ -9,6 +10,7 @@ import { closestScrollableElement, parseMonth, stringifyMonth } from "../util/ut
 class MDMonthFieldComponent extends MDTextFieldComponent {
     constructor() {
         super();
+
         this.type = "month";
     }
 
@@ -25,11 +27,13 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
 
     connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-month-field");
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
+
         this.removePicker();
     }
 
@@ -61,28 +65,28 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
             this.picker = undefined;
         }
     }
+
     /**
      * @param {Any} [options={}]
      */
-
     showPicker(options = {}) {
         if (this.picker) {
             if (this.textFieldNative.value) this.picker.value = parseMonth(this.textFieldNative.value);
             this.picker.show(options);
         }
     }
+
     /**
      */
-
     closePicker() {
         if (this.picker) {
             this.picker.close();
         }
     }
+
     /**
      * @param {Any} [options]
      */
-
     togglePicker(options) {
         if (this.picker) {
             if (this.picker.open) this.closePicker();

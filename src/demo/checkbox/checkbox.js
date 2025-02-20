@@ -9,8 +9,6 @@ class DemoCheckbox extends MdComponent {
                         <md-checkbox
                             name="checkbox"
                             value="checkbox"
-                            @onCheckboxNativeInput="${console.log}"
-                            @onCheckboxNativeReset="${console.log}"
                         ></md-checkbox>
                     </div>
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
@@ -18,8 +16,6 @@ class DemoCheckbox extends MdComponent {
                             name="checkbox"
                             value="checkbox"
                             indeterminate=""
-                            @onCheckboxNativeInput="${console.log}"
-                            @onCheckboxNativeReset="${console.log}"
                         ></md-checkbox>
                     </div>
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
@@ -27,8 +23,6 @@ class DemoCheckbox extends MdComponent {
                             name="checkbox"
                             value="checkbox"
                             checked=""
-                            @onCheckboxNativeInput="${console.log}"
-                            @onCheckboxNativeReset="${console.log}"
                         ></md-checkbox>
                     </div>
                 </div>

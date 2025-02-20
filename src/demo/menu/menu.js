@@ -29,16 +29,12 @@ class DemoMenu extends MdComponent {
                         <md-menu
                             id="menu"
                             .items="${[{ label: "Label" }, { label: "Label" }, { label: "Label" }, { label: "Label" }]}"
-                            @onMenuShow="${console.log}"
-                            @onMenuClose="${console.log}"
                             @onMenuWindowClick="${(event) => {
                                 if (!menu.contains(event.detail.target) && !button.contains(event.detail.target)) {
                                     menu.close();
                                 }
                             }}"
                             @onMenuWindowScroll="${() => menu.close()}"
-                            @onMenuShown="${console.log}"
-                            @onMenuClosed="${console.log}"
                             @onNavigationListItemClick="${() => menu.close()}"
                         ></md-menu>
                     </div>
@@ -52,16 +48,12 @@ class DemoMenu extends MdComponent {
                         <md-menu
                             id="menu2"
                             .items="${this.items}"
-                            @onMenuShow="${console.log}"
-                            @onMenuClose="${console.log}"
                             @onMenuWindowClick="${(event) => {
                                 if (!menu2.contains(event.detail.target) && !button2.contains(event.detail.target)) {
                                     menu2.close();
                                 }
                             }}"
                             @onMenuWindowScroll="${() => menu2.close()}"
-                            @onMenuShown="${console.log}"
-                            @onMenuClosed="${console.log}"
                             @onNavigationListItemClick="${() => menu2.close()}"
                         ></md-menu>
                     </div>

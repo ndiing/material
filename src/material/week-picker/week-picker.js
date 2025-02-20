@@ -6,6 +6,7 @@ import { closestScrollableElement, parseWeek, stringifyWeek } from "../util/util
 import { setPosition } from "../popper/popper";
 import { classMap } from "lit/directives/class-map.js";
 import { cache } from "lit/directives/cache.js";
+
 /**
  * @extends MdComponent
  * @element md-week-picker
@@ -23,7 +24,6 @@ class MDWeekPickerComponent extends MdComponent {
      * @property {Any} [index]
      * @property {Any} [selection]
      */
-
     static properties = {
         icons: { type: Array },
         actions: { type: Array },
@@ -140,6 +140,7 @@ class MDWeekPickerComponent extends MdComponent {
 
     constructor() {
         super();
+
         this.current = new Date();
         this.value = new Date();
         this.selection = new Date();
@@ -148,11 +149,7 @@ class MDWeekPickerComponent extends MdComponent {
 
     renderIcon(item) {
         /* prettier-ignore */
-        return html`
-            <md-icon
-                .data="${item}"
-            >${item.icon}</md-icon>
-        `;
+        return html` <md-icon .data="${item}">${item.icon}</md-icon> `;
     }
 
     renderIconButton(item) {
@@ -189,11 +186,7 @@ class MDWeekPickerComponent extends MdComponent {
 
     renderSpacer(item) {
         /* prettier-ignore */
-        return html`
-            <div 
-                class="md-week-picker__spacer"
-            ></div>
-        `;
+        return html` <div class="md-week-picker__spacer"></div> `;
     }
 
     renderComponent(item, component = "icon") {
@@ -210,15 +203,19 @@ class MDWeekPickerComponent extends MdComponent {
         /* prettier-ignore */
         return html`
             <div class="md-week-picker__list">
-                ${this.years.map((item) => html`
-                    <div
-                        .data="${item}"
-                        ?selected="${item.selected}"
-                        ?activated="${item.activated}"
-                        @click="${this.handleWeekPickerYearItemClick}"
-                        class="md-week-picker__list-item"
-                    >${item.label}</div>
-                `)}
+                ${this.years.map(
+                    (item) => html`
+                        <div
+                            .data="${item}"
+                            ?selected="${item.selected}"
+                            ?activated="${item.activated}"
+                            @click="${this.handleWeekPickerYearItemClick}"
+                            class="md-week-picker__list-item"
+                        >
+                            ${item.label}
+                        </div>
+                    `,
+                )}
             </div>
         `;
     }
@@ -227,15 +224,19 @@ class MDWeekPickerComponent extends MdComponent {
         /* prettier-ignore */
         return html`
             <div class="md-week-picker__list">
-                ${this.months.map((item) => html`
-                    <div
-                        .data="${item}"
-                        ?selected="${item.selected}"
-                        ?activated="${item.activated}"
-                        @click="${this.handleWeekPickerMonthItemClick}"
-                        class="md-week-picker__list-item"
-                    >${item.label}</div>
-                `)}
+                ${this.months.map(
+                    (item) => html`
+                        <div
+                            .data="${item}"
+                            ?selected="${item.selected}"
+                            ?activated="${item.activated}"
+                            @click="${this.handleWeekPickerMonthItemClick}"
+                            class="md-week-picker__list-item"
+                        >
+                            ${item.label}
+                        </div>
+                    `,
+                )}
             </div>
         `;
     }
@@ -245,32 +246,34 @@ class MDWeekPickerComponent extends MdComponent {
         return html`
             <div class="md-week-picker__table">
                 <div class="md-week-picker__table-header">
-                    <div class="md-week-picker__table-row">
-                        ${this.weekdays.map((item) => html`
-                            <div class="md-week-picker__table-cell">${item.label}</div>    
-                        `)}
-                    </div>
+                    <div class="md-week-picker__table-row">${this.weekdays.map((item) => html` <div class="md-week-picker__table-cell">${item.label}</div> `)}</div>
                 </div>
                 <div class="md-week-picker__table-body">
-                    ${this.days.map((row) => html`
-                        <div 
-                            class="md-week-picker__table-row"
-                            .data="${row}"
-                            ?selected="${row.selected}"
-                            ?activated="${row.activated}"
-                            @click="${this.handleWeekPickerWeekItemClick}"
-                        >
-                            ${row.children.map((item) => html`
-                                <div
-                                    class="${classMap({
-                                        "md-week-picker__table-cell": true,
-                                        "md-week-picker__table-cell--same-month": item.isSameMonth,
-                                        "md-week-picker__table-cell--sunday": item.isSunday,
-                                    })}"
-                                >${item.label}</div>
-                            `)}
-                        </div>
-                    `)}
+                    ${this.days.map(
+                        (row) => html`
+                            <div
+                                class="md-week-picker__table-row"
+                                .data="${row}"
+                                ?selected="${row.selected}"
+                                ?activated="${row.activated}"
+                                @click="${this.handleWeekPickerWeekItemClick}"
+                            >
+                                ${row.children.map(
+                                    (item) => html`
+                                        <div
+                                            class="${classMap({
+                                                "md-week-picker__table-cell": true,
+                                                "md-week-picker__table-cell--same-month": item.isSameMonth,
+                                                "md-week-picker__table-cell--sunday": item.isSunday,
+                                            })}"
+                                        >
+                                            ${item.label}
+                                        </div>
+                                    `,
+                                )}
+                            </div>
+                        `,
+                    )}
                 </div>
             </div>
         `;
@@ -279,77 +282,81 @@ class MDWeekPickerComponent extends MdComponent {
     render() {
         /* prettier-ignore */
         return html`
-            ${this.icons?.length || this.label || this.sublabel || this.actions?.length? html`
-                <div class="md-week-picker__header">
-                    <div class="md-week-picker__icons">${this.icons.map((icon) => this.renderComponent(icon, "icon"))}</div>
-                    ${this.actions?.length ? html` <div class="md-week-picker__actions">${this.actions.map((action) => this.renderComponent(action, "icon-button"))}</div> ` : nothing}
-                </div>
-            `: nothing}
+            ${this.icons?.length || this.label || this.sublabel || this.actions?.length
+                ? html`
+                      <div class="md-week-picker__header">
+                          <div class="md-week-picker__icons">${this.icons.map((icon) => this.renderComponent(icon, "icon"))}</div>
+                          ${this.actions?.length ? html` <div class="md-week-picker__actions">${this.actions.map((action) => this.renderComponent(action, "icon-button"))}</div> ` : nothing}
+                      </div>
+                  `
+                : nothing}
             <div class="md-week-picker__wrapper">
                 <div class="md-week-picker__body">
                     <div class="md-week-picker__items">
-                        <div class="md-week-picker__item">${cache([
-                            this.renderWeekPickerYear.bind(this), 
-                            this.renderWeekPickerMonth.bind(this), 
-                            this.renderWeekPickerDay.bind(this), 
-                        ][this.index]())}</div>
+                        <div class="md-week-picker__item">${cache([this.renderWeekPickerYear.bind(this), this.renderWeekPickerMonth.bind(this), this.renderWeekPickerDay.bind(this)][this.index]())}</div>
                     </div>
                 </div>
-                ${this.buttons?.length ? html`
-                    <div class="md-week-picker__footer">
-                        ${this.buttons?.length ? html`
-                            <div class="md-week-picker__buttons">${this.buttons.map((button) => this.renderComponent(button, "button"))}</div>
-                        ` : nothing}
-                    </div>    
-                ` : nothing}
+                ${this.buttons?.length ? html` <div class="md-week-picker__footer">${this.buttons?.length ? html` <div class="md-week-picker__buttons">${this.buttons.map((button) => this.renderComponent(button, "button"))}</div> ` : nothing}</div> ` : nothing}
             </div>
         `;
     }
-    connectedCallback() {
+
+    async connectedCallback() {
         super.connectedCallback();
+        this.defaultValue = this.defaultValue || new Date(this.value.valueOf());
+        this.defaultIndex = this.defaultIndex || this.index;
 
         this.classList.add("md-week-picker");
         this.style.setProperty("--md-comp-week-picker-animation", "none");
-        this.weekPickerScrim = document.createElement("md-scrim");
-        this.parentElement.insertBefore(this.weekPickerScrim, this.nextElementSibling);
+
+        this.handleWeekPickerAnimationend = this.handleWeekPickerAnimationend.bind(this);
+        this.addEventListener("animationend", this.handleWeekPickerAnimationend);
+
+        this.scrim = document.createElement("md-scrim");
+        this.parentElement.insertBefore(this.scrim, this.nextElementSibling);
+
         this.handleWeekPickerScrimClose = this.handleWeekPickerScrimClose.bind(this);
-        this.weekPickerScrim.addEventListener("onScrimClose", this.handleWeekPickerScrimClose);
-        if (this.modal) this.weekPickerScrim.open = this.open;
+        this.scrim.addEventListener("onScrimClose", this.handleWeekPickerScrimClose);
+
+        if (this.modal) this.scrim.open = this.open;
+
+        await this.updateComplete;
+
+        this.style.setProperty("--md-comp-week-picker-height", this.clientHeight + "px");
+        this.style.setProperty("--md-comp-week-picker-width", this.clientWidth + "px");
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
-        this.weekPickerScrim.removeEventListener("onScrimClose", this.handleWeekPickerScrimClose);
-        this.weekPickerScrim.remove();
+
+        this.removeEventListener("animationend", this.handleWeekPickerAnimationend);
+
+        this.scrim.removeEventListener("onScrimClose", this.handleWeekPickerScrimClose);
+        this.scrim.remove();
     }
 
-    firstUpdated(changedProperties) {
-        super.firstUpdated(changedProperties);
-        this.defaultValue = new Date(this.value.valueOf());
-        this.defaultIndex = this.index;
-        this.style.setProperty("--md-comp-week-picker-height", this.clientHeight + "px");
-        this.style.setProperty("--md-comp-week-picker-width", this.clientWidth + "px");
-    }
     updated(changedProperties) {
         super.updated(changedProperties);
+
         if (changedProperties.has("index")) {
             this.style.setProperty("--md-comp-week-picker-index", this.index);
         }
+
         if (changedProperties.has("modal")) {
             this.classList.toggle(`md-week-picker--modal`, !!this.modal);
         }
+
         if (changedProperties.has("value")) {
             this.selection = new Date(this.value.valueOf());
         }
     }
+
     /**
      * @param {Any} [options]
      */
-
     show(options) {
         this.index = this.defaultIndex;
-        this.handleWeekPickerShown = this.handleWeekPickerShown.bind(this);
-        this.addEventListener("animationend", this.handleWeekPickerShown);
+
         this.weekPickerWindow = closestScrollableElement(this);
         this.handleWeekPickerWindowScroll = this.handleWeekPickerWindowScroll.bind(this);
         this.weekPickerWindow.addEventListener("scroll", this.handleWeekPickerWindowScroll);
@@ -359,44 +366,39 @@ class MDWeekPickerComponent extends MdComponent {
         setPosition({
             container: this,
             offset: 4 + 4,
-            /* prettier-ignore */
-            placements: [
-                "bottom-start", "bottom-end", "bottom", 
-                "top-start", "top-end", "top", 
-                "right-start", "right-end", "right", 
-                "left-start", "left-end", "left"
-            ],
+
+            placements: ["bottom-start", "bottom-end", "bottom", "top-start", "top-end", "top", "right-start", "right-end", "right", "left-start", "left-end", "left"],
             ...options,
         });
         this.open = true;
-        if (this.modal) this.weekPickerScrim.show();
+        if (this.modal) this.scrim.show();
+
         /**
          * @event onWeekPickerShow
          * @property {Object} event
          */
         this.emit("onWeekPickerShow");
     }
+
     /**
      */
-
     close() {
-        this.handleWeekPickerClosed = this.handleWeekPickerClosed.bind(this);
-        this.addEventListener("animationend", this.handleWeekPickerClosed);
         this.weekPickerWindow.removeEventListener("scroll", this.handleWeekPickerWindowScroll);
         window.removeEventListener("click", this.handleWeekPickerWindowClick);
         this.style.removeProperty("--md-comp-week-picker-animation");
         this.open = false;
-        if (this.modal) this.weekPickerScrim.close();
+        if (this.modal) this.scrim.close();
+
         /**
          * @event onWeekPickerClose
          * @property {Object} event
          */
         this.emit("onWeekPickerClose");
     }
+
     /**
      * @param {Any} [options]
      */
-
     toggle(options) {
         if (this.open) this.close();
         else this.show(options);
@@ -412,6 +414,7 @@ class MDWeekPickerComponent extends MdComponent {
 
     handleWeekPickerWindowClick(event) {
         const target = document.elementFromPoint(event.clientX, event.clientY);
+
         /**
          * @event onWeekPickerWindowClick
          * @property {Object} event
@@ -424,6 +427,7 @@ class MDWeekPickerComponent extends MdComponent {
         const data = event.currentTarget.data;
         this.selection.setFullYear(data.year);
         this.index = 1;
+
         /**
          * @event onWeekPickerYearItemClick
          * @property {Object} event
@@ -436,6 +440,7 @@ class MDWeekPickerComponent extends MdComponent {
         this.selection.setFullYear(data.year);
         this.selection.setMonth(data.month);
         this.index = 2;
+
         /**
          * @event onWeekPickerMonthItemClick
          * @property {Object} event
@@ -452,6 +457,7 @@ class MDWeekPickerComponent extends MdComponent {
         this.value.setMonth(data.month);
         this.value.setWeek(data.week);
         this.requestUpdate();
+
         /**
          * @event onWeekPickerWeekItemClick
          * @property {Object} event
@@ -461,6 +467,7 @@ class MDWeekPickerComponent extends MdComponent {
 
     handleWeekPickerScrimClose(event) {
         if (this.open) this.close();
+
         /**
          * @event onWeekPickerScrimClose
          * @property {Object} event
@@ -469,7 +476,6 @@ class MDWeekPickerComponent extends MdComponent {
     }
 
     handleWeekPickerShown(event) {
-        this.removeEventListener("animationend", this.handleWeekPickerShown);
         /**
          * @event onWeekPickerShown
          * @property {Object} event
@@ -478,12 +484,16 @@ class MDWeekPickerComponent extends MdComponent {
     }
 
     handleWeekPickerClosed(event) {
-        this.removeEventListener("animationend", this.handleWeekPickerClosed);
         /**
          * @event onWeekPickerClosed
          * @property {Object} event
          */
         this.emit("onWeekPickerClosed");
+    }
+
+    handleWeekPickerAnimationend(event) {
+        if (event.animationName === "week-picker-out" || event.animationName === "week-picker-modal-out") this.handleWeekPickerShown(event);
+        else if (event.animationName === "week-picker-in" || event.animationName === "week-picker-modal-in") this.handleWeekPickerClosed(event);
     }
 
     handleWeekPickerIconButtonPrevClick(event) {
@@ -494,6 +504,7 @@ class MDWeekPickerComponent extends MdComponent {
         };
         map[this.index]();
         this.requestUpdate();
+
         /**
          * @event onWeekPickerIconButtonPrevClick
          * @property {Object} event
@@ -509,6 +520,7 @@ class MDWeekPickerComponent extends MdComponent {
         };
         map[this.index]();
         this.requestUpdate();
+
         /**
          * @event onWeekPickerIconButtonNextClick
          * @property {Object} event
@@ -524,6 +536,7 @@ class MDWeekPickerComponent extends MdComponent {
         };
         const fn = map[data.id];
         if (fn) return fn(event);
+
         /**
          * @event onWeekPickerIconButtonClick
          * @property {Object} event
@@ -533,6 +546,7 @@ class MDWeekPickerComponent extends MdComponent {
 
     handleWeekPickerButtonCancelClick(event) {
         this.value = new Date(this.defaultValue.valueOf());
+
         /**
          * @event onWeekPickerButtonCancelClick
          * @property {Object} event
@@ -555,6 +569,7 @@ class MDWeekPickerComponent extends MdComponent {
             2: 0,
         };
         this.index = map[this.index];
+
         /**
          * @event onWeekPickerButtonLabelClick
          * @property {Object} event
@@ -571,6 +586,7 @@ class MDWeekPickerComponent extends MdComponent {
         };
         const fn = map[data.id];
         if (fn) return fn(event);
+
         /**
          * @event onWeekPickerButtonClick
          * @property {Object} event

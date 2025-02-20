@@ -15,7 +15,6 @@ class DemoNavigationListItem extends MdComponent {
                             routerLink=""
                             rippleOptions=""
                             badge=""
-                            @onNavigationListItemSelected="${console.log}"
                         ></md-navigation-list-item>
                     </div>
                 </div>

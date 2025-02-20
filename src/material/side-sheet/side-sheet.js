@@ -2,6 +2,7 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
+
 /**
  * @extends MdComponent
  * @element md-side-sheet
@@ -16,7 +17,6 @@ class MDSideSheetComponent extends MdComponent {
      * @property {Boolean} [open]
      * @property {Boolean} [modal]
      */
-
     static properties = {
         icons: { type: Array },
         actions: { type: Array },
@@ -29,14 +29,17 @@ class MDSideSheetComponent extends MdComponent {
 
     constructor() {
         super();
+
         this.body = Array.from(this.childNodes);
     }
 
     renderIcon(item) {
+        /* prettier-ignore */
         return html` <md-icon .data="${item}">${item.icon}</md-icon> `;
     }
 
     renderIconButton(item) {
+        /* prettier-ignore */
         return html`
             <md-icon-button
                 .data="${item}"
@@ -52,6 +55,7 @@ class MDSideSheetComponent extends MdComponent {
     }
 
     renderButton(item) {
+        /* prettier-ignore */
         return html`
             <md-button
                 .data="${item}"
@@ -67,6 +71,7 @@ class MDSideSheetComponent extends MdComponent {
     }
 
     renderSpacer(item) {
+        /* prettier-ignore */
         return html` <div class="md-side-sheet__spacer"></div> `;
     }
 
@@ -81,100 +86,139 @@ class MDSideSheetComponent extends MdComponent {
     }
 
     render() {
-        return html` ${this.icons?.length || this.label || this.sublabel || this.actions?.length ? html` <div class="md-side-sheet__header">${this.icons?.length ? html` <div class="md-side-sheet__icons">${this.icons.map((icon) => this.renderComponent(icon, "icon"))}</div> ` : nothing} ${this.label || this.sublabel ? html` <div class="md-side-sheet__labels">${this.label ? html`<div class="md-side-sheet__label">${this.label}</div>` : nothing} ${this.sublabel ? html`<div class="md-side-sheet__sublabel">${this.sublabel}</div>` : nothing}</div> ` : nothing} ${this.actions?.length ? html` <div class="md-side-sheet__actions">${this.actions.map((action) => this.renderComponent(action, "icon-button"))}</div> ` : nothing}</div> ` : nothing} ${this.body?.length || this.buttons?.length ? html` <div class="md-side-sheet__wrapper">${this.body?.length ? html`<div class="md-side-sheet__body">${this.body}</div>` : nothing} ${this.buttons?.length ? html` <div class="md-side-sheet__footer">${this.buttons?.length ? html` <div class="md-side-sheet__buttons">${this.buttons.map((button) => this.renderComponent(button, "button"))}</div> ` : nothing}</div> ` : nothing}</div> ` : nothing} `;
+        /* prettier-ignore */
+        return html` ${this.icons?.length || this.label || this.sublabel || this.actions?.length ? html` 
+            <div class="md-side-sheet__header">
+                ${this.icons?.length ? html` 
+                <div class="md-side-sheet__icons">${this.icons.map((icon) => this.renderComponent(icon, "icon"))}</div>
+                ` : nothing} ${this.label || this.sublabel ? html` 
+                <div class="md-side-sheet__labels">
+                    ${this.label ? html`
+                    <div class="md-side-sheet__label">${this.label}</div>
+                    ` : nothing} ${this.sublabel ? html`
+                    <div class="md-side-sheet__sublabel">${this.sublabel}</div>
+                    ` : nothing}
+                </div>
+                ` : nothing} ${this.actions?.length ? html` 
+                <div class="md-side-sheet__actions">${this.actions.map((action) => this.renderComponent(action, "icon-button"))}</div>
+                ` : nothing}
+            </div>
+            ` : nothing} ${this.body?.length || this.buttons?.length ? html` 
+            <div class="md-side-sheet__wrapper">
+                ${this.body?.length ? html`
+                <div class="md-side-sheet__body">${this.body}</div>
+                ` : nothing} ${this.buttons?.length ? html` 
+                <div class="md-side-sheet__footer">
+                    ${this.buttons?.length ? html` 
+                    <div class="md-side-sheet__buttons">${this.buttons.map((button) => this.renderComponent(button, "button"))}</div>
+                    ` : nothing}
+                </div>
+                ` : nothing}
+            </div>
+            ` : nothing} `;
     }
-    connectedCallback() {
+
+    async connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-side-sheet");
         this.style.setProperty("--md-comp-side-sheet-animation", "none");
-        this.sideSheetScrim = document.createElement("md-scrim");
-        this.parentElement.insertBefore(this.sideSheetScrim, this.nextElementSibling);
-        this.handleSideSheetScrimClose = this.handleSideSheetScrimClose.bind(this);
-        this.sideSheetScrim.addEventListener("onScrimClose", this.handleSideSheetScrimClose);
-        if (this.modal) this.sideSheetScrim.open = this.open;
-    }
 
-    disconnectedCallback() {
-        super.disconnectedCallback();
-        this.sideSheetScrim.removeEventListener("onScrimClose", this.handleSideSheetScrimClose);
-        this.sideSheetScrim.remove();
-    }
+        this.handleSideSheetAnimationend = this.handleSideSheetAnimationend.bind(this);
+        this.addEventListener("animationend", this.handleSideSheetAnimationend);
 
-    firstUpdated(changedProperties) {
-        super.firstUpdated(changedProperties);
+        this.scrim = document.createElement("md-scrim");
+        this.parentElement.insertBefore(this.scrim, this.nextElementSibling);
+
+        this.handleSideSheetClosed = this.handleSideSheetClosed.bind(this);
+        this.scrim.addEventListener("onScrimClose", this.handleSideSheetClosed);
+
+        if (this.modal) this.scrim.open = this.open;
+
+        await this.updateComplete;
 
         this.style.setProperty("--md-comp-side-sheet-width", this.clientWidth + "px");
         this.style.setProperty("--md-comp-side-sheet-height", this.clientHeight + "px");
     }
 
+    disconnectedCallback() {
+        super.disconnectedCallback();
+
+        this.removeEventListener("animationend", this.handleSideSheetAnimationend);
+
+        this.scrim.removeEventListener("onScrimClose", this.handleSideSheetClosed);
+        this.scrim.remove();
+    }
+
     updated(changedProperties) {
         super.updated(changedProperties);
+
         if (changedProperties.has("modal")) {
             this.classList.toggle(`md-side-sheet--modal`, !!this.modal);
         }
     }
+
     /**
      */
-
     show() {
         this.style.removeProperty("--md-comp-side-sheet-animation");
-        this.handleSideSheetShown = this.handleSideSheetShown.bind(this);
-        this.addEventListener("animationend", this.handleSideSheetShown);
+
+        if (this.modal) this.scrim.show();
         this.open = true;
-        if (this.modal) this.sideSheetScrim.show();
+
         /**
          * @event onSideSheetShow
          * @property {Object} event
          */
         this.emit("onSideSheetShow");
     }
+
     /**
      */
-
     close() {
         this.style.removeProperty("--md-comp-side-sheet-animation");
-        this.handleSideSheetClosed = this.handleSideSheetClosed.bind(this);
-        this.addEventListener("animationend", this.handleSideSheetClosed);
+
+        if (this.scrim.open) this.scrim.close();
         this.open = false;
-        if (this.sideSheetScrim.open) this.sideSheetScrim.close();
+
         /**
          * @event onSideSheetClose
          * @property {Object} event
          */
         this.emit("onSideSheetClose");
     }
+
     /**
      */
-
     toggle() {
         if (this.open) this.close();
         else this.show();
     }
 
     handleSideSheetShown(event) {
-        if (event.animationName === "side-sheet-modal-out" || event.animationName === "side-sheet-out") {
-            this.removeEventListener("animationend", this.handleSideSheetShown);
-            /**
-             * @event onSideSheetShown
-             * @property {Object} event
-             */
-            this.emit("onSideSheetShown");
-        }
+        /**
+         * @event onSideSheetShown
+         * @property {Object} event
+         */
+        this.emit("onSideSheetShown");
     }
 
     handleSideSheetClosed(event) {
-        if (event.animationName === "side-sheet-modal-in" || event.animationName === "side-sheet-in") {
-            this.removeEventListener("animationend", this.handleSideSheetClosed);
-            /**
-             * @event onSideSheetClosed
-             * @property {Object} event
-             */
-            this.emit("onSideSheetClosed");
-        }
+        /**
+         * @event onSideSheetClosed
+         * @property {Object} event
+         */
+        this.emit("onSideSheetClosed");
+    }
+
+    handleSideSheetAnimationend(event) {
+        if (event.animationName === "side-sheet-out" || event.animationName === "side-sheet-modal-out") this.handleSideSheetShown(event);
+        else if (event.animationName === "side-sheet-in" || event.animationName === "side-sheet-modal-in") this.handleSideSheetClosed(event);
     }
 
     handleSideSheetScrimClose(event) {
         if (this.open) this.close();
+
         /**
          * @event onSideSheetScrimClose
          * @property {Object} event

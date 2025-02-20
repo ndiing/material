@@ -13,10 +13,7 @@ class DemoSnackbar extends MdComponent {
                         ></md-button>
                         <md-snackbar
                             id="snackbar"
-                            @onSnackbarIconButtonClick="${console.log}"
                             @onSnackbarButtonClick="${() => snackbar.toggle()}"
-                            @onSnackbarShown="${console.log}"
-                            @onSnackbarClosed="${console.log}"
                             >Body</md-snackbar
                         >
                     </div>
@@ -29,10 +26,7 @@ class DemoSnackbar extends MdComponent {
                         <md-snackbar
                             id="snackbar2"
                             .buttons="${[{ label: "Label" }]}"
-                            @onSnackbarIconButtonClick="${console.log}"
                             @onSnackbarButtonClick="${() => snackbar2.toggle()}"
-                            @onSnackbarShown="${console.log}"
-                            @onSnackbarClosed="${console.log}"
                             >Body</md-snackbar
                         >
                     </div>
@@ -44,10 +38,7 @@ class DemoSnackbar extends MdComponent {
                         ></md-button>
                         <md-snackbar
                             id="snackbar3"
-                            @onSnackbarIconButtonClick="${console.log}"
                             @onSnackbarButtonClick="${() => snackbar3.toggle()}"
-                            @onSnackbarShown="${console.log}"
-                            @onSnackbarClosed="${console.log}"
                             >Body Body Body Body Body Body Body Body</md-snackbar
                         >
                     </div>
@@ -60,10 +51,7 @@ class DemoSnackbar extends MdComponent {
                         <md-snackbar
                             id="snackbar4"
                             .buttons="${[{ label: "Label" }]}"
-                            @onSnackbarIconButtonClick="${console.log}"
                             @onSnackbarButtonClick="${() => snackbar4.toggle()}"
-                            @onSnackbarShown="${console.log}"
-                            @onSnackbarClosed="${console.log}"
                             >Body Body Body Body Body Body Body Body</md-snackbar
                         >
                     </div>
@@ -76,10 +64,7 @@ class DemoSnackbar extends MdComponent {
                         <md-snackbar
                             id="snackbar5"
                             .buttons="${[{ label: "Label Label" }]}"
-                            @onSnackbarIconButtonClick="${console.log}"
                             @onSnackbarButtonClick="${() => snackbar5.toggle()}"
-                            @onSnackbarShown="${console.log}"
-                            @onSnackbarClosed="${console.log}"
                             >Body Body Body Body Body Body Body Body</md-snackbar
                         >
                     </div>

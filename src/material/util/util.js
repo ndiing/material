@@ -1,6 +1,7 @@
 /**
  * @module Util
  */
+
 /**
  * Parses a date string and returns a Date object.
  * @memberof member:Util
@@ -10,6 +11,7 @@
 function parseDate(string) {
     return new Date(string);
 }
+
 /**
  * Parses a datetime-local string and returns a Date object.
  * @memberof member:Util
@@ -19,6 +21,7 @@ function parseDate(string) {
 function parseDatetimeLocal(string) {
     return new Date(string);
 }
+
 /**
  * Parses a month string and returns a Date object set to the first day of the month.
  * @memberof member:Util
@@ -28,6 +31,7 @@ function parseDatetimeLocal(string) {
 function parseMonth(string) {
     return new Date(string + "-01");
 }
+
 /**
  * Parses a time string and returns a Date object with the time set.
  * @memberof member:Util
@@ -36,13 +40,11 @@ function parseMonth(string) {
  */
 function parseTime(string) {
     const [hours, minutes] = string.split(":");
-
     const date = new Date();
-
     date.setHours(hours, minutes, 0, 0);
-
     return date;
 }
+
 /**
  * Parses a week string and returns a Date object set to the first day of the week.
  * @memberof member:Util
@@ -51,15 +53,12 @@ function parseTime(string) {
  */
 function parseWeek(string) {
     const [year, week] = string.split("-W");
-
     const d = new Date(year, 0, 1);
-
     const days = (week - 1) * 7;
-
     d.setDate(d.getDate() + days);
-
     return d;
 }
+
 /**
  * Converts a Date object to a date string (YYYY-MM-DD).
  * @memberof member:Util
@@ -69,6 +68,7 @@ function parseWeek(string) {
 function stringifyDate(date) {
     return date.toISOString().split("T")[0];
 }
+
 /**
  * Converts a Date object to a datetime-local string (YYYY-MM-DDTHH:MM).
  * @memberof member:Util
@@ -77,17 +77,13 @@ function stringifyDate(date) {
  */
 function stringifyDatetimeLocal(date) {
     const year = date.getFullYear();
-
     const month = String(date.getMonth() + 1).padStart(2, "0");
-
     const day = String(date.getDate()).padStart(2, "0");
-
     const hours = String(date.getHours()).padStart(2, "0");
-
     const minutes = String(date.getMinutes()).padStart(2, "0");
-
     return `${year}-${month}-${day}T${hours}:${minutes}`;
 }
+
 /**
  * Converts a Date object to a month string (YYYY-MM).
  * @memberof member:Util
@@ -97,6 +93,7 @@ function stringifyDatetimeLocal(date) {
 function stringifyMonth(date) {
     return date.toISOString().slice(0, 7);
 }
+
 /**
  * Converts a Date object to a time string (HH:MM).
  * @memberof member:Util
@@ -106,6 +103,7 @@ function stringifyMonth(date) {
 function stringifyTime(date) {
     return date.toTimeString().slice(0, 5);
 }
+
 /**
  * Converts a Date object to a week string (YYYY-W##).
  * @memberof member:Util
@@ -114,13 +112,11 @@ function stringifyTime(date) {
  */
 function stringifyWeek(date) {
     const firstDayOfYear = new Date(date.getFullYear(), 0, 1);
-
     const days = Math.floor((date - firstDayOfYear) / (24 * 60 * 60 * 1000));
-
     const weekNumber = Math.ceil((days + 1) / 7);
-
     return `${date.getFullYear()}-W${String(weekNumber).padStart(2, "0")}`;
 }
+
 /**
  * Finds the closest scrollable ancestor element.
  * @memberof member:Util

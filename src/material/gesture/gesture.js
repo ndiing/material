@@ -34,17 +34,21 @@ class Gesture {
         const currentY = event.clientY - this.startY;
         this.changedX = currentX - this.endX;
         this.changedY = currentY - this.endY;
+
         if (this.resizeHandle) {
             if (this.resizeHandle === "e" || this.resizeHandle === "se" || this.resizeHandle === "ne") {
                 this.currentWidth = this.startWidth + (currentX - this.endX);
             }
+
             if (this.resizeHandle === "w" || this.resizeHandle === "sw" || this.resizeHandle === "nw") {
                 this.currentX = currentX;
                 this.currentWidth = this.startWidth - (currentX - this.endX);
             }
+
             if (this.resizeHandle === "s" || this.resizeHandle === "se" || this.resizeHandle === "sw") {
                 this.currentHeight = this.startHeight + (currentY - this.endY);
             }
+
             if (this.resizeHandle === "n" || this.resizeHandle === "ne" || this.resizeHandle === "nw") {
                 this.currentY = currentY;
                 this.currentHeight = this.startHeight - (currentY - this.endY);
@@ -55,6 +59,7 @@ class Gesture {
             if (this.options.dragAxis.includes("x")) {
                 this.currentX = currentX;
             }
+
             if (this.options.dragAxis.includes("y")) {
                 this.currentY = currentY;
             }
@@ -62,6 +67,7 @@ class Gesture {
             this.emit(this.drag);
         }
         this.swipe = !this.resizeHandle && !this.drag && (this.changedX > 30 ? "onSwipeRight" : this.changedX < -30 ? "onSwipeLeft" : this.changedY > 30 ? "onSwipeBottom" : this.changedY < -30 ? "onSwipeTop" : undefined);
+
         if (this.options.updateStyle) {
             this.host.style.setProperty("position", "relative");
             this.host.style.setProperty("left", (this.currentX || 0) + "px");
@@ -75,22 +81,27 @@ class Gesture {
         clearTimeout(this.timeout);
         this.endX = this.currentX;
         this.endY = this.currentY;
+
         if (!this.swipe && !this.resize && !this.drag && !this.hold) {
             this.emit("onTap");
             this.lastTime = this.lastTime || 0;
+
             if (performance.now() - this.lastTime < 300) {
                 this.emit("onDoubleTap");
             }
             this.lastTime = performance.now();
         }
+
         if (this.resize) {
             this.emit("onResizeEnd");
             this.resize = undefined;
         }
+
         if (this.drag) {
             this.emit("onDragEnd");
             this.drag = undefined;
         }
+
         if (this.swipe) {
             this.emit(this.swipe);
             this.swipe = undefined;

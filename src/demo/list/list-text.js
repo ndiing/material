@@ -6,13 +6,7 @@ class DemoList extends MdComponent {
             <div class="md-layout">
                 <div class="md-layout__grid">
                     <div class="md-layout__column--expanded6 md-layout__column--medium4 md-layout__column--compact4">
-                        <md-list
-                            .items="${[{ label: "Label", sublabel: "Sublabel Sublabel Sublabel Sublabel Sublabel" }, { label: "Label", sublabel: "Sublabel" }, { label: "Label" }]}"
-                            @onListItemClick="${console.log}"
-                            @onListItemCheckboxNativeInput="${console.log}"
-                            @onListItemRadioButtonNativeInput="${console.log}"
-                            @onListItemSwitchNativeInput="${console.log}"
-                        ></md-list>
+                        <md-list .items="${[{ label: "Label", sublabel: "Sublabel Sublabel Sublabel Sublabel Sublabel" }, { label: "Label", sublabel: "Sublabel" }, { label: "Label" }]}"></md-list>
                     </div>
                     <div class="md-layout__column--expanded6 md-layout__column--medium4 md-layout__column--compact4">
                         <md-list
@@ -21,10 +15,6 @@ class DemoList extends MdComponent {
                                 { trailingCheckbox: true, label: "Label", sublabel: "Sublabel" },
                                 { trailingCheckbox: true, label: "Label" },
                             ]}"
-                            @onListItemClick="${console.log}"
-                            @onListItemCheckboxNativeInput="${console.log}"
-                            @onListItemRadioButtonNativeInput="${console.log}"
-                            @onListItemSwitchNativeInput="${console.log}"
                         ></md-list>
                     </div>
                 </div>

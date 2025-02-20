@@ -14,21 +14,8 @@ class DemoWeekPickerModal extends MdComponent {
                         <md-week-picker
                             id="weekPicker"
                             modal
-                            @onWeekPickerShow="${console.log}"
-                            @onWeekPickerClose="${console.log}"
-                            @onWeekPickerShown="${console.log}"
-                            @onWeekPickerClosed="${console.log}"
-                            @onWeekPickerIconButtonPrevClick="${console.log}"
-                            @onWeekPickerIconButtonNextClick="${console.log}"
-                            @onWeekPickerIconButtonClick="${console.log}"
-                            @onWeekPickerYearItemClick="${console.log}"
-                            @onWeekPickerMonthItemClick="${console.log}"
-                            @onWeekPickerWeekItemClick="${console.log}"
                             @onWeekPickerButtonCancelClick="${() => weekPicker.close()}"
                             @onWeekPickerButtonOkClick="${() => weekPicker.close()}"
-                            @onWeekPickerButtonLabelClick="${console.log}"
-                            @onWeekPickerButtonClick="${console.log}"
-                            @onWeekPickerScrimClose="${console.log}"
                         ></md-week-picker>
                     </div>
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
@@ -41,21 +28,8 @@ class DemoWeekPickerModal extends MdComponent {
                             id="weekPicker2"
                             value="1990-W42"
                             modal
-                            @onWeekPickerShow="${console.log}"
-                            @onWeekPickerClose="${console.log}"
-                            @onWeekPickerShown="${console.log}"
-                            @onWeekPickerClosed="${console.log}"
-                            @onWeekPickerIconButtonPrevClick="${console.log}"
-                            @onWeekPickerIconButtonNextClick="${console.log}"
-                            @onWeekPickerIconButtonClick="${console.log}"
-                            @onWeekPickerYearItemClick="${console.log}"
-                            @onWeekPickerMonthItemClick="${console.log}"
-                            @onWeekPickerWeekItemClick="${console.log}"
                             @onWeekPickerButtonCancelClick="${() => weekPicker2.close()}"
                             @onWeekPickerButtonOkClick="${() => weekPicker2.close()}"
-                            @onWeekPickerButtonLabelClick="${console.log}"
-                            @onWeekPickerButtonClick="${console.log}"
-                            @onWeekPickerScrimClose="${console.log}"
                         ></md-week-picker>
                     </div>
                 </div>

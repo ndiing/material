@@ -15,10 +15,6 @@ class DemoList extends MdComponent {
                                 { trailingCheckbox: true, avatar: "https://api.dicebear.com/9.x/dylan/svg?seed=Leah", label: "Label", sublabel: "Sublabel" },
                                 { trailingCheckbox: true, avatar: "https://api.dicebear.com/9.x/dylan/svg?seed=Leah", label: "Label" },
                             ]}"
-                            @onListItemClick="${console.log}"
-                            @onListItemCheckboxNativeInput="${console.log}"
-                            @onListItemRadioButtonNativeInput="${console.log}"
-                            @onListItemSwitchNativeInput="${console.log}"
                         ></md-list>
                     </div>
                 </div>

@@ -2,6 +2,7 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { Ripple } from "../ripple/ripple";
 import { ifDefined } from "lit/directives/if-defined.js";
+
 /**
  * @extends MdComponent
  * @element md-icon-button
@@ -15,7 +16,6 @@ class MDIconButtonComponent extends MdComponent {
      * @property {Boolean} [selected]
      * @property {Boolean} [disabled]
      */
-
     static properties = {
         icon: { type: String },
         icons: { type: Array },
@@ -30,11 +30,18 @@ class MDIconButtonComponent extends MdComponent {
 
     constructor() {
         super();
+
         this.type = "button";
         this.rippleOptions = {};
     }
 
     render() {
+        let icon = this.icon;
+
+        if (this.icons?.length) {
+            icon = this.icons[~~this.selected] || this.icons[0];
+        }
+
         return html`
             <button
                 class="md-icon-button__native"
@@ -42,23 +49,18 @@ class MDIconButtonComponent extends MdComponent {
             >
                 icon-button
             </button>
-            <md-icon class="md-icon-button__icon">${this.icons?.length ? this.icons[~~this.selected] || this.icons[0] : this.icon}</md-icon>
+            <md-icon class="md-icon-button__icon">${icon}</md-icon>
         `;
     }
-    connectedCallback() {
+
+    async connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-icon-button");
         this.handleIconButtonClick = this.handleIconButtonClick.bind(this);
         this.addEventListener("click", this.handleIconButtonClick);
-    }
 
-    disconnectedCallback() {
-        super.disconnectedCallback();
-        this.removeEventListener("click", this.handleIconButtonClick);
-    }
-
-    firstUpdated(changedProperties) {
-        super.firstUpdated(changedProperties);
+        await this.updateComplete;
 
         this.ripple = new Ripple(this, {
             trigger: ".md-icon-button__native",
@@ -68,8 +70,16 @@ class MDIconButtonComponent extends MdComponent {
         });
     }
 
+    disconnectedCallback() {
+        super.disconnectedCallback();
+
+        if (this.ripple) this.ripple.destroy();
+        this.removeEventListener("click", this.handleIconButtonClick);
+    }
+
     updated(changedProperties) {
         super.updated(changedProperties);
+
         if (changedProperties.has("variant")) {
             this.variants.forEach((variant) => {
                 this.classList.toggle(`md-icon-button--${variant}`, variant === this.variant);
@@ -81,6 +91,7 @@ class MDIconButtonComponent extends MdComponent {
         if (this.toggle) {
             this.selected = !this.selected;
         }
+
         /**
          * @event onIconButtonClick
          * @property {Object} event

@@ -10,7 +10,6 @@ class DemoTabs extends MdComponent {
                             items=""
                             rippleOptions=""
                             variant=""
-                            @onTabClick="${console.log}"
                         ></md-tabs>
                     </div>
                 </div>

@@ -1,6 +1,7 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { MDTextFieldComponent } from "../text-field/text-field";
+
 /**
  * @extends MDTextFieldComponent
  * @element md-password-field
@@ -8,6 +9,7 @@ import { MDTextFieldComponent } from "../text-field/text-field";
 class MDPasswordFieldComponent extends MDTextFieldComponent {
     constructor() {
         super();
+
         this.type = "password";
     }
 
@@ -17,6 +19,7 @@ class MDPasswordFieldComponent extends MDTextFieldComponent {
 
     connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-password-field");
     }
 

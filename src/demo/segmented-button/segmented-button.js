@@ -11,10 +11,7 @@ class DemoSegmentedButton extends MdComponent {
             <div class="md-layout">
                 <div class="md-layout__grid">
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
-                        <md-segmented-button
-                            .items="${this.items}"
-                            @onSegmentedButtonItemClick="${console.log}"
-                        ></md-segmented-button>
+                        <md-segmented-button .items="${this.items}"></md-segmented-button>
                     </div>
                 </div>
             </div>

@@ -15,7 +15,6 @@ class DemoTreeItem extends MdComponent {
                             leafIcons=""
                             label=""
                             routerLink=""
-                            @onTreeItemSelected="${console.log}"
                         ></md-tree-item>
                     </div>
                 </div>

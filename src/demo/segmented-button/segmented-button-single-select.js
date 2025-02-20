@@ -10,7 +10,6 @@ class DemoSegmentedButtonSingleSelect extends MdComponent {
                             type="single-select"
                             items=""
                             type=""
-                            @onSegmentedButtonItemClick="${console.log}"
                         ></md-segmented-button>
                     </div>
                 </div>

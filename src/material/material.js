@@ -9,7 +9,7 @@ import "./polyfill/polyfill.js";
 // import "./ripple/ripple.js";
 // import "./gesture/gesture.js";
 // import "./virtual/virtual.js";
-// import "./component/component.js";
+import "./component/component.js";
 // import "./progress/progress.js";
 // import "./router/router.js";
 import "./icon/icon.js";

@@ -36,10 +36,6 @@ class DemoList extends MdComponent {
                         <md-list
                             .items="${this.items}"
                             virtualize
-                            @onListItemClick="${console.log}"
-                            @onListItemCheckboxNativeInput="${console.log}"
-                            @onListItemRadioButtonNativeInput="${console.log}"
-                            @onListItemSwitchNativeInput="${console.log}"
                         ></md-list>
                     </div>
                 </div>

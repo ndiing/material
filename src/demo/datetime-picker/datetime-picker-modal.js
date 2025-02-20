@@ -14,23 +14,8 @@ class DemoDatetimePickerModal extends MdComponent {
                         <md-datetime-picker
                             id="datetimePicker"
                             modal
-                            @onDatetimePickerShow="${console.log}"
-                            @onDatetimePickerClose="${console.log}"
-                            @onDatetimePickerShown="${console.log}"
-                            @onDatetimePickerClosed="${console.log}"
-                            @onDatetimePickerIconButtonPrevClick="${console.log}"
-                            @onDatetimePickerIconButtonNextClick="${console.log}"
-                            @onDatetimePickerIconButtonClick="${console.log}"
-                            @onDatetimePickerYearItemClick="${console.log}"
-                            @onDatetimePickerMonthItemClick="${console.log}"
-                            @onDatetimePickerDayItemClick="${console.log}"
-                            @onDatetimePickerHourItemClick="${console.log}"
-                            @onDatetimePickerMinuteItemClick="${console.log}"
                             @onDatetimePickerButtonCancelClick="${() => datetimePicker.close()}"
                             @onDatetimePickerButtonOkClick="${() => datetimePicker.close()}"
-                            @onDatetimePickerButtonLabelClick="${console.log}"
-                            @onDatetimePickerButtonClick="${console.log}"
-                            @onDatetimePickerScrimClose="${console.log}"
                         ></md-datetime-picker>
                     </div>
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
@@ -43,23 +28,8 @@ class DemoDatetimePickerModal extends MdComponent {
                             id="datetimePicker2"
                             value="1990-10-17T20:30"
                             modal
-                            @onDatetimePickerShow="${console.log}"
-                            @onDatetimePickerClose="${console.log}"
-                            @onDatetimePickerShown="${console.log}"
-                            @onDatetimePickerClosed="${console.log}"
-                            @onDatetimePickerIconButtonPrevClick="${console.log}"
-                            @onDatetimePickerIconButtonNextClick="${console.log}"
-                            @onDatetimePickerIconButtonClick="${console.log}"
-                            @onDatetimePickerYearItemClick="${console.log}"
-                            @onDatetimePickerMonthItemClick="${console.log}"
-                            @onDatetimePickerDayItemClick="${console.log}"
-                            @onDatetimePickerHourItemClick="${console.log}"
-                            @onDatetimePickerMinuteItemClick="${console.log}"
                             @onDatetimePickerButtonCancelClick="${() => datetimePicker2.close()}"
                             @onDatetimePickerButtonOkClick="${() => datetimePicker2.close()}"
-                            @onDatetimePickerButtonLabelClick="${console.log}"
-                            @onDatetimePickerButtonClick="${console.log}"
-                            @onDatetimePickerScrimClose="${console.log}"
                         ></md-datetime-picker>
                     </div>
                 </div>

@@ -22,11 +22,6 @@ class DemoSheetSouthModal extends MdComponent {
                     region="south"
                     modal
                     style="height:80px"
-                    @onSheetIconButtonClick="${console.log}"
-                    @onSheetButtonClick="${console.log}"
-                    @onSheetShown="${console.log}"
-                    @onSheetClosed="${console.log}"
-                    @onSheetScrimClosed="${console.log}"
                     >Body</md-sheet
                 >
             </div>

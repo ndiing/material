@@ -14,7 +14,6 @@ class DemoTabsPrimary extends MdComponent {
                                 { icon: "image", label: "Label", badge: "32" },
                                 { icon: "image", label: "Label", badge: "3200" },
                             ]}"
-                            @onTabClick="${console.log}"
                         ></md-tabs>
                     </div>
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
@@ -26,7 +25,6 @@ class DemoTabsPrimary extends MdComponent {
                                 { label: "Label", badge: "32" },
                                 { label: "Label", badge: "3200" },
                             ]}"
-                            @onTabClick="${console.log}"
                         ></md-tabs>
                     </div>
                 </div>

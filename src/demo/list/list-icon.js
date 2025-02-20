@@ -12,10 +12,6 @@ class DemoList extends MdComponent {
                                 { icon: "image", label: "Label", sublabel: "Sublabel" },
                                 { icon: "image", label: "Label" },
                             ]}"
-                            @onListItemClick="${console.log}"
-                            @onListItemCheckboxNativeInput="${console.log}"
-                            @onListItemRadioButtonNativeInput="${console.log}"
-                            @onListItemSwitchNativeInput="${console.log}"
                         ></md-list>
                     </div>
                     <div class="md-layout__column--expanded6 md-layout__column--medium4 md-layout__column--compact4">
@@ -25,10 +21,6 @@ class DemoList extends MdComponent {
                                 { trailingCheckbox: true, icon: "image", label: "Label", sublabel: "Sublabel" },
                                 { trailingCheckbox: true, icon: "image", label: "Label" },
                             ]}"
-                            @onListItemClick="${console.log}"
-                            @onListItemCheckboxNativeInput="${console.log}"
-                            @onListItemRadioButtonNativeInput="${console.log}"
-                            @onListItemSwitchNativeInput="${console.log}"
                         ></md-list>
                     </div>
                 </div>

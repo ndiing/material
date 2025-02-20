@@ -4,7 +4,7 @@
     "name": "@ndiinginc/material",
     "scripts": {
         "serve": "webpack serve",
-        "prettier": "npx prettier ./src --write",
+        "prettier": "npx prettier ./src --write --embedded-language-formatting=auto",
         "jsdoc": "npx jsdoc ./src/material -r -X > ./src/docs/jsdoc/jsdoc.json",
         "localize:extract": "lit-localize extract",
         "localize:build": "lit-localize build",

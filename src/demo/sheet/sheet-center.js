@@ -15,11 +15,6 @@ class DemoSheetCenter extends MdComponent {
                             buttons=""
                             region=""
                             modal=""
-                            @onSheetIconButtonClick="${console.log}"
-                            @onSheetButtonClick="${console.log}"
-                            @onSheetShown="${console.log}"
-                            @onSheetClosed="${console.log}"
-                            @onSheetScrimClosed="${console.log}"
                         ></md-sheet>
                     </div>
                 </div>

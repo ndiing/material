@@ -10,3 +10,4 @@ import AppRoutes from "./app/app.js";
 
 const routes = [AppRoutes];
 Router.use(routes);
+

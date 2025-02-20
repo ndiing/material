@@ -11,8 +11,6 @@ class DemoSliderDiscrete extends MdComponent {
                             step="10"
                             name="slider"
                             value="50"
-                            @onSliderNativeInput="${console.log}"
-                            @onSliderNativeReset="${console.log}"
                         ></md-slider>
                     </div>
                 </div>

@@ -2,6 +2,7 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { Ripple } from "../ripple/ripple";
+
 /**
  * @extends MdComponent
  * @element md-list-item
@@ -27,7 +28,6 @@ class MDListItemComponent extends MdComponent {
      * @property {Object} [rippleOptions]
      * @property {Number} [badge]
      */
-
     static properties = {
         leadingCheckbox: { type: Boolean },
         leadingRadioButton: { type: Boolean },
@@ -51,27 +51,29 @@ class MDListItemComponent extends MdComponent {
 
     constructor() {
         super();
+
         this.rippleOptions = {};
     }
 
     render() {
+        /* prettier-ignore */
         return html`
             ${this.leadingCheckbox
                 ? html`<md-checkbox
                       class="md-list__checkbox"
-                      .checked="${this.selected}"
+                      .checked="${ifDefined(this.selected)}"
                   ></md-checkbox>`
                 : nothing}
             ${this.leadingRadioButton
                 ? html`<md-radio-button
                       class="md-list__radio-button"
-                      .checked="${this.selected}"
+                      .checked="${ifDefined(this.selected)}"
                   ></md-radio-button>`
                 : nothing}
             ${this.leadingSwitch
                 ? html`<md-switch
                       class="md-list__switch"
-                      .checked="${this.selected}"
+                      .checked="${ifDefined(this.selected)}"
                   ></md-switch>`
                 : nothing}
             ${this.avatar
@@ -98,40 +100,42 @@ class MDListItemComponent extends MdComponent {
             ${this.trailingCheckbox
                 ? html`<md-checkbox
                       class="md-list__checkbox"
-                      .checked="${this.selected}"
+                      .checked="${ifDefined(this.selected)}"
                   ></md-checkbox>`
                 : nothing}
             ${this.trailingRadioButton
                 ? html`<md-radio-button
                       class="md-list__radio-button"
-                      .checked="${this.selected}"
+                      .checked="${ifDefined(this.selected)}"
                   ></md-radio-button>`
                 : nothing}
             ${this.trailingSwitch
                 ? html`<md-switch
                       class="md-list__switch"
-                      .checked="${this.selected}"
+                      .checked="${ifDefined(this.selected)}"
                   ></md-switch>`
                 : nothing}
             ${this.badge !== undefined
                 ? html`<md-badge
                       class="md-list__badge"
-                      .label="${this.badge}"
+                      .label="${ifDefined(this.badge)}"
                   ></md-badge>`
                 : nothing}
         `;
     }
-    connectedCallback() {
-        super.connectedCallback();
-        this.classList.add("md-list__item");
-    }
 
-    firstUpdated(changedProperties) {
-        super.firstUpdated(changedProperties);
+    async connectedCallback() {
+        super.connectedCallback();
+
+        this.classList.add("md-list__item");
+
+        await this.updateComplete;
+
         this.ripple = new Ripple(this, this.rippleOptions);
 
         if (this.sublabel) {
             const sublabel = this.querySelector(".md-list__sublabel");
+
             if (sublabel.scrollHeight > sublabel.clientHeight) {
                 this.classList.add("md-list__item--three-line");
             } else {
@@ -139,11 +143,20 @@ class MDListItemComponent extends MdComponent {
             }
         }
     }
+
+    async disconnectedCallback() {
+        super.disconnectedCallback();
+
+        if (this.ripple) this.ripple.destroy();
+    }
+
     updated(changedProperties) {
         super.updated(changedProperties);
+
         if (changedProperties.has("icon")) {
             this.classList.toggle("md-list__item--with-icon", !!this.icon);
         }
+
         if (changedProperties.has("selected") && this.selected) {
             /**
              * @event onListItemSelected

@@ -12,10 +12,6 @@ class DemoList extends MdComponent {
                                 { image: "https://api.dicebear.com/9.x/dylan/svg?seed=Leah", label: "Label", sublabel: "Sublabel" },
                                 { image: "https://api.dicebear.com/9.x/dylan/svg?seed=Leah", label: "Label" },
                             ]}"
-                            @onListItemClick="${console.log}"
-                            @onListItemCheckboxNativeInput="${console.log}"
-                            @onListItemRadioButtonNativeInput="${console.log}"
-                            @onListItemSwitchNativeInput="${console.log}"
                         ></md-list>
                     </div>
                     <div class="md-layout__column--expanded6 md-layout__column--medium4 md-layout__column--compact4">
@@ -25,10 +21,6 @@ class DemoList extends MdComponent {
                                 { trailingCheckbox: true, image: "https://api.dicebear.com/9.x/dylan/svg?seed=Leah", label: "Label", sublabel: "Sublabel" },
                                 { trailingCheckbox: true, image: "https://api.dicebear.com/9.x/dylan/svg?seed=Leah", label: "Label" },
                             ]}"
-                            @onListItemClick="${console.log}"
-                            @onListItemCheckboxNativeInput="${console.log}"
-                            @onListItemRadioButtonNativeInput="${console.log}"
-                            @onListItemSwitchNativeInput="${console.log}"
                         ></md-list>
                     </div>
                 </div>

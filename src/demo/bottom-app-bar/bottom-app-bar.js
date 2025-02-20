@@ -29,10 +29,6 @@ class DemoBottomAppBar extends MdComponent {
                     .actions="${this.actions}"
                     .fab="${this.fab}"
                     open
-                    @onBottomAppBarIconButtonClick="${console.log}"
-                    @onBottomAppBarFabClick="${console.log}"
-                    @onBottomAppBarShown="${console.log}"
-                    @onBottomAppBarClosed="${console.log}"
                 ></md-bottom-app-bar>
             </div>
         `;

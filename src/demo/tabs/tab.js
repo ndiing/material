@@ -15,7 +15,6 @@ class DemoTab extends MdComponent {
                             routerLink=""
                             rippleOptions=""
                             badge=""
-                            @onTabSelected="${console.log}"
                         ></md-tab>
                     </div>
                 </div>

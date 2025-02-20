@@ -1,5 +1,6 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
+
 /**
  * @extends MdComponent
  * @element md-icon
@@ -7,6 +8,7 @@ import { MdComponent } from "../component/component";
 class MDIconComponent extends MdComponent {
     connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-icon");
     }
 }

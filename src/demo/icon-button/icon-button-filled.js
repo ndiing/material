@@ -9,7 +9,6 @@ class DemoIconButtonFilled extends MdComponent {
                         <md-icon-button
                             variant="filled"
                             icon="image"
-                            @onIconButtonClick="${console.log}"
                         ></md-icon-button>
                     </div>
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
@@ -17,7 +16,6 @@ class DemoIconButtonFilled extends MdComponent {
                             variant="filled"
                             icon="image"
                             toggle
-                            @onIconButtonClick="${console.log}"
                         ></md-icon-button>
                     </div>
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
@@ -26,7 +24,6 @@ class DemoIconButtonFilled extends MdComponent {
                             icon="image"
                             toggle
                             selected
-                            @onIconButtonClick="${console.log}"
                         ></md-icon-button>
                     </div>
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
@@ -34,7 +31,6 @@ class DemoIconButtonFilled extends MdComponent {
                             variant="filled"
                             icon="image"
                             disabled
-                            @onIconButtonClick="${console.log}"
                         ></md-icon-button>
                     </div>
                 </div>

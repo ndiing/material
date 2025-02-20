@@ -19,10 +19,7 @@ class DemoTooltip extends MdComponent {
                             sublabel=""
                             .buttons="${[{ label: "Label" }, { label: "Label" }]}"
                             style="width:312px"
-                            @onTooltipIconButtonClick="${console.log}"
                             @onTooltipButtonClick="${(event) => tooltip.toggle({ trigger: event.currentTarget })}"
-                            @onTooltipShown="${console.log}"
-                            @onTooltipClosed="${console.log}"
                             >Body Body Body Body Body Body Body Body Body Body Body Body Body Body Body Body</md-tooltip
                         >
                     </div>
@@ -40,10 +37,7 @@ class DemoTooltip extends MdComponent {
                             sublabel=""
                             .buttons="${[{ label: "Label" }]}"
                             style="width:312px"
-                            @onTooltipIconButtonClick="${console.log}"
                             @onTooltipButtonClick="${(event) => tooltip2.toggle({ trigger: event.currentTarget })}"
-                            @onTooltipShown="${console.log}"
-                            @onTooltipClosed="${console.log}"
                             >Body Body Body Body Body Body Body Body Body Body Body Body Body Body Body Body</md-tooltip
                         >
                     </div>
@@ -60,10 +54,7 @@ class DemoTooltip extends MdComponent {
                             label="Label Label"
                             sublabel=""
                             style="width:312px"
-                            @onTooltipIconButtonClick="${console.log}"
                             @onTooltipButtonClick="${(event) => tooltip3.toggle({ trigger: event.currentTarget })}"
-                            @onTooltipShown="${console.log}"
-                            @onTooltipClosed="${console.log}"
                             >Body Body Body Body Body Body Body Body Body Body Body Body Body Body Body Body</md-tooltip
                         >
                     </div>
@@ -80,10 +71,7 @@ class DemoTooltip extends MdComponent {
                             sublabel=""
                             .buttons="${[{ label: "Label" }]}"
                             style="width:312px"
-                            @onTooltipIconButtonClick="${console.log}"
                             @onTooltipButtonClick="${(event) => tooltip4.toggle({ trigger: event.currentTarget })}"
-                            @onTooltipShown="${console.log}"
-                            @onTooltipClosed="${console.log}"
                             >Body Body Body Body Body Body Body Body Body Body Body Body Body Body Body Body</md-tooltip
                         >
                     </div>
@@ -100,10 +88,7 @@ class DemoTooltip extends MdComponent {
                             sublabel=""
                             .buttons="${[{ label: "Label" }, { label: "Label" }]}"
                             style="width:312px"
-                            @onTooltipIconButtonClick="${console.log}"
                             @onTooltipButtonClick="${(event) => tooltip5.toggle({ trigger: event.currentTarget })}"
-                            @onTooltipShown="${console.log}"
-                            @onTooltipClosed="${console.log}"
                             >Body Body Body Body Body Body Body Body Body Body Body Body Body Body Body Body</md-tooltip
                         >
                     </div>

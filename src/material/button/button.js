@@ -2,6 +2,7 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { Ripple } from "../ripple/ripple";
 import { ifDefined } from "lit/directives/if-defined.js";
+
 /**
  * @extends MdComponent
  * @element md-button
@@ -15,7 +16,6 @@ class MDButtonComponent extends MdComponent {
      * @property {Boolean} [disabled]
      * @property {Boolean} [selected]
      */
-
     static properties = {
         icon: { type: String },
         label: { type: String },
@@ -29,10 +29,12 @@ class MDButtonComponent extends MdComponent {
 
     constructor() {
         super();
+
         this.type = "button";
     }
 
     render() {
+        /* prettier-ignore */
         return html`
             <button
                 class="md-button__native"
@@ -44,20 +46,27 @@ class MDButtonComponent extends MdComponent {
         `;
     }
 
-    connectedCallback() {
+    async connectedCallback() {
         super.connectedCallback();
-        this.classList.add("md-button");
-    }
 
-    firstUpdated(changedProperties) {
-        super.firstUpdated(changedProperties);
+        this.classList.add("md-button");
+
+        await this.updateComplete;
+
         this.ripple = new Ripple(this, {
             trigger: ".md-button__native",
         });
     }
 
+    async disconnectedCallback() {
+        super.disconnectedCallback();
+
+        if (this.ripple) this.ripple.destroy();
+    }
+
     updated(changedProperties) {
         super.updated(changedProperties);
+
         if (changedProperties.has("variant")) {
             this.variants.forEach((variant) => {
                 this.classList.toggle(`md-button--${variant}`, variant === this.variant);

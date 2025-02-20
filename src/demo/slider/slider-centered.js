@@ -12,8 +12,6 @@ class DemoSliderCentered extends MdComponent {
                             max="5000000000"
                             name="slider"
                             value="0"
-                            @onSliderNativeInput="${console.log}"
-                            @onSliderNativeReset="${console.log}"
                         ></md-slider>
                     </div>
                 </div>

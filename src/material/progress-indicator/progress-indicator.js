@@ -1,5 +1,6 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
+
 /**
  * @extends MdComponent
  * @element md-progress-indicator
@@ -10,7 +11,6 @@ class MDProgressIndicatorComponent extends MdComponent {
      * @property {Number} [max]
      * @property {Number} [value]
      */
-
     static properties = {
         variant: { type: String },
         max: { type: Number },
@@ -21,16 +21,18 @@ class MDProgressIndicatorComponent extends MdComponent {
 
     constructor() {
         super();
+
         this.max = 100;
         this.value = 0;
     }
 
     renderProgressIndicatorNative() {
+        /* prettier-ignore */
         return html`
             <progress
                 class="md-progress-indicator__native"
-                max="${this.max}"
-                value="${this.value}"
+                max="${ifDefined(this.max)}"
+                value="${ifDefined(this.value)}"
             ></progress>
         `;
     }
@@ -87,11 +89,13 @@ class MDProgressIndicatorComponent extends MdComponent {
 
     connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-progress-indicator");
     }
 
     updated(changedProperties) {
         super.updated(changedProperties);
+
         if (changedProperties.has("variant")) {
             this.variants.forEach((variant) => {
                 this.classList.toggle(`md-progress-indicator--${variant}`, this.variant === variant);

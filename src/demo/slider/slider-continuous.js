@@ -10,8 +10,6 @@ class DemoSliderContinuous extends MdComponent {
                             variant="continuous"
                             name="slider"
                             value="50"
-                            @onSliderNativeInput="${console.log}"
-                            @onSliderNativeReset="${console.log}"
                         ></md-slider>
                     </div>
                 </div>

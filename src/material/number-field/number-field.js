@@ -1,6 +1,7 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { MDTextFieldComponent } from "../text-field/text-field";
+
 /**
  * @extends MDTextFieldComponent
  * @element md-number-field
@@ -8,6 +9,7 @@ import { MDTextFieldComponent } from "../text-field/text-field";
 class MDNumberFieldComponent extends MDTextFieldComponent {
     constructor() {
         super();
+
         this.type = "number";
     }
 

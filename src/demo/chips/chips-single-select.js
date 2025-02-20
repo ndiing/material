@@ -11,7 +11,6 @@ class DemoChipsSingleSelect extends MdComponent {
                             type="single-select"
                             items=""
                             type=""
-                            @onChipClick="${console.log}"
                         ></md-chips>
                     </div>
                 </div>

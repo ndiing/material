@@ -25,9 +25,6 @@ class DemoSideSheet extends MdComponent {
                     open
                     @onSideSheetIconButtonClick="${(event) => sideSheet.toggle()}"
                     @onSideSheetButtonClick="${(event) => sideSheet.toggle()}"
-                    @onSideSheetShown="${console.log}"
-                    @onSideSheetClosed="${console.log}"
-                    @onSideSheetScrimClosed="${console.log}"
                     >Body</md-side-sheet
                 >
             </div>

@@ -14,7 +14,6 @@ class DemoSegmentedButtonMultiSelect extends MdComponent {
                         <md-segmented-button
                             type="multi-select"
                             .items="${this.items}"
-                            @onSegmentedButtonItemClick="${console.log}"
                         ></md-segmented-button>
                     </div>
                 </div>

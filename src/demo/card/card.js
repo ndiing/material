@@ -24,7 +24,6 @@ class DemoCard extends MdComponent {
                             .icons="${[{ icon: "image" }]}"
                             label="Label"
                             sublabel="Sublabel"
-                            @onCardIconButtonClick="${console.log}"
                             >body</md-card
                         >
                     </div>
@@ -34,7 +33,6 @@ class DemoCard extends MdComponent {
                             .actions="${[{ icon: "image" }, { icon: "image" }, { icon: "image" }]}"
                             label="Label"
                             sublabel="Sublabel"
-                            @onCardIconButtonClick="${console.log}"
                             >body</md-card
                         >
                     </div>
@@ -45,8 +43,6 @@ class DemoCard extends MdComponent {
                             label="Label"
                             sublabel="Sublabel"
                             .buttons="${[{ component: "spacer" }, { label: "Label" }, { label: "Label" }]}"
-                            @onCardIconButtonClick="${console.log}"
-                            @onCardButtonClick="${console.log}"
                             >body</md-card
                         >
                     </div>

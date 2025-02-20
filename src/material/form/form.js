@@ -2,6 +2,7 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { createRef, ref } from "lit/directives/ref.js";
+
 /**
  * @extends MdComponent
  * @element md-form
@@ -16,7 +17,6 @@ class MDFormComponent extends MdComponent {
      * @property {String} [name]
      * @property {Boolean} [noValidate]
      */
-
     static properties = {
         acceptCharset: { type: String },
         action: { type: String },
@@ -33,10 +33,12 @@ class MDFormComponent extends MdComponent {
 
     constructor() {
         super();
+
         this.body = Array.from(this.childNodes);
     }
 
     render() {
+        /* prettier-ignore */
         return html`
             <form
                 class="md-form__native"
@@ -58,18 +60,19 @@ class MDFormComponent extends MdComponent {
 
     connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-form");
     }
+
     /**
      */
-
     reset() {
         this.formNative.reset();
     }
+
     /**
      * @param {Any} [submitButton]
      */
-
     submit(submitButton) {
         if (this.formNative.requestSubmit) {
             if (submitButton) {
@@ -98,6 +101,7 @@ class MDFormComponent extends MdComponent {
             });
             element.dispatchEvent(event);
         }
+
         /**
          * @event onFormNativeReset
          * @property {Object} event
@@ -108,6 +112,7 @@ class MDFormComponent extends MdComponent {
     handleFormNativeSubmit(event) {
         event.preventDefault();
         new FormData(this.formNative);
+
         /**
          * @event onFormNativeSubmit
          * @property {Object} event

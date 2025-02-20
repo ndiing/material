@@ -6,17 +6,17 @@
     display: inline-flex;
     flex-direction: column;
     width: 80px;
-    margin-left: calc(0px - var(--md-comp-sheet-width));
+    margin-left: calc(0px - var(--md-comp-navigation-rail-width));
     background-color: var(--md-sys-color-surface);
-    --md-comp-sheet-animation: sheet-west-in;
-    animation-name: var(--md-comp-sheet-animation);
+    --md-comp-navigation-rail-animation: navigation-rail-in;
+    animation-name: var(--md-comp-navigation-rail-animation);
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
     animation-duration: var(--md-sys-motion-duration-short3);
 
     &[open] {
         margin-left: 0;
-        --md-comp-sheet-animation: sheet-west-out;
-        animation-name: var(--md-comp-sheet-animation);
+        --md-comp-navigation-rail-animation: navigation-rail-out;
+        animation-name: var(--md-comp-navigation-rail-animation);
         animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
     }
 }

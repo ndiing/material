@@ -8,15 +8,18 @@ const Mixins = (Super) =>
                 cancelable: true,
                 detail,
             });
+            console.log(type, event);
             this.dispatchEvent(event);
         }
     };
+
 /**
  * @extends LitElement
  */
 class MdComponent extends Mixins(LitElement) {
     constructor() {
         super();
+
         updateWhenLocaleChanges(this);
     }
 
@@ -26,17 +29,13 @@ class MdComponent extends Mixins(LitElement) {
 }
 class MdElement extends Mixins(HTMLElement) {
     static observedAttributes = [];
-
     constructor() {
         super();
     }
 
     connectedCallback() {}
-
     disconnectedCallback() {}
-
     adoptedCallback() {}
-
     attributeChangedCallback(name, oldValue, newValue) {}
 }
 

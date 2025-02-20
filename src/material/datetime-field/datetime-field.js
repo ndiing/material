@@ -2,6 +2,7 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { MDTextFieldComponent } from "../text-field/text-field";
 import { closestScrollableElement, parseDatetimeLocal, stringifyDatetimeLocal } from "../util/util";
+
 /**
  * @extends MDTextFieldComponent
  * @element md-datetime-field
@@ -9,6 +10,7 @@ import { closestScrollableElement, parseDatetimeLocal, stringifyDatetimeLocal } 
 class MDDatetimeFieldComponent extends MDTextFieldComponent {
     constructor() {
         super();
+
         this.type = "datetime-local";
     }
 
@@ -25,11 +27,13 @@ class MDDatetimeFieldComponent extends MDTextFieldComponent {
 
     connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-datetime-field");
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
+
         this.removePicker();
     }
 
@@ -59,28 +63,28 @@ class MDDatetimeFieldComponent extends MDTextFieldComponent {
             this.picker = undefined;
         }
     }
+
     /**
      * @param {Any} [options={}]
      */
-
     showPicker(options = {}) {
         if (this.picker) {
             if (this.textFieldNative.value) this.picker.value = parseDatetimeLocal(this.textFieldNative.value);
             this.picker.show(options);
         }
     }
+
     /**
      */
-
     closePicker() {
         if (this.picker) {
             this.picker.close();
         }
     }
+
     /**
      * @param {Any} [options]
      */
-
     togglePicker(options) {
         if (this.picker) {
             if (this.picker.open) this.closePicker();

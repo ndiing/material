@@ -3,6 +3,7 @@ import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
 import { setPosition } from "../popper/popper";
+
 /**
  * @extends MdComponent
  * @element md-tooltip
@@ -16,7 +17,6 @@ class MDTooltipComponent extends MdComponent {
      * @property {Array} [buttons]
      * @property {Boolean} [open]
      */
-
     static properties = {
         icons: { type: Array },
         actions: { type: Array },
@@ -28,14 +28,17 @@ class MDTooltipComponent extends MdComponent {
 
     constructor() {
         super();
+
         this.body = Array.from(this.childNodes);
     }
 
     renderIcon(item) {
+        /* prettier-ignore */
         return html` <md-icon .data="${item}">${item.icon}</md-icon> `;
     }
 
     renderIconButton(item) {
+        /* prettier-ignore */
         return html`
             <md-icon-button
                 .data="${item}"
@@ -51,6 +54,7 @@ class MDTooltipComponent extends MdComponent {
     }
 
     renderButton(item) {
+        /* prettier-ignore */
         return html`
             <md-button
                 .data="${item}"
@@ -66,6 +70,7 @@ class MDTooltipComponent extends MdComponent {
     }
 
     renderSpacer(item) {
+        /* prettier-ignore */
         return html` <div class="md-tooltip__spacer"></div> `;
     }
 
@@ -80,17 +85,58 @@ class MDTooltipComponent extends MdComponent {
     }
 
     render() {
-        return html` ${this.icons?.length || this.label || this.sublabel || this.actions?.length ? html` <div class="md-tooltip__header">${this.icons?.length ? html` <div class="md-tooltip__icons">${this.icons.map((icon) => this.renderComponent(icon, "icon"))}</div> ` : nothing} ${this.label || this.sublabel ? html` <div class="md-tooltip__labels">${this.label ? html`<div class="md-tooltip__label">${this.label}</div>` : nothing} ${this.sublabel ? html`<div class="md-tooltip__sublabel">${this.sublabel}</div>` : nothing}</div> ` : nothing} ${this.actions?.length ? html` <div class="md-tooltip__actions">${this.actions.map((action) => this.renderComponent(action, "icon-button"))}</div> ` : nothing}</div> ` : nothing} ${this.body?.length || this.buttons?.length ? html` <div class="md-tooltip__wrapper">${this.body?.length ? html`<div class="md-tooltip__body">${this.body}</div>` : nothing} ${this.buttons?.length ? html` <div class="md-tooltip__footer">${this.buttons?.length ? html` <div class="md-tooltip__buttons">${this.buttons.map((button) => this.renderComponent(button, "button"))}</div> ` : nothing}</div> ` : nothing}</div> ` : nothing} `;
+        /* prettier-ignore */
+        return html` 
+        ${this.icons?.length || this.label || this.sublabel || this.actions?.length ? html` 
+            <div class="md-tooltip__header">
+                
+                ${this.icons?.length ? html` 
+                <div class="md-tooltip__icons">${this.icons.map((icon) => this.renderComponent(icon, "icon"))}</div>
+                ` : nothing} 
+                ${this.label || this.sublabel ? html` 
+                <div class="md-tooltip__labels">
+                    
+                    ${this.label ? html`
+                    <div class="md-tooltip__label">${this.label}</div>
+                    ` : nothing} 
+                    ${this.sublabel ? html`
+                    <div class="md-tooltip__sublabel">${this.sublabel}</div>
+                    ` : nothing}
+                </div>
+                ` : nothing} 
+                ${this.actions?.length ? html` 
+                <div class="md-tooltip__actions">${this.actions.map((action) => this.renderComponent(action, "icon-button"))}</div>
+                ` : nothing}
+            </div>
+            ` : nothing} 
+            ${this.body?.length || this.buttons?.length ? html` 
+            <div class="md-tooltip__wrapper">
+                
+                ${this.body?.length ? html`
+                <div class="md-tooltip__body">${this.body}</div>
+                ` : nothing} 
+                ${this.buttons?.length ? html` 
+                <div class="md-tooltip__footer">
+                    
+                    ${this.buttons?.length ? html` 
+                    <div class="md-tooltip__buttons">${this.buttons.map((button) => this.renderComponent(button, "button"))}</div>
+                    ` : nothing}
+                </div>
+                ` : nothing}
+            </div>
+            ` : nothing} 
+        `
     }
 
     connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-tooltip");
     }
+
     /**
      * @param {Any} [options]
      */
-
     show(options) {
         setPosition({
             container: this,
@@ -99,27 +145,29 @@ class MDTooltipComponent extends MdComponent {
             ...options,
         });
         this.open = true;
+
         /**
          * @event onTooltipShow
          * @property {Object} event
          */
         this.emit("onTooltipShow");
     }
+
     /**
      */
-
     close() {
         this.open = false;
+
         /**
          * @event onTooltipClose
          * @property {Object} event
          */
         this.emit("onTooltipClose");
     }
+
     /**
      * @param {Any} [options]
      */
-
     toggle(options) {
         if (this.open) this.close();
         else this.show(options);

@@ -3,11 +3,7 @@ import { MdComponent } from "../../material/component/component";
 class DemoMonthField extends MdComponent {
     render() {
         return html`
-            <md-form
-                @onFormNativeFormdata="${console.log}"
-                @onFormNativeReset="${console.log}"
-                @onFormNativeSubmit="${console.log}"
-            >
+            <md-form>
                 <div class="md-layout">
                     <div class="md-layout__grid">
                         <div class="md-layout__column--expanded6 md-layout__column--medium4 md-layout__column--compact4">

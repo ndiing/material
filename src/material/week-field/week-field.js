@@ -2,6 +2,7 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { MDTextFieldComponent } from "../text-field/text-field";
 import { closestScrollableElement, parseWeek, stringifyWeek } from "../util/util";
+
 /**
  * @extends MDTextFieldComponent
  * @element md-week-field
@@ -9,6 +10,7 @@ import { closestScrollableElement, parseWeek, stringifyWeek } from "../util/util
 class MDWeekFieldComponent extends MDTextFieldComponent {
     constructor() {
         super();
+
         this.type = "week";
     }
 
@@ -25,11 +27,13 @@ class MDWeekFieldComponent extends MDTextFieldComponent {
 
     connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-week-field");
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
+
         this.removePicker();
     }
 
@@ -59,28 +63,28 @@ class MDWeekFieldComponent extends MDTextFieldComponent {
             this.picker = undefined;
         }
     }
+
     /**
      * @param {Any} [options={}]
      */
-
     showPicker(options = {}) {
         if (this.picker) {
             if (this.textFieldNative.value) this.picker.value = parseWeek(this.textFieldNative.value);
             this.picker.show(options);
         }
     }
+
     /**
      */
-
     closePicker() {
         if (this.picker) {
             this.picker.close();
         }
     }
+
     /**
      * @param {Any} [options]
      */
-
     togglePicker(options) {
         if (this.picker) {
             if (this.picker.open) this.closePicker();

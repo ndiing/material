@@ -2,6 +2,7 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { Ripple } from "../ripple/ripple";
+
 /**
  * @extends MdComponent
  * @element md-tree-item
@@ -17,7 +18,6 @@ class MDTreeItemComponent extends MdComponent {
      * @property {String} [label]
      * @property {String} [routerLink]
      */
-
     static properties = {
         selected: { type: Boolean, reflect: true },
         expanded: { type: Boolean, reflect: true },
@@ -43,26 +43,36 @@ class MDTreeItemComponent extends MdComponent {
 
     constructor() {
         super();
+
         this.actions = ["keyboard_arrow_right", "keyboard_arrow_down"];
         this.nodeIcons = ["folder", "folder_open"];
         this.leafIcons = ["draft", "draft"];
     }
 
     render() {
+        /* prettier-ignore */
         return html` ${Array.from({ length: this.indent }, () => html`<div class="md-tree__indent"></div>`)} ${this.action ? html`<md-icon class="md-tree__action">${this.action}</md-icon>` : nothing} ${this.icon ? html`<md-icon class="md-tree__icon">${this.icon}</md-icon>` : nothing} ${this.label ? html`<div class="md-tree__label">${this.label}</div>` : nothing} `;
     }
-    connectedCallback() {
-        super.connectedCallback();
-        this.classList.add("md-tree__item");
-    }
 
-    firstUpdated(changedProperties) {
-        super.firstUpdated(changedProperties);
+    async connectedCallback() {
+        super.connectedCallback();
+
+        this.classList.add("md-tree__item");
+
+        await this.updateComplete;
 
         this.ripple = new Ripple(this, {});
     }
+
+    async disconnectedCallback() {
+        super.disconnectedCallback();
+
+        if (this.ripple) this.ripple.destroy();
+    }
+
     updated(changedProperties) {
         super.updated(changedProperties);
+
         if (changedProperties.has("selected") && this.selected) {
             /**
              * @event onTreeItemSelected

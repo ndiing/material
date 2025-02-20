@@ -321,12 +321,12 @@ class DemoMain extends MdComponent {
             this.demoMainTopAppBar.open = false;
             this.demoMainNavigationDrawer.modal = false;
             this.demoMainNavigationDrawer.open = true;
-            this.demoMainNavigationDrawer.navigationDrawerScrim.open = false;
+            this.demoMainNavigationDrawer.scrim.open = false;
         } else {
             this.demoMainTopAppBar.open = true;
             this.demoMainNavigationDrawer.modal = true;
             this.demoMainNavigationDrawer.open = false;
-            this.demoMainNavigationDrawer.navigationDrawerScrim.open = false;
+            this.demoMainNavigationDrawer.scrim.open = false;
         }
     }
 

@@ -21,9 +21,6 @@ class DemoNavigationRailNoLabel extends MdComponent {
                     id="navigationRail"
                     .items="${[{ icon: "image", selected: true }, { icon: "image" }, { icon: "image" }, { icon: "image" }]}"
                     open
-                    @onNavigationRailIconButtonClick="${console.log}"
-                    @onNavigationRailShown="${console.log}"
-                    @onNavigationRailClosed="${console.log}"
                 ></md-navigation-rail>
             </div>
         `;

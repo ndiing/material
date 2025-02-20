@@ -10,8 +10,6 @@ class DemoSliderRangeSelection extends MdComponent {
                             variant="range-selection"
                             name="slider"
                             value="[25,75]"
-                            @onSliderNativeInput="${console.log}"
-                            @onSliderNativeReset="${console.log}"
                         ></md-slider>
                     </div>
                 </div>

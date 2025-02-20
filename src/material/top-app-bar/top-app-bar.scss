@@ -7,17 +7,17 @@
     height: 64px;
     padding: 0 16px;
     gap: 0 16px;
-    margin-top: calc(0px - var(--md-comp-sheet-height));
+    margin-top: calc(0px - var(--md-comp-top-app-bar-height));
     background-color: var(--md-sys-color-surface);
-    --md-comp-sheet-animation: sheet-north-in;
-    animation-name: var(--md-comp-sheet-animation);
+    --md-comp-top-app-bar-animation: top-app-bar-in;
+    animation-name: var(--md-comp-top-app-bar-animation);
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
     animation-duration: var(--md-sys-motion-duration-short3);
 
     &[open] {
         margin-top: 0;
-        --md-comp-sheet-animation: sheet-north-out;
-        animation-name: var(--md-comp-sheet-animation);
+        --md-comp-top-app-bar-animation: top-app-bar-out;
+        animation-name: var(--md-comp-top-app-bar-animation);
         animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
     }
 }
