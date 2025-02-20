@@ -42,12 +42,12 @@ class MDWeekFieldComponent extends MDTextFieldComponent {
             this.picker = document.createElement("md-week-picker");
             this.parentElement.insertBefore(this.picker, this.nextElementSibling);
             this.handleWeekFieldPickerButtonCancelClick = this.handleWeekFieldPickerButtonCancelClick.bind(this);
-            this.handleWeekFieldPickerButtonOkClick = this.handleWeekFieldPickerButtonOkClick.bind(this);
             this.picker.addEventListener("onWeekPickerButtonCancelClick", this.handleWeekFieldPickerButtonCancelClick);
+            this.handleWeekFieldPickerButtonOkClick = this.handleWeekFieldPickerButtonOkClick.bind(this);
             this.picker.addEventListener("onWeekPickerButtonOkClick", this.handleWeekFieldPickerButtonOkClick);
             this.handleWeekFieldPickerWindowScroll = this.handleWeekFieldPickerWindowScroll.bind(this);
-            this.handleWeekFieldPickerWindowClick = this.handleWeekFieldPickerWindowClick.bind(this);
             this.picker.addEventListener("onWeekPickerWindowScroll", this.handleWeekFieldPickerWindowScroll);
+            this.handleWeekFieldPickerWindowClick = this.handleWeekFieldPickerWindowClick.bind(this);
             this.picker.addEventListener("onWeekPickerWindowClick", this.handleWeekFieldPickerWindowClick);
             await this.picker.updateComplete;
         }

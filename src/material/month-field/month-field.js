@@ -42,14 +42,12 @@ class MDMonthFieldComponent extends MDTextFieldComponent {
             this.picker = document.createElement("md-month-picker");
             this.parentElement.insertBefore(this.picker, this.nextElementSibling);
             this.handleMonthFieldPickerButtonCancelClick = this.handleMonthFieldPickerButtonCancelClick.bind(this);
+            this.picker.addEventListener("onMonthPickerButtonCancelClick", this.handleMonthFieldPickerButtonCancelClick);
             this.handleMonthFieldPickerButtonOkClick = this.handleMonthFieldPickerButtonOkClick.bind(this);
-            this.picker.addEventListener("onMonthPickerButtonCancelClick", this.handleMonthFieldPickerButtonCancelClick);
-            this.picker.addEventListener("onMonthPickerButtonOkClick", this.handleMonthFieldPickerButtonOkClick);
-            this.picker.addEventListener("onMonthPickerButtonCancelClick", this.handleMonthFieldPickerButtonCancelClick);
             this.picker.addEventListener("onMonthPickerButtonOkClick", this.handleMonthFieldPickerButtonOkClick);
             this.handleMonthFieldPickerWindowScroll = this.handleMonthFieldPickerWindowScroll.bind(this);
-            this.handleMonthFieldPickerWindowClick = this.handleMonthFieldPickerWindowClick.bind(this);
             this.picker.addEventListener("onMonthPickerWindowScroll", this.handleMonthFieldPickerWindowScroll);
+            this.handleMonthFieldPickerWindowClick = this.handleMonthFieldPickerWindowClick.bind(this);
             this.picker.addEventListener("onMonthPickerWindowClick", this.handleMonthFieldPickerWindowClick);
             await this.picker.updateComplete;
         }

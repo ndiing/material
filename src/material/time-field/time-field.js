@@ -42,12 +42,12 @@ class MDTimeFieldComponent extends MDTextFieldComponent {
             this.picker = document.createElement("md-time-picker");
             this.parentElement.insertBefore(this.picker, this.nextElementSibling);
             this.handleTimeFieldPickerButtonCancelClick = this.handleTimeFieldPickerButtonCancelClick.bind(this);
-            this.handleTimeFieldPickerButtonOkClick = this.handleTimeFieldPickerButtonOkClick.bind(this);
             this.picker.addEventListener("onTimePickerButtonCancelClick", this.handleTimeFieldPickerButtonCancelClick);
+            this.handleTimeFieldPickerButtonOkClick = this.handleTimeFieldPickerButtonOkClick.bind(this);
             this.picker.addEventListener("onTimePickerButtonOkClick", this.handleTimeFieldPickerButtonOkClick);
             this.handleTimeFieldPickerWindowScroll = this.handleTimeFieldPickerWindowScroll.bind(this);
-            this.handleTimeFieldPickerWindowClick = this.handleTimeFieldPickerWindowClick.bind(this);
             this.picker.addEventListener("onTimePickerWindowScroll", this.handleTimeFieldPickerWindowScroll);
+            this.handleTimeFieldPickerWindowClick = this.handleTimeFieldPickerWindowClick.bind(this);
             this.picker.addEventListener("onTimePickerWindowClick", this.handleTimeFieldPickerWindowClick);
             await this.picker.updateComplete;
         }

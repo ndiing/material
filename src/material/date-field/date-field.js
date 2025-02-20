@@ -42,12 +42,12 @@ class MDDateFieldComponent extends MDTextFieldComponent {
             this.picker = document.createElement("md-date-picker");
             this.parentElement.insertBefore(this.picker, this.nextElementSibling);
             this.handleDateFieldPickerButtonCancelClick = this.handleDateFieldPickerButtonCancelClick.bind(this);
-            this.handleDateFieldPickerButtonOkClick = this.handleDateFieldPickerButtonOkClick.bind(this);
-            this.handleDateFieldPickerWindowScroll = this.handleDateFieldPickerWindowScroll.bind(this);
-            this.handleDateFieldPickerWindowClick = this.handleDateFieldPickerWindowClick.bind(this);
             this.picker.addEventListener("onDatePickerButtonCancelClick", this.handleDateFieldPickerButtonCancelClick);
+            this.handleDateFieldPickerButtonOkClick = this.handleDateFieldPickerButtonOkClick.bind(this);
             this.picker.addEventListener("onDatePickerButtonOkClick", this.handleDateFieldPickerButtonOkClick);
+            this.handleDateFieldPickerWindowScroll = this.handleDateFieldPickerWindowScroll.bind(this);
             this.picker.addEventListener("onDatePickerWindowScroll", this.handleDateFieldPickerWindowScroll);
+            this.handleDateFieldPickerWindowClick = this.handleDateFieldPickerWindowClick.bind(this);
             this.picker.addEventListener("onDatePickerWindowClick", this.handleDateFieldPickerWindowClick);
             await this.picker.updateComplete;
         }
