@@ -122,11 +122,19 @@ class MDListItemComponent extends MdComponent {
         `;
     }
 
-    async connectedCallback() {
+     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-list__item");
-        await this.updateComplete;
+        
 
+    }
+
+    
+    firstUpdated(changedProperties){
+        super.firstUpdated(changedProperties)
+
+        this.ripple = new Ripple(this, this.rippleOptions);
+        
         if (this.sublabel) {
             const sublabel = this.querySelector(".md-list__sublabel");
 
@@ -137,16 +145,9 @@ class MDListItemComponent extends MdComponent {
             }
         }
 
-        this.ripple = new Ripple(this, this.rippleOptions);
     }
 
-    async disconnectedCallback() {
-        super.disconnectedCallback();
-
-        if (this.ripple) this.ripple.destroy();
-    }
-
-    async updated(changedProperties) {
+     updated(changedProperties) {
         super.updated(changedProperties);
 
         if (changedProperties.has("icon")) {
