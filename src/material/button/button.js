@@ -44,20 +44,17 @@ class MDButtonComponent extends MdComponent {
         `;
     }
 
-    async connectedCallback() {
+    connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-button");
-        await this.updateComplete;
+    }
+
+    firstUpdated(changedProperties){
+        super.firstUpdated(changedProperties)
 
         this.ripple = new Ripple(this, {
             trigger: ".md-button__native",
         });
-    }
-
-    async disconnectedCallback() {
-        super.disconnectedCallback();
-
-        if (this.ripple) this.ripple.destroy();
     }
 
     updated(changedProperties) {
