@@ -46,7 +46,6 @@ class MDDatePickerComponent extends MdComponent {
             },
         },
         index: { state: true },
-        selection: { state: true },
     };
 
     yearFormat = new Intl.DateTimeFormat(undefined, { year: "numeric" }).format;
@@ -354,7 +353,7 @@ class MDDatePickerComponent extends MdComponent {
         this.style.setProperty("--md-comp-date-picker-width", this.clientWidth + "px");
     }
 
-    async updated(changedProperties) {
+    updated(changedProperties) {
         super.updated(changedProperties);
 
         if (changedProperties.has("index")) {
@@ -366,7 +365,6 @@ class MDDatePickerComponent extends MdComponent {
         }
 
         if (changedProperties.has("value")) {
-            await this.updateComplete;
 
             this.selection = new Date(this.value.valueOf());
         }
