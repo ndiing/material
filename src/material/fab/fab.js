@@ -37,18 +37,16 @@ class MDFabComponent extends MdComponent {
         return html` ${this.icon ? html`<md-icon class="md-fab__icon">${this.icon}</md-icon>` : nothing} ${this.label ? html`<div class="md-fab__label">${this.label}</div>` : nothing} `;
     }
 
-    async connectedCallback() {
+     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-fab");
-        await this.updateComplete;
 
-        this.ripple = new Ripple(this, {});
     }
 
-    async disconnectedCallback() {
-        super.disconnectedCallback();
-
-        if (this.ripple) this.ripple.destroy();
+    firstUpdated(changedProperties){
+        super.firstUpdated(changedProperties)
+        
+        this.ripple = new Ripple(this, {});
     }
 
     updated(changedProperties) {
