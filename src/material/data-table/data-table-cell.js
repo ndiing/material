@@ -56,10 +56,18 @@ class MDDataTableCellComponent extends MdComponent {
         `;
     }
 
-    async connectedCallback() {
+    connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-data-table__cell");
-        await this.updateComplete;
+        
+
+        
+    }
+
+    
+
+    firstUpdated(changedProperties){
+        super.firstUpdated(changedProperties)
 
         if (this.sublabel) {
             const sublabel = this.querySelector(".md-data-table__sublabel");
@@ -72,11 +80,7 @@ class MDDataTableCellComponent extends MdComponent {
         }
     }
 
-    async disconnectedCallback() {
-        super.disconnectedCallback();
-    }
-
-    async updated(changedProperties) {
+    updated(changedProperties) {
         super.updated(changedProperties);
 
         if (changedProperties.has("rightAligned")) {
