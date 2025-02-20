@@ -89,7 +89,7 @@ class MDDialogComponent extends MdComponent {
         return html` ${this.icons?.length || this.label || this.sublabel || this.actions?.length ? html` <div class="md-dialog__header">${this.icons?.length ? html` <div class="md-dialog__icons">${this.icons.map((icon) => this.renderComponent(icon, "icon"))}</div> ` : nothing} ${this.label || this.sublabel ? html` <div class="md-dialog__labels">${this.label ? html`<div class="md-dialog__label">${this.label}</div>` : nothing} ${this.sublabel ? html`<div class="md-dialog__sublabel">${this.sublabel}</div>` : nothing}</div> ` : nothing} ${this.actions?.length ? html` <div class="md-dialog__actions">${this.actions.map((action) => this.renderComponent(action, "icon-button"))}</div> ` : nothing}</div> ` : nothing} ${this.body?.length || this.buttons?.length ? html` <div class="md-dialog__wrapper">${this.body?.length ? html`<div class="md-dialog__body">${this.body}</div>` : nothing} ${this.buttons?.length ? html` <div class="md-dialog__footer">${this.buttons?.length ? html` <div class="md-dialog__buttons">${this.buttons.map((button) => this.renderComponent(button, "button"))}</div> ` : nothing}</div> ` : nothing}</div> ` : nothing} `;
     }
 
-    async connectedCallback() {
+    connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-dialog");
         this.style.setProperty("--md-comp-dialog-animation", "none");
@@ -98,16 +98,21 @@ class MDDialogComponent extends MdComponent {
         this.handleDialogScrimClose = this.handleDialogScrimClose.bind(this);
         this.dialogScrim.addEventListener("onScrimClose", this.handleDialogScrimClose);
 
-        if (this.open) this.dialogScrim.show();
-        await this.updateComplete;
-        this.style.setProperty("--md-comp-dialog-height", this.clientHeight + "px");
-        this.style.setProperty("--md-comp-dialog-width", this.clientWidth + "px");
+        this.dialogScrim.open=this.open
+        
+        
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
         this.dialogScrim.removeEventListener("onScrimClose", this.handleDialogScrimClose);
         this.dialogScrim.remove();
+    }
+
+    firstUpdated(changedProperties){
+        super.firstUpdated(changedProperties)
+        this.style.setProperty("--md-comp-dialog-height", this.clientHeight + "px");
+        this.style.setProperty("--md-comp-dialog-width", this.clientWidth + "px");
     }
 
     /**

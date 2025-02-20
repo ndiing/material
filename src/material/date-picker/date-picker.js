@@ -332,7 +332,7 @@ class MDDatePickerComponent extends MdComponent {
         this.handleDatePickerScrimClose = this.handleDatePickerScrimClose.bind(this);
         this.datePickerScrim.addEventListener("onScrimClose", this.handleDatePickerScrimClose);
 
-        if (this.modal ) this.datePickerScrim=this.open
+        if (this.modal ) this.datePickerScrim.open=this.open
         
     }
 

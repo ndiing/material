@@ -46,7 +46,6 @@ class MDDatetimePickerComponent extends MdComponent {
             },
         },
         index: { state: true },
-        selection: { state: true },
     };
 
     yearFormat = new Intl.DateTimeFormat(undefined, { year: "numeric" }).format;
@@ -397,22 +396,22 @@ class MDDatetimePickerComponent extends MdComponent {
         `;
     }
 
-    async connectedCallback() {
+     connectedCallback() {
         super.connectedCallback();
 
-        this.defaultValue = new Date(this.value.valueOf());
-        this.defaultIndex = this.index;
+        
         this.classList.add("md-datetime-picker");
+        
         this.style.setProperty("--md-comp-datetime-picker-animation", "none");
+
         this.datetimePickerScrim = document.createElement("md-scrim");
         this.parentElement.insertBefore(this.datetimePickerScrim, this.nextElementSibling);
+
         this.handleDatetimePickerScrimClose = this.handleDatetimePickerScrimClose.bind(this);
         this.datetimePickerScrim.addEventListener("onScrimClose", this.handleDatetimePickerScrimClose);
 
-        if (this.modal && this.open) this.datetimePickerScrim.show();
-        await this.updateComplete;
-        this.style.setProperty("--md-comp-datetime-picker-height", this.clientHeight + "px");
-        this.style.setProperty("--md-comp-datetime-picker-width", this.clientWidth + "px");
+        if (this.modal ) this.datetimePickerScrim.open=this.open
+        
     }
 
     disconnectedCallback() {
@@ -421,7 +420,17 @@ class MDDatetimePickerComponent extends MdComponent {
         this.datetimePickerScrim.remove();
     }
 
-    async updated(changedProperties) {
+    firstUpdated(changedProperties){
+        super.firstUpdated(changedProperties)
+
+        this.defaultValue = new Date(this.value.valueOf());
+        this.defaultIndex = this.index;
+
+        this.style.setProperty("--md-comp-datetime-picker-height", this.clientHeight + "px");
+        this.style.setProperty("--md-comp-datetime-picker-width", this.clientWidth + "px");
+    }
+
+     updated(changedProperties) {
         super.updated(changedProperties);
 
         if (changedProperties.has("index")) {
@@ -433,7 +442,7 @@ class MDDatetimePickerComponent extends MdComponent {
         }
 
         if (changedProperties.has("value")) {
-            await this.updateComplete;
+            
 
             this.selection = new Date(this.value.valueOf());
         }
