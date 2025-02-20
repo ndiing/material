@@ -54,21 +54,21 @@ class MDTreeItemComponent extends MdComponent {
         return html` ${Array.from({ length: this.indent }, () => html`<div class="md-tree__indent"></div>`)} ${this.action ? html`<md-icon class="md-tree__action">${this.action}</md-icon>` : nothing} ${this.icon ? html`<md-icon class="md-tree__icon">${this.icon}</md-icon>` : nothing} ${this.label ? html`<div class="md-tree__label">${this.label}</div>` : nothing} `;
     }
 
-    async connectedCallback() {
+     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-tree__item");
-        await this.updateComplete;
+        
 
+    }
+
+    
+    firstUpdated(changedProperties){
+        super.firstUpdated(changedProperties)
+        
         this.ripple = new Ripple(this, {});
     }
 
-    async disconnectedCallback() {
-        super.disconnectedCallback();
-
-        if (this.ripple) this.ripple.destroy();
-    }
-
-    async updated(changedProperties) {
+     updated(changedProperties) {
         super.updated(changedProperties);
 
         if (changedProperties.has("selected") && this.selected) {
