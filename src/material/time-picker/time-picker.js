@@ -248,11 +248,10 @@ class MDTimePickerComponent extends MdComponent {
         `;
     }
 
-    async connectedCallback() {
+     connectedCallback() {
         super.connectedCallback();
 
-        this.defaultValue = new Date(this.value.valueOf());
-        this.defaultIndex = this.index;
+        
         this.classList.add("md-time-picker");
         this.style.setProperty("--md-comp-time-picker-animation", "none");
         this.timePickerScrim = document.createElement("md-scrim");
@@ -260,16 +259,22 @@ class MDTimePickerComponent extends MdComponent {
         this.handleTimePickerScrimClose = this.handleTimePickerScrimClose.bind(this);
         this.timePickerScrim.addEventListener("onScrimClose", this.handleTimePickerScrimClose);
 
-        if (this.modal && this.open) this.timePickerScrim.show();
-        await this.updateComplete;
-        this.style.setProperty("--md-comp-time-picker-height", this.clientHeight + "px");
-        this.style.setProperty("--md-comp-time-picker-width", this.clientWidth + "px");
+        if (this.modal ) this.timePickerScrim.open=this.open
+        
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
         this.timePickerScrim.removeEventListener("onScrimClose", this.handleTimePickerScrimClose);
         this.timePickerScrim.remove();
+    }
+
+    firstUpdated(changedProperties){
+        super.firstUpdated(changedProperties)
+        this.defaultValue = new Date(this.value.valueOf());
+        this.defaultIndex = this.index;
+        this.style.setProperty("--md-comp-time-picker-height", this.clientHeight + "px");
+        this.style.setProperty("--md-comp-time-picker-width", this.clientWidth + "px");
     }
 
     async updated(changedProperties) {
