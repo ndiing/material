@@ -1,7 +1,6 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
-
 /**
  * @extends MdComponent
  * @element md-tabs
@@ -12,6 +11,7 @@ class MDTabsComponent extends MdComponent {
      * @property {Object} [rippleOptions]
      * @property {primary|secondary} [variant]
      */
+
     static properties = {
         items: { type: Array },
         rippleOptions: { type: Object },
@@ -55,7 +55,6 @@ class MDTabsComponent extends MdComponent {
 
     updated(changedProperties) {
         super.updated(changedProperties);
-
         if (changedProperties.has("variant")) {
             this.variants.forEach((variant) => {
                 this.classList.toggle(`md-tabs--${variant}`, variant === this.variant);
@@ -66,20 +65,17 @@ class MDTabsComponent extends MdComponent {
     handleTabClick(event) {
         this.style.removeProperty("--md-comp-tabs-indicator-transition-property");
         const data = event.currentTarget.data;
-
         this.items.forEach((item) => {
             item.selected = item === data;
         });
         this.requestUpdate();
-
         /**
          * @event onTabClick
          * @property {Object} event
          */
         this.emit("onTabClick", { event });
     }
-
-     handleTabSelected(event) {
+    handleTabSelected(event) {
         if (this.classList.contains("md-tabs")) {
             const currentTarget = event.detail.currentTarget;
             const data = currentTarget.data;
@@ -92,15 +88,12 @@ class MDTabsComponent extends MdComponent {
             this.prevIndex = this.currIndex;
             let left = currentTarget.offsetLeft;
             let right = this.clientWidth - (left + currentTarget.clientWidth);
-
             if (this.classList.contains("md-tabs--primary")) {
                 const label = currentTarget.querySelector(".md-tab__label");
                 left = label.offsetLeft + currentTarget.offsetLeft;
                 right = this.clientWidth - (left + label.clientWidth);
-
                 if (!currentTarget.classList.contains("md-tab--with-icon")) {
                     const badge = currentTarget.querySelector(".md-tab__badge");
-
                     if (badge) {
                         right = this.clientWidth - (badge.offsetLeft + currentTarget.offsetLeft + badge.clientWidth);
                     }

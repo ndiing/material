@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { Ripple } from "../ripple/ripple";
 import { ifDefined } from "lit/directives/if-defined.js";
-
 /**
  * @extends MdComponent
  * @element md-icon-button
@@ -16,6 +15,7 @@ class MDIconButtonComponent extends MdComponent {
      * @property {Boolean} [selected]
      * @property {Boolean} [disabled]
      */
+
     static properties = {
         icon: { type: String },
         icons: { type: Array },
@@ -45,25 +45,21 @@ class MDIconButtonComponent extends MdComponent {
             <md-icon class="md-icon-button__icon">${this.icons?.length ? this.icons[~~this.selected] || this.icons[0] : this.icon}</md-icon>
         `;
     }
-
-     connectedCallback() {
+    connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-icon-button");
         this.handleIconButtonClick = this.handleIconButtonClick.bind(this);
         this.addEventListener("click", this.handleIconButtonClick);
-
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
         this.removeEventListener("click", this.handleIconButtonClick);
-
     }
 
-    firstUpdated(changedProperties){
-        super.firstUpdated(changedProperties)
+    firstUpdated(changedProperties) {
+        super.firstUpdated(changedProperties);
 
-    
         this.ripple = new Ripple(this, {
             trigger: ".md-icon-button__native",
             unbounded: true,
@@ -74,7 +70,6 @@ class MDIconButtonComponent extends MdComponent {
 
     updated(changedProperties) {
         super.updated(changedProperties);
-
         if (changedProperties.has("variant")) {
             this.variants.forEach((variant) => {
                 this.classList.toggle(`md-icon-button--${variant}`, variant === this.variant);
@@ -86,7 +81,6 @@ class MDIconButtonComponent extends MdComponent {
         if (this.toggle) {
             this.selected = !this.selected;
         }
-
         /**
          * @event onIconButtonClick
          * @property {Object} event

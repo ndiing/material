@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { Ripple } from "../ripple/ripple";
-
 /**
  * @extends MdComponent
  * @element md-list-item
@@ -28,6 +27,7 @@ class MDListItemComponent extends MdComponent {
      * @property {Object} [rippleOptions]
      * @property {Number} [badge]
      */
+
     static properties = {
         leadingCheckbox: { type: Boolean },
         leadingRadioButton: { type: Boolean },
@@ -121,39 +121,29 @@ class MDListItemComponent extends MdComponent {
                 : nothing}
         `;
     }
-
-     connectedCallback() {
+    connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-list__item");
-        
-
     }
 
-    
-    firstUpdated(changedProperties){
-        super.firstUpdated(changedProperties)
-
+    firstUpdated(changedProperties) {
+        super.firstUpdated(changedProperties);
         this.ripple = new Ripple(this, this.rippleOptions);
-        
+
         if (this.sublabel) {
             const sublabel = this.querySelector(".md-list__sublabel");
-
             if (sublabel.scrollHeight > sublabel.clientHeight) {
                 this.classList.add("md-list__item--three-line");
             } else {
                 this.classList.add("md-list__item--two-line");
             }
         }
-
     }
-
-     updated(changedProperties) {
+    updated(changedProperties) {
         super.updated(changedProperties);
-
         if (changedProperties.has("icon")) {
             this.classList.toggle("md-list__item--with-icon", !!this.icon);
         }
-
         if (changedProperties.has("selected") && this.selected) {
             /**
              * @event onListItemSelected

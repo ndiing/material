@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
-
 /**
  * @extends MdComponent
  * @element md-navigation-rail
@@ -16,6 +15,7 @@ class MDNavigationRailComponent extends MdComponent {
      * @property {Array} [items]
      * @property {Boolean} [open]
      */
+
     static properties = {
         icons: { type: Array },
         actions: { type: Array },
@@ -55,10 +55,8 @@ class MDNavigationRailComponent extends MdComponent {
             item.component || component,
             [
                 ["icon", () => this.renderIcon(item)],
-
                 ["icon-button", () => this.renderIconButton(item)],
             ],
-
             () => nothing,
         );
     }
@@ -76,18 +74,14 @@ class MDNavigationRailComponent extends MdComponent {
             </div>
         `;
     }
-
-     connectedCallback() {
+    connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-navigation-rail");
         this.style.setProperty("--md-comp-sheet-animation", "none");
-        
-        
     }
 
     firstUpdated(changedProperties) {
         super.firstUpdated(changedProperties);
-
         this.style.setProperty("--md-comp-sheet-width", this.clientWidth + "px");
         this.style.setProperty("--md-comp-sheet-height", this.clientHeight + "px");
     }
@@ -95,35 +89,33 @@ class MDNavigationRailComponent extends MdComponent {
     updated(changedProperties) {
         super.updated(changedProperties);
     }
-
     /**
      */
+
     show() {
         this.style.removeProperty("--md-comp-sheet-animation");
         this.open = true;
-
         /**
          * @event onNavigationRailShow
          * @property {Object} event
          */
         this.emit("onNavigationRailShow");
     }
-
     /**
      */
+
     close() {
         this.style.removeProperty("--md-comp-sheet-animation");
         this.open = false;
-
         /**
          * @event onNavigationRailClose
          * @property {Object} event
          */
         this.emit("onNavigationRailClose");
     }
-
     /**
      */
+
     toggle() {
         if (this.open) this.close();
         else this.show();

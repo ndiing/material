@@ -1,8 +1,8 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
 class DemoMenu extends MdComponent {
-    constructor(){
-        super()
+    constructor() {
+        super();
         function generateLabelData(count) {
             const data = [];
             for (let i = 1; i <= count; i++) {

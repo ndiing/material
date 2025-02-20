@@ -1,7 +1,6 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
-
 /**
  * @extends MdComponent
  * @element md-data-table-cell
@@ -11,6 +10,7 @@ class MDDataTableCellComponent extends MdComponent {
      * @property {String} [label]
      * @property {String} [sublabel]
      */
+
     static properties = {
         label: { type: String },
         sublabel: { type: String },
@@ -59,19 +59,12 @@ class MDDataTableCellComponent extends MdComponent {
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-data-table__cell");
-        
-
-        
     }
 
-    
-
-    firstUpdated(changedProperties){
-        super.firstUpdated(changedProperties)
-
+    firstUpdated(changedProperties) {
+        super.firstUpdated(changedProperties);
         if (this.sublabel) {
             const sublabel = this.querySelector(".md-data-table__sublabel");
-
             if (sublabel.scrollHeight > sublabel.clientHeight) {
                 this.classList.add("md-data-table__cell--three-line");
             } else {
@@ -82,7 +75,6 @@ class MDDataTableCellComponent extends MdComponent {
 
     updated(changedProperties) {
         super.updated(changedProperties);
-
         if (changedProperties.has("rightAligned")) {
             this.classList.toggle("md-data-table__cell--right-aligned", !!this.rightAligned);
         }

@@ -4,7 +4,6 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
 import { setPosition } from "../popper/popper";
 import { closestScrollableElement } from "../util/util";
-
 /**
  * @extends MdComponent
  * @element md-menu
@@ -14,6 +13,7 @@ class MDMenuComponent extends MdComponent {
      * @property {Boolean} [open]
      * @property {Array} [items]
      */
+
     static properties = {
         open: { type: Boolean, reflect: true },
         items: { type: Array },
@@ -22,9 +22,9 @@ class MDMenuComponent extends MdComponent {
     constructor() {
         super();
         this.items = [];
-        this.virtualOptions={
-            rowHeight:48
-        }
+        this.virtualOptions = {
+            rowHeight: 48,
+        };
     }
 
     render() {
@@ -37,18 +37,15 @@ class MDMenuComponent extends MdComponent {
             ></md-list>
         `
     }
-
-     connectedCallback() {
+    connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-menu");
         this.style.setProperty("--md-comp-menu-animation", "none");
-        
     }
-
     /**
      * @param {Any} [options={}]
      */
-     show(options = {}) {
+    show(options = {}) {
         this.style.setProperty("--md-comp-menu-height", this.clientHeight + "px");
         this.style.setProperty("--md-comp-menu-width", this.clientWidth + "px");
         this.style.removeProperty("--md-comp-menu-animation");
@@ -71,16 +68,15 @@ class MDMenuComponent extends MdComponent {
             ...options,
         });
         this.open = true;
-
         /**
          * @event onMenuShow
          * @property {Object} event
          */
         this.emit("onMenuShow");
     }
-
     /**
      */
+
     close() {
         this.style.removeProperty("--md-comp-menu-animation");
         this.handleMenuClosed = this.handleMenuClosed.bind(this);
@@ -88,17 +84,16 @@ class MDMenuComponent extends MdComponent {
         this.menuWindow.removeEventListener("scroll", this.handleMenuWindowScroll);
         window.removeEventListener("click", this.handleMenuWindowClick);
         this.open = false;
-
         /**
          * @event onMenuClose
          * @property {Object} event
          */
         this.emit("onMenuClose");
     }
-
     /**
      * @param {Any} [options]
      */
+
     toggle(options) {
         if (this.open) this.close();
         else this.show(options);
@@ -106,7 +101,6 @@ class MDMenuComponent extends MdComponent {
 
     handleMenuWindowClick(event) {
         const target = document.elementFromPoint(event.clientX, event.clientY);
-
         /**
          * @event onMenuWindowClick
          * @property {Object} event
@@ -125,7 +119,6 @@ class MDMenuComponent extends MdComponent {
 
     handleMenuShown(event) {
         this.removeEventListener("animationend", this.handleMenuShown);
-
         /**
          * @event onMenuShown
          * @property {Object} event
@@ -135,7 +128,6 @@ class MDMenuComponent extends MdComponent {
 
     handleMenuClosed(event) {
         this.removeEventListener("animationend", this.handleMenuClosed);
-
         /**
          * @event onMenuClosed
          * @property {Object} event

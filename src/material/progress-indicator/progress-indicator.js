@@ -1,6 +1,5 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
-
 /**
  * @extends MdComponent
  * @element md-progress-indicator
@@ -11,6 +10,7 @@ class MDProgressIndicatorComponent extends MdComponent {
      * @property {Number} [max]
      * @property {Number} [value]
      */
+
     static properties = {
         variant: { type: String },
         max: { type: Number },
@@ -92,7 +92,6 @@ class MDProgressIndicatorComponent extends MdComponent {
 
     updated(changedProperties) {
         super.updated(changedProperties);
-
         if (changedProperties.has("variant")) {
             this.variants.forEach((variant) => {
                 this.classList.toggle(`md-progress-indicator--${variant}`, this.variant === variant);

@@ -3,7 +3,6 @@ import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { Store } from "../store/store";
 import { Virtual } from "../virtual/virtual";
-
 /**
  * MDListComponent class responsible for displaying a list.
  * @extends MdComponent
@@ -19,6 +18,7 @@ class MDListComponent extends MdComponent {
      * @property {Object} [virtualOptions={}] - The virtual options for the list items.
      * @property {boolean} [virtualize=false] - Indicates if the list should use virtualization.
      */
+
     static properties = {
         type: { type: String },
         items: { type: Array },
@@ -30,16 +30,16 @@ class MDListComponent extends MdComponent {
         virtualOptions: { type: Object },
         itemsVirtual: { type: Array },
     };
-
     /**
      * The available selection types.
      * @type {Array<string>}
      */
-    types = ["single-select", "multi-select"];
 
+    types = ["single-select", "multi-select"];
     /**
      * Creates an instance of the MDListComponent class.
      */
+
     constructor() {
         super();
         this.type = "single-select";
@@ -53,12 +53,12 @@ class MDListComponent extends MdComponent {
     getValue(item, name) {
         return item[this.fieldMap[name] || name];
     }
-
     // /**
     //  * Renders a list item.
     //  * @param {Object} item - The item data.
     //  * @returns {TemplateResult} The rendered template for the list item.
     //  */
+
     renderListItem(item) {
         return html`
             <md-list-row>
@@ -90,61 +90,52 @@ class MDListComponent extends MdComponent {
             </md-list-row>
         `;
     }
-
     // /**
     //  * Renders the list.
     //  * @returns {TemplateResult} The rendered template for the list.
     //  */
+
     render() {
         /* prettier-ignore */
         return this.itemsVirtual?.map((item) => this.renderListItem(item))
     }
-
     // /**
     //  * Called when the element is connected to the DOM.
     //  * Adds the 'md-list' class and initializes virtual scrolling if enabled.
     //  */
+
     async connectedCallback() {
         super.connectedCallback();
-
         this.classList.add("md-list");
         this.style.setProperty("--md-comp-list-icon-animation", "none");
-
         this.store = new Store();
-
         if (this.virtualize) {
             this.handleListVirtualScroll = this.handleListVirtualScroll.bind(this);
             this.addEventListener("onVirtualScroll", this.handleListVirtualScroll);
-
             this.virtual = new Virtual(this, this.virtualOptions);
-
             if (this.hasConnected) this.load();
         }
     }
-
     // /**
     //  * Called when the element is disconnected from the DOM.
     //  * Removes the virtual scrolling event listener and destroys the virtual instance if enabled.
     //  */
+
     async disconnectedCallback() {
         super.disconnectedCallback();
-
         if (this.virtualize) {
             this.removeEventListener("onVirtualScroll", this.handleListVirtualScroll);
-
             this.virtual.destroy();
         }
-
         this.hasConnected = true;
     }
-
     // /**
     //  * Called when the properties of the component are updated.
     //  * @param {Map} changedProperties - The properties that changed.
     //  */
+
     async updated(changedProperties) {
         super.updated(changedProperties);
-
         if (changedProperties.has("items")) {
             await this.updateComplete;
             this.load();
@@ -153,10 +144,8 @@ class MDListComponent extends MdComponent {
 
     load() {
         this.store.load(this.items);
-
         const result = this.store.get(this.storeOptions);
         this.itemsStore = result.data;
-
         if (this.virtualize) {
             this.virtualOptions.data = this.itemsStore;
             this.virtual.load(this.virtualOptions);
@@ -168,17 +157,15 @@ class MDListComponent extends MdComponent {
     handleListVirtualScroll(event) {
         this.itemsVirtual = event.detail.data;
     }
-
     // /**
     //  * Handles the click event on a list item.
     //  * @param {Event} event - The click event.
     //  */
+
     handleListItemClick(event) {
         const action = event.target.closest(".md-list__checkbox,.md-list__radio-button,.md-list__switch");
         if (action) return;
-
         this.style.removeProperty("--md-comp-list-icon-animation");
-
         const data = event.currentTarget.data;
         if (this.type === "single-select") {
             this.itemsStore.forEach((item) => {
@@ -188,57 +175,53 @@ class MDListComponent extends MdComponent {
             data.selected = !data.selected;
         }
         this.requestUpdate();
-
         /**
          * @event onListItemClick
          * @property {Object} event - The list item click event.
          */
         this.emit("onListItemClick", { event });
     }
-
     // /**
     //  * Handles the native input event on a list item checkbox.
     //  * @param {Event} event - The native input event.
     //  */
+
     handleListItemCheckboxNativeInput(event) {
         const data = event.currentTarget.data;
         data.selected = !data.selected;
         this.requestUpdate();
-
         /**
          * @event onListItemCheckboxNativeInput
          * @property {Object} event
          */
         this.emit("onListItemCheckboxNativeInput", { event });
     }
-
     // /**
     //  *
     //  * @param {*} event
     //  */
+
     handleListItemRadioButtonNativeInput(event) {
         const data = event.currentTarget.data;
         this.itemsStore.forEach((item) => {
             item.selected = item === data;
         });
         this.requestUpdate();
-
         /**
          * @event onListItemRadioButtonNativeInput
          * @property {Object} event
          */
         this.emit("onListItemRadioButtonNativeInput", { event });
     }
-
     // /**
     //  *
     //  * @param {*} event
     //  */
+
     handleListItemSwitchNativeInput(event) {
         const data = event.currentTarget.data;
         data.selected = !data.selected;
         this.requestUpdate();
-
         /**
          * @event onListItemSwitchNativeInput
          * @property {Object} event
@@ -246,5 +229,7 @@ class MDListComponent extends MdComponent {
         this.emit("onListItemSwitchNativeInput", { event });
     }
 }
+
 customElements.define("md-list", MDListComponent);
+
 export { MDListComponent };

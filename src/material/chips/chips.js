@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { Ripple } from "../ripple/ripple";
-
 /**
  * @extends MdComponent
  * @element md-chips
@@ -12,6 +11,7 @@ class MDChipsComponent extends MdComponent {
      * @property {Array} [items]
      * @property {single-select|multi-select} [type]
      */
+
     static properties = {
         items: { type: Array },
         type: { type: String },
@@ -50,7 +50,6 @@ class MDChipsComponent extends MdComponent {
 
     handleChipClick(event) {
         const data = event.currentTarget.data;
-
         if (this.type === "single-select") {
             this.items.forEach((item) => {
                 item.selected = data === item;
@@ -59,7 +58,6 @@ class MDChipsComponent extends MdComponent {
             data.selected = !data.selected;
         }
         this.requestUpdate();
-
         /**
          * @event onChipClick
          * @property {Object} event

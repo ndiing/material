@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { Ripple } from "../ripple/ripple";
-
 /**
  * @extends MdComponent
  * @element md-tab
@@ -18,6 +17,7 @@ class MDTabComponent extends MdComponent {
      * @property {Object} [rippleOptions]
      * @property {Number} [badge]
      */
+
     static properties = {
         icon: { type: String },
         label: { type: String },
@@ -45,29 +45,21 @@ class MDTabComponent extends MdComponent {
                 : nothing}
         `;
     }
-
-     connectedCallback() {
+    connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-tab");
-        
-
     }
 
-    
-    firstUpdated(changedProperties){
-        super.firstUpdated(changedProperties)
+    firstUpdated(changedProperties) {
+        super.firstUpdated(changedProperties);
 
-        
         this.ripple = new Ripple(this, this.rippleOptions);
     }
-
-     updated(changedProperties) {
+    updated(changedProperties) {
         super.updated(changedProperties);
-
         if (changedProperties.has("icon")) {
             this.classList.toggle("md-tab--with-icon", !!this.icon);
         }
-
         if (changedProperties.has("selected") && this.selected) {
             /**
              * @event onTabSelected

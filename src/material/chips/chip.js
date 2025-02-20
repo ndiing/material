@@ -1,7 +1,6 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { Ripple } from "../ripple/ripple";
-
 /**
  * @extends MdComponent
  * @element md-chip
@@ -15,6 +14,7 @@ class MDChipComponent extends MdComponent {
      * @property {Boolean} [selected]
      * @property {Boolean} [disabled]
      */
+
     static properties = {
         icon: { type: String },
         avatar: { type: String },
@@ -53,15 +53,11 @@ class MDChipComponent extends MdComponent {
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-chip");
-        
-
     }
 
-    
-    firstUpdated(changedProperties){
-        super.firstUpdated(changedProperties)
+    firstUpdated(changedProperties) {
+        super.firstUpdated(changedProperties);
 
-        
         this.ripple = new Ripple(this, {});
     }
 

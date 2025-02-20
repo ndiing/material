@@ -1,7 +1,6 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { MDTextFieldComponent } from "../text-field/text-field";
-
 /**
  * @extends MDTextFieldComponent
  * @element md-password-field
@@ -27,7 +26,6 @@ class MDPasswordFieldComponent extends MDTextFieldComponent {
 
     handleTextFieldIconButtonClick(event) {
         const data = event.currentTarget.data;
-
         if (data.id === "toggle") return this.handlePasswordFieldIconButtonToggleClick(event);
         super.handleTextFieldIconButtonClick(event);
     }

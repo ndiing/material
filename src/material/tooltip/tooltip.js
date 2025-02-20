@@ -3,7 +3,6 @@ import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
 import { setPosition } from "../popper/popper";
-
 /**
  * @extends MdComponent
  * @element md-tooltip
@@ -17,6 +16,7 @@ class MDTooltipComponent extends MdComponent {
      * @property {Array} [buttons]
      * @property {Boolean} [open]
      */
+
     static properties = {
         icons: { type: Array },
         actions: { type: Array },
@@ -72,14 +72,10 @@ class MDTooltipComponent extends MdComponent {
     renderComponent(item, component = "icon") {
         const components = [
             ["icon", () => this.renderIcon(item)],
-
             ["icon-button", () => this.renderIconButton(item)],
-
             ["button", () => this.renderButton(item)],
-
             ["spacer", () => this.renderSpacer(item)],
         ];
-
         return choose(item.component || component, components, () => nothing);
     }
 
@@ -91,10 +87,10 @@ class MDTooltipComponent extends MdComponent {
         super.connectedCallback();
         this.classList.add("md-tooltip");
     }
-
     /**
      * @param {Any} [options]
      */
+
     show(options) {
         setPosition({
             container: this,
@@ -103,29 +99,27 @@ class MDTooltipComponent extends MdComponent {
             ...options,
         });
         this.open = true;
-
         /**
          * @event onTooltipShow
          * @property {Object} event
          */
         this.emit("onTooltipShow");
     }
-
     /**
      */
+
     close() {
         this.open = false;
-
         /**
          * @event onTooltipClose
          * @property {Object} event
          */
         this.emit("onTooltipClose");
     }
-
     /**
      * @param {Any} [options]
      */
+
     toggle(options) {
         if (this.open) this.close();
         else this.show(options);

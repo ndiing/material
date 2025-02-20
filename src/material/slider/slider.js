@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { classMap } from "lit/directives/class-map.js";
-
 /**
  * @extends MdComponent
  * @element md-slider
@@ -16,6 +15,7 @@ class MDSliderComponent extends MdComponent {
      * @property {String} [name]
      * @property {Any} [value]
      */
+
     static properties = {
         min: { type: Number },
         max: { type: Number },
@@ -27,7 +27,6 @@ class MDSliderComponent extends MdComponent {
                 fromAttribute: (value, type) => {
                     return [].concat(JSON.parse(value));
                 },
-
                 toAttribute: (value, type) => {
                     return JSON.stringify(value);
                 },
@@ -44,7 +43,6 @@ class MDSliderComponent extends MdComponent {
             discrete: this.max / this.step + 1,
             "range-selection": 2,
         };
-
         return lengths[this.variant];
     }
 
@@ -81,7 +79,6 @@ class MDSliderComponent extends MdComponent {
                 <div class="md-slider__indicators">
                     ${Array.from(
                         { length: this.indicators },
-
                         (v, k) => html`
                             <div
                                 class="${classMap({
@@ -108,33 +105,26 @@ class MDSliderComponent extends MdComponent {
             />
         `;
     }
-
-     connectedCallback() {
+    connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-slider");
-
         if (this.value === undefined) {
             this.value = [this.max < this.min ? this.min : this.min + (this.max - this.min) / 2];
         }
         this.defaultValue = JSON.parse(JSON.stringify(this.value));
-
         if (this.min < 0) this.variant = "centered";
         else if (this.step > 1) this.variant = "discrete";
         else if (this.value.length > 1) this.variant = "range-selection";
         else this.variant = "continuous";
-
-        
     }
 
     firstUpdated(changedProperties) {
         super.firstUpdated(changedProperties);
-
-        this.updateValue()
+        this.updateValue();
     }
 
     updated(changedProperties) {
         super.updated(changedProperties);
-
         if (changedProperties.has("variant")) {
             this.variants.forEach((variant) => {
                 this.classList.toggle(`md-slider--${variant}`, variant === this.variant);
@@ -156,7 +146,6 @@ class MDSliderComponent extends MdComponent {
     handleSliderNativeInput(event) {
         const native = event.currentTarget;
         const data = native.data;
-
         if (this.value.length > 1) {
             this.sliderNativeAll[0].value = Math.min(this.sliderNativeAll[0].value, this.value[1]);
             this.sliderNativeAll[1].value = Math.max(this.sliderNativeAll[1].value, this.value[0]);
@@ -165,7 +154,6 @@ class MDSliderComponent extends MdComponent {
         native.value = this.value[data.index];
         this.updateValue();
         this.requestUpdate();
-
         /**
          * @event onSliderNativeInput
          * @property {Object} event
@@ -177,7 +165,6 @@ class MDSliderComponent extends MdComponent {
         this.value = JSON.parse(JSON.stringify(this.defaultValue));
         this.updateValue();
         this.requestUpdate();
-
         /**
          * @event onSliderNativeReset
          * @property {Object} event

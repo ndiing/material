@@ -1,6 +1,5 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
-
 /**
  * @extends MdComponent
  * @element md-scrim
@@ -9,6 +8,7 @@ class MDScrimComponent extends MdComponent {
     /**
      * @property {Boolean} [open]
      */
+
     static properties = {
         open: { type: Boolean, reflect: true },
     };
@@ -24,37 +24,35 @@ class MDScrimComponent extends MdComponent {
         super.disconnectedCallback();
         this.removeEventListener("click", this.handleScrimClick);
     }
-
     /**
      */
+
     show() {
         this.handleScrimShown = this.handleScrimShown.bind(this);
         this.addEventListener("animationend", this.handleScrimShown);
         this.open = true;
-
         /**
          * @event onScrimShow
          * @property {Object} event
          */
         this.emit("onScrimShow");
     }
-
     /**
      */
+
     close() {
         this.handleScrimClosed = this.handleScrimClosed.bind(this);
         this.addEventListener("animationend", this.handleScrimClosed);
         this.open = false;
-
         /**
          * @event onScrimClose
          * @property {Object} event
          */
         this.emit("onScrimClose");
     }
-
     /**
      */
+
     toggle() {
         if (this.open) this.close();
         else this.show();
@@ -62,7 +60,6 @@ class MDScrimComponent extends MdComponent {
 
     handleScrimClick(event) {
         this.close();
-
         /**
          * @event onScrimClick
          * @property {Object} event
@@ -73,7 +70,6 @@ class MDScrimComponent extends MdComponent {
     handleScrimShown(event) {
         if (event.animationName === "scrim-out") {
             this.removeEventListener("animationend", this.handleScrimShown);
-
             /**
              * @event onScrimShown
              * @property {Object} event
@@ -85,7 +81,6 @@ class MDScrimComponent extends MdComponent {
     handleScrimClosed(event) {
         if (event.animationName === "scrim-in") {
             this.removeEventListener("animationend", this.handleScrimClosed);
-
             /**
              * @event onScrimClosed
              * @property {Object} event

@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
-
 /**
  * @extends MdComponent
  * @element md-navigation-drawer
@@ -18,6 +17,7 @@ class MDNavigationDrawerComponent extends MdComponent {
      * @property {Boolean} [modal]
      * @property {tree} [type]
      */
+
     static properties = {
         icons: { type: Array },
         actions: { type: Array },
@@ -60,10 +60,8 @@ class MDNavigationDrawerComponent extends MdComponent {
             item.component || component,
             [
                 ["icon", () => this.renderIcon(item)],
-
                 ["icon-button", () => this.renderIconButton(item)],
             ],
-
             () => nothing,
         );
     }
@@ -77,12 +75,7 @@ class MDNavigationDrawerComponent extends MdComponent {
     }
 
     renderItems(type, items) {
-        return choose(
-            type,
-            [["tree", () => this.renderTree(items)]],
-
-            () => this.renderList(items),
-        );
+        return choose(type, [["tree", () => this.renderTree(items)]], () => this.renderList(items));
     }
 
     render() {
@@ -93,20 +86,15 @@ class MDNavigationDrawerComponent extends MdComponent {
             </div>
         `;
     }
-
-     connectedCallback() {
+    connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-navigation-drawer");
         this.style.setProperty("--md-comp-sheet-animation", "none");
-
         this.navigationDrawerScrim = document.createElement("md-scrim");
         this.parentElement.insertBefore(this.navigationDrawerScrim, this.nextElementSibling);
-
         this.handleNavigationDrawerScrimClose = this.handleNavigationDrawerScrimClose.bind(this);
         this.navigationDrawerScrim.addEventListener("onScrimClose", this.handleNavigationDrawerScrimClose);
-
-        if (this.modal ) this.navigationDrawerScrim.open=this.open
-        
+        if (this.modal) this.navigationDrawerScrim.open = this.open;
     }
 
     disconnectedCallback() {
@@ -115,59 +103,52 @@ class MDNavigationDrawerComponent extends MdComponent {
         this.navigationDrawerScrim.remove();
     }
 
-    firstUpdated(changedProperties){
-        super.firstUpdated(changedProperties)
-
+    firstUpdated(changedProperties) {
+        super.firstUpdated(changedProperties);
         this.style.setProperty("--md-comp-sheet-width", this.clientWidth + "px");
         this.style.setProperty("--md-comp-sheet-height", this.clientHeight + "px");
     }
 
     updated(changedProperties) {
         super.updated(changedProperties);
-
         if (changedProperties.has("region")) {
             this.regions.forEach((region) => {
                 this.classList.toggle(`md-navigation-drawer--${region}`, region === this.region);
             });
         }
-
         if (changedProperties.has("modal")) {
             this.classList.toggle(`md-navigation-drawer--modal`, !!this.modal);
         }
     }
-
     /**
      */
+
     show() {
         this.style.removeProperty("--md-comp-sheet-animation");
-
         if (this.modal) this.navigationDrawerScrim.show();
         this.open = true;
-
         /**
          * @event onNavigationDrawerShow
          * @property {Object} event
          */
         this.emit("onNavigationDrawerShow");
     }
-
     /**
      */
+
     close() {
         this.style.removeProperty("--md-comp-sheet-animation");
         this.open = false;
-
         if (this.navigationDrawerScrim.open) this.navigationDrawerScrim.close();
-
         /**
          * @event onNavigationDrawerClose
          * @property {Object} event
          */
         this.emit("onNavigationDrawerClose");
     }
-
     /**
      */
+
     toggle() {
         if (this.open) this.close();
         else this.show();
@@ -183,7 +164,6 @@ class MDNavigationDrawerComponent extends MdComponent {
 
     handleNavigationDrawerScrimClose(event) {
         if (this.open) this.close();
-
         /**
          * @event onNavigationDrawerScrimClose
          * @property {Object} event

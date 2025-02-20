@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { Ripple } from "../ripple/ripple";
-
 /**
  * @extends MdComponent
  * @element md-radio-button
@@ -14,6 +13,7 @@ class MDRadioButtonComponent extends MdComponent {
      * @property {Boolean} [indeterminate]
      * @property {Boolean} [checked]
      */
+
     static properties = {
         name: { type: String },
         value: { type: String },
@@ -45,21 +45,18 @@ class MDRadioButtonComponent extends MdComponent {
             </div>
         `;
     }
-
-     connectedCallback() {
+    connectedCallback() {
         super.connectedCallback();
-        
-        this.classList.add("md-radio-button");
 
+        this.classList.add("md-radio-button");
     }
 
-    
-    firstUpdated(changedProperties){
-        super.firstUpdated(changedProperties)
+    firstUpdated(changedProperties) {
+        super.firstUpdated(changedProperties);
         this.defaultValue = this.value;
         this.defaultIndeterminate = this.indeterminate;
         this.defaultChecked = this.checked;
-        
+
         this.ripple = new Ripple(this, {
             container: ".md-radio-button__track",
             trigger: ".md-radio-button__native",
@@ -72,7 +69,6 @@ class MDRadioButtonComponent extends MdComponent {
         const native = event.currentTarget;
         this.indeterminate = native.indeterminate;
         this.checked = native.checked;
-
         /**
          * @event onRadioButtonNativeInput
          * @property {Object} event
@@ -84,7 +80,6 @@ class MDRadioButtonComponent extends MdComponent {
         this.value = this.defaultValue;
         this.indeterminate = this.defaultIndeterminate;
         this.checked = this.defaultChecked;
-
         /**
          * @event onRadioButtonNativeReset
          * @property {Object} event

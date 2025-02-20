@@ -10,12 +10,12 @@ class Ripple {
      * @property {boolean} [unbounded=false] - Whether the ripple effect is unbounded.
      * @property {HTMLElement|string} [container] - The container element or selector for the ripple effect.
      */
-
     /**
      * Creates an instance of the Ripple class.
      * @param {HTMLElement} host - The host element.
      * @param {RippleOptions} [options] - Additional options for the ripple effect.
      */
+
     constructor(host, options) {
         this.host = host;
         this.options = {
@@ -26,16 +26,13 @@ class Ripple {
             container: undefined,
             ...options,
         };
-
         this.init();
     }
-
     /**
      * Initializes the ripple effect.
      */
-     init() {
+    init() {
         this.container = this.host;
-
         if (this.options.container) {
             if (typeof this.options.container === "string") {
                 this.container = this.host.querySelector(this.options.container);
@@ -44,7 +41,6 @@ class Ripple {
             }
         }
         this.trigger = this.host;
-
         if (this.options.trigger) {
             if (typeof this.options.trigger === "string") {
                 this.trigger = this.host.querySelector(this.options.trigger);
@@ -57,7 +53,6 @@ class Ripple {
         this.container.setAttribute("tabIndex", 0);
         this.trigger.classList.add("md-ripple--trigger");
         this.radius = 141.4213562373095;
-
         if (this.options.radius) {
             this.radius = (this.options.radius / this.container.clientWidth) * 100;
         }
@@ -74,18 +69,16 @@ class Ripple {
         this.trigger.addEventListener("focus", this.handleRippleFocusIn);
         this.trigger.addEventListener("blur", this.handleRippleFocusOut);
     }
-
     /**
      * Destroys the ripple effect.
      */
-     destroy() {
+    destroy() {
         if (this.container) {
             this.container.classList.remove("md-ripple");
             this.container.classList.remove("md-ripple--bounded");
             this.container.removeAttribute("tabIndex");
             this.container.style.removeProperty("--md-comp-ripple-radius");
         }
-
         if (this.trigger) {
             this.trigger.classList.remove("md-ripple--trigger");
             this.trigger.removeEventListener("pointerenter", this.handleRippleHoverIn);
@@ -97,33 +90,32 @@ class Ripple {
         this.container = null;
         this.trigger = null;
     }
-
     // /**
     //  * Handles the ripple hover-in event.
     //  * @param {Event} event - The hover-in event.
     //  */
+
     handleRippleHoverIn(event) {
         this.container.classList.add("md-ripple--hover");
     }
-
     // /**
     //  * Handles the ripple hover-out event.
     //  * @param {Event} event - The hover-out event.
     //  */
+
     handleRippleHoverOut(event) {
         this.container.classList.remove("md-ripple--hover");
     }
-
     // /**
     //  * Handles the ripple press-in event.
     //  * @param {Event} event - The press-in event.
     //  */
+
     handleRipplePressIn(event) {
         window.addEventListener("pointerup", this.handleRipplePressOut, { passive: true });
         window.addEventListener("touchend", this.handleRipplePressOut, { passive: true });
         this.container.classList.add("md-ripple--press");
         const rect = this.container.getBoundingClientRect();
-
         if (!this.options.centered) {
             const left = (event.clientX - rect.left) / rect.width;
             const top = (event.clientY - rect.top) / rect.height;
@@ -136,29 +128,29 @@ class Ripple {
             this.container.style.setProperty("--md-comp-ripple-y", y * 100 + "%");
         }
     }
-
     // /**
     //  * Handles the ripple press-out event.
     //  * @param {Event} event - The press-out event.
     //  */
+
     handleRipplePressOut(event) {
         window.removeEventListener("pointerup", this.handleRipplePressOut);
         window.removeEventListener("touchend", this.handleRipplePressOut);
         this.container.classList.remove("md-ripple--press");
     }
-
     // /**
     //  * Handles the ripple focus-in event.
     //  * @param {Event} event - The focus-in event.
     //  */
+
     handleRippleFocusIn(event) {
         this.container.classList.add("md-ripple--focus");
     }
-
     // /**
     //  * Handles the ripple focus-out event.
     //  * @param {Event} event - The focus-out event.
     //  */
+
     handleRippleFocusOut(event) {
         this.container.classList.remove("md-ripple--focus");
     }

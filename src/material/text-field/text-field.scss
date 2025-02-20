@@ -151,7 +151,6 @@
             }
         }
     }
-
     &.md-text-field--focus,
     &.md-text-field--populated {
         &:not(.md-text-field--separate-label).md-text-field--with-label {
@@ -246,7 +245,6 @@
             }
         }
     }
-
     &.md-text-field--focus,
     &.md-text-field--populated {
         &:not(.md-text-field--separate-label).md-text-field--with-label {
@@ -307,7 +305,6 @@
     &[type="color" i]::-webkit-color-swatch {
         border: 0;
     }
-
     &::-webkit-datetime-edit-fields-wrapper,
     &::-webkit-datetime-edit-month-field,
     &::-webkit-datetime-edit-day-field,
@@ -320,7 +317,6 @@
     &::-webkit-inner-spin-button {
         display: none;
     }
-
     &[type="file" i]::-webkit-file-upload-button,
     &[type="datetime-local" i]::-webkit-calendar-picker-indicator,
     &[type="date" i]::-webkit-calendar-picker-indicator,

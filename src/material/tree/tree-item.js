@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { Ripple } from "../ripple/ripple";
-
 /**
  * @extends MdComponent
  * @element md-tree-item
@@ -18,6 +17,7 @@ class MDTreeItemComponent extends MdComponent {
      * @property {String} [label]
      * @property {String} [routerLink]
      */
+
     static properties = {
         selected: { type: Boolean, reflect: true },
         expanded: { type: Boolean, reflect: true },
@@ -31,14 +31,12 @@ class MDTreeItemComponent extends MdComponent {
 
     get action() {
         if (!this.actions?.length) return;
-
         if (this.data.children?.length) return this.actions[~~this.expanded];
         else return [" ", ""][~~(this.indent === 0)];
     }
 
     get icon() {
         if (!this.leafIcons?.length) return;
-
         if (this.data.children?.length) return this.nodeIcons[~~this.expanded];
         else return this.leafIcons[~~this.selected];
     }
@@ -53,24 +51,18 @@ class MDTreeItemComponent extends MdComponent {
     render() {
         return html` ${Array.from({ length: this.indent }, () => html`<div class="md-tree__indent"></div>`)} ${this.action ? html`<md-icon class="md-tree__action">${this.action}</md-icon>` : nothing} ${this.icon ? html`<md-icon class="md-tree__icon">${this.icon}</md-icon>` : nothing} ${this.label ? html`<div class="md-tree__label">${this.label}</div>` : nothing} `;
     }
-
-     connectedCallback() {
+    connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-tree__item");
-        
-
     }
 
-    
-    firstUpdated(changedProperties){
-        super.firstUpdated(changedProperties)
-        
+    firstUpdated(changedProperties) {
+        super.firstUpdated(changedProperties);
+
         this.ripple = new Ripple(this, {});
     }
-
-     updated(changedProperties) {
+    updated(changedProperties) {
         super.updated(changedProperties);
-
         if (changedProperties.has("selected") && this.selected) {
             /**
              * @event onTreeItemSelected

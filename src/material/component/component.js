@@ -11,7 +11,6 @@ const Mixins = (Super) =>
             this.dispatchEvent(event);
         }
     };
-
 /**
  * @extends LitElement
  */
@@ -27,13 +26,17 @@ class MdComponent extends Mixins(LitElement) {
 }
 class MdElement extends Mixins(HTMLElement) {
     static observedAttributes = [];
+
     constructor() {
         super();
     }
 
     connectedCallback() {}
+
     disconnectedCallback() {}
+
     adoptedCallback() {}
+
     attributeChangedCallback(name, oldValue, newValue) {}
 }
 

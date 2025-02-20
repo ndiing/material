@@ -1,7 +1,6 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
-
 /**
  * @extends MdComponent
  * @element md-segmented-button
@@ -11,6 +10,7 @@ class MDSegmentedButtonComponent extends MdComponent {
      * @property {Array} [items]
      * @property {single-select|multi-select} [type]
      */
+
     static properties = {
         items: { type: Array },
         type: { type: String },
@@ -51,7 +51,6 @@ class MDSegmentedButtonComponent extends MdComponent {
 
     handleSegmentedButtonItemClick(event) {
         const data = event.currentTarget.data;
-
         if (this.type === "single-select") {
             this.items.forEach((item) => {
                 item.selected = item === data;
@@ -60,7 +59,6 @@ class MDSegmentedButtonComponent extends MdComponent {
             data.selected = !data.selected;
         }
         this.requestUpdate();
-
         /**
          * @event onSegmentedButtonItemClick
          * @property {Object} event

@@ -10,12 +10,12 @@ class Virtual {
      * @property {number} [nodePadding=2] - The number of nodes to pad above and below the visible area.
      * @property {Array} [data=[]] - The initial data for the list.
      */
-
     /**
      * Creates an instance of the Virtual class.
      * @param {HTMLElement} host - The host element containing the virtual scrollable list.
      * @param {VirtualOptions} [options] - Additional options for the virtual scroll.
      */
+
     constructor(host, options) {
         this.host = host;
         this.options = {
@@ -25,32 +25,27 @@ class Virtual {
             data: [],
             ...options,
         };
-
         this.init();
     }
-
     // /**
     //  * Debounces the handling of virtual scroll events.
     //  */
+
     handleVirtualScrollDebounce() {
         const { rowHeight, total } = this.updateTrackHeight();
         const { start, end } = this.updateItemsPosition(rowHeight, total);
         const data = this.options.data.slice(start, end);
         const cache = [rowHeight, total, start, end, data, this.now].toString();
-
-        this.rowHeight=rowHeight
-        this.total=total
-        this.start=start
-        this.end=end
-        this.data=data
-
+        this.rowHeight = rowHeight;
+        this.total = total;
+        this.start = start;
+        this.end = end;
+        this.data = data;
         if (this.cache !== cache) {
             this.cache = cache;
-
             if (document.activeElement !== document.body) {
                 document.activeElement.blur();
             }
-
             /**
              * @event onVirtualScroll
              * @type {Object}
@@ -63,13 +58,13 @@ class Virtual {
             this.emit("onVirtualScroll", { rowHeight, total, start, end, data });
         }
     }
-
     // /**
     //  * Updates the position of the items based on the scroll position.
     //  * @param {number} rowHeight - The height of each row/item in pixels.
     //  * @param {number} total - The total number of items in the list.
     //  * @returns {Object} An object containing the start and end indices of the visible items.
     //  */
+
     updateItemsPosition(rowHeight, total) {
         const scrollTop = this.host.scrollTop;
         const nodePadding = this.options.nodePadding;
@@ -78,9 +73,8 @@ class Virtual {
         const limit = Math.min(total - start, Math.ceil(viewportHeight / rowHeight) + 2 * nodePadding);
         const end = start + limit;
         const translateY = start * rowHeight;
-        
-        this.items = this.host.querySelectorAll(this.options.item);
 
+        this.items = this.host.querySelectorAll(this.options.item);
         this.items.forEach((item) => {
             item.style.setProperty("transform", "translate3d(0," + translateY + "px,0)");
             // if(this.options.rowHeight!==item.clientHeight){
@@ -89,11 +83,11 @@ class Virtual {
         });
         return { start, end };
     }
-
     // /**
     //  * Updates the height of the track element.
     //  * @returns {Object} An object containing the rowHeight and total number of items.
     //  */
+
     updateTrackHeight() {
         const total = this.options.data.length;
         const rowHeight = this.options.rowHeight;
@@ -101,19 +95,19 @@ class Virtual {
         this.track.style.setProperty("height", trackHeight + "px");
         return { rowHeight, total };
     }
-
     // /**
     //  * Handles the virtual scroll event.
     //  */
+
     handleVirtualScroll() {
         window.requestAnimationFrame(this.handleVirtualScrollDebounce);
     }
-
     // /**
     //  * Emits a custom event from the host element.
     //  * @param {string} type - The type of event to emit.
     //  * @param {Object} [detail] - The event detail.
     //  */
+
     emit(type, detail) {
         const event = new CustomEvent(type, {
             bubbles: true,
@@ -122,25 +116,24 @@ class Virtual {
         });
         this.host.dispatchEvent(event);
     }
-
     /**
      * Loads the specified options into the virtual scroll instance.
      * @param {VirtualOptions} [options={}] - The options to load.
      */
+
     load(options = {}) {
         for (const name in options) {
             const value = options[name];
-
             if (value === undefined || this.options[name] === value) continue;
             this.options[name] = value;
         }
         this.now = performance.now();
         this.handleVirtualScroll();
     }
-
     /**
      * Initializes the virtual scroll functionality by adding event listeners and setting initial styles.
      */
+
     init() {
         this.host.classList.add("md-virtual");
         this.track = document.createElement("div");
@@ -150,10 +143,10 @@ class Virtual {
         this.handleVirtualScrollDebounce = this.handleVirtualScrollDebounce.bind(this);
         this.host.addEventListener("scroll", this.handleVirtualScroll);
     }
-
     /**
      * Destroys the virtual scroll functionality by removing event listeners and resetting styles.
      */
+
     destroy() {
         this.host.classList.remove("md-virtual");
         this.track.remove();

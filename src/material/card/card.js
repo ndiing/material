@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
-
 /**
  * @extends MdComponent
  * @element md-card
@@ -15,6 +14,7 @@ class MDCardComponent extends MdComponent {
      * @property {String} [sublabel]
      * @property {Array} [buttons]
      */
+
     static properties = {
         icons: { type: Array },
         actions: { type: Array },
@@ -69,14 +69,10 @@ class MDCardComponent extends MdComponent {
     renderComponent(item, component = "icon") {
         const components = [
             ["icon", () => this.renderIcon(item)],
-
             ["icon-button", () => this.renderIconButton(item)],
-
             ["button", () => this.renderButton(item)],
-
             ["spacer", () => this.renderSpacer(item)],
         ];
-
         return choose(item.component || component, components, () => nothing);
     }
 

@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent, Mixins } from "../component/component";
 import { styleMap } from "lit/directives/style-map.js";
 import { Store } from "../store/store";
-
 /**
  * MDDataTableComponent class responsible for displaying a data table.
  * @extends MdComponent
@@ -17,21 +16,18 @@ class MDDataTableComponent extends MdComponent {
      * @property {number} width - The width of the header.
      * @property {boolean} sortable - Indicates if the header is sortable.
      */
-
     /**
      * @typedef {Object} MDDataTableComponentBodies
      * @property {string} name - The name of the body.
      * @property {boolean} rightAligned - Indicates if the body is right-aligned.
      * @property {number} width - The width of the body.
      */
-
     /**
      * @typedef {Object} MDDataTableComponentFooters
      * @property {string} label - The label of the footer.
      * @property {boolean} rightAligned - Indicates if the footer is right-aligned.
      * @property {number} width - The width of the footer.
      */
-
     /**
      * The properties of the component.
      * @property {MDDataTableComponentHeaders[]} headers - The headers of the table.
@@ -41,6 +37,7 @@ class MDDataTableComponent extends MdComponent {
      * @property {boolean} checkbox - Indicates if checkboxes should be displayed.
      * @property {boolean} virtualize - Indicates if the table should use virtualization.
      */
+
     static properties = {
         headers: { type: Array },
         bodies: { type: Array },
@@ -48,13 +45,11 @@ class MDDataTableComponent extends MdComponent {
         data: { type: Array },
         checkbox: { type: Boolean },
         virtualize: { type: Boolean },
-        
+
         storeOptions: { type: Object },
         dataStore: { type: Array },
-
         virtualOptions: { type: Object },
         dataVirtual: { type: Array },
-
         now: { type: Number },
     };
 
@@ -69,30 +64,30 @@ class MDDataTableComponent extends MdComponent {
         asc: "desc",
         desc: undefined,
     };
-
     /**
      * Gets the selected items in the data table.
      * @readonly
      * @returns {Array} The selected items.
      */
+
     get selected() {
         return this.dataStore?.filter((item) => item.selected);
     }
-
     /**
      * Gets the indeterminate state of the checkboxes.
      * @readonly
      * @returns {boolean} The indeterminate state.
      */
+
     get indeterminate() {
         return this.selected?.length && this.selected?.length < this.dataStore?.length;
     }
-
     /**
      * Gets the checked state of the checkboxes.
      * @readonly
      * @returns {boolean} The checked state.
      */
+
     get checked() {
         return this.selected?.length && this.selected?.length === this.dataStore?.length;
     }
@@ -100,15 +95,14 @@ class MDDataTableComponent extends MdComponent {
     get checkboxCell() {
         return [...((this.checkbox && [{ checkbox: true, sticky: true }]) || [])];
     }
-
     /**
      * Creates an instance of the MDDataTableComponent class.
      */
+
     constructor() {
         super();
         this.storeOptions = {};
-        this.virtualOptions={}
-
+        this.virtualOptions = {};
         this.store = new Store();
     }
 
@@ -272,30 +266,25 @@ class MDDataTableComponent extends MdComponent {
 
     async updated(changedProperties) {
         super.updated(changedProperties);
-
         if (changedProperties.has("data")) {
             await this.updateComplete;
-
             this.load();
         }
     }
-
     /**
      *
      */
+
     load() {
         this.store.load(this.data);
-
         const result = this.store.get(this.storeOptions);
         this.dataStore = result.data;
-
         if (this.virtualize) this.now = performance.now();
         else this.dataVirtual = this.dataStore;
     }
 
     handleDataTableKeydown(event) {
         if (event.ctrlKey && event.key === "a") this.handleDataTableKeydownCtrlA(event);
-
         /**
          * @event onDataTableKeydown
          * @type {Object}
@@ -306,12 +295,10 @@ class MDDataTableComponent extends MdComponent {
 
     handleDataTableKeydownCtrlA(event) {
         event.preventDefault();
-
         this.dataStore.forEach((item) => {
             item.selected = true;
         });
         this.requestUpdate();
-
         /**
          * @event onDataTableKeydownCtrlA
          * @type {Object}
@@ -322,13 +309,11 @@ class MDDataTableComponent extends MdComponent {
 
     handleDataTableNativeHeaderClick(event) {
         const data = event.currentTarget.data;
-
         if (data.checkbox) {
             return this.handleDataTableNativeHeaderCheckboxClick(event);
         } else if (data.sortable && event.target.closest(".md-data-table__section--center")) {
             return this.handleDataTableNativeHeaderSortableClick(event);
         }
-
         /**
          * @event onDataTableNativeHeaderClick
          * @type {Object}
@@ -339,36 +324,30 @@ class MDDataTableComponent extends MdComponent {
 
     handleDataTableNativeBodyClick(event) {
         const data = event.currentTarget.data;
-
         if (event.ctrlKey) {
             data.selected = !data.selected;
         } else if (event.shiftKey) {
             this.prevIndex = this.prevIndex || 0;
             this.currIndex = this.dataStore.indexOf(data);
             this.swapIndex = this.prevIndex > this.currIndex;
-
             if (this.swapIndex) {
                 [this.prevIndex, this.currIndex] = [this.currIndex, this.prevIndex];
             }
-
             this.dataStore.forEach((item, index) => {
                 item.selected = index >= this.prevIndex && index <= this.currIndex;
             });
-
             if (this.swapIndex) {
                 [this.currIndex, this.prevIndex] = [this.prevIndex, this.currIndex];
             }
         } else {
             this.dataStore.forEach((item, index) => {
                 item.selected = item === data;
-
                 if (item.selected) {
                     this.prevIndex = index;
                 }
             });
         }
         this.requestUpdate();
-
         /**
          * @event onDataTableNativeBodyClick
          * @type {Object}
@@ -381,12 +360,10 @@ class MDDataTableComponent extends MdComponent {
         event.stopPropagation();
         const data = event.currentTarget.data;
         const selected = !this.checked || this.indeterminate;
-
         this.dataStore.forEach((item) => {
             item.selected = selected;
         });
         this.requestUpdate();
-
         /**
          * @event onDataTableNativeHeaderCheckboxClick
          * @type {Object}
@@ -400,11 +377,9 @@ class MDDataTableComponent extends MdComponent {
         const data = event.currentTarget.data;
         data.sortIcon = this.sortIcons[data.order];
         data.order = this.orders[data.order];
-
         this.storeOptions.sorters = this.headers.flat().filter((item) => item.order);
         this.load();
         this.requestUpdate();
-
         /**
          * @event onDataTableNativeHeaderSortableClick
          * @type {Object}
@@ -418,7 +393,6 @@ class MDDataTableComponent extends MdComponent {
         const data = event.currentTarget.dataBody;
         data.selected = !data.selected;
         this.requestUpdate();
-
         /**
          * @event onDataTableNativeDataCheckboxClick
          * @type {Object}
@@ -429,11 +403,9 @@ class MDDataTableComponent extends MdComponent {
 
     handleDataTableNativeDataClick(event) {
         const data = event.currentTarget.data;
-
         if (data.checkbox) {
             return this.handleDataTableNativeDataCheckboxClick(event);
         }
-
         /**
          * @event onDataTableNativeDataClick
          * @type {Object}

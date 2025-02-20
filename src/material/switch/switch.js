@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { Ripple } from "../ripple/ripple";
-
 /**
  * @extends MdComponent
  * @element md-switch
@@ -15,6 +14,7 @@ class MDSwitchComponent extends MdComponent {
      * @property {Boolean} [checked]
      * @property {Array} [icons]
      */
+
     static properties = {
         name: { type: String },
         value: { type: String },
@@ -47,25 +47,18 @@ class MDSwitchComponent extends MdComponent {
             </div>
         `;
     }
-
-     connectedCallback() {
+    connectedCallback() {
         super.connectedCallback();
-        
+
         this.classList.add("md-switch");
         this.style.setProperty("--md-comp-switch-thumb-transition-property", "none");
-
-       
     }
 
-    
-
-    firstUpdated(changedProperties){
-        super.firstUpdated(changedProperties)
-
+    firstUpdated(changedProperties) {
+        super.firstUpdated(changedProperties);
         this.defaultValue = this.value;
         this.defaultIndeterminate = this.indeterminate;
         this.defaultChecked = this.checked;
-
         this.ripple = new Ripple(this, {
             container: ".md-switch__thumb",
             trigger: ".md-switch__native",
@@ -80,7 +73,6 @@ class MDSwitchComponent extends MdComponent {
         const native = event.currentTarget;
         this.indeterminate = native.indeterminate;
         this.checked = native.checked;
-
         /**
          * @event onSwitchNativeInput
          * @property {Object} event
@@ -92,7 +84,6 @@ class MDSwitchComponent extends MdComponent {
         this.value = this.defaultValue;
         this.indeterminate = this.defaultIndeterminate;
         this.checked = this.defaultChecked;
-
         /**
          * @event onSwitchNativeReset
          * @property {Object} event
