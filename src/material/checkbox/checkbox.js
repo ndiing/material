@@ -46,13 +46,18 @@ class MDCheckboxComponent extends MdComponent {
         `;
     }
 
-    async connectedCallback() {
+    connectedCallback() {
         super.connectedCallback();
+
+        this.classList.add("md-checkbox");
+    }
+
+    firstUpdated(changedProperties) {
+        super.firstUpdated(changedProperties);
+
         this.defaultValue = this.value;
         this.defaultIndeterminate = this.indeterminate;
         this.defaultChecked = this.checked;
-        this.classList.add("md-checkbox");
-        await this.updateComplete;
 
         this.ripple = new Ripple(this, {
             container: ".md-checkbox__track",
@@ -60,12 +65,6 @@ class MDCheckboxComponent extends MdComponent {
             unbounded: true,
             radius: 40,
         });
-    }
-
-    async disconnectedCallback() {
-        super.disconnectedCallback();
-
-        if (this.ripple) this.ripple.destroy();
     }
 
     handleCheckboxNativeInput(event) {
