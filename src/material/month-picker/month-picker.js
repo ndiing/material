@@ -46,7 +46,6 @@ class MDMonthPickerComponent extends MdComponent {
             },
         },
         index: { state: true },
-        selection: { state: true },
     };
 
     yearFormat = new Intl.DateTimeFormat(undefined, { year: "numeric" }).format;
@@ -248,19 +247,17 @@ class MDMonthPickerComponent extends MdComponent {
     async connectedCallback() {
         super.connectedCallback();
 
-        this.defaultValue = new Date(this.value.valueOf());
-        this.defaultIndex = this.index;
         this.classList.add("md-month-picker");
         this.style.setProperty("--md-comp-month-picker-animation", "none");
+
         this.monthPickerScrim = document.createElement("md-scrim");
         this.parentElement.insertBefore(this.monthPickerScrim, this.nextElementSibling);
+
         this.handleMonthPickerScrimClose = this.handleMonthPickerScrimClose.bind(this);
         this.monthPickerScrim.addEventListener("onScrimClose", this.handleMonthPickerScrimClose);
 
-        if (this.modal && this.open) this.monthPickerScrim.show();
-        await this.updateComplete;
-        this.style.setProperty("--md-comp-month-picker-height", this.clientHeight + "px");
-        this.style.setProperty("--md-comp-month-picker-width", this.clientWidth + "px");
+        if (this.modal) this.monthPickerScrim.open=this.open
+        
     }
 
     disconnectedCallback() {
@@ -269,7 +266,17 @@ class MDMonthPickerComponent extends MdComponent {
         this.monthPickerScrim.remove();
     }
 
-    async updated(changedProperties) {
+    firstUpdated(changedProperties){
+        super.firstUpdated(changedProperties)
+
+        this.defaultValue = new Date(this.value.valueOf());
+        this.defaultIndex = this.index;
+
+        this.style.setProperty("--md-comp-month-picker-height", this.clientHeight + "px");
+        this.style.setProperty("--md-comp-month-picker-width", this.clientWidth + "px");
+    }
+
+     updated(changedProperties) {
         super.updated(changedProperties);
 
         if (changedProperties.has("index")) {
@@ -281,7 +288,6 @@ class MDMonthPickerComponent extends MdComponent {
         }
 
         if (changedProperties.has("value")) {
-            await this.updateComplete;
 
             this.selection = new Date(this.value.valueOf());
         }
