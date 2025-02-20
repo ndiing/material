@@ -4,7 +4,7 @@
         "meta": {
             "range": [
                 220,
-                1321
+                1313
             ],
             "filename": "badge.js",
             "lineno": 9,
@@ -214,7 +214,7 @@
         "meta": {
             "range": [
                 220,
-                1321
+                1313
             ],
             "filename": "badge.js",
             "lineno": 9,
@@ -272,14 +272,14 @@
         "scope": "instance"
     },
     {
-        "comment": "/**\n    //  * Renders the badge with the label.\n    //  * @returns {TemplateResult|string} The rendered template or nothing if no label is set.\n    //  */",
+        "comment": "",
         "meta": {
             "range": [
-                871,
-                1073
+                867,
+                1069
             ],
             "filename": "badge.js",
-            "lineno": 34,
+            "lineno": 33,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\badge",
             "code": {
@@ -292,7 +292,7 @@
                 "": null
             }
         },
-        "description": "//  * Renders the badge with the label.\n    //  * @returns {TemplateResult|string} The rendered template or nothing if no label is set.\n    //",
+        "undocumented": true,
         "name": "render",
         "longname": "MDBadgeComponent#render",
         "kind": "function",
@@ -301,14 +301,14 @@
         "params": []
     },
     {
-        "comment": "/**\n    //  * Called when the element is connected to the DOM.\n    //  * Adds the 'md-badge' class to the element.\n    //  */",
+        "comment": "",
         "meta": {
             "range": [
-                1216,
-                1319
+                1208,
+                1311
             ],
             "filename": "badge.js",
-            "lineno": 49,
+            "lineno": 47,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\badge",
             "code": {
@@ -321,7 +321,7 @@
                 "": null
             }
         },
-        "description": "//  * Called when the element is connected to the DOM.\n    //  * Adds the 'md-badge' class to the element.\n    //",
+        "undocumented": true,
         "name": "connectedCallback",
         "longname": "MDBadgeComponent#connectedCallback",
         "kind": "function",
@@ -333,11 +333,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1386,
-                1402
+                1378,
+                1394
             ],
             "filename": "badge.js",
-            "lineno": 58,
+            "lineno": 56,
             "columnno": 9,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\badge",
             "code": {
@@ -357,7 +357,7 @@
         "meta": {
             "range": [
                 736,
-                5650
+                5626
             ],
             "filename": "bottom-app-bar.js",
             "lineno": 23,
@@ -655,7 +655,7 @@
         "meta": {
             "range": [
                 736,
-                5650
+                5626
             ],
             "filename": "bottom-app-bar.js",
             "lineno": 23,
@@ -690,14 +690,14 @@
         "description": "Creates an instance of the MDBottomAppBarComponent class."
     },
     {
-        "comment": "/**\n    //  * Renders an icon button.\n    //  * @param {Object} item - The item data for the icon button.\n    //  * @returns {TemplateResult} The rendered template for the icon button.\n    //  */",
+        "comment": "",
         "meta": {
             "range": [
-                1575,
-                2201
+                1571,
+                2197
             ],
             "filename": "bottom-app-bar.js",
-            "lineno": 49,
+            "lineno": 48,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-app-bar",
             "code": {
@@ -712,7 +712,7 @@
                 "": null
             }
         },
-        "description": "//  * Renders an icon button.\n    //  * @param {Object} item - The item data for the icon button.\n    //  * @returns {TemplateResult} The rendered template for the icon button.\n    //",
+        "undocumented": true,
         "name": "renderIconButton",
         "longname": "MDBottomAppBarComponent#renderIconButton",
         "kind": "function",
@@ -721,14 +721,14 @@
         "params": []
     },
     {
-        "comment": "/**\n    //  * Renders a floating action button (FAB).\n    //  * @param {Object|string} item - The item data for the FAB or the icon name.\n    //  * @returns {TemplateResult} The rendered template for the FAB.\n    //  */",
+        "comment": "",
         "meta": {
             "range": [
-                2438,
-                2982
+                2430,
+                2974
             ],
             "filename": "bottom-app-bar.js",
-            "lineno": 72,
+            "lineno": 70,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-app-bar",
             "code": {
@@ -743,7 +743,7 @@
                 "": null
             }
         },
-        "description": "//  * Renders a floating action button (FAB).\n    //  * @param {Object|string} item - The item data for the FAB or the icon name.\n    //  * @returns {TemplateResult} The rendered template for the FAB.\n    //",
+        "undocumented": true,
         "name": "renderFab",
         "longname": "MDBottomAppBarComponent#renderFab",
         "kind": "function",
@@ -752,14 +752,14 @@
         "params": []
     },
     {
-        "comment": "/**\n    //  * Renders the bottom app bar.\n    //  * @returns {TemplateResult} The rendered template for the bottom app bar.\n    //  */",
+        "comment": "",
         "meta": {
             "range": [
-                3134,
-                3466
+                3122,
+                3454
             ],
             "filename": "bottom-app-bar.js",
-            "lineno": 93,
+            "lineno": 90,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-app-bar",
             "code": {
@@ -772,7 +772,7 @@
                 "": null
             }
         },
-        "description": "//  * Renders the bottom app bar.\n    //  * @returns {TemplateResult} The rendered template for the bottom app bar.\n    //",
+        "undocumented": true,
         "name": "render",
         "longname": "MDBottomAppBarComponent#render",
         "kind": "function",
@@ -781,14 +781,14 @@
         "params": []
     },
     {
-        "comment": "/**\n    //  * Called when the element is connected to the DOM.\n    //  * Adds the 'md-bottom-app-bar' class and updates the component dimensions.\n    //  */",
+        "comment": "",
         "meta": {
             "range": [
-                3640,
-                4057
+                3624,
+                4041
             ],
             "filename": "bottom-app-bar.js",
-            "lineno": 108,
+            "lineno": 104,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-app-bar",
             "code": {
@@ -801,7 +801,7 @@
                 "": null
             }
         },
-        "description": "//  * Called when the element is connected to the DOM.\n    //  * Adds the 'md-bottom-app-bar' class and updates the component dimensions.\n    //",
+        "undocumented": true,
         "name": "connectedCallback",
         "longname": "MDBottomAppBarComponent#connectedCallback",
         "kind": "function",
@@ -814,11 +814,11 @@
         "comment": "/**\n     * Shows the bottom app bar.\n     */",
         "meta": {
             "range": [
-                4112,
-                4382
+                4096,
+                4366
             ],
             "filename": "bottom-app-bar.js",
-            "lineno": 123,
+            "lineno": 119,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-app-bar",
             "code": {
@@ -843,11 +843,11 @@
         "comment": "",
         "meta": {
             "range": [
-                4202,
-                4218
+                4186,
+                4202
             ],
             "filename": "bottom-app-bar.js",
-            "lineno": 125,
+            "lineno": 121,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-app-bar",
             "code": {
@@ -869,7 +869,7 @@
         "comment": "/**\n         * @event onBottomAppBarShow\n         * @property {Object} event - The show event.\n         */",
         "meta": {
             "filename": "bottom-app-bar.js",
-            "lineno": 127,
+            "lineno": 123,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-app-bar",
             "code": {}
@@ -894,11 +894,11 @@
         "comment": "/**\n     * Closes the bottom app bar.\n     */",
         "meta": {
             "range": [
-                4438,
-                4713
+                4422,
+                4697
             ],
             "filename": "bottom-app-bar.js",
-            "lineno": 137,
+            "lineno": 133,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-app-bar",
             "code": {
@@ -923,11 +923,11 @@
         "comment": "",
         "meta": {
             "range": [
-                4529,
-                4546
+                4513,
+                4530
             ],
             "filename": "bottom-app-bar.js",
-            "lineno": 139,
+            "lineno": 135,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-app-bar",
             "code": {
@@ -949,7 +949,7 @@
         "comment": "/**\n         * @event onBottomAppBarClose\n         * @property {Object} event - The close event.\n         */",
         "meta": {
             "filename": "bottom-app-bar.js",
-            "lineno": 141,
+            "lineno": 137,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-app-bar",
             "code": {}
@@ -974,11 +974,11 @@
         "comment": "/**\n     * Toggles the visibility of the bottom app bar.\n     */",
         "meta": {
             "range": [
-                4788,
-                4867
+                4772,
+                4851
             ],
             "filename": "bottom-app-bar.js",
-            "lineno": 151,
+            "lineno": 147,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-app-bar",
             "code": {
@@ -1000,14 +1000,14 @@
         "params": []
     },
     {
-        "comment": "/**\n    //  * Handles the icon button click event in the bottom app bar.\n    //  * @param {Event} event - The icon button click event.\n    //  */",
+        "comment": "",
         "meta": {
             "range": [
-                5030,
-                5280
+                5010,
+                5260
             ],
             "filename": "bottom-app-bar.js",
-            "lineno": 161,
+            "lineno": 156,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-app-bar",
             "code": {
@@ -1022,7 +1022,7 @@
                 "": null
             }
         },
-        "description": "//  * Handles the icon button click event in the bottom app bar.\n    //  * @param {Event} event - The icon button click event.\n    //",
+        "undocumented": true,
         "name": "handleBottomAppBarIconButtonClick",
         "longname": "MDBottomAppBarComponent#handleBottomAppBarIconButtonClick",
         "kind": "function",
@@ -1034,7 +1034,7 @@
         "comment": "/**\n         * @event onBottomAppBarIconButtonClick\n         * @property {Object} event - The icon button click event.\n         */",
         "meta": {
             "filename": "bottom-app-bar.js",
-            "lineno": 162,
+            "lineno": 157,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-app-bar",
             "code": {}
@@ -1059,11 +1059,11 @@
         "comment": "",
         "meta": {
             "range": [
-                5265,
-                5270
+                5245,
+                5250
             ],
             "filename": "bottom-app-bar.js",
-            "lineno": 166,
+            "lineno": 161,
             "columnno": 53,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-app-bar",
             "code": {
@@ -1080,14 +1080,14 @@
         "scope": "global"
     },
     {
-        "comment": "/**\n    //  * Handles the FAB click event in the bottom app bar.\n    //  * @param {Event} event - The FAB click event.\n    //  */",
+        "comment": "",
         "meta": {
             "range": [
-                5427,
-                5648
+                5403,
+                5624
             ],
             "filename": "bottom-app-bar.js",
-            "lineno": 174,
+            "lineno": 168,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-app-bar",
             "code": {
@@ -1102,7 +1102,7 @@
                 "": null
             }
         },
-        "description": "//  * Handles the FAB click event in the bottom app bar.\n    //  * @param {Event} event - The FAB click event.\n    //",
+        "undocumented": true,
         "name": "handleBottomAppBarFabClick",
         "longname": "MDBottomAppBarComponent#handleBottomAppBarFabClick",
         "kind": "function",
@@ -1114,7 +1114,7 @@
         "comment": "/**\n         * @event onBottomAppBarFabClick\n         * @property {Object} event - The FAB click event.\n         */",
         "meta": {
             "filename": "bottom-app-bar.js",
-            "lineno": 175,
+            "lineno": 169,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-app-bar",
             "code": {}
@@ -1139,11 +1139,11 @@
         "comment": "",
         "meta": {
             "range": [
-                5633,
-                5638
+                5609,
+                5614
             ],
             "filename": "bottom-app-bar.js",
-            "lineno": 179,
+            "lineno": 173,
             "columnno": 46,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-app-bar",
             "code": {
@@ -1163,11 +1163,11 @@
         "comment": "",
         "meta": {
             "range": [
-                5731,
-                5754
+                5707,
+                5730
             ],
             "filename": "bottom-app-bar.js",
-            "lineno": 185,
+            "lineno": 179,
             "columnno": 9,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\bottom-app-bar",
             "code": {
@@ -34266,7 +34266,7 @@
         "meta": {
             "range": [
                 365,
-                1625
+                1621
             ],
             "filename": "layout-observer.js",
             "lineno": 10,
@@ -34334,7 +34334,7 @@
         "meta": {
             "range": [
                 365,
-                1625
+                1621
             ],
             "filename": "layout-observer.js",
             "lineno": 10,
@@ -34420,14 +34420,14 @@
         "scope": "instance"
     },
     {
-        "comment": "/**\n    //  * Handles layout change events by destroying the current layout and initializing a new one.\n    //  */",
+        "comment": "",
         "meta": {
             "range": [
-                816,
-                883
+                812,
+                879
             ],
             "filename": "layout-observer.js",
-            "lineno": 24,
+            "lineno": 23,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout-observer",
             "code": {
@@ -34440,7 +34440,7 @@
                 "": null
             }
         },
-        "description": "//  * Handles layout change events by destroying the current layout and initializing a new one.\n    //",
+        "undocumented": true,
         "name": "handleChange",
         "longname": "LayoutObserver#handleChange",
         "kind": "function",
@@ -34452,11 +34452,11 @@
         "comment": "/**\n     * Initializes the layout by finding the matching media query and executing the callback.\n     * @param {Array<Object>} [items] - An array of layout items, each containing a name and a media query.\n     */",
         "meta": {
             "range": [
-                1107,
-                1382
+                1103,
+                1378
             ],
             "filename": "layout-observer.js",
-            "lineno": 33,
+            "lineno": 32,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout-observer",
             "code": {
@@ -34494,11 +34494,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1175,
-                1193
+                1171,
+                1189
             ],
             "filename": "layout-observer.js",
-            "lineno": 35,
+            "lineno": 34,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout-observer",
             "code": {
@@ -34520,11 +34520,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1213,
-                1270
+                1209,
+                1266
             ],
             "filename": "layout-observer.js",
-            "lineno": 37,
+            "lineno": 36,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout-observer",
             "code": {
@@ -34546,11 +34546,11 @@
         "comment": "/**\n     * Destroys the current layout by removing the event listener from the matching media query.\n     */",
         "meta": {
             "range": [
-                1501,
-                1623
+                1497,
+                1619
             ],
             "filename": "layout-observer.js",
-            "lineno": 45,
+            "lineno": 44,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout-observer",
             "code": {
@@ -34575,11 +34575,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1595,
-                1616
+                1591,
+                1612
             ],
             "filename": "layout-observer.js",
-            "lineno": 47,
+            "lineno": 46,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout-observer",
             "code": {
@@ -34601,11 +34601,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1636,
-                1650
+                1632,
+                1646
             ],
             "filename": "layout-observer.js",
-            "lineno": 51,
+            "lineno": 50,
             "columnno": 9,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\layout-observer",
             "code": {
@@ -36221,7 +36221,7 @@
         "meta": {
             "range": [
                 348,
-                8600
+                8564
             ],
             "filename": "list.js",
             "lineno": 12,
@@ -36848,7 +36848,7 @@
         "meta": {
             "range": [
                 348,
-                8600
+                8564
             ],
             "filename": "list.js",
             "lineno": 12,
@@ -37041,14 +37041,14 @@
         "params": []
     },
     {
-        "comment": "/**\n    //  * Renders a list item.\n    //  * @param {Object} item - The item data.\n    //  * @returns {TemplateResult} The rendered template for the list item.\n    //  */",
+        "comment": "",
         "meta": {
             "range": [
-                2036,
-                4070
+                2032,
+                4066
             ],
             "filename": "list.js",
-            "lineno": 64,
+            "lineno": 63,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
             "code": {
@@ -37063,7 +37063,7 @@
                 "": null
             }
         },
-        "description": "//  * Renders a list item.\n    //  * @param {Object} item - The item data.\n    //  * @returns {TemplateResult} The rendered template for the list item.\n    //",
+        "undocumented": true,
         "name": "renderListItem",
         "longname": "MDListComponent#renderListItem",
         "kind": "function",
@@ -37072,14 +37072,14 @@
         "params": []
     },
     {
-        "comment": "/**\n    //  * Renders the list.\n    //  * @returns {TemplateResult} The rendered template for the list.\n    //  */",
+        "comment": "",
         "meta": {
             "range": [
-                4202,
-                4294
+                4194,
+                4286
             ],
             "filename": "list.js",
-            "lineno": 102,
+            "lineno": 100,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
             "code": {
@@ -37092,7 +37092,7 @@
                 "": null
             }
         },
-        "description": "//  * Renders the list.\n    //  * @returns {TemplateResult} The rendered template for the list.\n    //",
+        "undocumented": true,
         "name": "render",
         "longname": "MDListComponent#render",
         "kind": "function",
@@ -37101,14 +37101,14 @@
         "params": []
     },
     {
-        "comment": "/**\n    //  * Called when the element is connected to the DOM.\n    //  * Adds the 'md-list' class and initializes virtual scrolling if enabled.\n    //  */",
+        "comment": "",
         "meta": {
             "range": [
-                4466,
-                5079
+                4454,
+                5067
             ],
             "filename": "list.js",
-            "lineno": 111,
+            "lineno": 108,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
             "code": {
@@ -37121,7 +37121,7 @@
                 "": null
             }
         },
-        "description": "//  * Called when the element is connected to the DOM.\n    //  * Adds the 'md-list' class and initializes virtual scrolling if enabled.\n    //",
+        "undocumented": true,
         "name": "connectedCallback",
         "longname": "MDListComponent#connectedCallback",
         "kind": "function",
@@ -37134,11 +37134,11 @@
         "comment": "",
         "meta": {
             "range": [
-                4650,
-                4674
+                4638,
+                4662
             ],
             "filename": "list.js",
-            "lineno": 116,
+            "lineno": 113,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
             "code": {
@@ -37160,11 +37160,11 @@
         "comment": "",
         "meta": {
             "range": [
-                4720,
-                4790
+                4708,
+                4778
             ],
             "filename": "list.js",
-            "lineno": 119,
+            "lineno": 116,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
             "code": {
@@ -37186,11 +37186,11 @@
         "comment": "",
         "meta": {
             "range": [
-                4888,
-                5014
+                4876,
+                5002
             ],
             "filename": "list.js",
-            "lineno": 121,
+            "lineno": 118,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
             "code": {
@@ -37212,11 +37212,11 @@
         "comment": "",
         "meta": {
             "range": [
-                4939,
-                4958
+                4927,
+                4946
             ],
             "filename": "list.js",
-            "lineno": 122,
+            "lineno": 119,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
             "code": {
@@ -37233,14 +37233,14 @@
         "scope": "global"
     },
     {
-        "comment": "/**\n    //  * Called when the element is disconnected from the DOM.\n    //  * Removes the virtual scrolling event listener and destroys the virtual instance if enabled.\n    //  */",
+        "comment": "",
         "meta": {
             "range": [
-                5276,
-                5549
+                5260,
+                5533
             ],
             "filename": "list.js",
-            "lineno": 134,
+            "lineno": 130,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
             "code": {
@@ -37253,7 +37253,7 @@
                 "": null
             }
         },
-        "description": "//  * Called when the element is disconnected from the DOM.\n    //  * Removes the virtual scrolling event listener and destroys the virtual instance if enabled.\n    //",
+        "undocumented": true,
         "name": "disconnectedCallback",
         "longname": "MDListComponent#disconnectedCallback",
         "kind": "function",
@@ -37266,11 +37266,11 @@
         "comment": "",
         "meta": {
             "range": [
-                5518,
-                5542
+                5502,
+                5526
             ],
             "filename": "list.js",
-            "lineno": 141,
+            "lineno": 137,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
             "code": {
@@ -37289,14 +37289,14 @@
         "scope": "instance"
     },
     {
-        "comment": "/**\n    //  * Called when the properties of the component are updated.\n    //  * @param {Map} changedProperties - The properties that changed.\n    //  */",
+        "comment": "",
         "meta": {
             "range": [
-                5720,
-                5924
+                5700,
+                5904
             ],
             "filename": "list.js",
-            "lineno": 149,
+            "lineno": 144,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
             "code": {
@@ -37311,7 +37311,7 @@
                 "": null
             }
         },
-        "description": "//  * Called when the properties of the component are updated.\n    //  * @param {Map} changedProperties - The properties that changed.\n    //",
+        "undocumented": true,
         "name": "updated",
         "longname": "MDListComponent#updated",
         "kind": "function",
@@ -37324,11 +37324,11 @@
         "comment": "",
         "meta": {
             "range": [
-                5930,
-                6294
+                5910,
+                6274
             ],
             "filename": "list.js",
-            "lineno": 159,
+            "lineno": 154,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
             "code": {
@@ -37353,11 +37353,11 @@
         "comment": "",
         "meta": {
             "range": [
-                5990,
-                6032
+                5970,
+                6012
             ],
             "filename": "list.js",
-            "lineno": 161,
+            "lineno": 156,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
             "code": {
@@ -37379,11 +37379,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6042,
-                6071
+                6022,
+                6051
             ],
             "filename": "list.js",
-            "lineno": 162,
+            "lineno": 157,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
             "code": {
@@ -37405,11 +37405,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6117,
-                6159
+                6097,
+                6139
             ],
             "filename": "list.js",
-            "lineno": 165,
+            "lineno": 160,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
             "code": {
@@ -37431,11 +37431,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6242,
-                6277
+                6222,
+                6257
             ],
             "filename": "list.js",
-            "lineno": 168,
+            "lineno": 163,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
             "code": {
@@ -37457,11 +37457,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6300,
-                6385
+                6280,
+                6365
             ],
             "filename": "list.js",
-            "lineno": 172,
+            "lineno": 167,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
             "code": {
@@ -37488,11 +37488,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6341,
-                6378
+                6321,
+                6358
             ],
             "filename": "list.js",
-            "lineno": 173,
+            "lineno": 168,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
             "code": {
@@ -37511,14 +37511,14 @@
         "scope": "instance"
     },
     {
-        "comment": "/**\n    //  * Handles the click event on a list item.\n    //  * @param {Event} event - The click event.\n    //  */",
+        "comment": "",
         "meta": {
             "range": [
-                6517,
-                7232
+                6493,
+                7208
             ],
             "filename": "list.js",
-            "lineno": 181,
+            "lineno": 175,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
             "code": {
@@ -37533,7 +37533,7 @@
                 "": null
             }
         },
-        "description": "//  * Handles the click event on a list item.\n    //  * @param {Event} event - The click event.\n    //",
+        "undocumented": true,
         "name": "handleListItemClick",
         "longname": "MDListComponent#handleListItemClick",
         "kind": "function",
@@ -37545,11 +37545,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6560,
-                6651
+                6536,
+                6627
             ],
             "filename": "list.js",
-            "lineno": 182,
+            "lineno": 176,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
             "code": {
@@ -37571,11 +37571,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6763,
-                6794
+                6739,
+                6770
             ],
             "filename": "list.js",
-            "lineno": 185,
+            "lineno": 179,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
             "code": {
@@ -37597,11 +37597,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6906,
-                6935
+                6882,
+                6911
             ],
             "filename": "list.js",
-            "lineno": 189,
+            "lineno": 183,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
             "code": {
@@ -37623,11 +37623,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6982,
-                7012
+                6958,
+                6988
             ],
             "filename": "list.js",
-            "lineno": 192,
+            "lineno": 186,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
             "code": {
@@ -37650,7 +37650,7 @@
         "comment": "/**\n         * @event onListItemClick\n         * @property {Object} event - The list item click event.\n         */",
         "meta": {
             "filename": "list.js",
-            "lineno": 196,
+            "lineno": 190,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
             "code": {}
@@ -37675,11 +37675,11 @@
         "comment": "",
         "meta": {
             "range": [
-                7217,
-                7222
+                7193,
+                7198
             ],
             "filename": "list.js",
-            "lineno": 200,
+            "lineno": 194,
             "columnno": 39,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
             "code": {
@@ -37696,14 +37696,14 @@
         "scope": "global"
     },
     {
-        "comment": "/**\n    //  * Handles the native input event on a list item checkbox.\n    //  * @param {Event} event - The native input event.\n    //  */",
+        "comment": "",
         "meta": {
             "range": [
-                7387,
-                7724
+                7359,
+                7696
             ],
             "filename": "list.js",
-            "lineno": 208,
+            "lineno": 201,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
             "code": {
@@ -37718,7 +37718,7 @@
                 "": null
             }
         },
-        "description": "//  * Handles the native input event on a list item checkbox.\n    //  * @param {Event} event - The native input event.\n    //",
+        "undocumented": true,
         "name": "handleListItemCheckboxNativeInput",
         "longname": "MDListComponent#handleListItemCheckboxNativeInput",
         "kind": "function",
@@ -37730,11 +37730,11 @@
         "comment": "",
         "meta": {
             "range": [
-                7444,
-                7475
+                7416,
+                7447
             ],
             "filename": "list.js",
-            "lineno": 209,
+            "lineno": 202,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
             "code": {
@@ -37756,11 +37756,11 @@
         "comment": "",
         "meta": {
             "range": [
-                7485,
-                7515
+                7457,
+                7487
             ],
             "filename": "list.js",
-            "lineno": 210,
+            "lineno": 203,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
             "code": {
@@ -37783,7 +37783,7 @@
         "comment": "/**\n         * @event onListItemCheckboxNativeInput\n         * @property {Object} event\n         */",
         "meta": {
             "filename": "list.js",
-            "lineno": 213,
+            "lineno": 206,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
             "code": {}
@@ -37807,11 +37807,11 @@
         "comment": "",
         "meta": {
             "range": [
-                7709,
-                7714
+                7681,
+                7686
             ],
             "filename": "list.js",
-            "lineno": 217,
+            "lineno": 210,
             "columnno": 53,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
             "code": {
@@ -37828,14 +37828,14 @@
         "scope": "global"
     },
     {
-        "comment": "/**\n    //  *\n    //  * @param {*} event\n    //  */",
+        "comment": "",
         "meta": {
             "range": [
-                7793,
-                8198
+                7761,
+                8166
             ],
             "filename": "list.js",
-            "lineno": 225,
+            "lineno": 217,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
             "code": {
@@ -37850,7 +37850,7 @@
                 "": null
             }
         },
-        "description": "//  *\n    //  * @param {*} event\n    //",
+        "undocumented": true,
         "name": "handleListItemRadioButtonNativeInput",
         "longname": "MDListComponent#handleListItemRadioButtonNativeInput",
         "kind": "function",
@@ -37862,11 +37862,11 @@
         "comment": "",
         "meta": {
             "range": [
-                7853,
-                7884
+                7821,
+                7852
             ],
             "filename": "list.js",
-            "lineno": 226,
+            "lineno": 218,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
             "code": {
@@ -37888,11 +37888,11 @@
         "comment": "",
         "meta": {
             "range": [
-                7942,
-                7971
+                7910,
+                7939
             ],
             "filename": "list.js",
-            "lineno": 228,
+            "lineno": 220,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
             "code": {
@@ -37914,7 +37914,7 @@
         "comment": "/**\n         * @event onListItemRadioButtonNativeInput\n         * @property {Object} event\n         */",
         "meta": {
             "filename": "list.js",
-            "lineno": 232,
+            "lineno": 224,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
             "code": {}
@@ -37938,11 +37938,11 @@
         "comment": "",
         "meta": {
             "range": [
-                8183,
-                8188
+                8151,
+                8156
             ],
             "filename": "list.js",
-            "lineno": 236,
+            "lineno": 228,
             "columnno": 56,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
             "code": {
@@ -37959,14 +37959,14 @@
         "scope": "global"
     },
     {
-        "comment": "/**\n    //  *\n    //  * @param {*} event\n    //  */",
+        "comment": "",
         "meta": {
             "range": [
-                8267,
-                8598
+                8231,
+                8562
             ],
             "filename": "list.js",
-            "lineno": 244,
+            "lineno": 235,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
             "code": {
@@ -37981,7 +37981,7 @@
                 "": null
             }
         },
-        "description": "//  *\n    //  * @param {*} event\n    //",
+        "undocumented": true,
         "name": "handleListItemSwitchNativeInput",
         "longname": "MDListComponent#handleListItemSwitchNativeInput",
         "kind": "function",
@@ -37993,11 +37993,11 @@
         "comment": "",
         "meta": {
             "range": [
-                8322,
-                8353
+                8286,
+                8317
             ],
             "filename": "list.js",
-            "lineno": 245,
+            "lineno": 236,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
             "code": {
@@ -38019,11 +38019,11 @@
         "comment": "",
         "meta": {
             "range": [
-                8363,
-                8393
+                8327,
+                8357
             ],
             "filename": "list.js",
-            "lineno": 246,
+            "lineno": 237,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
             "code": {
@@ -38046,7 +38046,7 @@
         "comment": "/**\n         * @event onListItemSwitchNativeInput\n         * @property {Object} event\n         */",
         "meta": {
             "filename": "list.js",
-            "lineno": 249,
+            "lineno": 240,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
             "code": {}
@@ -38070,11 +38070,11 @@
         "comment": "",
         "meta": {
             "range": [
-                8583,
-                8588
+                8547,
+                8552
             ],
             "filename": "list.js",
-            "lineno": 253,
+            "lineno": 244,
             "columnno": 51,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
             "code": {
@@ -38094,11 +38094,11 @@
         "comment": "",
         "meta": {
             "range": [
-                8663,
-                8678
+                8627,
+                8642
             ],
             "filename": "list.js",
-            "lineno": 259,
+            "lineno": 250,
             "columnno": 9,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\list",
             "code": {
@@ -52016,7 +52016,7 @@
         "meta": {
             "range": [
                 88,
-                2314
+                2298
             ],
             "filename": "progress.js",
             "lineno": 4,
@@ -52070,7 +52070,7 @@
         "meta": {
             "range": [
                 88,
-                2314
+                2298
             ],
             "filename": "progress.js",
             "lineno": 4,
@@ -52195,14 +52195,14 @@
         "scope": "instance"
     },
     {
-        "comment": "/**\n    //  * Renders the progress indicator element if it does not already exist.\n    //  */",
+        "comment": "",
         "meta": {
             "range": [
-                435,
-                749
+                431,
+                745
             ],
             "filename": "progress.js",
-            "lineno": 19,
+            "lineno": 18,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress",
             "code": {
@@ -52215,7 +52215,7 @@
                 "": null
             }
         },
-        "description": "//  * Renders the progress indicator element if it does not already exist.\n    //",
+        "undocumented": true,
         "name": "render",
         "longname": "Progress#render",
         "kind": "function",
@@ -52227,11 +52227,11 @@
         "comment": "",
         "meta": {
             "range": [
-                497,
-                569
+                493,
+                565
             ],
             "filename": "progress.js",
-            "lineno": 21,
+            "lineno": 20,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress",
             "code": {
@@ -52253,11 +52253,11 @@
         "comment": "/**\n     * Starts the progress indicator with the specified duration.\n     * @param {number} [duration] - The duration for the progress indicator.\n     */",
         "meta": {
             "range": [
-                914,
-                1213
+                910,
+                1209
             ],
             "filename": "progress.js",
-            "lineno": 31,
+            "lineno": 30,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress",
             "code": {
@@ -52295,11 +52295,11 @@
         "comment": "",
         "meta": {
             "range": [
-                940,
-                965
+                936,
+                961
             ],
             "filename": "progress.js",
-            "lineno": 32,
+            "lineno": 31,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress",
             "code": {
@@ -52321,11 +52321,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1019,
-                1053
+                1015,
+                1049
             ],
             "filename": "progress.js",
-            "lineno": 35,
+            "lineno": 34,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress",
             "code": {
@@ -52347,11 +52347,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1136,
-                1196
+                1132,
+                1192
             ],
             "filename": "progress.js",
-            "lineno": 40,
+            "lineno": 39,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress",
             "code": {
@@ -52370,14 +52370,14 @@
         "scope": "instance"
     },
     {
-        "comment": "/**\n    //  * Updates the progress indicator at each animation frame.\n    //  * @param {DOMHighResTimeStamp} currentTime - The current time of the animation frame.\n    //  */",
+        "comment": "",
         "meta": {
             "range": [
-                1405,
-                1844
+                1397,
+                1836
             ],
             "filename": "progress.js",
-            "lineno": 49,
+            "lineno": 47,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress",
             "code": {
@@ -52392,7 +52392,7 @@
                 "": null
             }
         },
-        "description": "//  * Updates the progress indicator at each animation frame.\n    //  * @param {DOMHighResTimeStamp} currentTime - The current time of the animation frame.\n    //",
+        "undocumented": true,
         "name": "step",
         "longname": "Progress#step",
         "kind": "function",
@@ -52404,11 +52404,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1482,
-                1520
+                1474,
+                1512
             ],
             "filename": "progress.js",
-            "lineno": 51,
+            "lineno": 49,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress",
             "code": {
@@ -52430,11 +52430,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1534,
-                1581
+                1526,
+                1573
             ],
             "filename": "progress.js",
-            "lineno": 52,
+            "lineno": 50,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress",
             "code": {
@@ -52456,11 +52456,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1591,
-                1633
+                1583,
+                1625
             ],
             "filename": "progress.js",
-            "lineno": 53,
+            "lineno": 51,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress",
             "code": {
@@ -52482,11 +52482,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1643,
-                1681
+                1635,
+                1673
             ],
             "filename": "progress.js",
-            "lineno": 54,
+            "lineno": 52,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress",
             "code": {
@@ -52508,11 +52508,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1724,
-                1784
+                1716,
+                1776
             ],
             "filename": "progress.js",
-            "lineno": 57,
+            "lineno": 55,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress",
             "code": {
@@ -52531,14 +52531,14 @@
         "scope": "instance"
     },
     {
-        "comment": "/**\n    //  * Removes the progress indicator element from the DOM.\n    //  */",
+        "comment": "",
         "meta": {
             "range": [
-                1939,
-                2091
+                1927,
+                2079
             ],
             "filename": "progress.js",
-            "lineno": 67,
+            "lineno": 64,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress",
             "code": {
@@ -52551,7 +52551,7 @@
                 "": null
             }
         },
-        "description": "//  * Removes the progress indicator element from the DOM.\n    //",
+        "undocumented": true,
         "name": "remove",
         "longname": "Progress#remove",
         "kind": "function",
@@ -52563,11 +52563,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2045,
-                2074
+                2033,
+                2062
             ],
             "filename": "progress.js",
-            "lineno": 70,
+            "lineno": 67,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress",
             "code": {
@@ -52586,14 +52586,14 @@
         "scope": "instance"
     },
     {
-        "comment": "/**\n    //  * Resets the progress indicator and clears its state.\n    //  */",
+        "comment": "",
         "meta": {
             "range": [
-                2185,
-                2312
+                2169,
+                2296
             ],
             "filename": "progress.js",
-            "lineno": 78,
+            "lineno": 74,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress",
             "code": {
@@ -52606,7 +52606,7 @@
                 "": null
             }
         },
-        "description": "//  * Resets the progress indicator and clears its state.\n    //",
+        "undocumented": true,
         "name": "reset",
         "longname": "Progress#reset",
         "kind": "function",
@@ -52618,11 +52618,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2203,
-                2224
+                2187,
+                2208
             ],
             "filename": "progress.js",
-            "lineno": 79,
+            "lineno": 75,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress",
             "code": {
@@ -52644,11 +52644,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2234,
-                2251
+                2218,
+                2235
             ],
             "filename": "progress.js",
-            "lineno": 80,
+            "lineno": 76,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress",
             "code": {
@@ -52670,11 +52670,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2261,
-                2282
+                2245,
+                2266
             ],
             "filename": "progress.js",
-            "lineno": 81,
+            "lineno": 77,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress",
             "code": {
@@ -52696,11 +52696,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2325,
-                2333
+                2309,
+                2317
             ],
             "filename": "progress.js",
-            "lineno": 86,
+            "lineno": 82,
             "columnno": 9,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress",
             "code": {
@@ -54346,7 +54346,7 @@
         "meta": {
             "range": [
                 77,
-                6615
+                6591
             ],
             "filename": "ripple.js",
             "lineno": 4,
@@ -54501,7 +54501,7 @@
         "meta": {
             "range": [
                 77,
-                6615
+                6591
             ],
             "filename": "ripple.js",
             "lineno": 4,
@@ -55197,14 +55197,14 @@
         "scope": "instance"
     },
     {
-        "comment": "/**\n    //  * Handles the ripple hover-in event.\n    //  * @param {Event} event - The hover-in event.\n    //  */",
+        "comment": "",
         "meta": {
             "range": [
-                4236,
-                4328
+                4232,
+                4324
             ],
             "filename": "ripple.js",
-            "lineno": 105,
+            "lineno": 104,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -55219,7 +55219,7 @@
                 "": null
             }
         },
-        "description": "//  * Handles the ripple hover-in event.\n    //  * @param {Event} event - The hover-in event.\n    //",
+        "undocumented": true,
         "name": "handleRippleHoverIn",
         "longname": "Ripple#handleRippleHoverIn",
         "kind": "function",
@@ -55228,14 +55228,14 @@
         "params": []
     },
     {
-        "comment": "/**\n    //  * Handles the ripple hover-out event.\n    //  * @param {Event} event - The hover-out event.\n    //  */",
+        "comment": "",
         "meta": {
             "range": [
-                4460,
-                4556
+                4452,
+                4548
             ],
             "filename": "ripple.js",
-            "lineno": 114,
+            "lineno": 112,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -55250,7 +55250,7 @@
                 "": null
             }
         },
-        "description": "//  * Handles the ripple hover-out event.\n    //  * @param {Event} event - The hover-out event.\n    //",
+        "undocumented": true,
         "name": "handleRippleHoverOut",
         "longname": "Ripple#handleRippleHoverOut",
         "kind": "function",
@@ -55259,14 +55259,14 @@
         "params": []
     },
     {
-        "comment": "/**\n    //  * Handles the ripple press-in event.\n    //  * @param {Event} event - The press-in event.\n    //  */",
+        "comment": "",
         "meta": {
             "range": [
-                4686,
-                5784
+                4674,
+                5772
             ],
             "filename": "ripple.js",
-            "lineno": 123,
+            "lineno": 120,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -55281,7 +55281,7 @@
                 "": null
             }
         },
-        "description": "//  * Handles the ripple press-in event.\n    //  * @param {Event} event - The press-in event.\n    //",
+        "undocumented": true,
         "name": "handleRipplePressIn",
         "longname": "Ripple#handleRipplePressIn",
         "kind": "function",
@@ -55293,11 +55293,11 @@
         "comment": "",
         "meta": {
             "range": [
-                4789,
-                4802
+                4777,
+                4790
             ],
             "filename": "ripple.js",
-            "lineno": 124,
+            "lineno": 121,
             "columnno": 74,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -55317,11 +55317,11 @@
         "comment": "",
         "meta": {
             "range": [
-                4880,
-                4893
+                4868,
+                4881
             ],
             "filename": "ripple.js",
-            "lineno": 125,
+            "lineno": 122,
             "columnno": 73,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -55341,11 +55341,11 @@
         "comment": "",
         "meta": {
             "range": [
-                4970,
-                5015
+                4958,
+                5003
             ],
             "filename": "ripple.js",
-            "lineno": 127,
+            "lineno": 124,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -55367,11 +55367,11 @@
         "comment": "",
         "meta": {
             "range": [
-                5074,
-                5121
+                5062,
+                5109
             ],
             "filename": "ripple.js",
-            "lineno": 130,
+            "lineno": 127,
             "columnno": 18,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -55393,11 +55393,11 @@
         "comment": "",
         "meta": {
             "range": [
-                5141,
-                5187
+                5129,
+                5175
             ],
             "filename": "ripple.js",
-            "lineno": 131,
+            "lineno": 128,
             "columnno": 18,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -55419,11 +55419,11 @@
         "comment": "",
         "meta": {
             "range": [
-                5207,
-                5245
+                5195,
+                5233
             ],
             "filename": "ripple.js",
-            "lineno": 132,
+            "lineno": 129,
             "columnno": 18,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -55445,11 +55445,11 @@
         "comment": "",
         "meta": {
             "range": [
-                5265,
-                5333
+                5253,
+                5321
             ],
             "filename": "ripple.js",
-            "lineno": 133,
+            "lineno": 130,
             "columnno": 18,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -55468,14 +55468,14 @@
         "params": []
     },
     {
-        "comment": "/**\n    //  * Handles the ripple press-out event.\n    //  * @param {Event} event - The press-out event.\n    //  */",
+        "comment": "",
         "meta": {
             "range": [
-                5916,
-                6163
+                5900,
+                6147
             ],
             "filename": "ripple.js",
-            "lineno": 147,
+            "lineno": 143,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -55490,7 +55490,7 @@
                 "": null
             }
         },
-        "description": "//  * Handles the ripple press-out event.\n    //  * @param {Event} event - The press-out event.\n    //",
+        "undocumented": true,
         "name": "handleRipplePressOut",
         "longname": "Ripple#handleRipplePressOut",
         "kind": "function",
@@ -55499,14 +55499,14 @@
         "params": []
     },
     {
-        "comment": "/**\n    //  * Handles the ripple focus-in event.\n    //  * @param {Event} event - The focus-in event.\n    //  */",
+        "comment": "",
         "meta": {
             "range": [
-                6293,
-                6385
+                6273,
+                6365
             ],
             "filename": "ripple.js",
-            "lineno": 158,
+            "lineno": 153,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -55521,7 +55521,7 @@
                 "": null
             }
         },
-        "description": "//  * Handles the ripple focus-in event.\n    //  * @param {Event} event - The focus-in event.\n    //",
+        "undocumented": true,
         "name": "handleRippleFocusIn",
         "longname": "Ripple#handleRippleFocusIn",
         "kind": "function",
@@ -55530,14 +55530,14 @@
         "params": []
     },
     {
-        "comment": "/**\n    //  * Handles the ripple focus-out event.\n    //  * @param {Event} event - The focus-out event.\n    //  */",
+        "comment": "",
         "meta": {
             "range": [
-                6517,
-                6613
+                6493,
+                6589
             ],
             "filename": "ripple.js",
-            "lineno": 167,
+            "lineno": 161,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -55552,7 +55552,7 @@
                 "": null
             }
         },
-        "description": "//  * Handles the ripple focus-out event.\n    //  * @param {Event} event - The focus-out event.\n    //",
+        "undocumented": true,
         "name": "handleRippleFocusOut",
         "longname": "Ripple#handleRippleFocusOut",
         "kind": "function",
@@ -55564,11 +55564,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6626,
-                6632
+                6602,
+                6608
             ],
             "filename": "ripple.js",
-            "lineno": 172,
+            "lineno": 166,
             "columnno": 9,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\ripple",
             "code": {
@@ -55588,7 +55588,7 @@
         "meta": {
             "range": [
                 627,
-                11367
+                11319
             ],
             "filename": "router.js",
             "lineno": 24,
@@ -55645,14 +55645,14 @@
         "memberof": "Router"
     },
     {
-        "comment": "/**\n    //  * Retrieves the matching route(s) based on the provided pathname.\n    //  * @param {string} [pathname=this.pathname] - The current pathname to match against.\n    //  * @param {Array} [routes=this.routes] - The array of routes to search within.\n    //  * @param {Object} [parent=null] - The parent route, if any.\n    //  * @param {Array} [result=[]] - The accumulated matched routes.\n    //  * @returns {Array} The array of matched routes.\n    //  */",
+        "comment": "",
         "meta": {
             "range": [
-                1258,
-                2161
+                1254,
+                2157
             ],
             "filename": "router.js",
-            "lineno": 40,
+            "lineno": 39,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -55670,7 +55670,7 @@
                 "": null
             }
         },
-        "description": "//  * Retrieves the matching route(s) based on the provided pathname.\n    //  * @param {string} [pathname=this.pathname] - The current pathname to match against.\n    //  * @param {Array} [routes=this.routes] - The array of routes to search within.\n    //  * @param {Object} [parent=null] - The parent route, if any.\n    //  * @param {Array} [result=[]] - The accumulated matched routes.\n    //  * @returns {Array} The array of matched routes.\n    //",
+        "undocumented": true,
         "name": "get",
         "longname": "Router.get",
         "kind": "function",
@@ -55682,11 +55682,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1366,
-                1371
+                1362,
+                1367
             ],
             "filename": "router.js",
-            "lineno": 41,
+            "lineno": 40,
             "columnno": 19,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -55706,11 +55706,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1434,
-                1455
+                1430,
+                1451
             ],
             "filename": "router.js",
-            "lineno": 43,
+            "lineno": 42,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -55733,11 +55733,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1473,
-                1556
+                1469,
+                1552
             ],
             "filename": "router.js",
-            "lineno": 44,
+            "lineno": 43,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -55760,11 +55760,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1574,
-                1698
+                1570,
+                1694
             ],
             "filename": "router.js",
-            "lineno": 45,
+            "lineno": 44,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -55787,11 +55787,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1732,
-                1770
+                1728,
+                1766
             ],
             "filename": "router.js",
-            "lineno": 47,
+            "lineno": 46,
             "columnno": 18,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -55813,11 +55813,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1816,
-                1889
+                1812,
+                1885
             ],
             "filename": "router.js",
-            "lineno": 50,
+            "lineno": 49,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -55839,11 +55839,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2014,
-                2085
+                2010,
+                2081
             ],
             "filename": "router.js",
-            "lineno": 57,
+            "lineno": 56,
             "columnno": 22,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -55865,11 +55865,11 @@
         "comment": "/**\n     * Retrieves the current pathname.\n     * @static\n     * @readonly\n     * @returns {string} The current pathname.\n     */",
         "meta": {
             "range": [
-                2301,
-                2539
+                2297,
+                2535
             ],
             "filename": "router.js",
-            "lineno": 69,
+            "lineno": 68,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -55902,14 +55902,14 @@
         "params": []
     },
     {
-        "comment": "/**\n    //  * Handles navigation events, triggering the route change process.\n    //  * @static\n    //  * @param {Event} event - The navigation event.\n    //  */",
+        "comment": "",
         "meta": {
             "range": [
-                2718,
-                4273
+                2710,
+                4265
             ],
             "filename": "router.js",
-            "lineno": 83,
+            "lineno": 81,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -55924,7 +55924,7 @@
                 "": null
             }
         },
-        "description": "//  * Handles navigation events, triggering the route change process.\n    //  * @static\n    //  * @param {Event} event - The navigation event.\n    //",
+        "undocumented": true,
         "name": "handleNavigation",
         "longname": "Router.handleNavigation",
         "kind": "function",
@@ -55937,7 +55937,7 @@
         "comment": "/**\n         * @event onRouterCurrentEntryChange\n         * @property {Object} event\n         */",
         "meta": {
             "filename": "router.js",
-            "lineno": 86,
+            "lineno": 84,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {}
@@ -55961,11 +55961,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2996,
-                3015
+                2988,
+                3007
             ],
             "filename": "router.js",
-            "lineno": 92,
+            "lineno": 90,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -55987,7 +55987,7 @@
         "comment": "/**\n         * @event onRouterNavigate\n         * @property {Object} event\n         */",
         "meta": {
             "filename": "router.js",
-            "lineno": 94,
+            "lineno": 92,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {}
@@ -56011,11 +56011,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3176,
-                3181
+                3168,
+                3173
             ],
             "filename": "router.js",
-            "lineno": 100,
+            "lineno": 98,
             "columnno": 19,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -56035,7 +56035,7 @@
         "comment": "/**\n                     * @event onRouterNavigateError\n                     * @property {Object} event\n                     */",
         "meta": {
             "filename": "router.js",
-            "lineno": 105,
+            "lineno": 103,
             "columnno": 20,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {}
@@ -56059,11 +56059,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3679,
-                3715
+                3671,
+                3707
             ],
             "filename": "router.js",
-            "lineno": 114,
+            "lineno": 112,
             "columnno": 18,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -56085,11 +56085,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3735,
-                3782
+                3727,
+                3774
             ],
             "filename": "router.js",
-            "lineno": 115,
+            "lineno": 113,
             "columnno": 18,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -56111,7 +56111,7 @@
         "comment": "/**\n         * @event onRouterNavigateSuccess\n         * @property {Object} event\n         */",
         "meta": {
             "filename": "router.js",
-            "lineno": 125,
+            "lineno": 123,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {}
@@ -56132,14 +56132,14 @@
         "scope": "global"
     },
     {
-        "comment": "/**\n    //  * Removes components from previous routes that are no longer in use.\n    //  * @static\n    //  * @param {Array} routes - The array of current routes.\n    //  */",
+        "comment": "",
         "meta": {
             "range": [
-                4463,
-                4966
+                4451,
+                4954
             ],
             "filename": "router.js",
-            "lineno": 138,
+            "lineno": 135,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -56154,7 +56154,7 @@
                 "": null
             }
         },
-        "description": "//  * Removes components from previous routes that are no longer in use.\n    //  * @static\n    //  * @param {Array} routes - The array of current routes.\n    //",
+        "undocumented": true,
         "name": "removeComponent",
         "longname": "Router.removeComponent",
         "kind": "function",
@@ -56166,11 +56166,11 @@
         "comment": "",
         "meta": {
             "range": [
-                4510,
-                4575
+                4498,
+                4563
             ],
             "filename": "router.js",
-            "lineno": 139,
+            "lineno": 136,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -56192,11 +56192,11 @@
         "comment": "",
         "meta": {
             "range": [
-                4597,
-                4603
+                4585,
+                4591
             ],
             "filename": "router.js",
-            "lineno": 141,
+            "lineno": 138,
             "columnno": 19,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -56216,11 +56216,11 @@
         "comment": "",
         "meta": {
             "range": [
-                4634,
-                4669
+                4622,
+                4657
             ],
             "filename": "router.js",
-            "lineno": 142,
+            "lineno": 139,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -56242,11 +56242,11 @@
         "comment": "",
         "meta": {
             "range": [
-                4899,
-                4935
+                4887,
+                4923
             ],
             "filename": "router.js",
-            "lineno": 148,
+            "lineno": 145,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -56266,14 +56266,14 @@
         "scope": "inner"
     },
     {
-        "comment": "/**\n    //  * Renders the specified component for the given route into the provided outlet.\n    //  * @static\n    //  * @param {Object} route - The route object containing the component to render.\n    //  * @param {HTMLElement} outlet - The outlet element where the component should be rendered.\n    //  */",
+        "comment": "",
         "meta": {
             "range": [
-                5290,
-                5456
+                5274,
+                5440
             ],
             "filename": "router.js",
-            "lineno": 160,
+            "lineno": 156,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -56289,7 +56289,7 @@
                 "": null
             }
         },
-        "description": "//  * Renders the specified component for the given route into the provided outlet.\n    //  * @static\n    //  * @param {Object} route - The route object containing the component to render.\n    //  * @param {HTMLElement} outlet - The outlet element where the component should be rendered.\n    //",
+        "undocumented": true,
         "name": "renderComponent",
         "longname": "Router.renderComponent",
         "kind": "function",
@@ -56298,14 +56298,14 @@
         "params": []
     },
     {
-        "comment": "/**\n    //  * Retrieves the outlet element for the specified route.\n    //  * @static\n    //  * @param {HTMLElement} container - The container element where the outlet is located.\n    //  * @param {Object} route - The route object containing outlet information.\n    //  * @returns {Promise<HTMLElement>} A promise that resolves to the outlet element.\n    //  */",
+        "comment": "",
         "meta": {
             "range": [
-                5835,
-                6682
+                5815,
+                6662
             ],
             "filename": "router.js",
-            "lineno": 172,
+            "lineno": 167,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -56321,7 +56321,7 @@
                 "": null
             }
         },
-        "description": "//  * Retrieves the outlet element for the specified route.\n    //  * @static\n    //  * @param {HTMLElement} container - The container element where the outlet is located.\n    //  * @param {Object} route - The route object containing outlet information.\n    //  * @returns {Promise<HTMLElement>} A promise that resolves to the outlet element.\n    //",
+        "undocumented": true,
         "name": "getOutlet",
         "longname": "Router.getOutlet",
         "kind": "function",
@@ -56334,11 +56334,11 @@
         "comment": "",
         "meta": {
             "range": [
-                5942,
-                5950
+                5922,
+                5930
             ],
             "filename": "router.js",
-            "lineno": 174,
+            "lineno": 169,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -56358,11 +56358,11 @@
         "comment": "",
         "meta": {
             "range": [
-                5968,
-                5974
+                5948,
+                5954
             ],
             "filename": "router.js",
-            "lineno": 175,
+            "lineno": 170,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -56382,11 +56382,11 @@
         "comment": "",
         "meta": {
             "range": [
-                5992,
-                6026
+                5972,
+                6006
             ],
             "filename": "router.js",
-            "lineno": 176,
+            "lineno": 171,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -56408,11 +56408,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6044,
-                6062
+                6024,
+                6042
             ],
             "filename": "router.js",
-            "lineno": 177,
+            "lineno": 172,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -56434,11 +56434,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6113,
-                6159
+                6093,
+                6139
             ],
             "filename": "router.js",
-            "lineno": 180,
+            "lineno": 175,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -56461,11 +56461,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6177,
-                6199
+                6157,
+                6179
             ],
             "filename": "router.js",
-            "lineno": 181,
+            "lineno": 176,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -56488,11 +56488,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6233,
-                6465
+                6213,
+                6445
             ],
             "filename": "router.js",
-            "lineno": 183,
+            "lineno": 178,
             "columnno": 18,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -56516,11 +56516,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6268,
-                6307
+                6248,
+                6287
             ],
             "filename": "router.js",
-            "lineno": 184,
+            "lineno": 179,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -56543,11 +56543,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6479,
-                6520
+                6459,
+                6500
             ],
             "filename": "router.js",
-            "lineno": 191,
+            "lineno": 186,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -56570,11 +56570,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6577,
-                6590
+                6557,
+                6570
             ],
             "filename": "router.js",
-            "lineno": 193,
+            "lineno": 188,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -56594,11 +56594,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6608,
-                6623
+                6588,
+                6603
             ],
             "filename": "router.js",
-            "lineno": 194,
+            "lineno": 189,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -56615,14 +56615,14 @@
         "scope": "global"
     },
     {
-        "comment": "/**\n    //  * Sets the container for the specified route.\n    //  * @static\n    //  * @param {Object} route - The route object.\n    //  * @returns {HTMLElement} The container element.\n    //  */",
+        "comment": "",
         "meta": {
             "range": [
-                6894,
-                6985
+                6870,
+                6961
             ],
             "filename": "router.js",
-            "lineno": 207,
+            "lineno": 201,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -56637,7 +56637,7 @@
                 "": null
             }
         },
-        "description": "//  * Sets the container for the specified route.\n    //  * @static\n    //  * @param {Object} route - The route object.\n    //  * @returns {HTMLElement} The container element.\n    //",
+        "undocumented": true,
         "name": "setContainer",
         "longname": "Router.setContainer",
         "kind": "function",
@@ -56646,14 +56646,14 @@
         "params": []
     },
     {
-        "comment": "/**\n    //  * Loads the component for the specified route.\n    //  * @static\n    //  * @param {Object} route - The route object containing load information.\n    //  * @returns {Promise<void>}\n    //  */",
+        "comment": "",
         "meta": {
             "range": [
-                7205,
-                7338
+                7177,
+                7310
             ],
             "filename": "router.js",
-            "lineno": 218,
+            "lineno": 211,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -56668,7 +56668,7 @@
                 "": null
             }
         },
-        "description": "//  * Loads the component for the specified route.\n    //  * @static\n    //  * @param {Object} route - The route object containing load information.\n    //  * @returns {Promise<void>}\n    //",
+        "undocumented": true,
         "name": "loadComponent",
         "longname": "Router.loadComponent",
         "kind": "function",
@@ -56681,11 +56681,11 @@
         "comment": "",
         "meta": {
             "range": [
-                7285,
-                7321
+                7257,
+                7293
             ],
             "filename": "router.js",
-            "lineno": 220,
+            "lineno": 213,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -56704,14 +56704,14 @@
         "scope": "static"
     },
     {
-        "comment": "/**\n    //  * Handles the beforeLoad event for the specified route.\n    //  * @static\n    //  * @param {Object} route - The route object containing beforeLoad information.\n    //  * @returns {Promise<void>}\n    //  */",
+        "comment": "",
         "meta": {
             "range": [
-                7573,
-                7921
+                7541,
+                7889
             ],
             "filename": "router.js",
-            "lineno": 231,
+            "lineno": 223,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -56726,7 +56726,7 @@
                 "": null
             }
         },
-        "description": "//  * Handles the beforeLoad event for the specified route.\n    //  * @static\n    //  * @param {Object} route - The route object containing beforeLoad information.\n    //  * @returns {Promise<void>}\n    //",
+        "undocumented": true,
         "name": "handleBeforeLoad",
         "longname": "Router.handleBeforeLoad",
         "kind": "function",
@@ -56739,11 +56739,11 @@
         "comment": "",
         "meta": {
             "range": [
-                7679,
-                7790
+                7647,
+                7758
             ],
             "filename": "router.js",
-            "lineno": 233,
+            "lineno": 225,
             "columnno": 18,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -56761,14 +56761,14 @@
         "params": []
     },
     {
-        "comment": "/**\n    //  * Sets the AbortController for handling route cancellations.\n    //  * @static\n    //  */",
+        "comment": "",
         "meta": {
             "range": [
-                8040,
-                8334
+                8004,
+                8298
             ],
             "filename": "router.js",
-            "lineno": 247,
+            "lineno": 238,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -56781,7 +56781,7 @@
                 "": null
             }
         },
-        "description": "//  * Sets the AbortController for handling route cancellations.\n    //  * @static\n    //",
+        "undocumented": true,
         "name": "setController",
         "longname": "Router.setController",
         "kind": "function",
@@ -56793,11 +56793,11 @@
         "comment": "",
         "meta": {
             "range": [
-                8278,
-                8317
+                8242,
+                8281
             ],
             "filename": "router.js",
-            "lineno": 253,
+            "lineno": 244,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -56819,11 +56819,11 @@
         "comment": "/**\n     * Navigates to the specified URL.\n     * @static\n     * @param {string} [url] - The URL to navigate to.\n     */",
         "meta": {
             "range": [
-                8465,
-                8658
+                8429,
+                8622
             ],
             "filename": "router.js",
-            "lineno": 262,
+            "lineno": 253,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -56861,11 +56861,11 @@
         "comment": "",
         "meta": {
             "range": [
-                8615,
-                8641
+                8579,
+                8605
             ],
             "filename": "router.js",
-            "lineno": 266,
+            "lineno": 257,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -56884,14 +56884,14 @@
         "scope": "static"
     },
     {
-        "comment": "/**\n    //  * Handles navigate events triggered by user interactions.\n    //  * @static\n    //  * @param {Event} event - The navigate event.\n    //  */",
+        "comment": "",
         "meta": {
             "range": [
-                8827,
-                9053
+                8787,
+                9013
             ],
             "filename": "router.js",
-            "lineno": 276,
+            "lineno": 266,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -56906,7 +56906,7 @@
                 "": null
             }
         },
-        "description": "//  * Handles navigate events triggered by user interactions.\n    //  * @static\n    //  * @param {Event} event - The navigate event.\n    //",
+        "undocumented": true,
         "name": "handleNavigate",
         "longname": "Router.handleNavigate",
         "kind": "function",
@@ -56918,11 +56918,11 @@
         "comment": "",
         "meta": {
             "range": [
-                8872,
-                8918
+                8832,
+                8878
             ],
             "filename": "router.js",
-            "lineno": 277,
+            "lineno": 267,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -56944,11 +56944,11 @@
         "comment": "",
         "meta": {
             "range": [
-                8962,
-                9002
+                8922,
+                8962
             ],
             "filename": "router.js",
-            "lineno": 280,
+            "lineno": 270,
             "columnno": 18,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -56967,14 +56967,14 @@
         "params": []
     },
     {
-        "comment": "/**\n    //  * Emits a custom event of the specified type.\n    //  * @static\n    //  * @param {string} type - The type of event to emit.\n    //  * @param {Object} [detail] - The optional event details.\n    //  */",
+        "comment": "",
         "meta": {
             "range": [
-                9282,
-                9487
+                9238,
+                9443
             ],
             "filename": "router.js",
-            "lineno": 292,
+            "lineno": 281,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -56990,7 +56990,7 @@
                 "": null
             }
         },
-        "description": "//  * Emits a custom event of the specified type.\n    //  * @static\n    //  * @param {string} type - The type of event to emit.\n    //  * @param {Object} [detail] - The optional event details.\n    //",
+        "undocumented": true,
         "name": "emit",
         "longname": "Router.emit",
         "kind": "function",
@@ -57002,11 +57002,11 @@
         "comment": "",
         "meta": {
             "range": [
-                9324,
-                9443
+                9280,
+                9399
             ],
             "filename": "router.js",
-            "lineno": 293,
+            "lineno": 282,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -57028,11 +57028,11 @@
         "comment": "",
         "meta": {
             "range": [
-                9368,
-                9381
+                9324,
+                9337
             ],
             "filename": "router.js",
-            "lineno": 294,
+            "lineno": 283,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -57052,11 +57052,11 @@
         "comment": "",
         "meta": {
             "range": [
-                9395,
-                9411
+                9351,
+                9367
             ],
             "filename": "router.js",
-            "lineno": 295,
+            "lineno": 284,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -57076,11 +57076,11 @@
         "comment": "",
         "meta": {
             "range": [
-                9425,
-                9431
+                9381,
+                9387
             ],
             "filename": "router.js",
-            "lineno": 296,
+            "lineno": 285,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -57100,11 +57100,11 @@
         "comment": "/**\n     * The array of defined routes.\n     * @static\n     * @type {Array}\n     */",
         "meta": {
             "range": [
-                9581,
-                9600
+                9537,
+                9556
             ],
             "filename": "router.js",
-            "lineno": 306,
+            "lineno": 295,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -57126,14 +57126,14 @@
         "memberof": "Router"
     },
     {
-        "comment": "/**\n    //  * The router options.\n    //  * @static\n    //  * @property {Object} event\n    //  */",
+        "comment": "",
         "meta": {
             "range": [
-                9714,
-                9734
+                9666,
+                9686
             ],
             "filename": "router.js",
-            "lineno": 313,
+            "lineno": 301,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -57142,7 +57142,7 @@
                 "type": "ClassProperty"
             }
         },
-        "description": "//  * The router options.\n    //  * @static\n    //  * @property {Object} event\n    //",
+        "undocumented": true,
         "name": "options",
         "longname": "Router#options",
         "kind": "member",
@@ -57153,7 +57153,7 @@
         "comment": "/**\n     * @typedef {Object} RouterUseRoutes\n     * @property {string} path - The path of the route.\n     * @property {HTMLElement} [component] - The component to render for the route.\n     * @property {Function} [load] - The function to load the component.\n     * @property {Function} [beforeLoad] - The function to call before loading the component.\n     * @property {RouterUseRoutes.<Array>} [children] - The child routes.\n     */",
         "meta": {
             "filename": "router.js",
-            "lineno": 315,
+            "lineno": 303,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {}
@@ -57223,7 +57223,7 @@
         "comment": "/**\n     * @typedef {Object} RouterUseOptions\n     * @property {boolean} [historyApiFallback=false] - Whether to use the History API for navigation.\n     */",
         "meta": {
             "filename": "router.js",
-            "lineno": 324,
+            "lineno": 312,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {}
@@ -57255,11 +57255,11 @@
         "comment": "/**\n     * Initializes the router with the specified routes and options.\n     * @static\n     * @param {RouterUseRoutes.<Array>} [routes=[]] - The array of routes.\n     * @param {RouterUseOptions} [options={}] - The router options.\n     */",
         "meta": {
             "range": [
-                10584,
-                11365
+                10536,
+                11317
             ],
             "filename": "router.js",
-            "lineno": 335,
+            "lineno": 323,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -57310,11 +57310,11 @@
         "comment": "",
         "meta": {
             "range": [
-                10632,
-                10652
+                10584,
+                10604
             ],
             "filename": "router.js",
-            "lineno": 336,
+            "lineno": 324,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -57336,11 +57336,11 @@
         "comment": "",
         "meta": {
             "range": [
-                10662,
-                10751
+                10614,
+                10703
             ],
             "filename": "router.js",
-            "lineno": 337,
+            "lineno": 325,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -57362,11 +57362,11 @@
         "comment": "",
         "meta": {
             "range": [
-                10691,
-                10716
+                10643,
+                10668
             ],
             "filename": "router.js",
-            "lineno": 338,
+            "lineno": 326,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -57387,11 +57387,11 @@
         "comment": "",
         "meta": {
             "range": [
-                10977,
-                11013
+                10929,
+                10965
             ],
             "filename": "router.js",
-            "lineno": 345,
+            "lineno": 333,
             "columnno": 18,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -57413,11 +57413,11 @@
         "comment": "",
         "meta": {
             "range": [
-                11027,
-                11172
+                10979,
+                11124
             ],
             "filename": "router.js",
-            "lineno": 346,
+            "lineno": 334,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -57438,11 +57438,11 @@
         "comment": "",
         "meta": {
             "range": [
-                11378,
-                11384
+                11330,
+                11336
             ],
             "filename": "router.js",
-            "lineno": 357,
+            "lineno": 345,
             "columnno": 9,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\router",
             "code": {
@@ -57583,7 +57583,7 @@
         "meta": {
             "range": [
                 291,
-                1593
+                1589
             ],
             "filename": "scheme-observer.js",
             "lineno": 9,
@@ -57651,7 +57651,7 @@
         "meta": {
             "range": [
                 291,
-                1593
+                1589
             ],
             "filename": "scheme-observer.js",
             "lineno": 9,
@@ -57737,14 +57737,14 @@
         "scope": "instance"
     },
     {
-        "comment": "/**\n    //  * Handles color scheme change events by destroying the current scheme and initializing a new one.\n    //  */",
+        "comment": "",
         "meta": {
             "range": [
-                764,
-                831
+                760,
+                827
             ],
             "filename": "scheme-observer.js",
-            "lineno": 23,
+            "lineno": 22,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme-observer",
             "code": {
@@ -57757,7 +57757,7 @@
                 "": null
             }
         },
-        "description": "//  * Handles color scheme change events by destroying the current scheme and initializing a new one.\n    //",
+        "undocumented": true,
         "name": "handleChange",
         "longname": "SchemeObserver#handleChange",
         "kind": "function",
@@ -57769,11 +57769,11 @@
         "comment": "/**\n     * Initializes the color scheme by finding the matching media query and executing the callback.\n     * @param {Array<Object>} [items=defaultItems] - The array of scheme items, each containing a name and a media query.\n     */",
         "meta": {
             "range": [
-                1075,
-                1350
+                1071,
+                1346
             ],
             "filename": "scheme-observer.js",
-            "lineno": 32,
+            "lineno": 31,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme-observer",
             "code": {
@@ -57812,11 +57812,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1143,
-                1161
+                1139,
+                1157
             ],
             "filename": "scheme-observer.js",
-            "lineno": 34,
+            "lineno": 33,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme-observer",
             "code": {
@@ -57838,11 +57838,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1181,
-                1238
+                1177,
+                1234
             ],
             "filename": "scheme-observer.js",
-            "lineno": 36,
+            "lineno": 35,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme-observer",
             "code": {
@@ -57864,11 +57864,11 @@
         "comment": "/**\n     * Destroys the current scheme by removing the event listener from the matching media query.\n     */",
         "meta": {
             "range": [
-                1469,
-                1591
+                1465,
+                1587
             ],
             "filename": "scheme-observer.js",
-            "lineno": 44,
+            "lineno": 43,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme-observer",
             "code": {
@@ -57893,11 +57893,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1563,
-                1584
+                1559,
+                1580
             ],
             "filename": "scheme-observer.js",
-            "lineno": 46,
+            "lineno": 45,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme-observer",
             "code": {
@@ -57919,11 +57919,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1604,
-                1618
+                1600,
+                1614
             ],
             "filename": "scheme-observer.js",
-            "lineno": 50,
+            "lineno": 49,
             "columnno": 9,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\scheme-observer",
             "code": {
@@ -65698,7 +65698,7 @@
         "meta": {
             "range": [
                 83,
-                6926
+                6918
             ],
             "filename": "store.js",
             "lineno": 4,
@@ -65781,7 +65781,7 @@
         "meta": {
             "range": [
                 83,
-                6926
+                6918
             ],
             "filename": "store.js",
             "lineno": 4,
@@ -66088,14 +66088,14 @@
         "params": []
     },
     {
-        "comment": "/**\n    //  * Performs a deep search on an item based on the query.\n    //  * @param {any} item - The item to search within.\n    //  * @param {string} q - The query string.\n    //  * @returns {boolean} True if the item matches the query, otherwise false.\n    //  */",
+        "comment": "",
         "meta": {
             "range": [
-                1808,
-                2304
+                1804,
+                2300
             ],
             "filename": "store.js",
-            "lineno": 61,
+            "lineno": 60,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -66111,7 +66111,7 @@
                 "": null
             }
         },
-        "description": "//  * Performs a deep search on an item based on the query.\n    //  * @param {any} item - The item to search within.\n    //  * @param {string} q - The query string.\n    //  * @returns {boolean} True if the item matches the query, otherwise false.\n    //",
+        "undocumented": true,
         "name": "deepSearch",
         "longname": "Store#deepSearch",
         "kind": "function",
@@ -66123,11 +66123,11 @@
         "comment": "/**\n     * Searches the data based on the query.\n     * @param {Array} data - The data to search.\n     * @param {string} q - The query string.\n     * @returns {Array} The filtered data.\n     */",
         "meta": {
             "range": [
-                2508,
-                2648
+                2504,
+                2644
             ],
             "filename": "store.js",
-            "lineno": 86,
+            "lineno": 85,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -66181,14 +66181,14 @@
         "scope": "instance"
     },
     {
-        "comment": "/**\n    //  * Retrieves a nested value from an item based on the specified name.\n    //  * @param {Object} item - The item to retrieve the value from.\n    //  * @param {string} name - The name of the property to retrieve.\n    //  * @returns {any} The nested value.\n    //  */",
+        "comment": "",
         "meta": {
             "range": [
-                2941,
-                3090
+                2933,
+                3082
             ],
             "filename": "store.js",
-            "lineno": 100,
+            "lineno": 98,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -66204,7 +66204,7 @@
                 "": null
             }
         },
-        "description": "//  * Retrieves a nested value from an item based on the specified name.\n    //  * @param {Object} item - The item to retrieve the value from.\n    //  * @param {string} name - The name of the property to retrieve.\n    //  * @returns {any} The nested value.\n    //",
+        "undocumented": true,
         "name": "getNestedValue",
         "longname": "Store#getNestedValue",
         "kind": "function",
@@ -66216,11 +66216,11 @@
         "comment": "/**\n     * Filters the data based on the provided filters.\n     * @param {Array} data - The data to filter.\n     * @param {Array} [filters] - The filters to apply.\n     * @returns {Array} The filtered data.\n     */",
         "meta": {
             "range": [
-                3315,
-                4708
+                3307,
+                4700
             ],
             "filename": "store.js",
-            "lineno": 110,
+            "lineno": 108,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -66278,11 +66278,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3557,
-                3561
+                3549,
+                3553
             ],
             "filename": "store.js",
-            "lineno": 116,
+            "lineno": 114,
             "columnno": 22,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -66302,11 +66302,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3563,
-                3568
+                3555,
+                3560
             ],
             "filename": "store.js",
-            "lineno": 116,
+            "lineno": 114,
             "columnno": 28,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -66326,11 +66326,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3570,
-                3586
+                3562,
+                3578
             ],
             "filename": "store.js",
-            "lineno": 116,
+            "lineno": 114,
             "columnno": 35,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -66350,11 +66350,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3619,
-                3663
+                3611,
+                3655
             ],
             "filename": "store.js",
-            "lineno": 117,
+            "lineno": 115,
             "columnno": 20,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -66376,11 +66376,11 @@
         "comment": "/**\n     * Retrieves a subset of the data within the specified range.\n     * @param {Array} data - The data to retrieve the range from.\n     * @param {number} _start - The start index of the range.\n     * @param {number} _end - The end index of the range.\n     * @returns {Array} The data within the specified range.\n     */",
         "meta": {
             "range": [
-                5043,
-                5117
+                5035,
+                5109
             ],
             "filename": "store.js",
-            "lineno": 151,
+            "lineno": 149,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -66447,11 +66447,11 @@
         "comment": "/**\n     * Paginates the data based on the specified page and limit.\n     * @param {Array} data - The data to paginate.\n     * @param {number} _page - The page number.\n     * @param {number} _limit - The number of items per page.\n     * @returns {Array} The paginated data.\n     */",
         "meta": {
             "range": [
-                5409,
-                5561
+                5401,
+                5553
             ],
             "filename": "store.js",
-            "lineno": 162,
+            "lineno": 160,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -66518,11 +66518,11 @@
         "comment": "",
         "meta": {
             "range": [
-                5453,
-                5481
+                5445,
+                5473
             ],
             "filename": "store.js",
-            "lineno": 163,
+            "lineno": 161,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -66544,11 +66544,11 @@
         "comment": "",
         "meta": {
             "range": [
-                5495,
-                5515
+                5487,
+                5507
             ],
             "filename": "store.js",
-            "lineno": 164,
+            "lineno": 162,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -66570,11 +66570,11 @@
         "comment": "/**\n     * Retrieves the processed data based on the provided options.\n     * @param {Object} [options={}] - The options for retrieving the data.\n     * @param {Array} [options.sorters] - The sorters to apply to the data.\n     * @param {string} [options.q] - The query string to search within the data.\n     * @param {Array} [options.filters] - The filters to apply to the data.\n     * @param {number} [options._start] - The start index for range retrieval.\n     * @param {number} [options._end] - The end index for range retrieval.\n     * @param {number} [options._page] - The page number for pagination.\n     * @param {number} [options._limit] - The number of items per page for pagination.\n     * @returns {Object} An object containing the processed data and the total count.\n     */",
         "meta": {
             "range": [
-                6358,
-                6924
+                6350,
+                6916
             ],
             "filename": "store.js",
-            "lineno": 180,
+            "lineno": 178,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -66693,11 +66693,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6392,
-                6399
+                6384,
+                6391
             ],
             "filename": "store.js",
-            "lineno": 181,
+            "lineno": 179,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -66717,11 +66717,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6401,
-                6402
+                6393,
+                6394
             ],
             "filename": "store.js",
-            "lineno": 181,
+            "lineno": 179,
             "columnno": 23,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -66741,11 +66741,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6404,
-                6411
+                6396,
+                6403
             ],
             "filename": "store.js",
-            "lineno": 181,
+            "lineno": 179,
             "columnno": 26,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -66765,11 +66765,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6413,
-                6419
+                6405,
+                6411
             ],
             "filename": "store.js",
-            "lineno": 181,
+            "lineno": 179,
             "columnno": 35,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -66789,11 +66789,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6421,
-                6425
+                6413,
+                6417
             ],
             "filename": "store.js",
-            "lineno": 181,
+            "lineno": 179,
             "columnno": 43,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -66813,11 +66813,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6427,
-                6432
+                6419,
+                6424
             ],
             "filename": "store.js",
-            "lineno": 181,
+            "lineno": 179,
             "columnno": 49,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -66837,11 +66837,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6434,
-                6440
+                6426,
+                6432
             ],
             "filename": "store.js",
-            "lineno": 181,
+            "lineno": 179,
             "columnno": 56,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -66861,11 +66861,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6466,
-                6490
+                6458,
+                6482
             ],
             "filename": "store.js",
-            "lineno": 182,
+            "lineno": 180,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -66887,11 +66887,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6500,
-                6531
+                6492,
+                6523
             ],
             "filename": "store.js",
-            "lineno": 183,
+            "lineno": 181,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -66914,11 +66914,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6541,
-                6568
+                6533,
+                6560
             ],
             "filename": "store.js",
-            "lineno": 184,
+            "lineno": 182,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -66941,11 +66941,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6578,
-                6611
+                6570,
+                6603
             ],
             "filename": "store.js",
-            "lineno": 185,
+            "lineno": 183,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -66968,11 +66968,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6625,
-                6644
+                6617,
+                6636
             ],
             "filename": "store.js",
-            "lineno": 186,
+            "lineno": 184,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -66994,11 +66994,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6717,
-                6754
+                6709,
+                6746
             ],
             "filename": "store.js",
-            "lineno": 189,
+            "lineno": 187,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -67021,11 +67021,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6834,
-                6875
+                6826,
+                6867
             ],
             "filename": "store.js",
-            "lineno": 191,
+            "lineno": 189,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -67048,11 +67048,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6904,
-                6908
+                6896,
+                6900
             ],
             "filename": "store.js",
-            "lineno": 193,
+            "lineno": 191,
             "columnno": 17,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -67072,11 +67072,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6910,
-                6915
+                6902,
+                6907
             ],
             "filename": "store.js",
-            "lineno": 193,
+            "lineno": 191,
             "columnno": 23,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -67096,11 +67096,11 @@
         "comment": "",
         "meta": {
             "range": [
-                6937,
-                6942
+                6929,
+                6934
             ],
             "filename": "store.js",
-            "lineno": 197,
+            "lineno": 195,
             "columnno": 9,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\store",
             "code": {
@@ -85679,7 +85679,7 @@
         "meta": {
             "range": [
                 79,
-                5837
+                5817
             ],
             "filename": "virtual.js",
             "lineno": 4,
@@ -85835,7 +85835,7 @@
         "meta": {
             "range": [
                 79,
-                5837
+                5817
             ],
             "filename": "virtual.js",
             "lineno": 4,
@@ -86032,14 +86032,14 @@
         "scope": "static"
     },
     {
-        "comment": "/**\n    //  * Debounces the handling of virtual scroll events.\n    //  */",
+        "comment": "",
         "meta": {
             "range": [
-                1186,
-                2278
+                1182,
+                2274
             ],
             "filename": "virtual.js",
-            "lineno": 35,
+            "lineno": 34,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual",
             "code": {
@@ -86052,7 +86052,7 @@
                 "": null
             }
         },
-        "description": "//  * Debounces the handling of virtual scroll events.\n    //",
+        "undocumented": true,
         "name": "handleVirtualScrollDebounce",
         "longname": "Virtual#handleVirtualScrollDebounce",
         "kind": "function",
@@ -86064,11 +86064,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1234,
-                1243
+                1230,
+                1239
             ],
             "filename": "virtual.js",
-            "lineno": 36,
+            "lineno": 35,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual",
             "code": {
@@ -86088,11 +86088,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1245,
-                1250
+                1241,
+                1246
             ],
             "filename": "virtual.js",
-            "lineno": 36,
+            "lineno": 35,
             "columnno": 27,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual",
             "code": {
@@ -86112,11 +86112,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1297,
-                1302
+                1293,
+                1298
             ],
             "filename": "virtual.js",
-            "lineno": 37,
+            "lineno": 36,
             "columnno": 16,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual",
             "code": {
@@ -86136,11 +86136,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1304,
-                1307
+                1300,
+                1303
             ],
             "filename": "virtual.js",
-            "lineno": 37,
+            "lineno": 36,
             "columnno": 23,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual",
             "code": {
@@ -86160,11 +86160,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1370,
-                1412
+                1366,
+                1408
             ],
             "filename": "virtual.js",
-            "lineno": 38,
+            "lineno": 37,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual",
             "code": {
@@ -86186,11 +86186,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1428,
-                1493
+                1424,
+                1489
             ],
             "filename": "virtual.js",
-            "lineno": 39,
+            "lineno": 38,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual",
             "code": {
@@ -86212,11 +86212,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1544,
-                1562
+                1540,
+                1558
             ],
             "filename": "virtual.js",
-            "lineno": 42,
+            "lineno": 41,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual",
             "code": {
@@ -86238,7 +86238,7 @@
         "comment": "/**\n             * @event onVirtualScroll\n             * @type {Object}\n             * @property {number} rowHeight - The height of each row/item in pixels.\n             * @property {number} total - The total number of items in the list.\n             * @property {number} start - The start index of the visible items.\n             * @property {number} end - The end index of the visible items.\n             * @property {Array} data - The data for the visible items.\n             */",
         "meta": {
             "filename": "virtual.js",
-            "lineno": 48,
+            "lineno": 47,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual",
             "code": {}
@@ -86304,11 +86304,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2224,
-                2233
+                2220,
+                2229
             ],
             "filename": "virtual.js",
-            "lineno": 57,
+            "lineno": 56,
             "columnno": 43,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual",
             "code": {
@@ -86328,11 +86328,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2235,
-                2240
+                2231,
+                2236
             ],
             "filename": "virtual.js",
-            "lineno": 57,
+            "lineno": 56,
             "columnno": 54,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual",
             "code": {
@@ -86352,11 +86352,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2242,
-                2247
+                2238,
+                2243
             ],
             "filename": "virtual.js",
-            "lineno": 57,
+            "lineno": 56,
             "columnno": 61,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual",
             "code": {
@@ -86376,11 +86376,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2249,
-                2252
+                2245,
+                2248
             ],
             "filename": "virtual.js",
-            "lineno": 57,
+            "lineno": 56,
             "columnno": 68,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual",
             "code": {
@@ -86400,11 +86400,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2254,
-                2258
+                2250,
+                2254
             ],
             "filename": "virtual.js",
-            "lineno": 57,
+            "lineno": 56,
             "columnno": 73,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual",
             "code": {
@@ -86421,14 +86421,14 @@
         "scope": "global"
     },
     {
-        "comment": "/**\n    //  * Updates the position of the items based on the scroll position.\n    //  * @param {number} rowHeight - The height of each row/item in pixels.\n    //  * @param {number} total - The total number of items in the list.\n    //  * @returns {Object} An object containing the start and end indices of the visible items.\n    //  */",
+        "comment": "",
         "meta": {
             "range": [
-                2631,
-                3481
+                2623,
+                3473
             ],
             "filename": "virtual.js",
-            "lineno": 68,
+            "lineno": 66,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual",
             "code": {
@@ -86444,7 +86444,7 @@
                 "": null
             }
         },
-        "description": "//  * Updates the position of the items based on the scroll position.\n    //  * @param {number} rowHeight - The height of each row/item in pixels.\n    //  * @param {number} total - The total number of items in the list.\n    //  * @returns {Object} An object containing the start and end indices of the visible items.\n    //",
+        "undocumented": true,
         "name": "updateItemsPosition",
         "longname": "Virtual#updateItemsPosition",
         "kind": "function",
@@ -86456,11 +86456,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2685,
-                2716
+                2677,
+                2708
             ],
             "filename": "virtual.js",
-            "lineno": 69,
+            "lineno": 67,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual",
             "code": {
@@ -86482,11 +86482,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2732,
-                2770
+                2724,
+                2762
             ],
             "filename": "virtual.js",
-            "lineno": 70,
+            "lineno": 68,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual",
             "code": {
@@ -86508,11 +86508,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2786,
-                2825
+                2778,
+                2817
             ],
             "filename": "virtual.js",
-            "lineno": 71,
+            "lineno": 69,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual",
             "code": {
@@ -86534,11 +86534,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2841,
-                2909
+                2833,
+                2901
             ],
             "filename": "virtual.js",
-            "lineno": 72,
+            "lineno": 70,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual",
             "code": {
@@ -86560,11 +86560,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2925,
-                3013
+                2917,
+                3005
             ],
             "filename": "virtual.js",
-            "lineno": 73,
+            "lineno": 71,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual",
             "code": {
@@ -86586,11 +86586,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3029,
-                3048
+                3021,
+                3040
             ],
             "filename": "virtual.js",
-            "lineno": 74,
+            "lineno": 72,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual",
             "code": {
@@ -86612,11 +86612,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3064,
-                3094
+                3056,
+                3086
             ],
             "filename": "virtual.js",
-            "lineno": 75,
+            "lineno": 73,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual",
             "code": {
@@ -86638,11 +86638,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3104,
-                3162
+                3096,
+                3154
             ],
             "filename": "virtual.js",
-            "lineno": 76,
+            "lineno": 74,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual",
             "code": {
@@ -86664,11 +86664,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3462,
-                3467
+                3454,
+                3459
             ],
             "filename": "virtual.js",
-            "lineno": 83,
+            "lineno": 81,
             "columnno": 17,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual",
             "code": {
@@ -86688,11 +86688,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3469,
-                3472
+                3461,
+                3464
             ],
             "filename": "virtual.js",
-            "lineno": 83,
+            "lineno": 81,
             "columnno": 24,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual",
             "code": {
@@ -86709,14 +86709,14 @@
         "scope": "global"
     },
     {
-        "comment": "/**\n    //  * Updates the height of the track element.\n    //  * @returns {Object} An object containing the rowHeight and total number of items.\n    //  */",
+        "comment": "",
         "meta": {
             "range": [
-                3654,
-                3931
+                3642,
+                3919
             ],
             "filename": "virtual.js",
-            "lineno": 91,
+            "lineno": 88,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual",
             "code": {
@@ -86729,7 +86729,7 @@
                 "": null
             }
         },
-        "description": "//  * Updates the height of the track element.\n    //  * @returns {Object} An object containing the rowHeight and total number of items.\n    //",
+        "undocumented": true,
         "name": "updateTrackHeight",
         "longname": "Virtual#updateTrackHeight",
         "kind": "function",
@@ -86741,11 +86741,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3690,
-                3722
+                3678,
+                3710
             ],
             "filename": "virtual.js",
-            "lineno": 92,
+            "lineno": 89,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual",
             "code": {
@@ -86767,11 +86767,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3738,
-                3772
+                3726,
+                3760
             ],
             "filename": "virtual.js",
-            "lineno": 93,
+            "lineno": 90,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual",
             "code": {
@@ -86793,11 +86793,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3788,
-                3819
+                3776,
+                3807
             ],
             "filename": "virtual.js",
-            "lineno": 94,
+            "lineno": 91,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual",
             "code": {
@@ -86819,11 +86819,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3906,
-                3915
+                3894,
+                3903
             ],
             "filename": "virtual.js",
-            "lineno": 96,
+            "lineno": 93,
             "columnno": 17,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual",
             "code": {
@@ -86843,11 +86843,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3917,
-                3922
+                3905,
+                3910
             ],
             "filename": "virtual.js",
-            "lineno": 96,
+            "lineno": 93,
             "columnno": 28,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual",
             "code": {
@@ -86864,14 +86864,14 @@
         "scope": "global"
     },
     {
-        "comment": "/**\n    //  * Handles the virtual scroll event.\n    //  */",
+        "comment": "",
         "meta": {
             "range": [
-                4007,
-                4108
+                3991,
+                4092
             ],
             "filename": "virtual.js",
-            "lineno": 103,
+            "lineno": 99,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual",
             "code": {
@@ -86884,7 +86884,7 @@
                 "": null
             }
         },
-        "description": "//  * Handles the virtual scroll event.\n    //",
+        "undocumented": true,
         "name": "handleVirtualScroll",
         "longname": "Virtual#handleVirtualScroll",
         "kind": "function",
@@ -86893,14 +86893,14 @@
         "params": []
     },
     {
-        "comment": "/**\n    //  * Emits a custom event from the host element.\n    //  * @param {string} type - The type of event to emit.\n    //  * @param {Object} [detail] - The event detail.\n    //  */",
+        "comment": "",
         "meta": {
             "range": [
-                4309,
-                4510
+                4289,
+                4490
             ],
             "filename": "virtual.js",
-            "lineno": 113,
+            "lineno": 108,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual",
             "code": {
@@ -86916,7 +86916,7 @@
                 "": null
             }
         },
-        "description": "//  * Emits a custom event from the host element.\n    //  * @param {string} type - The type of event to emit.\n    //  * @param {Object} [detail] - The event detail.\n    //",
+        "undocumented": true,
         "name": "emit",
         "longname": "Virtual#emit",
         "kind": "function",
@@ -86928,11 +86928,11 @@
         "comment": "",
         "meta": {
             "range": [
-                4344,
-                4463
+                4324,
+                4443
             ],
             "filename": "virtual.js",
-            "lineno": 114,
+            "lineno": 109,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual",
             "code": {
@@ -86954,11 +86954,11 @@
         "comment": "",
         "meta": {
             "range": [
-                4388,
-                4401
+                4368,
+                4381
             ],
             "filename": "virtual.js",
-            "lineno": 115,
+            "lineno": 110,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual",
             "code": {
@@ -86978,11 +86978,11 @@
         "comment": "",
         "meta": {
             "range": [
-                4415,
-                4431
+                4395,
+                4411
             ],
             "filename": "virtual.js",
-            "lineno": 116,
+            "lineno": 111,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual",
             "code": {
@@ -87002,11 +87002,11 @@
         "comment": "",
         "meta": {
             "range": [
-                4445,
-                4451
+                4425,
+                4431
             ],
             "filename": "virtual.js",
-            "lineno": 117,
+            "lineno": 112,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual",
             "code": {
@@ -87026,11 +87026,11 @@
         "comment": "/**\n     * Loads the specified options into the virtual scroll instance.\n     * @param {VirtualOptions} [options={}] - The options to load.\n     */",
         "meta": {
             "range": [
-                4668,
-                4976
+                4648,
+                4956
             ],
             "filename": "virtual.js",
-            "lineno": 126,
+            "lineno": 121,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual",
             "code": {
@@ -87069,11 +87069,11 @@
         "comment": "",
         "meta": {
             "range": [
-                4708,
-                4712
+                4688,
+                4692
             ],
             "filename": "virtual.js",
-            "lineno": 127,
+            "lineno": 122,
             "columnno": 19,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual",
             "code": {
@@ -87093,11 +87093,11 @@
         "comment": "",
         "meta": {
             "range": [
-                4745,
-                4766
+                4725,
+                4746
             ],
             "filename": "virtual.js",
-            "lineno": 128,
+            "lineno": 123,
             "columnno": 18,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual",
             "code": {
@@ -87119,11 +87119,11 @@
         "comment": "",
         "meta": {
             "range": [
-                4859,
-                4885
+                4839,
+                4865
             ],
             "filename": "virtual.js",
-            "lineno": 130,
+            "lineno": 125,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual",
             "code": {
@@ -87145,11 +87145,11 @@
         "comment": "",
         "meta": {
             "range": [
-                4905,
-                4933
+                4885,
+                4913
             ],
             "filename": "virtual.js",
-            "lineno": 132,
+            "lineno": 127,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual",
             "code": {
@@ -87171,11 +87171,11 @@
         "comment": "/**\n     * Initializes the virtual scroll functionality by adding event listeners and setting initial styles.\n     */",
         "meta": {
             "range": [
-                5104,
-                5543
+                5084,
+                5523
             ],
             "filename": "virtual.js",
-            "lineno": 139,
+            "lineno": 134,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual",
             "code": {
@@ -87200,11 +87200,11 @@
         "comment": "",
         "meta": {
             "range": [
-                5168,
-                5210
+                5148,
+                5190
             ],
             "filename": "virtual.js",
-            "lineno": 141,
+            "lineno": 136,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual",
             "code": {
@@ -87226,11 +87226,11 @@
         "comment": "",
         "meta": {
             "range": [
-                5314,
-                5376
+                5294,
+                5356
             ],
             "filename": "virtual.js",
-            "lineno": 144,
+            "lineno": 139,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual",
             "code": {
@@ -87252,11 +87252,11 @@
         "comment": "",
         "meta": {
             "range": [
-                5386,
-                5464
+                5366,
+                5444
             ],
             "filename": "virtual.js",
-            "lineno": 145,
+            "lineno": 140,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual",
             "code": {
@@ -87278,11 +87278,11 @@
         "comment": "/**\n     * Destroys the virtual scroll functionality by removing event listeners and resetting styles.\n     */",
         "meta": {
             "range": [
-                5664,
-                5835
+                5644,
+                5815
             ],
             "filename": "virtual.js",
-            "lineno": 152,
+            "lineno": 147,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual",
             "code": {
@@ -87307,11 +87307,11 @@
         "comment": "",
         "meta": {
             "range": [
-                5848,
-                5855
+                5828,
+                5835
             ],
             "filename": "virtual.js",
-            "lineno": 159,
+            "lineno": 154,
             "columnno": 9,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\virtual",
             "code": {

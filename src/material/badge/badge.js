@@ -26,8 +26,7 @@ class MDBadgeComponent extends MdComponent {
         this.max = 999;
     }
 
-    //
-    /**
+    // /**
     //  * Renders the badge with the label.
     //  * @returns {TemplateResult|string} The rendered template or nothing if no label is set.
     //  */
@@ -41,8 +40,7 @@ class MDBadgeComponent extends MdComponent {
         }
     }
 
-    //
-    /**
+    // /**
     //  * Called when the element is connected to the DOM.
     //  * Adds the 'md-badge' class to the element.
     //  */

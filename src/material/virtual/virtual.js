@@ -28,8 +28,7 @@ class Virtual {
         this.init();
     }
 
-    //
-    /**
+    // /**
     //  * Debounces the handling of virtual scroll events.
     //  */
     handleVirtualScrollDebounce() {
@@ -58,8 +57,7 @@ class Virtual {
         }
     }
 
-    //
-    /**
+    // /**
     //  * Updates the position of the items based on the scroll position.
     //  * @param {number} rowHeight - The height of each row/item in pixels.
     //  * @param {number} total - The total number of items in the list.
@@ -83,8 +81,7 @@ class Virtual {
         return { start, end };
     }
 
-    //
-    /**
+    // /**
     //  * Updates the height of the track element.
     //  * @returns {Object} An object containing the rowHeight and total number of items.
     //  */
@@ -96,16 +93,14 @@ class Virtual {
         return { rowHeight, total };
     }
 
-    //
-    /**
+    // /**
     //  * Handles the virtual scroll event.
     //  */
     handleVirtualScroll() {
         window.requestAnimationFrame(this.handleVirtualScrollDebounce);
     }
 
-    //
-    /**
+    // /**
     //  * Emits a custom event from the host element.
     //  * @param {string} type - The type of event to emit.
     //  * @param {Object} [detail] - The event detail.

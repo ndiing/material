@@ -97,8 +97,7 @@ class Ripple {
         this.trigger = null;
     }
 
-    //
-    /**
+    // /**
     //  * Handles the ripple hover-in event.
     //  * @param {Event} event - The hover-in event.
     //  */
@@ -106,8 +105,7 @@ class Ripple {
         this.container.classList.add("md-ripple--hover");
     }
 
-    //
-    /**
+    // /**
     //  * Handles the ripple hover-out event.
     //  * @param {Event} event - The hover-out event.
     //  */
@@ -115,8 +113,7 @@ class Ripple {
         this.container.classList.remove("md-ripple--hover");
     }
 
-    //
-    /**
+    // /**
     //  * Handles the ripple press-in event.
     //  * @param {Event} event - The press-in event.
     //  */
@@ -139,8 +136,7 @@ class Ripple {
         }
     }
 
-    //
-    /**
+    // /**
     //  * Handles the ripple press-out event.
     //  * @param {Event} event - The press-out event.
     //  */
@@ -150,8 +146,7 @@ class Ripple {
         this.container.classList.remove("md-ripple--press");
     }
 
-    //
-    /**
+    // /**
     //  * Handles the ripple focus-in event.
     //  * @param {Event} event - The focus-in event.
     //  */
@@ -159,8 +154,7 @@ class Ripple {
         this.container.classList.add("md-ripple--focus");
     }
 
-    //
-    /**
+    // /**
     //  * Handles the ripple focus-out event.
     //  * @param {Event} event - The focus-out event.
     //  */

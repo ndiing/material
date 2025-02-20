@@ -18,7 +18,6 @@ class DemoForm extends MdComponent {
                         </div>
                         <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
                             <md-text-field
-                                type="email"
                                 label="email"
                                 name="email"
                                 required
@@ -66,18 +65,16 @@ class DemoForm extends MdComponent {
                             ></md-text-field>
                         </div>
                         <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
-                            <md-text-field
-                                type="number"
+                            <md-number-field
                                 label="number"
                                 name="number"
                                 required
                                 value="123"
                                 cancelAction
-                            ></md-text-field>
+                            ></md-number-field>
                         </div>
                         <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
                             <md-date-field
-                                type="date"
                                 label="date"
                                 name="date"
                                 required
@@ -87,7 +84,6 @@ class DemoForm extends MdComponent {
                         </div>
                         <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
                             <md-datetime-field
-                                type="datetime-local"
                                 label="datetime-local"
                                 name="datetime-local"
                                 required
@@ -97,7 +93,6 @@ class DemoForm extends MdComponent {
                         </div>
                         <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
                             <md-month-field
-                                type="month"
                                 label="month"
                                 name="month"
                                 required
@@ -107,7 +102,6 @@ class DemoForm extends MdComponent {
                         </div>
                         <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
                             <md-time-field
-                                type="time"
                                 label="time"
                                 name="time"
                                 required
@@ -117,7 +111,6 @@ class DemoForm extends MdComponent {
                         </div>
                         <div class="md-layout__column--expanded4 md-layout__column--medium4 md-layout__column--compact4">
                             <md-week-field
-                                type="week"
                                 label="week"
                                 name="week"
                                 required

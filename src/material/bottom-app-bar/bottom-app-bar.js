@@ -40,8 +40,7 @@ class MDBottomAppBarComponent extends MdComponent {
         super();
     }
 
-    //
-    /**
+    // /**
     //  * Renders an icon button.
     //  * @param {Object} item - The item data for the icon button.
     //  * @returns {TemplateResult} The rendered template for the icon button.
@@ -63,8 +62,7 @@ class MDBottomAppBarComponent extends MdComponent {
         `;
     }
 
-    //
-    /**
+    // /**
     //  * Renders a floating action button (FAB).
     //  * @param {Object|string} item - The item data for the FAB or the icon name.
     //  * @returns {TemplateResult} The rendered template for the FAB.
@@ -85,8 +83,7 @@ class MDBottomAppBarComponent extends MdComponent {
         `;
     }
 
-    //
-    /**
+    // /**
     //  * Renders the bottom app bar.
     //  * @returns {TemplateResult} The rendered template for the bottom app bar.
     //  */
@@ -100,8 +97,7 @@ class MDBottomAppBarComponent extends MdComponent {
         `;
     }
 
-    //
-    /**
+    // /**
     //  * Called when the element is connected to the DOM.
     //  * Adds the 'md-bottom-app-bar' class and updates the component dimensions.
     //  */
@@ -153,8 +149,7 @@ class MDBottomAppBarComponent extends MdComponent {
         else this.show();
     }
 
-    //
-    /**
+    // /**
     //  * Handles the icon button click event in the bottom app bar.
     //  * @param {Event} event - The icon button click event.
     //  */
@@ -166,8 +161,7 @@ class MDBottomAppBarComponent extends MdComponent {
         this.emit("onBottomAppBarIconButtonClick", { event });
     }
 
-    //
-    /**
+    // /**
     //  * Handles the FAB click event in the bottom app bar.
     //  * @param {Event} event - The FAB click event.
     //  */

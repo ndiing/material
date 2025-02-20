@@ -12,8 +12,7 @@ class Progress {
         this.progressIndicator = null;
     }
 
-    //
-    /**
+    // /**
     //  * Renders the progress indicator element if it does not already exist.
     //  */
     render() {
@@ -41,8 +40,7 @@ class Progress {
         }
     }
 
-    //
-    /**
+    // /**
     //  * Updates the progress indicator at each animation frame.
     //  * @param {DOMHighResTimeStamp} currentTime - The current time of the animation frame.
     //  */
@@ -60,8 +58,7 @@ class Progress {
         }
     }
 
-    //
-    /**
+    // /**
     //  * Removes the progress indicator element from the DOM.
     //  */
     remove() {
@@ -71,8 +68,7 @@ class Progress {
         }
     }
 
-    //
-    /**
+    // /**
     //  * Resets the progress indicator and clears its state.
     //  */
     reset() {

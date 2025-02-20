@@ -28,8 +28,7 @@ class Router {
      * @property {Object} event
      */
     static params = {};
-    //
-    /**
+    // /**
     //  * Retrieves the matching route(s) based on the provided pathname.
     //  * @param {string} [pathname=this.pathname] - The current pathname to match against.
     //  * @param {Array} [routes=this.routes] - The array of routes to search within.
@@ -74,8 +73,7 @@ class Router {
         }
     }
 
-    //
-    /**
+    // /**
     //  * Handles navigation events, triggering the route change process.
     //  * @static
     //  * @param {Event} event - The navigation event.
@@ -129,8 +127,7 @@ class Router {
         this.emit("onRouterNavigateSuccess", {});
     }
 
-    //
-    /**
+    // /**
     //  * Removes components from previous routes that are no longer in use.
     //  * @static
     //  * @param {Array} routes - The array of current routes.
@@ -150,8 +147,7 @@ class Router {
         }
     }
 
-    //
-    /**
+    // /**
     //  * Renders the specified component for the given route into the provided outlet.
     //  * @static
     //  * @param {Object} route - The route object containing the component to render.
@@ -161,8 +157,7 @@ class Router {
         if (!route.component.isConnected) outlet.parentElement.insertBefore(route.component, outlet.nextElementSibling);
     }
 
-    //
-    /**
+    // /**
     //  * Retrieves the outlet element for the specified route.
     //  * @static
     //  * @param {HTMLElement} container - The container element where the outlet is located.
@@ -197,8 +192,7 @@ class Router {
         });
     }
 
-    //
-    /**
+    // /**
     //  * Sets the container for the specified route.
     //  * @static
     //  * @param {Object} route - The route object.
@@ -208,8 +202,7 @@ class Router {
         return route.parent?.component || document.body;
     }
 
-    //
-    /**
+    // /**
     //  * Loads the component for the specified route.
     //  * @static
     //  * @param {Object} route - The route object containing load information.
@@ -221,8 +214,7 @@ class Router {
         }
     }
 
-    //
-    /**
+    // /**
     //  * Handles the beforeLoad event for the specified route.
     //  * @static
     //  * @param {Object} route - The route object containing beforeLoad information.
@@ -239,8 +231,7 @@ class Router {
         });
     }
 
-    //
-    /**
+    // /**
     //  * Sets the AbortController for handling route cancellations.
     //  * @static
     //  */
@@ -267,8 +258,7 @@ class Router {
         }
     }
 
-    //
-    /**
+    // /**
     //  * Handles navigate events triggered by user interactions.
     //  * @static
     //  * @param {Event} event - The navigate event.
@@ -282,8 +272,7 @@ class Router {
         }
     }
 
-    //
-    /**
+    // /**
     //  * Emits a custom event of the specified type.
     //  * @static
     //  * @param {string} type - The type of event to emit.
@@ -304,8 +293,7 @@ class Router {
      * @type {Array}
      */
     static routes = [];
-    //
-    /**
+    // /**
     //  * The router options.
     //  * @static
     //  * @property {Object} event

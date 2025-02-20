@@ -51,8 +51,7 @@ class Store {
         });
     }
 
-    //
-    /**
+    // /**
     //  * Performs a deep search on an item based on the query.
     //  * @param {any} item - The item to search within.
     //  * @param {string} q - The query string.
@@ -90,8 +89,7 @@ class Store {
         return data.filter((item) => this.deepSearch(item, q));
     }
 
-    //
-    /**
+    // /**
     //  * Retrieves a nested value from an item based on the specified name.
     //  * @param {Object} item - The item to retrieve the value from.
     //  * @param {string} name - The name of the property to retrieve.

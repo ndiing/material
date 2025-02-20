@@ -17,8 +17,7 @@ class LayoutObserver {
         this.handleChange = this.handleChange.bind(this);
     }
 
-    //
-    /**
+    // /**
     //  * Handles layout change events by destroying the current layout and initializing a new one.
     //  */
     handleChange() {

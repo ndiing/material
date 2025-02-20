@@ -55,8 +55,7 @@ class MDListComponent extends MdComponent {
         return item[this.fieldMap[name] || name];
     }
 
-    //
-    /**
+    // /**
     //  * Renders a list item.
     //  * @param {Object} item - The item data.
     //  * @returns {TemplateResult} The rendered template for the list item.
@@ -94,8 +93,7 @@ class MDListComponent extends MdComponent {
         `;
     }
 
-    //
-    /**
+    // /**
     //  * Renders the list.
     //  * @returns {TemplateResult} The rendered template for the list.
     //  */
@@ -103,8 +101,7 @@ class MDListComponent extends MdComponent {
         return this.itemsVirtual?.map((item) => this.renderListItem(item));
     }
 
-    //
-    /**
+    // /**
     //  * Called when the element is connected to the DOM.
     //  * Adds the 'md-list' class and initializes virtual scrolling if enabled.
     //  */
@@ -126,8 +123,7 @@ class MDListComponent extends MdComponent {
         }
     }
 
-    //
-    /**
+    // /**
     //  * Called when the element is disconnected from the DOM.
     //  * Removes the virtual scrolling event listener and destroys the virtual instance if enabled.
     //  */
@@ -141,8 +137,7 @@ class MDListComponent extends MdComponent {
         this.hasConnected = true;
     }
 
-    //
-    /**
+    // /**
     //  * Called when the properties of the component are updated.
     //  * @param {Map} changedProperties - The properties that changed.
     //  */
@@ -173,8 +168,7 @@ class MDListComponent extends MdComponent {
         this.itemsVirtual = event.detail.data;
     }
 
-    //
-    /**
+    // /**
     //  * Handles the click event on a list item.
     //  * @param {Event} event - The click event.
     //  */
@@ -200,8 +194,7 @@ class MDListComponent extends MdComponent {
         this.emit("onListItemClick", { event });
     }
 
-    //
-    /**
+    // /**
     //  * Handles the native input event on a list item checkbox.
     //  * @param {Event} event - The native input event.
     //  */
@@ -217,8 +210,7 @@ class MDListComponent extends MdComponent {
         this.emit("onListItemCheckboxNativeInput", { event });
     }
 
-    //
-    /**
+    // /**
     //  *
     //  * @param {*} event
     //  */
@@ -236,8 +228,7 @@ class MDListComponent extends MdComponent {
         this.emit("onListItemRadioButtonNativeInput", { event });
     }
 
-    //
-    /**
+    // /**
     //  *
     //  * @param {*} event
     //  */
