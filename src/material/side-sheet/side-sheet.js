@@ -88,7 +88,7 @@ class MDSideSheetComponent extends MdComponent {
         return html` ${this.icons?.length || this.label || this.sublabel || this.actions?.length ? html` <div class="md-side-sheet__header">${this.icons?.length ? html` <div class="md-side-sheet__icons">${this.icons.map((icon) => this.renderComponent(icon, "icon"))}</div> ` : nothing} ${this.label || this.sublabel ? html` <div class="md-side-sheet__labels">${this.label ? html`<div class="md-side-sheet__label">${this.label}</div>` : nothing} ${this.sublabel ? html`<div class="md-side-sheet__sublabel">${this.sublabel}</div>` : nothing}</div> ` : nothing} ${this.actions?.length ? html` <div class="md-side-sheet__actions">${this.actions.map((action) => this.renderComponent(action, "icon-button"))}</div> ` : nothing}</div> ` : nothing} ${this.body?.length || this.buttons?.length ? html` <div class="md-side-sheet__wrapper">${this.body?.length ? html`<div class="md-side-sheet__body">${this.body}</div>` : nothing} ${this.buttons?.length ? html` <div class="md-side-sheet__footer">${this.buttons?.length ? html` <div class="md-side-sheet__buttons">${this.buttons.map((button) => this.renderComponent(button, "button"))}</div> ` : nothing}</div> ` : nothing}</div> ` : nothing} `;
     }
 
-    async connectedCallback() {
+     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-side-sheet");
         this.style.setProperty("--md-comp-side-sheet-animation", "none");
@@ -97,16 +97,23 @@ class MDSideSheetComponent extends MdComponent {
         this.handleSideSheetScrimClose = this.handleSideSheetScrimClose.bind(this);
         this.sideSheetScrim.addEventListener("onScrimClose", this.handleSideSheetScrimClose);
 
-        if (this.modal && this.open) this.sideSheetScrim.show();
-        await this.updateComplete;
-        this.style.setProperty("--md-comp-side-sheet-width", this.clientWidth + "px");
-        this.style.setProperty("--md-comp-side-sheet-height", this.clientHeight + "px");
+        if (this.modal ) this.sideSheetScrim.open=this.open
+        
+        
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
         this.sideSheetScrim.removeEventListener("onScrimClose", this.handleSideSheetScrimClose);
         this.sideSheetScrim.remove();
+    }
+
+    firstUpdated(changedProperties) {
+        super.firstUpdated(changedProperties);
+        
+        this.style.setProperty("--md-comp-side-sheet-width", this.clientWidth + "px");
+        this.style.setProperty("--md-comp-side-sheet-height", this.clientHeight + "px");
+        
     }
 
     updated(changedProperties) {
