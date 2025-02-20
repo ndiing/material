@@ -50,18 +50,19 @@ class MDChipComponent extends MdComponent {
         `;
     }
 
-    async connectedCallback() {
+    connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-chip");
-        await this.updateComplete;
+        
 
-        this.ripple = new Ripple(this, {});
     }
 
-    async disconnectedCallback() {
-        super.disconnectedCallback();
+    
+    firstUpdated(changedProperties){
+        super.firstUpdated(changedProperties)
 
-        if (this.ripple) this.ripple.destroy();
+        
+        this.ripple = new Ripple(this, {});
     }
 
     handleChipActionClick(event) {
