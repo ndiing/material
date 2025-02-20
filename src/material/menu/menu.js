@@ -38,7 +38,7 @@ class MDMenuComponent extends MdComponent {
         `
     }
 
-    async connectedCallback() {
+     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-menu");
         this.style.setProperty("--md-comp-menu-animation", "none");
@@ -48,7 +48,7 @@ class MDMenuComponent extends MdComponent {
     /**
      * @param {Any} [options={}]
      */
-    async show(options = {}) {
+     show(options = {}) {
         this.style.setProperty("--md-comp-menu-height", this.clientHeight + "px");
         this.style.setProperty("--md-comp-menu-width", this.clientWidth + "px");
         this.style.removeProperty("--md-comp-menu-animation");
