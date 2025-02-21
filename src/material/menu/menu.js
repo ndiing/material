@@ -25,6 +25,7 @@ class MDMenuComponent extends MdComponent {
         this.items = [];
         this.virtualOptions = {
             rowHeight: 48,
+            item: "md-list-row",
         };
     }
 
@@ -63,7 +64,7 @@ class MDMenuComponent extends MdComponent {
     /**
      * @param {Any} [options={}]
      */
-    show(options = {}) {
+    async show(options = {}) {
         this.style.setProperty("--md-comp-menu-height", this.clientHeight + "px");
         this.style.setProperty("--md-comp-menu-width", this.clientWidth + "px");
 
@@ -85,6 +86,11 @@ class MDMenuComponent extends MdComponent {
         });
 
         this.open = true;
+
+        let element=this.querySelector('md-list-item[selected]')
+        if(!element)
+        {element=this.querySelector('md-list-item')}
+        element.focus()
 
         /**
          * @event onMenuShow

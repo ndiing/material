@@ -48,6 +48,7 @@ class MDListComponent extends MdComponent {
         this.storeOptions = {};
         this.virtualOptions = {
             item: "md-list-row",
+            rowHeight: 56,
         };
     }
 
@@ -119,10 +120,7 @@ class MDListComponent extends MdComponent {
         if (this.virtualize) {
             this.handleListVirtualScroll = this.handleListVirtualScroll.bind(this);
             this.addEventListener("onVirtualScroll", this.handleListVirtualScroll);
-            this.virtual = new Virtual(this, {
-                item: "md-list-row",
-                ...this.virtualOptions,
-            });
+            this.virtual = new Virtual(this, this.virtualOptions);
             if (this.hasConnected) this.load();
         }
     }
@@ -170,23 +168,54 @@ class MDListComponent extends MdComponent {
         }
     }
 
-    async handleListWindowKeydownArrowUp(event) {
-        event.preventDefault();
+    async selectByOffset(offset) {
+        const startIndex = this.itemsStore.findIndex((item) => item.selected);
+        const total = this.itemsStore.length;
+        const currentIndex = offset < 0 ? Math.max(startIndex + offset, 0) : Math.min(startIndex + offset, total - 1);
 
-        const currIndex = this.itemsStore.findIndex((item) => item.selected);
-        const length = this.itemsStore.length;
-        const offset = -1;
-        // const nextIndex = (currIndex + length + offset) % length;
-        const nextIndex = Math.max(0, currIndex + offset);
         this.itemsStore.forEach((item, index) => {
-            item.selected = index === nextIndex;
+            item.selected = index === currentIndex;
         });
         this.requestUpdate();
 
-        await this.updateComplete;
+        await this.updateComplete
 
-        const element = this.querySelector("md-list-item[selected]");
-        element.scrollIntoView({ block: "nearest" });
+        const element = this.querySelector('md-list-item[selected]')
+        element.focus()
+
+        return currentIndex;
+    }
+
+    scrollToIndex(currentIndex, block = "nearest") {
+        const rowHeight = this.virtualOptions.rowHeight;
+
+        if (block === "nearest") {
+            const viewportHeight = Math.floor(this.clientHeight / rowHeight) * rowHeight;
+
+            if (currentIndex * rowHeight < this.scrollTop) {
+                this.scrollTop = Math.max(currentIndex * rowHeight, 0);
+            } else if ((currentIndex + 1) * rowHeight > viewportHeight + this.scrollTop) {
+                this.scrollTop = (currentIndex + 1) * rowHeight - viewportHeight;
+            }
+        } else if (block === "center") {
+            const rowTotal = Math.floor(this.clientHeight / rowHeight);
+            const middleIndex = Math.floor((rowTotal - 1) / 2);
+
+            this.scrollTop = (currentIndex - middleIndex) * rowHeight;
+        } else if (block === "start") {
+            this.scrollTop = currentIndex * rowHeight;
+        } else if (block === "end") {
+            const rowTotal = Math.floor(this.clientHeight / rowHeight);
+            
+            this.scrollTop = (currentIndex - (rowTotal - 1)) * rowHeight;
+        }
+    }
+
+    async handleListWindowKeydownArrowUp(event) {
+        event.preventDefault();
+
+        const currentIndex = await this.selectByOffset(-1);
+        this.scrollToIndex(currentIndex);
 
         /**
          * @event onListWindowKeydownArrowUp
@@ -199,20 +228,8 @@ class MDListComponent extends MdComponent {
     async handleListWindowKeydownArrowDown(event) {
         event.preventDefault();
 
-        const currIndex = this.itemsStore.findIndex((item) => item.selected);
-        const length = this.itemsStore.length;
-        const offset = 1;
-        // const nextIndex = (currIndex + length + offset) % length;
-        const nextIndex = Math.min(currIndex + offset, length - 1);
-        this.itemsStore.forEach((item, index) => {
-            item.selected = index === nextIndex;
-        });
-        this.requestUpdate();
-
-        await this.updateComplete;
-
-        const element = this.querySelector("md-list-item[selected]");
-        element.scrollIntoView({ block: "nearest" });
+        const currentIndex = await this.selectByOffset(1);
+        this.scrollToIndex(currentIndex);
 
         /**
          * @event onListWindowKeydownArrowDown
