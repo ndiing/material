@@ -9,23 +9,13 @@ class DemoIconButton extends MdComponent {
                         <md-icon-button icon="image"></md-icon-button>
                     </div>
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
-                        <md-icon-button
-                            icon="image"
-                            toggle
-                        ></md-icon-button>
+                        <md-icon-button icon="image" toggle></md-icon-button>
                     </div>
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
-                        <md-icon-button
-                            icon="image"
-                            toggle
-                            selected
-                        ></md-icon-button>
+                        <md-icon-button icon="image" toggle selected></md-icon-button>
                     </div>
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
-                        <md-icon-button
-                            icon="image"
-                            disabled
-                        ></md-icon-button>
+                        <md-icon-button icon="image" disabled></md-icon-button>
                     </div>
                 </div>
             </div>

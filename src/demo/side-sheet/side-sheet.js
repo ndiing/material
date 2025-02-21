@@ -8,25 +8,12 @@ class DemoSideSheet extends MdComponent {
                     <div class="md-layout">
                         <div class="md-layout__grid">
                             <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
-                                <md-button
-                                    variant="filled-tonal"
-                                    label="Toggle Side Sheet"
-                                    @click="${(event) => sideSheet.toggle()}"
-                                ></md-button>
+                                <md-button variant="filled-tonal" label="Toggle Side Sheet" @click="${(event) => sideSheet.toggle()}"></md-button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <md-side-sheet
-                    id="sideSheet"
-                    .actions="${[{ icon: "image" }]}"
-                    label="Label"
-                    .buttons="${[{ component: "spacer" }, { label: "Label" }, { label: "Label" }]}"
-                    open
-                    @onSideSheetIconButtonClick="${(event) => sideSheet.toggle()}"
-                    @onSideSheetButtonClick="${(event) => sideSheet.toggle()}"
-                    >Body</md-side-sheet
-                >
+                <md-side-sheet id="sideSheet" .actions="${[{ icon: "image" }]}" label="Label" .buttons="${[{ component: "spacer" }, { label: "Label" }, { label: "Label" }]}" open @onSideSheetIconButtonClick="${(event) => sideSheet.toggle()}" @onSideSheetButtonClick="${(event) => sideSheet.toggle()}">Body</md-side-sheet>
             </div>
         `;
     }

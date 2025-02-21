@@ -6,11 +6,7 @@ class DemoTabs extends MdComponent {
             <div class="md-layout">
                 <div class="md-layout__grid">
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
-                        <md-tabs
-                            items=""
-                            rippleOptions=""
-                            variant=""
-                        ></md-tabs>
+                        <md-tabs items="" rippleOptions="" variant=""></md-tabs>
                     </div>
                 </div>
             </div>

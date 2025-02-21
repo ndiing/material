@@ -8,21 +8,12 @@ class DemoTopAppBar extends MdComponent {
                     <div class="md-layout">
                         <div class="md-layout__grid">
                             <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
-                                <md-button
-                                    variant="filled-tonal"
-                                    label="Toggle Top App Bar"
-                                    @click="${() => topAppBar.toggle()}"
-                                ></md-button>
+                                <md-button variant="filled-tonal" label="Toggle Top App Bar" @click="${() => topAppBar.toggle()}"></md-button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <md-top-app-bar
-                    id="topAppBar"
-                    .leadingActions="${[{ icon: "image" }]}"
-                    label="Label"
-                    .trailingActions="${[{ icon: "image" }, { icon: "image" }, { icon: "image" }]}"
-                ></md-top-app-bar>
+                <md-top-app-bar id="topAppBar" .leadingActions="${[{ icon: "image" }]}" label="Label" .trailingActions="${[{ icon: "image" }, { icon: "image" }, { icon: "image" }]}"></md-top-app-bar>
             </div>
         `;
     }

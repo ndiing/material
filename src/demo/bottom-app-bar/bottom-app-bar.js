@@ -15,21 +15,12 @@ class DemoBottomAppBar extends MdComponent {
                     <div class="md-layout">
                         <div class="md-layout__grid">
                             <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
-                                <md-button
-                                    variant="filled-tonal"
-                                    label="Toggle Bottom App Bar"
-                                    @click="${() => bottomAppBar.toggle()}"
-                                ></md-button>
+                                <md-button variant="filled-tonal" label="Toggle Bottom App Bar" @click="${() => bottomAppBar.toggle()}"></md-button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <md-bottom-app-bar
-                    id="bottomAppBar"
-                    .actions="${this.actions}"
-                    .fab="${this.fab}"
-                    open
-                ></md-bottom-app-bar>
+                <md-bottom-app-bar id="bottomAppBar" .actions="${this.actions}" .fab="${this.fab}" open></md-bottom-app-bar>
             </div>
         `;
     }

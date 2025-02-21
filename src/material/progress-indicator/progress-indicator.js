@@ -44,39 +44,11 @@ class MDProgressIndicatorComponent extends MdComponent {
         this.strokeDashoffset = this.strokeDasharray * (1 - this.value / this.max);
         return html`
             <div class="md-progress-indicator__wrapper">
-                <svg
-                    class="md-progress-indicator__track"
-                    viewBox="0 0 100 100"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <circle
-                        cx="50"
-                        cy="50"
-                        r="${this.r}"
-                        fill="transparent"
-                        stroke="var(--md-sys-color-secondary-container)"
-                        stroke-width="${this.strokeWidth}"
-                        stroke-linecap="round"
-                        stroke-dasharray="${this.strokeDasharray}"
-                        stroke-dashoffset="0"
-                    />
+                <svg class="md-progress-indicator__track" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="${this.r}" fill="transparent" stroke="var(--md-sys-color-secondary-container)" stroke-width="${this.strokeWidth}" stroke-linecap="round" stroke-dasharray="${this.strokeDasharray}" stroke-dashoffset="0" />
                 </svg>
-                <svg
-                    class="md-progress-indicator__indicator"
-                    viewBox="0 0 100 100"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
-                    <circle
-                        cx="50"
-                        cy="50"
-                        r="${this.r}"
-                        fill="transparent"
-                        stroke="var(--md-sys-color-primary)"
-                        stroke-width="${this.strokeWidth}"
-                        stroke-linecap="round"
-                        stroke-dasharray="${this.strokeDasharray}"
-                        stroke-dashoffset="${this.strokeDashoffset}"
-                    />
+                <svg class="md-progress-indicator__indicator" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="${this.r}" fill="transparent" stroke="var(--md-sys-color-primary)" stroke-width="${this.strokeWidth}" stroke-linecap="round" stroke-dasharray="${this.strokeDasharray}" stroke-dashoffset="${this.strokeDashoffset}" />
                 </svg>
             </div>
         `;

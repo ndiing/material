@@ -45,14 +45,14 @@ class DemoMain extends MdComponent {
                 label: "chips",
                 children: [
                     { label: "chips-multi-select", routerLink: "/demo/chips-multi-select", group: "chips" },
-                    { label: "chips-single-select", routerLink: "/demo/chips-single-select", group: "chips" },
+                    // { label: "chips-single-select", routerLink: "/demo/chips-single-select", group: "chips" },
                     { label: "chips", routerLink: "/demo/chips", group: "chips" },
                 ],
             },
             {
                 label: "data-table",
                 children: [
-                    { label: "data-table-cell", routerLink: "/demo/data-table-cell", group: "data-table" },
+                    // { label: "data-table-cell", routerLink: "/demo/data-table-cell", group: "data-table" },
                     { label: "data-table-checkbox", routerLink: "/demo/data-table-checkbox", group: "data-table" },
                     { label: "data-table-resizable", routerLink: "/demo/data-table-resizable", group: "data-table" },
                     { label: "data-table-sortable", routerLink: "/demo/data-table-sortable", group: "data-table" },
@@ -107,10 +107,10 @@ class DemoMain extends MdComponent {
                     { label: "list-checkbox", routerLink: "/demo/list-checkbox", group: "list" },
                     { label: "list-icon", routerLink: "/demo/list-icon", group: "list" },
                     { label: "list-image", routerLink: "/demo/list-image", group: "list" },
-                    { label: "list-item", routerLink: "/demo/list-item", group: "list" },
+                    // { label: "list-item", routerLink: "/demo/list-item", group: "list" },
                     { label: "list-multi-select", routerLink: "/demo/list-multi-select", group: "list" },
                     { label: "list-radio-button", routerLink: "/demo/list-radio-button", group: "list" },
-                    { label: "list-row", routerLink: "/demo/list-row", group: "list" },
+                    // { label: "list-row", routerLink: "/demo/list-row", group: "list" },
                     { label: "list-single-select", routerLink: "/demo/list-single-select", group: "list" },
                     { label: "list-switch", routerLink: "/demo/list-switch", group: "list" },
                     { label: "list-text", routerLink: "/demo/list-text", group: "list" },
@@ -119,7 +119,6 @@ class DemoMain extends MdComponent {
                     { label: "list", routerLink: "/demo/list", group: "list" },
                 ],
             },
-            { label: "main", children: [{ label: "main", routerLink: "/demo/main", group: "main" }] },
             { label: "menu", children: [{ label: "menu", routerLink: "/demo/menu", group: "menu" }] },
             { label: "month-field", children: [{ label: "month-field", routerLink: "/demo/month-field", group: "month-field" }] },
             {
@@ -144,14 +143,6 @@ class DemoMain extends MdComponent {
                 ],
             },
             {
-                label: "navigation-list",
-                children: [
-                    { label: "navigation-list-item", routerLink: "/demo/navigation-list-item", group: "navigation-list" },
-                    { label: "navigation-list-row", routerLink: "/demo/navigation-list-row", group: "navigation-list" },
-                    { label: "navigation-list", routerLink: "/demo/navigation-list", group: "navigation-list" },
-                ],
-            },
-            {
                 label: "navigation-rail",
                 children: [
                     { label: "navigation-rail-no-label", routerLink: "/demo/navigation-rail-no-label", group: "navigation-rail" },
@@ -173,7 +164,7 @@ class DemoMain extends MdComponent {
                 label: "segmented-button",
                 children: [
                     { label: "segmented-button-multi-select", routerLink: "/demo/segmented-button-multi-select", group: "segmented-button" },
-                    { label: "segmented-button-single-select", routerLink: "/demo/segmented-button-single-select", group: "segmented-button" },
+                    // { label: "segmented-button-single-select", routerLink: "/demo/segmented-button-single-select", group: "segmented-button" },
                     { label: "segmented-button", routerLink: "/demo/segmented-button", group: "segmented-button" },
                 ],
             },
@@ -189,7 +180,7 @@ class DemoMain extends MdComponent {
                     { label: "sheet-south", routerLink: "/demo/sheet-south", group: "sheet" },
                     { label: "sheet-west-modal", routerLink: "/demo/sheet-west-modal", group: "sheet" },
                     { label: "sheet-west", routerLink: "/demo/sheet-west", group: "sheet" },
-                    { label: "sheet", routerLink: "/demo/sheet", group: "sheet" },
+                    // { label: "sheet", routerLink: "/demo/sheet", group: "sheet" },
                 ],
             },
             {
@@ -206,7 +197,7 @@ class DemoMain extends MdComponent {
                     { label: "slider-continuous", routerLink: "/demo/slider-continuous", group: "slider" },
                     { label: "slider-discrete", routerLink: "/demo/slider-discrete", group: "slider" },
                     { label: "slider-range-selection", routerLink: "/demo/slider-range-selection", group: "slider" },
-                    { label: "slider", routerLink: "/demo/slider", group: "slider" },
+                    // { label: "slider", routerLink: "/demo/slider", group: "slider" },
                 ],
             },
             { label: "snackbar", children: [{ label: "snackbar", routerLink: "/demo/snackbar", group: "snackbar" }] },
@@ -214,10 +205,10 @@ class DemoMain extends MdComponent {
             {
                 label: "tabs",
                 children: [
-                    { label: "tab", routerLink: "/demo/tab", group: "tabs" },
+                    // { label: "tab", routerLink: "/demo/tab", group: "tabs" },
                     { label: "tabs-primary", routerLink: "/demo/tabs-primary", group: "tabs" },
                     { label: "tabs-secondary", routerLink: "/demo/tabs-secondary", group: "tabs" },
-                    { label: "tabs", routerLink: "/demo/tabs", group: "tabs" },
+                    // { label: "tabs", routerLink: "/demo/tabs", group: "tabs" },
                 ],
             },
             { label: "test", children: [{ label: "test", routerLink: "/demo/test", group: "test" }] },
@@ -242,8 +233,8 @@ class DemoMain extends MdComponent {
             {
                 label: "tree",
                 children: [
-                    { label: "tree-item", routerLink: "/demo/tree-item", group: "tree" },
-                    { label: "tree-row", routerLink: "/demo/tree-row", group: "tree" },
+                    // { label: "tree-item", routerLink: "/demo/tree-item", group: "tree" },
+                    // { label: "tree-row", routerLink: "/demo/tree-row", group: "tree" },
                     { label: "tree", routerLink: "/demo/tree", group: "tree" },
                 ],
             },
@@ -263,19 +254,8 @@ class DemoMain extends MdComponent {
     render() {
         return html`
             <md-layout-border>
-                <md-top-app-bar
-                    id="demoMainTopAppBar"
-                    label="Demo"
-                    .leadingActions="${this.demoMainTopAppBarLeadingActions}"
-                    @onTopAppBarIconButtonClick="${this.handleDemoMainTopAppBarIconButtonClick}"
-                ></md-top-app-bar>
-                <md-navigation-drawer
-                    id="demoMainNavigationDrawer"
-                    type="tree"
-                    .items="${this.items}"
-                    @onTreeItemClick="${this.handleDemoMainNavigationDrawerTreeItemClick}"
-                    @onTreeKeydownEnter="${this.handleDemoMainNavigationDrawerTreeKeydownEnter}"
-                ></md-navigation-drawer>
+                <md-top-app-bar id="demoMainTopAppBar" label="Demo" .leadingActions="${this.demoMainTopAppBarLeadingActions}" @onTopAppBarIconButtonClick="${this.handleDemoMainTopAppBarIconButtonClick}"></md-top-app-bar>
+                <md-navigation-drawer id="demoMainNavigationDrawer" type="tree" .items="${this.items}" @onTreeItemClick="${this.handleDemoMainNavigationDrawerTreeItemClick}" @onTreeKeydownEnter="${this.handleDemoMainNavigationDrawerTreeKeydownEnter}"></md-navigation-drawer>
                 <md-layout-border-item region="center">
                     <md-outlet></md-outlet>
                 </md-layout-border-item>

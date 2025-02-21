@@ -632,21 +632,9 @@ class DemoDataTableCheckbox extends MdComponent {
     render() {
         return html`
             <div class="md-layout">
-                <div
-                    class="md-layout__grid"
-                    style="height:100%;min-height:0;"
-                >
-                    <div
-                        class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4"
-                        style="height:100%;min-height:0;"
-                    >
-                        <md-data-table
-                            .headers="${this.headers}"
-                            .bodies="${this.bodies}"
-                            .footers="${this.footers}"
-                            .data="${this.data}"
-                            checkbox
-                        ></md-data-table>
+                <div class="md-layout__grid" style="height:100%;min-height:0;">
+                    <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4" style="height:100%;min-height:0;">
+                        <md-data-table .headers="${this.headers}" .bodies="${this.bodies}" .footers="${this.footers}" .data="${this.data}" checkbox></md-data-table>
                     </div>
                 </div>
             </div>

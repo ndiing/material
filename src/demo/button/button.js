@@ -9,23 +9,13 @@ class DemoButton extends MdComponent {
                         <md-button label="Label"></md-button>
                     </div>
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
-                        <md-button
-                            icon="image"
-                            label="Label"
-                        ></md-button>
+                        <md-button icon="image" label="Label"></md-button>
                     </div>
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
-                        <md-button
-                            label="Label"
-                            disabled
-                        ></md-button>
+                        <md-button label="Label" disabled></md-button>
                     </div>
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
-                        <md-button
-                            icon="image"
-                            label="Label"
-                            disabled
-                        ></md-button>
+                        <md-button icon="image" label="Label" disabled></md-button>
                     </div>
                 </div>
             </div>

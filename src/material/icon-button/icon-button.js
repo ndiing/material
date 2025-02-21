@@ -41,12 +41,7 @@ class MDIconButtonComponent extends MdComponent {
             icon = this.icons[~~this.selected] || this.icons[0];
         }
         return html`
-            <button
-                class="md-icon-button__native"
-                .type="${ifDefined(this.type)}"
-            >
-                icon-button
-            </button>
+            <button class="md-icon-button__native" .type="${ifDefined(this.type)}">icon-button</button>
             <md-icon class="md-icon-button__icon">${icon}</md-icon>
         `;
     }

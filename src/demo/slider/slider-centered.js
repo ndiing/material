@@ -6,13 +6,7 @@ class DemoSliderCentered extends MdComponent {
             <div class="md-layout">
                 <div class="md-layout__grid">
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
-                        <md-slider
-                            variant="centered"
-                            min="-5000000000"
-                            max="5000000000"
-                            name="slider"
-                            value="0"
-                        ></md-slider>
+                        <md-slider variant="centered" min="-5000000000" max="5000000000" name="slider" value="0"></md-slider>
                     </div>
                 </div>
             </div>

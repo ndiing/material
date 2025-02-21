@@ -32487,7 +32487,7 @@
         "meta": {
             "range": [
                 251,
-                2757
+                2682
             ],
             "filename": "icon-button.js",
             "lineno": 9,
@@ -33073,7 +33073,7 @@
         "meta": {
             "range": [
                 251,
-                2757
+                2682
             ],
             "filename": "icon-button.js",
             "lineno": 9,
@@ -33159,7 +33159,7 @@
         "meta": {
             "range": [
                 1040,
-                1475
+                1400
             ],
             "filename": "icon-button.js",
             "lineno": 37,
@@ -33240,11 +33240,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1481,
-                1966
+                1406,
+                1891
             ],
             "filename": "icon-button.js",
-            "lineno": 54,
+            "lineno": 49,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\icon-button",
             "code": {
@@ -33270,11 +33270,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1599,
-                1665
+                1524,
+                1590
             ],
             "filename": "icon-button.js",
-            "lineno": 58,
+            "lineno": 53,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\icon-button",
             "code": {
@@ -33296,11 +33296,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1780,
-                1959
+                1705,
+                1884
             ],
             "filename": "icon-button.js",
-            "lineno": 63,
+            "lineno": 58,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\icon-button",
             "code": {
@@ -33322,11 +33322,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1825,
-                1859
+                1750,
+                1784
             ],
             "filename": "icon-button.js",
-            "lineno": 64,
+            "lineno": 59,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\icon-button",
             "code": {
@@ -33346,11 +33346,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1873,
-                1888
+                1798,
+                1813
             ],
             "filename": "icon-button.js",
-            "lineno": 65,
+            "lineno": 60,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\icon-button",
             "code": {
@@ -33370,11 +33370,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1902,
-                1912
+                1827,
+                1837
             ],
             "filename": "icon-button.js",
-            "lineno": 66,
+            "lineno": 61,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\icon-button",
             "code": {
@@ -33394,11 +33394,11 @@
         "comment": "",
         "meta": {
             "range": [
-                1972,
-                2184
+                1897,
+                2109
             ],
             "filename": "icon-button.js",
-            "lineno": 71,
+            "lineno": 66,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\icon-button",
             "code": {
@@ -33423,11 +33423,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2190,
-                2485
+                2115,
+                2410
             ],
             "filename": "icon-button.js",
-            "lineno": 80,
+            "lineno": 75,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\icon-button",
             "code": {
@@ -33454,11 +33454,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2491,
-                2755
+                2416,
+                2680
             ],
             "filename": "icon-button.js",
-            "lineno": 90,
+            "lineno": 85,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\icon-button",
             "code": {
@@ -33485,11 +33485,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2561,
-                2591
+                2486,
+                2516
             ],
             "filename": "icon-button.js",
-            "lineno": 92,
+            "lineno": 87,
             "columnno": 12,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\icon-button",
             "code": {
@@ -33511,7 +33511,7 @@
         "comment": "/**\n         * @event onIconButtonClick\n         * @property {Object} event\n         */",
         "meta": {
             "filename": "icon-button.js",
-            "lineno": 94,
+            "lineno": 89,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\icon-button",
             "code": {}
@@ -33535,11 +33535,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2740,
-                2745
+                2665,
+                2670
             ],
             "filename": "icon-button.js",
-            "lineno": 98,
+            "lineno": 93,
             "columnno": 41,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\icon-button",
             "code": {
@@ -33559,11 +33559,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2833,
-                2854
+                2758,
+                2779
             ],
             "filename": "icon-button.js",
-            "lineno": 104,
+            "lineno": 99,
             "columnno": 9,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\icon-button",
             "code": {
@@ -53758,7 +53758,7 @@
         "meta": {
             "range": [
                 215,
-                3386
+                2760
             ],
             "filename": "progress-indicator.js",
             "lineno": 8,
@@ -54044,7 +54044,7 @@
         "meta": {
             "range": [
                 215,
-                3386
+                2760
             ],
             "filename": "progress-indicator.js",
             "lineno": 8,
@@ -54159,7 +54159,7 @@
         "meta": {
             "range": [
                 954,
-                2746
+                2120
             ],
             "filename": "progress-indicator.js",
             "lineno": 40,
@@ -54291,11 +54291,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2752,
-                2954
+                2126,
+                2328
             ],
             "filename": "progress-indicator.js",
-            "lineno": 85,
+            "lineno": 57,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress-indicator",
             "code": {
@@ -54320,11 +54320,11 @@
         "comment": "",
         "meta": {
             "range": [
-                2960,
-                3076
+                2334,
+                2450
             ],
             "filename": "progress-indicator.js",
-            "lineno": 93,
+            "lineno": 65,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress-indicator",
             "code": {
@@ -54349,11 +54349,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3082,
-                3384
+                2456,
+                2758
             ],
             "filename": "progress-indicator.js",
-            "lineno": 99,
+            "lineno": 71,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress-indicator",
             "code": {
@@ -54380,11 +54380,11 @@
         "comment": "",
         "meta": {
             "range": [
-                3476,
-                3504
+                2850,
+                2878
             ],
             "filename": "progress-indicator.js",
-            "lineno": 112,
+            "lineno": 84,
             "columnno": 9,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\progress-indicator",
             "code": {
@@ -71144,7 +71144,7 @@
         "meta": {
             "range": [
                 314,
-                11419
+                10963
             ],
             "filename": "text-field.js",
             "lineno": 10,
@@ -73179,7 +73179,7 @@
         "meta": {
             "range": [
                 314,
-                11419
+                10963
             ],
             "filename": "text-field.js",
             "lineno": 10,
@@ -73411,7 +73411,7 @@
         "meta": {
             "range": [
                 4643,
-                7103
+                6647
             ],
             "filename": "text-field.js",
             "lineno": 149,
@@ -73465,11 +73465,11 @@
         "comment": "",
         "meta": {
             "range": [
-                7109,
-                7602
+                6653,
+                7146
             ],
             "filename": "text-field.js",
-            "lineno": 185,
+            "lineno": 162,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
             "code": {
@@ -73495,11 +73495,11 @@
         "comment": "",
         "meta": {
             "range": [
-                7181,
-                7232
+                6725,
+                6776
             ],
             "filename": "text-field.js",
-            "lineno": 188,
+            "lineno": 165,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
             "code": {
@@ -73521,11 +73521,11 @@
         "comment": "",
         "meta": {
             "range": [
-                7397,
-                7487
+                6941,
+                7031
             ],
             "filename": "text-field.js",
-            "lineno": 194,
+            "lineno": 171,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
             "code": {
@@ -73547,11 +73547,11 @@
         "comment": "",
         "meta": {
             "range": [
-                7608,
-                8192
+                7152,
+                7736
             ],
             "filename": "text-field.js",
-            "lineno": 198,
+            "lineno": 175,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
             "code": {
@@ -73578,11 +73578,11 @@
         "comment": "",
         "meta": {
             "range": [
-                8198,
-                8430
+                7742,
+                7974
             ],
             "filename": "text-field.js",
-            "lineno": 216,
+            "lineno": 193,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
             "code": {
@@ -73609,7 +73609,7 @@
         "comment": "/**\n         * @event onTextFieldFocus\n         * @property {Object} event\n         */",
         "meta": {
             "filename": "text-field.js",
-            "lineno": 218,
+            "lineno": 195,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
             "code": {}
@@ -73633,11 +73633,11 @@
         "comment": "",
         "meta": {
             "range": [
-                8415,
-                8420
+                7959,
+                7964
             ],
             "filename": "text-field.js",
-            "lineno": 222,
+            "lineno": 199,
             "columnno": 40,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
             "code": {
@@ -73657,11 +73657,11 @@
         "comment": "",
         "meta": {
             "range": [
-                8436,
-                8668
+                7980,
+                8212
             ],
             "filename": "text-field.js",
-            "lineno": 225,
+            "lineno": 202,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
             "code": {
@@ -73688,7 +73688,7 @@
         "comment": "/**\n         * @event onTextFieldBlur\n         * @property {Object} event\n         */",
         "meta": {
             "filename": "text-field.js",
-            "lineno": 227,
+            "lineno": 204,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
             "code": {}
@@ -73712,11 +73712,11 @@
         "comment": "",
         "meta": {
             "range": [
-                8653,
-                8658
+                8197,
+                8202
             ],
             "filename": "text-field.js",
-            "lineno": 231,
+            "lineno": 208,
             "columnno": 39,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
             "code": {
@@ -73736,11 +73736,11 @@
         "comment": "",
         "meta": {
             "range": [
-                8674,
-                8882
+                8218,
+                8426
             ],
             "filename": "text-field.js",
-            "lineno": 234,
+            "lineno": 211,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
             "code": {
@@ -73767,7 +73767,7 @@
         "comment": "/**\n         * @event onTextFieldInput\n         * @property {Object} event\n         */",
         "meta": {
             "filename": "text-field.js",
-            "lineno": 236,
+            "lineno": 213,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
             "code": {}
@@ -73791,11 +73791,11 @@
         "comment": "",
         "meta": {
             "range": [
-                8867,
-                8872
+                8411,
+                8416
             ],
             "filename": "text-field.js",
-            "lineno": 240,
+            "lineno": 217,
             "columnno": 40,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
             "code": {
@@ -73815,11 +73815,11 @@
         "comment": "/**\n     */",
         "meta": {
             "range": [
-                8904,
-                9193
+                8448,
+                8737
             ],
             "filename": "text-field.js",
-            "lineno": 245,
+            "lineno": 222,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
             "code": {
@@ -73843,11 +73843,11 @@
         "comment": "",
         "meta": {
             "range": [
-                8928,
-                8967
+                8472,
+                8511
             ],
             "filename": "text-field.js",
-            "lineno": 246,
+            "lineno": 223,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
             "code": {
@@ -73869,11 +73869,11 @@
         "comment": "",
         "meta": {
             "range": [
-                8977,
-                9028
+                8521,
+                8572
             ],
             "filename": "text-field.js",
-            "lineno": 247,
+            "lineno": 224,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
             "code": {
@@ -73895,11 +73895,11 @@
         "comment": "",
         "meta": {
             "range": [
-                9199,
-                9547
+                8743,
+                9091
             ],
             "filename": "text-field.js",
-            "lineno": 252,
+            "lineno": 229,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
             "code": {
@@ -73926,11 +73926,11 @@
         "comment": "",
         "meta": {
             "range": [
-                9271,
-                9322
+                8815,
+                8866
             ],
             "filename": "text-field.js",
-            "lineno": 254,
+            "lineno": 231,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
             "code": {
@@ -73952,7 +73952,7 @@
         "comment": "/**\n         * @event onTextFieldInvalid\n         * @property {Object} event\n         */",
         "meta": {
             "filename": "text-field.js",
-            "lineno": 256,
+            "lineno": 233,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
             "code": {}
@@ -73976,11 +73976,11 @@
         "comment": "",
         "meta": {
             "range": [
-                9532,
-                9537
+                9076,
+                9081
             ],
             "filename": "text-field.js",
-            "lineno": 260,
+            "lineno": 237,
             "columnno": 42,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
             "code": {
@@ -74000,11 +74000,11 @@
         "comment": "",
         "meta": {
             "range": [
-                9553,
-                9947
+                9097,
+                9491
             ],
             "filename": "text-field.js",
-            "lineno": 263,
+            "lineno": 240,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
             "code": {
@@ -74031,11 +74031,11 @@
         "comment": "",
         "meta": {
             "range": [
-                9591,
-                9621
+                9135,
+                9165
             ],
             "filename": "text-field.js",
-            "lineno": 264,
+            "lineno": 241,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
             "code": {
@@ -74057,11 +74057,11 @@
         "comment": "",
         "meta": {
             "range": [
-                9631,
-                9653
+                9175,
+                9197
             ],
             "filename": "text-field.js",
-            "lineno": 265,
+            "lineno": 242,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
             "code": {
@@ -74083,7 +74083,7 @@
         "comment": "/**\n         * @event onTextFieldReset\n         * @property {Object} event\n         */",
         "meta": {
             "filename": "text-field.js",
-            "lineno": 268,
+            "lineno": 245,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
             "code": {}
@@ -74107,11 +74107,11 @@
         "comment": "",
         "meta": {
             "range": [
-                9932,
-                9937
+                9476,
+                9481
             ],
             "filename": "text-field.js",
-            "lineno": 272,
+            "lineno": 249,
             "columnno": 40,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
             "code": {
@@ -74131,11 +74131,11 @@
         "comment": "",
         "meta": {
             "range": [
-                9953,
-                10461
+                9497,
+                10005
             ],
             "filename": "text-field.js",
-            "lineno": 275,
+            "lineno": 252,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
             "code": {
@@ -74162,11 +74162,11 @@
         "comment": "",
         "meta": {
             "range": [
-                10007,
-                10038
+                9551,
+                9582
             ],
             "filename": "text-field.js",
-            "lineno": 276,
+            "lineno": 253,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
             "code": {
@@ -74188,11 +74188,11 @@
         "comment": "",
         "meta": {
             "range": [
-                10048,
-                10087
+                9592,
+                9631
             ],
             "filename": "text-field.js",
-            "lineno": 277,
+            "lineno": 254,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
             "code": {
@@ -74214,11 +74214,11 @@
         "comment": "",
         "meta": {
             "range": [
-                10097,
-                10119
+                9641,
+                9663
             ],
             "filename": "text-field.js",
-            "lineno": 278,
+            "lineno": 255,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
             "code": {
@@ -74240,7 +74240,7 @@
         "comment": "/**\n         * @event onTextFieldIconButtonCancelClick\n         * @property {Object} event\n         */",
         "meta": {
             "filename": "text-field.js",
-            "lineno": 281,
+            "lineno": 258,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
             "code": {}
@@ -74264,11 +74264,11 @@
         "comment": "",
         "meta": {
             "range": [
-                10446,
-                10451
+                9990,
+                9995
             ],
             "filename": "text-field.js",
-            "lineno": 285,
+            "lineno": 262,
             "columnno": 56,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
             "code": {
@@ -74288,11 +74288,11 @@
         "comment": "",
         "meta": {
             "range": [
-                10467,
-                10840
+                10011,
+                10384
             ],
             "filename": "text-field.js",
-            "lineno": 288,
+            "lineno": 265,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
             "code": {
@@ -74319,11 +74319,11 @@
         "comment": "",
         "meta": {
             "range": [
-                10521,
-                10552
+                10065,
+                10096
             ],
             "filename": "text-field.js",
-            "lineno": 289,
+            "lineno": 266,
             "columnno": 14,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
             "code": {
@@ -74345,7 +74345,7 @@
         "comment": "/**\n         * @event onTextFieldIconButtonClick\n         * @property {Object} event\n         */",
         "meta": {
             "filename": "text-field.js",
-            "lineno": 294,
+            "lineno": 271,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
             "code": {}
@@ -74369,11 +74369,11 @@
         "comment": "",
         "meta": {
             "range": [
-                10825,
-                10830
+                10369,
+                10374
             ],
             "filename": "text-field.js",
-            "lineno": 298,
+            "lineno": 275,
             "columnno": 50,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
             "code": {
@@ -74393,11 +74393,11 @@
         "comment": "",
         "meta": {
             "range": [
-                10846,
-                11058
+                10390,
+                10602
             ],
             "filename": "text-field.js",
-            "lineno": 301,
+            "lineno": 278,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
             "code": {
@@ -74424,7 +74424,7 @@
         "comment": "/**\n         * @event onTextFieldClick\n         * @property {Object} event\n         */",
         "meta": {
             "filename": "text-field.js",
-            "lineno": 303,
+            "lineno": 280,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
             "code": {}
@@ -74448,11 +74448,11 @@
         "comment": "",
         "meta": {
             "range": [
-                11043,
-                11048
+                10587,
+                10592
             ],
             "filename": "text-field.js",
-            "lineno": 307,
+            "lineno": 284,
             "columnno": 40,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
             "code": {
@@ -74472,11 +74472,11 @@
         "comment": "",
         "meta": {
             "range": [
-                11064,
-                11417
+                10608,
+                10961
             ],
             "filename": "text-field.js",
-            "lineno": 310,
+            "lineno": 287,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
             "code": {
@@ -74503,7 +74503,7 @@
         "comment": "/**\n         * @event onTextFieldKeydown\n         * @property {Object} event\n         */",
         "meta": {
             "filename": "text-field.js",
-            "lineno": 314,
+            "lineno": 291,
             "columnno": 8,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
             "code": {}
@@ -74527,11 +74527,11 @@
         "comment": "",
         "meta": {
             "range": [
-                11402,
-                11407
+                10946,
+                10951
             ],
             "filename": "text-field.js",
-            "lineno": 318,
+            "lineno": 295,
             "columnno": 42,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
             "code": {
@@ -74551,11 +74551,11 @@
         "comment": "",
         "meta": {
             "range": [
-                11493,
-                11513
+                11037,
+                11057
             ],
             "filename": "text-field.js",
-            "lineno": 324,
+            "lineno": 301,
             "columnno": 9,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
             "code": {
@@ -94850,11 +94850,11 @@
         "comment": "/**\n     */",
         "meta": {
             "range": [
-                8904,
-                9193
+                8448,
+                8737
             ],
             "filename": "text-field.js",
-            "lineno": 245,
+            "lineno": 222,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
             "code": {
@@ -95143,11 +95143,11 @@
         "comment": "/**\n     */",
         "meta": {
             "range": [
-                8904,
-                9193
+                8448,
+                8737
             ],
             "filename": "text-field.js",
-            "lineno": 245,
+            "lineno": 222,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
             "code": {
@@ -95436,11 +95436,11 @@
         "comment": "/**\n     */",
         "meta": {
             "range": [
-                8904,
-                9193
+                8448,
+                8737
             ],
             "filename": "text-field.js",
-            "lineno": 245,
+            "lineno": 222,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
             "code": {
@@ -95729,11 +95729,11 @@
         "comment": "/**\n     */",
         "meta": {
             "range": [
-                8904,
-                9193
+                8448,
+                8737
             ],
             "filename": "text-field.js",
-            "lineno": 245,
+            "lineno": 222,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
             "code": {
@@ -96022,11 +96022,11 @@
         "comment": "/**\n     */",
         "meta": {
             "range": [
-                8904,
-                9193
+                8448,
+                8737
             ],
             "filename": "text-field.js",
-            "lineno": 245,
+            "lineno": 222,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
             "code": {
@@ -96315,11 +96315,11 @@
         "comment": "/**\n     */",
         "meta": {
             "range": [
-                8904,
-                9193
+                8448,
+                8737
             ],
             "filename": "text-field.js",
-            "lineno": 245,
+            "lineno": 222,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
             "code": {
@@ -96608,11 +96608,11 @@
         "comment": "/**\n     */",
         "meta": {
             "range": [
-                8904,
-                9193
+                8448,
+                8737
             ],
             "filename": "text-field.js",
-            "lineno": 245,
+            "lineno": 222,
             "columnno": 4,
             "path": "C:\\Users\\ndiin\\Documents\\ndiing3\\material\\src\\material\\text-field",
             "code": {

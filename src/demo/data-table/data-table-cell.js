@@ -7,16 +7,10 @@ class DemoDataTableCell extends MdComponent {
             <div class="md-layout">
                 <div class="md-layout__grid">
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
-                        <md-data-table-cell
-                            label="Label"
-                            sublabel="Sublabel sublabel sublabel sublabel sublabel sublabel sublabel sublabel sublabel sublabel"
-                        ></md-data-table-cell>
+                        <md-data-table-cell label="Label" sublabel="Sublabel sublabel sublabel sublabel sublabel sublabel sublabel sublabel sublabel sublabel"></md-data-table-cell>
                     </div>
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
-                        <md-data-table-cell
-                            label="Label"
-                            sublabel="Sublabel"
-                        ></md-data-table-cell>
+                        <md-data-table-cell label="Label" sublabel="Sublabel"></md-data-table-cell>
                     </div>
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
                         <md-data-table-cell label="Label"></md-data-table-cell>

@@ -152,30 +152,7 @@ class MDTextFieldComponent extends MdComponent {
             ${this.label ? html`<label class="md-text-field__label">${this.label}</label>` : nothing}
             <div class="md-text-field__container">
                 ${this.icons?.length ? html` <div class="md-text-field__icons">${this.icons.map((item) => this.renderComponent(item, "icon"))}</div> ` : nothing} ${this.prefix ? html`<div class="md-text-field__prefix">${this.prefix}</div>` : nothing}
-                <input
-                    .name="${ifDefined(this.name)}"
-                    .type="${ifDefined(this.type)}"
-                    .value="${ifDefined(this.value)}"
-                    .placeholder="${ifDefined(this.placeholder)}"
-                    .required="${ifDefined(this.required)}"
-                    .readOnly="${ifDefined(this.readOnly)}"
-                    .title="${ifDefined(this.title)}"
-                    .autocomplete="${ifDefined(this.autocomplete)}"
-                    .defaultValue="${ifDefined(this.defaultValue)}"
-                    .min="${ifDefined(this.min)}"
-                    .max="${ifDefined(this.max)}"
-                    .minLength="${ifDefined(this.minLength)}"
-                    .maxLength="${ifDefined(this.maxLength)}"
-                    .pattern="${ifDefined(this.pattern)}"
-                    @focus="${this.handleTextFieldFocus}"
-                    @blur="${this.handleTextFieldBlur}"
-                    @input="${this.handleTextFieldInput}"
-                    @invalid="${this.handleTextFieldInvalid}"
-                    @reset="${this.handleTextFieldReset}"
-                    @click="${this.handleTextFieldClick}"
-                    @keydown="${this.handleTextFieldKeydown}"
-                    class="md-text-field__native"
-                />
+                <input .name="${ifDefined(this.name)}" .type="${ifDefined(this.type)}" .value="${ifDefined(this.value)}" .placeholder="${ifDefined(this.placeholder)}" .required="${ifDefined(this.required)}" .readOnly="${ifDefined(this.readOnly)}" .title="${ifDefined(this.title)}" .autocomplete="${ifDefined(this.autocomplete)}" .defaultValue="${ifDefined(this.defaultValue)}" .min="${ifDefined(this.min)}" .max="${ifDefined(this.max)}" .minLength="${ifDefined(this.minLength)}" .maxLength="${ifDefined(this.maxLength)}" .pattern="${ifDefined(this.pattern)}" @focus="${this.handleTextFieldFocus}" @blur="${this.handleTextFieldBlur}" @input="${this.handleTextFieldInput}" @invalid="${this.handleTextFieldInvalid}" @reset="${this.handleTextFieldReset}" @click="${this.handleTextFieldClick}" @keydown="${this.handleTextFieldKeydown}" class="md-text-field__native" />
                 ${this.suffix ? html`<div class="md-text-field__suffix">${this.suffix}</div>` : nothing} ${actions?.length ? html` <div class="md-text-field__actions">${actions.map((item) => this.renderComponent(item, "icon-button"))}</div> ` : nothing}
             </div>
             ${this.text || this.error || this.counter ? html` <div class="md-text-field__wrapper">${this.text || this.error ? html`<div class="md-text-field__text">${this.error || this.text}</div>` : nothing} ${this.counter ? html`<div class="md-text-field__counter">${this.counter}</div>` : nothing}</div> ` : nothing}

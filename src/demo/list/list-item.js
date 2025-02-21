@@ -6,26 +6,7 @@ class DemoListItem extends MdComponent {
             <div class="md-layout">
                 <div class="md-layout__grid">
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
-                        <md-list-item
-                            leadingCheckbox=""
-                            leadingRadioButton=""
-                            leadingSwitch=""
-                            avatar=""
-                            image=""
-                            video=""
-                            icon=""
-                            label=""
-                            sublabel=""
-                            text=""
-                            trailingCheckbox=""
-                            trailingRadioButton=""
-                            trailingSwitch=""
-                            selected=""
-                            disabled=""
-                            routerLink=""
-                            rippleOptions=""
-                            badge=""
-                        ></md-list-item>
+                        <md-list-item leadingCheckbox="" leadingRadioButton="" leadingSwitch="" avatar="" image="" video="" icon="" label="" sublabel="" text="" trailingCheckbox="" trailingRadioButton="" trailingSwitch="" selected="" disabled="" routerLink="" rippleOptions="" badge=""></md-list-item>
                     </div>
                 </div>
             </div>

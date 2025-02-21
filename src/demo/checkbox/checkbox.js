@@ -6,24 +6,13 @@ class DemoCheckbox extends MdComponent {
             <div class="md-layout">
                 <div class="md-layout__grid">
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
-                        <md-checkbox
-                            name="checkbox"
-                            value="checkbox"
-                        ></md-checkbox>
+                        <md-checkbox name="checkbox" value="checkbox"></md-checkbox>
                     </div>
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
-                        <md-checkbox
-                            name="checkbox"
-                            value="checkbox"
-                            indeterminate=""
-                        ></md-checkbox>
+                        <md-checkbox name="checkbox" value="checkbox" indeterminate=""></md-checkbox>
                     </div>
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
-                        <md-checkbox
-                            name="checkbox"
-                            value="checkbox"
-                            checked=""
-                        ></md-checkbox>
+                        <md-checkbox name="checkbox" value="checkbox" checked=""></md-checkbox>
                     </div>
                 </div>
             </div>

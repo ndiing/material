@@ -6,16 +6,7 @@ class DemoTreeItem extends MdComponent {
             <div class="md-layout">
                 <div class="md-layout__grid">
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
-                        <md-tree-item
-                            selected=""
-                            expanded=""
-                            indent=""
-                            actions=""
-                            nodeIcons=""
-                            leafIcons=""
-                            label=""
-                            routerLink=""
-                        ></md-tree-item>
+                        <md-tree-item selected="" expanded="" indent="" actions="" nodeIcons="" leafIcons="" label="" routerLink=""></md-tree-item>
                     </div>
                 </div>
             </div>

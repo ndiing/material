@@ -8,20 +8,12 @@ class DemoNavigationBarNoLabel extends MdComponent {
                     <div class="md-layout">
                         <div class="md-layout__grid">
                             <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
-                                <md-button
-                                    variant="filled-tonal"
-                                    label="Toggle Navigation Bar"
-                                    @click="${(event) => navigationBar.toggle()}"
-                                ></md-button>
+                                <md-button variant="filled-tonal" label="Toggle Navigation Bar" @click="${(event) => navigationBar.toggle()}"></md-button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <md-navigation-bar
-                    id="navigationBar"
-                    .items="${[{ icon: "image", selected: true }, { icon: "image" }, { icon: "image" }, { icon: "image" }]}"
-                    open
-                ></md-navigation-bar>
+                <md-navigation-bar id="navigationBar" .items="${[{ icon: "image", selected: true }, { icon: "image" }, { icon: "image" }, { icon: "image" }]}" open></md-navigation-bar>
             </div>
         `;
     }

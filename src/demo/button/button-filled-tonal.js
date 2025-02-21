@@ -6,32 +6,16 @@ class DemoButtonFilledTonal extends MdComponent {
             <div class="md-layout">
                 <div class="md-layout__grid">
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
-                        <md-button
-                            variant="filled-tonal"
-                            label="Label"
-                        ></md-button>
+                        <md-button variant="filled-tonal" label="Label"></md-button>
                     </div>
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
-                        <md-button
-                            variant="filled-tonal"
-                            icon="image"
-                            label="Label"
-                        ></md-button>
+                        <md-button variant="filled-tonal" icon="image" label="Label"></md-button>
                     </div>
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
-                        <md-button
-                            variant="filled-tonal"
-                            label="Label"
-                            disabled
-                        ></md-button>
+                        <md-button variant="filled-tonal" label="Label" disabled></md-button>
                     </div>
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
-                        <md-button
-                            variant="filled-tonal"
-                            icon="image"
-                            label="Label"
-                            disabled
-                        ></md-button>
+                        <md-button variant="filled-tonal" icon="image" label="Label" disabled></md-button>
                     </div>
                 </div>
             </div>

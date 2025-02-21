@@ -10,16 +10,8 @@ class DemoTest extends MdComponent {
         return html`
             <md-layout>
                 <md-layout-grid style="min-height:0;height:100%">
-                    <md-layout-grid-item
-                        expanded="12"
-                        medium="4"
-                        compact="4"
-                        style="min-height:0;height:100%"
-                    >
-                        <div
-                            class="demo-gesture"
-                            style="width:256px;height:256px;background:var(--md-sys-color-surface-container-highest);"
-                        ></div>
+                    <md-layout-grid-item expanded="12" medium="4" compact="4" style="min-height:0;height:100%">
+                        <div class="demo-gesture" style="width:256px;height:256px;background:var(--md-sys-color-surface-container-highest);"></div>
                     </md-layout-grid-item>
                 </md-layout-grid>
             </md-layout>

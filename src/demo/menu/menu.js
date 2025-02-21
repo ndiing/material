@@ -20,12 +20,7 @@ class DemoMenu extends MdComponent {
             <div class="md-layout">
                 <div class="md-layout__grid">
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
-                        <md-button
-                            id="button"
-                            variant="filled-tonal"
-                            label="Toggle Menu"
-                            @click="${(event) => menu.toggle({ trigger: event.currentTarget })}"
-                        ></md-button>
+                        <md-button id="button" variant="filled-tonal" label="Toggle Menu" @click="${(event) => menu.toggle({ trigger: event.currentTarget })}"></md-button>
                         <md-menu
                             id="menu"
                             .items="${[{ label: "Label" }, { label: "Label" }, { label: "Label" }, { label: "Label" }]}"
@@ -39,12 +34,7 @@ class DemoMenu extends MdComponent {
                         ></md-menu>
                     </div>
                     <div class="md-layout__column--expanded12 md-layout__column--medium4 md-layout__column--compact4">
-                        <md-button
-                            id="button2"
-                            variant="filled-tonal"
-                            label="Toggle Menu"
-                            @click="${(event) => menu2.toggle({ trigger: event.currentTarget })}"
-                        ></md-button>
+                        <md-button id="button2" variant="filled-tonal" label="Toggle Menu" @click="${(event) => menu2.toggle({ trigger: event.currentTarget })}"></md-button>
                         <md-menu
                             id="menu2"
                             .items="${this.items}"

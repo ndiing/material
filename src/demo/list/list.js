@@ -21,14 +21,8 @@ class DemoList extends MdComponent {
     render() {
         return html`
             <div class="md-layout">
-                <div
-                    class="md-layout__grid"
-                    style="min-height: 0;min-width: 0;height: 100%;width: 100%;"
-                >
-                    <div
-                        class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4"
-                        style="min-height: 0;min-width: 0;height: 100%;width: 100%;"
-                    >
+                <div class="md-layout__grid" style="min-height: 0;min-width: 0;height: 100%;width: 100%;">
+                    <div class="md-layout__column--expanded12 md-layout__column--medium8 md-layout__column--compact4" style="min-height: 0;min-width: 0;height: 100%;width: 100%;">
                         <md-list .items="${this.items}"></md-list>
                     </div>
                 </div>
