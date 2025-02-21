@@ -4,7 +4,8 @@
     "name": "@ndiing/material",
     "publishConfig": {
         "registry": "https://npm.pkg.github.com/"
-      },
+    },
+    "repository": "https://github.com/ndiing/material",
     "scripts": {
         "serve": "webpack serve",
         "prettier": "npx prettier ./src --write --embedded-language-formatting=auto",
