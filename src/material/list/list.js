@@ -178,10 +178,10 @@ class MDListComponent extends MdComponent {
         });
         this.requestUpdate();
 
-        await this.updateComplete
+        await this.updateComplete;
 
-        const element = this.querySelector('md-list-item[selected]')
-        element.focus()
+        const element = this.querySelector("md-list-item[selected]");
+        element.focus();
 
         return currentIndex;
     }
@@ -206,7 +206,7 @@ class MDListComponent extends MdComponent {
             this.scrollTop = currentIndex * rowHeight;
         } else if (block === "end") {
             const rowTotal = Math.floor(this.clientHeight / rowHeight);
-            
+
             this.scrollTop = (currentIndex - (rowTotal - 1)) * rowHeight;
         }
     }

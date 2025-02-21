@@ -87,10 +87,11 @@ class MDMenuComponent extends MdComponent {
 
         this.open = true;
 
-        let element=this.querySelector('md-list-item[selected]')
-        if(!element)
-        {element=this.querySelector('md-list-item')}
-        element.focus()
+        let element = this.querySelector("md-list-item[selected]");
+        if (!element) {
+            element = this.querySelector("md-list-item");
+        }
+        element.focus();
 
         /**
          * @event onMenuShow
