@@ -1,105 +1,123 @@
-# Material Framework
+# Material
 
-Material adalah sebuah framework yang membantu Anda membuat tampilan website yang modern, responsif, dan mudah digunakan dengan mengikuti standar Material Design.
+Material adalah sebuah library UI berbasis [Lit](https://lit.dev/) yang dapat digunakan dalam proyek Webpack. Library ini menyediakan komponen dan modul yang membantu dalam pengembangan antarmuka pengguna dengan lebih efisien.
 
----
+## Instalasi
 
-## Dokumentasi & Demo
+Untuk menginstal package ini, jalankan perintah berikut di terminal:
 
-- **Panduan Lengkap**: [Material Docs](https://ndiing.github.io/material/dist/#/docs/badge)
-- **Contoh Aplikasi**: [Material Demo](https://ndiing.github.io/material/dist/#/demo)
-
----
-
-## Kenapa Menggunakan Material?
-
-- **Tampilan Profesional**: Mengikuti standar Material Design.
-- **Responsif**: Cocok untuk berbagai ukuran layar.
-- **Navigasi Mudah**: Sistem routing bawaan untuk berpindah halaman.
-- **Mudah Dikustomisasi**: Bisa disesuaikan sesuai kebutuhan.
-
----
-
-## Cara Memulai
-
-1. **Unduh & Instalasi**
-
-   ```bash
-   git clone https://github.com/ndiing/material.git
-   cd material
-   npm install
-   ```
-
-2. **Tambahkan ke Proyek**
-
-   Tambahkan file berikut ke proyek Anda:
-
-   ```js
-   import "./material/material.scss";
-   import "./material/material.js";
-   ```
-
----
-
-## Cara Mengatur Halaman
-
-Material memiliki sistem routing untuk berpindah halaman tanpa perlu refresh.
-
-```js
-import { Router } from "../material/router/router";
-import DemoMain from "./main/main.js";
-import DemoError from "./error/error.js";
-
-Router.use([
-    { path: "", component: DemoMain },
-    { path: "*", component: DemoError },
-]);
+```sh
+npm install @ndiing/material@0.71.11
 ```
 
----
+## Penggunaan
 
-## Contoh Pembuatan Halaman
-
-Berikut adalah contoh bagaimana Anda bisa membuat halaman utama menggunakan Material.
+Setelah instalasi, Anda dapat mengimpor komponen, modul, dan SCSS ke dalam proyek Webpack Anda dengan menambahkan kode berikut:
 
 ```js
-import { html } from "lit";
-import { MdComponent } from "../../material/component/component";
-
-class DemoMain extends MdComponent {
-    constructor() {
-        super();
-        this.items = [
-            { label: "Halaman 1", routerLink: "/page1" },
-            { label: "Halaman 2", routerLink: "/page2" },
-        ];
-    }
-
-    render() {
-        return html`
-            <md-top-app-bar label="Beranda" open></md-top-app-bar>
-            <md-navigation-drawer .items="${this.items}" open></md-navigation-drawer>
-            <md-sheet region="center"><md-outlet></md-outlet></md-sheet>
-        `;
-    }
-}
-customElements.define("demo-main", DemoMain);
-export default document.createElement("demo-main");
+import "@ndiing/material/src/material/material.scss";
+import "@ndiing/material/src/material/material.js";
 ```
 
----
+## Membuat Proyek Webpack
 
-## Struktur Dasar HTML
+Jika Anda belum memiliki proyek Webpack, ikuti langkah-langkah berikut untuk membuatnya:
 
-Gunakan struktur berikut sebagai dasar untuk aplikasi Anda.
+### 1. Inisialisasi Proyek
+
+Jalankan perintah berikut untuk membuat folder proyek dan menginisialisasi package manager:
+
+```sh
+mkdir my-material-project && cd my-material-project
+npm init -y
+```
+
+### 2. Instal Webpack dan Dependensi
+
+```sh
+npm install --save-dev webpack webpack-cli webpack-dev-server html-webpack-plugin css-loader style-loader sass-loader sass
+```
+
+### 3. Struktur Direktori
+
+Buat struktur direktori seperti berikut:
+
+```
+my-material-project/
+├── src/
+│   ├── index.js
+│   ├── index.html
+│   ├── styles.scss
+├── package.json
+├── webpack.config.js
+└── .gitignore
+```
+
+### 4. Konfigurasi Webpack
+
+Buat file `webpack.config.js` dengan isi berikut:
+
+```js
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+module.exports = {
+  entry: './src/index.js',
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+    clean: true,
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+        },
+      },
+      {
+        test: /\.scss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
+    ],
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+    }),
+  ],
+  devServer: {
+    static: './dist',
+  },
+  mode: 'development',
+};
+```
+
+### 5. Tambahkan Kode dalam `src/index.js`
+
+```js
+import "@ndiing/material/src/material/material.scss";
+import "@ndiing/material/src/material/material.js";
+
+console.log('Material UI berhasil dimuat');
+```
+
+### 6. Buat File `src/index.html`
 
 ```html
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aplikasi Material</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Material UI">
+    <title>Material UI</title>
+    <base href="./">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700">
 </head>
 <body>
     <md-outlet></md-outlet>
@@ -107,11 +125,39 @@ Gunakan struktur berikut sebagai dasar untuk aplikasi Anda.
 </html>
 ```
 
----
+### 7. Konfigurasi Router Dasar
 
-## Kesimpulan
+Tambahkan kode berikut untuk mengatur routing dalam aplikasi:
 
-Material adalah solusi yang mudah digunakan untuk membangun antarmuka web yang modern dan responsif. Dengan fitur routing bawaan dan komponen yang fleksibel, Anda bisa membuat aplikasi dengan cepat.
+```js
+import { Router } from "./material/router/router";
 
-Untuk informasi lebih lanjut, kunjungi dokumentasi resminya.
+Router.use(
+    {
+        path: "",
+        exact: true,
+        load: () => import("./main/main.js").then((module) => module.default),
+    },
+    {
+        path: "*",
+        load: () => import("./error/error.js").then((module) => module.default),
+    }
+);
+```
+
+### 8. Menjalankan Proyek
+
+Jalankan perintah berikut untuk menjalankan server pengembangan Webpack:
+
+```sh
+npx webpack serve
+```
+
+## Repository dan Lisensi
+
+- **GitHub Repository:** [Material](https://github.com/ndiing/material)
+- **NPM Package:** [@ndiing/material](https://github.com/ndiing/material/pkgs/npm/material)
+- **Lisensi:** Proyek ini dilisensikan di bawah [MIT License](LICENSE).
+
+Dokumentasi ini dibuat agar mudah dipahami bahkan bagi pengguna yang baru mengenal Webpack dan Lit. Jika ada pertanyaan atau kendala, silakan buka *issue* di GitHub repository.
 
