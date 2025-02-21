@@ -1,5 +1,7 @@
 # Material
 
+**[Demo](https://ndiing.github.io/material/dist/#/demo) | [API Documentation](https://ndiing.github.io/material/dist/#/docs)**
+
 Material adalah sebuah library UI berbasis [Lit](https://lit.dev/) yang dapat digunakan dalam proyek Webpack. Library ini menyediakan komponen dan modul yang membantu dalam pengembangan antarmuka pengguna dengan lebih efisien.
 
 ## Instalasi
@@ -137,6 +139,10 @@ Router.use(
         path: "",
         exact: true,
         load: () => import("./main/main.js").then((module) => module.default),
+        children: [
+            ...DemoRoutes,
+            ...DocsRoutes,
+        ],
     },
     {
         path: "*",
