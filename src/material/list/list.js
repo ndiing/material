@@ -110,6 +110,10 @@ class MDListComponent extends MdComponent {
 
         this.classList.add("md-list");
         this.style.setProperty("--md-comp-list-icon-animation", "none");
+
+        this.handleListWindowKeydown = this.handleListWindowKeydown.bind(this);
+        window.addEventListener("keydown", this.handleListWindowKeydown);
+
         this.store = new Store();
 
         if (this.virtualize) {
@@ -129,6 +133,8 @@ class MDListComponent extends MdComponent {
     //  */
     async disconnectedCallback() {
         super.disconnectedCallback();
+
+        window.removeEventListener("keydown", this.handleListWindowKeydown);
 
         if (this.virtualize) {
             this.removeEventListener("onVirtualScroll", this.handleListVirtualScroll);
@@ -161,6 +167,87 @@ class MDListComponent extends MdComponent {
             this.virtual.load(this.virtualOptions);
         } else {
             this.itemsVirtual = this.itemsStore;
+        }
+    }
+
+    async handleListWindowKeydownArrowUp(event) {
+        event.preventDefault();
+
+        const currIndex = this.itemsStore.findIndex((item) => item.selected);
+        const length = this.itemsStore.length;
+        const offset = -1;
+        // const nextIndex = (currIndex + length + offset) % length;
+        const nextIndex = Math.max(0,currIndex + offset)
+        this.itemsStore.forEach((item, index) => {
+            item.selected = index === nextIndex;
+        });
+        this.requestUpdate();
+
+        await this.updateComplete;
+
+        const element = this.querySelector("md-list-item[selected]");
+        element.scrollIntoView({ block: "nearest" });
+
+        /**
+         * @event onListWindowKeydownArrowUp
+         * @type {Object}
+         * @property {Object} event
+        */
+        this.emit('onListWindowKeydownArrowUp',{event})
+    }
+
+    async handleListWindowKeydownArrowDown(event) {
+        event.preventDefault();
+
+        const currIndex = this.itemsStore.findIndex((item) => item.selected);
+        const length = this.itemsStore.length;
+        const offset = 1;
+        // const nextIndex = (currIndex + length + offset) % length;
+        const nextIndex = Math.min(currIndex + offset,length - 1)
+        this.itemsStore.forEach((item, index) => {
+            item.selected = index === nextIndex;
+        });
+        this.requestUpdate();
+
+        await this.updateComplete;
+
+        const element = this.querySelector("md-list-item[selected]");
+        element.scrollIntoView({ block: "nearest" });
+
+        /**
+         * @event onListWindowKeydownArrowDown
+         * @type {Object}
+         * @property {Object} event
+        */
+        this.emit('onListWindowKeydownArrowDown',{event})
+    }
+
+    handleListWindowKeydownEnter(event) {
+        event.preventDefault();
+
+        const element = this.querySelector("md-list-item[selected]");
+        element.click();
+
+        /**
+         * @event onListWindowKeydownEnter
+         * @type {Object}
+         * @property {Object} event
+        */
+        this.emit('onListWindowKeydownEnter',{event})
+    }
+
+    handleListWindowKeydown(event) {
+        if (this.contains(document.activeElement)) {
+            if (event.key === "ArrowUp") this.handleListWindowKeydownArrowUp(event);
+            else if (event.key === "ArrowDown") this.handleListWindowKeydownArrowDown(event);
+            else if (event.key === "Enter") this.handleListWindowKeydownEnter(event);
+
+            /**
+             * @event onListWindowKeydown
+             * @type {Object}
+             * @property {Object} event
+            */
+            this.emit('onListWindowKeydown',{event})
         }
     }
 

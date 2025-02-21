@@ -32,17 +32,15 @@ class Virtual {
     //  * Debounces the handling of virtual scroll events.
     //  */
     handleVirtualScrollDebounce() {
-        const { rowHeight, total } = this.updateTrackHeight();
-        const { start, end } = this.updateItemsPosition(rowHeight, total);
-        const data = this.options.data.slice(start, end);
-        const cache = [rowHeight, total, start, end, data, this.now].toString();
+        this.updateTrackHeight();
+        this.updateItemsPosition(this.rowHeight, this.total);
+
+        const cache = [this.start, this.end, this.now].toString();
+
+        this.data = this.options.data.slice(this.start, this.end);
 
         if (this.cache !== cache) {
             this.cache = cache;
-
-            if (document.activeElement !== document.body) {
-                document.activeElement.blur();
-            }
 
             /**
              * @event onVirtualScroll
@@ -53,7 +51,7 @@ class Virtual {
              * @property {number} end - The end index of the visible items.
              * @property {Array} data - The data for the visible items.
              */
-            this.emit("onVirtualScroll", { rowHeight, total, start, end, data });
+            this.emit("onVirtualScroll", this);
         }
     }
 
@@ -64,21 +62,20 @@ class Virtual {
     //  * @returns {Object} An object containing the start and end indices of the visible items.
     //  */
     updateItemsPosition(rowHeight, total) {
-        const scrollTop = this.host.scrollTop;
-        const nodePadding = this.options.nodePadding;
-        const viewportHeight = this.host.clientHeight;
-        const start = Math.max(0, Math.floor(scrollTop / rowHeight) - nodePadding);
-        const limit = Math.min(total - start, Math.ceil(viewportHeight / rowHeight) + 2 * nodePadding);
-        const end = start + limit;
-        const translateY = start * rowHeight;
+        this.scrollTop = this.host.scrollTop;
+        this.nodePadding = this.options.nodePadding;
+        this.viewportHeight = this.host.clientHeight;
+
+        this.start = Math.max(0, Math.floor(this.scrollTop / rowHeight) - this.nodePadding);
+        this.limit = Math.min(total - this.start, Math.ceil(this.viewportHeight / rowHeight) + 2 * this.nodePadding);
+        this.end = this.start + this.limit;
+
+        this.translateY = this.start * rowHeight;
+
         this.items = this.host.querySelectorAll(this.options.item);
         this.items.forEach((item) => {
-            item.style.setProperty("transform", "translate3d(0," + translateY + "px,0)");
-            // if(this.options.rowHeight!==item.clientHeight){
-            //     this.options.rowHeight=item.clientHeight
-            // }
+            item.style.setProperty("transform", "translate3d(0," + this.translateY + "px,0)");
         });
-        return { start, end };
     }
 
     // /**
@@ -86,11 +83,11 @@ class Virtual {
     //  * @returns {Object} An object containing the rowHeight and total number of items.
     //  */
     updateTrackHeight() {
-        const total = this.options.data.length;
-        const rowHeight = this.options.rowHeight;
-        const trackHeight = total * rowHeight;
-        this.track.style.setProperty("height", trackHeight + "px");
-        return { rowHeight, total };
+        this.total = this.options.data.length;
+        this.rowHeight = this.options.rowHeight;
+        this.trackHeight = this.total * this.rowHeight;
+
+        this.track.style.setProperty("height", this.trackHeight + "px");
     }
 
     // /**
@@ -124,7 +121,9 @@ class Virtual {
             if (value === undefined || this.options[name] === value) continue;
             this.options[name] = value;
         }
+
         this.now = performance.now();
+
         this.handleVirtualScroll();
     }
 
@@ -133,11 +132,14 @@ class Virtual {
      */
     init() {
         this.host.classList.add("md-virtual");
+
         this.track = document.createElement("div");
         this.track.classList.add("md-virtual__track");
         this.host.prepend(this.track);
+
         this.handleVirtualScroll = this.handleVirtualScroll.bind(this);
         this.handleVirtualScrollDebounce = this.handleVirtualScrollDebounce.bind(this);
+
         this.host.addEventListener("scroll", this.handleVirtualScroll);
     }
 
