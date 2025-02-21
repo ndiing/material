@@ -1,5 +1,6 @@
 import { html } from "lit";
 import { MdComponent } from "../../material/component/component";
+import { Router } from "../../material/router/router";
 
 class AppMain extends MdComponent {
     render() {
@@ -10,6 +11,12 @@ class AppMain extends MdComponent {
                 </md-layout-border-item>
             </md-layout-border>
         `;
+    }
+
+    connectedCallback() {
+        super.connectedCallback();
+
+        Router.navigate("/demo");
     }
 }
 
