@@ -32,7 +32,6 @@ export default {
         { path: "demo", load: () => import("./demo.js").then((module) => module.default) },
         { path: "dialog", load: () => import("./dialog/dialog.js").then((module) => module.default) },
         { path: "divider", load: () => import("./divider/divider.js").then((module) => module.default) },
-        { path: "error", load: () => import("../app/error/error.js").then((module) => module.default) },
         { path: "fab-extended", load: () => import("./fab/fab-extended.js").then((module) => module.default) },
         { path: "fab-large", load: () => import("./fab/fab-large.js").then((module) => module.default) },
         { path: "fab-small", load: () => import("./fab/fab-small.js").then((module) => module.default) },

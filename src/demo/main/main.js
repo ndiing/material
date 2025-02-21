@@ -78,7 +78,6 @@ class DemoMain extends MdComponent {
             },
             { label: "dialog", children: [{ label: "dialog", routerLink: "/demo/dialog", group: "dialog" }] },
             { label: "divider", children: [{ label: "divider", routerLink: "/demo/divider", group: "divider" }] },
-            { label: "error", children: [{ label: "error", routerLink: "/demo/error", group: "error" }] },
             {
                 label: "fab",
                 children: [
