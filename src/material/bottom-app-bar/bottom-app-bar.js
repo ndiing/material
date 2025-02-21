@@ -2,6 +2,7 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
+import { styleMap } from "lit/directives/style-map.js";
 /**
  * MDBottomAppBarComponent class responsible for displaying a bottom app bar.
  * @extends MdComponent
@@ -39,16 +40,23 @@ class MDBottomAppBarComponent extends MdComponent {
         super();
     }
 
+    styleIconButton(item,index){
+        return {
+            '--md-comp-bottom-app-bar-action-index':index
+        }
+    }
+
     // /**
     //  * Renders an icon button.
     //  * @param {Object} item - The item data for the icon button.
     //  * @returns {TemplateResult} The rendered template for the icon button.
     //  */
-    renderIconButton(item) {
+    renderIconButton(item,index) {
         /* prettier-ignore */
         return html`
             <md-icon-button
                 class="md-bottom-app-bar__action"
+                style="${styleMap(this.styleIconButton(item,index))}"
                 .data="${item}"
                 .icon="${ifDefined(item.icon)}"
                 .variant="${ifDefined(item.variant)}"
@@ -90,7 +98,7 @@ class MDBottomAppBarComponent extends MdComponent {
         /* prettier-ignore */
         return html` 
             ${this.actions?.length ? html` 
-            <div class="md-bottom-app-bar__actions">${this.actions.map((action) => this.renderIconButton(action))}</div>
+                <div class="md-bottom-app-bar__actions">${this.actions.map((item,index) => this.renderIconButton(item,index))}</div>
             ` : nothing} 
             ${this.fab ? this.renderFab(this.fab) : nothing} 
         `;

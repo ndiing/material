@@ -2,7 +2,6 @@
 
 .md-bottom-app-bar {
     grid-area: south;
-    overflow: auto;
     display: flex;
     align-items: center;
     height: 80px;
@@ -21,6 +20,16 @@
         --md-comp-bottom-app-bar-animation: bottom-app-bar-out;
         animation-name: var(--md-comp-bottom-app-bar-animation);
         animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
+
+        .md-bottom-app-bar__action {
+            animation-name: bottom-app-bar-action-out;
+            animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
+        }
+
+        .md-bottom-app-bar__fab {
+            animation-name: bottom-app-bar-fab-out;
+            animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
+        }
     }
 }
 
@@ -30,6 +39,22 @@
     gap: 0 16px;
 }
 
+.md-bottom-app-bar__action {
+    transform: translate3d(0, 300%, 0);
+    opacity: 0;
+    animation-name: none;
+    animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
+    animation-duration: var(--md-sys-motion-duration-short3);
+    animation-fill-mode: forwards;
+    animation-delay: calc(var(--md-sys-motion-duration-short1) * var(--md-comp-bottom-app-bar-action-index));
+}
+
 .md-bottom-app-bar__fab {
     margin-left: auto;
+    transform: scale(0);
+    opacity: 0;
+    animation-name: none;
+    animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
+    animation-duration: var(--md-sys-motion-duration-short3);
+    animation-fill-mode: forwards;
 }

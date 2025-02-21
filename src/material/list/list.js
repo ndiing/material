@@ -3,6 +3,7 @@ import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { Store } from "../store/store";
 import { Virtual } from "../virtual/virtual";
+import { styleMap } from "lit/directives/style-map.js";
 /**
  * MDListComponent class responsible for displaying a list.
  * @extends MdComponent
@@ -55,17 +56,24 @@ class MDListComponent extends MdComponent {
         return item[this.fieldMap[name] || name];
     }
 
+    styleListItem(item,index){
+        return {
+            '--md-comp-list-item-index': index,
+        }
+    }
+
     // /**
     //  * Renders a list item.
     //  * @param {Object} item - The item data.
     //  * @returns {TemplateResult} The rendered template for the list item.
     //  */
-    renderListItem(item) {
+    renderListItem(item,index) {
         /* prettier-ignore */
         return html`
             <md-list-row>
                 <md-list-item
                     .data="${item}"
+                    style="${styleMap(this.styleListItem(item,index))}"
                     .avatar="${ifDefined(this.getValue(item, "avatar"))}"
                     .image="${ifDefined(this.getValue(item, "image"))}"
                     .video="${ifDefined(this.getValue(item, "video"))}"
@@ -98,7 +106,7 @@ class MDListComponent extends MdComponent {
     //  * @returns {TemplateResult} The rendered template for the list.
     //  */
     render() {
-        return this.itemsVirtual?.map((item) => this.renderListItem(item));
+        return this.itemsVirtual?.map((item,index) => this.renderListItem(item,index));
     }
 
     // /**
