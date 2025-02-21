@@ -1,7 +1,10 @@
 {
     "version": "0.71.10",
     "description": "material",
-    "name": "@ndiinginc/material",
+    "name": "@ndiing/material",
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com/"
+      },
     "scripts": {
         "serve": "webpack serve",
         "prettier": "npx prettier ./src --write --embedded-language-formatting=auto",
