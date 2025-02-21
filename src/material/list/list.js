@@ -168,7 +168,7 @@ class MDListComponent extends MdComponent {
         }
     }
 
-    async selectByOffset(offset) {
+    selectByOffset(offset) {
         const startIndex = this.itemsStore.findIndex((item) => item.selected);
         const total = this.itemsStore.length;
         const currentIndex = offset < 0 ? Math.max(startIndex + offset, 0) : Math.min(startIndex + offset, total - 1);
@@ -177,11 +177,6 @@ class MDListComponent extends MdComponent {
             item.selected = index === currentIndex;
         });
         this.requestUpdate();
-
-        await this.updateComplete;
-
-        const element = this.querySelector("md-list-item[selected]");
-        element.focus();
 
         return currentIndex;
     }
@@ -214,7 +209,7 @@ class MDListComponent extends MdComponent {
     async handleListWindowKeydownArrowUp(event) {
         event.preventDefault();
 
-        const currentIndex = await this.selectByOffset(-1);
+        const currentIndex = this.selectByOffset(-1);
         this.scrollToIndex(currentIndex);
 
         /**
@@ -228,7 +223,7 @@ class MDListComponent extends MdComponent {
     async handleListWindowKeydownArrowDown(event) {
         event.preventDefault();
 
-        const currentIndex = await this.selectByOffset(1);
+        const currentIndex = this.selectByOffset(1);
         this.scrollToIndex(currentIndex);
 
         /**
@@ -239,11 +234,8 @@ class MDListComponent extends MdComponent {
         this.emit("onListWindowKeydownArrowDown", { event });
     }
 
-    handleListWindowKeydownEnter(event) {
+    async handleListWindowKeydownEnter(event) {
         event.preventDefault();
-
-        const element = this.querySelector("md-list-item[selected]");
-        element.click();
 
         /**
          * @event onListWindowKeydownEnter
