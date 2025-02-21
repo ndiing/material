@@ -1,7 +1,6 @@
 import { Mixins } from "../component/component";
 import { Gesture } from "../gesture/gesture";
 import { Virtual } from "../virtual/virtual";
-
 /**
  * @extends HTMLTableElement
  */
@@ -15,7 +14,6 @@ class MDDataTableNativeComponent extends Mixins(HTMLTableElement) {
 
     handleDataTableNativeVirtualScroll(event) {
         this.instance.dataVirtual = event.detail.data;
-
         /**
          * @event onDataTableNativeVirtualScroll
          * @type {Object}
@@ -33,7 +31,10 @@ class MDDataTableNativeComponent extends Mixins(HTMLTableElement) {
             this.virtual = new Virtual(this, {
                 item: "tbody",
             });
-            if (this.hasConnected) this.virtual.load({ data: this.instance.dataStore });
+
+            if (this.hasConnected) {
+                this.virtual.load({ data: this.instance.dataStore });
+            }
         }
     }
 
@@ -46,52 +47,44 @@ class MDDataTableNativeComponent extends Mixins(HTMLTableElement) {
 }
 
 customElements.define("md-data-table-native", MDDataTableNativeComponent, { extends: "table" });
-
 /**
  * @extends HTMLTableCaptionElement
  */
 class MDDataTableNativeCaptionComponent extends Mixins(HTMLTableCaptionElement) {}
 
 customElements.define("md-data-table-native-caption", MDDataTableNativeCaptionComponent, { extends: "caption" });
-
 /**
  * @extends HTMLTableSectionElement
  */
 class MDDataTableNativeSectionComponent extends Mixins(HTMLTableSectionElement) {}
-
 /**
  * @extends MDDataTableNativeSectionComponent
  */
 class MDDataTableNativeHeadComponent extends MDDataTableNativeSectionComponent {}
 
 customElements.define("md-data-table-native-head", MDDataTableNativeHeadComponent, { extends: "thead" });
-
 /**
  * @extends MDDataTableNativeSectionComponent
  */
 class MDDataTableNativeBodyComponent extends MDDataTableNativeSectionComponent {}
 
 customElements.define("md-data-table-native-body", MDDataTableNativeBodyComponent, { extends: "tbody" });
-
 /**
  * @extends MDDataTableNativeSectionComponent
  */
 class MDDataTableNativeFooterComponent extends MDDataTableNativeSectionComponent {}
 
 customElements.define("md-data-table-native-footer", MDDataTableNativeFooterComponent, { extends: "tfoot" });
-
 /**
  * @extends HTMLTableRowElement
  */
 class MDDataTableNativeRowComponent extends Mixins(HTMLTableRowElement) {}
 
 customElements.define("md-data-table-native-row", MDDataTableNativeRowComponent, { extends: "tr" });
-
 /**
  * @extends HTMLTableCellElement
  */
 class MDDataTableNativeCellComponent extends Mixins(HTMLTableCellElement) {}
-
 /**
  * @extends MDDataTableNativeCellComponent
  */
@@ -99,7 +92,6 @@ class MDDataTableNativeHeaderComponent extends MDDataTableNativeCellComponent {
     handleDataTableNativeHeaderResize(event) {
         this.data.width = this.gesture.currentWidth;
         this.style.setProperty("min-width", this.data.width + "px");
-
         /**
          * @event onTableHeaderResize
          * @type {Object}
@@ -110,13 +102,15 @@ class MDDataTableNativeHeaderComponent extends MDDataTableNativeCellComponent {
 
     handleDataTableNativeHeaderDblclick(event) {
         const resizeHandleElement = event.target.closest(".md-resizable__handle");
-        if (!resizeHandleElement) return;
+
+        if (!resizeHandleElement) {
+            return;
+        }
         const rowIndex = this.parentElement.rowIndex + 1;
         const cellIndex = this.cellIndex + 1;
         const width = Array.from(this.instance.querySelectorAll(`tr:nth-child(${rowIndex}) td:nth-child(${cellIndex}) .md-data-table__label`)).reduce((prev, curr) => Math.max(prev, curr.scrollWidth), 0) + 16 + 16;
         this.data.width = width;
         this.style.setProperty("min-width", this.data.width + "px");
-
         /**
          * @event onTableHeaderDblclick
          * @type {Object}
@@ -147,7 +141,6 @@ class MDDataTableNativeHeaderComponent extends MDDataTableNativeCellComponent {
 }
 
 customElements.define("md-data-table-native-header", MDDataTableNativeHeaderComponent, { extends: "th" });
-
 /**
  * @extends MDDataTableNativeCellComponent
  */

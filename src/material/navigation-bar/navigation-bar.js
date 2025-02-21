@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
-
 /**
  * @extends MdComponent
  * @element md-navigation-bar
@@ -51,7 +50,6 @@ class MDNavigationBarComponent extends MdComponent {
     show() {
         this.style.removeProperty("--md-comp-navigation-bar-animation");
         this.open = true;
-
         /**
          * @event onNavigationBarShow
          * @property {Object} event
@@ -64,7 +62,6 @@ class MDNavigationBarComponent extends MdComponent {
     close() {
         this.style.removeProperty("--md-comp-navigation-bar-animation");
         this.open = false;
-
         /**
          * @event onNavigationBarClose
          * @property {Object} event
@@ -75,8 +72,11 @@ class MDNavigationBarComponent extends MdComponent {
     /**
      */
     toggle() {
-        if (this.open) this.close();
-        else this.show();
+        if (this.open) {
+            this.close();
+        } else {
+            this.show();
+        }
     }
 }
 

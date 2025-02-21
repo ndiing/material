@@ -45,7 +45,9 @@ class Progress {
     //  * @param {DOMHighResTimeStamp} currentTime - The current time of the animation frame.
     //  */
     step(currentTime) {
-        if (!this.progressIndicator) return;
+        if (!this.progressIndicator) {
+            return;
+        }
         let elapsed = currentTime - this.startTime;
         let progress = Math.min(elapsed / this.duration, 1);
         this.progressIndicator.max = this.duration;

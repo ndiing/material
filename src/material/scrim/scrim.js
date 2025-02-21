@@ -1,6 +1,5 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
-
 /**
  * @extends MdComponent
  * @element md-scrim
@@ -18,10 +17,8 @@ class MDScrimComponent extends MdComponent {
 
         this.classList.add("md-scrim");
         this.style.setProperty("--md-comp-scrim-animation", "none");
-
         this.handleScrimClick = this.handleScrimClick.bind(this);
         this.addEventListener("click", this.handleScrimClick);
-
         this.handleScrimAnimationend = this.handleScrimAnimationend.bind(this);
         this.addEventListener("animationend", this.handleScrimAnimationend);
     }
@@ -38,7 +35,6 @@ class MDScrimComponent extends MdComponent {
     show() {
         this.style.removeProperty("--md-comp-scrim-animation");
         this.open = true;
-
         /**
          * @event onScrimShow
          * @property {Object} event
@@ -51,7 +47,6 @@ class MDScrimComponent extends MdComponent {
     close() {
         this.style.removeProperty("--md-comp-scrim-animation");
         this.open = false;
-
         /**
          * @event onScrimClose
          * @property {Object} event
@@ -62,8 +57,11 @@ class MDScrimComponent extends MdComponent {
     /**
      */
     toggle() {
-        if (this.open) this.close();
-        else this.show();
+        if (this.open) {
+            this.close();
+        } else {
+            this.show();
+        }
     }
 
     handleScrimShown(event) {
@@ -83,13 +81,15 @@ class MDScrimComponent extends MdComponent {
     }
 
     handleScrimAnimationend(event) {
-        if (event.animationName === "scrim-out") this.handleScrimShown(event);
-        else if (event.animationName === "scrim-in") this.handleScrimClosed(event);
+        if (event.animationName === "scrim-out") {
+            this.handleScrimShown(event);
+        } else if (event.animationName === "scrim-in") {
+            this.handleScrimClosed(event);
+        }
     }
 
     handleScrimClick(event) {
         this.close();
-
         /**
          * @event onScrimClick
          * @property {Object} event

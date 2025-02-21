@@ -1,7 +1,6 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
-
 /**
  * @extends MdComponent
  * @element md-progress-indicator
@@ -84,8 +83,11 @@ class MDProgressIndicatorComponent extends MdComponent {
     }
 
     render() {
-        if (this.variant === "circular") return this.renderProgressIndicatorCircular();
-        else return this.renderProgressIndicatorNative();
+        if (this.variant === "circular") {
+            return this.renderProgressIndicatorCircular();
+        } else {
+            return this.renderProgressIndicatorNative();
+        }
     }
 
     connectedCallback() {

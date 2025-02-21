@@ -1,6 +1,5 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
-
 /**
  * MDBadgeComponent class responsible for displaying a badge with a label.
  * @extends MdComponent

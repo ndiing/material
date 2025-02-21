@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
-
 /**
  * @extends MdComponent
  * @element md-side-sheet
@@ -123,17 +122,16 @@ class MDSideSheetComponent extends MdComponent {
 
         this.classList.add("md-side-sheet");
         this.style.setProperty("--md-comp-side-sheet-animation", "none");
-
         this.handleSideSheetAnimationend = this.handleSideSheetAnimationend.bind(this);
         this.addEventListener("animationend", this.handleSideSheetAnimationend);
-
         this.scrim = document.createElement("md-scrim");
         this.parentElement.insertBefore(this.scrim, this.nextElementSibling);
-
         this.handleSideSheetClosed = this.handleSideSheetClosed.bind(this);
         this.scrim.addEventListener("onScrimClose", this.handleSideSheetClosed);
 
-        if (this.modal) this.scrim.open = this.open;
+        if (this.modal) {
+            this.scrim.open = this.open;
+        }
 
         await this.updateComplete;
 
@@ -145,7 +143,6 @@ class MDSideSheetComponent extends MdComponent {
         super.disconnectedCallback();
 
         this.removeEventListener("animationend", this.handleSideSheetAnimationend);
-
         this.scrim.removeEventListener("onScrimClose", this.handleSideSheetClosed);
         this.scrim.remove();
     }
@@ -163,9 +160,10 @@ class MDSideSheetComponent extends MdComponent {
     show() {
         this.style.removeProperty("--md-comp-side-sheet-animation");
 
-        if (this.modal) this.scrim.show();
+        if (this.modal) {
+            this.scrim.show();
+        }
         this.open = true;
-
         /**
          * @event onSideSheetShow
          * @property {Object} event
@@ -178,9 +176,10 @@ class MDSideSheetComponent extends MdComponent {
     close() {
         this.style.removeProperty("--md-comp-side-sheet-animation");
 
-        if (this.scrim.open) this.scrim.close();
+        if (this.scrim.open) {
+            this.scrim.close();
+        }
         this.open = false;
-
         /**
          * @event onSideSheetClose
          * @property {Object} event
@@ -191,8 +190,11 @@ class MDSideSheetComponent extends MdComponent {
     /**
      */
     toggle() {
-        if (this.open) this.close();
-        else this.show();
+        if (this.open) {
+            this.close();
+        } else {
+            this.show();
+        }
     }
 
     handleSideSheetShown(event) {
@@ -212,13 +214,17 @@ class MDSideSheetComponent extends MdComponent {
     }
 
     handleSideSheetAnimationend(event) {
-        if (event.animationName === "side-sheet-out" || event.animationName === "side-sheet-modal-out") this.handleSideSheetShown(event);
-        else if (event.animationName === "side-sheet-in" || event.animationName === "side-sheet-modal-in") this.handleSideSheetClosed(event);
+        if (event.animationName === "side-sheet-out" || event.animationName === "side-sheet-modal-out") {
+            this.handleSideSheetShown(event);
+        } else if (event.animationName === "side-sheet-in" || event.animationName === "side-sheet-modal-in") {
+            this.handleSideSheetClosed(event);
+        }
     }
 
     handleSideSheetScrimClose(event) {
-        if (this.open) this.close();
-
+        if (this.open) {
+            this.close();
+        }
         /**
          * @event onSideSheetScrimClose
          * @property {Object} event

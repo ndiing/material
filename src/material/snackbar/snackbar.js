@@ -11,11 +11,9 @@ const queue = () => {
             return callback();
         }
     };
-
     return (callback) => (pending = execute(callback));
 };
 const task = queue();
-
 /**
  * @extends MdComponent
  * @element md-snackbar
@@ -117,7 +115,6 @@ class MDSnackbarComponent extends MdComponent {
 
         this.classList.add("md-snackbar");
         this.style.setProperty("--md-comp-snackbar-animation", "none");
-
         this.handleSnackbarAnimationend = this.handleSnackbarAnimationend.bind(this);
         this.addEventListener("animationend", this.handleSnackbarAnimationend);
 
@@ -143,17 +140,14 @@ class MDSnackbarComponent extends MdComponent {
                         this.close();
                     };
                     const timeout = setTimeout(handleSnackbarAutoDismiss, this.autoDismiss);
-
                     const handleSnackbarDismissed = () => {
                         clearTimeout(timeout);
                         this.removeEventListener("onSnackbarClosed", handleSnackbarDismissed);
                         resolve();
                     };
                     this.addEventListener("onSnackbarClosed", handleSnackbarDismissed);
-
                     this.style.removeProperty("--md-comp-snackbar-animation");
                     this.open = true;
-
                     /**
                      * @event onSnackbarShow
                      * @property {Object} event
@@ -168,7 +162,6 @@ class MDSnackbarComponent extends MdComponent {
     close() {
         this.style.removeProperty("--md-comp-snackbar-animation");
         this.open = false;
-
         /**
          * @event onSnackbarClose
          * @property {Object} event
@@ -179,8 +172,11 @@ class MDSnackbarComponent extends MdComponent {
     /**
      */
     toggle() {
-        if (this.open) this.close();
-        else this.show();
+        if (this.open) {
+            this.close();
+        } else {
+            this.show();
+        }
     }
 
     handleSnackbarShown(event) {
@@ -200,8 +196,11 @@ class MDSnackbarComponent extends MdComponent {
     }
 
     handleSnackbarAnimationend(event) {
-        if (event.animationName === "snackbar-in") this.handleSnackbarClosed(event);
-        else if (event.animationName === "snackbar-out") this.handleSnackbarShown(event);
+        if (event.animationName === "snackbar-in") {
+            this.handleSnackbarClosed(event);
+        } else if (event.animationName === "snackbar-out") {
+            this.handleSnackbarShown(event);
+        }
     }
 
     handleSnackbarIconButtonClick(event) {

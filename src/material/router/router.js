@@ -54,7 +54,10 @@ class Router {
 
             if (route?.children?.length) {
                 const matches = this.get(pathname, route.children, route, [...result, route]);
-                if (matches) return matches;
+
+                if (matches) {
+                    return matches;
+                }
             }
         }
     }
@@ -72,7 +75,6 @@ class Router {
             return window.location.hash.replace(/^#/, "").replace(/\?[^\?]+/, "") || "/";
         }
     }
-
     // /**
     //  * Handles navigation events, triggering the route change process.
     //  * @static
@@ -80,7 +82,6 @@ class Router {
     //  */
     static async handleNavigation(event) {
         performance.mark("mark-1");
-
         /**
          * @event onRouterCurrentEntryChange
          * @property {Object} event
@@ -88,7 +89,6 @@ class Router {
         this.emit("onRouterCurrentEntryChange", {});
         this.setController();
         const routes = this.get();
-
         /**
          * @event onRouterNavigate
          * @property {Object} event
@@ -119,7 +119,6 @@ class Router {
         performance.clearMarks("mark-1");
         performance.clearMarks("mark-2");
         performance.clearMeasures("measure-1");
-
         /**
          * @event onRouterNavigateSuccess
          * @property {Object} event
@@ -154,7 +153,9 @@ class Router {
     //  * @param {HTMLElement} outlet - The outlet element where the component should be rendered.
     //  */
     static renderComponent(route, outlet) {
-        if (!route.component.isConnected) outlet.parentElement.insertBefore(route.component, outlet.nextElementSibling);
+        if (!route.component.isConnected) {
+            outlet.parentElement.insertBefore(route.component, outlet.nextElementSibling);
+        }
     }
 
     // /**
@@ -179,7 +180,9 @@ class Router {
                 outlet = target.querySelector(selector);
 
                 if (outlet) {
-                    if (observer) observer.disconnect();
+                    if (observer) {
+                        observer.disconnect();
+                    }
                     resolve(outlet);
                 }
             };
@@ -223,8 +226,11 @@ class Router {
     static async handleBeforeLoad(route) {
         await new Promise((resolve, reject) => {
             const callback = (error) => {
-                if (error) reject(error);
-                else resolve();
+                if (error) {
+                    reject(error);
+                } else {
+                    resolve();
+                }
             };
             this.controller.signal.addEventListener("abort", callback);
             route.beforeLoad(callback);
@@ -299,7 +305,6 @@ class Router {
     //  * @property {Object} event
     //  */
     static options = {};
-
     /**
      * @typedef {Object} RouterUseRoutes
      * @property {string} path - The path of the route.
@@ -308,12 +313,10 @@ class Router {
      * @property {Function} [beforeLoad] - The function to call before loading the component.
      * @property {RouterUseRoutes.<Array>} [children] - The child routes.
      */
-
     /**
      * @typedef {Object} RouterUseOptions
      * @property {boolean} [historyApiFallback=false] - Whether to use the History API for navigation.
      */
-
     /**
      * Initializes the router with the specified routes and options.
      * @static

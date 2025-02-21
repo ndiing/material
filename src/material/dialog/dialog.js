@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
-
 /**
  * @extends MdComponent
  * @element md-dialog
@@ -134,16 +133,12 @@ class MDDialogComponent extends MdComponent {
 
         this.classList.add("md-dialog");
         this.style.setProperty("--md-comp-dialog-animation", "none");
-
         this.handleDialogAnimationend = this.handleDialogAnimationend.bind(this);
         this.addEventListener("animationend", this.handleDialogAnimationend);
-
         this.scrim = document.createElement("md-scrim");
         this.parentElement.insertBefore(this.scrim, this.nextElementSibling);
-
         this.handleDialogScrimClose = this.handleDialogScrimClose.bind(this);
         this.scrim.addEventListener("onScrimClose", this.handleDialogScrimClose);
-
         this.scrim.open = this.open;
 
         await this.updateComplete;
@@ -156,7 +151,6 @@ class MDDialogComponent extends MdComponent {
         super.disconnectedCallback();
 
         this.removeEventListener("animationend", this.handleDialogAnimationend);
-
         this.scrim.removeEventListener("onScrimClose", this.handleDialogScrimClose);
         this.scrim.remove();
     }
@@ -167,7 +161,6 @@ class MDDialogComponent extends MdComponent {
         this.style.removeProperty("--md-comp-dialog-animation");
         this.scrim.show();
         this.open = true;
-
         /**
          * @event onDialogShow
          * @property {Object} event
@@ -179,9 +172,11 @@ class MDDialogComponent extends MdComponent {
      */
     close() {
         this.style.removeProperty("--md-comp-dialog-animation");
-        if (this.scrim.open) this.scrim.close();
-        this.open = false;
 
+        if (this.scrim.open) {
+            this.scrim.close();
+        }
+        this.open = false;
         /**
          * @event onDialogClose
          * @property {Object} event
@@ -192,8 +187,11 @@ class MDDialogComponent extends MdComponent {
     /**
      */
     toggle() {
-        if (this.open) this.close();
-        else this.show();
+        if (this.open) {
+            this.close();
+        } else {
+            this.show();
+        }
     }
 
     handleDialogShown(event) {
@@ -213,13 +211,15 @@ class MDDialogComponent extends MdComponent {
     }
 
     handleDialogAnimationend(event) {
-        if (event.animationName === "dialog-in" || event.animationName === "dialog-modal-in") this.handleDialogClosed(event);
-        else if (event.animationName === "dialog-out" || event.animationName === "dialog-modal-out") this.handleDialogShown(event);
+        if (event.animationName === "dialog-in" || event.animationName === "dialog-modal-in") {
+            this.handleDialogClosed(event);
+        } else if (event.animationName === "dialog-out" || event.animationName === "dialog-modal-out") {
+            this.handleDialogShown(event);
+        }
     }
 
     handleDialogScrimClose(event) {
         this.close();
-
         /**
          * @event onDialogScrimClose
          * @property {Object} event

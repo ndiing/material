@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { Ripple } from "../ripple/ripple";
-
 /**
  * @extends MdComponent
  * @element md-tree-item
@@ -30,17 +29,27 @@ class MDTreeItemComponent extends MdComponent {
     };
 
     get action() {
-        if (!this.actions?.length) return;
-        if (this.data.children?.length) return this.actions[~~this.expanded];
-        else return [" ", ""][~~(this.indent === 0)];
-    }
+        if (!this.actions?.length) {
+            return;
+        }
 
+        if (this.data.children?.length) {
+            return this.actions[~~this.expanded];
+        } else {
+            return [" ", ""][~~(this.indent === 0)];
+        }
+    }
     get icon() {
-        if (!this.leafIcons?.length) return;
-        if (this.data.children?.length) return this.nodeIcons[~~this.expanded];
-        else return this.leafIcons[~~this.selected];
-    }
+        if (!this.leafIcons?.length) {
+            return;
+        }
 
+        if (this.data.children?.length) {
+            return this.nodeIcons[~~this.expanded];
+        } else {
+            return this.leafIcons[~~this.selected];
+        }
+    }
     constructor() {
         super();
 
@@ -67,7 +76,9 @@ class MDTreeItemComponent extends MdComponent {
     async disconnectedCallback() {
         super.disconnectedCallback();
 
-        if (this.ripple) this.ripple.destroy();
+        if (this.ripple) {
+            this.ripple.destroy();
+        }
     }
 
     updated(changedProperties) {

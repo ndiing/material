@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { Ripple } from "../ripple/ripple";
 import { ifDefined } from "lit/directives/if-defined.js";
-
 /**
  * @extends MdComponent
  * @element md-button
@@ -39,10 +38,9 @@ class MDButtonComponent extends MdComponent {
             <button
                 class="md-button__native"
                 .type="${ifDefined(this.type)}"
-            >
-                button
-            </button>
-            ${this.icon ? html`<md-icon class="md-button__icon">${this.icon}</md-icon>` : nothing} ${this.label ? html`<div class="md-button__label">${this.label}</div>` : nothing}
+            >button</button>
+            ${this.icon ? html`<md-icon class="md-button__icon">${this.icon}</md-icon>` : nothing} 
+            ${this.label ? html`<div class="md-button__label">${this.label}</div>` : nothing}
         `;
     }
 
@@ -61,7 +59,9 @@ class MDButtonComponent extends MdComponent {
     async disconnectedCallback() {
         super.disconnectedCallback();
 
-        if (this.ripple) this.ripple.destroy();
+        if (this.ripple) {
+            this.ripple.destroy();
+        }
     }
 
     updated(changedProperties) {

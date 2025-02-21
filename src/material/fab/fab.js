@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { Ripple } from "../ripple/ripple";
 import { ifDefined } from "lit/directives/if-defined.js";
-
 /**
  * @extends MdComponent
  * @element md-fab
@@ -51,7 +50,9 @@ class MDFabComponent extends MdComponent {
     async disconnectedCallback() {
         super.disconnectedCallback();
 
-        if (this.ripple) this.ripple.destroy();
+        if (this.ripple) {
+            this.ripple.destroy();
+        }
     }
 
     updated(changedProperties) {

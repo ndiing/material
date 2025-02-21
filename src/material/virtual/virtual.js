@@ -10,7 +10,6 @@ class Virtual {
      * @property {number} [nodePadding=2] - The number of nodes to pad above and below the visible area.
      * @property {Array} [data=[]] - The initial data for the list.
      */
-
     /**
      * Creates an instance of the Virtual class.
      * @param {HTMLElement} host - The host element containing the virtual scrollable list.
@@ -34,14 +33,11 @@ class Virtual {
     handleVirtualScrollDebounce() {
         this.updateTrackHeight();
         this.updateItemsPosition(this.rowHeight, this.total);
-
         const cache = [this.start, this.end, this.now].toString();
-
         this.data = this.options.data.slice(this.start, this.end);
 
         if (this.cache !== cache) {
             this.cache = cache;
-
             /**
              * @event onVirtualScroll
              * @type {Object}
@@ -65,13 +61,10 @@ class Virtual {
         this.scrollTop = this.host.scrollTop;
         this.nodePadding = this.options.nodePadding;
         this.viewportHeight = this.host.clientHeight;
-
         this.start = Math.max(0, Math.floor(this.scrollTop / rowHeight) - this.nodePadding);
         this.limit = Math.min(total - this.start, Math.ceil(this.viewportHeight / rowHeight) + 2 * this.nodePadding);
         this.end = this.start + this.limit;
-
         this.translateY = this.start * rowHeight;
-
         this.items = this.host.querySelectorAll(this.options.item);
         this.items.forEach((item) => {
             item.style.setProperty("transform", "translate3d(0," + this.translateY + "px,0)");
@@ -86,7 +79,6 @@ class Virtual {
         this.total = this.options.data.length;
         this.rowHeight = this.options.rowHeight;
         this.trackHeight = this.total * this.rowHeight;
-
         this.track.style.setProperty("height", this.trackHeight + "px");
     }
 
@@ -118,12 +110,13 @@ class Virtual {
     load(options = {}) {
         for (const name in options) {
             const value = options[name];
-            if (value === undefined || this.options[name] === value) continue;
+
+            if (value === undefined || this.options[name] === value) {
+                continue;
+            }
             this.options[name] = value;
         }
-
         this.now = performance.now();
-
         this.handleVirtualScroll();
     }
 
@@ -132,14 +125,11 @@ class Virtual {
      */
     init() {
         this.host.classList.add("md-virtual");
-
         this.track = document.createElement("div");
         this.track.classList.add("md-virtual__track");
         this.host.prepend(this.track);
-
         this.handleVirtualScroll = this.handleVirtualScroll.bind(this);
         this.handleVirtualScrollDebounce = this.handleVirtualScrollDebounce.bind(this);
-
         this.host.addEventListener("scroll", this.handleVirtualScroll);
     }
 

@@ -3,7 +3,6 @@ import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
 import { setPosition } from "../popper/popper";
-
 /**
  * @extends MdComponent
  * @element md-tooltip
@@ -145,7 +144,6 @@ class MDTooltipComponent extends MdComponent {
             ...options,
         });
         this.open = true;
-
         /**
          * @event onTooltipShow
          * @property {Object} event
@@ -157,7 +155,6 @@ class MDTooltipComponent extends MdComponent {
      */
     close() {
         this.open = false;
-
         /**
          * @event onTooltipClose
          * @property {Object} event
@@ -169,8 +166,11 @@ class MDTooltipComponent extends MdComponent {
      * @param {Any} [options]
      */
     toggle(options) {
-        if (this.open) this.close();
-        else this.show(options);
+        if (this.open) {
+            this.close();
+        } else {
+            this.show(options);
+        }
     }
 
     handleTooltipIconButtonClick(event) {

@@ -3,7 +3,6 @@ import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
 import { classMap } from "lit/directives/class-map.js";
-
 /**
  * @extends MdComponent
  * @element md-text-field
@@ -89,19 +88,15 @@ class MDTextFieldComponent extends MdComponent {
             ]);
         return actions;
     }
-
     get trailingActions() {
         return [];
     }
-
     get textFieldNative() {
         return this.querySelector(".md-text-field__native");
     }
-
     get textFieldContainer() {
         return this.querySelector(".md-text-field__container");
     }
-
     constructor() {
         super();
 
@@ -153,7 +148,6 @@ class MDTextFieldComponent extends MdComponent {
 
     render() {
         const actions = this.leadingActions.concat(this.actions).concat(this.trailingActions);
-
         return html`
             ${this.label ? html`<label class="md-text-field__label">${this.label}</label>` : nothing}
             <div class="md-text-field__container">
@@ -192,7 +186,6 @@ class MDTextFieldComponent extends MdComponent {
         super.connectedCallback();
 
         this.defaultValue = this.defaultValue || this.value;
-
         this.classList.add("md-text-field");
         this.classList.toggle("md-text-field--populated", !!this.value);
 
@@ -222,7 +215,6 @@ class MDTextFieldComponent extends MdComponent {
 
     handleTextFieldFocus(event) {
         this.classList.add("md-text-field--focus");
-
         /**
          * @event onTextFieldFocus
          * @property {Object} event
@@ -232,7 +224,6 @@ class MDTextFieldComponent extends MdComponent {
 
     handleTextFieldBlur(event) {
         this.classList.remove("md-text-field--focus");
-
         /**
          * @event onTextFieldBlur
          * @property {Object} event
@@ -242,7 +233,6 @@ class MDTextFieldComponent extends MdComponent {
 
     handleTextFieldInput(event) {
         this.updateValue();
-
         /**
          * @event onTextFieldInput
          * @property {Object} event
@@ -263,7 +253,6 @@ class MDTextFieldComponent extends MdComponent {
         event.preventDefault();
         this.error = this.textFieldNative.validationMessage;
         this.classList.toggle("md-text-field--error", !!this.error);
-
         /**
          * @event onTextFieldInvalid
          * @property {Object} event
@@ -276,7 +265,6 @@ class MDTextFieldComponent extends MdComponent {
         this.error = undefined;
         this.classList.toggle("md-text-field--populated", !!this.value);
         this.classList.toggle("md-text-field--error", !!this.error);
-
         /**
          * @event onTextFieldReset
          * @property {Object} event
@@ -290,7 +278,6 @@ class MDTextFieldComponent extends MdComponent {
         this.error = undefined;
         this.classList.toggle("md-text-field--populated", !!this.textFieldNative.value);
         this.classList.toggle("md-text-field--error", !!this.error);
-
         /**
          * @event onTextFieldIconButtonCancelClick
          * @property {Object} event
@@ -300,8 +287,10 @@ class MDTextFieldComponent extends MdComponent {
 
     handleTextFieldIconButtonClick(event) {
         const data = event.currentTarget.data;
-        if (data.id === "cancel") return this.handleTextFieldIconButtonCancelClick(event);
 
+        if (data.id === "cancel") {
+            return this.handleTextFieldIconButtonCancelClick(event);
+        }
         /**
          * @event onTextFieldIconButtonClick
          * @property {Object} event
@@ -311,7 +300,6 @@ class MDTextFieldComponent extends MdComponent {
 
     handleTextFieldClick(event) {
         event.preventDefault();
-
         /**
          * @event onTextFieldClick
          * @property {Object} event
@@ -323,7 +311,6 @@ class MDTextFieldComponent extends MdComponent {
         if (["datetime-local", "date", "time", "time", "month", "week"].includes(this.type) && event.code === "Space") {
             event.preventDefault();
         }
-
         /**
          * @event onTextFieldKeydown
          * @property {Object} event

@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
-
 /**
  * @extends MdComponent
  * @element md-navigation-drawer
@@ -120,14 +119,14 @@ class MDNavigationDrawerComponent extends MdComponent {
 
         this.classList.add("md-navigation-drawer");
         this.style.setProperty("--md-comp-navigation-drawer-animation", "none");
-
         this.scrim = document.createElement("md-scrim");
         this.parentElement.insertBefore(this.scrim, this.nextElementSibling);
-
         this.handleNavigationDrawerScrimClose = this.handleNavigationDrawerScrimClose.bind(this);
         this.scrim.addEventListener("onScrimClose", this.handleNavigationDrawerScrimClose);
 
-        if (this.modal) this.scrim.open = this.open;
+        if (this.modal) {
+            this.scrim.open = this.open;
+        }
 
         await this.updateComplete;
 
@@ -154,9 +153,11 @@ class MDNavigationDrawerComponent extends MdComponent {
      */
     show() {
         this.style.removeProperty("--md-comp-navigation-drawer-animation");
-        if (this.modal) this.scrim.show();
-        this.open = true;
 
+        if (this.modal) {
+            this.scrim.show();
+        }
+        this.open = true;
         /**
          * @event onNavigationDrawerShow
          * @property {Object} event
@@ -168,9 +169,11 @@ class MDNavigationDrawerComponent extends MdComponent {
      */
     close() {
         this.style.removeProperty("--md-comp-navigation-drawer-animation");
-        if (this.scrim.open) this.scrim.close();
-        this.open = false;
 
+        if (this.scrim.open) {
+            this.scrim.close();
+        }
+        this.open = false;
         /**
          * @event onNavigationDrawerClose
          * @property {Object} event
@@ -181,8 +184,11 @@ class MDNavigationDrawerComponent extends MdComponent {
     /**
      */
     toggle() {
-        if (this.open) this.close();
-        else this.show();
+        if (this.open) {
+            this.close();
+        } else {
+            this.show();
+        }
     }
 
     handleNavigationDrawerIconButtonClick(event) {
@@ -194,8 +200,9 @@ class MDNavigationDrawerComponent extends MdComponent {
     }
 
     handleNavigationDrawerScrimClose(event) {
-        if (this.open) this.close();
-
+        if (this.open) {
+            this.close();
+        }
         /**
          * @event onNavigationDrawerScrimClose
          * @property {Object} event

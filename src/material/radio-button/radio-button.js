@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { Ripple } from "../ripple/ripple";
-
 /**
  * @extends MdComponent
  * @element md-radio-button
@@ -53,7 +52,6 @@ class MDRadioButtonComponent extends MdComponent {
         this.defaultValue = this.defaultValue || this.value;
         this.defaultIndeterminate = this.defaultIndeterminate || this.indeterminate;
         this.defaultChecked = this.defaultChecked || this.checked;
-
         this.classList.add("md-radio-button");
 
         await this.updateComplete;
@@ -69,14 +67,15 @@ class MDRadioButtonComponent extends MdComponent {
     async disconnectedCallback() {
         super.disconnectedCallback();
 
-        if (this.ripple) this.ripple.destroy();
+        if (this.ripple) {
+            this.ripple.destroy();
+        }
     }
 
     handleRadioButtonNativeInput(event) {
         const native = event.currentTarget;
         this.indeterminate = native.indeterminate;
         this.checked = native.checked;
-
         /**
          * @event onRadioButtonNativeInput
          * @property {Object} event
@@ -88,7 +87,6 @@ class MDRadioButtonComponent extends MdComponent {
         this.value = this.defaultValue;
         this.indeterminate = this.defaultIndeterminate;
         this.checked = this.defaultChecked;
-
         /**
          * @event onRadioButtonNativeReset
          * @property {Object} event

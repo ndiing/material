@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { classMap } from "lit/directives/class-map.js";
-
 /**
  * @extends MdComponent
  * @element md-slider
@@ -45,15 +44,12 @@ class MDSliderComponent extends MdComponent {
         };
         return lengths[this.variant];
     }
-
     get sliderNativeAll() {
         return this.querySelectorAll(".md-slider__native");
     }
-
     get sliderValueAll() {
         return this.querySelectorAll(".md-slider__value");
     }
-
     constructor() {
         super();
 
@@ -113,13 +109,18 @@ class MDSliderComponent extends MdComponent {
         super.connectedCallback();
 
         this.classList.add("md-slider");
-
         this.value = this.value || [this.max < this.min ? this.min : this.min + (this.max - this.min) / 2];
         this.defaultValue = JSON.parse(JSON.stringify(this.value));
-        if (this.min < 0) this.variant = "centered";
-        else if (this.step > 1) this.variant = "discrete";
-        else if (this.value.length > 1) this.variant = "range-selection";
-        else this.variant = "continuous";
+
+        if (this.min < 0) {
+            this.variant = "centered";
+        } else if (this.step > 1) {
+            this.variant = "discrete";
+        } else if (this.value.length > 1) {
+            this.variant = "range-selection";
+        } else {
+            this.variant = "continuous";
+        }
 
         await this.updateComplete;
 
@@ -159,7 +160,6 @@ class MDSliderComponent extends MdComponent {
         native.value = this.value[data.index];
         this.updateValue();
         this.requestUpdate();
-
         /**
          * @event onSliderNativeInput
          * @property {Object} event
@@ -171,7 +171,6 @@ class MDSliderComponent extends MdComponent {
         this.value = JSON.parse(JSON.stringify(this.defaultValue));
         this.updateValue();
         this.requestUpdate();
-
         /**
          * @event onSliderNativeReset
          * @property {Object} event

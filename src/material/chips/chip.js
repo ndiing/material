@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { Ripple } from "../ripple/ripple";
 import { ifDefined } from "lit/directives/if-defined.js";
-
 /**
  * @extends MdComponent
  * @element md-chip
@@ -69,7 +68,9 @@ class MDChipComponent extends MdComponent {
     async disconnectedCallback() {
         super.disconnectedCallback();
 
-        if (this.ripple) this.ripple.destroy();
+        if (this.ripple) {
+            this.ripple.destroy();
+        }
     }
 
     handleChipActionClick(event) {

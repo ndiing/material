@@ -3,7 +3,6 @@ const defaultItems = [
     { name: "medium", media: window.matchMedia("(min-width: 600px) and (max-width: 839px)") },
     { name: "compact", media: window.matchMedia("(max-width: 599px)") },
 ];
-
 /**
  * LayoutObserver class responsible for managing layout changes based on media queries.
  */

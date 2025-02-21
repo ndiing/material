@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
-
 /**
  * @extends MdComponent
  * @element md-sheet
@@ -139,17 +138,16 @@ class MDSheetComponent extends MdComponent {
 
         this.classList.add("md-sheet");
         this.style.setProperty("--md-comp-sheet-animation", "none");
-
         this.handleSheetAnimationend = this.handleSheetAnimationend.bind(this);
         this.addEventListener("animationend", this.handleSheetAnimationend);
-
         this.scrim = document.createElement("md-scrim");
         this.parentElement.insertBefore(this.scrim, this.nextElementSibling);
-
         this.handleSheetScrimClose = this.handleSheetScrimClose.bind(this);
         this.scrim.addEventListener("onScrimClose", this.handleSheetScrimClose);
 
-        if (this.modal) this.scrim.open = this.open;
+        if (this.modal) {
+            this.scrim.open = this.open;
+        }
 
         await this.updateComplete;
 
@@ -161,7 +159,6 @@ class MDSheetComponent extends MdComponent {
         super.disconnectedCallback();
 
         this.removeEventListener("animationend", this.handleSheetAnimationend);
-
         this.scrim.removeEventListener("onScrimClose", this.handleSheetScrimClose);
         this.scrim.remove();
     }
@@ -185,9 +182,10 @@ class MDSheetComponent extends MdComponent {
     show() {
         this.style.removeProperty("--md-comp-sheet-animation");
 
-        if (this.modal) this.scrim.show();
+        if (this.modal) {
+            this.scrim.show();
+        }
         this.open = true;
-
         /**
          * @event onSheetShow
          * @property {Object} event
@@ -200,9 +198,10 @@ class MDSheetComponent extends MdComponent {
     close() {
         this.style.removeProperty("--md-comp-sheet-animation");
 
-        if (this.scrim.open) this.scrim.close();
+        if (this.scrim.open) {
+            this.scrim.close();
+        }
         this.open = false;
-
         /**
          * @event onSheetClose
          * @property {Object} event
@@ -213,8 +212,11 @@ class MDSheetComponent extends MdComponent {
     /**
      */
     toggle() {
-        if (this.open) this.close();
-        else this.show();
+        if (this.open) {
+            this.close();
+        } else {
+            this.show();
+        }
     }
 
     handleSheetShown(event) {
@@ -235,13 +237,16 @@ class MDSheetComponent extends MdComponent {
 
     handleSheetAnimationend(event) {
         console.log(event.animationName);
-        if (/^sheet-\w+-(modal-)?out$/.test(event.animationName)) this.handleSheetShown(event);
-        else if (/^sheet-\w+-(modal-)?in$/.test(event.animationName)) this.handleSheetClosed(event);
+
+        if (/^sheet-\w+-(modal-)?out$/.test(event.animationName)) {
+            this.handleSheetShown(event);
+        } else if (/^sheet-\w+-(modal-)?in$/.test(event.animationName)) {
+            this.handleSheetClosed(event);
+        }
     }
 
     handleSheetScrimClose(event) {
         this.close();
-
         /**
          * @event onSheetScrimClose
          * @property {Object} event

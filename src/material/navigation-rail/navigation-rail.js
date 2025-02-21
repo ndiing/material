@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
-
 /**
  * @extends MdComponent
  * @element md-navigation-rail
@@ -67,31 +66,34 @@ class MDNavigationRailComponent extends MdComponent {
     render() {
         /* prettier-ignore */
         return html`
-        ${this.icons?.length || this.label || this.sublabel || this.actions?.length ? html` 
-        <div class="md-navigation-rail__header">
-            ${this.icons?.length ? html` 
-            <div class="md-navigation-rail__icons">${this.icons.map((icon) => this.renderComponent(icon, "icon"))}</div>
-            ` : nothing} ${this.label || this.sublabel ? html` 
-            <div class="md-navigation-rail__labels">
-                ${this.label ? html`
-                <div class="md-navigation-rail__label">${this.label}</div>
-                ` : nothing} ${this.sublabel ? html`
-                <div class="md-navigation-rail__sublabel">${this.sublabel}</div>
-                ` : nothing}
-            </div>
-            ` : nothing} ${this.actions?.length ? html` 
-            <div class="md-navigation-rail__actions">${this.actions.map((action) => this.renderComponent(action, "icon-button"))}</div>
+            ${this.icons?.length || this.label || this.sublabel || this.actions?.length ? html` 
+                <div class="md-navigation-rail__header">
+                    ${this.icons?.length ? html`
+                        <div class="md-navigation-rail__icons">
+                            ${this.icons.map((icon) => this.renderComponent(icon, "icon"))}
+                        </div>
+                    ` : nothing} 
+                    ${this.label || this.sublabel ? html` 
+                        <div class="md-navigation-rail__labels">
+                            ${this.label ? html`<div class="md-navigation-rail__label">${this.label}</div>` : nothing} 
+                            ${this.sublabel ? html`<div class="md-navigation-rail__sublabel">${this.sublabel}</div>` : nothing}
+                        </div>
+                    ` : nothing} 
+                    ${this.actions?.length ? html`
+                        <div class="md-navigation-rail__actions">
+                            ${this.actions.map((action) => this.renderComponent(action, "icon-button"))}
+                        </div>
+                    ` : nothing}
+                </div>
             ` : nothing}
-        </div>
-        ` : nothing}
-        <div class="md-navigation-rail__wrapper">
-            <div class="md-navigation-rail__body">
-                <md-list
-                    .rippleOptions="${ifDefined(this.rippleOptions)}"
-                    .items="${ifDefined(this.items)}"
+            <div class="md-navigation-rail__wrapper">
+                <div class="md-navigation-rail__body">
+                    <md-list
+                        .rippleOptions="${ifDefined(this.rippleOptions)}"
+                        .items="${ifDefined(this.items)}"
                     ></md-list>
+                </div>
             </div>
-        </div>
         `;
     }
 
@@ -112,7 +114,6 @@ class MDNavigationRailComponent extends MdComponent {
     show() {
         this.style.removeProperty("--md-comp-navigation-rail-animation");
         this.open = true;
-
         /**
          * @event onNavigationRailShow
          * @property {Object} event
@@ -125,7 +126,6 @@ class MDNavigationRailComponent extends MdComponent {
     close() {
         this.style.removeProperty("--md-comp-navigation-rail-animation");
         this.open = false;
-
         /**
          * @event onNavigationRailClose
          * @property {Object} event
@@ -136,8 +136,11 @@ class MDNavigationRailComponent extends MdComponent {
     /**
      */
     toggle() {
-        if (this.open) this.close();
-        else this.show();
+        if (this.open) {
+            this.close();
+        } else {
+            this.show();
+        }
     }
 
     handleNavigationRailIconButtonClick(event) {

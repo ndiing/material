@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
-
 /**
  * @extends MdComponent
  * @element md-bottom-sheet
@@ -123,17 +122,16 @@ class MDBottomSheetComponent extends MdComponent {
 
         this.classList.add("md-bottom-sheet");
         this.style.setProperty("--md-comp-bottom-sheet-animation", "none");
-
         this.handleBottomSheetAnimationend = this.handleBottomSheetAnimationend.bind(this);
         this.addEventListener("animationend", this.handleBottomSheetAnimationend);
-
         this.scrim = document.createElement("md-scrim");
         this.parentElement.insertBefore(this.scrim, this.nextElementSibling);
-
         this.handleBottomSheetScrimClose = this.handleBottomSheetScrimClose.bind(this);
         this.scrim.addEventListener("onScrimClose", this.handleBottomSheetScrimClose);
 
-        if (this.modal) this.scrim.open = this.open;
+        if (this.modal) {
+            this.scrim.open = this.open;
+        }
 
         await this.updateComplete;
 
@@ -145,7 +143,6 @@ class MDBottomSheetComponent extends MdComponent {
         super.disconnectedCallback();
 
         this.removeEventListener("animationend", this.handleBottomSheetAnimationend);
-
         this.scrim.removeEventListener("onScrimClose", this.handleBottomSheetScrimClose);
         this.scrim.remove();
     }
@@ -163,9 +160,10 @@ class MDBottomSheetComponent extends MdComponent {
     show() {
         this.style.removeProperty("--md-comp-bottom-sheet-animation");
 
-        if (this.modal) this.scrim.show();
+        if (this.modal) {
+            this.scrim.show();
+        }
         this.open = true;
-
         /**
          * @event onBottomSheetShow
          * @property {Object} event
@@ -178,9 +176,10 @@ class MDBottomSheetComponent extends MdComponent {
     close() {
         this.style.removeProperty("--md-comp-bottom-sheet-animation");
 
-        if (this.scrim.open) this.scrim.close();
+        if (this.scrim.open) {
+            this.scrim.close();
+        }
         this.open = false;
-
         /**
          * @event onBottomSheetClose
          * @property {Object} event
@@ -191,8 +190,11 @@ class MDBottomSheetComponent extends MdComponent {
     /**
      */
     toggle() {
-        if (this.open) this.close();
-        else this.show();
+        if (this.open) {
+            this.close();
+        } else {
+            this.show();
+        }
     }
 
     handleBottomSheetShown(event) {
@@ -212,13 +214,17 @@ class MDBottomSheetComponent extends MdComponent {
     }
 
     handleBottomSheetAnimationend(event) {
-        if (event.animationName === "bottom-sheet-out" || event.animationName === "bottom-sheet-modal-out") this.handleBottomSheetShown(event);
-        else if (event.animationName === "bottom-sheet-in" || event.animationName === "bottom-sheet-modal-in") this.handleBottomSheetClosed(event);
+        if (event.animationName === "bottom-sheet-out" || event.animationName === "bottom-sheet-modal-out") {
+            this.handleBottomSheetShown(event);
+        } else if (event.animationName === "bottom-sheet-in" || event.animationName === "bottom-sheet-modal-in") {
+            this.handleBottomSheetClosed(event);
+        }
     }
 
     handleBottomSheetScrimClose(event) {
-        if (this.open) this.close();
-
+        if (this.open) {
+            this.close();
+        }
         /**
          * @event onBottomSheetScrimClose
          * @property {Object} event

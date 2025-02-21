@@ -12,7 +12,6 @@ const Mixins = (Super) =>
             this.dispatchEvent(event);
         }
     };
-
 /**
  * @extends LitElement
  */

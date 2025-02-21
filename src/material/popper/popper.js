@@ -33,7 +33,6 @@ function calculatePosition(placement, options = {}) {
         "left-end": () => ({ left: left - cWidth - offset.right, top: bottom - cHeight }),
         "top-left": () => ({ left: left - cWidth - offset.right, top: top - cHeight - offset.bottom }),
     };
-
     return (positions[placement] || positions.top)();
 }
 // Parses the offset string into an object with top, right, bottom, and left properties.
@@ -53,7 +52,6 @@ function parseOffset(offset) {
 
     return { top, right, bottom, left };
 }
-
 /**
  * @typedef {Object} PopperOptions
  * @property {HTMLElement} container - The container element to position.
@@ -62,7 +60,6 @@ function parseOffset(offset) {
  * @property {string} [offset="0"] - The offset values as a string (e.g., "10 20 30 40").
  * @property {Array<string>} placements - The array of placement types to try.
  */
-
 /**
  * Sets the position of a container element based on the provided options.
  * @param {PopperOptions} options - The options for setting the position.
@@ -95,7 +92,6 @@ function setPosition(options = {}) {
             bestTop = top;
         }
     }
-
     bestLeft = Math.max(boundaryRect.left, Math.min(bestLeft, boundaryRect.right - containerRect.width));
 
     bestTop = Math.max(boundaryRect.top, Math.min(bestTop, boundaryRect.bottom - containerRect.height));

@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { MDTextFieldComponent } from "../text-field/text-field";
 import { closestScrollableElement, parseDatetimeLocal, stringifyDatetimeLocal } from "../util/util";
-
 /**
  * @extends MDTextFieldComponent
  * @element md-datetime-field
@@ -24,7 +23,6 @@ class MDDatetimeFieldComponent extends MDTextFieldComponent {
         ];
         return actions;
     }
-
     connectedCallback() {
         super.connectedCallback();
 
@@ -69,7 +67,9 @@ class MDDatetimeFieldComponent extends MDTextFieldComponent {
      */
     showPicker(options = {}) {
         if (this.picker) {
-            if (this.textFieldNative.value) this.picker.value = parseDatetimeLocal(this.textFieldNative.value);
+            if (this.textFieldNative.value) {
+                this.picker.value = parseDatetimeLocal(this.textFieldNative.value);
+            }
             this.picker.show(options);
         }
     }
@@ -87,8 +87,9 @@ class MDDatetimeFieldComponent extends MDTextFieldComponent {
      */
     togglePicker(options) {
         if (this.picker) {
-            if (this.picker.open) this.closePicker();
-            else this.showPicker(options);
+            if (this.picker.open) {
+                this.closePicker();
+            } else this.showPicker(options);
         }
     }
 
@@ -120,7 +121,10 @@ class MDDatetimeFieldComponent extends MDTextFieldComponent {
 
     handleTextFieldIconButtonClick(event) {
         const data = event.currentTarget.data;
-        if (data.id === "picker") return this.handleDatetimeFieldIconButtonPickerClick(event);
+
+        if (data.id === "picker") {
+            return this.handleDatetimeFieldIconButtonPickerClick(event);
+        }
         super.handleTextFieldIconButtonClick(event);
     }
 }

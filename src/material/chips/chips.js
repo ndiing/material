@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { Ripple } from "../ripple/ripple";
-
 /**
  * @extends MdComponent
  * @element md-chips
@@ -62,7 +61,6 @@ class MDChipsComponent extends MdComponent {
             data.selected = !data.selected;
         }
         this.requestUpdate();
-
         /**
          * @event onChipClick
          * @property {Object} event

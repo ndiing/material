@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { styleMap } from "lit/directives/style-map.js";
-
 /**
  * @extends MdComponent
  * @element md-image
@@ -42,7 +41,6 @@ class MDImageComponent extends MdComponent {
         }
         return style;
     }
-
     render() {
         /* prettier-ignore */
         return html`

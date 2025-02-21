@@ -1,7 +1,6 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { MDTextFieldComponent } from "../text-field/text-field";
-
 /**
  * @extends MDTextFieldComponent
  * @element md-number-field
@@ -19,7 +18,6 @@ class MDNumberFieldComponent extends MDTextFieldComponent {
             { component: "icon-button", id: "up", icon: "add" },
         ];
     }
-
     handleNumberFieldIconButtonUpClick(event) {
         this.textFieldNative.stepUp();
         this.updateValue();
@@ -32,8 +30,12 @@ class MDNumberFieldComponent extends MDTextFieldComponent {
 
     handleTextFieldIconButtonClick(event) {
         const data = event.currentTarget.data;
-        if (data.id === "up") return this.handleNumberFieldIconButtonUpClick(event);
-        else if (data.id === "down") return this.handleNumberFieldIconButtonDownClick(event);
+
+        if (data.id === "up") {
+            return this.handleNumberFieldIconButtonUpClick(event);
+        } else if (data.id === "down") {
+            return this.handleNumberFieldIconButtonDownClick(event);
+        }
         super.handleTextFieldIconButtonClick(event);
     }
 }

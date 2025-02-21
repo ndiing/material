@@ -1,7 +1,6 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
-
 /**
  * @extends MdComponent
  * @element md-tabs
@@ -73,7 +72,6 @@ class MDTabsComponent extends MdComponent {
             item.selected = item === data;
         });
         this.requestUpdate();
-
         /**
          * @event onTabClick
          * @property {Object} event

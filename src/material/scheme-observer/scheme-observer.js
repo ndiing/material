@@ -2,7 +2,6 @@ const defaultItems = [
     { name: "light", media: window.matchMedia("(prefers-color-scheme: light)") },
     { name: "dark", media: window.matchMedia("(prefers-color-scheme: dark)") },
 ];
-
 /**
  * SchemeObserver class responsible for managing color scheme changes based on media queries.
  */

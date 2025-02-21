@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { Ripple } from "../ripple/ripple";
 import { ifDefined } from "lit/directives/if-defined.js";
-
 /**
  * @extends MdComponent
  * @element md-icon-button
@@ -41,7 +40,6 @@ class MDIconButtonComponent extends MdComponent {
         if (this.icons?.length) {
             icon = this.icons[~~this.selected] || this.icons[0];
         }
-
         return html`
             <button
                 class="md-icon-button__native"
@@ -73,7 +71,9 @@ class MDIconButtonComponent extends MdComponent {
     disconnectedCallback() {
         super.disconnectedCallback();
 
-        if (this.ripple) this.ripple.destroy();
+        if (this.ripple) {
+            this.ripple.destroy();
+        }
         this.removeEventListener("click", this.handleIconButtonClick);
     }
 
@@ -91,7 +91,6 @@ class MDIconButtonComponent extends MdComponent {
         if (this.toggle) {
             this.selected = !this.selected;
         }
-
         /**
          * @event onIconButtonClick
          * @property {Object} event

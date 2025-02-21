@@ -6,7 +6,6 @@ import { closestScrollableElement, parseTime, stringifyTime } from "../util/util
 import { setPosition } from "../popper/popper";
 import { classMap } from "lit/directives/class-map.js";
 import { cache } from "lit/directives/cache.js";
-
 /**
  * @extends MdComponent
  * @element md-time-picker
@@ -65,7 +64,6 @@ class MDTimePickerComponent extends MdComponent {
             };
         });
     }
-
     get minutes() {
         return Array.from({ length: 60 }, (v, k) => {
             const date = new Date(this.selection.getFullYear(), this.selection.getMonth(), this.selection.getDate(), this.selection.getHours(), k);
@@ -81,7 +79,6 @@ class MDTimePickerComponent extends MdComponent {
             };
         });
     }
-
     get icons() {
         const map = {
             0: () => stringifyTime(this.selection),
@@ -89,18 +86,15 @@ class MDTimePickerComponent extends MdComponent {
         };
         return [{ component: "button", id: "label", label: map[this.index]() }];
     }
-
     get actions() {
         return [
             { id: "prev", icon: "keyboard_arrow_left" },
             { id: "next", icon: "keyboard_arrow_right" },
         ];
     }
-
     get buttons() {
         return [{ component: "spacer" }, { id: "cancel", label: "Cancel" }, { id: "ok", label: "Ok" }];
     }
-
     constructor() {
         super();
 
@@ -231,20 +225,18 @@ class MDTimePickerComponent extends MdComponent {
 
         this.defaultValue = this.defaultValue || new Date(this.value.valueOf());
         this.defaultIndex = this.defaultIndex || this.index;
-
         this.classList.add("md-time-picker");
         this.style.setProperty("--md-comp-time-picker-animation", "none");
-
         this.handleTimePickerAnimationend = this.handleTimePickerAnimationend.bind(this);
         this.addEventListener("animationend", this.handleTimePickerAnimationend);
-
         this.scrim = document.createElement("md-scrim");
         this.parentElement.insertBefore(this.scrim, this.nextElementSibling);
-
         this.handleTimePickerScrimClose = this.handleTimePickerScrimClose.bind(this);
         this.scrim.addEventListener("onScrimClose", this.handleTimePickerScrimClose);
 
-        if (this.modal) this.scrim.open = this.open;
+        if (this.modal) {
+            this.scrim.open = this.open;
+        }
 
         await this.updateComplete;
 
@@ -256,7 +248,6 @@ class MDTimePickerComponent extends MdComponent {
         super.disconnectedCallback();
 
         this.removeEventListener("animationend", this.handleTimePickerAnimationend);
-
         this.scrim.removeEventListener("onScrimClose", this.handleTimePickerScrimClose);
         this.scrim.remove();
     }
@@ -282,7 +273,6 @@ class MDTimePickerComponent extends MdComponent {
      */
     show(options) {
         this.index = this.defaultIndex;
-
         this.timePickerWindow = closestScrollableElement(this);
         this.handleTimePickerWindowScroll = this.handleTimePickerWindowScroll.bind(this);
         this.timePickerWindow.addEventListener("scroll", this.handleTimePickerWindowScroll);
@@ -292,13 +282,14 @@ class MDTimePickerComponent extends MdComponent {
         setPosition({
             container: this,
             offset: 4 + 4,
-
             placements: ["bottom-start", "bottom-end", "bottom", "top-start", "top-end", "top", "right-start", "right-end", "right", "left-start", "left-end", "left"],
             ...options,
         });
         this.open = true;
-        if (this.modal) this.scrim.show();
 
+        if (this.modal) {
+            this.scrim.show();
+        }
         /**
          * @event onTimePickerShow
          * @property {Object} event
@@ -313,8 +304,10 @@ class MDTimePickerComponent extends MdComponent {
         window.removeEventListener("click", this.handleTimePickerWindowClick);
         this.style.removeProperty("--md-comp-time-picker-animation");
         this.open = false;
-        if (this.modal) this.scrim.close();
 
+        if (this.modal) {
+            this.scrim.close();
+        }
         /**
          * @event onTimePickerClose
          * @property {Object} event
@@ -326,8 +319,11 @@ class MDTimePickerComponent extends MdComponent {
      * @param {Any} [options]
      */
     toggle(options) {
-        if (this.open) this.close();
-        else this.show(options);
+        if (this.open) {
+            this.close();
+        } else {
+            this.show(options);
+        }
     }
 
     handleTimePickerWindowScroll(event) {
@@ -340,7 +336,6 @@ class MDTimePickerComponent extends MdComponent {
 
     handleTimePickerWindowClick(event) {
         const target = document.elementFromPoint(event.clientX, event.clientY);
-
         /**
          * @event onTimePickerWindowClick
          * @property {Object} event
@@ -354,7 +349,6 @@ class MDTimePickerComponent extends MdComponent {
         this.selection.setHours(data.hour);
         this.value.setHours(data.hour);
         this.index = 1;
-
         /**
          * @event onTimePickerHourItemClick
          * @property {Object} event
@@ -367,7 +361,6 @@ class MDTimePickerComponent extends MdComponent {
         this.selection.setMinutes(data.minute);
         this.value.setMinutes(data.minute);
         this.index = 0;
-
         /**
          * @event onTimePickerMinuteItemClick
          * @property {Object} event
@@ -376,8 +369,9 @@ class MDTimePickerComponent extends MdComponent {
     }
 
     handleTimePickerScrimClose(event) {
-        if (this.open) this.close();
-
+        if (this.open) {
+            this.close();
+        }
         /**
          * @event onTimePickerScrimClose
          * @property {Object} event
@@ -402,8 +396,11 @@ class MDTimePickerComponent extends MdComponent {
     }
 
     handleTimePickerAnimationend(event) {
-        if (event.animationName === "time-picker-out" || event.animationName === "time-picker-modal-out") this.handleTimePickerShown(event);
-        else if (event.animationName === "time-picker-in" || event.animationName === "time-picker-modal-in") this.handleTimePickerClosed(event);
+        if (event.animationName === "time-picker-out" || event.animationName === "time-picker-modal-out") {
+            this.handleTimePickerShown(event);
+        } else if (event.animationName === "time-picker-in" || event.animationName === "time-picker-modal-in") {
+            this.handleTimePickerClosed(event);
+        }
     }
 
     handleTimePickerIconButtonPrevClick(event) {
@@ -413,7 +410,6 @@ class MDTimePickerComponent extends MdComponent {
         };
         map[this.index]();
         this.requestUpdate();
-
         /**
          * @event onTimePickerIconButtonPrevClick
          * @property {Object} event
@@ -428,7 +424,6 @@ class MDTimePickerComponent extends MdComponent {
         };
         map[this.index]();
         this.requestUpdate();
-
         /**
          * @event onTimePickerIconButtonNextClick
          * @property {Object} event
@@ -443,8 +438,10 @@ class MDTimePickerComponent extends MdComponent {
             next: this.handleTimePickerIconButtonNextClick.bind(this),
         };
         const fn = map[data.id];
-        if (fn) return fn(event);
 
+        if (fn) {
+            return fn(event);
+        }
         /**
          * @event onTimePickerIconButtonClick
          * @property {Object} event
@@ -454,7 +451,6 @@ class MDTimePickerComponent extends MdComponent {
 
     handleTimePickerButtonCancelClick(event) {
         this.value = new Date(this.defaultValue.valueOf());
-
         /**
          * @event onTimePickerButtonCancelClick
          * @property {Object} event
@@ -476,7 +472,6 @@ class MDTimePickerComponent extends MdComponent {
             1: 0,
         };
         this.index = map[this.index];
-
         /**
          * @event onTimePickerButtonLabelClick
          * @property {Object} event
@@ -492,8 +487,10 @@ class MDTimePickerComponent extends MdComponent {
             label: this.handleTimePickerButtonLabelClick.bind(this),
         };
         const fn = map[data.id];
-        if (fn) return fn(event);
 
+        if (fn) {
+            return fn(event);
+        }
         /**
          * @event onTimePickerButtonClick
          * @property {Object} event

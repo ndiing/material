@@ -3,7 +3,6 @@ import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { Store } from "../store/store";
 import { Virtual } from "../virtual/virtual";
-
 /**
  * MDListComponent class responsible for displaying a list.
  * @extends MdComponent
@@ -111,17 +110,18 @@ class MDListComponent extends MdComponent {
 
         this.classList.add("md-list");
         this.style.setProperty("--md-comp-list-icon-animation", "none");
-
         this.handleListWindowKeydown = this.handleListWindowKeydown.bind(this);
         window.addEventListener("keydown", this.handleListWindowKeydown);
-
         this.store = new Store();
 
         if (this.virtualize) {
             this.handleListVirtualScroll = this.handleListVirtualScroll.bind(this);
             this.addEventListener("onVirtualScroll", this.handleListVirtualScroll);
             this.virtual = new Virtual(this, this.virtualOptions);
-            if (this.hasConnected) this.load();
+
+            if (this.hasConnected) {
+                this.load();
+            }
         }
     }
 
@@ -172,12 +172,10 @@ class MDListComponent extends MdComponent {
         const startIndex = this.itemsStore.findIndex((item) => item.selected);
         const total = this.itemsStore.length;
         const currentIndex = offset < 0 ? Math.max(startIndex + offset, 0) : Math.min(startIndex + offset, total - 1);
-
         this.itemsStore.forEach((item, index) => {
             item.selected = index === currentIndex;
         });
         this.requestUpdate();
-
         return currentIndex;
     }
 
@@ -195,23 +193,19 @@ class MDListComponent extends MdComponent {
         } else if (block === "center") {
             const rowTotal = Math.floor(this.clientHeight / rowHeight);
             const middleIndex = Math.floor((rowTotal - 1) / 2);
-
             this.scrollTop = (currentIndex - middleIndex) * rowHeight;
         } else if (block === "start") {
             this.scrollTop = currentIndex * rowHeight;
         } else if (block === "end") {
             const rowTotal = Math.floor(this.clientHeight / rowHeight);
-
             this.scrollTop = (currentIndex - (rowTotal - 1)) * rowHeight;
         }
     }
 
     async handleListWindowKeydownArrowUp(event) {
         event.preventDefault();
-
         const currentIndex = this.selectByOffset(-1);
         this.scrollToIndex(currentIndex);
-
         /**
          * @event onListWindowKeydownArrowUp
          * @type {Object}
@@ -222,10 +216,8 @@ class MDListComponent extends MdComponent {
 
     async handleListWindowKeydownArrowDown(event) {
         event.preventDefault();
-
         const currentIndex = this.selectByOffset(1);
         this.scrollToIndex(currentIndex);
-
         /**
          * @event onListWindowKeydownArrowDown
          * @type {Object}
@@ -236,7 +228,6 @@ class MDListComponent extends MdComponent {
 
     async handleListWindowKeydownEnter(event) {
         event.preventDefault();
-
         /**
          * @event onListWindowKeydownEnter
          * @type {Object}
@@ -247,10 +238,13 @@ class MDListComponent extends MdComponent {
 
     handleListWindowKeydown(event) {
         if (this.contains(document.activeElement)) {
-            if (event.key === "ArrowUp") this.handleListWindowKeydownArrowUp(event);
-            else if (event.key === "ArrowDown") this.handleListWindowKeydownArrowDown(event);
-            else if (event.key === "Enter") this.handleListWindowKeydownEnter(event);
-
+            if (event.key === "ArrowUp") {
+                this.handleListWindowKeydownArrowUp(event);
+            } else if (event.key === "ArrowDown") {
+                this.handleListWindowKeydownArrowDown(event);
+            } else if (event.key === "Enter") {
+                this.handleListWindowKeydownEnter(event);
+            }
             /**
              * @event onListWindowKeydown
              * @type {Object}
@@ -270,7 +264,10 @@ class MDListComponent extends MdComponent {
     //  */
     handleListItemClick(event) {
         const action = event.target.closest(".md-list__checkbox,.md-list__radio-button,.md-list__switch");
-        if (action) return;
+
+        if (action) {
+            return;
+        }
         this.style.removeProperty("--md-comp-list-icon-animation");
         const data = event.currentTarget.data;
 
@@ -282,7 +279,6 @@ class MDListComponent extends MdComponent {
             data.selected = !data.selected;
         }
         this.requestUpdate();
-
         /**
          * @event onListItemClick
          * @property {Object} event - The list item click event.
@@ -298,7 +294,6 @@ class MDListComponent extends MdComponent {
         const data = event.currentTarget.data;
         data.selected = !data.selected;
         this.requestUpdate();
-
         /**
          * @event onListItemCheckboxNativeInput
          * @property {Object} event
@@ -316,7 +311,6 @@ class MDListComponent extends MdComponent {
             item.selected = item === data;
         });
         this.requestUpdate();
-
         /**
          * @event onListItemRadioButtonNativeInput
          * @property {Object} event
@@ -332,7 +326,6 @@ class MDListComponent extends MdComponent {
         const data = event.currentTarget.data;
         data.selected = !data.selected;
         this.requestUpdate();
-
         /**
          * @event onListItemSwitchNativeInput
          * @property {Object} event

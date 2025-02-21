@@ -2,7 +2,6 @@ import { html, nothing } from "lit";
 import { MdComponent } from "../component/component";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { Ripple } from "../ripple/ripple";
-
 /**
  * @extends MdComponent
  * @element md-checkbox
@@ -53,7 +52,6 @@ class MDCheckboxComponent extends MdComponent {
         this.defaultValue = this.defaultValue || this.value;
         this.defaultIndeterminate = this.defaultIndeterminate || this.indeterminate;
         this.defaultChecked = this.defaultChecked || this.checked;
-
         this.classList.add("md-checkbox");
 
         await this.updateComplete;
@@ -69,14 +67,15 @@ class MDCheckboxComponent extends MdComponent {
     async disconnectedCallback() {
         super.disconnectedCallback();
 
-        if (this.ripple) this.ripple.destroy();
+        if (this.ripple) {
+            this.ripple.destroy();
+        }
     }
 
     handleCheckboxNativeInput(event) {
         const native = event.currentTarget;
         this.indeterminate = native.indeterminate;
         this.checked = native.checked;
-
         /**
          * @event onCheckboxNativeInput
          * @property {Object} event
@@ -88,7 +87,6 @@ class MDCheckboxComponent extends MdComponent {
         this.value = this.defaultValue;
         this.indeterminate = this.defaultIndeterminate;
         this.checked = this.defaultChecked;
-
         /**
          * @event onCheckboxNativeReset
          * @property {Object} event
