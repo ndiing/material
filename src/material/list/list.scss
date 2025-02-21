@@ -3,6 +3,11 @@
 .md-list {
     display: flex;
     flex-direction: column;
+    overflow: auto;
+    min-height: 0;
+    min-width: 0;
+    height: 100%;
+    width: 100%;
     padding: 8px 0;
 }
 
