@@ -177,7 +177,7 @@ class MDListComponent extends MdComponent {
         const length = this.itemsStore.length;
         const offset = -1;
         // const nextIndex = (currIndex + length + offset) % length;
-        const nextIndex = Math.max(0,currIndex + offset)
+        const nextIndex = Math.max(0, currIndex + offset);
         this.itemsStore.forEach((item, index) => {
             item.selected = index === nextIndex;
         });
@@ -192,8 +192,8 @@ class MDListComponent extends MdComponent {
          * @event onListWindowKeydownArrowUp
          * @type {Object}
          * @property {Object} event
-        */
-        this.emit('onListWindowKeydownArrowUp',{event})
+         */
+        this.emit("onListWindowKeydownArrowUp", { event });
     }
 
     async handleListWindowKeydownArrowDown(event) {
@@ -203,7 +203,7 @@ class MDListComponent extends MdComponent {
         const length = this.itemsStore.length;
         const offset = 1;
         // const nextIndex = (currIndex + length + offset) % length;
-        const nextIndex = Math.min(currIndex + offset,length - 1)
+        const nextIndex = Math.min(currIndex + offset, length - 1);
         this.itemsStore.forEach((item, index) => {
             item.selected = index === nextIndex;
         });
@@ -218,8 +218,8 @@ class MDListComponent extends MdComponent {
          * @event onListWindowKeydownArrowDown
          * @type {Object}
          * @property {Object} event
-        */
-        this.emit('onListWindowKeydownArrowDown',{event})
+         */
+        this.emit("onListWindowKeydownArrowDown", { event });
     }
 
     handleListWindowKeydownEnter(event) {
@@ -232,8 +232,8 @@ class MDListComponent extends MdComponent {
          * @event onListWindowKeydownEnter
          * @type {Object}
          * @property {Object} event
-        */
-        this.emit('onListWindowKeydownEnter',{event})
+         */
+        this.emit("onListWindowKeydownEnter", { event });
     }
 
     handleListWindowKeydown(event) {
@@ -246,8 +246,8 @@ class MDListComponent extends MdComponent {
              * @event onListWindowKeydown
              * @type {Object}
              * @property {Object} event
-            */
-            this.emit('onListWindowKeydown',{event})
+             */
+            this.emit("onListWindowKeydown", { event });
         }
     }
 
