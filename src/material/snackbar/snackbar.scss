@@ -1,6 +1,8 @@
 @use "../mixins/mixins.scss";
 
 .md-snackbar {
+    --md-comp-snackbar-animation: snackbar-in;
+
     display: inline-flex;
     flex-wrap: wrap;
     width: 344px;
@@ -15,7 +17,6 @@
     z-index: 11;
     opacity: 0;
     pointer-events: none;
-    --md-comp-snackbar-animation: snackbar-in;
     animation-name: var(--md-comp-snackbar-animation);
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
     animation-duration: var(--md-sys-motion-duration-short3);
@@ -27,9 +28,10 @@
     }
 
     &[open] {
+        --md-comp-snackbar-animation: snackbar-out;
+
         opacity: 1;
         pointer-events: all;
-        --md-comp-snackbar-animation: snackbar-out;
         animation-name: var(--md-comp-snackbar-animation);
         animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
 

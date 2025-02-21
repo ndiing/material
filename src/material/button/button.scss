@@ -3,6 +3,7 @@
 .md-button {
     --md-comp-button-density: 0;
     --md-comp-button-height: calc(40px + (var(--md-comp-button-density) * 4px));
+
     display: inline-flex;
     align-items: center;
     justify-content: center;

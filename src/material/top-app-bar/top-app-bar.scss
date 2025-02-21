@@ -1,6 +1,8 @@
 @use "../mixins/mixins.scss";
 
 .md-top-app-bar {
+    --md-comp-top-app-bar-animation: top-app-bar-in;
+
     grid-area: north;
     display: flex;
     align-items: center;
@@ -9,14 +11,14 @@
     gap: 0 16px;
     margin-top: calc(0px - var(--md-comp-top-app-bar-height));
     background-color: var(--md-sys-color-surface);
-    --md-comp-top-app-bar-animation: top-app-bar-in;
     animation-name: var(--md-comp-top-app-bar-animation);
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
     animation-duration: var(--md-sys-motion-duration-short3);
 
     &[open] {
-        margin-top: 0;
         --md-comp-top-app-bar-animation: top-app-bar-out;
+
+        margin-top: 0;
         animation-name: var(--md-comp-top-app-bar-animation);
         animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
     }

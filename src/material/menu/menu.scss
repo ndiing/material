@@ -1,6 +1,8 @@
 @use "../mixins/mixins.scss";
 
 .md-menu {
+    --md-comp-menu-animation: menu-in;
+
     display: inline-flex;
     flex-direction: column;
     min-width: 112px;
@@ -13,7 +15,6 @@
     z-index: 11;
     opacity: 0;
     pointer-events: none;
-    --md-comp-menu-animation: menu-in;
     animation-name: var(--md-comp-menu-animation);
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
     animation-duration: var(--md-sys-motion-duration-short3);
@@ -25,9 +26,10 @@
     }
 
     &[open] {
+        --md-comp-menu-animation: menu-out;
+
         opacity: 1;
         pointer-events: all;
-        --md-comp-menu-animation: menu-out;
         animation-name: var(--md-comp-menu-animation);
         animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
 

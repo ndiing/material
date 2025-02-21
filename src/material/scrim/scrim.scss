@@ -1,4 +1,6 @@
 .md-scrim {
+    --md-comp-scrim-animation: scrim-in;
+
     position: absolute;
     left: 0;
     top: 0;
@@ -8,15 +10,15 @@
     background-color: var(--md-sys-color-scrim);
     opacity: 0%;
     pointer-events: none;
-    --md-comp-scrim-animation: scrim-in;
     animation-name: var(--md-comp-scrim-animation);
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
     animation-duration: var(--md-sys-motion-duration-short3);
 
     &[open] {
+        --md-comp-scrim-animation: scrim-out;
+
         opacity: 40%;
         pointer-events: all;
-        --md-comp-scrim-animation: scrim-out;
         animation-name: var(--md-comp-scrim-animation);
         animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
     }

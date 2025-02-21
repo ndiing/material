@@ -78,72 +78,80 @@
 }
 
 .md-sheet--north {
+    --md-comp-sheet-animation: sheet-north-in;
+
     grid-area: north;
     overflow: auto;
     height: var(--md-comp-sheet-height);
     margin-top: calc(0px - var(--md-comp-sheet-height));
-    --md-comp-sheet-animation: sheet-north-in;
     animation-name: var(--md-comp-sheet-animation);
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
     animation-duration: var(--md-sys-motion-duration-short3);
 
     &[open] {
-        margin-top: 0;
         --md-comp-sheet-animation: sheet-north-out;
+
+        margin-top: 0;
         animation-name: var(--md-comp-sheet-animation);
         animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
     }
 }
 
 .md-sheet--east {
+    --md-comp-sheet-animation: sheet-east-in;
+
     grid-area: east;
     overflow: auto;
     width: var(--md-comp-sheet-width);
     margin-right: calc(0px - var(--md-comp-sheet-width));
-    --md-comp-sheet-animation: sheet-east-in;
     animation-name: var(--md-comp-sheet-animation);
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
     animation-duration: var(--md-sys-motion-duration-short3);
 
     &[open] {
-        margin-right: 0;
         --md-comp-sheet-animation: sheet-east-out;
+
+        margin-right: 0;
         animation-name: var(--md-comp-sheet-animation);
         animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
     }
 }
 
 .md-sheet--south {
+    --md-comp-sheet-animation: sheet-south-in;
+
     grid-area: south;
     overflow: auto;
     height: var(--md-comp-sheet-height);
     margin-bottom: calc(0px - var(--md-comp-sheet-height));
-    --md-comp-sheet-animation: sheet-south-in;
     animation-name: var(--md-comp-sheet-animation);
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
     animation-duration: var(--md-sys-motion-duration-short3);
 
     &[open] {
-        margin-bottom: 0;
         --md-comp-sheet-animation: sheet-south-out;
+
+        margin-bottom: 0;
         animation-name: var(--md-comp-sheet-animation);
         animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
     }
 }
 
 .md-sheet--west {
+    --md-comp-sheet-animation: sheet-west-in;
+
     grid-area: west;
     overflow: auto;
     width: var(--md-comp-sheet-width);
     margin-left: calc(0px - var(--md-comp-sheet-width));
-    --md-comp-sheet-animation: sheet-west-in;
     animation-name: var(--md-comp-sheet-animation);
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
     animation-duration: var(--md-sys-motion-duration-short3);
 
     &[open] {
-        margin-left: 0;
         --md-comp-sheet-animation: sheet-west-out;
+
+        margin-left: 0;
         animation-name: var(--md-comp-sheet-animation);
         animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
     }
@@ -161,62 +169,70 @@
     z-index: 11;
 
     &.md-sheet--north {
+        --md-comp-sheet-animation: sheet-north-modal-in;
+
         margin-top: 0;
         left: 0;
         right: 0;
         top: 0;
         border-radius: 0 0 var(--md-sys-shape-corner-extra-large) var(--md-sys-shape-corner-extra-large);
         transform: translate3d(0, -100%, 0);
-        --md-comp-sheet-animation: sheet-north-modal-in;
 
         &[open] {
-            transform: translate3d(0, 0, 0);
             --md-comp-sheet-animation: sheet-north-modal-out;
+
+            transform: translate3d(0, 0, 0);
         }
     }
 
     &.md-sheet--east {
+        --md-comp-sheet-animation: sheet-east-modal-in;
+
         margin-right: 0;
         top: 0;
         bottom: 0;
         right: 0;
         border-radius: var(--md-sys-shape-corner-extra-large) 0 0 var(--md-sys-shape-corner-extra-large);
         transform: translate3d(100%, 0, 0);
-        --md-comp-sheet-animation: sheet-east-modal-in;
 
         &[open] {
-            transform: translate3d(0, 0, 0);
             --md-comp-sheet-animation: sheet-east-modal-out;
+
+            transform: translate3d(0, 0, 0);
         }
     }
 
     &.md-sheet--south {
+        --md-comp-sheet-animation: sheet-south-modal-in;
+
         margin-bottom: 0;
         left: 0;
         right: 0;
         bottom: 0;
         border-radius: var(--md-sys-shape-corner-extra-large) var(--md-sys-shape-corner-extra-large) 0 0;
         transform: translate3d(0, 100%, 0);
-        --md-comp-sheet-animation: sheet-south-modal-in;
 
         &[open] {
-            transform: translate3d(0, 0, 0);
             --md-comp-sheet-animation: sheet-south-modal-out;
+
+            transform: translate3d(0, 0, 0);
         }
     }
 
     &.md-sheet--west {
+        --md-comp-sheet-animation: sheet-west-modal-in;
+
         margin-left: 0;
         top: 0;
         bottom: 0;
         left: 0;
         border-radius: 0 var(--md-sys-shape-corner-extra-large) var(--md-sys-shape-corner-extra-large) 0;
         transform: translate3d(-100%, 0, 0);
-        --md-comp-sheet-animation: sheet-west-modal-in;
 
         &[open] {
-            transform: translate3d(0, 0, 0);
             --md-comp-sheet-animation: sheet-west-modal-out;
+
+            transform: translate3d(0, 0, 0);
         }
     }
 }

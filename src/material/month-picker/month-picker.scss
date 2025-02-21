@@ -9,6 +9,8 @@
     --md-comp-month-picker-container-height: calc((var(--md-comp-month-picker-table-item-height) * 7) + (8px * 6));
     --md-comp-month-picker-width: var(--md-comp-month-picker-container-width);
     --md-comp-month-picker-height: calc(var(--md-comp-month-picker-container-height) + (64px * 2));
+    --md-comp-month-picker-animation: month-picker-in;
+
     display: inline-flex;
     flex-direction: column;
     width: var(--md-comp-month-picker-width);
@@ -19,7 +21,6 @@
     z-index: 11;
     opacity: 0;
     pointer-events: none;
-    --md-comp-month-picker-animation: month-picker-in;
     animation-name: var(--md-comp-month-picker-animation);
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
     animation-duration: var(--md-sys-motion-duration-short3);
@@ -31,9 +32,10 @@
     }
 
     &[open] {
+        --md-comp-month-picker-animation: month-picker-out;
+
         opacity: 1;
         pointer-events: all;
-        --md-comp-month-picker-animation: month-picker-out;
         animation-name: var(--md-comp-month-picker-animation);
         animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
 

@@ -103,8 +103,6 @@
 @keyframes bottom-app-bar-in {0% {margin-bottom: 0;}100% {margin-bottom: calc(0px - var(--md-comp-bottom-app-bar-height));}}
 @keyframes bottom-app-bar-modal-in {0% {transform: translate3d(0, 0, 0);}100% {transform: translate3d(0, 100%, 0);}}
 @keyframes bottom-app-bar-modal-out {0% {transform: translate3d(0, 100%, 0);}100% {transform: translate3d(0, 0, 0);}}
-@keyframes bottom-app-bar-action-out {0% {transform: translate3d(0, 200%, 0);opacity: 0;}100% {transform: translate3d(0, 0, 0);opacity: 1;}}
-@keyframes bottom-app-bar-fab-out {0% {transform: scale(0);opacity: 0;}100% {transform: scale(1);opacity: 1;}}
 
 
 

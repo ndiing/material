@@ -1,4 +1,6 @@
 .md-switch {
+    --md-comp-switch-thumb-transition-property: left, width, height;
+
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -6,7 +8,6 @@
     width: 52px;
     height: 32px;
     position: relative;
-    --md-comp-switch-thumb-transition-property: left, width, height;
 }
 
 .md-switch__native {

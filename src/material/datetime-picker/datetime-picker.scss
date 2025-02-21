@@ -9,6 +9,8 @@
     --md-comp-datetime-picker-container-height: calc((var(--md-comp-datetime-picker-table-item-height) * 7) + (8px * 6));
     --md-comp-datetime-picker-width: var(--md-comp-datetime-picker-container-width);
     --md-comp-datetime-picker-height: calc(var(--md-comp-datetime-picker-container-height) + (64px * 2));
+    --md-comp-datetime-picker-animation: datetime-picker-in;
+
     display: inline-flex;
     flex-direction: column;
     width: var(--md-comp-datetime-picker-width);
@@ -19,7 +21,6 @@
     z-index: 11;
     opacity: 0;
     pointer-events: none;
-    --md-comp-datetime-picker-animation: datetime-picker-in;
     animation-name: var(--md-comp-datetime-picker-animation);
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
     animation-duration: var(--md-sys-motion-duration-short3);
@@ -31,9 +32,10 @@
     }
 
     &[open] {
+        --md-comp-datetime-picker-animation: datetime-picker-out;
+
         opacity: 1;
         pointer-events: all;
-        --md-comp-datetime-picker-animation: datetime-picker-out;
         animation-name: var(--md-comp-datetime-picker-animation);
         animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
 
@@ -275,6 +277,8 @@
     --md-comp-datetime-picker-circle-item-radius2: calc(var(--md-comp-datetime-picker-circle-item-radius) - (var(--md-comp-datetime-picker-circle-item-height) / 2));
     --md-comp-datetime-picker-circle-item-height2: calc(var(--md-comp-datetime-picker-circle-item-height) / 2);
     --md-comp-datetime-picker-circle-item-offset2: calc(var(--md-comp-datetime-picker-circle-item-offset) + (var(--md-comp-datetime-picker-circle-item-height2) / 2));
+    --md-comp-ripple-radius: 100%;
+
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -317,7 +321,6 @@
             opacity: 1;
         }
     }
-    --md-comp-ripple-radius: 100%;
     position: absolute;
 
     &::before {

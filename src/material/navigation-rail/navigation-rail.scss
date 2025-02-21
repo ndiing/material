@@ -1,6 +1,8 @@
 @use "../mixins/mixins.scss";
 
 .md-navigation-rail {
+    --md-comp-navigation-rail-animation: navigation-rail-in;
+
     grid-area: west;
     overflow: auto;
     display: inline-flex;
@@ -8,14 +10,14 @@
     width: 80px;
     margin-left: calc(0px - var(--md-comp-navigation-rail-width));
     background-color: var(--md-sys-color-surface);
-    --md-comp-navigation-rail-animation: navigation-rail-in;
     animation-name: var(--md-comp-navigation-rail-animation);
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
     animation-duration: var(--md-sys-motion-duration-short3);
 
     &[open] {
-        margin-left: 0;
         --md-comp-navigation-rail-animation: navigation-rail-out;
+
+        margin-left: 0;
         animation-name: var(--md-comp-navigation-rail-animation);
         animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
     }
@@ -77,8 +79,9 @@
 
 .md-navigation-rail {
     .md-list {
-        padding: 0;
         --md-comp-list-icon-animation: list-icon-out;
+
+        padding: 0;
 
         .md-list__item {
             flex-direction: column;

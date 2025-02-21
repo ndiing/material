@@ -122,12 +122,13 @@
 /* ripple */
 
 @mixin ripple() {
-    position: relative;
     --md-comp-ripple-radius: 141.4213562373095%;
     --md-comp-ripple-left: 50%;
     --md-comp-ripple-top: 50%;
     --md-comp-ripple-x: 0%;
     --md-comp-ripple-y: 0%;
+
+    position: relative;
 
     &:after {
         content: "";

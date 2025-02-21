@@ -3,6 +3,7 @@
 .md-text-field {
     --md-comp-text-field-density: 0;
     --md-comp-text-field-height: calc(56px + (var(--md-comp-text-field-density) * 4px));
+
     display: inline-flex;
     flex-direction: column;
     width: 100%;

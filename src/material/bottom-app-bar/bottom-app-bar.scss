@@ -1,6 +1,8 @@
 @use "../mixins/mixins.scss";
 
 .md-bottom-app-bar {
+    --md-comp-bottom-app-bar-animation: bottom-app-bar-in;
+
     grid-area: south;
     display: flex;
     align-items: center;
@@ -10,26 +12,16 @@
     margin-bottom: calc(0px - var(--md-comp-bottom-app-bar-height));
     background-color: var(--md-sys-color-surface-container);
     box-shadow: var(--md-sys-elevation-level2);
-    --md-comp-bottom-app-bar-animation: bottom-app-bar-in;
     animation-name: var(--md-comp-bottom-app-bar-animation);
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
     animation-duration: var(--md-sys-motion-duration-short3);
 
     &[open] {
-        margin-bottom: 0;
         --md-comp-bottom-app-bar-animation: bottom-app-bar-out;
+
+        margin-bottom: 0;
         animation-name: var(--md-comp-bottom-app-bar-animation);
         animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
-
-        .md-bottom-app-bar__action {
-            animation-name: bottom-app-bar-action-out;
-            animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
-        }
-
-        .md-bottom-app-bar__fab {
-            animation-name: bottom-app-bar-fab-out;
-            animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
-        }
     }
 }
 
@@ -39,22 +31,9 @@
     gap: 0 16px;
 }
 
-.md-bottom-app-bar__action {
-    transform: translate3d(0, 300%, 0);
-    opacity: 0;
-    animation-name: none;
-    animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
-    animation-duration: var(--md-sys-motion-duration-short3);
-    animation-fill-mode: forwards;
-    animation-delay: calc(var(--md-sys-motion-duration-short1) * var(--md-comp-bottom-app-bar-action-index));
-}
+// .md-bottom-app-bar__action {
+// }
 
 .md-bottom-app-bar__fab {
     margin-left: auto;
-    transform: scale(0);
-    opacity: 0;
-    animation-name: none;
-    animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
-    animation-duration: var(--md-sys-motion-duration-short3);
-    animation-fill-mode: forwards;
 }

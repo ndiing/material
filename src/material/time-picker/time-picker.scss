@@ -9,6 +9,8 @@
     --md-comp-time-picker-container-height: calc((var(--md-comp-time-picker-table-item-height) * 7) + (8px * 6));
     --md-comp-time-picker-width: var(--md-comp-time-picker-container-width);
     --md-comp-time-picker-height: calc(var(--md-comp-time-picker-container-height) + (64px * 2));
+    --md-comp-time-picker-animation: time-picker-in;
+
     display: inline-flex;
     flex-direction: column;
     width: var(--md-comp-time-picker-width);
@@ -19,7 +21,6 @@
     z-index: 11;
     opacity: 0;
     pointer-events: none;
-    --md-comp-time-picker-animation: time-picker-in;
     animation-name: var(--md-comp-time-picker-animation);
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
     animation-duration: var(--md-sys-motion-duration-short3);
@@ -31,9 +32,10 @@
     }
 
     &[open] {
+        --md-comp-time-picker-animation: time-picker-out;
+
         opacity: 1;
         pointer-events: all;
-        --md-comp-time-picker-animation: time-picker-out;
         animation-name: var(--md-comp-time-picker-animation);
         animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
 
@@ -156,6 +158,8 @@
     --md-comp-time-picker-circle-item-radius2: calc(var(--md-comp-time-picker-circle-item-radius) - (var(--md-comp-time-picker-circle-item-height) / 2));
     --md-comp-time-picker-circle-item-height2: calc(var(--md-comp-time-picker-circle-item-height) / 2);
     --md-comp-time-picker-circle-item-offset2: calc(var(--md-comp-time-picker-circle-item-offset) + (var(--md-comp-time-picker-circle-item-height2) / 2));
+    --md-comp-ripple-radius: 100%;
+
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -198,7 +202,6 @@
             opacity: 1;
         }
     }
-    --md-comp-ripple-radius: 100%;
     position: absolute;
 
     &::before {

@@ -78,35 +78,39 @@
 }
 
 .md-bottom-sheet--north {
+    --md-comp-bottom-sheet-animation: bottom-sheet-north-in;
+
     grid-area: north;
     overflow: auto;
     height: var(--md-comp-bottom-sheet-height);
     margin-top: calc(0px - var(--md-comp-bottom-sheet-height));
-    --md-comp-bottom-sheet-animation: bottom-sheet-north-in;
     animation-name: var(--md-comp-bottom-sheet-animation);
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
     animation-duration: var(--md-sys-motion-duration-short3);
 
     &[open] {
-        margin-top: 0;
         --md-comp-bottom-sheet-animation: bottom-sheet-north-out;
+
+        margin-top: 0;
         animation-name: var(--md-comp-bottom-sheet-animation);
         animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
     }
 }
 
 .md-bottom-sheet {
+    --md-comp-bottom-sheet-animation: bottom-sheet-in;
+
     grid-area: south;
     height: 80px;
     margin-bottom: calc(0px - var(--md-comp-bottom-sheet-height));
-    --md-comp-bottom-sheet-animation: bottom-sheet-in;
     animation-name: var(--md-comp-bottom-sheet-animation);
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
     animation-duration: var(--md-sys-motion-duration-short3);
 
     &[open] {
-        margin-bottom: 0;
         --md-comp-bottom-sheet-animation: bottom-sheet-out;
+
+        margin-bottom: 0;
         animation-name: var(--md-comp-bottom-sheet-animation);
         animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
     }
@@ -119,17 +123,19 @@
     z-index: 11;
 
     &.md-bottom-sheet {
+        --md-comp-bottom-sheet-animation: bottom-sheet-modal-in;
+
         margin-bottom: 0;
         left: 0;
         right: 0;
         bottom: 0;
         border-radius: var(--md-sys-shape-corner-extra-large) var(--md-sys-shape-corner-extra-large) 0 0;
         transform: translate3d(0, 100%, 0);
-        --md-comp-bottom-sheet-animation: bottom-sheet-modal-in;
 
         &[open] {
-            transform: translate3d(0, 0, 0);
             --md-comp-bottom-sheet-animation: bottom-sheet-modal-out;
+
+            transform: translate3d(0, 0, 0);
         }
     }
 }

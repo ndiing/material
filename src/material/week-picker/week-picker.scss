@@ -9,6 +9,8 @@
     --md-comp-week-picker-container-height: calc((var(--md-comp-week-picker-table-item-height) * 7) + (8px * 6));
     --md-comp-week-picker-width: var(--md-comp-week-picker-container-width);
     --md-comp-week-picker-height: calc(var(--md-comp-week-picker-container-height) + (64px * 2));
+    --md-comp-week-picker-animation: week-picker-in;
+
     display: inline-flex;
     flex-direction: column;
     width: var(--md-comp-week-picker-width);
@@ -19,7 +21,6 @@
     z-index: 11;
     opacity: 0;
     pointer-events: none;
-    --md-comp-week-picker-animation: week-picker-in;
     animation-name: var(--md-comp-week-picker-animation);
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
     animation-duration: var(--md-sys-motion-duration-short3);
@@ -31,9 +32,10 @@
     }
 
     &[open] {
+        --md-comp-week-picker-animation: week-picker-out;
+
         opacity: 1;
         pointer-events: all;
-        --md-comp-week-picker-animation: week-picker-out;
         animation-name: var(--md-comp-week-picker-animation);
         animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
 
