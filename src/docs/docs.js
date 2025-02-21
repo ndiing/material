@@ -1,8 +1,5 @@
-import DocsMain from "./main/main.js";
-import DocsPage from "./page/page.js";
-
 export default {
     path: "docs",
-    component: DocsMain,
-    children: [{ path: ":name", component: DocsPage }],
+    load: () => import("./main/main.js").then((module) => module.default),
+    children: [{ path: ":name", load: () => import("./page/page.js").then((module) => module.default) }],
 };

@@ -1,7 +1,7 @@
 import { html, nothing } from "lit";
 import { MdComponent } from "../../material/component/component";
 import { Router } from "../../material/router/router";
-import { keys, values } from "../jsdoc/jsdoc";
+import { values } from "../jsdoc/jsdoc";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
 class DocsPage extends MdComponent {
     constructor() {
@@ -183,8 +183,7 @@ class DocsPage extends MdComponent {
     }
 
     async handleDocsPageRouterNavigateSuccess(event) {
-        this.data = values.find((value) => value.key === Router.params.name + ".js");
-        console.log(this.data);
+        this.data = values.find((value) => value.key === Router.params.name);
         this.requestUpdate();
     }
 }

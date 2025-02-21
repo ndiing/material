@@ -1,5 +1,3 @@
-import AppMain from "./main/main.js";
-
 import "../demo/demo.scss";
 import DemoRoutes from "../demo/demo.js";
 
@@ -8,6 +6,6 @@ import DocsRoutes from "../docs/docs.js";
 
 export default {
     path: "",
-    component: AppMain,
+    load: () => import("./main/main.js").then((module) => module.default),
     children: [DemoRoutes, DocsRoutes],
 };

@@ -56,10 +56,10 @@ class MDListComponent extends MdComponent {
         return item[this.fieldMap[name] || name];
     }
 
-    styleListItem(item,index){
+    styleListItem(item, index) {
         return {
-            '--md-comp-list-item-index': index,
-        }
+            "--md-comp-list-item-index": index,
+        };
     }
 
     // /**
@@ -67,7 +67,7 @@ class MDListComponent extends MdComponent {
     //  * @param {Object} item - The item data.
     //  * @returns {TemplateResult} The rendered template for the list item.
     //  */
-    renderListItem(item,index) {
+    renderListItem(item, index) {
         /* prettier-ignore */
         return html`
             <md-list-row>
@@ -106,7 +106,7 @@ class MDListComponent extends MdComponent {
     //  * @returns {TemplateResult} The rendered template for the list.
     //  */
     render() {
-        return this.itemsVirtual?.map((item,index) => this.renderListItem(item,index));
+        return this.itemsVirtual?.map((item, index) => this.renderListItem(item, index));
     }
 
     // /**

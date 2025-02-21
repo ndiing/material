@@ -1,314 +1,123 @@
-import DemoMain from "./main/main.js";
-
-import DemoBadge from "./badge/badge.js";
-
-import DemoBottomAppBar from "./bottom-app-bar/bottom-app-bar.js";
-import DemoBottomAppBarNoFab from "./bottom-app-bar/bottom-app-bar-no-fab.js";
-
-import DemoBottomSheet from "./bottom-sheet/bottom-sheet.js";
-import DemoBottomSheetModal from "./bottom-sheet/bottom-sheet-modal.js";
-
-import DemoButton from "./button/button.js";
-import DemoButtonElevated from "./button/button-elevated.js";
-import DemoButtonFilled from "./button/button-filled.js";
-import DemoButtonFilledTonal from "./button/button-filled-tonal.js";
-import DemoButtonOutlined from "./button/button-outlined.js";
-
-import DemoCard from "./card/card.js";
-
-import DemoCheckbox from "./checkbox/checkbox.js";
-
-import DemoChips from "./chips/chips.js";
-import DemoChipsSingleSelect from "./chips/chips-single-select.js";
-import DemoChipsMultiSelect from "./chips/chips-multi-select.js";
-
-import DemoDataTableCell from "./data-table/data-table-cell.js";
-import DemoDataTable from "./data-table/data-table.js";
-import DemoDataTableCheckbox from "./data-table/data-table-checkbox.js";
-import DemoDataTableSortable from "./data-table/data-table-sortable.js";
-import DemoDataTableResizable from "./data-table/data-table-resizable.js";
-import DemoDataTableVirtualize from "./data-table/data-table-virtualize.js";
-
-import DemoDialog from "./dialog/dialog.js";
-
-import DemoDivider from "./divider/divider.js";
-
-import DemoFab from "./fab/fab.js";
-import DemoFabUnelevated from "./fab/fab-unelevated.js";
-import DemoFabExtended from "./fab/fab-extended.js";
-import DemoFabSmall from "./fab/fab-small.js";
-import DemoFabLarge from "./fab/fab-large.js";
-
-import DemoForm from "./form/form.js";
-
-import DemoIcon from "./icon/icon.js";
-
-import DemoIconButton from "./icon-button/icon-button.js";
-import DemoIconButtonFilled from "./icon-button/icon-button-filled.js";
-import DemoIconButtonFilledTonal from "./icon-button/icon-button-filled-tonal.js";
-import DemoIconButtonOutlined from "./icon-button/icon-button-outlined.js";
-
-import DemoImage from "./image/image.js";
-
-import DemoListItem from "./list/list-item.js";
-import DemoListRow from "./list/list-row.js";
-import DemoList from "./list/list.js";
-import DemoListAvatar from "./list/list-avatar.js";
-import DemoListImage from "./list/list-image.js";
-import DemoListVideo from "./list/list-video.js";
-import DemoListIcon from "./list/list-icon.js";
-import DemoListText from "./list/list-text.js";
-import DemoListCheckbox from "./list/list-checkbox.js";
-import DemoListRadioButton from "./list/list-radio-button.js";
-import DemoListSwitch from "./list/list-switch.js";
-import DemoListVirtualize from "./list/list-virtualize.js";
-import DemoListSingleSelect from "./list/list-single-select.js";
-import DemoListMultiSelect from "./list/list-multi-select.js";
-
-import DemoMenu from "./menu/menu.js";
-
-import DemoNavigationBar from "./navigation-bar/navigation-bar.js";
-import DemoNavigationBarNoLabel from "./navigation-bar/navigation-bar-no-label.js";
-
-import DemoNavigationDrawer from "./navigation-drawer/navigation-drawer.js";
-import DemoNavigationDrawerModal from "./navigation-drawer/navigation-drawer-modal.js";
-
-import DemoNavigationRail from "./navigation-rail/navigation-rail.js";
-import DemoNavigationRailNoLabel from "./navigation-rail/navigation-rail-no-label.js";
-
-import DemoProgressIndicator from "./progress-indicator/progress-indicator.js";
-import DemoProgressIndicatorCircular from "./progress-indicator/progress-indicator-circular.js";
-
-import DemoRadioButton from "./radio-button/radio-button.js";
-
-import DemoScrim from "./scrim/scrim.js";
-
-import DemoSegmentedButton from "./segmented-button/segmented-button.js";
-import DemoSegmentedButtonSingleSelect from "./segmented-button/segmented-button-single-select.js";
-import DemoSegmentedButtonMultiSelect from "./segmented-button/segmented-button-multi-select.js";
-
-import DemoSheet from "./sheet/sheet.js";
-import DemoSheetNorth from "./sheet/sheet-north.js";
-import DemoSheetNorthModal from "./sheet/sheet-north-modal.js";
-import DemoSheetEast from "./sheet/sheet-east.js";
-import DemoSheetEastModal from "./sheet/sheet-east-modal.js";
-import DemoSheetSouth from "./sheet/sheet-south.js";
-import DemoSheetSouthModal from "./sheet/sheet-south-modal.js";
-import DemoSheetWest from "./sheet/sheet-west.js";
-import DemoSheetWestModal from "./sheet/sheet-west-modal.js";
-import DemoSheetCenter from "./sheet/sheet-center.js";
-import DemoSideSheet from "./side-sheet/side-sheet.js";
-import DemoSideSheetModal from "./side-sheet/side-sheet-modal.js";
-
-import DemoSlider from "./slider/slider.js";
-import DemoSliderCentered from "./slider/slider-centered.js";
-import DemoSliderContinuous from "./slider/slider-continuous.js";
-import DemoSliderDiscrete from "./slider/slider-discrete.js";
-import DemoSliderRangeSelection from "./slider/slider-range-selection.js";
-
-import DemoSnackbar from "./snackbar/snackbar.js";
-
-import DemoSwitch from "./switch/switch.js";
-
-import DemoTab from "./tabs/tab.js";
-import DemoTabs from "./tabs/tabs.js";
-import DemoTabsPrimary from "./tabs/tabs-primary.js";
-import DemoTabsSecondary from "./tabs/tabs-secondary.js";
-
-import DemoTextField from "./text-field/text-field.js";
-import DemoTextFieldOutlined from "./text-field/text-field-outlined.js";
-import DemoTextFieldFilled from "./text-field/text-field-filled.js";
-
-import DemoTooltip from "./tooltip/tooltip.js";
-
-import DemoTopAppBar from "./top-app-bar/top-app-bar.js";
-
-import DemoTreeItem from "./tree/tree-item.js";
-import DemoTreeRow from "./tree/tree-row.js";
-import DemoTree from "./tree/tree.js";
-
-import DemoDatetimePicker from "./datetime-picker/datetime-picker.js";
-import DemoDatetimePickerModal from "./datetime-picker/datetime-picker-modal.js";
-
-import DemoDatePicker from "./date-picker/date-picker.js";
-import DemoDatePickerModal from "./date-picker/date-picker-modal.js";
-
-import DemoTimePicker from "./time-picker/time-picker.js";
-import DemoTimePickerModal from "./time-picker/time-picker-modal.js";
-
-import DemoMonthPicker from "./month-picker/month-picker.js";
-import DemoMonthPickerModal from "./month-picker/month-picker-modal.js";
-
-import DemoWeekPicker from "./week-picker/week-picker.js";
-import DemoWeekPickerModal from "./week-picker/week-picker-modal.js";
-
-import DemoDatetimeField from "./datetime-field/datetime-field.js";
-import DemoDateField from "./date-field/date-field.js";
-import DemoTimeField from "./time-field/time-field.js";
-import DemoMonthField from "./month-field/month-field.js";
-import DemoWeekField from "./week-field/week-field.js";
-
-import DemoPasswordField from "./password-field/password-field.js";
-import DemoNumberField from "./number-field/number-field.js";
-
-import DemoTest from "./test/test.js";
-
 export default {
     path: "demo",
-    component: DemoMain,
+    load: () => import("./main/main.js").then((module) => module.default),
     children: [
-        { path: "test", component: DemoTest },
-
-        { path: "badge", component: DemoBadge },
-
-        { path: "bottom-app-bar", component: DemoBottomAppBar },
-        { path: "bottom-app-bar-no-fab", component: DemoBottomAppBarNoFab },
-
-        { path: "bottom-sheet", component: DemoBottomSheet },
-        { path: "bottom-sheet-modal", component: DemoBottomSheetModal },
-
-        { path: "button", component: DemoButton },
-        { path: "button-elevated", component: DemoButtonElevated },
-        { path: "button-filled", component: DemoButtonFilled },
-        { path: "button-filled-tonal", component: DemoButtonFilledTonal },
-        { path: "button-outlined", component: DemoButtonOutlined },
-
-        { path: "card", component: DemoCard },
-
-        { path: "checkbox", component: DemoCheckbox },
-
-        { path: "chips", component: DemoChips },
-        { path: "chips-single-select", component: DemoChipsSingleSelect },
-        { path: "chips-multi-select", component: DemoChipsMultiSelect },
-
-        { path: "data-table-cell", component: DemoDataTableCell },
-        { path: "data-table", component: DemoDataTable },
-        { path: "data-table-checkbox", component: DemoDataTableCheckbox },
-        { path: "data-table-sortable", component: DemoDataTableSortable },
-        { path: "data-table-resizable", component: DemoDataTableResizable },
-        { path: "data-table-virtualize", component: DemoDataTableVirtualize },
-
-        { path: "dialog", component: DemoDialog },
-
-        { path: "divider", component: DemoDivider },
-
-        { path: "fab", component: DemoFab },
-        { path: "fab-unelevated", component: DemoFabUnelevated },
-        { path: "fab-extended", component: DemoFabExtended },
-        { path: "fab-small", component: DemoFabSmall },
-        { path: "fab-large", component: DemoFabLarge },
-
-        { path: "form", component: DemoForm },
-
-        { path: "icon", component: DemoIcon },
-
-        { path: "icon-button", component: DemoIconButton },
-        { path: "icon-button-filled", component: DemoIconButtonFilled },
-        { path: "icon-button-filled-tonal", component: DemoIconButtonFilledTonal },
-        { path: "icon-button-outlined", component: DemoIconButtonOutlined },
-
-        { path: "image", component: DemoImage },
-
-        { path: "list-item", component: DemoListItem },
-        { path: "list-row", component: DemoListRow },
-        { path: "list", component: DemoList },
-        { path: "list-single-select", component: DemoListSingleSelect },
-        { path: "list-multi-select", component: DemoListMultiSelect },
-        { path: "list-avatar", component: DemoListAvatar },
-        { path: "list-image", component: DemoListImage },
-        { path: "list-video", component: DemoListVideo },
-        { path: "list-icon", component: DemoListIcon },
-        { path: "list-text", component: DemoListText },
-        { path: "list-checkbox", component: DemoListCheckbox },
-        { path: "list-radio-button", component: DemoListRadioButton },
-        { path: "list-switch", component: DemoListSwitch },
-        { path: "list-virtualize", component: DemoListVirtualize },
-
-        { path: "menu", component: DemoMenu },
-
-        { path: "navigation-bar", component: DemoNavigationBar },
-        { path: "navigation-bar-no-label", component: DemoNavigationBarNoLabel },
-
-        { path: "navigation-drawer", component: DemoNavigationDrawer },
-        { path: "navigation-drawer-modal", component: DemoNavigationDrawerModal },
-
-        { path: "navigation-rail", component: DemoNavigationRail },
-        { path: "navigation-rail-no-label", component: DemoNavigationRailNoLabel },
-
-        { path: "progress-indicator", component: DemoProgressIndicator },
-        { path: "progress-indicator-circular", component: DemoProgressIndicatorCircular },
-
-        { path: "radio-button", component: DemoRadioButton },
-
-        { path: "scrim", component: DemoScrim },
-
-        { path: "segmented-button", component: DemoSegmentedButton },
-        { path: "segmented-button-single-select", component: DemoSegmentedButtonSingleSelect },
-        { path: "segmented-button-multi-select", component: DemoSegmentedButtonMultiSelect },
-
-        { path: "sheet", component: DemoSheet },
-        { path: "sheet-north", component: DemoSheetNorth },
-        { path: "sheet-north-modal", component: DemoSheetNorthModal },
-        { path: "sheet-east", component: DemoSheetEast },
-        { path: "sheet-east-modal", component: DemoSheetEastModal },
-        { path: "sheet-south", component: DemoSheetSouth },
-        { path: "sheet-south-modal", component: DemoSheetSouthModal },
-        { path: "sheet-west", component: DemoSheetWest },
-        { path: "sheet-west-modal", component: DemoSheetWestModal },
-        { path: "sheet-center", component: DemoSheetCenter },
-
-        { path: "side-sheet", component: DemoSideSheet },
-        { path: "side-sheet-modal", component: DemoSideSheetModal },
-
-        { path: "slider", component: DemoSlider },
-        { path: "slider-centered", component: DemoSliderCentered },
-        { path: "slider-continuous", component: DemoSliderContinuous },
-        { path: "slider-discrete", component: DemoSliderDiscrete },
-        { path: "slider-range-selection", component: DemoSliderRangeSelection },
-
-        { path: "snackbar", component: DemoSnackbar },
-
-        { path: "switch", component: DemoSwitch },
-
-        { path: "tab", component: DemoTab },
-        { path: "tabs", component: DemoTabs },
-        { path: "tabs-primary", component: DemoTabsPrimary },
-        { path: "tabs-secondary", component: DemoTabsSecondary },
-
-        { path: "text-field", component: DemoTextField },
-        { path: "text-field-outlined", component: DemoTextFieldOutlined },
-        { path: "text-field-filled", component: DemoTextFieldFilled },
-
-        { path: "tooltip", component: DemoTooltip },
-
-        { path: "top-app-bar", component: DemoTopAppBar },
-
-        { path: "tree-item", component: DemoTreeItem },
-        { path: "tree-row", component: DemoTreeRow },
-        { path: "tree", component: DemoTree },
-
-        { path: "datetime-picker", component: DemoDatetimePicker },
-        { path: "datetime-picker-modal", component: DemoDatetimePickerModal },
-
-        { path: "date-picker", component: DemoDatePicker },
-        { path: "date-picker-modal", component: DemoDatePickerModal },
-
-        { path: "time-picker", component: DemoTimePicker },
-        { path: "time-picker-modal", component: DemoTimePickerModal },
-
-        { path: "week-picker", component: DemoWeekPicker },
-        { path: "week-picker-modal", component: DemoWeekPickerModal },
-
-        { path: "month-picker", component: DemoMonthPicker },
-        { path: "month-picker-modal", component: DemoMonthPickerModal },
-
-        { path: "datetime-field", component: DemoDatetimeField },
-        { path: "date-field", component: DemoDateField },
-        { path: "time-field", component: DemoTimeField },
-        { path: "month-field", component: DemoMonthField },
-        { path: "week-field", component: DemoWeekField },
-        
-        { path: "password-field", component: DemoPasswordField },
-        { path: "number-field", component: DemoNumberField },
+        { path: "badge", load: () => import("./badge/badge.js").then((module) => module.default) },
+        { path: "bottom-app-bar-no-fab", load: () => import("./bottom-app-bar/bottom-app-bar-no-fab.js").then((module) => module.default) },
+        { path: "bottom-app-bar", load: () => import("./bottom-app-bar/bottom-app-bar.js").then((module) => module.default) },
+        { path: "bottom-sheet-modal", load: () => import("./bottom-sheet/bottom-sheet-modal.js").then((module) => module.default) },
+        { path: "bottom-sheet", load: () => import("./bottom-sheet/bottom-sheet.js").then((module) => module.default) },
+        { path: "button-elevated", load: () => import("./button/button-elevated.js").then((module) => module.default) },
+        { path: "button-filled-tonal", load: () => import("./button/button-filled-tonal.js").then((module) => module.default) },
+        { path: "button-filled", load: () => import("./button/button-filled.js").then((module) => module.default) },
+        { path: "button-outlined", load: () => import("./button/button-outlined.js").then((module) => module.default) },
+        { path: "button", load: () => import("./button/button.js").then((module) => module.default) },
+        { path: "card", load: () => import("./card/card.js").then((module) => module.default) },
+        { path: "checkbox", load: () => import("./checkbox/checkbox.js").then((module) => module.default) },
+        { path: "chips-multi-select", load: () => import("./chips/chips-multi-select.js").then((module) => module.default) },
+        { path: "chips-single-select", load: () => import("./chips/chips-single-select.js").then((module) => module.default) },
+        { path: "chips", load: () => import("./chips/chips.js").then((module) => module.default) },
+        { path: "data-table-cell", load: () => import("./data-table/data-table-cell.js").then((module) => module.default) },
+        { path: "data-table-checkbox", load: () => import("./data-table/data-table-checkbox.js").then((module) => module.default) },
+        { path: "data-table-resizable", load: () => import("./data-table/data-table-resizable.js").then((module) => module.default) },
+        { path: "data-table-sortable", load: () => import("./data-table/data-table-sortable.js").then((module) => module.default) },
+        { path: "data-table-virtualize", load: () => import("./data-table/data-table-virtualize.js").then((module) => module.default) },
+        { path: "data-table", load: () => import("./data-table/data-table.js").then((module) => module.default) },
+        { path: "date-field", load: () => import("./date-field/date-field.js").then((module) => module.default) },
+        { path: "date-picker-modal", load: () => import("./date-picker/date-picker-modal.js").then((module) => module.default) },
+        { path: "date-picker", load: () => import("./date-picker/date-picker.js").then((module) => module.default) },
+        { path: "datetime-field", load: () => import("./datetime-field/datetime-field.js").then((module) => module.default) },
+        { path: "datetime-picker-modal", load: () => import("./datetime-picker/datetime-picker-modal.js").then((module) => module.default) },
+        { path: "datetime-picker", load: () => import("./datetime-picker/datetime-picker.js").then((module) => module.default) },
+        { path: "demo", load: () => import("./demo.js").then((module) => module.default) },
+        { path: "dialog", load: () => import("./dialog/dialog.js").then((module) => module.default) },
+        { path: "divider", load: () => import("./divider/divider.js").then((module) => module.default) },
+        { path: "error", load: () => import("./error/error.js").then((module) => module.default) },
+        { path: "fab-extended", load: () => import("./fab/fab-extended.js").then((module) => module.default) },
+        { path: "fab-large", load: () => import("./fab/fab-large.js").then((module) => module.default) },
+        { path: "fab-small", load: () => import("./fab/fab-small.js").then((module) => module.default) },
+        { path: "fab-unelevated", load: () => import("./fab/fab-unelevated.js").then((module) => module.default) },
+        { path: "fab", load: () => import("./fab/fab.js").then((module) => module.default) },
+        { path: "form", load: () => import("./form/form.js").then((module) => module.default) },
+        { path: "icon", load: () => import("./icon/icon.js").then((module) => module.default) },
+        { path: "icon-button-filled-tonal", load: () => import("./icon-button/icon-button-filled-tonal.js").then((module) => module.default) },
+        { path: "icon-button-filled", load: () => import("./icon-button/icon-button-filled.js").then((module) => module.default) },
+        { path: "icon-button-outlined", load: () => import("./icon-button/icon-button-outlined.js").then((module) => module.default) },
+        { path: "icon-button", load: () => import("./icon-button/icon-button.js").then((module) => module.default) },
+        { path: "image", load: () => import("./image/image.js").then((module) => module.default) },
+        { path: "list-avatar", load: () => import("./list/list-avatar.js").then((module) => module.default) },
+        { path: "list-checkbox", load: () => import("./list/list-checkbox.js").then((module) => module.default) },
+        { path: "list-icon", load: () => import("./list/list-icon.js").then((module) => module.default) },
+        { path: "list-image", load: () => import("./list/list-image.js").then((module) => module.default) },
+        { path: "list-item", load: () => import("./list/list-item.js").then((module) => module.default) },
+        { path: "list-multi-select", load: () => import("./list/list-multi-select.js").then((module) => module.default) },
+        { path: "list-radio-button", load: () => import("./list/list-radio-button.js").then((module) => module.default) },
+        { path: "list-row", load: () => import("./list/list-row.js").then((module) => module.default) },
+        { path: "list-single-select", load: () => import("./list/list-single-select.js").then((module) => module.default) },
+        { path: "list-switch", load: () => import("./list/list-switch.js").then((module) => module.default) },
+        { path: "list-text", load: () => import("./list/list-text.js").then((module) => module.default) },
+        { path: "list-video", load: () => import("./list/list-video.js").then((module) => module.default) },
+        { path: "list-virtualize", load: () => import("./list/list-virtualize.js").then((module) => module.default) },
+        { path: "list", load: () => import("./list/list.js").then((module) => module.default) },
+        { path: "menu", load: () => import("./menu/menu.js").then((module) => module.default) },
+        { path: "month-field", load: () => import("./month-field/month-field.js").then((module) => module.default) },
+        { path: "month-picker-modal", load: () => import("./month-picker/month-picker-modal.js").then((module) => module.default) },
+        { path: "month-picker", load: () => import("./month-picker/month-picker.js").then((module) => module.default) },
+        { path: "navigation-bar-no-label", load: () => import("./navigation-bar/navigation-bar-no-label.js").then((module) => module.default) },
+        { path: "navigation-bar", load: () => import("./navigation-bar/navigation-bar.js").then((module) => module.default) },
+        { path: "navigation-drawer-modal", load: () => import("./navigation-drawer/navigation-drawer-modal.js").then((module) => module.default) },
+        { path: "navigation-drawer", load: () => import("./navigation-drawer/navigation-drawer.js").then((module) => module.default) },
+        { path: "navigation-list-item", load: () => import("./navigation-list/navigation-list-item.js").then((module) => module.default) },
+        { path: "navigation-list-row", load: () => import("./navigation-list/navigation-list-row.js").then((module) => module.default) },
+        { path: "navigation-list", load: () => import("./navigation-list/navigation-list.js").then((module) => module.default) },
+        { path: "navigation-rail-no-label", load: () => import("./navigation-rail/navigation-rail-no-label.js").then((module) => module.default) },
+        { path: "navigation-rail", load: () => import("./navigation-rail/navigation-rail.js").then((module) => module.default) },
+        { path: "number-field", load: () => import("./number-field/number-field.js").then((module) => module.default) },
+        { path: "password-field", load: () => import("./password-field/password-field.js").then((module) => module.default) },
+        { path: "progress-indicator-circular", load: () => import("./progress-indicator/progress-indicator-circular.js").then((module) => module.default) },
+        { path: "progress-indicator", load: () => import("./progress-indicator/progress-indicator.js").then((module) => module.default) },
+        { path: "radio-button", load: () => import("./radio-button/radio-button.js").then((module) => module.default) },
+        { path: "scrim", load: () => import("./scrim/scrim.js").then((module) => module.default) },
+        { path: "segmented-button-multi-select", load: () => import("./segmented-button/segmented-button-multi-select.js").then((module) => module.default) },
+        { path: "segmented-button-single-select", load: () => import("./segmented-button/segmented-button-single-select.js").then((module) => module.default) },
+        { path: "segmented-button", load: () => import("./segmented-button/segmented-button.js").then((module) => module.default) },
+        { path: "sheet-center", load: () => import("./sheet/sheet-center.js").then((module) => module.default) },
+        { path: "sheet-east-modal", load: () => import("./sheet/sheet-east-modal.js").then((module) => module.default) },
+        { path: "sheet-east", load: () => import("./sheet/sheet-east.js").then((module) => module.default) },
+        { path: "sheet-north-modal", load: () => import("./sheet/sheet-north-modal.js").then((module) => module.default) },
+        { path: "sheet-north", load: () => import("./sheet/sheet-north.js").then((module) => module.default) },
+        { path: "sheet-south-modal", load: () => import("./sheet/sheet-south-modal.js").then((module) => module.default) },
+        { path: "sheet-south", load: () => import("./sheet/sheet-south.js").then((module) => module.default) },
+        { path: "sheet-west-modal", load: () => import("./sheet/sheet-west-modal.js").then((module) => module.default) },
+        { path: "sheet-west", load: () => import("./sheet/sheet-west.js").then((module) => module.default) },
+        { path: "sheet", load: () => import("./sheet/sheet.js").then((module) => module.default) },
+        { path: "side-sheet-modal", load: () => import("./side-sheet/side-sheet-modal.js").then((module) => module.default) },
+        { path: "side-sheet", load: () => import("./side-sheet/side-sheet.js").then((module) => module.default) },
+        { path: "slider-centered", load: () => import("./slider/slider-centered.js").then((module) => module.default) },
+        { path: "slider-continuous", load: () => import("./slider/slider-continuous.js").then((module) => module.default) },
+        { path: "slider-discrete", load: () => import("./slider/slider-discrete.js").then((module) => module.default) },
+        { path: "slider-range-selection", load: () => import("./slider/slider-range-selection.js").then((module) => module.default) },
+        { path: "slider", load: () => import("./slider/slider.js").then((module) => module.default) },
+        { path: "snackbar", load: () => import("./snackbar/snackbar.js").then((module) => module.default) },
+        { path: "switch", load: () => import("./switch/switch.js").then((module) => module.default) },
+        { path: "tab", load: () => import("./tabs/tab.js").then((module) => module.default) },
+        { path: "tabs-primary", load: () => import("./tabs/tabs-primary.js").then((module) => module.default) },
+        { path: "tabs-secondary", load: () => import("./tabs/tabs-secondary.js").then((module) => module.default) },
+        { path: "tabs", load: () => import("./tabs/tabs.js").then((module) => module.default) },
+        { path: "test", load: () => import("./test/test.js").then((module) => module.default) },
+        { path: "text-field-filled", load: () => import("./text-field/text-field-filled.js").then((module) => module.default) },
+        { path: "text-field-outlined", load: () => import("./text-field/text-field-outlined.js").then((module) => module.default) },
+        { path: "text-field", load: () => import("./text-field/text-field.js").then((module) => module.default) },
+        { path: "time-field", load: () => import("./time-field/time-field.js").then((module) => module.default) },
+        { path: "time-picker-modal", load: () => import("./time-picker/time-picker-modal.js").then((module) => module.default) },
+        { path: "time-picker", load: () => import("./time-picker/time-picker.js").then((module) => module.default) },
+        { path: "tooltip", load: () => import("./tooltip/tooltip.js").then((module) => module.default) },
+        { path: "top-app-bar", load: () => import("./top-app-bar/top-app-bar.js").then((module) => module.default) },
+        { path: "tree-item", load: () => import("./tree/tree-item.js").then((module) => module.default) },
+        { path: "tree-row", load: () => import("./tree/tree-row.js").then((module) => module.default) },
+        { path: "tree", load: () => import("./tree/tree.js").then((module) => module.default) },
+        { path: "week-field", load: () => import("./week-field/week-field.js").then((module) => module.default) },
+        { path: "week-picker-modal", load: () => import("./week-picker/week-picker-modal.js").then((module) => module.default) },
+        { path: "week-picker", load: () => import("./week-picker/week-picker.js").then((module) => module.default) },
     ],
 };

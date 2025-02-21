@@ -40,10 +40,10 @@ class MDBottomAppBarComponent extends MdComponent {
         super();
     }
 
-    styleIconButton(item,index){
+    styleIconButton(item, index) {
         return {
-            '--md-comp-bottom-app-bar-action-index':index
-        }
+            "--md-comp-bottom-app-bar-action-index": index,
+        };
     }
 
     // /**
@@ -51,7 +51,7 @@ class MDBottomAppBarComponent extends MdComponent {
     //  * @param {Object} item - The item data for the icon button.
     //  * @returns {TemplateResult} The rendered template for the icon button.
     //  */
-    renderIconButton(item,index) {
+    renderIconButton(item, index) {
         /* prettier-ignore */
         return html`
             <md-icon-button
