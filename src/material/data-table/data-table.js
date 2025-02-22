@@ -263,6 +263,7 @@ class MDDataTableComponent extends MdComponent {
         super.connectedCallback();
 
         this.classList.add("md-data-table");
+        
         this.handleDataTableKeydown = this.handleDataTableKeydown.bind(this);
         window.addEventListener("keydown", this.handleDataTableKeydown);
     }

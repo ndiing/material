@@ -122,10 +122,13 @@ class MDBottomSheetComponent extends MdComponent {
 
         this.classList.add("md-bottom-sheet");
         this.style.setProperty("--md-comp-bottom-sheet-animation", "none");
+
         this.handleBottomSheetAnimationend = this.handleBottomSheetAnimationend.bind(this);
         this.addEventListener("animationend", this.handleBottomSheetAnimationend);
+
         this.scrim = document.createElement("md-scrim");
         this.parentElement.insertBefore(this.scrim, this.nextElementSibling);
+        
         this.handleBottomSheetScrimClose = this.handleBottomSheetScrimClose.bind(this);
         this.scrim.addEventListener("onScrimClose", this.handleBottomSheetScrimClose);
 

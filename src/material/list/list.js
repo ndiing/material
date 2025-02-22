@@ -38,6 +38,27 @@ class MDListComponent extends MdComponent {
     types = ["single-select", "multi-select"];
 
     /**
+     * @readonly
+    */
+    get selected(){
+        return this.itemsStore.find(item=>item.selected)
+    }
+
+    /**
+     * @readonly
+    */
+    get selectedIndex(){
+        return this.itemsStore.findIndex(item=>item.selected)
+    }
+
+    /**
+     * @readonly
+    */
+    get selectedAll(){
+        return this.itemsStore.filter(item=>item.selected)
+    }
+
+    /**
      * Creates an instance of the MDListComponent class.
      */
     constructor() {

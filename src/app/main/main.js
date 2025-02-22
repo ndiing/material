@@ -16,7 +16,7 @@ class AppMain extends MdComponent {
     connectedCallback() {
         super.connectedCallback();
 
-        Router.navigate("/demo");
+        // Router.navigate("/demo");
     }
 }
 

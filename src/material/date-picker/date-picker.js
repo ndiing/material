@@ -292,12 +292,24 @@ class MDDatePickerComponent extends MdComponent {
         this.defaultIndex = this.defaultIndex || this.index;
         this.classList.add("md-date-picker");
         this.style.setProperty("--md-comp-date-picker-animation", "none");
+
         this.handleDatePickerAnimationend = this.handleDatePickerAnimationend.bind(this);
         this.addEventListener("animationend", this.handleDatePickerAnimationend);
+        
         this.scrim = document.createElement("md-scrim");
         this.parentElement.insertBefore(this.scrim, this.nextElementSibling);
+        
         this.handleDatePickerScrimClose = this.handleDatePickerScrimClose.bind(this);
         this.scrim.addEventListener("onScrimClose", this.handleDatePickerScrimClose);
+
+        this.datePickerWindow = closestScrollableElement(this);
+
+        this.handleDatePickerWindowScroll = this.handleDatePickerWindowScroll.bind(this);
+        this.datePickerWindow.addEventListener("scroll", this.handleDatePickerWindowScroll);
+
+        this.handleDatePickerWindowClick = this.handleDatePickerWindowClick.bind(this);
+        window.addEventListener("click", this.handleDatePickerWindowClick);
+        
 
         if (this.modal) {
             this.scrim.open = this.open;
@@ -312,6 +324,8 @@ class MDDatePickerComponent extends MdComponent {
     disconnectedCallback() {
         super.disconnectedCallback();
 
+        this.datePickerWindow.removeEventListener("scroll", this.handleDatePickerWindowScroll);
+        window.removeEventListener("click", this.handleDatePickerWindowClick);
         this.removeEventListener("animationend", this.handleDatePickerAnimationend);
         this.scrim.removeEventListener("onScrimClose", this.handleDatePickerScrimClose);
         this.scrim.remove();
@@ -338,11 +352,7 @@ class MDDatePickerComponent extends MdComponent {
      */
     show(options) {
         this.index = this.defaultIndex;
-        this.datePickerWindow = closestScrollableElement(this);
-        this.handleDatePickerWindowScroll = this.handleDatePickerWindowScroll.bind(this);
-        this.datePickerWindow.addEventListener("scroll", this.handleDatePickerWindowScroll);
-        this.handleDatePickerWindowClick = this.handleDatePickerWindowClick.bind(this);
-        window.addEventListener("click", this.handleDatePickerWindowClick);
+        
         this.style.removeProperty("--md-comp-date-picker-animation");
         setPosition({
             container: this,
@@ -365,8 +375,7 @@ class MDDatePickerComponent extends MdComponent {
     /**
      */
     close() {
-        this.datePickerWindow.removeEventListener("scroll", this.handleDatePickerWindowScroll);
-        window.removeEventListener("click", this.handleDatePickerWindowClick);
+        
         this.style.removeProperty("--md-comp-date-picker-animation");
         this.open = false;
 

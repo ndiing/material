@@ -18,6 +18,10 @@ class MDMenuComponent extends MdComponent {
         items: { type: Array },
     };
 
+    get menuList(){
+        return this.querySelector('md-list')
+    }
+
     constructor() {
         super();
 
@@ -25,6 +29,7 @@ class MDMenuComponent extends MdComponent {
         this.virtualOptions = {
             rowHeight: 48,
             item: "md-list-row",
+            nodePadding:5
         };
     }
 
@@ -47,6 +52,14 @@ class MDMenuComponent extends MdComponent {
         this.handleMenuAnimationEnd = this.handleMenuAnimationEnd.bind(this);
         this.addEventListener("animationend", this.handleMenuAnimationEnd);
 
+        this.menuWindow = closestScrollableElement(this);
+        
+        this.handleMenuWindowScroll = this.handleMenuWindowScroll.bind(this);
+        this.menuWindow.addEventListener("scroll", this.handleMenuWindowScroll);
+
+        this.handleMenuWindowClick = this.handleMenuWindowClick.bind(this);
+        window.addEventListener("click", this.handleMenuWindowClick);
+
         await this.updateComplete;
 
         this.style.setProperty("--md-comp-menu-height", this.clientHeight + "px");
@@ -56,6 +69,8 @@ class MDMenuComponent extends MdComponent {
     async disconnectedCallback() {
         super.disconnectedCallback();
 
+        this.menuWindow.removeEventListener("scroll", this.handleMenuWindowScroll);
+        window.removeEventListener("click", this.handleMenuWindowClick);
         this.removeEventListener("animationend", this.handleMenuAnimationEnd);
     }
 
@@ -66,23 +81,22 @@ class MDMenuComponent extends MdComponent {
         this.style.setProperty("--md-comp-menu-height", this.clientHeight + "px");
         this.style.setProperty("--md-comp-menu-width", this.clientWidth + "px");
         this.style.removeProperty("--md-comp-menu-animation");
-        this.menuWindow = closestScrollableElement(this);
-        this.handleMenuWindowScroll = this.handleMenuWindowScroll.bind(this);
-        this.menuWindow.addEventListener("scroll", this.handleMenuWindowScroll);
-        this.handleMenuWindowClick = this.handleMenuWindowClick.bind(this);
-        window.addEventListener("click", this.handleMenuWindowClick);
+        
         setPosition({
             container: this,
             placements: ["bottom-start", "bottom-end", "bottom", "top-start", "top-end", "top", "right-start", "right-end", "right", "left-start", "left-end", "left"],
             ...options,
         });
-        this.open = true;
+
         let element = this.querySelector("md-list-item[selected]");
 
         if (!element) {
             element = this.querySelector("md-list-item");
         }
         element.focus();
+
+        this.open = true;
+
         /**
          * @event onMenuShow
          * @property {Object} event
@@ -94,8 +108,7 @@ class MDMenuComponent extends MdComponent {
      */
     close() {
         this.style.removeProperty("--md-comp-menu-animation");
-        this.menuWindow.removeEventListener("scroll", this.handleMenuWindowScroll);
-        window.removeEventListener("click", this.handleMenuWindowClick);
+        
         this.open = false;
         /**
          * @event onMenuClose

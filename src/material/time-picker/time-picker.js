@@ -227,13 +227,24 @@ class MDTimePickerComponent extends MdComponent {
         this.defaultIndex = this.defaultIndex || this.index;
         this.classList.add("md-time-picker");
         this.style.setProperty("--md-comp-time-picker-animation", "none");
+
         this.handleTimePickerAnimationend = this.handleTimePickerAnimationend.bind(this);
         this.addEventListener("animationend", this.handleTimePickerAnimationend);
+
         this.scrim = document.createElement("md-scrim");
         this.parentElement.insertBefore(this.scrim, this.nextElementSibling);
+
         this.handleTimePickerScrimClose = this.handleTimePickerScrimClose.bind(this);
         this.scrim.addEventListener("onScrimClose", this.handleTimePickerScrimClose);
 
+        this.timePickerWindow = closestScrollableElement(this);
+        
+        this.handleTimePickerWindowScroll = this.handleTimePickerWindowScroll.bind(this);
+        this.timePickerWindow.addEventListener("scroll", this.handleTimePickerWindowScroll);
+        
+        this.handleTimePickerWindowClick = this.handleTimePickerWindowClick.bind(this);
+        window.addEventListener("click", this.handleTimePickerWindowClick);
+        
         if (this.modal) {
             this.scrim.open = this.open;
         }
@@ -247,6 +258,9 @@ class MDTimePickerComponent extends MdComponent {
     disconnectedCallback() {
         super.disconnectedCallback();
 
+        this.timePickerWindow.removeEventListener("scroll", this.handleTimePickerWindowScroll);
+        window.removeEventListener("click", this.handleTimePickerWindowClick);
+        
         this.removeEventListener("animationend", this.handleTimePickerAnimationend);
         this.scrim.removeEventListener("onScrimClose", this.handleTimePickerScrimClose);
         this.scrim.remove();
@@ -273,11 +287,7 @@ class MDTimePickerComponent extends MdComponent {
      */
     show(options) {
         this.index = this.defaultIndex;
-        this.timePickerWindow = closestScrollableElement(this);
-        this.handleTimePickerWindowScroll = this.handleTimePickerWindowScroll.bind(this);
-        this.timePickerWindow.addEventListener("scroll", this.handleTimePickerWindowScroll);
-        this.handleTimePickerWindowClick = this.handleTimePickerWindowClick.bind(this);
-        window.addEventListener("click", this.handleTimePickerWindowClick);
+        
         this.style.removeProperty("--md-comp-time-picker-animation");
         setPosition({
             container: this,
@@ -300,8 +310,7 @@ class MDTimePickerComponent extends MdComponent {
     /**
      */
     close() {
-        this.timePickerWindow.removeEventListener("scroll", this.handleTimePickerWindowScroll);
-        window.removeEventListener("click", this.handleTimePickerWindowClick);
+        
         this.style.removeProperty("--md-comp-time-picker-animation");
         this.open = false;
 

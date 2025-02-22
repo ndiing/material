@@ -133,12 +133,16 @@ class MDDialogComponent extends MdComponent {
 
         this.classList.add("md-dialog");
         this.style.setProperty("--md-comp-dialog-animation", "none");
+
         this.handleDialogAnimationend = this.handleDialogAnimationend.bind(this);
         this.addEventListener("animationend", this.handleDialogAnimationend);
+
         this.scrim = document.createElement("md-scrim");
         this.parentElement.insertBefore(this.scrim, this.nextElementSibling);
+
         this.handleDialogScrimClose = this.handleDialogScrimClose.bind(this);
         this.scrim.addEventListener("onScrimClose", this.handleDialogScrimClose);
+        
         this.scrim.open = this.open;
 
         await this.updateComplete;

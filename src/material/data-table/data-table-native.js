@@ -25,6 +25,7 @@ class MDDataTableNativeComponent extends Mixins(HTMLTableElement) {
     connectedCallback() {
         this.handleDataTableNativeVirtualScroll = this.handleDataTableNativeVirtualScroll.bind(this);
         this.addEventListener("onVirtualScroll", this.handleDataTableNativeVirtualScroll);
+
         this.classList.add("md-data-table__native");
 
         if (this.instance.virtualize) {
@@ -123,8 +124,10 @@ class MDDataTableNativeHeaderComponent extends MDDataTableNativeCellComponent {
         if (this.data.resizable) {
             this.handleDataTableNativeHeaderResize = this.handleDataTableNativeHeaderResize.bind(this);
             this.addEventListener("onResize", this.handleDataTableNativeHeaderResize);
+
             this.handleDataTableNativeHeaderDblclick = this.handleDataTableNativeHeaderDblclick.bind(this);
             this.addEventListener("dblclick", this.handleDataTableNativeHeaderDblclick);
+            
             this.gesture = new Gesture(this, {
                 resizeHandles: ["e"],
                 dragAxis: [],

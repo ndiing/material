@@ -299,13 +299,24 @@ class MDWeekPickerComponent extends MdComponent {
         this.defaultIndex = this.defaultIndex || this.index;
         this.classList.add("md-week-picker");
         this.style.setProperty("--md-comp-week-picker-animation", "none");
+
         this.handleWeekPickerAnimationend = this.handleWeekPickerAnimationend.bind(this);
         this.addEventListener("animationend", this.handleWeekPickerAnimationend);
+
         this.scrim = document.createElement("md-scrim");
         this.parentElement.insertBefore(this.scrim, this.nextElementSibling);
+
         this.handleWeekPickerScrimClose = this.handleWeekPickerScrimClose.bind(this);
         this.scrim.addEventListener("onScrimClose", this.handleWeekPickerScrimClose);
 
+        this.weekPickerWindow = closestScrollableElement(this);
+
+        this.handleWeekPickerWindowScroll = this.handleWeekPickerWindowScroll.bind(this);
+        this.weekPickerWindow.addEventListener("scroll", this.handleWeekPickerWindowScroll);
+        
+        this.handleWeekPickerWindowClick = this.handleWeekPickerWindowClick.bind(this);
+        window.addEventListener("click", this.handleWeekPickerWindowClick);
+        
         if (this.modal) {
             this.scrim.open = this.open;
         }
@@ -318,6 +329,9 @@ class MDWeekPickerComponent extends MdComponent {
 
     disconnectedCallback() {
         super.disconnectedCallback();
+
+        this.weekPickerWindow.removeEventListener("scroll", this.handleWeekPickerWindowScroll);
+        window.removeEventListener("click", this.handleWeekPickerWindowClick);
 
         this.removeEventListener("animationend", this.handleWeekPickerAnimationend);
         this.scrim.removeEventListener("onScrimClose", this.handleWeekPickerScrimClose);
@@ -345,11 +359,7 @@ class MDWeekPickerComponent extends MdComponent {
      */
     show(options) {
         this.index = this.defaultIndex;
-        this.weekPickerWindow = closestScrollableElement(this);
-        this.handleWeekPickerWindowScroll = this.handleWeekPickerWindowScroll.bind(this);
-        this.weekPickerWindow.addEventListener("scroll", this.handleWeekPickerWindowScroll);
-        this.handleWeekPickerWindowClick = this.handleWeekPickerWindowClick.bind(this);
-        window.addEventListener("click", this.handleWeekPickerWindowClick);
+
         this.style.removeProperty("--md-comp-week-picker-animation");
         setPosition({
             container: this,
@@ -372,8 +382,6 @@ class MDWeekPickerComponent extends MdComponent {
     /**
      */
     close() {
-        this.weekPickerWindow.removeEventListener("scroll", this.handleWeekPickerWindowScroll);
-        window.removeEventListener("click", this.handleWeekPickerWindowClick);
         this.style.removeProperty("--md-comp-week-picker-animation");
         this.open = false;
 

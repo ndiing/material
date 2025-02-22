@@ -50,6 +50,7 @@ class MDIconButtonComponent extends MdComponent {
         super.connectedCallback();
 
         this.classList.add("md-icon-button");
+        
         this.handleIconButtonClick = this.handleIconButtonClick.bind(this);
         this.addEventListener("click", this.handleIconButtonClick);
 
