@@ -1,0 +1,50 @@
+@use "../../shared/mixins.scss";
+
+.md-grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-gap: 24px;
+}
+
+.md-grid__column {
+    grid-column-end: span 4;
+}
+
+@include mixins.breakpoint-expanded() {
+    .md-grid {
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        grid-gap: 24px;
+    }
+
+    @for $i from 1 through 12 {
+        .md-grid__column--expanded#{$i} {
+            grid-column-end: span $i;
+        }
+    }
+}
+
+@include mixins.breakpoint-medium() {
+    .md-grid {
+        grid-template-columns: repeat(8, minmax(0, 1fr));
+        grid-gap: 16px;
+    }
+
+    @for $i from 1 through 8 {
+        .md-grid__column--medium#{$i} {
+            grid-column-end: span $i;
+        }
+    }
+}
+
+@include mixins.breakpoint-compact() {
+    .md-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-gap: 8px;
+    }
+
+    @for $i from 1 through 4 {
+        .md-grid__column--compact#{$i} {
+            grid-column-end: span $i;
+        }
+    }
+}

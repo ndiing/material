@@ -1,0 +1,68 @@
+@use "../../shared/mixins.scss";
+
+.md-data-table {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+    }
+    thead,
+    tfoot {
+        position: sticky;
+        z-index: 1;
+        background-color: var(--md-sys-color-surface);
+        color: var(--md-sys-color-on-surface);
+    }
+
+    thead {
+        inset-block-start: 0;
+    }
+
+    tfoot {
+        inset-block-end: 0;
+    }
+
+    th {
+        text-align: left;
+
+        .md-data-table__cell {
+            height: 56px;
+        }
+    }
+
+    td {
+        max-width: 0;
+    }
+}
+
+.md-data-table__row--selected {
+    background-color: var(--md-sys-color-secondary-container);
+    color: var(--md-sys-color-on-secondary-container);
+}
+
+.md-data-table__cell {
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    height: 52px;
+    user-select: none;
+}
+
+.md-data-table__cell--active {
+    outline: 2px solid var(--md-sys-color-outline);
+    outline-offset: -2px;
+}
+
+.md-data-table__label {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    @include mixins.typescale-body-large();
+}

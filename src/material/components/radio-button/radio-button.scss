@@ -1,0 +1,83 @@
+.md-radio-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    position: relative;
+    width: 24px;
+    height: 24px;
+}
+
+.md-radio-button__native {
+    width: 200%;
+    height: 200%;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    appearance: none;
+
+    &:checked {
+        + .md-radio-button__container {
+            border-color: var(--md-sys-color-primary);
+            transition-duration: var(--md-sys-motion-duration-short2);
+            transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
+
+            .md-radio-button__icon {
+                width: 10px;
+                height: 10px;
+                border-radius: 5px;
+                background-color: var(--md-sys-color-primary);
+                border-color: var(--md-sys-color-primary);
+                transition-duration: var(--md-sys-motion-duration-short2);
+                transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
+            }
+        }
+    }
+}
+
+.md-radio-button__container {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--md-sys-color-on-surface-variant);
+    border-radius: 10px;
+    will-change: border-color;
+    transition-property: border-color;
+    transition-duration: var(--md-sys-motion-duration-short3);
+    transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
+}
+
+.md-radio-button__icon {
+    will-change: background-color, border-color;
+    transition-property: background-color, border-color;
+    transition-duration: var(--md-sys-motion-duration-short3);
+    transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
+}
+
+.md-radio-button--disabled {
+    pointer-events: none;
+    opacity: 38%;
+
+    .md-radio-button__container {
+        border-color: var(--md-sys-color-on-surface);
+    }
+
+    .md-radio-button__native {
+        &:checked {
+            + .md-radio-button__container {
+                border-color: var(--md-sys-color-on-surface);
+
+                .md-radio-button__icon {
+                    background-color: var(--md-sys-color-on-surface);
+                    border-color: var(--md-sys-color-on-surface);
+                }
+            }
+        }
+    }
+}

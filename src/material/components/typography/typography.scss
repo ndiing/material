@@ -1,0 +1,61 @@
+@use "../../shared/mixins.scss";
+
+.md-typography--display-large {
+    @include mixins.typescale-display-large();
+}
+
+.md-typography--display-medium {
+    @include mixins.typescale-display-medium();
+}
+
+.md-typography--display-small {
+    @include mixins.typescale-display-small();
+}
+
+.md-typography--headline-large {
+    @include mixins.typescale-headline-large();
+}
+
+.md-typography--headline-medium {
+    @include mixins.typescale-headline-medium();
+}
+
+.md-typography--headline-small {
+    @include mixins.typescale-headline-small();
+}
+
+.md-typography--title-large {
+    @include mixins.typescale-title-large();
+}
+
+.md-typography--title-medium {
+    @include mixins.typescale-title-medium();
+}
+
+.md-typography--title-small {
+    @include mixins.typescale-title-small();
+}
+
+.md-typography--body-large {
+    @include mixins.typescale-body-large();
+}
+
+.md-typography--body-medium {
+    @include mixins.typescale-body-medium();
+}
+
+.md-typography--body-small {
+    @include mixins.typescale-body-small();
+}
+
+.md-typography--label-large {
+    @include mixins.typescale-label-large();
+}
+
+.md-typography--label-medium {
+    @include mixins.typescale-label-medium();
+}
+
+.md-typography--label-small {
+    @include mixins.typescale-label-small();
+}

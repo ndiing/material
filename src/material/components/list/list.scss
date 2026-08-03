@@ -1,0 +1,106 @@
+@use "../../shared/mixins.scss";
+
+.md-list {
+    display: block;
+    padding: 8px 0;
+}
+.md-list__item {
+    display: flex;
+    align-items: center;
+    min-height: 56px;
+    padding: 8px 16px 8px calc(16px + (24px * var(--md-comp-list-item-level, 0)));
+    gap: 0 12px;
+}
+
+.md-list__content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+}
+
+.md-list__overline {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    @include mixins.typescale-label-small();
+}
+.md-list__label {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    @include mixins.typescale-body-large();
+}
+.md-list__supporting {
+    max-height: calc(var(--md-sys-typescale-label-small-line-height) * 2);
+    overflow: hidden;
+    @include mixins.typescale-label-small();
+}
+
+.md-list__leading {
+    display: inline-flex;
+    align-items: center;
+}
+
+.md-list__trailing {
+    display: inline-flex;
+    align-items: center;
+}
+
+.md-list__avatar {
+    width: 40px;
+    height: 40px;
+}
+.md-list__image {
+    width: 56px;
+    height: 56px;
+}
+.md-list__video {
+    height: 64px;
+    aspect-ratio: 4/3;
+    margin: 4px 0 0 -16px;
+}
+.md-list__icon {
+}
+.md-list__icon-button {
+}
+.md-list__text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    @include mixins.typescale-label-small();
+}
+
+.md-list__checkbox {
+}
+.md-list__radio-button {
+}
+.md-list__switch {
+}
+
+.md-list__item--selected {
+    background-color: var(--md-sys-color-secondary-container);
+    color: var(--md-sys-color-on-secondary-container);
+}
+
+.md-list__item--active {
+    outline: 2px solid var(--md-sys-color-outline);
+    outline-offset: -2px;
+}
+
+.md-list__item--one-line {
+    min-height: 56px;
+}
+.md-list__item--two-line {
+    min-height: 72px;
+}
+.md-list__item--three-line {
+    align-items: flex-start;
+    min-height: 88px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    .md-list__video {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}

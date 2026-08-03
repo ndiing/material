@@ -1,0 +1,16 @@
+.md-virtual-scroll {
+    display: block;
+    height: 100%;
+    overflow: auto;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: var(--md-comp-virtual-scroll-total-content-height);
+        width: 1px;
+        pointer-events: none;
+    }
+}

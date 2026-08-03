@@ -1,0 +1,290 @@
+.md-icon-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    will-change: border-radius, background-color, color, border-color;
+    transition-property: border-radius, background-color, color, border-color;
+    transition-duration: var(--md-sys-motion-duration-short2);
+    transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
+
+    &:active {
+        transition-duration: var(--md-sys-motion-duration-short3);
+        transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
+
+        .md-icon-button__native {
+            transition-duration: var(--md-sys-motion-duration-short3);
+            transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
+        }
+    }
+}
+
+.md-icon-button__native {
+    will-change: font-size;
+    transition-property: font-size;
+    transition-duration: var(--md-sys-motion-duration-short2);
+    transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
+}
+
+.md-icon-button--extra-small {
+    height: 32px;
+    width: 32px;
+
+    &.md-icon-button--narrow {
+        width: 28px;
+        height: 32px;
+    }
+
+    &.md-icon-button--wide {
+        width: 40px;
+        height: 32px;
+    }
+
+    &.md-icon-button--round {
+        border-radius: 16px;
+
+        &.md-icon-button--selected {
+            border-radius: 12px;
+        }
+    }
+
+    &.md-icon-button--square {
+        border-radius: 12px;
+
+        &.md-icon-button--selected {
+            border-radius: 16px;
+        }
+    }
+
+    &:active {
+        border-radius: 8px;
+    }
+
+    .md-icon-button__native {
+        font-size: 20px;
+        height: 20px;
+        width: 20px;
+    }
+}
+
+.md-icon-button--small {
+    height: 40px;
+    width: 40px;
+
+    &.md-icon-button--narrow {
+        width: 32px;
+        height: 40px;
+    }
+
+    &.md-icon-button--wide {
+        width: 52px;
+        height: 40px;
+    }
+
+    &.md-icon-button--round {
+        border-radius: 20px;
+
+        &.md-icon-button--selected {
+            border-radius: 12px;
+        }
+    }
+
+    &.md-icon-button--square {
+        border-radius: 12px;
+
+        &.md-icon-button--selected {
+            border-radius: 20px;
+        }
+    }
+
+    &:active {
+        border-radius: 8px;
+    }
+
+    .md-icon-button__native {
+        font-size: 24px;
+        height: 24px;
+        width: 24px;
+    }
+}
+
+.md-icon-button--medium {
+    height: 56px;
+    width: 56px;
+
+    &.md-icon-button--narrow {
+        width: 48px;
+        height: 56px;
+    }
+
+    &.md-icon-button--wide {
+        width: 72px;
+        height: 56px;
+    }
+
+    &.md-icon-button--round {
+        border-radius: 28px;
+
+        &.md-icon-button--selected {
+            border-radius: 16px;
+        }
+    }
+
+    &.md-icon-button--square {
+        border-radius: 16px;
+
+        &.md-icon-button--selected {
+            border-radius: 28px;
+        }
+    }
+
+    &:active {
+        border-radius: 12px;
+    }
+
+    .md-icon-button__native {
+        font-size: 24px;
+        height: 24px;
+        width: 24px;
+    }
+}
+
+.md-icon-button--large {
+    height: 96px;
+    width: 96px;
+
+    &.md-icon-button--narrow {
+        width: 64px;
+        height: 96px;
+    }
+
+    &.md-icon-button--wide {
+        width: 128px;
+        height: 96px;
+    }
+
+    &.md-icon-button--round {
+        border-radius: 48px;
+
+        &.md-icon-button--selected {
+            border-radius: 28px;
+        }
+    }
+
+    &.md-icon-button--square {
+        border-radius: 28px;
+
+        &.md-icon-button--selected {
+            border-radius: 48px;
+        }
+    }
+
+    &:active {
+        border-radius: 16px;
+    }
+
+    .md-icon-button__native {
+        font-size: 32px;
+        height: 32px;
+        width: 32px;
+    }
+}
+
+.md-icon-button--extra-large {
+    height: 136px;
+    width: 136px;
+
+    &.md-icon-button--narrow {
+        width: 104px;
+        height: 136px;
+    }
+
+    &.md-icon-button--wide {
+        width: 184px;
+        height: 136px;
+    }
+
+    &.md-icon-button--round {
+        border-radius: 68px;
+
+        &.md-icon-button--selected {
+            border-radius: 28px;
+        }
+    }
+
+    &.md-icon-button--square {
+        border-radius: 28px;
+
+        &.md-icon-button--selected {
+            border-radius: 68px;
+        }
+    }
+
+    &:active {
+        border-radius: 16px;
+    }
+
+    .md-icon-button__native {
+        font-size: 40px;
+        height: 40px;
+        width: 40px;
+    }
+}
+
+.md-icon-button--filled {
+    background-color: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
+
+    &.md-icon-button--toggle {
+        background-color: var(--md-sys-color-surface-container);
+        color: var(--md-sys-color-on-surface-variant);
+
+        &.md-icon-button--selected {
+            background-color: var(--md-sys-color-primary);
+            color: var(--md-sys-color-on-primary);
+        }
+    }
+}
+
+.md-icon-button--tonal {
+    background-color: var(--md-sys-color-secondary-container);
+    color: var(--md-sys-color-on-secondary-container);
+
+    &.md-icon-button--toggle {
+        background-color: var(--md-sys-color-secondary-container);
+        color: var(--md-sys-color-on-secondary-container);
+
+        &.md-icon-button--selected {
+            background-color: var(--md-sys-color-secondary);
+            color: var(--md-sys-color-on-secondary);
+        }
+    }
+}
+
+.md-icon-button--outlined {
+    border: 1px solid var(--md-sys-color-outline-variant);
+    color: var(--md-sys-color-on-surface-variant);
+
+    &.md-icon-button--toggle {
+        border: 1px solid var(--md-sys-color-outline-variant);
+        color: var(--md-sys-color-on-surface-variant);
+
+        &.md-icon-button--selected {
+            background-color: var(--md-sys-color-inverse-surface);
+            border: 1px solid var(--md-sys-color-inverse-surface);
+            color: var(--md-sys-color-inverse-on-surface);
+        }
+    }
+}
+
+.md-icon-button--standard {
+    color: var(--md-sys-color-on-surface-variant);
+
+    &.md-icon-button--toggle {
+        color: var(--md-sys-color-on-surface-variant);
+
+        &.md-icon-button--selected {
+            color: var(--md-sys-color-primary);
+        }
+    }
+}
