@@ -69,13 +69,15 @@ function writeFiles() {
         const value = result[name];
 
         for (let { root, dir, base, ext, name, file, data } of value) {
-            if(!file.includes('router')){continue}
+            if (!file.includes("router")) {
+                continue;
+            }
             console.log(file);
-            
-            data=data.replace(/\/\*\*[\s\S\n]+?\*\//gm,'')
-            data=data.replace(/[\n]+/g,'\n')
 
-            console.log(data)
+            data = data.replace(/\/\*\*[\s\S\n]+?\*\//gm, "");
+            data = data.replace(/[\n]+/g, "\n");
+
+            console.log(data);
 
             // break;
         }

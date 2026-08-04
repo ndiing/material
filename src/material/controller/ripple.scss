@@ -1,8 +1,8 @@
 @keyframes ripple-out {
-    0%{
+    0% {
         width: 0;
     }
-    100%{
+    100% {
         width: var(--md-comp-ripple-radius);
     }
 }

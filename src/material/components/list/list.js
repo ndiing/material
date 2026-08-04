@@ -40,8 +40,8 @@ class MdList extends MdListElement {
 
         this.activeRowIndex = 0;
         this.activeVisible = false;
-        this.startNode=0
-        
+        this.startNode = 0;
+
         this._handleListVirtualScrollUpdate = this._handleListVirtualScrollUpdate.bind(this);
         this._handleListKeydown = this._handleListKeydown.bind(this);
         this._handleListClick = this._handleListClick.bind(this);

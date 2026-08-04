@@ -99,10 +99,14 @@ class MdCheckbox extends MdElement {
 
     formResetCallback(event) {
         const checkboxNative = this.checkboxNative.value;
-        this.indeterminate = this.defaultIndeterminate;
-        this.checked = this.defaultChecked;
-        checkboxNative.indeterminate = this.indeterminate;
-        checkboxNative.checked = this.checked;
+        if (this.defaultIndeterminate !== undefined) {
+            checkboxNative.indeterminate = this.defaultIndeterminate;
+            this.indeterminate = checkboxNative.indeterminate;
+        }
+        if (this.defaultChecked !== undefined) {
+            checkboxNative.checked = this.defaultChecked;
+            this.checked = checkboxNative.checked;
+        }
 
         this.validationMessage = "";
         this._updateValidationClass();

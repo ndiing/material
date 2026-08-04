@@ -21,7 +21,7 @@ class MdScrim extends MdElement {
         super.connectedCallback();
 
         this.classList.add("md-scrim");
-    
+
         this.on("transitionend", this._handleScrimTransitionend);
         this.on("click", this._handleScrimClick);
     }
@@ -67,7 +67,7 @@ class MdScrim extends MdElement {
      */
     close() {
         this.open = false;
-        
+
         this.emit("onScrimClose", { element: this });
     }
 

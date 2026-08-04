@@ -96,7 +96,7 @@ class MdImage extends MdElement {
 
     _handleImageNativeLoad(event) {
         this.classList.add("md-image--loaded");
-        
+
         this.emit("onImageNativeLoad", { event, element: this });
     }
 

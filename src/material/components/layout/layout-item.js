@@ -40,7 +40,7 @@ class MdLayoutItem extends MdElement {
     disconnectedCallback() {
         super.disconnectedCallback();
 
-        if(this.scrimElement){
+        if (this.scrimElement) {
             this.scrimElement.off("onScrimClose", this._handleLayoutItemScrimClose);
             this.scrimElement.remove();
             this.scrimElement = null;
@@ -62,7 +62,7 @@ class MdLayoutItem extends MdElement {
 
         if (_changedProperties.has("open")) {
             this._toggleClass("open");
-            
+
             if (this.modal) {
                 if (this.open) {
                     this.scrimElement.show();

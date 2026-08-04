@@ -114,7 +114,7 @@ class MdIconButton extends MdElement {
     _handleIconButtonClick(event) {
         if (this.variant === "toggle") {
             this.selected = !this.selected;
-            
+
             this.emit("onIconButtonSelection", { event, element: this });
         }
 

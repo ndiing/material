@@ -67,18 +67,11 @@ class DemoCheckbox extends MdElement {
 
         await this.updateComplete;
 
-        [
-            '#checkbox0',
-            '#checkbox1',
-            '#checkbox2',
-            '#checkbox3',
-            '#checkbox4',
-            '#checkbox5',
-        ].forEach(cls=>{
-            const checkbox=this.querySelector(cls)
-            checkbox.checkboxNative.value.setCustomValidity('errorMessage')
-            checkbox.validate()
-        })
+        ["#checkbox0", "#checkbox1", "#checkbox2", "#checkbox3", "#checkbox4", "#checkbox5"].forEach((cls) => {
+            const checkbox = this.querySelector(cls);
+            checkbox.checkboxNative.value.setCustomValidity("errorMessage");
+            checkbox.validate();
+        });
     }
 
     handleDemoCheckboxFormNativeFormdata(event) {
