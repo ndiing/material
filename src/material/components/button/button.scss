@@ -70,30 +70,35 @@
 
     &.md-button--round {
         border-radius: 16px;
+
         &.md-button--selected {
             border-radius: 12px;
         }
     }
+
     &.md-button--square {
         border-radius: 12px;
+
         &.md-button--selected {
             border-radius: 16px;
         }
     }
+
     &:active {
         border-radius: 8px;
     }
 
     .md-button__icon {
-        font-size: 20px;
         width: 20px;
         height: 20px;
+        font-size: 20px;
     }
 
     .md-button__label {
         @include mixins.typescale-label-large();
     }
 }
+
 .md-button--small {
     height: 40px;
     padding: 0 16px;
@@ -101,30 +106,35 @@
 
     &.md-button--round {
         border-radius: 20px;
+
         &.md-button--selected {
             border-radius: 12px;
         }
     }
+
     &.md-button--square {
         border-radius: 12px;
+
         &.md-button--selected {
             border-radius: 20px;
         }
     }
+
     &:active {
         border-radius: 8px;
     }
 
     .md-button__icon {
-        font-size: 20px;
         width: 20px;
         height: 20px;
+        font-size: 20px;
     }
 
     .md-button__label {
         @include mixins.typescale-label-large();
     }
 }
+
 .md-button--medium {
     height: 56px;
     padding: 0 24px;
@@ -132,30 +142,35 @@
 
     &.md-button--round {
         border-radius: 28px;
+
         &.md-button--selected {
             border-radius: 16px;
         }
     }
+
     &.md-button--square {
         border-radius: 16px;
+
         &.md-button--selected {
             border-radius: 28px;
         }
     }
+
     &:active {
         border-radius: 12px;
     }
 
     .md-button__icon {
-        font-size: 24px;
         width: 24px;
         height: 24px;
+        font-size: 24px;
     }
 
     .md-button__label {
         @include mixins.typescale-title-medium();
     }
 }
+
 .md-button--large {
     height: 96px;
     padding: 0 48px;
@@ -163,30 +178,35 @@
 
     &.md-button--round {
         border-radius: 48px;
+
         &.md-button--selected {
             border-radius: 28px;
         }
     }
+
     &.md-button--square {
         border-radius: 28px;
+
         &.md-button--selected {
             border-radius: 48px;
         }
     }
+
     &:active {
         border-radius: 16px;
     }
 
     .md-button__icon {
-        font-size: 32px;
         width: 32px;
         height: 32px;
+        font-size: 32px;
     }
 
     .md-button__label {
         @include mixins.typescale-headline-small();
     }
 }
+
 .md-button--extra-large {
     height: 136px;
     padding: 0 64px;
@@ -194,24 +214,28 @@
 
     &.md-button--round {
         border-radius: 68px;
+
         &.md-button--selected {
             border-radius: 28px;
         }
     }
+
     &.md-button--square {
         border-radius: 28px;
+
         &.md-button--selected {
             border-radius: 68px;
         }
     }
+
     &:active {
         border-radius: 16px;
     }
 
     .md-button__icon {
-        font-size: 40px;
         width: 40px;
         height: 40px;
+        font-size: 40px;
     }
 
     .md-button__label {
@@ -223,9 +247,11 @@
     background-color: var(--md-sys-color-surface-container-low);
     color: var(--md-sys-color-primary);
     box-shadow: var(--md-sys-elevation-level1);
+
     &.md-button--toggle {
         background-color: var(--md-sys-color-surface-container-low);
         color: var(--md-sys-color-primary);
+
         &.md-button--selected {
             background-color: var(--md-sys-color-primary);
             color: var(--md-sys-color-on-primary);
@@ -238,12 +264,15 @@
         box-shadow: var(--md-sys-elevation-level0);
     }
 }
+
 .md-button--filled {
     background-color: var(--md-sys-color-primary);
     color: var(--md-sys-color-on-primary);
+
     &.md-button--toggle {
         background-color: var(--md-sys-color-surface-container);
         color: var(--md-sys-color-on-surface-variant);
+
         &.md-button--selected {
             background-color: var(--md-sys-color-primary);
             color: var(--md-sys-color-on-primary);
@@ -255,12 +284,15 @@
         color: var(--md-sys-color-on-surface38);
     }
 }
+
 .md-button--tonal {
     background-color: var(--md-sys-color-secondary-container);
     color: var(--md-sys-color-on-secondary-container);
+
     &.md-button--toggle {
         background-color: var(--md-sys-color-secondary-container);
         color: var(--md-sys-color-on-secondary-container);
+
         &.md-button--selected {
             background-color: var(--md-sys-color-secondary);
             color: var(--md-sys-color-on-secondary);
@@ -272,12 +304,15 @@
         color: var(--md-sys-color-on-surface38);
     }
 }
+
 .md-button--outlined {
     border: 1px solid var(--md-sys-color-outline-variant);
     color: var(--md-sys-color-on-surface-variant);
+
     &.md-button--toggle {
         border: 1px solid var(--md-sys-color-outline-variant);
         color: var(--md-sys-color-on-surface-variant);
+
         &.md-button--selected {
             background-color: var(--md-sys-color-inverse-surface);
             border: 1px solid var(--md-sys-color-inverse-surface);
@@ -291,6 +326,7 @@
         color: var(--md-sys-color-on-surface38);
     }
 }
+
 .md-button--text {
     color: var(--md-sys-color-primary);
     &.md-button--disabled,
@@ -299,6 +335,7 @@
         color: var(--md-sys-color-on-surface38);
     }
 }
+
 .md-button--disabled {
     pointer-events: none;
 }

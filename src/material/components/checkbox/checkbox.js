@@ -4,10 +4,6 @@ import { createRef, ref } from "lit/directives/ref.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { RippleController } from "../../controller/ripple.js";
 
-/**
- * @fires md-checkbox#onCheckboxNativeInvalid
- * @fires md-checkbox#onCheckboxNativeInput
- */
 class MdCheckbox extends MdElement {
     static formAssociated = true;
 

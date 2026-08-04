@@ -6,11 +6,11 @@
 
     &::before {
         content: "";
+        height: var(--md-comp-virtual-scroll-total-content-height);
+        width: 1px;
         position: absolute;
         left: 0;
         top: 0;
-        height: var(--md-comp-virtual-scroll-total-content-height);
-        width: 1px;
         pointer-events: none;
     }
 }

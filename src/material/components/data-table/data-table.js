@@ -5,13 +5,6 @@ import { createRef, ref } from "lit/directives/ref.js";
 import { classMap } from "lit/directives/class-map.js";
 import { VirtualScrollController } from "../../controller/virtual-scroll.js";
 
-/**
- * @fires md-data-table#onDataTableRowSelection
- * @fires md-data-table#onDataTableClick
- * @fires md-data-table#onDataTableKeydown
- * @fires md-data-table#onDataTableRowClick
- * @fires md-data-table#onDataTableCellClick
- */
 class MdDataTable extends MdElement {
     static properties = {
         columns: { type: Array },

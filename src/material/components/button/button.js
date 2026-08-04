@@ -3,10 +3,6 @@ import { MdElement } from "../../base/element.js";
 import { RippleController } from "../../controller/ripple.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 
-/**
- * @fires md-button#onButtonSelection
- * @fires md-button#onButtonClick
- */
 class MdButton extends MdElement {
     static properties = {
         variant: { type: String },

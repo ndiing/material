@@ -11,10 +11,6 @@ const converter = (value) => {
     }
 };
 
-/**
- * @fires md-icon-button#onIconButtonSelection
- * @fires md-icon-button#onIconButtonClick
- */
 class MdIconButton extends MdElement {
     static properties = {
         icon: { type: String, converter },

@@ -69,13 +69,19 @@ function writeFiles() {
         const value = result[name];
 
         for (let { root, dir, base, ext, name, file, data } of value) {
-            if (!file.includes("router")) {
+            if (!file.includes("data-table")) {
                 continue;
             }
             console.log(file);
 
             data = data.replace(/\/\*\*[\s\S\n]+?\*\//gm, "");
             data = data.replace(/[\n]+/g, "\n");
+
+            data = data.replace(/(^class)/gm, "\n$1");
+            data = data.replace(/(^customElements)/gm, "\n$1");
+            data = data.replace(/(^export)/gm, "\n$1");
+            data = data.replace(/(\s+static properties = \{)/gm, "\n$1");
+            data = data.replace(/(\s+(async )?\w+\(.*?\)\s?\{)/gm, "\n$1");
 
             console.log(data);
 

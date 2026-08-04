@@ -1,12 +1,5 @@
 import { QueryBuilder } from "./query-builder.js";
 
-/**
- * @fires window#onNavigationStart
- * @fires window#onNavigationError
- * @fires window#onGuardsCheckStart
- * @fires window#onGuardsCheckEnd
- * @fires window#onNavigationEnd
- */
 class Router {
     constructor(routes, options = {}) {
         this.routes = [...routes];

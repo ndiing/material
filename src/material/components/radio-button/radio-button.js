@@ -4,9 +4,6 @@ import { createRef, ref } from "lit/directives/ref.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { RippleController } from "../../controller/ripple.js";
 
-/**
- * @fires md-radio-button#onRadioButtonNativeInput
- */
 class MdRadioButton extends MdElement {
     static formAssociated = true;
 

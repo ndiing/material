@@ -1,11 +1,5 @@
 import { MdElement } from "../../base/element.js";
 
-/**
- * @fires md-layout-item#onLayoutItemShowed
- * @fires md-layout-item#onLayoutItemClosed
- * @fires md-layout-item#onLayoutItemShow
- * @fires md-layout-item#onLayoutItemClose
- */
 class MdLayoutItem extends MdElement {
     static properties = {
         region: { type: String },
@@ -95,25 +89,16 @@ class MdLayoutItem extends MdElement {
         this.close();
     }
 
-    /**
-     *
-     */
     show() {
         this.open = true;
         this.emit("onLayoutItemShow", { element: this });
     }
 
-    /**
-     *
-     */
     close() {
         this.open = false;
         this.emit("onLayoutItemClose", { element: this });
     }
 
-    /**
-     *
-     */
     toggle() {
         if (this.open) {
             this.close();

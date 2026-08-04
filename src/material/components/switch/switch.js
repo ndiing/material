@@ -13,9 +13,6 @@ const converter = (value) => {
     }
 };
 
-/**
- * @fires md-switch#onSwitchNativeInput
- */
 class MdSwitch extends MdElement {
     static formAssociated = true;
 

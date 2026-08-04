@@ -1,6 +1,7 @@
 ## src\material\components\text-field
 
 ### text-field
+
 src\material\components\text-field\text-field.js
 
 ```js
@@ -12,6 +13,12 @@ import { choose } from "lit/directives/choose.js";
 import { styleMap } from "lit/directives/style-map.js";
 import { classMap } from "lit/directives/class-map.js";
 
+/**
+ * @fires md-text-field#onTextFieldNativeFocus
+ * @fires md-text-field#onTextFieldNativeBlur
+ * @fires md-text-field#onTextFieldNativeInput
+ * @fires md-text-field#onTextFieldNativeInvalid
+ */
 class MdTextField extends MdElement {
     static formAssociated = true;
 
@@ -23,6 +30,8 @@ class MdTextField extends MdElement {
         clearable: { type: Boolean },
         trailing: { type: Array },
         supporting: { type: String },
+        color: { type: String },
+
         type: { type: String },
         name: { type: String },
         value: { type: String },
@@ -37,10 +46,11 @@ class MdTextField extends MdElement {
         step: { type: Number },
         pattern: { type: String },
         autocomplete: { type: String },
+
         validationMessage: { type: String, state: true },
         validateOnBlur: { type: Boolean },
         validateOnInput: { type: Boolean },
-        color: { type: String },
+
         currentLength: { type: Number, state: true },
     };
 
@@ -171,7 +181,7 @@ class MdTextField extends MdElement {
                 <div class="md-text-field__content">
                     ${this.prefix?this.renderText({text:this.prefix}):nothing}
                     <input 
-                        aria-label="${ifDefined(this.ariaLabel || this.name || 'checkbox')}"
+                        aria-label="${ifDefined(this.ariaLabel || this.name || 'text-field')}"
                         ${ref(this.textFieldNative)}
                         class="md-text-field__native"
                         type="${ifDefined(this.type)}"
@@ -216,8 +226,8 @@ class MdTextField extends MdElement {
         this.currentLength = this.value?.length ?? 0;
         this._toggleClass("populated", this.value);
 
-        const contentElement=this.querySelector('.md-text-field__content')
-        this.style.setProperty('--md-comp-text-field-content-offset-left',contentElement?.offsetLeft+'px')
+        const contentElement = this.querySelector(".md-text-field__content");
+        this.style.setProperty("--md-comp-text-field-content-offset-left", contentElement?.offsetLeft + "px");
     }
 
     disconnectedCallback() {
@@ -233,7 +243,7 @@ class MdTextField extends MdElement {
             this._toggleClassList(this.colors, this.color);
         }
         if (changedProperties.has("label")) {
-            this._toggleClass("label");
+            this._toggleClass("with-label", this.label);
         }
         if (changedProperties.has("disabled")) {
             this._toggleClass("disabled");
@@ -321,9 +331,10 @@ class MdTextField extends MdElement {
 customElements.define("md-text-field", MdTextField);
 
 export { MdTextField };
-
 ```
+
 ### text-field
+
 src\material\components\text-field\text-field.scss
 
 ```scss
@@ -361,6 +372,7 @@ src\material\components\text-field\text-field.scss
     align-items: center;
     padding: 0 12px;
     gap: 0 12px;
+
     + .md-text-field__content {
         margin-left: -28px;
     }
@@ -369,6 +381,7 @@ src\material\components\text-field\text-field.scss
 .md-text-field__icon-button {
     margin: 0 -8px;
 }
+
 // .md-text-field__icon {}
 
 .md-text-field__content {
@@ -378,21 +391,24 @@ src\material\components\text-field\text-field.scss
     width: 100%;
     height: 100%;
     padding: 0 16px;
+
     + .md-text-field__trailing {
         margin-left: -28px;
     }
 }
+
 .md-text-field__text {
     @include mixins.typescale-body-large();
 }
+
 .md-text-field__native {
     appearance: none;
     width: 100%;
     height: 100%;
-    outline: none;
     @include mixins.typescale-body-large();
     background-color: transparent;
     color: inherit;
+    outline: none;
 }
 
 input.md-text-field__native[type="date" i]::-webkit-calendar-picker-indicator,
@@ -402,12 +418,15 @@ input.md-text-field__native[type="time" i]::-webkit-calendar-picker-indicator,
 input.md-text-field__native[type="week" i]::-webkit-calendar-picker-indicator {
     display: none;
 }
+
 input.md-text-field__native::-webkit-inner-spin-button {
     display: none;
 }
+
 input.md-text-field__native[type="search" i]::-webkit-search-cancel-button {
     display: none;
 }
+
 input.md-text-field__native::-webkit-datetime-edit-fields-wrapper {
     padding: 0;
 }
@@ -452,20 +471,24 @@ select.md-text-field__native:-webkit-autofill:focus {
     padding: 0 16px;
     gap: 0 16px;
 }
+
 .md-text-field__supporting {
     @include mixins.typescale-body-small();
 }
+
 .md-text-field__counter {
     margin-left: auto;
     @include mixins.typescale-body-small();
 }
 
 // .md-text-field--populated {}
+
 .md-text-field--focus {
     .md-text-field__label {
         color: var(--md-sys-color-primary);
     }
 }
+
 .md-text-field--focus-visible {
     .md-text-field__container {
         outline: 2px solid var(--md-sys-color-outline);
@@ -477,9 +500,11 @@ select.md-text-field__native:-webkit-autofill:focus {
     .md-text-field__label {
         color: var(--md-sys-color-error);
     }
+
     .md-text-field__supporting {
         color: var(--md-sys-color-error);
     }
+
     .md-text-field__icon--error {
         color: var(--md-sys-color-error);
     }
@@ -488,31 +513,38 @@ select.md-text-field__native:-webkit-autofill:focus {
 .md-text-field--readonly,
 .md-text-field--disabled {
     pointer-events: none;
+
     .md-text-field__label {
         color: var(--md-sys-color-on-surface38);
     }
+
     .md-text-field__container {
         background-color: var(--md-sys-color-on-surface4);
     }
+
     .md-text-field__native {
         color: var(--md-sys-color-on-surface38);
     }
+
     .md-text-field__text {
         color: var(--md-sys-color-on-surface38);
     }
+
     .md-text-field__icon {
         color: var(--md-sys-color-on-surface38);
     }
+
     .md-text-field__icon-button {
         color: var(--md-sys-color-on-surface38);
     }
+
     .md-text-field__supporting {
         color: var(--md-sys-color-on-surface38);
     }
 }
 
 .md-text-field--filled {
-    &.md-text-field--label {
+    &.md-text-field--with-label {
         .md-text-field__label {
             position: absolute;
             pointer-events: none;
@@ -520,37 +552,40 @@ select.md-text-field__native:-webkit-autofill:focus {
             padding-top: calc((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-large-line-height)) / 2);
             padding-bottom: calc((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-large-line-height)) / 2);
             @include mixins.typescale-body-large();
+            will-change: padding, font-size, line-height, color;
+            transition-property: padding, font-size, line-height, color;
+            // transition-duration: var(--md-sys-motion-duration-short1);
+            // transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
+            transition-duration: var(--md-sys-motion-duration-short1);
+            transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
+        }
+        .md-text-field__text,
+        .md-text-field__native::placeholder {
+            visibility: hidden;
         }
     }
 
     .md-text-field__container {
         border-radius: 4px 4px 0 0;
-        background-color: var(--md-sys-color-surface-container-highest);
-        color: var(--md-sys-color-on-surface-variant);
         box-shadow: inset 0 -1px 0 0 var(--md-sys-color-on-surface-variant);
-    }
-
-    .md-text-field__text {
-        visibility: hidden;
     }
     &.md-text-field--populated,
     &.md-text-field--focus {
-        &.md-text-field--label {
+        &.md-text-field--with-label {
             .md-text-field__label {
-                padding-top: calc(((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-small-line-height)) / 2) - 8px);
-                padding-bottom: calc(((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-small-line-height)) / 2) + 8px);
+                padding-top: calc(((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-small-line-height)) / 2) - 10px);
+                padding-bottom: calc(((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-small-line-height)) / 2) + 6px);
                 @include mixins.typescale-body-small();
             }
-
             .md-text-field__text,
             .md-text-field__native {
-                padding-top: calc(((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-large-line-height)) / 2) + 8px);
-                padding-bottom: calc(((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-large-line-height)) / 2) - 8px);
+                padding-top: calc(((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-large-line-height)) / 2) + 6px);
+                padding-bottom: calc(((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-large-line-height)) / 2) - 10px);
             }
-        }
-
-        .md-text-field__text {
-            visibility: visible;
+            .md-text-field__text,
+            .md-text-field__native::placeholder {
+                visibility: visible;
+            }
         }
     }
 
@@ -572,6 +607,95 @@ select.md-text-field__native:-webkit-autofill:focus {
         }
     }
 }
-// .md-text-field--outlined {}
 
+.md-text-field--outlined {
+    &.md-text-field--with-label {
+        .md-text-field__label {
+            margin-left: 12px;
+            margin-right: 12px;
+            padding-left: 4px;
+            padding-right: 4px;
+            padding-top: calc((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-large-line-height)) / 2);
+            padding-bottom: calc((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-large-line-height)) / 2);
+            position: absolute;
+            z-index: 1;
+            pointer-events: none;
+            left: var(--md-comp-text-field-content-offset-left, 0);
+            @include mixins.typescale-body-large();
+            will-change: padding, font-size, line-height, color, top, left;
+            transition-property: padding, font-size, line-height, color, top, left;
+            // transition-duration: var(--md-sys-motion-duration-short1);
+            // transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
+            transition-duration: var(--md-sys-motion-duration-short1);
+            transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
+
+            &:before {
+                content: "";
+                width: 0%;
+                height: var(--md-sys-typescale-body-small-line-height);
+                position: absolute;
+                z-index: -1;
+                left: 50%;
+                top: 50%;
+                transform: translate3d(-50%, -50%, 0);
+                background-color: var(--md-sys-color-background);
+                color: var(--md-sys-color-on-background);
+                will-change: width;
+                transition-property: width;
+                // transition-duration: var(--md-sys-motion-duration-short1);
+                // transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
+                transition-duration: var(--md-sys-motion-duration-short1);
+                transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
+            }
+        }
+        .md-text-field__text,
+        .md-text-field__native::placeholder {
+            visibility: hidden;
+        }
+    }
+
+    .md-text-field__container {
+        border-radius: 4px;
+        background-color: transparent;
+        box-shadow: inset 0 0 0 1px var(--md-sys-color-on-surface-variant);
+    }
+    &.md-text-field--populated,
+    &.md-text-field--focus {
+        &.md-text-field--with-label {
+            .md-text-field__label {
+                padding-top: 0;
+                padding-bottom: 0;
+                top: calc(0px - (var(--md-sys-typescale-body-small-line-height) / 2));
+                left: 0;
+                @include mixins.typescale-body-small();
+
+                &:before {
+                    width: 100%;
+                }
+            }
+            .md-text-field__text,
+            .md-text-field__native::placeholder {
+                visibility: visible;
+            }
+        }
+    }
+
+    &.md-text-field--focus {
+        .md-text-field__container {
+            box-shadow: inset 0 0 0 2px var(--md-sys-color-primary);
+        }
+    }
+
+    &.md-text-field--error {
+        .md-text-field__container {
+            box-shadow: inset 0 0 0 1px var(--md-sys-color-error);
+        }
+    }
+
+    &.md-text-field--error.md-text-field--focus {
+        .md-text-field__container {
+            box-shadow: inset 0 0 0 2px var(--md-sys-color-error);
+        }
+    }
+}
 ```

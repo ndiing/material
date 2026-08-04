@@ -17,6 +17,8 @@ class MdTextField extends MdElement {
         clearable: { type: Boolean },
         trailing: { type: Array },
         supporting: { type: String },
+        color: { type: String },
+
         type: { type: String },
         name: { type: String },
         value: { type: String },
@@ -31,10 +33,11 @@ class MdTextField extends MdElement {
         step: { type: Number },
         pattern: { type: String },
         autocomplete: { type: String },
+
         validationMessage: { type: String, state: true },
         validateOnBlur: { type: Boolean },
         validateOnInput: { type: Boolean },
-        color: { type: String },
+
         currentLength: { type: Number, state: true },
     };
 
@@ -165,7 +168,7 @@ class MdTextField extends MdElement {
                 <div class="md-text-field__content">
                     ${this.prefix?this.renderText({text:this.prefix}):nothing}
                     <input 
-                        aria-label="${ifDefined(this.ariaLabel || this.name || 'checkbox')}"
+                        aria-label="${ifDefined(this.ariaLabel || this.name || 'text-field')}"
                         ${ref(this.textFieldNative)}
                         class="md-text-field__native"
                         type="${ifDefined(this.type)}"
@@ -210,8 +213,8 @@ class MdTextField extends MdElement {
         this.currentLength = this.value?.length ?? 0;
         this._toggleClass("populated", this.value);
 
-        const contentElement=this.querySelector('.md-text-field__content')
-        this.style.setProperty('--md-comp-text-field-content-offset-left',contentElement?.offsetLeft+'px')
+        const contentElement = this.querySelector(".md-text-field__content");
+        this.style.setProperty("--md-comp-text-field-content-offset-left", contentElement?.offsetLeft + "px");
     }
 
     disconnectedCallback() {
@@ -227,7 +230,7 @@ class MdTextField extends MdElement {
             this._toggleClassList(this.colors, this.color);
         }
         if (changedProperties.has("label")) {
-            this._toggleClass("label");
+            this._toggleClass("with-label", this.label);
         }
         if (changedProperties.has("disabled")) {
             this._toggleClass("disabled");

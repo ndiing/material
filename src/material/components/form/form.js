@@ -3,11 +3,6 @@ import { MdElement } from "../../base/element.js";
 import { createRef, ref } from "lit/directives/ref.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 
-/**
- * @fires md-form#onFormNativeFormdata
- * @fires md-form#onFormNativeReset
- * @fires md-form#onFormNativeSubmit
- */
 class MdForm extends MdElement {
     static properties = {
         method: { type: String },

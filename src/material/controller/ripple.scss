@@ -24,11 +24,11 @@
         position: absolute;
         left: var(--md-comp-ripple-left);
         top: var(--md-comp-ripple-top);
-        transform: translate3d(-50%, -50%, 0) translate3d(var(--md-comp-ripple-x), var(--md-comp-ripple-y), 0);
         z-index: 1;
-        pointer-events: none;
+        transform: translate3d(-50%, -50%, 0) translate3d(var(--md-comp-ripple-x), var(--md-comp-ripple-y), 0);
         background-color: currentColor;
         opacity: 0;
+        pointer-events: none;
     }
 }
 

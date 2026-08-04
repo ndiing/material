@@ -1,11 +1,5 @@
 import { MdElement } from "../../base/element.js";
 
-/**
- * @fires md-scrim#onScrimShowed
- * @fires md-scrim#onScrimClosed
- * @fires md-scrim#onScrimShow
- * @fires md-scrim#onScrimClose
- */
 class MdScrim extends MdElement {
     static properties = {
         open: { type: Boolean },
@@ -53,27 +47,18 @@ class MdScrim extends MdElement {
         }
     }
 
-    /**
-     *
-     */
     show() {
         this.open = true;
 
         this.emit("onScrimShow", { element: this });
     }
 
-    /**
-     *
-     */
     close() {
         this.open = false;
 
         this.emit("onScrimClose", { element: this });
     }
 
-    /**
-     *
-     */
     toggle() {
         if (this.open) {
             this.close();

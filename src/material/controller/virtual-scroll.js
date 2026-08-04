@@ -68,14 +68,6 @@ class VirtualScrollController {
         });
     }
 
-    /**
-     *
-     * @param {*} index
-     * @param {*} options
-     * @param {*} options.behavior auto | smooth
-     * @param {*} options.align auto | center | start | end
-     * @returns
-     */
     scrollTo(index, options = {}) {
         const { behavior = "auto", align = "auto", offset = 0 } = options;
 

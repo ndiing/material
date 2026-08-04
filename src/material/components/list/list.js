@@ -7,12 +7,6 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { MdListElement } from "../../base/list.js";
 import { repeat } from "lit/directives/repeat.js";
 
-/**
- * @fires md-list#onListItemSelection
- * @fires md-list#onListClick
- * @fires md-list#onListKeydown
- * @fires md-list#onListItemClick
- */
 class MdList extends MdListElement {
     static properties = {
         ...MdListElement.properties,
