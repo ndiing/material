@@ -1,4 +1,3 @@
-
 class QueryBuilder {
     constructor(searchParams, options = {}) {
         this.searchParams = searchParams ?? new URLSearchParams();

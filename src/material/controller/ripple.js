@@ -1,4 +1,3 @@
-
 class RippleController {
     constructor(host, options = {}) {
         this.host = host;

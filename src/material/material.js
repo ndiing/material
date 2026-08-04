@@ -7,25 +7,33 @@
 // import "./core/localization.js";
 // import "./core/store.js";
 // import "./core/query-builder.js";
+
 // import "./base/element.js";
 // import "./base/list.js";
 // import "./base/datetime-picker.js";
+
 // import "./controller/virtual-scroll.js";
 // import "./controller/ripple.js";
+
 import "./components/scrim/scrim.js";
 import "./components/layout/layout.js";
 import "./components/layout/layout-item.js";
 import "./components/icon/icon.js";
 import "./components/image/image.js";
+
 import "./components/icon-button/icon-button.js";
 import "./components/button/button.js";
+
 import "./components/text-field/text-field.js";
+import "./components/textarea/textarea.js";
 import "./components/checkbox/checkbox.js";
 import "./components/radio-button/radio-button.js";
 import "./components/switch/switch.js";
 import "./components/form/form.js";
+
 import "./components/data-table/data-table-cell.js";
 import "./components/data-table/data-table.js";
+
 import "./components/list/list-item.js";
 import "./components/list/list.js";
 import "./components/tree/tree.js";

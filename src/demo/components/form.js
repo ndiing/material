@@ -3,111 +3,160 @@ import { MdElement } from "../../material/base/element.js";
 
 class DemoForm extends MdElement {
     /* prettier-ignore */
-    render(){
+    render() {
         return html`
-            <md-form
-                @onFormNativeFormdata="${console.log}"
-                @onFormNativeReset="${console.log}"
-                @onFormNativeSubmit="${console.log}"
+            <md-form 
+                @onFormNativeFormdata="${this.handleDemoFormFormNativeFormdata}" 
+                @onFormNativeReset="${this.handleDemoFormFormNativeReset}" 
+                @onFormNativeSubmit="${this.handleDemoFormFormNativeSubmit}"
             >
-                <input type="hidden" name="csrf_token" value="abc123">
+                <div class="md-grid">
 
-                <fieldset>
-                    <legend>Text Inputs</legend>
-                    
-                    <label for="text">text *</label>
-                    <input id="text" type="text" required placeholder="Nama lengkap">
-                    
-                    <label for="number">number (1-10)</label>
-                    <input id="number" type="number" min="1" max="10" step="2">
-                    
-                    <label for="search">search</label>
-                    <input id="search" type="search" placeholder="Cari...">
-                    
-                    <label for="url">url</label>
-                    <input id="url" type="url" placeholder="https://example.com">
-                    
-                    <label for="tel">tel</label>
-                    <input id="tel" type="tel" pattern="[0-9]{10,13}" placeholder="08123456789">
-                    
-                    <label for="email">email *</label>
-                    <input id="email" type="email" required placeholder="user@domain.com">
-                    
-                    <label for="password">password</label>
-                    <input id="password" type="password" minlength="8">
-                    
-                    <label for="date">date</label>
-                    <input id="date" type="date">
-                    
-                    <label for="datetime">datetime</label>
-                    <input id="datetime" type="datetime-local">
-                    
-                    <label for="month">month</label>
-                    <input id="month" type="month">
-                    
-                    <label for="time">time</label>
-                    <input id="time" type="time">
-                    
-                    <label for="week">week</label>
-                    <input id="week" type="week">
-                </fieldset>
+                    <div class="md-grid__column md-grid__column--expanded4">
+                        <md-text-field name="text" type="text" label="Text"></md-text-field>
+                    </div>
+                    <div class="md-grid__column md-grid__column--expanded4">
+                        <md-text-field value="Text" name="text2" type="text" label="Text"></md-text-field>
+                    </div>
+                    <div class="md-grid__column md-grid__column--expanded4"></div>
 
-                <fieldset>
-                    <legend>Selection</legend>
-                    <label><input type="checkbox" checked> Checkbox</label>
-                    <label><input type="radio" name="radio" value="1"> Radio 1</label>
-                    <label><input type="radio" name="radio" value="2"> Radio 2</label>
-                </fieldset>
+                    <div class="md-grid__column md-grid__column--expanded4">
+                        <md-text-field name="number" type="number" label="Number"></md-text-field>
+                    </div>
+                    <div class="md-grid__column md-grid__column--expanded4">
+                        <md-text-field value="12345" name="number2" type="number" label="Number"></md-text-field>
+                    </div>
+                    <div class="md-grid__column md-grid__column--expanded4"></div>
 
-                <fieldset>
-                    <legend>Visual</legend>
-                    <label>Color: <input type="color" value="#ff0000"></label>
-                    <label>File: <input type="file" accept="image/*" multiple></label>
-                    <label>Range: <input type="range" min="0" max="100" value="50"></label>
-                </fieldset>
+                    <div class="md-grid__column md-grid__column--expanded4">
+                        <md-text-field name="tel" type="tel" label="Tel"></md-text-field>
+                    </div>
+                    <div class="md-grid__column md-grid__column--expanded4">
+                        <md-text-field value="081935155404" name="tel2" type="tel" label="Tel"></md-text-field>
+                    </div>
+                    <div class="md-grid__column md-grid__column--expanded4"></div>
 
-                <fieldset>
-                    <legend>Dropdown & Textarea</legend>
-                    <input type="text" list="datalist" placeholder="Ketik...">
-                    <datalist id="datalist">
-                        <option value="Jakarta"></option>
-                        <option value="Bandung"></option>
-                        <option value="Surabaya"></option>
-                    </datalist>
+                    <div class="md-grid__column md-grid__column--expanded4">
+                        <md-text-field autocomplete="email" name="email" type="email" label="Email"></md-text-field>
+                    </div>
+                    <div class="md-grid__column md-grid__column--expanded4">
+                        <md-text-field autocomplete="email" value="ndiing.inc@gmail.com" name="email2" type="email" label="Email"></md-text-field>
+                    </div>
+                    <div class="md-grid__column md-grid__column--expanded4"></div>
 
-                    <select>
-                        <optgroup label="Kota">
-                            <option value="jkt">Jakarta</option>
-                            <option value="bdg">Bandung</option>
-                        </optgroup>
-                        <optgroup label="Provinsi">
-                            <option value="jabar">Jawa Barat</option>
-                            <option value="jatim">Jawa Timur</option>
-                        </optgroup>
-                    </select>
+                    <div class="md-grid__column md-grid__column--expanded4">
+                        <md-text-field autocomplete="new-password" name="password" type="password" label="Password"></md-text-field>
+                    </div>
+                    <div class="md-grid__column md-grid__column--expanded4">
+                        <md-text-field autocomplete="new-password" value="password" name="password2" type="password" label="Password"></md-text-field>
+                    </div>
+                    <div class="md-grid__column md-grid__column--expanded4"></div>
 
-                    <textarea rows="4" placeholder="Deskripsi..."></textarea>
-                </fieldset>
+                    <div class="md-grid__column md-grid__column--expanded4">
+                        <md-text-field name="search" type="search" label="Search"></md-text-field>
+                    </div>
+                    <div class="md-grid__column md-grid__column--expanded4">
+                        <md-text-field value="Search" name="search2" type="search" label="Search"></md-text-field>
+                    </div>
+                    <div class="md-grid__column md-grid__column--expanded4"></div>
 
-                <fieldset>
-                    <legend>Meter & Progress</legend>
-                    <meter value="70" min="0" max="100">70%</meter>
-                    <progress value="50" max="100">50%</progress>
-                    <output name="result">0</output>
-                </fieldset>
+                    <div class="md-grid__column md-grid__column--expanded4">
+                        <md-text-field name="url" type="url" label="Url"></md-text-field>
+                    </div>
+                    <div class="md-grid__column md-grid__column--expanded4">
+                        <md-text-field value="https://www.google.com" name="url2" type="url" label="Url"></md-text-field>
+                    </div>
+                    <div class="md-grid__column md-grid__column--expanded4"></div>
 
-                <fieldset>
-                    <legend>Buttons</legend>
-                    <input type="button" value="Button">
-                    <input type="reset" value="Reset">
-                    <input type="submit" value="Submit">
-                    <button type="button">Button</button>
-                    <button type="reset">Reset</button>
-                    <button type="submit">Submit</button>
-                </fieldset>
+                    <div class="md-grid__column md-grid__column--expanded4">
+                        <md-text-field name="datetime-local" type="datetime-local" label="Datetime Local"></md-text-field>
+                    </div>
+                    <div class="md-grid__column md-grid__column--expanded4">
+                        <md-text-field value="2026-08-04T23:00" name="datetime-local2" type="datetime-local" label="Datetime Local"></md-text-field>
+                    </div>
+                    <div class="md-grid__column md-grid__column--expanded4"></div>
+
+                    <div class="md-grid__column md-grid__column--expanded4">
+                        <md-text-field name="date" type="date" label="Date"></md-text-field>
+                    </div>
+                    <div class="md-grid__column md-grid__column--expanded4">
+                        <md-text-field value="2026-08-04" name="date2" type="date" label="Date"></md-text-field>
+                    </div>
+                    <div class="md-grid__column md-grid__column--expanded4"></div>
+
+                    <div class="md-grid__column md-grid__column--expanded4">
+                        <md-text-field name="month" type="month" label="Month"></md-text-field>
+                    </div>
+                    <div class="md-grid__column md-grid__column--expanded4">
+                        <md-text-field value="2026-08" name="month2" type="month" label="Month"></md-text-field>
+                    </div>
+                    <div class="md-grid__column md-grid__column--expanded4"></div>
+
+                    <div class="md-grid__column md-grid__column--expanded4">
+                        <md-text-field name="week" type="week" label="Week"></md-text-field>
+                    </div>
+                    <div class="md-grid__column md-grid__column--expanded4">
+                        <md-text-field value="2026-W32" name="week2" type="week" label="Week"></md-text-field>
+                    </div>
+                    <div class="md-grid__column md-grid__column--expanded4"></div>
+
+                    <div class="md-grid__column md-grid__column--expanded4">
+                        <md-text-field name="time" type="time" label="Time"></md-text-field>
+                    </div>
+                    <div class="md-grid__column md-grid__column--expanded4">
+                        <md-text-field value="23:00" name="time2" type="time" label="Time"></md-text-field>
+                    </div>
+                    <div class="md-grid__column md-grid__column--expanded4"></div>
+
+                    <div class="md-grid__column md-grid__column--expanded4">
+                        <md-textarea name="textarea" label="Textarea"></md-textarea>
+                    </div>
+                    <div class="md-grid__column md-grid__column--expanded4">
+                        <md-textarea value="This is a long input in a multi-line text field that wraps overflow text onto a new line" name="textarea2" label="Textarea"></md-textarea>
+                    </div>
+                    <div class="md-grid__column md-grid__column--expanded4"></div>
+
+                    <div class="md-grid__column md-grid__column--expanded4">
+                        <md-checkbox name="checkbox"></md-checkbox>
+                    </div>
+                    <div class="md-grid__column md-grid__column--expanded4">
+                        <md-checkbox checked name="checkbox"></md-checkbox>
+                    </div>
+                    <div class="md-grid__column md-grid__column--expanded4"></div>
+
+                    <div class="md-grid__column md-grid__column--expanded4">
+                        <md-radio-button name="radio-button"></md-radio-button>
+                    </div>
+                    <div class="md-grid__column md-grid__column--expanded4">
+                        <md-radio-button checked name="radio-button"></md-radio-button>
+                    </div>
+                    <div class="md-grid__column md-grid__column--expanded4"></div>
+
+                    <div class="md-grid__column md-grid__column--expanded4">
+                        <md-switch name="switch"></md-switch>
+                    </div>
+                    <div class="md-grid__column md-grid__column--expanded4">
+                        <md-switch checked name="switch"></md-switch>
+                    </div>
+                    <div class="md-grid__column md-grid__column--expanded4"></div>
+
+
+                    <div class="md-grid__column md-grid__column--expanded12">
+                        <md-button type="reset" label="Reset"></md-button>
+                        <md-button type="submit" label="Submit"></md-button>
+                    </div>
+                </div>
             </md-form>
-        `
+        `;
     }
+
+    handleDemoFormFormNativeFormdata(event) {
+        console.log(Object.fromEntries(event.detail.formData.entries()));
+    }
+
+    handleDemoFormFormNativeReset(event) {}
+
+    handleDemoFormFormNativeSubmit(event) {}
 }
 customElements.define("demo-form", DemoForm);
 export default document.createElement("demo-form");

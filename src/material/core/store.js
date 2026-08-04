@@ -1,4 +1,3 @@
-
 class Store {
     constructor(docs = [], options = {}) {
         this.primaryKey = options.primaryKey ?? "id";

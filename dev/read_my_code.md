@@ -1,7 +1,6 @@
 ## src\material\components\text-field
 
 ### text-field
-
 src\material\components\text-field\text-field.js
 
 ```js
@@ -13,15 +12,8 @@ import { choose } from "lit/directives/choose.js";
 import { styleMap } from "lit/directives/style-map.js";
 import { classMap } from "lit/directives/class-map.js";
 
-/**
- * @fires md-text-field#onTextFieldNativeFocus
- * @fires md-text-field#onTextFieldNativeBlur
- * @fires md-text-field#onTextFieldNativeInput
- * @fires md-text-field#onTextFieldNativeInvalid
- */
 class MdTextField extends MdElement {
     static formAssociated = true;
-
     static properties = {
         leading: { type: Array },
         label: { type: String },
@@ -31,7 +23,6 @@ class MdTextField extends MdElement {
         trailing: { type: Array },
         supporting: { type: String },
         color: { type: String },
-
         type: { type: String },
         name: { type: String },
         value: { type: String },
@@ -46,18 +37,13 @@ class MdTextField extends MdElement {
         step: { type: Number },
         pattern: { type: String },
         autocomplete: { type: String },
-
         validationMessage: { type: String, state: true },
         validateOnBlur: { type: Boolean },
         validateOnInput: { type: Boolean },
-
         currentLength: { type: Number, state: true },
     };
-
     textFieldNative = createRef();
-
     colors = ["standard", "filled", "outlined"];
-
     constructor() {
         super();
         this.internals = this.attachInternals();
@@ -66,10 +52,8 @@ class MdTextField extends MdElement {
         this.validateOnInput = true;
         this.variant = "filled";
         this.currentLength = 0;
-
         this._handleTextFieldIconButtonClearClick = this._handleTextFieldIconButtonClearClick.bind(this);
     }
-
     /* prettier-ignore */
     renderAvatar(properties){
         return html`
@@ -89,7 +73,6 @@ class MdTextField extends MdElement {
             ></md-image>
         `
     }
-
     /* prettier-ignore */
     renderIcon(properties){
         return html`
@@ -104,7 +87,6 @@ class MdTextField extends MdElement {
             ></md-icon>
         `
     }
-
     /* prettier-ignore */
     renderIconButton(properties){
         return html`
@@ -127,7 +109,6 @@ class MdTextField extends MdElement {
             ></md-icon-button>
         `
     }
-
     /* prettier-ignore */
     renderText(properties){
         return html`
@@ -137,7 +118,6 @@ class MdTextField extends MdElement {
             >${properties.text}</div>
         `
     }
-
     /* prettier-ignore */
     renderComponent(component,properties){
         return choose(component,[
@@ -147,21 +127,51 @@ class MdTextField extends MdElement {
             ['text', () => this.renderText(properties)],
         ],() => nothing)
     }
-
     /* prettier-ignore */
     renderLeading(){
-        return html`
+        return this.leading?.length?html`
             <div class="md-text-field__leading">
                 ${this.leading.map(({component,...properties}) => {
                     return this.renderComponent(component,properties)
                 })}
             </div>
+        `:nothing
+    }
+    /* prettier-ignore */
+    renderContent(){
+        return html`
+            <div class="md-text-field__content">
+                ${this.prefix?this.renderText({text:this.prefix}):nothing}
+                <input 
+                    aria-label="${ifDefined(this.ariaLabel || this.name || 'text-field')}"
+                    ${ref(this.textFieldNative)}
+                    class="md-text-field__native"
+                    type="${ifDefined(this.type)}"
+                    name="${ifDefined(this.name)}"
+                    .value="${ifDefined(this.value)}"
+                    placeholder="${ifDefined(this.placeholder)}"
+                    ?disabled="${ifDefined(this.disabled)}"
+                    ?readonly="${ifDefined(this.readonly)}"
+                    ?required="${ifDefined(this.required)}"
+                    minlength="${ifDefined(this.minLength)}"
+                    maxlength="${ifDefined(this.maxLength)}"
+                    min="${ifDefined(this.min)}"
+                    max="${ifDefined(this.max)}"
+                    step="${ifDefined(this.step)}"
+                    pattern="${ifDefined(this.pattern)}"
+                    autocomplete="${ifDefined(this.autocomplete)}"
+                    @focus="${this._handleTextFieldNativeFocus}"
+                    @input="${this._handleTextFieldNativeInput}"
+                    @blur="${this._handleTextFieldNativeBlur}"
+                    @invalid="${this._handleTextFieldNativeInvalid}"
+                >
+                ${this.suffix?this.renderText({text:this.suffix}):nothing}
+            </div>
         `
     }
-
     /* prettier-ignore */
     renderTrailing(){
-        return html`
+        return (this.clearable&&this.value)||this.validationMessage||this.trailing?.length?html`
             <div class="md-text-field__trailing">
                 ${(this.clearable&&this.value)?this.renderIconButton({icon:'cancel',color:'standard',onTextFieldIconButtonClick:this._handleTextFieldIconButtonClearClick}):nothing}
                 ${this.validationMessage?this.renderIcon({icon:'error',class:{'md-text-field__icon--error':true}}):nothing}
@@ -169,43 +179,16 @@ class MdTextField extends MdElement {
                     return this.renderComponent(component,properties)
                 })}
             </div>
-        `
+        `:nothing
     }
-
     /* prettier-ignore */
     render(){
         return html`
             ${this.label?html`<label class="md-text-field__label">${this.label}</label>`:nothing}
             <div class="md-text-field__container">
-                ${this.leading?.length?this.renderLeading():nothing}
-                <div class="md-text-field__content">
-                    ${this.prefix?this.renderText({text:this.prefix}):nothing}
-                    <input 
-                        aria-label="${ifDefined(this.ariaLabel || this.name || 'text-field')}"
-                        ${ref(this.textFieldNative)}
-                        class="md-text-field__native"
-                        type="${ifDefined(this.type)}"
-                        name="${ifDefined(this.name)}"
-                        .value="${ifDefined(this.value)}"
-                        placeholder="${ifDefined(this.placeholder)}"
-                        ?disabled="${ifDefined(this.disabled)}"
-                        ?readonly="${ifDefined(this.readonly)}"
-                        ?required="${ifDefined(this.required)}"
-                        minlength="${ifDefined(this.minLength)}"
-                        maxlength="${ifDefined(this.maxLength)}"
-                        min="${ifDefined(this.min)}"
-                        max="${ifDefined(this.max)}"
-                        step="${ifDefined(this.step)}"
-                        pattern="${ifDefined(this.pattern)}"
-                        autocomplete="${ifDefined(this.autocomplete)}"
-                        @focus="${this._handleTextFieldNativeFocus}"
-                        @input="${this._handleTextFieldNativeInput}"
-                        @blur="${this._handleTextFieldNativeBlur}"
-                        @invalid="${this._handleTextFieldNativeInvalid}"
-                    >
-                    ${this.suffix?this.renderText({text:this.suffix}):nothing}
-                </div>
-                ${(this.clearable&&this.value)||this.validationMessage||this.trailing?.length?this.renderTrailing():nothing}
+                ${this.renderLeading()}
+                ${this.renderContent()}
+                ${this.renderTrailing()}
             </div>
             <div class="md-text-field__information">
                 ${this.supporting||this.validationMessage?html`<div class="md-text-field__supporting">${this.validationMessage||this.supporting}</div>`:nothing}
@@ -213,32 +196,22 @@ class MdTextField extends MdElement {
             </div>
         `
     }
-
     async connectedCallback() {
         super.connectedCallback();
-
         this.classList.add("md-text-field");
-
         this.defaultValue = this.defaultValue ?? this.value ?? "";
-
         await this.updateComplete;
-
         this.currentLength = this.value?.length ?? 0;
         this._toggleClass("populated", this.value);
-
         const contentElement = this.querySelector(".md-text-field__content");
         this.style.setProperty("--md-comp-text-field-content-offset-left", contentElement?.offsetLeft + "px");
     }
-
     disconnectedCallback() {
         super.disconnectedCallback();
-
         this.classList.remove("md-text-field");
     }
-
     update(changedProperties) {
         super.update(changedProperties);
-
         if (changedProperties.has("color")) {
             this._toggleClassList(this.colors, this.color);
         }
@@ -252,73 +225,56 @@ class MdTextField extends MdElement {
             this._toggleClass("readonly");
         }
     }
-
     formResetCallback(event) {
         const textFieldNative = this.textFieldNative.value;
         textFieldNative.value = this.defaultValue;
         this.value = textFieldNative.value;
         this.currentLength = this.value?.length ?? 0;
         this._toggleClass("populated", this.value);
-
         this.validationMessage = "";
         this._toggleClass("error", this.validationMessage);
     }
-
     _toggleClass(modifier, force = this[modifier]) {
         this.classList.toggle(`md-text-field--${modifier}`, !!force);
     }
-
     _toggleClassList(list, value) {
         list.forEach((item) => {
             this.classList.toggle(`md-text-field--${item}`, value === item);
         });
     }
-
     _handleTextFieldNativeFocus(event) {
         this._toggleClass("focus", true);
         this._toggleClass("focus-visible", !this.textFieldNative.value.matches(":active"));
-
         this.emit("onTextFieldNativeFocus", { event, element: this });
     }
-
     _handleTextFieldNativeBlur(event) {
         this._toggleClass("focus", false);
         this._toggleClass("focus-visible", false);
-
         if (this.validateOnBlur) {
             this.validate();
         }
-
         this.emit("onTextFieldNativeBlur", { event, element: this });
     }
-
     _handleTextFieldNativeInput(event) {
         const textFieldNative = this.textFieldNative.value;
         this.value = textFieldNative.value;
         this.currentLength = this.value?.length ?? 0;
         this._toggleClass("populated", this.value);
-
         if (this.validateOnInput) {
             this.validate();
         }
-
         this.emit("onTextFieldNativeInput", { event, element: this });
     }
-
     _handleTextFieldNativeInvalid(event) {
         event.preventDefault();
-
         this.validate();
-
         this.emit("onTextFieldNativeInvalid", { event, element: this });
     }
-
     validate() {
         const textFieldNative = this.textFieldNative.value;
         this.validationMessage = textFieldNative.validationMessage;
         this._toggleClass("error", this.validationMessage);
     }
-
     _handleTextFieldIconButtonClearClick(event) {
         const textFieldNative = this.textFieldNative.value;
         textFieldNative.value = "";
@@ -331,10 +287,9 @@ class MdTextField extends MdElement {
 customElements.define("md-text-field", MdTextField);
 
 export { MdTextField };
+
 ```
-
 ### text-field
-
 src\material\components\text-field\text-field.scss
 
 ```scss
@@ -359,8 +314,7 @@ src\material\components\text-field\text-field.scss
 
 .md-text-field__container {
     display: flex;
-    align-items: center;
-    height: var(--md-comp-text-field-height);
+    align-items: flex-start;
     gap: 0 16px;
     border-radius: 4px;
     background-color: var(--md-sys-color-surface-container-highest);
@@ -370,7 +324,7 @@ src\material\components\text-field\text-field.scss
 .md-text-field__leading {
     display: inline-flex;
     align-items: center;
-    padding: 0 12px;
+    padding: calc((var(--md-comp-text-field-height) - 24px) / 2) 12px;
     gap: 0 12px;
 
     + .md-text-field__content {
@@ -379,18 +333,18 @@ src\material\components\text-field\text-field.scss
 }
 
 .md-text-field__icon-button {
-    margin: 0 -8px;
+    margin: -8px;
 }
 
-// .md-text-field__icon {}
+.md-text-field__icon {
+}
 
 .md-text-field__content {
     flex: 1;
     display: inline-flex;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
     height: 100%;
-    padding: 0 16px;
 
     + .md-text-field__trailing {
         margin-left: -28px;
@@ -398,17 +352,29 @@ src\material\components\text-field\text-field.scss
 }
 
 .md-text-field__text {
+    padding: 0 16px;
+    margin: calc((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-large-line-height)) / 2) 0;
     @include mixins.typescale-body-large();
+    + .md-text-field__native {
+        margin-left: -32px;
+    }
 }
 
 .md-text-field__native {
     appearance: none;
     width: 100%;
-    height: 100%;
+    padding: 0 16px;
+    margin: calc((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-large-line-height)) / 2) 0;
     @include mixins.typescale-body-large();
     background-color: transparent;
     color: inherit;
     outline: none;
+    &::placeholder {
+        @include mixins.typescale-body-large();
+    }
+    + .md-text-field__text {
+        margin-left: -32px;
+    }
 }
 
 input.md-text-field__native[type="date" i]::-webkit-calendar-picker-indicator,
@@ -461,7 +427,7 @@ select.md-text-field__native:-webkit-autofill:focus {
 .md-text-field__trailing {
     display: inline-flex;
     align-items: center;
-    padding: 0 12px;
+    padding: calc((var(--md-comp-text-field-height) - 24px) / 2) 12px;
     gap: 0 12px;
 }
 
@@ -481,7 +447,8 @@ select.md-text-field__native:-webkit-autofill:focus {
     @include mixins.typescale-body-small();
 }
 
-// .md-text-field--populated {}
+.md-text-field--populated {
+}
 
 .md-text-field--focus {
     .md-text-field__label {
@@ -549,18 +516,17 @@ select.md-text-field__native:-webkit-autofill:focus {
             position: absolute;
             pointer-events: none;
             left: var(--md-comp-text-field-content-offset-left, 0);
-            padding-top: calc((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-large-line-height)) / 2);
-            padding-bottom: calc((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-large-line-height)) / 2);
+            margin-top: calc((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-large-line-height)) / 2);
+            margin-bottom: calc((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-large-line-height)) / 2);
             @include mixins.typescale-body-large();
-            will-change: padding, font-size, line-height, color;
-            transition-property: padding, font-size, line-height, color;
-            // transition-duration: var(--md-sys-motion-duration-short1);
-            // transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
+            will-change: margin, font-size, line-height, color;
+            transition-property: margin, font-size, line-height, color;
             transition-duration: var(--md-sys-motion-duration-short1);
             transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
         }
         .md-text-field__text,
-        .md-text-field__native::placeholder {
+        .md-text-field__native::placeholder,
+        .md-text-field__native::-webkit-datetime-edit {
             visibility: hidden;
         }
     }
@@ -573,17 +539,18 @@ select.md-text-field__native:-webkit-autofill:focus {
     &.md-text-field--focus {
         &.md-text-field--with-label {
             .md-text-field__label {
-                padding-top: calc(((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-small-line-height)) / 2) - 10px);
-                padding-bottom: calc(((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-small-line-height)) / 2) + 6px);
+                margin-top: calc(((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-small-line-height)) / 2) - 8px);
+                margin-bottom: calc(((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-small-line-height)) / 2) + 8px);
                 @include mixins.typescale-body-small();
             }
             .md-text-field__text,
             .md-text-field__native {
-                padding-top: calc(((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-large-line-height)) / 2) + 6px);
-                padding-bottom: calc(((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-large-line-height)) / 2) - 10px);
+                margin-top: calc(((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-large-line-height)) / 2) + 8px);
+                margin-bottom: calc(((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-large-line-height)) / 2) - 8px);
             }
             .md-text-field__text,
-            .md-text-field__native::placeholder {
+            .md-text-field__native::placeholder,
+            .md-text-field__native::-webkit-datetime-edit {
                 visibility: visible;
             }
         }
@@ -615,17 +582,15 @@ select.md-text-field__native:-webkit-autofill:focus {
             margin-right: 12px;
             padding-left: 4px;
             padding-right: 4px;
-            padding-top: calc((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-large-line-height)) / 2);
-            padding-bottom: calc((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-large-line-height)) / 2);
+            margin-top: calc((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-large-line-height)) / 2);
+            margin-bottom: calc((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-large-line-height)) / 2);
             position: absolute;
             z-index: 1;
             pointer-events: none;
             left: var(--md-comp-text-field-content-offset-left, 0);
             @include mixins.typescale-body-large();
-            will-change: padding, font-size, line-height, color, top, left;
-            transition-property: padding, font-size, line-height, color, top, left;
-            // transition-duration: var(--md-sys-motion-duration-short1);
-            // transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
+            will-change: margin, font-size, line-height, color, top, left;
+            transition-property: margin, font-size, line-height, color, top, left;
             transition-duration: var(--md-sys-motion-duration-short1);
             transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
 
@@ -642,14 +607,13 @@ select.md-text-field__native:-webkit-autofill:focus {
                 color: var(--md-sys-color-on-background);
                 will-change: width;
                 transition-property: width;
-                // transition-duration: var(--md-sys-motion-duration-short1);
-                // transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
                 transition-duration: var(--md-sys-motion-duration-short1);
                 transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
             }
         }
         .md-text-field__text,
-        .md-text-field__native::placeholder {
+        .md-text-field__native::placeholder,
+        .md-text-field__native::-webkit-datetime-edit {
             visibility: hidden;
         }
     }
@@ -663,8 +627,8 @@ select.md-text-field__native:-webkit-autofill:focus {
     &.md-text-field--focus {
         &.md-text-field--with-label {
             .md-text-field__label {
-                padding-top: 0;
-                padding-bottom: 0;
+                margin-top: 0;
+                margin-bottom: 0;
                 top: calc(0px - (var(--md-sys-typescale-body-small-line-height) / 2));
                 left: 0;
                 @include mixins.typescale-body-small();
@@ -674,7 +638,8 @@ select.md-text-field__native:-webkit-autofill:focus {
                 }
             }
             .md-text-field__text,
-            .md-text-field__native::placeholder {
+            .md-text-field__native::placeholder,
+            .md-text-field__native::-webkit-datetime-edit {
                 visibility: visible;
             }
         }
@@ -698,4 +663,80 @@ select.md-text-field__native:-webkit-autofill:focus {
         }
     }
 }
+
+```
+## src\material\components\textarea
+
+### textarea
+src\material\components\textarea\textarea.js
+
+```js
+import { html, nothing } from "lit";
+import { MdElement } from "../../base/element.js";
+import { MdTextField } from "../text-field/text-field.js";
+import { ifDefined } from "lit/directives/if-defined.js";
+import { ref } from "lit/directives/ref.js";
+
+class MdTextarea extends MdTextField {
+    static properties = {
+        ...MdTextField.properties,
+        rows: { type: Number },
+        cols: { type: Number },
+    };
+    /* prettier-ignore */
+    renderContent(){
+        return html`
+            <div class="md-text-field__content">
+                ${this.prefix?this.renderText({text:this.prefix}):nothing}
+                <textarea
+                    aria-label="${ifDefined(this.ariaLabel || this.name || 'text-field')}"
+                    ${ref(this.textFieldNative)}
+                    class="md-text-field__native"
+                    type="${ifDefined(this.type)}"
+                    name="${ifDefined(this.name)}"
+                    .value="${ifDefined(this.value)}"
+                    rows="${ifDefined(this.rows)}"
+                    cols="${ifDefined(this.cols)}"
+                    placeholder="${ifDefined(this.placeholder)}"
+                    ?disabled="${ifDefined(this.disabled)}"
+                    ?readonly="${ifDefined(this.readonly)}"
+                    ?required="${ifDefined(this.required)}"
+                    minlength="${ifDefined(this.minLength)}"
+                    maxlength="${ifDefined(this.maxLength)}"
+                    autocomplete="${ifDefined(this.autocomplete)}"
+                    @focus="${this._handleTextFieldNativeFocus}"
+                    @input="${this._handleTextFieldNativeInput}"
+                    @blur="${this._handleTextFieldNativeBlur}"
+                    @invalid="${this._handleTextFieldNativeInvalid}"
+                ></textarea>
+                ${this.suffix?this.renderText({text:this.suffix}):nothing}
+            </div>
+        `
+    }
+    async connectedCallback() {
+        super.connectedCallback();
+        this.classList.add("md-textarea");
+    }
+    disconnectedCallback() {
+        super.disconnectedCallback();
+        this.classList.remove("md-textarea");
+    }
+}
+
+customElements.define("md-textarea", MdTextarea);
+
+export { MdTextarea };
+
+```
+### textarea
+src\material\components\textarea\textarea.scss
+
+```scss
+.md-textarea {
+    .md-text-field__native {
+        resize: none;
+        field-sizing: content;
+    }
+}
+
 ```

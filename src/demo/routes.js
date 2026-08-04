@@ -45,6 +45,7 @@ export const routes = [
 
             { path: "/components/form", load: () => import("./components/form.js").then((module) => module.default), children: [] },
             { path: "/components/text-field", load: () => import("./components/text-field.js").then((module) => module.default), children: [] },
+            { path: "/components/textarea", load: () => import("./components/textarea.js").then((module) => module.default), children: [] },
             { path: "/components/checkbox", load: () => import("./components/checkbox.js").then((module) => module.default), children: [] },
             { path: "/components/radio-button", load: () => import("./components/radio-button.js").then((module) => module.default), children: [] },
             { path: "/components/switch", load: () => import("./components/switch.js").then((module) => module.default), children: [] },

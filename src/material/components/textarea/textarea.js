@@ -1,0 +1,55 @@
+import { html, nothing } from "lit";
+import { MdElement } from "../../base/element.js";
+import { MdTextField } from "../text-field/text-field.js";
+import { ifDefined } from "lit/directives/if-defined.js";
+import { ref } from "lit/directives/ref.js";
+
+class MdTextarea extends MdTextField {
+    static properties = {
+        ...MdTextField.properties,
+        rows: { type: Number },
+        cols: { type: Number },
+    };
+    /* prettier-ignore */
+    renderContent(){
+        return html`
+            <div class="md-text-field__content">
+                ${this.prefix?this.renderText({text:this.prefix}):nothing}
+                <textarea
+                    aria-label="${ifDefined(this.ariaLabel || this.name || 'text-field')}"
+                    ${ref(this.textFieldNative)}
+                    class="md-text-field__native"
+                    type="${ifDefined(this.type)}"
+                    name="${ifDefined(this.name)}"
+                    .value="${ifDefined(this.value)}"
+                    rows="${ifDefined(this.rows)}"
+                    cols="${ifDefined(this.cols)}"
+                    placeholder="${ifDefined(this.placeholder)}"
+                    ?disabled="${ifDefined(this.disabled)}"
+                    ?readonly="${ifDefined(this.readonly)}"
+                    ?required="${ifDefined(this.required)}"
+                    minlength="${ifDefined(this.minLength)}"
+                    maxlength="${ifDefined(this.maxLength)}"
+                    autocomplete="${ifDefined(this.autocomplete)}"
+                    @focus="${this._handleTextFieldNativeFocus}"
+                    @input="${this._handleTextFieldNativeInput}"
+                    @blur="${this._handleTextFieldNativeBlur}"
+                    @invalid="${this._handleTextFieldNativeInvalid}"
+                ></textarea>
+                ${this.suffix?this.renderText({text:this.suffix}):nothing}
+            </div>
+        `
+    }
+    async connectedCallback() {
+        super.connectedCallback();
+        this.classList.add("md-textarea");
+    }
+    disconnectedCallback() {
+        super.disconnectedCallback();
+        this.classList.remove("md-textarea");
+    }
+}
+
+customElements.define("md-textarea", MdTextarea);
+
+export { MdTextarea };

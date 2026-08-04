@@ -19,8 +19,7 @@
 
 .md-text-field__container {
     display: flex;
-    align-items: center;
-    height: var(--md-comp-text-field-height);
+    align-items: flex-start;
     gap: 0 16px;
     border-radius: 4px;
     background-color: var(--md-sys-color-surface-container-highest);
@@ -30,7 +29,7 @@
 .md-text-field__leading {
     display: inline-flex;
     align-items: center;
-    padding: 0 12px;
+    padding: calc((var(--md-comp-text-field-height) - 24px) / 2) 12px;
     gap: 0 12px;
 
     + .md-text-field__content {
@@ -39,18 +38,18 @@
 }
 
 .md-text-field__icon-button {
-    margin: 0 -8px;
+    margin: -8px;
 }
 
-// .md-text-field__icon {}
+.md-text-field__icon {
+}
 
 .md-text-field__content {
     flex: 1;
     display: inline-flex;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
     height: 100%;
-    padding: 0 16px;
 
     + .md-text-field__trailing {
         margin-left: -28px;
@@ -58,17 +57,29 @@
 }
 
 .md-text-field__text {
+    padding: 0 16px;
+    margin: calc((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-large-line-height)) / 2) 0;
     @include mixins.typescale-body-large();
+    + .md-text-field__native {
+        margin-left: -32px;
+    }
 }
 
 .md-text-field__native {
     appearance: none;
     width: 100%;
-    height: 100%;
+    padding: 0 16px;
+    margin: calc((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-large-line-height)) / 2) 0;
     @include mixins.typescale-body-large();
     background-color: transparent;
     color: inherit;
     outline: none;
+    &::placeholder {
+        @include mixins.typescale-body-large();
+    }
+    + .md-text-field__text {
+        margin-left: -32px;
+    }
 }
 
 input.md-text-field__native[type="date" i]::-webkit-calendar-picker-indicator,
@@ -121,7 +132,7 @@ select.md-text-field__native:-webkit-autofill:focus {
 .md-text-field__trailing {
     display: inline-flex;
     align-items: center;
-    padding: 0 12px;
+    padding: calc((var(--md-comp-text-field-height) - 24px) / 2) 12px;
     gap: 0 12px;
 }
 
@@ -141,7 +152,8 @@ select.md-text-field__native:-webkit-autofill:focus {
     @include mixins.typescale-body-small();
 }
 
-// .md-text-field--populated {}
+.md-text-field--populated {
+}
 
 .md-text-field--focus {
     .md-text-field__label {
@@ -209,18 +221,17 @@ select.md-text-field__native:-webkit-autofill:focus {
             position: absolute;
             pointer-events: none;
             left: var(--md-comp-text-field-content-offset-left, 0);
-            padding-top: calc((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-large-line-height)) / 2);
-            padding-bottom: calc((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-large-line-height)) / 2);
+            margin-top: calc((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-large-line-height)) / 2);
+            margin-bottom: calc((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-large-line-height)) / 2);
             @include mixins.typescale-body-large();
-            will-change: padding, font-size, line-height, color;
-            transition-property: padding, font-size, line-height, color;
-            // transition-duration: var(--md-sys-motion-duration-short1);
-            // transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
+            will-change: margin, font-size, line-height, color;
+            transition-property: margin, font-size, line-height, color;
             transition-duration: var(--md-sys-motion-duration-short1);
             transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
         }
         .md-text-field__text,
-        .md-text-field__native::placeholder {
+        .md-text-field__native::placeholder,
+        .md-text-field__native::-webkit-datetime-edit {
             visibility: hidden;
         }
     }
@@ -233,17 +244,18 @@ select.md-text-field__native:-webkit-autofill:focus {
     &.md-text-field--focus {
         &.md-text-field--with-label {
             .md-text-field__label {
-                padding-top: calc(((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-small-line-height)) / 2) - 10px);
-                padding-bottom: calc(((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-small-line-height)) / 2) + 6px);
+                margin-top: calc(((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-small-line-height)) / 2) - 8px);
+                margin-bottom: calc(((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-small-line-height)) / 2) + 8px);
                 @include mixins.typescale-body-small();
             }
             .md-text-field__text,
             .md-text-field__native {
-                padding-top: calc(((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-large-line-height)) / 2) + 6px);
-                padding-bottom: calc(((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-large-line-height)) / 2) - 10px);
+                margin-top: calc(((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-large-line-height)) / 2) + 8px);
+                margin-bottom: calc(((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-large-line-height)) / 2) - 8px);
             }
             .md-text-field__text,
-            .md-text-field__native::placeholder {
+            .md-text-field__native::placeholder,
+            .md-text-field__native::-webkit-datetime-edit {
                 visibility: visible;
             }
         }
@@ -275,17 +287,15 @@ select.md-text-field__native:-webkit-autofill:focus {
             margin-right: 12px;
             padding-left: 4px;
             padding-right: 4px;
-            padding-top: calc((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-large-line-height)) / 2);
-            padding-bottom: calc((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-large-line-height)) / 2);
+            margin-top: calc((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-large-line-height)) / 2);
+            margin-bottom: calc((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-large-line-height)) / 2);
             position: absolute;
             z-index: 1;
             pointer-events: none;
             left: var(--md-comp-text-field-content-offset-left, 0);
             @include mixins.typescale-body-large();
-            will-change: padding, font-size, line-height, color, top, left;
-            transition-property: padding, font-size, line-height, color, top, left;
-            // transition-duration: var(--md-sys-motion-duration-short1);
-            // transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
+            will-change: margin, font-size, line-height, color, top, left;
+            transition-property: margin, font-size, line-height, color, top, left;
             transition-duration: var(--md-sys-motion-duration-short1);
             transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
 
@@ -302,14 +312,13 @@ select.md-text-field__native:-webkit-autofill:focus {
                 color: var(--md-sys-color-on-background);
                 will-change: width;
                 transition-property: width;
-                // transition-duration: var(--md-sys-motion-duration-short1);
-                // transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
                 transition-duration: var(--md-sys-motion-duration-short1);
                 transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
             }
         }
         .md-text-field__text,
-        .md-text-field__native::placeholder {
+        .md-text-field__native::placeholder,
+        .md-text-field__native::-webkit-datetime-edit {
             visibility: hidden;
         }
     }
@@ -323,8 +332,8 @@ select.md-text-field__native:-webkit-autofill:focus {
     &.md-text-field--focus {
         &.md-text-field--with-label {
             .md-text-field__label {
-                padding-top: 0;
-                padding-bottom: 0;
+                margin-top: 0;
+                margin-bottom: 0;
                 top: calc(0px - (var(--md-sys-typescale-body-small-line-height) / 2));
                 left: 0;
                 @include mixins.typescale-body-small();
@@ -334,7 +343,8 @@ select.md-text-field__native:-webkit-autofill:focus {
                 }
             }
             .md-text-field__text,
-            .md-text-field__native::placeholder {
+            .md-text-field__native::placeholder,
+            .md-text-field__native::-webkit-datetime-edit {
                 visibility: visible;
             }
         }

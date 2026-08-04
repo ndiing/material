@@ -123,17 +123,49 @@ class MdTextField extends MdElement {
     }
     /* prettier-ignore */
     renderLeading(){
-        return html`
+        return this.leading?.length?html`
             <div class="md-text-field__leading">
                 ${this.leading.map(({component,...properties}) => {
                     return this.renderComponent(component,properties)
                 })}
             </div>
+        `:nothing
+    }
+    /* prettier-ignore */
+    renderContent(){
+        return html`
+            <div class="md-text-field__content">
+                ${this.prefix?this.renderText({text:this.prefix}):nothing}
+                <input 
+                    aria-label="${ifDefined(this.ariaLabel || this.name || 'text-field')}"
+                    ${ref(this.textFieldNative)}
+                    class="md-text-field__native"
+                    type="${ifDefined(this.type)}"
+                    name="${ifDefined(this.name)}"
+                    .value="${ifDefined(this.value)}"
+                    placeholder="${ifDefined(this.placeholder)}"
+                    ?disabled="${ifDefined(this.disabled)}"
+                    ?readonly="${ifDefined(this.readonly)}"
+                    ?required="${ifDefined(this.required)}"
+                    minlength="${ifDefined(this.minLength)}"
+                    maxlength="${ifDefined(this.maxLength)}"
+                    min="${ifDefined(this.min)}"
+                    max="${ifDefined(this.max)}"
+                    step="${ifDefined(this.step)}"
+                    pattern="${ifDefined(this.pattern)}"
+                    autocomplete="${ifDefined(this.autocomplete)}"
+                    @focus="${this._handleTextFieldNativeFocus}"
+                    @input="${this._handleTextFieldNativeInput}"
+                    @blur="${this._handleTextFieldNativeBlur}"
+                    @invalid="${this._handleTextFieldNativeInvalid}"
+                >
+                ${this.suffix?this.renderText({text:this.suffix}):nothing}
+            </div>
         `
     }
     /* prettier-ignore */
     renderTrailing(){
-        return html`
+        return (this.clearable&&this.value)||this.validationMessage||this.trailing?.length?html`
             <div class="md-text-field__trailing">
                 ${(this.clearable&&this.value)?this.renderIconButton({icon:'cancel',color:'standard',onTextFieldIconButtonClick:this._handleTextFieldIconButtonClearClick}):nothing}
                 ${this.validationMessage?this.renderIcon({icon:'error',class:{'md-text-field__icon--error':true}}):nothing}
@@ -141,42 +173,16 @@ class MdTextField extends MdElement {
                     return this.renderComponent(component,properties)
                 })}
             </div>
-        `
+        `:nothing
     }
     /* prettier-ignore */
     render(){
         return html`
             ${this.label?html`<label class="md-text-field__label">${this.label}</label>`:nothing}
             <div class="md-text-field__container">
-                ${this.leading?.length?this.renderLeading():nothing}
-                <div class="md-text-field__content">
-                    ${this.prefix?this.renderText({text:this.prefix}):nothing}
-                    <input 
-                        aria-label="${ifDefined(this.ariaLabel || this.name || 'text-field')}"
-                        ${ref(this.textFieldNative)}
-                        class="md-text-field__native"
-                        type="${ifDefined(this.type)}"
-                        name="${ifDefined(this.name)}"
-                        .value="${ifDefined(this.value)}"
-                        placeholder="${ifDefined(this.placeholder)}"
-                        ?disabled="${ifDefined(this.disabled)}"
-                        ?readonly="${ifDefined(this.readonly)}"
-                        ?required="${ifDefined(this.required)}"
-                        minlength="${ifDefined(this.minLength)}"
-                        maxlength="${ifDefined(this.maxLength)}"
-                        min="${ifDefined(this.min)}"
-                        max="${ifDefined(this.max)}"
-                        step="${ifDefined(this.step)}"
-                        pattern="${ifDefined(this.pattern)}"
-                        autocomplete="${ifDefined(this.autocomplete)}"
-                        @focus="${this._handleTextFieldNativeFocus}"
-                        @input="${this._handleTextFieldNativeInput}"
-                        @blur="${this._handleTextFieldNativeBlur}"
-                        @invalid="${this._handleTextFieldNativeInvalid}"
-                    >
-                    ${this.suffix?this.renderText({text:this.suffix}):nothing}
-                </div>
-                ${(this.clearable&&this.value)||this.validationMessage||this.trailing?.length?this.renderTrailing():nothing}
+                ${this.renderLeading()}
+                ${this.renderContent()}
+                ${this.renderTrailing()}
             </div>
             <div class="md-text-field__information">
                 ${this.supporting||this.validationMessage?html`<div class="md-text-field__supporting">${this.validationMessage||this.supporting}</div>`:nothing}

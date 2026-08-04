@@ -1,4 +1,3 @@
-
 class VirtualScrollController {
     constructor(host, options = {}) {
         this.host = host;

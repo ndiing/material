@@ -1,4 +1,3 @@
-
 class MediaObserver {
     constructor(callback = () => {}, list) {
         this.callback = callback;
