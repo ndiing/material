@@ -1,0 +1,25 @@
+@use "../../shared/mixins.scss";
+
+.md-badge{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    min-width: 16px;
+    height: 16px;
+    padding: 0 4px;
+    border-radius: 8px;
+    background-color: var(--md-sys-color-error);
+    color: var(--md-sys-color-on-error);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    @include mixins.typescale-label-small();
+
+    &:empty{
+        min-width: 6px;
+        height: 6px;
+        padding: 0;
+        border-radius: 3px;
+    }
+}

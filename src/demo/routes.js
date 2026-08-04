@@ -52,7 +52,9 @@ export const routes = [
 
             { path: "/components/icon-button", load: () => import("./components/icon-button.js").then((module) => module.default), children: [] },
             { path: "/components/button", load: () => import("./components/button.js").then((module) => module.default), children: [] },
+            { path: "/components/badge", load: () => import("./components/badge.js").then((module) => module.default), children: [] },
         ],
     },
     { path: "*", component: DemoError, children: [] },
 ];
+

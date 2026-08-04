@@ -1,4 +1,4 @@
-// import "./core/router.js";
+import "./core/router.js";
 // import "./core/observer.js";
 // import "./core/breakpoint-observer.js";
 // import "./core/scheme-observer.js";
@@ -21,6 +21,8 @@ import "./components/layout/layout-item.js";
 import "./components/icon/icon.js";
 import "./components/image/image.js";
 
+import "./components/badge/badge.js";
+
 import "./components/icon-button/icon-button.js";
 import "./components/button/button.js";
 
@@ -38,3 +40,26 @@ import "./components/list/list-item.js";
 import "./components/list/list.js";
 import "./components/tree/tree.js";
 import "./components/push-menu/push-menu.js";
+
+// const performanceObserver = new PerformanceObserver((entries) => {
+//     entries.getEntries().forEach((entry) => {
+//         console.log(entry);
+//     });
+// });
+// performanceObserver.observe({
+//     entryTypes: [
+//         "element", //
+//         "event",
+//         "first-input",
+//         "largest-contentful-paint",
+//         "layout-shift",
+//         "long-animation-frame",
+//         "longtask",
+//         "mark",
+//         "measure",
+//         "navigation",
+//         "paint",
+//         "resource",
+//         "visibility-state",
+//     ],
+// });

@@ -689,10 +689,9 @@ class MdTextarea extends MdTextField {
             <div class="md-text-field__content">
                 ${this.prefix?this.renderText({text:this.prefix}):nothing}
                 <textarea
-                    aria-label="${ifDefined(this.ariaLabel || this.name || 'text-field')}"
+                    aria-label="${ifDefined(this.ariaLabel || this.name || 'textarea')}"
                     ${ref(this.textFieldNative)}
                     class="md-text-field__native"
-                    type="${ifDefined(this.type)}"
                     name="${ifDefined(this.name)}"
                     .value="${ifDefined(this.value)}"
                     rows="${ifDefined(this.rows)}"
