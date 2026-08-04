@@ -3,7 +3,6 @@ import { MdElement } from "../../base/element.js";
 import { createRef, ref } from "lit/directives/ref.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { RippleController } from "../../controller/ripple.js";
-
 const converter = (value) => {
     if (!value) return [];
     try {
@@ -15,7 +14,6 @@ const converter = (value) => {
 
 class MdSwitch extends MdElement {
     static formAssociated = true;
-
     static properties = {
         ariaLabel: { type: String, attribute: "aria-label" },
         name: { type: String },
@@ -27,9 +25,7 @@ class MdSwitch extends MdElement {
         icon: { type: String, converter },
         tabIndex: { type: Number },
     };
-
     switchNative = createRef();
-
     constructor() {
         super();
         this.internals = this.attachInternals();
@@ -42,7 +38,6 @@ class MdSwitch extends MdElement {
         };
         this.rippleController = new RippleController(this, this.rippleOptions);
     }
-
     /* prettier-ignore */
     renderIcon(){
         const icons=Array.isArray(this.icon)?this.icon:[this.icon]
@@ -50,7 +45,6 @@ class MdSwitch extends MdElement {
         const icon=icons[index]
         return icon?html`<md-icon class="md-switch__icon" .icon="${icon}"></md-icon>`:nothing
     }
-
     /* prettier-ignore */
     render(){
         return html`
@@ -72,42 +66,32 @@ class MdSwitch extends MdElement {
             </div>
         `
     }
-
     async connectedCallback() {
         super.connectedCallback();
-
         this.classList.add("md-switch");
-
         if (this.checked !== undefined) {
             this.defaultChecked = this.checked;
         }
     }
-
     disconnectedCallback() {
         super.disconnectedCallback();
-
         this.classList.remove("md-switch");
     }
-
     async update(changedProperties) {
         super.update(changedProperties);
-
         if (changedProperties.has("disabled")) {
             this.classList.toggle("md-switch--disabled", this.disabled);
         }
-
         if (changedProperties.has("rippleOptions")) {
             await this.updateComplete;
             this.rippleController.reinit(this.rippleOptions);
         }
     }
-
     formResetCallback(event) {
         const switchNative = this.switchNative.value;
         this.checked = this.defaultChecked;
         switchNative.checked = this.checked;
     }
-
     _handleSwitchNativeInput(event) {
         const switchNative = this.switchNative.value;
         this.checked = switchNative.checked;

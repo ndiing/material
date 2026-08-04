@@ -1,14 +1,12 @@
+
 class Store {
     constructor(docs = [], options = {}) {
         this.primaryKey = options.primaryKey ?? "id";
-
         this.load(docs);
     }
-
     _rebuildIndex() {
         this.searchIndex = this._buildSearchIndex(this.docs);
     }
-
     _updateIndexForDoc(doc) {
         const flatValues = this._flattenObject(doc);
         flatValues.forEach((value) => {
@@ -23,7 +21,6 @@ class Store {
             }
         });
     }
-
     _removeFromIndex(doc) {
         const flatValues = this._flattenObject(doc);
         flatValues.forEach((value) => {
@@ -41,11 +38,9 @@ class Store {
             }
         });
     }
-
     _getValueByPath(obj, path) {
         return path.split(".").reduce((current, key) => current?.[key], obj);
     }
-
     _buildSearchIndex(docs) {
         const index = new Map();
         docs.forEach((doc) => {
@@ -66,7 +61,6 @@ class Store {
         });
         return index;
     }
-
     _flattenObject(obj, prefix = "") {
         let values = [];
         for (const key in obj) {
@@ -79,25 +73,19 @@ class Store {
         }
         return values;
     }
-
     load(docs) {
         this.docs = structuredClone(docs);
         this._rebuildIndex();
     }
-
     get(id) {
         return this.docs.find((doc) => doc[this.primaryKey] === id) || null;
     }
-
     getAll(options = {}) {
         const { _sort, _order, q, _page, _limit, _start, _end, ...restOptions } = options;
-
         let docs = [...this.docs];
-
         if (q) {
             docs = this.search(docs, q);
         }
-
         if (Object.keys(restOptions).length) {
             const filters = [];
             const regexp = /^(\w+?)(_(lt|gt|lte|gte|eq|ne|like))?$/i;
@@ -110,31 +98,24 @@ class Store {
             }
             docs = this.filter(docs, filters);
         }
-
         if (_sort) {
             const sorters = [];
-
             const sortFields = Array.isArray(_sort) ? _sort : [_sort];
             const sortOrders = Array.isArray(_order) ? _order : [];
-
             sortFields.forEach((field, index) => {
                 sorters.push({
                     _sort: field,
                     _order: sortOrders[index] || "asc",
                 });
             });
-
             docs = this.sort(docs, sorters);
         }
-
         const filtered = docs.length;
-
         if (_page && _limit) {
             docs = this.paginate(docs, _page, _limit);
         } else if (_start !== undefined || _end !== undefined) {
             docs = this.slice(docs, _start, _end);
         }
-
         return {
             docs,
             total: this.docs.length,
@@ -151,28 +132,23 @@ class Store {
             },
         };
     }
-
     post(doc = {}) {
         if (!doc[this.primaryKey]) {
             throw new Error("Document must have an 'id' field");
         }
-
         if (this.docs.some((d) => d[this.primaryKey] === doc[this.primaryKey])) {
             throw new Error(`Document with id ${doc[this.primaryKey]} already exists`);
         }
-
         const newDoc = structuredClone(doc);
         this.docs.push(newDoc);
         this._updateIndexForDoc(newDoc);
         return newDoc;
     }
-
     patch(id, doc) {
         const index = this.docs.findIndex((d) => d[this.primaryKey] === id);
         if (index === -1) {
             throw new Error(`Document with id ${id} not found`);
         }
-
         this._removeFromIndex(this.docs[index]);
         this.docs[index] = {
             ...this.docs[index],
@@ -181,39 +157,30 @@ class Store {
         this._updateIndexForDoc(this.docs[index]);
         return this.docs[index];
     }
-
     delete(id) {
         const index = this.docs.findIndex((d) => d[this.primaryKey] === id);
         if (index === -1) {
             throw new Error(`Document with id ${id} not found`);
         }
-
         const deleted = this.docs[index];
         this._removeFromIndex(deleted);
         this.docs.splice(index, 1);
         return deleted;
     }
-
     search(docs, q = "") {
         if (!q || q.trim() === "") return docs;
-
         const query = q.toLowerCase().trim();
-
         const exactMatch = query.match(/"(.*?)"/);
         let searchWords = [];
         let exactPhrase = null;
-
         if (exactMatch) {
             exactPhrase = exactMatch[1];
-
             const remaining = query.replace(`"${exactPhrase}"`, "").trim();
             searchWords = remaining ? remaining.split(/\s+/) : [];
         } else {
             searchWords = query.split(/\s+/);
         }
-
         const matchingIds = new Set();
-
         if (exactPhrase) {
             for (const [word, ids] of this.searchIndex) {
                 if (word.includes(exactPhrase)) {
@@ -221,7 +188,6 @@ class Store {
                 }
             }
         }
-
         for (const searchWord of searchWords) {
             const tempIds = new Set();
             for (const [indexWord, ids] of this.searchIndex) {
@@ -229,7 +195,6 @@ class Store {
                     ids.forEach((id) => tempIds.add(id));
                 }
             }
-
             if (matchingIds.size === 0) {
                 tempIds.forEach((id) => matchingIds.add(id));
             } else {
@@ -240,20 +205,15 @@ class Store {
                 }
             }
         }
-
         return docs.filter((doc) => matchingIds.has(doc[this.primaryKey]));
     }
-
     filter(docs, filters = []) {
         if (!filters.length) return docs;
-
         return docs.filter((doc) => {
             return filters.every((filter) => {
                 const { name, value, operator } = filter;
                 const docValue = this._getValueByPath(doc, name);
-
                 if (docValue === undefined || docValue === null) return false;
-
                 let compareValue = value;
                 if (typeof docValue === "number" && !isNaN(Number(value))) {
                     compareValue = Number(value);
@@ -262,7 +222,6 @@ class Store {
                 } else if (docValue instanceof Date) {
                     compareValue = new Date(value);
                 }
-
                 switch (operator) {
                     case "eq":
                         return docValue == compareValue;
@@ -284,25 +243,20 @@ class Store {
             });
         });
     }
-
     sort(docs, sorters = []) {
         if (!sorters.length) return docs;
-
         return [...docs].toSorted((a, b) => {
             for (const s of sorters) {
                 const { _sort, _order } = s;
                 if (!_sort) continue;
-
                 const aVal = this._getValueByPath(a, _sort) ?? "";
                 const bVal = this._getValueByPath(b, _sort) ?? "";
-
                 let comparison = 0;
                 if (typeof aVal === "string" || typeof bVal === "string") {
                     comparison = String(aVal).localeCompare(String(bVal));
                 } else {
                     comparison = aVal - bVal;
                 }
-
                 if (comparison !== 0) {
                     return _order === "desc" ? -comparison : comparison;
                 }
@@ -310,14 +264,12 @@ class Store {
             return 0;
         });
     }
-
     paginate(docs, _page = 1, _limit = 10) {
         const page = parseInt(_page) || 1;
         const limit = parseInt(_limit) || 10;
         const start = (page - 1) * limit;
         return docs.slice(start, start + limit);
     }
-
     slice(docs, _start, _end) {
         if (_start === undefined && _end === undefined) return docs;
         const start = parseInt(_start) || 0;
@@ -327,15 +279,12 @@ class Store {
 }
 
 export { Store };
-
 /* 
 sort()
 _sort=column1,column2
 _order=asc,desc
-
 search()
 q=value
-
 filter()
 name=value
 name_gt=value
@@ -345,15 +294,11 @@ name_lte=value
 name_eq=value
 name_ne=value
 name_like=value
-
 paginate()
 _page=1&_limit=10
-
 slice()
 _start=0&_end=10
-
 /pathname?_sort=column1&_order=asc&_sort=column2&_order=asc&_sort=column3&_order=desc
-
 {
     _sort:[
         "column1",

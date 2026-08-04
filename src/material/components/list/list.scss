@@ -4,6 +4,7 @@
     display: block;
     padding: 8px 0;
 }
+
 .md-list__item {
     display: flex;
     align-items: center;
@@ -25,12 +26,14 @@
     text-overflow: ellipsis;
     @include mixins.typescale-label-small();
 }
+
 .md-list__label {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     @include mixins.typescale-body-large();
 }
+
 .md-list__supporting {
     max-height: calc(var(--md-sys-typescale-label-small-line-height) * 2);
     overflow: hidden;
@@ -51,19 +54,24 @@
     width: 40px;
     height: 40px;
 }
+
 .md-list__image {
     width: 56px;
     height: 56px;
 }
+
 .md-list__video {
     height: 64px;
     aspect-ratio: 4/3;
     margin: 4px 0 0 -16px;
 }
+
 .md-list__icon {
 }
+
 .md-list__icon-button {
 }
+
 .md-list__text {
     white-space: nowrap;
     overflow: hidden;
@@ -73,8 +81,10 @@
 
 .md-list__checkbox {
 }
+
 .md-list__radio-button {
 }
+
 .md-list__switch {
 }
 
@@ -91,9 +101,11 @@
 .md-list__item--one-line {
     min-height: 56px;
 }
+
 .md-list__item--two-line {
     min-height: 72px;
 }
+
 .md-list__item--three-line {
     align-items: flex-start;
     min-height: 88px;

@@ -8,7 +8,6 @@ import { classMap } from "lit/directives/class-map.js";
 
 class MdTextField extends MdElement {
     static formAssociated = true;
-
     static properties = {
         leading: { type: Array },
         label: { type: String },
@@ -18,7 +17,6 @@ class MdTextField extends MdElement {
         trailing: { type: Array },
         supporting: { type: String },
         color: { type: String },
-
         type: { type: String },
         name: { type: String },
         value: { type: String },
@@ -33,18 +31,13 @@ class MdTextField extends MdElement {
         step: { type: Number },
         pattern: { type: String },
         autocomplete: { type: String },
-
         validationMessage: { type: String, state: true },
         validateOnBlur: { type: Boolean },
         validateOnInput: { type: Boolean },
-
         currentLength: { type: Number, state: true },
     };
-
     textFieldNative = createRef();
-
     colors = ["standard", "filled", "outlined"];
-
     constructor() {
         super();
         this.internals = this.attachInternals();
@@ -53,10 +46,8 @@ class MdTextField extends MdElement {
         this.validateOnInput = true;
         this.variant = "filled";
         this.currentLength = 0;
-
         this._handleTextFieldIconButtonClearClick = this._handleTextFieldIconButtonClearClick.bind(this);
     }
-
     /* prettier-ignore */
     renderAvatar(properties){
         return html`
@@ -76,7 +67,6 @@ class MdTextField extends MdElement {
             ></md-image>
         `
     }
-
     /* prettier-ignore */
     renderIcon(properties){
         return html`
@@ -91,7 +81,6 @@ class MdTextField extends MdElement {
             ></md-icon>
         `
     }
-
     /* prettier-ignore */
     renderIconButton(properties){
         return html`
@@ -114,7 +103,6 @@ class MdTextField extends MdElement {
             ></md-icon-button>
         `
     }
-
     /* prettier-ignore */
     renderText(properties){
         return html`
@@ -124,7 +112,6 @@ class MdTextField extends MdElement {
             >${properties.text}</div>
         `
     }
-
     /* prettier-ignore */
     renderComponent(component,properties){
         return choose(component,[
@@ -134,7 +121,6 @@ class MdTextField extends MdElement {
             ['text', () => this.renderText(properties)],
         ],() => nothing)
     }
-
     /* prettier-ignore */
     renderLeading(){
         return html`
@@ -145,7 +131,6 @@ class MdTextField extends MdElement {
             </div>
         `
     }
-
     /* prettier-ignore */
     renderTrailing(){
         return html`
@@ -158,7 +143,6 @@ class MdTextField extends MdElement {
             </div>
         `
     }
-
     /* prettier-ignore */
     render(){
         return html`
@@ -200,32 +184,22 @@ class MdTextField extends MdElement {
             </div>
         `
     }
-
     async connectedCallback() {
         super.connectedCallback();
-
         this.classList.add("md-text-field");
-
         this.defaultValue = this.defaultValue ?? this.value ?? "";
-
         await this.updateComplete;
-
         this.currentLength = this.value?.length ?? 0;
         this._toggleClass("populated", this.value);
-
         const contentElement = this.querySelector(".md-text-field__content");
         this.style.setProperty("--md-comp-text-field-content-offset-left", contentElement?.offsetLeft + "px");
     }
-
     disconnectedCallback() {
         super.disconnectedCallback();
-
         this.classList.remove("md-text-field");
     }
-
     update(changedProperties) {
         super.update(changedProperties);
-
         if (changedProperties.has("color")) {
             this._toggleClassList(this.colors, this.color);
         }
@@ -239,73 +213,56 @@ class MdTextField extends MdElement {
             this._toggleClass("readonly");
         }
     }
-
     formResetCallback(event) {
         const textFieldNative = this.textFieldNative.value;
         textFieldNative.value = this.defaultValue;
         this.value = textFieldNative.value;
         this.currentLength = this.value?.length ?? 0;
         this._toggleClass("populated", this.value);
-
         this.validationMessage = "";
         this._toggleClass("error", this.validationMessage);
     }
-
     _toggleClass(modifier, force = this[modifier]) {
         this.classList.toggle(`md-text-field--${modifier}`, !!force);
     }
-
     _toggleClassList(list, value) {
         list.forEach((item) => {
             this.classList.toggle(`md-text-field--${item}`, value === item);
         });
     }
-
     _handleTextFieldNativeFocus(event) {
         this._toggleClass("focus", true);
         this._toggleClass("focus-visible", !this.textFieldNative.value.matches(":active"));
-
         this.emit("onTextFieldNativeFocus", { event, element: this });
     }
-
     _handleTextFieldNativeBlur(event) {
         this._toggleClass("focus", false);
         this._toggleClass("focus-visible", false);
-
         if (this.validateOnBlur) {
             this.validate();
         }
-
         this.emit("onTextFieldNativeBlur", { event, element: this });
     }
-
     _handleTextFieldNativeInput(event) {
         const textFieldNative = this.textFieldNative.value;
         this.value = textFieldNative.value;
         this.currentLength = this.value?.length ?? 0;
         this._toggleClass("populated", this.value);
-
         if (this.validateOnInput) {
             this.validate();
         }
-
         this.emit("onTextFieldNativeInput", { event, element: this });
     }
-
     _handleTextFieldNativeInvalid(event) {
         event.preventDefault();
-
         this.validate();
-
         this.emit("onTextFieldNativeInvalid", { event, element: this });
     }
-
     validate() {
         const textFieldNative = this.textFieldNative.value;
         this.validationMessage = textFieldNative.validationMessage;
         this._toggleClass("error", this.validationMessage);
     }
-
     _handleTextFieldIconButtonClearClick(event) {
         const textFieldNative = this.textFieldNative.value;
         textFieldNative.value = "";

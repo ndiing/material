@@ -9,11 +9,9 @@ class MdTree extends MdListElement {
         super();
         this.type = "tree";
     }
-
     /* prettier-ignore */
     render(){
         const rootHasBranch = this._tree.some((node) => node.children?.length);
-
         return repeat(this._list, (item) => item[this.valueField], (item) => html`
             <md-list-item
                 style="${styleMap({
@@ -26,7 +24,6 @@ class MdTree extends MdListElement {
             ></md-list-item>
         `)
     }
-
     _getLeadingItem(item, rootHasBranch) {
         const leading = [];
         if (rootHasBranch) {
@@ -39,11 +36,9 @@ class MdTree extends MdListElement {
         leading.push({ component: "icon", icon: item.hasChildren ? (this.expandedValues.has(item[this.valueField]) ? "folder_open" : "folder") : "draft" });
         return leading;
     }
-
     _handleListItemClick(event) {
         const li = event.currentTarget;
         const item = li.item;
-
         if (item.hasChildren) {
             if (this.expandedValues.has(item[this.valueField])) {
                 this.expandedValues.delete(item[this.valueField]);
@@ -51,10 +46,8 @@ class MdTree extends MdListElement {
                 this.expandedValues.add(item[this.valueField]);
             }
         }
-
         this.selectedValues.clear();
         this.selectedValues.add(item[this.valueField]);
-
         this._setItems();
     }
 }

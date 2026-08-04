@@ -6,19 +6,15 @@ class MdElement extends LitElement {
         super();
         updateWhenLocaleChanges(this);
     }
-
     createRenderRoot() {
         return this;
     }
-
     on(type, listener) {
         this.addEventListener(type, listener);
     }
-
     off(type, listener) {
         this.removeEventListener(type, listener);
     }
-
     emit(type, detail) {
         const event = new CustomEvent(type, {
             bubbles: true,

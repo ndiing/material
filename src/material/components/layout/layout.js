@@ -3,13 +3,10 @@ import { MdElement } from "../../base/element.js";
 class MdLayout extends MdElement {
     connectedCallback() {
         super.connectedCallback();
-
         this.classList.add("md-layout");
     }
-
     disconnectedCallback() {
         super.disconnectedCallback();
-
         this.classList.remove("md-layout");
     }
 }

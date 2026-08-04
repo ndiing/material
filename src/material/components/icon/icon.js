@@ -5,21 +5,16 @@ class MdIcon extends MdElement {
     static properties = {
         icon: { type: String },
     };
-
     /* prettier-ignore */
     render(){
         return this.icon
     }
-
     connectedCallback() {
         super.connectedCallback();
-
         this.classList.add("md-icon");
     }
-
     disconnectedCallback() {
         super.disconnectedCallback();
-
         this.classList.remove("md-icon");
     }
 }

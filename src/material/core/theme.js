@@ -1,16 +1,12 @@
 import { argbFromHex, themeFromSourceColor, themeFromImage, applyTheme } from "@material/material-color-utilities";
-
 async function setTheme(input, customColors) {
     let theme;
-
     if (input instanceof HTMLImageElement) {
         theme = await themeFromImage(input, customColors);
     } else {
         theme = themeFromSourceColor(argbFromHex(input), customColors);
     }
-
     const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-
     if (systemDark) {
         Object.assign(theme.schemes.dark.props, {
             surfaceDim: theme.palettes.neutral.tone(6),
@@ -32,7 +28,6 @@ async function setTheme(input, customColors) {
             surfaceContainerHighest: theme.palettes.neutral.tone(90),
         });
     }
-
     return applyTheme(theme, { target: document.body, dark: systemDark });
 }
 
