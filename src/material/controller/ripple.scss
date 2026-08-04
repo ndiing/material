@@ -1,3 +1,12 @@
+@keyframes ripple-out {
+    0%{
+        width: 0;
+    }
+    100%{
+        width: var(--md-comp-ripple-radius);
+    }
+}
+
 .md-ripple {
     --md-comp-ripple-radius: 141.4213562373095%;
     --md-comp-ripple-left: 50%;
@@ -20,11 +29,6 @@
         pointer-events: none;
         background-color: currentColor;
         opacity: 0;
-
-        will-change: width;
-        transition-property: width;
-        transition-duration: var(--md-sys-motion-duration-short2);
-        transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
     }
 }
 
@@ -41,16 +45,15 @@
 .md-ripple--focus {
     &::after {
         opacity: 10%;
-        transition-duration: var(--md-sys-motion-duration-short3);
-        transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
     }
 }
 
 .md-ripple--press {
     &::after {
         opacity: 10%;
-        width: 0;
-        transition: none;
+        animation-name: ripple-out;
+        animation-duration: var(--md-sys-motion-duration-short3);
+        animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
     }
 }
 

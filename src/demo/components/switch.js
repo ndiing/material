@@ -12,39 +12,31 @@ class DemoSwitch extends MdElement {
             >
                 <div class="md-grid">
                     <div class="md-grid__column md-grid__column--expanded4">
+                        <h2>Configurations</h2>
+
                         <md-switch></md-switch>
-                        <md-switch disabled></md-switch>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4">
                         <md-switch checked></md-switch>
-                        <md-switch disabled checked></md-switch>
+
+                        <br>
+                        <br>
+
+                        <md-switch icon='["","check"]'></md-switch>
+                        <md-switch icon='["","check"]' checked></md-switch>
+
+                        <br>
+                        <br>
+
+                        <md-switch icon='["close","check"]'></md-switch>
+                        <md-switch icon='["close","check"]' checked></md-switch>
+
+                        <br>
+                        <br>
                     </div>
-                    <div class="md-grid__column md-grid__column--expanded4">
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4">
-                        <md-switch icon='["","done"]'></md-switch>
-                        <md-switch icon='["","done"]' disabled></md-switch>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4">
-                        <md-switch icon='["","done"]' checked></md-switch>
-                        <md-switch icon='["","done"]' disabled checked></md-switch>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4">
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4">
-                        <md-switch icon='["close","done"]'></md-switch>
-                        <md-switch icon='["close","done"]' disabled></md-switch>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4">
-                        <md-switch icon='["close","done"]' checked></md-switch>
-                        <md-switch icon='["close","done"]' disabled checked></md-switch>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4">
-                    </div>
+                    
 
                     <div class="md-grid__column md-grid__column--expanded12">
-                        <md-button type="reset" label="reset" color="outlined"></md-button>
-                        <md-button type="submit" label="submit" color="tonal"></md-button>
+                        <md-button type="reset" label="reset"></md-button>
+                        <md-button type="submit" label="submit"></md-button>
                     </div>
                 </div>
             </md-form>

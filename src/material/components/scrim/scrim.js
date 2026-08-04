@@ -13,7 +13,6 @@ class MdScrim extends MdElement {
 
     constructor() {
         super();
-
         this._handleScrimTransitionend = this._handleScrimTransitionend.bind(this);
         this._handleScrimClick = this._handleScrimClick.bind(this);
     }
@@ -22,7 +21,7 @@ class MdScrim extends MdElement {
         super.connectedCallback();
 
         this.classList.add("md-scrim");
-
+    
         this.on("transitionend", this._handleScrimTransitionend);
         this.on("click", this._handleScrimClick);
     }
@@ -59,6 +58,7 @@ class MdScrim extends MdElement {
      */
     show() {
         this.open = true;
+
         this.emit("onScrimShow", { element: this });
     }
 
@@ -67,6 +67,7 @@ class MdScrim extends MdElement {
      */
     close() {
         this.open = false;
+        
         this.emit("onScrimClose", { element: this });
     }
 

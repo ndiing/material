@@ -13,46 +13,45 @@ const beforeLoad = (router, next) => {
 /* prettier-ignore */
 export const routes = [
     {
-        path: '/', component: DemoMain, children: [
+        path: "/", component: DemoMain, children: [
             // // Test
-            // {path:'/users',beforeLoad,load:() => import("./users/users.js").then(module=>module.default),children:[
-            //     {path:'/:id',load:() => import("./users/user.js").then(module=>module.default),children:[]},
-            // ]},
-            // {path:'/blogs',load:() => import("./blogs/blogs.js").then(module=>module.default),children:[
-            //     {path:'/:id',outlet:'main',load:() => import("./blogs/blog.js").then(module=>module.default),children:[]},
-            // ]},
-            // {path:'/a',component:DemoA,children:[
-            //     {path:'/b',component:DemoB,children:[
-            //         {path:'/c',component:DemoC,children:[
-            //             {path:'/:id',component:DemoD,children:[]},
-            //         ]},
-            //     ]},
-            // ]},
-            
-            { path: '/controller/ripple', load: () => import("./controller/ripple.js").then(module => module.default), children: [] },
+            // { path: "/users", beforeLoad, load: () => import("./users/users.js").then((module) => module.default), children: [{ path: "/:id", load: () => import("./users/user.js").then((module) => module.default), children: [] }] },
+            // { path: "/blogs", load: () => import("./blogs/blogs.js").then((module) => module.default), children: [{ path: "/:id", outlet: "main", load: () => import("./blogs/blog.js").then((module) => module.default), children: [] }] },
+            // { path: "/a", component: DemoA, children: [
+            //     { path: "/b", component: DemoB, children: [
+            //         { path: "/c", component: DemoC, children: [
+            //             { path: "/:id", component: DemoD, children: [] }
+            //         ] }
+            //     ] }
+            // ] },
 
-            { path: '/components/typography', load: () => import("./components/typography.js").then(module => module.default), children: [] },
-            { path: '/components/grid', load: () => import("./components/grid.js").then(module => module.default), children: [] },
-            { path: '/components/grid-expanded', load: () => import("./components/grid-expanded.js").then(module => module.default), children: [] },
-            { path: '/components/grid-medium', load: () => import("./components/grid-medium.js").then(module => module.default), children: [] },
-            { path: '/components/grid-compact', load: () => import("./components/grid-compact.js").then(module => module.default), children: [] },
-            { path: '/components/icon', load: () => import("./components/icon.js").then(module => module.default), children: [] },
-            { path: '/components/image', load: () => import("./components/image.js").then(module => module.default), children: [] },
-            { path: '/components/data-table', load: () => import("./components/data-table.js").then(module => module.default), children: [] },
-            { path: '/components/list', load: () => import("./components/list.js").then(module => module.default), children: [] },
-            { path: '/components/list-configurations', load: () => import("./components/list-configurations.js").then(module => module.default), children: [] },
-            { path: '/components/list-interactions', load: () => import("./components/list-interactions.js").then(module => module.default), children: [] },
-            { path: '/components/tree', load: () => import("./components/tree.js").then(module => module.default), children: [] },
-            { path: '/components/push-menu', load: () => import("./components/push-menu.js").then(module => module.default), children: [] },
-            { path: '/components/form', load: () => import("./components/form.js").then(module => module.default), children: [] },
-            { path: '/components/text-field', load: () => import("./components/text-field.js").then(module => module.default), children: [] },
-            { path: '/components/checkbox', load: () => import("./components/checkbox.js").then(module => module.default), children: [] },
-            { path: '/components/radio-button', load: () => import("./components/radio-button.js").then(module => module.default), children: [] },
-            { path: '/components/switch', load: () => import("./components/switch.js").then(module => module.default), children: [] },
-            { path: '/components/icon-button', load: () => import("./components/icon-button.js").then(module => module.default), children: [] },
-            { path: '/components/button', load: () => import("./components/button.js").then(module => module.default), children: [] },
-           
-        ]
+            { path: "/controller/ripple", load: () => import("./controller/ripple.js").then((module) => module.default), children: [] },
+
+            { path: "/components/typography", load: () => import("./components/typography.js").then((module) => module.default), children: [] },
+            { path: "/components/grid", load: () => import("./components/grid.js").then((module) => module.default), children: [] },
+            { path: "/components/grid-expanded", load: () => import("./components/grid-expanded.js").then((module) => module.default), children: [] },
+            { path: "/components/grid-medium", load: () => import("./components/grid-medium.js").then((module) => module.default), children: [] },
+            { path: "/components/grid-compact", load: () => import("./components/grid-compact.js").then((module) => module.default), children: [] },
+            { path: "/components/icon", load: () => import("./components/icon.js").then((module) => module.default), children: [] },
+            { path: "/components/image", load: () => import("./components/image.js").then((module) => module.default), children: [] },
+
+            { path: "/components/data-table", load: () => import("./components/data-table.js").then((module) => module.default), children: [] },
+
+            { path: "/components/list", load: () => import("./components/list.js").then((module) => module.default), children: [] },
+            { path: "/components/list-configurations", load: () => import("./components/list-configurations.js").then((module) => module.default), children: [] },
+            { path: "/components/list-interactions", load: () => import("./components/list-interactions.js").then((module) => module.default), children: [] },
+            { path: "/components/tree", load: () => import("./components/tree.js").then((module) => module.default), children: [] },
+            { path: "/components/push-menu", load: () => import("./components/push-menu.js").then((module) => module.default), children: [] },
+
+            { path: "/components/form", load: () => import("./components/form.js").then((module) => module.default), children: [] },
+            { path: "/components/text-field", load: () => import("./components/text-field.js").then((module) => module.default), children: [] },
+            { path: "/components/checkbox", load: () => import("./components/checkbox.js").then((module) => module.default), children: [] },
+            { path: "/components/radio-button", load: () => import("./components/radio-button.js").then((module) => module.default), children: [] },
+            { path: "/components/switch", load: () => import("./components/switch.js").then((module) => module.default), children: [] },
+
+            { path: "/components/icon-button", load: () => import("./components/icon-button.js").then((module) => module.default), children: [] },
+            { path: "/components/button", load: () => import("./components/button.js").then((module) => module.default), children: [] },
+        ],
     },
-    { path: '*', redirectTo: '/', component: DemoError, children: [] },
+    { path: "*", component: DemoError, children: [] },
 ];

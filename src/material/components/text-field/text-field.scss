@@ -25,16 +25,73 @@
 }
 
 .md-text-field__leading {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 12px;
+    gap: 0 12px;
+    + .md-text-field__native {
+        margin-left: -12px;
+    }
 }
 
 .md-text-field__native {
     appearance: none;
-    background-color: inherit;
+    background-color: transparent;
     color: inherit;
     width: 100%;
     height: 100%;
     padding: 0 16px;
     @include mixins.typescale-body-large();
+    + .md-text-field__trailing {
+        margin-left: -12px;
+    }
+}
+
+.md-text-field__trailing {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 12px;
+    gap: 0 12px;
+}
+
+.md-text-field--prefix {
+    .md-text-field__leading {
+        + .md-text-field__native {
+            margin-left: -28px;
+        }
+    }
+}
+
+.md-text-field--suffix {
+    .md-text-field__native {
+        @include mixins.typescale-body-large();
+        + .md-text-field__trailing {
+            margin-left: -28px;
+        }
+    }
+}
+
+.md-text-field__icon-button {
+    margin: 0 -8px;
+}
+
+.md-text-field__icon {
+}
+
+.md-text-field__text {
+}
+
+.md-text-field__content {
+    display: flex;
+    gap: 0 16px;
+    padding: 0 16px;
+}
+
+.md-text-field__supporting {
+    @include mixins.typescale-body-small();
+}
+
+.md-text-field__counter {
 }
 
 input.md-text-field__native[type="date" i]::-webkit-calendar-picker-indicator,
@@ -80,22 +137,6 @@ select.md-text-field__native:-webkit-autofill:focus {
     transition: background-color 5000s ease-in-out 0s !important;
 }
 
-.md-text-field__trailing {
-}
-
-.md-text-field__content {
-    display: flex;
-    gap: 0 16px;
-    padding: 0 16px;
-}
-
-.md-text-field__supporting {
-    @include mixins.typescale-body-small();
-}
-
-.md-text-field__counter {
-}
-
 .md-text-field--error {
     .md-text-field__label {
         color: var(--md-sys-color-error);
@@ -110,9 +151,6 @@ select.md-text-field__native:-webkit-autofill:focus {
 }
 
 .md-text-field--populated {
-}
-
-.md-text-field--default {
 }
 
 .md-text-field--filled {

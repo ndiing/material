@@ -31,7 +31,7 @@ class MdTree extends MdListElement {
         const leading = [];
         if (rootHasBranch) {
             if (item.hasChildren) {
-                leading.push({ component: "iconButton", width: "narrow", color: "standard", icon: item.expanded ? "keyboard_arrow_down" : "keyboard_arrow_right" });
+                leading.push({ component: "icon-button", width: "narrow", color: "standard", icon: item.expanded ? "keyboard_arrow_down" : "keyboard_arrow_right" });
             } else {
                 leading.push({ component: "icon", icon: "", style: { width: "32px" } });
             }

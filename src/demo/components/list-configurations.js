@@ -16,113 +16,113 @@ class DemoListConfigurations extends MdElement {
 
         // With leading avatar
         const items0 = [
-            { leading: [{ component: "avatar", src }], trailing: [], label: "Label text", supporting: "Supporting text that is long enough to fill up multiple lines" },
-            { leading: [{ component: "avatar", src }], trailing: [], label: "Label text", supporting: "Supporting text" },
-            { leading: [{ component: "avatar", src }], trailing: [], label: "Label text" },
+            { id:'0', leading: [{ component: "avatar", src }], trailing: [], label: "Label text", supporting: "Supporting text that is long enough to fill up multiple lines" },
+            { id:'1', leading: [{ component: "avatar", src }], trailing: [], label: "Label text", supporting: "Supporting text" },
+            { id:'2', leading: [{ component: "avatar", src }], trailing: [], label: "Label text" },
         ];
         // With leading avatar and trailing checkbox
         const items1 = [
-            { leading: [{ component: "avatar", src }], trailing: [{ component: "checkbox" }], label: "Label text", supporting: "Supporting text that is long enough to fill up multiple lines" },
-            { leading: [{ component: "avatar", src }], trailing: [{ component: "checkbox" }], label: "Label text", supporting: "Supporting text" },
-            { leading: [{ component: "avatar", src }], trailing: [{ component: "checkbox" }], label: "Label text" },
+            { id:'3', leading: [{ component: "avatar", src }], trailing: [{ component: "checkbox" }], label: "Label text", supporting: "Supporting text that is long enough to fill up multiple lines" },
+            { id:'4', leading: [{ component: "avatar", src }], trailing: [{ component: "checkbox" }], label: "Label text", supporting: "Supporting text" },
+            { id:'5', leading: [{ component: "avatar", src }], trailing: [{ component: "checkbox" }], label: "Label text" },
         ];
         // Leading image or thumbnail
 
         // With leading image
         const items2 = [
-            { leading: [{ component: "image", src }], trailing: [], label: "Label text", supporting: "Supporting text that is long enough to fill up multiple lines" },
-            { leading: [{ component: "image", src }], trailing: [], label: "Label text", supporting: "Supporting text" },
-            { leading: [{ component: "image", src }], trailing: [], label: "Label text" },
+            { id:'6', leading: [{ component: "image", src }], trailing: [], label: "Label text", supporting: "Supporting text that is long enough to fill up multiple lines" },
+            { id:'7', leading: [{ component: "image", src }], trailing: [], label: "Label text", supporting: "Supporting text" },
+            { id:'8', leading: [{ component: "image", src }], trailing: [], label: "Label text" },
         ];
         // With leading image and trailing checkbox
         const items3 = [
-            { leading: [{ component: "image", src }], trailing: [{ component: "checkbox" }], label: "Label text", supporting: "Supporting text that is long enough to fill up multiple lines" },
-            { leading: [{ component: "image", src }], trailing: [{ component: "checkbox" }], label: "Label text", supporting: "Supporting text" },
-            { leading: [{ component: "image", src }], trailing: [{ component: "checkbox" }], label: "Label text" },
+            { id:'9', leading: [{ component: "image", src }], trailing: [{ component: "checkbox" }], label: "Label text", supporting: "Supporting text that is long enough to fill up multiple lines" },
+            { id:'10', leading: [{ component: "image", src }], trailing: [{ component: "checkbox" }], label: "Label text", supporting: "Supporting text" },
+            { id:'11', leading: [{ component: "image", src }], trailing: [{ component: "checkbox" }], label: "Label text" },
         ];
         // Leading video
 
         // With leading video
         const items4 = [
-            { leading: [{ component: "video", src }], trailing: [], label: "Label text", supporting: "Supporting text that is long enough to fill up multiple lines" },
-            { leading: [{ component: "video", src }], trailing: [], label: "Label text", supporting: "Supporting text" },
-            { leading: [{ component: "video", src }], trailing: [], label: "Label text" },
+            { id:'12', leading: [{ component: "video", src }], trailing: [], label: "Label text", supporting: "Supporting text that is long enough to fill up multiple lines" },
+            { id:'13', leading: [{ component: "video", src }], trailing: [], label: "Label text", supporting: "Supporting text" },
+            { id:'14', leading: [{ component: "video", src }], trailing: [], label: "Label text" },
         ];
         // With leading video and trailing checkbox
         const items5 = [
-            { leading: [{ component: "video", src }], trailing: [{ component: "checkbox" }], label: "Label text", supporting: "Supporting text that is long enough to fill up multiple lines" },
-            { leading: [{ component: "video", src }], trailing: [{ component: "checkbox" }], label: "Label text", supporting: "Supporting text" },
-            { leading: [{ component: "video", src }], trailing: [{ component: "checkbox" }], label: "Label text" },
+            { id:'15', leading: [{ component: "video", src }], trailing: [{ component: "checkbox" }], label: "Label text", supporting: "Supporting text that is long enough to fill up multiple lines" },
+            { id:'16', leading: [{ component: "video", src }], trailing: [{ component: "checkbox" }], label: "Label text", supporting: "Supporting text" },
+            { id:'17', leading: [{ component: "video", src }], trailing: [{ component: "checkbox" }], label: "Label text" },
         ];
         // Leading icon
 
         // With leading icon
         const items6 = [
-            { leading: [{ component: "icon", icon: "person" }], trailing: [], label: "Label text", supporting: "Supporting text that is long enough to fill up multiple lines" },
-            { leading: [{ component: "icon", icon: "person" }], trailing: [], label: "Label text", supporting: "Supporting text" },
-            { leading: [{ component: "icon", icon: "person" }], trailing: [], label: "Label text" },
+            { id:'18', leading: [{ component: "icon", icon: "person" }], trailing: [], label: "Label text", supporting: "Supporting text that is long enough to fill up multiple lines" },
+            { id:'19', leading: [{ component: "icon", icon: "person" }], trailing: [], label: "Label text", supporting: "Supporting text" },
+            { id:'20', leading: [{ component: "icon", icon: "person" }], trailing: [], label: "Label text" },
         ];
         // With leading icon and trailing checkbox
         const items7 = [
-            { leading: [{ component: "icon", icon: "person" }], trailing: [{ component: "checkbox" }], label: "Label text", supporting: "Supporting text that is long enough to fill up multiple lines" },
-            { leading: [{ component: "icon", icon: "person" }], trailing: [{ component: "checkbox" }], label: "Label text", supporting: "Supporting text" },
-            { leading: [{ component: "icon", icon: "person" }], trailing: [{ component: "checkbox" }], label: "Label text" },
+            { id:'21', leading: [{ component: "icon", icon: "person" }], trailing: [{ component: "checkbox" }], label: "Label text", supporting: "Supporting text that is long enough to fill up multiple lines" },
+            { id:'22', leading: [{ component: "icon", icon: "person" }], trailing: [{ component: "checkbox" }], label: "Label text", supporting: "Supporting text" },
+            { id:'23', leading: [{ component: "icon", icon: "person" }], trailing: [{ component: "checkbox" }], label: "Label text" },
         ];
         // Text-only
 
         // With text only
         const items8 = [
-            { leading: [], trailing: [], label: "Label text", supporting: "Supporting text that is long enough to fill up multiple lines" },
-            { leading: [], trailing: [], label: "Label text", supporting: "Supporting text" },
-            { leading: [], trailing: [], label: "Label text" },
+            { id:'24', leading: [], trailing: [], label: "Label text", supporting: "Supporting text that is long enough to fill up multiple lines" },
+            { id:'25', leading: [], trailing: [], label: "Label text", supporting: "Supporting text" },
+            { id:'26', leading: [], trailing: [], label: "Label text" },
         ];
         // With text and trailing checkbox
         const items9 = [
-            { leading: [], trailing: [{ component: "checkbox" }], label: "Label text", supporting: "Supporting text that is long enough to fill up multiple lines" },
-            { leading: [], trailing: [{ component: "checkbox" }], label: "Label text", supporting: "Supporting text" },
-            { leading: [], trailing: [{ component: "checkbox" }], label: "Label text" },
+            { id:'27', leading: [], trailing: [{ component: "checkbox" }], label: "Label text", supporting: "Supporting text that is long enough to fill up multiple lines" },
+            { id:'28', leading: [], trailing: [{ component: "checkbox" }], label: "Label text", supporting: "Supporting text" },
+            { id:'29', leading: [], trailing: [{ component: "checkbox" }], label: "Label text" },
         ];
         // Leading checkbox
 
         // With leading checkbox
         const items10 = [
-            { leading: [{ component: "checkbox" }], trailing: [], label: "Label text", supporting: "Supporting text that is long enough to fill up multiple lines" },
-            { leading: [{ component: "checkbox" }], trailing: [], label: "Label text", supporting: "Supporting text" },
-            { leading: [{ component: "checkbox" }], trailing: [], label: "Label text" },
+            { id:'30', leading: [{ component: "checkbox" }], trailing: [], label: "Label text", supporting: "Supporting text that is long enough to fill up multiple lines" },
+            { id:'31', leading: [{ component: "checkbox" }], trailing: [], label: "Label text", supporting: "Supporting text" },
+            { id:'32', leading: [{ component: "checkbox" }], trailing: [], label: "Label text" },
         ];
         // With leading checkbox and trailing text
         const items11 = [
-            { leading: [{ component: "checkbox" }], trailing: [{ component: "text", text: "100+" }], label: "Label text", supporting: "Supporting text that is long enough to fill up multiple lines" },
-            { leading: [{ component: "checkbox" }], trailing: [{ component: "text", text: "100+" }], label: "Label text", supporting: "Supporting text" },
-            { leading: [{ component: "checkbox" }], trailing: [{ component: "text", text: "100+" }], label: "Label text" },
+            { id:'33', leading: [{ component: "checkbox" }], trailing: [{ component: "text", text: "100+" }], label: "Label text", supporting: "Supporting text that is long enough to fill up multiple lines" },
+            { id:'34', leading: [{ component: "checkbox" }], trailing: [{ component: "text", text: "100+" }], label: "Label text", supporting: "Supporting text" },
+            { id:'35', leading: [{ component: "checkbox" }], trailing: [{ component: "text", text: "100+" }], label: "Label text" },
         ];
         // Leading radio button
 
         // With leading radio button
         const items12 = [
-            { leading: [{ component: "radioButton" }], trailing: [], label: "Label text", supporting: "Supporting text that is long enough to fill up multiple lines" },
-            { leading: [{ component: "radioButton" }], trailing: [], label: "Label text", supporting: "Supporting text" },
-            { leading: [{ component: "radioButton" }], trailing: [], label: "Label text" },
+            { id:'36', leading: [{ component: "radioButton" }], trailing: [], label: "Label text", supporting: "Supporting text that is long enough to fill up multiple lines" },
+            { id:'37', leading: [{ component: "radioButton" }], trailing: [], label: "Label text", supporting: "Supporting text" },
+            { id:'38', leading: [{ component: "radioButton" }], trailing: [], label: "Label text" },
         ];
         // With leading radio button and trailing text
         const items13 = [
-            { leading: [{ component: "radioButton" }], trailing: [{ component: "text", text: "100+" }], label: "Label text", supporting: "Supporting text that is long enough to fill up multiple lines" },
-            { leading: [{ component: "radioButton" }], trailing: [{ component: "text", text: "100+" }], label: "Label text", supporting: "Supporting text" },
-            { leading: [{ component: "radioButton" }], trailing: [{ component: "text", text: "100+" }], label: "Label text" },
+            { id:'39', leading: [{ component: "radioButton" }], trailing: [{ component: "text", text: "100+" }], label: "Label text", supporting: "Supporting text that is long enough to fill up multiple lines" },
+            { id:'40', leading: [{ component: "radioButton" }], trailing: [{ component: "text", text: "100+" }], label: "Label text", supporting: "Supporting text" },
+            { id:'41', leading: [{ component: "radioButton" }], trailing: [{ component: "text", text: "100+" }], label: "Label text" },
         ];
         // Trailing switch
 
         // With trailing switch
         const items14 = [
-            { leading: [], trailing: [{ component: "switch" }], label: "Label text", supporting: "Supporting text that is long enough to fill up multiple lines" },
-            { leading: [], trailing: [{ component: "switch" }], label: "Label text", supporting: "Supporting text" },
-            { leading: [], trailing: [{ component: "switch" }], label: "Label text" },
+            { id:'42', leading: [], trailing: [{ component: "switch" }], label: "Label text", supporting: "Supporting text that is long enough to fill up multiple lines" },
+            { id:'43', leading: [], trailing: [{ component: "switch" }], label: "Label text", supporting: "Supporting text" },
+            { id:'44', leading: [], trailing: [{ component: "switch" }], label: "Label text" },
         ];
         // With leading icon and trailing switch
         const items15 = [
-            { leading: [{ component: "icon", icon: "person" }], trailing: [{ component: "switch" }], label: "Label text", supporting: "Supporting text that is long enough to fill up multiple lines" },
-            { leading: [{ component: "icon", icon: "person" }], trailing: [{ component: "switch" }], label: "Label text", supporting: "Supporting text" },
-            { leading: [{ component: "icon", icon: "person" }], trailing: [{ component: "switch" }], label: "Label text" },
+            { id:'45', leading: [{ component: "icon", icon: "person" }], trailing: [{ component: "switch" }], label: "Label text", supporting: "Supporting text that is long enough to fill up multiple lines" },
+            { id:'46', leading: [{ component: "icon", icon: "person" }], trailing: [{ component: "switch" }], label: "Label text", supporting: "Supporting text" },
+            { id:'47', leading: [{ component: "icon", icon: "person" }], trailing: [{ component: "switch" }], label: "Label text" },
         ];
 
         this.configurations = [

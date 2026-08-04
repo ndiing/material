@@ -58,6 +58,7 @@ class MdIconButton extends MdElement {
 
     connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-icon-button");
 
         this.on("click", this._handleIconButtonClick);
@@ -65,7 +66,9 @@ class MdIconButton extends MdElement {
 
     disconnectedCallback() {
         super.disconnectedCallback();
+
         this.off("click", this._handleIconButtonClick);
+
         this.classList.remove("md-icon-button");
     }
 
@@ -111,6 +114,7 @@ class MdIconButton extends MdElement {
     _handleIconButtonClick(event) {
         if (this.variant === "toggle") {
             this.selected = !this.selected;
+            
             this.emit("onIconButtonSelection", { event, element: this });
         }
 

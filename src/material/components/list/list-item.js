@@ -194,9 +194,9 @@ class MdListItem extends MdElement {
             ['image', () => this.renderImage(properties)],
             ['video', () => this.renderVideo(properties)],
             ['icon', () => this.renderIcon(properties)],
-            ['iconButton', () => this.renderIconButton(properties)],
+            ['icon-button', () => this.renderIconButton(properties)],
             ['checkbox', () => this.renderCheckbox(properties)],
-            ['radioButton', () => this.renderRadioButton(properties)],
+            ['radio-button', () => this.renderRadioButton(properties)],
             ['switch', () => this.renderSwitch(properties)],
             ['text', () => this.renderText(properties)],
         ],() => nothing)

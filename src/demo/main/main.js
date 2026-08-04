@@ -34,6 +34,7 @@ class DemoMain extends MdElement {
                         .scrollOnArrowDownActiveRow="${true}"
                         .selectOnEnterActiveRow="${true}"
                         .singleSelect="${true}"
+                        .virtualScroll="${true}"
                     ></md-list>
                 </md-layout-item>
                 <md-layout-item region="center">
@@ -105,8 +106,6 @@ class DemoMain extends MdElement {
             if (event.key === "Tab") {
                 // Ambil elemen focusable yang beneran visible & enabled
                 const focusable = Array.from(document.body.querySelectorAll(['button:not([tabindex="-1"]):not([disabled])', 'input:not([tabindex="-1"]):not([disabled])', 'select:not([tabindex="-1"]):not([disabled])', 'textarea:not([tabindex="-1"]):not([disabled])', '[tabindex]:not([tabindex="-1"]):not([disabled])'].join(","))).filter((el) => el.offsetParent !== null); // filter yang hidden
-
-                console.log(focusable);
 
                 if (focusable.length === 0) return;
 

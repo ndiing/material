@@ -40,9 +40,11 @@ class MdLayoutItem extends MdElement {
     disconnectedCallback() {
         super.disconnectedCallback();
 
-        this.scrimElement.off("onScrimClose", this._handleLayoutItemScrimClose);
-        this.scrimElement.remove();
-        this.scrimElement = null;
+        if(this.scrimElement){
+            this.scrimElement.off("onScrimClose", this._handleLayoutItemScrimClose);
+            this.scrimElement.remove();
+            this.scrimElement = null;
+        }
 
         this.off("transitionend", this._handleLayoutItemTransitionend);
 
@@ -60,6 +62,7 @@ class MdLayoutItem extends MdElement {
 
         if (_changedProperties.has("open")) {
             this._toggleClass("open");
+            
             if (this.modal) {
                 if (this.open) {
                     this.scrimElement.show();
@@ -71,12 +74,12 @@ class MdLayoutItem extends MdElement {
     }
 
     _toggleClass(modifier) {
-        this.classList.toggle(`md-layout-item--${modifier}`, Boolean(this[modifier]));
+        this.classList.toggle(`md-layout__item--${modifier}`, !!this[modifier]);
     }
 
     _toggleClassList(list, value) {
         list.forEach((item) => {
-            this.classList.toggle(`md-layout-item--${item}`, value === item);
+            this.classList.toggle(`md-layout__item--${item}`, value === item);
         });
     }
 

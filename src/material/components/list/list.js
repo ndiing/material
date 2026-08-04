@@ -40,7 +40,8 @@ class MdList extends MdListElement {
 
         this.activeRowIndex = 0;
         this.activeVisible = false;
-
+        this.startNode=0
+        
         this._handleListVirtualScrollUpdate = this._handleListVirtualScrollUpdate.bind(this);
         this._handleListKeydown = this._handleListKeydown.bind(this);
         this._handleListClick = this._handleListClick.bind(this);
@@ -143,7 +144,7 @@ class MdList extends MdListElement {
     _getTrailingItem(item) {
         const trailing = [];
         if (item.hasChildren) {
-            trailing.push({ component: "iconButton", width: "narrow", color: "standard", icon: this.expandedValues.has(item[this.valueField]) ? "keyboard_arrow_up" : "keyboard_arrow_down" });
+            trailing.push({ component: "icon-button", width: "narrow", color: "standard", icon: this.expandedValues.has(item[this.valueField]) ? "keyboard_arrow_up" : "keyboard_arrow_down" });
         }
         return trailing;
     }

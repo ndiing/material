@@ -96,12 +96,15 @@ class MdImage extends MdElement {
 
     _handleImageNativeLoad(event) {
         this.classList.add("md-image--loaded");
+        
         this.emit("onImageNativeLoad", { event, element: this });
     }
 
     _handleImageNativeError(event) {
         this.classList.add("md-image--error");
+
         this.error = true;
+
         this.emit("onImageNativeError", { event, element: this });
     }
 }

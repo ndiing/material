@@ -12,8 +12,8 @@
 // import "./base/list.js";
 // import "./base/datetime-picker.js";
 
-import "./controller/virtual-scroll.js";
-import "./controller/ripple.js";
+// import "./controller/virtual-scroll.js";
+// import "./controller/ripple.js";
 
 import "./components/scrim/scrim.js";
 import "./components/layout/layout.js";

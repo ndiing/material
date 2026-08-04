@@ -68,20 +68,14 @@ function writeFiles() {
     for (const name in result) {
         const value = result[name];
 
-        for (const { root, dir, base, ext, name, file, data } of value) {
-            console.log();
+        for (let { root, dir, base, ext, name, file, data } of value) {
+            if(!file.includes('router')){continue}
             console.log(file);
-            const className=(data.match(/class (\w+)/)?.[1])
-            const extendName = (data.match(/extends (\w+)/)?.[1])
-            const eventNameSet=new Set()
-            for(const [,eventName] of data.matchAll(/this\.emit\("(\w+)", \{(.*)\}\)/gm)){
-                eventNameSet.add(eventName)
-            }
-            console.log({
-                className,
-                extendName,
-                eventNameSet
-            })
+            
+            data=data.replace(/\/\*\*[\s\S\n]+?\*\//gm,'')
+            data=data.replace(/[\n]+/g,'\n')
+
+            console.log(data)
 
             // break;
         }

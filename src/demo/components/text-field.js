@@ -11,49 +11,76 @@ class DemoTextField extends MdElement {
                 @onFormNativeSubmit="${this.handleDemoTextFieldFormNativeSubmit}"
             >
                 <div class="md-grid">
-                    <div class="md-grid__column md-grid__column--expanded4">
-                        <md-text-field required autocomplete="username" label="Text" name="text" type="text"></md-text-field>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4">
-                        <md-text-field label="Number" name="number" type="number"></md-text-field>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4">
-                        <md-text-field label="Search" name="search" type="search"></md-text-field>
-                    </div>
 
                     <div class="md-grid__column md-grid__column--expanded4">
-                        <md-text-field label="URL" name="url" type="url"></md-text-field>
+                        <md-text-field type="text" label="Label" supporting="Supporting text"></md-text-field>
                     </div>
                     <div class="md-grid__column md-grid__column--expanded4">
-                        <md-text-field autocomplete="tel-national" label="Tel" name="tel" type="tel"></md-text-field>
+                        <md-text-field type="text" label="Label" supporting="Supporting text" value="Input"></md-text-field>
                     </div>
-                    <div class="md-grid__column md-grid__column--expanded4">
-                        <md-text-field autocomplete="email" label="Email" name="email" type="email"></md-text-field>
-                    </div>
+                    <div class="md-grid__column md-grid__column--expanded4"></div>
+                    
 
                     <div class="md-grid__column md-grid__column--expanded4">
-                        <md-text-field autocomplete="new-password" label="Password" name="password" type="password"></md-text-field>
+                        <md-text-field clearable type="text" label="Label" ></md-text-field>
                     </div>
                     <div class="md-grid__column md-grid__column--expanded4">
-                        <md-text-field label="Date" name="date" type="date"></md-text-field>
+                        <md-text-field clearable type="text" label="Label"  value="Input"></md-text-field>
                     </div>
-                    <div class="md-grid__column md-grid__column--expanded4">
-                        <md-text-field label="Datetime Local" name="datetime-local" type="datetime-local"></md-text-field>
-                    </div>
+                    <div class="md-grid__column md-grid__column--expanded4"></div>
+                    
 
                     <div class="md-grid__column md-grid__column--expanded4">
-                        <md-text-field label="Month" name="month" type="month"></md-text-field>
+                        <md-text-field .leading="${[{component:'icon',icon:'search'}]}" type="text" label="Label" ></md-text-field>
                     </div>
                     <div class="md-grid__column md-grid__column--expanded4">
-                        <md-text-field label="Time" name="time" type="time"></md-text-field>
+                        <md-text-field .leading="${[{component:'icon',icon:'search'}]}" type="text" label="Label"  value="Input"></md-text-field>
+                    </div>
+                    <div class="md-grid__column md-grid__column--expanded4"></div>
+                    
+                    
+
+                    <div class="md-grid__column md-grid__column--expanded4">
+                        <md-text-field .leading="${[{component:'icon',icon:'search'}]}" clearable type="text" label="Label" ></md-text-field>
                     </div>
                     <div class="md-grid__column md-grid__column--expanded4">
-                        <md-text-field label="Week" name="week" type="week"></md-text-field>
+                        <md-text-field .leading="${[{component:'icon',icon:'search'}]}" clearable type="text" label="Label"  value="Input"></md-text-field>
                     </div>
+                    <div class="md-grid__column md-grid__column--expanded4"></div>
+                    
+                    
+
+                    <div class="md-grid__column md-grid__column--expanded4">
+                        <md-text-field prefix="$" type="text" label="Label" ></md-text-field>
+                    </div>
+                    <div class="md-grid__column md-grid__column--expanded4">
+                        <md-text-field prefix="$" type="text" label="Label"  value="Input"></md-text-field>
+                    </div>
+                    <div class="md-grid__column md-grid__column--expanded4"></div>
+                    
+                    
+                    <div class="md-grid__column md-grid__column--expanded4">
+                        <md-text-field suffix="lbs" type="text" label="Label" ></md-text-field>
+                    </div>
+                    <div class="md-grid__column md-grid__column--expanded4">
+                        <md-text-field suffix="lbs" type="text" label="Label"  value="Input"></md-text-field>
+                    </div>
+                    <div class="md-grid__column md-grid__column--expanded4"></div>
+                    
+                    
+                    <div class="md-grid__column md-grid__column--expanded4">
+                        <md-text-field type="text" label="Label" ></md-text-field>
+                    </div>
+                    <div class="md-grid__column md-grid__column--expanded4">
+                        <md-text-field type="text" label="Label"  value="This is a long input in a multi-line text field that wraps overflow text onto a new line"></md-text-field>
+                    </div>
+                    <div class="md-grid__column md-grid__column--expanded4"></div>
+                    
+
 
                     <div class="md-grid__column md-grid__column--expanded12">
-                        <md-button type="reset" label="reset" color="outlined"></md-button>
-                        <md-button type="submit" label="submit" color="tonal"></md-button>
+                        <md-button type="reset" label="reset"></md-button>
+                        <md-button type="submit" label="submit"></md-button>
                     </div>
                 </div>
             </md-form>
