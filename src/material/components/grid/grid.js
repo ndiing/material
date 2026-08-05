@@ -6,6 +6,7 @@ class MdGrid extends MdElement {
         super.connectedCallback();
         this.classList.add("md-grid");
     }
+
     disconnectedCallback() {
         super.disconnectedCallback();
         this.classList.remove("md-grid");

@@ -6,19 +6,23 @@ class MdBadge extends MdElement {
         label: { type: Number },
         max: { type: Number },
     };
+
     constructor() {
         super();
         this.label = 0;
         this.max = 999;
     }
+
     /* prettier-ignore */
     render(){
         return this.label>this.max?`${this.max}+`:this.label?this.label:nothing
     }
+
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-badge");
     }
+
     disconnectedCallback() {
         super.disconnectedCallback();
         this.classList.remove("md-badge");

@@ -187,6 +187,7 @@ class MdDatetimePickerElement extends MdElement {
         }
         return arr;
     }
+
     constructor() {
         super();
         this.locale = undefined;
@@ -195,6 +196,7 @@ class MdDatetimePickerElement extends MdElement {
         this.currentDate = new Date();
         this.selectedDate = new Date();
     }
+
     _setFormatter() {
         const locale = this.locale || undefined;
         this.yearFormat = new Intl.DateTimeFormat(locale, { year: "numeric" }).format;
@@ -204,6 +206,7 @@ class MdDatetimePickerElement extends MdElement {
         this.hourFormat = new Intl.DateTimeFormat(locale, { hour: "numeric", hour12: false }).format;
         this.minuteFormat = new Intl.DateTimeFormat(locale, { minute: "numeric", hour12: false }).format;
     }
+
     update(changedProperties) {
         super.update(changedProperties);
         if (changedProperties.has("locale")) {

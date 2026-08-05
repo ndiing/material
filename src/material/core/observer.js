@@ -4,6 +4,7 @@ class MediaObserver {
         this.list = list;
         this.observe = this.observe.bind(this);
     }
+
     observe(list) {
         if (!this.list) {
             this.list = list;
@@ -16,6 +17,7 @@ class MediaObserver {
         this.callback(this.item);
         this.item.mql.addEventListener("change", this.observe);
     }
+
     disconnect() {
         if (this.item?.mql) {
             this.item.mql.removeEventListener("change", this.observe);

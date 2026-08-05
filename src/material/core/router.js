@@ -14,6 +14,7 @@ class Router {
         this.params = {};
         this.controller = null;
     }
+
     _getRoutes(routes = this.routes, parent = null, result = []) {
         this.params = {};
         for (const route of routes) {
@@ -36,6 +37,7 @@ class Router {
         }
         return null;
     }
+
     async _beforeLoad(route) {
         return new Promise((resolve, reject) => {
             const next = (err) => {
@@ -59,6 +61,7 @@ class Router {
             route.beforeLoad(this, next);
         });
     }
+
     async _getOutlet(route, container) {
         return new Promise((resolve, reject) => {
             let outlet;
@@ -85,6 +88,7 @@ class Router {
             resolveOutlet();
         });
     }
+
     async _renderComponent(route) {
         if (!route.component) {
             if (!route.load) {
@@ -104,6 +108,7 @@ class Router {
             outlet.parentElement.insertBefore(route.component, outlet.nextElementSibling);
         }
     }
+
     _removeComponent(activeRoutes = []) {
         const outlets = Array.from(document.body.querySelectorAll("md-outlet"));
         for (const outlet of outlets) {
@@ -119,6 +124,7 @@ class Router {
             }
         }
     }
+
     _parseURL() {
         if (this.historyApiFallback) {
             return URL.parse(window.location.href);
@@ -126,9 +132,9 @@ class Router {
             return URL.parse(window.location.hash.slice(1), this.base);
         }
     }
+
     async _handleNavigation() {
         // performance.mark("onNavigationStart");
-
         this.emit("onNavigationStart", this);
         const { pathname, search, hash } = this._parseURL();
         this.url.pathname = pathname;
@@ -171,13 +177,13 @@ class Router {
         }
         this._removeComponent(routes);
         this.emit("onNavigationEnd", this);
-
         // performance.mark("onNavigationEnd");
         // performance.measure("measureNavigation", "onNavigationStart", "onNavigationEnd");
         // performance.clearMarks("onNavigationStart");
         // performance.clearMarks("onNavigationEnd");
         // performance.clearMeasures("measureNavigation");
     }
+
     navigate(url, options = {}) {
         let targetUrl = url;
         if (!targetUrl) {
@@ -194,6 +200,7 @@ class Router {
             window.location.hash = targetUrl;
         }
     }
+
     _handleNavigate(event) {
         const routerLink = event.target.closest("[routerLink]");
         if (!routerLink) return;
@@ -201,6 +208,7 @@ class Router {
         const url = routerLink.getAttribute("routerLink");
         this.navigate(url);
     }
+
     listen() {
         if (document.readyState === "loading") {
             window.addEventListener("DOMContentLoaded", () => this._handleNavigation());
@@ -214,12 +222,15 @@ class Router {
         }
         window.addEventListener("click", (event) => this._handleNavigate(event));
     }
+
     on(type, listener) {
         window.addEventListener(type, listener);
     }
+
     off(type, listener) {
         window.removeEventListener(type, listener);
     }
+
     emit(type, detail) {
         const event = new CustomEvent(type, {
             bubbles: true,
@@ -228,35 +239,43 @@ class Router {
         });
         window.dispatchEvent(event);
     }
+
     search(...args) {
         this.queryBuilder.search(...args);
         return this;
     }
+
     filter(...args) {
         this.queryBuilder.filter(...args);
         return this;
     }
+
     sort(...args) {
         this.queryBuilder.sort(...args);
         return this;
     }
+
     paginate(...args) {
         this.queryBuilder.paginate(...args);
         return this;
     }
+
     slice(...args) {
         this.queryBuilder.slice(...args);
         return this;
     }
+
     hash(hash) {
         this.url.hash = hash;
         return this;
     }
+
     clear(...args) {
         this.url.hash = "";
         this.queryBuilder.clear(...args);
         return this;
     }
+
     reload(force = false) {
         if (force) {
             window.location.reload();
@@ -264,9 +283,11 @@ class Router {
             this._handleNavigation();
         }
     }
+
     back() {
         window.history.back();
     }
+
     forward() {
         window.history.forward();
     }

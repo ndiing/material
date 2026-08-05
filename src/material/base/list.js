@@ -19,6 +19,7 @@ class MdListElement extends MdElement {
     get current() {
         return this._stack[this._stack.length - 1];
     }
+
     constructor() {
         super();
         this.items = [];
@@ -32,6 +33,7 @@ class MdListElement extends MdElement {
         this.selectedValues = new Set();
         this.expandedValues = new Set();
     }
+
     _setStack() {
         const [selectedId] = this.selectedValues;
         if (!selectedId) {
@@ -56,6 +58,7 @@ class MdListElement extends MdElement {
         }
         this._stack = stack;
     }
+
     _getItems() {
         const items = [];
         const walk = (node, level = 0) => {
@@ -72,9 +75,11 @@ class MdListElement extends MdElement {
         this._tree.forEach((node) => walk(node, 0));
         return items;
     }
+
     _setItems() {
         this._list = this._getItems();
     }
+
     _getSelectedParents(id) {
         const path = [];
         let current = id;
@@ -85,6 +90,7 @@ class MdListElement extends MdElement {
         }
         return path.reverse();
     }
+
     _getAllSelectedParents() {
         const parents = new Set();
         for (const id of this.selectedValues) {
@@ -93,10 +99,12 @@ class MdListElement extends MdElement {
         }
         return parents;
     }
+
     _setExpanded() {
         const parents = this._getAllSelectedParents();
         parents.forEach((id) => this.expandedValues.add(id));
     }
+
     _getParents() {
         const parents = new Map();
         const walk = (node, parent) => {
@@ -110,9 +118,11 @@ class MdListElement extends MdElement {
         this._tree.forEach((node) => walk(node));
         return parents;
     }
+
     _setParents() {
         this._parents = this._getParents();
     }
+
     _getSelected() {
         const selected = new Set();
         const nodes = [...this._tree];
@@ -127,10 +137,12 @@ class MdListElement extends MdElement {
         }
         return selected;
     }
+
     _setSelected() {
         const selected = this._getSelected();
         selected.forEach((id) => this.selectedValues.add(id));
     }
+
     _buildTree(items) {
         const map = new Map();
         const tree = [];
@@ -152,9 +164,11 @@ class MdListElement extends MdElement {
         });
         return tree;
     }
+
     _setTree() {
         this._tree = this._buildTree(this.items);
     }
+
     willUpdate(_changedProperties) {
         super.willUpdate(_changedProperties);
         if (_changedProperties.has("items")) {
@@ -169,6 +183,7 @@ class MdListElement extends MdElement {
             }
         }
     }
+
     push(item) {
         this._stack = [
             ...this._stack,
@@ -178,6 +193,7 @@ class MdListElement extends MdElement {
             },
         ];
     }
+
     pop() {
         if (this._stack.length > 1) {
             this._stack = this._stack.slice(0, -1);

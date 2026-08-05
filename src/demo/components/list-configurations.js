@@ -100,15 +100,15 @@ class DemoListConfigurations extends MdElement {
 
         // With leading radio button
         const items12 = [
-            { id: "36", leading: [{ component: "radioButton" }], trailing: [], label: "Label text", supporting: "Supporting text that is long enough to fill up multiple lines" },
-            { id: "37", leading: [{ component: "radioButton" }], trailing: [], label: "Label text", supporting: "Supporting text" },
-            { id: "38", leading: [{ component: "radioButton" }], trailing: [], label: "Label text" },
+            { id: "36", leading: [{ component: "radio-button" }], trailing: [], label: "Label text", supporting: "Supporting text that is long enough to fill up multiple lines" },
+            { id: "37", leading: [{ component: "radio-button" }], trailing: [], label: "Label text", supporting: "Supporting text" },
+            { id: "38", leading: [{ component: "radio-button" }], trailing: [], label: "Label text" },
         ];
         // With leading radio button and trailing text
         const items13 = [
-            { id: "39", leading: [{ component: "radioButton" }], trailing: [{ component: "text", text: "100+" }], label: "Label text", supporting: "Supporting text that is long enough to fill up multiple lines" },
-            { id: "40", leading: [{ component: "radioButton" }], trailing: [{ component: "text", text: "100+" }], label: "Label text", supporting: "Supporting text" },
-            { id: "41", leading: [{ component: "radioButton" }], trailing: [{ component: "text", text: "100+" }], label: "Label text" },
+            { id: "39", leading: [{ component: "radio-button" }], trailing: [{ component: "text", text: "100+" }], label: "Label text", supporting: "Supporting text that is long enough to fill up multiple lines" },
+            { id: "40", leading: [{ component: "radio-button" }], trailing: [{ component: "text", text: "100+" }], label: "Label text", supporting: "Supporting text" },
+            { id: "41", leading: [{ component: "radio-button" }], trailing: [{ component: "text", text: "100+" }], label: "Label text" },
         ];
         // Trailing switch
 

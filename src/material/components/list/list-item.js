@@ -22,11 +22,12 @@ class MdListItem extends MdElement {
         return this.leading?.some((i) => i.component === "checkbox") || this.trailing?.some((i) => i.component === "checkbox");
     }
     get hasRadioButton() {
-        return this.leading?.some((i) => i.component === "radioButton") || this.trailing?.some((i) => i.component === "radioButton");
+        return this.leading?.some((i) => i.component === "radio-button") || this.trailing?.some((i) => i.component === "radioButton");
     }
     get hasSwitch() {
         return this.leading?.some((i) => i.component === "switch") || this.trailing?.some((i) => i.component === "switch");
     }
+
     constructor() {
         super();
         this.leading = [];
@@ -37,6 +38,7 @@ class MdListItem extends MdElement {
         };
         this.rippleController = new RippleController(this, this.rippleOptions);
     }
+
     /* prettier-ignore */
     renderAvatar(properties){
         return html`
@@ -52,6 +54,7 @@ class MdListItem extends MdElement {
             ></md-image>
         `
     }
+
     /* prettier-ignore */
     renderImage(properties){
         return html`
@@ -67,6 +70,7 @@ class MdListItem extends MdElement {
             ></md-image>
         `
     }
+
     /* prettier-ignore */
     renderVideo(properties){
         return html`
@@ -82,6 +86,7 @@ class MdListItem extends MdElement {
             ></md-image>
         `
     }
+
     /* prettier-ignore */
     renderIcon(properties){
         return html`
@@ -92,6 +97,7 @@ class MdListItem extends MdElement {
             ></md-icon>
         `
     }
+
     /* prettier-ignore */
     renderIconButton(properties){
         return html`
@@ -110,6 +116,7 @@ class MdListItem extends MdElement {
             ></md-icon-button>
         `
     }
+
     /* prettier-ignore */
     renderCheckbox(properties){
         return html`
@@ -129,6 +136,7 @@ class MdListItem extends MdElement {
             ></md-checkbox>
         `
     }
+
     /* prettier-ignore */
     renderRadioButton(properties){
         return html`
@@ -146,6 +154,7 @@ class MdListItem extends MdElement {
             ></md-radio-button>
         `
     }
+
     /* prettier-ignore */
     renderSwitch(properties){
         return html`
@@ -163,6 +172,7 @@ class MdListItem extends MdElement {
             ></md-switch>
         `
     }
+
     /* prettier-ignore */
     renderText(properties){
         return html`
@@ -172,6 +182,7 @@ class MdListItem extends MdElement {
             >${properties.text}</div>
         `
     }
+
     /* prettier-ignore */
     renderComponent(component,properties){
         return choose(component,[
@@ -186,6 +197,7 @@ class MdListItem extends MdElement {
             ['text', () => this.renderText(properties)],
         ],() => nothing)
     }
+
     /* prettier-ignore */
     renderLeading(){
         return html`
@@ -196,6 +208,7 @@ class MdListItem extends MdElement {
             </div>
         `
     }
+
     /* prettier-ignore */
     renderTrailing(){
         return html`
@@ -206,6 +219,7 @@ class MdListItem extends MdElement {
             </div>
         `
     }
+
     /* prettier-ignore */
     renderContent(){
         return html`
@@ -216,6 +230,7 @@ class MdListItem extends MdElement {
             </div>
         `
     }
+
     /* prettier-ignore */
     render(){
         return html`
@@ -224,6 +239,7 @@ class MdListItem extends MdElement {
             ${this.trailing?.length?this.renderTrailing():nothing}
         `
     }
+
     async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-list__item");
@@ -234,6 +250,7 @@ class MdListItem extends MdElement {
             await this._setLayoutClass();
         }
     }
+
     async disconnectedCallback() {
         super.disconnectedCallback();
         if (this.interactive) {
@@ -241,12 +258,14 @@ class MdListItem extends MdElement {
         }
         this.classList.remove("md-list__item");
     }
+
     update(changedProperties) {
         super.update(changedProperties);
         if (changedProperties.has("rippleOptions")) {
             this.rippleController.reinit(this.rippleOptions);
         }
     }
+
     async _setLayoutClass() {
         await this.updateComplete;
         if (this.supporting) {
@@ -259,9 +278,11 @@ class MdListItem extends MdElement {
         }
         this._toggleClassList(this.layouts, this.layout);
     }
+
     _toggleClass(modifier) {
         this.classList.toggle(`md-list__item--${modifier}`, Boolean(this[modifier]));
     }
+
     _toggleClassList(list, value) {
         list.forEach((item) => {
             this.classList.toggle(`md-list__item--${item}`, value === item);

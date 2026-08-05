@@ -10,6 +10,7 @@ class MdTextarea extends MdTextField {
         rows: { type: Number },
         cols: { type: Number },
     };
+
     /* prettier-ignore */
     renderContent(){
         return html`
@@ -39,10 +40,12 @@ class MdTextarea extends MdTextField {
             </div>
         `
     }
+
     async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-textarea");
     }
+
     disconnectedCallback() {
         super.disconnectedCallback();
         this.classList.remove("md-textarea");

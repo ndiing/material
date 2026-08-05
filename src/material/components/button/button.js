@@ -20,6 +20,7 @@ class MdButton extends MdElement {
     sizes = ["extra-small", "small", "medium", "large", "extra-large"];
     shapes = ["round", "square"];
     colors = ["elevated", "filled", "tonal", "outlined", "text"];
+
     constructor() {
         super();
         this.variant = "default";
@@ -33,6 +34,7 @@ class MdButton extends MdElement {
         this.rippleController = new RippleController(this, this.rippleOptions);
         this._handleButtonClick = this._handleButtonClick.bind(this);
     }
+
     /* prettier-ignore */
     render(){
         return html`
@@ -45,16 +47,19 @@ class MdButton extends MdElement {
             ${this.label?html`<div class="md-button__label">${this.label}</div>`:nothing}
         `
     }
+
     connectedCallback() {
         super.connectedCallback();
         this.on("click", this._handleButtonClick);
         this.classList.add("md-button");
     }
+
     disconnectedCallback() {
         super.disconnectedCallback();
         this.off("click", this._handleButtonClick);
         this.classList.remove("md-button");
     }
+
     update(changedProperties) {
         super.update(changedProperties);
         if (changedProperties.has("variant")) {
@@ -79,14 +84,17 @@ class MdButton extends MdElement {
             this.rippleController.reinit(this.rippleOptions);
         }
     }
+
     _toggleClass(modifier) {
         this.classList.toggle(`md-button--${modifier}`, Boolean(this[modifier]));
     }
+
     _toggleClassList(list, value) {
         list.forEach((item) => {
             this.classList.toggle(`md-button--${item}`, value === item);
         });
     }
+
     _handleButtonClick(event) {
         if (this.variant === "toggle") {
             this.selected = !this.selected;

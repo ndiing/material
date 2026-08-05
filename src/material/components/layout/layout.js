@@ -5,6 +5,7 @@ class MdLayout extends MdElement {
         super.connectedCallback();
         this.classList.add("md-layout");
     }
+
     disconnectedCallback() {
         super.disconnectedCallback();
         this.classList.remove("md-layout");

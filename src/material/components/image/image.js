@@ -14,6 +14,7 @@ class MdImage extends MdElement {
         errorSrc: { type: String },
     };
     shapes = ["round", "square", "sharp"];
+
     constructor() {
         super();
         this.loading = "lazy";
@@ -21,6 +22,7 @@ class MdImage extends MdElement {
         this.errorSrc = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=";
         this._handleImageResizeObserver = this._handleImageResizeObserver.bind(this);
     }
+
     /* prettier-ignore */
     render(){
         return html`
@@ -34,17 +36,20 @@ class MdImage extends MdElement {
             >
         `
     }
+
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-image");
         this.resizeObserver = new ResizeObserver(this._handleImageResizeObserver);
         this.resizeObserver.observe(this);
     }
+
     disconnectedCallback() {
         super.disconnectedCallback();
         this.resizeObserver.disconnect(this);
         this.classList.remove("md-image");
     }
+
     update(changedProperties) {
         super.update(changedProperties);
         if (changedProperties.has("shape")) {
@@ -52,11 +57,13 @@ class MdImage extends MdElement {
             this._updateSquareRadius();
         }
     }
+
     _handleImageResizeObserver() {
         window.requestAnimationFrame(() => {
             this._updateSquareRadius();
         });
     }
+
     _updateSquareRadius() {
         if (this.shape === "square") {
             const radius = Math.ceil(Math.sqrt(Math.max(this.clientWidth, this.clientHeight)) * 2);
@@ -65,18 +72,22 @@ class MdImage extends MdElement {
             this.style.removeProperty("--md-comp-image-radius");
         }
     }
+
     _toggleClass(modifier) {
         this.classList.toggle(`md-image--${modifier}`, Boolean(this[modifier]));
     }
+
     _toggleClassList(list, value) {
         list.forEach((item) => {
             this.classList.toggle(`md-image--${item}`, value === item);
         });
     }
+
     _handleImageNativeLoad(event) {
         this.classList.add("md-image--loaded");
         this.emit("onImageNativeLoad", { event, element: this });
     }
+
     _handleImageNativeError(event) {
         this.classList.add("md-image--error");
         this.error = true;

@@ -7,12 +7,14 @@ class MdLayoutItem extends MdElement {
         open: { type: Boolean },
     };
     regions = ["center", "west", "north", "east", "south"];
+
     constructor() {
         super();
         this.region = "center";
         this._handleLayoutItemTransitionend = this._handleLayoutItemTransitionend.bind(this);
         this._handleLayoutItemScrimClose = this._handleLayoutItemScrimClose.bind(this);
     }
+
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-layout__item");
@@ -23,6 +25,7 @@ class MdLayoutItem extends MdElement {
         }
         this.scrimElement.on("onScrimClose", this._handleLayoutItemScrimClose);
     }
+
     disconnectedCallback() {
         super.disconnectedCallback();
         if (this.scrimElement) {
@@ -33,6 +36,7 @@ class MdLayoutItem extends MdElement {
         this.off("transitionend", this._handleLayoutItemTransitionend);
         this.classList.remove("md-layout__item");
     }
+
     updated(_changedProperties) {
         if (_changedProperties.has("region")) {
             this._toggleClassList(this.regions, this.region);
@@ -51,14 +55,17 @@ class MdLayoutItem extends MdElement {
             }
         }
     }
+
     _toggleClass(modifier) {
         this.classList.toggle(`md-layout__item--${modifier}`, !!this[modifier]);
     }
+
     _toggleClassList(list, value) {
         list.forEach((item) => {
             this.classList.toggle(`md-layout__item--${item}`, value === item);
         });
     }
+
     _handleLayoutItemTransitionend(event) {
         if (this.open) {
             this.emit("onLayoutItemShowed", { event, element: this });
@@ -66,17 +73,21 @@ class MdLayoutItem extends MdElement {
             this.emit("onLayoutItemClosed", { event, element: this });
         }
     }
+
     _handleLayoutItemScrimClose(event) {
         this.close();
     }
+
     show() {
         this.open = true;
         this.emit("onLayoutItemShow", { element: this });
     }
+
     close() {
         this.open = false;
         this.emit("onLayoutItemClose", { element: this });
     }
+
     toggle() {
         if (this.open) {
             this.close();

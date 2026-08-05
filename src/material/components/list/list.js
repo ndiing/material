@@ -26,6 +26,7 @@ class MdList extends MdListElement {
         virtualScrollOptions: { type: Object },
         _items: { type: Array, state: true },
     };
+
     constructor() {
         super();
         this._items = [];
@@ -41,6 +42,7 @@ class MdList extends MdListElement {
             onUpdate: this._handleListVirtualScrollUpdate,
         });
     }
+
     /* prettier-ignore */
     renderItems(){
         return repeat(this._items, (item) => item[this.valueField], (item,rowIndex)=>{
@@ -70,6 +72,7 @@ class MdList extends MdListElement {
             `
         })
     }
+
     /* prettier-ignore */
     renderEmptyItems(){
         return html`
@@ -78,10 +81,12 @@ class MdList extends MdListElement {
             ></md-list-item>
         `
     }
+
     /* prettier-ignore */
     render(){
         return this._items?.length?this.renderItems():this.renderEmptyItems()
     }
+
     async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-list");
@@ -92,6 +97,7 @@ class MdList extends MdListElement {
         this.on("keydown", this._handleListKeydown);
         this.on("click", this._handleListClick);
     }
+
     disconnectedCallback() {
         super.disconnectedCallback();
         if (this.virtualScroll) {
@@ -101,6 +107,7 @@ class MdList extends MdListElement {
         this.off("click", this._handleListClick);
         this.classList.remove("md-list");
     }
+
     async update(changedProperties) {
         super.update(changedProperties);
         if (changedProperties.has("_list")) {
@@ -115,17 +122,20 @@ class MdList extends MdListElement {
             }
         }
     }
+
     _getTrailingItem(item) {
         const trailing = [];
         if (item.hasChildren) {
             trailing.push({ component: "icon-button", width: "narrow", color: "standard", icon: this.expandedValues.has(item[this.valueField]) ? "keyboard_arrow_up" : "keyboard_arrow_down" });
         }
-        return trailing;
+        return [...((item.trailing?.length && item.trailing) || []), ...trailing];
     }
+
     _handleListVirtualScrollUpdate({ controller } = {}) {
         this.startNode = controller.startNode;
         this._items = this._list.slice(controller.startNode, controller.endNode);
     }
+
     _handleListClick(event) {
         if (this.clearSelection && !event.target.closest(".md-list__item")) {
             event.preventDefault();
@@ -135,6 +145,7 @@ class MdList extends MdListElement {
         }
         this.emit("onListClick", { event, element: this });
     }
+
     _handleListKeydown(event) {
         if (this.selectAll && event.ctrlKey && event.code === "KeyA") {
             event.preventDefault();
@@ -185,6 +196,7 @@ class MdList extends MdListElement {
         }
         this.emit("onListKeydown", { event, element: this });
     }
+
     _handleListItemClick(event) {
         const li = event.currentTarget;
         const item = li.item;
@@ -220,6 +232,7 @@ class MdList extends MdListElement {
         }
         this.emit("onListItemClick", { event, element: this });
     }
+
     select(item) {
         if (item.hasChildren) {
             if (this.expandedValues.has(item[this.valueField])) {

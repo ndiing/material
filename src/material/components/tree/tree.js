@@ -9,6 +9,7 @@ class MdTree extends MdListElement {
         super();
         this.type = "tree";
     }
+
     /* prettier-ignore */
     render(){
         const rootHasBranch = this._tree.some((node) => node.children?.length);
@@ -24,6 +25,7 @@ class MdTree extends MdListElement {
             ></md-list-item>
         `)
     }
+
     _getLeadingItem(item, rootHasBranch) {
         const leading = [];
         if (rootHasBranch) {
@@ -36,6 +38,7 @@ class MdTree extends MdListElement {
         leading.push({ component: "icon", icon: item.hasChildren ? (this.expandedValues.has(item[this.valueField]) ? "folder_open" : "folder") : "draft" });
         return leading;
     }
+
     _handleListItemClick(event) {
         const li = event.currentTarget;
         const item = li.item;

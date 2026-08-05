@@ -26,6 +26,7 @@ class MdDataTable extends MdElement {
         checkbox: { type: Boolean },
         _rows: { type: Array, state: true },
     };
+
     constructor() {
         super();
         this.columns = [];
@@ -45,6 +46,7 @@ class MdDataTable extends MdElement {
             onUpdate: this._handleDataTableVirtualScrollUpdate,
         });
     }
+
     /* prettier-ignore */
     renderThead(){
         const size=this.selectedValues.size
@@ -79,6 +81,7 @@ class MdDataTable extends MdElement {
             </thead>
         `
     }
+
     /* prettier-ignore */
     renderTbody(){
         return html`
@@ -128,6 +131,7 @@ class MdDataTable extends MdElement {
             </tbody>
         `
     }
+
     /* prettier-ignore */
     renderEmptyTbody(){
         return html`
@@ -142,6 +146,7 @@ class MdDataTable extends MdElement {
             </tbody>
         `
     }
+
     /* prettier-ignore */
     render(){
         return html`
@@ -153,6 +158,7 @@ class MdDataTable extends MdElement {
             </table>
         `
     }
+
     async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-data-table");
@@ -160,12 +166,14 @@ class MdDataTable extends MdElement {
         this.on("keydown", this._handleDataTableKeydown);
         this.on("click", this._handleDataTableClick);
     }
+
     disconnectedCallback() {
         super.disconnectedCallback();
         this.off("keydown", this._handleDataTableKeydown);
         this.off("click", this._handleDataTableClick);
         this.classList.remove("md-data-table");
     }
+
     async update(changedProperties) {
         super.update(changedProperties);
         if (changedProperties.has("rows")) {
@@ -176,6 +184,7 @@ class MdDataTable extends MdElement {
             });
         }
     }
+
     _handleDataTableHeaderCellCheckboxNativeInput(event) {
         const checkbox = event.detail.element;
         if (checkbox.checked) {
@@ -187,12 +196,15 @@ class MdDataTable extends MdElement {
         }
         this.requestUpdate();
     }
+
     _handleDataTableCellCheckboxNativeInput(event) {}
+
     _handleDataTableVirtualScrollUpdate({ controller } = {}) {
         this.startNode = controller.startNode;
         this.endNode = controller.endNode;
         this._rows = this.rows.slice(controller.startNode, controller.endNode);
     }
+
     _handleDataTableClick(event) {
         if (this.clearSelection && !event.target.closest("tr")) {
             event.preventDefault();
@@ -202,6 +214,7 @@ class MdDataTable extends MdElement {
         }
         this.emit("onDataTableClick", { event, element: this });
     }
+
     _handleDataTableKeydown(event) {
         if (this.selectAll && event.ctrlKey && event.code === "KeyA") {
             event.preventDefault();
@@ -258,6 +271,7 @@ class MdDataTable extends MdElement {
         }
         this.emit("onDataTableKeydown", { event, element: this });
     }
+
     _handleDataTableRowClick(event) {
         const tr = event.currentTarget;
         const row = tr.row;
@@ -286,6 +300,7 @@ class MdDataTable extends MdElement {
         this.requestUpdate();
         this.emit("onDataTableRowClick", { event, element: this });
     }
+
     _handleDataTableCellClick(event) {
         if (!(this.activeRow && this.activeCell)) {
             return;
@@ -297,6 +312,7 @@ class MdDataTable extends MdElement {
         this.activeCellIndex = td.cellIndex;
         this.emit("onDataTableCellClick", { event, element: this });
     }
+
     select(id) {
         this.selectedValues.clear();
         this.selectedValues.add(id);

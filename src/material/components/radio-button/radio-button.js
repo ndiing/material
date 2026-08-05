@@ -17,6 +17,7 @@ class MdRadioButton extends MdElement {
         tabIndex: { type: Number },
     };
     radioButtonNative = createRef();
+
     constructor() {
         super();
         this.internals = this.attachInternals();
@@ -28,6 +29,7 @@ class MdRadioButton extends MdElement {
         };
         this.rippleController = new RippleController(this, this.rippleOptions);
     }
+
     /* prettier-ignore */
     render(){
         return html`
@@ -49,6 +51,7 @@ class MdRadioButton extends MdElement {
             </div>
         `
     }
+
     async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-radio-button");
@@ -56,10 +59,12 @@ class MdRadioButton extends MdElement {
             this.defaultChecked = this.checked;
         }
     }
+
     disconnectedCallback() {
         super.disconnectedCallback();
         this.classList.remove("md-radio-button");
     }
+
     async update(changedProperties) {
         super.update(changedProperties);
         if (changedProperties.has("disabled")) {
@@ -69,11 +74,13 @@ class MdRadioButton extends MdElement {
             this.rippleController.reinit(this.rippleOptions);
         }
     }
+
     formResetCallback(event) {
         const radioButtonNative = this.radioButtonNative.value;
         this.checked = this.defaultChecked;
         radioButtonNative.checked = this.checked;
     }
+
     _handleRadioButtonNativeInput(event) {
         const radioButtonNative = this.radioButtonNative.value;
         this.checked = radioButtonNative.checked;

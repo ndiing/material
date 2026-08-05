@@ -20,6 +20,7 @@ class MdCheckbox extends MdElement {
         tabIndex: { type: Number },
     };
     checkboxNative = createRef();
+
     constructor() {
         super();
         this.internals = this.attachInternals();
@@ -32,6 +33,7 @@ class MdCheckbox extends MdElement {
         this.validateOnInput = true;
         this.rippleController = new RippleController(this, this.rippleOptions);
     }
+
     /* prettier-ignore */
     render(){
         return html`
@@ -55,6 +57,7 @@ class MdCheckbox extends MdElement {
             </div>
         `
     }
+
     async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-checkbox");
@@ -65,10 +68,12 @@ class MdCheckbox extends MdElement {
             this.defaultChecked = this.checked;
         }
     }
+
     disconnectedCallback() {
         super.disconnectedCallback();
         this.classList.remove("md-checkbox");
     }
+
     async update(changedProperties) {
         super.update(changedProperties);
         if (changedProperties.has("disabled")) {
@@ -79,6 +84,7 @@ class MdCheckbox extends MdElement {
             this.rippleController.reinit(this.rippleOptions);
         }
     }
+
     formResetCallback(event) {
         const checkboxNative = this.checkboxNative.value;
         if (this.defaultIndeterminate !== undefined) {
@@ -92,11 +98,13 @@ class MdCheckbox extends MdElement {
         this.validationMessage = "";
         this._updateValidationClass();
     }
+
     _handleCheckboxNativeInvalid(event) {
         event.preventDefault();
         this.validate();
         this.emit("onCheckboxNativeInvalid", { event, element: this });
     }
+
     _handleCheckboxNativeInput(event) {
         const checkboxNative = this.checkboxNative.value;
         this.indeterminate = checkboxNative.indeterminate;
@@ -106,9 +114,11 @@ class MdCheckbox extends MdElement {
         }
         this.emit("onCheckboxNativeInput", { event, element: this });
     }
+
     _updateValidationClass() {
         this.classList.toggle("md-checkbox--error", !!this.validationMessage);
     }
+
     validate() {
         const checkboxNative = this.checkboxNative.value;
         this.validationMessage = checkboxNative.validationMessage;

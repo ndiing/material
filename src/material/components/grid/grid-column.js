@@ -7,14 +7,17 @@ class MdGridColumn extends MdElement {
         medium: { type: Number },
         compact: { type: Number },
     };
+
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-grid__column");
     }
+
     disconnectedCallback() {
         super.disconnectedCallback();
         this.classList.remove("md-grid__column");
     }
+
     update(changedProperties) {
         super.update(changedProperties);
         if (changedProperties.has("expanded")) {

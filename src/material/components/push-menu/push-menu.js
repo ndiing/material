@@ -9,6 +9,7 @@ class MdPushMenu extends MdListElement {
         super();
         this.type = "stack";
     }
+
     /* prettier-ignore */
     render(){
         const { items, parent } = this.current;
@@ -36,6 +37,7 @@ class MdPushMenu extends MdListElement {
             `)}
         `
     }
+
     _getTrailingItem(item) {
         const trailing = [];
         if (item.children?.length) {
@@ -43,6 +45,7 @@ class MdPushMenu extends MdListElement {
         }
         return trailing;
     }
+
     _getLeadingItem(item, parent) {
         const leading = [];
         if (parent) {
@@ -50,11 +53,13 @@ class MdPushMenu extends MdListElement {
         }
         return leading;
     }
+
     _getLeading(parent) {
         const leading = [];
         leading.push({ component: "icon", icon: "arrow_back" });
         return leading;
     }
+
     _handleListItemClick(event) {
         const li = event.currentTarget;
         const item = li.item;

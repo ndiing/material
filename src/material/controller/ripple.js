@@ -12,6 +12,7 @@ class RippleController {
         this._handleFocus = this._handleFocus.bind(this);
         this._handleBlur = this._handleBlur.bind(this);
     }
+
     setOptions(options) {
         this.centered = options.centered ?? this.centered ?? false;
         this.radius = options.radius ?? this.radius;
@@ -20,12 +21,15 @@ class RippleController {
         this.container = options.container ?? this.container;
         this.register = options.register ?? this.register ?? true;
     }
+
     _handlePointerenter(event) {
         this.containerElement.classList.add("md-ripple--hover");
     }
+
     _handlePointerleave(event) {
         this.containerElement.classList.remove("md-ripple--hover");
     }
+
     _handlePointerdown(event) {
         window.addEventListener("pointerup", this._handlePointerup, { passive: true });
         window.addEventListener("touchend", this._handlePointerup, { passive: true });
@@ -42,17 +46,21 @@ class RippleController {
             this.containerElement.style.setProperty("--md-comp-ripple-y", y * 100 + "%");
         }
     }
+
     _handlePointerup(event) {
         this.containerElement.classList.remove("md-ripple--press");
         window.removeEventListener("pointerup", this._handlePointerup);
         window.removeEventListener("touchend", this._handlePointerup);
     }
+
     _handleFocus(event) {
         this.containerElement.classList.add("md-ripple--focus");
     }
+
     _handleBlur(event) {
         this.containerElement.classList.remove("md-ripple--focus");
     }
+
     async init() {
         await this.host.updateComplete;
         this.containerElement = this.container ? (typeof this.container === "string" ? this.host.querySelector(this.container) : this.container) : this.host;
@@ -79,6 +87,7 @@ class RippleController {
         this.triggerElement.addEventListener("focus", this._handleFocus);
         this.triggerElement.addEventListener("blur", this._handleBlur);
     }
+
     async destroy() {
         await this.host.updateComplete;
         this.containerElement.classList.remove("md-ripple");
@@ -91,14 +100,17 @@ class RippleController {
         this.triggerElement.removeEventListener("focus", this._handleFocus);
         this.triggerElement.removeEventListener("blur", this._handleBlur);
     }
+
     async reinit(options) {
         this.setOptions(options);
         await this.destroy();
         await this.init();
     }
+
     async hostConnected() {
         await this.init();
     }
+
     async hostDisconnected() {
         await this.destroy();
     }

@@ -8,6 +8,7 @@ class VirtualScrollController {
         this._handleScroll = this._handleScroll.bind(this);
         this._handleResizeObserver = this._handleResizeObserver.bind(this);
     }
+
     setOptions(options) {
         this.viewport = options.viewport ?? this.viewport ?? this.host;
         this.itemCount = options.itemCount ?? this.itemCount ?? 0;
@@ -16,6 +17,7 @@ class VirtualScrollController {
         this.onUpdate = options.onUpdate ?? this.onUpdate ?? (() => {});
         this.register = options.register ?? this.register ?? true;
     }
+
     _update() {
         this.startNode = Math.max(0, Math.floor(this.viewport.scrollTop / this.rowHeight) - this.nodePadding);
         this.visibleNodesCount = Math.min(this.itemCount - this.startNode, Math.ceil(this.viewportHeight / this.rowHeight) + 2 * this.nodePadding);
@@ -24,33 +26,40 @@ class VirtualScrollController {
         this.viewport.style.setProperty("--md-comp-virtual-scroll-content-translate-y", `${this.offsetY}px`);
         this.onUpdate({ controller: this });
     }
+
     _updateViewportHeight() {
         this.viewportHeight = this.viewport.clientHeight;
     }
+
     _updateTotalContentHeight() {
         this.totalContentHeight = this.itemCount * this.rowHeight;
         this.viewport.style.setProperty("--md-comp-virtual-scroll-total-content-height", `${this.totalContentHeight}px`);
     }
+
     _saveScrollPosition() {
         this.scrollTop = this.viewport.scrollTop;
     }
+
     _restoreScrollPosition() {
         if (this.scrollTop) {
             this.viewport.scrollTo({ top: this.scrollTop });
         }
     }
+
     _handleScroll() {
         // this._saveScrollPosition();
         window.requestAnimationFrame(() => {
             this._update();
         });
     }
+
     _handleResizeObserver(entries) {
         window.requestAnimationFrame(() => {
             this._updateViewportHeight();
             this._update();
         });
     }
+
     scrollTo(index, options = {}) {
         const { behavior = "auto", align = "auto", offset = 0 } = options;
         const viewportHeight = this.viewportHeight || this.viewport.clientHeight;
@@ -78,6 +87,7 @@ class VirtualScrollController {
             this.viewport.scrollTo({ top, behavior });
         }
     }
+
     async init() {
         await this.viewport.updateComplete;
         this.viewport.classList.add("md-virtual-scroll");
@@ -88,6 +98,7 @@ class VirtualScrollController {
         this.resizeObserver = new ResizeObserver(this._handleResizeObserver);
         this.resizeObserver.observe(this.viewport);
     }
+
     async destroy() {
         await this.viewport.updateComplete;
         this.resizeObserver.disconnect();
@@ -95,14 +106,17 @@ class VirtualScrollController {
         this.viewport.style.removeProperty("--md-comp-virtual-scroll-total-content-height");
         this.viewport.classList.remove("md-virtual-scroll");
     }
+
     async reinit(options) {
         this.setOptions(options);
         await this.destroy();
         await this.init();
     }
+
     async hostConnected() {
         await this.init();
     }
+
     async hostDisconnected() {
         await this.destroy();
     }

@@ -13,6 +13,7 @@ class MdForm extends MdElement {
         noValidate: { type: Boolean },
     };
     formNative = createRef();
+
     /* prettier-ignore */
     render(){
         return html`
@@ -31,6 +32,7 @@ class MdForm extends MdElement {
             >${this._childNodes}</form>
         `
     }
+
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-form");
@@ -39,14 +41,17 @@ class MdForm extends MdElement {
             this.replaceChildren();
         }
     }
+
     disconnectedCallback() {
         super.disconnectedCallback();
         this.classList.remove("md-form");
     }
+
     reset() {
         const formNative = this.formNative.value;
         formNative.reset();
     }
+
     submit(button) {
         const formNative = this.formNative.value;
         formNative.reportValidity();
@@ -60,12 +65,15 @@ class MdForm extends MdElement {
             formNative.submit();
         }
     }
+
     _handleFormNativeFormdata(event) {
         this.emit("onFormNativeFormdata", { event, element: this, formData: event.formData });
     }
+
     _handleFormNativeReset(event) {
         this.emit("onFormNativeReset", { event, element: this });
     }
+
     _handleFormNativeSubmit(event) {
         event.preventDefault();
         const formNative = this.formNative.value;

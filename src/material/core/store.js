@@ -3,9 +3,11 @@ class Store {
         this.primaryKey = options.primaryKey ?? "id";
         this.load(docs);
     }
+
     _rebuildIndex() {
         this.searchIndex = this._buildSearchIndex(this.docs);
     }
+
     _updateIndexForDoc(doc) {
         const flatValues = this._flattenObject(doc);
         flatValues.forEach((value) => {
@@ -20,6 +22,7 @@ class Store {
             }
         });
     }
+
     _removeFromIndex(doc) {
         const flatValues = this._flattenObject(doc);
         flatValues.forEach((value) => {
@@ -37,9 +40,11 @@ class Store {
             }
         });
     }
+
     _getValueByPath(obj, path) {
         return path.split(".").reduce((current, key) => current?.[key], obj);
     }
+
     _buildSearchIndex(docs) {
         const index = new Map();
         docs.forEach((doc) => {
@@ -60,6 +65,7 @@ class Store {
         });
         return index;
     }
+
     _flattenObject(obj, prefix = "") {
         let values = [];
         for (const key in obj) {
@@ -72,13 +78,16 @@ class Store {
         }
         return values;
     }
+
     load(docs) {
         this.docs = structuredClone(docs);
         this._rebuildIndex();
     }
+
     get(id) {
         return this.docs.find((doc) => doc[this.primaryKey] === id) || null;
     }
+
     getAll(options = {}) {
         const { _sort, _order, q, _page, _limit, _start, _end, ...restOptions } = options;
         let docs = [...this.docs];
@@ -131,6 +140,7 @@ class Store {
             },
         };
     }
+
     post(doc = {}) {
         if (!doc[this.primaryKey]) {
             throw new Error("Document must have an 'id' field");
@@ -143,6 +153,7 @@ class Store {
         this._updateIndexForDoc(newDoc);
         return newDoc;
     }
+
     patch(id, doc) {
         const index = this.docs.findIndex((d) => d[this.primaryKey] === id);
         if (index === -1) {
@@ -156,6 +167,7 @@ class Store {
         this._updateIndexForDoc(this.docs[index]);
         return this.docs[index];
     }
+
     delete(id) {
         const index = this.docs.findIndex((d) => d[this.primaryKey] === id);
         if (index === -1) {
@@ -166,6 +178,7 @@ class Store {
         this.docs.splice(index, 1);
         return deleted;
     }
+
     search(docs, q = "") {
         if (!q || q.trim() === "") return docs;
         const query = q.toLowerCase().trim();
@@ -206,6 +219,7 @@ class Store {
         }
         return docs.filter((doc) => matchingIds.has(doc[this.primaryKey]));
     }
+
     filter(docs, filters = []) {
         if (!filters.length) return docs;
         return docs.filter((doc) => {
@@ -242,6 +256,7 @@ class Store {
             });
         });
     }
+
     sort(docs, sorters = []) {
         if (!sorters.length) return docs;
         return [...docs].toSorted((a, b) => {
@@ -263,12 +278,14 @@ class Store {
             return 0;
         });
     }
+
     paginate(docs, _page = 1, _limit = 10) {
         const page = parseInt(_page) || 1;
         const limit = parseInt(_limit) || 10;
         const start = (page - 1) * limit;
         return docs.slice(start, start + limit);
     }
+
     slice(docs, _start, _end) {
         if (_start === undefined && _end === undefined) return docs;
         const start = parseInt(_start) || 0;
