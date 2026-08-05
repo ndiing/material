@@ -19,7 +19,7 @@ function getFraction(value, min, max) {
 
 class MdSlider extends MdElement {
     static formAssociated = true;
-    
+
     static properties = {
         variant: { type: String },
         orientation: { type: String },
@@ -33,6 +33,7 @@ class MdSlider extends MdElement {
         readonly: { type: Boolean },
         required: { type: Boolean },
         autocomplete: { type: String },
+        icon: { type: String, converter },
         values: { type: Array, state: true },
         tickmarks: { type: Array, state: true },
     };
@@ -63,6 +64,8 @@ class MdSlider extends MdElement {
                 name="${ifDefined(this.name)}"
                 value="${ifDefined(this.values)}"
             >
+            ${this.icon?html`<md-icon class="md-slider__icon">${this.icon}</md-icon>`:nothing}
+            <div class="md-slider__track"></div>
             ${this.values.map((value,index)=>html`
                 <input 
                     ${ref(this.sliderNatives[index])}
@@ -79,14 +82,34 @@ class MdSlider extends MdElement {
                     @input="${this._handleSliderNativeInput}"
                 >
                 <output class="md-slider__label">${value}</output>
+                <div class="md-slider__thumb"></div>
             `)}
             <div class="md-slider__tickmarks">
-                ${Array.from({length:this.tickmarks+1},() => html`
-                    <div class="md-slider__tickmark"></div>
+                ${Array.from({length:this.tickmarks+1},(v, k) => html`
+                    <div class="${classMap(this._getTickmarkClass(k))}"></div>
                 `)}
             </div>
         `
     }
+
+    _getTickmarkClass(k) {
+        const value = this.tickmarks * k;
+
+        let active = false;
+        if (this.variant === "centered") {
+            active = (value < 50 && value >= this.percentage0) || (value > 50 && value <= this.percentage0);
+        } else if (this.variant === "range") {
+            active = value >= this.percentage0 && value <= this.percentage1;
+        } else {
+            active = value <= this.percentage0;
+        }
+
+        return {
+            "md-slider__tickmark": true,
+            "md-slider__tickmark--active": active,
+        };
+    }
+
     async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-slider");
@@ -175,6 +198,9 @@ class MdSlider extends MdElement {
             const calc0 = this._calculate(0);
             const calc1 = this._calculate(1);
 
+            this.percentage0 = calc0.percentage;
+            this.percentage1 = calc1.percentage;
+
             this.values = [_value0, _value1];
 
             this._setCssVars(0, calc0.fraction, calc0.percentage);
@@ -185,6 +211,7 @@ class MdSlider extends MdElement {
             const percentage0 = Math.min(50, percentage);
             const percentage1 = Math.max(50, percentage);
 
+            this.percentage0 = percentage;
             this.values = [value];
 
             this._setCssVars(0, fraction, percentage0);
@@ -192,6 +219,7 @@ class MdSlider extends MdElement {
         } else {
             const { value, fraction, percentage } = this._calculate(0);
 
+            this.percentage0 = percentage;
             this.values = [value];
 
             this._setCssVars(0, fraction, percentage);

@@ -73,18 +73,18 @@ class DemoSlider extends MdElement {
                         <br>
                         <br>
 
-                        <md-slider name="slider15" size="medium"></md-slider>
-                        <md-slider name="slider16" orientation="vertical" size="medium"></md-slider>
+                        <md-slider icon="volume_up" name="slider15" size="medium"></md-slider>
+                        <md-slider icon="volume_up" name="slider16" orientation="vertical" size="medium"></md-slider>
                         <br>
                         <br>
 
-                        <md-slider name="slider17" size="large"></md-slider>
-                        <md-slider name="slider18" orientation="vertical" size="large"></md-slider>
+                        <md-slider icon="volume_up" name="slider17" size="large"></md-slider>
+                        <md-slider icon="volume_up" name="slider18" orientation="vertical" size="large"></md-slider>
                         <br>
                         <br>
 
-                        <md-slider name="slider0" size="extra-large"></md-slider>
-                        <md-slider name="slider1" orientation="vertical" size="extra-large"></md-slider>
+                        <md-slider icon="volume_up" name="slider0" size="extra-large"></md-slider>
+                        <md-slider icon="volume_up" name="slider1" orientation="vertical" size="extra-large"></md-slider>
 
                     </div>
                     

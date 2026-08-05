@@ -25,7 +25,7 @@ function getFraction(value, min, max) {
 
 class MdSlider extends MdElement {
     static formAssociated = true;
-    
+
     static properties = {
         variant: { type: String },
         orientation: { type: String },
@@ -39,6 +39,7 @@ class MdSlider extends MdElement {
         readonly: { type: Boolean },
         required: { type: Boolean },
         autocomplete: { type: String },
+        icon: { type: String, converter },
         values: { type: Array, state: true },
         tickmarks: { type: Array, state: true },
     };
@@ -69,6 +70,8 @@ class MdSlider extends MdElement {
                 name="${ifDefined(this.name)}"
                 value="${ifDefined(this.values)}"
             >
+            ${this.icon?html`<md-icon class="md-slider__icon">${this.icon}</md-icon>`:nothing}
+            <div class="md-slider__track"></div>
             ${this.values.map((value,index)=>html`
                 <input 
                     ${ref(this.sliderNatives[index])}
@@ -85,14 +88,34 @@ class MdSlider extends MdElement {
                     @input="${this._handleSliderNativeInput}"
                 >
                 <output class="md-slider__label">${value}</output>
+                <div class="md-slider__thumb"></div>
             `)}
             <div class="md-slider__tickmarks">
-                ${Array.from({length:this.tickmarks+1},() => html`
-                    <div class="md-slider__tickmark"></div>
+                ${Array.from({length:this.tickmarks+1},(v, k) => html`
+                    <div class="${classMap(this._getTickmarkClass(k))}"></div>
                 `)}
             </div>
         `
     }
+
+    _getTickmarkClass(k) {
+        const value = this.tickmarks * k;
+
+        let active = false;
+        if (this.variant === "centered") {
+            active = (value < 50 && value >= this.percentage0) || (value > 50 && value <= this.percentage0);
+        } else if (this.variant === "range") {
+            active = value >= this.percentage0 && value <= this.percentage1;
+        } else {
+            active = value <= this.percentage0;
+        }
+
+        return {
+            "md-slider__tickmark": true,
+            "md-slider__tickmark--active": active,
+        };
+    }
+
     async connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-slider");
@@ -181,6 +204,9 @@ class MdSlider extends MdElement {
             const calc0 = this._calculate(0);
             const calc1 = this._calculate(1);
 
+            this.percentage0 = calc0.percentage;
+            this.percentage1 = calc1.percentage;
+
             this.values = [_value0, _value1];
 
             this._setCssVars(0, calc0.fraction, calc0.percentage);
@@ -191,6 +217,7 @@ class MdSlider extends MdElement {
             const percentage0 = Math.min(50, percentage);
             const percentage1 = Math.max(50, percentage);
 
+            this.percentage0 = percentage;
             this.values = [value];
 
             this._setCssVars(0, fraction, percentage0);
@@ -198,6 +225,7 @@ class MdSlider extends MdElement {
         } else {
             const { value, fraction, percentage } = this._calculate(0);
 
+            this.percentage0 = percentage;
             this.values = [value];
 
             this._setCssVars(0, fraction, percentage);
@@ -238,26 +266,27 @@ src\material\components\slider\slider.scss
     --md-comp-slider-track-shape: 8px;
     --md-comp-slider-handle-height: 44px;
     --md-comp-slider-handle-width: 4px;
-    --md-comp-slider-active-track-color: var(--md-sys-color-primary);
-    --md-comp-slider-inactive-track-color: var(--md-sys-color-secondary-container);
 
     display: inline-flex;
     align-items: center;
     justify-content: center;
     vertical-align: middle;
     position: relative;
+}
 
-    &::before {
-        content: "";
-        position: absolute;
-        z-index: 1;
-    }
+.md-slider__icon {
+    position: absolute;
+    z-index: 3;
+    font-size: 24px;
+    height: 24px;
+    width: 24px;
+    color: var(--md-sys-color-on-primary);
 }
 
 .md-slider__native {
     appearance: none;
     position: absolute;
-    z-index: 3;
+    z-index: 6;
     outline: none;
     background-color: transparent;
 
@@ -271,13 +300,12 @@ src\material\components\slider\slider.scss
     }
 
     &::-webkit-slider-thumb {
-        z-index: 4;
+        z-index: 7;
         appearance: none;
-        box-shadow: 0 0 0 6px var(--md-sys-color-background);
     }
 
     &:focus-visible {
-        &::-webkit-slider-thumb {
+        + .md-slider__label + .md-slider__thumb {
             outline: 2px solid var(--md-sys-color-outline);
             outline-offset: 2px;
         }
@@ -289,6 +317,19 @@ src\material\components\slider\slider.scss
             transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
         }
     }
+}
+
+.md-slider__track {
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.md-slider__thumb {
+    position: absolute;
+    z-index: 4;
+    pointer-events: none;
+    box-shadow: 0 0 0 6px var(--md-sys-color-background);
 }
 
 .md-slider__label {
@@ -307,7 +348,7 @@ src\material\components\slider\slider.scss
     background-color: var(--md-sys-color-inverse-surface);
     color: var(--md-sys-color-inverse-on-surface);
     position: absolute;
-    z-index: 4;
+    z-index: 5;
     transition-duration: var(--md-sys-motion-duration-short2);
     transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
 }
@@ -319,11 +360,21 @@ src\material\components\slider\slider.scss
     z-index: 2;
     pointer-events: none;
 }
+
 .md-slider__tickmark {
     width: 4px;
     height: 4px;
     border-radius: 2px;
-    background-color: var(--md-comp-slider-active-track-color);
+    background-color: var(--md-sys-color-primary);
+}
+
+.md-slider--discrete {
+    .md-slider__tickmark {
+        background-color: var(--md-sys-color-primary);
+    }
+    .md-slider__tickmark--active {
+        background-color: var(--md-sys-color-secondary-container);
+    }
 }
 
 .md-slider--horizontal {
@@ -331,39 +382,16 @@ src\material\components\slider\slider.scss
     height: calc(var(--md-comp-slider-handle-height) + 8px);
     margin: 0 6px;
 
-    &::before {
-        height: var(--md-comp-slider-track-height);
-        left: -6px;
-        right: -6px;
-        border-radius: var(--md-comp-slider-track-shape);
-        background: linear-gradient(to right, var(--md-comp-slider-active-track-color) 0 var(--md-comp-slider-percentage0), var(--md-comp-slider-inactive-track-color) var(--md-comp-slider-percentage0) 100%);
+    .md-slider__icon {
+        left: 0;
     }
 
     .md-slider__native {
         width: 100%;
 
-        &::-webkit-slider-container {
-            height: calc(var(--md-comp-slider-handle-height) + 8px);
-        }
-
-        &::-webkit-slider-runnable-track {
-            height: var(--md-comp-slider-track-height);
-        }
-
         &::-webkit-slider-thumb {
             height: var(--md-comp-slider-handle-height);
             width: var(--md-comp-slider-handle-width);
-            margin-top: calc(0px - ((var(--md-comp-slider-handle-height) - var(--md-comp-slider-track-height)) / 2));
-            border-radius: 9999px;
-            background-color: var(--md-comp-slider-active-track-color);
-        }
-
-        &:nth-child(1 of .md-slider__native) {
-            clip-path: inset(0 calc(100% - (40px / 2 + (100% - 40px) * (var(--md-comp-slider-fraction0) + (var(--md-comp-slider-fraction1) - var(--md-comp-slider-fraction0)) / 2))) 0 0);
-        }
-
-        &:nth-child(2 of .md-slider__native) {
-            clip-path: inset(0 0 0 calc(40px / 2 + (100% - 40px) * (var(--md-comp-slider-fraction0) + (var(--md-comp-slider-fraction1) - var(--md-comp-slider-fraction0)) / 2)));
         }
 
         &:is(:active, :focus-visible) {
@@ -372,6 +400,23 @@ src\material\components\slider\slider.scss
                 transform: translate3d(-50%, 0, 0) scale3d(1, 1, 1);
             }
         }
+    }
+
+    .md-slider__track {
+        height: var(--md-comp-slider-track-height);
+        left: -6px;
+        right: -6px;
+        border-radius: var(--md-comp-slider-track-shape);
+        background: linear-gradient(to right, var(--md-sys-color-primary) 0 var(--md-comp-slider-percentage0), var(--md-sys-color-secondary-container) var(--md-comp-slider-percentage0) 100%);
+    }
+
+    .md-slider__thumb {
+        height: var(--md-comp-slider-handle-height);
+        width: var(--md-comp-slider-handle-width);
+        border-radius: 9999px;
+        background-color: var(--md-sys-color-primary);
+        left: calc(var(--md-comp-slider-fraction0) * (100% - var(--md-comp-slider-handle-width)) + (var(--md-comp-slider-handle-width) / 2));
+        transform: translate3d(-50%, 0, 0);
     }
 
     .md-slider__label {
@@ -387,8 +432,8 @@ src\material\components\slider\slider.scss
     }
 
     &.md-slider--centered {
-        &::before {
-            background: linear-gradient(to right, var(--md-comp-slider-inactive-track-color) 0% var(--md-comp-slider-percentage0), var(--md-comp-slider-active-track-color) var(--md-comp-slider-percentage0) var(--md-comp-slider-percentage1), var(--md-comp-slider-inactive-track-color) var(--md-comp-slider-percentage1) 100%);
+        .md-slider__track {
+            background: linear-gradient(to right, var(--md-sys-color-secondary-container) 0% var(--md-comp-slider-percentage0), var(--md-sys-color-primary) var(--md-comp-slider-percentage0) var(--md-comp-slider-percentage1), var(--md-sys-color-secondary-container) var(--md-comp-slider-percentage1) 100%);
         }
     }
 
@@ -402,13 +447,21 @@ src\material\components\slider\slider.scss
                 clip-path: inset(0 0 0 calc(40px / 2 + (100% - 40px) * (var(--md-comp-slider-fraction0) + (var(--md-comp-slider-fraction1) - var(--md-comp-slider-fraction0)) / 2)));
             }
         }
+
+        .md-slider__track {
+            background: linear-gradient(to right, var(--md-sys-color-secondary-container) 0 var(--md-comp-slider-percentage0), var(--md-sys-color-primary) var(--md-comp-slider-percentage0) var(--md-comp-slider-percentage1), var(--md-sys-color-secondary-container) var(--md-comp-slider-percentage1) 100%);
+        }
+
+        .md-slider__thumb {
+            &:nth-child(2 of .md-slider__thumb) {
+                left: calc(var(--md-comp-slider-fraction1) * (100% - var(--md-comp-slider-handle-width)) + (var(--md-comp-slider-handle-width) / 2));
+            }
+        }
+
         .md-slider__label {
             &:nth-child(2 of .md-slider__label) {
                 left: calc(var(--md-comp-slider-fraction1) * (100% - var(--md-comp-slider-handle-width)) + (var(--md-comp-slider-handle-width) / 2));
             }
-        }
-        &::before {
-            background: linear-gradient(to right, var(--md-comp-slider-inactive-track-color) 0 var(--md-comp-slider-percentage0), var(--md-comp-slider-active-track-color) var(--md-comp-slider-percentage0) var(--md-comp-slider-percentage1), var(--md-comp-slider-inactive-track-color) var(--md-comp-slider-percentage1) 100%);
         }
     }
 }
@@ -418,12 +471,8 @@ src\material\components\slider\slider.scss
     width: calc(var(--md-comp-slider-handle-height) + 8px);
     margin: 6px 0;
 
-    &::before {
-        width: var(--md-comp-slider-track-height);
-        top: -6px;
-        bottom: -6px;
-        border-radius: var(--md-comp-slider-track-shape);
-        background: linear-gradient(to top, var(--md-comp-slider-active-track-color) 0 var(--md-comp-slider-percentage0), var(--md-comp-slider-inactive-track-color) var(--md-comp-slider-percentage0) 100%);
+    .md-slider__icon {
+        bottom: 0;
     }
 
     .md-slider__native {
@@ -431,20 +480,9 @@ src\material\components\slider\slider.scss
         direction: rtl;
         height: 100%;
 
-        &::-webkit-slider-container {
-            width: calc(var(--md-comp-slider-handle-height) + 8px);
-        }
-
-        &::-webkit-slider-runnable-track {
-            width: var(--md-comp-slider-track-height);
-        }
-
         &::-webkit-slider-thumb {
             width: var(--md-comp-slider-handle-height);
             height: var(--md-comp-slider-handle-width);
-            margin-left: calc(0px - ((var(--md-comp-slider-handle-height) - var(--md-comp-slider-track-height)) / 2));
-            border-radius: 9999px;
-            background-color: var(--md-comp-slider-active-track-color);
         }
 
         &:is(:active, :focus-visible) {
@@ -453,6 +491,23 @@ src\material\components\slider\slider.scss
                 transform: translate3d(0, 50%, 0) scale3d(1, 1, 1);
             }
         }
+    }
+
+    .md-slider__track {
+        width: var(--md-comp-slider-track-height);
+        top: -6px;
+        bottom: -6px;
+        border-radius: var(--md-comp-slider-track-shape);
+        background: linear-gradient(to top, var(--md-sys-color-primary) 0 var(--md-comp-slider-percentage0), var(--md-sys-color-secondary-container) var(--md-comp-slider-percentage0) 100%);
+    }
+
+    .md-slider__thumb {
+        width: var(--md-comp-slider-handle-height);
+        height: var(--md-comp-slider-handle-width);
+        border-radius: 9999px;
+        background-color: var(--md-sys-color-primary);
+        bottom: calc(var(--md-comp-slider-fraction0) * (100% - var(--md-comp-slider-handle-width)) + (var(--md-comp-slider-handle-width) / 2));
+        transform: translate3d(0, 50%, 0);
     }
 
     .md-slider__label {
@@ -464,13 +519,13 @@ src\material\components\slider\slider.scss
     }
 
     .md-slider__tickmarks {
-        flex-direction: column;
+        flex-direction: column-reverse;
         height: 100%;
     }
 
     &.md-slider--centered {
-        &::before {
-            background: linear-gradient(to top, var(--md-comp-slider-inactive-track-color) 0% var(--md-comp-slider-percentage0), var(--md-comp-slider-active-track-color) var(--md-comp-slider-percentage0) var(--md-comp-slider-percentage1), var(--md-comp-slider-inactive-track-color) var(--md-comp-slider-percentage1) 100%);
+        .md-slider__track {
+            background: linear-gradient(to top, var(--md-sys-color-secondary-container) 0% var(--md-comp-slider-percentage0), var(--md-sys-color-primary) var(--md-comp-slider-percentage0) var(--md-comp-slider-percentage1), var(--md-sys-color-secondary-container) var(--md-comp-slider-percentage1) 100%);
         }
     }
 
@@ -484,21 +539,23 @@ src\material\components\slider\slider.scss
                 clip-path: inset(0 0 calc(40px / 2 + (100% - 40px) * (var(--md-comp-slider-fraction0) + (var(--md-comp-slider-fraction1) - var(--md-comp-slider-fraction0)) / 2)) 0);
             }
         }
+
+        .md-slider__track {
+            background: linear-gradient(to top, var(--md-sys-color-secondary-container) 0 var(--md-comp-slider-percentage0), var(--md-sys-color-primary) var(--md-comp-slider-percentage0) var(--md-comp-slider-percentage1), var(--md-sys-color-secondary-container) var(--md-comp-slider-percentage1) 100%);
+        }
+
+        .md-slider__thumb {
+            &:nth-child(2 of .md-slider__thumb) {
+                bottom: calc(var(--md-comp-slider-fraction1) * (100% - var(--md-comp-slider-handle-width)) + (var(--md-comp-slider-handle-width) / 2));
+            }
+        }
+
         .md-slider__label {
             &:nth-child(2 of .md-slider__label) {
                 bottom: calc(var(--md-comp-slider-fraction1) * (100% - var(--md-comp-slider-handle-width)) + (var(--md-comp-slider-handle-width) / 2));
             }
         }
-        &::before {
-            background: linear-gradient(to top, var(--md-comp-slider-inactive-track-color) 0 var(--md-comp-slider-percentage0), var(--md-comp-slider-active-track-color) var(--md-comp-slider-percentage0) var(--md-comp-slider-percentage1), var(--md-comp-slider-inactive-track-color) var(--md-comp-slider-percentage1) 100%);
-        }
     }
-}
-
-.md-slider--disabled,
-.md-slider--readonly {
-    --md-comp-slider-active-track-color: var(--md-sys-color-on-surface38);
-    --md-comp-slider-inactive-track-color: var(--md-sys-color-on-surface12);
 }
 
 .md-slider--extra-small {
@@ -534,6 +591,12 @@ src\material\components\slider\slider.scss
     --md-comp-slider-track-shape: 28px;
     --md-comp-slider-handle-height: 108px;
     --md-comp-slider-handle-width: 4px;
+    
+    .md-slider__icon {
+        font-size: 32px;
+        height: 32px;
+        width: 32px;
+    }
 }
 
 ```
