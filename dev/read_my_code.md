@@ -591,7 +591,7 @@ src\material\components\slider\slider.scss
     --md-comp-slider-track-shape: 28px;
     --md-comp-slider-handle-height: 108px;
     --md-comp-slider-handle-width: 4px;
-    
+
     .md-slider__icon {
         font-size: 32px;
         height: 32px;

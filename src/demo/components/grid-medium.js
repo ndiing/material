@@ -5,17 +5,17 @@ class DemoGridMedium extends MdElement {
     /* prettier-ignore */
     render(){
         return html`
-            <div class="md-grid">
-                <div class="md-grid__column md-grid__column--medium1">medium1</div>
-                <div class="md-grid__column md-grid__column--medium7">medium7</div>
-                <div class="md-grid__column md-grid__column--medium2">medium2</div>
-                <div class="md-grid__column md-grid__column--medium6">medium6</div>
-                <div class="md-grid__column md-grid__column--medium3">medium3</div>
-                <div class="md-grid__column md-grid__column--medium5">medium5</div>
-                <div class="md-grid__column md-grid__column--medium4">medium4</div>
-                <div class="md-grid__column md-grid__column--medium4">medium4</div>
-                <div class="md-grid__column md-grid__column--medium8">medium8</div>
-            </div>
+            <md-grid class="md-grid">
+                <md-grid-column medium="1">1</md-grid-column>
+                <md-grid-column medium="7">7</md-grid-column>
+                <md-grid-column medium="2">2</md-grid-column>
+                <md-grid-column medium="6">6</md-grid-column>
+                <md-grid-column medium="3">3</md-grid-column>
+                <md-grid-column medium="5">5</md-grid-column>
+                <md-grid-column medium="4">4</md-grid-column>
+                <md-grid-column medium="4">4</md-grid-column>
+                <md-grid-column medium="8">8</md-grid-column>
+            </md-grid>
         `
     }
 }

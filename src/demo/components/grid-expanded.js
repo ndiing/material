@@ -5,21 +5,21 @@ class DemoGridExpanded extends MdElement {
     /* prettier-ignore */
     render(){
         return html`
-            <div class="md-grid">
-                <div class="md-grid__column md-grid__column--expanded1">expanded1</div>
-                <div class="md-grid__column md-grid__column--expanded11">expanded11</div>
-                <div class="md-grid__column md-grid__column--expanded2">expanded2</div>
-                <div class="md-grid__column md-grid__column--expanded10">expanded10</div>
-                <div class="md-grid__column md-grid__column--expanded3">expanded3</div>
-                <div class="md-grid__column md-grid__column--expanded9">expanded9</div>
-                <div class="md-grid__column md-grid__column--expanded4">expanded4</div>
-                <div class="md-grid__column md-grid__column--expanded8">expanded8</div>
-                <div class="md-grid__column md-grid__column--expanded5">expanded5</div>
-                <div class="md-grid__column md-grid__column--expanded7">expanded7</div>
-                <div class="md-grid__column md-grid__column--expanded6">expanded6</div>
-                <div class="md-grid__column md-grid__column--expanded6">expanded6</div>
-                <div class="md-grid__column md-grid__column--expanded12">expanded12</div>
-            </div>
+            <md-grid class="md-grid">
+                <md-grid-column expanded="1">1</md-grid-column>
+                <md-grid-column expanded="11">11</md-grid-column>
+                <md-grid-column expanded="2">2</md-grid-column>
+                <md-grid-column expanded="10">10</md-grid-column>
+                <md-grid-column expanded="3">3</md-grid-column>
+                <md-grid-column expanded="9">9</md-grid-column>
+                <md-grid-column expanded="4">4</md-grid-column>
+                <md-grid-column expanded="8">8</md-grid-column>
+                <md-grid-column expanded="5">5</md-grid-column>
+                <md-grid-column expanded="7">7</md-grid-column>
+                <md-grid-column expanded="6">6</md-grid-column>
+                <md-grid-column expanded="6">6</md-grid-column>
+                <md-grid-column expanded="12">12</md-grid-column>
+            </md-grid>
         `
     }
 }

@@ -158,12 +158,15 @@ class DemoForm extends MdElement {
         `;
     }
 
-    handleFormdata(event) {}
+    handleFormdata(event) {
+        console.log([...event.formData.entries()]);
+    }
 
     handleReset(event) {}
 
     handleSubmit(event) {
         event.preventDefault();
+        new FormData(event.currentTarget);
     }
 }
 customElements.define("demo-form", DemoForm);

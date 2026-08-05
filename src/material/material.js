@@ -20,6 +20,8 @@ import "./components/layout/layout.js";
 import "./components/layout/layout-item.js";
 import "./components/icon/icon.js";
 import "./components/image/image.js";
+import "./components/grid/grid.js";
+import "./components/grid/grid-column.js";
 
 import "./components/badge/badge.js";
 
