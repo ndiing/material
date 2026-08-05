@@ -4,18 +4,16 @@ import { MdElement } from "../../base/element.js";
 class MdBadge extends MdElement {
     static properties = {
         label: { type: Number },
-        min: { type: Number },
         max: { type: Number },
     };
-    constructor(){
-        super()
-        this.label=0
-        this.min=1
-        this.max=999
+    constructor() {
+        super();
+        this.label = 0;
+        this.max = 999;
     }
     /* prettier-ignore */
     render(){
-        return this.label>=this.min?this.label>=this.max?`${this.max}+`:this.label:nothing
+        return this.label>this.max?`${this.max}+`:this.label?this.label:nothing
     }
     connectedCallback() {
         super.connectedCallback();

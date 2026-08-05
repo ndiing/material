@@ -127,7 +127,7 @@ class Router {
         }
     }
     async _handleNavigation() {
-        performance.mark("onNavigationStart");
+        // performance.mark("onNavigationStart");
 
         this.emit("onNavigationStart", this);
         const { pathname, search, hash } = this._parseURL();
@@ -171,12 +171,12 @@ class Router {
         }
         this._removeComponent(routes);
         this.emit("onNavigationEnd", this);
-        
-        performance.mark("onNavigationEnd");
-        performance.measure("measureNavigation", "onNavigationStart", "onNavigationEnd");
-        performance.clearMarks("onNavigationStart");
-        performance.clearMarks("onNavigationEnd");
-        performance.clearMeasures("measureNavigation");
+
+        // performance.mark("onNavigationEnd");
+        // performance.measure("measureNavigation", "onNavigationStart", "onNavigationEnd");
+        // performance.clearMarks("onNavigationStart");
+        // performance.clearMarks("onNavigationEnd");
+        // performance.clearMeasures("measureNavigation");
     }
     navigate(url, options = {}) {
         let targetUrl = url;

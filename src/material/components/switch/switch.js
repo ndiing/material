@@ -4,7 +4,6 @@ import { createRef, ref } from "lit/directives/ref.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { RippleController } from "../../controller/ripple.js";
 const converter = (value) => {
-    if (!value) return [];
     try {
         return JSON.parse(value);
     } catch {

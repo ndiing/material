@@ -5,10 +5,10 @@ class DemoTextField extends MdElement {
     /* prettier-ignore */
     render() {
         return html`
-            <md-form 
-                @onFormNativeFormdata="${this.handleDemoTextFieldFormNativeFormdata}" 
-                @onFormNativeReset="${this.handleDemoTextFieldFormNativeReset}" 
-                @onFormNativeSubmit="${this.handleDemoTextFieldFormNativeSubmit}"
+            <form 
+                @formdata="${this.handleFormdata}" 
+                @reset="${this.handleReset}" 
+                @submit="${this.handleSubmit}"
             >
                 <div class="md-grid">
                     
@@ -239,17 +239,17 @@ class DemoTextField extends MdElement {
                         <md-button type="submit" label="submit"></md-button>
                     </div>
                 </div>
-            </md-form>
+            </form>
         `;
     }
 
-    handleDemoTextFieldFormNativeFormdata(event) {
-        console.log(Object.fromEntries(event.detail.formData.entries()));
+    handleFormdata(event) {}
+
+    handleReset(event) {}
+
+    handleSubmit(event) {
+        event.preventDefault();
     }
-
-    handleDemoTextFieldFormNativeReset(event) {}
-
-    handleDemoTextFieldFormNativeSubmit(event) {}
 }
 customElements.define("demo-text-field", DemoTextField);
 export default document.createElement("demo-text-field");

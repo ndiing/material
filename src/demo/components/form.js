@@ -5,10 +5,10 @@ class DemoForm extends MdElement {
     /* prettier-ignore */
     render() {
         return html`
-            <md-form 
-                @onFormNativeFormdata="${this.handleDemoFormFormNativeFormdata}" 
-                @onFormNativeReset="${this.handleDemoFormFormNativeReset}" 
-                @onFormNativeSubmit="${this.handleDemoFormFormNativeSubmit}"
+            <form 
+                @formdata="${this.handleFormdata}" 
+                @reset="${this.handleReset}" 
+                @submit="${this.handleSubmit}"
             >
                 <div class="md-grid">
 
@@ -120,7 +120,7 @@ class DemoForm extends MdElement {
                         <md-checkbox name="checkbox"></md-checkbox>
                     </div>
                     <div class="md-grid__column md-grid__column--expanded4">
-                        <md-checkbox checked name="checkbox"></md-checkbox>
+                        <md-checkbox checked name="checkbox2"></md-checkbox>
                     </div>
                     <div class="md-grid__column md-grid__column--expanded4"></div>
 
@@ -136,7 +136,15 @@ class DemoForm extends MdElement {
                         <md-switch name="switch"></md-switch>
                     </div>
                     <div class="md-grid__column md-grid__column--expanded4">
-                        <md-switch checked name="switch"></md-switch>
+                        <md-switch checked name="switch2"></md-switch>
+                    </div>
+                    <div class="md-grid__column md-grid__column--expanded4"></div>
+
+                    <div class="md-grid__column md-grid__column--expanded4">
+                        <md-slider value="0" name="slider"></md-slider>
+                    </div>
+                    <div class="md-grid__column md-grid__column--expanded4">
+                        <md-slider value="50" name="slider2"></md-slider>
                     </div>
                     <div class="md-grid__column md-grid__column--expanded4"></div>
 
@@ -146,17 +154,17 @@ class DemoForm extends MdElement {
                         <md-button type="submit" label="Submit"></md-button>
                     </div>
                 </div>
-            </md-form>
+            </form>
         `;
     }
 
-    handleDemoFormFormNativeFormdata(event) {
-        console.log(Object.fromEntries(event.detail.formData.entries()));
+    handleFormdata(event) {}
+
+    handleReset(event) {}
+
+    handleSubmit(event) {
+        event.preventDefault();
     }
-
-    handleDemoFormFormNativeReset(event) {}
-
-    handleDemoFormFormNativeSubmit(event) {}
 }
 customElements.define("demo-form", DemoForm);
 export default document.createElement("demo-form");

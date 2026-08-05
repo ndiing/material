@@ -2,7 +2,6 @@ import { html } from "lit";
 import { MdElement } from "../../base/element.js";
 import { RippleController } from "../../controller/ripple.js";
 const converter = (value) => {
-    if (!value) return [];
     try {
         return JSON.parse(value);
     } catch {

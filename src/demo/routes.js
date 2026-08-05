@@ -35,6 +35,11 @@ export const routes = [
             { path: "/components/icon", load: () => import("./components/icon.js").then((module) => module.default), children: [] },
             { path: "/components/image", load: () => import("./components/image.js").then((module) => module.default), children: [] },
 
+            { path: "/components/badge", load: () => import("./components/badge.js").then((module) => module.default), children: [] },
+
+            { path: "/components/icon-button", load: () => import("./components/icon-button.js").then((module) => module.default), children: [] },
+            { path: "/components/button", load: () => import("./components/button.js").then((module) => module.default), children: [] },
+
             { path: "/components/data-table", load: () => import("./components/data-table.js").then((module) => module.default), children: [] },
 
             { path: "/components/list", load: () => import("./components/list.js").then((module) => module.default), children: [] },
@@ -49,12 +54,9 @@ export const routes = [
             { path: "/components/checkbox", load: () => import("./components/checkbox.js").then((module) => module.default), children: [] },
             { path: "/components/radio-button", load: () => import("./components/radio-button.js").then((module) => module.default), children: [] },
             { path: "/components/switch", load: () => import("./components/switch.js").then((module) => module.default), children: [] },
+            { path: "/components/slider", load: () => import("./components/slider.js").then((module) => module.default), children: [] },
 
-            { path: "/components/icon-button", load: () => import("./components/icon-button.js").then((module) => module.default), children: [] },
-            { path: "/components/button", load: () => import("./components/button.js").then((module) => module.default), children: [] },
-            { path: "/components/badge", load: () => import("./components/badge.js").then((module) => module.default), children: [] },
         ],
     },
     { path: "*", component: DemoError, children: [] },
 ];
-

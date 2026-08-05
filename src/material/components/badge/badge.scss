@@ -1,6 +1,6 @@
 @use "../../shared/mixins.scss";
 
-.md-badge{
+.md-badge {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -16,7 +16,7 @@
     text-overflow: ellipsis;
     @include mixins.typescale-label-small();
 
-    &:empty{
+    &:empty {
         min-width: 6px;
         height: 6px;
         padding: 0;

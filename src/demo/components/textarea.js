@@ -5,10 +5,10 @@ class DemoTextarea extends MdElement {
     /* prettier-ignore */
     render() {
         return html`
-            <md-form 
-                @onFormNativeFormdata="${this.handleDemoTextareaFormNativeFormdata}" 
-                @onFormNativeReset="${this.handleDemoTextareaFormNativeReset}" 
-                @onFormNativeSubmit="${this.handleDemoTextareaFormNativeSubmit}"
+            <form 
+                 @formdata="${this.handleFormdata}" 
+                @reset="${this.handleReset}" 
+                @submit="${this.handleSubmit}"
             >
                 <div class="md-grid">
                     
@@ -239,17 +239,17 @@ class DemoTextarea extends MdElement {
                         <md-button type="submit" label="submit"></md-button>
                     </div>
                 </div>
-            </md-form>
+            </form>
         `;
     }
 
-    handleDemoTextareaFormNativeFormdata(event) {
-        console.log(Object.fromEntries(event.detail.formData.entries()));
+    handleFormdata(event) {}
+
+    handleReset(event) {}
+
+    handleSubmit(event) {
+        event.preventDefault();
     }
-
-    handleDemoTextareaFormNativeReset(event) {}
-
-    handleDemoTextareaFormNativeSubmit(event) {}
 }
 customElements.define("demo-textarea", DemoTextarea);
 export default document.createElement("demo-textarea");

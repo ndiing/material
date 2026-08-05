@@ -5,10 +5,10 @@ class DemoSwitch extends MdElement {
     /* prettier-ignore */
     render() {
         return html`
-            <md-form 
-                @onFormNativeFormdata="${this.handleDemoSwitchFormNativeFormdata}" 
-                @onFormNativeReset="${this.handleDemoSwitchFormNativeReset}" 
-                @onFormNativeSubmit="${this.handleDemoSwitchFormNativeSubmit}"
+            <form 
+                @formdata="${this.handleFormdata}" 
+                @reset="${this.handleReset}" 
+                @submit="${this.handleSubmit}"
             >
                 <div class="md-grid">
                     <div class="md-grid__column md-grid__column--expanded4">
@@ -39,23 +39,17 @@ class DemoSwitch extends MdElement {
                         <md-button type="submit" label="submit"></md-button>
                     </div>
                 </div>
-            </md-form>
+            </form>
         `;
     }
 
-    async firstUpdated(_changedProperties) {
-        super.firstUpdated(_changedProperties);
+    handleFormdata(event) {}
 
-        await this.updateComplete;
+    handleReset(event) {}
+
+    handleSubmit(event) {
+        event.preventDefault();
     }
-
-    handleDemoSwitchFormNativeFormdata(event) {
-        console.log(Object.fromEntries(event.detail.formData.entries()));
-    }
-
-    handleDemoSwitchFormNativeReset(event) {}
-
-    handleDemoSwitchFormNativeSubmit(event) {}
 }
 customElements.define("demo-switch", DemoSwitch);
 export default document.createElement("demo-switch");

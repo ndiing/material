@@ -5,10 +5,10 @@ class DemoCheckbox extends MdElement {
     /* prettier-ignore */
     render() {
         return html`
-            <md-form 
-                @onFormNativeFormdata="${this.handleDemoCheckboxFormNativeFormdata}" 
-                @onFormNativeReset="${this.handleDemoCheckboxFormNativeReset}" 
-                @onFormNativeSubmit="${this.handleDemoCheckboxFormNativeSubmit}"
+            <form 
+                 @formdata="${this.handleFormdata}" 
+                @reset="${this.handleReset}" 
+                @submit="${this.handleSubmit}"
             >
                 <div class="md-grid">
                     <div class="md-grid__column md-grid__column--expanded4">
@@ -58,7 +58,7 @@ class DemoCheckbox extends MdElement {
                         <md-button type="submit" label="submit"></md-button>
                     </div>
                 </div>
-            </md-form>
+            </form>
         `;
     }
 
@@ -74,13 +74,13 @@ class DemoCheckbox extends MdElement {
         });
     }
 
-    handleDemoCheckboxFormNativeFormdata(event) {
-        console.log(Object.fromEntries(event.detail.formData.entries()));
+    handleFormdata(event) {}
+
+    handleReset(event) {}
+
+    handleSubmit(event) {
+        event.preventDefault();
     }
-
-    handleDemoCheckboxFormNativeReset(event) {}
-
-    handleDemoCheckboxFormNativeSubmit(event) {}
 }
 customElements.define("demo-checkbox", DemoCheckbox);
 export default document.createElement("demo-checkbox");
