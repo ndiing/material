@@ -2,7 +2,7 @@ import { MdElement } from "../../base/element.js";
 
 class MdScrim extends MdElement {
     static properties = {
-        open: { type: Boolean, reflect:true },
+        open: { type: Boolean, reflect: true },
     };
 
     constructor() {
@@ -31,7 +31,7 @@ class MdScrim extends MdElement {
     }
 
     update(changedProperties) {
-        super.update(changedProperties)
+        super.update(changedProperties);
 
         if (changedProperties.has("open")) {
             this.classList.toggle("md-scrim--open", !!this.open);
@@ -40,7 +40,7 @@ class MdScrim extends MdElement {
 
     _handleScrimClick(event) {
         // this.close();
-        this.emit('onScrimClick',{event,element:this})
+        this.emit("onScrimClick", { event, element: this });
     }
 
     _handleScrimTransitionend(event) {

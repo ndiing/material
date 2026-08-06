@@ -1,7 +1,7 @@
 @use "../../shared/mixins.scss";
 .md-textarea {
     @include mixins.initialize();
-    
+
     .md-text-field__native {
         resize: none;
         field-sizing: content;

@@ -63,7 +63,6 @@ class MdImage extends MdElement {
             this.shapes.forEach((shape) => {
                 this.classList.toggle(`md-image--${shape}`, this.shape === shape);
             });
-
         }
     }
 
@@ -71,11 +70,10 @@ class MdImage extends MdElement {
         super.updated(_changedProperties);
 
         if (_changedProperties.has("shape")) {
-
             this._updateSquareRadius();
         }
     }
-    
+
     _updateSquareRadius() {
         if (this.shape === "square") {
             const radius = Math.ceil(Math.sqrt(Math.max(this.clientWidth, this.clientHeight)) * 2);
@@ -85,8 +83,6 @@ class MdImage extends MdElement {
             this.style.removeProperty("--md-comp-image-radius");
         }
     }
-
-
 
     _handleImageResizeObserver() {
         window.requestAnimationFrame(() => {

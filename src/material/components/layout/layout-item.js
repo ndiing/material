@@ -4,7 +4,7 @@ class MdLayoutItem extends MdElement {
     static properties = {
         region: { type: String },
         modal: { type: Boolean },
-        open: { type: Boolean,reflect:true },
+        open: { type: Boolean, reflect: true },
     };
 
     regions = ["center", "west", "north", "east", "south"];
@@ -24,7 +24,7 @@ class MdLayoutItem extends MdElement {
         this.classList.add("md-layout__item");
 
         this.on("transitionend", this._handleLayoutItemTransitionend);
-        
+
         if (!this.scrimElement) {
             this.scrimElement = document.createElement("md-scrim");
             this.parentElement.insertBefore(this.scrimElement, this.nextElementSibling);
@@ -47,7 +47,7 @@ class MdLayoutItem extends MdElement {
     }
 
     update(changedProperties) {
-        super.update(changedProperties)
+        super.update(changedProperties);
 
         if (changedProperties.has("region")) {
             this.regions.forEach((region) => {
@@ -64,11 +64,10 @@ class MdLayoutItem extends MdElement {
         }
     }
 
-    updated(_changedProperties){
-        super.updated(_changedProperties)
+    updated(_changedProperties) {
+        super.updated(_changedProperties);
 
         if (_changedProperties.has("open")) {
-
             if (this.modal) {
                 if (this.open) {
                     this.scrimElement.show();

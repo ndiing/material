@@ -108,11 +108,10 @@ class MdIconButton extends MdElement {
         if (changedProperties.has("disabled")) {
             this.classList.toggle(`md-icon-button--disabled`, !!this.disabled);
         }
-        
     }
 
-    updated(_changedProperties){
-        super.updated(_changedProperties)
+    updated(_changedProperties) {
+        super.updated(_changedProperties);
 
         if (_changedProperties.has("rippleOptions")) {
             this.rippleController.reinit(this.rippleOptions);

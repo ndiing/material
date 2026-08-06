@@ -9,7 +9,7 @@ class MdBadge extends MdElement {
 
     constructor() {
         super();
-        
+
         this.label = 0;
         this.max = 999;
     }

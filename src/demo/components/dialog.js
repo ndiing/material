@@ -33,12 +33,12 @@ class DemoDialog extends MdElement {
         `
     }
 
-    get dialog(){
-        return this.querySelector('#dialog')
+    get dialog() {
+        return this.querySelector("#dialog");
     }
 
-    handleClick(event){
-        this.dialog.show()
+    handleClick(event) {
+        this.dialog.show();
     }
 }
 customElements.define("demo-dialog", DemoDialog);

@@ -137,13 +137,13 @@
 }
 
 @mixin initialize {
-  &--initialize {
-    &,
-    *,
-    *::before,
-    *::after {
-      transition: none !important;
-      animation: none !important;
+    &--initialize {
+        &,
+        *,
+        *::before,
+        *::after {
+            transition: none !important;
+            animation: none !important;
+        }
     }
-  }
 }

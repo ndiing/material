@@ -34,7 +34,7 @@ class MdGridColumn extends MdElement {
                 this.classList.toggle(`md-grid__column--medium${index}`, index === this.medium);
             }
         }
-        
+
         if (changedProperties.has("compact")) {
             for (let index = 1; index <= 4; index++) {
                 this.classList.toggle(`md-grid__column--compact${index}`, index === this.compact);

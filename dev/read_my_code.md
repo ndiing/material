@@ -1,6 +1,7 @@
 ## src\material\components\dialog
 
 ### dialog
+
 src\material\components\dialog\dialog.js
 
 ```js
@@ -90,9 +91,10 @@ class MdDialog extends MdElement {
 customElements.define("md-dialog", MdDialog);
 
 export { MdDialog };
-
 ```
+
 ### dialog
+
 src\material\components\dialog\dialog.scss
 
 ```scss
@@ -224,5 +226,4 @@ src\material\components\dialog\dialog.scss
     padding: 24px 24px;
     gap: 0 4px;
 }
-
 ```
