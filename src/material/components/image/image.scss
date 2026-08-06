@@ -1,3 +1,5 @@
+@use "../../shared/mixins.scss";
+
 .md-image {
     display: inline-flex;
     align-items: center;
@@ -9,6 +11,8 @@
     transition-property: width, height, border-radius, opacity, background-color;
     transition-duration: var(--md-sys-motion-duration-short3);
     transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
+
+    @include mixins.initialize();
 }
 
 .md-image__native {

@@ -2,37 +2,45 @@ import { MdElement } from "../../base/element.js";
 
 class MdScrim extends MdElement {
     static properties = {
-        open: { type: Boolean },
+        open: { type: Boolean, reflect:true },
     };
 
     constructor() {
         super();
+
         this._handleScrimTransitionend = this._handleScrimTransitionend.bind(this);
         this._handleScrimClick = this._handleScrimClick.bind(this);
     }
 
     connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-scrim");
+
         this.on("transitionend", this._handleScrimTransitionend);
         this.on("click", this._handleScrimClick);
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
+
         this.off("click", this._handleScrimClick);
         this.off("transitionend", this._handleScrimTransitionend);
+
         this.classList.remove("md-scrim");
     }
 
-    updated(_changedProperties) {
-        if (_changedProperties.has("open")) {
+    update(changedProperties) {
+        super.update(changedProperties)
+
+        if (changedProperties.has("open")) {
             this.classList.toggle("md-scrim--open", !!this.open);
         }
     }
 
     _handleScrimClick(event) {
-        this.close();
+        // this.close();
+        this.emit('onScrimClick',{event,element:this})
     }
 
     _handleScrimTransitionend(event) {

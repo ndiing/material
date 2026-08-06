@@ -140,17 +140,17 @@ class DemoListConfigurations extends MdElement {
     /* prettier-ignore */
     render(){
         return html`
-            <div class="md-grid">
+            <md-grid >
                 ${this.configurations.map(rows=>html`
                     ${rows.map(items=>html`
-                        <div class="md-grid__column md-grid__column--expanded4 md-grid__column--medium4 md-grid__column--compact4">
+                        <md-grid-column  expanded="4" medium="4" compact="4">
                             ${items.length?html`
                                 <md-list .items="${items}"></md-list>
                             `:nothing}
-                        </div>
+                        </md-grid-column>
                     `)}
                 `)}
-            </div>
+            </md-grid>
         `
     }
 }

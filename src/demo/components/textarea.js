@@ -10,235 +10,235 @@ class DemoTextarea extends MdElement {
                 @reset="${this.handleReset}" 
                 @submit="${this.handleSubmit}"
             >
-                <div class="md-grid">
+                <md-grid >
                     
                     <!-- filled -->
-                    <div class="md-grid__column md-grid__column--expanded4">
+                    <md-grid-column expanded="4">
                         <md-textarea required placeholder="Placeholder" color="filled" type="text" label="Label" supporting="Supporting text"></md-textarea>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4">
+                    </md-grid-column>
+                    <md-grid-column expanded="4">
                         <md-textarea required placeholder="Placeholder" color="filled" type="text" label="Label" supporting="Supporting text" value="Input"></md-textarea>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4"></div>
+                    </md-grid-column>
+                    <md-grid-column expanded="4"></md-grid-column>
                     
-                    <div class="md-grid__column md-grid__column--expanded4">
+                    <md-grid-column expanded="4">
                         <md-textarea required placeholder="Placeholder" maxLength="10" clearable color="filled" type="text" label="Label" supporting="Supporting text"></md-textarea>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4">
+                    </md-grid-column>
+                    <md-grid-column expanded="4">
                         <md-textarea required placeholder="Placeholder" maxLength="10" clearable color="filled" type="text" label="Label" supporting="Supporting text" value="Input"></md-textarea>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4"></div>
+                    </md-grid-column>
+                    <md-grid-column expanded="4"></md-grid-column>
                     
 
-                    <div class="md-grid__column md-grid__column--expanded4">
+                    <md-grid-column expanded="4">
                         <md-textarea required placeholder="Placeholder" color="filled" clearable type="text" label="Label" ></md-textarea>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4">
+                    </md-grid-column>
+                    <md-grid-column expanded="4">
                         <md-textarea required placeholder="Placeholder" color="filled" clearable type="text" label="Label"  value="Input"></md-textarea>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4"></div>
+                    </md-grid-column>
+                    <md-grid-column expanded="4"></md-grid-column>
                     
 
-                    <div class="md-grid__column md-grid__column--expanded4">
+                    <md-grid-column expanded="4">
                         <md-textarea required placeholder="Placeholder" color="filled" .leading="${[{component:'icon',icon:'search'}]}" type="text" label="Label" ></md-textarea>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4">
+                    </md-grid-column>
+                    <md-grid-column expanded="4">
                         <md-textarea required placeholder="Placeholder" color="filled" .leading="${[{component:'icon',icon:'search'}]}" type="text" label="Label"  value="Input"></md-textarea>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4"></div>
+                    </md-grid-column>
+                    <md-grid-column expanded="4"></md-grid-column>
                     
                     
 
-                    <div class="md-grid__column md-grid__column--expanded4">
+                    <md-grid-column expanded="4">
                         <md-textarea required placeholder="Placeholder" color="filled" .leading="${[{component:'icon',icon:'search'}]}" clearable type="text" label="Label" ></md-textarea>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4">
+                    </md-grid-column>
+                    <md-grid-column expanded="4">
                         <md-textarea required placeholder="Placeholder" color="filled" .leading="${[{component:'icon',icon:'search'}]}" clearable type="text" label="Label"  value="Input"></md-textarea>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4"></div>
+                    </md-grid-column>
+                    <md-grid-column expanded="4"></md-grid-column>
                     
                     
 
-                    <div class="md-grid__column md-grid__column--expanded4">
+                    <md-grid-column expanded="4">
                         <md-textarea required placeholder="Placeholder" color="filled" prefix="$" type="text" label="Label" ></md-textarea>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4">
+                    </md-grid-column>
+                    <md-grid-column expanded="4">
                         <md-textarea required placeholder="Placeholder" color="filled" prefix="$" type="text" label="Label"  value="Input"></md-textarea>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4"></div>
+                    </md-grid-column>
+                    <md-grid-column expanded="4"></md-grid-column>
                     
                     
-                    <div class="md-grid__column md-grid__column--expanded4">
+                    <md-grid-column expanded="4">
                         <md-textarea required placeholder="Placeholder" color="filled" suffix="lbs" type="text" label="Label" ></md-textarea>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4">
+                    </md-grid-column>
+                    <md-grid-column expanded="4">
                         <md-textarea required placeholder="Placeholder" color="filled" suffix="lbs" type="text" label="Label"  value="Input"></md-textarea>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4"></div>
+                    </md-grid-column>
+                    <md-grid-column expanded="4"></md-grid-column>
                     
                     
-                    <div class="md-grid__column md-grid__column--expanded4">
+                    <md-grid-column expanded="4">
                         <md-textarea required placeholder="Placeholder" color="filled" type="text" label="Label" ></md-textarea>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4">
+                    </md-grid-column>
+                    <md-grid-column expanded="4">
                         <md-textarea required placeholder="Placeholder" color="filled" type="text" label="Label"  value="This is a long input in a multi-line text field that wraps overflow text onto a new line"></md-textarea>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4"></div>
+                    </md-grid-column>
+                    <md-grid-column expanded="4"></md-grid-column>
                     
 
                     <!-- outlined -->
-                    <div class="md-grid__column md-grid__column--expanded4">
+                    <md-grid-column expanded="4">
                         <md-textarea required placeholder="Placeholder" color="outlined" type="text" label="Label" supporting="Supporting text"></md-textarea>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4">
+                    </md-grid-column>
+                    <md-grid-column expanded="4">
                         <md-textarea required placeholder="Placeholder" color="outlined" type="text" label="Label" supporting="Supporting text" value="Input"></md-textarea>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4"></div>
+                    </md-grid-column>
+                    <md-grid-column expanded="4"></md-grid-column>
                     
-                    <div class="md-grid__column md-grid__column--expanded4">
+                    <md-grid-column expanded="4">
                         <md-textarea required placeholder="Placeholder" maxLength="10" clearable color="outlined" type="text" label="Label" supporting="Supporting text"></md-textarea>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4">
+                    </md-grid-column>
+                    <md-grid-column expanded="4">
                         <md-textarea required placeholder="Placeholder" maxLength="10" clearable color="outlined" type="text" label="Label" supporting="Supporting text" value="Input"></md-textarea>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4"></div>
+                    </md-grid-column>
+                    <md-grid-column expanded="4"></md-grid-column>
                     
 
-                    <div class="md-grid__column md-grid__column--expanded4">
+                    <md-grid-column expanded="4">
                         <md-textarea required placeholder="Placeholder" color="outlined" clearable type="text" label="Label" ></md-textarea>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4">
+                    </md-grid-column>
+                    <md-grid-column expanded="4">
                         <md-textarea required placeholder="Placeholder" color="outlined" clearable type="text" label="Label"  value="Input"></md-textarea>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4"></div>
+                    </md-grid-column>
+                    <md-grid-column expanded="4"></md-grid-column>
                     
 
-                    <div class="md-grid__column md-grid__column--expanded4">
+                    <md-grid-column expanded="4">
                         <md-textarea required placeholder="Placeholder" color="outlined" .leading="${[{component:'icon',icon:'search'}]}" type="text" label="Label" ></md-textarea>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4">
+                    </md-grid-column>
+                    <md-grid-column expanded="4">
                         <md-textarea required placeholder="Placeholder" color="outlined" .leading="${[{component:'icon',icon:'search'}]}" type="text" label="Label"  value="Input"></md-textarea>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4"></div>
+                    </md-grid-column>
+                    <md-grid-column expanded="4"></md-grid-column>
                     
                     
 
-                    <div class="md-grid__column md-grid__column--expanded4">
+                    <md-grid-column expanded="4">
                         <md-textarea required placeholder="Placeholder" color="outlined" .leading="${[{component:'icon',icon:'search'}]}" clearable type="text" label="Label" ></md-textarea>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4">
+                    </md-grid-column>
+                    <md-grid-column expanded="4">
                         <md-textarea required placeholder="Placeholder" color="outlined" .leading="${[{component:'icon',icon:'search'}]}" clearable type="text" label="Label"  value="Input"></md-textarea>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4"></div>
+                    </md-grid-column>
+                    <md-grid-column expanded="4"></md-grid-column>
                     
                     
 
-                    <div class="md-grid__column md-grid__column--expanded4">
+                    <md-grid-column expanded="4">
                         <md-textarea required placeholder="Placeholder" color="outlined" prefix="$" type="text" label="Label" ></md-textarea>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4">
+                    </md-grid-column>
+                    <md-grid-column expanded="4">
                         <md-textarea required placeholder="Placeholder" color="outlined" prefix="$" type="text" label="Label"  value="Input"></md-textarea>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4"></div>
+                    </md-grid-column>
+                    <md-grid-column expanded="4"></md-grid-column>
                     
                     
-                    <div class="md-grid__column md-grid__column--expanded4">
+                    <md-grid-column expanded="4">
                         <md-textarea required placeholder="Placeholder" color="outlined" suffix="lbs" type="text" label="Label" ></md-textarea>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4">
+                    </md-grid-column>
+                    <md-grid-column expanded="4">
                         <md-textarea required placeholder="Placeholder" color="outlined" suffix="lbs" type="text" label="Label"  value="Input"></md-textarea>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4"></div>
+                    </md-grid-column>
+                    <md-grid-column expanded="4"></md-grid-column>
                     
                     
-                    <div class="md-grid__column md-grid__column--expanded4">
+                    <md-grid-column expanded="4">
                         <md-textarea required placeholder="Placeholder" color="outlined" type="text" label="Label" ></md-textarea>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4">
+                    </md-grid-column>
+                    <md-grid-column expanded="4">
                         <md-textarea required placeholder="Placeholder" color="outlined" type="text" label="Label"  value="This is a long input in a multi-line text field that wraps overflow text onto a new line"></md-textarea>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4"></div>
+                    </md-grid-column>
+                    <md-grid-column expanded="4"></md-grid-column>
                     
                     <!-- standard -->
-                    <div class="md-grid__column md-grid__column--expanded4">
+                    <md-grid-column expanded="4">
                         <md-textarea required placeholder="Placeholder" type="text" label="Label" supporting="Supporting text"></md-textarea>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4">
+                    </md-grid-column>
+                    <md-grid-column expanded="4">
                         <md-textarea required placeholder="Placeholder" type="text" label="Label" supporting="Supporting text" value="Input"></md-textarea>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4"></div>
+                    </md-grid-column>
+                    <md-grid-column expanded="4"></md-grid-column>
                     
-                    <div class="md-grid__column md-grid__column--expanded4">
+                    <md-grid-column expanded="4">
                         <md-textarea required placeholder="Placeholder" maxLength="10" clearable type="text" label="Label" supporting="Supporting text"></md-textarea>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4">
+                    </md-grid-column>
+                    <md-grid-column expanded="4">
                         <md-textarea required placeholder="Placeholder" maxLength="10" clearable type="text" label="Label" supporting="Supporting text" value="Input"></md-textarea>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4"></div>
+                    </md-grid-column>
+                    <md-grid-column expanded="4"></md-grid-column>
                     
 
-                    <div class="md-grid__column md-grid__column--expanded4">
+                    <md-grid-column expanded="4">
                         <md-textarea required placeholder="Placeholder" clearable type="text" label="Label" ></md-textarea>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4">
+                    </md-grid-column>
+                    <md-grid-column expanded="4">
                         <md-textarea required placeholder="Placeholder" clearable type="text" label="Label"  value="Input"></md-textarea>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4"></div>
+                    </md-grid-column>
+                    <md-grid-column expanded="4"></md-grid-column>
                     
 
-                    <div class="md-grid__column md-grid__column--expanded4">
+                    <md-grid-column expanded="4">
                         <md-textarea required placeholder="Placeholder" .leading="${[{component:'icon',icon:'search'}]}" type="text" label="Label" ></md-textarea>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4">
+                    </md-grid-column>
+                    <md-grid-column expanded="4">
                         <md-textarea required placeholder="Placeholder" .leading="${[{component:'icon',icon:'search'}]}" type="text" label="Label"  value="Input"></md-textarea>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4"></div>
+                    </md-grid-column>
+                    <md-grid-column expanded="4"></md-grid-column>
                     
                     
 
-                    <div class="md-grid__column md-grid__column--expanded4">
+                    <md-grid-column expanded="4">
                         <md-textarea required placeholder="Placeholder" .leading="${[{component:'icon',icon:'search'}]}" clearable type="text" label="Label" ></md-textarea>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4">
+                    </md-grid-column>
+                    <md-grid-column expanded="4">
                         <md-textarea required placeholder="Placeholder" .leading="${[{component:'icon',icon:'search'}]}" clearable type="text" label="Label"  value="Input"></md-textarea>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4"></div>
+                    </md-grid-column>
+                    <md-grid-column expanded="4"></md-grid-column>
                     
                     
 
-                    <div class="md-grid__column md-grid__column--expanded4">
+                    <md-grid-column expanded="4">
                         <md-textarea required placeholder="Placeholder" prefix="$" type="text" label="Label" ></md-textarea>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4">
+                    </md-grid-column>
+                    <md-grid-column expanded="4">
                         <md-textarea required placeholder="Placeholder" prefix="$" type="text" label="Label"  value="Input"></md-textarea>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4"></div>
+                    </md-grid-column>
+                    <md-grid-column expanded="4"></md-grid-column>
                     
                     
-                    <div class="md-grid__column md-grid__column--expanded4">
+                    <md-grid-column expanded="4">
                         <md-textarea required placeholder="Placeholder" suffix="lbs" type="text" label="Label" ></md-textarea>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4">
+                    </md-grid-column>
+                    <md-grid-column expanded="4">
                         <md-textarea required placeholder="Placeholder" suffix="lbs" type="text" label="Label"  value="Input"></md-textarea>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4"></div>
+                    </md-grid-column>
+                    <md-grid-column expanded="4"></md-grid-column>
                     
                     
-                    <div class="md-grid__column md-grid__column--expanded4">
+                    <md-grid-column expanded="4">
                         <md-textarea required placeholder="Placeholder" type="text" label="Label" ></md-textarea>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4">
+                    </md-grid-column>
+                    <md-grid-column expanded="4">
                         <md-textarea required placeholder="Placeholder" type="text" label="Label"  value="This is a long input in a multi-line text field that wraps overflow text onto a new line"></md-textarea>
-                    </div>
-                    <div class="md-grid__column md-grid__column--expanded4"></div>
+                    </md-grid-column>
+                    <md-grid-column expanded="4"></md-grid-column>
                     
 
 
-                    <div class="md-grid__column md-grid__column--expanded12">
+                    <md-grid-column expanded="12">
                         <md-button type="reset" label="reset"></md-button>
                         <md-button type="submit" label="submit"></md-button>
-                    </div>
-                </div>
+                    </md-grid-column>
+                </md-grid>
             </form>
         `;
     }

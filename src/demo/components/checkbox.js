@@ -10,8 +10,8 @@ class DemoCheckbox extends MdElement {
                 @reset="${this.handleReset}" 
                 @submit="${this.handleSubmit}"
             >
-                <div class="md-grid">
-                    <div class="md-grid__column md-grid__column--expanded4">
+                <md-grid >
+                    <md-grid-column expanded="4">
 
                         <h2>States</h2>
 
@@ -51,13 +51,13 @@ class DemoCheckbox extends MdElement {
                         <br>
                         <br>
 
-                    </div>
+                    </md-grid-column>
 
-                    <div class="md-grid__column md-grid__column--expanded12">
+                    <md-grid-column expanded="12">
                         <md-button type="reset" label="reset"></md-button>
                         <md-button type="submit" label="submit"></md-button>
-                    </div>
-                </div>
+                    </md-grid-column>
+                </md-grid>
             </form>
         `;
     }

@@ -114,6 +114,9 @@ class RippleController {
     async hostDisconnected() {
         await this.destroy();
     }
+
+    // hostUpdate(){}
+    // hostUpdated(){}
 }
 
 export { RippleController };

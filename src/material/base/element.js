@@ -11,6 +11,20 @@ class MdElement extends LitElement {
         return this;
     }
 
+    connectedCallback() {
+        super.connectedCallback();
+        this.classList.add(`${this.localName}--initialize`);
+    }
+
+    firstUpdated(_changedProperties) {
+        super.firstUpdated(_changedProperties);
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                this.classList.remove(`${this.localName}--initialize`);
+            });
+        });
+    }
+
     on(type, listener) {
         this.addEventListener(type, listener);
     }

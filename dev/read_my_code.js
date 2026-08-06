@@ -68,9 +68,8 @@ function writeFiles() {
         ],
         [
             // /.*/,
-            // /src\\material\\components\\text-field/,
-            /src\\material\\components\\slider/,
-            // /src\\demo\\components\\button/,
+            /src\\material\\components\\dialog\\dialog\.js/,
+            /src\\material\\components\\dialog\\dialog\.scss/,
         ],
     );
 

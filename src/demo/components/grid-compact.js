@@ -5,7 +5,7 @@ class DemoGridCompact extends MdElement {
     /* prettier-ignore */
     render(){
         return html`
-            <md-grid class="md-grid">
+            <md-grid >
                 <md-grid-column compact="1">1</md-grid-column>
                 <md-grid-column compact="3">3</md-grid-column>
                 <md-grid-column compact="2">2</md-grid-column>

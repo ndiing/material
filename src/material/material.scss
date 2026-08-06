@@ -1,4 +1,4 @@
-// @use "./shared/mixins.scss";
+@use "./shared/mixins.scss";
 
 @use "./base/tokens.scss";
 @use "./base/reset.scss";
@@ -18,13 +18,16 @@
 @use "./components/icon-button/icon-button.scss";
 @use "./components/button/button.scss";
 
+@use "./components/card/card.scss";
+@use "./components/dialog/dialog.scss";
+
 @use "./components/text-field/text-field.scss";
 @use "./components/textarea/textarea.scss";
 @use "./components/checkbox/checkbox.scss";
 @use "./components/radio-button/radio-button.scss";
 @use "./components/switch/switch.scss";
 @use "./components/slider/slider.scss";
-// @use "./components/form/form.scss";
+@use "./components/form/form.scss";
 
 @use "./components/data-table/data-table.scss";
 

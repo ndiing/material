@@ -50,7 +50,7 @@ class MdDataTable extends MdElement {
     /* prettier-ignore */
     renderThead(){
         const size=this.selectedValues.size
-        const checked = size===this.rows.length
+        const checked = size&&size===this.rows.length
         const indeterminate = size&&size!==this.rows.length
         return html`
             <thead>

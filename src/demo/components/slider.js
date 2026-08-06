@@ -10,8 +10,8 @@ class DemoSlider extends MdElement {
                 @reset="${this.handleReset}" 
                 @submit="${this.handleSubmit}"
             >
-                <div class="md-grid">
-                    <div class="md-grid__column md-grid__column--expanded12">
+                <md-grid >
+                    <md-grid-column expanded="12">
                         <h2>Variants</h2>
 
                         
@@ -86,14 +86,14 @@ class DemoSlider extends MdElement {
                         <md-slider icon="volume_up" name="slider0" size="extra-large"></md-slider>
                         <md-slider icon="volume_up" name="slider1" orientation="vertical" size="extra-large"></md-slider>
 
-                    </div>
+                    </md-grid-column>
                     
 
-                    <div class="md-grid__column md-grid__column--expanded12">
+                    <md-grid-column expanded="12">
                         <md-button type="reset" label="reset"></md-button>
                         <md-button type="submit" label="submit"></md-button>
-                    </div>
-                </div>
+                    </md-grid-column>
+                </md-grid>
             </form>
         `;
     }

@@ -34,8 +34,19 @@
         background-color: transparent;
     }
 
+    &::-moz-range-track {
+        appearance: none;
+    }
+
     &::-webkit-slider-runnable-track {
         appearance: none;
+    }
+
+    &::-moz-range-thumb {
+        z-index: 7;
+        appearance: none;
+        border: 0;
+        background-color: transparent;
     }
 
     &::-webkit-slider-thumb {
@@ -128,6 +139,11 @@
     .md-slider__native {
         width: 100%;
 
+        &::-moz-range-thumb {
+            height: var(--md-comp-slider-handle-height);
+            width: var(--md-comp-slider-handle-width);
+        }
+
         &::-webkit-slider-thumb {
             height: var(--md-comp-slider-handle-height);
             width: var(--md-comp-slider-handle-width);
@@ -218,6 +234,11 @@
         writing-mode: vertical-lr;
         direction: rtl;
         height: 100%;
+
+        &::-moz-range-thumb {
+            width: var(--md-comp-slider-handle-height);
+            height: var(--md-comp-slider-handle-width);
+        }
 
         &::-webkit-slider-thumb {
             width: var(--md-comp-slider-handle-height);

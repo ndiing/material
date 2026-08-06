@@ -7,6 +7,8 @@
     width: 100%;
     gap: 4px 0;
     position: relative;
+
+    @include mixins.initialize();
 }
 
 .md-text-field__label {
@@ -100,6 +102,11 @@
     &::-webkit-datetime-edit-minute-field {
         padding: 0;
     }
+    &:-webkit-autofill::first-line,
+    &:-webkit-autofill::first-line,
+    &:-webkit-autofill::first-line {
+        @include mixins.typescale-body-large();
+    }
     &:-webkit-autofill,
     &:-webkit-autofill:hover,
     &:-webkit-autofill:focus {
@@ -109,53 +116,6 @@
         transition: background-color 5000s ease-in-out 0s;
     }
 }
-
-// input.md-text-field__native[type="date" i]::-webkit-calendar-picker-indicator,
-// input.md-text-field__native[type="datetime-local" i]::-webkit-calendar-picker-indicator,
-// input.md-text-field__native[type="month" i]::-webkit-calendar-picker-indicator,
-// input.md-text-field__native[type="time" i]::-webkit-calendar-picker-indicator,
-// input.md-text-field__native[type="week" i]::-webkit-calendar-picker-indicator {
-//     display: none;
-// }
-
-// input.md-text-field__native::-webkit-inner-spin-button {
-//     display: none;
-// }
-
-// input.md-text-field__native[type="search" i]::-webkit-search-cancel-button {
-//     display: none;
-// }
-
-// input.md-text-field__native::-webkit-datetime-edit-fields-wrapper {
-//     padding: 0;
-// }
-// input.md-text-field__native::-webkit-datetime-edit-month-field,
-// input.md-text-field__native::-webkit-datetime-edit-day-field,
-// input.md-text-field__native::-webkit-datetime-edit-year-field,
-// input.md-text-field__native::-webkit-datetime-edit-hour-field,
-// input.md-text-field__native::-webkit-datetime-edit-minute-field {
-//     padding: 0;
-// }
-
-// input.md-text-field__native:-webkit-autofill::first-line,
-// textarea.md-text-field__native:-webkit-autofill::first-line,
-// select.md-text-field__native:-webkit-autofill::first-line {
-//     @include mixins.typescale-body-large();
-// }
-// input.md-text-field__native:-webkit-autofill,
-// input.md-text-field__native:-webkit-autofill:hover,
-// input.md-text-field__native:-webkit-autofill:focus,
-// textarea.md-text-field__native:-webkit-autofill,
-// textarea.md-text-field__native:-webkit-autofill:hover,
-// textarea.md-text-field__native:-webkit-autofill:focus,
-// select.md-text-field__native:-webkit-autofill,
-// select.md-text-field__native:-webkit-autofill:hover,
-// select.md-text-field__native:-webkit-autofill:focus {
-//     -webkit-box-shadow: 0 0 0 1000px var(--md-sys-color-surface-container-highest) inset;
-//     -webkit-text-fill-color: var(--md-sys-color-on-surface);
-//     caret-color: var(--md-sys-color-on-surface);
-//     transition: background-color 5000s ease-in-out 0s;
-// }
 
 .md-text-field__trailing {
     display: inline-flex;
@@ -260,7 +220,7 @@
         .md-text-field__text,
         .md-text-field__native::placeholder,
         .md-text-field__native::-webkit-datetime-edit {
-            visibility: hidden;
+            color: transparent;
         }
     }
 
@@ -284,7 +244,7 @@
             .md-text-field__text,
             .md-text-field__native::placeholder,
             .md-text-field__native::-webkit-datetime-edit {
-                visibility: visible;
+                color: var(--md-sys-color-on-surface-variant);
             }
         }
     }
@@ -347,7 +307,7 @@
         .md-text-field__text,
         .md-text-field__native::placeholder,
         .md-text-field__native::-webkit-datetime-edit {
-            visibility: hidden;
+            color: transparent;
         }
     }
 
@@ -373,7 +333,7 @@
             .md-text-field__text,
             .md-text-field__native::placeholder,
             .md-text-field__native::-webkit-datetime-edit {
-                visibility: visible;
+                color: var(--md-sys-color-on-surface-variant);
             }
         }
     }

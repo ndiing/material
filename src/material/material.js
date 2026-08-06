@@ -1,17 +1,20 @@
-// import "./core/router.js";
-// import "./core/observer.js";
-// import "./core/breakpoint-observer.js";
-// import "./core/scheme-observer.js";
-// import "./core/orientation-observer.js";
-// import "./core/theme.js";
-// import "./core/localization.js";
-// import "./core/store.js";
-// import "./core/query-builder.js";
-// import "./base/element.js";
-// import "./base/list.js";
-// import "./base/datetime-picker.js";
-// import "./controller/virtual-scroll.js";
-// import "./controller/ripple.js";
+import "./core/router.js";
+import "./core/observer.js";
+import "./core/breakpoint-observer.js";
+import "./core/scheme-observer.js";
+import "./core/orientation-observer.js";
+import "./core/theme.js";
+import "./core/localization.js";
+import "./core/store.js";
+import "./core/query-builder.js";
+
+import "./base/element.js";
+import "./base/list.js";
+import "./base/datetime-picker.js";
+
+import "./controller/virtual-scroll.js";
+import "./controller/ripple.js";
+
 import "./components/scrim/scrim.js";
 import "./components/layout/layout.js";
 import "./components/layout/layout-item.js";
@@ -19,22 +22,39 @@ import "./components/icon/icon.js";
 import "./components/image/image.js";
 import "./components/grid/grid.js";
 import "./components/grid/grid-column.js";
+
 import "./components/badge/badge.js";
 import "./components/icon-button/icon-button.js";
 import "./components/button/button.js";
+
+import "./components/card/card.js";
+import "./components/card/card-header.js";
+import "./components/card/card-body.js";
+import "./components/card/card-main.js";
+import "./components/card/card-footer.js";
+
+import "./components/dialog/dialog.js";
+import "./components/dialog/dialog-header.js";
+import "./components/dialog/dialog-body.js";
+import "./components/dialog/dialog-main.js";
+import "./components/dialog/dialog-footer.js";
+
 import "./components/text-field/text-field.js";
 import "./components/textarea/textarea.js";
 import "./components/checkbox/checkbox.js";
 import "./components/radio-button/radio-button.js";
 import "./components/switch/switch.js";
 import "./components/slider/slider.js";
-// import "./components/form/form.js";
+import "./components/form/form.js";
+
 import "./components/data-table/data-table-cell.js";
 import "./components/data-table/data-table.js";
+
 import "./components/list/list-item.js";
 import "./components/list/list.js";
 import "./components/tree/tree.js";
 import "./components/push-menu/push-menu.js";
+
 // const performanceObserver = new PerformanceObserver((entries) => {
 //     entries.getEntries().forEach((entry) => {
 //         console.log(entry);

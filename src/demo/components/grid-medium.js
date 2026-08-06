@@ -5,7 +5,7 @@ class DemoGridMedium extends MdElement {
     /* prettier-ignore */
     render(){
         return html`
-            <md-grid class="md-grid">
+            <md-grid >
                 <md-grid-column medium="1">1</md-grid-column>
                 <md-grid-column medium="7">7</md-grid-column>
                 <md-grid-column medium="2">2</md-grid-column>

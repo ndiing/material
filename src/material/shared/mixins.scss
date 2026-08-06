@@ -135,3 +135,15 @@
     letter-spacing: var(--md-sys-typescale-label-small-tracking);
     line-height: var(--md-sys-typescale-label-small-line-height);
 }
+
+@mixin initialize {
+  &--initialize {
+    &,
+    *,
+    *::before,
+    *::after {
+      transition: none !important;
+      animation: none !important;
+    }
+  }
+}
