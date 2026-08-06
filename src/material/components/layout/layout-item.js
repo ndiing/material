@@ -67,7 +67,7 @@ class MdLayoutItem extends MdElement {
     updated(_changedProperties){
         super.updated(_changedProperties)
 
-        if (changedProperties.has("open")) {
+        if (_changedProperties.has("open")) {
 
             if (this.modal) {
                 if (this.open) {

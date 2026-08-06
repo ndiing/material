@@ -8,16 +8,18 @@ class MdIcon extends MdElement {
 
     /* prettier-ignore */
     render(){
-        return this.icon
+        return html`${this.icon}`
     }
 
     connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-icon");
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
+
         this.classList.remove("md-icon");
     }
 }
