@@ -3,11 +3,12 @@ import { MdElement } from "../../base/element.js";
 
 class MdDialog extends MdElement {
     static properties = {
-        open: { type: Boolean },
+        open: { type: Boolean, reflect:true },
     };
 
     constructor() {
         super();
+
         this._handleDialogScrimClick = this._handleDialogScrimClick.bind(this);
         this._handleDialogAnimationend = this._handleDialogAnimationend.bind(this);
     }
@@ -31,9 +32,11 @@ class MdDialog extends MdElement {
     disconnectedCallback() {
         super.disconnectedCallback();
 
-        this.scrimElement.off("onScrimClick", this._handleDialogScrimClick);
-        this.scrimElement.remove();
-        this.scrimElement = null;
+        if(this.scrimElement){
+            this.scrimElement.off("onScrimClick", this._handleDialogScrimClick);
+            this.scrimElement.remove();
+            this.scrimElement = null;
+        }
 
         this.off("animationend", this._handleDialogAnimationend);
 
@@ -42,13 +45,24 @@ class MdDialog extends MdElement {
 
     update(changedProperties) {
         super.update(changedProperties);
+
         if (changedProperties.has("open")) {
             if (this.open) {
                 this.classList.add("md-dialog--open");
-                this.scrimElement.show();
             } else {
                 this.classList.remove("md-dialog--open");
                 this.classList.add("md-dialog--close");
+            }
+        }
+    }
+
+    updated(_changedProperties){
+        super.updated(_changedProperties)
+
+        if (_changedProperties.has("open")) {
+            if (this.open) {
+                this.scrimElement.show();
+            } else {
                 this.scrimElement.close();
             }
         }
