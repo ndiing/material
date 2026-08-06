@@ -175,4 +175,5 @@ class DemoButton extends MdElement {
     }
 }
 customElements.define("demo-button", DemoButton);
-export default document.createElement("demo-button");
+// export default document.createElement("demo-button");
+export default new DemoButton();

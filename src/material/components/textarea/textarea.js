@@ -41,13 +41,15 @@ class MdTextarea extends MdTextField {
         `
     }
 
-    async connectedCallback() {
+    connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-textarea");
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
+
         this.classList.remove("md-textarea");
     }
 }

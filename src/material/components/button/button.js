@@ -2,6 +2,7 @@ import { html, nothing } from "lit";
 import { MdElement } from "../../base/element.js";
 import { RippleController } from "../../controller/ripple.js";
 import { ifDefined } from "lit/directives/if-defined.js";
+import { createRef, ref } from "lit/directives/ref.js";
 
 class MdButton extends MdElement {
     static properties = {
@@ -22,6 +23,8 @@ class MdButton extends MdElement {
     shapes = ["round", "square"];
     colors = ["elevated", "filled", "tonal", "outlined", "text"];
 
+    buttonNative = createRef();
+
     constructor() {
         super();
 
@@ -30,19 +33,19 @@ class MdButton extends MdElement {
         this.shape = "round";
         this.color = "filled";
         this.type = "button";
-        this.rippleOptions = {
-            trigger: ".md-button__native",
-        };
 
         this._handleButtonClick = this._handleButtonClick.bind(this);
 
-        this.rippleController = new RippleController(this, this.rippleOptions);
+        this.rippleController = new RippleController(this, {
+            trigger: ".md-button__native",
+        });
     }
 
     /* prettier-ignore */
     render(){
         return html`
             <button 
+                ${ref(this.buttonNative)}
                 class="md-button__native"
                 type="${ifDefined(this.type)}"
                 ?disabled="${ifDefined(this.disabled)}"

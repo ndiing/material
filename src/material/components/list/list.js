@@ -90,7 +90,7 @@ class MdList extends MdListElement {
         return this._items?.length?this.renderItems():this.renderEmptyItems()
     }
 
-    async connectedCallback() {
+    connectedCallback() {
         super.connectedCallback();
 
         this.classList.add("md-list");
@@ -98,7 +98,9 @@ class MdList extends MdListElement {
         this.tabIndex = 0;
 
         if (this.virtualScroll) {
-            this.virtualScrollController.init();
+            this.updateComplete.then(() => {
+                this.virtualScrollController.init();
+            });
         }
 
         this.on("keydown", this._handleListKeydown);
@@ -135,9 +137,11 @@ class MdList extends MdListElement {
 
         if (_changedProperties.has("_list")) {
             if (this.virtualScroll) {
-                this.virtualScrollController.reinit({
-                    viewport: this,
-                    itemCount: this._list.length,
+                this.updateComplete.then(() => {
+                    this.virtualScrollController.reinit({
+                        viewport: this,
+                        itemCount: this._list.length,
+                    });
                 });
             }
         }

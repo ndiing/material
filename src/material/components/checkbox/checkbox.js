@@ -25,15 +25,14 @@ class MdCheckbox extends MdElement {
         super();
         this.internals = this.attachInternals();
 
-        this.rippleOptions = {
+        this.validateOnInput = true;
+
+        this.rippleController = new RippleController(this, {
             centered: true,
             radius: 40,
             unbounded: true,
             trigger: ".md-checkbox__native",
-        };
-        this.validateOnInput = true;
-
-        this.rippleController = new RippleController(this, this.rippleOptions);
+        });
     }
 
     /* prettier-ignore */

@@ -40,7 +40,7 @@ import "./components/dialog/dialog-main.js";
 import "./components/dialog/dialog-footer.js";
 
 import "./components/text-field/text-field.js"; // butuh refractor segera
-import "./components/textarea/textarea.js"; // butuh refractor segera
+import "./components/textarea/textarea.js";
 import "./components/checkbox/checkbox.js";
 import "./components/radio-button/radio-button.js";
 import "./components/switch/switch.js";

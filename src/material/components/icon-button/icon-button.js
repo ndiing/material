@@ -40,8 +40,7 @@ class MdIconButton extends MdElement {
 
         this._handleIconButtonClick = this._handleIconButtonClick.bind(this);
 
-        this.rippleOptions = {};
-        this.rippleController = new RippleController(this, this.rippleOptions);
+        this.rippleController = new RippleController(this, {});
     }
 
     /* prettier-ignore */

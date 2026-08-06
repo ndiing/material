@@ -36,7 +36,6 @@ class MdDataTable extends MdElement {
         this.selectedValues = new Set();
         this.activeRowIndex = 0;
         this.activeCellIndex = 0;
-        this.activeVisible = false;
         this.checkbox = true;
 
         this._handleDataTableVirtualScrollUpdate = this._handleDataTableVirtualScrollUpdate.bind(this);
@@ -161,7 +160,7 @@ class MdDataTable extends MdElement {
         `
     }
 
-    async connectedCallback() {
+    connectedCallback() {
         super.connectedCallback();
 
         this.classList.add("md-data-table");
@@ -184,9 +183,11 @@ class MdDataTable extends MdElement {
     updated(_changedProperties) {
         super.updated(_changedProperties);
         if (_changedProperties.has("rows")) {
-            this.virtualScrollController.reinit({
-                viewport: this.querySelector("table"),
-                itemCount: this.rows.length,
+            this.updateComplete.then(() => {
+                this.virtualScrollController.reinit({
+                    viewport: this.querySelector("table"),
+                    itemCount: this.rows.length,
+                });
             });
         }
     }

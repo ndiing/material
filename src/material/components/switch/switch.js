@@ -31,15 +31,13 @@ class MdSwitch extends MdElement {
         super();
         this.internals = this.attachInternals();
 
-        this.rippleOptions = {
+        this.rippleController = new RippleController(this, {
             centered: true,
             radius: 40,
             unbounded: true,
             trigger: ".md-switch__native",
             container: ".md-switch__thumb",
-        };
-
-        this.rippleController = new RippleController(this, this.rippleOptions);
+        });
     }
 
     /* prettier-ignore */
@@ -72,7 +70,7 @@ class MdSwitch extends MdElement {
         `
     }
 
-    async connectedCallback() {
+    connectedCallback() {
         super.connectedCallback();
 
         this.classList.add("md-switch");

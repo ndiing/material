@@ -40,11 +40,10 @@ class MdListItem extends MdElement {
         this.leading = [];
         this.trailing = [];
         this.interactive = true;
-        this.rippleOptions = {
-            register: false,
-        };
 
-        this.rippleController = new RippleController(this, this.rippleOptions);
+        this.rippleController = new RippleController(this, {
+            register: false,
+        });
     }
 
     /* prettier-ignore */

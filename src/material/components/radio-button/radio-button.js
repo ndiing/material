@@ -23,14 +23,12 @@ class MdRadioButton extends MdElement {
         super();
         this.internals = this.attachInternals();
 
-        this.rippleOptions = {
+        this.rippleController = new RippleController(this, {
             centered: true,
             radius: 40,
             unbounded: true,
             trigger: ".md-radio-button__native",
-        };
-
-        this.rippleController = new RippleController(this, this.rippleOptions);
+        });
     }
 
     /* prettier-ignore */
@@ -55,7 +53,7 @@ class MdRadioButton extends MdElement {
         `
     }
 
-    async connectedCallback() {
+    connectedCallback() {
         super.connectedCallback();
 
         this.classList.add("md-radio-button");
@@ -67,7 +65,7 @@ class MdRadioButton extends MdElement {
         this.classList.remove("md-radio-button");
     }
 
-    async update(changedProperties) {
+    update(changedProperties) {
         super.update(changedProperties);
 
         if (changedProperties.has("disabled")) {
@@ -75,13 +73,13 @@ class MdRadioButton extends MdElement {
         }
     }
 
-    async firstUpdated(_changedProperties) {
+    firstUpdated(_changedProperties) {
         super.firstUpdated(_changedProperties);
 
         this.defaultChecked = this.defaultChecked ?? this.checked ?? false;
     }
 
-    async updated(_changedProperties) {
+    updated(_changedProperties) {
         super.updated(_changedProperties);
 
         if (_changedProperties.has("rippleOptions")) {
