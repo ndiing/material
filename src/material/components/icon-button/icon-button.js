@@ -1,6 +1,7 @@
 import { html } from "lit";
 import { MdElement } from "../../base/element.js";
 import { RippleController } from "../../controller/ripple.js";
+
 const converter = (value) => {
     try {
         return JSON.parse(value);
@@ -21,6 +22,7 @@ class MdIconButton extends MdElement {
         disabled: { type: Boolean, reflect: true },
         rippleOptions: { type: Object },
     };
+
     variants = ["default", "toggle"];
     sizes = ["extra-small", "small", "medium", "large", "extra-large"];
     shapes = ["round", "square"];
@@ -29,78 +31,101 @@ class MdIconButton extends MdElement {
 
     constructor() {
         super();
+
         this.variant = "default";
         this.size = "small";
         this.shape = "round";
         this.color = "filled";
         this.width = "default";
+
         this._handleIconButtonClick = this._handleIconButtonClick.bind(this);
+
         this.rippleOptions = {};
         this.rippleController = new RippleController(this, this.rippleOptions);
     }
 
+    /* prettier-ignore */
     render() {
         const icons = Array.isArray(this.icon) ? this.icon : [this.icon];
         const index = this.selected ? 1 : 0;
         const icon = icons[index] ?? icons[0] ?? "";
-        return html` <md-icon class="md-icon-button__native" .icon="${icon}"></md-icon> `;
+
+        return html`
+            <md-icon 
+                class="md-icon-button__native" 
+                .icon="${icon}"
+            ></md-icon>
+        `;
     }
 
     connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-icon-button");
+
         this.on("click", this._handleIconButtonClick);
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
+
         this.off("click", this._handleIconButtonClick);
+
         this.classList.remove("md-icon-button");
     }
 
     update(changedProperties) {
         super.update(changedProperties);
+
         if (changedProperties.has("variant")) {
-            this._toggleClassList(this.variants, this.variant);
+            this.variants.forEach((variant) => {
+                this.classList.toggle(`md-icon-button--${variant}`, this.variant === variant);
+            });
         }
         if (changedProperties.has("size")) {
-            this._toggleClassList(this.sizes, this.size);
+            this.sizes.forEach((size) => {
+                this.classList.toggle(`md-icon-button--${size}`, this.size === size);
+            });
         }
         if (changedProperties.has("shape")) {
-            this._toggleClassList(this.shapes, this.shape);
+            this.shapes.forEach((shape) => {
+                this.classList.toggle(`md-icon-button--${shape}`, this.shape === shape);
+            });
         }
         if (changedProperties.has("color")) {
-            this._toggleClassList(this.colors, this.color);
+            this.colors.forEach((color) => {
+                this.classList.toggle(`md-icon-button--${color}`, this.color === color);
+            });
         }
         if (changedProperties.has("width")) {
-            this._toggleClassList(this.widths, this.width);
+            this.widths.forEach((width) => {
+                this.classList.toggle(`md-icon-button--${width}`, this.width === width);
+            });
         }
         if (changedProperties.has("selected")) {
-            this._toggleClass("selected");
+            this.classList.toggle(`md-icon-button--selected`, !!this.selected);
         }
         if (changedProperties.has("disabled")) {
-            this._toggleClass("disabled");
+            this.classList.toggle(`md-icon-button--disabled`, !!this.disabled);
         }
-        if (changedProperties.has("rippleOptions")) {
+        
+    }
+
+    updated(_changedProperties){
+        super.updated(_changedProperties)
+
+        if (_changedProperties.has("rippleOptions")) {
             this.rippleController.reinit(this.rippleOptions);
         }
-    }
-
-    _toggleClass(modifier) {
-        this.classList.toggle(`md-icon-button--${modifier}`, Boolean(this[modifier]));
-    }
-
-    _toggleClassList(list, value) {
-        list.forEach((item) => {
-            this.classList.toggle(`md-icon-button--${item}`, value === item);
-        });
     }
 
     _handleIconButtonClick(event) {
         if (this.variant === "toggle") {
             this.selected = !this.selected;
+
             this.emit("onIconButtonSelection", { event, element: this });
         }
+
         this.emit("onIconButtonClick", { event, element: this });
     }
 }
