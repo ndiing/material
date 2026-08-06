@@ -39,7 +39,7 @@ import "./components/dialog/dialog-body.js";
 import "./components/dialog/dialog-main.js";
 import "./components/dialog/dialog-footer.js";
 
-import "./components/text-field/text-field.js"; // butuh refractor segera
+import "./components/text-field/text-field.js";
 import "./components/textarea/textarea.js";
 import "./components/checkbox/checkbox.js";
 import "./components/radio-button/radio-button.js";

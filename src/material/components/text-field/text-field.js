@@ -8,6 +8,7 @@ import { classMap } from "lit/directives/class-map.js";
 
 class MdTextField extends MdElement {
     static formAssociated = true;
+
     static properties = {
         leading: { type: Array },
         label: { type: String },
@@ -34,19 +35,23 @@ class MdTextField extends MdElement {
         validationMessage: { type: String, state: true },
         validateOnBlur: { type: Boolean },
         validateOnInput: { type: Boolean },
-        currentLength: { type: Number, state: true },
     };
+
     textFieldNative = createRef();
+    textFieldContent = createRef();
+
     colors = ["standard", "filled", "outlined"];
 
     constructor() {
         super();
         this.internals = this.attachInternals();
+
         this.leading = [];
         this.trailing = [];
         this.validateOnInput = true;
         this.variant = "filled";
         this.currentLength = 0;
+
         this._handleTextFieldIconButtonClearClick = this._handleTextFieldIconButtonClearClick.bind(this);
     }
 
@@ -142,7 +147,10 @@ class MdTextField extends MdElement {
     /* prettier-ignore */
     renderContent(){
         return html`
-            <div class="md-text-field__content">
+            <div
+                ${ref(this.textFieldContent)}
+                class="md-text-field__content"
+            >
                 ${this.prefix?this.renderText({text:this.prefix}):nothing}
                 <input 
                     aria-label="${ifDefined(this.ariaLabel || this.name || 'text-field')}"
@@ -201,102 +209,120 @@ class MdTextField extends MdElement {
         `
     }
 
-    async connectedCallback() {
+    connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-text-field");
-        this.defaultValue = this.defaultValue ?? this.value ?? "";
-        await this.updateComplete;
-        this.currentLength = this.value?.length ?? 0;
-        this._toggleClass("populated", this.value);
-        const contentElement = this.querySelector(".md-text-field__content");
-        this.style.setProperty("--md-comp-text-field-content-offset-left", contentElement?.offsetLeft + "px");
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
+
         this.classList.remove("md-text-field");
     }
 
     update(changedProperties) {
         super.update(changedProperties);
         if (changedProperties.has("color")) {
-            this._toggleClassList(this.colors, this.color);
+            this.colors.forEach((color) => {
+                this.classList.toggle(`md-text-field--${color}`, this.color === color);
+            });
         }
         if (changedProperties.has("label")) {
-            this._toggleClass("with-label", this.label);
+            this.classList.toggle(`md-text-field--with-label`, !!this.label);
         }
         if (changedProperties.has("disabled")) {
-            this._toggleClass("disabled");
+            this.classList.toggle(`md-text-field--disabled`, !!this.disabled);
         }
         if (changedProperties.has("readonly")) {
-            this._toggleClass("readonly");
+            this.classList.toggle(`md-text-field--readonly`, !!this.readonly);
         }
+    }
+
+    firstUpdated(_changedProperties) {
+        super.firstUpdated(_changedProperties);
+
+        this.defaultValue = this.defaultValue ?? this.value ?? "";
+
+        const textFieldNative = this.textFieldNative.value;
+
+        this.currentLength = textFieldNative.value.length;
+
+        this.classList.toggle(`md-text-field--populated`, !!this.textFieldNative.value);
+
+        this.style.setProperty("--md-comp-text-field-content-offset-left", this.textFieldContent.value.offsetLeft + "px");
     }
 
     formResetCallback(event) {
         const textFieldNative = this.textFieldNative.value;
         textFieldNative.value = this.defaultValue;
-        this.value = textFieldNative.value;
-        this.currentLength = this.value?.length ?? 0;
-        this._toggleClass("populated", this.value);
+
+        this.value = this.defaultValue;
+        this.currentLength = this.defaultValue.length;
+
+        this.classList.toggle(`md-text-field--populated`, !!this.value);
+
         this.validationMessage = "";
-        this._toggleClass("error", this.validationMessage);
-    }
-
-    _toggleClass(modifier, force = this[modifier]) {
-        this.classList.toggle(`md-text-field--${modifier}`, !!force);
-    }
-
-    _toggleClassList(list, value) {
-        list.forEach((item) => {
-            this.classList.toggle(`md-text-field--${item}`, value === item);
-        });
+        this.classList.toggle(`md-text-field--error`, !!this.validationMessage);
     }
 
     _handleTextFieldNativeFocus(event) {
-        this._toggleClass("focus", true);
-        this._toggleClass("focus-visible", !this.textFieldNative.value.matches(":active"));
+        this.classList.toggle(`md-text-field--focus`, true);
+        this.classList.toggle(`md-text-field--focus-visible`, !this.textFieldNative.value.matches(":active"));
+
         this.emit("onTextFieldNativeFocus", { event, element: this });
     }
 
     _handleTextFieldNativeBlur(event) {
-        this._toggleClass("focus", false);
-        this._toggleClass("focus-visible", false);
+        this.classList.toggle(`md-text-field--focus`, false);
+        this.classList.toggle(`md-text-field--focus-visible`, false);
+
         if (this.validateOnBlur) {
             this.validate();
         }
+
         this.emit("onTextFieldNativeBlur", { event, element: this });
     }
 
     _handleTextFieldNativeInput(event) {
         const textFieldNative = this.textFieldNative.value;
+
         this.value = textFieldNative.value;
-        this.currentLength = this.value?.length ?? 0;
-        this._toggleClass("populated", this.value);
+        this.currentLength = this.value.length;
+
+        this.classList.toggle(`md-text-field--populated`, !!this.value);
+
         if (this.validateOnInput) {
             this.validate();
         }
+
         this.emit("onTextFieldNativeInput", { event, element: this });
     }
 
     _handleTextFieldNativeInvalid(event) {
         event.preventDefault();
+
         this.validate();
+
         this.emit("onTextFieldNativeInvalid", { event, element: this });
     }
 
     validate() {
         const textFieldNative = this.textFieldNative.value;
+
         this.validationMessage = textFieldNative.validationMessage;
-        this._toggleClass("error", this.validationMessage);
+
+        this.classList.toggle(`md-text-field--error`, !!this.validationMessage);
     }
 
     _handleTextFieldIconButtonClearClick(event) {
         const textFieldNative = this.textFieldNative.value;
         textFieldNative.value = "";
-        this.value = textFieldNative.value;
-        this.currentLength = this.value?.length ?? 0;
-        this._toggleClass("populated", this.value);
+
+        this.value = "";
+        this.currentLength = 0;
+
+        this.classList.toggle(`md-text-field--populated`, !!this.value);
     }
 }
 

@@ -14,7 +14,10 @@ class MdTextarea extends MdTextField {
     /* prettier-ignore */
     renderContent(){
         return html`
-            <div class="md-text-field__content">
+            <div
+                ${ref(this.textFieldContent)}
+                class="md-text-field__content"
+            >
                 ${this.prefix?this.renderText({text:this.prefix}):nothing}
                 <textarea
                     aria-label="${ifDefined(this.ariaLabel || this.name || 'textarea')}"
