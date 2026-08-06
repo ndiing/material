@@ -245,32 +245,29 @@ class MdListItem extends MdElement {
         `
     }
 
-     connectedCallback() {
+    connectedCallback() {
         super.connectedCallback();
 
         this.classList.add("md-list__item");
 
         if (this.interactive) {
-             this.rippleController.init();
+            this.rippleController.init();
         }
-
     }
 
-     disconnectedCallback() {
-
+    disconnectedCallback() {
         super.disconnectedCallback();
 
         if (this.interactive) {
-             this.rippleController.destroy();
+            this.rippleController.destroy();
         }
 
         this.classList.remove("md-list__item");
     }
 
-    firstUpdated(_changedProperties){
-        super.firstUpdated(_changedProperties)
+    firstUpdated(_changedProperties) {
+        super.firstUpdated(_changedProperties);
 
-        
         if (this.supporting) {
             const supportingElement = this.querySelector(".md-list__supporting");
             const clientHeight = supportingElement.clientHeight;
@@ -279,7 +276,7 @@ class MdListItem extends MdElement {
         } else {
             this.layout = "one-line";
         }
-        
+
         this.layouts.forEach((layout) => {
             this.classList.toggle(`md-list__item--${layout}`, this.layout === layout);
         });
@@ -292,9 +289,6 @@ class MdListItem extends MdElement {
             this.rippleController.reinit(this.rippleOptions);
         }
     }
-
-    
-
 }
 
 customElements.define("md-list-item", MdListItem);

@@ -69,13 +69,13 @@ class MdPushMenu extends MdListElement {
     _handleListItemClick(event) {
         const li = event.currentTarget;
         const item = li.item;
-        
+
         if (item?.children?.length) {
             this.push(item);
         } else {
             this.selectedValues.clear();
             this.selectedValues.add(item[this.valueField]);
-            
+
             this._setStack();
         }
     }

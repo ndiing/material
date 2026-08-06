@@ -47,8 +47,8 @@ import "./components/switch/switch.js"; // butuh refractor segera
 import "./components/slider/slider.js"; // butuh refractor segera
 import "./components/form/form.js"; // butuh refractor segera
 
-import "./components/data-table/data-table-cell.js"; // butuh refractor segera
-import "./components/data-table/data-table.js"; // butuh refractor segera
+import "./components/data-table/data-table-cell.js";
+import "./components/data-table/data-table.js";
 
 import "./components/list/list-item.js";
 import "./components/list/list.js";

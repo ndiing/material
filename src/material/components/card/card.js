@@ -24,7 +24,7 @@ class MdCard extends MdElement {
 
     update(changedProperties) {
         super.update(changedProperties);
-        
+
         if (changedProperties.has("color")) {
             this.colors.forEach((color) => {
                 this.classList.toggle(`md-card--${color}`, this.color === color);

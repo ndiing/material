@@ -3,7 +3,7 @@ import { MdElement } from "../../base/element.js";
 
 class MdDialog extends MdElement {
     static properties = {
-        open: { type: Boolean, reflect:true },
+        open: { type: Boolean, reflect: true },
     };
 
     constructor() {
@@ -32,7 +32,7 @@ class MdDialog extends MdElement {
     disconnectedCallback() {
         super.disconnectedCallback();
 
-        if(this.scrimElement){
+        if (this.scrimElement) {
             this.scrimElement.off("onScrimClick", this._handleDialogScrimClick);
             this.scrimElement.remove();
             this.scrimElement = null;
@@ -56,8 +56,8 @@ class MdDialog extends MdElement {
         }
     }
 
-    updated(_changedProperties){
-        super.updated(_changedProperties)
+    updated(_changedProperties) {
+        super.updated(_changedProperties);
 
         if (_changedProperties.has("open")) {
             if (this.open) {

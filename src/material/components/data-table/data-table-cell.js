@@ -15,11 +15,13 @@ class MdDataTableCell extends MdElement {
 
     connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-data-table__cell");
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
+
         this.classList.remove("md-data-table__cell");
     }
 }

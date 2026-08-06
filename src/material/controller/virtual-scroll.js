@@ -101,10 +101,14 @@ class VirtualScrollController {
 
     async destroy() {
         await this.viewport.updateComplete;
-        this.resizeObserver.disconnect();
-        this.viewport.removeEventListener("scroll", this._handleScroll);
-        this.viewport.style.removeProperty("--md-comp-virtual-scroll-total-content-height");
-        this.viewport.classList.remove("md-virtual-scroll");
+        if (this.resizeObserver) {
+            this.resizeObserver.disconnect();
+        }
+        if (this.viewport) {
+            this.viewport.removeEventListener("scroll", this._handleScroll);
+            this.viewport.style.removeProperty("--md-comp-virtual-scroll-total-content-height");
+            this.viewport.classList.remove("md-virtual-scroll");
+        }
     }
 
     async reinit(options) {

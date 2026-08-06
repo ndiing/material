@@ -44,7 +44,7 @@ class MdTree extends MdListElement {
     _handleListItemClick(event) {
         const li = event.currentTarget;
         const item = li.item;
-        
+
         if (item.hasChildren) {
             if (this.expandedValues.has(item[this.valueField])) {
                 this.expandedValues.delete(item[this.valueField]);
@@ -52,10 +52,10 @@ class MdTree extends MdListElement {
                 this.expandedValues.add(item[this.valueField]);
             }
         }
-        
+
         this.selectedValues.clear();
         this.selectedValues.add(item[this.valueField]);
-        
+
         this._setItems();
     }
 }

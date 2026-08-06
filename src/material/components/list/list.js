@@ -118,19 +118,19 @@ class MdList extends MdListElement {
         this.classList.remove("md-list");
     }
 
-     update(changedProperties) {
+    update(changedProperties) {
         super.update(changedProperties);
 
         if (changedProperties.has("_list")) {
             if (!this.virtualScroll) {
                 queueMicrotask(() => {
                     this._items = this._list;
-                })
-            } 
+                });
+            }
         }
     }
 
-     updated(_changedProperties) {
+    updated(_changedProperties) {
         super.updated(_changedProperties);
 
         if (_changedProperties.has("_list")) {
@@ -139,8 +139,7 @@ class MdList extends MdListElement {
                     viewport: this,
                     itemCount: this._list.length,
                 });
-            } 
-            
+            }
         }
     }
 
@@ -293,9 +292,9 @@ class MdList extends MdListElement {
         }
         this.selectedValues.clear();
         this.selectedValues.add(item[this.valueField]);
-        
+
         this._setItems();
-        
+
         this.lastSelectedIndex = this._items.findIndex((_item) => _item[this.valueField] === item[this.valueField]);
     }
 }
