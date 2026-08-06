@@ -6,27 +6,30 @@ import { RippleController } from "../../controller/ripple.js";
 
 class MdRadioButton extends MdElement {
     static formAssociated = true;
+
     static properties = {
-        ariaLabel: { type: String, attribute: "aria-label" },
         name: { type: String },
         value: { type: String },
-        checked: { type: Boolean },
-        disabled: { type: Boolean },
-        required: { type: Boolean },
+        checked: { type: Boolean, reflect: true },
+        disabled: { type: Boolean, reflect: true },
+        required: { type: Boolean, reflect: true },
         rippleOptions: { type: Object },
         tabIndex: { type: Number },
     };
+
     radioButtonNative = createRef();
 
     constructor() {
         super();
         this.internals = this.attachInternals();
+
         this.rippleOptions = {
             centered: true,
             radius: 40,
             unbounded: true,
             trigger: ".md-radio-button__native",
         };
+
         this.rippleController = new RippleController(this, this.rippleOptions);
     }
 
@@ -34,7 +37,7 @@ class MdRadioButton extends MdElement {
     render(){
         return html`
             <input 
-                aria-label="${ifDefined(this.ariaLabel || this.name || 'radio-button')}"
+                aria-label="radio-button"
                 ${ref(this.radioButtonNative)}
                 class="md-radio-button__native"
                 type="radio"
@@ -54,36 +57,50 @@ class MdRadioButton extends MdElement {
 
     async connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-radio-button");
-        if (this.checked !== undefined) {
-            this.defaultChecked = this.checked;
-        }
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
+
         this.classList.remove("md-radio-button");
     }
 
     async update(changedProperties) {
         super.update(changedProperties);
+
         if (changedProperties.has("disabled")) {
             this.classList.toggle("md-radio-button--disabled", this.disabled);
         }
-        if (changedProperties.has("rippleOptions")) {
+    }
+
+    async firstUpdated(_changedProperties) {
+        super.firstUpdated(_changedProperties);
+
+        this.defaultChecked = this.defaultChecked ?? this.checked ?? false;
+    }
+
+    async updated(_changedProperties) {
+        super.updated(_changedProperties);
+
+        if (_changedProperties.has("rippleOptions")) {
             this.rippleController.reinit(this.rippleOptions);
         }
     }
 
     formResetCallback(event) {
-        const radioButtonNative = this.radioButtonNative.value;
         this.checked = this.defaultChecked;
-        radioButtonNative.checked = this.checked;
+
+        const radioButtonNative = this.radioButtonNative.value;
+        radioButtonNative.checked = this.defaultChecked;
     }
 
     _handleRadioButtonNativeInput(event) {
         const radioButtonNative = this.radioButtonNative.value;
+
         this.checked = radioButtonNative.checked;
+
         this.emit("onRadioButtonNativeInput", { event, element: this });
     }
 }

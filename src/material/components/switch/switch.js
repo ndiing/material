@@ -13,8 +13,8 @@ const converter = (value) => {
 
 class MdSwitch extends MdElement {
     static formAssociated = true;
+
     static properties = {
-        ariaLabel: { type: String, attribute: "aria-label" },
         name: { type: String },
         value: { type: String },
         checked: { type: Boolean },
@@ -24,11 +24,13 @@ class MdSwitch extends MdElement {
         icon: { type: String, converter },
         tabIndex: { type: Number },
     };
+
     switchNative = createRef();
 
     constructor() {
         super();
         this.internals = this.attachInternals();
+
         this.rippleOptions = {
             centered: true,
             radius: 40,
@@ -36,6 +38,7 @@ class MdSwitch extends MdElement {
             trigger: ".md-switch__native",
             container: ".md-switch__thumb",
         };
+
         this.rippleController = new RippleController(this, this.rippleOptions);
     }
 
@@ -51,7 +54,7 @@ class MdSwitch extends MdElement {
     render(){
         return html`
             <input 
-                aria-label="${ifDefined(this.ariaLabel || this.name || 'switch')}"
+                aria-label="switch"
                 ${ref(this.switchNative)}
                 class="md-switch__native"
                 type="checkbox"
@@ -71,37 +74,50 @@ class MdSwitch extends MdElement {
 
     async connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-switch");
-        if (this.checked !== undefined) {
-            this.defaultChecked = this.checked;
-        }
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
+
         this.classList.remove("md-switch");
     }
 
-    async update(changedProperties) {
+    update(changedProperties) {
         super.update(changedProperties);
+
         if (changedProperties.has("disabled")) {
             this.classList.toggle("md-switch--disabled", this.disabled);
         }
-        if (changedProperties.has("rippleOptions")) {
-            await this.updateComplete;
+    }
+
+    firstUpdated(_changedProperties) {
+        super.firstUpdated(_changedProperties);
+
+        this.defaultChecked = this.defaultChecked ?? this.checked ?? false;
+    }
+
+    updated(_changedProperties) {
+        super.updated(_changedProperties);
+
+        if (_changedProperties.has("rippleOptions")) {
             this.rippleController.reinit(this.rippleOptions);
         }
     }
 
     formResetCallback(event) {
-        const switchNative = this.switchNative.value;
         this.checked = this.defaultChecked;
-        switchNative.checked = this.checked;
+
+        const switchNative = this.switchNative.value;
+        switchNative.checked = this.defaultChecked;
     }
 
     _handleSwitchNativeInput(event) {
         const switchNative = this.switchNative.value;
+
         this.checked = switchNative.checked;
+
         this.emit("onSwitchNativeInput", { event, element: this });
     }
 }

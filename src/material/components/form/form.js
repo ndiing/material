@@ -12,6 +12,7 @@ class MdForm extends MdElement {
         autocomplete: { type: String },
         noValidate: { type: Boolean },
     };
+
     formNative = createRef();
 
     /* prettier-ignore */
@@ -35,11 +36,17 @@ class MdForm extends MdElement {
 
     connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-form");
-        if (!this._childNodes) {
-            this._childNodes = Array.from(this.childNodes);
-            this.replaceChildren();
-        }
+    }
+
+    firstUpdated(_changedProperties) {
+        super.firstUpdated(_changedProperties);
+
+        this.classList.add("md-form");
+
+        this._childNodes = Array.from(this.childNodes);
+        this.replaceChildren();
     }
 
     disconnectedCallback() {
@@ -49,12 +56,15 @@ class MdForm extends MdElement {
 
     reset() {
         const formNative = this.formNative.value;
+
         formNative.reset();
     }
 
     submit(button) {
         const formNative = this.formNative.value;
+
         formNative.reportValidity();
+
         if (formNative.requestSubmit) {
             if (button) {
                 formNative.requestSubmit(button);
@@ -76,8 +86,10 @@ class MdForm extends MdElement {
 
     _handleFormNativeSubmit(event) {
         event.preventDefault();
+
         const formNative = this.formNative.value;
         new FormData(formNative);
+
         this.emit("onFormNativeSubmit", { event, element: this });
     }
 }

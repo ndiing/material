@@ -41,11 +41,11 @@ import "./components/dialog/dialog-footer.js";
 
 import "./components/text-field/text-field.js"; // butuh refractor segera
 import "./components/textarea/textarea.js"; // butuh refractor segera
-import "./components/checkbox/checkbox.js"; // butuh refractor segera
-import "./components/radio-button/radio-button.js"; // butuh refractor segera
-import "./components/switch/switch.js"; // butuh refractor segera
+import "./components/checkbox/checkbox.js";
+import "./components/radio-button/radio-button.js";
+import "./components/switch/switch.js";
 import "./components/slider/slider.js"; // butuh refractor segera
-import "./components/form/form.js"; // butuh refractor segera
+import "./components/form/form.js";
 
 import "./components/data-table/data-table-cell.js";
 import "./components/data-table/data-table.js";
