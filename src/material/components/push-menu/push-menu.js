@@ -40,34 +40,42 @@ class MdPushMenu extends MdListElement {
 
     _getTrailingItem(item) {
         const trailing = [];
+
         if (item.children?.length) {
             trailing.push({ component: "icon", icon: "arrow_forward" });
         }
+
         return trailing;
     }
 
     _getLeadingItem(item, parent) {
         const leading = [];
+
         if (parent) {
             leading.push({ component: "icon", icon: "" });
         }
+
         return leading;
     }
 
     _getLeading(parent) {
         const leading = [];
+
         leading.push({ component: "icon", icon: "arrow_back" });
+
         return leading;
     }
 
     _handleListItemClick(event) {
         const li = event.currentTarget;
         const item = li.item;
+        
         if (item?.children?.length) {
             this.push(item);
         } else {
             this.selectedValues.clear();
             this.selectedValues.add(item[this.valueField]);
+            
             this._setStack();
         }
     }

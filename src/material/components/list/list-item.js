@@ -17,13 +17,17 @@ class MdListItem extends MdElement {
         rippleOptions: { type: Object },
         selected: { type: Boolean },
     };
+
     layouts = ["one-line", "two-line", "three-line"];
+
     get hasCheckbox() {
         return this.leading?.some((i) => i.component === "checkbox") || this.trailing?.some((i) => i.component === "checkbox");
     }
+
     get hasRadioButton() {
         return this.leading?.some((i) => i.component === "radio-button") || this.trailing?.some((i) => i.component === "radioButton");
     }
+
     get hasSwitch() {
         return this.leading?.some((i) => i.component === "switch") || this.trailing?.some((i) => i.component === "switch");
     }
@@ -36,6 +40,7 @@ class MdListItem extends MdElement {
         this.rippleOptions = {
             register: false,
         };
+
         this.rippleController = new RippleController(this, this.rippleOptions);
     }
 
@@ -240,34 +245,32 @@ class MdListItem extends MdElement {
         `
     }
 
-    async connectedCallback() {
+     connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-list__item");
+
         if (this.interactive) {
-            await this.rippleController.init();
+             this.rippleController.init();
         }
-        if (!this.layout) {
-            await this._setLayoutClass();
-        }
+
     }
 
-    async disconnectedCallback() {
+     disconnectedCallback() {
+
         super.disconnectedCallback();
+
         if (this.interactive) {
-            await this.rippleController.destroy();
+             this.rippleController.destroy();
         }
+
         this.classList.remove("md-list__item");
     }
 
-    update(changedProperties) {
-        super.update(changedProperties);
-        if (changedProperties.has("rippleOptions")) {
-            this.rippleController.reinit(this.rippleOptions);
-        }
-    }
+    firstUpdated(_changedProperties){
+        super.firstUpdated(_changedProperties)
 
-    async _setLayoutClass() {
-        await this.updateComplete;
+        
         if (this.supporting) {
             const supportingElement = this.querySelector(".md-list__supporting");
             const clientHeight = supportingElement.clientHeight;
@@ -276,18 +279,22 @@ class MdListItem extends MdElement {
         } else {
             this.layout = "one-line";
         }
-        this._toggleClassList(this.layouts, this.layout);
-    }
-
-    _toggleClass(modifier) {
-        this.classList.toggle(`md-list__item--${modifier}`, Boolean(this[modifier]));
-    }
-
-    _toggleClassList(list, value) {
-        list.forEach((item) => {
-            this.classList.toggle(`md-list__item--${item}`, value === item);
+        
+        this.layouts.forEach((layout) => {
+            this.classList.toggle(`md-list__item--${layout}`, this.layout === layout);
         });
     }
+
+    updated(_changedProperties) {
+        super.updated(_changedProperties);
+
+        if (_changedProperties.has("rippleOptions")) {
+            this.rippleController.reinit(this.rippleOptions);
+        }
+    }
+
+    
+
 }
 
 customElements.define("md-list-item", MdListItem);

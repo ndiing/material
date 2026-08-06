@@ -28,6 +28,7 @@ class MdTree extends MdListElement {
 
     _getLeadingItem(item, rootHasBranch) {
         const leading = [];
+
         if (rootHasBranch) {
             if (item.hasChildren) {
                 leading.push({ component: "icon-button", width: "narrow", color: "standard", icon: item.expanded ? "keyboard_arrow_down" : "keyboard_arrow_right" });
@@ -35,6 +36,7 @@ class MdTree extends MdListElement {
                 leading.push({ component: "icon", icon: "", style: { width: "32px" } });
             }
         }
+
         leading.push({ component: "icon", icon: item.hasChildren ? (this.expandedValues.has(item[this.valueField]) ? "folder_open" : "folder") : "draft" });
         return leading;
     }
@@ -42,6 +44,7 @@ class MdTree extends MdListElement {
     _handleListItemClick(event) {
         const li = event.currentTarget;
         const item = li.item;
+        
         if (item.hasChildren) {
             if (this.expandedValues.has(item[this.valueField])) {
                 this.expandedValues.delete(item[this.valueField]);
@@ -49,8 +52,10 @@ class MdTree extends MdListElement {
                 this.expandedValues.add(item[this.valueField]);
             }
         }
+        
         this.selectedValues.clear();
         this.selectedValues.add(item[this.valueField]);
+        
         this._setItems();
     }
 }

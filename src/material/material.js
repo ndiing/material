@@ -39,16 +39,16 @@ import "./components/dialog/dialog-body.js";
 import "./components/dialog/dialog-main.js";
 import "./components/dialog/dialog-footer.js";
 
-import "./components/text-field/text-field.js";
-import "./components/textarea/textarea.js";
-import "./components/checkbox/checkbox.js";
-import "./components/radio-button/radio-button.js";
-import "./components/switch/switch.js";
-import "./components/slider/slider.js";
-import "./components/form/form.js";
+import "./components/text-field/text-field.js"; // butuh refractor segera
+import "./components/textarea/textarea.js"; // butuh refractor segera
+import "./components/checkbox/checkbox.js"; // butuh refractor segera
+import "./components/radio-button/radio-button.js"; // butuh refractor segera
+import "./components/switch/switch.js"; // butuh refractor segera
+import "./components/slider/slider.js"; // butuh refractor segera
+import "./components/form/form.js"; // butuh refractor segera
 
-import "./components/data-table/data-table-cell.js";
-import "./components/data-table/data-table.js";
+import "./components/data-table/data-table-cell.js"; // butuh refractor segera
+import "./components/data-table/data-table.js"; // butuh refractor segera
 
 import "./components/list/list-item.js";
 import "./components/list/list.js";

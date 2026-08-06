@@ -1,37 +1,25 @@
 @use "../../shared/mixins.scss";
 
 @keyframes dialog-show {
-    0% {
-        height: 0;
-        transform: translate3d(-50%, calc(-50% - 25vh), 0);
-        overflow: hidden;
-    }
-    100% {
-        overflow: hidden;
-    }
-}
-@keyframes dialog-close {
-    0% {
-        visibility: visible;
-    }
-    100% {
-        transform: translate3d(-50%, calc(-50% - 25vh), 0);
+    from {
         opacity: 0;
+        transform: translate3d(-50%, -100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(-50%, -50%, 0);
     }
 }
-@keyframes dialog-main-show {
-    0% {
+
+@keyframes dialog-close {
+    from {
+        opacity: 1;
     }
-    100% {
-        overflow: hidden;
-    }
-}
-@keyframes dialog-main-close {
-    0% {
-        overflow: hidden;
-    }
-    100% {
-        overflow: hidden;
+
+    to {
+        opacity: 0;
+        transform: translate3d(-50%, -100%, 0);
     }
 }
 
@@ -49,28 +37,20 @@
     left: 50%;
     top: 50%;
     transform: translate3d(-50%, -50%, 0);
-    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
 }
 .md-dialog--close {
     animation-name: dialog-close;
     animation-duration: var(--md-sys-motion-duration-short2);
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
-    .md-dialog__main {
-        animation-name: dialog-main-close;
-        animation-duration: var(--md-sys-motion-duration-short2);
-        animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
-    }
 }
 .md-dialog--open {
-    visibility: visible;
+    opacity: 1;
+    pointer-events: all;
     animation-name: dialog-show;
     animation-duration: var(--md-sys-motion-duration-short3);
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
-    .md-dialog__main {
-        animation-name: dialog-main-show;
-        animation-duration: var(--md-sys-motion-duration-short3);
-        animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
-    }
 }
 .md-dialog__header {
     display: flex;

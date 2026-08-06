@@ -29,13 +29,16 @@ class MdList extends MdListElement {
 
     constructor() {
         super();
+
         this._items = [];
         this.activeRowIndex = 0;
         this.activeVisible = false;
         this.startNode = 0;
+
         this._handleListVirtualScrollUpdate = this._handleListVirtualScrollUpdate.bind(this);
         this._handleListKeydown = this._handleListKeydown.bind(this);
         this._handleListClick = this._handleListClick.bind(this);
+
         this.virtualScrollController = new VirtualScrollController(this, {
             rowHeight: 56,
             register: false,
@@ -89,102 +92,141 @@ class MdList extends MdListElement {
 
     async connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-list");
+
         this.tabIndex = 0;
+
         if (this.virtualScroll) {
             this.virtualScrollController.init();
         }
+
         this.on("keydown", this._handleListKeydown);
         this.on("click", this._handleListClick);
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
+
         if (this.virtualScroll) {
             this.virtualScrollController.destroy();
         }
+
         this.off("keydown", this._handleListKeydown);
         this.off("click", this._handleListClick);
+
         this.classList.remove("md-list");
     }
 
-    async update(changedProperties) {
+     update(changedProperties) {
         super.update(changedProperties);
+
         if (changedProperties.has("_list")) {
-            await this.updateComplete;
+            if (!this.virtualScroll) {
+                queueMicrotask(() => {
+                    this._items = this._list;
+                })
+            } 
+        }
+    }
+
+     updated(_changedProperties) {
+        super.updated(_changedProperties);
+
+        if (_changedProperties.has("_list")) {
             if (this.virtualScroll) {
                 this.virtualScrollController.reinit({
                     viewport: this,
                     itemCount: this._list.length,
                 });
-            } else {
-                this._items = this._list;
-            }
+            } 
+            
         }
     }
 
     _getTrailingItem(item) {
         const trailing = [];
+
         if (item.hasChildren) {
             trailing.push({ component: "icon-button", width: "narrow", color: "standard", icon: this.expandedValues.has(item[this.valueField]) ? "keyboard_arrow_up" : "keyboard_arrow_down" });
         }
+
         return [...((item.trailing?.length && item.trailing) || []), ...trailing];
     }
 
     _handleListVirtualScrollUpdate({ controller } = {}) {
         this.startNode = controller.startNode;
+
         this._items = this._list.slice(controller.startNode, controller.endNode);
     }
 
     _handleListClick(event) {
         if (this.clearSelection && !event.target.closest(".md-list__item")) {
             event.preventDefault();
+
             this.selectedValues.clear();
             this.requestUpdate();
+
             this.emit("onListItemSelection", { event, element: this });
         }
+
         this.emit("onListClick", { event, element: this });
     }
 
     _handleListKeydown(event) {
         if (this.selectAll && event.ctrlKey && event.code === "KeyA") {
             event.preventDefault();
+
             this.items.forEach((item) => {
                 this.selectedValues.add(item[this.valueField]);
             });
             this.requestUpdate();
+
             this.emit("onListItemSelection", { event, element: this });
         }
+
         if (this.activeRow && event.key === "ArrowUp") {
             event.preventDefault();
+
             this.activeVisible = true;
             this.activeRowIndex = Math.max(this.activeRowIndex - 1, 0);
+
             if (this.scrollOnArrowUpActiveRow) {
                 this.virtualScrollController.scrollTo(this.activeRowIndex);
             }
+
             if (this.selectOnArrowUpActiveRow) {
                 this.select(this.items[this.activeRowIndex]);
                 this.emit("onListItemSelection", { event, element: this });
             }
+
             this.requestUpdate();
         }
+
         if (this.activeRow && event.key === "ArrowDown") {
             event.preventDefault();
+
             this.activeVisible = true;
             this.activeRowIndex = Math.min(this.activeRowIndex + 1, this.items.length - 1);
+
             if (this.scrollOnArrowDownActiveRow) {
                 this.virtualScrollController.scrollTo(this.activeRowIndex, { offset: 16 });
             }
+
             if (this.selectOnArrowDownActiveRow) {
                 this.select(this.items[this.activeRowIndex]);
                 this.emit("onListItemSelection", { event, element: this });
             }
+
             this.requestUpdate();
         }
+
         if (this.selectOnEnterActiveRow && event.key === "Enter") {
             event.preventDefault();
+
             const li = this.querySelector(`.md-list__item:nth-child(${this.activeRowIndex + 1 - this.startNode})`);
             const item = li.item;
+
             if (item.routerLink) {
                 li.click();
             } else {
@@ -192,6 +234,7 @@ class MdList extends MdListElement {
                 this.select(this.items[this.activeRowIndex]);
                 this.requestUpdate();
             }
+
             this.emit("onListItemSelection", { event, element: this });
         }
         this.emit("onListKeydown", { event, element: this });
@@ -200,10 +243,13 @@ class MdList extends MdListElement {
     _handleListItemClick(event) {
         const li = event.currentTarget;
         const item = li.item;
+
         if (this.selectRange && event.shiftKey) {
             this.lastSelectedIndex = this.lastSelectedIndex ?? 0;
             this.currentSelectedIndex = this._items.findIndex((_item) => _item[this.valueField] === item[this.valueField]);
+
             const [start, end] = [this.lastSelectedIndex, this.currentSelectedIndex].toSorted((a, b) => a - b);
+
             this.selectedValues.clear();
             this._items.forEach((item, index) => {
                 if (index >= start && index <= end) {
@@ -211,6 +257,7 @@ class MdList extends MdListElement {
                 }
             });
             this.requestUpdate();
+
             this.emit("onListItemSelection", { event, element: this });
         } else if ((this.multiSelect && event.ctrlKey) || li.hasCheckbox || li.hasSwitch) {
             if (this.selectedValues.has(item[this.valueField])) {
@@ -226,10 +273,13 @@ class MdList extends MdListElement {
         }
         if (this.activeRow) {
             this.activeVisible = false;
+
             const index = Array.prototype.indexOf.call(li.parentElement.children, li);
             this.activeRowIndex = index + this.startNode;
+
             this.requestUpdate();
         }
+
         this.emit("onListItemClick", { event, element: this });
     }
 
@@ -243,7 +293,9 @@ class MdList extends MdListElement {
         }
         this.selectedValues.clear();
         this.selectedValues.add(item[this.valueField]);
+        
         this._setItems();
+        
         this.lastSelectedIndex = this._items.findIndex((_item) => _item[this.valueField] === item[this.valueField]);
     }
 }
