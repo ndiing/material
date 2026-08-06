@@ -44,7 +44,7 @@ import "./components/textarea/textarea.js";
 import "./components/checkbox/checkbox.js";
 import "./components/radio-button/radio-button.js";
 import "./components/switch/switch.js";
-import "./components/slider/slider.js"; // butuh refractor segera
+import "./components/slider/slider.js";
 import "./components/form/form.js";
 
 import "./components/data-table/data-table-cell.js";

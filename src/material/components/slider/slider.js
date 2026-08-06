@@ -4,51 +4,60 @@ import { createRef, ref } from "lit/directives/ref.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { RippleController } from "../../controller/ripple.js";
 import { classMap } from "lit/directives/class-map.js";
-const converter = (value) => {
+
+function converter(value) {
     try {
         return JSON.parse(value);
     } catch {
         return value;
     }
-};
-function getFraction(value, min, max) {
+}
+
+function getFraction(min, max, value) {
     return (value - min) / (max - min);
 }
 
 class MdSlider extends MdElement {
     static formAssociated = true;
+
     static properties = {
-        variant: { type: String },
-        orientation: { type: String },
-        size: { type: String },
+        name: { type: String },
         min: { type: Number },
         max: { type: Number },
         step: { type: Number },
         value: { type: Number, converter },
-        name: { type: String },
-        disabled: { type: Boolean },
-        readonly: { type: Boolean },
-        required: { type: Boolean },
-        autocomplete: { type: String },
-        icon: { type: String, converter },
+        variant: { type: String, state: true },
+        icon: { type: String },
+        orientation: { type: String },
+        size: { type: String },
+        stopIndicator: { type: Boolean },
+        valueIndicator: { type: Boolean },
         values: { type: Array, state: true },
-        tickmarks: { type: Array, state: true },
+        stops: { type: Number, state: true },
     };
+
     variants = ["standard", "centered", "range"];
     orientations = ["horizontal", "vertical"];
     sizes = ["extra-small", "small", "medium", "large", "extra-large"];
-    sliderNatives = [];
+
+    sliderNative = [createRef(), createRef()];
 
     constructor() {
         super();
+
         this.internals = this.attachInternals();
-        this.orientation = "horizontal";
-        this.size = "extra-small";
+
+        this.variant = "standard";
         this.min = 0;
         this.max = 100;
         this.step = 1;
         this.value = 50;
+        this.stopIndicator = true;
+        this.valueIndicator = true;
         this.values = [];
+
+        this.orientation = "horizontal";
+        this.size = "extra-small";
     }
 
     /* prettier-ignore */
@@ -58,176 +67,212 @@ class MdSlider extends MdElement {
                 class="md-slider__hidden"
                 type="hidden" 
                 name="${ifDefined(this.name)}"
-                value="${ifDefined(this.values)}"
+                value="${this.values}"
             >
             ${this.icon?html`<md-icon class="md-slider__icon">${this.icon}</md-icon>`:nothing}
             <div class="md-slider__track"></div>
             ${this.values.map((value,index)=>html`
                 <input 
-                    ${ref(this.sliderNatives[index])}
-                    class="md-slider__native"
+                    ${ref(this.sliderNative[index])}
+                    class="${classMap({
+                        'md-slider__native':true,
+                        [`md-slider__native${index}`]:true,
+                    })}"
                     type="range"
                     min="${ifDefined(this.min)}"
                     max="${ifDefined(this.max)}"
                     step="${ifDefined(this.step)}"
                     value="${ifDefined(value)}"
-                    ?disabled="${ifDefined(this.disabled)}"
-                    ?readonly="${ifDefined(this.readonly)}"
-                    ?required="${ifDefined(this.required)}"
-                    autocomplete="${ifDefined(this.autocomplete)}"
                     @input="${this._handleSliderNativeInput}"
+                    @focus="${this._handleSliderNativeFocus}"
+                    @blur="${this._handleSliderNativeBlur}"
                 >
-                <output class="md-slider__label">${value}</output>
-                <div class="md-slider__thumb"></div>
+                <div 
+                    class="${classMap({
+                        'md-slider__thumb':true,
+                        [`md-slider__thumb${index}`]:true,
+                    })}"
+                ></div>
+                ${this.valueIndicator?html`
+                    <div 
+                        class="${classMap({
+                            'md-slider__label':true,
+                            [`md-slider__label${index}`]:true
+                        })}"
+                    >${value}</div>
+                `:nothing}
             `)}
-            <div class="md-slider__tickmarks">
-                ${Array.from({length:this.tickmarks+1},(v, k) => html`
-                    <div class="${classMap(this._getTickmarkClass(k))}"></div>
+            <div class="md-slider__stops">
+                ${Array.from({length:this.stops+1},(v, k) => html`
+                    <div 
+                        class="${classMap(this._getStopClass(k))}"
+                    ></div>
                 `)}
             </div>
         `
     }
 
-    _getTickmarkClass(k) {
-        const value = this.tickmarks * k;
-        let active = false;
+    _getStopClass(k) {
+        const value = (k/this.stops)*100;
+        const [percentage0, percentage1] = this.values.map((value) => getFraction(this.min, this.max, value) * 100);
+
+        let selected = false;
         if (this.variant === "centered") {
-            active = (value < 50 && value >= this.percentage0) || (value > 50 && value <= this.percentage0);
+            selected = (value <= 50 && value >= percentage0) || (value >= 50 && value <= percentage0);
         } else if (this.variant === "range") {
-            active = value >= this.percentage0 && value <= this.percentage1;
+            selected = value >= percentage0 && value <= percentage1;
         } else {
-            active = value <= this.percentage0;
+            selected = value <= percentage0;
         }
         return {
-            "md-slider__tickmark": true,
-            "md-slider__tickmark--active": active,
+            "md-slider__stop": true,
+            "md-slider__stop--selected": selected,
         };
     }
 
-    async connectedCallback() {
+    connectedCallback() {
         super.connectedCallback();
+
         this.classList.add("md-slider");
-        await this.updateComplete;
-        this.defaultValues = this.defaultValues ?? structuredClone(this.values);
-        if (this.value?.length === 2) {
-            this.variant = "range";
-        } else if (this.min < 0) {
-            this.variant = "centered";
-        }
-        this._updateValue();
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
+
         this.classList.remove("md-slider");
     }
 
-    willUpdate(changedProperties) {
-        super.willUpdate(changedProperties);
-        if (changedProperties.has("value")) {
-            this.values = Array.isArray(this.value) ? this.value : [this.value];
-            for (let index = 0; index < this.values.length; index++) {
-                if (!this.sliderNatives[index]) {
-                    this.sliderNatives[index] = createRef();
-                }
+    willUpdate(_changedProperties) {
+        super.willUpdate(_changedProperties);
+
+        if (_changedProperties.has("min")) {
+            if (this.min < 0) {
+                this.variant = "centered";
             }
         }
-        if (changedProperties.has("step")) {
-            this.tickmarks = this.step > 1 ? (this.max - this.min) / this.step : this.step;
+
+        if (_changedProperties.has("step")) {
+            this.stops = this.step > 1 ? Math.floor((this.max - this.min) / this.step) : this.step;
+        }
+
+        if (_changedProperties.has("value")) {
+            this.values = Array.isArray(this.value) ? this.value : [this.value];
+            if (this.values.length === 2) {
+                this.variant = "range";
+            }
         }
     }
 
     update(changedProperties) {
         super.update(changedProperties);
+
+        if (changedProperties.has("variant")) {
+            this.variants.forEach((variant) => {
+                this.classList.toggle(`md-slider--${variant}`, this.variant === variant);
+            });
+        }
         if (changedProperties.has("orientation")) {
-            this._toggleClassList(this.orientations, this.orientation);
+            this.orientations.forEach((orientation) => {
+                this.classList.toggle(`md-slider--${orientation}`, this.orientation === orientation);
+            });
         }
         if (changedProperties.has("size")) {
-            this._toggleClassList(this.sizes, this.size);
+            this.sizes.forEach((size) => {
+                this.classList.toggle(`md-slider--${size}`, this.size === size);
+            });
         }
-        if (changedProperties.has("variant")) {
-            this._toggleClassList(this.variants, this.variant);
+        if (changedProperties.has("stops")) {
+            this.classList.toggle("md-slider--discrete", this.stops > 1);
         }
-        if (changedProperties.has("disabled")) {
-            this._toggleClass("disabled", this.disabled);
-        }
-        if (changedProperties.has("readonly")) {
-            this._toggleClass("readonly", this.readonly);
-        }
-        if (changedProperties.has("step")) {
-            this._toggleClass("discrete", this.step > 1);
-        }
+    }
+
+    _calculate(sliderNative) {
+        const min = Number(sliderNative.min);
+        const max = Number(sliderNative.max);
+        const value = Number(sliderNative.value);
+        const fraction = getFraction(min, max, value);
+        const percentage = fraction * 100;
+        return { min, max, value, fraction, percentage };
+    }
+
+    _setCssVar(index, fraction, percentage) {
+        this.style.setProperty(`--md-comp-slider-fraction${index}`, fraction);
+        this.style.setProperty(`--md-comp-slider-percentage${index}`, `${percentage}%`);
+    }
+
+    firstUpdated(changedProperties) {
+        super.firstUpdated(changedProperties);
+
+        this.defaultValues = structuredClone(this.values);
+
+        this._setVariantCssVar();
     }
 
     formResetCallback(event) {
-        for (let index = 0; index < this.defaultValues.length; index++) {
-            const sliderNative = this.sliderNatives[index].value;
-            sliderNative.value = this.defaultValues[index];
-        }
-        this.values = this.defaultValues;
-        this._updateValue();
-    }
-
-    _toggleClass(modifier, force = this[modifier]) {
-        this.classList.toggle(`md-slider--${modifier}`, !!force);
-    }
-
-    _toggleClassList(list, value) {
-        list.forEach((item) => {
-            this.classList.toggle(`md-slider--${item}`, value === item);
+        this.values = [...this.defaultValues];
+        this.defaultValues.forEach((value, index) => {
+            const sliderNative = this.sliderNative[index].value;
+            sliderNative.value = value;
         });
+
+        this._setVariantCssVar();
     }
 
     _handleSliderNativeInput(event) {
-        this._updateValue(true);
-        this.emit("onSliderNativeInput", { event, element: this });
+        if (this.variant === "centered") {
+            const sliderNative = this.sliderNative[0].value;
+            this.values = [Number(sliderNative.value)];
+        } else if (this.variant === "range") {
+            const sliderNative0 = this.sliderNative[0].value;
+            const sliderNative1 = this.sliderNative[1].value;
+
+            const clampValue0 = Math.min(Number(sliderNative0.value), this.values[1]);
+            const clampValue1 = Math.max(Number(sliderNative1.value), this.values[0]);
+
+            sliderNative0.value = clampValue0;
+            sliderNative1.value = clampValue1;
+
+            this.values = [clampValue0, clampValue1];
+        } else {
+            const sliderNative = this.sliderNative[0].value;
+            this.values = [Number(sliderNative.value)];
+        }
+
+        this._setVariantCssVar();
     }
 
-    _updateValue(force) {
-        if (this.variant === "range") {
-            const native0 = this.sliderNatives[0].value;
-            const native1 = this.sliderNatives[1].value;
-            const _value0 = Math.min(Number(native0.value), this.values[1] ?? Number(native0.max));
-            const _value1 = Math.max(Number(native1.value), this.values[0] ?? Number(native1.min));
-            native0.value = _value0;
-            native1.value = _value1;
-            const calc0 = this._calculate(0);
-            const calc1 = this._calculate(1);
-            this.percentage0 = calc0.percentage;
-            this.percentage1 = calc1.percentage;
-            this.values = [_value0, _value1];
-            this._setCssVars(0, calc0.fraction, calc0.percentage);
-            this._setCssVars(1, calc1.fraction, calc1.percentage);
-        } else if (this.variant === "centered") {
-            const { value, fraction, percentage } = this._calculate(0);
+    _handleSliderNativeFocus(event) {
+        this.classList.toggle("md-slider--focus", true);
+        this.classList.toggle("md-slider--focus-visible", !this.matches(":active"));
+    }
+    _handleSliderNativeBlur(event) {
+        this.classList.toggle("md-slider--focus", false);
+        this.classList.toggle("md-slider--focus-visible", false);
+    }
+
+    _setVariantCssVar() {
+        if (this.variant === "centered") {
+            const sliderNative = this.sliderNative[0].value;
+
+            const { fraction, percentage } = this._calculate(sliderNative);
             const percentage0 = Math.min(50, percentage);
             const percentage1 = Math.max(50, percentage);
-            this.percentage0 = percentage;
-            this.values = [value];
-            this._setCssVars(0, fraction, percentage0);
-            this.style.setProperty(`--md-comp-slider-percentage1`, `${percentage1}%`);
+            this._setCssVar(0, fraction, percentage0);
+            this._setCssVar(1, fraction, percentage1);
+        } else if (this.variant === "range") {
+            const sliderNative0 = this.sliderNative[0].value;
+            const sliderNative1 = this.sliderNative[1].value;
+
+            const { fraction: fraction0, percentage: percentage0 } = this._calculate(sliderNative0);
+            const { fraction: fraction1, percentage: percentage1 } = this._calculate(sliderNative1);
+            this._setCssVar(0, fraction0, percentage0);
+            this._setCssVar(1, fraction1, percentage1);
         } else {
-            const { value, fraction, percentage } = this._calculate(0);
-            this.percentage0 = percentage;
-            this.values = [value];
-            this._setCssVars(0, fraction, percentage);
+            const sliderNative = this.sliderNative[0].value;
+
+            const { fraction: fraction0, percentage: percentage0 } = this._calculate(sliderNative);
+            this._setCssVar(0, fraction0, percentage0);
         }
-    }
-
-    _calculate(index) {
-        const sliderNative = this.sliderNatives[index].value;
-        const value = Number(sliderNative.value);
-        const min = Number(sliderNative.min);
-        const max = Number(sliderNative.max);
-        const step = Number(sliderNative.step);
-        const fraction = getFraction(value, min, max);
-        const percentage = fraction * 100;
-        return { value, fraction, percentage };
-    }
-
-    _setCssVars(index, fraction, percentage) {
-        this.style.setProperty(`--md-comp-slider-fraction${index}`, fraction);
-        this.style.setProperty(`--md-comp-slider-percentage${index}`, `${percentage}%`);
     }
 }
 

@@ -50,7 +50,6 @@ class MdTextField extends MdElement {
         this.trailing = [];
         this.validateOnInput = true;
         this.variant = "filled";
-        this.currentLength = 0;
 
         this._handleTextFieldIconButtonClearClick = this._handleTextFieldIconButtonClearClick.bind(this);
     }
@@ -195,6 +194,7 @@ class MdTextField extends MdElement {
 
     /* prettier-ignore */
     render(){
+        const currentLength = this.value?.length
         return html`
             ${this.label?html`<label class="md-text-field__label">${this.label}</label>`:nothing}
             <div class="md-text-field__container">
@@ -204,7 +204,7 @@ class MdTextField extends MdElement {
             </div>
             <div class="md-text-field__information">
                 ${this.supporting||this.validationMessage?html`<div class="md-text-field__supporting">${this.validationMessage||this.supporting}</div>`:nothing}
-                ${(this.maxLength&&this.currentLength>0)?html`<div class="md-text-field__counter">${this.currentLength}/${this.maxLength}</div>`:nothing}
+                ${(this.maxLength&&currentLength>0)?html`<div class="md-text-field__counter">${currentLength}/${this.maxLength}</div>`:nothing}
             </div>
         `
     }
@@ -246,9 +246,7 @@ class MdTextField extends MdElement {
 
         const textFieldNative = this.textFieldNative.value;
 
-        this.currentLength = textFieldNative.value.length;
-
-        this.classList.toggle(`md-text-field--populated`, !!this.textFieldNative.value);
+        this.classList.toggle(`md-text-field--populated`, !!textFieldNative.value);
 
         this.style.setProperty("--md-comp-text-field-content-offset-left", this.textFieldContent.value.offsetLeft + "px");
     }
@@ -258,7 +256,6 @@ class MdTextField extends MdElement {
         textFieldNative.value = this.defaultValue;
 
         this.value = this.defaultValue;
-        this.currentLength = this.defaultValue.length;
 
         this.classList.toggle(`md-text-field--populated`, !!this.value);
 
@@ -288,7 +285,6 @@ class MdTextField extends MdElement {
         const textFieldNative = this.textFieldNative.value;
 
         this.value = textFieldNative.value;
-        this.currentLength = this.value.length;
 
         this.classList.toggle(`md-text-field--populated`, !!this.value);
 
@@ -320,7 +316,6 @@ class MdTextField extends MdElement {
         textFieldNative.value = "";
 
         this.value = "";
-        this.currentLength = 0;
 
         this.classList.toggle(`md-text-field--populated`, !!this.value);
     }

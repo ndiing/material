@@ -4,6 +4,7 @@ import { updateWhenLocaleChanges } from "@lit/localize";
 class MdElement extends LitElement {
     constructor() {
         super();
+
         updateWhenLocaleChanges(this);
     }
 
@@ -15,6 +16,7 @@ class MdElement extends LitElement {
         super.connectedCallback();
 
         this.classList.add(`${this.localName}--initialize`);
+
         requestAnimationFrame(() => {
             requestAnimationFrame(() => {
                 this.classList.remove(`${this.localName}--initialize`);
