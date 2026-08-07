@@ -4,13 +4,20 @@ import { MdElement } from "../../base/element.js";
 class MdDialog extends MdElement {
     static properties = {
         open: { type: Boolean, reflect: true },
+        variant: { type: String },
+        heroIcon: { type: Boolean },
     };
+
+    variants = ["basic", "full-screen"];
 
     constructor() {
         super();
 
+        this.variant = "basic";
+
         this._handleDialogScrimClick = this._handleDialogScrimClick.bind(this);
         this._handleDialogAnimationend = this._handleDialogAnimationend.bind(this);
+        this._handleWindowKeydown = this._handleWindowKeydown.bind(this);
     }
 
     connectedCallback() {
@@ -31,6 +38,8 @@ class MdDialog extends MdElement {
 
     disconnectedCallback() {
         super.disconnectedCallback();
+
+        window.removeEventListener("keydown", this._handleWindowKeydown);
 
         if (this.scrimElement) {
             this.scrimElement.off("onScrimClick", this._handleDialogScrimClick);
@@ -54,12 +63,22 @@ class MdDialog extends MdElement {
                 this.classList.add("md-dialog--close");
             }
         }
+
+        if (changedProperties.has("variant")) {
+            this.variants.forEach((variant) => {
+                this.classList.toggle(`md-dialog--${variant}`, this.variant === variant);
+            });
+        }
+
+        if (changedProperties.has("heroIcon")) {
+            this.classList.toggle(`md-dialog--hero-icon`, !!this.heroIcon);
+        }
     }
 
     updated(_changedProperties) {
         super.updated(_changedProperties);
 
-        if (_changedProperties.has("open")) {
+        if (_changedProperties.has("open") && this.variant === "basic") {
             if (this.open) {
                 this.scrimElement.show();
             } else {
@@ -78,12 +97,24 @@ class MdDialog extends MdElement {
         }
     }
 
+    _handleWindowKeydown(event) {
+        if (event.code === "Escape") {
+            event.preventDefault();
+            this.close();
+        }
+    }
+
     show() {
+        if(this.open){return}
         this.open = true;
+        this.focus();
+        window.addEventListener("keydown", this._handleWindowKeydown);
     }
 
     close() {
+        if(!this.open){return}
         this.open = false;
+        window.removeEventListener("keydown", this._handleWindowKeydown);
     }
 
     toggle() {

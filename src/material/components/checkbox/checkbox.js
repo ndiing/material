@@ -108,15 +108,12 @@ class MdCheckbox extends MdElement {
 
     _handleCheckboxNativeInvalid(event) {
         event.preventDefault();
-
         this.validate();
-
         this.emit("onCheckboxNativeInvalid", { event, element: this });
     }
 
     _handleCheckboxNativeInput(event) {
         const checkboxNative = this.checkboxNative.value;
-
         this.indeterminate = checkboxNative.indeterminate;
         this.checked = checkboxNative.checked;
 
@@ -133,9 +130,7 @@ class MdCheckbox extends MdElement {
 
     validate() {
         const checkboxNative = this.checkboxNative.value;
-
         this.validationMessage = checkboxNative.validationMessage;
-
         this._updateValidationClass();
     }
 }

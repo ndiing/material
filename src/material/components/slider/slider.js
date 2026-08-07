@@ -102,18 +102,20 @@ class MdSlider extends MdElement {
                     >${value}</div>
                 `:nothing}
             `)}
-            <div class="md-slider__stops">
-                ${Array.from({length:this.stops+1},(v, k) => html`
-                    <div 
-                        class="${classMap(this._getStopClass(k))}"
-                    ></div>
-                `)}
-            </div>
+            ${this.stopIndicator?html`
+                <div class="md-slider__stops">
+                    ${Array.from({length:this.stops+1},(v, k) => html`
+                        <div 
+                            class="${classMap(this._getStopClass(k))}"
+                        ></div>
+                    `)}
+                </div>
+            `:nothing}
         `
     }
 
     _getStopClass(k) {
-        const value = (k/this.stops)*100;
+        const value = (k / this.stops) * 100;
         const [percentage0, percentage1] = this.values.map((value) => getFraction(this.min, this.max, value) * 100);
 
         let selected = false;

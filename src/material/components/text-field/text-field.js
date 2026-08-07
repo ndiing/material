@@ -32,6 +32,7 @@ class MdTextField extends MdElement {
         step: { type: Number },
         pattern: { type: String },
         autocomplete: { type: String },
+        inputmode: { type: String },
         validationMessage: { type: String, state: true },
         validateOnBlur: { type: Boolean },
         validateOnInput: { type: Boolean },
@@ -152,7 +153,7 @@ class MdTextField extends MdElement {
             >
                 ${this.prefix?this.renderText({text:this.prefix}):nothing}
                 <input 
-                    aria-label="${ifDefined(this.ariaLabel || this.name || 'text-field')}"
+                    aria-label="text-field"
                     ${ref(this.textFieldNative)}
                     class="md-text-field__native"
                     type="${ifDefined(this.type)}"
@@ -169,6 +170,7 @@ class MdTextField extends MdElement {
                     step="${ifDefined(this.step)}"
                     pattern="${ifDefined(this.pattern)}"
                     autocomplete="${ifDefined(this.autocomplete)}"
+                    inputmode="${ifDefined(this.inputmode)}"
                     @focus="${this._handleTextFieldNativeFocus}"
                     @input="${this._handleTextFieldNativeInput}"
                     @blur="${this._handleTextFieldNativeBlur}"
@@ -245,18 +247,14 @@ class MdTextField extends MdElement {
         this.defaultValue = this.defaultValue ?? this.value ?? "";
 
         const textFieldNative = this.textFieldNative.value;
-
         this.classList.toggle(`md-text-field--populated`, !!textFieldNative.value);
-
         this.style.setProperty("--md-comp-text-field-content-offset-left", this.textFieldContent.value.offsetLeft + "px");
     }
 
     formResetCallback(event) {
+        this.value = this.defaultValue;
         const textFieldNative = this.textFieldNative.value;
         textFieldNative.value = this.defaultValue;
-
-        this.value = this.defaultValue;
-
         this.classList.toggle(`md-text-field--populated`, !!this.value);
 
         this.validationMessage = "";
@@ -283,9 +281,7 @@ class MdTextField extends MdElement {
 
     _handleTextFieldNativeInput(event) {
         const textFieldNative = this.textFieldNative.value;
-
         this.value = textFieldNative.value;
-
         this.classList.toggle(`md-text-field--populated`, !!this.value);
 
         if (this.validateOnInput) {
@@ -297,27 +293,21 @@ class MdTextField extends MdElement {
 
     _handleTextFieldNativeInvalid(event) {
         event.preventDefault();
-
         this.validate();
-
         this.emit("onTextFieldNativeInvalid", { event, element: this });
-    }
-
-    validate() {
-        const textFieldNative = this.textFieldNative.value;
-
-        this.validationMessage = textFieldNative.validationMessage;
-
-        this.classList.toggle(`md-text-field--error`, !!this.validationMessage);
     }
 
     _handleTextFieldIconButtonClearClick(event) {
         const textFieldNative = this.textFieldNative.value;
         textFieldNative.value = "";
-
         this.value = "";
-
         this.classList.toggle(`md-text-field--populated`, !!this.value);
+    }
+
+    validate() {
+        const textFieldNative = this.textFieldNative.value;
+        this.validationMessage = textFieldNative.validationMessage;
+        this.classList.toggle(`md-text-field--error`, !!this.validationMessage);
     }
 }
 

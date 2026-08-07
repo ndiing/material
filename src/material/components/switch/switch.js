@@ -106,16 +106,13 @@ class MdSwitch extends MdElement {
 
     formResetCallback(event) {
         this.checked = this.defaultChecked;
-
         const switchNative = this.switchNative.value;
         switchNative.checked = this.defaultChecked;
     }
 
     _handleSwitchNativeInput(event) {
         const switchNative = this.switchNative.value;
-
         this.checked = switchNative.checked;
-
         this.emit("onSwitchNativeInput", { event, element: this });
     }
 }

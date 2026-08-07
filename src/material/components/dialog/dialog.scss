@@ -1,6 +1,6 @@
 @use "../../shared/mixins.scss";
 
-@keyframes dialog-show {
+@keyframes basic-dialog-show {
     from {
         opacity: 0;
         transform: translate3d(-50%, -100%, 0);
@@ -12,7 +12,7 @@
     }
 }
 
-@keyframes dialog-close {
+@keyframes basic-dialog-close {
     from {
         opacity: 1;
     }
@@ -20,6 +20,29 @@
     to {
         opacity: 0;
         transform: translate3d(-50%, -100%, 0);
+    }
+}
+
+@keyframes full-screen-dialog-show {
+    from {
+        opacity: 0;
+        transform: translate3d(-50%, 2000px, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(-50%, -50%, 0);
+    }
+}
+
+@keyframes full-screen-dialog-close {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        transform: translate3d(-50%, 2000px, 0);
     }
 }
 
@@ -39,23 +62,16 @@
     transform: translate3d(-50%, -50%, 0);
     opacity: 0;
     pointer-events: none;
+
+    @include mixins.initialize();
 }
-.md-dialog--close {
-    animation-name: dialog-close;
-    animation-duration: var(--md-sys-motion-duration-short2);
-    animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
-}
-.md-dialog--open {
-    opacity: 1;
-    pointer-events: all;
-    animation-name: dialog-show;
-    animation-duration: var(--md-sys-motion-duration-short3);
-    animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
-}
+
 .md-dialog__header {
     display: flex;
     align-items: center;
-    padding: 24px 24px;
+    padding: 24px;
+    gap: 0 16px;
+
     + .md-dialog__body {
         margin-top: -32px;
     }
@@ -64,22 +80,40 @@
 .md-dialog__leading {
     display: inline-flex;
     align-items: center;
+    gap: 0 24px;
 }
+
 .md-dialog__content {
     flex: 1;
+    min-width: 0;
 }
+
 .md-dialog__headline {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     @include mixins.typescale-headline-small();
-
-    // // full
-    // @include mixins.typescale-title-large();
 }
+
 .md-dialog__trailing {
     display: inline-flex;
     align-items: center;
+    gap: 0 24px;
+
+    .md-dialog__icon-button {
+        margin: 0 -8px;
+    }
+
+    .md-dialog__button {
+        margin: 0 -8px;
+    }
+}
+
+// .md-dialog__icon {}
+
+.md-dialog--hero-icon .md-dialog__header {
+    flex-direction: column;
+    gap: 24px 0;
 }
 
 .md-dialog__body {
@@ -87,22 +121,68 @@
     display: flex;
     flex-direction: column;
     min-height: 0;
-    min-width: 0;
 }
+
 .md-dialog__main {
     flex: 1;
     padding: 0 24px;
     margin: 24px 0;
     overflow: auto;
     @include mixins.typescale-body-medium();
+
     + .md-dialog__footer {
         margin-top: -24px;
     }
 }
+
 .md-dialog__footer {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding: 24px 24px;
-    gap: 0 4px;
+    padding: 24px;
+    gap: 0 8px;
+}
+
+.md-dialog--close {
+    animation-name: basic-dialog-close;
+    animation-duration: var(--md-sys-motion-duration-short2);
+    animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
+}
+
+.md-dialog--open {
+    opacity: 1;
+    pointer-events: all;
+    animation-name: basic-dialog-show;
+    animation-duration: var(--md-sys-motion-duration-short3);
+    animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
+}
+
+// .md-dialog--basic{}
+
+.md-dialog--full-screen {
+    min-width: 100%;
+    max-width: 100%;
+    height: 100%;
+    border-radius: 0;
+    box-shadow: none;
+    background-color: var(--md-sys-color-surface);
+    color: var(--md-sys-color-on-surface-variant);
+
+    .md-dialog__header {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        min-height: 64px;
+    }
+
+    .md-dialog__headline {
+        @include mixins.typescale-title-large();
+    }
+
+    &.md-dialog--close {
+        animation-name: full-screen-dialog-close;
+    }
+
+    &.md-dialog--open {
+        animation-name: full-screen-dialog-show;
+    }
 }

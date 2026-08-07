@@ -17,9 +17,11 @@ class MdElement extends LitElement {
 
         this.classList.add(`${this.localName}--initialize`);
 
-        requestAnimationFrame(() => {
+        this.updateComplete.then(() => {
             requestAnimationFrame(() => {
-                this.classList.remove(`${this.localName}--initialize`);
+                requestAnimationFrame(() => {
+                    this.classList.remove(`${this.localName}--initialize`);
+                });
             });
         });
     }

@@ -13,6 +13,14 @@ class DemoForm extends MdElement {
                 <md-grid >
 
                     <md-grid-column expanded="4">
+                        <md-text-field inputmode="numeric" name="inputmode" type="text" label="Text"></md-text-field>
+                    </md-grid-column>
+                    <md-grid-column expanded="4">
+                        <md-text-field inputmode="numeric" value="Text" name="inputmode2" type="text" label="Text"></md-text-field>
+                    </md-grid-column>
+                    <md-grid-column expanded="4"></md-grid-column>
+
+                    <md-grid-column expanded="4">
                         <md-text-field name="text" type="text" label="Text"></md-text-field>
                     </md-grid-column>
                     <md-grid-column expanded="4">

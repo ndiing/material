@@ -89,16 +89,13 @@ class MdRadioButton extends MdElement {
 
     formResetCallback(event) {
         this.checked = this.defaultChecked;
-
         const radioButtonNative = this.radioButtonNative.value;
         radioButtonNative.checked = this.defaultChecked;
     }
 
     _handleRadioButtonNativeInput(event) {
         const radioButtonNative = this.radioButtonNative.value;
-
         this.checked = radioButtonNative.checked;
-
         this.emit("onRadioButtonNativeInput", { event, element: this });
     }
 }

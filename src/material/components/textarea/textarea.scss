@@ -1,4 +1,5 @@
 @use "../../shared/mixins.scss";
+
 .md-textarea {
     @include mixins.initialize();
 

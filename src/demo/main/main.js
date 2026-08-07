@@ -104,30 +104,27 @@ class DemoMain extends MdElement {
     firstUpdated() {
         document.body.addEventListener("keydown", (event) => {
             if (event.key === "Tab") {
-                // Ambil elemen focusable yang beneran visible & enabled
-                const focusable = Array.from(document.body.querySelectorAll(['button:not([tabindex="-1"]):not([disabled])', 'input:not([tabindex="-1"]):not([disabled])', 'select:not([tabindex="-1"]):not([disabled])', 'textarea:not([tabindex="-1"]):not([disabled])', '[tabindex]:not([tabindex="-1"]):not([disabled])'].join(","))).filter((el) => el.offsetParent !== null); // filter yang hidden
+                const activeDialog = document.body.querySelector("md-dialog[open]");
+                const root = activeDialog || document.body;
+                const focusable = Array.from(root.querySelectorAll('button:not([tabindex="-1"]):not([disabled]),' + 'input:not([tabindex="-1"]):not([disabled]),' + 'select:not([tabindex="-1"]):not([disabled]),' + 'textarea:not([tabindex="-1"]):not([disabled]),' + '[tabindex]:not([tabindex="-1"]):not([disabled])')).filter((el) => el.checkVisibility({ opacityProperty: true }));
 
                 if (focusable.length === 0) return;
 
                 const currentElement = document.activeElement;
                 let currentIndex = focusable.indexOf(currentElement);
 
-                // Kalo currentElement nggak ada di list (misal body), mulai dari -1
                 if (currentIndex === -1) {
-                    currentIndex = event?.shiftKey ? 0 : -1;
-                    // Shift+Tab mulai dari akhir, Tab mulai dari awal
+                    currentIndex = event.shiftKey ? 0 : -1;
                 }
 
                 let nextIndex;
-                if (event?.shiftKey) {
-                    // Mundur
+                if (event.shiftKey) {
                     nextIndex = (currentIndex - 1 + focusable.length) % focusable.length;
                 } else {
-                    // Maju
                     nextIndex = (currentIndex + 1) % focusable.length;
                 }
 
-                event?.preventDefault?.();
+                event.preventDefault();
                 focusable[nextIndex].focus();
             }
         });

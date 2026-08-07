@@ -62,6 +62,7 @@
     padding: 0 16px;
     margin: calc((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-large-line-height)) / 2) 0;
     @include mixins.typescale-body-large();
+
     + .md-text-field__native {
         margin-left: -32px;
     }
@@ -76,9 +77,11 @@
     background-color: transparent;
     color: inherit;
     outline: none;
+
     &::placeholder {
         @include mixins.typescale-body-large();
     }
+
     + .md-text-field__text {
         margin-left: -32px;
     }
@@ -86,12 +89,15 @@
     &::-webkit-calendar-picker-indicator {
         display: none;
     }
+
     &::-webkit-inner-spin-button {
         display: none;
     }
+
     &::-webkit-search-cancel-button {
         display: none;
     }
+
     &::-webkit-datetime-edit-fields-wrapper {
         padding: 0;
     }
