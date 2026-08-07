@@ -241,7 +241,7 @@
     .md-slider__track::after {
         clip-path: inset(calc(100% - var(--md-comp-slider-percentage0)) 0 0 0);
     }
-    .md-slider--discrete {
+    &.md-slider--discrete {
         .md-slider__track::after {
             background-image: radial-gradient(circle at center var(--md-comp-slider-stop-indicator-size), var(--md-sys-color-on-primary) 0, var(--md-sys-color-on-primary) calc(var(--md-comp-slider-stop-indicator-size) / 2), transparent calc(var(--md-comp-slider-stop-indicator-size) / 2));
         }
