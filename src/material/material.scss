@@ -7,10 +7,11 @@
 @use "./controller/virtual-scroll.scss";
 @use "./controller/ripple.scss";
 
-@use "./components/typography/typography.scss";
 @use "./components/grid/grid.scss";
 @use "./components/scrim/scrim.scss";
 @use "./components/layout/layout.scss";
+
+@use "./components/typography/typography.scss";
 @use "./components/icon/icon.scss";
 @use "./components/image/image.scss";
 

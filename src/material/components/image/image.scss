@@ -26,7 +26,7 @@
 }
 
 .md-image--round {
-    border-radius: 9999px;
+    border-radius: var(--md-sys-shape-corner-full);
 }
 
 .md-image--sharp {

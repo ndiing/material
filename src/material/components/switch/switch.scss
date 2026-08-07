@@ -12,7 +12,7 @@
     appearance: none;
     width: 52px;
     height: 32px;
-    border-radius: 50%;
+    border-radius: var(--md-sys-shape-corner-full);
     transform: translate3d(-50%, -50%, 0);
     position: absolute;
     z-index: 2;
@@ -29,7 +29,7 @@
             .md-switch__thumb {
                 width: 24px;
                 height: 24px;
-                border-radius: 12px;
+                border-radius: var(--md-sys-shape-corner-full);
                 left: 22px;
                 background-color: var(--md-sys-color-on-primary);
                 color: var(--md-sys-color-primary);
@@ -44,7 +44,7 @@
             .md-switch__thumb {
                 width: 28px;
                 height: 28px;
-                border-radius: 14px;
+                border-radius: var(--md-sys-shape-corner-full);
                 left: 0px;
             }
         }
@@ -60,7 +60,7 @@
 
     &:focus-visible {
         outline-offset: 2px;
-        border-radius: 9999px;
+        border-radius: var(--md-sys-shape-corner-full);
     }
 }
 
@@ -73,7 +73,7 @@
     height: 32px;
     background-color: var(--md-sys-color-surface-container-highest);
     border: 2px solid var(--md-sys-color-outline);
-    border-radius: 16px;
+    border-radius: var(--md-sys-shape-corner-full);
     position: relative;
     will-change: background-color, border-color;
     transition-property: background-color, border-color;
@@ -91,7 +91,7 @@
     position: absolute;
     width: 24px;
     height: 24px;
-    border-radius: 12px;
+    border-radius: var(--md-sys-shape-corner-full);
     left: 2px;
     will-change: width, height, border-radius, left, background-color, color;
     transition-property: width, height, border-radius, left, background-color, color;
@@ -101,7 +101,7 @@
     &:empty {
         width: 16px;
         height: 16px;
-        border-radius: 8px;
+        border-radius: var(--md-sys-shape-corner-full);
         left: 4px;
     }
 

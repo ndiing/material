@@ -117,7 +117,7 @@
 .md-slider__thumb {
     height: var(--md-comp-slider-handle-height);
     width: var(--md-comp-slider-handle-width);
-    border-radius: 9999px;
+    border-radius: var(--md-sys-shape-corner-full);
     background-color: var(--md-sys-color-primary);
     box-shadow: 0 0 0 6px var(--md-sys-color-background);
     position: absolute;
@@ -134,7 +134,7 @@
     height: var(--md-comp-slider-label-container-height);
     width: var(--md-comp-slider-label-container-width);
     padding: 12px 16px;
-    border-radius: 9999px;
+    border-radius: var(--md-sys-shape-corner-full);
     background-color: var(--md-sys-color-inverse-surface);
     color: var(--md-sys-color-inverse-on-surface);
     position: absolute;

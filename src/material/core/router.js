@@ -3,11 +3,13 @@ import { QueryBuilder } from "./query-builder.js";
 class Router {
     constructor(routes, options = {}) {
         this.routes = [...routes];
-        const { timeout = 5000, historyApiFallback = false, base = "http://localhost", head } = options;
+
+        const { timeout = 5000, historyApiFallback = false, base = "http://localhost" } = options;
+        
         this.timeout = timeout;
         this.historyApiFallback = historyApiFallback;
         this.base = base;
-        this.head = head;
+
         this.url = new URL("/", this.base);
         this.queryBuilder = new QueryBuilder(this.url.searchParams);
         this.query = {};
@@ -17,17 +19,20 @@ class Router {
 
     _getRoutes(routes = this.routes, parent = null, result = []) {
         this.params = {};
+
         for (const route of routes) {
             if (!route.input) {
                 route.parent = parent;
                 route.input = `${route.parent?.input ?? "/"}/${route.path}`.replace(/\/+/g, "/").replace(/(?!^)\/$/, "");
                 route.pattern = new URLPattern(route.input, this.base);
             }
+
             if (route.pattern.test(this.url.pathname, this.base)) {
                 const execResult = route.pattern.exec(this.url.pathname, this.base);
                 this.params = execResult?.pathname?.groups ?? {};
                 return [...result, route];
             }
+
             if (route?.children && route.children?.length) {
                 const matches = this._getRoutes(route.children, route, [...result, route]);
                 if (matches) {
@@ -42,22 +47,29 @@ class Router {
         return new Promise((resolve, reject) => {
             const next = (err) => {
                 clearTimeout(timeout);
+
                 if (this.controller) {
                     this.controller.signal.removeEventListener("abort", handleAbort);
                 }
+
                 if (err) reject(err);
                 else resolve();
             };
+
             const handleTimeout = () => {
                 next(new Error(`beforeLoad timeout on path: ${route.input}`));
             };
+
             const timeout = setTimeout(handleTimeout, this.timeout);
+
             const handleAbort = (event) => {
                 next(event);
             };
+
             if (this.controller) {
                 this.controller.signal.addEventListener("abort", handleAbort);
             }
+
             route.beforeLoad(this, next);
         });
     }
@@ -65,8 +77,10 @@ class Router {
     async _getOutlet(route, container) {
         return new Promise((resolve, reject) => {
             let outlet;
+
             const target = route.outlet ? document.body : container;
             const selector = route.outlet ? `md-outlet[name="${route.outlet}"]` : "md-outlet:not([name])";
+            
             const resolveOutlet = () => {
                 outlet = target.querySelector(selector);
                 if (outlet) {
@@ -75,16 +89,19 @@ class Router {
                     resolve(outlet);
                 }
             };
+
             const observer = new MutationObserver(resolveOutlet);
             observer.observe(target, {
                 childList: true,
                 subtree: true,
             });
+
             const rejectOutlet = () => {
                 observer.disconnect();
                 reject(new Error(`Outlet [${selector}] not found for route: ${route.input}`));
             };
             const timeout = setTimeout(rejectOutlet, this.timeout);
+
             resolveOutlet();
         });
     }
@@ -94,17 +111,22 @@ class Router {
             if (!route.load) {
                 throw new Error(`route.load() not set for path: ${route.input}`);
             }
+
             route.component = await route.load(this);
         }
+
         if (!route.component) {
             throw new Error(`route.component not resolved for path: ${route.input}`);
         }
+
         const container = route.parent?.component ?? document.body;
         const outlet = await this._getOutlet(route, container);
+
         if (!route.component.isConnected) {
             route.component.isComponent = true;
             route.component.router = this;
             route.component.route = route;
+
             outlet.parentElement.insertBefore(route.component, outlet.nextElementSibling);
         }
     }
@@ -136,24 +158,29 @@ class Router {
     async _handleNavigation() {
         // performance.mark("onNavigationStart");
         this.emit("onNavigationStart", this);
+        
         const { pathname, search, hash } = this._parseURL();
         this.url.pathname = pathname;
         this.url.search = search;
         this.url.hash = hash;
         this.query = this.queryBuilder.toJSON();
+
         const routes = this._getRoutes();
         if (!routes || routes.length === 0) {
             this.emit("onNavigationError", new Error(`404 Not Found: ${this.url.pathname}`));
             return;
         }
+
         if (this.controller && !this.controller.signal.aborted) {
             this.controller.abort();
         }
         this.controller = new AbortController();
+
         for (const route of routes) {
             if (route.redirectTo) {
                 return this.navigate(route.redirectTo);
             }
+
             if (route.beforeLoad) {
                 try {
                     this.emit("onGuardsCheckStart", this);
@@ -168,6 +195,7 @@ class Router {
                     }
                 }
             }
+
             try {
                 await this._renderComponent(route);
             } catch (err) {
@@ -175,7 +203,9 @@ class Router {
                 throw err;
             }
         }
+
         this._removeComponent(routes);
+
         this.emit("onNavigationEnd", this);
         // performance.mark("onNavigationEnd");
         // performance.measure("measureNavigation", "onNavigationStart", "onNavigationEnd");
@@ -186,15 +216,18 @@ class Router {
 
     navigate(url, options = {}) {
         let targetUrl = url;
+
         if (!targetUrl) {
             targetUrl = `${this.url.pathname}${this.url.search}${this.url.hash}`;
         }
+
         if (this.historyApiFallback) {
             if (options.replace) {
                 window.history.replaceState({}, "", targetUrl);
             } else {
                 window.history.pushState({}, "", targetUrl);
             }
+
             this._handleNavigation();
         } else {
             window.location.hash = targetUrl;
@@ -204,6 +237,7 @@ class Router {
     _handleNavigate(event) {
         const routerLink = event.target.closest("[routerLink]");
         if (!routerLink) return;
+
         event.preventDefault();
         const url = routerLink.getAttribute("routerLink");
         this.navigate(url);
@@ -215,11 +249,13 @@ class Router {
         } else {
             this._handleNavigation();
         }
+
         if (this.historyApiFallback) {
             window.addEventListener("popstate", () => this._handleNavigation());
         } else {
             window.addEventListener("hashchange", () => this._handleNavigation());
         }
+        
         window.addEventListener("click", (event) => this._handleNavigate(event));
     }
 

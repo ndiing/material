@@ -20,7 +20,7 @@
         content: "";
         width: var(--md-comp-ripple-radius);
         aspect-ratio: 1/1;
-        border-radius: 50%;
+        border-radius: var(--md-sys-shape-corner-full);
         position: absolute;
         left: var(--md-comp-ripple-left);
         top: var(--md-comp-ripple-top);

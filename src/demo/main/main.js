@@ -1,6 +1,8 @@
 import { html } from "lit";
 import { MdElement } from "../../material/base/element.js";
 import { BreakpointObserver } from "../../material/core/breakpoint-observer.js";
+import { initFocusTrap } from "../../material/core/focus-trap.js";
+
 
 class DemoMain extends MdElement {
     static properties = {
@@ -102,32 +104,7 @@ class DemoMain extends MdElement {
     }
 
     firstUpdated() {
-        document.body.addEventListener("keydown", (event) => {
-            if (event.key === "Tab") {
-                const activeDialog = document.body.querySelector("md-dialog[open]");
-                const root = activeDialog || document.body;
-                const focusable = Array.from(root.querySelectorAll('button:not([tabindex="-1"]):not([disabled]),' + 'input:not([tabindex="-1"]):not([disabled]),' + 'select:not([tabindex="-1"]):not([disabled]),' + 'textarea:not([tabindex="-1"]):not([disabled]),' + '[tabindex]:not([tabindex="-1"]):not([disabled])')).filter((el) => el.checkVisibility({ opacityProperty: true }));
-
-                if (focusable.length === 0) return;
-
-                const currentElement = document.activeElement;
-                let currentIndex = focusable.indexOf(currentElement);
-
-                if (currentIndex === -1) {
-                    currentIndex = event.shiftKey ? 0 : -1;
-                }
-
-                let nextIndex;
-                if (event.shiftKey) {
-                    nextIndex = (currentIndex - 1 + focusable.length) % focusable.length;
-                } else {
-                    nextIndex = (currentIndex + 1) % focusable.length;
-                }
-
-                event.preventDefault();
-                focusable[nextIndex].focus();
-            }
-        });
+        initFocusTrap()
     }
 }
 

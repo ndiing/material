@@ -2,7 +2,7 @@ import { html } from "lit";
 import { MdElement } from "../../material/base/element.js";
 import { setPosition } from "../../material/core/positioner.js";
 
-class DemoTest extends MdElement {
+class DemoInputMask extends MdElement {
     constructor() {
         super();
     }
@@ -62,5 +62,5 @@ class DemoTest extends MdElement {
         input.setSelectionRange(newCursorPos, newCursorPos);
     }
 }
-customElements.define("demo-test", DemoTest);
-export default document.createElement("demo-test");
+customElements.define("demo-input-mask", DemoInputMask);
+export default document.createElement("demo-input-mask");

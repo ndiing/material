@@ -282,7 +282,6 @@ export { MdSlider };
 src\material\components\slider\slider.scss
 
 ```scss
-
 .md-slider {
     --md-comp-slider-track-height: 16px;
     --md-comp-slider-label-container-height: 44px;
@@ -302,9 +301,7 @@ src\material\components\slider\slider.scss
     user-select: none;
 }
 
-
 // .md-slider__hidden {}
-
 
 .md-slider__native {
     appearance: none;
@@ -317,16 +314,13 @@ src\material\components\slider\slider.scss
     z-index: 6;
 }
 
-
 .md-slider__native::-webkit-slider-container {
     appearance: none;
 }
 
-
 .md-slider__native::-webkit-slider-runnable-track {
     appearance: none;
 }
-
 
 .md-slider__native::-webkit-slider-thumb {
     appearance: none;
@@ -336,16 +330,13 @@ src\material\components\slider\slider.scss
     background-color: transparent;
 }
 
-
 .md-slider__native::-moz-range-track {
     appearance: none;
 }
 
-
 .md-slider__native::-moz-range-progress {
     appearance: none;
 }
-
 
 .md-slider__native::-moz-range-thumb {
     appearance: none;
@@ -356,7 +347,6 @@ src\material\components\slider\slider.scss
     width: var(--md-comp-slider-handle-width);
     background-color: transparent;
 }
-
 
 .md-slider__icon {
     position: absolute;
@@ -373,7 +363,6 @@ src\material\components\slider\slider.scss
     color: var(--md-sys-color-on-primary);
 }
 
-
 .md-slider__track {
     position: absolute;
     z-index: 1;
@@ -383,7 +372,6 @@ src\material\components\slider\slider.scss
     height: var(--md-comp-slider-track-height);
 }
 .md-slider__track::before,
-
 .md-slider__track::after {
     content: "";
     position: absolute;
@@ -405,17 +393,15 @@ src\material\components\slider\slider.scss
 }
 
 .md-slider--discrete {
-
     .md-slider__track::after {
         background-image: radial-gradient(circle at var(--md-comp-slider-stop-indicator-size) center, var(--md-sys-color-on-primary) 0, var(--md-sys-color-on-primary) calc(var(--md-comp-slider-stop-indicator-size) / 2), transparent calc(var(--md-comp-slider-stop-indicator-size) / 2));
     }
 }
 
-
 .md-slider__thumb {
     height: var(--md-comp-slider-handle-height);
     width: var(--md-comp-slider-handle-width);
-    border-radius: 9999px;
+    border-radius: var(--md-sys-shape-corner-full);
     background-color: var(--md-sys-color-primary);
     box-shadow: 0 0 0 6px var(--md-sys-color-background);
     position: absolute;
@@ -425,7 +411,6 @@ src\material\components\slider\slider.scss
     pointer-events: none;
 }
 
-
 .md-slider__label {
     display: inline-flex;
     align-items: center;
@@ -433,7 +418,7 @@ src\material\components\slider\slider.scss
     height: var(--md-comp-slider-label-container-height);
     width: var(--md-comp-slider-label-container-width);
     padding: 12px 16px;
-    border-radius: 9999px;
+    border-radius: var(--md-sys-shape-corner-full);
     background-color: var(--md-sys-color-inverse-surface);
     color: var(--md-sys-color-inverse-on-surface);
     position: absolute;
@@ -444,24 +429,19 @@ src\material\components\slider\slider.scss
     transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
 }
 
-
 .md-slider__native:is(:active, :focus-visible) + .md-slider__thumb + .md-slider__label {
     transition-duration: var(--md-sys-motion-duration-short2);
     transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
 }
-
 
 .md-slider__native:focus-visible + .md-slider__thumb {
     outline: 2px solid var(--md-sys-color-outline);
     outline-offset: 2px;
 }
 
-
 // .md-slider--standard {}
 
-
 .md-slider--horizontal {
-
     .md-slider__label {
         bottom: calc(100% - (var(--md-comp-slider-label-container-height) / 2));
         left: calc(var(--md-comp-slider-fraction0) * (100% - var(--md-comp-slider-handle-width)) + (var(--md-comp-slider-handle-width) / 2));
@@ -471,42 +451,33 @@ src\material\components\slider\slider.scss
         transition-property: bottom, transform;
     }
 
-
     .md-slider__native:is(:active, :focus-visible) + .md-slider__thumb + .md-slider__label {
         bottom: 100%;
         transform: translate3d(-50%, 0, 0) scale3d(1, 1, 1);
     }
 
-
     &.md-slider--centered {
-
         .md-slider__track::after {
             clip-path: inset(0 calc(100% - var(--md-comp-slider-percentage1)) 0 var(--md-comp-slider-percentage0));
         }
     }
 
-
     &.md-slider--range {
-
         .md-slider__native0 {
             clip-path: inset(0 calc(100% - (40px / 2 + (100% - 40px) * (var(--md-comp-slider-fraction0) + (var(--md-comp-slider-fraction1) - var(--md-comp-slider-fraction0)) / 2))) 0 0);
         }
-
 
         .md-slider__native1 {
             clip-path: inset(0 0 0 calc(40px / 2 + (100% - 40px) * (var(--md-comp-slider-fraction0) + (var(--md-comp-slider-fraction1) - var(--md-comp-slider-fraction0)) / 2)));
         }
 
-
         .md-slider__track::after {
             clip-path: inset(0 calc(100% - var(--md-comp-slider-percentage1)) 0 var(--md-comp-slider-percentage0));
         }
 
-
         .md-slider__thumb1 {
             left: calc(var(--md-comp-slider-fraction1) * (100% - var(--md-comp-slider-handle-width)) + (var(--md-comp-slider-handle-width) / 2));
         }
-
 
         .md-slider__label1 {
             left: calc(var(--md-comp-slider-fraction1) * (100% - var(--md-comp-slider-handle-width)) + (var(--md-comp-slider-handle-width) / 2));
@@ -514,36 +485,30 @@ src\material\components\slider\slider.scss
     }
 }
 
-
 .md-slider--vertical {
     height: 192px;
     width: calc(var(--md-comp-slider-handle-height) + (4px * 2));
     margin: calc(var(--md-comp-slider-stop-indicator-size) / 2) 0;
-
 
     .md-slider__native {
         writing-mode: vertical-lr;
         direction: rtl;
     }
 
-
     .md-slider__native::-webkit-slider-thumb {
         width: var(--md-comp-slider-handle-height);
         height: var(--md-comp-slider-handle-width);
     }
-
 
     .md-slider__native::-moz-range-thumb {
         width: var(--md-comp-slider-handle-height);
         height: var(--md-comp-slider-handle-width);
     }
 
-
     .md-slider__icon {
         left: auto;
         bottom: calc(14px + (4px - 14px) * var(--md-comp-slider-fraction0));
     }
-
 
     .md-slider__track {
         left: auto;
@@ -555,7 +520,6 @@ src\material\components\slider\slider.scss
         width: var(--md-comp-slider-track-height);
     }
     .md-slider__track::before,
-
     .md-slider__track::after {
         background-size: 100% calc((100% - var(--md-comp-slider-stop-indicator-size) * 2) / var(--md-comp-slider-stop));
     }
@@ -569,12 +533,10 @@ src\material\components\slider\slider.scss
     }
 
     &.md-slider--discrete {
-
         .md-slider__track::after {
             background-image: radial-gradient(circle at center var(--md-comp-slider-stop-indicator-size), var(--md-sys-color-on-primary) 0, var(--md-sys-color-on-primary) calc(var(--md-comp-slider-stop-indicator-size) / 2), transparent calc(var(--md-comp-slider-stop-indicator-size) / 2));
         }
     }
-
 
     .md-slider__thumb {
         width: var(--md-comp-slider-handle-height);
@@ -583,7 +545,6 @@ src\material\components\slider\slider.scss
         bottom: calc(var(--md-comp-slider-fraction0) * (100% - var(--md-comp-slider-handle-width)) + (var(--md-comp-slider-handle-width) / 2));
         transform: translate3d(0, 50%, 0);
     }
-
 
     .md-slider__label {
         left: calc(100% - (var(--md-comp-slider-label-container-height) / 2));
@@ -594,12 +555,10 @@ src\material\components\slider\slider.scss
         transition-property: left, transform;
     }
 
-
     .md-slider__native:is(:active, :focus-visible) + .md-slider__thumb + .md-slider__label {
         left: 100%;
         transform: translate3d(0, 50%, 0) scale3d(1, 1, 1);
     }
-
 
     .md-slider__stops {
         flex-direction: column-reverse;
@@ -607,43 +566,34 @@ src\material\components\slider\slider.scss
         height: 100%;
     }
 
-
     &.md-slider--centered {
-
         .md-slider__track::after {
             clip-path: inset(calc(100% - var(--md-comp-slider-percentage1)) 0 var(--md-comp-slider-percentage0) 0);
         }
     }
 
-
     &.md-slider--range {
-
         .md-slider__native0 {
             clip-path: inset(calc(100% - (40px / 2 + (100% - 40px) * (var(--md-comp-slider-fraction0) + (var(--md-comp-slider-fraction1) - var(--md-comp-slider-fraction0)) / 2))) 0 0 0);
         }
-
 
         .md-slider__native1 {
             clip-path: inset(0 0 calc(40px / 2 + (100% - 40px) * (var(--md-comp-slider-fraction0) + (var(--md-comp-slider-fraction1) - var(--md-comp-slider-fraction0)) / 2)) 0);
         }
 
-
         .md-slider__track::after {
             clip-path: inset(calc(100% - var(--md-comp-slider-percentage1)) 0 var(--md-comp-slider-percentage0) 0);
         }
 
-
         .md-slider__thumb1 {
             bottom: calc(var(--md-comp-slider-fraction1) * (100% - var(--md-comp-slider-handle-width)) + (var(--md-comp-slider-handle-width) / 2));
         }
-
 
         .md-slider__label1 {
             bottom: calc(var(--md-comp-slider-fraction1) * (100% - var(--md-comp-slider-handle-width)) + (var(--md-comp-slider-handle-width) / 2));
         }
     }
 }
-
 
 .md-slider--extra-small {
     --md-comp-slider-track-height: 16px;
@@ -655,7 +605,6 @@ src\material\components\slider\slider.scss
     --md-comp-slider-inset-icon-size: 0px;
 }
 
-
 .md-slider--small {
     --md-comp-slider-track-height: 24px;
     --md-comp-slider-label-container-height: 44px;
@@ -665,7 +614,6 @@ src\material\components\slider\slider.scss
     --md-comp-slider-track-shape: 8px;
     --md-comp-slider-inset-icon-size: 0px;
 }
-
 
 .md-slider--medium {
     --md-comp-slider-track-height: 40px;
@@ -677,7 +625,6 @@ src\material\components\slider\slider.scss
     --md-comp-slider-inset-icon-size: 24px;
 }
 
-
 .md-slider--large {
     --md-comp-slider-track-height: 56px;
     --md-comp-slider-label-container-height: 44px;
@@ -687,7 +634,6 @@ src\material\components\slider\slider.scss
     --md-comp-slider-track-shape: 16px;
     --md-comp-slider-inset-icon-size: 24px;
 }
-
 
 .md-slider--extra-large {
     --md-comp-slider-track-height: 96px;

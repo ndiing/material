@@ -27,11 +27,12 @@ export const routes = [
 
             { path: "/controller/ripple", load: () => import("./controller/ripple.js").then((module) => module.default), children: [] },
 
-            { path: "/components/typography", load: () => import("./components/typography.js").then((module) => module.default), children: [] },
             { path: "/components/grid", load: () => import("./components/grid.js").then((module) => module.default), children: [] },
             { path: "/components/grid-expanded", load: () => import("./components/grid-expanded.js").then((module) => module.default), children: [] },
             { path: "/components/grid-medium", load: () => import("./components/grid-medium.js").then((module) => module.default), children: [] },
             { path: "/components/grid-compact", load: () => import("./components/grid-compact.js").then((module) => module.default), children: [] },
+            
+            { path: "/components/typography", load: () => import("./components/typography.js").then((module) => module.default), children: [] },
             { path: "/components/icon", load: () => import("./components/icon.js").then((module) => module.default), children: [] },
             { path: "/components/image", load: () => import("./components/image.js").then((module) => module.default), children: [] },
 
@@ -59,7 +60,7 @@ export const routes = [
             { path: "/components/radio-button", load: () => import("./components/radio-button.js").then((module) => module.default), children: [] },
             { path: "/components/switch", load: () => import("./components/switch.js").then((module) => module.default), children: [] },
             { path: "/components/slider", load: () => import("./components/slider.js").then((module) => module.default), children: [] },
-            // { path: "/components/test", load: () => import("./components/test.js").then((module) => module.default), children: [] },
+            // { path: "/components/input-mask", load: () => import("./components/input-mask.js").then((module) => module.default), children: [] },
 
         ],
     },

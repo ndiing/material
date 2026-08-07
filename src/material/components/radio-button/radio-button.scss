@@ -12,7 +12,7 @@
     appearance: none;
     width: 40px;
     height: 40px;
-    border-radius: 50%;
+    border-radius: var(--md-sys-shape-corner-full);
     transform: translate3d(-50%, -50%, 0);
     position: absolute;
     z-index: 2;
@@ -28,7 +28,7 @@
             .md-radio-button__icon {
                 width: 10px;
                 height: 10px;
-                border-radius: 5px;
+                border-radius: var(--md-sys-shape-corner-full);
                 background-color: var(--md-sys-color-primary);
                 border-color: var(--md-sys-color-primary);
                 transition-duration: var(--md-sys-motion-duration-short2);
@@ -46,7 +46,7 @@
     width: 20px;
     height: 20px;
     border: 2px solid var(--md-sys-color-on-surface-variant);
-    border-radius: 10px;
+    border-radius: var(--md-sys-shape-corner-full);
     will-change: border-color;
     transition-property: border-color;
     transition-duration: var(--md-sys-motion-duration-short3);
