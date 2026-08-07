@@ -8,7 +8,6 @@ import "./core/localization.js";
 import "./core/store.js";
 import "./core/query-builder.js";
 import "./core/positioner.js";
-import "./core/focus-trap.js";
 
 import "./base/element.js";
 import "./base/list.js";
