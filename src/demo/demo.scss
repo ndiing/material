@@ -5,3 +5,22 @@
     height: 56px;
     padding: 0 16px;
 }
+
+.test-trigger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: calc(40px * 3);
+    background-color: var(--md-sys-color-secondary-container);
+}
+.test-container {
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(56px * 5);
+    width: calc(56px * 3);
+    background-color: var(--md-sys-color-surface-container-highest);
+    opacity: 75%;
+}

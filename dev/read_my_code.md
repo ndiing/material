@@ -1,6 +1,7 @@
 ## src\demo\components
 
 ### dialog
+
 src\demo\components\dialog.js
 
 ```js
@@ -102,11 +103,12 @@ class DemoDialog extends MdElement {
 }
 customElements.define("demo-dialog", DemoDialog);
 export default document.createElement("demo-dialog");
-
 ```
+
 ## src\material\components\dialog
 
 ### dialog-body
+
 src\material\components\dialog\dialog-body.js
 
 ```js
@@ -130,9 +132,10 @@ class MdDialogBody extends MdElement {
 customElements.define("md-dialog-body", MdDialogBody);
 
 export { MdDialogBody };
-
 ```
+
 ### dialog-footer
+
 src\material\components\dialog\dialog-footer.js
 
 ```js
@@ -196,9 +199,10 @@ class MdDialogFooter extends MdElement {
 customElements.define("md-dialog-footer", MdDialogFooter);
 
 export { MdDialogFooter };
-
 ```
+
 ### dialog-header
+
 src\material\components\dialog\dialog-header.js
 
 ```js
@@ -355,9 +359,10 @@ class MdDialogHeader extends MdElement {
 customElements.define("md-dialog-header", MdDialogHeader);
 
 export { MdDialogHeader };
-
 ```
+
 ### dialog-main
+
 src\material\components\dialog\dialog-main.js
 
 ```js
@@ -381,9 +386,10 @@ class MdDialogMain extends MdElement {
 customElements.define("md-dialog-main", MdDialogMain);
 
 export { MdDialogMain };
-
 ```
+
 ### dialog
+
 src\material\components\dialog\dialog.js
 
 ```js
@@ -494,14 +500,18 @@ class MdDialog extends MdElement {
     }
 
     show() {
-        if(this.open){return}
+        if (this.open) {
+            return;
+        }
         this.open = true;
         this.focus();
         window.addEventListener("keydown", this._handleWindowKeydown);
     }
 
     close() {
-        if(!this.open){return}
+        if (!this.open) {
+            return;
+        }
         this.open = false;
         window.removeEventListener("keydown", this._handleWindowKeydown);
     }
@@ -518,9 +528,10 @@ class MdDialog extends MdElement {
 customElements.define("md-dialog", MdDialog);
 
 export { MdDialog };
-
 ```
+
 ### dialog
+
 src\material\components\dialog\dialog.scss
 
 ```scss
@@ -712,5 +723,4 @@ src\material\components\dialog\dialog.scss
         animation-name: full-screen-dialog-show;
     }
 }
-
 ```

@@ -105,14 +105,18 @@ class MdDialog extends MdElement {
     }
 
     show() {
-        if(this.open){return}
+        if (this.open) {
+            return;
+        }
         this.open = true;
         this.focus();
         window.addEventListener("keydown", this._handleWindowKeydown);
     }
 
     close() {
-        if(!this.open){return}
+        if (!this.open) {
+            return;
+        }
         this.open = false;
         window.removeEventListener("keydown", this._handleWindowKeydown);
     }

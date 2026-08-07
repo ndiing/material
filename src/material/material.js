@@ -7,6 +7,7 @@ import "./core/theme.js";
 import "./core/localization.js";
 import "./core/store.js";
 import "./core/query-builder.js";
+import "./core/positioner.js";
 
 import "./base/element.js";
 import "./base/list.js";
