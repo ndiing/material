@@ -73,7 +73,7 @@ class MdSlider extends MdElement {
         const iconIndex = Math.round(fraction * (icons.length - 1));
         const index = Math.max(0, Math.min(icons.length - 1, iconIndex));
         const trackLength = Math.max(this.clientHeight,this.clientWidth);
-        const iconThresholdFraction = 34 / trackLength;
+        const iconThresholdFraction = 38 / trackLength;
         
         return html`
             <input 
@@ -350,7 +350,7 @@ src\material\components\slider\slider.scss
 
 .md-slider__icon {
     position: absolute;
-    left: calc(10px + (2px - 10px) * var(--md-comp-slider-fraction0));
+    left: calc(14px + (4px - 14px) * var(--md-comp-slider-fraction0));
     z-index: 3;
     pointer-events: none;
     font-size: var(--md-comp-slider-inset-icon-size);
@@ -503,7 +503,7 @@ src\material\components\slider\slider.scss
 
     .md-slider__icon {
         left: auto;
-        bottom: calc(10px + (2px - 10px) * var(--md-comp-slider-fraction0));
+        bottom: calc(14px + (4px - 14px) * var(--md-comp-slider-fraction0));
     }
 
     .md-slider__track {
@@ -525,7 +525,7 @@ src\material\components\slider\slider.scss
     .md-slider__track::after {
         clip-path: inset(calc(100% - var(--md-comp-slider-percentage0)) 0 0 0);
     }
-    .md-slider--discrete {
+    &.md-slider--discrete {
         .md-slider__track::after {
             background-image: radial-gradient(circle at center var(--md-comp-slider-stop-indicator-size), var(--md-sys-color-on-primary) 0, var(--md-sys-color-on-primary) calc(var(--md-comp-slider-stop-indicator-size) / 2), transparent calc(var(--md-comp-slider-stop-indicator-size) / 2));
         }

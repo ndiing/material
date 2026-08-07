@@ -66,7 +66,7 @@
 
 .md-slider__icon {
     position: absolute;
-    left: calc(10px + (2px - 10px) * var(--md-comp-slider-fraction0));
+    left: calc(14px + (4px - 14px) * var(--md-comp-slider-fraction0));
     z-index: 3;
     pointer-events: none;
     font-size: var(--md-comp-slider-inset-icon-size);
@@ -219,7 +219,7 @@
 
     .md-slider__icon {
         left: auto;
-        bottom: calc(10px + (2px - 10px) * var(--md-comp-slider-fraction0));
+        bottom: calc(14px + (4px - 14px) * var(--md-comp-slider-fraction0));
     }
 
     .md-slider__track {

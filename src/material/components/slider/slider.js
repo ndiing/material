@@ -67,7 +67,7 @@ class MdSlider extends MdElement {
         const iconIndex = Math.round(fraction * (icons.length - 1));
         const index = Math.max(0, Math.min(icons.length - 1, iconIndex));
         const trackLength = Math.max(this.clientHeight,this.clientWidth);
-        const iconThresholdFraction = 34 / trackLength;
+        const iconThresholdFraction = 38 / trackLength;
         
         return html`
             <input 
