@@ -75,12 +75,14 @@ class DemoTest extends MdElement {
                     </md-grid-column>                
                 `)}
             </md-grid> -->
-            <md-grid style="margin:calc(56px * 5)">
+            <!-- <md-grid style="margin:calc(56px * 5)">
                 <md-grid-column style="height:calc(56px * 6)">
                     <div class="test-container">container</div>
                     <div class="test-trigger">trigger</div>
                 </md-grid-column>       
-            </md-grid>
+            </md-grid> -->
+
+            <div class="test-track"></div>
         `
     }
 
@@ -96,16 +98,16 @@ class DemoTest extends MdElement {
         //     this.setPosition(trigger, container, options);
         // });
 
-        const container = this.querySelector(".test-container");
-        // const trigger = this.querySelector(".test-trigger");
+        // const container = this.querySelector(".test-container");
+        // // const trigger = this.querySelector(".test-trigger");
 
-        document.body.addEventListener("contextmenu", (event) => {
-            event.preventDefault();
-            const trigger = event;
-            const options = this.items[0];
-            const result = setPosition(trigger, container, options);
-            console.log(result);
-        });
+        // document.body.addEventListener("contextmenu", (event) => {
+        //     event.preventDefault();
+        //     const trigger = event;
+        //     const options = this.items[0];
+        //     const result = setPosition(trigger, container, options);
+        //     console.log(result);
+        // });
 
         // let counter = 0;
 

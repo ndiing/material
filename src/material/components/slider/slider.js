@@ -27,7 +27,7 @@ class MdSlider extends MdElement {
         step: { type: Number },
         value: { type: Number, converter },
         variant: { type: String, state: true },
-        icon: { type: String },
+        icon: { type: String, converter },
         orientation: { type: String },
         size: { type: String },
         stopIndicator: { type: Boolean },
@@ -62,6 +62,13 @@ class MdSlider extends MdElement {
 
     /* prettier-ignore */
     render(){
+        const icons = Array.isArray(this.icon) ? this.icon : [this.icon];
+        const fraction = getFraction(this.min, this.max, this.values[0] ?? this.min);
+        const iconIndex = Math.round(fraction * (icons.length - 1));
+        const index = Math.max(0, Math.min(icons.length - 1, iconIndex));
+        const trackLength = Math.max(this.clientHeight,this.clientWidth);
+        const iconThresholdFraction = 34 / trackLength;
+        
         return html`
             <input 
                 class="md-slider__hidden"
@@ -69,7 +76,15 @@ class MdSlider extends MdElement {
                 name="${ifDefined(this.name)}"
                 value="${this.values}"
             >
-            ${this.icon?html`<md-icon class="md-slider__icon">${this.icon}</md-icon>`:nothing}
+            ${icons[index]?html`
+                <md-icon
+                    class="${classMap({
+                        "md-slider__icon":true,
+                        "md-slider__icon--active":fraction >= iconThresholdFraction,
+                    })}"
+                    icon="${icons[index]}"
+                ></md-icon>    
+            `:nothing}
             <div class="md-slider__track"></div>
             ${this.values.map((value,index)=>html`
                 <input 
@@ -102,34 +117,7 @@ class MdSlider extends MdElement {
                     >${value}</div>
                 `:nothing}
             `)}
-            ${this.stopIndicator?html`
-                <div class="md-slider__stops">
-                    ${Array.from({length:this.stops+1},(v, k) => html`
-                        <div 
-                            class="${classMap(this._getStopClass(k))}"
-                        ></div>
-                    `)}
-                </div>
-            `:nothing}
         `
-    }
-
-    _getStopClass(k) {
-        const value = (k / this.stops) * 100;
-        const [percentage0, percentage1] = this.values.map((value) => getFraction(this.min, this.max, value) * 100);
-
-        let selected = false;
-        if (this.variant === "centered") {
-            selected = (value <= 50 && value >= percentage0) || (value >= 50 && value <= percentage0);
-        } else if (this.variant === "range") {
-            selected = value >= percentage0 && value <= percentage1;
-        } else {
-            selected = value <= percentage0;
-        }
-        return {
-            "md-slider__stop": true,
-            "md-slider__stop--selected": selected,
-        };
     }
 
     connectedCallback() {
@@ -184,7 +172,8 @@ class MdSlider extends MdElement {
             });
         }
         if (changedProperties.has("stops")) {
-            this.classList.toggle("md-slider--discrete", this.stops > 1);
+            this.classList.toggle(`md-slider--discrete`, this.stops > 1);
+            this.style.setProperty("--md-comp-slider-stop", this.stops);
         }
     }
 

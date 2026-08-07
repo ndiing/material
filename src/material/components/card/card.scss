@@ -17,7 +17,10 @@
 .md-card__header {
     display: flex;
     align-items: center;
-    padding: 0 16px;
+    padding: 16px;
+    + .md-card__body {
+        margin-top: -16px;
+    }
 }
 
 .md-card__body {
@@ -28,16 +31,20 @@
 .md-card__main {
     flex: 1;
     padding: 0 16px;
+    margin: 16px 0;
     // white-space: nowrap;
     // overflow: hidden;
     // text-overflow: ellipsis;
     @include mixins.typescale-body-large();
+    + .md-card__footer {
+        margin-top: -16px;
+    }
 }
 
 .md-card__footer {
     display: flex;
     align-items: center;
-    padding: 0 16px;
+    padding: 16px;
 }
 
 .md-card--elevated {

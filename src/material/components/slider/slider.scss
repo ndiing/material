@@ -6,11 +6,12 @@
     --md-comp-slider-handle-width: 4px;
     --md-comp-slider-track-shape: 8px;
     --md-comp-slider-inset-icon-size: 0px;
+    --md-comp-slider-stop-indicator-size: 4px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     width: 192px;
-    margin: 0 6px;
+    margin: 0 calc(var(--md-comp-slider-stop-indicator-size) / 2);
     height: calc(var(--md-comp-slider-handle-height) + (4px * 2));
     position: relative;
     user-select: none;
@@ -65,25 +66,48 @@
 
 .md-slider__icon {
     position: absolute;
-    left: 6px;
+    left: calc(10px + (2px - 10px) * var(--md-comp-slider-fraction0));
     z-index: 3;
     pointer-events: none;
     font-size: var(--md-comp-slider-inset-icon-size);
     width: var(--md-comp-slider-inset-icon-size);
     height: var(--md-comp-slider-inset-icon-size);
+    color: var(--md-sys-color-on-secondary-container);
+}
+.md-slider__icon--active {
     color: var(--md-sys-color-on-primary);
 }
 
 .md-slider__track {
-    height: var(--md-comp-slider-track-height);
-    left: -6px;
-    right: -6px;
-    border-radius: var(--md-comp-slider-track-shape);
-    background-color: var(--md-sys-color-secondary-container);
-    background: linear-gradient(to right, var(--md-sys-color-primary) 0 var(--md-comp-slider-percentage0), var(--md-sys-color-secondary-container) var(--md-comp-slider-percentage0) 100%);
     position: absolute;
     z-index: 1;
     pointer-events: none;
+    left: calc(0px - (var(--md-comp-slider-stop-indicator-size) / 2));
+    right: calc(0px - (var(--md-comp-slider-stop-indicator-size) / 2));
+    height: var(--md-comp-slider-track-height);
+}
+.md-slider__track::before,
+.md-slider__track::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--md-comp-slider-track-shape);
+    background-size: calc((100% - var(--md-comp-slider-stop-indicator-size) * 2) / var(--md-comp-slider-stop)) 100%;
+}
+.md-slider__track::before {
+    background-color: var(--md-sys-color-secondary-container);
+    background-image: radial-gradient(circle at var(--md-comp-slider-stop-indicator-size) center, var(--md-sys-color-on-secondary-container) 0, var(--md-sys-color-on-secondary-container) calc(var(--md-comp-slider-stop-indicator-size) / 2), transparent calc(var(--md-comp-slider-stop-indicator-size) / 2));
+}
+.md-slider__track::after {
+    background-color: var(--md-sys-color-primary);
+    clip-path: inset(0 calc(100% - var(--md-comp-slider-percentage0)) 0 0);
+}
+.md-slider--discrete {
+    .md-slider__track::after {
+        background-image: radial-gradient(circle at var(--md-comp-slider-stop-indicator-size) center, var(--md-sys-color-on-primary) 0, var(--md-sys-color-on-primary) calc(var(--md-comp-slider-stop-indicator-size) / 2), transparent calc(var(--md-comp-slider-stop-indicator-size) / 2));
+    }
 }
 
 .md-slider__thumb {
@@ -117,31 +141,6 @@
     transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
 }
 
-.md-slider__stops {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    position: absolute;
-    z-index: 2;
-}
-
-.md-slider__stop {
-    width: 4px;
-    height: 4px;
-    border-radius: 2px;
-    background-color: var(--md-sys-color-on-secondary-container);
-}
-
-.md-slider--discrete {
-    .md-slider__stop {
-        background-color: var(--md-sys-color-on-secondary-container);
-    }
-
-    .md-slider__stop--selected {
-        background-color: var(--md-sys-color-on-primary);
-    }
-}
-
 .md-slider__native:is(:active, :focus-visible) + .md-slider__thumb + .md-slider__label {
     transition-duration: var(--md-sys-motion-duration-short2);
     transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
@@ -170,8 +169,8 @@
     }
 
     &.md-slider--centered {
-        .md-slider__track {
-            background: linear-gradient(to right, var(--md-sys-color-secondary-container) 0 var(--md-comp-slider-percentage0), var(--md-sys-color-primary) var(--md-comp-slider-percentage0) var(--md-comp-slider-percentage1), var(--md-sys-color-secondary-container) var(--md-comp-slider-percentage1) 100%);
+        .md-slider__track::after {
+            clip-path: inset(0 calc(100% - var(--md-comp-slider-percentage1)) 0 var(--md-comp-slider-percentage0));
         }
     }
 
@@ -184,8 +183,8 @@
             clip-path: inset(0 0 0 calc(40px / 2 + (100% - 40px) * (var(--md-comp-slider-fraction0) + (var(--md-comp-slider-fraction1) - var(--md-comp-slider-fraction0)) / 2)));
         }
 
-        .md-slider__track {
-            background: linear-gradient(to right, var(--md-sys-color-secondary-container) 0 var(--md-comp-slider-percentage0), var(--md-sys-color-primary) var(--md-comp-slider-percentage0) var(--md-comp-slider-percentage1), var(--md-sys-color-secondary-container) var(--md-comp-slider-percentage1) 100%);
+        .md-slider__track::after {
+            clip-path: inset(0 calc(100% - var(--md-comp-slider-percentage1)) 0 var(--md-comp-slider-percentage0));
         }
 
         .md-slider__thumb1 {
@@ -201,7 +200,7 @@
 .md-slider--vertical {
     height: 192px;
     width: calc(var(--md-comp-slider-handle-height) + (4px * 2));
-    margin: 6px 0;
+    margin: calc(var(--md-comp-slider-stop-indicator-size) / 2) 0;
 
     .md-slider__native {
         writing-mode: vertical-lr;
@@ -220,17 +219,32 @@
 
     .md-slider__icon {
         left: auto;
-        bottom: 6px;
+        bottom: calc(10px + (2px - 10px) * var(--md-comp-slider-fraction0));
     }
 
     .md-slider__track {
-        width: var(--md-comp-slider-track-height);
-        height: auto;
         left: auto;
         right: auto;
-        top: -6px;
-        bottom: -6px;
-        background: linear-gradient(to top, var(--md-sys-color-primary) 0 var(--md-comp-slider-percentage0), var(--md-sys-color-secondary-container) var(--md-comp-slider-percentage0) 100%);
+        height: auto;
+
+        top: calc(0px - (var(--md-comp-slider-stop-indicator-size) / 2));
+        bottom: calc(0px - (var(--md-comp-slider-stop-indicator-size) / 2));
+        width: var(--md-comp-slider-track-height);
+    }
+    .md-slider__track::before,
+    .md-slider__track::after {
+        background-size: 100% calc((100% - var(--md-comp-slider-stop-indicator-size) * 2) / var(--md-comp-slider-stop));
+    }
+    .md-slider__track::before {
+        background-image: radial-gradient(circle at center var(--md-comp-slider-stop-indicator-size), var(--md-sys-color-on-secondary-container) 0, var(--md-sys-color-on-secondary-container) calc(var(--md-comp-slider-stop-indicator-size) / 2), transparent calc(var(--md-comp-slider-stop-indicator-size) / 2));
+    }
+    .md-slider__track::after {
+        clip-path: inset(calc(100% - var(--md-comp-slider-percentage0)) 0 0 0);
+    }
+    .md-slider--discrete {
+        .md-slider__track::after {
+            background-image: radial-gradient(circle at center var(--md-comp-slider-stop-indicator-size), var(--md-sys-color-on-primary) 0, var(--md-sys-color-on-primary) calc(var(--md-comp-slider-stop-indicator-size) / 2), transparent calc(var(--md-comp-slider-stop-indicator-size) / 2));
+        }
     }
 
     .md-slider__thumb {
@@ -262,8 +276,8 @@
     }
 
     &.md-slider--centered {
-        .md-slider__track {
-            background: linear-gradient(to top, var(--md-sys-color-secondary-container) 0 var(--md-comp-slider-percentage0), var(--md-sys-color-primary) var(--md-comp-slider-percentage0) var(--md-comp-slider-percentage1), var(--md-sys-color-secondary-container) var(--md-comp-slider-percentage1) 100%);
+        .md-slider__track::after {
+            clip-path: inset(calc(100% - var(--md-comp-slider-percentage1)) 0 var(--md-comp-slider-percentage0) 0);
         }
     }
 
@@ -276,8 +290,8 @@
             clip-path: inset(0 0 calc(40px / 2 + (100% - 40px) * (var(--md-comp-slider-fraction0) + (var(--md-comp-slider-fraction1) - var(--md-comp-slider-fraction0)) / 2)) 0);
         }
 
-        .md-slider__track {
-            background: linear-gradient(to top, var(--md-sys-color-secondary-container) 0 var(--md-comp-slider-percentage0), var(--md-sys-color-primary) var(--md-comp-slider-percentage0) var(--md-comp-slider-percentage1), var(--md-sys-color-secondary-container) var(--md-comp-slider-percentage1) 100%);
+        .md-slider__track::after {
+            clip-path: inset(calc(100% - var(--md-comp-slider-percentage1)) 0 var(--md-comp-slider-percentage0) 0);
         }
 
         .md-slider__thumb1 {

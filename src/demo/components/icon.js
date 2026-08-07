@@ -19,7 +19,7 @@ class DemoIcon extends MdElement {
         return html`
             <!-- <md-icon>menu</md-icon> -->
             <div class="test-viewport">
-                <div class="test-container" style="${styleMap({
+                <div style="${styleMap({
                     'transform':'translate3d(0,var(--md-comp-virtual-scroll-content-translate-y),0)'
                 })}">
                     ${this.list.map(items=>html`
