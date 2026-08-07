@@ -1,7 +1,8 @@
 @use "../../shared/mixins.scss";
 
 .md-list {
-    display: block;
+    display: flex;
+    flex-direction: column;
     padding: 8px 0;
 }
 
@@ -66,11 +67,9 @@
     margin: 4px 0 0 -16px;
 }
 
-.md-list__icon {
-}
+// .md-list__icon {}
 
-.md-list__icon-button {
-}
+// .md-list__icon-button {}
 
 .md-list__text {
     white-space: nowrap;
@@ -79,14 +78,11 @@
     @include mixins.typescale-label-small();
 }
 
-.md-list__checkbox {
-}
+// .md-list__checkbox {}
 
-.md-list__radio-button {
-}
+// .md-list__radio-button {}
 
-.md-list__switch {
-}
+// .md-list__switch {}
 
 .md-list__item--selected {
     background-color: var(--md-sys-color-secondary-container);
@@ -115,5 +111,41 @@
     .md-list__video {
         margin-top: 0;
         margin-bottom: 0;
+    }
+}
+
+.md-menu {
+    display: inline-flex;
+    flex-direction: column;
+    min-width: calc((44px * 3) + (2px * (3 - 1)) + (4px * 2));
+    max-height: calc((44px * 5) + (2px * (5 - 1)) + (4px * 2));
+    border-radius: var(--md-sys-shape-corner-large);
+    background-color: var(--md-sys-color-surface-container);
+    box-shadow: var(--md-sys-elevation-level2);
+}
+
+.md-menu__list {
+    padding: 4px;
+    gap: 2px 0;
+
+    .md-list__item {
+        min-height: 44px;
+        padding: 8px 12px;
+        gap: 0 8px;
+        border-radius: var(--md-sys-shape-corner-small);
+    }
+
+    .md-list__item--selected {
+        border-radius: var(--md-sys-shape-corner-medium);
+    }
+
+    .md-list__icon {
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
+    }
+
+    .md-list__label {
+        @include mixins.typescale-label-large();
     }
 }

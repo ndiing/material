@@ -74,6 +74,7 @@
     height: var(--md-comp-slider-inset-icon-size);
     color: var(--md-sys-color-on-secondary-container);
 }
+
 .md-slider__icon--active {
     color: var(--md-sys-color-on-primary);
 }
@@ -96,14 +97,17 @@
     border-radius: var(--md-comp-slider-track-shape);
     background-size: calc((100% - var(--md-comp-slider-stop-indicator-size) * 2) / var(--md-comp-slider-stop)) 100%;
 }
+
 .md-slider__track::before {
     background-color: var(--md-sys-color-secondary-container);
     background-image: radial-gradient(circle at var(--md-comp-slider-stop-indicator-size) center, var(--md-sys-color-on-secondary-container) 0, var(--md-sys-color-on-secondary-container) calc(var(--md-comp-slider-stop-indicator-size) / 2), transparent calc(var(--md-comp-slider-stop-indicator-size) / 2));
 }
+
 .md-slider__track::after {
     background-color: var(--md-sys-color-primary);
     clip-path: inset(0 calc(100% - var(--md-comp-slider-percentage0)) 0 0);
 }
+
 .md-slider--discrete {
     .md-slider__track::after {
         background-image: radial-gradient(circle at var(--md-comp-slider-stop-indicator-size) center, var(--md-sys-color-on-primary) 0, var(--md-sys-color-on-primary) calc(var(--md-comp-slider-stop-indicator-size) / 2), transparent calc(var(--md-comp-slider-stop-indicator-size) / 2));
@@ -235,12 +239,15 @@
     .md-slider__track::after {
         background-size: 100% calc((100% - var(--md-comp-slider-stop-indicator-size) * 2) / var(--md-comp-slider-stop));
     }
+
     .md-slider__track::before {
         background-image: radial-gradient(circle at center var(--md-comp-slider-stop-indicator-size), var(--md-sys-color-on-secondary-container) 0, var(--md-sys-color-on-secondary-container) calc(var(--md-comp-slider-stop-indicator-size) / 2), transparent calc(var(--md-comp-slider-stop-indicator-size) / 2));
     }
+
     .md-slider__track::after {
         clip-path: inset(calc(100% - var(--md-comp-slider-percentage0)) 0 0 0);
     }
+
     &.md-slider--discrete {
         .md-slider__track::after {
             background-image: radial-gradient(circle at center var(--md-comp-slider-stop-indicator-size), var(--md-sys-color-on-primary) 0, var(--md-sys-color-on-primary) calc(var(--md-comp-slider-stop-indicator-size) / 2), transparent calc(var(--md-comp-slider-stop-indicator-size) / 2));

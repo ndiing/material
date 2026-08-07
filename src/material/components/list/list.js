@@ -139,9 +139,16 @@ class MdList extends MdListElement {
             if (this.virtualScroll) {
                 this.updateComplete.then(() => {
                     this.virtualScrollController.reinit({
-                        viewport: this,
                         itemCount: this._list.length,
                     });
+                });
+            }
+        }
+
+        if (_changedProperties.has("virtualScrollOptions")) {
+            if (this.virtualScroll) {
+                this.updateComplete.then(() => {
+                    this.virtualScrollController.reinit(this.virtualScrollOptions);
                 });
             }
         }

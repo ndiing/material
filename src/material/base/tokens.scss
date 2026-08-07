@@ -109,10 +109,10 @@
 }
 
 :root {
-    --md-sys-color-on-surface10: color-mix(in srgb, var(--md-sys-color-on-surface) 10%, #fff);
-    --md-sys-color-on-surface38: color-mix(in srgb, var(--md-sys-color-on-surface) 38%, #fff);
-    --md-sys-color-on-surface4: color-mix(in srgb, var(--md-sys-color-on-surface) 4%, #fff);
-    --md-sys-color-on-surface12: color-mix(in srgb, var(--md-sys-color-on-surface) 12%, #fff);
+    --md-sys-color-on-surface4: color-mix(in srgb, var(--md-sys-color-on-surface) 4%, var(--md-sys-color-surface));
+    --md-sys-color-on-surface10: color-mix(in srgb, var(--md-sys-color-on-surface) 10%, var(--md-sys-color-surface));
+    --md-sys-color-on-surface12: color-mix(in srgb, var(--md-sys-color-on-surface) 12%, var(--md-sys-color-surface));
+    --md-sys-color-on-surface38: color-mix(in srgb, var(--md-sys-color-on-surface) 38%, var(--md-sys-color-surface));
 }
 
 :root {
