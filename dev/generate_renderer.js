@@ -116,7 +116,7 @@ function writeFiles() {
         code += `/* prettier-ignore */\r\n`;
         code += `function ${data.methodName}(properties = {}) {\r\n`;
         code += `    return html\`\r\n`;
-        code += `        <md-button\r\n`;
+        code += `        <${data.localName}\r\n`;
         code += `            class="\${classMap(properties.classMap ?? {})}",\r\n`;
         code += `            style="\${styleMap(properties.styleMap ?? {})}",\r\n`;
         for (const name in data.properties) {
@@ -127,7 +127,7 @@ function writeFiles() {
         for (const eventName of data.events) {
             code += `            @${eventName}="\${ifDefined(properties.${eventName})}"\r\n`;
         }
-        code += `        ></md-button>\r\n`;
+        code += `        ></${data.localName}>\r\n`;
         code += `    \`\r\n`;
         code += `}\r\n`;
         code += `\r\n`;

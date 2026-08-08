@@ -5,6 +5,7 @@ import { choose } from "lit/directives/choose.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { styleMap } from "lit/directives/style-map.js";
 import { createRef, ref } from "lit/directives/ref.js";
+import { renderCheckbox, renderIcon, renderIconButton, renderImage, renderRadioButton, renderSwitch } from "../../utils/render-component.js";
 
 class MdListItem extends MdElement {
     static properties = {
@@ -47,140 +48,6 @@ class MdListItem extends MdElement {
     }
 
     /* prettier-ignore */
-    renderAvatar(properties){
-        return html`
-            <md-image 
-                class="md-list__avatar"
-                style="${styleMap(properties.style??{})}"
-                .src="${ifDefined(properties.src)}"
-                .alt="${ifDefined(properties.alt)}"
-                .loading="${ifDefined(properties.loading)}"
-                .shape="${ifDefined(properties.shape??'round')}"
-                .error="${ifDefined(properties.error)}"
-                .errorSrc="${ifDefined(properties.errorSrc)}"
-            ></md-image>
-        `
-    }
-
-    /* prettier-ignore */
-    renderImage(properties){
-        return html`
-            <md-image 
-                class="md-list__image"
-                style="${styleMap(properties.style??{})}"
-                .src="${ifDefined(properties.src)}"
-                .alt="${ifDefined(properties.alt)}"
-                .loading="${ifDefined(properties.loading)}"
-                .shape="${ifDefined(properties.shape??'sharp')}"
-                .error="${ifDefined(properties.error)}"
-                .errorSrc="${ifDefined(properties.errorSrc)}"
-            ></md-image>
-        `
-    }
-
-    /* prettier-ignore */
-    renderVideo(properties){
-        return html`
-            <md-image 
-                class="md-list__video"
-                style="${styleMap(properties.style??{})}"
-                .src="${ifDefined(properties.src)}"
-                .alt="${ifDefined(properties.alt)}"
-                .loading="${ifDefined(properties.loading)}"
-                .shape="${ifDefined(properties.shape??'sharp')}"
-                .error="${ifDefined(properties.error)}"
-                .errorSrc="${ifDefined(properties.errorSrc)}"
-            ></md-image>
-        `
-    }
-
-    /* prettier-ignore */
-    renderIcon(properties){
-        return html`
-            <md-icon 
-                class="md-list__icon"
-                style="${styleMap(properties.style??{})}"
-                .icon="${ifDefined(properties.icon)}"
-            ></md-icon>
-        `
-    }
-
-    /* prettier-ignore */
-    renderIconButton(properties){
-        return html`
-            <md-icon-button 
-                class="md-list__icon-button"
-                style="${styleMap(properties.style??{})}"
-                .icon="${ifDefined(properties.icon)}"
-                .variant="${ifDefined(properties.variant)}"
-                .size="${ifDefined(properties.size)}"
-                .shape="${ifDefined(properties.shape)}"
-                .color="${ifDefined(properties.color)}"
-                .width="${ifDefined(properties.width)}"
-                .selected="${ifDefined(properties.selected)}"
-                .disabled="${ifDefined(properties.disabled)}"
-                .rippleOptions="${ifDefined(properties.rippleOptions)}"
-            ></md-icon-button>
-        `
-    }
-
-    /* prettier-ignore */
-    renderCheckbox(properties){
-        return html`
-            <md-checkbox 
-                class="md-list__checkbox"
-                style="${styleMap(properties.style??{})}"
-                .ariaLabel="${ifDefined(properties.ariaLabel)}"
-                .name="${ifDefined(properties.name)}"
-                .value="${ifDefined(properties.value)}"
-                .indeterminate="${ifDefined(properties.indeterminate)}"
-                .checked="${ifDefined(properties.checked??this.selected)}"
-                .disabled="${ifDefined(properties.disabled)}"
-                .required="${ifDefined(properties.required)}"
-                .rippleOptions="${ifDefined(properties.rippleOptions)}"
-                .validateOnInput="${ifDefined(properties.validateOnInput)}"
-                .tabIndex="${ifDefined(properties.tabIndex??-1)}"
-            ></md-checkbox>
-        `
-    }
-
-    /* prettier-ignore */
-    renderRadioButton(properties){
-        return html`
-            <md-radio-button 
-                class="md-list__radio-button"
-                style="${styleMap(properties.style??{})}"
-                .ariaLabel="${ifDefined(properties.ariaLabel)}"
-                .name="${ifDefined(properties.name)}"
-                .value="${ifDefined(properties.value)}"
-                .checked="${ifDefined(properties.checked??this.selected)}"
-                .disabled="${ifDefined(properties.disabled)}"
-                .required="${ifDefined(properties.required)}"
-                .rippleOptions="${ifDefined(properties.rippleOptions)}"
-                .tabIndex="${ifDefined(properties.tabIndex??-1)}"
-            ></md-radio-button>
-        `
-    }
-
-    /* prettier-ignore */
-    renderSwitch(properties){
-        return html`
-            <md-switch 
-                class="md-list__switch"
-                style="${styleMap(properties.style??{})}"
-                .ariaLabel="${ifDefined(properties.ariaLabel)}"
-                .name="${ifDefined(properties.name)}"
-                .value="${ifDefined(properties.value)}"
-                .checked="${ifDefined(properties.checked??this.selected)}"
-                .disabled="${ifDefined(properties.disabled)}"
-                .required="${ifDefined(properties.required)}"
-                .rippleOptions="${ifDefined(properties.rippleOptions)}"
-                .tabIndex="${ifDefined(properties.tabIndex??-1)}"
-            ></md-switch>
-        `
-    }
-
-    /* prettier-ignore */
     renderText(properties){
         return html`
             <div 
@@ -193,14 +60,14 @@ class MdListItem extends MdElement {
     /* prettier-ignore */
     renderComponent(component,properties){
         return choose(component,[
-            ['avatar', () => this.renderAvatar(properties)],
-            ['image', () => this.renderImage(properties)],
-            ['video', () => this.renderVideo(properties)],
-            ['icon', () => this.renderIcon(properties)],
-            ['icon-button', () => this.renderIconButton(properties)],
-            ['checkbox', () => this.renderCheckbox(properties)],
-            ['radio-button', () => this.renderRadioButton(properties)],
-            ['switch', () => this.renderSwitch(properties)],
+            ['avatar', () => renderImage({ classMap: { "md-list__avatar": true, ...properties.classMap }, shape: "round", ...properties })],
+            ['image', () => renderImage({ classMap: { "md-list__image": true, ...properties.classMap }, shape: "sharp", ...properties })],
+            ['video', () => renderImage({ classMap: { "md-list__video": true, ...properties.classMap }, shape: "sharp", ...properties })],
+            ['icon', () => renderIcon({ classMap: { "md-list__icon": true, ...properties.classMap } })],
+            ['icon-button', () => renderIconButton({ classMap: { "md-list__icon-button": true, ...properties.classMap } })],
+            ['checkbox', () => renderCheckbox({ classMap: { "md-list__checkbox": true, ...properties.classMap }, tabIndex: -1, checked: this.selected, ...properties })],
+            ['radio-button', () => renderRadioButton({ classMap: { "md-list__radio-button": true, ...properties.classMap }, tabIndex: -1, checked: this.selected, ...properties })],
+            ['switch', () => renderSwitch({ classMap: { "md-list__switch": true, ...properties.classMap }, tabIndex: -1, checked: this.selected, ...properties })],
             ['text', () => this.renderText(properties)],
         ],() => nothing)
     }

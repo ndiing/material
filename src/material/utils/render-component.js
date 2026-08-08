@@ -7,13 +7,13 @@ import { styleMap } from "lit/directives/style-map.js";
 /* prettier-ignore */
 function renderBadge(properties = {}) {
     return html`
-        <md-button
+        <md-badge
             class="${classMap(properties.classMap ?? {})}",
             style="${styleMap(properties.styleMap ?? {})}",
             .label="${ifDefined(properties.label)}"
             .max="${ifDefined(properties.max)}"
             .maxLength="${ifDefined(properties.maxLength)}"
-        ></md-button>
+        ></md-badge>
     `
 }
 
@@ -42,58 +42,58 @@ function renderButton(properties = {}) {
 /* prettier-ignore */
 function renderCardBody(properties = {}) {
     return html`
-        <md-button
+        <md-card-body
             class="${classMap(properties.classMap ?? {})}",
             style="${styleMap(properties.styleMap ?? {})}",
-        ></md-button>
+        ></md-card-body>
     `
 }
 
 /* prettier-ignore */
 function renderCardFooter(properties = {}) {
     return html`
-        <md-button
+        <md-card-footer
             class="${classMap(properties.classMap ?? {})}",
             style="${styleMap(properties.styleMap ?? {})}",
-        ></md-button>
+        ></md-card-footer>
     `
 }
 
 /* prettier-ignore */
 function renderCardHeader(properties = {}) {
     return html`
-        <md-button
+        <md-card-header
             class="${classMap(properties.classMap ?? {})}",
             style="${styleMap(properties.styleMap ?? {})}",
-        ></md-button>
+        ></md-card-header>
     `
 }
 
 /* prettier-ignore */
 function renderCardMain(properties = {}) {
     return html`
-        <md-button
+        <md-card-main
             class="${classMap(properties.classMap ?? {})}",
             style="${styleMap(properties.styleMap ?? {})}",
-        ></md-button>
+        ></md-card-main>
     `
 }
 
 /* prettier-ignore */
 function renderCard(properties = {}) {
     return html`
-        <md-button
+        <md-card
             class="${classMap(properties.classMap ?? {})}",
             style="${styleMap(properties.styleMap ?? {})}",
             .color="${ifDefined(properties.color)}"
-        ></md-button>
+        ></md-card>
     `
 }
 
 /* prettier-ignore */
 function renderCheckbox(properties = {}) {
     return html`
-        <md-button
+        <md-checkbox
             class="${classMap(properties.classMap ?? {})}",
             style="${styleMap(properties.styleMap ?? {})}",
             .name="${ifDefined(properties.name)}"
@@ -107,25 +107,25 @@ function renderCheckbox(properties = {}) {
             .tabIndex="${ifDefined(properties.tabIndex)}"
             @onCheckboxNativeInvalid="${ifDefined(properties.onCheckboxNativeInvalid)}"
             @onCheckboxNativeInput="${ifDefined(properties.onCheckboxNativeInput)}"
-        ></md-button>
+        ></md-checkbox>
     `
 }
 
 /* prettier-ignore */
 function renderDataTableCell(properties = {}) {
     return html`
-        <md-button
+        <md-data-table-cell
             class="${classMap(properties.classMap ?? {})}",
             style="${styleMap(properties.styleMap ?? {})}",
             .label="${ifDefined(properties.label)}"
-        ></md-button>
+        ></md-data-table-cell>
     `
 }
 
 /* prettier-ignore */
 function renderDataTable(properties = {}) {
     return html`
-        <md-button
+        <md-data-table
             class="${classMap(properties.classMap ?? {})}",
             style="${styleMap(properties.styleMap ?? {})}",
             .columns="${ifDefined(properties.columns)}"
@@ -149,71 +149,71 @@ function renderDataTable(properties = {}) {
             @onDataTableKeydown="${ifDefined(properties.onDataTableKeydown)}"
             @onDataTableRowClick="${ifDefined(properties.onDataTableRowClick)}"
             @onDataTableCellClick="${ifDefined(properties.onDataTableCellClick)}"
-        ></md-button>
+        ></md-data-table>
     `
 }
 
 /* prettier-ignore */
 function renderDialogBody(properties = {}) {
     return html`
-        <md-button
+        <md-dialog-body
             class="${classMap(properties.classMap ?? {})}",
             style="${styleMap(properties.styleMap ?? {})}",
-        ></md-button>
+        ></md-dialog-body>
     `
 }
 
 /* prettier-ignore */
 function renderDialogFooter(properties = {}) {
     return html`
-        <md-button
+        <md-dialog-footer
             class="${classMap(properties.classMap ?? {})}",
             style="${styleMap(properties.styleMap ?? {})}",
             .buttons="${ifDefined(properties.buttons)}"
-        ></md-button>
+        ></md-dialog-footer>
     `
 }
 
 /* prettier-ignore */
 function renderDialogHeader(properties = {}) {
     return html`
-        <md-button
+        <md-dialog-header
             class="${classMap(properties.classMap ?? {})}",
             style="${styleMap(properties.styleMap ?? {})}",
             .leading="${ifDefined(properties.leading)}"
             .headline="${ifDefined(properties.headline)}"
             .trailing="${ifDefined(properties.trailing)}"
-        ></md-button>
+        ></md-dialog-header>
     `
 }
 
 /* prettier-ignore */
 function renderDialogMain(properties = {}) {
     return html`
-        <md-button
+        <md-dialog-main
             class="${classMap(properties.classMap ?? {})}",
             style="${styleMap(properties.styleMap ?? {})}",
-        ></md-button>
+        ></md-dialog-main>
     `
 }
 
 /* prettier-ignore */
 function renderDialog(properties = {}) {
     return html`
-        <md-button
+        <md-dialog
             class="${classMap(properties.classMap ?? {})}",
             style="${styleMap(properties.styleMap ?? {})}",
             .open="${ifDefined(properties.open)}"
             .variant="${ifDefined(properties.variant)}"
             .heroIcon="${ifDefined(properties.heroIcon)}"
-        ></md-button>
+        ></md-dialog>
     `
 }
 
 /* prettier-ignore */
 function renderForm(properties = {}) {
     return html`
-        <md-button
+        <md-form
             class="${classMap(properties.classMap ?? {})}",
             style="${styleMap(properties.styleMap ?? {})}",
             .method="${ifDefined(properties.method)}"
@@ -225,48 +225,48 @@ function renderForm(properties = {}) {
             @onFormNativeFormdata="${ifDefined(properties.onFormNativeFormdata)}"
             @onFormNativeReset="${ifDefined(properties.onFormNativeReset)}"
             @onFormNativeSubmit="${ifDefined(properties.onFormNativeSubmit)}"
-        ></md-button>
+        ></md-form>
     `
 }
 
 /* prettier-ignore */
 function renderGridColumn(properties = {}) {
     return html`
-        <md-button
+        <md-grid-column
             class="${classMap(properties.classMap ?? {})}",
             style="${styleMap(properties.styleMap ?? {})}",
             .expanded="${ifDefined(properties.expanded)}"
             .medium="${ifDefined(properties.medium)}"
             .compact="${ifDefined(properties.compact)}"
-        ></md-button>
+        ></md-grid-column>
     `
 }
 
 /* prettier-ignore */
 function renderGrid(properties = {}) {
     return html`
-        <md-button
+        <md-grid
             class="${classMap(properties.classMap ?? {})}",
             style="${styleMap(properties.styleMap ?? {})}",
-        ></md-button>
+        ></md-grid>
     `
 }
 
 /* prettier-ignore */
 function renderIcon(properties = {}) {
     return html`
-        <md-button
+        <md-icon
             class="${classMap(properties.classMap ?? {})}",
             style="${styleMap(properties.styleMap ?? {})}",
             .icon="${ifDefined(properties.icon)}"
-        ></md-button>
+        ></md-icon>
     `
 }
 
 /* prettier-ignore */
 function renderIconButton(properties = {}) {
     return html`
-        <md-button
+        <md-icon-button
             class="${classMap(properties.classMap ?? {})}",
             style="${styleMap(properties.styleMap ?? {})}",
             .icon="${ifDefined(properties.icon)}"
@@ -280,14 +280,14 @@ function renderIconButton(properties = {}) {
             .rippleOptions="${ifDefined(properties.rippleOptions)}"
             @onIconButtonSelection="${ifDefined(properties.onIconButtonSelection)}"
             @onIconButtonClick="${ifDefined(properties.onIconButtonClick)}"
-        ></md-button>
+        ></md-icon-button>
     `
 }
 
 /* prettier-ignore */
 function renderImage(properties = {}) {
     return html`
-        <md-button
+        <md-image
             class="${classMap(properties.classMap ?? {})}",
             style="${styleMap(properties.styleMap ?? {})}",
             .src="${ifDefined(properties.src)}"
@@ -297,14 +297,14 @@ function renderImage(properties = {}) {
             .errorSrc="${ifDefined(properties.errorSrc)}"
             @onImageNativeLoad="${ifDefined(properties.onImageNativeLoad)}"
             @onImageNativeError="${ifDefined(properties.onImageNativeError)}"
-        ></md-button>
+        ></md-image>
     `
 }
 
 /* prettier-ignore */
 function renderLayoutItem(properties = {}) {
     return html`
-        <md-button
+        <md-layout-item
             class="${classMap(properties.classMap ?? {})}",
             style="${styleMap(properties.styleMap ?? {})}",
             .region="${ifDefined(properties.region)}"
@@ -314,24 +314,24 @@ function renderLayoutItem(properties = {}) {
             @onLayoutItemClosed="${ifDefined(properties.onLayoutItemClosed)}"
             @onLayoutItemShow="${ifDefined(properties.onLayoutItemShow)}"
             @onLayoutItemClose="${ifDefined(properties.onLayoutItemClose)}"
-        ></md-button>
+        ></md-layout-item>
     `
 }
 
 /* prettier-ignore */
 function renderLayout(properties = {}) {
     return html`
-        <md-button
+        <md-layout
             class="${classMap(properties.classMap ?? {})}",
             style="${styleMap(properties.styleMap ?? {})}",
-        ></md-button>
+        ></md-layout>
     `
 }
 
 /* prettier-ignore */
 function renderListItem(properties = {}) {
     return html`
-        <md-button
+        <md-list-item
             class="${classMap(properties.classMap ?? {})}",
             style="${styleMap(properties.styleMap ?? {})}",
             .leading="${ifDefined(properties.leading)}"
@@ -343,14 +343,14 @@ function renderListItem(properties = {}) {
             .interactive="${ifDefined(properties.interactive)}"
             .rippleOptions="${ifDefined(properties.rippleOptions)}"
             .selected="${ifDefined(properties.selected)}"
-        ></md-button>
+        ></md-list-item>
     `
 }
 
 /* prettier-ignore */
 function renderList(properties = {}) {
     return html`
-        <md-button
+        <md-list
             class="${classMap(properties.classMap ?? {})}",
             style="${styleMap(properties.styleMap ?? {})}",
             .items="${ifDefined(properties.items)}"
@@ -375,24 +375,24 @@ function renderList(properties = {}) {
             @onListClick="${ifDefined(properties.onListClick)}"
             @onListKeydown="${ifDefined(properties.onListKeydown)}"
             @onListItemClick="${ifDefined(properties.onListItemClick)}"
-        ></md-button>
+        ></md-list>
     `
 }
 
 /* prettier-ignore */
 function renderPushMenu(properties = {}) {
     return html`
-        <md-button
+        <md-push-menu
             class="${classMap(properties.classMap ?? {})}",
             style="${styleMap(properties.styleMap ?? {})}",
-        ></md-button>
+        ></md-push-menu>
     `
 }
 
 /* prettier-ignore */
 function renderRadioButton(properties = {}) {
     return html`
-        <md-button
+        <md-radio-button
             class="${classMap(properties.classMap ?? {})}",
             style="${styleMap(properties.styleMap ?? {})}",
             .name="${ifDefined(properties.name)}"
@@ -403,14 +403,14 @@ function renderRadioButton(properties = {}) {
             .rippleOptions="${ifDefined(properties.rippleOptions)}"
             .tabIndex="${ifDefined(properties.tabIndex)}"
             @onRadioButtonNativeInput="${ifDefined(properties.onRadioButtonNativeInput)}"
-        ></md-button>
+        ></md-radio-button>
     `
 }
 
 /* prettier-ignore */
 function renderScrim(properties = {}) {
     return html`
-        <md-button
+        <md-scrim
             class="${classMap(properties.classMap ?? {})}",
             style="${styleMap(properties.styleMap ?? {})}",
             .open="${ifDefined(properties.open)}"
@@ -419,14 +419,14 @@ function renderScrim(properties = {}) {
             @onScrimClosed="${ifDefined(properties.onScrimClosed)}"
             @onScrimShow="${ifDefined(properties.onScrimShow)}"
             @onScrimClose="${ifDefined(properties.onScrimClose)}"
-        ></md-button>
+        ></md-scrim>
     `
 }
 
 /* prettier-ignore */
 function renderSlider(properties = {}) {
     return html`
-        <md-button
+        <md-slider
             class="${classMap(properties.classMap ?? {})}",
             style="${styleMap(properties.styleMap ?? {})}",
             .name="${ifDefined(properties.name)}"
@@ -439,14 +439,14 @@ function renderSlider(properties = {}) {
             .size="${ifDefined(properties.size)}"
             .stopIndicator="${ifDefined(properties.stopIndicator)}"
             .valueIndicator="${ifDefined(properties.valueIndicator)}"
-        ></md-button>
+        ></md-slider>
     `
 }
 
 /* prettier-ignore */
 function renderSwitch(properties = {}) {
     return html`
-        <md-button
+        <md-switch
             class="${classMap(properties.classMap ?? {})}",
             style="${styleMap(properties.styleMap ?? {})}",
             .name="${ifDefined(properties.name)}"
@@ -458,14 +458,14 @@ function renderSwitch(properties = {}) {
             .icon="${ifDefined(properties.icon)}"
             .tabIndex="${ifDefined(properties.tabIndex)}"
             @onSwitchNativeInput="${ifDefined(properties.onSwitchNativeInput)}"
-        ></md-button>
+        ></md-switch>
     `
 }
 
 /* prettier-ignore */
 function renderTextField(properties = {}) {
     return html`
-        <md-button
+        <md-text-field
             class="${classMap(properties.classMap ?? {})}",
             style="${styleMap(properties.styleMap ?? {})}",
             .leading="${ifDefined(properties.leading)}"
@@ -497,14 +497,14 @@ function renderTextField(properties = {}) {
             @onTextFieldNativeBlur="${ifDefined(properties.onTextFieldNativeBlur)}"
             @onTextFieldNativeInput="${ifDefined(properties.onTextFieldNativeInput)}"
             @onTextFieldNativeInvalid="${ifDefined(properties.onTextFieldNativeInvalid)}"
-        ></md-button>
+        ></md-text-field>
     `
 }
 
 /* prettier-ignore */
 function renderTextarea(properties = {}) {
     return html`
-        <md-button
+        <md-textarea
             class="${classMap(properties.classMap ?? {})}",
             style="${styleMap(properties.styleMap ?? {})}",
             .items="${ifDefined(properties.items)}"
@@ -514,17 +514,17 @@ function renderTextarea(properties = {}) {
             .labelField="${ifDefined(properties.labelField)}"
             .rows="${ifDefined(properties.rows)}"
             .cols="${ifDefined(properties.cols)}"
-        ></md-button>
+        ></md-textarea>
     `
 }
 
 /* prettier-ignore */
 function renderTree(properties = {}) {
     return html`
-        <md-button
+        <md-tree
             class="${classMap(properties.classMap ?? {})}",
             style="${styleMap(properties.styleMap ?? {})}",
-        ></md-button>
+        ></md-tree>
     `
 }
 
