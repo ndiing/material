@@ -41,11 +41,6 @@ class MdDataTable extends MdElement {
         this._handleDataTableVirtualScrollUpdate = this._handleDataTableVirtualScrollUpdate.bind(this);
         this._handleDataTableKeydown = this._handleDataTableKeydown.bind(this);
         this._handleDataTableClick = this._handleDataTableClick.bind(this);
-
-        this.virtualScrollController = new VirtualScrollController(this, {
-            rowHeight: 52,
-            onUpdate: this._handleDataTableVirtualScrollUpdate,
-        });
     }
 
     /* prettier-ignore */
@@ -167,12 +162,25 @@ class MdDataTable extends MdElement {
 
         this.tabIndex = 0;
 
+        this.updateComplete.then(() => {
+            if (!this.virtualScrollController) {
+                this.virtualScrollController = new VirtualScrollController(this.querySelector('table'), {
+                    register:false,
+                    rowHeight: 52,
+                    onUpdate: this._handleDataTableVirtualScrollUpdate,
+                });
+            }
+            this.virtualScrollController.init();
+        });
+
         this.on("keydown", this._handleDataTableKeydown);
         this.on("click", this._handleDataTableClick);
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
+
+        this.virtualScrollController.destroy();
 
         this.off("keydown", this._handleDataTableKeydown);
         this.off("click", this._handleDataTableClick);
@@ -185,7 +193,6 @@ class MdDataTable extends MdElement {
         if (_changedProperties.has("rows")) {
             this.updateComplete.then(() => {
                 this.virtualScrollController.reinit({
-                    viewport: this.querySelector("table"),
                     itemCount: this.rows.length,
                 });
             });

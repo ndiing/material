@@ -28,7 +28,6 @@ class VirtualScrollController {
         this.offsetY = this.startNode * this.rowHeight;
 
         this.viewport.style.setProperty("--md-comp-virtual-scroll-content-translate-y", `${this.offsetY}px`);
-
         this.onUpdate({ controller: this });
     }
 
@@ -97,11 +96,10 @@ class VirtualScrollController {
     init() {
         this.viewport.classList.add("md-virtual-scroll");
 
-        this._updateViewportHeight();
-        this._updateTotalContentHeight();
         // this._restoreScrollPosition();
+        this._updateTotalContentHeight();
 
-        this.viewport.addEventListener("scroll", this._handleScroll);
+        this.viewport.addEventListener("scroll", this._handleScroll);        
 
         this.resizeObserver = new ResizeObserver(this._handleResizeObserver);
         this.resizeObserver.observe(this.viewport);
