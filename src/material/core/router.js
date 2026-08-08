@@ -5,7 +5,7 @@ class Router {
         this.routes = [...routes];
 
         const { timeout = 5000, historyApiFallback = false, base = "http://localhost" } = options;
-        
+
         this.timeout = timeout;
         this.historyApiFallback = historyApiFallback;
         this.base = base;
@@ -80,7 +80,7 @@ class Router {
 
             const target = route.outlet ? document.body : container;
             const selector = route.outlet ? `md-outlet[name="${route.outlet}"]` : "md-outlet:not([name])";
-            
+
             const resolveOutlet = () => {
                 outlet = target.querySelector(selector);
                 if (outlet) {
@@ -158,7 +158,7 @@ class Router {
     async _handleNavigation() {
         // performance.mark("onNavigationStart");
         this.emit("onNavigationStart", this);
-        
+
         const { pathname, search, hash } = this._parseURL();
         this.url.pathname = pathname;
         this.url.search = search;
@@ -255,7 +255,7 @@ class Router {
         } else {
             window.addEventListener("hashchange", () => this._handleNavigation());
         }
-        
+
         window.addEventListener("click", (event) => this._handleNavigate(event));
     }
 

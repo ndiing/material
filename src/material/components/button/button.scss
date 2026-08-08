@@ -6,12 +6,10 @@
     justify-content: center;
     vertical-align: middle;
     position: relative;
-
     will-change: border-radius, background-color, color, border-color;
     transition-property: border-radius, background-color, color, border-color;
     transition-duration: var(--md-sys-motion-duration-short2);
     transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
-
     @include mixins.initialize();
 
     &:active {

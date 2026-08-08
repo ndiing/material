@@ -307,7 +307,6 @@ src\material\components\slider\slider.scss
     appearance: none;
     background-color: transparent;
     outline: none;
-
     height: 100%;
     width: 100%;
     position: absolute;
@@ -324,7 +323,6 @@ src\material\components\slider\slider.scss
 
 .md-slider__native::-webkit-slider-thumb {
     appearance: none;
-
     height: var(--md-comp-slider-handle-height);
     width: var(--md-comp-slider-handle-width);
     background-color: transparent;
@@ -342,7 +340,6 @@ src\material\components\slider\slider.scss
     appearance: none;
     border: 0;
     border-radius: 0;
-
     height: var(--md-comp-slider-handle-height);
     width: var(--md-comp-slider-handle-width);
     background-color: transparent;
@@ -424,7 +421,6 @@ src\material\components\slider\slider.scss
     position: absolute;
     z-index: 5;
     pointer-events: none;
-
     transition-duration: var(--md-sys-motion-duration-short3);
     transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
 }
@@ -446,7 +442,6 @@ src\material\components\slider\slider.scss
         bottom: calc(100% - (var(--md-comp-slider-label-container-height) / 2));
         left: calc(var(--md-comp-slider-fraction0) * (100% - var(--md-comp-slider-handle-width)) + (var(--md-comp-slider-handle-width) / 2));
         transform: translate3d(-50%, 0, 0) scale3d(0, 0, 0);
-
         will-change: bottom, transform;
         transition-property: bottom, transform;
     }
@@ -514,7 +509,6 @@ src\material\components\slider\slider.scss
         left: auto;
         right: auto;
         height: auto;
-
         top: calc(0px - (var(--md-comp-slider-stop-indicator-size) / 2));
         bottom: calc(0px - (var(--md-comp-slider-stop-indicator-size) / 2));
         width: var(--md-comp-slider-track-height);
@@ -550,7 +544,6 @@ src\material\components\slider\slider.scss
         left: calc(100% - (var(--md-comp-slider-label-container-height) / 2));
         bottom: calc(var(--md-comp-slider-fraction0) * (100% - var(--md-comp-slider-handle-width)) + (var(--md-comp-slider-handle-width) / 2));
         transform: translate3d(0, 50%, 0) scale3d(0, 0, 0);
-
         will-change: left, transform;
         transition-property: left, transform;
     }

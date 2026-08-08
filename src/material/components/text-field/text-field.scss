@@ -7,7 +7,6 @@
     width: 100%;
     gap: 4px 0;
     position: relative;
-
     @include mixins.initialize();
 }
 
@@ -101,9 +100,10 @@
     &::-webkit-datetime-edit-fields-wrapper {
         padding: 0;
     }
-    &::-webkit-datetime-edit-month-field,
-    &::-webkit-datetime-edit-day-field,
     &::-webkit-datetime-edit-year-field,
+    &::-webkit-datetime-edit-month-field,
+    &::-webkit-datetime-edit-week-field,
+    &::-webkit-datetime-edit-day-field,
     &::-webkit-datetime-edit-hour-field,
     &::-webkit-datetime-edit-minute-field {
         padding: 0;
@@ -121,7 +121,6 @@
         caret-color: var(--md-sys-color-on-surface);
         transition: background-color 5000s ease-in-out 0s;
     }
-
 }
 
 .md-text-field__trailing {
