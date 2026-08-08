@@ -87,16 +87,15 @@ function writeFiles() {
                 temp[className].properties = properties;
             }
 
-            const events = [...data.matchAll(/this\.emit\("(\w+)", .*?\);/gm)].map(([, eventName]) => (eventName));
+            const events = [...data.matchAll(/this\.emit\("(\w+)", .*?\);/gm)].map(([, eventName]) => eventName);
             temp[className].events = new Set(events);
             temp[className].methodName = `render${className.slice(2)}`;
-            
+
             const localName = data.match(/customElements\.define\("([\w-]+?)", .*?\);/)?.[1];
-            if(localName){
+            if (localName) {
                 temp[className].localName = localName;
                 temp[className].componentName = localName.slice(3);
             }
-
         }
     }
 
@@ -120,8 +119,10 @@ function writeFiles() {
         code += `            class="\${classMap(properties.classMap ?? {})}",\r\n`;
         code += `            style="\${styleMap(properties.styleMap ?? {})}",\r\n`;
         for (const name in data.properties) {
-            const value = data.properties[name]
-            if(value?.state){continue}
+            const value = data.properties[name];
+            if (value?.state) {
+                continue;
+            }
             code += `            .${name}="\${ifDefined(properties.${name})}"\r\n`;
         }
         for (const eventName of data.events) {
@@ -160,7 +161,7 @@ function writeFiles() {
 
     code += `};\r\n`;
 
-    write(path.join('src/material/utils/render-component.js'),code);
+    write(path.join("src/material/utils/render-component.js"), code);
 }
 
 writeFiles();

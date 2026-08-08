@@ -150,25 +150,25 @@ class MdSlider extends MdElement {
         }
     }
 
-    update(changedProperties) {
-        super.update(changedProperties);
+    updated(_changedProperties) {
+        super.updated(_changedProperties);
 
-        if (changedProperties.has("variant")) {
+        if (_changedProperties.has("variant")) {
             this.variants.forEach((variant) => {
                 this.classList.toggle(`md-slider--${variant}`, this.variant === variant);
             });
         }
-        if (changedProperties.has("orientation")) {
+        if (_changedProperties.has("orientation")) {
             this.orientations.forEach((orientation) => {
                 this.classList.toggle(`md-slider--${orientation}`, this.orientation === orientation);
             });
         }
-        if (changedProperties.has("size")) {
+        if (_changedProperties.has("size")) {
             this.sizes.forEach((size) => {
                 this.classList.toggle(`md-slider--${size}`, this.size === size);
             });
         }
-        if (changedProperties.has("stops")) {
+        if (_changedProperties.has("stops")) {
             this.classList.toggle(`md-slider--discrete`, this.stops > 1);
             this.style.setProperty("--md-comp-slider-stop", this.stops);
         }

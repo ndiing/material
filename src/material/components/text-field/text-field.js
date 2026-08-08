@@ -223,42 +223,42 @@ class MdTextField extends MdElement {
         this.classList.remove("md-text-field");
     }
 
-    update(changedProperties) {
-        super.update(changedProperties);
-        if (changedProperties.has("color")) {
-            this.colors.forEach((color) => {
-                this.classList.toggle(`md-text-field--${color}`, this.color === color);
-            });
-        }
-        if (changedProperties.has("label")) {
-            this.classList.toggle(`md-text-field--with-label`, !!this.label);
-        }
-        if (changedProperties.has("disabled")) {
-            this.classList.toggle(`md-text-field--disabled`, !!this.disabled);
-        }
-        if (changedProperties.has("readonly")) {
-            this.classList.toggle(`md-text-field--readonly`, !!this.readonly);
-        }
-    }
-
     firstUpdated(_changedProperties) {
         super.firstUpdated(_changedProperties);
 
         this.defaultValue = this.defaultValue ?? this.value ?? "";
 
         const textFieldNative = this.textFieldNative.value;
-        this.classList.toggle(`md-text-field--populated`, !!textFieldNative.value);
+        this.classList.toggle(`md-text-field--populated`, Boolean(textFieldNative.value));
         this.style.setProperty("--md-comp-text-field-content-offset-left", this.textFieldContent.value.offsetLeft + "px");
+    }
+
+    updated(_changedProperties) {
+        super.updated(_changedProperties);
+        if (_changedProperties.has("color")) {
+            this.colors.forEach((color) => {
+                this.classList.toggle(`md-text-field--${color}`, this.color === color);
+            });
+        }
+        if (_changedProperties.has("label")) {
+            this.classList.toggle(`md-text-field--with-label`, Boolean(this.label));
+        }
+        if (_changedProperties.has("disabled")) {
+            this.classList.toggle(`md-text-field--disabled`, Boolean(this.disabled));
+        }
+        if (_changedProperties.has("readonly")) {
+            this.classList.toggle(`md-text-field--readonly`, Boolean(this.readonly));
+        }
     }
 
     formResetCallback(event) {
         this.value = this.defaultValue;
         const textFieldNative = this.textFieldNative.value;
         textFieldNative.value = this.defaultValue;
-        this.classList.toggle(`md-text-field--populated`, !!this.value);
+        this.classList.toggle(`md-text-field--populated`, Boolean(this.value));
 
         this.validationMessage = "";
-        this.classList.toggle(`md-text-field--error`, !!this.validationMessage);
+        this.classList.toggle(`md-text-field--error`, Boolean(this.validationMessage));
     }
 
     _handleTextFieldNativeFocus(event) {
@@ -282,7 +282,7 @@ class MdTextField extends MdElement {
     _handleTextFieldNativeInput(event) {
         const textFieldNative = this.textFieldNative.value;
         this.value = textFieldNative.value;
-        this.classList.toggle(`md-text-field--populated`, !!this.value);
+        this.classList.toggle(`md-text-field--populated`, Boolean(this.value));
 
         if (this.validateOnInput) {
             this.validate();
@@ -301,13 +301,13 @@ class MdTextField extends MdElement {
         const textFieldNative = this.textFieldNative.value;
         textFieldNative.value = "";
         this.value = "";
-        this.classList.toggle(`md-text-field--populated`, !!this.value);
+        this.classList.toggle(`md-text-field--populated`, Boolean(this.value));
     }
 
     validate() {
         const textFieldNative = this.textFieldNative.value;
         this.validationMessage = textFieldNative.validationMessage;
-        this.classList.toggle(`md-text-field--error`, !!this.validationMessage);
+        this.classList.toggle(`md-text-field--error`, Boolean(this.validationMessage));
     }
 }
 

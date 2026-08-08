@@ -99,7 +99,7 @@ class VirtualScrollController {
         // this._restoreScrollPosition();
         this._updateTotalContentHeight();
 
-        this.viewport.addEventListener("scroll", this._handleScroll);        
+        this.viewport.addEventListener("scroll", this._handleScroll);
 
         this.resizeObserver = new ResizeObserver(this._handleResizeObserver);
         this.resizeObserver.observe(this.viewport);

@@ -1,6 +1,7 @@
 ## src
 
 ### index
+
 src\index.js
 
 ```js
@@ -9,11 +10,12 @@ import "./material/material.js";
 
 import "./demo/demo.scss";
 import "./demo/demo.js";
-
 ```
+
 ## src\material\base
 
 ### datetime-picker
+
 src\material\base\datetime-picker.js
 
 ```js
@@ -235,9 +237,10 @@ class MdDatetimePickerElement extends MdElement {
 }
 
 export { MdDatetimePickerElement };
-
 ```
+
 ### element
+
 src\material\base\element.js
 
 ```js
@@ -289,9 +292,10 @@ class MdElement extends LitElement {
 }
 
 export { MdElement };
-
 ```
+
 ### fonts
+
 src\material\base\fonts.scss
 
 ```scss
@@ -589,9 +593,10 @@ src\material\base\fonts.scss
 body {
     --google-font-color-notocoloremoji: colrv1;
 }
-
 ```
+
 ### list
+
 src\material\base\list.js
 
 ```js
@@ -799,9 +804,10 @@ class MdListElement extends MdElement {
 }
 
 export { MdListElement };
-
 ```
+
 ### reset
+
 src\material\base\reset.scss
 
 ```scss
@@ -844,9 +850,10 @@ body {
     color: var(--md-sys-color-on-background);
     @include mixins.typescale-body-large();
 }
-
 ```
+
 ### tokens
+
 src\material\base\tokens.scss
 
 ```scss
@@ -1137,11 +1144,12 @@ src\material\base\tokens.scss
     --md-sys-typescale-label-small-tracking: 0.5px;
     --md-sys-typescale-label-small-line-height: 16px;
 }
-
 ```
+
 ## src\material\components\badge
 
 ### badge
+
 src\material\components\badge\badge.js
 
 ```js
@@ -1194,9 +1202,10 @@ class MdBadge extends MdElement {
 customElements.define("md-badge", MdBadge);
 
 export { MdBadge };
-
 ```
+
 ### badge
+
 src\material\components\badge\badge.scss
 
 ```scss
@@ -1224,11 +1233,12 @@ src\material\components\badge\badge.scss
         padding: 0;
     }
 }
-
 ```
+
 ## src\material\components\button
 
 ### button
+
 src\material\components\button\button.js
 
 ```js
@@ -1358,9 +1368,10 @@ class MdButton extends MdElement {
 customElements.define("md-button", MdButton);
 
 export { MdButton };
-
 ```
+
 ### button
+
 src\material\components\button\button.scss
 
 ```scss
@@ -1705,11 +1716,12 @@ src\material\components\button\button.scss
 .md-button--disabled {
     pointer-events: none;
 }
-
 ```
+
 ## src\material\components\card
 
 ### card-body
+
 src\material\components\card\card-body.js
 
 ```js
@@ -1733,9 +1745,10 @@ class MdCardBody extends MdElement {
 customElements.define("md-card-body", MdCardBody);
 
 export { MdCardBody };
-
 ```
+
 ### card-footer
+
 src\material\components\card\card-footer.js
 
 ```js
@@ -1759,9 +1772,10 @@ class MdCardFooter extends MdElement {
 customElements.define("md-card-footer", MdCardFooter);
 
 export { MdCardFooter };
-
 ```
+
 ### card-header
+
 src\material\components\card\card-header.js
 
 ```js
@@ -1785,9 +1799,10 @@ class MdCardHeader extends MdElement {
 customElements.define("md-card-header", MdCardHeader);
 
 export { MdCardHeader };
-
 ```
+
 ### card-main
+
 src\material\components\card\card-main.js
 
 ```js
@@ -1811,9 +1826,10 @@ class MdCardMain extends MdElement {
 customElements.define("md-card-main", MdCardMain);
 
 export { MdCardMain };
-
 ```
+
 ### card
+
 src\material\components\card\card.js
 
 ```js
@@ -1855,9 +1871,10 @@ class MdCard extends MdElement {
 customElements.define("md-card", MdCard);
 
 export { MdCard };
-
 ```
+
 ### card
+
 src\material\components\card\card.scss
 
 ```scss
@@ -1967,11 +1984,12 @@ src\material\components\card\card.scss
         box-shadow: var(--md-sys-elevation-level0);
     }
 }
-
 ```
+
 ## src\material\components\checkbox
 
 ### checkbox
+
 src\material\components\checkbox\checkbox.js
 
 ```js
@@ -2115,9 +2133,10 @@ class MdCheckbox extends MdElement {
 customElements.define("md-checkbox", MdCheckbox);
 
 export { MdCheckbox };
-
 ```
+
 ### checkbox
+
 src\material\components\checkbox\checkbox.scss
 
 ```scss
@@ -2269,11 +2288,12 @@ src\material\components\checkbox\checkbox.scss
         }
     }
 }
-
 ```
+
 ## src\material\components\data-table
 
 ### data-table-cell
+
 src\material\components\data-table\data-table-cell.js
 
 ```js
@@ -2308,9 +2328,10 @@ class MdDataTableCell extends MdElement {
 customElements.define("md-data-table-cell", MdDataTableCell);
 
 export { MdDataTableCell };
-
 ```
+
 ### data-table
+
 src\material\components\data-table\data-table.js
 
 ```js
@@ -2686,9 +2707,10 @@ class MdDataTable extends MdElement {
 customElements.define("md-data-table", MdDataTable);
 
 export { MdDataTable };
-
 ```
+
 ### data-table
+
 src\material\components\data-table\data-table.scss
 
 ```scss
@@ -2760,11 +2782,12 @@ src\material\components\data-table\data-table.scss
     text-overflow: ellipsis;
     @include mixins.typescale-body-large();
 }
-
 ```
+
 ## src\material\components\dialog
 
 ### dialog-body
+
 src\material\components\dialog\dialog-body.js
 
 ```js
@@ -2788,9 +2811,10 @@ class MdDialogBody extends MdElement {
 customElements.define("md-dialog-body", MdDialogBody);
 
 export { MdDialogBody };
-
 ```
+
 ### dialog-footer
+
 src\material\components\dialog\dialog-footer.js
 
 ```js
@@ -2854,9 +2878,10 @@ class MdDialogFooter extends MdElement {
 customElements.define("md-dialog-footer", MdDialogFooter);
 
 export { MdDialogFooter };
-
 ```
+
 ### dialog-header
+
 src\material\components\dialog\dialog-header.js
 
 ```js
@@ -3013,9 +3038,10 @@ class MdDialogHeader extends MdElement {
 customElements.define("md-dialog-header", MdDialogHeader);
 
 export { MdDialogHeader };
-
 ```
+
 ### dialog-main
+
 src\material\components\dialog\dialog-main.js
 
 ```js
@@ -3039,9 +3065,10 @@ class MdDialogMain extends MdElement {
 customElements.define("md-dialog-main", MdDialogMain);
 
 export { MdDialogMain };
-
 ```
+
 ### dialog
+
 src\material\components\dialog\dialog.js
 
 ```js
@@ -3180,9 +3207,10 @@ class MdDialog extends MdElement {
 customElements.define("md-dialog", MdDialog);
 
 export { MdDialog };
-
 ```
+
 ### dialog
+
 src\material\components\dialog\dialog.scss
 
 ```scss
@@ -3373,11 +3401,12 @@ src\material\components\dialog\dialog.scss
         animation-name: full-screen-dialog-show;
     }
 }
-
 ```
+
 ## src\material\components\form
 
 ### form
+
 src\material\components\form\form.js
 
 ```js
@@ -3480,9 +3509,10 @@ class MdForm extends MdElement {
 customElements.define("md-form", MdForm);
 
 export { MdForm };
-
 ```
+
 ### form
+
 src\material\components\form\form.scss
 
 ```scss
@@ -3492,11 +3522,12 @@ src\material\components\form\form.scss
 
 .md-form__native {
 }
-
 ```
+
 ## src\material\components\grid
 
 ### grid-column
+
 src\material\components\grid\grid-column.js
 
 ```js
@@ -3548,9 +3579,10 @@ class MdGridColumn extends MdElement {
 customElements.define("md-grid-column", MdGridColumn);
 
 export { MdGridColumn };
-
 ```
+
 ### grid
+
 src\material\components\grid\grid.js
 
 ```js
@@ -3574,9 +3606,10 @@ class MdGrid extends MdElement {
 customElements.define("md-grid", MdGrid);
 
 export { MdGrid };
-
 ```
+
 ### grid
+
 src\material\components\grid\grid.scss
 
 ```scss
@@ -3630,11 +3663,12 @@ src\material\components\grid\grid.scss
         }
     }
 }
-
 ```
+
 ## src\material\components\icon
 
 ### icon
+
 src\material\components\icon\icon.js
 
 ```js
@@ -3667,9 +3701,10 @@ class MdIcon extends MdElement {
 customElements.define("md-icon", MdIcon);
 
 export { MdIcon };
-
 ```
+
 ### icon
+
 src\material\components\icon\icon.scss
 
 ```scss
@@ -3699,11 +3734,12 @@ src\material\components\icon\icon.scss
         "GRAD" 0,
         "opsz" 24;
 }
-
 ```
+
 ## src\material\components\icon-button
 
 ### icon-button
+
 src\material\components\icon-button\icon-button.js
 
 ```js
@@ -3840,9 +3876,10 @@ class MdIconButton extends MdElement {
 customElements.define("md-icon-button", MdIconButton);
 
 export { MdIconButton };
-
 ```
+
 ### icon-button
+
 src\material\components\icon-button\icon-button.scss
 
 ```scss
@@ -4139,11 +4176,12 @@ src\material\components\icon-button\icon-button.scss
         }
     }
 }
-
 ```
+
 ## src\material\components\image
 
 ### image
+
 src\material\components\image\image.js
 
 ```js
@@ -4257,9 +4295,10 @@ class MdImage extends MdElement {
 customElements.define("md-image", MdImage);
 
 export { MdImage };
-
 ```
+
 ### image
+
 src\material\components\image\image.scss
 
 ```scss
@@ -4303,11 +4342,12 @@ src\material\components\image\image.scss
 .md-image--error {
     opacity: 50%;
 }
-
 ```
+
 ## src\material\components\layout
 
 ### layout-item
+
 src\material\components\layout\layout-item.js
 
 ```js
@@ -4427,9 +4467,10 @@ class MdLayoutItem extends MdElement {
 customElements.define("md-layout-item", MdLayoutItem);
 
 export { MdLayoutItem };
-
 ```
+
 ### layout
+
 src\material\components\layout\layout.js
 
 ```js
@@ -4452,9 +4493,10 @@ class MdLayout extends MdElement {
 customElements.define("md-layout", MdLayout);
 
 export { MdLayout };
-
 ```
+
 ### layout
+
 src\material\components\layout\layout.scss
 
 ```scss
@@ -4568,11 +4610,12 @@ src\material\components\layout\layout.scss
 .md-layout__item--center {
     grid-area: center;
 }
-
 ```
+
 ## src\material\components\list
 
 ### list-item
+
 src\material\components\list\list-item.js
 
 ```js
@@ -4873,9 +4916,10 @@ class MdListItem extends MdElement {
 customElements.define("md-list-item", MdListItem);
 
 export { MdListItem };
-
 ```
+
 ### list
+
 src\material\components\list\list.js
 
 ```js
@@ -5194,9 +5238,10 @@ class MdList extends MdListElement {
 customElements.define("md-list", MdList);
 
 export { MdList };
-
 ```
+
 ### list
+
 src\material\components\list\list.scss
 
 ```scss
@@ -5351,11 +5396,12 @@ src\material\components\list\list.scss
         @include mixins.typescale-label-large();
     }
 }
-
 ```
+
 ## src\material\components\push-menu
 
 ### push-menu
+
 src\material\components\push-menu\push-menu.js
 
 ```js
@@ -5445,17 +5491,20 @@ class MdPushMenu extends MdListElement {
 customElements.define("md-push-menu", MdPushMenu);
 
 export { MdPushMenu };
-
 ```
+
 ### push-menu
+
 src\material\components\push-menu\push-menu.scss
 
 ```scss
 
 ```
+
 ## src\material\components\radio-button
 
 ### radio-button
+
 src\material\components\radio-button\radio-button.js
 
 ```js
@@ -5564,9 +5613,10 @@ class MdRadioButton extends MdElement {
 customElements.define("md-radio-button", MdRadioButton);
 
 export { MdRadioButton };
-
 ```
+
 ### radio-button
+
 src\material\components\radio-button\radio-button.scss
 
 ```scss
@@ -5653,11 +5703,12 @@ src\material\components\radio-button\radio-button.scss
         }
     }
 }
-
 ```
+
 ## src\material\components\scrim
 
 ### scrim
+
 src\material\components\scrim\scrim.js
 
 ```js
@@ -5736,9 +5787,10 @@ class MdScrim extends MdElement {
 customElements.define("md-scrim", MdScrim);
 
 export { MdScrim };
-
 ```
+
 ### scrim
+
 src\material\components\scrim\scrim.scss
 
 ```scss
@@ -5765,11 +5817,12 @@ src\material\components\scrim\scrim.scss
         transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
     }
 }
-
 ```
+
 ## src\material\components\slider
 
 ### slider
+
 src\material\components\slider\slider.js
 
 ```js
@@ -6042,9 +6095,10 @@ class MdSlider extends MdElement {
 customElements.define("md-slider", MdSlider);
 
 export { MdSlider };
-
 ```
+
 ### slider
+
 src\material\components\slider\slider.scss
 
 ```scss
@@ -6399,11 +6453,12 @@ src\material\components\slider\slider.scss
     --md-comp-slider-track-shape: 28px;
     --md-comp-slider-inset-icon-size: 32px;
 }
-
 ```
+
 ## src\material\components\switch
 
 ### switch
+
 src\material\components\switch\switch.js
 
 ```js
@@ -6529,9 +6584,10 @@ class MdSwitch extends MdElement {
 customElements.define("md-switch", MdSwitch);
 
 export { MdSwitch };
-
 ```
+
 ### switch
+
 src\material\components\switch\switch.scss
 
 ```scss
@@ -6689,11 +6745,12 @@ src\material\components\switch\switch.scss
         }
     }
 }
-
 ```
+
 ## src\material\components\text-field
 
 ### text-field
+
 src\material\components\text-field\text-field.js
 
 ```js
@@ -7013,9 +7070,10 @@ class MdTextField extends MdElement {
 customElements.define("md-text-field", MdTextField);
 
 export { MdTextField };
-
 ```
+
 ### text-field
+
 src\material\components\text-field\text-field.scss
 
 ```scss
@@ -7381,11 +7439,12 @@ src\material\components\text-field\text-field.scss
         }
     }
 }
-
 ```
+
 ## src\material\components\textarea
 
 ### textarea
+
 src\material\components\textarea\textarea.js
 
 ```js
@@ -7451,9 +7510,10 @@ class MdTextarea extends MdTextField {
 customElements.define("md-textarea", MdTextarea);
 
 export { MdTextarea };
-
 ```
+
 ### textarea
+
 src\material\components\textarea\textarea.scss
 
 ```scss
@@ -7467,11 +7527,12 @@ src\material\components\textarea\textarea.scss
         field-sizing: content;
     }
 }
-
 ```
+
 ## src\material\components\tree
 
 ### tree
+
 src\material\components\tree\tree.js
 
 ```js
@@ -7540,17 +7601,20 @@ class MdTree extends MdListElement {
 customElements.define("md-tree", MdTree);
 
 export { MdTree };
-
 ```
+
 ### tree
+
 src\material\components\tree\tree.scss
 
 ```scss
 
 ```
+
 ## src\material\components\typography
 
 ### typography
+
 src\material\components\typography\typography.scss
 
 ```scss
@@ -7615,11 +7679,12 @@ src\material\components\typography\typography.scss
 .md-typography--label-small {
     @include mixins.typescale-label-small();
 }
-
 ```
+
 ## src\material\controller
 
 ### ripple
+
 src\material\controller\ripple.js
 
 ```js
@@ -7768,9 +7833,10 @@ class RippleController {
 }
 
 export { RippleController };
-
 ```
+
 ### ripple
+
 src\material\controller\ripple.scss
 
 ```scss
@@ -7848,9 +7914,10 @@ src\material\controller\ripple.scss
 .md-ripple--disabled {
     pointer-events: none;
 }
-
 ```
+
 ### virtual-scroll
+
 src\material\controller\virtual-scroll.js
 
 ```js
@@ -7989,9 +8056,10 @@ class VirtualScrollController {
 }
 
 export { VirtualScrollController };
-
 ```
+
 ### virtual-scroll
+
 src\material\controller\virtual-scroll.scss
 
 ```scss
@@ -8011,11 +8079,12 @@ src\material\controller\virtual-scroll.scss
         pointer-events: none;
     }
 }
-
 ```
+
 ## src\material\core
 
 ### breakpoint-observer
+
 src\material\core\breakpoint-observer.js
 
 ```js
@@ -8032,9 +8101,10 @@ class BreakpointObserver extends MediaObserver {
 }
 
 export { BreakpointObserver };
-
 ```
+
 ### localization
+
 src\material\core\localization.js
 
 ```js
@@ -8047,9 +8117,10 @@ const { getLocale, setLocale } = configureLocalization({
 });
 
 export { sourceLocale, targetLocales, getLocale, setLocale };
-
 ```
+
 ### observer
+
 src\material\core\observer.js
 
 ```js
@@ -8081,9 +8152,10 @@ class MediaObserver {
 }
 
 export { MediaObserver };
-
 ```
+
 ### orientation-observer
+
 src\material\core\orientation-observer.js
 
 ```js
@@ -8099,9 +8171,10 @@ class OrientationObserver extends MediaObserver {
 }
 
 export { OrientationObserver };
-
 ```
+
 ### positioner
+
 src\material\core\positioner.js
 
 ```js
@@ -8254,9 +8327,10 @@ function setPosition(trigger, container, options = {}) {
 }
 
 export { PLACEMENTS, setPosition };
-
 ```
+
 ### query-builder
+
 src\material\core\query-builder.js
 
 ```js
@@ -8397,9 +8471,10 @@ class QueryBuilder {
 }
 
 export { QueryBuilder };
-
 ```
+
 ### router
+
 src\material\core\router.js
 
 ```js
@@ -8735,9 +8810,10 @@ class Router {
 }
 
 export { Router };
-
 ```
+
 ### scheme-observer
+
 src\material\core\scheme-observer.js
 
 ```js
@@ -8753,9 +8829,10 @@ class SchemeObserver extends MediaObserver {
 }
 
 export { SchemeObserver };
-
 ```
+
 ### store
+
 src\material\core\store.js
 
 ```js
@@ -9089,9 +9166,10 @@ _start=0&_end=10
     ],
 }
 */
-
 ```
+
 ### theme
+
 src\material\core\theme.js
 
 ```js
@@ -9129,11 +9207,12 @@ async function setTheme(input, customColors) {
 }
 
 export { setTheme };
-
 ```
+
 ## src\material
 
 ### material
+
 src\material\material.js
 
 ```js
@@ -9195,9 +9274,10 @@ import "./components/list/list-item.js";
 import "./components/list/list.js";
 import "./components/tree/tree.js";
 import "./components/push-menu/push-menu.js";
-
 ```
+
 ### material
+
 src\material\material.scss
 
 ```scss
@@ -9238,11 +9318,12 @@ src\material\material.scss
 @use "./components/list/list.scss";
 @use "./components/tree/tree.scss";
 @use "./components/push-menu/push-menu.scss";
-
 ```
+
 ## src\material\shared
 
 ### mixins
+
 src\material\shared\mixins.scss
 
 ```scss
@@ -9395,5 +9476,4 @@ src\material\shared\mixins.scss
         }
     }
 }
-
 ```

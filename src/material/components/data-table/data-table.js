@@ -164,8 +164,8 @@ class MdDataTable extends MdElement {
 
         this.updateComplete.then(() => {
             if (!this.virtualScrollController) {
-                this.virtualScrollController = new VirtualScrollController(this.querySelector('table'), {
-                    register:false,
+                this.virtualScrollController = new VirtualScrollController(this.querySelector("table"), {
+                    register: false,
                     rowHeight: 52,
                     onUpdate: this._handleDataTableVirtualScrollUpdate,
                 });

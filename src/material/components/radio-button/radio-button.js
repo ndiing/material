@@ -65,14 +65,6 @@ class MdRadioButton extends MdElement {
         this.classList.remove("md-radio-button");
     }
 
-    update(changedProperties) {
-        super.update(changedProperties);
-
-        if (changedProperties.has("disabled")) {
-            this.classList.toggle("md-radio-button--disabled", this.disabled);
-        }
-    }
-
     firstUpdated(_changedProperties) {
         super.firstUpdated(_changedProperties);
 
@@ -81,6 +73,10 @@ class MdRadioButton extends MdElement {
 
     updated(_changedProperties) {
         super.updated(_changedProperties);
+
+        if (_changedProperties.has("disabled")) {
+            this.classList.toggle("md-radio-button--disabled", this.disabled);
+        }
 
         if (_changedProperties.has("rippleOptions")) {
             this.rippleController.reinit(this.rippleOptions);

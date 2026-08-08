@@ -10,8 +10,9 @@ class MdImage extends MdElement {
         alt: { type: String },
         loading: { type: String },
         shape: { type: String },
-        error: { type: Boolean, state: true },
         errorSrc: { type: String },
+        error: { type: Boolean, state: true },
+        loaded: { type: Boolean, state: true },
     };
 
     shapes = ["round", "square", "sharp"];
@@ -56,21 +57,22 @@ class MdImage extends MdElement {
         this.classList.remove("md-image");
     }
 
-    update(changedProperties) {
-        super.update(changedProperties);
-
-        if (changedProperties.has("shape")) {
-            this.shapes.forEach((shape) => {
-                this.classList.toggle(`md-image--${shape}`, this.shape === shape);
-            });
-        }
-    }
-
     updated(_changedProperties) {
         super.updated(_changedProperties);
 
         if (_changedProperties.has("shape")) {
+            this.shapes.forEach((shape) => {
+                this.classList.toggle(`md-image--${shape}`, this.shape === shape);
+            });
             this._updateSquareRadius();
+        }
+
+        if (_changedProperties.has("loaded")) {
+            this.classList.toggle(`md-image--loaded`, Boolean(this.loaded));
+        }
+
+        if (_changedProperties.has("error")) {
+            this.classList.toggle(`md-image--error`, Boolean(this.error));
         }
     }
 
@@ -91,14 +93,12 @@ class MdImage extends MdElement {
     }
 
     _handleImageNativeLoad(event) {
-        this.classList.add("md-image--loaded");
+        this.loaded = true;
 
         this.emit("onImageNativeLoad", { event, element: this });
     }
 
     _handleImageNativeError(event) {
-        this.classList.add("md-image--error");
-
         this.error = true;
 
         this.emit("onImageNativeError", { event, element: this });

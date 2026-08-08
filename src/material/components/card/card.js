@@ -22,10 +22,10 @@ class MdCard extends MdElement {
         this.classList.remove("md-card");
     }
 
-    update(changedProperties) {
-        super.update(changedProperties);
+    updated(_changedProperties) {
+        super.updated(_changedProperties);
 
-        if (changedProperties.has("color")) {
+        if (_changedProperties.has("color")) {
             this.colors.forEach((color) => {
                 this.classList.toggle(`md-card--${color}`, this.color === color);
             });

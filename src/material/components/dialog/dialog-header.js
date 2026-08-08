@@ -3,6 +3,7 @@ import { MdElement } from "../../base/element.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { styleMap } from "lit/directives/style-map.js";
 import { choose } from "lit/directives/choose.js";
+import { renderButton, renderIcon, renderIconButton, renderImage } from "../../utils/render-component.js";
 
 class MdDialogHeader extends MdElement {
     static properties = {
@@ -19,79 +20,12 @@ class MdDialogHeader extends MdElement {
     }
 
     /* prettier-ignore */
-    renderAvatar(properties){
-        return html`
-            <md-image 
-                class="md-dialog__avatar"
-                style="${styleMap(properties.style??{})}"
-                .src="${ifDefined(properties.src)}"
-                .alt="${ifDefined(properties.alt)}"
-                .loading="${ifDefined(properties.loading)}"
-                .shape="${ifDefined(properties.shape??'round')}"
-                .error="${ifDefined(properties.error)}"
-                .errorSrc="${ifDefined(properties.errorSrc)}"
-            ></md-image>
-        `
-    }
-
-    /* prettier-ignore */
-    renderIcon(properties){
-        return html`
-            <md-icon 
-                class="md-dialog__icon"
-                style="${styleMap(properties.style??{})}"
-                .icon="${ifDefined(properties.icon)}"
-            ></md-icon>
-        `
-    }
-
-    /* prettier-ignore */
-    renderIconButton(properties){
-        return html`
-            <md-icon-button 
-                class="md-dialog__icon-button"
-                style="${styleMap(properties.style??{})}"
-                .icon="${ifDefined(properties.icon)}"
-                .variant="${ifDefined(properties.variant)}"
-                .size="${ifDefined(properties.size)}"
-                .shape="${ifDefined(properties.shape)}"
-                .color="${ifDefined(properties.color)}"
-                .width="${ifDefined(properties.width)}"
-                .selected="${ifDefined(properties.selected)}"
-                .disabled="${ifDefined(properties.disabled)}"
-                .rippleOptions="${ifDefined(properties.rippleOptions)}"
-            ></md-icon-button>
-        `
-    }
-
-    /* prettier-ignore */
-    renderButton(properties){
-        return html`
-            <md-button 
-                class="md-dialog__button"
-                style="${styleMap(properties.style??{})}"
-                .variant="${ifDefined(properties.variant)}"
-                .size="${ifDefined(properties.size)}"
-                .shape="${ifDefined(properties.shape)}"
-                .color="${ifDefined(properties.color)}"
-                .label="${ifDefined(properties.label)}"
-                .icon="${ifDefined(properties.icon)}"
-                .selected="${ifDefined(properties.selected)}"
-                .disabled="${ifDefined(properties.disabled)}"
-                .type="${ifDefined(properties.type)}"
-                .rippleOptions="${ifDefined(properties.rippleOptions)}"
-                @click="${properties.onDialogButtonClick}"
-            ></md-button>
-        `
-    }
-
-    /* prettier-ignore */
     renderComponent(component,properties){
         return choose(component,[
-            ['avatar', () => this.renderAvatar(properties)],
-            ['icon', () => this.renderIcon(properties)],
-            ['icon-button', () => this.renderIconButton(properties)],
-            ['button', () => this.renderButton(properties)],
+            ['avatar', () => renderImage({classMap:{'md-dialog__avatar':true,...properties.classMap},shape:'round',...properties})],
+            ['icon', () => renderIcon({classMap:{'md-dialog__icon':true,...properties.classMap},...properties})],
+            ['icon-button', () => renderIconButton({classMap:{'md-dialog__icon-button':true,...properties.classMap},...properties})],
+            ['button', () => renderButton({classMap:{'md-dialog__button':true,...properties.classMap},...properties})],
         ],() => nothing)
     }
 

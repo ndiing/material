@@ -30,11 +30,11 @@ class MdScrim extends MdElement {
         this.classList.remove("md-scrim");
     }
 
-    update(changedProperties) {
-        super.update(changedProperties);
+    updated(_changedProperties) {
+        super.updated(_changedProperties);
 
-        if (changedProperties.has("open")) {
-            this.classList.toggle("md-scrim--open", !!this.open);
+        if (_changedProperties.has("open")) {
+            this.classList.toggle("md-scrim--open", Boolean(this.open));
         }
     }
 

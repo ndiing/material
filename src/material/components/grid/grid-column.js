@@ -20,22 +20,22 @@ class MdGridColumn extends MdElement {
         this.classList.remove("md-grid__column");
     }
 
-    update(changedProperties) {
-        super.update(changedProperties);
+    updated(_changedProperties) {
+        super.updated(_changedProperties);
 
-        if (changedProperties.has("expanded")) {
+        if (_changedProperties.has("expanded")) {
             for (let index = 1; index <= 12; index++) {
                 this.classList.toggle(`md-grid__column--expanded${index}`, index === this.expanded);
             }
         }
 
-        if (changedProperties.has("medium")) {
+        if (_changedProperties.has("medium")) {
             for (let index = 1; index <= 8; index++) {
                 this.classList.toggle(`md-grid__column--medium${index}`, index === this.medium);
             }
         }
 
-        if (changedProperties.has("compact")) {
+        if (_changedProperties.has("compact")) {
             for (let index = 1; index <= 4; index++) {
                 this.classList.toggle(`md-grid__column--compact${index}`, index === this.compact);
             }

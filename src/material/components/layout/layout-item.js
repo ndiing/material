@@ -46,28 +46,22 @@ class MdLayoutItem extends MdElement {
         this.classList.remove("md-layout__item");
     }
 
-    update(changedProperties) {
-        super.update(changedProperties);
+    updated(_changedProperties) {
+        super.updated(_changedProperties);
 
-        if (changedProperties.has("region")) {
+        if (_changedProperties.has("region")) {
             this.regions.forEach((region) => {
                 this.classList.toggle(`md-layout__item--${region}`, this.region === region);
             });
         }
 
-        if (changedProperties.has("modal")) {
-            this.classList.toggle(`md-layout__item--modal`, !!this.modal);
+        if (_changedProperties.has("modal")) {
+            this.classList.toggle(`md-layout__item--modal`, Boolean(this.modal));
         }
-
-        if (changedProperties.has("open")) {
-            this.classList.toggle(`md-layout__item--open`, !!this.open);
-        }
-    }
-
-    updated(_changedProperties) {
-        super.updated(_changedProperties);
 
         if (_changedProperties.has("open")) {
+            this.classList.toggle(`md-layout__item--open`, Boolean(this.open));
+
             if (this.modal) {
                 if (this.open) {
                     this.scrimElement.show();

@@ -52,36 +52,26 @@ class MdDialog extends MdElement {
         this.classList.remove("md-dialog");
     }
 
-    update(changedProperties) {
-        super.update(changedProperties);
+    updated(_changedProperties) {
+        super.updated(_changedProperties);
 
-        if (changedProperties.has("open")) {
-            if (this.open) {
-                this.classList.add("md-dialog--open");
-            } else {
-                this.classList.remove("md-dialog--open");
-                this.classList.add("md-dialog--close");
-            }
-        }
-
-        if (changedProperties.has("variant")) {
+        if (_changedProperties.has("variant")) {
             this.variants.forEach((variant) => {
                 this.classList.toggle(`md-dialog--${variant}`, this.variant === variant);
             });
         }
 
-        if (changedProperties.has("heroIcon")) {
-            this.classList.toggle(`md-dialog--hero-icon`, !!this.heroIcon);
+        if (_changedProperties.has("heroIcon")) {
+            this.classList.toggle(`md-dialog--hero-icon`, Boolean(this.heroIcon));
         }
-    }
-
-    updated(_changedProperties) {
-        super.updated(_changedProperties);
 
         if (_changedProperties.has("open") && this.variant === "basic") {
             if (this.open) {
+                this.classList.add("md-dialog--open");
                 this.scrimElement.show();
             } else {
+                this.classList.remove("md-dialog--open");
+                this.classList.add("md-dialog--close");
                 this.scrimElement.close();
             }
         }

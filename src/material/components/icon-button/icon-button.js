@@ -73,44 +73,46 @@ class MdIconButton extends MdElement {
         this.classList.remove("md-icon-button");
     }
 
-    update(changedProperties) {
-        super.update(changedProperties);
+    updated(_changedProperties) {
+        super.updated(_changedProperties);
 
-        if (changedProperties.has("variant")) {
+        if (_changedProperties.has("variant")) {
             this.variants.forEach((variant) => {
                 this.classList.toggle(`md-icon-button--${variant}`, this.variant === variant);
             });
         }
-        if (changedProperties.has("size")) {
+
+        if (_changedProperties.has("size")) {
             this.sizes.forEach((size) => {
                 this.classList.toggle(`md-icon-button--${size}`, this.size === size);
             });
         }
-        if (changedProperties.has("shape")) {
+
+        if (_changedProperties.has("shape")) {
             this.shapes.forEach((shape) => {
                 this.classList.toggle(`md-icon-button--${shape}`, this.shape === shape);
             });
         }
-        if (changedProperties.has("color")) {
+
+        if (_changedProperties.has("color")) {
             this.colors.forEach((color) => {
                 this.classList.toggle(`md-icon-button--${color}`, this.color === color);
             });
         }
-        if (changedProperties.has("width")) {
+
+        if (_changedProperties.has("width")) {
             this.widths.forEach((width) => {
                 this.classList.toggle(`md-icon-button--${width}`, this.width === width);
             });
         }
-        if (changedProperties.has("selected")) {
-            this.classList.toggle(`md-icon-button--selected`, !!this.selected);
-        }
-        if (changedProperties.has("disabled")) {
-            this.classList.toggle(`md-icon-button--disabled`, !!this.disabled);
-        }
-    }
 
-    updated(_changedProperties) {
-        super.updated(_changedProperties);
+        if (_changedProperties.has("selected")) {
+            this.classList.toggle(`md-icon-button--selected`, Boolean(this.selected));
+        }
+
+        if (_changedProperties.has("disabled")) {
+            this.classList.toggle(`md-icon-button--disabled`, Boolean(this.disabled));
+        }
 
         if (_changedProperties.has("rippleOptions")) {
             this.rippleController.reinit(this.rippleOptions);

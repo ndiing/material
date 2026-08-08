@@ -1,6 +1,7 @@
 import { html } from "lit";
 import { MdElement } from "./element.js";
 import { classMap } from "lit/directives/class-map.js";
+
 if (typeof Date.prototype.setWeek !== "function") {
     Date.prototype.setWeek = function (week) {
         const year = this.getFullYear();
@@ -11,6 +12,7 @@ if (typeof Date.prototype.setWeek !== "function") {
         return this;
     };
 }
+
 if (typeof Date.prototype.getWeek !== "function") {
     Date.prototype.getWeek = function () {
         const target = new Date(this.valueOf());
@@ -27,6 +29,7 @@ class MdDatetimePickerElement extends MdElement {
         locale: { type: String },
         type: { type: String },
     };
+
     get years() {
         const arr = [];
         const selectedYear = Math.floor(this.selectedDate.getFullYear() / 10) * 10;
@@ -41,6 +44,7 @@ class MdDatetimePickerElement extends MdElement {
         }
         return arr;
     }
+
     get months() {
         const arr = [];
         const selectedYear = this.selectedDate.getFullYear();
@@ -56,9 +60,11 @@ class MdDatetimePickerElement extends MdElement {
         }
         return arr;
     }
+
     get weekdays() {
         return this.type === "week" ? this.weekColumns : this.dayColumns;
     }
+
     get dayColumns() {
         const arr = [];
         for (let i = 0; i < 7; i++) {
@@ -70,6 +76,7 @@ class MdDatetimePickerElement extends MdElement {
         }
         return arr;
     }
+
     get weekColumns() {
         const arr = [];
         for (let i = 0; i < 7; i++) {
@@ -81,9 +88,11 @@ class MdDatetimePickerElement extends MdElement {
         }
         return arr;
     }
+
     get calendar() {
         return this.type === "week" ? this.weekCalendar : this.dayCalendar;
     }
+
     get dayCalendar() {
         const selectedYear = this.selectedDate.getFullYear();
         const selectedMonth = this.selectedDate.getMonth();
@@ -111,6 +120,7 @@ class MdDatetimePickerElement extends MdElement {
         }
         return arr;
     }
+
     get weekCalendar() {
         const selectedYear = this.selectedDate.getFullYear();
         const selectedMonth = this.selectedDate.getMonth();
@@ -147,6 +157,7 @@ class MdDatetimePickerElement extends MdElement {
         }
         return arr;
     }
+
     get hours() {
         const selectedYear = this.selectedDate.getFullYear();
         const selectedMonth = this.selectedDate.getMonth();
@@ -166,6 +177,7 @@ class MdDatetimePickerElement extends MdElement {
         }
         return arr;
     }
+
     get minutes() {
         const selectedYear = this.selectedDate.getFullYear();
         const selectedMonth = this.selectedDate.getMonth();
@@ -190,15 +202,20 @@ class MdDatetimePickerElement extends MdElement {
 
     constructor() {
         super();
+
         this.locale = undefined;
+
         this._setFormatter();
+
         this.type = "day";
+
         this.currentDate = new Date();
         this.selectedDate = new Date();
     }
 
     _setFormatter() {
         const locale = this.locale || undefined;
+
         this.yearFormat = new Intl.DateTimeFormat(locale, { year: "numeric" }).format;
         this.monthFormat = new Intl.DateTimeFormat(locale, { month: "long" }).format;
         this.weekdayFormat = new Intl.DateTimeFormat(locale, { weekday: "narrow" }).format;
@@ -209,6 +226,7 @@ class MdDatetimePickerElement extends MdElement {
 
     update(changedProperties) {
         super.update(changedProperties);
+
         if (changedProperties.has("locale")) {
             this._setFormatter();
         }
