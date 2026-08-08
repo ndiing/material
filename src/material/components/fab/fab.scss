@@ -1,0 +1,106 @@
+@use "../../shared/mixins.scss";
+
+.md-fab {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+.md-fab__icon {
+}
+
+.md-fab__label {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    @include mixins.typescale-title-medium();
+}
+
+.md-fab--small {
+    min-width: 56px;
+    height: 56px;
+    padding: 16px;
+    gap: 0 8px;
+    border-radius: var(--md-sys-shape-corner-large);
+    .md-fab__icon {
+        font-size: 24px;
+        height: 24px;
+        width: 24px;
+    }
+    .md-fab__label {
+        @include mixins.typescale-title-medium();
+    }
+}
+
+.md-fab--medium {
+    min-width: 80px;
+    height: 80px;
+    padding: 26px;
+    gap: 0 12px;
+    border-radius: var(--md-sys-shape-corner-large-increased);
+    .md-fab__icon {
+        font-size: 28px;
+        height: 28px;
+        width: 28px;
+    }
+    .md-fab__label {
+        @include mixins.typescale-title-large();
+    }
+}
+
+.md-fab--large {
+    min-width: 96px;
+    height: 96px;
+    padding: 28px;
+    gap: 0 16px;
+    border-radius: var(--md-sys-shape-corner-extra-large);
+    .md-fab__icon {
+        font-size: 36px;
+        height: 36px;
+        width: 36px;
+    }
+    .md-fab__label {
+        @include mixins.typescale-headline-small();
+    }
+}
+
+.md-fab--primary-container {
+    background-color: var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
+    box-shadow: var(--md-sys-elevation-level3);
+}
+
+.md-fab--secondary-container {
+    background-color: var(--md-sys-color-secondary-container);
+    color: var(--md-sys-color-on-secondary-container);
+    box-shadow: var(--md-sys-elevation-level3);
+}
+
+.md-fab--tertiary-container {
+    background-color: var(--md-sys-color-tertiary-container);
+    color: var(--md-sys-color-on-tertiary-container);
+    box-shadow: var(--md-sys-elevation-level3);
+}
+
+.md-fab--primary {
+    background-color: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
+    box-shadow: var(--md-sys-elevation-level3);
+}
+
+.md-fab--secondary {
+    background-color: var(--md-sys-color-secondary);
+    color: var(--md-sys-color-on-secondary);
+    box-shadow: var(--md-sys-elevation-level3);
+}
+
+.md-fab--tertiary {
+    background-color: var(--md-sys-color-tertiary);
+    color: var(--md-sys-color-on-tertiary);
+    box-shadow: var(--md-sys-elevation-level3);
+}
+
+.md-fab--unelevated {
+    box-shadow: none;
+}

@@ -5,7 +5,7 @@ import { choose } from "lit/directives/choose.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { styleMap } from "lit/directives/style-map.js";
 import { createRef, ref } from "lit/directives/ref.js";
-import { renderCheckbox, renderIcon, renderIconButton, renderImage, renderRadioButton, renderSwitch } from "../../utils/render-component.js";
+import { renderBadge, renderCheckbox, renderIcon, renderIconButton, renderImage, renderRadioButton, renderSwitch } from "../../utils/render-component.js";
 
 class MdListItem extends MdElement {
     static properties = {
@@ -68,6 +68,7 @@ class MdListItem extends MdElement {
             ['checkbox', () => renderCheckbox({ classMap: { "md-list__checkbox": true, ...properties.classMap }, tabIndex: -1, checked: this.selected, ...properties })],
             ['radio-button', () => renderRadioButton({ classMap: { "md-list__radio-button": true, ...properties.classMap }, tabIndex: -1, checked: this.selected, ...properties })],
             ['switch', () => renderSwitch({ classMap: { "md-list__switch": true, ...properties.classMap }, tabIndex: -1, checked: this.selected, ...properties })],
+            ['badge', () => renderBadge({ classMap: { "md-list__badge": true, ...properties.classMap }, ...properties })],
             ['text', () => this.renderText(properties)],
         ],() => nothing)
     }

@@ -8,8 +8,8 @@ import { styleMap } from "lit/directives/style-map.js";
 function renderBadge(properties = {}) {
     return html`
         <md-badge
-            class="${classMap(properties.classMap ?? {})}",
-            style="${styleMap(properties.styleMap ?? {})}",
+            class="${classMap(properties.classMap ?? {})}"
+            style="${styleMap(properties.styleMap ?? {})}"
             .label="${ifDefined(properties.label)}"
             .max="${ifDefined(properties.max)}"
             .maxLength="${ifDefined(properties.maxLength)}"
@@ -21,8 +21,8 @@ function renderBadge(properties = {}) {
 function renderButton(properties = {}) {
     return html`
         <md-button
-            class="${classMap(properties.classMap ?? {})}",
-            style="${styleMap(properties.styleMap ?? {})}",
+            class="${classMap(properties.classMap ?? {})}"
+            style="${styleMap(properties.styleMap ?? {})}"
             .variant="${ifDefined(properties.variant)}"
             .size="${ifDefined(properties.size)}"
             .shape="${ifDefined(properties.shape)}"
@@ -43,8 +43,8 @@ function renderButton(properties = {}) {
 function renderCardBody(properties = {}) {
     return html`
         <md-card-body
-            class="${classMap(properties.classMap ?? {})}",
-            style="${styleMap(properties.styleMap ?? {})}",
+            class="${classMap(properties.classMap ?? {})}"
+            style="${styleMap(properties.styleMap ?? {})}"
         ></md-card-body>
     `
 }
@@ -53,8 +53,8 @@ function renderCardBody(properties = {}) {
 function renderCardFooter(properties = {}) {
     return html`
         <md-card-footer
-            class="${classMap(properties.classMap ?? {})}",
-            style="${styleMap(properties.styleMap ?? {})}",
+            class="${classMap(properties.classMap ?? {})}"
+            style="${styleMap(properties.styleMap ?? {})}"
         ></md-card-footer>
     `
 }
@@ -63,8 +63,8 @@ function renderCardFooter(properties = {}) {
 function renderCardHeader(properties = {}) {
     return html`
         <md-card-header
-            class="${classMap(properties.classMap ?? {})}",
-            style="${styleMap(properties.styleMap ?? {})}",
+            class="${classMap(properties.classMap ?? {})}"
+            style="${styleMap(properties.styleMap ?? {})}"
         ></md-card-header>
     `
 }
@@ -73,8 +73,8 @@ function renderCardHeader(properties = {}) {
 function renderCardMain(properties = {}) {
     return html`
         <md-card-main
-            class="${classMap(properties.classMap ?? {})}",
-            style="${styleMap(properties.styleMap ?? {})}",
+            class="${classMap(properties.classMap ?? {})}"
+            style="${styleMap(properties.styleMap ?? {})}"
         ></md-card-main>
     `
 }
@@ -83,8 +83,8 @@ function renderCardMain(properties = {}) {
 function renderCard(properties = {}) {
     return html`
         <md-card
-            class="${classMap(properties.classMap ?? {})}",
-            style="${styleMap(properties.styleMap ?? {})}",
+            class="${classMap(properties.classMap ?? {})}"
+            style="${styleMap(properties.styleMap ?? {})}"
             .color="${ifDefined(properties.color)}"
         ></md-card>
     `
@@ -94,8 +94,8 @@ function renderCard(properties = {}) {
 function renderCheckbox(properties = {}) {
     return html`
         <md-checkbox
-            class="${classMap(properties.classMap ?? {})}",
-            style="${styleMap(properties.styleMap ?? {})}",
+            class="${classMap(properties.classMap ?? {})}"
+            style="${styleMap(properties.styleMap ?? {})}"
             .name="${ifDefined(properties.name)}"
             .value="${ifDefined(properties.value)}"
             .indeterminate="${ifDefined(properties.indeterminate)}"
@@ -115,8 +115,8 @@ function renderCheckbox(properties = {}) {
 function renderDataTableCell(properties = {}) {
     return html`
         <md-data-table-cell
-            class="${classMap(properties.classMap ?? {})}",
-            style="${styleMap(properties.styleMap ?? {})}",
+            class="${classMap(properties.classMap ?? {})}"
+            style="${styleMap(properties.styleMap ?? {})}"
             .label="${ifDefined(properties.label)}"
         ></md-data-table-cell>
     `
@@ -126,8 +126,8 @@ function renderDataTableCell(properties = {}) {
 function renderDataTable(properties = {}) {
     return html`
         <md-data-table
-            class="${classMap(properties.classMap ?? {})}",
-            style="${styleMap(properties.styleMap ?? {})}",
+            class="${classMap(properties.classMap ?? {})}"
+            style="${styleMap(properties.styleMap ?? {})}"
             .columns="${ifDefined(properties.columns)}"
             .rows="${ifDefined(properties.rows)}"
             .valueField="${ifDefined(properties.valueField)}"
@@ -157,8 +157,8 @@ function renderDataTable(properties = {}) {
 function renderDialogBody(properties = {}) {
     return html`
         <md-dialog-body
-            class="${classMap(properties.classMap ?? {})}",
-            style="${styleMap(properties.styleMap ?? {})}",
+            class="${classMap(properties.classMap ?? {})}"
+            style="${styleMap(properties.styleMap ?? {})}"
         ></md-dialog-body>
     `
 }
@@ -167,8 +167,8 @@ function renderDialogBody(properties = {}) {
 function renderDialogFooter(properties = {}) {
     return html`
         <md-dialog-footer
-            class="${classMap(properties.classMap ?? {})}",
-            style="${styleMap(properties.styleMap ?? {})}",
+            class="${classMap(properties.classMap ?? {})}"
+            style="${styleMap(properties.styleMap ?? {})}"
             .buttons="${ifDefined(properties.buttons)}"
         ></md-dialog-footer>
     `
@@ -178,8 +178,8 @@ function renderDialogFooter(properties = {}) {
 function renderDialogHeader(properties = {}) {
     return html`
         <md-dialog-header
-            class="${classMap(properties.classMap ?? {})}",
-            style="${styleMap(properties.styleMap ?? {})}",
+            class="${classMap(properties.classMap ?? {})}"
+            style="${styleMap(properties.styleMap ?? {})}"
             .leading="${ifDefined(properties.leading)}"
             .headline="${ifDefined(properties.headline)}"
             .trailing="${ifDefined(properties.trailing)}"
@@ -191,8 +191,8 @@ function renderDialogHeader(properties = {}) {
 function renderDialogMain(properties = {}) {
     return html`
         <md-dialog-main
-            class="${classMap(properties.classMap ?? {})}",
-            style="${styleMap(properties.styleMap ?? {})}",
+            class="${classMap(properties.classMap ?? {})}"
+            style="${styleMap(properties.styleMap ?? {})}"
         ></md-dialog-main>
     `
 }
@@ -201,8 +201,8 @@ function renderDialogMain(properties = {}) {
 function renderDialog(properties = {}) {
     return html`
         <md-dialog
-            class="${classMap(properties.classMap ?? {})}",
-            style="${styleMap(properties.styleMap ?? {})}",
+            class="${classMap(properties.classMap ?? {})}"
+            style="${styleMap(properties.styleMap ?? {})}"
             .open="${ifDefined(properties.open)}"
             .variant="${ifDefined(properties.variant)}"
             .heroIcon="${ifDefined(properties.heroIcon)}"
@@ -214,8 +214,8 @@ function renderDialog(properties = {}) {
 function renderForm(properties = {}) {
     return html`
         <md-form
-            class="${classMap(properties.classMap ?? {})}",
-            style="${styleMap(properties.styleMap ?? {})}",
+            class="${classMap(properties.classMap ?? {})}"
+            style="${styleMap(properties.styleMap ?? {})}"
             .method="${ifDefined(properties.method)}"
             .action="${ifDefined(properties.action)}"
             .enctype="${ifDefined(properties.enctype)}"
@@ -233,8 +233,8 @@ function renderForm(properties = {}) {
 function renderGridColumn(properties = {}) {
     return html`
         <md-grid-column
-            class="${classMap(properties.classMap ?? {})}",
-            style="${styleMap(properties.styleMap ?? {})}",
+            class="${classMap(properties.classMap ?? {})}"
+            style="${styleMap(properties.styleMap ?? {})}"
             .expanded="${ifDefined(properties.expanded)}"
             .medium="${ifDefined(properties.medium)}"
             .compact="${ifDefined(properties.compact)}"
@@ -246,8 +246,8 @@ function renderGridColumn(properties = {}) {
 function renderGrid(properties = {}) {
     return html`
         <md-grid
-            class="${classMap(properties.classMap ?? {})}",
-            style="${styleMap(properties.styleMap ?? {})}",
+            class="${classMap(properties.classMap ?? {})}"
+            style="${styleMap(properties.styleMap ?? {})}"
         ></md-grid>
     `
 }
@@ -256,8 +256,8 @@ function renderGrid(properties = {}) {
 function renderIcon(properties = {}) {
     return html`
         <md-icon
-            class="${classMap(properties.classMap ?? {})}",
-            style="${styleMap(properties.styleMap ?? {})}",
+            class="${classMap(properties.classMap ?? {})}"
+            style="${styleMap(properties.styleMap ?? {})}"
             .icon="${ifDefined(properties.icon)}"
         ></md-icon>
     `
@@ -267,8 +267,8 @@ function renderIcon(properties = {}) {
 function renderIconButton(properties = {}) {
     return html`
         <md-icon-button
-            class="${classMap(properties.classMap ?? {})}",
-            style="${styleMap(properties.styleMap ?? {})}",
+            class="${classMap(properties.classMap ?? {})}"
+            style="${styleMap(properties.styleMap ?? {})}"
             .icon="${ifDefined(properties.icon)}"
             .variant="${ifDefined(properties.variant)}"
             .size="${ifDefined(properties.size)}"
@@ -288,8 +288,8 @@ function renderIconButton(properties = {}) {
 function renderImage(properties = {}) {
     return html`
         <md-image
-            class="${classMap(properties.classMap ?? {})}",
-            style="${styleMap(properties.styleMap ?? {})}",
+            class="${classMap(properties.classMap ?? {})}"
+            style="${styleMap(properties.styleMap ?? {})}"
             .src="${ifDefined(properties.src)}"
             .alt="${ifDefined(properties.alt)}"
             .loading="${ifDefined(properties.loading)}"
@@ -305,8 +305,8 @@ function renderImage(properties = {}) {
 function renderLayoutItem(properties = {}) {
     return html`
         <md-layout-item
-            class="${classMap(properties.classMap ?? {})}",
-            style="${styleMap(properties.styleMap ?? {})}",
+            class="${classMap(properties.classMap ?? {})}"
+            style="${styleMap(properties.styleMap ?? {})}"
             .region="${ifDefined(properties.region)}"
             .modal="${ifDefined(properties.modal)}"
             .open="${ifDefined(properties.open)}"
@@ -322,8 +322,8 @@ function renderLayoutItem(properties = {}) {
 function renderLayout(properties = {}) {
     return html`
         <md-layout
-            class="${classMap(properties.classMap ?? {})}",
-            style="${styleMap(properties.styleMap ?? {})}",
+            class="${classMap(properties.classMap ?? {})}"
+            style="${styleMap(properties.styleMap ?? {})}"
         ></md-layout>
     `
 }
@@ -332,8 +332,8 @@ function renderLayout(properties = {}) {
 function renderListItem(properties = {}) {
     return html`
         <md-list-item
-            class="${classMap(properties.classMap ?? {})}",
-            style="${styleMap(properties.styleMap ?? {})}",
+            class="${classMap(properties.classMap ?? {})}"
+            style="${styleMap(properties.styleMap ?? {})}"
             .leading="${ifDefined(properties.leading)}"
             .trailing="${ifDefined(properties.trailing)}"
             .overline="${ifDefined(properties.overline)}"
@@ -351,8 +351,8 @@ function renderListItem(properties = {}) {
 function renderList(properties = {}) {
     return html`
         <md-list
-            class="${classMap(properties.classMap ?? {})}",
-            style="${styleMap(properties.styleMap ?? {})}",
+            class="${classMap(properties.classMap ?? {})}"
+            style="${styleMap(properties.styleMap ?? {})}"
             .items="${ifDefined(properties.items)}"
             .type="${ifDefined(properties.type)}"
             .valueField="${ifDefined(properties.valueField)}"
@@ -371,6 +371,7 @@ function renderList(properties = {}) {
             .singleSelect="${ifDefined(properties.singleSelect)}"
             .virtualScroll="${ifDefined(properties.virtualScroll)}"
             .virtualScrollOptions="${ifDefined(properties.virtualScrollOptions)}"
+            .rippleOptions="${ifDefined(properties.rippleOptions)}"
             @onListItemSelection="${ifDefined(properties.onListItemSelection)}"
             @onListClick="${ifDefined(properties.onListClick)}"
             @onListKeydown="${ifDefined(properties.onListKeydown)}"
@@ -383,8 +384,8 @@ function renderList(properties = {}) {
 function renderPushMenu(properties = {}) {
     return html`
         <md-push-menu
-            class="${classMap(properties.classMap ?? {})}",
-            style="${styleMap(properties.styleMap ?? {})}",
+            class="${classMap(properties.classMap ?? {})}"
+            style="${styleMap(properties.styleMap ?? {})}"
         ></md-push-menu>
     `
 }
@@ -393,8 +394,8 @@ function renderPushMenu(properties = {}) {
 function renderRadioButton(properties = {}) {
     return html`
         <md-radio-button
-            class="${classMap(properties.classMap ?? {})}",
-            style="${styleMap(properties.styleMap ?? {})}",
+            class="${classMap(properties.classMap ?? {})}"
+            style="${styleMap(properties.styleMap ?? {})}"
             .name="${ifDefined(properties.name)}"
             .value="${ifDefined(properties.value)}"
             .checked="${ifDefined(properties.checked)}"
@@ -411,8 +412,8 @@ function renderRadioButton(properties = {}) {
 function renderScrim(properties = {}) {
     return html`
         <md-scrim
-            class="${classMap(properties.classMap ?? {})}",
-            style="${styleMap(properties.styleMap ?? {})}",
+            class="${classMap(properties.classMap ?? {})}"
+            style="${styleMap(properties.styleMap ?? {})}"
             .open="${ifDefined(properties.open)}"
             @onScrimClick="${ifDefined(properties.onScrimClick)}"
             @onScrimShowed="${ifDefined(properties.onScrimShowed)}"
@@ -427,8 +428,8 @@ function renderScrim(properties = {}) {
 function renderSlider(properties = {}) {
     return html`
         <md-slider
-            class="${classMap(properties.classMap ?? {})}",
-            style="${styleMap(properties.styleMap ?? {})}",
+            class="${classMap(properties.classMap ?? {})}"
+            style="${styleMap(properties.styleMap ?? {})}"
             .name="${ifDefined(properties.name)}"
             .min="${ifDefined(properties.min)}"
             .max="${ifDefined(properties.max)}"
@@ -447,8 +448,8 @@ function renderSlider(properties = {}) {
 function renderSwitch(properties = {}) {
     return html`
         <md-switch
-            class="${classMap(properties.classMap ?? {})}",
-            style="${styleMap(properties.styleMap ?? {})}",
+            class="${classMap(properties.classMap ?? {})}"
+            style="${styleMap(properties.styleMap ?? {})}"
             .name="${ifDefined(properties.name)}"
             .value="${ifDefined(properties.value)}"
             .checked="${ifDefined(properties.checked)}"
@@ -466,8 +467,8 @@ function renderSwitch(properties = {}) {
 function renderTextField(properties = {}) {
     return html`
         <md-text-field
-            class="${classMap(properties.classMap ?? {})}",
-            style="${styleMap(properties.styleMap ?? {})}",
+            class="${classMap(properties.classMap ?? {})}"
+            style="${styleMap(properties.styleMap ?? {})}"
             .leading="${ifDefined(properties.leading)}"
             .label="${ifDefined(properties.label)}"
             .prefix="${ifDefined(properties.prefix)}"
@@ -505,8 +506,8 @@ function renderTextField(properties = {}) {
 function renderTextarea(properties = {}) {
     return html`
         <md-textarea
-            class="${classMap(properties.classMap ?? {})}",
-            style="${styleMap(properties.styleMap ?? {})}",
+            class="${classMap(properties.classMap ?? {})}"
+            style="${styleMap(properties.styleMap ?? {})}"
             .items="${ifDefined(properties.items)}"
             .type="${ifDefined(properties.type)}"
             .valueField="${ifDefined(properties.valueField)}"
@@ -522,8 +523,8 @@ function renderTextarea(properties = {}) {
 function renderTree(properties = {}) {
     return html`
         <md-tree
-            class="${classMap(properties.classMap ?? {})}",
-            style="${styleMap(properties.styleMap ?? {})}",
+            class="${classMap(properties.classMap ?? {})}"
+            style="${styleMap(properties.styleMap ?? {})}"
         ></md-tree>
     `
 }

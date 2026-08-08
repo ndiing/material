@@ -40,6 +40,7 @@ export const routes = [
 
             { path: "/components/icon-button", load: () => import("./components/icon-button.js").then((module) => module.default), children: [] },
             { path: "/components/button", load: () => import("./components/button.js").then((module) => module.default), children: [] },
+            { path: "/components/fab", load: () => import("./components/fab.js").then((module) => module.default), children: [] },
 
             { path: "/components/card", load: () => import("./components/card.js").then((module) => module.default), children: [] },
             { path: "/components/dialog", load: () => import("./components/dialog.js").then((module) => module.default), children: [] },

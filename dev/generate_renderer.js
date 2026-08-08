@@ -116,8 +116,8 @@ function writeFiles() {
         code += `function ${data.methodName}(properties = {}) {\r\n`;
         code += `    return html\`\r\n`;
         code += `        <${data.localName}\r\n`;
-        code += `            class="\${classMap(properties.classMap ?? {})}",\r\n`;
-        code += `            style="\${styleMap(properties.styleMap ?? {})}",\r\n`;
+        code += `            class="\${classMap(properties.classMap ?? {})}"\r\n`;
+        code += `            style="\${styleMap(properties.styleMap ?? {})}"\r\n`;
         for (const name in data.properties) {
             const value = data.properties[name];
             if (value?.state) {

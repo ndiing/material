@@ -30,6 +30,7 @@ import "./components/image/image.js";
 import "./components/badge/badge.js";
 import "./components/icon-button/icon-button.js";
 import "./components/button/button.js";
+import "./components/fab/fab.js";
 
 import "./components/card/card.js";
 import "./components/card/card-header.js";

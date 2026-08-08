@@ -17,6 +17,47 @@ class DemoListStyle extends MdElement {
             { id: 2, leading: [{ component: "icon", icon: "image" }], label: "Item 3" },
             { id: 3, leading: [{ component: "icon", icon: "image" }], label: "Item 4" },
         ];
+
+        this.items2 = [
+            { id: 0, leading: [{ component: "icon", icon: "image" }], label: "Item 1", selected: true },
+            { id: 1, leading: [{ component: "icon", icon: "image" }], label: "Item 2" },
+            {
+                id: 2,
+                leading: [
+                    { component: "icon", icon: "image" },
+                    { component: "badge", label: 0 },
+                ],
+                label: "Item 3",
+            },
+            {
+                id: 3,
+                leading: [
+                    { component: "icon", icon: "image" },
+                    { component: "badge", label: 3 },
+                ],
+                label: "Item 4",
+            },
+        ];
+        this.items3 = [
+            { id: 0, leading: [{ component: "icon", icon: "image" }], label: "Item 1", selected: true },
+            { id: 1, leading: [{ component: "icon", icon: "image" }], label: "Item 2" },
+            {
+                id: 2,
+                leading: [
+                    { component: "icon", icon: "image" },
+                    { component: "badge", label: 0 },
+                ],
+                label: "Item 3",
+            },
+            {
+                id: 3,
+                leading: [
+                    { component: "icon", icon: "image" },
+                    { component: "badge", label: 3 },
+                ],
+                label: "Item 4",
+            },
+        ];
     }
     /* prettier-ignore */
     render(){
@@ -35,6 +76,18 @@ class DemoListStyle extends MdElement {
                 </md-grid-column>
                 <md-grid-column>
                 </md-grid-column>
+
+                <md-grid-column expanded="12">
+                    <div class="md-navigation-bar md-navigation-bar--vertical">
+                        <md-list class="md-navigation-bar__list" .items="${this.items2}" singleSelect activeRow selectOnEnterActiveRow .rippleOptions="${{container:'.md-list__icon'}}"></md-list>
+                    </div>
+                </md-grid-column>
+                <md-grid-column expanded="12">
+                    <div class="md-navigation-bar md-navigation-bar--horizontal">
+                        <md-list class="md-navigation-bar__list" .items="${this.items3}" singleSelect activeRow selectOnEnterActiveRow></md-list>
+                    </div>
+                </md-grid-column>
+                
 
             </md-grid>
         `

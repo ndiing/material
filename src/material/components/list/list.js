@@ -24,6 +24,7 @@ class MdList extends MdListElement {
         activeVisible: { type: Boolean, state: true },
         virtualScroll: { type: Boolean },
         virtualScrollOptions: { type: Object },
+        rippleOptions: { type: Object },
         _items: { type: Array, state: true },
     };
 
@@ -68,7 +69,7 @@ class MdList extends MdListElement {
                     .supporting="${ifDefined(item.supporting)}"
                     .routerLink="${ifDefined(item.routerLink)}"
                     .interactive="${ifDefined(item.interactive)}"
-                    .rippleOptions="${ifDefined(item.rippleOptions)}"
+                    .rippleOptions="${ifDefined(item.rippleOptions??this.rippleOptions)}"
                     .selected="${selected}"
                     @click="${this._handleListItemClick}"
                 ></md-list-item>    
