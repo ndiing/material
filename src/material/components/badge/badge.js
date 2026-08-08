@@ -3,32 +3,43 @@ import { MdElement } from "../../base/element.js";
 
 class MdBadge extends MdElement {
     static properties = {
-        label: { type: Number },
+        label: { type: String },
         max: { type: Number },
+        maxLength: { type: Number },
     };
 
     constructor() {
         super();
-
-        this.label = 0;
         this.max = 999;
+        this.maxLength = 4;
     }
 
-    /* prettier-ignore */
-    render(){
-        const label = this.label>this.max?`${this.max}+`:this.label?this.label:nothing
-        return html`${label}`
+    render() {
+        if (!this.label) {
+            return nothing;
+        }
+
+        const rawLabel = String(this.label).trim();
+
+        const labelAsNumber = Number(rawLabel);
+        if (!isNaN(labelAsNumber)) {
+            return labelAsNumber > this.max ? `${this.max}+` : labelAsNumber;
+        }
+
+        if (rawLabel.length > this.maxLength) {
+            return rawLabel.slice(0, this.maxLength);
+        }
+
+        return rawLabel;
     }
 
     connectedCallback() {
         super.connectedCallback();
-
         this.classList.add("md-badge");
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
-
         this.classList.remove("md-badge");
     }
 }

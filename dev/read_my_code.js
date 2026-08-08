@@ -65,11 +65,15 @@ function writeFiles() {
             /README\.md/,
             // /src/,
             /webpack.config\.js/,
+            /src\\material\\fonts/,
+            /src\\demo/,
+            /src\\generated/,
         ],
         [
             // /.*/,
-            /src\\material\\components\\slider/,
-            /src\\material\\components\\slider/,
+            /src/,
+            // /src\\material\\components\\slider/,
+            // /src\\material\\components\\slider/,
             // /src\\demo\\components\\slider/,
         ],
     );

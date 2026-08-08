@@ -128,3 +128,26 @@ class DemoMain extends MdElement {
 customElements.define("demo-main", DemoMain);
 
 export default document.createElement("demo-main");
+
+// const performanceObserver = new PerformanceObserver((entries) => {
+//     entries.getEntries().forEach((entry) => {
+//         console.log(entry);
+//     });
+// });
+// performanceObserver.observe({
+//     entryTypes: [
+//         "element", //
+//         "event",
+//         "first-input",
+//         "largest-contentful-paint",
+//         "layout-shift",
+//         "long-animation-frame",
+//         "longtask",
+//         "mark",
+//         "measure",
+//         "navigation",
+//         "paint",
+//         "resource",
+//         "visibility-state",
+//     ],
+// });

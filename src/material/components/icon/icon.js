@@ -8,7 +8,7 @@ class MdIcon extends MdElement {
 
     /* prettier-ignore */
     render(){
-        return html`${this.icon}`
+        return this.icon
     }
 
     connectedCallback() {

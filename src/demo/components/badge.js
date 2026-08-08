@@ -5,9 +5,18 @@ class DemoBadge extends MdElement {
     /* prettier-ignore */
     render(){
         return html`
-            <md-badge></md-badge>
-            <md-badge label="1"></md-badge>
-            <md-badge label="1000"></md-badge>
+             <md-grid>
+                <md-grid-column>
+                    <md-badge></md-badge>
+                    <md-badge label="1"></md-badge>
+                    <md-badge label="1000" max="999"></md-badge>
+                </md-grid-column>
+                <md-grid-column>
+                    <md-badge></md-badge>
+                    <md-badge label="PLAY"></md-badge>
+                    <md-badge label="PLAYER" maxLength="4"></md-badge>
+                </md-grid-column>
+            </md-grid>
         `
     }
 }
