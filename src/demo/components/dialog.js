@@ -58,7 +58,7 @@ class DemoDialog extends MdElement {
                         {component:'icon',icon:'image'}
                     ]}"
                     .trailing="${[
-                        {component:'button',label:'Save',color:'text',onDialogButtonClick:this.handleClick2}
+                        {component:'button',label:'Save',color:'text',onButtonClick:this.handleClick2}
                     ]}"
                     headline="Full-screen dialog title"
                 ></md-dialog-header>
@@ -91,6 +91,7 @@ class DemoDialog extends MdElement {
         this.dialog1.show();
     }
     handleClick2(event) {
+        console.log(event)
         this.dialog2.toggle();
     }
 }

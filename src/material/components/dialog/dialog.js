@@ -65,10 +65,12 @@ class MdDialog extends MdElement {
             this.classList.toggle(`md-dialog--hero-icon`, Boolean(this.heroIcon));
         }
 
-        if (_changedProperties.has("open") && this.variant === "basic") {
+        if (_changedProperties.has("open")) {
             if (this.open) {
                 this.classList.add("md-dialog--open");
-                this.scrimElement.show();
+                if (this.variant === "basic") {
+                    this.scrimElement.show();
+                }
             } else {
                 this.classList.remove("md-dialog--open");
                 this.classList.add("md-dialog--close");
