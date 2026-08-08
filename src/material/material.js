@@ -9,6 +9,8 @@ import "./core/store.js";
 import "./core/query-builder.js";
 import "./core/positioner.js";
 
+import "./utils/render-component.js";
+
 import "./base/element.js";
 import "./base/list.js";
 import "./base/datetime-picker.js";
