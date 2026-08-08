@@ -66,8 +66,6 @@ class MdSlider extends MdElement {
         const fraction = getFraction(this.min, this.max, this.values[0] ?? this.min);
         const iconIndex = Math.round(fraction * (icons.length - 1));
         const index = Math.max(0, Math.min(icons.length - 1, iconIndex));
-        const trackLength = Math.max(this.clientHeight,this.clientWidth);
-        const iconThresholdFraction = 38 / trackLength;
         
         return html`
             <input 
@@ -80,7 +78,6 @@ class MdSlider extends MdElement {
                 <md-icon
                     class="${classMap({
                         "md-slider__icon":true,
-                        "md-slider__icon--active":fraction >= iconThresholdFraction,
                     })}"
                     icon="${icons[index]}"
                 ></md-icon>    

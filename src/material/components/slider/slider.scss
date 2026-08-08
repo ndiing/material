@@ -63,17 +63,13 @@
 
 .md-slider__icon {
     position: absolute;
-    left: calc(14px + (4px - 14px) * var(--md-comp-slider-fraction0));
+    left: calc(14px + (4px - 14px) * min(1, var(--md-comp-slider-fraction0) * (100% / (var(--md-comp-slider-inset-icon-size) + 14px))));
     z-index: 3;
     pointer-events: none;
     font-size: var(--md-comp-slider-inset-icon-size);
     width: var(--md-comp-slider-inset-icon-size);
     height: var(--md-comp-slider-inset-icon-size);
-    color: var(--md-sys-color-on-secondary-container);
-}
-
-.md-slider__icon--active {
-    color: var(--md-sys-color-on-primary);
+    color: color-mix(in srgb, var(--md-sys-color-on-secondary-container), var(--md-sys-color-on-primary) calc(min(1, var(--md-comp-slider-fraction0) * (100% / ((var(--md-comp-slider-inset-icon-size) + 14px)/2))) * 100%));
 }
 
 .md-slider__track {
@@ -218,7 +214,7 @@
 
     .md-slider__icon {
         left: auto;
-        bottom: calc(14px + (4px - 14px) * var(--md-comp-slider-fraction0));
+        bottom: calc(14px + (4px - 14px) * min(1, var(--md-comp-slider-fraction0) * (100% / (var(--md-comp-slider-inset-icon-size) + 14px))));
     }
 
     .md-slider__track {
