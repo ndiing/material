@@ -56,7 +56,7 @@ class DemoMain extends MdElement {
                         .virtualScroll="${true}"
                     ></md-list>
                 </md-layout-item>
-                <md-layout-item region="center">
+                <md-layout-item region="center" style="padding:24px;">
                     <md-outlet></md-outlet>
                     <md-outlet name="main"></md-outlet>
                 </md-layout-item>
