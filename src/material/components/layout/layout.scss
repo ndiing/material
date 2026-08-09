@@ -1,16 +1,16 @@
-:root {
-    --md-comp-layout-north-size: 64px;
-    --md-comp-layout-south-size: 64px;
-    --md-comp-layout-west-size: 256px;
-    --md-comp-layout-east-size: 256px;
-}
-
 .md-layout {
+    --md-comp-layout-north-height: 64px;
+    --md-comp-layout-south-height: 64px;
+    --md-comp-layout-west-width: 256px;
+    --md-comp-layout-east-width: 256px;
+    --md-comp-layout-north-translate-y: 0px;
+    --md-comp-layout-south-translate-y: 0px;
+    --md-comp-layout-west-translate-x: 0px;
+    --md-comp-layout-east-translate-x: 0px;
+
     display: grid;
-    grid-template-columns: auto 1fr auto;
-    grid-template-rows: auto 1fr auto;
-    gap: 0px 0px;
-    grid-auto-flow: row;
+    grid-template-rows: var(--md-comp-layout-north-translate-y) 1fr var(--md-comp-layout-south-translate-y);
+    grid-template-columns: var(--md-comp-layout-west-translate-x) 1fr var(--md-comp-layout-east-translate-x);
     grid-template-areas:
         "north north north"
         "west center east"
@@ -18,24 +18,35 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
+    position: relative;
+    //will-change: grid-template-columns, grid-template-rows;
+    transition-property: grid-template-columns, grid-template-rows;
+    transition-duration: var(--md-sys-motion-duration-short2);
+    transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
+}
+
+.md-layout--open {
+    transition-duration: var(--md-sys-motion-duration-short3);
+    transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
 }
 
 .md-layout__item {
+    width: 100%;
+    height: 100%;
     overflow: auto;
-    will-change: margin;
-    transition-property: margin;
+    //will-change: transform;
+    transition-property: transform;
     transition-duration: var(--md-sys-motion-duration-short2);
     transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
 
     &.md-layout__item--modal {
-        position: absolute;
         z-index: 20;
         background-color: var(--md-sys-color-surface-container);
         color: var(--md-sys-color-on-surface);
     }
 
     &.md-layout__item--open {
-        transition-property: margin;
+        transform: translate3d(0, 0, 0);
         transition-duration: var(--md-sys-motion-duration-short3);
         transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
     }
@@ -43,66 +54,26 @@
 
 .md-layout__item--north {
     grid-area: north;
-    height: var(--md-comp-layout-north-size);
-    margin-top: calc(0px - var(--md-comp-layout-north-size));
-
-    &.md-layout__item--modal {
-        left: 0;
-        top: 0;
-        right: 0;
-    }
-
-    &.md-layout__item--open {
-        margin-top: 0;
-    }
+    height: var(--md-comp-layout-north-height);
+    transform: translate3d(0, calc(0px - var(--md-comp-layout-north-height)), 0);
 }
 
 .md-layout__item--south {
     grid-area: south;
-    height: var(--md-comp-layout-south-size);
-    margin-bottom: calc(0px - var(--md-comp-layout-south-size));
-
-    &.md-layout__item--modal {
-        left: 0;
-        right: 0;
-        bottom: 0;
-    }
-
-    &.md-layout__item--open {
-        margin-bottom: 0;
-    }
+    height: var(--md-comp-layout-south-height);
+    transform: translate3d(0, var(--md-comp-layout-south-height), 0);
 }
 
 .md-layout__item--west {
     grid-area: west;
-    width: var(--md-comp-layout-west-size);
-    margin-left: calc(0px - var(--md-comp-layout-west-size));
-
-    &.md-layout__item--modal {
-        left: 0;
-        top: 0;
-        bottom: 0;
-    }
-
-    &.md-layout__item--open {
-        margin-left: 0;
-    }
+    width: var(--md-comp-layout-west-width);
+    transform: translate3d(calc(0px - var(--md-comp-layout-west-width)), 0, 0);
 }
 
 .md-layout__item--east {
     grid-area: east;
-    width: var(--md-comp-layout-east-size);
-    margin-right: calc(0px - var(--md-comp-layout-east-size));
-
-    &.md-layout__item--modal {
-        top: 0;
-        right: 0;
-        bottom: 0;
-    }
-
-    &.md-layout__item--open {
-        margin-right: 0;
-    }
+    width: var(--md-comp-layout-east-width);
+    transform: translate3d(var(--md-comp-layout-east-width), 0, 0);
 }
 
 .md-layout__item--center {

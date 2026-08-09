@@ -27,6 +27,10 @@ export const routes = [
 
             { path: "/controller/ripple", load: () => import("./controller/ripple.js").then((module) => module.default), children: [] },
 
+            { path: "/components/layout", load: () => import("./components/layout.js").then((module) => module.default), children: [] },
+            { path: "/components/layout-modal", load: () => import("./components/layout-modal.js").then((module) => module.default), children: [] },
+            { path: "/components/nested-layout", load: () => import("./components/nested-layout.js").then((module) => module.default), children: [] },
+
             { path: "/components/grid", load: () => import("./components/grid.js").then((module) => module.default), children: [] },
             { path: "/components/grid-expanded", load: () => import("./components/grid-expanded.js").then((module) => module.default), children: [] },
             { path: "/components/grid-medium", load: () => import("./components/grid-medium.js").then((module) => module.default), children: [] },

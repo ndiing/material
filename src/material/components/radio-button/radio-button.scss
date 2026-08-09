@@ -47,14 +47,14 @@
     height: 20px;
     border: 2px solid var(--md-sys-color-on-surface-variant);
     border-radius: var(--md-sys-shape-corner-full);
-    will-change: border-color;
+    //will-change: border-color;
     transition-property: border-color;
     transition-duration: var(--md-sys-motion-duration-short3);
     transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
 }
 
 .md-radio-button__icon {
-    will-change: background-color, border-color;
+    //will-change: background-color, border-color;
     transition-property: background-color, border-color;
     transition-duration: var(--md-sys-motion-duration-short3);
     transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));

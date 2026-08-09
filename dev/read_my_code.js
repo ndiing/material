@@ -66,15 +66,13 @@ function writeFiles() {
             // /src/,
             /webpack.config\.js/,
             /src\\material\\fonts/,
-            /src\\demo/,
+            // /src\\demo/,
             /src\\generated/,
         ],
         [
             // /.*/,
-            /src/,
-            // /src\\material\\components\\slider/,
-            // /src\\material\\components\\slider/,
-            // /src\\demo\\components\\slider/,
+            /src\\material\\components\\layout\\layout/,
+            /src\\demo\\components\\layout/,
         ],
     );
 

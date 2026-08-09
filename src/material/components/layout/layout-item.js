@@ -5,9 +5,25 @@ class MdLayoutItem extends MdElement {
         region: { type: String },
         modal: { type: Boolean },
         open: { type: Boolean, reflect: true },
+        width: { type: Number },
+        height: { type: Number },
     };
 
     regions = ["center", "west", "north", "east", "south"];
+
+    get regionSize(){return {
+        north:{property:'--md-comp-layout-north-height',value:(this.height)+'px'},
+        south:{property:'--md-comp-layout-south-height',value:(this.height)+'px'},
+        west:{property:'--md-comp-layout-west-width',value:(this.width)+'px'},
+        east:{property:'--md-comp-layout-east-width',value:(this.width)+'px'},
+    }}
+
+    get regionTranslate(){return {
+        north:{property:'--md-comp-layout-north-translate-y',value:(this.modal?0:this.height)+'px'},
+        south:{property:'--md-comp-layout-south-translate-y',value:(this.height)+'px'},
+        west:{property:'--md-comp-layout-west-translate-x',value:(this.modal?0:this.width)+'px'},
+        east:{property:'--md-comp-layout-east-translate-x',value:(this.width)+'px'},
+    }}
 
     constructor() {
         super();
@@ -15,7 +31,7 @@ class MdLayoutItem extends MdElement {
         this.region = "center";
 
         this._handleLayoutItemTransitionend = this._handleLayoutItemTransitionend.bind(this);
-        this._handleLayoutItemScrimClose = this._handleLayoutItemScrimClose.bind(this);
+        this._handleLayoutItemScrimClick = this._handleLayoutItemScrimClick.bind(this);
     }
 
     connectedCallback() {
@@ -29,14 +45,14 @@ class MdLayoutItem extends MdElement {
             this.scrimElement = document.createElement("md-scrim");
             this.parentElement.insertBefore(this.scrimElement, this.nextElementSibling);
         }
-        this.scrimElement.on("onScrimClose", this._handleLayoutItemScrimClose);
+        this.scrimElement.on("onScrimClick", this._handleLayoutItemScrimClick);
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
 
         if (this.scrimElement) {
-            this.scrimElement.off("onScrimClose", this._handleLayoutItemScrimClose);
+            this.scrimElement.off("onScrimClick", this._handleLayoutItemScrimClick);
             this.scrimElement.remove();
             this.scrimElement = null;
         }
@@ -59,8 +75,26 @@ class MdLayoutItem extends MdElement {
             this.classList.toggle(`md-layout__item--modal`, Boolean(this.modal));
         }
 
+        if (
+            _changedProperties.has("width")||
+            _changedProperties.has("height")
+        ) {
+            
+            const regionSize = this.regionSize[this.region]
+            this.parentElement.style.setProperty(regionSize.property,regionSize.value)
+        }
+
         if (_changedProperties.has("open")) {
             this.classList.toggle(`md-layout__item--open`, Boolean(this.open));
+
+            const regionTranslate = this.regionTranslate[this.region]
+            if(this.open){
+                this.parentElement.style.setProperty(regionTranslate.property,regionTranslate.value)
+                this.parentElement.classList.toggle(`md-layout--open`, true);
+            }
+            else {
+                this.parentElement.style.removeProperty(regionTranslate.property)
+            }
 
             if (this.modal) {
                 if (this.open) {
@@ -74,13 +108,14 @@ class MdLayoutItem extends MdElement {
 
     _handleLayoutItemTransitionend(event) {
         if (this.open) {
+            this.parentElement.classList.toggle(`md-layout--open`, false);
             this.emit("onLayoutItemShowed", { event, element: this });
         } else {
             this.emit("onLayoutItemClosed", { event, element: this });
         }
     }
 
-    _handleLayoutItemScrimClose(event) {
+    _handleLayoutItemScrimClick(event) {
         this.close();
     }
 

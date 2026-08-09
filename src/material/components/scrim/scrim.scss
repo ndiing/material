@@ -8,7 +8,7 @@
     background-color: var(--md-sys-color-scrim);
     opacity: 0%;
     pointer-events: none;
-    will-change: opacity;
+    //will-change: opacity;
     transition-property: opacity;
     transition-duration: var(--md-sys-motion-duration-short2);
     transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));

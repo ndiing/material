@@ -3,7 +3,7 @@
 .md-card {
     display: flex;
     flex-direction: column;
-    will-change: box-shadow;
+    //will-change: box-shadow;
     transition-property: box-shadow;
     transition-duration: var(--md-sys-motion-duration-short2);
     transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));

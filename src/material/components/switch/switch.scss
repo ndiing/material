@@ -75,7 +75,7 @@
     border: 2px solid var(--md-sys-color-outline);
     border-radius: var(--md-sys-shape-corner-full);
     position: relative;
-    will-change: background-color, border-color;
+    //will-change: background-color, border-color;
     transition-property: background-color, border-color;
     transition-duration: var(--md-sys-motion-duration-short3);
     transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
@@ -93,7 +93,7 @@
     height: 24px;
     border-radius: var(--md-sys-shape-corner-full);
     left: 2px;
-    will-change: width, height, border-radius, left, background-color, color;
+    //will-change: width, height, border-radius, left, background-color, color;
     transition-property: width, height, border-radius, left, background-color, color;
     transition-duration: var(--md-sys-motion-duration-short3);
     transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));

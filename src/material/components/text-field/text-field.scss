@@ -216,7 +216,7 @@
             margin-top: calc((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-large-line-height)) / 2);
             margin-bottom: calc((var(--md-comp-text-field-height) - var(--md-sys-typescale-body-large-line-height)) / 2);
             @include mixins.typescale-body-large();
-            will-change: margin, font-size, line-height, color;
+            //will-change: margin, font-size, line-height, color;
             transition-property: margin, font-size, line-height, color;
             transition-duration: var(--md-sys-motion-duration-short1);
             transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
@@ -286,7 +286,7 @@
             pointer-events: none;
             left: var(--md-comp-text-field-content-offset-left, 0);
             @include mixins.typescale-body-large();
-            will-change: margin, font-size, line-height, color, top, left;
+            //will-change: margin, font-size, line-height, color, top, left;
             transition-property: margin, font-size, line-height, color, top, left;
             transition-duration: var(--md-sys-motion-duration-short1);
             transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
@@ -302,7 +302,7 @@
                 transform: translate3d(-50%, -50%, 0);
                 background-color: var(--md-sys-color-background);
                 color: var(--md-sys-color-on-background);
-                will-change: width;
+                //will-change: width;
                 transition-property: width;
                 transition-duration: var(--md-sys-motion-duration-short1);
                 transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));

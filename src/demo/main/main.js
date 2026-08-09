@@ -44,6 +44,7 @@ class DemoMain extends MdElement {
                     region="west" 
                     .modal="${this.modal}"
                     .open="${this.open}"
+                    width="256"
                 >
                     <md-list
                         .items="${this.items}"
@@ -56,7 +57,7 @@ class DemoMain extends MdElement {
                         .virtualScroll="${true}"
                     ></md-list>
                 </md-layout-item>
-                <md-layout-item region="center" style="padding:24px;">
+                <md-layout-item region="center">
                     <md-outlet></md-outlet>
                     <md-outlet name="main"></md-outlet>
                 </md-layout-item>
@@ -91,7 +92,7 @@ class DemoMain extends MdElement {
                 ...value,
                 routerLink: value.path,
                 id: index,
-                // interactive:false
+                selected:this.router.url.pathname===value.path
             }));
         });
 

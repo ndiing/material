@@ -19,9 +19,6 @@ const config = {
     devServer: {
         open: true,
         historyApiFallback: true,
-        static: {
-            directory: path.join(__dirname, "public"),
-        },
     },
     plugins: [
         new HtmlWebpackPlugin({

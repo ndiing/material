@@ -7,7 +7,7 @@
     vertical-align: middle;
     overflow: hidden;
     opacity: 0%;
-    will-change: width, height, border-radius, opacity, background-color;
+    //will-change: width, height, border-radius, opacity, background-color;
     transition-property: width, height, border-radius, opacity, background-color;
     transition-duration: var(--md-sys-motion-duration-short3);
     transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));

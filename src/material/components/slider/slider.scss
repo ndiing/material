@@ -154,7 +154,7 @@
         bottom: calc(100% - (var(--md-comp-slider-label-container-height) / 2));
         left: calc(var(--md-comp-slider-fraction0) * (100% - var(--md-comp-slider-handle-width)) + (var(--md-comp-slider-handle-width) / 2));
         transform: translate3d(-50%, 0, 0) scale3d(0, 0, 0);
-        will-change: bottom, transform;
+        //will-change: bottom, transform;
         transition-property: bottom, transform;
     }
 
@@ -256,7 +256,7 @@
         left: calc(100% - (var(--md-comp-slider-label-container-height) / 2));
         bottom: calc(var(--md-comp-slider-fraction0) * (100% - var(--md-comp-slider-handle-width)) + (var(--md-comp-slider-handle-width) / 2));
         transform: translate3d(0, 50%, 0) scale3d(0, 0, 0);
-        will-change: left, transform;
+        //will-change: left, transform;
         transition-property: left, transform;
     }
 
