@@ -49,11 +49,6 @@ class DemoLayoutModal extends MdElement {
                     <md-button label="east" @click="${this.handleClickEast}"></md-button>
                     <md-button label="south" @click="${this.handleClickSouth}"></md-button>
                     <md-button label="west" @click="${this.handleClickWest}"></md-button>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint aliquid ea quaerat culpa doloremque quia id nesciunt itaque, fuga iste quo repudiandae corporis eum minima iure sapiente architecto unde harum.
-                    Asperiores quo quam, ducimus mollitia modi error. Atque, repellendus! Dolor eaque dolore aliquam. Debitis vero esse eos inventore explicabo perspiciatis, at, quasi quam sit similique cupiditate nisi possimus quibusdam ipsam.
-                    Dolorum officia ipsa nobis vero accusantium illo omnis. Deleniti, eaque, id fugit veritatis, ut laborum placeat magni magnam deserunt sint eveniet aliquid pariatur adipisci ipsa necessitatibus officiis. Iusto, sunt facilis?
-                    Perspiciatis repudiandae unde quia natus! Amet ea sint dolorem. At natus in voluptate incidunt sit cum saepe provident officiis perferendis earum tenetur odio rerum sequi odit rem, exercitationem quaerat repellat.
-                    Vel consequatur officiis earum, sit et est iusto rerum quia excepturi laboriosam dolorum aliquid dignissimos similique, quo doloribus voluptate minima officia veniam, deserunt id eligendi quod velit aut accusamus! Sapiente?
                 </md-layout-item>
             </md-layout>
         `

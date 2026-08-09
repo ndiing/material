@@ -25,12 +25,7 @@ class MdLayoutItem extends MdElement {
     get currentValue() {
         const size = this.currentSize;
         const dockedSize = this.dockedOnCollapsed ? this.collapsedSize : 0;
-        return {
-            north: this.modal ? dockedSize : size,
-            east: this.modal ? dockedSize : size,
-            south: this.modal ? dockedSize : size,
-            west: this.modal ? dockedSize : size,
-        }[this.region];
+        return this.modal ? dockedSize : size
     }
 
     constructor() {

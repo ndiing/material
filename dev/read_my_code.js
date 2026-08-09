@@ -71,8 +71,8 @@ function writeFiles() {
         ],
         [
             // /.*/,
-            /src\\material\\components\\navigation-rail\\navigation-rail/,
-            /src\\demo\\components\\navigation-rail/,
+            /src\\material\\components\\layout\\layout/,
+            // /src\\demo\\components\\layout/,
         ],
     );
 
