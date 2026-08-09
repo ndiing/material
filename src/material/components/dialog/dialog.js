@@ -32,8 +32,8 @@ class MdDialog extends MdElement {
         if (!this.scrimElement) {
             this.scrimElement = document.createElement("md-scrim");
             this.parentElement.insertBefore(this.scrimElement, this.nextElementSibling);
+            this.scrimElement.on("onScrimClick", this._handleDialogScrimClick);
         }
-        this.scrimElement.on("onScrimClick", this._handleDialogScrimClick);
     }
 
     disconnectedCallback() {

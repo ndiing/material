@@ -59,3 +59,7 @@ import "./components/list/list-item.js";
 import "./components/list/list.js";
 import "./components/tree/tree.js";
 import "./components/push-menu/push-menu.js";
+
+import "./components/navigation-bar/navigation-bar.js";
+import "./components/navigation-drawer/navigation-drawer.js";
+import "./components/navigation-rail/navigation-rail.js";

@@ -211,6 +211,23 @@ function renderDialog(properties = {}) {
 }
 
 /* prettier-ignore */
+function renderFab(properties = {}) {
+    return html`
+        <md-fab
+            class="${classMap(properties.classMap ?? {})}"
+            style="${styleMap(properties.styleMap ?? {})}"
+            .size="${ifDefined(properties.size)}"
+            .color="${ifDefined(properties.color)}"
+            .icon="${ifDefined(properties.icon)}"
+            .label="${ifDefined(properties.label)}"
+            .rippleController="${ifDefined(properties.rippleController)}"
+            .unelevated="${ifDefined(properties.unelevated)}"
+            @onFabClick="${ifDefined(properties.onFabClick)}"
+        ></md-fab>
+    `
+}
+
+/* prettier-ignore */
 function renderForm(properties = {}) {
     return html`
         <md-form
@@ -310,6 +327,8 @@ function renderLayoutItem(properties = {}) {
             .region="${ifDefined(properties.region)}"
             .modal="${ifDefined(properties.modal)}"
             .open="${ifDefined(properties.open)}"
+            .width="${ifDefined(properties.width)}"
+            .height="${ifDefined(properties.height)}"
             @onLayoutItemShowed="${ifDefined(properties.onLayoutItemShowed)}"
             @onLayoutItemClosed="${ifDefined(properties.onLayoutItemClosed)}"
             @onLayoutItemShow="${ifDefined(properties.onLayoutItemShow)}"
@@ -377,6 +396,114 @@ function renderList(properties = {}) {
             @onListKeydown="${ifDefined(properties.onListKeydown)}"
             @onListItemClick="${ifDefined(properties.onListItemClick)}"
         ></md-list>
+    `
+}
+
+/* prettier-ignore */
+function renderNavigationBar(properties = {}) {
+    return html`
+        <md-navigation-bar
+            class="${classMap(properties.classMap ?? {})}"
+            style="${styleMap(properties.styleMap ?? {})}"
+            .items="${ifDefined(properties.items)}"
+            .type="${ifDefined(properties.type)}"
+            .valueField="${ifDefined(properties.valueField)}"
+            .parentField="${ifDefined(properties.parentField)}"
+            .labelField="${ifDefined(properties.labelField)}"
+            .clearSelection="${ifDefined(properties.clearSelection)}"
+            .selectAll="${ifDefined(properties.selectAll)}"
+            .activeRow="${ifDefined(properties.activeRow)}"
+            .scrollOnArrowUpActiveRow="${ifDefined(properties.scrollOnArrowUpActiveRow)}"
+            .selectOnArrowUpActiveRow="${ifDefined(properties.selectOnArrowUpActiveRow)}"
+            .scrollOnArrowDownActiveRow="${ifDefined(properties.scrollOnArrowDownActiveRow)}"
+            .selectOnArrowDownActiveRow="${ifDefined(properties.selectOnArrowDownActiveRow)}"
+            .selectOnEnterActiveRow="${ifDefined(properties.selectOnEnterActiveRow)}"
+            .selectRange="${ifDefined(properties.selectRange)}"
+            .multiSelect="${ifDefined(properties.multiSelect)}"
+            .singleSelect="${ifDefined(properties.singleSelect)}"
+            .virtualScroll="${ifDefined(properties.virtualScroll)}"
+            .virtualScrollOptions="${ifDefined(properties.virtualScrollOptions)}"
+            .rippleOptions="${ifDefined(properties.rippleOptions)}"
+            .region="${ifDefined(properties.region)}"
+            .modal="${ifDefined(properties.modal)}"
+            .open="${ifDefined(properties.open)}"
+            .width="${ifDefined(properties.width)}"
+            .height="${ifDefined(properties.height)}"
+            .layout="${ifDefined(properties.layout)}"
+        ></md-navigation-bar>
+    `
+}
+
+/* prettier-ignore */
+function renderNavigationDrawer(properties = {}) {
+    return html`
+        <md-navigation-drawer
+            class="${classMap(properties.classMap ?? {})}"
+            style="${styleMap(properties.styleMap ?? {})}"
+            .items="${ifDefined(properties.items)}"
+            .type="${ifDefined(properties.type)}"
+            .valueField="${ifDefined(properties.valueField)}"
+            .parentField="${ifDefined(properties.parentField)}"
+            .labelField="${ifDefined(properties.labelField)}"
+            .clearSelection="${ifDefined(properties.clearSelection)}"
+            .selectAll="${ifDefined(properties.selectAll)}"
+            .activeRow="${ifDefined(properties.activeRow)}"
+            .scrollOnArrowUpActiveRow="${ifDefined(properties.scrollOnArrowUpActiveRow)}"
+            .selectOnArrowUpActiveRow="${ifDefined(properties.selectOnArrowUpActiveRow)}"
+            .scrollOnArrowDownActiveRow="${ifDefined(properties.scrollOnArrowDownActiveRow)}"
+            .selectOnArrowDownActiveRow="${ifDefined(properties.selectOnArrowDownActiveRow)}"
+            .selectOnEnterActiveRow="${ifDefined(properties.selectOnEnterActiveRow)}"
+            .selectRange="${ifDefined(properties.selectRange)}"
+            .multiSelect="${ifDefined(properties.multiSelect)}"
+            .singleSelect="${ifDefined(properties.singleSelect)}"
+            .virtualScroll="${ifDefined(properties.virtualScroll)}"
+            .virtualScrollOptions="${ifDefined(properties.virtualScrollOptions)}"
+            .rippleOptions="${ifDefined(properties.rippleOptions)}"
+            .region="${ifDefined(properties.region)}"
+            .modal="${ifDefined(properties.modal)}"
+            .open="${ifDefined(properties.open)}"
+            .width="${ifDefined(properties.width)}"
+            .height="${ifDefined(properties.height)}"
+        ></md-navigation-drawer>
+    `
+}
+
+/* prettier-ignore */
+function renderNavigationRail(properties = {}) {
+    return html`
+        <md-navigation-rail
+            class="${classMap(properties.classMap ?? {})}"
+            style="${styleMap(properties.styleMap ?? {})}"
+            .items="${ifDefined(properties.items)}"
+            .type="${ifDefined(properties.type)}"
+            .valueField="${ifDefined(properties.valueField)}"
+            .parentField="${ifDefined(properties.parentField)}"
+            .labelField="${ifDefined(properties.labelField)}"
+            .clearSelection="${ifDefined(properties.clearSelection)}"
+            .selectAll="${ifDefined(properties.selectAll)}"
+            .activeRow="${ifDefined(properties.activeRow)}"
+            .scrollOnArrowUpActiveRow="${ifDefined(properties.scrollOnArrowUpActiveRow)}"
+            .selectOnArrowUpActiveRow="${ifDefined(properties.selectOnArrowUpActiveRow)}"
+            .scrollOnArrowDownActiveRow="${ifDefined(properties.scrollOnArrowDownActiveRow)}"
+            .selectOnArrowDownActiveRow="${ifDefined(properties.selectOnArrowDownActiveRow)}"
+            .selectOnEnterActiveRow="${ifDefined(properties.selectOnEnterActiveRow)}"
+            .selectRange="${ifDefined(properties.selectRange)}"
+            .multiSelect="${ifDefined(properties.multiSelect)}"
+            .singleSelect="${ifDefined(properties.singleSelect)}"
+            .virtualScroll="${ifDefined(properties.virtualScroll)}"
+            .virtualScrollOptions="${ifDefined(properties.virtualScrollOptions)}"
+            .rippleOptions="${ifDefined(properties.rippleOptions)}"
+            .region="${ifDefined(properties.region)}"
+            .modal="${ifDefined(properties.modal)}"
+            .open="${ifDefined(properties.open)}"
+            .width="${ifDefined(properties.width)}"
+            .height="${ifDefined(properties.height)}"
+            .variant="${ifDefined(properties.variant)}"
+            .collapsedWidth="${ifDefined(properties.collapsedWidth)}"
+            .expandedWidth="${ifDefined(properties.expandedWidth)}"
+            .iconButton="${ifDefined(properties.iconButton)}"
+            .fab="${ifDefined(properties.fab)}"
+        ></md-navigation-rail>
     `
 }
 
@@ -508,11 +635,31 @@ function renderTextarea(properties = {}) {
         <md-textarea
             class="${classMap(properties.classMap ?? {})}"
             style="${styleMap(properties.styleMap ?? {})}"
-            .items="${ifDefined(properties.items)}"
+            .leading="${ifDefined(properties.leading)}"
+            .label="${ifDefined(properties.label)}"
+            .prefix="${ifDefined(properties.prefix)}"
+            .suffix="${ifDefined(properties.suffix)}"
+            .clearable="${ifDefined(properties.clearable)}"
+            .trailing="${ifDefined(properties.trailing)}"
+            .supporting="${ifDefined(properties.supporting)}"
+            .color="${ifDefined(properties.color)}"
             .type="${ifDefined(properties.type)}"
-            .valueField="${ifDefined(properties.valueField)}"
-            .parentField="${ifDefined(properties.parentField)}"
-            .labelField="${ifDefined(properties.labelField)}"
+            .name="${ifDefined(properties.name)}"
+            .value="${ifDefined(properties.value)}"
+            .placeholder="${ifDefined(properties.placeholder)}"
+            .disabled="${ifDefined(properties.disabled)}"
+            .readonly="${ifDefined(properties.readonly)}"
+            .required="${ifDefined(properties.required)}"
+            .minLength="${ifDefined(properties.minLength)}"
+            .maxLength="${ifDefined(properties.maxLength)}"
+            .min="${ifDefined(properties.min)}"
+            .max="${ifDefined(properties.max)}"
+            .step="${ifDefined(properties.step)}"
+            .pattern="${ifDefined(properties.pattern)}"
+            .autocomplete="${ifDefined(properties.autocomplete)}"
+            .inputmode="${ifDefined(properties.inputmode)}"
+            .validateOnBlur="${ifDefined(properties.validateOnBlur)}"
+            .validateOnInput="${ifDefined(properties.validateOnInput)}"
             .rows="${ifDefined(properties.rows)}"
             .cols="${ifDefined(properties.cols)}"
         ></md-textarea>
@@ -547,6 +694,7 @@ function renderComponent(component, properties = {}) {
         ["dialog-header", () => renderDialogHeader(component, properties)],
         ["dialog-main", () => renderDialogMain(component, properties)],
         ["dialog", () => renderDialog(component, properties)],
+        ["fab", () => renderFab(component, properties)],
         ["form", () => renderForm(component, properties)],
         ["grid-column", () => renderGridColumn(component, properties)],
         ["grid", () => renderGrid(component, properties)],
@@ -557,6 +705,9 @@ function renderComponent(component, properties = {}) {
         ["layout", () => renderLayout(component, properties)],
         ["list-item", () => renderListItem(component, properties)],
         ["list", () => renderList(component, properties)],
+        ["navigation-bar", () => renderNavigationBar(component, properties)],
+        ["navigation-drawer", () => renderNavigationDrawer(component, properties)],
+        ["navigation-rail", () => renderNavigationRail(component, properties)],
         ["push-menu", () => renderPushMenu(component, properties)],
         ["radio-button", () => renderRadioButton(component, properties)],
         ["scrim", () => renderScrim(component, properties)],
@@ -585,6 +736,7 @@ export {
     renderDialogHeader,
     renderDialogMain,
     renderDialog,
+    renderFab,
     renderForm,
     renderGridColumn,
     renderGrid,
@@ -595,6 +747,9 @@ export {
     renderLayout,
     renderListItem,
     renderList,
+    renderNavigationBar,
+    renderNavigationDrawer,
+    renderNavigationRail,
     renderPushMenu,
     renderRadioButton,
     renderScrim,

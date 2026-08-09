@@ -58,6 +58,15 @@ export const routes = [
             { path: "/components/push-menu", load: () => import("./components/push-menu.js").then((module) => module.default), children: [] },
             { path: "/components/list-style", load: () => import("./components/list-style.js").then((module) => module.default), children: [] },
 
+            { path: "/components/navigation-bar", load: () => import("./components/navigation-bar.js").then((module) => module.default), children: [] },
+            { path: "/components/navigation-bar-horizontal", load: () => import("./components/navigation-bar-horizontal.js").then((module) => module.default), children: [] },
+
+            { path: "/components/navigation-drawer", load: () => import("./components/navigation-drawer.js").then((module) => module.default), children: [] },
+            { path: "/components/navigation-drawer-modal", load: () => import("./components/navigation-drawer-modal.js").then((module) => module.default), children: [] },
+
+            { path: "/components/navigation-rail", load: () => import("./components/navigation-rail.js").then((module) => module.default), children: [] },
+            { path: "/components/navigation-rail-modal", load: () => import("./components/navigation-rail-modal.js").then((module) => module.default), children: [] },
+
             { path: "/components/form", load: () => import("./components/form.js").then((module) => module.default), children: [] },
             { path: "/components/text-field", load: () => import("./components/text-field.js").then((module) => module.default), children: [] },
             { path: "/components/textarea", load: () => import("./components/textarea.js").then((module) => module.default), children: [] },

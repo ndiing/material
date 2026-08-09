@@ -4,6 +4,8 @@ class MdLayoutItem extends MdElement {
     static properties = {
         region: { type: String },
         modal: { type: Boolean },
+        closeOnScrimClick: { type: Boolean },
+        showScrimOnOpen: { type: Boolean },
         open: { type: Boolean, reflect: true },
         width: { type: Number },
         height: { type: Number },
@@ -33,6 +35,8 @@ class MdLayoutItem extends MdElement {
         super();
 
         this.region = "center";
+        this.closeOnScrimClick = true;
+        this.showScrimOnOpen = true;
 
         this._handleLayoutItemTransitionend = this._handleLayoutItemTransitionend.bind(this);
         this._handleLayoutItemScrimClick = this._handleLayoutItemScrimClick.bind(this);
@@ -48,8 +52,8 @@ class MdLayoutItem extends MdElement {
         if (!this.scrimElement) {
             this.scrimElement = document.createElement("md-scrim");
             this.parentElement.insertBefore(this.scrimElement, this.nextElementSibling);
+            this.scrimElement.on("onScrimClick", this._handleLayoutItemScrimClick);
         }
-        this.scrimElement.on("onScrimClick", this._handleLayoutItemScrimClick);
 
         this._restoreState();
     }
@@ -70,20 +74,6 @@ class MdLayoutItem extends MdElement {
         this.classList.remove("md-layout__item");
     }
 
-    _restoreState() {
-        this.requestUpdate("open", false);
-    }
-
-    _cleanState() {
-        this.classList.remove('md-layout__item--open');
-
-        const regionTranslate = this.regionTranslate[this.region];
-        if (regionTranslate) {
-            this.parentElement.style.removeProperty(regionTranslate.property);
-            this.parentElement.classList.remove('md-layout--open');
-        }
-    }
-
     updated(_changedProperties) {
         super.updated(_changedProperties);
 
@@ -102,6 +92,11 @@ class MdLayoutItem extends MdElement {
             if (regionSize) {
                 this.parentElement.style.setProperty(regionSize.property, regionSize.value);
             }
+
+            const regionTranslate = this.regionTranslate[this.region];
+            if (regionTranslate) {
+                this.parentElement.style.setProperty(regionTranslate.property, regionTranslate.value);
+            }
         }
 
         if (_changedProperties.has("open")) {
@@ -109,25 +104,39 @@ class MdLayoutItem extends MdElement {
             if (this.open) {
                 if (regionTranslate) {
                     this.parentElement.style.setProperty(regionTranslate.property, regionTranslate.value);
-                    this.parentElement.classList.add('md-layout--open');
+                    this.parentElement.classList.add("md-layout--open");
                 }
-                this.classList.add('md-layout__item--open');
-                if (this.modal) {
+                this.classList.add("md-layout__item--open");
+                if (this.modal && this.showScrimOnOpen) {
                     this.scrimElement.show();
                 }
             } else {
                 if (regionTranslate) {
                     this.parentElement.style.removeProperty(regionTranslate.property);
                 }
-                this.classList.remove('md-layout__item--open');
+                this.classList.remove("md-layout__item--open");
                 this.scrimElement.close();
             }
         }
     }
 
+    _restoreState() {
+        this.requestUpdate("open", false);
+    }
+
+    _cleanState() {
+        this.classList.remove("md-layout__item--open");
+
+        const regionTranslate = this.regionTranslate[this.region];
+        if (regionTranslate) {
+            this.parentElement.style.removeProperty(regionTranslate.property);
+            this.parentElement.classList.remove("md-layout--open");
+        }
+    }
+
     _handleLayoutItemTransitionend(event) {
         if (this.open) {
-            this.parentElement.classList.remove('md-layout--open');
+            this.parentElement.classList.remove("md-layout--open");
             this.emit("onLayoutItemShowed", { event, element: this });
         } else {
             this.emit("onLayoutItemClosed", { event, element: this });
@@ -135,7 +144,9 @@ class MdLayoutItem extends MdElement {
     }
 
     _handleLayoutItemScrimClick(event) {
-        this.close();
+        if (this.closeOnScrimClick) {
+            this.close();
+        }
     }
 
     show() {

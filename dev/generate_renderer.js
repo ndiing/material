@@ -82,7 +82,9 @@ function writeFiles() {
                 var properties;
                 var converter;
                 var MdListElement = temp.MdListElement;
-                var MdTextField = temp.MdListElement;
+                var MdTextField = temp.MdTextField;
+                var MdList = temp.MdList;
+                var MdLayoutItem = temp.MdLayoutItem;
                 eval(`properties={${propertiesString}}`);
                 temp[className].properties = properties;
             }

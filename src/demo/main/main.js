@@ -39,24 +39,14 @@ class DemoMain extends MdElement {
     render(){
         return html`
             <md-layout role="main">
-                <md-layout-item 
+                <md-navigation-drawer 
                     id="west" 
                     region="west" 
+                    width="256"
                     .modal="${this.modal}"
                     .open="${this.open}"
-                    width="256"
-                >
-                    <md-list
-                        .items="${this.items}"
-                        .labelField="${'label'}"
-                        .activeRow="${true}"
-                        .scrollOnArrowUpActiveRow="${true}"
-                        .scrollOnArrowDownActiveRow="${true}"
-                        .selectOnEnterActiveRow="${true}"
-                        .singleSelect="${true}"
-                        .virtualScroll="${true}"
-                    ></md-list>
-                </md-layout-item>
+                    .items="${this.items}"
+                ></md-navigation-drawer>
                 <md-layout-item region="center">
                     <md-outlet></md-outlet>
                     <md-outlet name="main"></md-outlet>
@@ -91,9 +81,9 @@ class DemoMain extends MdElement {
             this.items = items.map((value, index) => ({
                 ...value,
                 routerLink: value.path,
-                label: value.path.split('/')[2].replace(/(^|[\W])(\w)/g,($,$1,$2)=>' '+$2.toUpperCase()),
+                label: value.path.split("/")[2].replace(/(^|[\W])(\w)/g, ($, $1, $2) => " " + $2.toUpperCase()),
                 id: index,
-                selected:this.router.url.pathname===value.path
+                selected: this.router.url.pathname === value.path,
             }));
         });
 

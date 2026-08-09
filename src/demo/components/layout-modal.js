@@ -55,16 +55,16 @@ class DemoLayoutModal extends MdElement {
     }
 
     handleClickNorth() {
-        this.north.value.toggle()
+        this.north.value.toggle();
     }
     handleClickEast() {
-        this.east.value.toggle()
+        this.east.value.toggle();
     }
     handleClickSouth() {
-        this.south.value.toggle()
+        this.south.value.toggle();
     }
     handleClickWest() {
-        this.west.value.toggle()
+        this.west.value.toggle();
     }
 }
 customElements.define("demo-layout-modal", DemoLayoutModal);

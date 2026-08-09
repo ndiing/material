@@ -91,7 +91,7 @@ class DemoDialog extends MdElement {
         this.dialog1.show();
     }
     handleClick2(event) {
-        console.log(event)
+        console.log(event);
         this.dialog2.toggle();
     }
 }

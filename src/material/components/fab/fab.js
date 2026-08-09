@@ -23,6 +23,8 @@ class MdFab extends MdElement {
         this.color = "primary-container";
 
         this.rippleController = new RippleController(this, {});
+
+        this._handleFabClick = this._handleFabClick.bind(this);
     }
 
     /* prettier-ignore */
@@ -41,11 +43,15 @@ class MdFab extends MdElement {
     connectedCallback() {
         super.connectedCallback();
 
+        this.on("click", this._handleFabClick);
+
         this.classList.add("md-fab");
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
+
+        this.off("click", this._handleFabClick);
 
         this.classList.remove("md-fab");
     }
@@ -69,6 +75,10 @@ class MdFab extends MdElement {
         if (_changedProperties.has("rippleController")) {
             this.rippleController.reinit(this.rippleController);
         }
+    }
+
+    _handleFabClick(event) {
+        this.emit("onFabClick", { event, element: this });
     }
 }
 

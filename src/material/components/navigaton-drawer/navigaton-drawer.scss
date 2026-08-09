@@ -1,0 +1,27 @@
+@use "../../shared/mixins.scss";
+
+.md-navigation-drawer {
+    // width: 360px;
+    background-color: var(--md-sys-color-surface);
+}
+
+.md-navigation-drawer--modal {
+    box-shadow: var(--md-sys-elevation-level1);
+    background-color: var(--md-sys-color-surface-container-low);
+}
+
+.md-navigation-drawer__list {
+    padding: 12px 0;
+
+    .md-list__item {
+        min-height: 56px;
+        padding: 0 16px;
+        gap: 0 12px;
+        margin: 0 12px;
+        border-radius: var(--md-sys-shape-corner-full);
+    }
+
+    .md-list__label {
+        @include mixins.typescale-label-large();
+    }
+}

@@ -232,7 +232,6 @@ class DemoListStyle extends MdElement {
                 label: "Item 4",
             },
         ];
-
     }
     /* prettier-ignore */
     render(){

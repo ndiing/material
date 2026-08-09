@@ -80,8 +80,8 @@ class RippleController {
     }
 
     init() {
-        this.containerElement = this.container ? (typeof this.container === "string" ? this.host.querySelector(this.container) : this.container) : this.host;
-        this.triggerElement = this.trigger ? (typeof this.trigger === "string" ? this.host.querySelector(this.trigger) : this.trigger) : this.host;
+        this.containerElement = (typeof this.container === "string" ? this.host.querySelector(this.container) : this.container) ?? this.host;
+        this.triggerElement = (typeof this.trigger === "string" ? this.host.querySelector(this.trigger) : this.trigger) ?? this.host;
 
         this.containerElement.classList.add("md-ripple");
 

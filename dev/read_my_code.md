@@ -1,95 +1,44 @@
 ## src\demo\components
 
-### layout-modal
-src\demo\components\layout-modal.js
+### navigation-rail-modal
+src\demo\components\navigation-rail-modal.js
 
 ```js
 import { html } from "lit";
 import { MdElement } from "../../material/base/element.js";
 import { createRef, ref } from "lit/directives/ref.js";
 
-class DemoLayoutModal extends MdElement {
+class DemoNavigationRailModal extends MdElement {
     north = createRef();
     east = createRef();
     south = createRef();
     west = createRef();
 
-    /* prettier-ignore */
-    render(){
-        return html`
-            <md-layout>
-                <md-layout-item height="64" ${ref(this.north)} region="north" modal>
-                        north
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim iure perspiciatis impedit quis, assumenda odit saepe harum. Dolorem eum qui dicta nobis repudiandae. Assumenda dolore itaque repudiandae suscipit consequatur enim.
-                        Illum, non, eum ducimus iure ullam ratione nulla impedit natus repudiandae aspernatur, perspiciatis doloremque iste recusandae animi corporis labore. Blanditiis et nobis modi quidem, sint autem porro at doloribus soluta.
-                        Veniam laboriosam rerum, obcaecati similique ducimus sint assumenda odit voluptatem perspiciatis facilis deserunt dolorum eius culpa. Laudantium et a eum minus, commodi error, praesentium harum aspernatur natus, vitae ea architecto!
-                        Molestias assumenda quis, eveniet fugiat adipisci accusantium dolorum saepe quod pariatur provident. Unde blanditiis deleniti maiores aspernatur culpa repellat sit saepe, dolorum nostrum sunt. Beatae consectetur similique placeat et reiciendis?
-                        Delectus odio repudiandae eveniet mollitia, facilis quod? Explicabo, pariatur. Minus quos debitis architecto non. Ducimus dolorum animi quod laboriosam ex tempore consequuntur harum placeat aperiam! Earum modi ad dicta corrupti.
-                </md-layout-item>
-                <md-layout-item width="256" ${ref(this.east)} region="east" modal>
-                        east
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim iure perspiciatis impedit quis, assumenda odit saepe harum. Dolorem eum qui dicta nobis repudiandae. Assumenda dolore itaque repudiandae suscipit consequatur enim.
-                        Illum, non, eum ducimus iure ullam ratione nulla impedit natus repudiandae aspernatur, perspiciatis doloremque iste recusandae animi corporis labore. Blanditiis et nobis modi quidem, sint autem porro at doloribus soluta.
-                        Veniam laboriosam rerum, obcaecati similique ducimus sint assumenda odit voluptatem perspiciatis facilis deserunt dolorum eius culpa. Laudantium et a eum minus, commodi error, praesentium harum aspernatur natus, vitae ea architecto!
-                        Molestias assumenda quis, eveniet fugiat adipisci accusantium dolorum saepe quod pariatur provident. Unde blanditiis deleniti maiores aspernatur culpa repellat sit saepe, dolorum nostrum sunt. Beatae consectetur similique placeat et reiciendis?
-                        Delectus odio repudiandae eveniet mollitia, facilis quod? Explicabo, pariatur. Minus quos debitis architecto non. Ducimus dolorum animi quod laboriosam ex tempore consequuntur harum placeat aperiam! Earum modi ad dicta corrupti.
-                </md-layout-item>
-                <md-layout-item height="64" ${ref(this.south)} region="south" modal>
-                        south
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim iure perspiciatis impedit quis, assumenda odit saepe harum. Dolorem eum qui dicta nobis repudiandae. Assumenda dolore itaque repudiandae suscipit consequatur enim.
-                        Illum, non, eum ducimus iure ullam ratione nulla impedit natus repudiandae aspernatur, perspiciatis doloremque iste recusandae animi corporis labore. Blanditiis et nobis modi quidem, sint autem porro at doloribus soluta.
-                        Veniam laboriosam rerum, obcaecati similique ducimus sint assumenda odit voluptatem perspiciatis facilis deserunt dolorum eius culpa. Laudantium et a eum minus, commodi error, praesentium harum aspernatur natus, vitae ea architecto!
-                        Molestias assumenda quis, eveniet fugiat adipisci accusantium dolorum saepe quod pariatur provident. Unde blanditiis deleniti maiores aspernatur culpa repellat sit saepe, dolorum nostrum sunt. Beatae consectetur similique placeat et reiciendis?
-                        Delectus odio repudiandae eveniet mollitia, facilis quod? Explicabo, pariatur. Minus quos debitis architecto non. Ducimus dolorum animi quod laboriosam ex tempore consequuntur harum placeat aperiam! Earum modi ad dicta corrupti.
-                </md-layout-item>
-                <md-layout-item width="256" ${ref(this.west)} region="west" modal>
-                        west
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim iure perspiciatis impedit quis, assumenda odit saepe harum. Dolorem eum qui dicta nobis repudiandae. Assumenda dolore itaque repudiandae suscipit consequatur enim.
-                        Illum, non, eum ducimus iure ullam ratione nulla impedit natus repudiandae aspernatur, perspiciatis doloremque iste recusandae animi corporis labore. Blanditiis et nobis modi quidem, sint autem porro at doloribus soluta.
-                        Veniam laboriosam rerum, obcaecati similique ducimus sint assumenda odit voluptatem perspiciatis facilis deserunt dolorum eius culpa. Laudantium et a eum minus, commodi error, praesentium harum aspernatur natus, vitae ea architecto!
-                        Molestias assumenda quis, eveniet fugiat adipisci accusantium dolorum saepe quod pariatur provident. Unde blanditiis deleniti maiores aspernatur culpa repellat sit saepe, dolorum nostrum sunt. Beatae consectetur similique placeat et reiciendis?
-                        Delectus odio repudiandae eveniet mollitia, facilis quod? Explicabo, pariatur. Minus quos debitis architecto non. Ducimus dolorum animi quod laboriosam ex tempore consequuntur harum placeat aperiam! Earum modi ad dicta corrupti.
-                </md-layout-item>
-                <md-layout-item region="center">
-                    <md-button label="north" @click="${this.handleClickNorth}"></md-button>
-                    <md-button label="east" @click="${this.handleClickEast}"></md-button>
-                    <md-button label="south" @click="${this.handleClickSouth}"></md-button>
-                    <md-button label="west" @click="${this.handleClickWest}"></md-button>
-                </md-layout-item>
-            </md-layout>
-        `
-    }
+    constructor() {
+        super();
+        this.items9 = [
+            { id: 0, leading: [{ component: "icon", icon: "image" }], label: "Item 1", selected: true },
+            { id: 1, leading: [{ component: "icon", icon: "image" }], label: "Item 2" },
+            {
+                id: 2,
+                leading: [
+                    { component: "icon", icon: "image" },
+                    { component: "badge", label: 0 },
+                ],
+                label: "Item 3",
+            },
+            {
+                id: 3,
+                leading: [
+                    { component: "icon", icon: "image" },
+                    { component: "badge", label: 3 },
+                ],
+                label: "Item 4",
+            },
+        ];
 
-    handleClickNorth() {
-        this.north.value.toggle()
+        this.handleToggleCollapse = this.handleToggleCollapse.bind(this);
     }
-    handleClickEast() {
-        this.east.value.toggle()
-    }
-    handleClickSouth() {
-        this.south.value.toggle()
-    }
-    handleClickWest() {
-        this.west.value.toggle()
-    }
-}
-customElements.define("demo-layout-modal", DemoLayoutModal);
-export default document.createElement("demo-layout-modal");
-
-```
-### layout
-src\demo\components\layout.js
-
-```js
-import { html } from "lit";
-import { MdElement } from "../../material/base/element.js";
-import { createRef, ref } from "lit/directives/ref.js";
-
-class DemoLayout extends MdElement {
-    north = createRef();
-    east = createRef();
-    south = createRef();
-    west = createRef();
 
     /* prettier-ignore */
     render(){
@@ -97,344 +46,347 @@ class DemoLayout extends MdElement {
             <md-layout>
                 <md-layout-item height="64" ${ref(this.north)} region="north">
                         north
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores ullam a, dolorum possimus totam maiores quas harum! Aperiam repellat nesciunt quod quibusdam voluptas porro exercitationem impedit. Obcaecati nulla unde tempora?
-                        Iusto eligendi consequatur molestias. Fugit numquam blanditiis asperiores tempore perferendis amet rem architecto non, repellat eligendi vero porro expedita nostrum quo eveniet nemo unde, quis quisquam! Ex vitae eligendi provident!
-                        Aperiam vel totam ipsam, nobis repellendus distinctio veritatis, tempora eius laudantium delectus provident repellat iste ut earum necessitatibus odit facilis doloribus quos assumenda fuga molestias! Fugit hic deleniti laborum odio?
-                        Incidunt quia quasi a reprehenderit vel. Odit tempora incidunt numquam unde esse ipsum eius culpa provident repellendus nisi, non laborum vero, consequatur quod optio temporibus iusto voluptatum laboriosam. Nesciunt, ipsa?
-                        Dicta natus aspernatur, tempora minus maxime deserunt commodi accusamus accusantium, omnis adipisci vitae tenetur illo nobis a, atque magni impedit quos fugiat numquam consectetur. Dolorum nostrum asperiores modi quibusdam voluptatum.
                 </md-layout-item>
                 <md-layout-item width="256" ${ref(this.east)} region="east">
                         east
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores ullam a, dolorum possimus totam maiores quas harum! Aperiam repellat nesciunt quod quibusdam voluptas porro exercitationem impedit. Obcaecati nulla unde tempora?
-                        Iusto eligendi consequatur molestias. Fugit numquam blanditiis asperiores tempore perferendis amet rem architecto non, repellat eligendi vero porro expedita nostrum quo eveniet nemo unde, quis quisquam! Ex vitae eligendi provident!
-                        Aperiam vel totam ipsam, nobis repellendus distinctio veritatis, tempora eius laudantium delectus provident repellat iste ut earum necessitatibus odit facilis doloribus quos assumenda fuga molestias! Fugit hic deleniti laborum odio?
-                        Incidunt quia quasi a reprehenderit vel. Odit tempora incidunt numquam unde esse ipsum eius culpa provident repellendus nisi, non laborum vero, consequatur quod optio temporibus iusto voluptatum laboriosam. Nesciunt, ipsa?
-                        Dicta natus aspernatur, tempora minus maxime deserunt commodi accusamus accusantium, omnis adipisci vitae tenetur illo nobis a, atque magni impedit quos fugiat numquam consectetur. Dolorum nostrum asperiores modi quibusdam voluptatum.
                 </md-layout-item>
                 <md-layout-item height="64" ${ref(this.south)} region="south">
                         south
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores ullam a, dolorum possimus totam maiores quas harum! Aperiam repellat nesciunt quod quibusdam voluptas porro exercitationem impedit. Obcaecati nulla unde tempora?
-                        Iusto eligendi consequatur molestias. Fugit numquam blanditiis asperiores tempore perferendis amet rem architecto non, repellat eligendi vero porro expedita nostrum quo eveniet nemo unde, quis quisquam! Ex vitae eligendi provident!
-                        Aperiam vel totam ipsam, nobis repellendus distinctio veritatis, tempora eius laudantium delectus provident repellat iste ut earum necessitatibus odit facilis doloribus quos assumenda fuga molestias! Fugit hic deleniti laborum odio?
-                        Incidunt quia quasi a reprehenderit vel. Odit tempora incidunt numquam unde esse ipsum eius culpa provident repellendus nisi, non laborum vero, consequatur quod optio temporibus iusto voluptatum laboriosam. Nesciunt, ipsa?
-                        Dicta natus aspernatur, tempora minus maxime deserunt commodi accusamus accusantium, omnis adipisci vitae tenetur illo nobis a, atque magni impedit quos fugiat numquam consectetur. Dolorum nostrum asperiores modi quibusdam voluptatum.
                 </md-layout-item>
-                <md-layout-item width="256" ${ref(this.west)} region="west">
-                        west
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores ullam a, dolorum possimus totam maiores quas harum! Aperiam repellat nesciunt quod quibusdam voluptas porro exercitationem impedit. Obcaecati nulla unde tempora?
-                        Iusto eligendi consequatur molestias. Fugit numquam blanditiis asperiores tempore perferendis amet rem architecto non, repellat eligendi vero porro expedita nostrum quo eveniet nemo unde, quis quisquam! Ex vitae eligendi provident!
-                        Aperiam vel totam ipsam, nobis repellendus distinctio veritatis, tempora eius laudantium delectus provident repellat iste ut earum necessitatibus odit facilis doloribus quos assumenda fuga molestias! Fugit hic deleniti laborum odio?
-                        Incidunt quia quasi a reprehenderit vel. Odit tempora incidunt numquam unde esse ipsum eius culpa provident repellendus nisi, non laborum vero, consequatur quod optio temporibus iusto voluptatum laboriosam. Nesciunt, ipsa?
-                        Dicta natus aspernatur, tempora minus maxime deserunt commodi accusamus accusantium, omnis adipisci vitae tenetur illo nobis a, atque magni impedit quos fugiat numquam consectetur. Dolorum nostrum asperiores modi quibusdam voluptatum.
-                </md-layout-item>
+                <md-navigation-rail 
+                    ${ref(this.west)} 
+                    open 
+                    .iconButton="${{icon:["menu","menu_open"], onIconButtonClick:this.handleToggleCollapse}}"
+                    .fab="${{icon:'edit',label:'Label', onFabClick:console.log}}"
+                    .items="${this.items9}"
+                    modal
+                ></md-navigation-rail>
                 <md-layout-item region="center">
                     <md-button label="north" @click="${this.handleClickNorth}"></md-button>
                     <md-button label="east" @click="${this.handleClickEast}"></md-button>
                     <md-button label="south" @click="${this.handleClickSouth}"></md-button>
                     <md-button label="west" @click="${this.handleClickWest}"></md-button>
+                    <md-button label="toggle collapse" @click="${this.handleToggleCollapse}"></md-button>
                 </md-layout-item>
             </md-layout>
         `
     }
 
     handleClickNorth() {
-        this.north.value.toggle()
+        this.north.value.toggle();
     }
     handleClickEast() {
-        this.east.value.toggle()
+        this.east.value.toggle();
     }
     handleClickSouth() {
-        this.south.value.toggle()
+        this.south.value.toggle();
     }
     handleClickWest() {
-        this.west.value.toggle()
+        this.west.value.toggle();
+    }
+    handleToggleCollapse() {
+        this.west.value.toggleCollapse();
     }
 }
-customElements.define("demo-layout", DemoLayout);
-export default document.createElement("demo-layout");
+customElements.define("demo-navigation-rail-modal", DemoNavigationRailModal);
+export default document.createElement("demo-navigation-rail-modal");
 
 ```
-## src\material\components\layout
-
-### layout-item
-src\material\components\layout\layout-item.js
+### navigation-rail
+src\demo\components\navigation-rail.js
 
 ```js
-import { MdElement } from "../../base/element.js";
+import { html } from "lit";
+import { MdElement } from "../../material/base/element.js";
+import { createRef, ref } from "lit/directives/ref.js";
 
-class MdLayoutItem extends MdElement {
-    static properties = {
-        region: { type: String },
-        modal: { type: Boolean },
-        open: { type: Boolean, reflect: true },
-        width: { type: Number },
-        height: { type: Number },
-    };
+class DemoNavigationRail extends MdElement {
+    north = createRef();
+    east = createRef();
+    south = createRef();
+    west = createRef();
 
-    regions = ["center", "west", "north", "east", "south"];
+    constructor() {
+        super();
+        this.items9 = [
+            { id: 0, leading: [{ component: "icon", icon: "image" }], label: "Item 1", selected: true },
+            { id: 1, leading: [{ component: "icon", icon: "image" }], label: "Item 2" },
+            {
+                id: 2,
+                leading: [
+                    { component: "icon", icon: "image" },
+                    { component: "badge", label: 0 },
+                ],
+                label: "Item 3",
+            },
+            {
+                id: 3,
+                leading: [
+                    { component: "icon", icon: "image" },
+                    { component: "badge", label: 3 },
+                ],
+                label: "Item 4",
+            },
+        ];
 
-    get regionSize() {
-        return {
-            north: { property: "--md-comp-layout-north-height", value: this.height + "px" },
-            south: { property: "--md-comp-layout-south-height", value: this.height + "px" },
-            west: { property: "--md-comp-layout-west-width", value: this.width + "px" },
-            east: { property: "--md-comp-layout-east-width", value: this.width + "px" },
-        };
+        this.handleToggleCollapse = this.handleToggleCollapse.bind(this);
     }
 
+    /* prettier-ignore */
+    render(){
+        return html`
+            <md-layout>
+                <md-layout-item height="64" ${ref(this.north)} region="north">
+                        north
+                </md-layout-item>
+                <md-layout-item width="256" ${ref(this.east)} region="east">
+                        east
+                </md-layout-item>
+                <md-layout-item height="64" ${ref(this.south)} region="south">
+                        south
+                </md-layout-item>
+                <md-navigation-rail 
+                    ${ref(this.west)} 
+                    open 
+                    .iconButton="${{icon:["menu","menu_open"], onIconButtonClick:this.handleToggleCollapse}}"
+                    .fab="${{icon:'edit',label:'Label', onFabClick:console.log}}"
+                    .items="${this.items9}"
+                ></md-navigation-rail>
+                <md-layout-item region="center">
+                    <md-button label="north" @click="${this.handleClickNorth}"></md-button>
+                    <md-button label="east" @click="${this.handleClickEast}"></md-button>
+                    <md-button label="south" @click="${this.handleClickSouth}"></md-button>
+                    <md-button label="west" @click="${this.handleClickWest}"></md-button>
+                    <md-button label="toggle collapse" @click="${this.handleToggleCollapse}"></md-button>
+                </md-layout-item>
+            </md-layout>
+        `
+    }
+
+    handleClickNorth() {
+        this.north.value.toggle();
+    }
+    handleClickEast() {
+        this.east.value.toggle();
+    }
+    handleClickSouth() {
+        this.south.value.toggle();
+    }
+    handleClickWest() {
+        this.west.value.toggle();
+    }
+    handleToggleCollapse() {
+        this.west.value.toggleCollapse();
+    }
+}
+customElements.define("demo-navigation-rail", DemoNavigationRail);
+export default document.createElement("demo-navigation-rail");
+
+```
+## src\material\components\navigation-rail
+
+### navigation-rail
+src\material\components\navigation-rail\navigation-rail.js
+
+```js
+import { html, nothing } from "lit";
+import { MdElement } from "../../base/element.js";
+import { renderFab, renderIconButton, renderList } from "../../utils/render-component.js";
+import { MdList } from "../list/list.js";
+import { MdLayoutItem } from "../layout/layout-item.js";
+
+class MdNavigationRail extends MdLayoutItem {
+    static properties = {
+        ...MdList.properties,
+        ...MdLayoutItem.properties,
+        collapsedWidth: { type: Number },
+        expandedWidth: { type: Number },
+        iconButton: { type: Object },
+        fab: { type: Object },
+        expanded: { type: Boolean },
+    };
+
+    /**@override*/
     get regionTranslate() {
         return {
-            north: { property: "--md-comp-layout-north-translate-y", value: (this.modal ? 0 : this.height) + "px" },
-            south: { property: "--md-comp-layout-south-translate-y", value: this.height + "px" },
-            west: { property: "--md-comp-layout-west-translate-x", value: (this.modal ? 0 : this.width) + "px" },
-            east: { property: "--md-comp-layout-east-translate-x", value: this.width + "px" },
+            west: { property: "--md-comp-layout-west-translate-x", value: (this.modal ? this.collapsedWidth : this.width) + "px" },
         };
     }
 
     constructor() {
         super();
 
-        this.region = "center";
+        this.region = "west";
+        this.collapsedWidth = 96;
+        this.expandedWidth = 220;
+        this.width = this.collapsedWidth;
+        this.closeOnScrimClick = false;
+        this.showScrimOnOpen = false;
+        this.expanded = false;
 
-        this._handleLayoutItemTransitionend = this._handleLayoutItemTransitionend.bind(this);
-        this._handleLayoutItemScrimClick = this._handleLayoutItemScrimClick.bind(this);
+        this._handleNavigationRailScrimClick = this._handleNavigationRailScrimClick.bind(this);
+        this._handleNavigationRailTransitionend = this._handleNavigationRailTransitionend.bind(this);
+    }
+
+    renderIconButton() {
+        const iconButtonProperties = {
+            classMap: {
+                "md-navigation-rail__icon-button": true,
+            },
+            variant: "toggle",
+            color: "standard",
+            ...this.iconButton,
+            selected: this.expanded,
+        };
+        return renderIconButton(iconButtonProperties);
+    }
+
+    renderFab() {
+        const fabProperties = {
+            classMap: {
+                "md-navigation-rail__fab": true,
+            },
+            unelevated: true,
+            ...this.fab,
+            label: this.expanded ? this.fab.label : "",
+        };
+        return renderFab(fabProperties);
+    }
+
+    renderList() {
+        const listProperties = {
+            classMap: {
+                "md-navigation-rail__list": true,
+            },
+            items: this.items,
+            singleSelect: true,
+            activeRow: true,
+            selectOnEnterActiveRow: true,
+            rippleOptions: this.expanded ? { container: ".md-list__item", centered: true } : { container: ".md-list__icon", centered: true },
+        };
+        return renderList(listProperties);
+    }
+
+    /* prettier-ignore */
+    render(){
+        return html`
+            ${this.iconButton?this.renderIconButton():nothing}
+            ${this.fab?this.renderFab():nothing}
+            ${this.renderList()}
+        `
     }
 
     connectedCallback() {
         super.connectedCallback();
 
-        this.classList.add("md-layout__item");
+        this.classList.add("md-navigation-rail");
 
-        this.on("transitionend", this._handleLayoutItemTransitionend);
+        this.on("transitionend", this._handleNavigationRailTransitionend);
 
-        if (!this.scrimElement) {
-            this.scrimElement = document.createElement("md-scrim");
-            this.parentElement.insertBefore(this.scrimElement, this.nextElementSibling);
+        if (this.scrimElement) {
+            this.scrimElement.on("onScrimClick", this._handleNavigationRailScrimClick);
         }
-        this.scrimElement.on("onScrimClick", this._handleLayoutItemScrimClick);
-
-        this._restoreState();
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
-
-        this._cleanState();
-
         if (this.scrimElement) {
-            this.scrimElement.off("onScrimClick", this._handleLayoutItemScrimClick);
-            this.scrimElement.remove();
-            this.scrimElement = null;
+            this.scrimElement.off("onScrimClick", this._handleNavigationRailScrimClick);
         }
 
-        this.off("transitionend", this._handleLayoutItemTransitionend);
+        this.off("transitionend", this._handleNavigationRailTransitionend);
 
-        this.classList.remove("md-layout__item");
+        this.classList.remove("md-navigation-rail");
     }
 
-    _restoreState() {
-        this.requestUpdate("open", false);
-    }
+    update(changedProperties) {
+        super.update(changedProperties);
 
-    _cleanState() {
-        this.classList.remove('md-layout__item--open');
-
-        const regionTranslate = this.regionTranslate[this.region];
-        if (regionTranslate) {
-            this.parentElement.style.removeProperty(regionTranslate.property);
-            this.parentElement.classList.remove('md-layout--open');
+        if (changedProperties.has("expanded") && this.open) {
+            queueMicrotask(() => {
+                if (this.expanded) {
+                    this.width = this.expandedWidth;
+                } else {
+                    this.width = this.collapsedWidth;
+                }
+            });
         }
     }
 
     updated(_changedProperties) {
         super.updated(_changedProperties);
 
-        if (_changedProperties.has("region")) {
-            this.regions.forEach((region) => {
-                this.classList.toggle(`md-layout__item--${region}`, this.region === region);
-            });
-        }
-
-        if (_changedProperties.has("modal")) {
-            this.classList.toggle(`md-layout__item--modal`, Boolean(this.modal));
-        }
-
-        if (_changedProperties.has("width") || _changedProperties.has("height")) {
-            const regionSize = this.regionSize[this.region];
-            if (regionSize) {
-                this.parentElement.style.setProperty(regionSize.property, regionSize.value);
-            }
-        }
-
-        if (_changedProperties.has("open")) {
-            const regionTranslate = this.regionTranslate[this.region];
-            if (this.open) {
-                if (regionTranslate) {
-                    this.parentElement.style.setProperty(regionTranslate.property, regionTranslate.value);
-                    this.parentElement.classList.add('md-layout--open');
-                }
-                this.classList.add('md-layout__item--open');
+        if (_changedProperties.has("expanded") && this.open) {
+            if (this.expanded) {
+                this.classList.add(`md-navigation-rail--expanded`);
+                this.classList.remove(`md-navigation-rail--collapsed`);
                 if (this.modal) {
                     this.scrimElement.show();
                 }
             } else {
-                if (regionTranslate) {
-                    this.parentElement.style.removeProperty(regionTranslate.property);
-                }
-                this.classList.remove('md-layout__item--open');
+                this.classList.remove(`md-navigation-rail--expanded`);
+                this.classList.add(`md-navigation-rail--collapsed`);
                 this.scrimElement.close();
             }
         }
-    }
 
-    _handleLayoutItemTransitionend(event) {
-        if (this.open) {
-            this.parentElement.classList.remove('md-layout--open');
-            this.emit("onLayoutItemShowed", { event, element: this });
-        } else {
-            this.emit("onLayoutItemClosed", { event, element: this });
+        if (_changedProperties.has("modal")) {
+            this.classList.toggle(`md-navigation-rail--modal`, Boolean(this.modal));
         }
     }
 
-    _handleLayoutItemScrimClick(event) {
-        this.close();
+    /**@override*/
+    _restoreState() {
+        super._restoreState();
+        this.requestUpdate("expanded", false);
     }
 
-    show() {
-        this.open = true;
-
-        this.emit("onLayoutItemShow", { element: this });
+    /**@override*/
+    _cleanState() {
+        super._cleanState();
+        this.classList.remove(`md-navigation-rail--expanded`);
     }
 
-    close() {
-        this.open = false;
-
-        this.emit("onLayoutItemClose", { element: this });
-    }
-
-    toggle() {
-        if (this.open) {
-            this.close();
+    _handleNavigationRailTransitionend(event) {
+        if (this.expanded) {
+            this.emit("onNavigationRailExpanded", { event, element: this });
         } else {
-            this.show();
+            this.emit("onNavigationRailCollapsed", { event, element: this });
+        }
+    }
+
+    _handleNavigationRailScrimClick(event) {
+        this.collapse();
+        this.emit("onNavigationRailScrimClick", { event, element: this });
+    }
+
+    collapse() {
+        if (!this.open) {
+            return;
+        }
+        this.expanded = false;
+        this.emit("onNavigationRailCollapse", { element: this });
+    }
+
+    expand() {
+        if (!this.open) {
+            return;
+        }
+        this.expanded = true;
+        this.emit("onNavigationRailExpand", { element: this });
+    }
+
+    toggleCollapse() {
+        if (this.expanded) {
+            this.collapse();
+        } else {
+            this.expand();
         }
     }
 }
 
-customElements.define("md-layout-item", MdLayoutItem);
+customElements.define("md-navigation-rail", MdNavigationRail);
 
-export { MdLayoutItem };
-
-```
-### layout
-src\material\components\layout\layout.js
-
-```js
-import { MdElement } from "../../base/element.js";
-
-class MdLayout extends MdElement {
-    connectedCallback() {
-        super.connectedCallback();
-
-        this.classList.add("md-layout");
-    }
-
-    disconnectedCallback() {
-        super.disconnectedCallback();
-
-        this.classList.remove("md-layout");
-    }
-}
-
-customElements.define("md-layout", MdLayout);
-
-export { MdLayout };
-
-```
-### layout
-src\material\components\layout\layout.scss
-
-```scss
-.md-layout {
-    --md-comp-layout-north-height: 64px;
-    --md-comp-layout-south-height: 64px;
-    --md-comp-layout-west-width: 256px;
-    --md-comp-layout-east-width: 256px;
-    --md-comp-layout-north-translate-y: 0px;
-    --md-comp-layout-south-translate-y: 0px;
-    --md-comp-layout-west-translate-x: 0px;
-    --md-comp-layout-east-translate-x: 0px;
-
-    display: grid;
-    grid-template-rows: var(--md-comp-layout-north-translate-y) 1fr var(--md-comp-layout-south-translate-y);
-    grid-template-columns: var(--md-comp-layout-west-translate-x) 1fr var(--md-comp-layout-east-translate-x);
-    grid-template-areas:
-        "north north north"
-        "west center east"
-        "south south south";
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    position: relative;
-    //will-change: grid-template-columns, grid-template-rows;
-    transition-property: grid-template-columns, grid-template-rows;
-    transition-duration: var(--md-sys-motion-duration-short2);
-    transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
-}
-
-.md-layout--open {
-    transition-duration: var(--md-sys-motion-duration-short3);
-    transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
-}
-
-.md-layout__item {
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    //will-change: transform;
-    transition-property: transform;
-    transition-duration: var(--md-sys-motion-duration-short2);
-    transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
-
-    &.md-layout__item--modal {
-        z-index: 20;
-        background-color: var(--md-sys-color-surface-container);
-        color: var(--md-sys-color-on-surface);
-    }
-
-    &.md-layout__item--open {
-        transform: translate3d(0, 0, 0);
-        transition-duration: var(--md-sys-motion-duration-short3);
-        transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
-    }
-}
-
-.md-layout__item--north {
-    grid-area: north;
-    height: var(--md-comp-layout-north-height);
-    transform: translate3d(0, calc(0px - var(--md-comp-layout-north-height)), 0);
-}
-
-.md-layout__item--south {
-    grid-area: south;
-    height: var(--md-comp-layout-south-height);
-    transform: translate3d(0, var(--md-comp-layout-south-height), 0);
-}
-
-.md-layout__item--west {
-    grid-area: west;
-    width: var(--md-comp-layout-west-width);
-    transform: translate3d(calc(0px - var(--md-comp-layout-west-width)), 0, 0);
-}
-
-.md-layout__item--east {
-    grid-area: east;
-    width: var(--md-comp-layout-east-width);
-    transform: translate3d(var(--md-comp-layout-east-width), 0, 0);
-}
-
-.md-layout__item--center {
-    grid-area: center;
-}
+export { MdNavigationRail };
 
 ```
