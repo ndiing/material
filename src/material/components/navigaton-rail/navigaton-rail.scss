@@ -6,19 +6,6 @@
     align-items: flex-start;
     // padding: 44px 0;
     background-color: var(--md-sys-color-surface);
-    //will-change: transform,width,background-color;
-    transition-property: transform, width, background-color;
-    transition-duration: var(--md-sys-motion-duration-short2);
-    transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
-}
-
-.md-navigation-rail--expanded {
-    transition-duration: var(--md-sys-motion-duration-short3);
-    transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
-}
-
-.md-navigation-rail--modal {
-    background-color: var(--md-sys-color-surface);
 }
 
 .md-navigation-rail--modal.md-navigation-rail--expanded {
