@@ -47,29 +47,29 @@ class DemoNestedLayout extends MdElement {
     }
 
     handleClickNorth() {
-        console.log(this.north.value.toggle())
+        this.north.value.toggle()
     }
     handleClickEast() {
-        console.log(this.east.value.toggle())
+        this.east.value.toggle()
     }
     handleClickSouth() {
-        console.log(this.south.value.toggle())
+        this.south.value.toggle()
     }
     handleClickWest() {
-        console.log(this.west.value.toggle())
+        this.west.value.toggle()
     }
 
     handleClickNorth1() {
-        console.log(this.north1.value.toggle())
+        this.north1.value.toggle()
     }
     handleClickEast1() {
-        console.log(this.east1.value.toggle())
+        this.east1.value.toggle()
     }
     handleClickSouth1() {
-        console.log(this.south1.value.toggle())
+        this.south1.value.toggle()
     }
     handleClickWest1() {
-        console.log(this.west1.value.toggle())
+        this.west1.value.toggle()
     }
 }
 customElements.define("demo-nested-layout", DemoNestedLayout);
