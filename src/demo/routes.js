@@ -56,7 +56,7 @@ export const routes = [
             { path: "/components/list-interactions", load: () => import("./components/list-interactions.js").then((module) => module.default), children: [] },
             { path: "/components/tree", load: () => import("./components/tree.js").then((module) => module.default), children: [] },
             { path: "/components/push-menu", load: () => import("./components/push-menu.js").then((module) => module.default), children: [] },
-            { path: "/components/list-style", load: () => import("./components/list-style.js").then((module) => module.default), children: [] },
+            // { path: "/components/list-style", load: () => import("./components/list-style.js").then((module) => module.default), children: [] },
 
             { path: "/components/navigation-bar", load: () => import("./components/navigation-bar.js").then((module) => module.default), children: [] },
             { path: "/components/navigation-bar-horizontal", load: () => import("./components/navigation-bar-horizontal.js").then((module) => module.default), children: [] },
@@ -74,6 +74,7 @@ export const routes = [
             { path: "/components/radio-button", load: () => import("./components/radio-button.js").then((module) => module.default), children: [] },
             { path: "/components/switch", load: () => import("./components/switch.js").then((module) => module.default), children: [] },
             { path: "/components/slider", load: () => import("./components/slider.js").then((module) => module.default), children: [] },
+            // { path: "/components/test", load: () => import("./components/test.js").then((module) => module.default), children: [] },
 
         ],
     },

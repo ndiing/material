@@ -42,7 +42,7 @@ class DemoMain extends MdElement {
                 <md-navigation-drawer 
                     id="west" 
                     region="west" 
-                    width="256"
+                    size="256"
                     .modal="${this.modal}"
                     .open="${this.open}"
                     .items="${this.items}"

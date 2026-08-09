@@ -13,7 +13,7 @@ class MdNavigationDrawer extends MdLayoutItem {
     constructor() {
         super();
 
-        this.width = 360;
+        this.size = 360;
         this.region = "west";
     }
 

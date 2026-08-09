@@ -16,7 +16,7 @@ class MdNavigationBar extends MdLayoutItem {
     constructor() {
         super();
 
-        this.height = 64;
+        this.size = 64;
         this.region = "south";
         this.layout = "vertical";
     }

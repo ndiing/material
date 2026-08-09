@@ -1,42 +1,50 @@
+import { html } from "lit";
 import { MdElement } from "../../base/element.js";
 
 class MdLayoutItem extends MdElement {
     static properties = {
         region: { type: String },
-        modal: { type: Boolean },
-        closeOnScrimClick: { type: Boolean },
-        showScrimOnOpen: { type: Boolean },
         open: { type: Boolean, reflect: true },
-        width: { type: Number },
-        height: { type: Number },
+        size: { type: Number },
+        modal: { type: Boolean },
+        collapsedSize: { type: Number },
+        expanded: { type: Boolean },
+        dockedOnCollapsed: { type: Boolean },
+        closeOnScrimClick: { type: Boolean },
+        collapseOnScrimClick: { type: Boolean },
+        showScrimOnOpen: { type: Boolean },
+        showScrimOnExpanded: { type: Boolean },
     };
 
-    regions = ["center", "west", "north", "east", "south"];
+    regions = ["north", "east", "south", "west", "center"];
 
-    get regionSize() {
-        return {
-            north: { property: "--md-comp-layout-north-height", value: this.height + "px" },
-            south: { property: "--md-comp-layout-south-height", value: this.height + "px" },
-            west: { property: "--md-comp-layout-west-width", value: this.width + "px" },
-            east: { property: "--md-comp-layout-east-width", value: this.width + "px" },
-        };
+    get currentSize() {
+        return this.expanded ? this.size : this.collapsedSize;
     }
 
-    get regionTranslate() {
+    get currentValue() {
+        const size = this.currentSize;
+        const dockedSize = this.dockedOnCollapsed ? this.collapsedSize : 0;
         return {
-            north: { property: "--md-comp-layout-north-translate-y", value: (this.modal ? 0 : this.height) + "px" },
-            south: { property: "--md-comp-layout-south-translate-y", value: this.height + "px" },
-            west: { property: "--md-comp-layout-west-translate-x", value: (this.modal ? 0 : this.width) + "px" },
-            east: { property: "--md-comp-layout-east-translate-x", value: this.width + "px" },
-        };
+            north: this.modal ? dockedSize : size,
+            east: this.modal ? dockedSize : size,
+            south: this.modal ? dockedSize : size,
+            west: this.modal ? dockedSize : size,
+        }[this.region];
     }
 
     constructor() {
         super();
 
         this.region = "center";
+        this.size = 0;
+        this.collapsedSize = 0;
+        this.expanded = true;
+        this.dockedOnCollapsed = false;
         this.closeOnScrimClick = true;
         this.showScrimOnOpen = true;
+        this.showScrimOnExpanded = false;
+        this.collapseOnScrimClick = false;
 
         this._handleLayoutItemTransitionend = this._handleLayoutItemTransitionend.bind(this);
         this._handleLayoutItemScrimClick = this._handleLayoutItemScrimClick.bind(this);
@@ -44,8 +52,6 @@ class MdLayoutItem extends MdElement {
 
     connectedCallback() {
         super.connectedCallback();
-
-        this.classList.add("md-layout__item");
 
         this.on("transitionend", this._handleLayoutItemTransitionend);
 
@@ -55,13 +61,18 @@ class MdLayoutItem extends MdElement {
             this.scrimElement.on("onScrimClick", this._handleLayoutItemScrimClick);
         }
 
-        this._restoreState();
+        this.classList.add("md-layout__item");
+
+        this.requestUpdate("open", false);
+        this.requestUpdate("expanded", false);
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
 
-        this._cleanState();
+        this.parentElement.style.removeProperty(`--md-comp-layout-item-${this.region}-value`);
+        this.parentElement.classList.remove("md-layout--open");
+        this.parentElement.classList.remove("md-layout--expanded");
 
         if (this.scrimElement) {
             this.scrimElement.off("onScrimClick", this._handleLayoutItemScrimClick);
@@ -83,63 +94,44 @@ class MdLayoutItem extends MdElement {
             });
         }
 
-        if (_changedProperties.has("modal")) {
-            this.classList.toggle(`md-layout__item--modal`, Boolean(this.modal));
-        }
-
-        if (_changedProperties.has("width") || _changedProperties.has("height")) {
-            const regionSize = this.regionSize[this.region];
-            if (regionSize) {
-                this.parentElement.style.setProperty(regionSize.property, regionSize.value);
-            }
-
-            const regionTranslate = this.regionTranslate[this.region];
-            if (regionTranslate) {
-                this.parentElement.style.setProperty(regionTranslate.property, regionTranslate.value);
-            }
-        }
-
         if (_changedProperties.has("open")) {
-            const regionTranslate = this.regionTranslate[this.region];
-            if (this.open) {
-                if (regionTranslate) {
-                    this.parentElement.style.setProperty(regionTranslate.property, regionTranslate.value);
-                    this.parentElement.classList.add("md-layout--open");
-                }
-                this.classList.add("md-layout__item--open");
-                if (this.modal && this.showScrimOnOpen) {
+            this._updateValue();
+            this.classList.toggle("md-layout__item--open", Boolean(this.open));
+            if (this.showScrimOnOpen && this.modal) {
+                if (this.open) {
                     this.scrimElement.show();
+                } else {
+                    this.scrimElement.close();
                 }
-            } else {
-                if (regionTranslate) {
-                    this.parentElement.style.removeProperty(regionTranslate.property);
-                }
-                this.classList.remove("md-layout__item--open");
-                this.scrimElement.close();
             }
         }
-    }
 
-    _restoreState() {
-        this.requestUpdate("open", false);
-    }
-
-    _cleanState() {
-        this.classList.remove("md-layout__item--open");
-
-        const regionTranslate = this.regionTranslate[this.region];
-        if (regionTranslate) {
-            this.parentElement.style.removeProperty(regionTranslate.property);
-            this.parentElement.classList.remove("md-layout--open");
+        if (_changedProperties.has("size")) {
+            this._updateSize();
         }
-    }
 
-    _handleLayoutItemTransitionend(event) {
-        if (this.open) {
-            this.parentElement.classList.remove("md-layout--open");
-            this.emit("onLayoutItemShowed", { event, element: this });
-        } else {
-            this.emit("onLayoutItemClosed", { event, element: this });
+        if (_changedProperties.has("dockedOnCollapsed") || _changedProperties.has("collapsedSize")) {
+            if (this.dockedOnCollapsed) {
+                this.parentElement.style.setProperty(`--md-comp-layout-item-${this.region}-collapsed-size`, `${this.collapsedSize}px`);
+            }
+        }
+
+        if (_changedProperties.has("modal")) {
+            this.classList.toggle("md-layout__item--modal", Boolean(this.modal));
+        }
+
+        if (_changedProperties.has("expanded")) {
+            this._updateSize();
+            this._updateValue();
+            this.classList.toggle("md-layout__item--expanded", Boolean(this.expanded));
+            this.parentElement.classList.add("md-layout--expanded");
+            if (this.showScrimOnExpanded && this.modal) {
+                if (this.expanded) {
+                    this.scrimElement.show();
+                } else {
+                    this.scrimElement.close();
+                }
+            }
         }
     }
 
@@ -147,25 +139,79 @@ class MdLayoutItem extends MdElement {
         if (this.closeOnScrimClick) {
             this.close();
         }
+        if (this.collapseOnScrimClick) {
+            this.collapse();
+        }
+    }
+
+    _updateSize() {
+        this.parentElement.style.setProperty(`--md-comp-layout-item-${this.region}-size`, `${this.currentSize}px`);
+    }
+
+    _updateValue() {
+        if (this.open) {
+            this.parentElement.classList.add("md-layout--open");
+            this.parentElement.style.setProperty(`--md-comp-layout-item-${this.region}-value`, `${this.currentValue}px`);
+        } else {
+            this.parentElement.style.removeProperty(`--md-comp-layout-item-${this.region}-value`);
+        }
+    }
+
+    _handleLayoutItemTransitionend(event) {
+        if (event.target !== event.currentTarget) {
+            return;
+        }
+
+        if (this.open) {
+            this.parentElement.classList.remove("md-layout--open");
+            this.emit("onLayoutItemShowed", { event, element: this });
+        } else {
+            this.emit("onLayoutItemClosed", { event, element: this });
+        }
+
+        this.parentElement.classList.remove("md-layout--expanded");
+        if (this.expanded) {
+            this.emit("onLayoutItemExpanded", { event, element: this });
+        } else {
+            this.emit("onLayoutItemCollapsed", { event, element: this });
+        }
     }
 
     show() {
         this.open = true;
-
         this.emit("onLayoutItemShow", { element: this });
     }
-
     close() {
         this.open = false;
-
         this.emit("onLayoutItemClose", { element: this });
     }
-
     toggle() {
         if (this.open) {
             this.close();
         } else {
             this.show();
+        }
+    }
+
+    expand() {
+        if (this.collapsedSize === 0 || !this.open) {
+            return;
+        }
+        this.expanded = true;
+        this.emit("onLayoutItemExpand", { element: this });
+    }
+    collapse() {
+        if (this.collapsedSize === 0 || !this.open) {
+            return;
+        }
+        this.expanded = false;
+        this.emit("onLayoutItemCollapse", { element: this });
+    }
+    toggleCollapse() {
+        if (this.expanded) {
+            this.collapse();
+        } else {
+            this.expand();
         }
     }
 }

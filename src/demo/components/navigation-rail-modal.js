@@ -3,9 +3,6 @@ import { MdElement } from "../../material/base/element.js";
 import { createRef, ref } from "lit/directives/ref.js";
 
 class DemoNavigationRailModal extends MdElement {
-    north = createRef();
-    east = createRef();
-    south = createRef();
     west = createRef();
 
     constructor() {
@@ -38,15 +35,7 @@ class DemoNavigationRailModal extends MdElement {
     render(){
         return html`
             <md-layout>
-                <md-layout-item height="64" ${ref(this.north)} region="north">
-                        north
-                </md-layout-item>
-                <md-layout-item width="256" ${ref(this.east)} region="east">
-                        east
-                </md-layout-item>
-                <md-layout-item height="64" ${ref(this.south)} region="south">
-                        south
-                </md-layout-item>
+                
                 <md-navigation-rail 
                     ${ref(this.west)} 
                     open 
@@ -56,25 +45,14 @@ class DemoNavigationRailModal extends MdElement {
                     modal
                 ></md-navigation-rail>
                 <md-layout-item region="center">
-                    <md-button label="north" @click="${this.handleClickNorth}"></md-button>
-                    <md-button label="east" @click="${this.handleClickEast}"></md-button>
-                    <md-button label="south" @click="${this.handleClickSouth}"></md-button>
-                    <md-button label="west" @click="${this.handleClickWest}"></md-button>
-                    <md-button label="toggle collapse" @click="${this.handleToggleCollapse}"></md-button>
+                    
+                    <md-button label="Toggle Navigation Rail" @click="${this.handleClickWest}"></md-button>
+                    <md-button label="Toggle Collapse Navigation Rail" @click="${this.handleToggleCollapse}"></md-button>
                 </md-layout-item>
             </md-layout>
         `
     }
 
-    handleClickNorth() {
-        this.north.value.toggle();
-    }
-    handleClickEast() {
-        this.east.value.toggle();
-    }
-    handleClickSouth() {
-        this.south.value.toggle();
-    }
     handleClickWest() {
         this.west.value.toggle();
     }

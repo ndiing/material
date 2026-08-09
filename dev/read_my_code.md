@@ -9,9 +9,6 @@ import { MdElement } from "../../material/base/element.js";
 import { createRef, ref } from "lit/directives/ref.js";
 
 class DemoNavigationRailModal extends MdElement {
-    north = createRef();
-    east = createRef();
-    south = createRef();
     west = createRef();
 
     constructor() {
@@ -44,15 +41,7 @@ class DemoNavigationRailModal extends MdElement {
     render(){
         return html`
             <md-layout>
-                <md-layout-item height="64" ${ref(this.north)} region="north">
-                        north
-                </md-layout-item>
-                <md-layout-item width="256" ${ref(this.east)} region="east">
-                        east
-                </md-layout-item>
-                <md-layout-item height="64" ${ref(this.south)} region="south">
-                        south
-                </md-layout-item>
+                
                 <md-navigation-rail 
                     ${ref(this.west)} 
                     open 
@@ -62,25 +51,14 @@ class DemoNavigationRailModal extends MdElement {
                     modal
                 ></md-navigation-rail>
                 <md-layout-item region="center">
-                    <md-button label="north" @click="${this.handleClickNorth}"></md-button>
-                    <md-button label="east" @click="${this.handleClickEast}"></md-button>
-                    <md-button label="south" @click="${this.handleClickSouth}"></md-button>
-                    <md-button label="west" @click="${this.handleClickWest}"></md-button>
-                    <md-button label="toggle collapse" @click="${this.handleToggleCollapse}"></md-button>
+                    
+                    <md-button label="Toggle Navigation Rail" @click="${this.handleClickWest}"></md-button>
+                    <md-button label="Toggle Collapse Navigation Rail" @click="${this.handleToggleCollapse}"></md-button>
                 </md-layout-item>
             </md-layout>
         `
     }
 
-    handleClickNorth() {
-        this.north.value.toggle();
-    }
-    handleClickEast() {
-        this.east.value.toggle();
-    }
-    handleClickSouth() {
-        this.south.value.toggle();
-    }
     handleClickWest() {
         this.west.value.toggle();
     }
@@ -101,9 +79,6 @@ import { MdElement } from "../../material/base/element.js";
 import { createRef, ref } from "lit/directives/ref.js";
 
 class DemoNavigationRail extends MdElement {
-    north = createRef();
-    east = createRef();
-    south = createRef();
     west = createRef();
 
     constructor() {
@@ -136,15 +111,6 @@ class DemoNavigationRail extends MdElement {
     render(){
         return html`
             <md-layout>
-                <md-layout-item height="64" ${ref(this.north)} region="north">
-                        north
-                </md-layout-item>
-                <md-layout-item width="256" ${ref(this.east)} region="east">
-                        east
-                </md-layout-item>
-                <md-layout-item height="64" ${ref(this.south)} region="south">
-                        south
-                </md-layout-item>
                 <md-navigation-rail 
                     ${ref(this.west)} 
                     open 
@@ -153,25 +119,13 @@ class DemoNavigationRail extends MdElement {
                     .items="${this.items9}"
                 ></md-navigation-rail>
                 <md-layout-item region="center">
-                    <md-button label="north" @click="${this.handleClickNorth}"></md-button>
-                    <md-button label="east" @click="${this.handleClickEast}"></md-button>
-                    <md-button label="south" @click="${this.handleClickSouth}"></md-button>
-                    <md-button label="west" @click="${this.handleClickWest}"></md-button>
-                    <md-button label="toggle collapse" @click="${this.handleToggleCollapse}"></md-button>
+                    <md-button label="Toggle Navigation Rail" @click="${this.handleClickWest}"></md-button>
+                    <md-button label="Toggle Collapse Navigation Rail" @click="${this.handleToggleCollapse}"></md-button>
                 </md-layout-item>
             </md-layout>
         `
     }
 
-    handleClickNorth() {
-        this.north.value.toggle();
-    }
-    handleClickEast() {
-        this.east.value.toggle();
-    }
-    handleClickSouth() {
-        this.south.value.toggle();
-    }
     handleClickWest() {
         this.west.value.toggle();
     }
@@ -199,33 +153,23 @@ class MdNavigationRail extends MdLayoutItem {
     static properties = {
         ...MdList.properties,
         ...MdLayoutItem.properties,
-        collapsedWidth: { type: Number },
-        expandedWidth: { type: Number },
         iconButton: { type: Object },
         fab: { type: Object },
         expanded: { type: Boolean },
     };
 
-    /**@override*/
-    get regionTranslate() {
-        return {
-            west: { property: "--md-comp-layout-west-translate-x", value: (this.modal ? this.collapsedWidth : this.width) + "px" },
-        };
-    }
-
     constructor() {
         super();
 
         this.region = "west";
-        this.collapsedWidth = 96;
-        this.expandedWidth = 220;
-        this.width = this.collapsedWidth;
-        this.closeOnScrimClick = false;
-        this.showScrimOnOpen = false;
         this.expanded = false;
-
-        this._handleNavigationRailScrimClick = this._handleNavigationRailScrimClick.bind(this);
-        this._handleNavigationRailTransitionend = this._handleNavigationRailTransitionend.bind(this);
+        this.showScrimOnExpanded = true;
+        this.showScrimOnOpen = false;
+        this.closeOnScrimClick = false;
+        this.collapseOnScrimClick = true;
+        this.dockedOnCollapsed = true;
+        this.size = 220;
+        this.collapsedSize = 96;
     }
 
     renderIconButton() {
@@ -280,107 +224,24 @@ class MdNavigationRail extends MdLayoutItem {
         super.connectedCallback();
 
         this.classList.add("md-navigation-rail");
-
-        this.on("transitionend", this._handleNavigationRailTransitionend);
-
-        if (this.scrimElement) {
-            this.scrimElement.on("onScrimClick", this._handleNavigationRailScrimClick);
-        }
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
-        if (this.scrimElement) {
-            this.scrimElement.off("onScrimClick", this._handleNavigationRailScrimClick);
-        }
-
-        this.off("transitionend", this._handleNavigationRailTransitionend);
 
         this.classList.remove("md-navigation-rail");
-    }
-
-    update(changedProperties) {
-        super.update(changedProperties);
-
-        if (changedProperties.has("expanded") && this.open) {
-            queueMicrotask(() => {
-                if (this.expanded) {
-                    this.width = this.expandedWidth;
-                } else {
-                    this.width = this.collapsedWidth;
-                }
-            });
-        }
     }
 
     updated(_changedProperties) {
         super.updated(_changedProperties);
 
-        if (_changedProperties.has("expanded") && this.open) {
-            if (this.expanded) {
-                this.classList.add(`md-navigation-rail--expanded`);
-                this.classList.remove(`md-navigation-rail--collapsed`);
-                if (this.modal) {
-                    this.scrimElement.show();
-                }
-            } else {
-                this.classList.remove(`md-navigation-rail--expanded`);
-                this.classList.add(`md-navigation-rail--collapsed`);
-                this.scrimElement.close();
-            }
+        if (_changedProperties.has("expanded")) {
+            this.classList.toggle(`md-navigation-rail--expanded`, Boolean(this.expanded));
+            this.classList.toggle(`md-navigation-rail--collapsed`, !Boolean(this.expanded));
         }
 
         if (_changedProperties.has("modal")) {
             this.classList.toggle(`md-navigation-rail--modal`, Boolean(this.modal));
-        }
-    }
-
-    /**@override*/
-    _restoreState() {
-        super._restoreState();
-        this.requestUpdate("expanded", false);
-    }
-
-    /**@override*/
-    _cleanState() {
-        super._cleanState();
-        this.classList.remove(`md-navigation-rail--expanded`);
-    }
-
-    _handleNavigationRailTransitionend(event) {
-        if (this.expanded) {
-            this.emit("onNavigationRailExpanded", { event, element: this });
-        } else {
-            this.emit("onNavigationRailCollapsed", { event, element: this });
-        }
-    }
-
-    _handleNavigationRailScrimClick(event) {
-        this.collapse();
-        this.emit("onNavigationRailScrimClick", { event, element: this });
-    }
-
-    collapse() {
-        if (!this.open) {
-            return;
-        }
-        this.expanded = false;
-        this.emit("onNavigationRailCollapse", { element: this });
-    }
-
-    expand() {
-        if (!this.open) {
-            return;
-        }
-        this.expanded = true;
-        this.emit("onNavigationRailExpand", { element: this });
-    }
-
-    toggleCollapse() {
-        if (this.expanded) {
-            this.collapse();
-        } else {
-            this.expand();
         }
     }
 }
