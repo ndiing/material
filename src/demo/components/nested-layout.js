@@ -17,17 +17,17 @@ class DemoNestedLayout extends MdElement {
     render(){
         return html`
             <md-layout>
-                <md-layout-item ${ref(this.north)} height="64" region="north">north</md-layout-item>
-                <md-layout-item ${ref(this.east)} width="128" region="east">east</md-layout-item>
-                <md-layout-item ${ref(this.south)} height="64" region="south">south</md-layout-item>
-                <md-layout-item ${ref(this.west)} width="128" region="west">west</md-layout-item>
+                <md-layout-item ${ref(this.north)} size="64" region="north">north</md-layout-item>
+                <md-layout-item ${ref(this.east)} size="128" region="east">east</md-layout-item>
+                <md-layout-item ${ref(this.south)} size="64" region="south">south</md-layout-item>
+                <md-layout-item ${ref(this.west)} size="128" region="west">west</md-layout-item>
                 <md-layout-item region="center">
                     
                     <md-layout>
-                        <md-layout-item ${ref(this.north1)} height="64" region="north">north</md-layout-item>
-                        <md-layout-item ${ref(this.east1)} width="128" region="east">east</md-layout-item>
-                        <md-layout-item ${ref(this.south1)} height="64" region="south">south</md-layout-item>
-                        <md-layout-item ${ref(this.west1)} width="128" region="west">west</md-layout-item>
+                        <md-layout-item ${ref(this.north1)} size="64" region="north">north</md-layout-item>
+                        <md-layout-item ${ref(this.east1)} size="128" region="east">east</md-layout-item>
+                        <md-layout-item ${ref(this.south1)} size="64" region="south">south</md-layout-item>
+                        <md-layout-item ${ref(this.west1)} size="128" region="west">west</md-layout-item>
                         <md-layout-item region="center">
                             <md-button label="north" @click="${this.handleClickNorth}"></md-button>
                             <md-button label="east" @click="${this.handleClickEast}"></md-button>

@@ -43,7 +43,6 @@
 }
 
 .md-layout__item--north {
-    background-color: #fff;
     grid-area: north;
     height: var(--md-comp-layout-item-north-size);
     transform: translate3d(0, calc(0px - var(--md-comp-layout-item-north-size)), 0);
@@ -54,7 +53,6 @@
 }
 
 .md-layout__item--south {
-    background-color: #fff;
     grid-area: south;
     height: var(--md-comp-layout-item-south-size);
     transform: translate3d(0, 0, 0);
@@ -66,7 +64,6 @@
 }
 
 .md-layout__item--west {
-    background-color: #fff;
     grid-area: west;
     width: var(--md-comp-layout-item-west-size);
     transform: translate3d(calc(0px - var(--md-comp-layout-item-west-size)), 0, 0);
@@ -77,7 +74,6 @@
 }
 
 .md-layout__item--east {
-    background-color: #fff;
     grid-area: east;
     width: var(--md-comp-layout-item-east-size);
     transform: translate3d(0, 0, 0);
