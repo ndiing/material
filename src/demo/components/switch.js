@@ -12,7 +12,7 @@ class DemoSwitch extends MdElement {
             >
                 <md-grid >
                     <md-grid-column expanded="4">
-                        <h2>Configurations</h2>
+                        
 
                         <md-switch></md-switch>
                         <md-switch checked></md-switch>

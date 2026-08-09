@@ -13,7 +13,7 @@ class DemoCheckbox extends MdElement {
                 <md-grid >
                     <md-grid-column expanded="4">
 
-                        <h2>States</h2>
+                        
 
                         <md-checkbox checked></md-checkbox>
                         <md-checkbox disabled checked></md-checkbox>

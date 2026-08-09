@@ -48,7 +48,7 @@ class DemoMain extends MdElement {
                 >
                     <md-list
                         .items="${this.items}"
-                        .labelField="${'path'}"
+                        .labelField="${'label'}"
                         .activeRow="${true}"
                         .scrollOnArrowUpActiveRow="${true}"
                         .scrollOnArrowDownActiveRow="${true}"
@@ -91,6 +91,7 @@ class DemoMain extends MdElement {
             this.items = items.map((value, index) => ({
                 ...value,
                 routerLink: value.path,
+                label: value.path.split('/')[2].replace(/(^|[\W])(\w)/g,($,$1,$2)=>' '+$2.toUpperCase()),
                 id: index,
                 selected:this.router.url.pathname===value.path
             }));

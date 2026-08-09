@@ -12,7 +12,7 @@ class DemoSlider extends MdElement {
             >
                 <md-grid >
                     <md-grid-column expanded="12">
-                        <h2>Variants</h2>
+                        
 
                         
                         <md-slider name="slider0" min="0" max="100" value="60"></md-slider>
@@ -22,8 +22,8 @@ class DemoSlider extends MdElement {
                         <br>
                         
 
-                        <h2>Configurations</h2>
-                        <h3>Orientation</h3>
+                        
+                        
                         
                                                 
                         <md-slider name="slider3" orientation="horizontal" min="0" max="100" value="60"></md-slider>
@@ -61,7 +61,7 @@ class DemoSlider extends MdElement {
                         <br>
 
 
-                        <h3>Size</h3>
+                        
                         
                         <md-slider name="slider15" size="extra-small"></md-slider>
                         <md-slider name="slider16" orientation="vertical" size="extra-small"></md-slider>

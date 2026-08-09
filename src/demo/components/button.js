@@ -5,7 +5,7 @@ class DemoButton extends MdElement {
     /* prettier-ignore */
     render(){
         return html`
-            <h3>Variants</h3>
+            
 
             <md-button icon="edit" label="Label"></md-button>
             <md-button variant="toggle" icon="edit" label="Unselected"></md-button>
@@ -14,9 +14,9 @@ class DemoButton extends MdElement {
             <br>
             <br>
 
-            <h2>Configurations</h2>
+            
 
-            <h3>Size</h3>
+            
 
             <md-button size="extra-small" color="tonal" label="Extra Small"></md-button>
             <md-button size="small" color="tonal" label="Small"></md-button>
@@ -28,7 +28,7 @@ class DemoButton extends MdElement {
             <br>
             <br>
 
-            <h3>Shape</h3>
+            
 
             <md-button shape="round" color="outlined" label="Round"></md-button>
             <md-button shape="square" color="outlined" label="Square"></md-button>
@@ -36,7 +36,7 @@ class DemoButton extends MdElement {
             <br>
             <br>
 
-            <h3>Color</h3>
+            
 
             <md-button color="elevated" label="Elevated"></md-button>
             <md-button color="filled" label="Filled"></md-button>
@@ -49,7 +49,7 @@ class DemoButton extends MdElement {
             <br>
             <br>
 
-            <h2>Color</h2>
+            
 
             <md-button color="elevated" icon="edit" label="Elevated button"></md-button>
             <md-button variant="toggle" color="elevated" icon="edit" label="Elevated unselected"></md-button>
@@ -86,7 +86,7 @@ class DemoButton extends MdElement {
             <br>
             <br>
 
-            <h3>States</h3>
+            
 
             
             <md-button color="elevated" label="Enabled"></md-button>
@@ -119,9 +119,9 @@ class DemoButton extends MdElement {
             <br>
             <br>
 
-            <h2>Shape morph</h2>
+            
 
-            <h3>When selected</h3>
+            
 
             
             <md-button shape="round" color="outlined" label="Learn more"></md-button>
@@ -136,7 +136,7 @@ class DemoButton extends MdElement {
             <br>
             <br>
 
-            <h2>Measurements</h2>
+            
             
             
             <md-button size="extra-small" color="tonal" label="Common button"></md-button>

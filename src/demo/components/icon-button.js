@@ -6,7 +6,7 @@ class DemoIconButton extends MdElement {
     render(){
         return html`
 
-            <h2>Variants</h2>
+            
             <md-icon-button  icon="edit"></md-icon-button>
             <md-icon-button variant="toggle" icon='["menu","menu_open"]'></md-icon-button>
             <md-icon-button variant="toggle" selected .icon="${["menu","menu_open"]}"></md-icon-button>
@@ -14,9 +14,9 @@ class DemoIconButton extends MdElement {
             <br>
             <br>
 
-            <h2>Configurations</h2>
+            
 
-            <h3>Size</h3>
+            
 
             <md-icon-button color="tonal" size="extra-small"  icon="edit"></md-icon-button>
             <md-icon-button color="tonal" size="small"  icon="edit"></md-icon-button>
@@ -27,7 +27,7 @@ class DemoIconButton extends MdElement {
             <br>
             <br>
 
-            <h3>Shape</h3>
+            
 
             <md-icon-button color="outlined" shape="round" icon="edit"></md-icon-button>
             <md-icon-button color="outlined" shape="square" icon="edit"></md-icon-button>
@@ -35,7 +35,7 @@ class DemoIconButton extends MdElement {
             <br>
             <br>
 
-            <h3>Color</h3>
+            
 
             <md-icon-button color="filled" icon="edit"></md-icon-button>
             <md-icon-button color="tonal" icon="edit"></md-icon-button>
@@ -45,7 +45,7 @@ class DemoIconButton extends MdElement {
             <br>
             <br>
 
-            <h3>Width</h3>
+            
 
             <md-icon-button width="narrow" color="filled" icon="edit"></md-icon-button>
             <md-icon-button width="default" color="filled" icon="edit"></md-icon-button>
@@ -54,10 +54,10 @@ class DemoIconButton extends MdElement {
             <br>
             <br>
 
-            <h2>States</h2>
+            
 
 
-            <h3>Default</h3>
+            
             <md-icon-button color="filled" icon="edit"></md-icon-button>
             <md-icon-button disabled color="filled" icon="edit"></md-icon-button>
 
@@ -82,7 +82,7 @@ class DemoIconButton extends MdElement {
             <br>
             <br>
 
-            <h3>Toggle</h3>
+            
             <md-icon-button color="filled" icon="edit"></md-icon-button>
             <md-icon-button variant="toggle" selected color="filled" icon="edit"></md-icon-button>
 
@@ -107,8 +107,8 @@ class DemoIconButton extends MdElement {
             <br>
             <br>
 
-            <h2>Shape morph</h2>
-            <h3>When selected</h3>
+            
+            
 
             <md-icon-button color="tonal" shape="round" icon="edit"></md-icon-button>
             <md-icon-button variant="toggle" selected color="tonal" shape="round" icon="edit"></md-icon-button>
@@ -122,7 +122,7 @@ class DemoIconButton extends MdElement {
             <br>
             <br>
 
-            <h2>Measurements</h2>
+            
 
             <md-icon-button color="outlined" size="extra-small"  icon="edit"></md-icon-button>
             <md-icon-button color="filled" size="extra-small"  icon="edit"></md-icon-button>
@@ -164,7 +164,7 @@ class DemoIconButton extends MdElement {
             <br>
             <br>
 
-            <h3>Button corner radius</h3>
+            
 
             
             <md-icon-button color="outlined" shape="round" size="extra-small"  icon="edit"></md-icon-button>

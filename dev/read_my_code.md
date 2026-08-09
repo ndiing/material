@@ -233,16 +233,16 @@ class MdLayoutItem extends MdElement {
     }
 
     _restoreState() {
-        this.requestUpdate('open', false);
+        this.requestUpdate("open", false);
     }
 
     _cleanState() {
-        this.classList.toggle(`md-layout__item--open`, false);
+        this.classList.remove('md-layout__item--open');
 
         const regionTranslate = this.regionTranslate[this.region];
         if (regionTranslate) {
             this.parentElement.style.removeProperty(regionTranslate.property);
-            this.parentElement.classList.toggle(`md-layout--open`, false);
+            this.parentElement.classList.remove('md-layout--open');
         }
     }
 
@@ -261,35 +261,35 @@ class MdLayoutItem extends MdElement {
 
         if (_changedProperties.has("width") || _changedProperties.has("height")) {
             const regionSize = this.regionSize[this.region];
-            this.parentElement.style.setProperty(regionSize.property, regionSize.value);
+            if (regionSize) {
+                this.parentElement.style.setProperty(regionSize.property, regionSize.value);
+            }
         }
 
         if (_changedProperties.has("open")) {
-            this.classList.toggle(`md-layout__item--open`, Boolean(this.open));
-
             const regionTranslate = this.regionTranslate[this.region];
-            if(regionTranslate){
-                if (this.open) {
+            if (this.open) {
+                if (regionTranslate) {
                     this.parentElement.style.setProperty(regionTranslate.property, regionTranslate.value);
-                    this.parentElement.classList.toggle(`md-layout--open`, true);
-                } else {
+                    this.parentElement.classList.add('md-layout--open');
+                }
+                this.classList.add('md-layout__item--open');
+                if (this.modal) {
+                    this.scrimElement.show();
+                }
+            } else {
+                if (regionTranslate) {
                     this.parentElement.style.removeProperty(regionTranslate.property);
                 }
-            }
-
-            if (this.modal) {
-                if (this.open) {
-                    this.scrimElement.show();
-                } else {
-                    this.scrimElement.close();
-                }
+                this.classList.remove('md-layout__item--open');
+                this.scrimElement.close();
             }
         }
     }
 
     _handleLayoutItemTransitionend(event) {
         if (this.open) {
-            this.parentElement.classList.toggle(`md-layout--open`, false);
+            this.parentElement.classList.remove('md-layout--open');
             this.emit("onLayoutItemShowed", { event, element: this });
         } else {
             this.emit("onLayoutItemClosed", { event, element: this });

@@ -12,7 +12,7 @@ class DemoRadioButton extends MdElement {
             >
                 <md-grid >
                     <md-grid-column expanded="4">
-                        <h2>States</h2>
+                        
                         <md-radio-button name="radio1" checked></md-radio-button>
                         <md-radio-button name="radio1"></md-radio-button>
                     </md-grid-column>
