@@ -1,6 +1,6 @@
 import { html } from "lit";
 import { MdElement } from "../../base/element.js";
-import { renderList } from "../../utils/render-component.js";
+import { renderList } from "../../core/template.js";
 import { MdList } from "../list/list.js";
 import { MdLayoutItem } from "../layout/layout-item.js";
 

@@ -2,7 +2,7 @@ import { html, nothing } from "lit";
 import { MdElement } from "../../base/element.js";
 import { styleMap } from "lit/directives/style-map.js";
 import { ifDefined } from "lit/directives/if-defined.js";
-import { renderButton } from "../../utils/render-component.js";
+import { renderButton } from "../../core/template.js";
 
 class MdDialogFooter extends MdElement {
     static properties = {

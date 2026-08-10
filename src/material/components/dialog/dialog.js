@@ -66,13 +66,12 @@ class MdDialog extends MdElement {
         }
 
         if (_changedProperties.has("open")) {
+            this.classList.toggle("md-dialog--open", Boolean(this.open));
             if (this.open) {
-                this.classList.add("md-dialog--open");
                 if (this.variant === "basic") {
                     this.scrimElement.show();
                 }
             } else {
-                this.classList.remove("md-dialog--open");
                 this.classList.add("md-dialog--close");
                 this.scrimElement.close();
             }
@@ -84,6 +83,9 @@ class MdDialog extends MdElement {
     }
 
     _handleDialogAnimationend(event) {
+        if (event.target !== event.currentTarget) {
+            return;
+        }
         if (!this.open) {
             this.classList.remove("md-dialog--close");
         }

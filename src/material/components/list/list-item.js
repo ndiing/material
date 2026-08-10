@@ -5,7 +5,7 @@ import { choose } from "lit/directives/choose.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { styleMap } from "lit/directives/style-map.js";
 import { createRef, ref } from "lit/directives/ref.js";
-import { renderBadge, renderCheckbox, renderIcon, renderIconButton, renderImage, renderRadioButton, renderSwitch } from "../../utils/render-component.js";
+import { renderBadge, renderCheckbox, renderIcon, renderIconButton, renderImage, renderRadioButton, renderSwitch } from "../../core/template.js";
 
 class MdListItem extends MdElement {
     static properties = {

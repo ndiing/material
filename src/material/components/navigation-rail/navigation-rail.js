@@ -1,6 +1,6 @@
 import { html, nothing } from "lit";
 import { MdElement } from "../../base/element.js";
-import { renderFab, renderIconButton, renderList } from "../../utils/render-component.js";
+import { renderFab, renderIconButton, renderList } from "../../core/template.js";
 import { MdList } from "../list/list.js";
 import { MdLayoutItem } from "../layout/layout-item.js";
 

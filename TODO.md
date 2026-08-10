@@ -36,7 +36,7 @@
 [ ] Bottom sheets
 [ ] Side sheets
 [x] Sliders
-[ ] Snackbar
+[x] Snackbar
 [x] Switch
 [ ] Tabs
 [x] Text fields

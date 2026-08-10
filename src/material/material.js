@@ -8,8 +8,8 @@ import "./core/localization.js";
 import "./core/store.js";
 import "./core/query-builder.js";
 import "./core/positioner.js";
-
-import "./utils/render-component.js";
+import "./core/task-queue.js";
+import "./core/template.js";
 
 import "./base/element.js";
 import "./base/list.js";
@@ -32,6 +32,8 @@ import "./components/tooltip/tooltip.js";
 import "./components/icon-button/icon-button.js";
 import "./components/button/button.js";
 import "./components/fab/fab.js";
+
+import "./components/snackbar/snackbar.js";
 
 import "./components/card/card.js";
 import "./components/card/card-header.js";
@@ -64,3 +66,5 @@ import "./components/push-menu/push-menu.js";
 import "./components/navigation-bar/navigation-bar.js";
 import "./components/navigation-drawer/navigation-drawer.js";
 import "./components/navigation-rail/navigation-rail.js";
+
+import "./service/snackbar.js";

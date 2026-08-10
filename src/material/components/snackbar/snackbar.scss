@@ -1,0 +1,85 @@
+@use "../../shared/mixins.scss";
+
+@keyframes snackbar-open {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes snackbar-close {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+}
+
+.md-snackbar {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 344px;
+    padding: 4px 0;
+    gap: 8px;
+    border-radius: var(--md-sys-shape-corner-extra-small);
+    box-shadow: var(--md-sys-elevation-level2);
+    background-color: var(--md-sys-color-inverse-surface);
+    color: var(--md-sys-color-inverse-on-surface);
+    position: absolute;
+    z-index: 30;
+    left: 8px;
+    bottom: 8px;
+    opacity: 0;
+    pointer-events: none;
+}
+.md-snackbar--open {
+    opacity: 1;
+    pointer-events: all;
+    animation-name: snackbar-open;
+    animation-duration: var(--md-sys-motion-duration-short3);
+    animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
+}
+.md-snackbar--close {
+    //will-change: border-radius, background-color, color, border-color;
+    animation-name: snackbar-close;
+    animation-duration: var(--md-sys-motion-duration-short2);
+    animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
+}
+.md-snackbar__supporting {
+    padding: 10px 0;
+    margin: 0 16px;
+    white-space: pre;
+    @include mixins.typescale-body-medium();
+}
+.md-snackbar__actions {
+    display: inline-flex;
+    margin-left: auto;
+}
+.md-snackbar__button {
+    color: var(--md-sys-color-inverse-primary);
+    padding: 0 8px;
+    margin: 0 8px;
+    + .md-snackbar__icon-button {
+        margin-left: -4px;
+    }
+}
+.md-snackbar__icon-button {
+    color: var(--md-sys-color-inverse-on-surface);
+    margin: 0 4px;
+}
+
+.md-snackbar--with-action {
+    .md-snackbar__supporting {
+        width: 200px;
+        margin-right: 0;
+    }
+}

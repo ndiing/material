@@ -76,6 +76,7 @@ export const routes = [
             { path: "/components/slider", load: () => import("./components/slider.js").then((module) => module.default), children: [] },
 
             { path: "/components/tooltip", load: () => import("./components/tooltip.js").then((module) => module.default), children: [] },
+            { path: "/components/snackbar", load: () => import("./components/snackbar.js").then((module) => module.default), children: [] },
 
         ],
     },

@@ -3,7 +3,7 @@ import { MdElement } from "../../base/element.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { styleMap } from "lit/directives/style-map.js";
 import { choose } from "lit/directives/choose.js";
-import { renderButton, renderIcon, renderIconButton, renderImage } from "../../utils/render-component.js";
+import { renderButton, renderIcon, renderIconButton, renderImage } from "../../core/template.js";
 
 class MdDialogHeader extends MdElement {
     static properties = {

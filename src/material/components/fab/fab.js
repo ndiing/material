@@ -1,6 +1,6 @@
 import { html, nothing } from "lit";
 import { MdElement } from "../../base/element.js";
-import { renderIcon } from "../../utils/render-component.js";
+import { renderIcon } from "../../core/template.js";
 import { RippleController } from "../../controller/ripple.js";
 
 class MdFab extends MdElement {

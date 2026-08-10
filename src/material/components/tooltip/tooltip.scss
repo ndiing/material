@@ -33,6 +33,8 @@
     z-index: 30;
     opacity: 0;
     pointer-events: none;
+}
+.md-tooltip--close {
     //will-change: transform, opacity;
     animation-name: tooltip-close;
     animation-duration: var(--md-sys-motion-duration-short1);

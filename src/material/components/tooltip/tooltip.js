@@ -1,6 +1,6 @@
 import { html, nothing } from "lit";
 import { MdElement } from "../../base/element.js";
-import { renderButton } from "../../utils/render-component.js";
+import { renderButton } from "../../core/template.js";
 import { setPosition } from "../../core/positioner.js";
 
 class MdTooltip extends MdElement {
@@ -27,6 +27,7 @@ class MdTooltip extends MdElement {
 
         this._handleTooltipTriggerPointerenter = this._handleTooltipTriggerPointerenter.bind(this);
         this._handleTooltipTriggerPointerleave = this._handleTooltipTriggerPointerleave.bind(this);
+        this._handleTooltipAnimationend = this._handleTooltipAnimationend.bind(this);
     }
 
     render() {
@@ -53,12 +54,14 @@ class MdTooltip extends MdElement {
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-tooltip");
+        this.addEventListener("animationend", this._handleTooltipAnimationend);
         this._attachTrigger();
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
         this._detachTrigger();
+        this.removeEventListener("animationend", this._handleTooltipAnimationend);
         this.classList.remove("md-tooltip");
     }
 
@@ -73,6 +76,9 @@ class MdTooltip extends MdElement {
 
         if (_changedProperties.has("open")) {
             this.classList.toggle(`md-tooltip--open`, Boolean(this.open));
+            if (!this.open) {
+                this.classList.add("md-tooltip--close");
+            }
         }
 
         if (_changedProperties.has("for")) {
@@ -106,6 +112,15 @@ class MdTooltip extends MdElement {
 
     _handleTooltipTriggerPointerleave() {
         this.close();
+    }
+
+    _handleTooltipAnimationend(event) {
+        if (event.target !== event.currentTarget) {
+            return;
+        }
+        if (!this.open) {
+            this.classList.remove("md-tooltip--close");
+        }
     }
 
     show(trigger) {
