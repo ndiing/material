@@ -18,11 +18,11 @@ import "./base/datetime-picker.js";
 import "./controller/virtual-scroll.js";
 import "./controller/ripple.js";
 
-import "./components/grid/grid.js";
 import "./components/grid/grid-column.js";
+import "./components/grid/grid.js";
 import "./components/scrim/scrim.js";
-import "./components/layout/layout.js";
 import "./components/layout/layout-item.js";
+import "./components/layout/layout.js";
 
 import "./components/icon/icon.js";
 import "./components/image/image.js";
