@@ -1,0 +1,107 @@
+@use "../../shared/mixins.scss";
+
+@keyframes tooltip-open {
+    from {
+        opacity: 0;
+        transform: scale3d(0.7, 0.7, 0.7);
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes tooltip-close {
+    from {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+        transform: scale3d(0.7, 0.7, 0.7);
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.md-tooltip {
+    display: inline-flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 30;
+    opacity: 0;
+    pointer-events: none;
+    //will-change: transform, opacity;
+    animation-name: tooltip-close;
+    animation-duration: var(--md-sys-motion-duration-short1);
+    animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
+    animation-fill-mode: forwards;
+}
+.md-tooltip--open {
+    opacity: 1;
+    animation-name: tooltip-open;
+    animation-duration: var(--md-sys-motion-duration-short2);
+    animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
+    animation-fill-mode: forwards;
+
+    .md-tooltip__button {
+        pointer-events: all;
+    }
+}
+
+// .md-tooltip__subhead {}
+
+.md-tooltip__supporting {
+    white-space: pre;
+}
+
+.md-tooltip__buttons {
+    display: flex;
+    align-items: center;
+    gap: 0 32px;
+}
+.md-tooltip__button {
+    padding: 0 8px;
+    margin: 0 -8px;
+}
+
+.md-tooltip--plain {
+    border-radius: var(--md-sys-shape-corner-extra-small);
+    background-color: var(--md-sys-color-inverse-surface);
+    color: var(--md-sys-color-inverse-on-surface);
+
+    .md-tooltip__supporting {
+        padding: 4px 8px;
+        @include mixins.typescale-body-small();
+    }
+}
+.md-tooltip--rich {
+    border-radius: var(--md-sys-shape-corner-medium);
+    background-color: var(--md-sys-color-surface-container);
+    color: var(--md-sys-color-on-surface-variant);
+    box-shadow: var(--md-sys-elevation-level2);
+
+    .md-tooltip__subhead {
+        padding: 12px 16px;
+        @include mixins.typescale-title-small();
+
+        + .md-tooltip__supporting {
+            margin-top: -20px;
+        }
+    }
+
+    .md-tooltip__supporting {
+        padding: 12px 16px;
+        @include mixins.typescale-body-medium();
+
+        + .md-tooltip__buttons {
+            margin-top: -8px;
+        }
+    }
+
+    .md-tooltip__buttons {
+        padding: 8px 16px;
+    }
+}

@@ -25,7 +25,7 @@ class MdLayoutItem extends MdElement {
     get currentValue() {
         const size = this.currentSize;
         const dockedSize = this.dockedOnCollapsed ? this.collapsedSize : 0;
-        return this.modal ? dockedSize : size
+        return this.modal ? dockedSize : size;
     }
 
     constructor() {

@@ -97,6 +97,11 @@ function _getRect(element) {
  * @param {number|number[]} options.offset - Offset in pixels
  */
 function setPosition(trigger, container, options = {}) {
+    options = {
+        placement: Object.keys(STRATEGIES),
+        offset: 0,
+        ...options,
+    };
     const boundary = _getBoundary(container);
 
     const triggerRect = _getRect(trigger);

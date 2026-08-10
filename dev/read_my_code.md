@@ -1,372 +1,347 @@
-## src\material\components\layout
+## src\demo\components
 
-### layout-item
-src\material\components\layout\layout-item.js
+### tooltip
+src\demo\components\tooltip.js
 
 ```js
 import { html } from "lit";
-import { MdElement } from "../../base/element.js";
+import { MdElement } from "../../material/base/element.js";
+import { createRef, ref } from "lit/directives/ref.js";
 
-class MdLayoutItem extends MdElement {
+class DemoTooltip extends MdElement {
+    tooltip0 = createRef();
+    tooltip1 = createRef();
+    tooltip2 = createRef();
+    tooltip3 = createRef();
+    tooltip4 = createRef();
+    tooltip5 = createRef();
+    tooltip6 = createRef();
+
+    /* prettier-ignore */
+    render(){
+        return html`
+            <md-grid>
+                <md-grid-column>
+                    <md-button 
+                        @pointerenter="${this.handleButton0Pointerenter}" 
+                        @pointerleave="${this.handleButton0Pointerleave}" 
+                        label="Tooltip"></md-button>
+                    <md-tooltip ${ref(this.tooltip0)} variant="plain" supporting="Save to favorites"></md-tooltip>
+                </md-grid-column>
+                <md-grid-column>
+                    <md-button 
+                        id="my-btn"
+                        @pointerenter="${this.handleButton1Pointerenter}" 
+                        @pointerleave="${this.handleButton1Pointerleave}" 
+                        label="Tooltip"></md-button>
+                    <md-tooltip for="my-btn" variant="plain" supporting="Grant value is calculated using the\nclosing stock price from the day\nbefore the grant date. Amounts do\nnot reflect tax witholdings."></md-tooltip>
+                </md-grid-column>
+                <md-grid-column>
+                </md-grid-column>
+
+                <md-grid-column>
+                    <md-button @click="${this.handleButton2Click}" label="Tooltip"></md-button>
+                    <md-tooltip ${ref(this.tooltip2)} 
+                        variant="rich"
+                        subhead="Rich tooltip"
+                        supporting="Rich tooltips bring attention to a particular\nelement of feature that warrants a person's\nfocus."
+                        .buttons="${[
+                            {label:'Action'},
+                            {label:'Action'},
+                        ]}"
+                    ></md-tooltip>
+                </md-grid-column>
+                <md-grid-column>
+                    <md-button @click="${this.handleButton3Click}" label="Tooltip"></md-button>
+                    <md-tooltip ${ref(this.tooltip3)} 
+                        variant="rich"
+                        subhead="Rich tooltip"
+                        supporting="Rich tooltips bring attention to a particular\nelement of feature that warrants a person's\nfocus."
+                        .buttons="${[
+                            {label:'Action'},
+                        ]}"
+                    ></md-tooltip>
+                </md-grid-column>
+                <md-grid-column>
+                    <md-button @click="${this.handleButton4Click}" label="Tooltip"></md-button>
+                    <md-tooltip ${ref(this.tooltip4)} 
+                        variant="rich"
+                        subhead="Rich tooltip"
+                        supporting="Rich tooltips bring attention to a particular\nelement of feature that warrants a person's\nfocus."
+                    ></md-tooltip>
+                </md-grid-column>
+                <md-grid-column>
+                    <md-button @click="${this.handleButton5Click}" label="Tooltip"></md-button>
+                    <md-tooltip ${ref(this.tooltip5)} 
+                        variant="rich"
+                        supporting="Rich tooltips bring attention to a particular\nelement of feature that warrants a person's\nfocus."
+                        .buttons="${[
+                            {label:'Action'},
+                        ]}"
+                    ></md-tooltip>
+                </md-grid-column>
+                <md-grid-column>
+                    <md-button @click="${this.handleButton6Click}" label="Tooltip"></md-button>
+                    <md-tooltip ${ref(this.tooltip6)} 
+                        variant="rich"
+                        supporting="Rich tooltips bring attention to a particular\nelement of feature that warrants a person's\nfocus."
+                        .buttons="${[
+                            {label:'Action'},
+                            {label:'Action'},
+                        ]}"
+                    ></md-tooltip>
+                </md-grid-column>
+
+            </md-grid>
+        `
+    }
+
+    handleButton0Pointerenter() {
+        this.tooltip0.value.show(event.currentTarget);
+    }
+    handleButton0Pointerleave() {
+        this.tooltip0.value.close(event.currentTarget);
+    }
+
+    handleButton2Click(event) {
+        this.tooltip2.value.toggle(event.currentTarget);
+    }
+    handleButton3Click(event) {
+        this.tooltip3.value.toggle(event.currentTarget);
+    }
+    handleButton4Click(event) {
+        this.tooltip4.value.toggle(event.currentTarget);
+    }
+    handleButton5Click(event) {
+        this.tooltip5.value.toggle(event.currentTarget);
+    }
+    handleButton6Click(event) {
+        this.tooltip6.value.toggle(event.currentTarget);
+    }
+}
+customElements.define("demo-tooltip", DemoTooltip);
+export default document.createElement("demo-tooltip");
+
+```
+## src\material\components\tooltip
+
+### tooltip
+src\material\components\tooltip\tooltip.js
+
+```js
+import { html, nothing } from "lit";
+import { MdElement } from "../../base/element.js";
+import { renderButton } from "../../utils/render-component.js";
+import { setPosition } from "../../core/positioner.js";
+
+class MdTooltip extends MdElement {
     static properties = {
-        region: { type: String },
-        open: { type: Boolean, reflect: true },
-        size: { type: Number },
-        modal: { type: Boolean },
-        collapsedSize: { type: Number },
-        expanded: { type: Boolean },
-        dockedOnCollapsed: { type: Boolean },
-        closeOnScrimClick: { type: Boolean },
-        collapseOnScrimClick: { type: Boolean },
-        showScrimOnOpen: { type: Boolean },
-        showScrimOnExpanded: { type: Boolean },
+        subhead: { type: String },
+        supporting: { type: String },
+        buttons: { type: Array },
+        variant: { type: String },
+        open: { type: Boolean },
+        placement: { type: Array },
+        offset: { type: Number },
+        for: { type: String },
     };
 
-    regions = ["north", "east", "south", "west", "center"];
-
-    get currentSize() {
-        return this.expanded ? this.size : this.collapsedSize;
-    }
-
-    get currentValue() {
-        const size = this.currentSize;
-        const dockedSize = this.dockedOnCollapsed ? this.collapsedSize : 0;
-        return this.modal ? dockedSize : size
-    }
+    variants = ["plain", "rich"];
 
     constructor() {
         super();
 
-        this.region = "center";
-        this.size = 0;
-        this.collapsedSize = 0;
-        this.expanded = true;
-        this.dockedOnCollapsed = false;
-        this.closeOnScrimClick = true;
-        this.showScrimOnOpen = true;
-        this.showScrimOnExpanded = false;
-        this.collapseOnScrimClick = false;
+        this.variant = "plain";
+        this.buttons = [];
+        this.placement = ["above", "north-east", "after", "south-east", "below", "south-west", "before", "north-west"];
+        this.offset = 4;
 
-        this._handleLayoutItemTransitionend = this._handleLayoutItemTransitionend.bind(this);
-        this._handleLayoutItemScrimClick = this._handleLayoutItemScrimClick.bind(this);
+        this._handleTooltipTriggerPointerenter = this._handleTooltipTriggerPointerenter.bind(this);
+        this._handleTooltipTriggerPointerleave = this._handleTooltipTriggerPointerleave.bind(this);
+    }
+
+    render() {
+        return html`
+            ${this.subhead ? html`<div class="md-tooltip__subhead">${this.subhead}</div>` : nothing} ${this.supporting ? html`<div class="md-tooltip__supporting">${this.supporting}</div>` : nothing}
+            ${
+                this.buttons?.length
+                    ? html`
+                          <div class="md-tooltip__buttons">
+                              ${this.buttons.map((button) =>
+                              renderButton({
+                                  classMap: { "md-tooltip__button": true },
+                                  color: "text",
+                                  ...button,
+                              }),
+                          )}
+                          </div>
+                      `
+                    : nothing
+            }
+        `;
     }
 
     connectedCallback() {
         super.connectedCallback();
-
-        this.on("transitionend", this._handleLayoutItemTransitionend);
-
-        if (!this.scrimElement) {
-            this.scrimElement = document.createElement("md-scrim");
-            this.parentElement.insertBefore(this.scrimElement, this.nextElementSibling);
-            this.scrimElement.on("onScrimClick", this._handleLayoutItemScrimClick);
-        }
-
-        this.classList.add("md-layout__item");
-
-        this.requestUpdate("open", false);
-        this.requestUpdate("expanded", false);
+        this.classList.add("md-tooltip");
+        this._attachTrigger();
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
-
-        this.parentElement.style.removeProperty(`--md-comp-layout-item-${this.region}-value`);
-        this.parentElement.classList.remove("md-layout--open");
-        this.parentElement.classList.remove("md-layout--expanded");
-
-        if (this.scrimElement) {
-            this.scrimElement.off("onScrimClick", this._handleLayoutItemScrimClick);
-            this.scrimElement.remove();
-            this.scrimElement = null;
-        }
-
-        this.off("transitionend", this._handleLayoutItemTransitionend);
-
-        this.classList.remove("md-layout__item");
+        this._detachTrigger();
+        this.classList.remove("md-tooltip");
     }
 
     updated(_changedProperties) {
         super.updated(_changedProperties);
 
-        if (_changedProperties.has("region")) {
-            this.regions.forEach((region) => {
-                this.classList.toggle(`md-layout__item--${region}`, this.region === region);
+        if (_changedProperties.has("variant")) {
+            this.variants.forEach((variant) => {
+                this.classList.toggle(`md-tooltip--${variant}`, this.variant === variant);
             });
         }
 
         if (_changedProperties.has("open")) {
-            this._updateValue();
-            this.classList.toggle("md-layout__item--open", Boolean(this.open));
-            if (this.showScrimOnOpen && this.modal) {
-                if (this.open) {
-                    this.scrimElement.show();
-                } else {
-                    this.scrimElement.close();
-                }
-            }
+            this.classList.toggle(`md-tooltip--open`, Boolean(this.open));
         }
 
-        if (_changedProperties.has("size")) {
-            this._updateSize();
+        if (_changedProperties.has("for")) {
+            this._detachTrigger();
+            this._attachTrigger();
         }
+    }
 
-        if (_changedProperties.has("dockedOnCollapsed") || _changedProperties.has("collapsedSize")) {
-            if (this.dockedOnCollapsed) {
-                this.parentElement.style.setProperty(`--md-comp-layout-item-${this.region}-collapsed-size`, `${this.collapsedSize}px`);
-            }
-        }
-
-        if (_changedProperties.has("modal")) {
-            this.classList.toggle("md-layout__item--modal", Boolean(this.modal));
-        }
-
-        if (_changedProperties.has("expanded")) {
-            this._updateSize();
-            this._updateValue();
-            this.classList.toggle("md-layout__item--expanded", Boolean(this.expanded));
-            this.parentElement.classList.add("md-layout--expanded");
-            if (this.showScrimOnExpanded && this.modal) {
-                if (this.expanded) {
-                    this.scrimElement.show();
-                } else {
-                    this.scrimElement.close();
-                }
+    _attachTrigger() {
+        if (this.for) {
+            const target = document.getElementById(this.for);
+            if (target) {
+                this.trigger = target;
+                this.trigger.addEventListener("pointerenter", this._handleTooltipTriggerPointerenter);
+                this.trigger.addEventListener("pointerleave", this._handleTooltipTriggerPointerleave);
             }
         }
     }
 
-    _handleLayoutItemScrimClick(event) {
-        if (this.closeOnScrimClick) {
-            this.close();
-        }
-        if (this.collapseOnScrimClick) {
-            this.collapse();
-        }
-    }
-
-    _updateSize() {
-        this.parentElement.style.setProperty(`--md-comp-layout-item-${this.region}-size`, `${this.currentSize}px`);
-    }
-
-    _updateValue() {
-        if (this.open) {
-            this.parentElement.classList.add("md-layout--open");
-            this.parentElement.style.setProperty(`--md-comp-layout-item-${this.region}-value`, `${this.currentValue}px`);
-        } else {
-            this.parentElement.style.removeProperty(`--md-comp-layout-item-${this.region}-value`);
+    _detachTrigger() {
+        if (this.trigger) {
+            this.trigger.removeEventListener("pointerenter", this._handleTooltipTriggerPointerenter);
+            this.trigger.removeEventListener("pointerleave", this._handleTooltipTriggerPointerleave);
+            this.trigger = null;
         }
     }
 
-    _handleLayoutItemTransitionend(event) {
-        if (event.target !== event.currentTarget) {
-            return;
-        }
-
-        if (this.open) {
-            this.parentElement.classList.remove("md-layout--open");
-            this.emit("onLayoutItemShowed", { event, element: this });
-        } else {
-            this.emit("onLayoutItemClosed", { event, element: this });
-        }
-
-        this.parentElement.classList.remove("md-layout--expanded");
-        if (this.expanded) {
-            this.emit("onLayoutItemExpanded", { event, element: this });
-        } else {
-            this.emit("onLayoutItemCollapsed", { event, element: this });
-        }
+    _handleTooltipTriggerPointerenter(event) {
+        this.show(event.currentTarget || this.trigger);
     }
 
-    show() {
+    _handleTooltipTriggerPointerleave() {
+        this.close();
+    }
+
+    show(trigger) {
+        const target = trigger || this.trigger;
+        if (!target) return;
+
+        setPosition(target, this, {
+            placement: this.placement,
+            offset: this.offset,
+        });
         this.open = true;
-        this.emit("onLayoutItemShow", { element: this });
     }
+
     close() {
         this.open = false;
-        this.emit("onLayoutItemClose", { element: this });
     }
-    toggle() {
+
+    toggle(trigger) {
         if (this.open) {
             this.close();
         } else {
-            this.show();
-        }
-    }
-
-    expand() {
-        if (this.collapsedSize === 0 || !this.open) {
-            return;
-        }
-        this.expanded = true;
-        this.emit("onLayoutItemExpand", { element: this });
-    }
-    collapse() {
-        if (this.collapsedSize === 0 || !this.open) {
-            return;
-        }
-        this.expanded = false;
-        this.emit("onLayoutItemCollapse", { element: this });
-    }
-    toggleCollapse() {
-        if (this.expanded) {
-            this.collapse();
-        } else {
-            this.expand();
+            this.show(trigger);
         }
     }
 }
 
-customElements.define("md-layout-item", MdLayoutItem);
+customElements.define("md-tooltip", MdTooltip);
 
-export { MdLayoutItem };
-
-```
-### layout
-src\material\components\layout\layout.js
-
-```js
-import { html } from "lit";
-import { MdElement } from "../../base/element.js";
-
-class MdLayout extends MdElement {
-    connectedCallback() {
-        super.connectedCallback();
-
-        this.classList.add("md-layout");
-    }
-
-    disconnectedCallback() {
-        super.disconnectedCallback();
-
-        this.classList.remove("md-layout");
-    }
-}
-
-customElements.define("md-layout", MdLayout);
-
-export { MdLayout };
+export { MdTooltip };
 
 ```
-### layout
-src\material\components\layout\layout.scss
+### tooltip
+src\material\components\tooltip\tooltip.scss
 
 ```scss
-.md-layout {
-    --md-comp-layout-item-north-size: 64px;
-    --md-comp-layout-item-south-size: 64px;
-    --md-comp-layout-item-west-size: 256px;
-    --md-comp-layout-item-east-size: 256px;
+@use "../../shared/mixins.scss";
 
-    --md-comp-layout-item-north-collapsed-size: 0px;
-    --md-comp-layout-item-south-collapsed-size: 0px;
-    --md-comp-layout-item-west-collapsed-size: 0px;
-    --md-comp-layout-item-east-collapsed-size: 0px;
-
-    --md-comp-layout-item-north-value: 0px;
-    --md-comp-layout-item-south-value: 0px;
-    --md-comp-layout-item-west-value: 0px;
-    --md-comp-layout-item-east-value: 0px;
-
-    display: grid;
-    grid-template-rows: var(--md-comp-layout-item-north-value) 1fr var(--md-comp-layout-item-south-value);
-    grid-template-columns: var(--md-comp-layout-item-west-value) 1fr var(--md-comp-layout-item-east-value);
-    grid-template-areas:
-        "north north north"
-        "west center east"
-        "south south south";
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    position: relative;
-    //will-change: grid-template-columns, grid-template-rows;
-    transition-property: grid-template-columns, grid-template-rows;
-    transition-duration: var(--md-sys-motion-duration-short2);
-    transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
+.md-tooltip {
+    display: inline-flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 30;
+    opacity: 0;
+    pointer-events: none;
 }
-
-.md-layout__item {
-    display: block;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    //will-change: transform, width, height;
-    transition-property: transform, width, height;
-    transition-duration: var(--md-sys-motion-duration-short2);
-    transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
-}
-
-.md-layout__item--north {
-    grid-area: north;
-    height: var(--md-comp-layout-item-north-size);
-    transform: translate3d(0, calc(0px - var(--md-comp-layout-item-north-size)), 0);
-    // &.md-layout__item--modal{
-    //     &.md-layout__item--open {
-    //     }
-    // }
-}
-
-.md-layout__item--south {
-    grid-area: south;
-    height: var(--md-comp-layout-item-south-size);
-    transform: translate3d(0, 0, 0);
-    &.md-layout__item--modal {
-        &.md-layout__item--open {
-            transform: translate3d(0, calc(0px - var(--md-comp-layout-item-south-size) + var(--md-comp-layout-item-south-collapsed-size)), 0);
-        }
+.md-tooltip--open {
+    opacity: 1;
+    .md-tooltip__button {
+        pointer-events: all;
     }
 }
 
-.md-layout__item--west {
-    grid-area: west;
-    width: var(--md-comp-layout-item-west-size);
-    transform: translate3d(calc(0px - var(--md-comp-layout-item-west-size)), 0, 0);
-    // &.md-layout__item--modal{
-    //     &.md-layout__item--open {
-    //     }
-    // }
+// .md-tooltip__subhead {}
+
+.md-tooltip__supporting {
+    white-space: pre;
 }
 
-.md-layout__item--east {
-    grid-area: east;
-    width: var(--md-comp-layout-item-east-size);
-    transform: translate3d(0, 0, 0);
-    &.md-layout__item--modal {
-        &.md-layout__item--open {
-            transform: translate3d(calc(0px - var(--md-comp-layout-item-east-size) + var(--md-comp-layout-item-east-collapsed-size)), 0, 0);
-        }
+.md-tooltip__buttons {
+    display: flex;
+    align-items: center;
+    gap: 0 32px;
+}
+.md-tooltip__button {
+    padding: 0 8px;
+    margin: 0 -8px;
+}
+
+.md-tooltip--plain {
+    border-radius: var(--md-sys-shape-corner-extra-small);
+    background-color: var(--md-sys-color-inverse-surface);
+    color: var(--md-sys-color-inverse-on-surface);
+
+    .md-tooltip__supporting {
+        padding: 4px 8px;
+        @include mixins.typescale-body-small();
     }
 }
-
-.md-layout__item--center {
-    grid-area: center;
-}
-
-.md-layout__item--modal {
-    z-index: 20;
+.md-tooltip--rich {
+    border-radius: var(--md-sys-shape-corner-medium);
     background-color: var(--md-sys-color-surface-container);
-    color: var(--md-sys-color-on-surface);
-}
+    color: var(--md-sys-color-on-surface-variant);
+    box-shadow: var(--md-sys-elevation-level2);
 
-.md-layout__item--open {
-    transform: translate3d(0, 0, 0);
-    transition-duration: var(--md-sys-motion-duration-short3);
-    transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
-}
+    .md-tooltip__subhead {
+        padding: 12px 16px;
+        @include mixins.typescale-title-small();
 
-.md-layout__item--expanded {
-    transition-duration: var(--md-sys-motion-duration-short3);
-    transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
-}
+        + .md-tooltip__supporting {
+            margin-top: -20px;
+        }
+    }
 
-.md-layout--open {
-    transition-duration: var(--md-sys-motion-duration-short3);
-    transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
-}
+    .md-tooltip__supporting {
+        padding: 12px 16px;
+        @include mixins.typescale-body-medium();
 
-.md-layout--expanded {
-    transition-duration: var(--md-sys-motion-duration-short3);
-    transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
+        + .md-tooltip__buttons {
+            margin-top: -8px;
+        }
+    }
+
+    .md-tooltip__buttons {
+        padding: 8px 16px;
+    }
 }
 
 ```

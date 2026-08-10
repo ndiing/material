@@ -71,8 +71,8 @@ function writeFiles() {
         ],
         [
             // /.*/,
-            /src\\material\\components\\layout\\layout/,
-            // /src\\demo\\components\\layout/,
+            /src\\material\\components\\tooltip/,
+            /src\\demo\\components\\tooltip/,
         ],
     );
 

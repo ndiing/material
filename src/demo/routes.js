@@ -74,7 +74,8 @@ export const routes = [
             { path: "/components/radio-button", load: () => import("./components/radio-button.js").then((module) => module.default), children: [] },
             { path: "/components/switch", load: () => import("./components/switch.js").then((module) => module.default), children: [] },
             { path: "/components/slider", load: () => import("./components/slider.js").then((module) => module.default), children: [] },
-            // { path: "/components/test", load: () => import("./components/test.js").then((module) => module.default), children: [] },
+
+            { path: "/components/tooltip", load: () => import("./components/tooltip.js").then((module) => module.default), children: [] },
 
         ],
     },

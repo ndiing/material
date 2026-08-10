@@ -63,3 +63,5 @@ import "./components/push-menu/push-menu.js";
 import "./components/navigation-bar/navigation-bar.js";
 import "./components/navigation-drawer/navigation-drawer.js";
 import "./components/navigation-rail/navigation-rail.js";
+
+import "./components/tooltip/tooltip.js";
