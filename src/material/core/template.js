@@ -597,6 +597,23 @@ function renderSlider(properties = {}) {
 }
 
 /* prettier-ignore */
+function renderSnackbar(properties = {}) {
+    return html`
+        <md-snackbar
+            class="${classMap(properties.classMap ?? {})}"
+            style="${styleMap(properties.styleMap ?? {})}"
+            .supporting="${ifDefined(properties.supporting)}"
+            .actions="${ifDefined(properties.actions)}"
+            .open="${ifDefined(properties.open)}"
+            @onSnackbarClosed="${ifDefined(properties.onSnackbarClosed)}"
+            @onSnackbarShowed="${ifDefined(properties.onSnackbarShowed)}"
+            @onSnackbarShow="${ifDefined(properties.onSnackbarShow)}"
+            @onSnackbarClose="${ifDefined(properties.onSnackbarClose)}"
+        ></md-snackbar>
+    `
+}
+
+/* prettier-ignore */
 function renderSwitch(properties = {}) {
     return html`
         <md-switch
@@ -692,6 +709,24 @@ function renderTextarea(properties = {}) {
 }
 
 /* prettier-ignore */
+function renderTooltip(properties = {}) {
+    return html`
+        <md-tooltip
+            class="${classMap(properties.classMap ?? {})}"
+            style="${styleMap(properties.styleMap ?? {})}"
+            .subhead="${ifDefined(properties.subhead)}"
+            .supporting="${ifDefined(properties.supporting)}"
+            .buttons="${ifDefined(properties.buttons)}"
+            .variant="${ifDefined(properties.variant)}"
+            .open="${ifDefined(properties.open)}"
+            .placement="${ifDefined(properties.placement)}"
+            .offset="${ifDefined(properties.offset)}"
+            .for="${ifDefined(properties.for)}"
+        ></md-tooltip>
+    `
+}
+
+/* prettier-ignore */
 function renderTree(properties = {}) {
     return html`
         <md-tree
@@ -737,9 +772,11 @@ function renderComponent(component, properties = {}) {
         ["radio-button", () => renderRadioButton(component, properties)],
         ["scrim", () => renderScrim(component, properties)],
         ["slider", () => renderSlider(component, properties)],
+        ["snackbar", () => renderSnackbar(component, properties)],
         ["switch", () => renderSwitch(component, properties)],
         ["text-field", () => renderTextField(component, properties)],
         ["textarea", () => renderTextarea(component, properties)],
+        ["tooltip", () => renderTooltip(component, properties)],
         ["tree", () => renderTree(component, properties)],
     ], () => nothing,);
 }
@@ -779,8 +816,10 @@ export {
     renderRadioButton,
     renderScrim,
     renderSlider,
+    renderSnackbar,
     renderSwitch,
     renderTextField,
     renderTextarea,
+    renderTooltip,
     renderTree,
 };

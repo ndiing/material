@@ -71,8 +71,8 @@ function writeFiles() {
         ],
         [
             // /.*/,
-            /src\\material\\components\\snackbar/,
-            /src\\demo\\components\\snackbar/,
+            /src\\material\\components\\split-button/,
+            // /src\\demo\\components\\split-button/,
         ],
     );
 

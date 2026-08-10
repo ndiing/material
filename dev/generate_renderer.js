@@ -163,7 +163,7 @@ function writeFiles() {
 
     code += `};\r\n`;
 
-    write(path.join("src/material/utils/render-component.js"), code);
+    write(path.join("src/material/core/template.js"), code);
 }
 
 writeFiles();

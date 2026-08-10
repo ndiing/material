@@ -1,33 +1,13 @@
 import { html } from "lit";
 import { MdElement } from "./element.js";
 import { classMap } from "lit/directives/class-map.js";
-
-if (typeof Date.prototype.setWeek !== "function") {
-    Date.prototype.setWeek = function (week) {
-        const year = this.getFullYear();
-        const firstThursday = new Date(year, 0, 4);
-        const firstThursdayTime = firstThursday.getTime();
-        const weekStartTime = firstThursdayTime + (week - 1) * 7 * 24 * 60 * 60 * 1000;
-        this.setTime(weekStartTime);
-        return this;
-    };
-}
-
-if (typeof Date.prototype.getWeek !== "function") {
-    Date.prototype.getWeek = function () {
-        const target = new Date(this.valueOf());
-        const dayNr = (this.getDay() + 6) % 7;
-        target.setDate(target.getDate() - dayNr + 3);
-        const firstThursday = new Date(target.getFullYear(), 0, 4);
-        const weekNumber = Math.round((target - firstThursday) / (7 * 24 * 60 * 60 * 1000)) + 1;
-        return weekNumber;
-    };
-}
+import { getWeek, setWeek } from "date-fns";
 
 class MdDatetimePickerElement extends MdElement {
     static properties = {
         locale: { type: String },
         type: { type: String },
+        selectedDate: { type: Date },
     };
 
     get years() {
@@ -132,10 +112,10 @@ class MdDatetimePickerElement extends MdElement {
             const obj = {
                 year: date.getFullYear(),
                 month: date.getMonth(),
-                week: date.getWeek(),
+                week: getWeek(date),
                 label: this.dateFormat(date),
-                active: date.getFullYear() === this.currentDate.getFullYear() && date.getMonth() === this.currentDate.getMonth() && date.getWeek() === this.currentDate.getWeek(),
-                selected: date.getFullYear() === this.selectedDate.getFullYear() && date.getMonth() === this.selectedDate.getMonth() && date.getWeek() === this.selectedDate.getWeek(),
+                active: date.getFullYear() === this.currentDate.getFullYear() && date.getMonth() === this.currentDate.getMonth() && getWeek(date) === this.getWeek(currentDate),
+                selected: date.getFullYear() === this.selectedDate.getFullYear() && date.getMonth() === this.selectedDate.getMonth() && getWeek(date) === this.getWeek(selectedDate),
                 outsideMonth: !(date.getFullYear() === this.selectedDate.getFullYear() && date.getMonth() === this.selectedDate.getMonth()),
                 children: [],
             };
@@ -200,6 +180,18 @@ class MdDatetimePickerElement extends MdElement {
         return arr;
     }
 
+    get selectedMonth() {
+        const value = this.selectedDate.getMonth();
+        const label = this.selectedMonthFormat(this.selectedDate);
+        return { value, label };
+    }
+
+    get selectedYear() {
+        const value = this.selectedDate.getFullYear();
+        const label = this.selectedYearFormat(this.selectedDate);
+        return { value, label };
+    }
+
     constructor() {
         super();
 
@@ -217,9 +209,14 @@ class MdDatetimePickerElement extends MdElement {
         const locale = this.locale || undefined;
 
         this.yearFormat = new Intl.DateTimeFormat(locale, { year: "numeric" }).format;
+        this.selectedYearFormat = new Intl.DateTimeFormat(locale, { year: "numeric" }).format;
+
         this.monthFormat = new Intl.DateTimeFormat(locale, { month: "long" }).format;
+        this.selectedMonthFormat = new Intl.DateTimeFormat(locale, { month: "short" }).format;
+
         this.weekdayFormat = new Intl.DateTimeFormat(locale, { weekday: "narrow" }).format;
         this.dateFormat = new Intl.DateTimeFormat(locale, { day: "numeric" }).format;
+
         this.hourFormat = new Intl.DateTimeFormat(locale, { hour: "numeric", hour12: false }).format;
         this.minuteFormat = new Intl.DateTimeFormat(locale, { minute: "numeric", hour12: false }).format;
     }

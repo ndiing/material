@@ -31,6 +31,7 @@ import "./components/tooltip/tooltip.js";
 
 import "./components/icon-button/icon-button.js";
 import "./components/button/button.js";
+import "./components/split-button/split-button.js";
 import "./components/fab/fab.js";
 
 import "./components/snackbar/snackbar.js";
@@ -46,6 +47,8 @@ import "./components/dialog/dialog-header.js";
 import "./components/dialog/dialog-body.js";
 import "./components/dialog/dialog-main.js";
 import "./components/dialog/dialog-footer.js";
+
+import "./components/datetime-picker/datetime-picker.js";
 
 import "./components/text-field/text-field.js";
 import "./components/textarea/textarea.js";

@@ -44,6 +44,7 @@ export const routes = [
 
             { path: "/components/icon-button", load: () => import("./components/icon-button.js").then((module) => module.default), children: [] },
             { path: "/components/button", load: () => import("./components/button.js").then((module) => module.default), children: [] },
+            { path: "/components/split-button", load: () => import("./components/split-button.js").then((module) => module.default), children: [] },
             { path: "/components/fab", load: () => import("./components/fab.js").then((module) => module.default), children: [] },
 
             { path: "/components/card", load: () => import("./components/card.js").then((module) => module.default), children: [] },
@@ -77,6 +78,7 @@ export const routes = [
 
             { path: "/components/tooltip", load: () => import("./components/tooltip.js").then((module) => module.default), children: [] },
             { path: "/components/snackbar", load: () => import("./components/snackbar.js").then((module) => module.default), children: [] },
+            { path: "/components/datetime-picker", load: () => import("./components/datetime-picker.js").then((module) => module.default), children: [] },
 
         ],
     },
