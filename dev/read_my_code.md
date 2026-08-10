@@ -168,12 +168,12 @@ class MdTooltip extends MdElement {
                     ? html`
                           <div class="md-tooltip__buttons">
                               ${this.buttons.map((button) =>
-                              renderButton({
-                                  classMap: { "md-tooltip__button": true },
-                                  color: "text",
-                                  ...button,
-                              }),
-                          )}
+                                  renderButton({
+                                      classMap: { "md-tooltip__button": true },
+                                      color: "text",
+                                      ...button,
+                                  }),
+                              )}
                           </div>
                       `
                     : nothing
@@ -274,6 +274,32 @@ src\material\components\tooltip\tooltip.scss
 ```scss
 @use "../../shared/mixins.scss";
 
+@keyframes tooltip-open {
+    from {
+        opacity: 0;
+        transform: scale3d(0.7, 0.7, 0.7);
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes tooltip-close {
+    from {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+        transform: scale3d(0.7, 0.7, 0.7);
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
 .md-tooltip {
     display: inline-flex;
     flex-direction: column;
@@ -281,9 +307,19 @@ src\material\components\tooltip\tooltip.scss
     z-index: 30;
     opacity: 0;
     pointer-events: none;
+    //will-change: transform, opacity;
+    animation-name: tooltip-close;
+    animation-duration: var(--md-sys-motion-duration-short1);
+    animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
+    animation-fill-mode: forwards;
 }
 .md-tooltip--open {
     opacity: 1;
+    animation-name: tooltip-open;
+    animation-duration: var(--md-sys-motion-duration-short2);
+    animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
+    animation-fill-mode: forwards;
+
     .md-tooltip__button {
         pointer-events: all;
     }

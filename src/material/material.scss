@@ -14,8 +14,9 @@
 @use "./components/typography/typography.scss";
 @use "./components/icon/icon.scss";
 @use "./components/image/image.scss";
-
 @use "./components/badge/badge.scss";
+@use "./components/tooltip/tooltip.scss";
+
 @use "./components/icon-button/icon-button.scss";
 @use "./components/button/button.scss";
 @use "./components/fab/fab.scss";
@@ -40,5 +41,3 @@
 @use "./components/navigaton-bar/navigaton-bar.scss";
 @use "./components/navigaton-drawer/navigaton-drawer.scss";
 @use "./components/navigaton-rail/navigaton-rail.scss";
-
-@use "./components/tooltip/tooltip.scss";

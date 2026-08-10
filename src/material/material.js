@@ -18,16 +18,17 @@ import "./base/datetime-picker.js";
 import "./controller/virtual-scroll.js";
 import "./controller/ripple.js";
 
+import "./components/grid/grid.js";
+import "./components/grid/grid-column.js";
 import "./components/scrim/scrim.js";
 import "./components/layout/layout.js";
 import "./components/layout/layout-item.js";
-import "./components/grid/grid.js";
-import "./components/grid/grid-column.js";
 
 import "./components/icon/icon.js";
 import "./components/image/image.js";
-
 import "./components/badge/badge.js";
+import "./components/tooltip/tooltip.js";
+
 import "./components/icon-button/icon-button.js";
 import "./components/button/button.js";
 import "./components/fab/fab.js";
@@ -63,5 +64,3 @@ import "./components/push-menu/push-menu.js";
 import "./components/navigation-bar/navigation-bar.js";
 import "./components/navigation-drawer/navigation-drawer.js";
 import "./components/navigation-rail/navigation-rail.js";
-
-import "./components/tooltip/tooltip.js";

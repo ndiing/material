@@ -37,12 +37,12 @@ class MdTooltip extends MdElement {
                     ? html`
                           <div class="md-tooltip__buttons">
                               ${this.buttons.map((button) =>
-                              renderButton({
-                                  classMap: { "md-tooltip__button": true },
-                                  color: "text",
-                                  ...button,
-                              }),
-                          )}
+                                  renderButton({
+                                      classMap: { "md-tooltip__button": true },
+                                      color: "text",
+                                      ...button,
+                                  }),
+                              )}
                           </div>
                       `
                     : nothing

@@ -25,7 +25,7 @@ export const routes = [
             //     ] }
             // ] },
 
-            { path: "/controller/ripple", load: () => import("./controller/ripple.js").then((module) => module.default), children: [] },
+            // { path: "/controller/ripple", load: () => import("./controller/ripple.js").then((module) => module.default), children: [] },
 
             { path: "/components/layout", load: () => import("./components/layout.js").then((module) => module.default), children: [] },
             { path: "/components/layout-modal", load: () => import("./components/layout-modal.js").then((module) => module.default), children: [] },
