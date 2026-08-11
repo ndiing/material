@@ -6,7 +6,7 @@ class DemoButton extends MdElement {
     render(){
         return html`
             
-            <md-grid style="margin: 24px;">
+            <md-grid class="demo-grid">
                 
                 <md-grid-column expanded="6" medium="4" compact="4">
                     <md-button icon="edit" label="Label"></md-button>

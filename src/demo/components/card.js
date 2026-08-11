@@ -5,7 +5,7 @@ class DemoCard extends MdElement {
     /* prettier-ignore */
     render(){
         return html`
-            <md-grid style="margin: 24px;">
+            <md-grid class="demo-grid">
                 <md-grid-column expanded="6" medium="4" compact="4">
                     <md-card color="elevated">
                         <md-card-header>header</md-card-header>

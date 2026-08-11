@@ -5,12 +5,12 @@ class DemoGridCompact extends MdElement {
     /* prettier-ignore */
     render(){
         return html`
-            <md-grid >
-                <md-grid-column compact="1">1</md-grid-column>
-                <md-grid-column compact="3">3</md-grid-column>
-                <md-grid-column compact="2">2</md-grid-column>
-                <md-grid-column compact="2">2</md-grid-column>
-                <md-grid-column compact="4">4</md-grid-column>
+            <md-grid class="demo-grid">
+                <md-grid-column class="demo-grid__column" compact="1">1</md-grid-column>
+                <md-grid-column class="demo-grid__column" compact="3">3</md-grid-column>
+                <md-grid-column class="demo-grid__column" compact="2">2</md-grid-column>
+                <md-grid-column class="demo-grid__column" compact="2">2</md-grid-column>
+                <md-grid-column class="demo-grid__column" compact="4">4</md-grid-column>
             </md-grid>
         `
     }
