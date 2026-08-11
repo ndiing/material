@@ -1,3 +1,4 @@
+// grid
 .demo-grid{
     margin: 24px;
 }
@@ -9,7 +10,11 @@
     background-color: var(--md-sys-color-surface-container);
 }
 
-.test-item {
+// icon
+.demo-icon{
+    padding: 24px;
+}
+.demo-icon__item {
     display: grid;
     grid-template-columns: repeat(12, minmax(0, 1fr));
     align-items: center;
@@ -17,46 +22,3 @@
     padding: 0 16px;
 }
 
-.test-trigger {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    height: 40px;
-    width: calc(40px * 3);
-    background-color: var(--md-sys-color-secondary-container);
-}
-.test-container {
-    position: absolute;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    height: calc(56px * 5);
-    width: calc(56px * 3);
-    background-color: var(--md-sys-color-surface-container-highest);
-    opacity: 75%;
-}
-.test-track {
-    display: flex;
-    width: 100%;
-    height: 16px;
-    border-radius: 9999px;
-    position: relative;
-}
-.test-track::before,
-.test-track::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 9999px;
-    background-size: calc((100% - 4px * 2) / 1) 100%;
-}
-.test-track::before {
-    background-color: var(--md-sys-color-secondary-container);
-    background-image: radial-gradient(circle at 4px center, var(--md-sys-color-on-secondary-container) 0, var(--md-sys-color-on-secondary-container) calc(4px / 2), transparent calc(4px / 2));
-}
-.test-track::after {
-    background-color: var(--md-sys-color-primary);
-    background-image: radial-gradient(circle at 4px center, var(--md-sys-color-on-primary) 0, var(--md-sys-color-on-primary) calc(4px / 2), transparent calc(4px / 2));
-    clip-path: inset(0 100% 0 0);
-}

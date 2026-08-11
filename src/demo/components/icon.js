@@ -17,13 +17,12 @@ class DemoIcon extends MdElement {
     /* prettier-ignore */
     render(){
         return html`
-            <!-- <md-icon>menu</md-icon> -->
-            <div class="test-viewport">
+            <div class="demo-icon">
                 <div style="${styleMap({
                     'transform':'translate3d(0,var(--md-comp-virtual-scroll-content-translate-y),0)'
                 })}">
                     ${this.list.map(items=>html`
-                        <div class="test-item">
+                        <div class="demo-icon__item">
                             ${items.map(item=>item.text?html`
                                 <div>${item.text.charAt(0).toUpperCase() + item.text.slice(1)}</div>
                             `:html`
@@ -42,7 +41,7 @@ class DemoIcon extends MdElement {
         await this.updateComplete;
 
         if (!this.virtualScrollController) {
-            this.virtualScrollController = new VirtualScrollController(this.querySelector(".test-viewport"), {
+            this.virtualScrollController = new VirtualScrollController(this.querySelector(".demo-icon"), {
                 rowHeight: 56,
                 itemCount: icons.length,
                 register: false,
