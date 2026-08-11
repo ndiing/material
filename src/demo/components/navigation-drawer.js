@@ -22,8 +22,9 @@ class DemoNavigationDrawer extends MdElement {
             <md-layout>
                 <md-navigation-drawer ${ref(this.west)} .items="${this.items5}" open></md-navigation-drawer>
                 <md-layout-item region="center">
-                    
-                    <md-button label="Toggle Navigation Drawer" @click="${this.handleClickWest}"></md-button>
+                    <div class="demo-layout__center">
+                        <md-button label="Toggle Navigation Drawer" @click="${this.handleClickWest}"></md-button>
+                    </div>
                 </md-layout-item>
             </md-layout>
         `

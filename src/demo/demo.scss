@@ -10,6 +10,17 @@
     background-color: var(--md-sys-color-surface-container);
 }
 
+// layout
+.demo-layout__item{
+    display: flex;
+    align-items: center;
+    height: 64px;
+    padding: 16px;
+}
+.demo-layout__center{
+    padding: 16px;
+}
+
 // icon
 .demo-icon{
     padding: 24px;

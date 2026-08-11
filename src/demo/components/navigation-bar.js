@@ -36,7 +36,9 @@ class DemoNavigationBar extends MdElement {
             <md-layout>
                 <md-navigation-bar ${ref(this.south)} .items="${this.items2}" open></md-navigation-bar>
                 <md-layout-item region="center">
-                    <md-button label="Toggle Navigation Bar" @click="${this.handleClickSouth}"></md-button>
+                    <div class="demo-layout__center">
+                        <md-button label="Toggle Navigation Bar" @click="${this.handleClickSouth}"></md-button>
+                    </div>
                 </md-layout-item>
             </md-layout>
         `

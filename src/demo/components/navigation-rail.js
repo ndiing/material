@@ -43,8 +43,10 @@ class DemoNavigationRail extends MdElement {
                     .items="${this.items9}"
                 ></md-navigation-rail>
                 <md-layout-item region="center">
-                    <md-button label="Toggle Navigation Rail" @click="${this.handleClickWest}"></md-button>
-                    <md-button label="Toggle Collapse Navigation Rail" @click="${this.handleToggleCollapse}"></md-button>
+                    <div class="demo-layout__center">
+                        <md-button label="Toggle Navigation Rail" @click="${this.handleClickWest}"></md-button><br><br>
+                        <md-button label="Toggle Collapse Navigation Rail" @click="${this.handleToggleCollapse}"></md-button><br><br>
+                    </div>
                 </md-layout-item>
             </md-layout>
         `

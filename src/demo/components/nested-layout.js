@@ -17,28 +17,51 @@ class DemoNestedLayout extends MdElement {
     render(){
         return html`
             <md-layout>
-                <md-layout-item ${ref(this.north)} size="64" region="north">north</md-layout-item>
-                <md-layout-item ${ref(this.east)} size="128" region="east">east</md-layout-item>
-                <md-layout-item ${ref(this.south)} size="64" region="south">south</md-layout-item>
-                <md-layout-item ${ref(this.west)} size="128" region="west">west</md-layout-item>
+                <md-layout-item ${ref(this.north)} size="64" region="north">
+                    <div class="demo-layout__item">North</div>
+                </md-layout-item>
+                <md-layout-item ${ref(this.east)} size="128" region="east">
+                    <div class="demo-layout__item">East</div>
+                </md-layout-item>
+                <md-layout-item ${ref(this.south)} size="64" region="south">
+                    <div class="demo-layout__item">South</div>
+                </md-layout-item>
+                <md-layout-item ${ref(this.west)} size="128" region="west">
+                    <div class="demo-layout__item">West</div>
+                </md-layout-item>
                 <md-layout-item region="center">
                     
                     <md-layout>
-                        <md-layout-item ${ref(this.north1)} size="64" region="north">north</md-layout-item>
-                        <md-layout-item ${ref(this.east1)} size="128" region="east">east</md-layout-item>
-                        <md-layout-item ${ref(this.south1)} size="64" region="south">south</md-layout-item>
-                        <md-layout-item ${ref(this.west1)} size="128" region="west">west</md-layout-item>
+                        <md-layout-item ${ref(this.north1)} size="64" region="north">
+                            <div class="demo-layout__item">North</div>
+                        </md-layout-item>
+                        <md-layout-item ${ref(this.east1)} size="128" region="east">
+                            <div class="demo-layout__item">East</div>
+                        </md-layout-item>
+                        <md-layout-item ${ref(this.south1)} size="64" region="south">
+                            <div class="demo-layout__item">South</div>
+                        </md-layout-item>
+                        <md-layout-item ${ref(this.west1)} size="128" region="west">
+                            <div class="demo-layout__item">West</div>
+                        </md-layout-item>
                         <md-layout-item region="center">
-                            <md-button label="north" @click="${this.handleClickNorth}"></md-button>
-                            <md-button label="east" @click="${this.handleClickEast}"></md-button>
-                            <md-button label="south" @click="${this.handleClickSouth}"></md-button>
-                            <md-button label="west" @click="${this.handleClickWest}"></md-button>
-                            <br>
-                            <br>
-                            <md-button label="north1" @click="${this.handleClickNorth1}"></md-button>
-                            <md-button label="east1" @click="${this.handleClickEast1}"></md-button>
-                            <md-button label="south1" @click="${this.handleClickSouth1}"></md-button>
-                            <md-button label="west1" @click="${this.handleClickWest1}"></md-button>
+                            <div class="demo-layout__center">
+                                <md-button color="tonal" label="Toogle North" @click="${this.handleClickNorth}"></md-button><br><br>
+                                <md-button color="tonal" label="Toogle Nested North" @click="${this.handleClickNorth1}"></md-button><br><br>
+                                <br><br>
+
+                                <md-button color="tonal" label="Toogle East" @click="${this.handleClickEast}"></md-button><br><br>
+                                <md-button color="tonal" label="Toogle Nested East" @click="${this.handleClickEast1}"></md-button><br><br>
+                                <br><br>
+
+                                <md-button color="tonal" label="Toogle South" @click="${this.handleClickSouth}"></md-button><br><br>
+                                <md-button color="tonal" label="Toogle Nested South" @click="${this.handleClickSouth1}"></md-button><br><br>
+                                <br><br>
+
+                                <md-button color="tonal" label="Toogle West" @click="${this.handleClickWest}"></md-button><br><br>
+                                <md-button color="tonal" label="Toogle Nested West" @click="${this.handleClickWest1}"></md-button><br><br>
+                                <br><br>
+                            </div>
                         </md-layout-item>
                     </md-layout>
                 </md-layout-item>

@@ -23,8 +23,9 @@ class DemoNavigationDrawerModal extends MdElement {
                 
                 <md-navigation-drawer ${ref(this.west)} .items="${this.items5}" modal></md-navigation-drawer>
                 <md-layout-item region="center">
-                    
-                    <md-button label="Toggle Navigation Drawer" @click="${this.handleClickWest}"></md-button>
+                    <div class="demo-layout__center">
+                        <md-button label="Toggle Navigation Drawer" @click="${this.handleClickWest}"></md-button>
+                    </div>
                 </md-layout-item>
             </md-layout>
         `
