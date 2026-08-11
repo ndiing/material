@@ -1,3 +1,6 @@
+/* 
+breakpoint
+*/
 @mixin breakpoint-expanded() {
     @media (min-width: 840px) {
         @content;
@@ -16,6 +19,9 @@
     }
 }
 
+/* 
+typescale
+*/
 @mixin typescale-display-large() {
     font-family: var(--md-sys-typescale-display-large-font);
     font-weight: var(--md-sys-typescale-display-large-weight);
@@ -136,6 +142,9 @@
     line-height: var(--md-sys-typescale-label-small-line-height);
 }
 
+/* 
+initialize
+*/
 @mixin initialize {
     &--initialize {
         &,
@@ -146,4 +155,74 @@
             animation: none !important;
         }
     }
+}
+
+/* 
+ripple
+*/
+@mixin ripple() {
+    --md-comp-ripple-radius: 141.4213562373095%;
+    --md-comp-ripple-left: 50%;
+    --md-comp-ripple-top: 50%;
+    --md-comp-ripple-x: 0%;
+    --md-comp-ripple-y: 0%;
+
+    position: relative;
+    isolation: isolate;
+
+    &:after {
+        content: "";
+        width: var(--md-comp-ripple-radius);
+        aspect-ratio: 1/1;
+        border-radius: var(--md-sys-shape-corner-full);
+        position: absolute;
+        left: var(--md-comp-ripple-left);
+        top: var(--md-comp-ripple-top);
+        z-index: 1;
+        transform: translate3d(-50%, -50%, 0) translate3d(var(--md-comp-ripple-x), var(--md-comp-ripple-y), 0);
+        background-color: currentColor;
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+@mixin ripple-bounded() {
+    overflow: hidden;
+}
+@mixin ripple-trigger() {
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+@mixin ripple-focus() {
+    &::after {
+        opacity: 10%;
+    }
+}
+@mixin ripple-press() {
+    &::after {
+        opacity: 10%;
+        animation-name: ripple-out;
+        animation-duration: var(--md-sys-motion-duration-short3);
+        animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
+    }
+}
+@mixin ripple-hover() {
+    &::after {
+        opacity: 8%;
+    }
+}
+@mixin ripple-drag() {
+    &::after {
+        opacity: 16%;
+    }
+}
+// @mixin ripple-selection() {
+//     background-color: var(--md-sys-color-secondary-container);
+//     color: var(--md-sys-color-on-secondary-container);
+// }
+@mixin ripple-disabled() {
+    pointer-events: none;
+    // &::after {
+    //     opacity: 38%;
+    // }
 }

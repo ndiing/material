@@ -6,7 +6,7 @@ class DemoDatetimePicker extends MdElement {
     render(){
         return html`
             <md-grid>
-                <md-grid-column>
+                <md-grid-column expanded="6">
                     <md-datetime-picker></md-datetime-picker>
                 </md-grid-column>
             </md-grid>

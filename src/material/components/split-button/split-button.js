@@ -8,6 +8,7 @@ class MdSplitButton extends MdElement {
     static properties = {
         icon: { type: String },
         label: { type: String },
+        trailingIcon: { type: String },
         size: { type: String },
         color: { type: String },
         selected: { type: Boolean },
@@ -21,6 +22,7 @@ class MdSplitButton extends MdElement {
 
         this.size = "small";
         this.color = "filled";
+        this.trailingIcon='keyboard_arrow_down'
 
         this.leadingRippleController = new RippleController(this, {
             container: ".md-split-button__leading",
@@ -46,7 +48,7 @@ class MdSplitButton extends MdElement {
                 class="md-split-button__trailing"
                 @click="${this._handleSplitButtonIconClick}"
             >
-                <md-icon class="md-split-button__icon" .icon="${"keyboard_arrow_down"}"></md-icon>
+                <md-icon class="md-split-button__icon" .icon="${this.trailingIcon}"></md-icon>
             </div>
         `
     }

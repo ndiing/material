@@ -16,6 +16,7 @@ class MdDatetimePickerElement extends MdElement {
         for (let i = 0; i < 10; i++) {
             const date = new Date(selectedYear + i, 0);
             arr.push({
+                id: i,
                 year: date.getFullYear(),
                 label: this.yearFormat(date),
                 active: date.getFullYear() === this.currentDate.getFullYear(),
@@ -31,6 +32,7 @@ class MdDatetimePickerElement extends MdElement {
         for (let i = 0; i < 12; i++) {
             const date = new Date(selectedYear, i);
             arr.push({
+                id: i,
                 year: date.getFullYear(),
                 month: date.getMonth(),
                 label: this.monthFormat(date),

@@ -10,8 +10,8 @@
 [ ] FAB menu
 [x] FABs
 [x] Icon buttons
-[ ] Segmented buttons
-[ ] Split button
+[-] Segmented buttons
+[x] Split button
 [x] Cards
 [ ] Carousel
 [x] Checkbox

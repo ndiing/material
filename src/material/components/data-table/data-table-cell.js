@@ -1,10 +1,16 @@
 import { html } from "lit";
 import { MdElement } from "../../base/element.js";
+import { RippleController } from "../../controller/ripple.js";
 
 class MdDataTableCell extends MdElement {
     static properties = {
         label: { type: String },
     };
+
+    constructor(){
+        super()
+
+    }
 
     /* prettier-ignore */
     render(){

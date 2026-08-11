@@ -4,6 +4,7 @@ import { styleMap } from "lit/directives/style-map.js";
 import { createRef, ref } from "lit/directives/ref.js";
 import { classMap } from "lit/directives/class-map.js";
 import { VirtualScrollController } from "../../controller/virtual-scroll.js";
+import { RippleController } from "../../controller/ripple.js";
 
 class MdDataTable extends MdElement {
     static properties = {
@@ -41,6 +42,8 @@ class MdDataTable extends MdElement {
         this._handleDataTableVirtualScrollUpdate = this._handleDataTableVirtualScrollUpdate.bind(this);
         this._handleDataTableKeydown = this._handleDataTableKeydown.bind(this);
         this._handleDataTableClick = this._handleDataTableClick.bind(this);
+
+        
     }
 
     /* prettier-ignore */
