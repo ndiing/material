@@ -39,6 +39,7 @@
     transition-property: transform, width, height;
     transition-duration: var(--md-sys-motion-duration-short2);
     transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
+    transition-behavior: allow-discrete;
 }
 
 .md-layout__item--north {

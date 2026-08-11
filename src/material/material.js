@@ -33,23 +33,23 @@ import "./components/icon-button/icon-button.js";
 import "./components/fab/fab.js";
 import "./components/split-button/split-button.js";
 
-import "./components/card/card.js";
 import "./components/card/card-header.js";
 import "./components/card/card-body.js";
 import "./components/card/card-main.js";
 import "./components/card/card-footer.js";
+import "./components/card/card.js";
 
-import "./components/dialog/dialog.js";
 import "./components/dialog/dialog-header.js";
 import "./components/dialog/dialog-body.js";
 import "./components/dialog/dialog-main.js";
 import "./components/dialog/dialog-footer.js";
+import "./components/dialog/dialog.js";
 
-import "./components/sheet/sheet.js";
 import "./components/sheet/sheet-header.js";
 import "./components/sheet/sheet-body.js";
 import "./components/sheet/sheet-main.js";
 import "./components/sheet/sheet-footer.js";
+import "./components/sheet/sheet.js";
 
 import "./components/tooltip/tooltip.js";
 import "./components/snackbar/snackbar.js";

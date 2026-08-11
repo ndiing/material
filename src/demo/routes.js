@@ -36,6 +36,7 @@ export const routes = [
             { path: "/components/layout-docked", load: () => import("./components/layout-docked.js").then((module) => module.default), children: [] },
             { path: "/components/layout-modal", load: () => import("./components/layout-modal.js").then((module) => module.default), children: [] },
             { path: "/components/layout-docked-modal", load: () => import("./components/layout-docked-modal.js").then((module) => module.default), children: [] },
+            { path: "/components/layout-nested", load: () => import("./components/layout-nested.js").then((module) => module.default), children: [] },
 
             { path: "/components/typography", load: () => import("./components/typography.js").then((module) => module.default), children: [] },
             { path: "/components/icon", load: () => import("./components/icon.js").then((module) => module.default), children: [] },
@@ -84,7 +85,7 @@ export const routes = [
             
             { path: "/components/datetime-picker", load: () => import("./components/datetime-picker.js").then((module) => module.default), children: [] },
 
-            { path: "/components/test", load: () => import("./components/test.js").then((module) => module.default), children: [] },
+            // { path: "/components/test", load: () => import("./components/test.js").then((module) => module.default), children: [] },
 
         ],
     },

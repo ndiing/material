@@ -10,66 +10,56 @@ class DemoDialog extends MdElement {
     render(){
         return html`
                 
-            <md-dialog id="dialog0" style="width:310px;" >
-                <md-dialog-header
-                    headline="Basic dialog title"
-                ></md-dialog-header>
-                <md-dialog-body>
-                    <md-dialog-main>
-                        A dialog is a modal window that
+            <md-dialog 
+                id="dialog0" 
+                style="width:310px;"
+                headline="Basic dialog title"
+                .buttons="${[
+                    {label:'Action 2',color:'text'},
+                    {label:'Action 1',color:'text'},
+                ]}"
+                .inner="${html`A dialog is a modal window that
                         appears in front of app content to
                         provide critical information or prompt
-                        for a decision to be made.
-                    </md-dialog-main>
-                    <md-dialog-footer
-                        .buttons="${[
-                            {label:'Action 2',color:'text'},
-                            {label:'Action 1',color:'text'},
-                        ]}"
-                    ></md-dialog-footer>
-                </md-dialog-body>
-            </md-dialog>
+                        for a decision to be made.`}"
+            ></md-dialog>
                 
-            <md-dialog heroIcon id="dialog1" style="width:340px;">
-                <md-dialog-header
-                    .leading="${[
-                        {component:'icon',icon:'image'}
-                    ]}"
-                    headline="Dialog with hero icon"
-                ></md-dialog-header>
-                <md-dialog-body>
-                    <md-dialog-main>                        
-                        A dialog is a modal window that appears in front
+            <md-dialog 
+                heroIcon 
+                id="dialog1" 
+                style="width:340px;"
+                .leading="${[
+                    {component:'icon',icon:'image'}
+                ]}"
+                headline="Dialog with hero icon"
+                .inner="${html`A dialog is a modal window that appears in front
                         of app content to provide critical
-                        information or ask for a decision.
-                    </md-dialog-main>
-                    <md-dialog-footer
-                        .buttons="${[
-                            {label:'Cancel',color:'text'},
-                            {label:'Accept',color:'text'},
-                        ]}"
-                    ></md-dialog-footer>
-                </md-dialog-body>
-            </md-dialog>
+                        information or ask for a decision.`}"
+                .buttons="${[
+                    {label:'Cancel',color:'text'},
+                    {label:'Accept',color:'text'},
+                ]}"
+            ></md-dialog>
  
-            <md-dialog variant="full-screen" id="dialog2" >
-                <md-dialog-header
-                    .leading="${[
-                        {component:'icon',icon:'image'}
-                    ]}"
-                    .trailing="${[
-                        {component:'button',label:'Save',color:'text',onButtonClick:this.handleClick2}
-                    ]}"
-                    headline="Full-screen dialog title"
-                ></md-dialog-header>
-                <md-dialog-body>
-                    <md-dialog-main></md-dialog-main>
-                </md-dialog-body>
-            </md-dialog>
+            <md-dialog 
+                variant="full-screen" 
+                id="dialog2"
+                .leading="${[
+                    {component:'icon',icon:'image'}
+                ]}"
+                .trailing="${[
+                    {component:'button',label:'Save',color:'text',onButtonClick:this.handleClick2}
+                ]}"
+                headline="Full-screen dialog title"
+            ></md-dialog>
              
-            <md-button label="Basic dialog title" @click="${this.handleClick0}"></md-button>
-            <md-button label="Dialog with hero icon" @click="${this.handleClick1}"></md-button>
-            <md-button label="Full-screen dialog title" @click="${this.handleClick2}"></md-button>
+            <md-grid class="demo-grid">
+                <div class="md-grid-item" expanded="6" medium="4" compact="4">
+                    <md-button label="Basic dialog title" @click="${this.handleClick0}"></md-button><br><br>
+                    <md-button label="Dialog with hero icon" @click="${this.handleClick1}"></md-button><br><br>
+                    <md-button label="Full-screen dialog title" @click="${this.handleClick2}"></md-button><br><br>
+                </div>
+            </md-grid>
 
         `
     }

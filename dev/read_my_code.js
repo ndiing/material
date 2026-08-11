@@ -65,14 +65,10 @@ function writeFiles() {
             /README\.md/,
             // /src/,
             /webpack.config\.js/,
-            /src\\material\\fonts/,
-            // /src\\demo/,
-            /src\\generated/,
         ],
         [
             // /.*/,
-            /src\\material\\components\\split-button/,
-            // /src\\demo\\components\\split-button/,
+            /src\\material\\components\\slider/,
         ],
     );
 

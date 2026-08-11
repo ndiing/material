@@ -1,8 +1,13 @@
-import { html } from "lit";
+import { html, nothing } from "lit";
 import { MdElement } from "../../base/element.js";
+import { MdDialogHeader } from "./dialog-header.js";
+import { MdDialogFooter } from "./dialog-footer.js";
+import { ifDefined } from "lit/directives/if-defined.js";
 
 class MdDialog extends MdElement {
     static properties = {
+        ...MdDialogHeader.properties,
+        ...MdDialogFooter.properties,
         open: { type: Boolean, reflect: true },
         variant: { type: String },
         heroIcon: { type: Boolean },
@@ -18,6 +23,27 @@ class MdDialog extends MdElement {
         this._handleDialogScrimClick = this._handleDialogScrimClick.bind(this);
         this._handleDialogAnimationend = this._handleDialogAnimationend.bind(this);
         this._handleWindowKeydown = this._handleWindowKeydown.bind(this);
+    }
+
+    /* prettier-ignore */
+    render(){
+        return html`
+            ${this.leading?.length||this.headline||this.trailing?.length?html`
+                <md-dialog-header 
+                    .leading="${ifDefined(this.leading)}" 
+                    .headline="${ifDefined(this.headline)}" 
+                    .trailing="${ifDefined(this.trailing)}"
+                ></md-dialog-header>
+            `:nothing}
+            ${this.inner||this.buttons?.length?html`
+                <md-dialog-body>
+                    <md-dialog-main>${this.inner}</md-dialog-main>
+                    <md-dialog-footer 
+                        .buttons="${ifDefined(this.buttons)}"
+                    ></md-dialog-footer>
+                </md-dialog-body>
+            `:nothing}
+        `
     }
 
     connectedCallback() {

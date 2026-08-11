@@ -56,10 +56,14 @@ class MdLayoutItem extends MdElement {
             this.parentElement.insertBefore(this.scrimElement, this.nextElementSibling);
             this.scrimElement.addEventListener("onScrimClick", this._handleLayoutItemScrimClick);
         }
+
+        this._restoreState();
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
+
+        this._clearState();
 
         if (this.scrimElement) {
             this.scrimElement.removeEventListener("onScrimClick", this._handleLayoutItemScrimClick);
@@ -122,6 +126,16 @@ class MdLayoutItem extends MdElement {
                 }
             }
         }
+    }
+
+    _restoreState() {
+        this.requestUpdate("open", false);
+        this.requestUpdate("expanded", false);
+    }
+
+    _clearState() {
+        this.classList.remove("md-layout__item--open");
+        this.classList.remove("md-layout__item--expanded");
     }
 
     _updateCssVars() {

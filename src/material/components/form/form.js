@@ -11,6 +11,7 @@ class MdForm extends MdElement {
         target: { type: String },
         autocomplete: { type: String },
         noValidate: { type: Boolean },
+        inner: { type: Object },
     };
 
     formNative = createRef();
@@ -30,7 +31,7 @@ class MdForm extends MdElement {
                 @formdata="${this._handleFormNativeFormdata}"
                 @reset="${this._handleFormNativeReset}"
                 @submit="${this._handleFormNativeSubmit}"
-            >${this._childNodes}</form>
+            >${this.inner}</form>
         `
     }
 
@@ -38,15 +39,6 @@ class MdForm extends MdElement {
         super.connectedCallback();
 
         this.classList.add("md-form");
-    }
-
-    firstUpdated(_changedProperties) {
-        super.firstUpdated(_changedProperties);
-
-        this.classList.add("md-form");
-
-        this._childNodes = Array.from(this.childNodes);
-        this.replaceChildren();
     }
 
     disconnectedCallback() {
