@@ -1,6 +1,10 @@
 @use "../../shared/mixins.scss";
 
 .md-badge {
+    --md-comp-badge-width: 16px;
+    --md-comp-badge-height: 16px;
+    --md-comp-badge-padding: 4px;
+
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -23,6 +27,6 @@
     &:empty {
         min-width: 6px;
         height: 6px;
-        padding: 0;
+        padding: 0 0;
     }
 }

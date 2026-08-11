@@ -1,16 +1,125 @@
 @use "../../shared/mixins.scss";
 
 .md-icon-button {
+    --md-comp-icon-button-height: 40px;
+    --md-comp-icon-button-width: 40px;
+    //
+    --md-comp-icon-button-native-height: 24px;
+    --md-comp-icon-button-native-width: 24px;
+    --md-comp-icon-button-native-font-size: 24px;
+    //
+    --md-comp-icon-button-narrow-width: 32px;
+    --md-comp-icon-button-narrow-height: 40px;
+    //
+    --md-comp-icon-button-wide-width: 52px;
+    --md-comp-icon-button-wide-height: 40px;
+    //
+    --md-comp-icon-button-round-border-radius: 20px;
+    --md-comp-icon-button-round-selected-border-radius: 12px;
+    //
+    --md-comp-icon-button-square-border-radius: 12px;
+    --md-comp-icon-button-square-selected-border-radius: 20px;
+    //
+    --md-comp-icon-button-active-border-radius: 8px;
+    //
+    --md-comp-icon-button-border-width: 0px;
+    --md-comp-icon-button-border-style: solid;
+    --md-comp-icon-button-border-color: transparent;
+    --md-comp-icon-button-background-color: var(--md-sys-color-primary);
+    --md-comp-icon-button-color: var(--md-sys-color-on-primary);
+    --md-comp-icon-button-box-shadow: var(--md-sys-elevation-level0);
+    //
+    --md-comp-icon-button-toggle-border-color: transparent;
+    --md-comp-icon-button-toggle-background-color: var(--md-sys-color-surface-container);
+    --md-comp-icon-button-toggle-color: var(--md-sys-color-on-surface-container);
+    --md-comp-icon-button-toggle-box-shadow: var(--md-sys-elevation-level0);
+    //
+    --md-comp-icon-button-toggle-selected-border-color: transparent;
+    --md-comp-icon-button-toggle-selected-background-color: var(--md-sys-color-primary);
+    --md-comp-icon-button-toggle-selected-color: var(--md-sys-color-on-primary);
+    --md-comp-icon-button-toggle-selected-box-shadow: var(--md-sys-elevation-level0);
+    //
+    --md-comp-icon-button-disabled-border-color: transparent;
+    --md-comp-icon-button-disabled-background-color: var(--md-sys-color-on-surface10);
+    --md-comp-icon-button-disabled-color: var(--md-sys-color-on-surface38);
+    --md-comp-icon-button-disabled-box-shadow: var(--md-sys-elevation-level0);
+
     display: inline-flex;
     align-items: center;
     justify-content: center;
     vertical-align: middle;
+
+    height: var(--md-comp-icon-button-height);
+    width: var(--md-comp-icon-button-width);
+
+    border-width: var(--md-comp-icon-button-border-width);
+    border-style: var(--md-comp-icon-button-border-style);
+    border-color: var(--md-comp-icon-button-border-color);
+    background-color: var(--md-comp-icon-button-background-color);
+    color: var(--md-comp-icon-button-color);
+    box-shadow: var(--md-comp-icon-button-box-shadow);
+
     //will-change: border-radius, background-color, color, border-color;
     transition-property: border-radius, background-color, color, border-color;
     transition-duration: var(--md-sys-motion-duration-short2);
     transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
 
+    .md-icon-button__native {
+        height: var(--md-comp-icon-button-native-height);
+        width: var(--md-comp-icon-button-native-width);
+        font-size: var(--md-comp-icon-button-native-font-size);
+    }
+
+    &.md-icon-button--narrow {
+        width: var(--md-comp-icon-button-narrow-width);
+        height: var(--md-comp-icon-button-narrow-height);
+    }
+
+    &.md-icon-button--wide {
+        width: var(--md-comp-icon-button-wide-width);
+        height: var(--md-comp-icon-button-wide-height);
+    }
+
+    &.md-icon-button--round {
+        border-radius: var(--md-comp-icon-button-round-border-radius);
+
+        &.md-icon-button--selected {
+            border-radius: var(--md-comp-icon-button-round-selected-border-radius);
+        }
+    }
+
+    &.md-icon-button--square {
+        border-radius: var(--md-comp-icon-button-square-border-radius);
+
+        &.md-icon-button--selected {
+            border-radius: var(--md-comp-icon-button-square-selected-border-radius);
+        }
+    }
+
+    &.md-icon-button--toggle {
+        border-color: var(--md-comp-icon-button-toggle-border-color);
+        background-color: var(--md-comp-icon-button-toggle-background-color);
+        color: var(--md-comp-icon-button-toggle-color);
+        box-shadow: var(--md-comp-icon-button-toggle-box-shadow);
+    }
+
+    &.md-icon-button--selected {
+        border-color: var(--md-comp-icon-button-toggle-selected-border-color);
+        background-color: var(--md-comp-icon-button-toggle-selected-background-color);
+        color: var(--md-comp-icon-button-toggle-selected-color);
+        box-shadow: var(--md-comp-icon-button-toggle-selected-box-shadow);
+    }
+
+    &.md-icon-button--disabled {
+        border-color: var(--md-comp-icon-button-disabled-border-color);
+        background-color: var(--md-comp-icon-button-disabled-background-color);
+        color: var(--md-comp-icon-button-disabled-color);
+        box-shadow: var(--md-comp-icon-button-disabled-box-shadow);
+    }
+
     &:active {
+        border-radius: var(--md-comp-icon-button-active-border-radius);
+
         transition-duration: var(--md-sys-motion-duration-short3);
         transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
 
@@ -29,264 +138,213 @@
 }
 
 .md-icon-button--extra-small {
-    height: 32px;
-    width: 32px;
-
-    &.md-icon-button--narrow {
-        width: 28px;
-        height: 32px;
-    }
-
-    &.md-icon-button--wide {
-        width: 40px;
-        height: 32px;
-    }
-
-    &.md-icon-button--round {
-        border-radius: 16px;
-
-        &.md-icon-button--selected {
-            border-radius: 12px;
-        }
-    }
-
-    &.md-icon-button--square {
-        border-radius: 12px;
-
-        &.md-icon-button--selected {
-            border-radius: 16px;
-        }
-    }
-
-    &:active {
-        border-radius: 8px;
-    }
-
-    .md-icon-button__native {
-        height: 20px;
-        width: 20px;
-        font-size: 20px;
-    }
+    --md-comp-icon-button-height: 32px;
+    --md-comp-icon-button-width: 32px;
+    //
+    --md-comp-icon-button-native-height: 20px;
+    --md-comp-icon-button-native-width: 20px;
+    --md-comp-icon-button-native-font-size: 20px;
+    //
+    --md-comp-icon-button-narrow-width: 28px;
+    --md-comp-icon-button-narrow-height: 32px;
+    //
+    --md-comp-icon-button-wide-width: 40px;
+    --md-comp-icon-button-wide-height: 32px;
+    //
+    --md-comp-icon-button-round-border-radius: 16px;
+    --md-comp-icon-button-round-selected-border-radius: 12px;
+    //
+    --md-comp-icon-button-square-border-radius: 12px;
+    --md-comp-icon-button-square-selected-border-radius: 16px;
+    //
+    --md-comp-icon-button-active-border-radius: 8px;
 }
 
 .md-icon-button--small {
-    height: 40px;
-    width: 40px;
-
-    &.md-icon-button--narrow {
-        width: 32px;
-        height: 40px;
-    }
-
-    &.md-icon-button--wide {
-        width: 52px;
-        height: 40px;
-    }
-
-    &.md-icon-button--round {
-        border-radius: 20px;
-
-        &.md-icon-button--selected {
-            border-radius: 12px;
-        }
-    }
-
-    &.md-icon-button--square {
-        border-radius: 12px;
-
-        &.md-icon-button--selected {
-            border-radius: 20px;
-        }
-    }
-
-    &:active {
-        border-radius: 8px;
-    }
-
-    .md-icon-button__native {
-        height: 24px;
-        width: 24px;
-        font-size: 24px;
-    }
+    --md-comp-icon-button-height: 40px;
+    --md-comp-icon-button-width: 40px;
+    //
+    --md-comp-icon-button-native-height: 24px;
+    --md-comp-icon-button-native-width: 24px;
+    --md-comp-icon-button-native-font-size: 24px;
+    //
+    --md-comp-icon-button-narrow-width: 32px;
+    --md-comp-icon-button-narrow-height: 40px;
+    //
+    --md-comp-icon-button-wide-width: 52px;
+    --md-comp-icon-button-wide-height: 40px;
+    //
+    --md-comp-icon-button-round-border-radius: 20px;
+    --md-comp-icon-button-round-selected-border-radius: 12px;
+    //
+    --md-comp-icon-button-square-border-radius: 12px;
+    --md-comp-icon-button-square-selected-border-radius: 20px;
+    //
+    --md-comp-icon-button-active-border-radius: 8px;
 }
 
 .md-icon-button--medium {
-    height: 56px;
-    width: 56px;
-
-    &.md-icon-button--narrow {
-        width: 48px;
-        height: 56px;
-    }
-
-    &.md-icon-button--wide {
-        width: 72px;
-        height: 56px;
-    }
-
-    &.md-icon-button--round {
-        border-radius: 28px;
-
-        &.md-icon-button--selected {
-            border-radius: 16px;
-        }
-    }
-
-    &.md-icon-button--square {
-        border-radius: 16px;
-
-        &.md-icon-button--selected {
-            border-radius: 28px;
-        }
-    }
-
-    &:active {
-        border-radius: 12px;
-    }
-
-    .md-icon-button__native {
-        height: 24px;
-        width: 24px;
-        font-size: 24px;
-    }
+    --md-comp-icon-button-height: 56px;
+    --md-comp-icon-button-width: 56px;
+    //
+    --md-comp-icon-button-native-height: 24px;
+    --md-comp-icon-button-native-width: 24px;
+    --md-comp-icon-button-native-font-size: 24px;
+    //
+    --md-comp-icon-button-narrow-width: 48px;
+    --md-comp-icon-button-narrow-height: 56px;
+    //
+    --md-comp-icon-button-wide-width: 72px;
+    --md-comp-icon-button-wide-height: 56px;
+    //
+    --md-comp-icon-button-round-border-radius: 28px;
+    --md-comp-icon-button-round-selected-border-radius: 16px;
+    //
+    --md-comp-icon-button-square-border-radius: 16px;
+    --md-comp-icon-button-square-selected-border-radius: 28px;
+    //
+    --md-comp-icon-button-active-border-radius: 12px;
 }
 
 .md-icon-button--large {
-    height: 96px;
-    width: 96px;
-
-    &.md-icon-button--narrow {
-        width: 64px;
-        height: 96px;
-    }
-
-    &.md-icon-button--wide {
-        width: 128px;
-        height: 96px;
-    }
-
-    &.md-icon-button--round {
-        border-radius: 48px;
-
-        &.md-icon-button--selected {
-            border-radius: 28px;
-        }
-    }
-
-    &.md-icon-button--square {
-        border-radius: 28px;
-
-        &.md-icon-button--selected {
-            border-radius: 48px;
-        }
-    }
-
-    &:active {
-        border-radius: 16px;
-    }
-
-    .md-icon-button__native {
-        height: 32px;
-        width: 32px;
-        font-size: 32px;
-    }
+    --md-comp-icon-button-height: 96px;
+    --md-comp-icon-button-width: 96px;
+    //
+    --md-comp-icon-button-native-height: 32px;
+    --md-comp-icon-button-native-width: 32px;
+    --md-comp-icon-button-native-font-size: 32px;
+    //
+    --md-comp-icon-button-narrow-width: 64px;
+    --md-comp-icon-button-narrow-height: 96px;
+    //
+    --md-comp-icon-button-wide-width: 128px;
+    --md-comp-icon-button-wide-height: 96px;
+    //
+    --md-comp-icon-button-round-border-radius: 48px;
+    --md-comp-icon-button-round-selected-border-radius: 28px;
+    //
+    --md-comp-icon-button-square-border-radius: 28px;
+    --md-comp-icon-button-square-selected-border-radius: 48px;
+    //
+    --md-comp-icon-button-active-border-radius: 16px;
 }
 
 .md-icon-button--extra-large {
-    height: 136px;
-    width: 136px;
-
-    &.md-icon-button--narrow {
-        width: 104px;
-        height: 136px;
-    }
-
-    &.md-icon-button--wide {
-        width: 184px;
-        height: 136px;
-    }
-
-    &.md-icon-button--round {
-        border-radius: 68px;
-
-        &.md-icon-button--selected {
-            border-radius: 28px;
-        }
-    }
-
-    &.md-icon-button--square {
-        border-radius: 28px;
-
-        &.md-icon-button--selected {
-            border-radius: 68px;
-        }
-    }
-
-    &:active {
-        border-radius: 16px;
-    }
-
-    .md-icon-button__native {
-        height: 40px;
-        width: 40px;
-        font-size: 40px;
-    }
+    --md-comp-icon-button-height: 136px;
+    --md-comp-icon-button-width: 136px;
+    //
+    --md-comp-icon-button-native-height: 40px;
+    --md-comp-icon-button-native-width: 40px;
+    --md-comp-icon-button-native-font-size: 40px;
+    //
+    --md-comp-icon-button-narrow-width: 104px;
+    --md-comp-icon-button-narrow-height: 136px;
+    //
+    --md-comp-icon-button-wide-width: 184px;
+    --md-comp-icon-button-wide-height: 136px;
+    //
+    --md-comp-icon-button-round-border-radius: 68px;
+    --md-comp-icon-button-round-selected-border-radius: 28px;
+    //
+    --md-comp-icon-button-square-border-radius: 28px;
+    --md-comp-icon-button-square-selected-border-radius: 68px;
+    //
+    --md-comp-icon-button-active-border-radius: 16px;
 }
 
 .md-icon-button--filled {
-    background-color: var(--md-sys-color-primary);
-    color: var(--md-sys-color-on-primary);
-
-    &.md-icon-button--toggle {
-        background-color: var(--md-sys-color-surface-container);
-        color: var(--md-sys-color-on-surface-variant);
-
-        &.md-icon-button--selected {
-            background-color: var(--md-sys-color-primary);
-            color: var(--md-sys-color-on-primary);
-        }
-    }
+    --md-comp-icon-button-border-width: 0px;
+    --md-comp-icon-button-border-style: solid;
+    --md-comp-icon-button-border-color: transparent;
+    --md-comp-icon-button-background-color: var(--md-sys-color-primary);
+    --md-comp-icon-button-color: var(--md-sys-color-on-primary);
+    --md-comp-icon-button-box-shadow: var(--md-sys-elevation-level0);
+    //
+    --md-comp-icon-button-toggle-border-color: transparent;
+    --md-comp-icon-button-toggle-background-color: var(--md-sys-color-surface-container);
+    --md-comp-icon-button-toggle-color: var(--md-sys-color-on-surface-container);
+    --md-comp-icon-button-toggle-box-shadow: var(--md-sys-elevation-level0);
+    //
+    --md-comp-icon-button-toggle-selected-border-color: transparent;
+    --md-comp-icon-button-toggle-selected-background-color: var(--md-sys-color-primary);
+    --md-comp-icon-button-toggle-selected-color: var(--md-sys-color-on-primary);
+    --md-comp-icon-button-toggle-selected-box-shadow: var(--md-sys-elevation-level0);
+    //
+    --md-comp-icon-button-disabled-border-color: transparent;
+    --md-comp-icon-button-disabled-background-color: var(--md-sys-color-on-surface10);
+    --md-comp-icon-button-disabled-color: var(--md-sys-color-on-surface38);
+    --md-comp-icon-button-disabled-box-shadow: var(--md-sys-elevation-level0);
 }
-
 .md-icon-button--tonal {
-    background-color: var(--md-sys-color-secondary-container);
-    color: var(--md-sys-color-on-secondary-container);
-
-    &.md-icon-button--toggle {
-        background-color: var(--md-sys-color-secondary-container);
-        color: var(--md-sys-color-on-secondary-container);
-
-        &.md-icon-button--selected {
-            background-color: var(--md-sys-color-secondary);
-            color: var(--md-sys-color-on-secondary);
-        }
-    }
+    --md-comp-icon-button-border-width: 0px;
+    --md-comp-icon-button-border-style: solid;
+    --md-comp-icon-button-border-color: transparent;
+    --md-comp-icon-button-background-color: var(--md-sys-color-secondary-container);
+    --md-comp-icon-button-color: var(--md-sys-color-on-secondary-container);
+    --md-comp-icon-button-box-shadow: var(--md-sys-elevation-level0);
+    //
+    --md-comp-icon-button-toggle-border-color: transparent;
+    --md-comp-icon-button-toggle-background-color: var(--md-sys-color-secondary-container);
+    --md-comp-icon-button-toggle-color: var(--md-sys-color-on-secondary-container);
+    --md-comp-icon-button-toggle-box-shadow: var(--md-sys-elevation-level0);
+    //
+    --md-comp-icon-button-toggle-selected-border-color: transparent;
+    --md-comp-icon-button-toggle-selected-background-color: var(--md-sys-color-secondary);
+    --md-comp-icon-button-toggle-selected-color: var(--md-sys-color-on-secondary);
+    --md-comp-icon-button-toggle-selected-box-shadow: var(--md-sys-elevation-level0);
+    //
+    --md-comp-icon-button-disabled-border-color: transparent;
+    --md-comp-icon-button-disabled-background-color: var(--md-sys-color-on-surface10);
+    --md-comp-icon-button-disabled-color: var(--md-sys-color-on-surface38);
+    --md-comp-icon-button-disabled-box-shadow: var(--md-sys-elevation-level0);
 }
-
 .md-icon-button--outlined {
-    border: 1px solid var(--md-sys-color-outline-variant);
-    color: var(--md-sys-color-on-surface-variant);
-
-    &.md-icon-button--toggle {
-        border: 1px solid var(--md-sys-color-outline-variant);
-        color: var(--md-sys-color-on-surface-variant);
-
-        &.md-icon-button--selected {
-            background-color: var(--md-sys-color-inverse-surface);
-            border: 1px solid var(--md-sys-color-inverse-surface);
-            color: var(--md-sys-color-inverse-on-surface);
-        }
-    }
+    --md-comp-icon-button-border-width: 1px;
+    --md-comp-icon-button-border-style: solid;
+    --md-comp-icon-button-border-color: var(--md-sys-color-outline-variant);
+    --md-comp-icon-button-background-color: transparent;
+    --md-comp-icon-button-color: var(--md-sys-color-on-surface-variant);
+    --md-comp-icon-button-box-shadow: var(--md-sys-elevation-level0);
+    //
+    --md-comp-icon-button-toggle-border-color: var(--md-sys-color-outline-variant);
+    --md-comp-icon-button-toggle-background-color: transparent;
+    --md-comp-icon-button-toggle-color: var(--md-sys-color-on-surface-variant);
+    --md-comp-icon-button-toggle-box-shadow: var(--md-sys-elevation-level0);
+    //
+    --md-comp-icon-button-toggle-selected-border-color: var(--md-sys-color-inverse-surface);
+    --md-comp-icon-button-toggle-selected-background-color: var(--md-sys-color-inverse-surface);
+    --md-comp-icon-button-toggle-selected-color: var(--md-sys-color-inverse-on-surface);
+    --md-comp-icon-button-toggle-selected-box-shadow: var(--md-sys-elevation-level0);
+    //
+    --md-comp-icon-button-disabled-border-color: var(--md-sys-color-outline-variant);
+    --md-comp-icon-button-disabled-background-color: var(--md-sys-color-on-surface10);
+    --md-comp-icon-button-disabled-color: var(--md-sys-color-on-surface38);
+    --md-comp-icon-button-disabled-box-shadow: var(--md-sys-elevation-level0);
+}
+.md-icon-button--standard {
+    --md-comp-icon-button-border-width: 0px;
+    --md-comp-icon-button-border-style: solid;
+    --md-comp-icon-button-border-color: transparent;
+    --md-comp-icon-button-background-color: transparent;
+    --md-comp-icon-button-color: var(--md-sys-color-primary);
+    --md-comp-icon-button-box-shadow: var(--md-sys-elevation-level0);
+    //
+    --md-comp-icon-button-toggle-border-color: transparent;
+    --md-comp-icon-button-toggle-background-color: transparent;
+    --md-comp-icon-button-toggle-color: var(--md-sys-color-primary);
+    --md-comp-icon-button-toggle-box-shadow: var(--md-sys-elevation-level0);
+    //
+    --md-comp-icon-button-toggle-selected-border-color: transparent;
+    --md-comp-icon-button-toggle-selected-background-color: transparent;
+    --md-comp-icon-button-toggle-selected-color: var(--md-sys-color-primary);
+    --md-comp-icon-button-toggle-selected-box-shadow: var(--md-sys-elevation-level0);
+    //
+    --md-comp-icon-button-disabled-border-color: transparent;
+    --md-comp-icon-button-disabled-background-color: var(--md-sys-color-on-surface10);
+    --md-comp-icon-button-disabled-color: var(--md-sys-color-on-surface38);
+    --md-comp-icon-button-disabled-box-shadow: var(--md-sys-elevation-level0);
 }
 
-.md-icon-button--standard {
-    color: var(--md-sys-color-on-surface-variant);
-
-    &.md-icon-button--toggle {
-        color: var(--md-sys-color-on-surface-variant);
-
-        &.md-icon-button--selected {
-            color: var(--md-sys-color-primary);
-        }
-    }
+.md-icon-button--disabled {
+    pointer-events: none;
 }

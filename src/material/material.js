@@ -27,14 +27,12 @@ import "./components/layout/layout.js";
 import "./components/icon/icon.js";
 import "./components/image/image.js";
 import "./components/badge/badge.js";
-import "./components/tooltip/tooltip.js";
 
-import "./components/icon-button/icon-button.js";
 import "./components/button/button.js";
-import "./components/split-button/split-button.js";
+import "./components/icon-button/icon-button.js";
 import "./components/fab/fab.js";
+import "./components/split-button/split-button.js";
 
-import "./components/snackbar/snackbar.js";
 
 import "./components/card/card.js";
 import "./components/card/card-header.js";
@@ -48,13 +46,14 @@ import "./components/dialog/dialog-body.js";
 import "./components/dialog/dialog-main.js";
 import "./components/dialog/dialog-footer.js";
 
-import "./components/datetime-picker/datetime-picker.js";
+import "./components/tooltip/tooltip.js";
+import "./components/snackbar/snackbar.js";
 
-import "./components/text-field/text-field.js";
-import "./components/textarea/textarea.js";
 import "./components/checkbox/checkbox.js";
 import "./components/radio-button/radio-button.js";
 import "./components/switch/switch.js";
+import "./components/text-field/text-field.js";
+import "./components/textarea/textarea.js";
 import "./components/slider/slider.js";
 import "./components/form/form.js";
 
@@ -69,5 +68,7 @@ import "./components/push-menu/push-menu.js";
 import "./components/navigation-bar/navigation-bar.js";
 import "./components/navigation-drawer/navigation-drawer.js";
 import "./components/navigation-rail/navigation-rail.js";
+
+import "./components/datetime-picker/datetime-picker.js";
 
 import "./service/snackbar.js";
