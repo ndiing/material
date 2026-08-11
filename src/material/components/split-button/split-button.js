@@ -39,14 +39,18 @@ class MdSplitButton extends MdElement {
         return html`
             <div 
                 class="md-split-button__leading"
+                tabindex="0"
                 @click="${this._handleSplitButtonClick}"
+                @keydown="${this._handleSplitButtonKeydown}"
             >
                 ${this.icon?html`<md-icon class="md-split-button__icon" .icon="${this.icon}"></md-icon>`:nothing}
                 ${this.label?html`<div class="md-split-button__label">${this.label}</div>`:nothing}
             </div>
             <div 
                 class="md-split-button__trailing"
+                tabindex="0"
                 @click="${this._handleSplitButtonIconClick}"
+                @keydown="${this._handleSplitButtonIconKeydown}"
             >
                 <md-icon class="md-split-button__icon" .icon="${this.trailingIcon}"></md-icon>
             </div>
@@ -87,10 +91,33 @@ class MdSplitButton extends MdElement {
         this.emit("onSplitButtonClick", { event, element: this });
     }
 
+    _handleSplitButtonKeydown(event){
+        if(event.key==='Enter'||event.code==='Space'){
+            event.preventDefault()
+            this.emit('onSplitButtonPress',{event,element:this})
+        }
+        this.emit('onSplitButtonKeydown',{event,element:this})
+    }
+
     _handleSplitButtonIconClick(event) {
-        this.selected = !this.selected;
+        this.toggleSelect(event);
         this.emit("onSplitButtonIconClick", { event, element: this });
     }
+
+    _handleSplitButtonIconKeydown(event){
+        if(event.key==='Enter'||event.code==='Space'){
+            event.preventDefault()
+            this.emit('onSplitButtonPress',{event,element:this})
+            this.toggleSelect(event);
+        }
+        this.emit('onSplitButtonKeydown',{event,element:this})
+    }
+
+    toggleSelect(event={}) {
+        this.selected = !this.selected;
+        this.emit('onSplitButtonSelection', { event, element: this });
+    }
+
 }
 
 customElements.define("md-split-button", MdSplitButton);
