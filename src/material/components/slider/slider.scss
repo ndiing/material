@@ -154,13 +154,24 @@
         bottom: calc(100% - (var(--md-comp-slider-label-container-height) / 2));
         left: calc(var(--md-comp-slider-fraction0) * (100% - var(--md-comp-slider-handle-width)) + (var(--md-comp-slider-handle-width) / 2));
         transform: translate3d(-50%, 0, 0) scale3d(0, 0, 0);
-        //will-change: bottom, transform;
-        transition-property: bottom, transform;
+        //will-change: top, bottom, transform;
+        transition-property: top, bottom, transform;
     }
 
     .md-slider__native:is(:active, :focus-visible) + .md-slider__thumb + .md-slider__label {
         bottom: 100%;
         transform: translate3d(-50%, 0, 0) scale3d(1, 1, 1);
+    }
+
+    &.md-slider--flipped {
+        .md-slider__label {
+            bottom: auto;
+            top: calc(100% - (var(--md-comp-slider-label-container-height) / 2));
+        }
+        .md-slider__native:is(:active, :focus-visible) + .md-slider__thumb + .md-slider__label {
+            bottom: auto;
+            top: 100%;
+        }
     }
 
     &.md-slider--centered {
@@ -256,13 +267,25 @@
         left: calc(100% - (var(--md-comp-slider-label-container-height) / 2));
         bottom: calc(var(--md-comp-slider-fraction0) * (100% - var(--md-comp-slider-handle-width)) + (var(--md-comp-slider-handle-width) / 2));
         transform: translate3d(0, 50%, 0) scale3d(0, 0, 0);
-        //will-change: left, transform;
-        transition-property: left, transform;
+        //will-change: right, left, transform;
+        transition-property: right, left, transform;
     }
 
     .md-slider__native:is(:active, :focus-visible) + .md-slider__thumb + .md-slider__label {
         left: 100%;
         transform: translate3d(0, 50%, 0) scale3d(1, 1, 1);
+    }
+
+    &.md-slider--flipped {
+        .md-slider__label {
+            left: auto;
+            right: calc(100% - (var(--md-comp-slider-label-container-height) / 2));
+        }
+        
+        .md-slider__native:is(:active, :focus-visible) + .md-slider__thumb + .md-slider__label {
+            left: auto;
+            right: 100%;
+        }
     }
 
     .md-slider__stops {

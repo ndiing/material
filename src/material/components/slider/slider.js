@@ -27,13 +27,13 @@ class MdSlider extends MdElement {
         step: { type: Number },
         value: { type: Number, converter },
         variant: { type: String, state: true },
-        icon: { type: String, converter },
         orientation: { type: String },
         size: { type: String },
-        stopIndicator: { type: Boolean },
-        valueIndicator: { type: Boolean },
+        icon: { type: String, converter },
         values: { type: Array, state: true },
         stops: { type: Number, state: true },
+        label: { type: Boolean },
+        flipped: { type: Boolean },
     };
 
     variants = ["standard", "centered", "range"];
@@ -52,12 +52,11 @@ class MdSlider extends MdElement {
         this.max = 100;
         this.step = 1;
         this.value = 50;
-        this.stopIndicator = true;
-        this.valueIndicator = true;
         this.values = [];
-
         this.orientation = "horizontal";
         this.size = "extra-small";
+        this.label=true
+        this.flipped=false
     }
 
     /* prettier-ignore */
@@ -105,7 +104,7 @@ class MdSlider extends MdElement {
                         [`md-slider__thumb${index}`]:true,
                     })}"
                 ></div>
-                ${this.valueIndicator?html`
+                ${this.label?html`
                     <div 
                         class="${classMap({
                             'md-slider__label':true,
@@ -171,6 +170,9 @@ class MdSlider extends MdElement {
         if (_changedProperties.has("stops")) {
             this.classList.toggle(`md-slider--discrete`, this.stops > 1);
             this.style.setProperty("--md-comp-slider-stop", this.stops);
+        }
+        if (_changedProperties.has("flipped")) {
+            this.classList.toggle(`md-slider--flipped`, Boolean(this.flipped));
         }
     }
 
