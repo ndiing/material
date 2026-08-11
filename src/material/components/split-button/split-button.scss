@@ -2,36 +2,36 @@
 
 .md-split-button {
     --md-comp-split-button-gap: 2px;
-    // leading icon
+    //
     --md-comp-split-button-leading-icon-height: 20px;
-    // leading label
+    //
     --md-comp-split-button-leading-label-font-family: var(--md-sys-typescale-label-large-font);
     --md-comp-split-button-leading-label-font-weight: var(--md-sys-typescale-label-large-weight);
     --md-comp-split-button-leading-label-font-size: var(--md-sys-typescale-label-large-size);
     --md-comp-split-button-leading-label-letter-spacing: var(--md-sys-typescale-label-large-tracking);
     --md-comp-split-button-leading-label-line-height: var(--md-sys-typescale-label-large-line-height);
-    // leading
+    //
     --md-comp-split-button-leading-height: 40px;
     --md-comp-split-button-leading-padding-left: 16px;
     --md-comp-split-button-leading-padding-right: 12px;
     --md-comp-split-button-leading-gap: 8px;
     --md-comp-split-button-leading-border-top-right-radius: 4px;
     --md-comp-split-button-leading-border-bottom-right-radius: 4px;
-    // trailing
+    //
     --md-comp-split-button-trailing-height: 40px;
     --md-comp-split-button-trailing-padding-left: 12px;
     --md-comp-split-button-trailing-padding-right: 14px;
     --md-comp-split-button-trailing-border-top-left-radius: 4px;
     --md-comp-split-button-trailing-border-bottom-left-radius: 4px;
-    // trailing icon
+    //
     --md-comp-split-button-trailing-icon-height: 22px;
-    // leading trailing
+    //
     --md-comp-split-button-leading-trailing-border-width: 0;
     --md-comp-split-button-leading-trailing-border-color: transparent;
     --md-comp-split-button-leading-trailing-background-color: var(--md-sys-color-primary);
     --md-comp-split-button-leading-trailing-color: var(--md-sys-color-on-primary);
     --md-comp-split-button-leading-trailing-box-shadow: var(--md-sys-elevation-level0);
-    // selected trailing
+    //
     --md-comp-split-button-selected-trailing-padding-left: 13px;
     --md-comp-split-button-selected-trailing-padding-right: 13px;
     display: inline-flex;
@@ -136,156 +136,156 @@
 
 .md-split-button--extra-small {
     --md-comp-split-button-gap: 2px;
-    // leading icon
+    //
     --md-comp-split-button-leading-icon-height: 20px;
-    // leading label
+    //
     --md-comp-split-button-leading-label-font-family: var(--md-sys-typescale-label-large-font);
     --md-comp-split-button-leading-label-font-weight: var(--md-sys-typescale-label-large-weight);
     --md-comp-split-button-leading-label-font-size: var(--md-sys-typescale-label-large-size);
     --md-comp-split-button-leading-label-letter-spacing: var(--md-sys-typescale-label-large-tracking);
     --md-comp-split-button-leading-label-line-height: var(--md-sys-typescale-label-large-line-height);
-    // leading
+    //
     --md-comp-split-button-leading-height: 32px;
     --md-comp-split-button-leading-padding-left: 12px;
     --md-comp-split-button-leading-padding-right: 10px;
     --md-comp-split-button-leading-gap: 4px;
     --md-comp-split-button-leading-border-top-right-radius: 4px;
     --md-comp-split-button-leading-border-bottom-right-radius: 4px;
-    // trailing
+    //
     --md-comp-split-button-trailing-height: 32px;
     --md-comp-split-button-trailing-padding-left: 12px;
     --md-comp-split-button-trailing-padding-right: 14px;
     --md-comp-split-button-trailing-border-top-left-radius: 4px;
     --md-comp-split-button-trailing-border-bottom-left-radius: 4px;
-    // trailing icon
+    //
     --md-comp-split-button-trailing-icon-height: 22px;
-    // selected trailing
+    //
     --md-comp-split-button-selected-trailing-padding-left: 13px;
     --md-comp-split-button-selected-trailing-padding-right: 13px;
 }
 
 .md-split-button--small {
     --md-comp-split-button-gap: 2px;
-    // leading icon
+    //
     --md-comp-split-button-leading-icon-height: 20px;
-    // leading label
+    //
     --md-comp-split-button-leading-label-font-family: var(--md-sys-typescale-label-large-font);
     --md-comp-split-button-leading-label-font-weight: var(--md-sys-typescale-label-large-weight);
     --md-comp-split-button-leading-label-font-size: var(--md-sys-typescale-label-large-size);
     --md-comp-split-button-leading-label-letter-spacing: var(--md-sys-typescale-label-large-tracking);
     --md-comp-split-button-leading-label-line-height: var(--md-sys-typescale-label-large-line-height);
-    // leading
+    //
     --md-comp-split-button-leading-height: 40px;
     --md-comp-split-button-leading-padding-left: 16px;
     --md-comp-split-button-leading-padding-right: 12px;
     --md-comp-split-button-leading-gap: 8px;
     --md-comp-split-button-leading-border-top-right-radius: 4px;
     --md-comp-split-button-leading-border-bottom-right-radius: 4px;
-    // trailing
+    //
     --md-comp-split-button-trailing-height: 40px;
     --md-comp-split-button-trailing-padding-left: 12px;
     --md-comp-split-button-trailing-padding-right: 14px;
     --md-comp-split-button-trailing-border-top-left-radius: 4px;
     --md-comp-split-button-trailing-border-bottom-left-radius: 4px;
-    // trailing icon
+    //
     --md-comp-split-button-trailing-icon-height: 22px;
-    // selected trailing
+    //
     --md-comp-split-button-selected-trailing-padding-left: 13px;
     --md-comp-split-button-selected-trailing-padding-right: 13px;
 }
 
 .md-split-button--medium {
     --md-comp-split-button-gap: 2px;
-    // leading icon
+    //
     --md-comp-split-button-leading-icon-height: 24px;
-    // leading label
+    //
     --md-comp-split-button-leading-label-font-family: var(--md-sys-typescale-title-medium-font);
     --md-comp-split-button-leading-label-font-weight: var(--md-sys-typescale-title-medium-weight);
     --md-comp-split-button-leading-label-font-size: var(--md-sys-typescale-title-medium-size);
     --md-comp-split-button-leading-label-letter-spacing: var(--md-sys-typescale-title-medium-tracking);
     --md-comp-split-button-leading-label-line-height: var(--md-sys-typescale-title-medium-line-height);
-    // leading
+    //
     --md-comp-split-button-leading-height: 56px;
     --md-comp-split-button-leading-padding-left: 24px;
     --md-comp-split-button-leading-padding-right: 24px;
     --md-comp-split-button-leading-gap: 8px;
     --md-comp-split-button-leading-border-top-right-radius: 4px;
     --md-comp-split-button-leading-border-bottom-right-radius: 4px;
-    // trailing
+    //
     --md-comp-split-button-trailing-height: 56px;
     --md-comp-split-button-trailing-padding-left: 13px;
     --md-comp-split-button-trailing-padding-right: 17px;
     --md-comp-split-button-trailing-border-top-left-radius: 4px;
     --md-comp-split-button-trailing-border-bottom-left-radius: 4px;
-    // trailing icon
+    //
     --md-comp-split-button-trailing-icon-height: 24px;
-    // selected trailing
+    //
     --md-comp-split-button-selected-trailing-padding-left: 15px;
     --md-comp-split-button-selected-trailing-padding-right: 15px;
 }
 
 .md-split-button--large {
     --md-comp-split-button-gap: 2px;
-    // leading icon
+    //
     --md-comp-split-button-leading-icon-height: 32px;
-    // leading label
+    //
     --md-comp-split-button-leading-label-font-family: var(--md-sys-typescale-headline-small-font);
     --md-comp-split-button-leading-label-font-weight: var(--md-sys-typescale-headline-small-weight);
     --md-comp-split-button-leading-label-font-size: var(--md-sys-typescale-headline-small-size);
     --md-comp-split-button-leading-label-letter-spacing: var(--md-sys-typescale-headline-small-tracking);
     --md-comp-split-button-leading-label-line-height: var(--md-sys-typescale-headline-small-line-height);
-    // leading
+    //
     --md-comp-split-button-leading-height: 96px;
     --md-comp-split-button-leading-padding-left: 48px;
     --md-comp-split-button-leading-padding-right: 48px;
     --md-comp-split-button-leading-gap: 12px;
     --md-comp-split-button-leading-border-top-right-radius: 8px;
     --md-comp-split-button-leading-border-bottom-right-radius: 8px;
-    // trailing
+    //
     --md-comp-split-button-trailing-height: 96px;
     --md-comp-split-button-trailing-padding-left: 26px;
     --md-comp-split-button-trailing-padding-right: 32px;
     --md-comp-split-button-trailing-border-top-left-radius: 8px;
     --md-comp-split-button-trailing-border-bottom-left-radius: 8px;
-    // trailing icon
+    //
     --md-comp-split-button-trailing-icon-height: 38px;
-    // selected trailing
+    //
     --md-comp-split-button-selected-trailing-padding-left: 29px;
     --md-comp-split-button-selected-trailing-padding-right: 29px;
 }
 
 .md-split-button--extra-large {
     --md-comp-split-button-gap: 2px;
-    // leading icon
+    //
     --md-comp-split-button-leading-icon-height: 40px;
-    // leading label
+    //
     --md-comp-split-button-leading-label-font-family: var(--md-sys-typescale-headline-large-font);
     --md-comp-split-button-leading-label-font-weight: var(--md-sys-typescale-headline-large-weight);
     --md-comp-split-button-leading-label-font-size: var(--md-sys-typescale-headline-large-size);
     --md-comp-split-button-leading-label-letter-spacing: var(--md-sys-typescale-headline-large-tracking);
     --md-comp-split-button-leading-label-line-height: var(--md-sys-typescale-headline-large-line-height);
-    // leading
+    //
     --md-comp-split-button-leading-height: 136px;
     --md-comp-split-button-leading-padding-left: 64px;
     --md-comp-split-button-leading-padding-right: 64px;
     --md-comp-split-button-leading-gap: 16px;
     --md-comp-split-button-leading-border-top-right-radius: 12px;
     --md-comp-split-button-leading-border-bottom-right-radius: 12px;
-    // trailing
+    //
     --md-comp-split-button-trailing-height: 136px;
     --md-comp-split-button-trailing-padding-left: 37px;
     --md-comp-split-button-trailing-padding-right: 49px;
     --md-comp-split-button-trailing-border-top-left-radius: 12px;
     --md-comp-split-button-trailing-border-bottom-left-radius: 12px;
-    // trailing icon
+    //
     --md-comp-split-button-trailing-icon-height: 50px;
-    // selected trailing
+    //
     --md-comp-split-button-selected-trailing-padding-left: 43px;
     --md-comp-split-button-selected-trailing-padding-right: 43px;
 }
 
 .md-split-button--elevated {
-    // leading trailing
+    //
     --md-comp-split-button-leading-trailing-border-width: 0;
     --md-comp-split-button-leading-trailing-border-color: transparent;
     --md-comp-split-button-leading-trailing-background-color: var(--md-sys-color-surface-container-low);
@@ -294,7 +294,7 @@
 }
 
 .md-split-button--filled {
-    // leading trailing
+    //
     --md-comp-split-button-leading-trailing-border-width: 0;
     --md-comp-split-button-leading-trailing-border-color: transparent;
     --md-comp-split-button-leading-trailing-background-color: var(--md-sys-color-primary);
@@ -303,7 +303,7 @@
 }
 
 .md-split-button--tonal {
-    // leading trailing
+    //
     --md-comp-split-button-leading-trailing-border-width: 0;
     --md-comp-split-button-leading-trailing-border-color: transparent;
     --md-comp-split-button-leading-trailing-background-color: var(--md-sys-color-secondary-container);
@@ -312,7 +312,7 @@
 }
 
 .md-split-button--outlined {
-    // leading trailing
+    //
     --md-comp-split-button-leading-trailing-border-width: 1px;
     --md-comp-split-button-leading-trailing-border-color: var(--md-sys-color-outline-variant);
     --md-comp-split-button-leading-trailing-background-color: transparent;
@@ -321,7 +321,7 @@
 }
 
 .md-split-button--text {
-    // leading trailing
+    //
     --md-comp-split-button-leading-trailing-border-width: 0px;
     --md-comp-split-button-leading-trailing-border-color: transparent;
     --md-comp-split-button-leading-trailing-background-color: transparent;

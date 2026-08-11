@@ -1,17 +1,127 @@
 @use "../../shared/mixins.scss";
 
 .md-button {
+    //
+    --md-comp-button-height: 40px;
+    --md-comp-button-padding: 16px;
+    --md-comp-button-gap: 8px;
+    //
+    --md-comp-button-icon-width: 20px;
+    --md-comp-button-icon-height: 20px;
+    --md-comp-button-icon-font-size: 20px;
+    //
+    --md-comp-button-label-font-family: var(--md-sys-typescale-label-large-font);
+    --md-comp-button-label-font-weight: var(--md-sys-typescale-label-large-weight);
+    --md-comp-button-label-font-size: var(--md-sys-typescale-label-large-size);
+    --md-comp-button-label-letter-spacing: var(--md-sys-typescale-label-large-tracking);
+    --md-comp-button-label-line-height: var(--md-sys-typescale-label-large-line-height);
+    //
+    --md-comp-button-round-border-radius: 20px;
+    --md-comp-button-round-selected-border-radius: 12px;
+    //
+    --md-comp-button-square-border-radius: 12px;
+    --md-comp-button-square-selected-border-radius: 20px;
+    //
+    --md-comp-button-active-border-radius: 8px;
+    //
+    --md-comp-button-border-width: 0px;
+    --md-comp-button-border-style: solid;
+    --md-comp-button-border-color: transparent;
+    --md-comp-button-background-color: var(--md-sys-color-primary);
+    --md-comp-button-color: var(--md-sys-color-on-primary);
+    --md-comp-button-box-shadow: var(--md-sys-elevation-level0);
+    //
+    --md-comp-button-toggle-border-color: transparent;
+    --md-comp-button-toggle-background-color: var(--md-sys-color-surface-container);
+    --md-comp-button-toggle-color: var(--md-sys-color-on-surface-container);
+    --md-comp-button-toggle-box-shadow: var(--md-sys-elevation-level0);
+    //
+    --md-comp-button-toggle-selected-border-color: transparent;
+    --md-comp-button-toggle-selected-background-color: var(--md-sys-color-primary);
+    --md-comp-button-toggle-selected-color: var(--md-sys-color-on-primary);
+    --md-comp-button-toggle-selected-box-shadow: var(--md-sys-elevation-level0);
+    //
+    --md-comp-button-disabled-border-color: transparent;
+    --md-comp-button-disabled-background-color: var(--md-sys-color-on-surface10);
+    --md-comp-button-disabled-color: var(--md-sys-color-on-surface38);
+    --md-comp-button-disabled-box-shadow: var(--md-sys-elevation-level0);
+
     display: inline-flex;
     align-items: center;
     justify-content: center;
     vertical-align: middle;
     position: relative;
+
+    height: var(--md-comp-button-height);
+    padding: 0 var(--md-comp-button-padding);
+    gap: 0 var(--md-comp-button-gap);
+
+    border-width: var(--md-comp-button-border-width);
+    border-style: var(--md-comp-button-border-style);
+    border-color: var(--md-comp-button-border-color);
+    background-color: var(--md-comp-button-background-color);
+    color: var(--md-comp-button-color);
+    box-shadow: var(--md-comp-button-box-shadow);
+
     //will-change: border-radius, background-color, color, border-color;
     transition-property: border-radius, background-color, color, border-color;
     transition-duration: var(--md-sys-motion-duration-short2);
     transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
 
+    .md-button__icon {
+        width: var(--md-comp-button-icon-width);
+        height: var(--md-comp-button-icon-height);
+        font-size: var(--md-comp-button-icon-font-size);
+    }
+
+    .md-button__label {
+        font-family: var(--md-comp-button-label-font-family);
+        font-weight: var(--md-comp-button-label-font-weight);
+        font-size: var(--md-comp-button-label-font-size);
+        letter-spacing: var(--md-comp-button-label-letter-spacing);
+        line-height: var(--md-comp-button-label-line-height);
+    }
+
+    &.md-button--round {
+        border-radius: var(--md-comp-button-round-border-radius);
+
+        &.md-button--selected {
+            border-radius: var(--md-comp-button-round-selected-border-radius);
+        }
+    }
+
+    &.md-button--square {
+        border-radius: var(--md-comp-button-square-border-radius);
+
+        &.md-button--selected {
+            border-radius: var(--md-comp-button-square-selected-border-radius);
+        }
+    }
+
+    &.md-button--toggle {
+        border-color: var(--md-comp-button-toggle-border-color);
+        background-color: var(--md-comp-button-toggle-background-color);
+        color: var(--md-comp-button-toggle-color);
+        box-shadow: var(--md-comp-button-toggle-box-shadow);
+    }
+
+    &.md-button--selected {
+        border-color: var(--md-comp-button-toggle-selected-border-color);
+        background-color: var(--md-comp-button-toggle-selected-background-color);
+        color: var(--md-comp-button-toggle-selected-color);
+        box-shadow: var(--md-comp-button-toggle-selected-box-shadow);
+    }
+
+    &.md-button--disabled {
+        border-color: var(--md-comp-button-disabled-border-color);
+        background-color: var(--md-comp-button-disabled-background-color);
+        color: var(--md-comp-button-disabled-color);
+        box-shadow: var(--md-comp-button-disabled-box-shadow);
+    }
+
     &:active {
+        border-radius: var(--md-comp-button-active-border-radius);
+
         transition-duration: var(--md-sys-motion-duration-short3);
         transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
 
@@ -52,311 +162,253 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-family: var(--md-sys-typescale-label-large-font);
-    font-weight: var(--md-sys-typescale-label-large-weight);
-    font-size: var(--md-sys-typescale-label-large-size);
-    letter-spacing: var(--md-sys-typescale-label-large-tracking);
-    line-height: var(--md-sys-typescale-label-large-line-height);
+    // font-family: var(--md-sys-typescale-label-large-font);
+    // font-weight: var(--md-sys-typescale-label-large-weight);
+    // font-size: var(--md-sys-typescale-label-large-size);
+    // letter-spacing: var(--md-sys-typescale-label-large-tracking);
+    // line-height: var(--md-sys-typescale-label-large-line-height);
     //will-change: font-size;
     transition-property: font-size;
     transition-duration: var(--md-sys-motion-duration-short2);
     transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
 }
 
-.md-button--default {
-}
+// .md-button--default {}
 
 .md-button--extra-small {
-    height: 32px;
-    padding: 0 12px;
-    gap: 0 4px;
-
-    &.md-button--round {
-        border-radius: 16px;
-
-        &.md-button--selected {
-            border-radius: 12px;
-        }
-    }
-
-    &.md-button--square {
-        border-radius: 12px;
-
-        &.md-button--selected {
-            border-radius: 16px;
-        }
-    }
-
-    &:active {
-        border-radius: 8px;
-    }
-
-    .md-button__icon {
-        width: 20px;
-        height: 20px;
-        font-size: 20px;
-    }
-
-    .md-button__label {
-        font-family: var(--md-sys-typescale-label-large-font);
-        font-weight: var(--md-sys-typescale-label-large-weight);
-        font-size: var(--md-sys-typescale-label-large-size);
-        letter-spacing: var(--md-sys-typescale-label-large-tracking);
-        line-height: var(--md-sys-typescale-label-large-line-height);
-    }
+    --md-comp-button-height: 32px;
+    --md-comp-button-padding: 12px;
+    --md-comp-button-gap: 4px;
+    //
+    --md-comp-button-icon-width: 20px;
+    --md-comp-button-icon-height: 20px;
+    --md-comp-button-icon-font-size: 20px;
+    //
+    --md-comp-button-label-font-family: var(--md-sys-typescale-label-large-font);
+    --md-comp-button-label-font-weight: var(--md-sys-typescale-label-large-weight);
+    --md-comp-button-label-font-size: var(--md-sys-typescale-label-large-size);
+    --md-comp-button-label-letter-spacing: var(--md-sys-typescale-label-large-tracking);
+    --md-comp-button-label-line-height: var(--md-sys-typescale-label-large-line-height);
+    //
+    --md-comp-button-round-border-radius: 16px;
+    --md-comp-button-round-selected-border-radius: 12px;
+    //
+    --md-comp-button-square-border-radius: 12px;
+    --md-comp-button-square-selected-border-radius: 16px;
+    //
+    --md-comp-button-active-border-radius: 8px;
 }
 
 .md-button--small {
-    height: 40px;
-    padding: 0 16px;
-    gap: 0 8px;
-
-    &.md-button--round {
-        border-radius: 20px;
-
-        &.md-button--selected {
-            border-radius: 12px;
-        }
-    }
-
-    &.md-button--square {
-        border-radius: 12px;
-
-        &.md-button--selected {
-            border-radius: 20px;
-        }
-    }
-
-    &:active {
-        border-radius: 8px;
-    }
-
-    .md-button__icon {
-        width: 20px;
-        height: 20px;
-        font-size: 20px;
-    }
-
-    .md-button__label {
-        font-family: var(--md-sys-typescale-label-large-font);
-        font-weight: var(--md-sys-typescale-label-large-weight);
-        font-size: var(--md-sys-typescale-label-large-size);
-        letter-spacing: var(--md-sys-typescale-label-large-tracking);
-        line-height: var(--md-sys-typescale-label-large-line-height);
-    }
+    --md-comp-button-height: 40px;
+    --md-comp-button-padding: 16px;
+    --md-comp-button-gap: 8px;
+    //
+    --md-comp-button-icon-width: 20px;
+    --md-comp-button-icon-height: 20px;
+    --md-comp-button-icon-font-size: 20px;
+    //
+    --md-comp-button-label-font-family: var(--md-sys-typescale-label-large-font);
+    --md-comp-button-label-font-weight: var(--md-sys-typescale-label-large-weight);
+    --md-comp-button-label-font-size: var(--md-sys-typescale-label-large-size);
+    --md-comp-button-label-letter-spacing: var(--md-sys-typescale-label-large-tracking);
+    --md-comp-button-label-line-height: var(--md-sys-typescale-label-large-line-height);
+    //
+    --md-comp-button-round-border-radius: 20px;
+    --md-comp-button-round-selected-border-radius: 12px;
+    //
+    --md-comp-button-square-border-radius: 12px;
+    --md-comp-button-square-selected-border-radius: 20px;
+    //
+    --md-comp-button-active-border-radius: 8px;
 }
 
 .md-button--medium {
-    height: 56px;
-    padding: 0 24px;
-    gap: 0 8px;
-
-    &.md-button--round {
-        border-radius: 28px;
-
-        &.md-button--selected {
-            border-radius: 16px;
-        }
-    }
-
-    &.md-button--square {
-        border-radius: 16px;
-
-        &.md-button--selected {
-            border-radius: 28px;
-        }
-    }
-
-    &:active {
-        border-radius: 12px;
-    }
-
-    .md-button__icon {
-        width: 24px;
-        height: 24px;
-        font-size: 24px;
-    }
-
-    .md-button__label {
-        font-family: var(--md-sys-typescale-title-medium-font);
-        font-weight: var(--md-sys-typescale-title-medium-weight);
-        font-size: var(--md-sys-typescale-title-medium-size);
-        letter-spacing: var(--md-sys-typescale-title-medium-tracking);
-        line-height: var(--md-sys-typescale-title-medium-line-height);
-    }
+    --md-comp-button-height: 56px;
+    --md-comp-button-padding: 24px;
+    --md-comp-button-gap: 8px;
+    //
+    --md-comp-button-icon-width: 24px;
+    --md-comp-button-icon-height: 24px;
+    --md-comp-button-icon-font-size: 24px;
+    //
+    --md-comp-button-label-font-family: var(--md-sys-typescale-title-medium-font);
+    --md-comp-button-label-font-weight: var(--md-sys-typescale-title-medium-weight);
+    --md-comp-button-label-font-size: var(--md-sys-typescale-title-medium-size);
+    --md-comp-button-label-letter-spacing: var(--md-sys-typescale-title-medium-tracking);
+    --md-comp-button-label-line-height: var(--md-sys-typescale-title-medium-line-height);
+    //
+    --md-comp-button-round-border-radius: 28px;
+    --md-comp-button-round-selected-border-radius: 16px;
+    //
+    --md-comp-button-square-border-radius: 16px;
+    --md-comp-button-square-selected-border-radius: 28px;
+    //
+    --md-comp-button-active-border-radius: 12px;
 }
 
 .md-button--large {
-    height: 96px;
-    padding: 0 48px;
-    gap: 0 12px;
-
-    &.md-button--round {
-        border-radius: 48px;
-
-        &.md-button--selected {
-            border-radius: 28px;
-        }
-    }
-
-    &.md-button--square {
-        border-radius: 28px;
-
-        &.md-button--selected {
-            border-radius: 48px;
-        }
-    }
-
-    &:active {
-        border-radius: 16px;
-    }
-
-    .md-button__icon {
-        width: 32px;
-        height: 32px;
-        font-size: 32px;
-    }
-
-    .md-button__label {
-        font-family: var(--md-sys-typescale-headline-small-font);
-        font-weight: var(--md-sys-typescale-headline-small-weight);
-        font-size: var(--md-sys-typescale-headline-small-size);
-        letter-spacing: var(--md-sys-typescale-headline-small-tracking);
-        line-height: var(--md-sys-typescale-headline-small-line-height);
-    }
+    --md-comp-button-height: 96px;
+    --md-comp-button-padding: 48px;
+    --md-comp-button-gap: 12px;
+    //
+    --md-comp-button-icon-width: 32px;
+    --md-comp-button-icon-height: 32px;
+    --md-comp-button-icon-font-size: 32px;
+    //
+    --md-comp-button-label-font-family: var(--md-sys-typescale-headline-small-font);
+    --md-comp-button-label-font-weight: var(--md-sys-typescale-headline-small-weight);
+    --md-comp-button-label-font-size: var(--md-sys-typescale-headline-small-size);
+    --md-comp-button-label-letter-spacing: var(--md-sys-typescale-headline-small-tracking);
+    --md-comp-button-label-line-height: var(--md-sys-typescale-headline-small-line-height);
+    //
+    --md-comp-button-round-border-radius: 48px;
+    --md-comp-button-round-selected-border-radius: 28px;
+    //
+    --md-comp-button-square-border-radius: 28px;
+    --md-comp-button-square-selected-border-radius: 48px;
+    //
+    --md-comp-button-active-border-radius: 16px;
 }
 
 .md-button--extra-large {
-    height: 136px;
-    padding: 0 64px;
-    gap: 0 16px;
-
-    &.md-button--round {
-        border-radius: 68px;
-
-        &.md-button--selected {
-            border-radius: 28px;
-        }
-    }
-
-    &.md-button--square {
-        border-radius: 28px;
-
-        &.md-button--selected {
-            border-radius: 68px;
-        }
-    }
-
-    &:active {
-        border-radius: 16px;
-    }
-
-    .md-button__icon {
-        width: 40px;
-        height: 40px;
-        font-size: 40px;
-    }
-
-    .md-button__label {
-        font-family: var(--md-sys-typescale-headline-large-font);
-        font-weight: var(--md-sys-typescale-headline-large-weight);
-        font-size: var(--md-sys-typescale-headline-large-size);
-        letter-spacing: var(--md-sys-typescale-headline-large-tracking);
-        line-height: var(--md-sys-typescale-headline-large-line-height);
-    }
+    --md-comp-button-height: 136px;
+    --md-comp-button-padding: 64px;
+    --md-comp-button-gap: 16px;
+    //
+    --md-comp-button-icon-width: 40px;
+    --md-comp-button-icon-height: 40px;
+    --md-comp-button-icon-font-size: 40px;
+    //
+    --md-comp-button-label-font-family: var(--md-sys-typescale-headline-large-font);
+    --md-comp-button-label-font-weight: var(--md-sys-typescale-headline-large-weight);
+    --md-comp-button-label-font-size: var(--md-sys-typescale-headline-large-size);
+    --md-comp-button-label-letter-spacing: var(--md-sys-typescale-headline-large-tracking);
+    --md-comp-button-label-line-height: var(--md-sys-typescale-headline-large-line-height);
+    //
+    --md-comp-button-round-border-radius: 68px;
+    --md-comp-button-round-selected-border-radius: 28px;
+    //
+    --md-comp-button-square-border-radius: 28px;
+    --md-comp-button-square-selected-border-radius: 68px;
+    //
+    --md-comp-button-active-border-radius: 16px;
 }
 
 .md-button--elevated {
-    background-color: var(--md-sys-color-surface-container-low);
-    color: var(--md-sys-color-primary);
-    box-shadow: var(--md-sys-elevation-level1);
-
-    &.md-button--toggle {
-        background-color: var(--md-sys-color-surface-container-low);
-        color: var(--md-sys-color-primary);
-
-        &.md-button--selected {
-            background-color: var(--md-sys-color-primary);
-            color: var(--md-sys-color-on-primary);
-        }
-    }
-    &.md-button--disabled,
-    &.md-button--disabled.md-button--selected {
-        background-color: var(--md-sys-color-on-surface10);
-        color: var(--md-sys-color-on-surface38);
-        box-shadow: var(--md-sys-elevation-level0);
-    }
+    --md-comp-button-border-width: 0px;
+    --md-comp-button-border-style: solid;
+    --md-comp-button-border-color: transparent;
+    --md-comp-button-background-color: var(--md-sys-color-surface-container-low);
+    --md-comp-button-color: var(--md-sys-color-primary);
+    --md-comp-button-box-shadow: var(--md-sys-elevation-level1);
+    //
+    --md-comp-button-toggle-border-color: transparent;
+    --md-comp-button-toggle-background-color: var(--md-sys-color-surface-container-low);
+    --md-comp-button-toggle-color: var(--md-sys-color-primary);
+    --md-comp-button-toggle-box-shadow: var(--md-sys-elevation-level1);
+    //
+    --md-comp-button-toggle-selected-border-color: transparent;
+    --md-comp-button-toggle-selected-background-color: var(--md-sys-color-primary);
+    --md-comp-button-toggle-selected-color: var(--md-sys-color-on-primary);
+    --md-comp-button-toggle-selected-box-shadow: var(--md-sys-elevation-level1);
+    //
+    --md-comp-button-disabled-border-color: transparent;
+    --md-comp-button-disabled-background-color: var(--md-sys-color-on-surface10);
+    --md-comp-button-disabled-color: var(--md-sys-color-on-surface38);
+    --md-comp-button-disabled-box-shadow: var(--md-sys-elevation-level0);
 }
-
 .md-button--filled {
-    background-color: var(--md-sys-color-primary);
-    color: var(--md-sys-color-on-primary);
-
-    &.md-button--toggle {
-        background-color: var(--md-sys-color-surface-container);
-        color: var(--md-sys-color-on-surface-variant);
-
-        &.md-button--selected {
-            background-color: var(--md-sys-color-primary);
-            color: var(--md-sys-color-on-primary);
-        }
-    }
-    &.md-button--disabled,
-    &.md-button--disabled.md-button--selected {
-        background-color: var(--md-sys-color-on-surface10);
-        color: var(--md-sys-color-on-surface38);
-    }
+    --md-comp-button-border-width: 0px;
+    --md-comp-button-border-style: solid;
+    --md-comp-button-border-color: transparent;
+    --md-comp-button-background-color: var(--md-sys-color-primary);
+    --md-comp-button-color: var(--md-sys-color-on-primary);
+    --md-comp-button-box-shadow: var(--md-sys-elevation-level0);
+    //
+    --md-comp-button-toggle-border-color: transparent;
+    --md-comp-button-toggle-background-color: var(--md-sys-color-surface-container);
+    --md-comp-button-toggle-color: var(--md-sys-color-on-surface-container);
+    --md-comp-button-toggle-box-shadow: var(--md-sys-elevation-level0);
+    //
+    --md-comp-button-toggle-selected-border-color: transparent;
+    --md-comp-button-toggle-selected-background-color: var(--md-sys-color-primary);
+    --md-comp-button-toggle-selected-color: var(--md-sys-color-on-primary);
+    --md-comp-button-toggle-selected-box-shadow: var(--md-sys-elevation-level0);
+    //
+    --md-comp-button-disabled-border-color: transparent;
+    --md-comp-button-disabled-background-color: var(--md-sys-color-on-surface10);
+    --md-comp-button-disabled-color: var(--md-sys-color-on-surface38);
+    --md-comp-button-disabled-box-shadow: var(--md-sys-elevation-level0);
 }
-
 .md-button--tonal {
-    background-color: var(--md-sys-color-secondary-container);
-    color: var(--md-sys-color-on-secondary-container);
-
-    &.md-button--toggle {
-        background-color: var(--md-sys-color-secondary-container);
-        color: var(--md-sys-color-on-secondary-container);
-
-        &.md-button--selected {
-            background-color: var(--md-sys-color-secondary);
-            color: var(--md-sys-color-on-secondary);
-        }
-    }
-    &.md-button--disabled,
-    &.md-button--disabled.md-button--selected {
-        background-color: var(--md-sys-color-on-surface10);
-        color: var(--md-sys-color-on-surface38);
-    }
+    --md-comp-button-border-width: 0px;
+    --md-comp-button-border-style: solid;
+    --md-comp-button-border-color: transparent;
+    --md-comp-button-background-color: var(--md-sys-color-secondary-container);
+    --md-comp-button-color: var(--md-sys-color-on-secondary-container);
+    --md-comp-button-box-shadow: var(--md-sys-elevation-level0);
+    //
+    --md-comp-button-toggle-border-color: transparent;
+    --md-comp-button-toggle-background-color: var(--md-sys-color-secondary-container);
+    --md-comp-button-toggle-color: var(--md-sys-color-on-secondary-container);
+    --md-comp-button-toggle-box-shadow: var(--md-sys-elevation-level0);
+    //
+    --md-comp-button-toggle-selected-border-color: transparent;
+    --md-comp-button-toggle-selected-background-color: var(--md-sys-color-secondary);
+    --md-comp-button-toggle-selected-color: var(--md-sys-color-on-secondary);
+    --md-comp-button-toggle-selected-box-shadow: var(--md-sys-elevation-level0);
+    //
+    --md-comp-button-disabled-border-color: transparent;
+    --md-comp-button-disabled-background-color: var(--md-sys-color-on-surface10);
+    --md-comp-button-disabled-color: var(--md-sys-color-on-surface38);
+    --md-comp-button-disabled-box-shadow: var(--md-sys-elevation-level0);
 }
-
 .md-button--outlined {
-    border: 1px solid var(--md-sys-color-outline-variant);
-    color: var(--md-sys-color-on-surface-variant);
-
-    &.md-button--toggle {
-        border: 1px solid var(--md-sys-color-outline-variant);
-        color: var(--md-sys-color-on-surface-variant);
-
-        &.md-button--selected {
-            background-color: var(--md-sys-color-inverse-surface);
-            border: 1px solid var(--md-sys-color-inverse-surface);
-            color: var(--md-sys-color-inverse-on-surface);
-        }
-    }
-    &.md-button--disabled,
-    &.md-button--disabled.md-button--selected {
-        border: 1px solid var(--md-sys-color-outline-variant);
-        background-color: var(--md-sys-color-on-surface10);
-        color: var(--md-sys-color-on-surface38);
-    }
+    --md-comp-button-border-width: 1px;
+    --md-comp-button-border-style: solid;
+    --md-comp-button-border-color: var(--md-sys-color-outline-variant);
+    --md-comp-button-background-color: transparent;
+    --md-comp-button-color: var(--md-sys-color-on-surface-variant);
+    --md-comp-button-box-shadow: var(--md-sys-elevation-level0);
+    //
+    --md-comp-button-toggle-border-color: var(--md-sys-color-outline-variant);
+    --md-comp-button-toggle-background-color: transparent;
+    --md-comp-button-toggle-color: var(--md-sys-color-on-surface-variant);
+    --md-comp-button-toggle-box-shadow: var(--md-sys-elevation-level0);
+    //
+    --md-comp-button-toggle-selected-border-color: var(--md-sys-color-inverse-surface);
+    --md-comp-button-toggle-selected-background-color: var(--md-sys-color-inverse-surface);
+    --md-comp-button-toggle-selected-color: var(--md-sys-color-inverse-on-surface);
+    --md-comp-button-toggle-selected-box-shadow: var(--md-sys-elevation-level0);
+    //
+    --md-comp-button-disabled-border-color: var(--md-sys-color-outline-variant);
+    --md-comp-button-disabled-background-color: var(--md-sys-color-on-surface10);
+    --md-comp-button-disabled-color: var(--md-sys-color-on-surface38);
+    --md-comp-button-disabled-box-shadow: var(--md-sys-elevation-level0);
 }
-
 .md-button--text {
-    color: var(--md-sys-color-primary);
-    &.md-button--disabled,
-    &.md-button--disabled.md-button--selected {
-        background-color: var(--md-sys-color-on-surface10);
-        color: var(--md-sys-color-on-surface38);
-    }
+    --md-comp-button-border-width: 0px;
+    --md-comp-button-border-style: solid;
+    --md-comp-button-border-color: transparent;
+    --md-comp-button-background-color: transparent;
+    --md-comp-button-color: var(--md-sys-color-primary);
+    --md-comp-button-box-shadow: var(--md-sys-elevation-level0);
+    //
+    --md-comp-button-toggle-border-color: transparent;
+    --md-comp-button-toggle-background-color: transparent;
+    --md-comp-button-toggle-color: var(--md-sys-color-primary);
+    --md-comp-button-toggle-box-shadow: var(--md-sys-elevation-level0);
+    //
+    --md-comp-button-toggle-selected-border-color: transparent;
+    --md-comp-button-toggle-selected-background-color: transparent;
+    --md-comp-button-toggle-selected-color: var(--md-sys-color-primary);
+    --md-comp-button-toggle-selected-box-shadow: var(--md-sys-elevation-level0);
+    //
+    --md-comp-button-disabled-border-color: transparent;
+    --md-comp-button-disabled-background-color: var(--md-sys-color-on-surface10);
+    --md-comp-button-disabled-color: var(--md-sys-color-on-surface38);
+    --md-comp-button-disabled-box-shadow: var(--md-sys-elevation-level0);
 }
 
 .md-button--disabled {
