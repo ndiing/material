@@ -127,7 +127,6 @@ class DemoPushMenu extends MdElement {
             { id: 37, parent_id: 6, label: "Compensation & Benefit" },
             { id: 38, parent_id: 6, label: "General Affairs" },
         ];
-        
     }
     /* prettier-ignore */
     render(){

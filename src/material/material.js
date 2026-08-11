@@ -45,6 +45,12 @@ import "./components/dialog/dialog-body.js";
 import "./components/dialog/dialog-main.js";
 import "./components/dialog/dialog-footer.js";
 
+import "./components/sheet/sheet.js";
+import "./components/sheet/sheet-header.js";
+import "./components/sheet/sheet-body.js";
+import "./components/sheet/sheet-main.js";
+import "./components/sheet/sheet-footer.js";
+
 import "./components/tooltip/tooltip.js";
 import "./components/snackbar/snackbar.js";
 

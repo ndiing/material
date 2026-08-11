@@ -281,7 +281,7 @@
             left: auto;
             right: calc(100% - (var(--md-comp-slider-label-container-height) / 2));
         }
-        
+
         .md-slider__native:is(:active, :focus-visible) + .md-slider__thumb + .md-slider__label {
             left: auto;
             right: 100%;

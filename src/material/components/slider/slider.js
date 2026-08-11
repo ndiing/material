@@ -55,8 +55,8 @@ class MdSlider extends MdElement {
         this.values = [];
         this.orientation = "horizontal";
         this.size = "extra-small";
-        this.label=true
-        this.flipped=false
+        this.label = true;
+        this.flipped = false;
     }
 
     /* prettier-ignore */

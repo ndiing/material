@@ -48,6 +48,8 @@ export const routes = [
 
             { path: "/components/card", load: () => import("./components/card.js").then((module) => module.default), children: [] },
             { path: "/components/dialog", load: () => import("./components/dialog.js").then((module) => module.default), children: [] },
+            { path: "/components/sheet", load: () => import("./components/sheet.js").then((module) => module.default), children: [] },
+            
             { path: "/components/tooltip", load: () => import("./components/tooltip.js").then((module) => module.default), children: [] },
             { path: "/components/snackbar", load: () => import("./components/snackbar.js").then((module) => module.default), children: [] },
 

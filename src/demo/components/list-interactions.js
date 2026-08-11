@@ -66,7 +66,7 @@ class DemoListInteractions extends MdElement {
             { id: 37, parent_id: 6, label: "Compensation & Benefit" },
             { id: 38, parent_id: 6, label: "General Affairs" },
         ];
-        this.data1 =  [
+        this.data1 = [
             // Level 1 - C-Level
             { id: 1, parent_id: null, label: "CEO Office" },
             { id: 2, parent_id: null, label: "Board of Directors" },
@@ -127,7 +127,6 @@ class DemoListInteractions extends MdElement {
             { id: 37, parent_id: 6, label: "Compensation & Benefit" },
             { id: 38, parent_id: 6, label: "General Affairs" },
         ];
-        
     }
     /* prettier-ignore */
     render(){
