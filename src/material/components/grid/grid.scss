@@ -10,7 +10,7 @@
     grid-column-end: span 4;
 }
 
-@include mixins.breakpoint-expanded() {
+@media (min-width: 840px) {
     .md-grid {
         grid-template-columns: repeat(12, minmax(0, 1fr));
         grid-gap: 24px;
@@ -23,7 +23,7 @@
     }
 }
 
-@include mixins.breakpoint-medium() {
+@media (min-width: 600px) and (max-width: 839px) {
     .md-grid {
         grid-template-columns: repeat(8, minmax(0, 1fr));
         grid-gap: 16px;
@@ -36,7 +36,7 @@
     }
 }
 
-@include mixins.breakpoint-compact() {
+@media (max-width: 599px) {
     .md-grid {
         grid-template-columns: repeat(4, minmax(0, 1fr));
         grid-gap: 8px;

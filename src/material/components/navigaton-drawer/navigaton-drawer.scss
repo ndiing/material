@@ -22,6 +22,10 @@
     }
 
     .md-list__label {
-        @include mixins.typescale-label-large();
+        font-family: var(--md-sys-typescale-label-large-font);
+        font-weight: var(--md-sys-typescale-label-large-weight);
+        font-size: var(--md-sys-typescale-label-large-size);
+        letter-spacing: var(--md-sys-typescale-label-large-tracking);
+        line-height: var(--md-sys-typescale-label-large-line-height);
     }
 }

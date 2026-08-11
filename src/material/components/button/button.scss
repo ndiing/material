@@ -52,7 +52,11 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    @include mixins.typescale-label-large();
+    font-family: var(--md-sys-typescale-label-large-font);
+    font-weight: var(--md-sys-typescale-label-large-weight);
+    font-size: var(--md-sys-typescale-label-large-size);
+    letter-spacing: var(--md-sys-typescale-label-large-tracking);
+    line-height: var(--md-sys-typescale-label-large-line-height);
     //will-change: font-size;
     transition-property: font-size;
     transition-duration: var(--md-sys-motion-duration-short2);
@@ -94,7 +98,11 @@
     }
 
     .md-button__label {
-        @include mixins.typescale-label-large();
+        font-family: var(--md-sys-typescale-label-large-font);
+        font-weight: var(--md-sys-typescale-label-large-weight);
+        font-size: var(--md-sys-typescale-label-large-size);
+        letter-spacing: var(--md-sys-typescale-label-large-tracking);
+        line-height: var(--md-sys-typescale-label-large-line-height);
     }
 }
 
@@ -130,7 +138,11 @@
     }
 
     .md-button__label {
-        @include mixins.typescale-label-large();
+        font-family: var(--md-sys-typescale-label-large-font);
+        font-weight: var(--md-sys-typescale-label-large-weight);
+        font-size: var(--md-sys-typescale-label-large-size);
+        letter-spacing: var(--md-sys-typescale-label-large-tracking);
+        line-height: var(--md-sys-typescale-label-large-line-height);
     }
 }
 
@@ -166,7 +178,11 @@
     }
 
     .md-button__label {
-        @include mixins.typescale-title-medium();
+        font-family: var(--md-sys-typescale-title-medium-font);
+        font-weight: var(--md-sys-typescale-title-medium-weight);
+        font-size: var(--md-sys-typescale-title-medium-size);
+        letter-spacing: var(--md-sys-typescale-title-medium-tracking);
+        line-height: var(--md-sys-typescale-title-medium-line-height);
     }
 }
 
@@ -202,7 +218,11 @@
     }
 
     .md-button__label {
-        @include mixins.typescale-headline-small();
+        font-family: var(--md-sys-typescale-headline-small-font);
+        font-weight: var(--md-sys-typescale-headline-small-weight);
+        font-size: var(--md-sys-typescale-headline-small-size);
+        letter-spacing: var(--md-sys-typescale-headline-small-tracking);
+        line-height: var(--md-sys-typescale-headline-small-line-height);
     }
 }
 
@@ -238,7 +258,11 @@
     }
 
     .md-button__label {
-        @include mixins.typescale-headline-large();
+        font-family: var(--md-sys-typescale-headline-large-font);
+        font-weight: var(--md-sys-typescale-headline-large-weight);
+        font-size: var(--md-sys-typescale-headline-large-size);
+        letter-spacing: var(--md-sys-typescale-headline-large-tracking);
+        line-height: var(--md-sys-typescale-headline-large-line-height);
     }
 }
 

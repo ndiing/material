@@ -7,9 +7,8 @@ class MdDataTableCell extends MdElement {
         label: { type: String },
     };
 
-    constructor(){
-        super()
-
+    constructor() {
+        super();
     }
 
     /* prettier-ignore */

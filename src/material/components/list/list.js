@@ -196,7 +196,7 @@ class MdList extends MdListElement {
             this.emit("onListItemSelection", { event, element: this });
         }
 
-        if (this.activeRow && event.key === "ArrowUp") {
+        if (this.activeRow && (event.key === "ArrowUp" || event.key === "ArrowLeft")) {
             event.preventDefault();
 
             this.activeVisible = true;
@@ -214,7 +214,7 @@ class MdList extends MdListElement {
             this.requestUpdate();
         }
 
-        if (this.activeRow && event.key === "ArrowDown") {
+        if (this.activeRow && (event.key === "ArrowDown" || event.key === "ArrowRight")) {
             event.preventDefault();
 
             this.activeVisible = true;
@@ -232,7 +232,7 @@ class MdList extends MdListElement {
             this.requestUpdate();
         }
 
-        if (this.selectOnEnterActiveRow && event.key === "Enter") {
+        if (this.selectOnEnterActiveRow && (event.key === "Enter" || event.code === "Space")) {
             event.preventDefault();
 
             const li = this.querySelector(`.md-list__item:nth-child(${this.activeRowIndex + 1 - this.startNode})`);

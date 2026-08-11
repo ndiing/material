@@ -1,6 +1,7 @@
 ## src\material\components\split-button
 
 ### split-button
+
 src\material\components\split-button\split-button.js
 
 ```js
@@ -28,7 +29,7 @@ class MdSplitButton extends MdElement {
 
         this.size = "small";
         this.color = "filled";
-        this.trailingIcon='keyboard_arrow_down'
+        this.trailingIcon = "keyboard_arrow_down";
 
         this.leadingRippleController = new RippleController(this, {
             container: ".md-split-button__leading",
@@ -97,12 +98,12 @@ class MdSplitButton extends MdElement {
         this.emit("onSplitButtonClick", { event, element: this });
     }
 
-    _handleSplitButtonKeydown(event){
-        if(event.key==='Enter'||event.code==='Space'){
-            event.preventDefault()
-            this.emit('onSplitButtonPress',{event,element:this})
+    _handleSplitButtonKeydown(event) {
+        if (event.key === "Enter" || event.code === "Space") {
+            event.preventDefault();
+            this.emit("onSplitButtonPress", { event, element: this });
         }
-        this.emit('onSplitButtonKeydown',{event,element:this})
+        this.emit("onSplitButtonKeydown", { event, element: this });
     }
 
     _handleSplitButtonIconClick(event) {
@@ -110,28 +111,28 @@ class MdSplitButton extends MdElement {
         this.emit("onSplitButtonIconClick", { event, element: this });
     }
 
-    _handleSplitButtonIconKeydown(event){
-        if(event.key==='Enter'||event.code==='Space'){
-            event.preventDefault()
-            this.emit('onSplitButtonPress',{event,element:this})
+    _handleSplitButtonIconKeydown(event) {
+        if (event.key === "Enter" || event.code === "Space") {
+            event.preventDefault();
+            this.emit("onSplitButtonPress", { event, element: this });
             this.toggleSelect(event);
         }
-        this.emit('onSplitButtonKeydown',{event,element:this})
+        this.emit("onSplitButtonKeydown", { event, element: this });
     }
 
-    toggleSelect(event={}) {
+    toggleSelect(event = {}) {
         this.selected = !this.selected;
-        this.emit('onSplitButtonSelection', { event, element: this });
+        this.emit("onSplitButtonSelection", { event, element: this });
     }
-
 }
 
 customElements.define("md-split-button", MdSplitButton);
 
 export { MdSplitButton };
-
 ```
+
 ### split-button
+
 src\material\components\split-button\split-button.scss
 
 ```scss
@@ -440,5 +441,4 @@ src\material\components\split-button\split-button.scss
     color: var(--md-sys-color-on-surface-variant);
     box-shadow: var(--md-sys-elevation-level0);
 }
-
 ```

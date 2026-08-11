@@ -64,5 +64,9 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    @include mixins.typescale-body-large();
+    font-family: var(--md-sys-typescale-body-large-font);
+    font-weight: var(--md-sys-typescale-body-large-weight);
+    font-size: var(--md-sys-typescale-body-large-size);
+    letter-spacing: var(--md-sys-typescale-body-large-tracking);
+    line-height: var(--md-sys-typescale-body-large-line-height);
 }

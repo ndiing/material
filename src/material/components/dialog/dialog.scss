@@ -44,7 +44,11 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    @include mixins.typescale-headline-small();
+    font-family: var(--md-sys-typescale-headline-small-font);
+    font-weight: var(--md-sys-typescale-headline-small-weight);
+    font-size: var(--md-sys-typescale-headline-small-size);
+    letter-spacing: var(--md-sys-typescale-headline-small-tracking);
+    line-height: var(--md-sys-typescale-headline-small-line-height);
 }
 
 .md-dialog__trailing {
@@ -80,7 +84,11 @@
     padding: 0 24px;
     margin: 24px 0;
     overflow: auto;
-    @include mixins.typescale-body-medium();
+    font-family: var(--md-sys-typescale-body-medium-font);
+    font-weight: var(--md-sys-typescale-body-medium-weight);
+    font-size: var(--md-sys-typescale-body-medium-size);
+    letter-spacing: var(--md-sys-typescale-body-medium-tracking);
+    line-height: var(--md-sys-typescale-body-medium-line-height);
 
     + .md-dialog__footer {
         margin-top: -24px;
@@ -127,7 +135,11 @@
     }
 
     .md-dialog__headline {
-        @include mixins.typescale-title-large();
+        font-family: var(--md-sys-typescale-title-large-font);
+        font-weight: var(--md-sys-typescale-title-large-weight);
+        font-size: var(--md-sys-typescale-title-large-size);
+        letter-spacing: var(--md-sys-typescale-title-large-tracking);
+        line-height: var(--md-sys-typescale-title-large-line-height);
     }
 
     &.md-dialog--close {

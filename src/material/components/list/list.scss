@@ -25,20 +25,32 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    @include mixins.typescale-label-small();
+    font-family: var(--md-sys-typescale-label-small-font);
+    font-weight: var(--md-sys-typescale-label-small-weight);
+    font-size: var(--md-sys-typescale-label-small-size);
+    letter-spacing: var(--md-sys-typescale-label-small-tracking);
+    line-height: var(--md-sys-typescale-label-small-line-height);
 }
 
 .md-list__label {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    @include mixins.typescale-body-large();
+    font-family: var(--md-sys-typescale-body-large-font);
+    font-weight: var(--md-sys-typescale-body-large-weight);
+    font-size: var(--md-sys-typescale-body-large-size);
+    letter-spacing: var(--md-sys-typescale-body-large-tracking);
+    line-height: var(--md-sys-typescale-body-large-line-height);
 }
 
 .md-list__supporting {
     max-height: calc(var(--md-sys-typescale-label-small-line-height) * 2);
     overflow: hidden;
-    @include mixins.typescale-label-small();
+    font-family: var(--md-sys-typescale-label-small-font);
+    font-weight: var(--md-sys-typescale-label-small-weight);
+    font-size: var(--md-sys-typescale-label-small-size);
+    letter-spacing: var(--md-sys-typescale-label-small-tracking);
+    line-height: var(--md-sys-typescale-label-small-line-height);
 }
 
 .md-list__leading {
@@ -75,7 +87,11 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    @include mixins.typescale-label-small();
+    font-family: var(--md-sys-typescale-label-small-font);
+    font-weight: var(--md-sys-typescale-label-small-weight);
+    font-size: var(--md-sys-typescale-label-small-size);
+    letter-spacing: var(--md-sys-typescale-label-small-tracking);
+    line-height: var(--md-sys-typescale-label-small-line-height);
 }
 
 // .md-list__checkbox {}
@@ -115,7 +131,6 @@
         margin-bottom: 0;
     }
 }
-
 // menu
 
 .md-menu {
@@ -146,6 +161,10 @@
     }
 
     .md-list__label {
-        @include mixins.typescale-label-large();
+        font-family: var(--md-sys-typescale-label-large-font);
+        font-weight: var(--md-sys-typescale-label-large-weight);
+        font-size: var(--md-sys-typescale-label-large-size);
+        letter-spacing: var(--md-sys-typescale-label-large-tracking);
+        line-height: var(--md-sys-typescale-label-large-line-height);
     }
 }

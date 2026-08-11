@@ -42,8 +42,6 @@ class MdDataTable extends MdElement {
         this._handleDataTableVirtualScrollUpdate = this._handleDataTableVirtualScrollUpdate.bind(this);
         this._handleDataTableKeydown = this._handleDataTableKeydown.bind(this);
         this._handleDataTableClick = this._handleDataTableClick.bind(this);
-
-        
     }
 
     /* prettier-ignore */
@@ -304,7 +302,7 @@ class MdDataTable extends MdElement {
             this.requestUpdate();
         }
 
-        if (this.selectOnEnterActiveRow && event.key === "Enter") {
+        if (this.selectOnEnterActiveRow && (event.key === "Enter" || event.code === "Space")) {
             event.preventDefault();
 
             this.activeVisible = true;

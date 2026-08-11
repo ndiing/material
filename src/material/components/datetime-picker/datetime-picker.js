@@ -12,7 +12,7 @@ class MdDatetimePicker extends MdDatetimePickerElement {
     constructor() {
         super();
 
-        this.selectedDate=new Date(2026,8-1,10)
+        this.selectedDate = new Date(2026, 8 - 1, 10);
     }
 
     /* prettier-ignore */
@@ -68,12 +68,12 @@ class MdDatetimePicker extends MdDatetimePickerElement {
             <div class="md-datetime-picker__header">
                 <div class="md-datetime-picker__leading">
                     <md-icon-button class="md-datetime-picker__icon-button" .icon="${"keyboard_arrow_left"}" .color="${"standard"}" .size="${"extra-small"}"></md-icon-button>
-                    <md-split-button class="md-datetime-picker__split-button" .label="${this.selectedMonth.label}" .trailingIcon="${"arrow_drop_down"}" .color="${"standard"}" .size="${"extra-small"}"></md-split-button>
+                    <md-split-button class="md-datetime-picker__split-button" .label="${this.selectedMonth.label}" .trailingIcon="${"arrow_drop_down"}" .color="${"text"}" .size="${"extra-small"}"></md-split-button>
                     <md-icon-button class="md-datetime-picker__icon-button" .icon="${"keyboard_arrow_right"}" .color="${"standard"}" .size="${"extra-small"}"></md-icon-button>
                 </div>
                 <div class="md-datetime-picker__trailing">
                     <md-icon-button class="md-datetime-picker__icon-button" .icon="${"keyboard_arrow_left"}" .color="${"standard"}" .size="${"extra-small"}"></md-icon-button>
-                    <md-split-button class="md-datetime-picker__split-button" .label="${this.selectedYear.label}" .trailingIcon="${"arrow_drop_down"}" .color="${"standard"}" .size="${"extra-small"}"></md-split-button>
+                    <md-split-button class="md-datetime-picker__split-button" .label="${this.selectedYear.label}" .trailingIcon="${"arrow_drop_down"}" .color="${"text"}" .size="${"extra-small"}"></md-split-button>
                     <md-icon-button class="md-datetime-picker__icon-button" .icon="${"keyboard_arrow_right"}" .color="${"standard"}" .size="${"extra-small"}"></md-icon-button>
                 </div>
             </div>

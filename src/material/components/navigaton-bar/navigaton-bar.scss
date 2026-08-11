@@ -23,7 +23,11 @@
     }
 
     .md-list__label {
-        @include mixins.typescale-label-medium();
+        font-family: var(--md-sys-typescale-label-medium-font);
+        font-weight: var(--md-sys-typescale-label-medium-weight);
+        font-size: var(--md-sys-typescale-label-medium-size);
+        letter-spacing: var(--md-sys-typescale-label-medium-tracking);
+        line-height: var(--md-sys-typescale-label-medium-line-height);
     }
 }
 

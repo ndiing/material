@@ -1,61 +1,121 @@
 @use "../../shared/mixins.scss";
 
 .md-typography--display-large {
-    @include mixins.typescale-display-large();
+    font-family: var(--md-sys-typescale-display-large-font);
+    font-weight: var(--md-sys-typescale-display-large-weight);
+    font-size: var(--md-sys-typescale-display-large-size);
+    letter-spacing: var(--md-sys-typescale-display-large-tracking);
+    line-height: var(--md-sys-typescale-display-large-line-height);
 }
 
 .md-typography--display-medium {
-    @include mixins.typescale-display-medium();
+    font-family: var(--md-sys-typescale-display-medium-font);
+    font-weight: var(--md-sys-typescale-display-medium-weight);
+    font-size: var(--md-sys-typescale-display-medium-size);
+    letter-spacing: var(--md-sys-typescale-display-medium-tracking);
+    line-height: var(--md-sys-typescale-display-medium-line-height);
 }
 
 .md-typography--display-small {
-    @include mixins.typescale-display-small();
+    font-family: var(--md-sys-typescale-display-small-font);
+    font-weight: var(--md-sys-typescale-display-small-weight);
+    font-size: var(--md-sys-typescale-display-small-size);
+    letter-spacing: var(--md-sys-typescale-display-small-tracking);
+    line-height: var(--md-sys-typescale-display-small-line-height);
 }
 
 .md-typography--headline-large {
-    @include mixins.typescale-headline-large();
+    font-family: var(--md-sys-typescale-headline-large-font);
+    font-weight: var(--md-sys-typescale-headline-large-weight);
+    font-size: var(--md-sys-typescale-headline-large-size);
+    letter-spacing: var(--md-sys-typescale-headline-large-tracking);
+    line-height: var(--md-sys-typescale-headline-large-line-height);
 }
 
 .md-typography--headline-medium {
-    @include mixins.typescale-headline-medium();
+    font-family: var(--md-sys-typescale-headline-medium-font);
+    font-weight: var(--md-sys-typescale-headline-medium-weight);
+    font-size: var(--md-sys-typescale-headline-medium-size);
+    letter-spacing: var(--md-sys-typescale-headline-medium-tracking);
+    line-height: var(--md-sys-typescale-headline-medium-line-height);
 }
 
 .md-typography--headline-small {
-    @include mixins.typescale-headline-small();
+    font-family: var(--md-sys-typescale-headline-small-font);
+    font-weight: var(--md-sys-typescale-headline-small-weight);
+    font-size: var(--md-sys-typescale-headline-small-size);
+    letter-spacing: var(--md-sys-typescale-headline-small-tracking);
+    line-height: var(--md-sys-typescale-headline-small-line-height);
 }
 
 .md-typography--title-large {
-    @include mixins.typescale-title-large();
+    font-family: var(--md-sys-typescale-title-large-font);
+    font-weight: var(--md-sys-typescale-title-large-weight);
+    font-size: var(--md-sys-typescale-title-large-size);
+    letter-spacing: var(--md-sys-typescale-title-large-tracking);
+    line-height: var(--md-sys-typescale-title-large-line-height);
 }
 
 .md-typography--title-medium {
-    @include mixins.typescale-title-medium();
+    font-family: var(--md-sys-typescale-title-medium-font);
+    font-weight: var(--md-sys-typescale-title-medium-weight);
+    font-size: var(--md-sys-typescale-title-medium-size);
+    letter-spacing: var(--md-sys-typescale-title-medium-tracking);
+    line-height: var(--md-sys-typescale-title-medium-line-height);
 }
 
 .md-typography--title-small {
-    @include mixins.typescale-title-small();
+    font-family: var(--md-sys-typescale-title-small-font);
+    font-weight: var(--md-sys-typescale-title-small-weight);
+    font-size: var(--md-sys-typescale-title-small-size);
+    letter-spacing: var(--md-sys-typescale-title-small-tracking);
+    line-height: var(--md-sys-typescale-title-small-line-height);
 }
 
 .md-typography--body-large {
-    @include mixins.typescale-body-large();
+    font-family: var(--md-sys-typescale-body-large-font);
+    font-weight: var(--md-sys-typescale-body-large-weight);
+    font-size: var(--md-sys-typescale-body-large-size);
+    letter-spacing: var(--md-sys-typescale-body-large-tracking);
+    line-height: var(--md-sys-typescale-body-large-line-height);
 }
 
 .md-typography--body-medium {
-    @include mixins.typescale-body-medium();
+    font-family: var(--md-sys-typescale-body-medium-font);
+    font-weight: var(--md-sys-typescale-body-medium-weight);
+    font-size: var(--md-sys-typescale-body-medium-size);
+    letter-spacing: var(--md-sys-typescale-body-medium-tracking);
+    line-height: var(--md-sys-typescale-body-medium-line-height);
 }
 
 .md-typography--body-small {
-    @include mixins.typescale-body-small();
+    font-family: var(--md-sys-typescale-body-small-font);
+    font-weight: var(--md-sys-typescale-body-small-weight);
+    font-size: var(--md-sys-typescale-body-small-size);
+    letter-spacing: var(--md-sys-typescale-body-small-tracking);
+    line-height: var(--md-sys-typescale-body-small-line-height);
 }
 
 .md-typography--label-large {
-    @include mixins.typescale-label-large();
+    font-family: var(--md-sys-typescale-label-large-font);
+    font-weight: var(--md-sys-typescale-label-large-weight);
+    font-size: var(--md-sys-typescale-label-large-size);
+    letter-spacing: var(--md-sys-typescale-label-large-tracking);
+    line-height: var(--md-sys-typescale-label-large-line-height);
 }
 
 .md-typography--label-medium {
-    @include mixins.typescale-label-medium();
+    font-family: var(--md-sys-typescale-label-medium-font);
+    font-weight: var(--md-sys-typescale-label-medium-weight);
+    font-size: var(--md-sys-typescale-label-medium-size);
+    letter-spacing: var(--md-sys-typescale-label-medium-tracking);
+    line-height: var(--md-sys-typescale-label-medium-line-height);
 }
 
 .md-typography--label-small {
-    @include mixins.typescale-label-small();
+    font-family: var(--md-sys-typescale-label-small-font);
+    font-weight: var(--md-sys-typescale-label-small-weight);
+    font-size: var(--md-sys-typescale-label-small-size);
+    letter-spacing: var(--md-sys-typescale-label-small-tracking);
+    line-height: var(--md-sys-typescale-label-small-line-height);
 }

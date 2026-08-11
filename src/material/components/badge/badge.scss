@@ -14,7 +14,11 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    @include mixins.typescale-label-small();
+    font-family: var(--md-sys-typescale-label-small-font);
+    font-weight: var(--md-sys-typescale-label-small-weight);
+    font-size: var(--md-sys-typescale-label-small-size);
+    letter-spacing: var(--md-sys-typescale-label-small-tracking);
+    line-height: var(--md-sys-typescale-label-small-line-height);
 
     &:empty {
         min-width: 6px;

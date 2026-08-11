@@ -34,7 +34,6 @@
     // selected trailing
     --md-comp-split-button-selected-trailing-padding-left: 13px;
     --md-comp-split-button-selected-trailing-padding-right: 13px;
-
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -84,7 +83,6 @@
             width: var(--md-comp-split-button-trailing-icon-height);
         }
     }
-
     .md-split-button__leading,
     .md-split-button__trailing {
         border-width: var(--md-comp-split-button-leading-trailing-border-width);
@@ -107,7 +105,6 @@
         }
     }
 }
-
 .md-split-button__leading,
 .md-split-button__trailing {
     //will-change: border-radius;
@@ -320,5 +317,14 @@
     --md-comp-split-button-leading-trailing-border-color: var(--md-sys-color-outline-variant);
     --md-comp-split-button-leading-trailing-background-color: transparent;
     --md-comp-split-button-leading-trailing-color: var(--md-sys-color-on-surface-variant);
+    --md-comp-split-button-leading-trailing-box-shadow: var(--md-sys-elevation-level0);
+}
+
+.md-split-button--text {
+    // leading trailing
+    --md-comp-split-button-leading-trailing-border-width: 0px;
+    --md-comp-split-button-leading-trailing-border-color: transparent;
+    --md-comp-split-button-leading-trailing-background-color: transparent;
+    --md-comp-split-button-leading-trailing-color: var(--md-sys-color-primary);
     --md-comp-split-button-leading-trailing-box-shadow: var(--md-sys-elevation-level0);
 }
