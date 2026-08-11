@@ -1,126 +1,157 @@
 @use "../../shared/mixins.scss";
 
 .md-fab {
+    --md-comp-fab-min-width: 80px;
+    --md-comp-fab-height: 80px;
+    --md-comp-fab-padding: 26px;
+    --md-comp-fab-gap: 12px;
+    --md-comp-fab-border-radius: var(--md-sys-shape-corner-large-increased);
+    // 
+    --md-comp-fab-icon-font-size: 28px;
+    --md-comp-fab-icon-height: 28px;
+    --md-comp-fab-icon-width: 28px;
+    // 
+    --md-comp-fab-label-font-family: var(--md-sys-typescale-title-large-font);
+    --md-comp-fab-label-font-weight: var(--md-sys-typescale-title-large-weight);
+    --md-comp-fab-label-font-size: var(--md-sys-typescale-title-large-size);
+    --md-comp-fab-label-letter-spacing: var(--md-sys-typescale-title-large-tracking);
+    --md-comp-fab-label-line-height: var(--md-sys-typescale-title-large-line-height);
+    // 
+    --md-comp-fab-background-color: var(--md-sys-color-primary-container);
+    --md-comp-fab-color: var(--md-sys-color-on-primary-container);
+    --md-comp-fab-box-shadow: var(--md-sys-elevation-level3);
+
     display: inline-flex;
     align-items: center;
     justify-content: center;
     vertical-align: middle;
+
+    min-width: var(--md-comp-fab-min-width);
+    height: var(--md-comp-fab-height);
+    padding: var(--md-comp-fab-padding);
+    gap: 0 var(--md-comp-fab-gap);
+    border-radius: var(--md-comp-fab-border-radius);
+
+    background-color: var(--md-comp-fab-background-color);
+    color: var(--md-comp-fab-color);
+    box-shadow: var(--md-comp-fab-box-shadow);
+
+    .md-fab__icon {
+        font-size: var(--md-comp-fab-icon-font-size);
+        height: var(--md-comp-fab-icon-height);
+        width: var(--md-comp-fab-icon-width);
+    }
+
+    .md-fab__label {
+        font-family: var(--md-comp-fab-label-font-family);
+        font-weight: var(--md-comp-fab-label-font-weight);
+        font-size: var(--md-comp-fab-label-font-size);
+        letter-spacing: var(--md-comp-fab-label-letter-spacing);
+        line-height: var(--md-comp-fab-label-line-height);
+    }
 }
 
-.md-fab__icon {
-}
+// .md-fab__icon {}
 
 .md-fab__label {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-family: var(--md-sys-typescale-title-medium-font);
-    font-weight: var(--md-sys-typescale-title-medium-weight);
-    font-size: var(--md-sys-typescale-title-medium-size);
-    letter-spacing: var(--md-sys-typescale-title-medium-tracking);
-    line-height: var(--md-sys-typescale-title-medium-line-height);
+    // font-family: var(--md-sys-typescale-title-medium-font);
+    // font-weight: var(--md-sys-typescale-title-medium-weight);
+    // font-size: var(--md-sys-typescale-title-medium-size);
+    // letter-spacing: var(--md-sys-typescale-title-medium-tracking);
+    // line-height: var(--md-sys-typescale-title-medium-line-height);
 }
 
 .md-fab--small {
-    min-width: 56px;
-    height: 56px;
-    padding: 16px;
-    gap: 0 8px;
-    border-radius: var(--md-sys-shape-corner-large);
-
-    .md-fab__icon {
-        font-size: 24px;
-        height: 24px;
-        width: 24px;
-    }
-
-    .md-fab__label {
-        font-family: var(--md-sys-typescale-title-medium-font);
-        font-weight: var(--md-sys-typescale-title-medium-weight);
-        font-size: var(--md-sys-typescale-title-medium-size);
-        letter-spacing: var(--md-sys-typescale-title-medium-tracking);
-        line-height: var(--md-sys-typescale-title-medium-line-height);
-    }
+    --md-comp-fab-min-width: 56px;
+    --md-comp-fab-height: 56px;
+    --md-comp-fab-padding: 16px;
+    --md-comp-fab-gap: 8px;
+    --md-comp-fab-border-radius: var(--md-sys-shape-corner-large);
+    // 
+    --md-comp-fab-icon-font-size: 24px;
+    --md-comp-fab-icon-height: 24px;
+    --md-comp-fab-icon-width: 24px;
+    // 
+    --md-comp-fab-label-font-family: var(--md-sys-typescale-title-medium-font);
+    --md-comp-fab-label-font-weight: var(--md-sys-typescale-title-medium-weight);
+    --md-comp-fab-label-font-size: var(--md-sys-typescale-title-medium-size);
+    --md-comp-fab-label-letter-spacing: var(--md-sys-typescale-title-medium-tracking);
+    --md-comp-fab-label-line-height: var(--md-sys-typescale-title-medium-line-height);
 }
 
 .md-fab--medium {
-    min-width: 80px;
-    height: 80px;
-    padding: 26px;
-    gap: 0 12px;
-    border-radius: var(--md-sys-shape-corner-large-increased);
-
-    .md-fab__icon {
-        font-size: 28px;
-        height: 28px;
-        width: 28px;
-    }
-
-    .md-fab__label {
-        font-family: var(--md-sys-typescale-title-large-font);
-        font-weight: var(--md-sys-typescale-title-large-weight);
-        font-size: var(--md-sys-typescale-title-large-size);
-        letter-spacing: var(--md-sys-typescale-title-large-tracking);
-        line-height: var(--md-sys-typescale-title-large-line-height);
-    }
+    --md-comp-fab-min-width: 80px;
+    --md-comp-fab-height: 80px;
+    --md-comp-fab-padding: 26px;
+    --md-comp-fab-gap: 12px;
+    --md-comp-fab-border-radius: var(--md-sys-shape-corner-large-increased);
+    // 
+    --md-comp-fab-icon-font-size: 28px;
+    --md-comp-fab-icon-height: 28px;
+    --md-comp-fab-icon-width: 28px;
+    // 
+    --md-comp-fab-label-font-family: var(--md-sys-typescale-title-large-font);
+    --md-comp-fab-label-font-weight: var(--md-sys-typescale-title-large-weight);
+    --md-comp-fab-label-font-size: var(--md-sys-typescale-title-large-size);
+    --md-comp-fab-label-letter-spacing: var(--md-sys-typescale-title-large-tracking);
+    --md-comp-fab-label-line-height: var(--md-sys-typescale-title-large-line-height);
 }
 
 .md-fab--large {
-    min-width: 96px;
-    height: 96px;
-    padding: 28px;
-    gap: 0 16px;
-    border-radius: var(--md-sys-shape-corner-extra-large);
-
-    .md-fab__icon {
-        font-size: 36px;
-        height: 36px;
-        width: 36px;
-    }
-
-    .md-fab__label {
-        font-family: var(--md-sys-typescale-headline-small-font);
-        font-weight: var(--md-sys-typescale-headline-small-weight);
-        font-size: var(--md-sys-typescale-headline-small-size);
-        letter-spacing: var(--md-sys-typescale-headline-small-tracking);
-        line-height: var(--md-sys-typescale-headline-small-line-height);
-    }
+    --md-comp-fab-min-width: 96px;
+    --md-comp-fab-height: 96px;
+    --md-comp-fab-padding: 28px;
+    --md-comp-fab-gap: 16px;
+    --md-comp-fab-border-radius: var(--md-sys-shape-corner-extra-large);
+    // 
+    --md-comp-fab-icon-font-size: 36px;
+    --md-comp-fab-icon-height: 36px;
+    --md-comp-fab-icon-width: 36px;
+    // 
+    --md-comp-fab-label-font-family: var(--md-sys-typescale-headline-small-font);
+    --md-comp-fab-label-font-weight: var(--md-sys-typescale-headline-small-weight);
+    --md-comp-fab-label-font-size: var(--md-sys-typescale-headline-small-size);
+    --md-comp-fab-label-letter-spacing: var(--md-sys-typescale-headline-small-tracking);
+    --md-comp-fab-label-line-height: var(--md-sys-typescale-headline-small-line-height);
 }
 
 .md-fab--primary-container {
-    background-color: var(--md-sys-color-primary-container);
-    color: var(--md-sys-color-on-primary-container);
-    box-shadow: var(--md-sys-elevation-level3);
+    --md-comp-fab-background-color: var(--md-sys-color-primary-container);
+    --md-comp-fab-color: var(--md-sys-color-on-primary-container);
+    --md-comp-fab-box-shadow: var(--md-sys-elevation-level3);
 }
 
 .md-fab--secondary-container {
-    background-color: var(--md-sys-color-secondary-container);
-    color: var(--md-sys-color-on-secondary-container);
-    box-shadow: var(--md-sys-elevation-level3);
+    --md-comp-fab-background-color: var(--md-sys-color-secondary-container);
+    --md-comp-fab-color: var(--md-sys-color-on-secondary-container);
+    --md-comp-fab-box-shadow: var(--md-sys-elevation-level3);
 }
 
 .md-fab--tertiary-container {
-    background-color: var(--md-sys-color-tertiary-container);
-    color: var(--md-sys-color-on-tertiary-container);
-    box-shadow: var(--md-sys-elevation-level3);
+    --md-comp-fab-background-color: var(--md-sys-color-tertiary-container);
+    --md-comp-fab-color: var(--md-sys-color-on-tertiary-container);
+    --md-comp-fab-box-shadow: var(--md-sys-elevation-level3);
 }
 
 .md-fab--primary {
-    background-color: var(--md-sys-color-primary);
-    color: var(--md-sys-color-on-primary);
-    box-shadow: var(--md-sys-elevation-level3);
+    --md-comp-fab-background-color: var(--md-sys-color-primary);
+    --md-comp-fab-color: var(--md-sys-color-on-primary);
+    --md-comp-fab-box-shadow: var(--md-sys-elevation-level3);
 }
 
 .md-fab--secondary {
-    background-color: var(--md-sys-color-secondary);
-    color: var(--md-sys-color-on-secondary);
-    box-shadow: var(--md-sys-elevation-level3);
+    --md-comp-fab-background-color: var(--md-sys-color-secondary);
+    --md-comp-fab-color: var(--md-sys-color-on-secondary);
+    --md-comp-fab-box-shadow: var(--md-sys-elevation-level3);
 }
 
 .md-fab--tertiary {
-    background-color: var(--md-sys-color-tertiary);
-    color: var(--md-sys-color-on-tertiary);
-    box-shadow: var(--md-sys-elevation-level3);
+    --md-comp-fab-background-color: var(--md-sys-color-tertiary);
+    --md-comp-fab-color: var(--md-sys-color-on-tertiary);
+    --md-comp-fab-box-shadow: var(--md-sys-elevation-level3);
 }
 
 .md-fab--unelevated {
