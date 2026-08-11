@@ -22,7 +22,7 @@ class MdNavigationRail extends MdLayoutItem {
         this.showScrimOnOpen = false;
         this.closeOnScrimClick = false;
         this.collapseOnScrimClick = true;
-        this.dockedOnCollapsed = true;
+        this.docked = true;
         this.size = 220;
         this.collapsedSize = 96;
     }

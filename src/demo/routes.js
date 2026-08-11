@@ -33,8 +33,9 @@ export const routes = [
             { path: "/components/grid-compact", load: () => import("./components/grid-compact.js").then((module) => module.default), children: [] },
 
             { path: "/components/layout", load: () => import("./components/layout.js").then((module) => module.default), children: [] },
+            { path: "/components/layout-docked", load: () => import("./components/layout-docked.js").then((module) => module.default), children: [] },
             { path: "/components/layout-modal", load: () => import("./components/layout-modal.js").then((module) => module.default), children: [] },
-            { path: "/components/nested-layout", load: () => import("./components/nested-layout.js").then((module) => module.default), children: [] },
+            { path: "/components/layout-docked-modal", load: () => import("./components/layout-docked-modal.js").then((module) => module.default), children: [] },
 
             { path: "/components/typography", load: () => import("./components/typography.js").then((module) => module.default), children: [] },
             { path: "/components/icon", load: () => import("./components/icon.js").then((module) => module.default), children: [] },
@@ -49,7 +50,7 @@ export const routes = [
             { path: "/components/card", load: () => import("./components/card.js").then((module) => module.default), children: [] },
             { path: "/components/dialog", load: () => import("./components/dialog.js").then((module) => module.default), children: [] },
             { path: "/components/sheet", load: () => import("./components/sheet.js").then((module) => module.default), children: [] },
-            
+
             { path: "/components/tooltip", load: () => import("./components/tooltip.js").then((module) => module.default), children: [] },
             { path: "/components/snackbar", load: () => import("./components/snackbar.js").then((module) => module.default), children: [] },
 
@@ -82,6 +83,8 @@ export const routes = [
             { path: "/components/navigation-rail-modal", load: () => import("./components/navigation-rail-modal.js").then((module) => module.default), children: [] },
             
             { path: "/components/datetime-picker", load: () => import("./components/datetime-picker.js").then((module) => module.default), children: [] },
+
+            { path: "/components/test", load: () => import("./components/test.js").then((module) => module.default), children: [] },
 
         ],
     },

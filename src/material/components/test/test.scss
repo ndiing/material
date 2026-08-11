@@ -35,6 +35,7 @@
     width: 100%;
     height: 100%;
     overflow: auto;
+    overflow: hidden;
     //will-change: transform, width, height;
     transition-property: transform, width, height;
     transition-duration: var(--md-sys-motion-duration-short2);
@@ -113,24 +114,21 @@
 
 .md-layout__item--open {
     transform: translate3d(0, 0, 0);
-}
-
-.md-layout__item--opening {
     transition-duration: var(--md-sys-motion-duration-short3);
     transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
 }
 
-.md-layout__item--expanding {
-    transition-duration: var(--md-sys-motion-duration-short3);
-    transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
-}
+// .md-layout__item--expanded {
+//     transition-duration: var(--md-sys-motion-duration-short3);
+//     transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
+// }
 
-.md-layout--opening {
-    transition-duration: var(--md-sys-motion-duration-short3);
-    transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
-}
+// .md-layout--open {
+//     transition-duration: var(--md-sys-motion-duration-short3);
+//     transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
+// }
 
-.md-layout--expanding {
-    transition-duration: var(--md-sys-motion-duration-short3);
-    transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
-}
+// .md-layout--expanded {
+//     transition-duration: var(--md-sys-motion-duration-short3);
+//     transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
+// }

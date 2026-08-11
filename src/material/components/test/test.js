@@ -23,33 +23,19 @@ class MdLayoutItem extends MdElement {
 
         this.region = "center";
         this.collapsedSize = 0;
-
-        this.docked = false;
         this.expanded = true;
         this.showScrimOnOpen = true;
-        this.closeOnScrimClick = true;
         this.showScrimOnExpanded = false;
+        this.closeOnScrimClick = true;
         this.collapseOnScrimClick = false;
 
-        // this.docked = true;
-        // this.expanded = false;
-        // this.showScrimOnOpen = false;
-        // this.closeOnScrimClick = false;
-        // this.showScrimOnExpanded = true;
-        // this.collapseOnScrimClick = true;
-
         this._handleLayoutItemScrimClick = this._handleLayoutItemScrimClick.bind(this);
-        this._handleLayoutItemTransitionend = this._handleLayoutItemTransitionend.bind(this);
-        this._handleLayoutTransitionend = this._handleLayoutTransitionend.bind(this);
     }
 
     connectedCallback() {
         super.connectedCallback();
 
         this.classList.add("md-layout__item");
-
-        this.addEventListener("transitionend", this._handleLayoutItemTransitionend);
-        this.parentElement.addEventListener("transitionend", this._handleLayoutTransitionend);
 
         if (!this.scrimElement) {
             this.scrimElement = document.createElement("md-scrim");
@@ -66,9 +52,6 @@ class MdLayoutItem extends MdElement {
             this.scrimElement.remove();
             this.scrimElement = null;
         }
-
-        this.parentElement.removeEventListener("transitionend", this._handleLayoutTransitionend);
-        this.removeEventListener("transitionend", this._handleLayoutItemTransitionend);
 
         this.classList.remove("md-layout__item");
     }
@@ -130,13 +113,9 @@ class MdLayoutItem extends MdElement {
         const currentValue = this.modal ? dockedSize : currentSize;
         if (this.open) {
             this.parentElement.style.setProperty(`--md-comp-layout-item-${this.region}-value`, `${currentValue}px`);
-            this.classList.add("md-layout-item--opening");
-            this.parentElement.classList.add("md-layout-item--opening");
         } else {
             this.parentElement.style.removeProperty(`--md-comp-layout-item-${this.region}-value`);
         }
-        this.classList.add("md-layout-item--expanding");
-        this.parentElement.classList.add("md-layout-item--expanding");
         this.parentElement.style.setProperty(`--md-comp-layout-item-${this.region}-size`, `${currentSize}px`);
     }
 
@@ -147,22 +126,6 @@ class MdLayoutItem extends MdElement {
         if (this.collapseOnScrimClick) {
             this.collapse();
         }
-    }
-
-    _handleLayoutTransitionend(event) {
-        if (event.target !== event.currentTarget) {
-            return;
-        }
-        this.parentElement.classList.remove("md-layout-item--opening");
-        this.parentElement.classList.remove("md-layout-item--expanding");
-    }
-
-    _handleLayoutItemTransitionend(event) {
-        if (event.target !== event.currentTarget) {
-            return;
-        }
-        this.classList.remove("md-layout-item--opening");
-        this.classList.remove("md-layout-item--expanding");
     }
 
     show() {
@@ -205,5 +168,3 @@ class MdLayoutItem extends MdElement {
 }
 
 customElements.define("md-layout-item", MdLayoutItem);
-
-export { MdLayoutItem };
