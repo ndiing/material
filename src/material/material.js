@@ -1,22 +1,22 @@
-import "./core/router.js";
-import "./core/observer.js";
-import "./core/breakpoint-observer.js";
-import "./core/scheme-observer.js";
-import "./core/orientation-observer.js";
-import "./core/theme.js";
-import "./core/localization.js";
-import "./core/store.js";
-import "./core/query-builder.js";
-import "./core/positioner.js";
-import "./core/task-queue.js";
-import "./core/template.js";
+// import "./core/router.js";
+// import "./core/observer.js";
+// import "./core/breakpoint-observer.js";
+// import "./core/scheme-observer.js";
+// import "./core/orientation-observer.js";
+// import "./core/theme.js";
+// import "./core/localization.js";
+// import "./core/store.js";
+// import "./core/query-builder.js";
+// import "./core/positioner.js";
+// import "./core/task-queue.js";
+// import "./core/template.js";
 
-import "./base/element.js";
-import "./base/list.js";
-import "./base/datetime-picker.js";
+// import "./base/element.js";
+// import "./base/list.js";
+// import "./base/datetime-picker.js";
 
-import "./controller/virtual-scroll.js";
-import "./controller/ripple.js";
+// import "./controller/virtual-scroll.js";
+// import "./controller/ripple.js";
 
 import "./components/grid/grid-column.js";
 import "./components/grid/grid.js";
@@ -32,7 +32,6 @@ import "./components/button/button.js";
 import "./components/icon-button/icon-button.js";
 import "./components/fab/fab.js";
 import "./components/split-button/split-button.js";
-
 
 import "./components/card/card.js";
 import "./components/card/card-header.js";
@@ -71,4 +70,4 @@ import "./components/navigation-rail/navigation-rail.js";
 
 import "./components/datetime-picker/datetime-picker.js";
 
-import "./service/snackbar.js";
+// import "./service/snackbar.js";

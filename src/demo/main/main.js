@@ -86,7 +86,7 @@ class DemoMain extends MdElement {
                     id: index,
                     selected: this.router.url.pathname === value.path,
                 }))
-                .sort((a, b) => a.label.localeCompare(b.label));
+                // .sort((a, b) => a.label.localeCompare(b.label));
         });
 
         this.cachedProperties = {

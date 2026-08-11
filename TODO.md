@@ -20,7 +20,7 @@
 [ ] Date pickers
 [ ] Time pickers
 [x] Dialogs
-[ ] Divider
+[-] Divider
 [x] Lists
 [-] Loading & progress
 [ ] Loading indicator
