@@ -10,33 +10,33 @@ class DemoSwitch extends MdElement {
                 @reset="${this.handleReset}" 
                 @submit="${this.handleSubmit}"
             >
-                <md-grid >
-                    <md-grid-column expanded="4">
-                        
-
+                <md-grid class="demo-grid">
+                    
+                    <md-grid-column expanded="6" medium="4" compact="4">
                         <md-switch></md-switch>
+                    </md-grid-column>
+                    <md-grid-column expanded="6" medium="4" compact="4">
                         <md-switch checked></md-switch>
-
-                        <br>
-                        <br>
-
-                        <md-switch icon='["","check"]'></md-switch>
-                        <md-switch icon='["","check"]' checked></md-switch>
-
-                        <br>
-                        <br>
-
-                        <md-switch icon='["close","check"]'></md-switch>
-                        <md-switch icon='["close","check"]' checked></md-switch>
-
-                        <br>
-                        <br>
                     </md-grid-column>
                     
 
+                    <md-grid-column expanded="6" medium="4" compact="4">
+                        <md-switch icon='["","check"]'></md-switch>
+                    </md-grid-column>
+                    <md-grid-column expanded="6" medium="4" compact="4">
+                        <md-switch icon='["","check"]' checked></md-switch>
+                    </md-grid-column>
+
+                    <md-grid-column expanded="6" medium="4" compact="4">
+                        <md-switch icon='["close","check"]'></md-switch>
+                    </md-grid-column>
+                    <md-grid-column expanded="6" medium="4" compact="4">
+                        <md-switch icon='["close","check"]' checked></md-switch>
+                    </md-grid-column>
+
                     <md-grid-column expanded="12">
-                        <md-button type="reset" label="reset"></md-button>
-                        <md-button type="submit" label="submit"></md-button>
+                        <md-button color="tonal" type="reset" label="Reset"></md-button>
+                        <md-button color="tonal" type="submit" label="Submit"></md-button>
                     </md-grid-column>
                 </md-grid>
             </form>

@@ -146,9 +146,13 @@
 
     &.md-dialog--close {
         animation-name: full-screen-dialog-close;
+        animation-duration: var(--md-sys-motion-expressive-slow-spatial-duration);
+        animation-timing-function: cubic-bezier(var(--md-sys-motion-expressive-slow-spatial));
     }
 
     &.md-dialog--open {
         animation-name: full-screen-dialog-show;
+        animation-duration: var(--md-sys-motion-expressive-slow-spatial-duration);
+        animation-timing-function: cubic-bezier(var(--md-sys-motion-expressive-slow-spatial));
     }
 }

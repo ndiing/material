@@ -133,14 +133,14 @@
     position: absolute;
     z-index: 5;
     pointer-events: none;
-    transition-duration: var(--md-sys-motion-duration-short3);
-    transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
+    transition-duration: var(--md-sys-motion-expressive-fast-spatial-duration);
+    transition-timing-function: cubic-bezier(var(--md-sys-motion-expressive-fast-spatial));
 }
 
-.md-slider__native:is(:active, :focus-visible) + .md-slider__thumb + .md-slider__label {
-    transition-duration: var(--md-sys-motion-duration-short2);
-    transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
-}
+// .md-slider__native:is(:active, :focus-visible) + .md-slider__thumb + .md-slider__label {
+//     transition-duration: var(--md-sys-motion-expressive-fast-spatial-duration);
+//     transition-timing-function: cubic-bezier(var(--md-sys-motion-expressive-fast-spatial));
+// }
 
 .md-slider__native:focus-visible + .md-slider__thumb {
     outline: 2px solid var(--md-sys-color-outline);
