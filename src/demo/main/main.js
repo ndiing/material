@@ -84,8 +84,8 @@ class DemoMain extends MdElement {
                 label: value.path.split("/")[2].replace(/(^|[\W])(\w)/g, ($, $1, $2) => " " + $2.toUpperCase()),
                 id: index,
                 selected: this.router.url.pathname === value.path,
-            }));
-            // .sort((a, b) => a.label.localeCompare(b.label));
+            }))
+            .sort((a, b) => a.label.localeCompare(b.label));
         });
 
         this.cachedProperties = {

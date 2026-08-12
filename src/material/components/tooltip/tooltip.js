@@ -22,7 +22,17 @@ class MdTooltip extends MdElement {
 
         this.variant = "plain";
         this.buttons = [];
-        this.placement = ["above", "north-east", "after", "south-east", "below", "south-west", "before", "north-west"];
+        this.placement = [
+            //
+            "above",
+            "after",
+            "below",
+            "before",
+            "north-east",
+            "south-east",
+            "south-west",
+            "north-west",
+        ];
         this.offset = 4;
 
         this._handleTooltipTriggerPointerenter = this._handleTooltipTriggerPointerenter.bind(this);
@@ -33,21 +43,19 @@ class MdTooltip extends MdElement {
     render() {
         return html`
             ${this.subhead ? html`<div class="md-tooltip__subhead">${this.subhead}</div>` : nothing} ${this.supporting ? html`<div class="md-tooltip__supporting">${this.supporting}</div>` : nothing}
-            ${
-                this.buttons?.length
-                    ? html`
-                          <div class="md-tooltip__buttons">
-                              ${this.buttons.map((button) =>
-                                  renderButton({
-                                      classMap: { "md-tooltip__button": true },
-                                      color: "text",
-                                      ...button,
-                                  }),
-                              )}
-                          </div>
-                      `
-                    : nothing
-            }
+            ${this.buttons?.length
+                ? html`
+                      <div class="md-tooltip__buttons">
+                          ${this.buttons.map((button) =>
+                              renderButton({
+                                  classMap: { "md-tooltip__button": true },
+                                  color: "text",
+                                  ...button,
+                              }),
+                          )}
+                      </div>
+                  `
+                : nothing}
         `;
     }
 
