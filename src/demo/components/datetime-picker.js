@@ -5,10 +5,12 @@ class DemoDatetimePicker extends MdElement {
     /* prettier-ignore */
     render(){
         return html`
-            <md-grid>
+            <md-grid class="demo-grid">
+
                 <md-grid-column expanded="6">
-                    <md-datetime-picker></md-datetime-picker>
+                    <md-datetime-picker value="1990-10-17T23:45"></md-datetime-picker>
                 </md-grid-column>
+
             </md-grid>
         `
     }

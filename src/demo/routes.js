@@ -66,9 +66,7 @@ export const routes = [
             { path: "/components/form", load: () => import("./components/form.js").then((module) => module.default), children: [] },
 
             { path: "/components/list", load: () => import("./components/list.js").then((module) => module.default), children: [] },
-            // { path: "/components/list-configurations", load: () => import("./components/list-configurations.js").then((module) => module.default), children: [] },
 
-            // { path: "/components/list-interactions", load: () => import("./components/list-interactions.js").then((module) => module.default), children: [] },
             { path: "/components/tree", load: () => import("./components/tree.js").then((module) => module.default), children: [] },
             { path: "/components/push-menu", load: () => import("./components/push-menu.js").then((module) => module.default), children: [] },
 

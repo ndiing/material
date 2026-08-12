@@ -205,6 +205,9 @@ class MdListElement extends MdElement {
         super.willUpdate(_changedProperties);
 
         if (_changedProperties.has("items")) {
+            this.selectedValues.clear()
+            this.expandedValues.clear()
+
             this._setTree();
             this._setSelected();
             this._setParents();

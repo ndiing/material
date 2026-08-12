@@ -1,4 +1,4 @@
-import "./core/router.js";
+// import "./core/router.js";
 // import "./core/observer.js";
 // import "./core/breakpoint-observer.js";
 // import "./core/scheme-observer.js";
@@ -9,6 +9,7 @@ import "./core/router.js";
 // import "./core/query-builder.js";
 // import "./core/positioner.js";
 // import "./core/task-queue.js";
+// import "./core/date-formatter.js";
 // import "./core/template.js";
 
 // import "./base/element.js";

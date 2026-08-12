@@ -269,7 +269,7 @@ class MdList extends MdListElement {
             });
             this.requestUpdate();
 
-            this.emit("onListItemSelection", { event, element: this });
+            this.emit("onListItemSelection", { event, element: this,item });
         } else if ((this.multiSelect && event.ctrlKey) || li.hasCheckbox || li.hasSwitch) {
             if (this.selectedValues.has(item[this.valueField])) {
                 this.selectedValues.delete(item[this.valueField]);
@@ -277,10 +277,10 @@ class MdList extends MdListElement {
                 this.selectedValues.add(item[this.valueField]);
             }
             this.requestUpdate();
-            this.emit("onListItemSelection", { event, element: this });
+            this.emit("onListItemSelection", { event, element: this,item });
         } else if (this.singleSelect || li.hasRadioButton) {
             this.select(item);
-            this.emit("onListItemSelection", { event, element: this });
+            this.emit("onListItemSelection", { event, element: this,item });
         }
         if (this.activeRow) {
             this.activeVisible = false;

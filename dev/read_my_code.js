@@ -68,7 +68,9 @@ function writeFiles() {
         ],
         [
             // /.*/,
-            /src\\material\\components\\slider/,
+            /src\\material\\components\\datetime/,
+            /src\\material\\base\\datetime/,
+            /src\\material\\core\\date/,
         ],
     );
 
