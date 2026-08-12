@@ -31,13 +31,6 @@ class MdLayoutItem extends MdElement {
         this.showScrimOnExpanded = false;
         this.collapseOnScrimClick = false;
 
-        // this.docked = true;
-        // this.expanded = false;
-        // this.showScrimOnOpen = false;
-        // this.closeOnScrimClick = false;
-        // this.showScrimOnExpanded = true;
-        // this.collapseOnScrimClick = true;
-
         this._handleLayoutItemScrimClick = this._handleLayoutItemScrimClick.bind(this);
         this._handleLayoutItemTransitionend = this._handleLayoutItemTransitionend.bind(this);
         this._handleLayoutTransitionend = this._handleLayoutTransitionend.bind(this);

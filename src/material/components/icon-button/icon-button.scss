@@ -3,42 +3,42 @@
 .md-icon-button {
     --md-comp-icon-button-height: 40px;
     --md-comp-icon-button-width: 40px;
-    //
+
     --md-comp-icon-button-native-height: 24px;
     --md-comp-icon-button-native-width: 24px;
     --md-comp-icon-button-native-font-size: 24px;
-    //
+
     --md-comp-icon-button-narrow-width: 32px;
     --md-comp-icon-button-narrow-height: 40px;
-    //
+
     --md-comp-icon-button-wide-width: 52px;
     --md-comp-icon-button-wide-height: 40px;
-    //
+
     --md-comp-icon-button-round-border-radius: 20px;
     --md-comp-icon-button-round-selected-border-radius: 12px;
-    //
+
     --md-comp-icon-button-square-border-radius: 12px;
     --md-comp-icon-button-square-selected-border-radius: 20px;
-    //
+
     --md-comp-icon-button-active-border-radius: 8px;
-    //
+
     --md-comp-icon-button-border-width: 0px;
     --md-comp-icon-button-border-style: solid;
     --md-comp-icon-button-border-color: transparent;
     --md-comp-icon-button-background-color: var(--md-sys-color-primary);
     --md-comp-icon-button-color: var(--md-sys-color-on-primary);
     --md-comp-icon-button-box-shadow: var(--md-sys-elevation-level0);
-    //
+
     --md-comp-icon-button-toggle-border-color: transparent;
     --md-comp-icon-button-toggle-background-color: var(--md-sys-color-surface-container);
     --md-comp-icon-button-toggle-color: var(--md-sys-color-on-surface-container);
     --md-comp-icon-button-toggle-box-shadow: var(--md-sys-elevation-level0);
-    //
+
     --md-comp-icon-button-toggle-selected-border-color: transparent;
     --md-comp-icon-button-toggle-selected-background-color: var(--md-sys-color-primary);
     --md-comp-icon-button-toggle-selected-color: var(--md-sys-color-on-primary);
     --md-comp-icon-button-toggle-selected-box-shadow: var(--md-sys-elevation-level0);
-    //
+
     --md-comp-icon-button-disabled-border-color: transparent;
     --md-comp-icon-button-disabled-background-color: var(--md-sys-color-on-surface10);
     --md-comp-icon-button-disabled-color: var(--md-sys-color-on-surface38);
@@ -59,7 +59,7 @@
     color: var(--md-comp-icon-button-color);
     box-shadow: var(--md-comp-icon-button-box-shadow);
 
-    //will-change: border-radius, background-color, color, border-color;
+    will-change: border-radius, background-color, color, border-color;
     transition-property: border-radius, background-color, color, border-color;
     transition-duration: var(--md-sys-motion-expressive-fast-spatial-duration);
     transition-timing-function: cubic-bezier(var(--md-sys-motion-expressive-fast-spatial));
@@ -120,9 +120,6 @@
     &:active {
         border-radius: var(--md-comp-icon-button-active-border-radius);
 
-        // transition-duration: var(--md-sys-motion-duration-short3);
-        // transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
-
         .md-icon-button__native {
             transition-duration: var(--md-sys-motion-duration-short3);
             transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
@@ -131,7 +128,7 @@
 }
 
 .md-icon-button__native {
-    //will-change: font-size;
+    will-change: font-size;
     transition-property: font-size;
     transition-duration: var(--md-sys-motion-duration-short2);
     transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
@@ -140,115 +137,115 @@
 .md-icon-button--extra-small {
     --md-comp-icon-button-height: 32px;
     --md-comp-icon-button-width: 32px;
-    //
+
     --md-comp-icon-button-native-height: 20px;
     --md-comp-icon-button-native-width: 20px;
     --md-comp-icon-button-native-font-size: 20px;
-    //
+
     --md-comp-icon-button-narrow-width: 28px;
     --md-comp-icon-button-narrow-height: 32px;
-    //
+
     --md-comp-icon-button-wide-width: 40px;
     --md-comp-icon-button-wide-height: 32px;
-    //
+
     --md-comp-icon-button-round-border-radius: 16px;
     --md-comp-icon-button-round-selected-border-radius: 12px;
-    //
+
     --md-comp-icon-button-square-border-radius: 12px;
     --md-comp-icon-button-square-selected-border-radius: 16px;
-    //
+
     --md-comp-icon-button-active-border-radius: 8px;
 }
 
 .md-icon-button--small {
     --md-comp-icon-button-height: 40px;
     --md-comp-icon-button-width: 40px;
-    //
+
     --md-comp-icon-button-native-height: 24px;
     --md-comp-icon-button-native-width: 24px;
     --md-comp-icon-button-native-font-size: 24px;
-    //
+
     --md-comp-icon-button-narrow-width: 32px;
     --md-comp-icon-button-narrow-height: 40px;
-    //
+
     --md-comp-icon-button-wide-width: 52px;
     --md-comp-icon-button-wide-height: 40px;
-    //
+
     --md-comp-icon-button-round-border-radius: 20px;
     --md-comp-icon-button-round-selected-border-radius: 12px;
-    //
+
     --md-comp-icon-button-square-border-radius: 12px;
     --md-comp-icon-button-square-selected-border-radius: 20px;
-    //
+
     --md-comp-icon-button-active-border-radius: 8px;
 }
 
 .md-icon-button--medium {
     --md-comp-icon-button-height: 56px;
     --md-comp-icon-button-width: 56px;
-    //
+
     --md-comp-icon-button-native-height: 24px;
     --md-comp-icon-button-native-width: 24px;
     --md-comp-icon-button-native-font-size: 24px;
-    //
+
     --md-comp-icon-button-narrow-width: 48px;
     --md-comp-icon-button-narrow-height: 56px;
-    //
+
     --md-comp-icon-button-wide-width: 72px;
     --md-comp-icon-button-wide-height: 56px;
-    //
+
     --md-comp-icon-button-round-border-radius: 28px;
     --md-comp-icon-button-round-selected-border-radius: 16px;
-    //
+
     --md-comp-icon-button-square-border-radius: 16px;
     --md-comp-icon-button-square-selected-border-radius: 28px;
-    //
+
     --md-comp-icon-button-active-border-radius: 12px;
 }
 
 .md-icon-button--large {
     --md-comp-icon-button-height: 96px;
     --md-comp-icon-button-width: 96px;
-    //
+
     --md-comp-icon-button-native-height: 32px;
     --md-comp-icon-button-native-width: 32px;
     --md-comp-icon-button-native-font-size: 32px;
-    //
+
     --md-comp-icon-button-narrow-width: 64px;
     --md-comp-icon-button-narrow-height: 96px;
-    //
+
     --md-comp-icon-button-wide-width: 128px;
     --md-comp-icon-button-wide-height: 96px;
-    //
+
     --md-comp-icon-button-round-border-radius: 48px;
     --md-comp-icon-button-round-selected-border-radius: 28px;
-    //
+
     --md-comp-icon-button-square-border-radius: 28px;
     --md-comp-icon-button-square-selected-border-radius: 48px;
-    //
+
     --md-comp-icon-button-active-border-radius: 16px;
 }
 
 .md-icon-button--extra-large {
     --md-comp-icon-button-height: 136px;
     --md-comp-icon-button-width: 136px;
-    //
+
     --md-comp-icon-button-native-height: 40px;
     --md-comp-icon-button-native-width: 40px;
     --md-comp-icon-button-native-font-size: 40px;
-    //
+
     --md-comp-icon-button-narrow-width: 104px;
     --md-comp-icon-button-narrow-height: 136px;
-    //
+
     --md-comp-icon-button-wide-width: 184px;
     --md-comp-icon-button-wide-height: 136px;
-    //
+
     --md-comp-icon-button-round-border-radius: 68px;
     --md-comp-icon-button-round-selected-border-radius: 28px;
-    //
+
     --md-comp-icon-button-square-border-radius: 28px;
     --md-comp-icon-button-square-selected-border-radius: 68px;
-    //
+
     --md-comp-icon-button-active-border-radius: 16px;
 }
 
@@ -259,17 +256,17 @@
     --md-comp-icon-button-background-color: var(--md-sys-color-primary);
     --md-comp-icon-button-color: var(--md-sys-color-on-primary);
     --md-comp-icon-button-box-shadow: var(--md-sys-elevation-level0);
-    //
+
     --md-comp-icon-button-toggle-border-color: transparent;
     --md-comp-icon-button-toggle-background-color: var(--md-sys-color-surface-container);
     --md-comp-icon-button-toggle-color: var(--md-sys-color-on-surface-container);
     --md-comp-icon-button-toggle-box-shadow: var(--md-sys-elevation-level0);
-    //
+
     --md-comp-icon-button-toggle-selected-border-color: transparent;
     --md-comp-icon-button-toggle-selected-background-color: var(--md-sys-color-primary);
     --md-comp-icon-button-toggle-selected-color: var(--md-sys-color-on-primary);
     --md-comp-icon-button-toggle-selected-box-shadow: var(--md-sys-elevation-level0);
-    //
+
     --md-comp-icon-button-disabled-border-color: transparent;
     --md-comp-icon-button-disabled-background-color: var(--md-sys-color-on-surface10);
     --md-comp-icon-button-disabled-color: var(--md-sys-color-on-surface38);
@@ -282,17 +279,17 @@
     --md-comp-icon-button-background-color: var(--md-sys-color-secondary-container);
     --md-comp-icon-button-color: var(--md-sys-color-on-secondary-container);
     --md-comp-icon-button-box-shadow: var(--md-sys-elevation-level0);
-    //
+
     --md-comp-icon-button-toggle-border-color: transparent;
     --md-comp-icon-button-toggle-background-color: var(--md-sys-color-secondary-container);
     --md-comp-icon-button-toggle-color: var(--md-sys-color-on-secondary-container);
     --md-comp-icon-button-toggle-box-shadow: var(--md-sys-elevation-level0);
-    //
+
     --md-comp-icon-button-toggle-selected-border-color: transparent;
     --md-comp-icon-button-toggle-selected-background-color: var(--md-sys-color-secondary);
     --md-comp-icon-button-toggle-selected-color: var(--md-sys-color-on-secondary);
     --md-comp-icon-button-toggle-selected-box-shadow: var(--md-sys-elevation-level0);
-    //
+
     --md-comp-icon-button-disabled-border-color: transparent;
     --md-comp-icon-button-disabled-background-color: var(--md-sys-color-on-surface10);
     --md-comp-icon-button-disabled-color: var(--md-sys-color-on-surface38);
@@ -305,17 +302,17 @@
     --md-comp-icon-button-background-color: transparent;
     --md-comp-icon-button-color: var(--md-sys-color-on-surface-variant);
     --md-comp-icon-button-box-shadow: var(--md-sys-elevation-level0);
-    //
+
     --md-comp-icon-button-toggle-border-color: var(--md-sys-color-outline-variant);
     --md-comp-icon-button-toggle-background-color: transparent;
     --md-comp-icon-button-toggle-color: var(--md-sys-color-on-surface-variant);
     --md-comp-icon-button-toggle-box-shadow: var(--md-sys-elevation-level0);
-    //
+
     --md-comp-icon-button-toggle-selected-border-color: var(--md-sys-color-inverse-surface);
     --md-comp-icon-button-toggle-selected-background-color: var(--md-sys-color-inverse-surface);
     --md-comp-icon-button-toggle-selected-color: var(--md-sys-color-inverse-on-surface);
     --md-comp-icon-button-toggle-selected-box-shadow: var(--md-sys-elevation-level0);
-    //
+
     --md-comp-icon-button-disabled-border-color: var(--md-sys-color-outline-variant);
     --md-comp-icon-button-disabled-background-color: var(--md-sys-color-on-surface10);
     --md-comp-icon-button-disabled-color: var(--md-sys-color-on-surface38);
@@ -328,17 +325,17 @@
     --md-comp-icon-button-background-color: transparent;
     --md-comp-icon-button-color: var(--md-sys-color-primary);
     --md-comp-icon-button-box-shadow: var(--md-sys-elevation-level0);
-    //
+
     --md-comp-icon-button-toggle-border-color: transparent;
     --md-comp-icon-button-toggle-background-color: transparent;
     --md-comp-icon-button-toggle-color: var(--md-sys-color-primary);
     --md-comp-icon-button-toggle-box-shadow: var(--md-sys-elevation-level0);
-    //
+
     --md-comp-icon-button-toggle-selected-border-color: transparent;
     --md-comp-icon-button-toggle-selected-background-color: transparent;
     --md-comp-icon-button-toggle-selected-color: var(--md-sys-color-primary);
     --md-comp-icon-button-toggle-selected-box-shadow: var(--md-sys-elevation-level0);
-    //
+
     --md-comp-icon-button-disabled-border-color: transparent;
     --md-comp-icon-button-disabled-background-color: var(--md-sys-color-on-surface10);
     --md-comp-icon-button-disabled-color: var(--md-sys-color-on-surface38);

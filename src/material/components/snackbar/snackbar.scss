@@ -29,7 +29,6 @@
 
 .md-snackbar--close {
     opacity: 1;
-    //will-change: border-radius, background-color, color, border-color;
     animation-name: slideOutDown;
     animation-duration: var(--md-sys-motion-expressive-fast-effects-duration);
     animation-timing-function: cubic-bezier(var(--md-sys-motion-expressive-fast-effects));

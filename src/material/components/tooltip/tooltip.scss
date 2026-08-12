@@ -21,14 +21,10 @@
 }
 
 .md-tooltip--close {
-    //will-change: transform, opacity;
     animation-name: zoomOut;
     animation-duration: var(--md-sys-motion-duration-short1);
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
 }
-
-// .md-tooltip__subhead {}
-
 .md-tooltip__supporting {
     white-space: pre;
 }

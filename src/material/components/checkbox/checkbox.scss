@@ -13,16 +13,10 @@
     width: 40px;
     height: 40px;
     border-radius: var(--md-sys-shape-corner-full);
-    // transform: translate3d(-50%, -50%, 0);
-    // position: absolute;
     z-index: 2;
-    // left: 50%;
-    // top: 50%;
     position: absolute;
     inset: 0;
     margin: auto;
-    // width: max-content;
-    // height: max-content;
 
     &:indeterminate {
         + .md-checkbox__container {
@@ -74,14 +68,12 @@
     height: 18px;
     border: 2px solid var(--md-sys-color-on-surface-variant);
     border-radius: 2px;
-    //will-change: background-color, border-color;
     transition-property: background-color, border-color;
     transition-duration: var(--md-sys-motion-duration-short3);
     transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
 }
 
 .md-checkbox__icon {
-    //will-change: border-color;
     transition-property: border-color;
     transition-duration: var(--md-sys-motion-duration-short3);
     transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));

@@ -52,7 +52,6 @@ class VirtualScrollController {
     }
 
     _handleScroll() {
-        // this._saveScrollPosition();
         window.requestAnimationFrame(() => {
             this._update();
         });
@@ -96,7 +95,6 @@ class VirtualScrollController {
     init() {
         this.viewport.classList.add("md-virtual-scroll");
 
-        // this._restoreScrollPosition();
         this._updateTotalContentHeight();
 
         this.viewport.addEventListener("scroll", this._handleScroll);

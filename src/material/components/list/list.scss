@@ -79,10 +79,6 @@
     margin: 4px 0 0 -16px;
 }
 
-// .md-list__icon {}
-
-// .md-list__icon-button {}
-
 .md-list__text {
     white-space: nowrap;
     overflow: hidden;
@@ -93,14 +89,6 @@
     letter-spacing: var(--md-sys-typescale-label-small-tracking);
     line-height: var(--md-sys-typescale-label-small-line-height);
 }
-
-// .md-list__checkbox {}
-
-// .md-list__radio-button {}
-
-// .md-list__switch {}
-
-// .md-list__badge {}
 
 .md-list__item--selected {
     background-color: var(--md-sys-color-secondary-container);
@@ -131,7 +119,6 @@
         margin-bottom: 0;
     }
 }
-// menu
 
 .md-menu {
     display: inline-flex;

@@ -39,7 +39,6 @@ class MdScrim extends MdElement {
     }
 
     _handleScrimClick(event) {
-        // this.close();
         this.emit("onScrimClick", { event, element: this });
     }
 

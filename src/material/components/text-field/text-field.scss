@@ -46,8 +46,6 @@
     margin: -8px;
 }
 
-// .md-text-field__icon {}
-
 .md-text-field__content {
     flex: 1;
     display: inline-flex;
@@ -174,8 +172,6 @@
     line-height: var(--md-sys-typescale-body-small-line-height);
 }
 
-// .md-text-field--populated {}
-
 .md-text-field--focus {
     .md-text-field__label {
         color: var(--md-sys-color-primary);
@@ -248,7 +244,6 @@
             font-size: var(--md-sys-typescale-body-large-size);
             letter-spacing: var(--md-sys-typescale-body-large-tracking);
             line-height: var(--md-sys-typescale-body-large-line-height);
-            //will-change: margin, font-size, line-height, color;
             transition-property: margin, font-size, line-height, color;
             transition-duration: var(--md-sys-motion-duration-short1);
             transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
@@ -326,7 +321,6 @@
             font-size: var(--md-sys-typescale-body-large-size);
             letter-spacing: var(--md-sys-typescale-body-large-tracking);
             line-height: var(--md-sys-typescale-body-large-line-height);
-            //will-change: margin, font-size, line-height, color, top, left;
             transition-property: margin, font-size, line-height, color, top, left;
             transition-duration: var(--md-sys-motion-duration-short1);
             transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
@@ -335,19 +329,12 @@
                 content: "";
                 width: 0%;
                 height: var(--md-sys-typescale-body-small-line-height);
-                // position: absolute;
                 z-index: -1;
-                // left: 50%;
-                // top: 50%;
-                // transform: translate3d(-50%, -50%, 0);
                 position: absolute;
                 inset: 0;
                 margin: auto;
-                // width: max-content;
-                // height: max-content;
                 background-color: var(--md-sys-color-background);
                 color: var(--md-sys-color-on-background);
-                //will-change: width;
                 transition-property: width;
                 transition-duration: var(--md-sys-motion-duration-short1);
                 transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));

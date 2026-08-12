@@ -9,11 +9,7 @@
     color: var(--md-sys-color-on-surface-variant);
     border-radius: var(--md-sys-shape-corner-extra-large);
     box-shadow: var(--md-sys-elevation-level3);
-    // position: absolute;
     z-index: 20;
-    // left: 50%;
-    // top: 50%;
-    // transform: translate3d(-50%, -50%, 0);
     position: absolute;
     inset: 0;
     margin: auto;
@@ -70,8 +66,6 @@
     }
 }
 
-// .md-dialog__icon {}
-
 .md-dialog--hero-icon .md-dialog__header {
     flex-direction: column;
     gap: 24px 0;
@@ -123,8 +117,6 @@
     animation-duration: var(--md-sys-motion-expressive-default-spatial-duration);
     animation-timing-function: cubic-bezier(var(--md-sys-motion-expressive-default-spatial));
 }
-
-// .md-dialog--basic{}
 
 .md-dialog--full-screen {
     min-width: 100%;
