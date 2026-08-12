@@ -65,8 +65,8 @@
 
     //will-change: border-radius, background-color, color, border-color;
     transition-property: border-radius, background-color, color, border-color;
-    transition-duration: var(--md-sys-motion-duration-short2);
-    transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
+    transition-duration: var(--md-sys-motion-expressive-fast-spatial-duration);
+    transition-timing-function: cubic-bezier(var(--md-sys-motion-expressive-fast-spatial));
 
     .md-button__icon {
         width: var(--md-comp-button-icon-width);
@@ -122,8 +122,8 @@
     &:active {
         border-radius: var(--md-comp-button-active-border-radius);
 
-        transition-duration: var(--md-sys-motion-duration-short3);
-        transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
+        // transition-duration: var(--md-sys-motion-duration-short3);
+        // transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
 
         .md-button__icon {
             transition-duration: var(--md-sys-motion-duration-short3);

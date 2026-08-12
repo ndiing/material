@@ -62,8 +62,8 @@ ripple
     &::after {
         opacity: 10%;
         animation-name: ripple-out;
-        animation-duration: var(--md-sys-motion-duration-short3);
-        animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
+        animation-duration: var(--md-sys-motion-expressive-fast-spatial-duration);
+        animation-timing-function: cubic-bezier(var(--md-sys-motion-expressive-fast-spatial));
     }
 }
 

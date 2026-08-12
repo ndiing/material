@@ -107,16 +107,16 @@
 
 .md-dialog--close {
     animation-name: basic-dialog-close;
-    animation-duration: var(--md-sys-motion-duration-short2);
-    animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
+    animation-duration: var(--md-sys-motion-expressive-default-spatial-duration);
+    animation-timing-function: cubic-bezier(var(--md-sys-motion-expressive-default-spatial));
 }
 
 .md-dialog--open {
     opacity: 1;
     pointer-events: all;
     animation-name: basic-dialog-show;
-    animation-duration: var(--md-sys-motion-duration-short3);
-    animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
+    animation-duration: var(--md-sys-motion-expressive-default-spatial-duration);
+    animation-timing-function: cubic-bezier(var(--md-sys-motion-expressive-default-spatial));
 }
 
 // .md-dialog--basic{}

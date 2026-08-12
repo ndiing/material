@@ -139,61 +139,112 @@
 :root {
     --md-sys-motion-spring-fast-spatial-damping: 0.9;
     --md-sys-motion-spring-fast-spatial-stiffness: 1400;
+
     --md-sys-motion-spring-fast-effects-damping: 1;
     --md-sys-motion-spring-fast-effects-stiffness: 3800;
+
     --md-sys-motion-spring-default-spatial-damping: 0.9;
     --md-sys-motion-spring-default-spatial-stiffness: 700;
+
     --md-sys-motion-spring-default-effects-damping: 1;
     --md-sys-motion-spring-default-effects-stiffness: 1600;
+
     --md-sys-motion-spring-slow-spatial-damping: 0.9;
     --md-sys-motion-spring-slow-spatial-stiffness: 300;
+
     --md-sys-motion-spring-slow-effects-damping: 1;
     --md-sys-motion-spring-slow-effects-stiffness: 800;
+
     --md-sys-motion-easing-emphasized: 0.2, 0, 0, 1;
     --md-sys-motion-easing-emphasized-accelerate: 0.3, 0, 0.8, 0.15;
     --md-sys-motion-easing-emphasized-decelerate: 0.05, 0.7, 0.1, 1;
+
     --md-sys-motion-easing-standard: 0.2, 0, 0, 1;
     --md-sys-motion-easing-standard-accelerate: 0.3, 0, 1, 1;
     --md-sys-motion-easing-standard-decelerate: 0, 0, 0, 1;
+
     --md-sys-motion-easing-legacy: 0.4, 0, 0.2, 1;
     --md-sys-motion-easing-legacy-accelerate: 0.4, 0, 1, 1;
     --md-sys-motion-easing-legacy-decelerate: 0, 0, 0.2, 1;
+
     --md-sys-motion-easing-linear: 0, 0, 1, 1;
+
     --md-sys-motion-duration-short1: 100ms;
     --md-sys-motion-duration-short2: 200ms;
     --md-sys-motion-duration-short3: 300ms;
     --md-sys-motion-duration-short4: 400ms;
+
     --md-sys-motion-duration-medium1: 500ms;
     --md-sys-motion-duration-medium2: 600ms;
     --md-sys-motion-duration-medium3: 700ms;
     --md-sys-motion-duration-medium4: 800ms;
+
     --md-sys-motion-duration-long1: 900ms;
     --md-sys-motion-duration-long2: 1000ms;
     --md-sys-motion-duration-long3: 1100ms;
     --md-sys-motion-duration-long4: 1200ms;
+
     --md-sys-motion-duration-extra-long1: 1400ms;
     --md-sys-motion-duration-extra-long2: 1600ms;
     --md-sys-motion-duration-extra-long3: 1800ms;
     --md-sys-motion-duration-extra-long4: 2000ms;
+
     --md-sys-motion-path: linear;
+
+    --md-sys-motion-expressive-fast-spatial-duration: 350ms;
+    --md-sys-motion-expressive-default-spatial-duration: 500ms;
+    --md-sys-motion-expressive-slow-spatial-duration: 650ms;
+    --md-sys-motion-expressive-fast-effects-duration: 150ms;
+    --md-sys-motion-expressive-default-effects-duration: 200ms;
+    --md-sys-motion-expressive-slow-effects-duration: 300ms;
+
+    --md-sys-motion-expressive-fast-spatial: 0.42, 1.67, 0.21, 0.9;
+    --md-sys-motion-expressive-default-spatial: 0.38, 1.21, 0.22, 1;
+    --md-sys-motion-expressive-slow-spatial: 0.39, 1.29, 0.35, 0.98;
+    --md-sys-motion-expressive-fast-effects: 0.31, 0.94, 0.34, 1;
+    --md-sys-motion-expressive-default-effects: 0.34, 0.8, 0.34, 1;
+    --md-sys-motion-expressive-slow-effects: 0.34, 0.88, 0.34, 1;
+
+    --md-sys-motion-standard-fast-spatial-duration: 350ms;
+    --md-sys-motion-standard-default-spatial-duration: 500ms;
+    --md-sys-motion-standard-slow-spatial-duration: 750ms;
+    --md-sys-motion-standard-fast-effects-duration: 150ms;
+    --md-sys-motion-standard-default-effects-duration: 200ms;
+    --md-sys-motion-standard-slow-effects-duration: 300ms;
+
+    --md-sys-motion-standard-fast-spatial: 0.27, 1.06, 0.18, 1;
+    --md-sys-motion-standard-default-spatial: 0.27, 1.06, 0.18, 1;
+    --md-sys-motion-standard-slow-spatial: 0.27, 1.06, 0.18, 1;
+    --md-sys-motion-standard-fast-effects: 0.31, 0.94, 0.34, 1;
+    --md-sys-motion-standard-default-effects: 0.34, 0.8, 0.34, 1;
+    --md-sys-motion-standard-slow-effects: 0.34, 0.88, 0.34, 1;
 }
 
 :root {
     --md-sys-shape-corner-full: 9999px;
+
     --md-sys-shape-corner-extra-large-top: 28px 28px 0 0;
     --md-sys-shape-corner-extra-large: 28px;
+
     --md-sys-shape-corner-large-top: 16px 16px 0 0;
     --md-sys-shape-corner-large-end: 0 16px 16px 0;
     --md-sys-shape-corner-large-start: 16px 0 0 16px;
     --md-sys-shape-corner-large: 16px;
+
     --md-sys-shape-corner-medium: 12px;
+
     --md-sys-shape-corner-small: 8px;
+
     --md-sys-shape-corner-extra-small-top: 4px 4px 0 0;
     --md-sys-shape-corner-extra-small: 4px;
+
     --md-sys-shape-corner-none: 0;
+
     --md-sys-shape-corner-large-increased: 20px;
+
     --md-sys-shape-corner-extra-large-increased: 32px;
     --md-sys-shape-corner-extra-extra-large: 48px;
+
     --md-sys-shape-corner-value-none: 0;
     --md-sys-shape-corner-value-extra-small: 4px;
     --md-sys-shape-corner-value-small: 8px;
@@ -211,71 +262,85 @@
     --md-sys-typescale-display-large-size: 57px;
     --md-sys-typescale-display-large-tracking: -0.25px;
     --md-sys-typescale-display-large-line-height: 64px;
+
     --md-sys-typescale-display-medium-font: "Noto Sans";
     --md-sys-typescale-display-medium-weight: 400;
     --md-sys-typescale-display-medium-size: 45px;
     --md-sys-typescale-display-medium-tracking: 0;
     --md-sys-typescale-display-medium-line-height: 52px;
+
     --md-sys-typescale-display-small-font: "Noto Sans";
     --md-sys-typescale-display-small-weight: 400;
     --md-sys-typescale-display-small-size: 36px;
     --md-sys-typescale-display-small-tracking: 0;
     --md-sys-typescale-display-small-line-height: 44px;
+
     --md-sys-typescale-headline-large-font: "Noto Sans";
     --md-sys-typescale-headline-large-weight: 400;
     --md-sys-typescale-headline-large-size: 32px;
     --md-sys-typescale-headline-large-tracking: 0;
     --md-sys-typescale-headline-large-line-height: 40px;
+
     --md-sys-typescale-headline-medium-font: "Noto Sans";
     --md-sys-typescale-headline-medium-weight: 400;
     --md-sys-typescale-headline-medium-size: 28px;
     --md-sys-typescale-headline-medium-tracking: 0;
     --md-sys-typescale-headline-medium-line-height: 36px;
+
     --md-sys-typescale-headline-small-font: "Noto Sans";
     --md-sys-typescale-headline-small-weight: 400;
     --md-sys-typescale-headline-small-size: 24px;
     --md-sys-typescale-headline-small-tracking: 0;
     --md-sys-typescale-headline-small-line-height: 32px;
+
     --md-sys-typescale-title-large-font: "Noto Sans";
     --md-sys-typescale-title-large-weight: 400;
     --md-sys-typescale-title-large-size: 22px;
     --md-sys-typescale-title-large-tracking: 0;
     --md-sys-typescale-title-large-line-height: 28px;
+
     --md-sys-typescale-title-medium-font: "Noto Sans";
     --md-sys-typescale-title-medium-weight: 500;
     --md-sys-typescale-title-medium-size: 16px;
     --md-sys-typescale-title-medium-tracking: 0.15px;
     --md-sys-typescale-title-medium-line-height: 24px;
+
     --md-sys-typescale-title-small-font: "Noto Sans";
     --md-sys-typescale-title-small-weight: 500;
     --md-sys-typescale-title-small-size: 14px;
     --md-sys-typescale-title-small-tracking: 0.1px;
     --md-sys-typescale-title-small-line-height: 20px;
+
     --md-sys-typescale-body-large-font: "Noto Sans";
     --md-sys-typescale-body-large-weight: 400;
     --md-sys-typescale-body-large-size: 16px;
     --md-sys-typescale-body-large-tracking: 0.5px;
     --md-sys-typescale-body-large-line-height: 24px;
+
     --md-sys-typescale-body-medium-font: "Noto Sans";
     --md-sys-typescale-body-medium-weight: 400;
     --md-sys-typescale-body-medium-size: 14px;
     --md-sys-typescale-body-medium-tracking: 0.25px;
     --md-sys-typescale-body-medium-line-height: 20px;
+
     --md-sys-typescale-body-small-font: "Noto Sans";
     --md-sys-typescale-body-small-weight: 400;
     --md-sys-typescale-body-small-size: 12px;
     --md-sys-typescale-body-small-tracking: 0.4px;
     --md-sys-typescale-body-small-line-height: 16px;
+
     --md-sys-typescale-label-large-font: "Noto Sans";
     --md-sys-typescale-label-large-weight: 500;
     --md-sys-typescale-label-large-size: 14px;
     --md-sys-typescale-label-large-tracking: 0.1px;
     --md-sys-typescale-label-large-line-height: 20px;
+
     --md-sys-typescale-label-medium-font: "Noto Sans";
     --md-sys-typescale-label-medium-weight: 500;
     --md-sys-typescale-label-medium-size: 12px;
     --md-sys-typescale-label-medium-tracking: 0.5px;
     --md-sys-typescale-label-medium-line-height: 16px;
+
     --md-sys-typescale-label-small-font: "Noto Sans";
     --md-sys-typescale-label-small-weight: 500;
     --md-sys-typescale-label-small-size: 11px;

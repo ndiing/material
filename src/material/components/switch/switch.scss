@@ -23,18 +23,19 @@
         + .md-switch__track {
             background-color: var(--md-sys-color-primary);
             border-color: var(--md-sys-color-primary);
-            transition-duration: var(--md-sys-motion-duration-short2);
-            transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
+            // transition-duration: var(--md-sys-motion-expressive-fast-spatial-duration);
+            // transition-timing-function: cubic-bezier(var(--md-sys-motion-expressive-fast-spatial));
 
             .md-switch__thumb {
-                width: 24px;
-                height: 24px;
+                // width: 24px;
+                // height: 24px;
                 border-radius: var(--md-sys-shape-corner-full);
-                left: 22px;
+                // left: 22px;
+                transform: translate3d(-7.6923076923076925%, -50%, 0) scale3d(1, 1, 1);
                 background-color: var(--md-sys-color-on-primary);
                 color: var(--md-sys-color-primary);
-                transition-duration: var(--md-sys-motion-duration-short2);
-                transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
+                // transition-duration: var(--md-sys-motion-expressive-fast-spatial-duration);
+                // transition-timing-function: cubic-bezier(var(--md-sys-motion-expressive-fast-spatial));
             }
         }
     }
@@ -42,17 +43,19 @@
     &:active {
         + .md-switch__track {
             .md-switch__thumb {
-                width: 28px;
-                height: 28px;
+                // width: 28px;
+                // height: 28px;
                 border-radius: var(--md-sys-shape-corner-full);
-                left: 0px;
+                // left: 0px;
+                transform: translate3d(-92.3076923076923%, -50%, 0) scale3d(1.1666666666666667, 1.1666666666666667, 1.1666666666666667);
             }
         }
 
         &:checked {
             + .md-switch__track {
                 .md-switch__thumb {
-                    left: 22px;
+                    // left: 20px;
+                    transform: translate3d(-7.6923076923076925%, -50%, 0) scale3d(1.1666666666666667, 1.1666666666666667, 1.1666666666666667);
                 }
             }
         }
@@ -77,8 +80,8 @@
     position: relative;
     //will-change: background-color, border-color;
     transition-property: background-color, border-color;
-    transition-duration: var(--md-sys-motion-duration-short3);
-    transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
+    transition-duration: var(--md-sys-motion-expressive-fast-spatial-duration);
+    transition-timing-function: cubic-bezier(var(--md-sys-motion-expressive-fast-spatial));
 }
 
 .md-switch__thumb {
@@ -92,17 +95,21 @@
     width: 24px;
     height: 24px;
     border-radius: var(--md-sys-shape-corner-full);
-    left: 2px;
-    //will-change: width, height, border-radius, left, background-color, color;
-    transition-property: width, height, border-radius, left, background-color, color;
-    transition-duration: var(--md-sys-motion-duration-short3);
-    transition-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
+    // left: 2px;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-92.3076923076923%, -50%, 0) scale3d(1, 1, 1);
+    //will-change: transform, border-radius, background-color, color;
+    transition-property: transform, border-radius, background-color, color;
+    transition-duration: var(--md-sys-motion-expressive-fast-spatial-duration);
+    transition-timing-function: cubic-bezier(var(--md-sys-motion-expressive-fast-spatial));
 
     &:empty {
-        width: 16px;
-        height: 16px;
+        // width: 16px;
+        // height: 16px;
         border-radius: var(--md-sys-shape-corner-full);
-        left: 4px;
+        // left: 4px;
+        transform: translate3d(-92.3076923076923%, -50%, 0) scale3d(0.6666666666666666, 0.6666666666666666, 0.6666666666666666);
     }
 
     &.md-ripple {
@@ -119,8 +126,8 @@
 }
 
 .md-switch__icon {
-    width: 16px;
-    height: 16px;
+    // width: 16px;
+    // height: 16px;
     font-size: 16px;
 }
 
