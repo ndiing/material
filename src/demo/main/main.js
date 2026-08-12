@@ -47,7 +47,7 @@ class DemoMain extends MdElement {
                     .open="${this.open}"
                     .items="${this.items}"
                 ></md-navigation-drawer>
-                <md-layout-item region="center">
+                <md-layout-item id="main" region="center">
                     <md-outlet></md-outlet>
                     <md-outlet name="main"></md-outlet>
                 </md-layout-item>
