@@ -66,9 +66,9 @@ export const routes = [
             { path: "/components/form", load: () => import("./components/form.js").then((module) => module.default), children: [] },
 
             { path: "/components/list", load: () => import("./components/list.js").then((module) => module.default), children: [] },
-            { path: "/components/list-configurations", load: () => import("./components/list-configurations.js").then((module) => module.default), children: [] },
+            // { path: "/components/list-configurations", load: () => import("./components/list-configurations.js").then((module) => module.default), children: [] },
 
-            { path: "/components/list-interactions", load: () => import("./components/list-interactions.js").then((module) => module.default), children: [] },
+            // { path: "/components/list-interactions", load: () => import("./components/list-interactions.js").then((module) => module.default), children: [] },
             { path: "/components/tree", load: () => import("./components/tree.js").then((module) => module.default), children: [] },
             { path: "/components/push-menu", load: () => import("./components/push-menu.js").then((module) => module.default), children: [] },
 
@@ -76,10 +76,8 @@ export const routes = [
 
             { path: "/components/navigation-bar", load: () => import("./components/navigation-bar.js").then((module) => module.default), children: [] },
             { path: "/components/navigation-bar-horizontal", load: () => import("./components/navigation-bar-horizontal.js").then((module) => module.default), children: [] },
-
             { path: "/components/navigation-drawer", load: () => import("./components/navigation-drawer.js").then((module) => module.default), children: [] },
             { path: "/components/navigation-drawer-modal", load: () => import("./components/navigation-drawer-modal.js").then((module) => module.default), children: [] },
-
             { path: "/components/navigation-rail", load: () => import("./components/navigation-rail.js").then((module) => module.default), children: [] },
             { path: "/components/navigation-rail-modal", load: () => import("./components/navigation-rail-modal.js").then((module) => module.default), children: [] },
             

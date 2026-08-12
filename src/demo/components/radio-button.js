@@ -10,15 +10,33 @@ class DemoRadioButton extends MdElement {
                 @reset="${this.handleReset}" 
                 @submit="${this.handleSubmit}"
             >
-                <md-grid >
-                    <md-grid-column expanded="4">
-                        
-                        <md-radio-button name="radio1" checked></md-radio-button>
-                        <md-radio-button name="radio1"></md-radio-button>
+                <md-grid class="demo-grid">
+                    <md-grid-column expanded="12" medium="8" compact="4">
+                        <md-grid>
+                            <md-grid-column expanded="12" medium="8" compact="8">
+                                <h3>Radio button</h3>
+                            </md-grid-column>
+
+                            <md-grid-column expanded="6" medium="4" compact="4">
+                                <md-radio-button name="radio1" checked></md-radio-button>
+                            </md-grid-column>
+                            <md-grid-column expanded="6" medium="4" compact="4">
+                                <md-radio-button name="radio2" checked disabled></md-radio-button>
+                            </md-grid-column>
+
+                            <md-grid-column expanded="6" medium="4" compact="4">
+                                <md-radio-button name="radio1"></md-radio-button>
+                            </md-grid-column>
+                            <md-grid-column expanded="6" medium="4" compact="4">
+                                <md-radio-button name="radio2" disabled></md-radio-button>
+                            </md-grid-column>
+
+                        </md-grid>
                     </md-grid-column>
+                    
                     <md-grid-column expanded="12">
-                        <md-button type="reset" label="reset"></md-button>
-                        <md-button type="submit" label="submit"></md-button>
+                        <md-button color="outlined" type="reset" label="Reset"></md-button>
+                        <md-button color="tonal" type="submit" label="Submit"></md-button>
                     </md-grid-column>
                 </md-grid>
             </form>

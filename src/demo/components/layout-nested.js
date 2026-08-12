@@ -46,16 +46,16 @@ class DemoLayoutNested extends MdElement {
                         </md-layout-item>
                         <md-layout-item region="center">
                             <div style="padding:24px;">
-                                <md-button label="North 1 Toggle" @click="${this._handleNorth1Toggle}"></md-button><br><br>
+                                <md-button label="North 1 Toggle" @click="${this._handleNorth1Toggle}"></md-button>
                                 <md-button label="North 2 Toggle" color="tonal" @click="${this._handleNorth2Toggle}"></md-button><br><br>
                                 
-                                <md-button label="East 1 Toggle" @click="${this._handleEast1Toggle}"></md-button><br><br>
+                                <md-button label="East 1 Toggle" @click="${this._handleEast1Toggle}"></md-button>
                                 <md-button label="East 2 Toggle" color="tonal" @click="${this._handleEast2Toggle}"></md-button><br><br>
 
-                                <md-button label="South 1 Toggle" @click="${this._handleSouth1Toggle}"></md-button><br><br>
+                                <md-button label="South 1 Toggle" @click="${this._handleSouth1Toggle}"></md-button>
                                 <md-button label="South 2 Toggle" color="tonal" @click="${this._handleSouth2Toggle}"></md-button><br><br>
                                 
-                                <md-button label="West 1 Toggle" @click="${this._handleWest1Toggle}"></md-button><br><br>
+                                <md-button label="West 1 Toggle" @click="${this._handleWest1Toggle}"></md-button>
                                 <md-button label="West 2 Toggle" color="tonal" @click="${this._handleWest2Toggle}"></md-button><br><br>
                             </div>
                         </md-layout-item>

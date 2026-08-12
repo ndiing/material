@@ -11,31 +11,39 @@ class DemoSwitch extends MdElement {
                 @submit="${this.handleSubmit}"
             >
                 <md-grid class="demo-grid">
+                    <md-grid-column expanded="12" medium="8" compact="4">
+                        <md-grid>
+                            <md-grid-column expanded="12" medium="8" compact="8">
+                                <h3>Switch</h3>
+                            </md-grid-column>
+
+                            <md-grid-column expanded="6" medium="4" compact="4">
+                                <md-switch></md-switch>
+                            </md-grid-column>
+                            <md-grid-column expanded="6" medium="4" compact="4">
+                                <md-switch checked></md-switch>
+                            </md-grid-column>
+
+                            <md-grid-column expanded="6" medium="4" compact="4">
+                                <md-switch icon='["", "check"]'></md-switch>
+                            </md-grid-column>
+                            <md-grid-column expanded="6" medium="4" compact="4">
+                                <md-switch icon='["", "check"]' checked></md-switch>
+                            </md-grid-column>
+
+                            <md-grid-column expanded="6" medium="4" compact="4">
+                                <md-switch icon='["close", "check"]'></md-switch>
+                            </md-grid-column>
+                            <md-grid-column expanded="6" medium="4" compact="4">
+                                <md-switch icon='["close", "check"]' checked></md-switch>
+                            </md-grid-column>
+                            
+
+                        </md-grid>
+                    </md-grid-column>
                     
-                    <md-grid-column expanded="6" medium="4" compact="4">
-                        <md-switch></md-switch>
-                    </md-grid-column>
-                    <md-grid-column expanded="6" medium="4" compact="4">
-                        <md-switch checked></md-switch>
-                    </md-grid-column>
-                    
-
-                    <md-grid-column expanded="6" medium="4" compact="4">
-                        <md-switch icon='["","check"]'></md-switch>
-                    </md-grid-column>
-                    <md-grid-column expanded="6" medium="4" compact="4">
-                        <md-switch icon='["","check"]' checked></md-switch>
-                    </md-grid-column>
-
-                    <md-grid-column expanded="6" medium="4" compact="4">
-                        <md-switch icon='["close","check"]'></md-switch>
-                    </md-grid-column>
-                    <md-grid-column expanded="6" medium="4" compact="4">
-                        <md-switch icon='["close","check"]' checked></md-switch>
-                    </md-grid-column>
-
                     <md-grid-column expanded="12">
-                        <md-button color="tonal" type="reset" label="Reset"></md-button>
+                        <md-button color="outlined" type="reset" label="Reset"></md-button>
                         <md-button color="tonal" type="submit" label="Submit"></md-button>
                     </md-grid-column>
                 </md-grid>

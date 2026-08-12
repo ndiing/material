@@ -5,65 +5,166 @@ class DemoSplitButton extends MdElement {
     /* prettier-ignore */
     render(){
         return html`
-            <md-grid>
-                <md-grid-column expanded="12">
-                    <md-split-button icon="edit" label="Label" color="elevated"></md-split-button>
-                    <md-split-button selected icon="edit" label="Label" color="elevated"></md-split-button>
-                    <br>
-                    <br>
+            
+            <md-grid class="demo-grid">
 
-
-                    <md-split-button icon="edit" label="Label" color="filled"></md-split-button>
-                    <md-split-button selected icon="edit" label="Label" color="filled"></md-split-button>
-                    <br>
-                    <br>
-
-
-                    <md-split-button icon="edit" label="Label" color="tonal"></md-split-button>
-                    <md-split-button selected icon="edit" label="Label" color="tonal"></md-split-button>
-                    <br>
-                    <br>
-
-
-                    <md-split-button icon="edit" label="Label" color="outlined"></md-split-button>
-                    <md-split-button selected icon="edit" label="Label" color="outlined"></md-split-button>
-                    <br>
-                    <br>
-
-
-                    <br>
-                    <br>
-
-                    <md-split-button icon="edit" label="Label" size="extra-small"></md-split-button>
-                    <md-split-button selected icon="edit" label="Label" size="extra-small"></md-split-button>
-                    <br>
-                    <br>
-
-                    <md-split-button icon="edit" label="Label" size="small"></md-split-button>
-                    <md-split-button selected icon="edit" label="Label" size="small"></md-split-button>
-                    <br>
-                    <br>
-
-                    <md-split-button icon="edit" label="Label" size="medium"></md-split-button>
-                    <md-split-button selected icon="edit" label="Label" size="medium"></md-split-button>
-                    <br>
-                    <br>
-
-                    <md-split-button icon="edit" label="Label" size="large"></md-split-button>
-                    <md-split-button selected icon="edit" label="Label" size="large"></md-split-button>
-                    <br>
-                    <br>
-
-                    <md-split-button icon="edit" label="Label" size="extra-large"></md-split-button>
-                    <md-split-button selected icon="edit" label="Label" size="extra-large"></md-split-button>
-                    <br>
-                    <br>
-
-                    <br>
-                    <br>
-
-                    
+                
+                <md-grid-column expanded="12" medium="8" compact="4">
+                    <md-grid>
+                        <md-grid-column expanded="12" medium="8" compact="8">
+                            <h3>Split button</h3>
+                        </md-grid-column>
+                        <md-grid-column expanded="6" medium="4" compact="4">
+                            <md-split-button icon="edit" label="Label"></md-split-button>
+                        </md-grid-column>
+                        <md-grid-column expanded="6" medium="4" compact="4">
+                        </md-grid-column>
+                    </md-grid>
                 </md-grid-column>
+                
+                <md-grid-column expanded="12" medium="8" compact="4">
+                    <md-grid>
+                        <md-grid-column expanded="12" medium="8" compact="8">
+                            <h3>Color configurations</h3>
+                        </md-grid-column>
+                        <md-grid-column expanded="12" medium="8" compact="4">
+                            <md-split-button color="elevated" icon="edit" label="Label"></md-split-button>
+                        </md-grid-column>
+                        <md-grid-column expanded="12" medium="8" compact="4">
+                            <md-split-button color="filled" icon="edit" label="Label"></md-split-button>
+                        </md-grid-column>
+                        <md-grid-column expanded="12" medium="8" compact="4">
+                            <md-split-button color="tonal" icon="edit" label="Label"></md-split-button>
+                        </md-grid-column>
+                        <md-grid-column expanded="12" medium="8" compact="4">
+                            <md-split-button color="outlined" icon="edit" label="Label"></md-split-button>
+                        </md-grid-column>
+                    </md-grid>
+                </md-grid-column>
+                
+                <md-grid-column expanded="12" medium="8" compact="4">
+                    <md-grid>
+                        <md-grid-column expanded="12" medium="8" compact="8">
+                            <h3>Size configurations</h3>
+                        </md-grid-column>
+                        <md-grid-column expanded="12" medium="8" compact="4">
+                            <md-split-button size="extra-small" color="filled" icon="edit" label="Label"></md-split-button>
+                        </md-grid-column>
+                        <md-grid-column expanded="12" medium="8" compact="4">
+                            <md-split-button size="small" color="filled" icon="edit" label="Label"></md-split-button>
+                        </md-grid-column>
+                        <md-grid-column expanded="12" medium="8" compact="4">
+                            <md-split-button size="medium" color="filled" icon="edit" label="Label"></md-split-button>
+                        </md-grid-column>
+                        <md-grid-column expanded="12" medium="8" compact="4">
+                            <md-split-button size="large" color="filled" icon="edit" label="Label"></md-split-button>
+                        </md-grid-column>
+                        <md-grid-column expanded="12" medium="8" compact="4">
+                            <md-split-button size="extra-large" color="filled" icon="edit" label="Label"></md-split-button>
+                        </md-grid-column>
+                    </md-grid>
+                </md-grid-column>
+
+
+                <md-grid-column expanded="12" medium="8" compact="4">
+                    <md-grid>
+                        <md-grid-column expanded="12" medium="8" compact="8">
+                            <h3>Anatomy</h3>
+                        </md-grid-column>
+                        <md-grid-column expanded="12" medium="4" compact="4">
+                            <md-split-button icon="edit" label="Label"></md-split-button>
+                        </md-grid-column>
+                        <md-grid-column expanded="12" medium="4" compact="4">
+                            <md-split-button label="Label"></md-split-button>
+                        </md-grid-column>
+                        <md-grid-column expanded="12" medium="4" compact="4">
+                            <md-split-button icon="edit"></md-split-button>
+                        </md-grid-column>
+                    </md-grid>
+                </md-grid-column>
+                
+                <md-grid-column expanded="12" medium="8" compact="4">
+                    <md-grid>
+                        <md-grid-column expanded="12" medium="8" compact="8">
+                            <h3>Color + Selected</h3>
+                        </md-grid-column>
+
+                        <md-grid-column expanded="6" medium="8" compact="4">
+                            <md-split-button color="elevated" icon="edit" label="Label"></md-split-button>
+                        </md-grid-column>
+                        <md-grid-column expanded="6" medium="8" compact="4">
+                            <md-split-button selected color="elevated" icon="edit" label="Label"></md-split-button>
+                        </md-grid-column>
+
+                        <md-grid-column expanded="6" medium="8" compact="4">
+                            <md-split-button color="filled" icon="edit" label="Label"></md-split-button>
+                        </md-grid-column>
+                        <md-grid-column expanded="6" medium="8" compact="4">
+                            <md-split-button selected color="filled" icon="edit" label="Label"></md-split-button>
+                        </md-grid-column>
+
+                        <md-grid-column expanded="6" medium="8" compact="4">
+                            <md-split-button color="tonal" icon="edit" label="Label"></md-split-button>
+                        </md-grid-column>
+                        <md-grid-column expanded="6" medium="8" compact="4">
+                            <md-split-button selected color="tonal" icon="edit" label="Label"></md-split-button>
+                        </md-grid-column>
+
+                        <md-grid-column expanded="6" medium="8" compact="4">
+                            <md-split-button color="outlined" icon="edit" label="Label"></md-split-button>
+                        </md-grid-column>
+                        <md-grid-column expanded="6" medium="8" compact="4">
+                            <md-split-button selected color="outlined" icon="edit" label="Label"></md-split-button>
+                        </md-grid-column>
+
+                    </md-grid>
+                </md-grid-column>
+                
+                
+                <md-grid-column expanded="12" medium="8" compact="4">
+                    <md-grid>
+                        <md-grid-column expanded="12" medium="8" compact="8">
+                            <h3>Size + Selected</h3>
+                        </md-grid-column>
+
+                        <md-grid-column expanded="6" medium="8" compact="4">
+                            <md-split-button size="extra-small" color="filled" icon="edit" label="Label"></md-split-button>
+                        </md-grid-column>
+                        <md-grid-column expanded="6" medium="8" compact="4">
+                            <md-split-button size="extra-small" selected color="filled" icon="edit" label="Label"></md-split-button>
+                        </md-grid-column>
+
+                        <md-grid-column expanded="6" medium="8" compact="4">
+                            <md-split-button size="small" color="filled" icon="edit" label="Label"></md-split-button>
+                        </md-grid-column>
+                        <md-grid-column expanded="6" medium="8" compact="4">
+                            <md-split-button size="small" selected color="filled" icon="edit" label="Label"></md-split-button>
+                        </md-grid-column>
+
+                        <md-grid-column expanded="6" medium="8" compact="4">
+                            <md-split-button size="medium" color="filled" icon="edit" label="Label"></md-split-button>
+                        </md-grid-column>
+                        <md-grid-column expanded="6" medium="8" compact="4">
+                            <md-split-button size="medium" selected color="filled" icon="edit" label="Label"></md-split-button>
+                        </md-grid-column>
+
+                        <md-grid-column expanded="6" medium="8" compact="4">
+                            <md-split-button size="large" color="filled" icon="edit" label="Label"></md-split-button>
+                        </md-grid-column>
+                        <md-grid-column expanded="6" medium="8" compact="4">
+                            <md-split-button size="large" selected color="filled" icon="edit" label="Label"></md-split-button>
+                        </md-grid-column>
+
+                        <md-grid-column expanded="6" medium="8" compact="4">
+                            <md-split-button size="extra-large" color="filled" icon="edit" label="Label"></md-split-button>
+                        </md-grid-column>
+                        <md-grid-column expanded="6" medium="8" compact="4">
+                            <md-split-button size="extra-large" selected color="filled" icon="edit" label="Label"></md-split-button>
+                        </md-grid-column>
+
+                    </md-grid>
+                </md-grid-column>
+                
             </md-grid>
         `
     }

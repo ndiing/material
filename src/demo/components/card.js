@@ -6,38 +6,66 @@ class DemoCard extends MdElement {
     render(){
         return html`
             <md-grid class="demo-grid">
-                <md-grid-column expanded="6" medium="4" compact="4">
-                    <md-card color="elevated">
-                        <md-card-header>header</md-card-header>
-                        <md-card-body>
-                            <md-card-main>main</md-card-main>
-                            <md-card-footer>footer</md-card-footer>
-                        </md-card-body>
-                    </md-card>
-                </md-grid-column>
-                <md-grid-column expanded="6" medium="4" compact="4"></md-grid-column>
 
-                <md-grid-column expanded="6" medium="4" compact="4">
-                    <md-card color="filled">
-                        <md-card-header>header</md-card-header>
-                        <md-card-body>
-                            <md-card-main>main</md-card-main>
-                            <md-card-footer>footer</md-card-footer>
-                        </md-card-body>
-                    </md-card>
-                </md-grid-column>
-                <md-grid-column expanded="6" medium="4" compact="4"></md-grid-column>
+                <md-grid-column expanded="12" medium="8" compact="4">
+                    <md-grid>
+                        <md-grid-column expanded="12" medium="8" compact="8">
+                            <h3>Elevated card</h3>
+                        </md-grid-column>
 
-                <md-grid-column expanded="6" medium="4" compact="4">
-                    <md-card color="outlined">
-                        <md-card-header>header</md-card-header>
-                        <md-card-body>
-                            <md-card-main>main</md-card-main>
-                            <md-card-footer>footer</md-card-footer>
-                        </md-card-body>
-                    </md-card>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-card color="elevated">
+                                <md-card-header>header</md-card-header>
+                                <md-card-body>
+                                    <md-card-main>main</md-card-main>
+                                    <md-card-footer>footer</md-card-footer>
+                                </md-card-body>
+                            </md-card>
+                        </md-grid-column>
+
+                    </md-grid>
                 </md-grid-column>
-                <md-grid-column expanded="6" medium="4" compact="4"></md-grid-column>
+
+                <md-grid-column expanded="12" medium="8" compact="4">
+                    <md-grid>
+                        <md-grid-column expanded="12" medium="8" compact="8">
+                            <h3>Filled card</h3>
+                        </md-grid-column>
+
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-card color="filled">
+                                <md-card-header>header</md-card-header>
+                                <md-card-body>
+                                    <md-card-main>main</md-card-main>
+                                    <md-card-footer>footer</md-card-footer>
+                                </md-card-body>
+                            </md-card>
+                        </md-grid-column>
+
+                    </md-grid>
+                </md-grid-column>
+
+                <md-grid-column expanded="12" medium="8" compact="4">
+                    <md-grid>
+                        <md-grid-column expanded="12" medium="8" compact="8">
+                            <h3>Outlined card</h3>
+                        </md-grid-column>
+
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-card color="outlined">
+                                <md-card-header>header</md-card-header>
+                                <md-card-body>
+                                    <md-card-main>main</md-card-main>
+                                    <md-card-footer>footer</md-card-footer>
+                                </md-card-body>
+                            </md-card>
+                        </md-grid-column>
+
+                    </md-grid>
+                </md-grid-column>
+
+
+
 
             </md-grid>
         `

@@ -133,17 +133,25 @@ class DemoPushMenu extends MdElement {
         return html`
             <md-grid class="demo-grid">
 
-                <md-grid-column expanded="6" medium="4" compact="4">
-                    <md-push-menu
-                        .items="${this.data0}"
-                        .singleSelect="${true}"
-                    ></md-push-menu>
-                </md-grid-column>
-                <md-grid-column expanded="6" medium="4" compact="4">
-                    <md-push-menu
-                        .items="${this.data1}"
-                        .singleSelect="${true}"
-                    ></md-push-menu>
+                <md-grid-column expanded="12" medium="8" compact="4">
+                    <md-grid>
+                        <md-grid-column expanded="12" medium="8" compact="8">
+                            <h3>Push Menu</h3>
+                        </md-grid-column>
+
+                        <md-grid-column expanded="6" medium="4" compact="4">
+                            <md-push-menu
+                                .items="${this.data0}"
+                                .singleSelect="${true}"
+                            ></md-push-menu>
+                        </md-grid-column>
+                        <md-grid-column expanded="6" medium="4" compact="4">
+                            <md-push-menu
+                                .items="${this.data1}"
+                                .singleSelect="${true}"
+                            ></md-push-menu>
+                        </md-grid-column>
+                    </md-grid>
                 </md-grid-column>
                 
             </md-grid>

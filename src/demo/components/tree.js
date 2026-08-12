@@ -133,17 +133,25 @@ class DemoTree extends MdElement {
         return html`
             <md-grid class="demo-grid">
 
-                <md-grid-column expanded="6" medium="4" compact="4">
-                    <md-tree
-                        .items="${this.data0}"
-                        .singleSelect="${true}"
-                    ></md-tree>
-                </md-grid-column>
-                <md-grid-column expanded="6" medium="4" compact="4">
-                    <md-tree
-                        .items="${this.data1}"
-                        .singleSelect="${true}"
-                    ></md-tree>
+                <md-grid-column expanded="12" medium="8" compact="4">
+                    <md-grid>
+                        <md-grid-column expanded="12" medium="8" compact="8">
+                            <h3>Tree</h3>
+                        </md-grid-column>
+
+                        <md-grid-column expanded="6" medium="4" compact="4">
+                            <md-tree
+                                .items="${this.data0}"
+                                .singleSelect="${true}"
+                            ></md-tree>
+                        </md-grid-column>
+                        <md-grid-column expanded="6" medium="4" compact="4">
+                            <md-tree
+                                .items="${this.data1}"
+                                .singleSelect="${true}"
+                            ></md-tree>
+                        </md-grid-column>
+                    </md-grid>
                 </md-grid-column>
                 
             </md-grid>

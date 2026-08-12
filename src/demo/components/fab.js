@@ -5,134 +5,267 @@ class DemoFab extends MdElement {
     /* prettier-ignore */
     render(){
         return html`
-            <md-grid style="margin:24px;">
-                
-                <md-grid-column expanded="6" medium="4" compact="4">
-                    <md-fab icon="edit"></md-fab>
+            
+            <md-grid class="demo-grid">
+
+                <md-grid-column expanded="12" medium="8" compact="4">
+                    <md-grid>
+                        <md-grid-column expanded="12" medium="8" compact="8">
+                            <h3>Size</h3>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab size="small" icon="edit"></md-fab>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab size="medium" icon="edit"></md-fab>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab size="large" icon="edit"></md-fab>
+                        </md-grid-column>
+                    </md-grid>
                 </md-grid-column>
-                <md-grid-column expanded="6" medium="4" compact="4">
-                    <md-fab icon="edit" unelevated></md-fab>
+
+                <md-grid-column expanded="12" medium="8" compact="4">
+                    <md-grid>
+                        <md-grid-column expanded="12" medium="8" compact="8">
+                            <h3>Color</h3>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab color="primary-container" icon="edit"></md-fab>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab color="secondary-container" icon="edit"></md-fab>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab color="tertiary-container" icon="edit"></md-fab>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab color="primary" icon="edit"></md-fab>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab color="secondary" icon="edit"></md-fab>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab color="tertiary" icon="edit"></md-fab>
+                        </md-grid-column>
+                    </md-grid>
                 </md-grid-column>
-                
-                <md-grid-column expanded="6" medium="4" compact="4">
-                    <md-fab size="small" icon="edit"></md-fab>
+
+                <md-grid-column expanded="12" medium="8" compact="4">
+                    <md-grid>
+                        <md-grid-column expanded="12" medium="8" compact="8">
+                            <h3>Size + Unelevated</h3>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab unelevated size="small" icon="edit"></md-fab>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab unelevated size="medium" icon="edit"></md-fab>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab unelevated size="large" icon="edit"></md-fab>
+                        </md-grid-column>
+                    </md-grid>
                 </md-grid-column>
-                <md-grid-column expanded="6" medium="4" compact="4">
-                    <md-fab size="small" icon="edit" unelevated></md-fab>
+
+                <md-grid-column expanded="12" medium="8" compact="4">
+                    <md-grid>
+                        <md-grid-column expanded="12" medium="8" compact="8">
+                            <h3>Color + Unelevated</h3>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab unelevated color="primary-container" icon="edit"></md-fab>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab unelevated color="secondary-container" icon="edit"></md-fab>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab unelevated color="tertiary-container" icon="edit"></md-fab>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab unelevated color="primary" icon="edit"></md-fab>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab unelevated color="secondary" icon="edit"></md-fab>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab unelevated color="tertiary" icon="edit"></md-fab>
+                        </md-grid-column>
+                    </md-grid>
                 </md-grid-column>
-                <md-grid-column expanded="6" medium="4" compact="4">
-                    <md-fab size="medium" icon="edit"></md-fab>
+
+                <md-grid-column expanded="12" medium="8" compact="4">
+                    <md-grid>
+                        <md-grid-column expanded="12" medium="8" compact="8">
+                            <h3>Size</h3>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab label="Label" size="small" icon="edit"></md-fab>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab label="Label" size="medium" icon="edit"></md-fab>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab label="Label" size="large" icon="edit"></md-fab>
+                        </md-grid-column>
+                    </md-grid>
                 </md-grid-column>
-                <md-grid-column expanded="6" medium="4" compact="4">
-                    <md-fab size="medium" icon="edit" unelevated></md-fab>
+
+                <md-grid-column expanded="12" medium="8" compact="4">
+                    <md-grid>
+                        <md-grid-column expanded="12" medium="8" compact="8">
+                            <h3>Color</h3>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab label="Label" color="primary-container" icon="edit"></md-fab>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab label="Label" color="secondary-container" icon="edit"></md-fab>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab label="Label" color="tertiary-container" icon="edit"></md-fab>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab label="Label" color="primary" icon="edit"></md-fab>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab label="Label" color="secondary" icon="edit"></md-fab>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab label="Label" color="tertiary" icon="edit"></md-fab>
+                        </md-grid-column>
+                    </md-grid>
                 </md-grid-column>
-                <md-grid-column expanded="6" medium="4" compact="4">
-                    <md-fab size="large" icon="edit"></md-fab>
+
+                <md-grid-column expanded="12" medium="8" compact="4">
+                    <md-grid>
+                        <md-grid-column expanded="12" medium="8" compact="8">
+                            <h3>Size + Unelevated</h3>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab label="Label" unelevated size="small" icon="edit"></md-fab>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab label="Label" unelevated size="medium" icon="edit"></md-fab>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab label="Label" unelevated size="large" icon="edit"></md-fab>
+                        </md-grid-column>
+                    </md-grid>
                 </md-grid-column>
-                <md-grid-column expanded="6" medium="4" compact="4">
-                    <md-fab size="large" icon="edit" unelevated></md-fab>
+
+                <md-grid-column expanded="12" medium="8" compact="4">
+                    <md-grid>
+                        <md-grid-column expanded="12" medium="8" compact="8">
+                            <h3>Color + Unelevated</h3>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab label="Label" unelevated color="primary-container" icon="edit"></md-fab>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab label="Label" unelevated color="secondary-container" icon="edit"></md-fab>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab label="Label" unelevated color="tertiary-container" icon="edit"></md-fab>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab label="Label" unelevated color="primary" icon="edit"></md-fab>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab label="Label" unelevated color="secondary" icon="edit"></md-fab>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab label="Label" unelevated color="tertiary" icon="edit"></md-fab>
+                        </md-grid-column>
+                    </md-grid>
                 </md-grid-column>
-                
-                <md-grid-column expanded="6" medium="4" compact="4">
-                    <md-fab color="primary-container" icon="edit"></md-fab>
+
+                <md-grid-column expanded="12" medium="8" compact="4">
+                    <md-grid>
+                        <md-grid-column expanded="12" medium="8" compact="8">
+                            <h3>Size</h3>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab label="Label" size="small"></md-fab>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab label="Label" size="medium"></md-fab>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab label="Label" size="large"></md-fab>
+                        </md-grid-column>
+                    </md-grid>
                 </md-grid-column>
-                <md-grid-column expanded="6" medium="4" compact="4">
-                    <md-fab color="primary-container" icon="edit" unelevated></md-fab>
+
+                <md-grid-column expanded="12" medium="8" compact="4">
+                    <md-grid>
+                        <md-grid-column expanded="12" medium="8" compact="8">
+                            <h3>Color</h3>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab label="Label" color="primary-container"></md-fab>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab label="Label" color="secondary-container"></md-fab>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab label="Label" color="tertiary-container"></md-fab>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab label="Label" color="primary"></md-fab>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab label="Label" color="secondary"></md-fab>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab label="Label" color="tertiary"></md-fab>
+                        </md-grid-column>
+                    </md-grid>
                 </md-grid-column>
-                <md-grid-column expanded="6" medium="4" compact="4">
-                    <md-fab color="secondary-container" icon="edit"></md-fab>
+
+                <md-grid-column expanded="12" medium="8" compact="4">
+                    <md-grid>
+                        <md-grid-column expanded="12" medium="8" compact="8">
+                            <h3>Size + Unelevated</h3>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab label="Label" unelevated size="small"></md-fab>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab label="Label" unelevated size="medium"></md-fab>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab label="Label" unelevated size="large"></md-fab>
+                        </md-grid-column>
+                    </md-grid>
                 </md-grid-column>
-                <md-grid-column expanded="6" medium="4" compact="4">
-                    <md-fab color="secondary-container" icon="edit" unelevated></md-fab>
+
+                <md-grid-column expanded="12" medium="8" compact="4">
+                    <md-grid>
+                        <md-grid-column expanded="12" medium="8" compact="8">
+                            <h3>Color + Unelevated</h3>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab label="Label" unelevated color="primary-container"></md-fab>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab label="Label" unelevated color="secondary-container"></md-fab>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab label="Label" unelevated color="tertiary-container"></md-fab>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab label="Label" unelevated color="primary"></md-fab>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab label="Label" unelevated color="secondary"></md-fab>
+                        </md-grid-column>
+                        <md-grid-column expanded="4" medium="4" compact="4">
+                            <md-fab label="Label" unelevated color="tertiary"></md-fab>
+                        </md-grid-column>
+                    </md-grid>
                 </md-grid-column>
-                <md-grid-column expanded="6" medium="4" compact="4">
-                    <md-fab color="tertiary-container" icon="edit"></md-fab>
-                </md-grid-column>
-                <md-grid-column expanded="6" medium="4" compact="4">
-                    <md-fab color="tertiary-container" icon="edit" unelevated></md-fab>
-                </md-grid-column>
-                <md-grid-column expanded="6" medium="4" compact="4">
-                    <md-fab color="primary" icon="edit"></md-fab>
-                </md-grid-column>
-                <md-grid-column expanded="6" medium="4" compact="4">
-                    <md-fab color="primary" icon="edit" unelevated></md-fab>
-                </md-grid-column>
-                <md-grid-column expanded="6" medium="4" compact="4">
-                    <md-fab color="secondary" icon="edit"></md-fab>
-                </md-grid-column>
-                <md-grid-column expanded="6" medium="4" compact="4">
-                    <md-fab color="secondary" icon="edit" unelevated></md-fab>
-                </md-grid-column>
-                <md-grid-column expanded="6" medium="4" compact="4">
-                    <md-fab color="tertiary" icon="edit"></md-fab>
-                </md-grid-column>
-                <md-grid-column expanded="6" medium="4" compact="4">
-                    <md-fab color="tertiary" icon="edit" unelevated></md-fab>
-                </md-grid-column>
-                
-                <md-grid-column expanded="6" medium="4" compact="4">
-                    <md-fab icon="edit" label="Label"></md-fab>
-                </md-grid-column>
-                <md-grid-column expanded="6" medium="4" compact="4">
-                    <md-fab icon="edit" label="Label" unelevated></md-fab>
-                </md-grid-column>
-                
-                <md-grid-column expanded="6" medium="4" compact="4">
-                    <md-fab size="small" icon="edit" label="Small"></md-fab>
-                </md-grid-column>
-                <md-grid-column expanded="6" medium="4" compact="4">
-                    <md-fab size="small" icon="edit" label="Small" unelevated></md-fab>
-                </md-grid-column>
-                <md-grid-column expanded="6" medium="4" compact="4">
-                    <md-fab size="medium" icon="edit" label="Medium"></md-fab>
-                </md-grid-column>
-                <md-grid-column expanded="6" medium="4" compact="4">
-                    <md-fab size="medium" icon="edit" label="Medium" unelevated></md-fab>
-                </md-grid-column>
-                <md-grid-column expanded="6" medium="4" compact="4">
-                    <md-fab size="large" icon="edit" label="Large"></md-fab>
-                </md-grid-column>
-                <md-grid-column expanded="6" medium="4" compact="4">
-                    <md-fab size="large" icon="edit" label="Large" unelevated></md-fab>
-                </md-grid-column>
-                
-                <md-grid-column expanded="6" medium="4" compact="4">
-                    <md-fab color="primary-container" icon="edit" label="Primary Container"></md-fab>
-                </md-grid-column>
-                <md-grid-column expanded="6" medium="4" compact="4">
-                    <md-fab color="primary-container" icon="edit" label="Primary Container" unelevated></md-fab>
-                </md-grid-column>
-                <md-grid-column expanded="6" medium="4" compact="4">
-                    <md-fab color="secondary-container" icon="edit" label="Secondary Container"></md-fab>
-                </md-grid-column>
-                <md-grid-column expanded="6" medium="4" compact="4">
-                    <md-fab color="secondary-container" icon="edit" label="Secondary Container" unelevated></md-fab>
-                </md-grid-column>
-                <md-grid-column expanded="6" medium="4" compact="4">
-                    <md-fab color="tertiary-container" icon="edit" label="Tertiary Container"></md-fab>
-                </md-grid-column>
-                <md-grid-column expanded="6" medium="4" compact="4">
-                    <md-fab color="tertiary-container" icon="edit" label="Tertiary Container" unelevated></md-fab>
-                </md-grid-column>
-                <md-grid-column expanded="6" medium="4" compact="4">
-                    <md-fab color="primary" icon="edit" label="Primary"></md-fab>
-                </md-grid-column>
-                <md-grid-column expanded="6" medium="4" compact="4">
-                    <md-fab color="primary" icon="edit" label="Primary" unelevated></md-fab>
-                </md-grid-column>
-                <md-grid-column expanded="6" medium="4" compact="4">
-                    <md-fab color="secondary" icon="edit" label="Secondary"></md-fab>
-                </md-grid-column>
-                <md-grid-column expanded="6" medium="4" compact="4">
-                    <md-fab color="secondary" icon="edit" label="Secondary" unelevated></md-fab>
-                </md-grid-column>
-                <md-grid-column expanded="6" medium="4" compact="4">
-                    <md-fab color="tertiary" icon="edit" label="Tertiary"></md-fab>
-                </md-grid-column>
-                <md-grid-column expanded="6" medium="4" compact="4">
-                    <md-fab color="tertiary" icon="edit" label="Tertiary" unelevated></md-fab>
-                </md-grid-column>
-                
+
             </md-grid>
         `
     }

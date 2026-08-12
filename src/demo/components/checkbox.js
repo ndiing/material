@@ -10,70 +10,47 @@ class DemoCheckbox extends MdElement {
                 @reset="${this.handleReset}" 
                 @submit="${this.handleSubmit}"
             >
-                <md-grid >
-                    <md-grid-column expanded="4">
+                <md-grid class="demo-grid">
+                    <md-grid-column expanded="12" medium="8" compact="4">
+                        <md-grid>
+                            <md-grid-column expanded="12" medium="8" compact="8">
+                                <h3>Checkbox</h3>
+                            </md-grid-column>
 
-                        
+                            <md-grid-column expanded="6" medium="4" compact="4">
+                                <md-checkbox checked></md-checkbox>
+                            </md-grid-column>
+                            <md-grid-column expanded="6" medium="4" compact="4">
+                                <md-checkbox checked disabled></md-checkbox>
+                            </md-grid-column>
 
-                        <md-checkbox checked></md-checkbox>
-                        <md-checkbox disabled checked></md-checkbox>
+                            <md-grid-column expanded="6" medium="4" compact="4">
+                                <md-checkbox indeterminate></md-checkbox>
+                            </md-grid-column>
+                            <md-grid-column expanded="6" medium="4" compact="4">
+                                <md-checkbox indeterminate disabled></md-checkbox>
+                            </md-grid-column>
 
-                        <br>
-                        <br>
+                            <md-grid-column expanded="6" medium="4" compact="4">
+                                <md-checkbox></md-checkbox>
+                            </md-grid-column>
+                            <md-grid-column expanded="6" medium="4" compact="4">
+                                <md-checkbox disabled></md-checkbox>
+                            </md-grid-column>
 
-                        <md-checkbox indeterminate></md-checkbox>
-                        <md-checkbox disabled indeterminate></md-checkbox>
-
-                        <br>
-                        <br>
-
-                        <md-checkbox></md-checkbox>
-                        <md-checkbox disabled></md-checkbox>
-
-                        <br>
-                        <br>
-
-                        <md-checkbox id="checkbox0" checked></md-checkbox>
-                        <md-checkbox id="checkbox1" disabled checked></md-checkbox>
-
-                        <br>
-                        <br>
-
-                        <md-checkbox id="checkbox2" indeterminate></md-checkbox>
-                        <md-checkbox id="checkbox3" disabled indeterminate></md-checkbox>
-
-                        <br>
-                        <br>
-
-                        <md-checkbox id="checkbox4"></md-checkbox>
-                        <md-checkbox id="checkbox5" disabled></md-checkbox>
-
-                        <br>
-                        <br>
-
+                        </md-grid>
                     </md-grid-column>
-
+                    
                     <md-grid-column expanded="12">
-                        <md-button type="reset" label="reset"></md-button>
-                        <md-button type="submit" label="submit"></md-button>
+                        <md-button color="outlined" type="reset" label="Reset"></md-button>
+                        <md-button color="tonal" type="submit" label="Submit"></md-button>
                     </md-grid-column>
                 </md-grid>
             </form>
         `;
     }
 
-    async firstUpdated(_changedProperties) {
-        super.firstUpdated(_changedProperties);
-
-        await this.updateComplete;
-
-        ["#checkbox0", "#checkbox1", "#checkbox2", "#checkbox3", "#checkbox4", "#checkbox5"].forEach((cls) => {
-            const checkbox = this.querySelector(cls);
-            checkbox.checkboxNative.value.setCustomValidity("errorMessage");
-            checkbox.validate();
-        });
-    }
-
+    
     handleFormdata(event) {}
 
     handleReset(event) {}
