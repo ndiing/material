@@ -1,33 +1,49 @@
 @keyframes slide-in-from-right {
-    from {
-        transform: translate3d(100%, 0, 0);
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(100%,0,0);
+        transform: translate3d(100%,0,0)
     }
+
     to {
-        transform: translate3d(0, 0, 0);
+        opacity: 1;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0)
     }
 }
 @keyframes slide-out-to-left {
-    from {
-        transform: translate3d(0, 0, 0);
+    0% {
+        opacity: 1
     }
+
     to {
-        transform: translate3d(-100%, 0, 0);
+        opacity: 0;
+        -webkit-transform: translate3d(-100%,0,0);
+        transform: translate3d(-100%,0,0)
     }
 }
 @keyframes slide-in-from-left {
-    from {
-        transform: translate3d(-100%, 0, 0);
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(-100%,0,0);
+        transform: translate3d(-100%,0,0)
     }
+
     to {
-        transform: translate3d(0, 0, 0);
+        opacity: 1;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0)
     }
 }
 @keyframes slide-out-to-right {
-    from {
-        transform: translate3d(0, 0, 0);
+    0% {
+        opacity: 1
     }
+
     to {
-        transform: translate3d(100%, 0, 0);
+        opacity: 0;
+        -webkit-transform: translate3d(100%,0,0);
+        transform: translate3d(100%,0,0)
     }
 }
 #main {
@@ -46,21 +62,21 @@
 }
 html:active-view-transition-type(forwards) {
     &::view-transition-old(main) {
-        animation-name: slide-out-to-left;
+        // animation-name: slide-out-to-left;
         z-index: 1;
     }
     &::view-transition-new(main) {
-        animation-name: slide-in-from-right;
+        // animation-name: slide-in-from-right;
         z-index: 2;
     }
 }
 html:active-view-transition-type(backwards) {
     &::view-transition-old(main) {
-        animation-name: slide-out-to-right;
+        // animation-name: slide-out-to-right;
         z-index: 2;
     }
     &::view-transition-new(main) {
-        animation-name: slide-in-from-left;
+        // animation-name: slide-in-from-left;
         z-index: 1;
     }
 }

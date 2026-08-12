@@ -13,11 +13,16 @@
     width: 40px;
     height: 40px;
     border-radius: var(--md-sys-shape-corner-full);
-    transform: translate3d(-50%, -50%, 0);
-    position: absolute;
+    // transform: translate3d(-50%, -50%, 0);
+    // position: absolute;
     z-index: 2;
-    left: 50%;
-    top: 50%;
+    // left: 50%;
+    // top: 50%;
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    // width: max-content;
+    // height: max-content;
 
     &:checked {
         + .md-radio-button__container {

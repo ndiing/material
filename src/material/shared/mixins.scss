@@ -35,7 +35,8 @@ ripple
         left: var(--md-comp-ripple-left);
         top: var(--md-comp-ripple-top);
         z-index: 1;
-        transform: translate3d(-50%, -50%, 0) translate3d(var(--md-comp-ripple-x), var(--md-comp-ripple-y), 0);
+        transform: translate3d(-50%, -50%, 0) scale3d(1,1,1) 
+            translate3d(var(--md-comp-ripple-x), var(--md-comp-ripple-y), 0) scale3d(1,1,1);
         background-color: currentColor;
         opacity: 0;
         pointer-events: none;
@@ -61,7 +62,7 @@ ripple
 @mixin ripple-press() {
     &::after {
         opacity: 10%;
-        animation-name: ripple-out;
+        animation-name: zoomInCenter;
         animation-duration: var(--md-sys-motion-expressive-fast-spatial-duration);
         animation-timing-function: cubic-bezier(var(--md-sys-motion-expressive-fast-spatial));
     }
@@ -86,8 +87,8 @@ ripple
 
 @mixin ripple-disabled() {
     pointer-events: none;
-
+    
     // &::after {
-    //     opacity: 38%;
+    //     opacity: 0%;
     // }
 }

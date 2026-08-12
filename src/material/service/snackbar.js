@@ -14,11 +14,11 @@ class Snackbar {
                     this.snackbar = document.createElement("md-snackbar");
 
                     const remove = () => {
-                        this.snackbar.off("onSnackbarClosed", remove);
+                        this.snackbar.removeEventListener("onSnackbarClosed", remove);
                         this.snackbar.remove();
                         resolve();
                     };
-                    this.snackbar.on("onSnackbarClosed", remove);
+                    this.snackbar.addEventListener("onSnackbarClosed", remove);
 
                     this.snackbar.supporting = supporting;
                     this.snackbar.actions = actions.map((action) => {

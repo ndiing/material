@@ -9,11 +9,16 @@
     color: var(--md-sys-color-on-surface-variant);
     border-radius: var(--md-sys-shape-corner-extra-large);
     box-shadow: var(--md-sys-elevation-level3);
-    position: absolute;
+    // position: absolute;
     z-index: 20;
-    left: 50%;
-    top: 50%;
-    transform: translate3d(-50%, -50%, 0);
+    // left: 50%;
+    // top: 50%;
+    // transform: translate3d(-50%, -50%, 0);
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: max-content;
+    height: max-content;
     opacity: 0;
     pointer-events: none;
 }
@@ -105,16 +110,16 @@
     gap: 0 8px;
 }
 
-.md-dialog--close {
-    animation-name: basic-dialog-close;
+.md-dialog--open {
+    opacity: 1;
+    pointer-events: all;
+    animation-name: fadeInDown;
     animation-duration: var(--md-sys-motion-expressive-default-spatial-duration);
     animation-timing-function: cubic-bezier(var(--md-sys-motion-expressive-default-spatial));
 }
 
-.md-dialog--open {
-    opacity: 1;
-    pointer-events: all;
-    animation-name: basic-dialog-show;
+.md-dialog--close {
+    animation-name: fadeOutUp;
     animation-duration: var(--md-sys-motion-expressive-default-spatial-duration);
     animation-timing-function: cubic-bezier(var(--md-sys-motion-expressive-default-spatial));
 }
@@ -144,14 +149,14 @@
         line-height: var(--md-sys-typescale-title-large-line-height);
     }
 
-    &.md-dialog--close {
-        animation-name: full-screen-dialog-close;
+    &.md-dialog--open {
+        animation-name: fadeInUpBig;
         animation-duration: var(--md-sys-motion-expressive-slow-spatial-duration);
         animation-timing-function: cubic-bezier(var(--md-sys-motion-expressive-slow-spatial));
     }
 
-    &.md-dialog--open {
-        animation-name: full-screen-dialog-show;
+    &.md-dialog--close {
+        animation-name: fadeOutDownBig;
         animation-duration: var(--md-sys-motion-expressive-slow-spatial-duration);
         animation-timing-function: cubic-bezier(var(--md-sys-motion-expressive-slow-spatial));
     }

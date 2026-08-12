@@ -9,22 +9,22 @@
     pointer-events: none;
 }
 
-.md-tooltip--close {
-    //will-change: transform, opacity;
-    animation-name: tooltip-close;
-    animation-duration: var(--md-sys-motion-duration-short1);
-    animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
-}
-
 .md-tooltip--open {
     opacity: 1;
-    animation-name: tooltip-open;
+    animation-name: zoomIn;
     animation-duration: var(--md-sys-motion-duration-short2);
     animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-decelerate));
 
     .md-tooltip__button {
         pointer-events: all;
     }
+}
+
+.md-tooltip--close {
+    //will-change: transform, opacity;
+    animation-name: zoomOut;
+    animation-duration: var(--md-sys-motion-duration-short1);
+    animation-timing-function: cubic-bezier(var(--md-sys-motion-easing-standard-accelerate));
 }
 
 // .md-tooltip__subhead {}

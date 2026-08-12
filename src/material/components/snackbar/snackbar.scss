@@ -22,16 +22,17 @@
 .md-snackbar--open {
     opacity: 1;
     pointer-events: all;
-    animation-name: snackbar-open;
+    animation-name: slideInUp;
     animation-duration: var(--md-sys-motion-expressive-fast-spatial-duration);
     animation-timing-function: cubic-bezier(var(--md-sys-motion-expressive-fast-spatial));
 }
 
 .md-snackbar--close {
+    opacity: 1;
     //will-change: border-radius, background-color, color, border-color;
-    animation-name: snackbar-close;
-    animation-duration: var(--md-sys-motion-expressive-fast-spatial-duration);
-    animation-timing-function: cubic-bezier(var(--md-sys-motion-expressive-fast-spatial));
+    animation-name: slideOutDown;
+    animation-duration: var(--md-sys-motion-expressive-fast-effects-duration);
+    animation-timing-function: cubic-bezier(var(--md-sys-motion-expressive-fast-effects));
 }
 
 .md-snackbar__supporting {

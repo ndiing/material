@@ -138,11 +138,16 @@
 }
 
 .md-button__native {
-    position: absolute;
+    // position: absolute;
     z-index: 2;
-    left: 50%;
-    top: 50%;
-    transform: translate3d(-50%, -50%, 0);
+    // left: 50%;
+    // top: 50%;
+    // transform: translate3d(-50%, -50%, 0);
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    // width: max-content;
+    // height: max-content;
     width: 100%;
     height: 100%;
     appearance: none;

@@ -1,103 +1,114 @@
-@keyframes ripple-out {
+@keyframes zoomInCenter {
     0% {
-        width: 0;
+        transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 0);
     }
 
     100% {
     }
 }
 
-@keyframes basic-dialog-show {
-    from {
+@keyframes zoomIn {
+    0% {
         opacity: 0;
-        transform: translate3d(-50%, -100%, 0);
-    }
-
-    to {
-        opacity: 1;
-        transform: translate3d(-50%, -50%, 0);
-    }
-}
-
-@keyframes basic-dialog-close {
-    from {
-        opacity: 1;
-    }
-
-    to {
-        opacity: 0;
-        transform: translate3d(-50%, -100%, 0);
-    }
-}
-
-@keyframes full-screen-dialog-show {
-    from {
-        opacity: 0;
-        transform: translate3d(-50%, 2000px, 0);
-    }
-
-    to {
-        opacity: 1;
-        transform: translate3d(-50%, -50%, 0);
-    }
-}
-
-@keyframes full-screen-dialog-close {
-    from {
-        opacity: 1;
-    }
-
-    to {
-        opacity: 0;
-        transform: translate3d(-50%, 2000px, 0);
-    }
-}
-
-@keyframes tooltip-open {
-    from {
-        opacity: 0;
-        transform: scale3d(0.7, 0.7, 0.7);
+        -webkit-transform: scale3d(.3,.3,.3);
+        transform: scale3d(.3,.3,.3)
     }
 
     50% {
-        opacity: 1;
+        opacity: 1
     }
 }
 
-@keyframes tooltip-close {
-    from {
-        opacity: 1;
+@keyframes zoomOut {
+    0% {
+        opacity: 1
     }
 
     50% {
         opacity: 0;
-        transform: scale3d(0.7, 0.7, 0.7);
+        -webkit-transform: scale3d(.3,.3,.3);
+        transform: scale3d(.3,.3,.3)
     }
 
     to {
-        opacity: 0;
+        opacity: 0
     }
 }
 
-@keyframes snackbar-open {
-    from {
+@keyframes fadeInDown {
+    0% {
         opacity: 0;
-        transform: translate3d(0, 100%, 0);
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
     }
 
     to {
         opacity: 1;
-        transform: translate3d(0, 0, 0);
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
     }
 }
 
-@keyframes snackbar-close {
-    from {
+@keyframes fadeOutUp {
+    0% {
         opacity: 1;
     }
 
     to {
         opacity: 0;
-        transform: translate3d(0, 100%, 0);
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+    }
+}
+
+@keyframes fadeInUpBig {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 2000px, 0);
+        transform: translate3d(0, 2000px, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+}
+
+@keyframes fadeOutDownBig {
+    0% {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 2000px, 0);
+        transform: translate3d(0, 2000px, 0);
+    }
+}
+
+@keyframes slideInUp {
+    0% {
+        -webkit-transform: translate3d(0,100%,0);
+        transform: translate3d(0,100%,0);
+        visibility: visible
+    }
+
+    to {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0)
+    }
+}
+
+@keyframes slideOutDown {
+    0% {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0)
+    }
+
+    to {
+        -webkit-transform: translate3d(0,100%,0);
+        transform: translate3d(0,100%,0);
+        visibility: hidden
     }
 }
