@@ -33,7 +33,7 @@ class MdSlider extends MdElement {
         values: { type: Array, state: true },
         stops: { type: Number, state: true },
         label: { type: Boolean },
-        flipped: { type: Boolean },
+        flipLabel: { type: Boolean },
     };
 
     variants = ["standard", "centered", "range"];
@@ -56,7 +56,7 @@ class MdSlider extends MdElement {
         this.orientation = "horizontal";
         this.size = "extra-small";
         this.label = true;
-        this.flipped = false;
+        this.flipLabel = false;
     }
 
     /* prettier-ignore */
@@ -171,8 +171,8 @@ class MdSlider extends MdElement {
             this.classList.toggle(`md-slider--discrete`, this.stops > 1);
             this.style.setProperty("--md-comp-slider-stop", this.stops);
         }
-        if (_changedProperties.has("flipped")) {
-            this.classList.toggle(`md-slider--flipped`, Boolean(this.flipped));
+        if (_changedProperties.has("flipLabel")) {
+            this.classList.toggle(`md-slider--flip-label`, Boolean(this.flipLabel));
         }
     }
 
