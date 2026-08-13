@@ -3,9 +3,11 @@
 .md-datetime-picker {
     display: inline-flex;
     flex-direction: column;
-    max-width: 360px;
-    max-height: 460px;
+    // max-width: 360px;
+    // max-height: 460px;
+    // max-height: 520px;
     background-color: var(--md-sys-color-surface-container-high);
+    
     color: var(--md-sys-color-on-surface);
     box-shadow: var(--md-sys-elevation-level3);
     border-radius: var(--md-sys-shape-corner-large);
@@ -81,6 +83,10 @@
                 @include mixins.ripple-disabled();
             }
         }
+    }
+
+    .md-datetime-picker__button {
+        margin: -4px;
     }
 }
 
@@ -202,6 +208,56 @@
     }
 }
 
+.md-datetime-picker__headline{
+    margin: 4px 12px;
+    font-family: var(--md-sys-typescale-label-small-font);
+    font-weight: var(--md-sys-typescale-label-small-weight);
+    font-size: var(--md-sys-typescale-label-small-size);
+    letter-spacing: var(--md-sys-typescale-label-small-tracking);
+    line-height: var(--md-sys-typescale-label-small-line-height);
+}
+
+.md-datetime-picker__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.md-datetime-picker__input {
+    width: 96px;
+    height: 80px;
+    border-radius: var(--md-sys-shape-corner-small);
+    background-color: var(--md-sys-color-surface-container-highest);
+    font-family: var(--md-sys-typescale-display-medium-font);
+    font-weight: var(--md-sys-typescale-display-medium-weight);
+    font-size: var(--md-sys-typescale-display-medium-size);
+    letter-spacing: var(--md-sys-typescale-display-medium-tracking);
+    line-height: var(--md-sys-typescale-display-medium-line-height);
+    text-align: center;
+    &::selection{
+        background-color: transparent;
+    }
+    &:focus {
+        outline: 2px solid var(--md-sys-color-primary);
+        outline-offset: -2px;
+    }
+}
+.md-datetime-picker__input--active {
+    background-color: var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
+}
+
+.md-datetime-picker__separator {
+    width: 24px;
+    font-family: var(--md-sys-typescale-display-large-font);
+    font-weight: var(--md-sys-typescale-display-large-weight);
+    font-size: var(--md-sys-typescale-display-large-size);
+    letter-spacing: var(--md-sys-typescale-display-large-tracking);
+    line-height: var(--md-sys-typescale-display-large-line-height);
+    text-align: center;
+}
+
 .md-datetime-picker__dial {
     position: relative;
     width: 256px;
@@ -227,7 +283,7 @@
     @include mixins.ripple();
     @include mixins.ripple-trigger();
     position: absolute;
-    z-index: 2;
+    z-index: 1;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -253,13 +309,14 @@
 
     &::before {
         content: "";
-        height: 2px;
+        // height: 2px;
+        height: 4px;
         border-radius: var(--md-sys-shape-corner-full);
         position: absolute;
         z-index: -1;
         right: 50%;
         top: 50%;
-        transform-origin: 100% 50%;
+        transform-origin: right center;
     }
 
     &::after {
@@ -277,6 +334,7 @@
     color: var(--md-sys-color-on-primary);
 
     &::before {
+        height: 2px;
         background-color: var(--md-sys-color-primary);
     }
 }
@@ -318,14 +376,20 @@
                 top: calc(100px * sin((($i - 16) / 60) * 2 * pi) + 104px);
 
                 @if ((($i - 16) % 5) != 0) {
-                    z-index: 1;
                     height: 24px;
                     width: 24px;
                     // 256/2 = 128-48/2 = 104-4 = 100
                     // 104+(48/2)-(24/2) = 116
                     left: calc(100px * cos((($i - 16) / 60) * 2 * pi) + 116px);
                     top: calc(100px * sin((($i - 16) / 60) * 2 * pi) + 116px);
-                    color: transparent;
+                    font-family: var(--md-sys-typescale-body-small-font);
+                    font-weight: var(--md-sys-typescale-body-small-weight);
+                    font-size: var(--md-sys-typescale-body-small-size);
+                    letter-spacing: var(--md-sys-typescale-body-small-tracking);
+                    line-height: var(--md-sys-typescale-body-small-line-height);
+                    &:not(:hover, .md-datetime-picker__handle--now, .md-datetime-picker__handle--selected) {
+                        font-size: 0;
+                    }
                 }
 
                 &::before {

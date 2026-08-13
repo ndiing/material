@@ -4,7 +4,7 @@
 [x] Badges
 [-] Buttons
 [-] All buttons
-[ ] Button groups
+[x] Button groups
 [x] Buttons
 [x] Extended FABs
 [ ] FAB menu
@@ -33,8 +33,8 @@
 [x] Radio button
 [ ] Search
 [-] Sheets
-[ ] Bottom sheets
-[ ] Side sheets
+[-] Bottom sheets
+[x] Side sheets
 [x] Sliders
 [x] Snackbar
 [x] Switch

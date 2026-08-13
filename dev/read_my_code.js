@@ -68,9 +68,13 @@ function writeFiles() {
         ],
         [
             // /.*/,
-            /src\\material\\components\\datetime/,
-            /src\\material\\base\\datetime/,
-            /src\\material\\core\\date/,
+            // /src\\material\\components\\datetime/,
+            // /src\\material\\base\\datetime/,
+            // /src\\material\\core\\date/,
+            /src\\material\\material\.js/,
+            /src\\material\\material\.scss/,
+            /src\\demo\\demo\.js/,
+            /src\\demo\\demo\.scss/,
         ],
     );
 

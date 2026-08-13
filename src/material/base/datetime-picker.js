@@ -120,8 +120,8 @@ class MdDatetimePickerElement extends MdElement {
                 month: date.getMonth(),
                 week: getWeek(date),
                 label: this.dateFormat(date),
-                active: date.getFullYear() === this.current.getFullYear() && date.getMonth() === this.current.getMonth() && getWeek(date) === this.getWeek(this.current),
-                selected: date.getFullYear() === this.selected.getFullYear() && date.getMonth() === this.selected.getMonth() && getWeek(date) === this.getWeek(this.selected),
+                active: date.getFullYear() === this.current.getFullYear() && date.getMonth() === this.current.getMonth() && getWeek(date) === getWeek(this.current),
+                selected: date.getFullYear() === this.selected.getFullYear() && date.getMonth() === this.selected.getMonth() && getWeek(date) === getWeek(this.selected),
                 outsideMonth: !(date.getFullYear() === this.selection.getFullYear() && date.getMonth() === this.selection.getMonth()),
                 cells: [],
             };
@@ -157,8 +157,16 @@ class MdDatetimePickerElement extends MdElement {
                 date: date.getDate(),
                 hour: date.getHours(),
                 label: this.hourFormat(date),
-                active: date.getFullYear() === this.current.getFullYear() && date.getMonth() === this.current.getMonth() && date.getDate() === this.current.getDate() && date.getHours() === this.current.getHours(),
-                selected: date.getFullYear() === this.selected.getFullYear() && date.getMonth() === this.selected.getMonth() && date.getDate() === this.selected.getDate() && date.getHours() === this.selected.getHours(),
+                active: 
+                    // date.getFullYear() === this.current.getFullYear() && 
+                    // date.getMonth() === this.current.getMonth() && 
+                    // date.getDate() === this.current.getDate() && 
+                    date.getHours() === this.current.getHours(),
+                selected: 
+                    // date.getFullYear() === this.selected.getFullYear() && 
+                    // date.getMonth() === this.selected.getMonth() && 
+                    // date.getDate() === this.selected.getDate() && 
+                    date.getHours() === this.selected.getHours(),
             });
         }
         return arr;
@@ -179,8 +187,18 @@ class MdDatetimePickerElement extends MdElement {
                 hour: date.getHours(),
                 minute: date.getMinutes(),
                 label: this.minuteFormat(date),
-                active: date.getFullYear() === this.current.getFullYear() && date.getMonth() === this.current.getMonth() && date.getDate() === this.current.getDate() && date.getHours() === this.current.getHours() && date.getMinutes() === this.current.getMinutes(),
-                selected: date.getFullYear() === this.selected.getFullYear() && date.getMonth() === this.selected.getMonth() && date.getDate() === this.selected.getDate() && date.getHours() === this.selected.getHours() && date.getMinutes() === this.selected.getMinutes(),
+                active: 
+                    // date.getFullYear() === this.current.getFullYear() && 
+                    // date.getMonth() === this.current.getMonth() && 
+                    // date.getDate() === this.current.getDate() && 
+                    // date.getHours() === this.current.getHours() && 
+                    date.getMinutes() === this.current.getMinutes(),
+                selected: 
+                    // date.getFullYear() === this.selected.getFullYear() && 
+                    // date.getMonth() === this.selected.getMonth() && 
+                    // date.getDate() === this.selected.getDate() && 
+                    // date.getHours() === this.selected.getHours() && 
+                    date.getMinutes() === this.selected.getMinutes(),
             });
         }
         return arr;
@@ -195,6 +213,18 @@ class MdDatetimePickerElement extends MdElement {
     get selectedYear() {
         const value = this.selection.getFullYear();
         const label = this.selectedYearFormat(this.selection);
+        return { value, label };
+    }
+
+    get selectedHour() {
+        const value = this.selection.getHours();
+        const label = String(value).padStart(2,'0')
+        return { value, label };
+    }
+
+    get selectedMinute() {
+        const value = this.selection.getMinutes();
+        const label = String(value).padStart(2,'0')
         return { value, label };
     }
 
@@ -225,7 +255,9 @@ class MdDatetimePickerElement extends MdElement {
         this.dateFormat = new Intl.DateTimeFormat(locale, { day: "numeric" }).format;
 
         this.hourFormat = new Intl.DateTimeFormat(locale, { hour: "numeric", hour12: false }).format;
+
         this.minuteFormat = new Intl.DateTimeFormat(locale, { minute: "numeric", hour12: false }).format;
+
     }
 
     update(changedProperties) {
