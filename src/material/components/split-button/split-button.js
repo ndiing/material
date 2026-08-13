@@ -115,7 +115,7 @@ class MdSplitButton extends MdElement {
 
     toggleSelect(event = {}) {
         this.selected = !this.selected;
-        this.emit("onSplitButtonSelection", { event, element: this,selected:this.selected });
+        this.emit("onSplitButtonSelection", { event, element: this, selected: this.selected });
     }
 }
 

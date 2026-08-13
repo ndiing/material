@@ -3,7 +3,6 @@ import { MdElement } from "../../material/base/element.js";
 import { createRef, ref } from "lit/directives/ref.js";
 
 class DemoTooltip extends MdElement {
-    
     /* prettier-ignore */
     render(){
         return html`
@@ -96,8 +95,6 @@ class DemoTooltip extends MdElement {
             </md-grid>
         `
     }
-
-    
 }
 customElements.define("demo-tooltip", DemoTooltip);
 export default document.createElement("demo-tooltip");

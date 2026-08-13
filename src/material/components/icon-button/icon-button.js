@@ -21,6 +21,7 @@ class MdIconButton extends MdElement {
         selected: { type: Boolean, reflect: true },
         disabled: { type: Boolean, reflect: true },
         rippleOptions: { type: Object },
+        selectOnToggle: { type: Boolean },
     };
 
     variants = ["default", "toggle"];
@@ -37,6 +38,7 @@ class MdIconButton extends MdElement {
         this.shape = "round";
         this.color = "filled";
         this.width = "default";
+        this.selectOnToggle = true;
 
         this._handleIconButtonClick = this._handleIconButtonClick.bind(this);
 
@@ -120,7 +122,7 @@ class MdIconButton extends MdElement {
     }
 
     _handleIconButtonClick(event) {
-        if (this.variant === "toggle") {
+        if (this.variant === "toggle" && this.selectOnToggle) {
             this.selected = !this.selected;
 
             this.emit("onIconButtonSelection", { event, element: this });

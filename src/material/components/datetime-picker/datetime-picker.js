@@ -18,6 +18,10 @@ class MdDatetimePicker extends MdDatetimePickerElement {
         super();
 
         this.view = "calendar";
+
+        // test
+        this.view = "hours";
+        this.view = "minutes";
     }
 
     /* prettier-ignore */
@@ -89,85 +93,123 @@ class MdDatetimePicker extends MdDatetimePickerElement {
     }
 
     /* prettier-ignore */
+    renderHours() {
+        return html`
+            <div class="md-datetime-picker__dial md-datetime-picker__dial--hours">
+                ${this.hours.map(cell=>html`
+                    <div
+                        class="${classMap({
+                            "md-datetime-picker__handle":true,
+                            "md-datetime-picker__handle--now":cell.active,
+                            "md-datetime-picker__handle--selected":cell.selected,
+                        })}"
+                    >${cell.label}</div>
+                `)}
+            </div>
+        `;
+    }
+
+    /* prettier-ignore */
+    renderMinutes() {
+        return html`
+            <div class="md-datetime-picker__dial md-datetime-picker__dial--minutes">
+                ${this.minutes.map(cell=>html`
+                    <div
+                        class="${classMap({
+                            "md-datetime-picker__handle":true,
+                            "md-datetime-picker__handle--now":cell.active,
+                            "md-datetime-picker__handle--selected":cell.selected,
+                        })}"
+                    >${cell.label}</div>
+                `)}
+            </div>
+        `;
+    }
+
+    /* prettier-ignore */
     renderView(view){
         return choose(view, [
             ['calendar', () => this.renderCalendar()],
             ['months', () => this.renderMonths()],
             ['years', () => this.renderYears()],
+            ['hours', () => this.renderHours()],
+            ['minutes', () => this.renderMinutes()],
         ], () => nothing)
     }
 
     /* prettier-ignore */
     render(){
         return html`
-            <div class="md-datetime-picker__header">
-                <div class="md-datetime-picker__leading">
-                    <md-icon-button 
-                        class="${classMap({
-                            "md-datetime-picker__icon-button":true,
-                            "md-datetime-picker__icon-button--hidden":this.view==='years',
-                        })}" 
-                        .color="${"standard"}" 
-                        .icon="${"keyboard_arrow_left"}"
-                        @onIconButtonClick="${this._handleDatetimePickerPrevMonthSelection}"
-                    ></md-icon-button>
-                    <md-split-button 
-                        class="${classMap({
-                            "md-datetime-picker__split-button":true,
-                            "md-datetime-picker__split-button--disabled":this.view==='years',
-                        })}" 
-                        .color="${"text"}" 
-                        .label="${this.selectedMonth.label}" 
-                        .trailingIcon="${"arrow_drop_down"}"
-                        .selected="${this.view==='months'}"
-                        @onSplitButtonSelection="${this._handleDatetimePickerMonthViewSelection}"
-                    ></md-split-button>
-                    <md-icon-button 
-                        class="${classMap({
-                            "md-datetime-picker__icon-button":true,
-                            "md-datetime-picker__icon-button--hidden":this.view==='years',
-                        })}" 
-                        .color="${"standard"}" 
-                        .icon="${"keyboard_arrow_right"}"
-                        @onIconButtonClick="${this._handleDatetimePickerNextMonthSelection}"
-                    ></md-icon-button>
+            ${['calendar','years','months'].includes(this.view)?html`
+                <div class="md-datetime-picker__header">
+                    <div class="md-datetime-picker__leading">
+                        <md-icon-button 
+                            class="${classMap({
+                                "md-datetime-picker__icon-button":true,
+                                "md-datetime-picker__icon-button--hidden":this.view==='years',
+                            })}" 
+                            .color="${"standard"}" 
+                            .icon="${"keyboard_arrow_left"}"
+                            @onIconButtonClick="${this._handleDatetimePickerPrevMonthSelection}"
+                        ></md-icon-button>
+                        <md-split-button 
+                            class="${classMap({
+                                "md-datetime-picker__split-button":true,
+                                "md-datetime-picker__split-button--disabled":this.view==='years',
+                            })}" 
+                            .color="${"text"}" 
+                            .label="${this.selectedMonth.label}" 
+                            .trailingIcon="${"arrow_drop_down"}"
+                            .selected="${this.view==='months'}"
+                            @onSplitButtonSelection="${this._handleDatetimePickerMonthViewSelection}"
+                        ></md-split-button>
+                        <md-icon-button 
+                            class="${classMap({
+                                "md-datetime-picker__icon-button":true,
+                                "md-datetime-picker__icon-button--hidden":this.view==='years',
+                            })}" 
+                            .color="${"standard"}" 
+                            .icon="${"keyboard_arrow_right"}"
+                            @onIconButtonClick="${this._handleDatetimePickerNextMonthSelection}"
+                        ></md-icon-button>
+                    </div>
+                    <div class="md-datetime-picker__spacer"></div>
+                    <div class="md-datetime-picker__trailing">
+                        <md-icon-button 
+                            class="${classMap({
+                                "md-datetime-picker__icon-button":true,
+                                "md-datetime-picker__icon-button--hidden":this.view==='months',
+                            })}" 
+                            .color="${"standard"}" 
+                            .icon="${"keyboard_arrow_left"}"
+                            @onIconButtonClick="${this._handleDatetimePickerPrevYearSelection}"
+                        ></md-icon-button>
+                        <md-split-button 
+                            class="${classMap({
+                                "md-datetime-picker__split-button":true,
+                                "md-datetime-picker__split-button--disabled":this.view==='months',
+                            })}" 
+                            .color="${"text"}" 
+                            .label="${this.selectedYear.label}" 
+                            .trailingIcon="${"arrow_drop_down"}"
+                            .selected="${this.view==='years'}"
+                            @onSplitButtonSelection="${this._handleDatetimePickerYearViewSelection}"
+                        ></md-split-button>
+                        <md-icon-button 
+                            class="${classMap({
+                                "md-datetime-picker__icon-button":true,
+                                "md-datetime-picker__icon-button--hidden":this.view==='months',
+                            })}" 
+                            .color="${"standard"}" 
+                            .icon="${"keyboard_arrow_right"}"
+                            @onIconButtonClick="${this._handleDatetimePickerNextYearSelection}"
+                        ></md-icon-button>
+                    </div>
                 </div>
-                <div class="md-datetime-picker__spacer"></div>
-                <div class="md-datetime-picker__trailing">
-                    <md-icon-button 
-                        class="${classMap({
-                            "md-datetime-picker__icon-button":true,
-                            "md-datetime-picker__icon-button--hidden":this.view==='months',
-                        })}" 
-                        .color="${"standard"}" 
-                        .icon="${"keyboard_arrow_left"}"
-                        @onIconButtonClick="${this._handleDatetimePickerPrevYearSelection}"
-                    ></md-icon-button>
-                    <md-split-button 
-                        class="${classMap({
-                            "md-datetime-picker__split-button":true,
-                            "md-datetime-picker__split-button--disabled":this.view==='months',
-                        })}" 
-                        .color="${"text"}" 
-                        .label="${this.selectedYear.label}" 
-                        .trailingIcon="${"arrow_drop_down"}"
-                        .selected="${this.view==='years'}"
-                        @onSplitButtonSelection="${this._handleDatetimePickerYearViewSelection}"
-                    ></md-split-button>
-                    <md-icon-button 
-                        class="${classMap({
-                            "md-datetime-picker__icon-button":true,
-                            "md-datetime-picker__icon-button--hidden":this.view==='months',
-                        })}" 
-                        .color="${"standard"}" 
-                        .icon="${"keyboard_arrow_right"}"
-                        @onIconButtonClick="${this._handleDatetimePickerNextYearSelection}"
-                    ></md-icon-button>
-                </div>
-            </div>
+            `:nothing}
             <div class="md-datetime-picker__body">
                 <div class="md-datetime-picker__main">${this.renderView(this.view)}</div>
-                ${this.view==='calendar'?html`
+                ${['calendar','hours'].includes(this.view)?html`
                     <div class="md-datetime-picker__footer">
                         <div class="md-datetime-picker__spacer"></div>
                         <md-button 

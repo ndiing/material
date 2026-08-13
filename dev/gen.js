@@ -67,7 +67,10 @@ function writeFiles() {
         const value = result[name];
 
         for (const { root, dir, base, ext, name, file, data } of value) {
-            const className = data.match(/class (\w+)/)[1];
+            const className = data.match(/class (\w+)/)?.[1];
+            if (!className) {
+                continue;
+            }
             temp[className] = {
                 properties: {},
                 extendsName: null,
@@ -85,6 +88,11 @@ function writeFiles() {
                 var MdTextField = temp.MdTextField;
                 var MdList = temp.MdList;
                 var MdLayoutItem = temp.MdLayoutItem;
+                var MdDatetimePickerElement = temp.MdDatetimePickerElement;
+                var MdDialogHeader = temp.MdDialogHeader;
+                var MdDialogFooter = temp.MdDialogFooter;
+                var MdSheetHeader = temp.MdSheetHeader;
+                var MdSheetFooter = temp.MdSheetFooter;
                 eval(`properties={${propertiesString}}`);
                 temp[className].properties = properties;
             }
@@ -118,6 +126,7 @@ function writeFiles() {
         code += `function ${data.methodName}(properties = {}) {\r\n`;
         code += `    return html\`\r\n`;
         code += `        <${data.localName}\r\n`;
+        code += `            .data="\${properties}"\r\n`;
         code += `            class="\${classMap(properties.classMap ?? {})}"\r\n`;
         code += `            style="\${styleMap(properties.styleMap ?? {})}"\r\n`;
         for (const name in data.properties) {

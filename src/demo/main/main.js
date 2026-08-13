@@ -78,14 +78,15 @@ class DemoMain extends MdElement {
             // items.push({path:'/a/b/c'})
             // items.push({path:'/a/b/c/d'})
 
-            this.items = items.map((value, index) => ({
-                ...value,
-                routerLink: value.path,
-                label: value.path.split("/")[2].replace(/(^|[\W])(\w)/g, ($, $1, $2) => " " + $2.toUpperCase()),
-                id: index,
-                selected: this.router.url.pathname === value.path,
-            }))
-            .sort((a, b) => a.label.localeCompare(b.label));
+            this.items = items
+                .map((value, index) => ({
+                    ...value,
+                    routerLink: value.path,
+                    label: value.path.split("/")[2].replace(/(^|[\W])(\w)/g, ($, $1, $2) => " " + $2.toUpperCase()),
+                    id: index,
+                    selected: this.router.url.pathname === value.path,
+                }))
+                .sort((a, b) => a.label.localeCompare(b.label));
         });
 
         this.cachedProperties = {

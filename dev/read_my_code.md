@@ -1,6 +1,7 @@
 ## src\material\base
 
 ### datetime-picker
+
 src\material\base\datetime-picker.js
 
 ```js
@@ -244,11 +245,12 @@ class MdDatetimePickerElement extends MdElement {
 }
 
 export { MdDatetimePickerElement };
-
 ```
+
 ## src\material\components\datetime-picker
 
 ### datetime-picker
+
 src\material\components\datetime-picker\datetime-picker.js
 
 ```js
@@ -272,6 +274,10 @@ class MdDatetimePicker extends MdDatetimePickerElement {
         super();
 
         this.view = "calendar";
+
+        // test
+        this.view = "hours";
+        this.view = "minutes";
     }
 
     /* prettier-ignore */
@@ -343,85 +349,123 @@ class MdDatetimePicker extends MdDatetimePickerElement {
     }
 
     /* prettier-ignore */
+    renderHours() {
+        return html`
+            <div class="md-datetime-picker__dial md-datetime-picker__dial--hours">
+                ${this.hours.map(cell=>html`
+                    <div
+                        class="${classMap({
+                            "md-datetime-picker__handle":true,
+                            "md-datetime-picker__handle--now":cell.active,
+                            "md-datetime-picker__handle--selected":cell.selected,
+                        })}"
+                    >${cell.label}</div>
+                `)}
+            </div>
+        `;
+    }
+
+    /* prettier-ignore */
+    renderMinutes() {
+        return html`
+            <div class="md-datetime-picker__dial md-datetime-picker__dial--minutes">
+                ${this.minutes.map(cell=>html`
+                    <div
+                        class="${classMap({
+                            "md-datetime-picker__handle":true,
+                            "md-datetime-picker__handle--now":cell.active,
+                            "md-datetime-picker__handle--selected":cell.selected,
+                        })}"
+                    >${cell.label}</div>
+                `)}
+            </div>
+        `;
+    }
+
+    /* prettier-ignore */
     renderView(view){
         return choose(view, [
             ['calendar', () => this.renderCalendar()],
             ['months', () => this.renderMonths()],
             ['years', () => this.renderYears()],
+            ['hours', () => this.renderHours()],
+            ['minutes', () => this.renderMinutes()],
         ], () => nothing)
     }
 
     /* prettier-ignore */
     render(){
         return html`
-            <div class="md-datetime-picker__header">
-                <div class="md-datetime-picker__leading">
-                    <md-icon-button 
-                        class="${classMap({
-                            "md-datetime-picker__icon-button":true,
-                            "md-datetime-picker__icon-button--hidden":this.view==='years',
-                        })}" 
-                        .color="${"standard"}" 
-                        .icon="${"keyboard_arrow_left"}"
-                        @onIconButtonClick="${this._handleDatetimePickerPrevMonthSelection}"
-                    ></md-icon-button>
-                    <md-split-button 
-                        class="${classMap({
-                            "md-datetime-picker__split-button":true,
-                            "md-datetime-picker__split-button--disabled":this.view==='years',
-                        })}" 
-                        .color="${"text"}" 
-                        .label="${this.selectedMonth.label}" 
-                        .trailingIcon="${"arrow_drop_down"}"
-                        .selected="${this.view==='months'}"
-                        @onSplitButtonSelection="${this._handleDatetimePickerMonthViewSelection}"
-                    ></md-split-button>
-                    <md-icon-button 
-                        class="${classMap({
-                            "md-datetime-picker__icon-button":true,
-                            "md-datetime-picker__icon-button--hidden":this.view==='years',
-                        })}" 
-                        .color="${"standard"}" 
-                        .icon="${"keyboard_arrow_right"}"
-                        @onIconButtonClick="${this._handleDatetimePickerNextMonthSelection}"
-                    ></md-icon-button>
+            ${['calendar','years','months'].includes(this.view)?html`
+                <div class="md-datetime-picker__header">
+                    <div class="md-datetime-picker__leading">
+                        <md-icon-button 
+                            class="${classMap({
+                                "md-datetime-picker__icon-button":true,
+                                "md-datetime-picker__icon-button--hidden":this.view==='years',
+                            })}" 
+                            .color="${"standard"}" 
+                            .icon="${"keyboard_arrow_left"}"
+                            @onIconButtonClick="${this._handleDatetimePickerPrevMonthSelection}"
+                        ></md-icon-button>
+                        <md-split-button 
+                            class="${classMap({
+                                "md-datetime-picker__split-button":true,
+                                "md-datetime-picker__split-button--disabled":this.view==='years',
+                            })}" 
+                            .color="${"text"}" 
+                            .label="${this.selectedMonth.label}" 
+                            .trailingIcon="${"arrow_drop_down"}"
+                            .selected="${this.view==='months'}"
+                            @onSplitButtonSelection="${this._handleDatetimePickerMonthViewSelection}"
+                        ></md-split-button>
+                        <md-icon-button 
+                            class="${classMap({
+                                "md-datetime-picker__icon-button":true,
+                                "md-datetime-picker__icon-button--hidden":this.view==='years',
+                            })}" 
+                            .color="${"standard"}" 
+                            .icon="${"keyboard_arrow_right"}"
+                            @onIconButtonClick="${this._handleDatetimePickerNextMonthSelection}"
+                        ></md-icon-button>
+                    </div>
+                    <div class="md-datetime-picker__spacer"></div>
+                    <div class="md-datetime-picker__trailing">
+                        <md-icon-button 
+                            class="${classMap({
+                                "md-datetime-picker__icon-button":true,
+                                "md-datetime-picker__icon-button--hidden":this.view==='months',
+                            })}" 
+                            .color="${"standard"}" 
+                            .icon="${"keyboard_arrow_left"}"
+                            @onIconButtonClick="${this._handleDatetimePickerPrevYearSelection}"
+                        ></md-icon-button>
+                        <md-split-button 
+                            class="${classMap({
+                                "md-datetime-picker__split-button":true,
+                                "md-datetime-picker__split-button--disabled":this.view==='months',
+                            })}" 
+                            .color="${"text"}" 
+                            .label="${this.selectedYear.label}" 
+                            .trailingIcon="${"arrow_drop_down"}"
+                            .selected="${this.view==='years'}"
+                            @onSplitButtonSelection="${this._handleDatetimePickerYearViewSelection}"
+                        ></md-split-button>
+                        <md-icon-button 
+                            class="${classMap({
+                                "md-datetime-picker__icon-button":true,
+                                "md-datetime-picker__icon-button--hidden":this.view==='months',
+                            })}" 
+                            .color="${"standard"}" 
+                            .icon="${"keyboard_arrow_right"}"
+                            @onIconButtonClick="${this._handleDatetimePickerNextYearSelection}"
+                        ></md-icon-button>
+                    </div>
                 </div>
-                <div class="md-datetime-picker__spacer"></div>
-                <div class="md-datetime-picker__trailing">
-                    <md-icon-button 
-                        class="${classMap({
-                            "md-datetime-picker__icon-button":true,
-                            "md-datetime-picker__icon-button--hidden":this.view==='months',
-                        })}" 
-                        .color="${"standard"}" 
-                        .icon="${"keyboard_arrow_left"}"
-                        @onIconButtonClick="${this._handleDatetimePickerPrevYearSelection}"
-                    ></md-icon-button>
-                    <md-split-button 
-                        class="${classMap({
-                            "md-datetime-picker__split-button":true,
-                            "md-datetime-picker__split-button--disabled":this.view==='months',
-                        })}" 
-                        .color="${"text"}" 
-                        .label="${this.selectedYear.label}" 
-                        .trailingIcon="${"arrow_drop_down"}"
-                        .selected="${this.view==='years'}"
-                        @onSplitButtonSelection="${this._handleDatetimePickerYearViewSelection}"
-                    ></md-split-button>
-                    <md-icon-button 
-                        class="${classMap({
-                            "md-datetime-picker__icon-button":true,
-                            "md-datetime-picker__icon-button--hidden":this.view==='months',
-                        })}" 
-                        .color="${"standard"}" 
-                        .icon="${"keyboard_arrow_right"}"
-                        @onIconButtonClick="${this._handleDatetimePickerNextYearSelection}"
-                    ></md-icon-button>
-                </div>
-            </div>
+            `:nothing}
             <div class="md-datetime-picker__body">
                 <div class="md-datetime-picker__main">${this.renderView(this.view)}</div>
-                ${this.view==='calendar'?html`
+                ${['calendar','hours'].includes(this.view)?html`
                     <div class="md-datetime-picker__footer">
                         <div class="md-datetime-picker__spacer"></div>
                         <md-button 
@@ -549,9 +593,10 @@ class MdDatetimePicker extends MdDatetimePickerElement {
 customElements.define("md-datetime-picker", MdDatetimePicker);
 
 export { MdDatetimePicker };
-
 ```
+
 ### datetime-picker
+
 src\material\components\datetime-picker\datetime-picker.scss
 
 ```scss
@@ -560,7 +605,7 @@ src\material\components\datetime-picker\datetime-picker.scss
 .md-datetime-picker {
     display: inline-flex;
     flex-direction: column;
-    width: 360px;
+    max-width: 360px;
     max-height: 460px;
     background-color: var(--md-sys-color-surface-container-high);
     color: var(--md-sys-color-on-surface);
@@ -572,6 +617,7 @@ src\material\components\datetime-picker\datetime-picker.scss
     display: flex;
     align-items: center;
     padding: 20px 12px;
+
     + .md-datetime-picker__body {
         margin-top: -12px;
     }
@@ -593,43 +639,50 @@ src\material\components\datetime-picker\datetime-picker.scss
     gap: 0 16px;
 }
 
-.md-datetime-picker__icon-button {
-    margin: -8px;
-    color: var(--md-sys-color-on-surface-variant);
-}
-.md-datetime-picker__icon-button--hidden {
-    visibility: hidden;
-    @include mixins.ripple-disabled();
-}
+.md-datetime-picker__leading,
+.md-datetime-picker__trailing {
+    .md-datetime-picker__icon-button {
+        margin: -8px;
+        color: var(--md-sys-color-on-surface-variant);
 
-.md-datetime-picker__split-button {
-    margin: -8px;
-    min-width: 80px;
-    color: var(--md-sys-color-on-surface-variant);
+        &.md-datetime-picker__icon-button--hidden {
+            visibility: hidden;
+            @include mixins.ripple-disabled();
+        }
+    }
 
-    .md-split-button__leading {
-        padding-left: calc(var(--md-comp-split-button-leading-padding-left) - 8px);
-        padding-right: calc(var(--md-comp-split-button-leading-padding-right) - 8px);
-        gap: 0 calc(var(--md-comp-split-button-leading-gap) - 8px);
-    }
-    .md-split-button__trailing {
-        padding-left: calc(var(--md-comp-split-button-trailing-padding-left) - 8px);
-        padding-right: calc(var(--md-comp-split-button-trailing-padding-right) - 8px);
-    }
-    &.md-split-button--selected .md-split-button__trailing {
-        padding-left: calc(var(--md-comp-split-button-selected-trailing-padding-left) - 8px);
-        padding-right: calc(var(--md-comp-split-button-selected-trailing-padding-right) - 8px);
-    }
-}
+    .md-datetime-picker__split-button {
+        margin: -8px;
+        min-width: 80px;
+        color: var(--md-sys-color-on-surface-variant);
 
-.md-datetime-picker__split-button--disabled {
-    .md-split-button__leading{
-        color: var(--md-sys-color-on-surface38);
-        @include mixins.ripple-disabled();
-    }
-    .md-split-button__trailing{
-        visibility: hidden;
-        @include mixins.ripple-disabled();
+        .md-split-button__leading {
+            padding-left: calc(var(--md-comp-split-button-leading-padding-left) - 8px);
+            padding-right: calc(var(--md-comp-split-button-leading-padding-right) - 8px);
+            gap: 0 calc(var(--md-comp-split-button-leading-gap) - 8px);
+        }
+
+        .md-split-button__trailing {
+            padding-left: calc(var(--md-comp-split-button-trailing-padding-left) - 8px);
+            padding-right: calc(var(--md-comp-split-button-trailing-padding-right) - 8px);
+        }
+
+        &.md-split-button--selected .md-split-button__trailing {
+            padding-left: calc(var(--md-comp-split-button-selected-trailing-padding-left) - 8px);
+            padding-right: calc(var(--md-comp-split-button-selected-trailing-padding-right) - 8px);
+        }
+
+        &.md-datetime-picker__split-button--disabled {
+            .md-split-button__leading {
+                color: var(--md-sys-color-on-surface38);
+                @include mixins.ripple-disabled();
+            }
+
+            .md-split-button__trailing {
+                visibility: hidden;
+                @include mixins.ripple-disabled();
+            }
+        }
     }
 }
 
@@ -642,6 +695,7 @@ src\material\components\datetime-picker\datetime-picker.scss
 .md-datetime-picker__main {
     flex: 1;
     padding: 16px 0;
+
     + .md-datetime-picker__footer {
         margin-top: -20px;
     }
@@ -655,6 +709,7 @@ src\material\components\datetime-picker\datetime-picker.scss
 
     th {
         text-align: left;
+
         &:has(.md-datetime-picker__cell) {
             @include mixins.ripple-disabled();
         }
@@ -662,11 +717,13 @@ src\material\components\datetime-picker\datetime-picker.scss
 
     td {
         max-width: 0;
+
         &:has(.md-datetime-picker__cell--outside) {
             @include mixins.ripple-disabled();
         }
     }
 }
+
 .md-datetime-picker__cell {
     display: inline-flex;
     align-items: center;
@@ -679,40 +736,51 @@ src\material\components\datetime-picker\datetime-picker.scss
     @include mixins.ripple();
     @include mixins.ripple-bounded();
     @include mixins.ripple-trigger();
+
     &:focus {
         @include mixins.ripple-focus();
     }
+
     &:active {
         @include mixins.ripple-press();
     }
+
     &:hover {
         @include mixins.ripple-hover();
     }
+
     &:drag {
         @include mixins.ripple-drag();
     }
 }
+
 .md-datetime-picker__cell--outside {
     color: var(--md-sys-color-on-surface38);
     @include mixins.ripple-disabled();
 }
+
 .md-datetime-picker__cell--today {
     border: 1px solid var(--md-sys-color-primary);
     color: var(--md-sys-color-primary);
 }
+
 .md-datetime-picker__cell--selected {
     background-color: var(--md-sys-color-primary);
     color: var(--md-sys-color-on-primary);
 }
+
 .md-datetime-picker__cell--sunday {
     color: var(--md-sys-color-error);
+
     &.md-datetime-picker__cell--outside {
         color: var(--md-sys-color-error38);
     }
+
     &.md-datetime-picker__cell--today {
         border: 1px solid var(--md-sys-color-error);
         color: var(--md-sys-color-error);
     }
+
     &.md-datetime-picker__cell--selected {
         background-color: var(--md-sys-color-error);
         color: var(--md-sys-color-on-error);
@@ -728,12 +796,146 @@ src\material\components\datetime-picker\datetime-picker.scss
         min-height: 48px;
         padding: 12px 16px;
         gap: 0 16px;
-        // color: var(--md-sys-color-on-surface);
     }
 
     .md-list__item--selected {
         background-color: var(--md-sys-color-surface-variant);
         color: var(--md-sys-color-on-surface-variant);
+    }
+}
+
+.md-datetime-picker__dial {
+    position: relative;
+    width: 256px;
+    height: 256px;
+    margin: 36px;
+    border-radius: var(--md-sys-shape-corner-full);
+    background-color: var(--md-sys-color-surface-container-highest);
+
+    &::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-radius: var(--md-sys-shape-corner-full);
+        background-color: var(--md-sys-color-primary);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate3d(-50%, -50%, 0);
+    }
+}
+
+.md-datetime-picker__handle {
+    @include mixins.ripple();
+    @include mixins.ripple-trigger();
+    position: absolute;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: var(--md-sys-shape-corner-full);
+
+    &:focus {
+        @include mixins.ripple-focus();
+    }
+
+    &:active {
+        @include mixins.ripple-press();
+    }
+
+    &:hover {
+        @include mixins.ripple-hover();
+    }
+
+    &:drag {
+        @include mixins.ripple-drag();
+    }
+
+    &::before {
+        content: "";
+        height: 2px;
+        border-radius: var(--md-sys-shape-corner-full);
+        position: absolute;
+        z-index: -1;
+        right: 50%;
+        top: 50%;
+        transform-origin: 100% 50%;
+    }
+
+    &::after {
+        width: 100%;
+    }
+}
+
+.md-datetime-picker__handle--now {
+    border: 1px solid var(--md-sys-color-primary);
+    color: var(--md-sys-color-primary);
+}
+
+.md-datetime-picker__handle--selected {
+    background-color: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
+
+    &::before {
+        background-color: var(--md-sys-color-primary);
+    }
+}
+
+.md-datetime-picker__dial--hours {
+    .md-datetime-picker__handle {
+        @for $i from 1 through 24 {
+            &:nth-child(#{$i}) {
+                @if $i <= 12 {
+                    // 256/2 = 128-48/2 = 104-4 = 100
+                    left: calc(100px * cos((($i - 4) / 12) * 2 * pi) + 104px);
+                    top: calc(100px * sin((($i - 4) / 12) * 2 * pi) + 104px);
+
+                    &::before {
+                        width: 100px;
+                        transform: rotate(calc((360deg / 12) * ($i - 4)));
+                    }
+                } @else {
+                    // 256/2 = 128-48/2 = 104-48/2 = 80-4 = 76
+                    left: calc(76px * cos((($i - 4) / 12) * 2 * pi) + 104px);
+                    top: calc(76px * sin((($i - 4) / 12) * 2 * pi) + 104px);
+
+                    &::before {
+                        width: 76px;
+                        transform: rotate(calc((360deg / 12) * ($i - 12 - 4)));
+                    }
+                }
+            }
+        }
+    }
+}
+
+.md-datetime-picker__dial--minutes {
+    .md-datetime-picker__handle {
+        @for $i from 1 through 60 {
+            &:nth-child(#{$i}) {
+                // 256/2 = 128-48/2 = 104-4 = 100
+                left: calc(100px * cos((($i - 16) / 60) * 2 * pi) + 104px);
+                top: calc(100px * sin((($i - 16) / 60) * 2 * pi) + 104px);
+
+                @if ((($i - 16) % 5) != 0) {
+                    z-index: 1;
+                    height: 24px;
+                    width: 24px;
+                    // 256/2 = 128-48/2 = 104-4 = 100
+                    // 104+(48/2)-(24/2) = 116
+                    left: calc(100px * cos((($i - 16) / 60) * 2 * pi) + 116px);
+                    top: calc(100px * sin((($i - 16) / 60) * 2 * pi) + 116px);
+                    color: transparent;
+                }
+
+                &::before {
+                    width: 100px;
+                    transform: rotate(calc((360deg / 60) * ($i - 16)));
+                }
+            }
+        }
     }
 }
 
@@ -743,14 +945,16 @@ src\material\components\datetime-picker\datetime-picker.scss
     gap: 0 16px;
     padding: 12px;
 }
+
 .md-datetime-picker__button {
     margin: -2px;
 }
-
 ```
+
 ## src\material\core
 
 ### date-formatter
+
 src\material\core\date-formatter.js
 
 ```js
@@ -791,5 +995,4 @@ const dateFormatter = {
 };
 
 export { dateFormatter };
-
 ```

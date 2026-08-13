@@ -59,8 +59,8 @@
     color: var(--md-comp-icon-button-color);
     box-shadow: var(--md-comp-icon-button-box-shadow);
 
-    will-change: border-radius, background-color, color, border-color;
-    transition-property: border-radius, background-color, color, border-color;
+    will-change: height, width, border-radius, background-color, color, border-color;
+    transition-property: height, width, border-radius, background-color, color, border-color;
     transition-duration: var(--md-sys-motion-expressive-fast-spatial-duration);
     transition-timing-function: cubic-bezier(var(--md-sys-motion-expressive-fast-spatial));
 

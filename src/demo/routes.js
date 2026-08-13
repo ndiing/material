@@ -46,6 +46,7 @@ export const routes = [
             { path: "/components/button", load: () => import("./components/button.js").then((module) => module.default), children: [] },
             { path: "/components/icon-button", load: () => import("./components/icon-button.js").then((module) => module.default), children: [] },
             { path: "/components/fab", load: () => import("./components/fab.js").then((module) => module.default), children: [] },
+            { path: "/components/button-group", load: () => import("./components/button-group.js").then((module) => module.default), children: [] },
             { path: "/components/split-button", load: () => import("./components/split-button.js").then((module) => module.default), children: [] },
 
             { path: "/components/card", load: () => import("./components/card.js").then((module) => module.default), children: [] },

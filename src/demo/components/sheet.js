@@ -9,7 +9,7 @@ class DemoSheet extends MdElement {
     south = createRef();
     west = createRef();
     west2 = createRef();
-    
+
     /* prettier-ignore */
     render(){
         return html`
@@ -112,7 +112,6 @@ class DemoSheet extends MdElement {
         `
     }
 
-    
     _handleNorthToggle() {
         this.north.value.toggle();
     }
@@ -131,7 +130,6 @@ class DemoSheet extends MdElement {
     _handleWestToggle2() {
         this.west2.value.toggle();
     }
-
 }
 customElements.define("demo-sheet", DemoSheet);
 export default document.createElement("demo-sheet");

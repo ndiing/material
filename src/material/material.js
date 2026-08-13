@@ -31,6 +31,7 @@ import "./components/badge/badge.js";
 
 import "./components/button/button.js";
 import "./components/icon-button/icon-button.js";
+import "./components/button-group/button-group.js";
 import "./components/fab/fab.js";
 import "./components/split-button/split-button.js";
 

@@ -50,7 +50,6 @@ class DemoCheckbox extends MdElement {
         `;
     }
 
-    
     handleFormdata(event) {}
 
     handleReset(event) {}

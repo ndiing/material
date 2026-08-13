@@ -8,7 +8,9 @@ class DemoDatetimePicker extends MdElement {
             <md-grid class="demo-grid">
 
                 <md-grid-column expanded="6">
-                    <md-datetime-picker value="1990-10-17T23:45"></md-datetime-picker>
+                    <!-- <md-datetime-picker value="1990-10-17T23:45"></md-datetime-picker> -->
+                    <md-datetime-picker value="2026-08-13T02:04"></md-datetime-picker>
+                    <!-- <md-datetime-picker></md-datetime-picker> -->
                 </md-grid-column>
 
             </md-grid>

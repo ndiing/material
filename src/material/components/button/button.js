@@ -16,6 +16,7 @@ class MdButton extends MdElement {
         disabled: { type: Boolean },
         type: { type: String },
         rippleOptions: { type: Object },
+        selectOnToggle: { type: Boolean },
     };
 
     variants = ["default", "toggle"];
@@ -33,6 +34,7 @@ class MdButton extends MdElement {
         this.shape = "round";
         this.color = "filled";
         this.type = "button";
+        this.selectOnToggle = true;
 
         this._handleButtonClick = this._handleButtonClick.bind(this);
 
@@ -112,7 +114,7 @@ class MdButton extends MdElement {
     }
 
     _handleButtonClick(event) {
-        if (this.variant === "toggle") {
+        if (this.variant === "toggle" && this.selectOnToggle) {
             this.selected = !this.selected;
 
             this.emit("onButtonSelection", { event, element: this, selected: this.selected });

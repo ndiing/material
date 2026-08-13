@@ -8,6 +8,7 @@ import { styleMap } from "lit/directives/style-map.js";
 function renderBadge(properties = {}) {
     return html`
         <md-badge
+            .data="${properties}"
             class="${classMap(properties.classMap ?? {})}"
             style="${styleMap(properties.styleMap ?? {})}"
             .label="${ifDefined(properties.label)}"
@@ -21,6 +22,7 @@ function renderBadge(properties = {}) {
 function renderButton(properties = {}) {
     return html`
         <md-button
+            .data="${properties}"
             class="${classMap(properties.classMap ?? {})}"
             style="${styleMap(properties.styleMap ?? {})}"
             .variant="${ifDefined(properties.variant)}"
@@ -33,6 +35,7 @@ function renderButton(properties = {}) {
             .disabled="${ifDefined(properties.disabled)}"
             .type="${ifDefined(properties.type)}"
             .rippleOptions="${ifDefined(properties.rippleOptions)}"
+            .selectOnToggle="${ifDefined(properties.selectOnToggle)}"
             @onButtonSelection="${ifDefined(properties.onButtonSelection)}"
             @onButtonClick="${ifDefined(properties.onButtonClick)}"
         ></md-button>
@@ -40,9 +43,26 @@ function renderButton(properties = {}) {
 }
 
 /* prettier-ignore */
+function renderButtonGroup(properties = {}) {
+    return html`
+        <md-button-group
+            .data="${properties}"
+            class="${classMap(properties.classMap ?? {})}"
+            style="${styleMap(properties.styleMap ?? {})}"
+            .buttons="${ifDefined(properties.buttons)}"
+            .variant="${ifDefined(properties.variant)}"
+            .size="${ifDefined(properties.size)}"
+            .shape="${ifDefined(properties.shape)}"
+            .color="${ifDefined(properties.color)}"
+        ></md-button-group>
+    `
+}
+
+/* prettier-ignore */
 function renderCardBody(properties = {}) {
     return html`
         <md-card-body
+            .data="${properties}"
             class="${classMap(properties.classMap ?? {})}"
             style="${styleMap(properties.styleMap ?? {})}"
         ></md-card-body>
@@ -53,6 +73,7 @@ function renderCardBody(properties = {}) {
 function renderCardFooter(properties = {}) {
     return html`
         <md-card-footer
+            .data="${properties}"
             class="${classMap(properties.classMap ?? {})}"
             style="${styleMap(properties.styleMap ?? {})}"
         ></md-card-footer>
@@ -63,6 +84,7 @@ function renderCardFooter(properties = {}) {
 function renderCardHeader(properties = {}) {
     return html`
         <md-card-header
+            .data="${properties}"
             class="${classMap(properties.classMap ?? {})}"
             style="${styleMap(properties.styleMap ?? {})}"
         ></md-card-header>
@@ -73,6 +95,7 @@ function renderCardHeader(properties = {}) {
 function renderCardMain(properties = {}) {
     return html`
         <md-card-main
+            .data="${properties}"
             class="${classMap(properties.classMap ?? {})}"
             style="${styleMap(properties.styleMap ?? {})}"
         ></md-card-main>
@@ -83,6 +106,7 @@ function renderCardMain(properties = {}) {
 function renderCard(properties = {}) {
     return html`
         <md-card
+            .data="${properties}"
             class="${classMap(properties.classMap ?? {})}"
             style="${styleMap(properties.styleMap ?? {})}"
             .color="${ifDefined(properties.color)}"
@@ -94,6 +118,7 @@ function renderCard(properties = {}) {
 function renderCheckbox(properties = {}) {
     return html`
         <md-checkbox
+            .data="${properties}"
             class="${classMap(properties.classMap ?? {})}"
             style="${styleMap(properties.styleMap ?? {})}"
             .name="${ifDefined(properties.name)}"
@@ -115,6 +140,7 @@ function renderCheckbox(properties = {}) {
 function renderDataTableCell(properties = {}) {
     return html`
         <md-data-table-cell
+            .data="${properties}"
             class="${classMap(properties.classMap ?? {})}"
             style="${styleMap(properties.styleMap ?? {})}"
             .label="${ifDefined(properties.label)}"
@@ -126,6 +152,7 @@ function renderDataTableCell(properties = {}) {
 function renderDataTable(properties = {}) {
     return html`
         <md-data-table
+            .data="${properties}"
             class="${classMap(properties.classMap ?? {})}"
             style="${styleMap(properties.styleMap ?? {})}"
             .columns="${ifDefined(properties.columns)}"
@@ -154,9 +181,37 @@ function renderDataTable(properties = {}) {
 }
 
 /* prettier-ignore */
+function renderDatetimePicker(properties = {}) {
+    return html`
+        <md-datetime-picker
+            .data="${properties}"
+            class="${classMap(properties.classMap ?? {})}"
+            style="${styleMap(properties.styleMap ?? {})}"
+            .locale="${ifDefined(properties.locale)}"
+            .type="${ifDefined(properties.type)}"
+            .selection="${ifDefined(properties.selection)}"
+            .value="${ifDefined(properties.value)}"
+            @onDatetimePickerMonthViewSelection="${ifDefined(properties.onDatetimePickerMonthViewSelection)}"
+            @onDatetimePickerYearViewSelection="${ifDefined(properties.onDatetimePickerYearViewSelection)}"
+            @onDatetimePickerPrevMonthSelection="${ifDefined(properties.onDatetimePickerPrevMonthSelection)}"
+            @onDatetimePickerNextMonthSelection="${ifDefined(properties.onDatetimePickerNextMonthSelection)}"
+            @onDatetimePickerPrevYearSelection="${ifDefined(properties.onDatetimePickerPrevYearSelection)}"
+            @onDatetimePickerNextYearSelection="${ifDefined(properties.onDatetimePickerNextYearSelection)}"
+            @onDatetimePickerMonthSelection="${ifDefined(properties.onDatetimePickerMonthSelection)}"
+            @onDatetimePickerYearSelection="${ifDefined(properties.onDatetimePickerYearSelection)}"
+            @onDatetimePickerDateSelection="${ifDefined(properties.onDatetimePickerDateSelection)}"
+            @onDatetimePickerCancelSelection="${ifDefined(properties.onDatetimePickerCancelSelection)}"
+            @onDatetimePickerOkSelection="${ifDefined(properties.onDatetimePickerOkSelection)}"
+            @onDatetimePickerSelection="${ifDefined(properties.onDatetimePickerSelection)}"
+        ></md-datetime-picker>
+    `
+}
+
+/* prettier-ignore */
 function renderDialogBody(properties = {}) {
     return html`
         <md-dialog-body
+            .data="${properties}"
             class="${classMap(properties.classMap ?? {})}"
             style="${styleMap(properties.styleMap ?? {})}"
         ></md-dialog-body>
@@ -167,6 +222,7 @@ function renderDialogBody(properties = {}) {
 function renderDialogFooter(properties = {}) {
     return html`
         <md-dialog-footer
+            .data="${properties}"
             class="${classMap(properties.classMap ?? {})}"
             style="${styleMap(properties.styleMap ?? {})}"
             .buttons="${ifDefined(properties.buttons)}"
@@ -178,6 +234,7 @@ function renderDialogFooter(properties = {}) {
 function renderDialogHeader(properties = {}) {
     return html`
         <md-dialog-header
+            .data="${properties}"
             class="${classMap(properties.classMap ?? {})}"
             style="${styleMap(properties.styleMap ?? {})}"
             .leading="${ifDefined(properties.leading)}"
@@ -191,6 +248,7 @@ function renderDialogHeader(properties = {}) {
 function renderDialogMain(properties = {}) {
     return html`
         <md-dialog-main
+            .data="${properties}"
             class="${classMap(properties.classMap ?? {})}"
             style="${styleMap(properties.styleMap ?? {})}"
         ></md-dialog-main>
@@ -201,8 +259,13 @@ function renderDialogMain(properties = {}) {
 function renderDialog(properties = {}) {
     return html`
         <md-dialog
+            .data="${properties}"
             class="${classMap(properties.classMap ?? {})}"
             style="${styleMap(properties.styleMap ?? {})}"
+            .leading="${ifDefined(properties.leading)}"
+            .headline="${ifDefined(properties.headline)}"
+            .trailing="${ifDefined(properties.trailing)}"
+            .buttons="${ifDefined(properties.buttons)}"
             .open="${ifDefined(properties.open)}"
             .variant="${ifDefined(properties.variant)}"
             .heroIcon="${ifDefined(properties.heroIcon)}"
@@ -214,6 +277,7 @@ function renderDialog(properties = {}) {
 function renderFab(properties = {}) {
     return html`
         <md-fab
+            .data="${properties}"
             class="${classMap(properties.classMap ?? {})}"
             style="${styleMap(properties.styleMap ?? {})}"
             .size="${ifDefined(properties.size)}"
@@ -231,6 +295,7 @@ function renderFab(properties = {}) {
 function renderForm(properties = {}) {
     return html`
         <md-form
+            .data="${properties}"
             class="${classMap(properties.classMap ?? {})}"
             style="${styleMap(properties.styleMap ?? {})}"
             .method="${ifDefined(properties.method)}"
@@ -239,6 +304,7 @@ function renderForm(properties = {}) {
             .target="${ifDefined(properties.target)}"
             .autocomplete="${ifDefined(properties.autocomplete)}"
             .noValidate="${ifDefined(properties.noValidate)}"
+            .inner="${ifDefined(properties.inner)}"
             @onFormNativeFormdata="${ifDefined(properties.onFormNativeFormdata)}"
             @onFormNativeReset="${ifDefined(properties.onFormNativeReset)}"
             @onFormNativeSubmit="${ifDefined(properties.onFormNativeSubmit)}"
@@ -250,6 +316,7 @@ function renderForm(properties = {}) {
 function renderGridColumn(properties = {}) {
     return html`
         <md-grid-column
+            .data="${properties}"
             class="${classMap(properties.classMap ?? {})}"
             style="${styleMap(properties.styleMap ?? {})}"
             .expanded="${ifDefined(properties.expanded)}"
@@ -263,6 +330,7 @@ function renderGridColumn(properties = {}) {
 function renderGrid(properties = {}) {
     return html`
         <md-grid
+            .data="${properties}"
             class="${classMap(properties.classMap ?? {})}"
             style="${styleMap(properties.styleMap ?? {})}"
         ></md-grid>
@@ -273,6 +341,7 @@ function renderGrid(properties = {}) {
 function renderIcon(properties = {}) {
     return html`
         <md-icon
+            .data="${properties}"
             class="${classMap(properties.classMap ?? {})}"
             style="${styleMap(properties.styleMap ?? {})}"
             .icon="${ifDefined(properties.icon)}"
@@ -284,6 +353,7 @@ function renderIcon(properties = {}) {
 function renderIconButton(properties = {}) {
     return html`
         <md-icon-button
+            .data="${properties}"
             class="${classMap(properties.classMap ?? {})}"
             style="${styleMap(properties.styleMap ?? {})}"
             .icon="${ifDefined(properties.icon)}"
@@ -295,6 +365,7 @@ function renderIconButton(properties = {}) {
             .selected="${ifDefined(properties.selected)}"
             .disabled="${ifDefined(properties.disabled)}"
             .rippleOptions="${ifDefined(properties.rippleOptions)}"
+            .selectOnToggle="${ifDefined(properties.selectOnToggle)}"
             @onIconButtonSelection="${ifDefined(properties.onIconButtonSelection)}"
             @onIconButtonClick="${ifDefined(properties.onIconButtonClick)}"
         ></md-icon-button>
@@ -305,6 +376,7 @@ function renderIconButton(properties = {}) {
 function renderImage(properties = {}) {
     return html`
         <md-image
+            .data="${properties}"
             class="${classMap(properties.classMap ?? {})}"
             style="${styleMap(properties.styleMap ?? {})}"
             .src="${ifDefined(properties.src)}"
@@ -322,27 +394,20 @@ function renderImage(properties = {}) {
 function renderLayoutItem(properties = {}) {
     return html`
         <md-layout-item
+            .data="${properties}"
             class="${classMap(properties.classMap ?? {})}"
             style="${styleMap(properties.styleMap ?? {})}"
             .region="${ifDefined(properties.region)}"
-            .open="${ifDefined(properties.open)}"
             .size="${ifDefined(properties.size)}"
-            .modal="${ifDefined(properties.modal)}"
             .collapsedSize="${ifDefined(properties.collapsedSize)}"
+            .modal="${ifDefined(properties.modal)}"
+            .open="${ifDefined(properties.open)}"
             .expanded="${ifDefined(properties.expanded)}"
-            .dockedOnCollapsed="${ifDefined(properties.dockedOnCollapsed)}"
-            .closeOnScrimClick="${ifDefined(properties.closeOnScrimClick)}"
-            .collapseOnScrimClick="${ifDefined(properties.collapseOnScrimClick)}"
+            .docked="${ifDefined(properties.docked)}"
             .showScrimOnOpen="${ifDefined(properties.showScrimOnOpen)}"
             .showScrimOnExpanded="${ifDefined(properties.showScrimOnExpanded)}"
-            @onLayoutItemShowed="${ifDefined(properties.onLayoutItemShowed)}"
-            @onLayoutItemClosed="${ifDefined(properties.onLayoutItemClosed)}"
-            @onLayoutItemExpanded="${ifDefined(properties.onLayoutItemExpanded)}"
-            @onLayoutItemCollapsed="${ifDefined(properties.onLayoutItemCollapsed)}"
-            @onLayoutItemShow="${ifDefined(properties.onLayoutItemShow)}"
-            @onLayoutItemClose="${ifDefined(properties.onLayoutItemClose)}"
-            @onLayoutItemExpand="${ifDefined(properties.onLayoutItemExpand)}"
-            @onLayoutItemCollapse="${ifDefined(properties.onLayoutItemCollapse)}"
+            .closeOnScrimClick="${ifDefined(properties.closeOnScrimClick)}"
+            .collapseOnScrimClick="${ifDefined(properties.collapseOnScrimClick)}"
         ></md-layout-item>
     `
 }
@@ -351,6 +416,7 @@ function renderLayoutItem(properties = {}) {
 function renderLayout(properties = {}) {
     return html`
         <md-layout
+            .data="${properties}"
             class="${classMap(properties.classMap ?? {})}"
             style="${styleMap(properties.styleMap ?? {})}"
         ></md-layout>
@@ -361,6 +427,7 @@ function renderLayout(properties = {}) {
 function renderListItem(properties = {}) {
     return html`
         <md-list-item
+            .data="${properties}"
             class="${classMap(properties.classMap ?? {})}"
             style="${styleMap(properties.styleMap ?? {})}"
             .leading="${ifDefined(properties.leading)}"
@@ -380,6 +447,7 @@ function renderListItem(properties = {}) {
 function renderList(properties = {}) {
     return html`
         <md-list
+            .data="${properties}"
             class="${classMap(properties.classMap ?? {})}"
             style="${styleMap(properties.styleMap ?? {})}"
             .items="${ifDefined(properties.items)}"
@@ -413,6 +481,7 @@ function renderList(properties = {}) {
 function renderNavigationBar(properties = {}) {
     return html`
         <md-navigation-bar
+            .data="${properties}"
             class="${classMap(properties.classMap ?? {})}"
             style="${styleMap(properties.styleMap ?? {})}"
             .items="${ifDefined(properties.items)}"
@@ -435,16 +504,16 @@ function renderNavigationBar(properties = {}) {
             .virtualScrollOptions="${ifDefined(properties.virtualScrollOptions)}"
             .rippleOptions="${ifDefined(properties.rippleOptions)}"
             .region="${ifDefined(properties.region)}"
-            .open="${ifDefined(properties.open)}"
             .size="${ifDefined(properties.size)}"
-            .modal="${ifDefined(properties.modal)}"
             .collapsedSize="${ifDefined(properties.collapsedSize)}"
+            .modal="${ifDefined(properties.modal)}"
+            .open="${ifDefined(properties.open)}"
             .expanded="${ifDefined(properties.expanded)}"
-            .dockedOnCollapsed="${ifDefined(properties.dockedOnCollapsed)}"
-            .closeOnScrimClick="${ifDefined(properties.closeOnScrimClick)}"
-            .collapseOnScrimClick="${ifDefined(properties.collapseOnScrimClick)}"
+            .docked="${ifDefined(properties.docked)}"
             .showScrimOnOpen="${ifDefined(properties.showScrimOnOpen)}"
             .showScrimOnExpanded="${ifDefined(properties.showScrimOnExpanded)}"
+            .closeOnScrimClick="${ifDefined(properties.closeOnScrimClick)}"
+            .collapseOnScrimClick="${ifDefined(properties.collapseOnScrimClick)}"
             .layout="${ifDefined(properties.layout)}"
         ></md-navigation-bar>
     `
@@ -454,6 +523,7 @@ function renderNavigationBar(properties = {}) {
 function renderNavigationDrawer(properties = {}) {
     return html`
         <md-navigation-drawer
+            .data="${properties}"
             class="${classMap(properties.classMap ?? {})}"
             style="${styleMap(properties.styleMap ?? {})}"
             .items="${ifDefined(properties.items)}"
@@ -476,16 +546,16 @@ function renderNavigationDrawer(properties = {}) {
             .virtualScrollOptions="${ifDefined(properties.virtualScrollOptions)}"
             .rippleOptions="${ifDefined(properties.rippleOptions)}"
             .region="${ifDefined(properties.region)}"
-            .open="${ifDefined(properties.open)}"
             .size="${ifDefined(properties.size)}"
-            .modal="${ifDefined(properties.modal)}"
             .collapsedSize="${ifDefined(properties.collapsedSize)}"
+            .modal="${ifDefined(properties.modal)}"
+            .open="${ifDefined(properties.open)}"
             .expanded="${ifDefined(properties.expanded)}"
-            .dockedOnCollapsed="${ifDefined(properties.dockedOnCollapsed)}"
-            .closeOnScrimClick="${ifDefined(properties.closeOnScrimClick)}"
-            .collapseOnScrimClick="${ifDefined(properties.collapseOnScrimClick)}"
+            .docked="${ifDefined(properties.docked)}"
             .showScrimOnOpen="${ifDefined(properties.showScrimOnOpen)}"
             .showScrimOnExpanded="${ifDefined(properties.showScrimOnExpanded)}"
+            .closeOnScrimClick="${ifDefined(properties.closeOnScrimClick)}"
+            .collapseOnScrimClick="${ifDefined(properties.collapseOnScrimClick)}"
         ></md-navigation-drawer>
     `
 }
@@ -494,6 +564,7 @@ function renderNavigationDrawer(properties = {}) {
 function renderNavigationRail(properties = {}) {
     return html`
         <md-navigation-rail
+            .data="${properties}"
             class="${classMap(properties.classMap ?? {})}"
             style="${styleMap(properties.styleMap ?? {})}"
             .items="${ifDefined(properties.items)}"
@@ -516,16 +587,16 @@ function renderNavigationRail(properties = {}) {
             .virtualScrollOptions="${ifDefined(properties.virtualScrollOptions)}"
             .rippleOptions="${ifDefined(properties.rippleOptions)}"
             .region="${ifDefined(properties.region)}"
-            .open="${ifDefined(properties.open)}"
             .size="${ifDefined(properties.size)}"
-            .modal="${ifDefined(properties.modal)}"
             .collapsedSize="${ifDefined(properties.collapsedSize)}"
+            .modal="${ifDefined(properties.modal)}"
+            .open="${ifDefined(properties.open)}"
             .expanded="${ifDefined(properties.expanded)}"
-            .dockedOnCollapsed="${ifDefined(properties.dockedOnCollapsed)}"
-            .closeOnScrimClick="${ifDefined(properties.closeOnScrimClick)}"
-            .collapseOnScrimClick="${ifDefined(properties.collapseOnScrimClick)}"
+            .docked="${ifDefined(properties.docked)}"
             .showScrimOnOpen="${ifDefined(properties.showScrimOnOpen)}"
             .showScrimOnExpanded="${ifDefined(properties.showScrimOnExpanded)}"
+            .closeOnScrimClick="${ifDefined(properties.closeOnScrimClick)}"
+            .collapseOnScrimClick="${ifDefined(properties.collapseOnScrimClick)}"
             .iconButton="${ifDefined(properties.iconButton)}"
             .fab="${ifDefined(properties.fab)}"
         ></md-navigation-rail>
@@ -536,6 +607,7 @@ function renderNavigationRail(properties = {}) {
 function renderPushMenu(properties = {}) {
     return html`
         <md-push-menu
+            .data="${properties}"
             class="${classMap(properties.classMap ?? {})}"
             style="${styleMap(properties.styleMap ?? {})}"
         ></md-push-menu>
@@ -546,6 +618,7 @@ function renderPushMenu(properties = {}) {
 function renderRadioButton(properties = {}) {
     return html`
         <md-radio-button
+            .data="${properties}"
             class="${classMap(properties.classMap ?? {})}"
             style="${styleMap(properties.styleMap ?? {})}"
             .name="${ifDefined(properties.name)}"
@@ -564,6 +637,7 @@ function renderRadioButton(properties = {}) {
 function renderScrim(properties = {}) {
     return html`
         <md-scrim
+            .data="${properties}"
             class="${classMap(properties.classMap ?? {})}"
             style="${styleMap(properties.styleMap ?? {})}"
             .open="${ifDefined(properties.open)}"
@@ -577,9 +651,85 @@ function renderScrim(properties = {}) {
 }
 
 /* prettier-ignore */
+function renderSheetBody(properties = {}) {
+    return html`
+        <md-sheet-body
+            .data="${properties}"
+            class="${classMap(properties.classMap ?? {})}"
+            style="${styleMap(properties.styleMap ?? {})}"
+        ></md-sheet-body>
+    `
+}
+
+/* prettier-ignore */
+function renderSheetFooter(properties = {}) {
+    return html`
+        <md-sheet-footer
+            .data="${properties}"
+            class="${classMap(properties.classMap ?? {})}"
+            style="${styleMap(properties.styleMap ?? {})}"
+            .buttons="${ifDefined(properties.buttons)}"
+        ></md-sheet-footer>
+    `
+}
+
+/* prettier-ignore */
+function renderSheetHeader(properties = {}) {
+    return html`
+        <md-sheet-header
+            .data="${properties}"
+            class="${classMap(properties.classMap ?? {})}"
+            style="${styleMap(properties.styleMap ?? {})}"
+            .leading="${ifDefined(properties.leading)}"
+            .headline="${ifDefined(properties.headline)}"
+            .trailing="${ifDefined(properties.trailing)}"
+        ></md-sheet-header>
+    `
+}
+
+/* prettier-ignore */
+function renderSheetMain(properties = {}) {
+    return html`
+        <md-sheet-main
+            .data="${properties}"
+            class="${classMap(properties.classMap ?? {})}"
+            style="${styleMap(properties.styleMap ?? {})}"
+        ></md-sheet-main>
+    `
+}
+
+/* prettier-ignore */
+function renderSheet(properties = {}) {
+    return html`
+        <md-sheet
+            .data="${properties}"
+            class="${classMap(properties.classMap ?? {})}"
+            style="${styleMap(properties.styleMap ?? {})}"
+            .region="${ifDefined(properties.region)}"
+            .size="${ifDefined(properties.size)}"
+            .collapsedSize="${ifDefined(properties.collapsedSize)}"
+            .modal="${ifDefined(properties.modal)}"
+            .open="${ifDefined(properties.open)}"
+            .expanded="${ifDefined(properties.expanded)}"
+            .docked="${ifDefined(properties.docked)}"
+            .showScrimOnOpen="${ifDefined(properties.showScrimOnOpen)}"
+            .showScrimOnExpanded="${ifDefined(properties.showScrimOnExpanded)}"
+            .closeOnScrimClick="${ifDefined(properties.closeOnScrimClick)}"
+            .collapseOnScrimClick="${ifDefined(properties.collapseOnScrimClick)}"
+            .leading="${ifDefined(properties.leading)}"
+            .headline="${ifDefined(properties.headline)}"
+            .trailing="${ifDefined(properties.trailing)}"
+            .buttons="${ifDefined(properties.buttons)}"
+            .inner="${ifDefined(properties.inner)}"
+        ></md-sheet>
+    `
+}
+
+/* prettier-ignore */
 function renderSlider(properties = {}) {
     return html`
         <md-slider
+            .data="${properties}"
             class="${classMap(properties.classMap ?? {})}"
             style="${styleMap(properties.styleMap ?? {})}"
             .name="${ifDefined(properties.name)}"
@@ -587,11 +737,11 @@ function renderSlider(properties = {}) {
             .max="${ifDefined(properties.max)}"
             .step="${ifDefined(properties.step)}"
             .value="${ifDefined(properties.value)}"
-            .icon="${ifDefined(properties.icon)}"
             .orientation="${ifDefined(properties.orientation)}"
             .size="${ifDefined(properties.size)}"
-            .stopIndicator="${ifDefined(properties.stopIndicator)}"
-            .valueIndicator="${ifDefined(properties.valueIndicator)}"
+            .icon="${ifDefined(properties.icon)}"
+            .label="${ifDefined(properties.label)}"
+            .flipLabel="${ifDefined(properties.flipLabel)}"
         ></md-slider>
     `
 }
@@ -600,6 +750,7 @@ function renderSlider(properties = {}) {
 function renderSnackbar(properties = {}) {
     return html`
         <md-snackbar
+            .data="${properties}"
             class="${classMap(properties.classMap ?? {})}"
             style="${styleMap(properties.styleMap ?? {})}"
             .supporting="${ifDefined(properties.supporting)}"
@@ -614,9 +765,32 @@ function renderSnackbar(properties = {}) {
 }
 
 /* prettier-ignore */
+function renderSplitButton(properties = {}) {
+    return html`
+        <md-split-button
+            .data="${properties}"
+            class="${classMap(properties.classMap ?? {})}"
+            style="${styleMap(properties.styleMap ?? {})}"
+            .icon="${ifDefined(properties.icon)}"
+            .label="${ifDefined(properties.label)}"
+            .trailingIcon="${ifDefined(properties.trailingIcon)}"
+            .size="${ifDefined(properties.size)}"
+            .color="${ifDefined(properties.color)}"
+            .selected="${ifDefined(properties.selected)}"
+            @onSplitButtonClick="${ifDefined(properties.onSplitButtonClick)}"
+            @onSplitButtonPress="${ifDefined(properties.onSplitButtonPress)}"
+            @onSplitButtonKeydown="${ifDefined(properties.onSplitButtonKeydown)}"
+            @onSplitButtonIconClick="${ifDefined(properties.onSplitButtonIconClick)}"
+            @onSplitButtonSelection="${ifDefined(properties.onSplitButtonSelection)}"
+        ></md-split-button>
+    `
+}
+
+/* prettier-ignore */
 function renderSwitch(properties = {}) {
     return html`
         <md-switch
+            .data="${properties}"
             class="${classMap(properties.classMap ?? {})}"
             style="${styleMap(properties.styleMap ?? {})}"
             .name="${ifDefined(properties.name)}"
@@ -636,6 +810,7 @@ function renderSwitch(properties = {}) {
 function renderTextField(properties = {}) {
     return html`
         <md-text-field
+            .data="${properties}"
             class="${classMap(properties.classMap ?? {})}"
             style="${styleMap(properties.styleMap ?? {})}"
             .leading="${ifDefined(properties.leading)}"
@@ -675,6 +850,7 @@ function renderTextField(properties = {}) {
 function renderTextarea(properties = {}) {
     return html`
         <md-textarea
+            .data="${properties}"
             class="${classMap(properties.classMap ?? {})}"
             style="${styleMap(properties.styleMap ?? {})}"
             .leading="${ifDefined(properties.leading)}"
@@ -712,6 +888,7 @@ function renderTextarea(properties = {}) {
 function renderTooltip(properties = {}) {
     return html`
         <md-tooltip
+            .data="${properties}"
             class="${classMap(properties.classMap ?? {})}"
             style="${styleMap(properties.styleMap ?? {})}"
             .subhead="${ifDefined(properties.subhead)}"
@@ -730,6 +907,7 @@ function renderTooltip(properties = {}) {
 function renderTree(properties = {}) {
     return html`
         <md-tree
+            .data="${properties}"
             class="${classMap(properties.classMap ?? {})}"
             style="${styleMap(properties.styleMap ?? {})}"
         ></md-tree>
@@ -741,6 +919,7 @@ function renderComponent(component, properties = {}) {
     return choose(component,[
         ["badge", () => renderBadge(component, properties)],
         ["button", () => renderButton(component, properties)],
+        ["button-group", () => renderButtonGroup(component, properties)],
         ["card-body", () => renderCardBody(component, properties)],
         ["card-footer", () => renderCardFooter(component, properties)],
         ["card-header", () => renderCardHeader(component, properties)],
@@ -749,6 +928,7 @@ function renderComponent(component, properties = {}) {
         ["checkbox", () => renderCheckbox(component, properties)],
         ["data-table-cell", () => renderDataTableCell(component, properties)],
         ["data-table", () => renderDataTable(component, properties)],
+        ["datetime-picker", () => renderDatetimePicker(component, properties)],
         ["dialog-body", () => renderDialogBody(component, properties)],
         ["dialog-footer", () => renderDialogFooter(component, properties)],
         ["dialog-header", () => renderDialogHeader(component, properties)],
@@ -771,8 +951,14 @@ function renderComponent(component, properties = {}) {
         ["push-menu", () => renderPushMenu(component, properties)],
         ["radio-button", () => renderRadioButton(component, properties)],
         ["scrim", () => renderScrim(component, properties)],
+        ["sheet-body", () => renderSheetBody(component, properties)],
+        ["sheet-footer", () => renderSheetFooter(component, properties)],
+        ["sheet-header", () => renderSheetHeader(component, properties)],
+        ["sheet-main", () => renderSheetMain(component, properties)],
+        ["sheet", () => renderSheet(component, properties)],
         ["slider", () => renderSlider(component, properties)],
         ["snackbar", () => renderSnackbar(component, properties)],
+        ["split-button", () => renderSplitButton(component, properties)],
         ["switch", () => renderSwitch(component, properties)],
         ["text-field", () => renderTextField(component, properties)],
         ["textarea", () => renderTextarea(component, properties)],
@@ -785,6 +971,7 @@ function renderComponent(component, properties = {}) {
 export { 
     renderBadge,
     renderButton,
+    renderButtonGroup,
     renderCardBody,
     renderCardFooter,
     renderCardHeader,
@@ -793,6 +980,7 @@ export {
     renderCheckbox,
     renderDataTableCell,
     renderDataTable,
+    renderDatetimePicker,
     renderDialogBody,
     renderDialogFooter,
     renderDialogHeader,
@@ -815,8 +1003,14 @@ export {
     renderPushMenu,
     renderRadioButton,
     renderScrim,
+    renderSheetBody,
+    renderSheetFooter,
+    renderSheetHeader,
+    renderSheetMain,
+    renderSheet,
     renderSlider,
     renderSnackbar,
+    renderSplitButton,
     renderSwitch,
     renderTextField,
     renderTextarea,

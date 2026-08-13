@@ -125,7 +125,6 @@ class DemoList extends MdElement {
             { id: "47", leading: [{ component: "icon", icon: "person" }], trailing: [{ component: "switch" }], label: "Label text" },
         ];
 
-        
         this.data0 = [
             // Level 1 - C-Level
             { id: 1, parent_id: null, label: "CEO Office" },
@@ -250,14 +249,14 @@ class DemoList extends MdElement {
         ];
 
         this.docs = [
-            {label:'Leading avatar',items:[items0, items1]},
-            {label:'With leading image',items:[items2, items3]},
-            {label:'Leading video',items:[items4, items5]},
-            {label:'Leading icon',items:[items6, items7]},
-            {label:'Text-only',items:[items8, items9]},
-            {label:'Leading checkbox',items:[items10, items11]},
-            {label:'Leading radio button',items:[items12, items13]},
-            {label:'Trailing switch',items:[items14, items15]},
+            { label: "Leading avatar", items: [items0, items1] },
+            { label: "With leading image", items: [items2, items3] },
+            { label: "Leading video", items: [items4, items5] },
+            { label: "Leading icon", items: [items6, items7] },
+            { label: "Text-only", items: [items8, items9] },
+            { label: "Leading checkbox", items: [items10, items11] },
+            { label: "Leading radio button", items: [items12, items13] },
+            { label: "Trailing switch", items: [items14, items15] },
         ];
     }
 

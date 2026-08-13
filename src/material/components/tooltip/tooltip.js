@@ -43,19 +43,21 @@ class MdTooltip extends MdElement {
     render() {
         return html`
             ${this.subhead ? html`<div class="md-tooltip__subhead">${this.subhead}</div>` : nothing} ${this.supporting ? html`<div class="md-tooltip__supporting">${this.supporting}</div>` : nothing}
-            ${this.buttons?.length
-                ? html`
-                      <div class="md-tooltip__buttons">
-                          ${this.buttons.map((button) =>
+            ${
+                this.buttons?.length
+                    ? html`
+                          <div class="md-tooltip__buttons">
+                              ${this.buttons.map((button) =>
                               renderButton({
                                   classMap: { "md-tooltip__button": true },
                                   color: "text",
                                   ...button,
                               }),
                           )}
-                      </div>
-                  `
-                : nothing}
+                          </div>
+                      `
+                    : nothing
+            }
         `;
     }
 
