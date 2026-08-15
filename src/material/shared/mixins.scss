@@ -17,14 +17,16 @@ initialize
 ripple
 */
 
-@mixin ripple() {
+@mixin ripple-vars() {
     --md-comp-ripple-radius: 141.4213562373095%;
     --md-comp-ripple-left: 50%;
     --md-comp-ripple-top: 50%;
     --md-comp-ripple-x: 0%;
     --md-comp-ripple-y: 0%;
+}
+
+@mixin ripple() {
     position: relative;
-    isolation: isolate;
 
     &:after {
         content: "";
@@ -34,7 +36,6 @@ ripple
         position: absolute;
         left: var(--md-comp-ripple-left);
         top: var(--md-comp-ripple-top);
-        z-index: 1;
         transform: translate3d(-50%, -50%, 0) scale3d(1, 1, 1) translate3d(var(--md-comp-ripple-x), var(--md-comp-ripple-y), 0) scale3d(1, 1, 1);
         background-color: currentColor;
         opacity: 0;

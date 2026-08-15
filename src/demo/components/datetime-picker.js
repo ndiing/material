@@ -1,5 +1,8 @@
 import { html } from "lit";
 import { MdElement } from "../../material/base/element.js";
+import { dateFormatter } from "../../material/core/date-formatter.js";
+
+// console.log(dateFormatter["datetime-local"].toString(new Date()))
 
 class DemoDatetimePicker extends MdElement {
     /* prettier-ignore */
@@ -7,10 +10,47 @@ class DemoDatetimePicker extends MdElement {
         return html`
             <md-grid class="demo-grid">
 
+                <!-- docked -->
                 <md-grid-column expanded="6">
-                    <!-- <md-datetime-picker value="1990-10-17T23:45"></md-datetime-picker> -->
-                    <md-datetime-picker value="2026-08-13T02:04"></md-datetime-picker>
-                    <!-- <md-datetime-picker></md-datetime-picker> -->
+                    <md-datetime-picker @onDatetimePickerChange="${event=>console.log(event.detail.data)}" value="2026-08-15T07:36" variant="docked"></md-datetime-picker>
+                </md-grid-column>
+                <md-grid-column expanded="6">
+                    <md-datetime-picker @onDatetimePickerChange="${event=>console.log(event.detail.data)}" value="2026-08-15T07:36" variant="docked" view="years"></md-datetime-picker>
+                </md-grid-column>
+                <md-grid-column expanded="6">
+                    <md-datetime-picker @onDatetimePickerChange="${event=>console.log(event.detail.data)}" value="2026-08-15T07:36" variant="docked" view="months"></md-datetime-picker>
+                </md-grid-column>
+
+                <!-- modal -->
+                <md-grid-column expanded="6">
+                    <md-datetime-picker @onDatetimePickerChange="${event=>console.log(event.detail.data)}" value="2026-08-15T07:36" variant="modal"></md-datetime-picker>
+                </md-grid-column>
+                <md-grid-column expanded="6">
+                    <md-datetime-picker @onDatetimePickerChange="${event=>console.log(event.detail.data)}" value="2026-08-15T07:36" variant="modal" view="years"></md-datetime-picker>
+                </md-grid-column>
+                <md-grid-column expanded="6">
+                    <md-datetime-picker @onDatetimePickerChange="${event=>console.log(event.detail.data)}" value="2026-08-15T07:36" variant="modal" view="months"></md-datetime-picker>
+                </md-grid-column>
+
+                <!-- modal-input -->
+                <md-grid-column expanded="6">
+                    <md-datetime-picker @onDatetimePickerChange="${event=>console.log(event.detail.data)}" value="2026-08-15T07:36" variant="modal-input" view="nothing"></md-datetime-picker>
+                </md-grid-column>
+
+                <!-- dial -->
+                <md-grid-column expanded="6">
+                    <md-datetime-picker @onDatetimePickerChange="${event=>console.log(event.detail.data)}" value="2026-08-15T07:36" variant="dial" view="hours"></md-datetime-picker>
+                </md-grid-column>
+                <md-grid-column expanded="6">
+                    <md-datetime-picker @onDatetimePickerChange="${event=>console.log(event.detail.data)}" value="2026-08-15T07:36" variant="dial" view="minutes"></md-datetime-picker>
+                </md-grid-column>
+                <md-grid-column expanded="6">
+                    <md-datetime-picker @onDatetimePickerChange="${event=>console.log(event.detail.data)}" value="2026-08-15T07:36" variant="dial" view="hours" hour12></md-datetime-picker>
+                </md-grid-column>
+
+                <!-- input -->
+                <md-grid-column expanded="6">
+                    <md-datetime-picker @onDatetimePickerChange="${event=>console.log(event.detail.data)}" value="2026-08-15T07:36" variant="input" view="nothing"></md-datetime-picker>
                 </md-grid-column>
 
             </md-grid>

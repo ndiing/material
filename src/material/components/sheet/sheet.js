@@ -30,12 +30,12 @@ class MdSheet extends MdLayoutItem {
                 ></md-sheet-header>
             `:nothing}
             ${this.inner||this.buttons?.length?html`
-                <md-sheet-body>
-                    <md-sheet-main>${this.inner}</md-sheet-main>
+                ${this.inner?html`<md-sheet-body>${this.inner}</md-sheet-body>`:nothing}
+                ${this.buttons?.length?html`
                     <md-sheet-footer 
                         .buttons="${ifDefined(this.buttons)}"
                     ></md-sheet-footer>
-                </md-sheet-body>
+                `:nothing}
             `:nothing}
         `
     }

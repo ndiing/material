@@ -52,6 +52,27 @@ src\demo\demo.scss
     padding: 0 16px;
 }
 
+.test {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    background-color: #000;
+    color: #fff;
+    position: relative;
+    z-index: unset;
+    &::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        width: 48px;
+        height: 48px;
+        background-color: #fff;
+    }
+}
+
 ```
 ## src\material
 
@@ -59,26 +80,26 @@ src\demo\demo.scss
 src\material\material.js
 
 ```js
-// import "./core/router.js";
-// import "./core/observer.js";
-// import "./core/breakpoint-observer.js";
-// import "./core/scheme-observer.js";
-// import "./core/orientation-observer.js";
-// import "./core/theme.js";
-// import "./core/localization.js";
-// import "./core/store.js";
-// import "./core/query-builder.js";
-// import "./core/positioner.js";
-// import "./core/task-queue.js";
-// import "./core/date-formatter.js";
-// import "./core/template.js";
+import "./core/router.js";
+import "./core/observer.js";
+import "./core/breakpoint-observer.js";
+import "./core/scheme-observer.js";
+import "./core/orientation-observer.js";
+import "./core/theme.js";
+import "./core/localization.js";
+import "./core/store.js";
+import "./core/query-builder.js";
+import "./core/positioner.js";
+import "./core/task-queue.js";
+import "./core/date-formatter.js";
+import "./core/template.js";
 
-// import "./base/element.js";
-// import "./base/list.js";
-// import "./base/datetime-picker.js";
+import "./base/element.js";
+import "./base/list.js";
+import "./base/datetime-picker.js";
 
-// import "./controller/virtual-scroll.js";
-// import "./controller/ripple.js";
+import "./controller/virtual-scroll.js";
+import "./controller/ripple.js";
 
 import "./components/grid/grid-column.js";
 import "./components/grid/grid.js";
@@ -98,19 +119,16 @@ import "./components/split-button/split-button.js";
 
 import "./components/card/card-header.js";
 import "./components/card/card-body.js";
-import "./components/card/card-main.js";
 import "./components/card/card-footer.js";
 import "./components/card/card.js";
 
 import "./components/dialog/dialog-header.js";
 import "./components/dialog/dialog-body.js";
-import "./components/dialog/dialog-main.js";
 import "./components/dialog/dialog-footer.js";
 import "./components/dialog/dialog.js";
 
 import "./components/sheet/sheet-header.js";
 import "./components/sheet/sheet-body.js";
-import "./components/sheet/sheet-main.js";
 import "./components/sheet/sheet-footer.js";
 import "./components/sheet/sheet.js";
 
@@ -148,7 +166,7 @@ import "./components/datetime-picker/datetime-picker.js";
 src\material\material.scss
 
 ```scss
-// @use "./shared/mixins.scss";
+@use "./shared/mixins.scss";
 
 @use "./base/tokens.scss";
 @use "./base/animations.scss";

@@ -173,6 +173,8 @@ class MdTextField extends MdElement {
                     inputmode="${ifDefined(this.inputmode)}"
                     @focus="${this._handleTextFieldNativeFocus}"
                     @input="${this._handleTextFieldNativeInput}"
+                    @change="${this._handleTextFieldNativeChange}"
+                    @click="${this._handleTextFieldNativeClick}"
                     @blur="${this._handleTextFieldNativeBlur}"
                     @invalid="${this._handleTextFieldNativeInvalid}"
                 >
@@ -204,10 +206,12 @@ class MdTextField extends MdElement {
                 ${this.renderContent()}
                 ${this.renderTrailing()}
             </div>
-            <div class="md-text-field__information">
-                ${this.supporting||this.validationMessage?html`<div class="md-text-field__supporting">${this.validationMessage||this.supporting}</div>`:nothing}
-                ${(this.maxLength&&currentLength>0)?html`<div class="md-text-field__counter">${currentLength}/${this.maxLength}</div>`:nothing}
-            </div>
+            ${this.supporting||this.validationMessage||(this.maxLength&&currentLength>0)?html`
+                <div class="md-text-field__information">
+                    ${this.supporting||this.validationMessage?html`<div class="md-text-field__supporting">${this.validationMessage||this.supporting}</div>`:nothing}
+                    ${(this.maxLength&&currentLength>0)?html`<div class="md-text-field__counter">${currentLength}/${this.maxLength}</div>`:nothing}
+                </div>
+            `:nothing}
         `
     }
 
@@ -280,6 +284,22 @@ class MdTextField extends MdElement {
     }
 
     _handleTextFieldNativeInput(event) {
+        this._updateTextFieldNative();
+
+        this.emit("onTextFieldNativeInput", { event, element: this });
+    }
+
+    _handleTextFieldNativeChange(event) {
+        this._updateTextFieldNative();
+
+        this.emit("onTextFieldNativeChange", { event, element: this });
+    }
+
+    _handleTextFieldNativeClick(event) {
+        this.emit("onTextFieldNativeClick", { event, element: this });
+    }
+
+    _updateTextFieldNative() {
         const textFieldNative = this.textFieldNative.value;
         this.value = textFieldNative.value;
         this.classList.toggle(`md-text-field--populated`, Boolean(this.value));
@@ -287,8 +307,6 @@ class MdTextField extends MdElement {
         if (this.validateOnInput) {
             this.validate();
         }
-
-        this.emit("onTextFieldNativeInput", { event, element: this });
     }
 
     _handleTextFieldNativeInvalid(event) {

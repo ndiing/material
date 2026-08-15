@@ -36,12 +36,12 @@ class MdDialog extends MdElement {
                 ></md-dialog-header>
             `:nothing}
             ${this.inner||this.buttons?.length?html`
-                <md-dialog-body>
-                    <md-dialog-main>${this.inner}</md-dialog-main>
+                ${this.inner?html`<md-dialog-body>${this.inner}</md-dialog-body>`:nothing}
+                ${this.buttons?.length?html`
                     <md-dialog-footer 
                         .buttons="${ifDefined(this.buttons)}"
                     ></md-dialog-footer>
-                </md-dialog-body>
+                `:nothing}
             `:nothing}
         `
     }

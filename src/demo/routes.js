@@ -82,7 +82,7 @@ export const routes = [
             
             { path: "/components/datetime-picker", load: () => import("./components/datetime-picker.js").then((module) => module.default), children: [] },
 
-            // { path: "/components/test", load: () => import("./components/test.js").then((module) => module.default), children: [] },
+            { path: "/components/test", load: () => import("./components/test.js").then((module) => module.default), children: [] },
 
         ],
     },

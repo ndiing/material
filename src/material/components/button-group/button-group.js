@@ -37,7 +37,7 @@ class MdButtonGroup extends MdElement {
 
     /* prettier-ignore */
     renderComponent(component,properties){
-        const defaultProperties = {
+        const computedProperties = {
             variant: 'toggle',
             size: this.size,
             shape: this.shape,
@@ -46,8 +46,8 @@ class MdButtonGroup extends MdElement {
             selectOnToggle:false
         }
         return choose(component,[
-            ['icon-button', () => renderIconButton({ classMap: { "md-button-group__icon-button": true, ...properties.classMap }, ...defaultProperties,...properties, onIconButtonClick:this._handleButtonGroupItemClick })],
-            ['button', () => renderButton({ classMap: { "md-button-group__button": true, ...properties.classMap }, ...defaultProperties,...properties, onButtonClick:this._handleButtonGroupItemClick })],
+            ['icon-button', () => renderIconButton({ classMap: { "md-button-group__icon-button": true, ...properties.classMap },...properties, onIconButtonClick:this._handleButtonGroupItemClick, ...computedProperties })],
+            ['button', () => renderButton({ classMap: { "md-button-group__button": true, ...properties.classMap },...properties, onButtonClick:this._handleButtonGroupItemClick, ...computedProperties })],
         ],() => nothing)
     }
 
@@ -66,6 +66,18 @@ class MdButtonGroup extends MdElement {
         super.disconnectedCallback();
 
         this.classList.remove("md-button-group");
+    }
+
+    willUpdate(_changedProperties) {
+        super.willUpdate(_changedProperties);
+        if (_changedProperties.has("buttons")) {
+            this.selectedButtons.clear();
+            this.buttons.forEach((button) => {
+                if (button.selected) {
+                    this.selectedButtons.add(button.id);
+                }
+            });
+        }
     }
 
     updated(_changedProperties) {
@@ -108,12 +120,12 @@ class MdButtonGroup extends MdElement {
                 this.selectedButtons.add(data.id);
             }
 
-            this.emit("onButtonGroupItemSelection", { event, element: this });
+            this.emit("onButtonGroupItemSelection", { event, element: this, data });
         } else if (this.singleSelect) {
             this.selectedButtons.clear();
             this.selectedButtons.add(data.id);
 
-            this.emit("onButtonGroupItemSelection", { event, element: this });
+            this.emit("onButtonGroupItemSelection", { event, element: this, data });
         }
 
         this.requestUpdate();

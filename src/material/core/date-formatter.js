@@ -1,4 +1,4 @@
-import { parse, parseISO, format, getWeek, setWeek, isValid } from "date-fns";
+import { parse, parseISO, format, getISOWeek, setISOWeek, isValid } from "date-fns";
 
 const dateFormatter = {
     date: {
@@ -9,11 +9,11 @@ const dateFormatter = {
     week: {
         parse: (value) => {
             const match = value?.match(/^(\d{4})-W(\d{1,2})$/);
-            return match ? setWeek(new Date(parseInt(match[1]), 0, 4), parseInt(match[2]), { weekStartsOn: 1 }) : null;
+            return match ? setISOWeek(new Date(parseInt(match[1]), 0, 4), parseInt(match[2])) : null;
         },
         toString: (date) => {
             if (!date || !isValid(date)) return "";
-            return `${date.getFullYear()}-W${String(getWeek(date, { weekStartsOn: 1 })).padStart(2, "0")}`;
+            return `${date.getFullYear()}-W${String(getISOWeek(date)).padStart(2, "0")}`;
         },
         pattern: "yyyy-Www",
     },

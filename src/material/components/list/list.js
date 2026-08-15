@@ -121,14 +121,12 @@ class MdList extends MdListElement {
         this.classList.remove("md-list");
     }
 
-    update(changedProperties) {
-        super.update(changedProperties);
+    willUpdate(_changedProperties) {
+        super.willUpdate(_changedProperties);
 
-        if (changedProperties.has("_list")) {
+        if (_changedProperties.has("_list")) {
             if (!this.virtualScroll) {
-                queueMicrotask(() => {
-                    this._items = this._list;
-                });
+                this._items = this._list;
             }
         }
     }

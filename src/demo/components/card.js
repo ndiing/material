@@ -16,10 +16,8 @@ class DemoCard extends MdElement {
                         <md-grid-column expanded="4" medium="4" compact="4">
                             <md-card color="elevated">
                                 <md-card-header>header</md-card-header>
-                                <md-card-body>
-                                    <md-card-main>main</md-card-main>
-                                    <md-card-footer>footer</md-card-footer>
-                                </md-card-body>
+                                <md-card-body>main</md-card-body>
+                                <md-card-footer>footer</md-card-footer>
                             </md-card>
                         </md-grid-column>
 
@@ -35,10 +33,8 @@ class DemoCard extends MdElement {
                         <md-grid-column expanded="4" medium="4" compact="4">
                             <md-card color="filled">
                                 <md-card-header>header</md-card-header>
-                                <md-card-body>
-                                    <md-card-main>main</md-card-main>
-                                    <md-card-footer>footer</md-card-footer>
-                                </md-card-body>
+                                <md-card-body>main</md-card-body>
+                                <md-card-footer>footer</md-card-footer>
                             </md-card>
                         </md-grid-column>
 
@@ -54,10 +50,8 @@ class DemoCard extends MdElement {
                         <md-grid-column expanded="4" medium="4" compact="4">
                             <md-card color="outlined">
                                 <md-card-header>header</md-card-header>
-                                <md-card-body>
-                                    <md-card-main>main</md-card-main>
-                                    <md-card-footer>footer</md-card-footer>
-                                </md-card-body>
+                                <md-card-body>main</md-card-body>
+                                <md-card-footer>footer</md-card-footer>
                             </md-card>
                         </md-grid-column>
 

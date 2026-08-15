@@ -1,23 +1,23 @@
-// import "./core/router.js";
-// import "./core/observer.js";
-// import "./core/breakpoint-observer.js";
-// import "./core/scheme-observer.js";
-// import "./core/orientation-observer.js";
-// import "./core/theme.js";
-// import "./core/localization.js";
-// import "./core/store.js";
-// import "./core/query-builder.js";
-// import "./core/positioner.js";
-// import "./core/task-queue.js";
-// import "./core/date-formatter.js";
-// import "./core/template.js";
+import "./core/router.js";
+import "./core/observer.js";
+import "./core/breakpoint-observer.js";
+import "./core/scheme-observer.js";
+import "./core/orientation-observer.js";
+import "./core/theme.js";
+import "./core/localization.js";
+import "./core/store.js";
+import "./core/query-builder.js";
+import "./core/positioner.js";
+import "./core/task-queue.js";
+import "./core/date-formatter.js";
+import "./core/template.js";
 
-// import "./base/element.js";
-// import "./base/list.js";
-// import "./base/datetime-picker.js";
+import "./base/element.js";
+import "./base/list.js";
+import "./base/datetime-picker.js";
 
-// import "./controller/virtual-scroll.js";
-// import "./controller/ripple.js";
+import "./controller/virtual-scroll.js";
+import "./controller/ripple.js";
 
 import "./components/grid/grid-column.js";
 import "./components/grid/grid.js";
@@ -37,19 +37,16 @@ import "./components/split-button/split-button.js";
 
 import "./components/card/card-header.js";
 import "./components/card/card-body.js";
-import "./components/card/card-main.js";
 import "./components/card/card-footer.js";
 import "./components/card/card.js";
 
 import "./components/dialog/dialog-header.js";
 import "./components/dialog/dialog-body.js";
-import "./components/dialog/dialog-main.js";
 import "./components/dialog/dialog-footer.js";
 import "./components/dialog/dialog.js";
 
 import "./components/sheet/sheet-header.js";
 import "./components/sheet/sheet-body.js";
-import "./components/sheet/sheet-main.js";
 import "./components/sheet/sheet-footer.js";
 import "./components/sheet/sheet.js";
 

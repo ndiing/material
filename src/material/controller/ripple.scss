@@ -1,6 +1,9 @@
 @use "../shared/mixins.scss";
 
 .md-ripple {
+    @include mixins.ripple-vars();
+}
+.md-ripple {
     @include mixins.ripple();
 }
 .md-ripple--bounded {

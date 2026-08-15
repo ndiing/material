@@ -20,7 +20,7 @@ class DemoButtonGroup extends MdElement {
                                 color="tonal"
                                 .buttons="${[
                                     {id:18,component:'icon-button',icon:'image',width:'narrow',},
-                                    {id:19,component:'icon-button',icon:'image',width:'default',},
+                                    {id:19,component:'icon-button',icon:'image',width:'default',selected:true},
                                     {id:20,component:'icon-button',icon:'image',width:'narrow',},
                                     {id:21,component:'icon-button',icon:'image',width:'wide',},
                                 ]}"
@@ -34,7 +34,7 @@ class DemoButtonGroup extends MdElement {
                                 color="outlined"
                                 .buttons="${[
                                     {id:22,component:'icon-button',icon:'image',width:'narrow',},
-                                    {id:23,component:'icon-button',icon:'image',width:'default',},
+                                    {id:23,component:'icon-button',icon:'image',width:'default',selected:true},
                                     {id:24,component:'icon-button',icon:'image',width:'narrow',},
                                     {id:25,component:'icon-button',icon:'image',width:'wide',},
                                 ]}"
@@ -48,7 +48,7 @@ class DemoButtonGroup extends MdElement {
                                 color="filled"
                                 .buttons="${[
                                     {id:26,component:'icon-button',icon:'image',width:'narrow',},
-                                    {id:27,component:'icon-button',icon:'image',width:'default',},
+                                    {id:27,component:'icon-button',icon:'image',width:'default',selected:true},
                                     {id:28,component:'icon-button',icon:'image',width:'narrow',},
                                     {id:29,component:'icon-button',icon:'image',width:'wide',},
                                 ]}"
@@ -62,7 +62,7 @@ class DemoButtonGroup extends MdElement {
                                 color="tonal"
                                 .buttons="${[
                                     {id:30,component:'icon-button',icon:'image',width:'narrow',},
-                                    {id:31,component:'icon-button',icon:'image',width:'default',},
+                                    {id:31,component:'icon-button',icon:'image',width:'default',selected:true},
                                     {id:32,component:'icon-button',icon:'image',width:'narrow',},
                                     {id:33,component:'icon-button',icon:'image',width:'wide',},
                                 ]}"
@@ -76,7 +76,7 @@ class DemoButtonGroup extends MdElement {
                                 color="filled"
                                 .buttons="${[
                                     {id:34,component:'icon-button',icon:'image',width:'narrow',},
-                                    {id:35,component:'icon-button',icon:'image',width:'default',},
+                                    {id:35,component:'icon-button',icon:'image',width:'default',selected:true},
                                     {id:36,component:'icon-button',icon:'image',width:'narrow',},
                                     {id:37,component:'icon-button',icon:'image',width:'wide',},
                                 ]}"
@@ -100,7 +100,7 @@ class DemoButtonGroup extends MdElement {
                                 shape="round"
                                 .buttons="${[
                                     {id:38,component:'button',icon:'image',label:'Label',},
-                                    {id:39,component:'button',icon:'image',label:'Label',},
+                                    {id:39,component:'button',icon:'image',label:'Label',selected:true},
                                     {id:40,component:'button',icon:'image',label:'Label',},
                                 ]}"
                             ></md-button-group>
@@ -114,7 +114,7 @@ class DemoButtonGroup extends MdElement {
                                 shape="round"
                                 .buttons="${[
                                     {id:41,component:'button',icon:'image',label:'Label',},
-                                    {id:42,component:'button',icon:'image',label:'Label',},
+                                    {id:42,component:'button',icon:'image',label:'Label',selected:true},
                                     {id:43,component:'button',icon:'image',label:'Label',},
                                 ]}"
                             ></md-button-group>
@@ -128,7 +128,7 @@ class DemoButtonGroup extends MdElement {
                                 shape="round"
                                 .buttons="${[
                                     {id:44,component:'button',icon:'image',label:'Label',},
-                                    {id:45,component:'button',icon:'image',label:'Label',},
+                                    {id:45,component:'button',icon:'image',label:'Label',selected:true},
                                     {id:46,component:'button',icon:'image',label:'Label',},
                                 ]}"
                             ></md-button-group>
@@ -142,7 +142,7 @@ class DemoButtonGroup extends MdElement {
                                 shape="round"
                                 .buttons="${[
                                     {id:47,component:'button',icon:'image',label:'Label',},
-                                    {id:48,component:'button',icon:'image',label:'Label',},
+                                    {id:48,component:'button',icon:'image',label:'Label',selected:true},
                                     {id:49,component:'button',icon:'image',label:'Label',},
                                 ]}"
                             ></md-button-group>
@@ -156,7 +156,7 @@ class DemoButtonGroup extends MdElement {
                                 shape="round"
                                 .buttons="${[
                                     {id:0,component:'button',icon:'image',label:'Label',},
-                                    {id:1,component:'button',icon:'image',label:'Label',},
+                                    {id:1,component:'button',icon:'image',label:'Label',selected:true},
                                     {id:2,component:'button',icon:'image',label:'Label',},
                                 ]}"
                             ></md-button-group>
@@ -179,7 +179,7 @@ class DemoButtonGroup extends MdElement {
                                 shape="square"
                                 .buttons="${[
                                     {id:3,component:'button',icon:'image',label:'Label',},
-                                    {id:4,component:'button',icon:'image',label:'Label',},
+                                    {id:4,component:'button',icon:'image',label:'Label',selected:true},
                                     {id:5,component:'button',icon:'image',label:'Label',},
                                 ]}"
                             ></md-button-group>
@@ -193,7 +193,7 @@ class DemoButtonGroup extends MdElement {
                                 shape="square"
                                 .buttons="${[
                                     {id:6,component:'button',icon:'image',label:'Label',},
-                                    {id:7,component:'button',icon:'image',label:'Label',},
+                                    {id:7,component:'button',icon:'image',label:'Label',selected:true},
                                     {id:8,component:'button',icon:'image',label:'Label',},
                                 ]}"
                             ></md-button-group>
@@ -207,7 +207,7 @@ class DemoButtonGroup extends MdElement {
                                 shape="square"
                                 .buttons="${[
                                     {id:9,component:'button',icon:'image',label:'Label',},
-                                    {id:10,component:'button',icon:'image',label:'Label',},
+                                    {id:10,component:'button',icon:'image',label:'Label',selected:true},
                                     {id:11,component:'button',icon:'image',label:'Label',},
                                 ]}"
                             ></md-button-group>
@@ -221,7 +221,7 @@ class DemoButtonGroup extends MdElement {
                                 shape="square"
                                 .buttons="${[
                                     {id:12,component:'button',icon:'image',label:'Label',},
-                                    {id:13,component:'button',icon:'image',label:'Label',},
+                                    {id:13,component:'button',icon:'image',label:'Label',selected:true},
                                     {id:14,component:'button',icon:'image',label:'Label',},
                                 ]}"
                             ></md-button-group>
@@ -235,7 +235,7 @@ class DemoButtonGroup extends MdElement {
                                 shape="square"
                                 .buttons="${[
                                     {id:15,component:'button',icon:'image',label:'Label',},
-                                    {id:16,component:'button',icon:'image',label:'Label',},
+                                    {id:16,component:'button',icon:'image',label:'Label',selected:true},
                                     {id:17,component:'button',icon:'image',label:'Label',},
                                 ]}"
                             ></md-button-group>
@@ -259,7 +259,7 @@ class DemoButtonGroup extends MdElement {
                                 shape="round"
                                 .buttons="${[
                                     {id:38,component:'button',icon:'image',label:'Label',},
-                                    {id:39,component:'button',icon:'image',label:'Label',},
+                                    {id:39,component:'button',icon:'image',label:'Label',selected:true},
                                     {id:40,component:'button',icon:'image',label:'Label',},
                                 ]}"
                             ></md-button-group>
@@ -274,7 +274,7 @@ class DemoButtonGroup extends MdElement {
                                 shape="round"
                                 .buttons="${[
                                     {id:41,component:'button',icon:'image',label:'Label',},
-                                    {id:42,component:'button',icon:'image',label:'Label',},
+                                    {id:42,component:'button',icon:'image',label:'Label',selected:true},
                                     {id:43,component:'button',icon:'image',label:'Label',},
                                 ]}"
                             ></md-button-group>
@@ -289,7 +289,7 @@ class DemoButtonGroup extends MdElement {
                                 shape="round"
                                 .buttons="${[
                                     {id:44,component:'button',icon:'image',label:'Label',},
-                                    {id:45,component:'button',icon:'image',label:'Label',},
+                                    {id:45,component:'button',icon:'image',label:'Label',selected:true},
                                     {id:46,component:'button',icon:'image',label:'Label',},
                                 ]}"
                             ></md-button-group>
@@ -304,7 +304,7 @@ class DemoButtonGroup extends MdElement {
                                 shape="round"
                                 .buttons="${[
                                     {id:47,component:'button',icon:'image',label:'Label',},
-                                    {id:48,component:'button',icon:'image',label:'Label',},
+                                    {id:48,component:'button',icon:'image',label:'Label',selected:true},
                                     {id:49,component:'button',icon:'image',label:'Label',},
                                 ]}"
                             ></md-button-group>
@@ -319,7 +319,7 @@ class DemoButtonGroup extends MdElement {
                                 shape="round"
                                 .buttons="${[
                                     {id:0,component:'button',icon:'image',label:'Label',},
-                                    {id:1,component:'button',icon:'image',label:'Label',},
+                                    {id:1,component:'button',icon:'image',label:'Label',selected:true},
                                     {id:2,component:'button',icon:'image',label:'Label',},
                                 ]}"
                             ></md-button-group>
@@ -343,7 +343,7 @@ class DemoButtonGroup extends MdElement {
                                 shape="square"
                                 .buttons="${[
                                     {id:3,component:'button',icon:'image',label:'Label',},
-                                    {id:4,component:'button',icon:'image',label:'Label',},
+                                    {id:4,component:'button',icon:'image',label:'Label',selected:true},
                                     {id:5,component:'button',icon:'image',label:'Label',},
                                 ]}"
                             ></md-button-group>
@@ -358,7 +358,7 @@ class DemoButtonGroup extends MdElement {
                                 shape="square"
                                 .buttons="${[
                                     {id:6,component:'button',icon:'image',label:'Label',},
-                                    {id:7,component:'button',icon:'image',label:'Label',},
+                                    {id:7,component:'button',icon:'image',label:'Label',selected:true},
                                     {id:8,component:'button',icon:'image',label:'Label',},
                                 ]}"
                             ></md-button-group>
@@ -373,7 +373,7 @@ class DemoButtonGroup extends MdElement {
                                 shape="square"
                                 .buttons="${[
                                     {id:9,component:'button',icon:'image',label:'Label',},
-                                    {id:10,component:'button',icon:'image',label:'Label',},
+                                    {id:10,component:'button',icon:'image',label:'Label',selected:true},
                                     {id:11,component:'button',icon:'image',label:'Label',},
                                 ]}"
                             ></md-button-group>
@@ -388,7 +388,7 @@ class DemoButtonGroup extends MdElement {
                                 shape="square"
                                 .buttons="${[
                                     {id:12,component:'button',icon:'image',label:'Label',},
-                                    {id:13,component:'button',icon:'image',label:'Label',},
+                                    {id:13,component:'button',icon:'image',label:'Label',selected:true},
                                     {id:14,component:'button',icon:'image',label:'Label',},
                                 ]}"
                             ></md-button-group>
@@ -403,7 +403,7 @@ class DemoButtonGroup extends MdElement {
                                 shape="square"
                                 .buttons="${[
                                     {id:15,component:'button',icon:'image',label:'Label',},
-                                    {id:16,component:'button',icon:'image',label:'Label',},
+                                    {id:16,component:'button',icon:'image',label:'Label',selected:true},
                                     {id:17,component:'button',icon:'image',label:'Label',},
                                 ]}"
                             ></md-button-group>

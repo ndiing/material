@@ -66,6 +66,8 @@
     transition-duration: var(--md-sys-motion-expressive-fast-spatial-duration);
     transition-timing-function: cubic-bezier(var(--md-sys-motion-expressive-fast-spatial));
 
+    @include mixins.initialize();
+
     .md-button__icon {
         width: var(--md-comp-button-icon-width);
         height: var(--md-comp-button-icon-height);
