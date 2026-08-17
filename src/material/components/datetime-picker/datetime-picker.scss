@@ -92,6 +92,10 @@
             letter-spacing: var(--md-sys-typescale-display-medium-tracking);
             line-height: var(--md-sys-typescale-display-medium-line-height);
             text-align: center;
+
+            &::selection {
+                background-color: transparent;
+            }
         }
 
         &.md-datetime-picker__text-field--active,

@@ -18,9 +18,13 @@ class MdDatetimePicker extends MdDatetimePickerElement {
         value: { type: String },
     };
 
+    dateInputRef = createRef();
     hourInputRef = createRef();
     minuteInputRef = createRef();
 
+    get dateInput() {
+        return this.dateInputRef.value.textFieldNative.value;
+    }
     get hourInput() {
         return this.hourInputRef.value.textFieldNative.value;
     }
@@ -287,6 +291,7 @@ class MdDatetimePicker extends MdDatetimePickerElement {
         return html`
             <div class="md-datetime-picker__toolbar">
                 <md-text-field 
+                    ${ref(this.dateInput)}
                     class="md-datetime-picker__text-field"
                     .type="${"date"}"
                     .label="${"Date"}"
@@ -328,7 +333,7 @@ class MdDatetimePicker extends MdDatetimePickerElement {
                         .label="${ifDefined(this.variant==="input"?"Hour":undefined)}"
                         @onTextFieldNativeClick="${this._handleDatetimePickerHourFocus}"
                         @onTextFieldNativeFocus="${this._handleDatetimePickerHourFocus}"
-                        @onTextFieldNativeInput="${this._formatTimeInput({threshold: this.hour12 ? 1 : 2,max: this.hour12 ? 12 : 23,digit: 2,callback: this._handleDatetimePickerHourInput,})}"
+                        @onTextFieldNativeInput="${this._formatTimeInput({type:'hour',threshold: this.hour12 ? 1 : 2,max: this.hour12 ? 12 : 23,digit: 2,callback: this._handleDatetimePickerHourInput,})}"
                     ></md-text-field>
                     <div class="md-datetime-picker__separator">:</div>
                     <md-text-field 
@@ -341,7 +346,7 @@ class MdDatetimePicker extends MdDatetimePickerElement {
                         .label="${ifDefined(this.variant==="input"?"Minute":undefined)}"
                         @onTextFieldNativeClick="${this._handleDatetimePickerMinuteFocus}"
                         @onTextFieldNativeFocus="${this._handleDatetimePickerMinuteFocus}"
-                        @onTextFieldNativeInput="${this._formatTimeInput({threshold: 5,max: 59,digit: 2,callback: this._handleDatetimePickerMinuteInput,})}"
+                        @onTextFieldNativeInput="${this._formatTimeInput({type:'minute',threshold: 5,max: 59,digit: 2,callback: this._handleDatetimePickerMinuteInput,})}"
                     ></md-text-field>
                 </div>
                 ${this.hour12?html`
@@ -509,8 +514,6 @@ class MdDatetimePicker extends MdDatetimePickerElement {
 
         this.setHour(cell.hour, this.hour12 && this.info.ampm);
 
-        this.view = "calendar";
-
         this._emitChange();
     }
     _handleDatetimePickerMinuteSelection(event) {
@@ -617,22 +620,23 @@ class MdDatetimePicker extends MdDatetimePickerElement {
     }
 
     _handleDatetimePickerDateInput(event) {}
-    _formatTimeInput({ threshold, max, digit, callback } = {}) {
+    _formatTimeInput({ key, threshold, max, digit, callback } = {}) {
         return ({ detail: { event } } = {}) => {
             const input = event.currentTarget;
             const data = (event.data || "").replace(/\D/, "");
-            this.hourBuffer = this.hourBuffer || "";
-            if (this.hourBuffer.length === 0 && Number(data) > threshold) {
-                this.hourBuffer += "0";
+            const key = `_${type}Buffer`;
+            this[key] = this[key] || "";
+            if (this[key].length === 0 && Number(data) > threshold) {
+                this[key] += "0";
             }
-            this.hourBuffer += data;
-            const value = Math.min(Number(this.hourBuffer), max);
+            this[key] += data;
+            const value = Math.min(Number(this[key]), max);
             const formatted = String(value).padStart(2, "0");
             window.requestAnimationFrame(() => {
                 input.setRangeText(formatted, 0, formatted.length, "select");
             });
-            if (this.hourBuffer.length === digit) {
-                this.hourBuffer = "";
+            if (this[key].length === digit) {
+                this[key] = "";
                 callback(value);
             }
         };

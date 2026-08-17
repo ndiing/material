@@ -1,0 +1,21 @@
+.md-input-datetime {
+    display: inline-flex;
+    background-color: #fff;
+    color: #000;
+
+    input {
+        background-color: transparent;
+        color: inherit;
+        outline: none;
+        field-sizing: content;
+    }
+
+    &:has(input:focus) {
+        outline: 2px solid var(--md-sys-color-outline);
+        outline-offset: -2px;
+    }
+}
+
+.md-input-datetime__separator {
+    white-space: pre;
+}

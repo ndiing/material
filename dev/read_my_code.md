@@ -1,6 +1,7 @@
 ## src\demo
 
 ### demo
+
 src\demo\demo.js
 
 ```js
@@ -11,9 +12,10 @@ const router = new Router(routes, {
     historyApiFallback: true,
 });
 router.listen();
-
 ```
+
 ### demo
+
 src\demo\demo.scss
 
 ```scss
@@ -51,32 +53,12 @@ src\demo\demo.scss
     height: 56px;
     padding: 0 16px;
 }
-
-.test {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 40px;
-    background-color: #000;
-    color: #fff;
-    position: relative;
-    z-index: unset;
-    &::before {
-        content: "";
-        position: absolute;
-        z-index: -1;
-        width: 48px;
-        height: 48px;
-        background-color: #fff;
-    }
-}
-
 ```
+
 ## src\material
 
 ### material
+
 src\material\material.js
 
 ```js
@@ -100,6 +82,11 @@ import "./base/datetime-picker.js";
 
 import "./controller/virtual-scroll.js";
 import "./controller/ripple.js";
+
+import "./components/input/input-number.js";
+import "./components/input/input-segment.js";
+import "./components/input/input-enum.js";
+import "./components/input/input-datetime.js";
 
 import "./components/grid/grid-column.js";
 import "./components/grid/grid.js";
@@ -160,9 +147,10 @@ import "./components/datetime-picker/datetime-picker.js";
 // import "./service/snackbar.js";
 
 // import "./components/test/test.js";
-
 ```
+
 ### material
+
 src\material\material.scss
 
 ```scss
@@ -175,6 +163,8 @@ src\material\material.scss
 
 @use "./controller/virtual-scroll.scss";
 @use "./controller/ripple.scss";
+
+@use "./components/input/input.scss";
 
 @use "./components/grid/grid.scss";
 @use "./components/scrim/scrim.scss";
@@ -218,5 +208,4 @@ src\material\material.scss
 @use "./components/datetime-picker/datetime-picker.scss";
 
 // @use "./components/test/test.scss";
-
 ```

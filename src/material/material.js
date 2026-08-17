@@ -19,6 +19,11 @@ import "./base/datetime-picker.js";
 import "./controller/virtual-scroll.js";
 import "./controller/ripple.js";
 
+import "./components/input/input-number.js";
+import "./components/input/input-segment.js";
+import "./components/input/input-enum.js";
+import "./components/input/input-datetime.js";
+
 import "./components/grid/grid-column.js";
 import "./components/grid/grid.js";
 import "./components/scrim/scrim.js";

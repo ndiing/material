@@ -5,6 +5,8 @@ import { BreakpointObserver } from "../../material/core/breakpoint-observer.js";
 const FOCUSABLE = 'button:not([tabindex="-1"]):not([disabled]),input:not([tabindex="-1"]):not([disabled]),select:not([tabindex="-1"]):not([disabled]),textarea:not([tabindex="-1"]):not([disabled]),[tabindex]:not([tabindex="-1"]):not([disabled])';
 
 function initFocusTrap() {
+    let lastFocusedIndex = 0;
+
     document.body.addEventListener("keydown", (event) => {
         if (event.key !== "Tab") return;
 
@@ -14,10 +16,13 @@ function initFocusTrap() {
         if (focusable.length === 0) return;
 
         const currentIndex = focusable.indexOf(document.activeElement);
-        const nextIndex = event.shiftKey ? (currentIndex - 1 + focusable.length) % focusable.length : (currentIndex + 1) % focusable.length;
+        const activeIndex = currentIndex !== -1 ? currentIndex : lastFocusedIndex;
+
+        const nextIndex = event.shiftKey ? (activeIndex - 1 + focusable.length) % focusable.length : (activeIndex + 1) % focusable.length;
 
         event.preventDefault();
         focusable[nextIndex]?.focus();
+        lastFocusedIndex = nextIndex;
     });
 }
 
