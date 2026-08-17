@@ -45,7 +45,7 @@ class MdInputSegment extends MdElement {
                 @click="${this._handleClick}"
                 @focus="${this._handleFocus}"
                 @input="${this._handleInput}"
-                @change="${this._handleChange}"
+                @blur="${this._handleBlur}"
             >
         `
     }
@@ -162,7 +162,13 @@ class MdInputSegment extends MdElement {
         }
     }
 
-    _handleChange(event) {
+    _handleBlur(event) {
+        this.autoCorrect();
+
+        this.emit("onInputSegmentBlur", { event, element: this });
+    }
+
+    autoCorrect() {
         const input = this.native.value;
         const number = Number(input.value);
 
@@ -172,11 +178,13 @@ class MdInputSegment extends MdElement {
             result = this._clampNumber(result);
             result = this._formatNumber(result);
         }
+        
 
-        input.setRangeText(result, 0, this.maxLength, "select");
+        console.log(number,result,this.max)
+
+        // input.setRangeText(result, 0, this.maxLength, "select");
+        input.value = result;
         this.value = result;
-
-        this.emit("onInputSegmentChange", { event, element: this });
     }
 }
 

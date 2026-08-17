@@ -38,7 +38,7 @@ class MdInputNumber extends MdElement {
                 .value="${ifDefined(this.value)}"
                 @keydown="${this._handleKeydown}"
                 @input="${this._handleInput}"
-                @change="${this._handleChange}"
+                @blur="${this._handleBlur}"
             >
         `
     }
@@ -123,7 +123,13 @@ class MdInputNumber extends MdElement {
         this.emit("onInputNumberInput", { event, element: this });
     }
 
-    _handleChange(event) {
+    _handleBlur(event) {
+        this.autoCorrect();
+
+        this.emit("onInputNumberBlur", { event, element: this });
+    }
+
+    autoCorrect() {
         const input = this.native.value;
         const value = input.value;
         const number = Number(value);
@@ -137,8 +143,6 @@ class MdInputNumber extends MdElement {
 
         this.value = result;
         input.value = result;
-
-        this.emit("onInputNumberChange", { event, element: this });
     }
 }
 

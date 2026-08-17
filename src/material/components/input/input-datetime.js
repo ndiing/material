@@ -107,8 +107,24 @@ class MdInputDatetime extends MdElement {
 
         const date = this.value ? parse(this.value, this.formats[this.type].forValue, new Date()) : new Date();
 
-        const year = this._getRef("yyyy").value?.value ? Number(this._getRef("yyyy").value.value) : date.getFullYear();
-        const month = this._getRef("MM").value?.value ? Number(this._getRef("MM").value.value) : date.getMonth() + 1;
+        let year = date.getFullYear();
+        let month = date.getMonth() + 1;
+
+        const yearRef = this._getRef("yyyy").value;
+        if (yearRef?.value) {
+            const yearNumber = Number(yearRef.value);
+            if (!isNaN(yearNumber)) {
+                year = yearNumber;
+            }
+        }
+
+        const monthRef = this._getRef("MM").value;
+        if (monthRef?.value) {
+            const monthNumber = Number(monthRef.value);
+            if (!isNaN(monthNumber)) {
+                month = monthNumber;
+            }
+        }
 
         if (this.value) {
             config.value = format(date, token);
@@ -152,7 +168,7 @@ class MdInputDatetime extends MdElement {
                 .startValue="${ifDefined(params.startValue)}"
                 @onInputSegmentKeydown="${this._handleInputDatetimeKeydown}"
                 @onInputSegmentInput="${this._handleInputDatetimeInput}"
-                @onInputSegmentChange="${this._handleInputDatetimeChange}"
+                @onInputSegmentBlur="${this._handleInputDatetimeBlur}"
             ></md-input-segment>
         `
     }
@@ -176,7 +192,7 @@ class MdInputDatetime extends MdElement {
                 .options="${ifDefined(params.options)}"
                 @onInputEnumKeydown="${this._handleInputDatetimeKeydown}"
                 @onInputEnumInput="${this._handleInputDatetimeInput}"
-                @onInputEnumChange="${this._handleInputDatetimeChange}"
+                @onInputEnumBlur="${this._handleInputDatetimeBlur}"
             ></md-input-enum>
         `
     }
@@ -301,7 +317,11 @@ class MdInputDatetime extends MdElement {
         this.value = value;
     }
 
-    _handleInputDatetimeChange(event) {}
+    _handleInputDatetimeBlur(event) {
+        this.tokens.forEach((token) => {
+            this._getRef(token).value.autoCorrect();
+        });
+    }
 }
 
 customElements.define("md-input-datetime", MdInputDatetime);

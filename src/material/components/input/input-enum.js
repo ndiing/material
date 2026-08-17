@@ -52,7 +52,7 @@ class MdInputEnum extends MdElement {
                 @click="${this._handleClick}"
                 @focus="${this._handleFocus}"
                 @input="${this._handleInput}"
-                @change="${this._handleChange}"
+                @blur="${this._handleBlur}"
             >
         `
     }
@@ -211,9 +211,13 @@ class MdInputEnum extends MdElement {
     }
 
     
-    _handleChange(event) {
-        this.emit("onInputEnumChange", { event, element: this });
+    _handleBlur(event) {
+        this.autoCorrect()
+
+        this.emit("onInputEnumBlur", { event, element: this });
     }
+
+    autoCorrect(){}
 
 }
 
