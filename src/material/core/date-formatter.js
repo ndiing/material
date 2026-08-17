@@ -15,7 +15,7 @@ const dateFormatter = {
             if (!date || !isValid(date)) return "";
             return `${date.getFullYear()}-W${String(getISOWeek(date)).padStart(2, "0")}`;
         },
-        pattern: "yyyy-Www",
+        pattern: "yyyy-'W'II",
     },
     month: {
         parse: (value) => (value ? parseISO(`${value}-01`) : null),

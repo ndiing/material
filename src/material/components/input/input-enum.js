@@ -14,6 +14,7 @@ class MdInputEnum extends MdElement {
         tabIndex: { type: Number },
         placeholder: { type: String },
         options: { type: Array },
+        selectedIndex: { type: Number },
     };
 
     native = createRef();
@@ -23,13 +24,17 @@ class MdInputEnum extends MdElement {
 
         this.internals = this.attachInternals();
 
-        this.defaultValue = "";
         this.buffer = "";
         this.filteredIndex = -1;
         this.filtered = [];
+
+        this.defaultValue = "";
+        this.defaultSelectedIndex = -1;
+
         this.min = 0;
         this.max = 0;
         this.placeholder = "";
+
         this.options = [];
         this.selectedIndex = -1;
     }
@@ -47,6 +52,7 @@ class MdInputEnum extends MdElement {
                 @click="${this._handleClick}"
                 @focus="${this._handleFocus}"
                 @input="${this._handleInput}"
+                @change="${this._handleChange}"
             >
         `
     }
@@ -57,13 +63,38 @@ class MdInputEnum extends MdElement {
         if (_changedProperties.has("options")) {
             this.max = this.options.length - 1;
         }
+
+        if (_changedProperties.has("selectedIndex")) {
+            if (this.selectedIndex !== -1) {
+                const option = this.options[this.selectedIndex];
+                this.value = option ? option.label : undefined;
+                this.selectedIndex = option ? this.selectedIndex : -1;
+            }
+        }
+
+        if (_changedProperties.has("value")) {
+            if (this.value !== undefined && this.value !== null) {
+                const selectedIndex = this.options.findIndex((option) => option.label.toLowerCase() === this.value.toLowerCase());
+                this.selectedIndex = selectedIndex !== -1 ? selectedIndex : -1;
+                const option = this.options[this.selectedIndex];
+                this.value = option ? this.value : undefined;
+            }
+        }
     }
 
     firstUpdated(_changedProperties) {
         super.firstUpdated(_changedProperties);
 
-        if (this.value !== undefined && this.value !== null) {
-            this.defaultValue = this.value;
+        if (_changedProperties.has("selectedIndex")) {
+            if (this.selectedIndex !== -1) {
+                this.defaultSelectedIndex = this.selectedIndex;
+            }
+        }
+
+        if (_changedProperties.has("value")) {
+            if (this.value !== undefined && this.value !== null) {
+                this.defaultValue = this.value;
+            }
         }
     }
 
@@ -72,6 +103,7 @@ class MdInputEnum extends MdElement {
 
         input.value = this.defaultValue || this.placeholder;
         this.value = this.defaultValue;
+        this.selectedIndex = this.defaultSelectedIndex;
     }
 
     _moveIndex(n) {
@@ -177,6 +209,12 @@ class MdInputEnum extends MdElement {
 
         this.emit("onInputEnumInput", { event, element: this });
     }
+
+    
+    _handleChange(event) {
+        this.emit("onInputEnumChange", { event, element: this });
+    }
+
 }
 
 customElements.define("md-input-enum", MdInputEnum);
