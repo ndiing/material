@@ -1,235 +1,183 @@
 import { html, nothing } from "lit";
 import { MdElement } from "../../base/element.js";
-import { createRef, ref } from "lit/directives/ref.js";
 import { choose } from "lit/directives/choose.js";
 import { classMap } from "lit/directives/class-map.js";
 import { styleMap } from "lit/directives/style-map.js";
 import { ifDefined } from "lit/directives/if-defined.js";
-import { format, getISOWeeksInYear, parse } from "date-fns";
+import { ref } from "lit/directives/ref.js";
+import { format, getISOWeeksInYear, isValid, parse } from "date-fns";
 
 class MdInputDatetime extends MdElement {
     static properties = {
         type: { type: String },
         value: { type: String },
+        placeholder: { type: String },
+        format: { type: String },
+        min: { type: String },
+        max: { type: String },
+        year: { type: Number, state: true },
+        month: { type: Number, state: true },
     };
 
-    placeholderRegex = /(MMMM|yyyy|HH|hh|mm|dd|MM|a|II|-{2,})|([^MMMMyyyyHHhhmmaMMddII-]+)/g;
-    partRegex = /(MMMM|yyyy|HH|hh|mm|dd|MM|a|II)|([^MMMMyyyyHHhhmmaMMddII]+)/g;
-    tokenRegex = /(MMMM|yyyy|HH|hh|mm|dd|MM|a|II)/g;
+    partRegex = /(yyyy|RRRR|MMMM|mm|MM|II|HH|hh|dd|a|-{1,})|([^yyyyRRRRMMMMmmMMIIHHhhdda-]+)/g;
+    tokenRegex = /(yyyy|RRRR|MMMM|mm|MM|II|HH|hh|dd|a)/g;
+    escapeRegex = /([^yyyyRRRRMMMMmmMMIIHHhhdda]+)/g;
 
-    formats = {
+    types = {
+        "datetime-local": {
+            placeholder: "mm/dd/yyyy --:--",
+            format: "MM/dd/yyyy HH:mm",
+            value: "yyyy-MM-dd'T'HH:mm",
+        },
         date: {
             placeholder: "mm/dd/yyyy",
-            template: "MM/dd/yyyy",
-            fromTemplate: "MM/dd/yyyy",
-            forValue: "yyyy-MM-dd",
-        },
-        week: {
-            placeholder: "Week --, ----",
-            template: "Week II, yyyy",
-            fromTemplate: "'Week' II, RRRR",
-            forValue: "RRRR-'W'II",
-        },
-        month: {
-            placeholder: "--------- ----",
-            template: "MMMM yyyy",
-            fromTemplate: "MMMM yyyy",
-            forValue: "yyyy-MM",
+            format: "MM/dd/yyyy",
+            value: "yyyy-MM-dd",
         },
         time: {
             placeholder: "--:--",
-            template: "HH:mm",
-            fromTemplate: "HH:mm",
-            forValue: "HH:mm",
+            format: "HH:mm",
+            value: "HH:mm",
         },
-        "datetime-local": {
-            placeholder: "mm/dd/yyyy --:--",
-            template: "MM/dd/yyyy HH:mm",
-            fromTemplate: "MM/dd/yyyy HH:mm",
-            forValue: "yyyy-MM-dd'T'HH:mm",
+        week: {
+            placeholder: "Week --, ----",
+            format: "Week II, RRRR",
+            value: "RRRR-'W'II",
+        },
+        month: {
+            placeholder: "--------- ----",
+            format: "MMMM yyyy",
+            value: "yyyy-MM",
         },
     };
 
-    configs = {
-        dd: { component: "input-segment", min: 1, max: 31, threshold: 3, maxLength: 2, placeholder: "dd" },
-        MM: { component: "input-segment", min: 1, max: 12, threshold: 1, maxLength: 2, placeholder: "mm" },
-        yyyy: { component: "input-segment", min: 1000, max: 9999, startValue: 2026, maxLength: 4, placeholder: "yyyy" },
-        HH: { component: "input-segment", min: 0, max: 23, threshold: 2, maxLength: 2, placeholder: "--" },
-        hh: { component: "input-segment", min: 1, max: 12, threshold: 1, maxLength: 2, placeholder: "--" },
-        mm: { component: "input-segment", min: 0, max: 59, threshold: 5, maxLength: 2, placeholder: "--" },
-        II: { component: "input-segment", min: 1, max: 53, threshold: 5, maxLength: 2, placeholder: "--" },
-        a: { component: "input-enum", options: [], placeholder: "--" },
-        MMMM: { component: "input-enum", options: [], placeholder: "---------" },
+    props = {
+        yyyy: { component: "input-segment", min: 1000, max: 9999, maxLength: 4, startValue: 2026, clampOnInput: false, autoFocusNextOnComplete: true },
+        RRRR: { component: "input-segment", min: 1000, max: 9999, maxLength: 4, startValue: 2026, clampOnInput: false, autoFocusNextOnComplete: true },
+        II: { component: "input-segment", min: 1, max: 53, threshold: 5, maxLength: 2, autoFocusNextOnComplete: true },
+        MMMM: { component: "input-enum", options: [], autoFocusNextOnComplete: false },
+        MM: { component: "input-segment", min: 1, max: 12, threshold: 1, maxLength: 2, autoFocusNextOnComplete: true },
+        dd: { component: "input-segment", min: 1, max: 31, threshold: 3, maxLength: 2, autoFocusNextOnComplete: true },
+        HH: { component: "input-segment", min: 0, max: 23, threshold: 2, maxLength: 2, autoFocusNextOnComplete: true },
+        hh: { component: "input-segment", min: 1, max: 12, threshold: 1, maxLength: 2, autoFocusNextOnComplete: true },
+        mm: { component: "input-segment", min: 0, max: 59, threshold: 5, maxLength: 2, autoFocusNextOnComplete: true },
+        a: { component: "input-enum", options: [], autoFocusNextOnComplete: false },
     };
 
     constructor() {
         super();
 
-        this._ref = {};
-
         this.type = "datetime-local";
+        this.value = "";
+        this.placeholder = null;
+        this.format = null;
+        this.min = null;
+        this.max = null;
 
-        this._setMonths();
-        this._setMeridiems();
-    }
+        this.date = new Date();
+        this.year = this.date.getFullYear();
+        this.month = this.date.getMonth();
 
-    _setMeridiems() {
-        this.meridiems = [
-            { value: 0, label: "AM" },
-            { value: 1, label: "PM" },
-        ];
-    }
-
-    _setMonths() {
-        const arr = [];
-        const current = new Date();
         const format = new Intl.DateTimeFormat(undefined, { month: "long" }).format;
+        const months = [];
         for (let i = 0; i < 12; i++) {
-            const date = new Date(current.getFullYear(), i);
-            const label = format(date);
-            arr.push({ value: i, label });
+            months.push(format(new Date(this.year, i)));
         }
-        this.months = arr;
-    }
-
-    _getRef(part) {
-        if (!this._ref[part]) {
-            this._ref[part] = createRef();
-        }
-        return this._ref[part];
-    }
-
-    _getConfig(token) {
-        if (!this.configs[token]) {
-            return;
-        }
-        const config = { ...this.configs[token] };
-
-        const date = this.value ? parse(this.value, this.formats[this.type].forValue, new Date()) : new Date();
-
-        let year = date.getFullYear();
-        let month = date.getMonth() + 1;
-
-        const yearRef = this._getRef("yyyy").value;
-        if (yearRef?.value) {
-            const yearNumber = Number(yearRef.value);
-            if (!isNaN(yearNumber)) {
-                year = yearNumber;
-            }
-        }
-
-        const monthRef = this._getRef("MM").value;
-        if (monthRef?.value) {
-            const monthNumber = Number(monthRef.value);
-            if (!isNaN(monthNumber)) {
-                month = monthNumber;
-            }
-        }
-
-        if (this.value) {
-            config.value = format(date, token);
-        }
-
-        if (token === "dd") {
-            config.max = 32 - new Date(year, month - 1, 32).getDate();
-            config.threshold = Math.floor(config.max / 10);
-        } else if (token === "yyyy") {
-            config.startValue = year;
-        } else if (token === "II") {
-            config.max = getISOWeeksInYear(new Date(year, 0));
-        } else if (token === "a") {
-            config.options = this.meridiems;
-        } else if (token === "MMMM") {
-            config.options = this.months;
-        }
-
-        return config;
+        this.setProperties("MMMM", "options", months);
+        this.setProperties("a", "options", ["AM", "PM"]);
     }
 
     /* prettier-ignore */
-    renderInputSegment(params = {}) {
-        return html`
-            <md-input-segment
-                ${ref(this._getRef(params['data-part']))}
-                .data="${params}"
-                data-index="${params['data-index']}"
-                data-part="${params['data-part']}"
-                class="${classMap(params.classMap ?? {})}"
-                style="${styleMap(params.styleMap ?? {})}"
-                .value="${ifDefined(params.value)}"
-                .tabIndex="${ifDefined(params.tabIndex)}"
-                .step="${ifDefined(params.step)}"
-                .min="${ifDefined(params.min)}"
-                .max="${ifDefined(params.max)}"
-                .maxLength="${ifDefined(params.maxLength)}"
-                .size="${ifDefined(params.size)}"
-                .threshold="${ifDefined(params.threshold)}"
-                .placeholder="${ifDefined(params.placeholder)}"
-                .startValue="${ifDefined(params.startValue)}"
-                @onInputSegmentKeydown="${this._handleInputDatetimeKeydown}"
-                @onInputSegmentInput="${this._handleInputDatetimeInput}"
-                @onInputSegmentBlur="${this._handleInputDatetimeBlur}"
-            ></md-input-segment>
-        `
-    }
-
-    /* prettier-ignore */
-    renderInputEnum(params = {}) {
+    renderInputEnum(properties = {}) {
         return html`
             <md-input-enum
-                ${ref(this._getRef(params['data-part']))}
-                .data="${params}"
-                data-index="${params['data-index']}"
-                data-part="${params['data-part']}"
-                class="${classMap(params.classMap ?? {})}"
-                style="${styleMap(params.styleMap ?? {})}"
-                .value="${ifDefined(params.value)}"
-                .tabIndex="${ifDefined(params.tabIndex)}"
-                .min="${ifDefined(params.min)}"
-                .max="${ifDefined(params.max)}"
-                .size="${ifDefined(params.size)}"
-                .placeholder="${ifDefined(params.placeholder)}"
-                .options="${ifDefined(params.options)}"
-                @onInputEnumKeydown="${this._handleInputDatetimeKeydown}"
-                @onInputEnumInput="${this._handleInputDatetimeInput}"
-                @onInputEnumBlur="${this._handleInputDatetimeBlur}"
+                ${ref(this.getRef(properties.token))}
+                data-index="${properties.index}"
+                .data="${properties}"
+                class="${classMap(properties.classMap ?? {})}"
+                style="${styleMap(properties.styleMap ?? {})}"
+                .value="${ifDefined(properties.value)}"
+                .size="${ifDefined(properties.size)}"
+                .placeholder="${ifDefined(properties.placeholder)}"
+                .tabIndex="${ifDefined(properties.tabIndex)}"
+                .options="${ifDefined(properties.options)}"
+                .selectedIndex="${ifDefined(properties.selectedIndex)}"
+                .bufferTimeout="${ifDefined(properties.bufferTimeout)}"
+                @onInputEnumInput="${this._handleInput}"
+                @onInputEnumChange="${this._handleChange}"
+                @onInputEnumKeydown="${this._handleKeydown}"
+                @onInputEnumFocus="${this._handleFocus}"
+                @onInputEnumBlur="${this._handleBlur}"
             ></md-input-enum>
         `
     }
 
     /* prettier-ignore */
-    renderInputSeparator(params={}){
+    renderInputSegment(properties = {}) {
         return html`
-            <span class="md-input-datetime__separator">${params.label}</span>
+            <md-input-segment
+                ${ref(this.getRef(properties.token))}
+                data-index="${properties.index}"
+                .data="${properties}"
+                class="${classMap(properties.classMap ?? {})}"
+                style="${styleMap(properties.styleMap ?? {})}"
+                .value="${ifDefined(properties.value)}"
+                .size="${ifDefined(properties.size)}"
+                .step="${ifDefined(properties.step)}"
+                .min="${ifDefined(properties.min)}"
+                .max="${ifDefined(properties.max)}"
+                .threshold="${ifDefined(properties.threshold)}"
+                .startValue="${ifDefined(properties.startValue)}"
+                .placeholder="${ifDefined(properties.placeholder)}"
+                .maxLength="${ifDefined(properties.maxLength)}"
+                .clampOnInput="${ifDefined(properties.clampOnInput)}"
+                .tabIndex="${ifDefined(properties.tabIndex)}"
+                @onInputSegmentInput="${this._handleInput}"
+                @onInputSegmentChange="${this._handleChange}"
+                @onInputSegmentKeydown="${this._handleKeydown}"
+                @onInputSegmentFocus="${this._handleFocus}"
+                @onInputSegmentBlur="${this._handleBlur}"
+            ></md-input-segment>
         `
     }
 
     /* prettier-ignore */
-    renderComponent(params){
-        return choose(params.component,[
-            ['input-segment',() => this.renderInputSegment(params)],
-            ['input-enum',() => this.renderInputEnum(params)],
-            ['input-separator',() => this.renderInputSeparator(params)],
-        ],() => nothing)
+    renderInputSeparator(properties = {}) {
+        return html`
+            <span class="md-input-datetime__separator">${properties.placeholder}</span>
+        `
+    }
+
+    /* prettier-ignore */
+    renderComponent(properties = {}) {
+        return choose(properties.component,[
+            ["input-segment", () => this.renderInputSegment(properties)],
+            ["input-enum", () => this.renderInputEnum(properties)],
+            ["input-separator", () => this.renderInputSeparator(properties)],
+        ], () => nothing,);
     }
 
     /* prettier-ignore */
     render(){
-        let count = 0;
-        return this.parts.map((part,i) => {
-            const config = this._getConfig(part);
-            if (config) {
-                const index = count++;
-                return this.renderComponent({
-                    ...config,
-                    tabIndex: index === 0 ? 0 : -1,
-                    "data-index": index,
-                    "data-part": part,
-                    placeholder: this.placeholders[i],
-                });
-            } else {
-                return this.renderComponent({ component: "input-separator", label: part });
+        let count=0
+        return this.parts.map((token,i)=>{
+            let properties = this.getProperties(token);
+            let placeholder = this.placeholders[i]
+
+            if(properties){
+                const index=count++
+                properties.index=index
+                properties.tabIndex=index===0?0:-1
+            }else{
+                properties={
+                    component:'input-separator',
+                }
             }
+
+            properties.placeholder=placeholder
+            properties.token=token
+
+            return this.renderComponent(properties)
         })
     }
 
@@ -248,79 +196,183 @@ class MdInputDatetime extends MdElement {
     willUpdate(_changedProperties) {
         super.willUpdate(_changedProperties);
 
-        if (_changedProperties.has("type") || _changedProperties.has("format") || _changedProperties.has("placeholder")) {
-            const formats = this.formats[this.type];
-
-            const parts = formats.template.match(this.partRegex);
-            const tokens = formats.template.match(this.tokenRegex);
-            const placeholders = formats.placeholder.match(this.placeholderRegex);
-
-            this.parts = parts;
-            this.tokens = tokens;
-            this.placeholders = placeholders;
+        if (_changedProperties.has("placeholder") && this.placeholder) {
+            this.setPattern("placeholder", this.placeholder);
         }
+
+        if (_changedProperties.has("format") && this.format) {
+            this.setPattern("format", this.format);
+        }
+
+        if (_changedProperties.has("type")) {
+            const placeholderPattern = this.getPattern("placeholder");
+            const formatPattern = this.getPattern("format");
+
+            this.setPattern("reverse", formatPattern.replace(this.escapeRegex, "'$1'"));
+
+            this.parts = formatPattern.match(this.partRegex);
+            this.placeholders = placeholderPattern.match(this.partRegex);
+            this.tokens = formatPattern.match(this.tokenRegex);
+        }
+
+        if (_changedProperties.has("value") && this.value) {
+            this.date = new Date();
+
+            const valuePattern = this.getPattern("value");
+            const date = parse(this.value, valuePattern, new Date());
+            if (isValid(date)) {
+                this.date = new Date(date);
+                this.tokens.forEach((token) => {
+                    this.setProperties(token, "value", format(date, token));
+                });
+            }
+
+            this.year = this.date.getFullYear();
+            this.month = this.date.getMonth();
+        }
+
+        if (_changedProperties.has("min") && this.min) {
+            const valuePattern = this.getPattern("value");
+
+            const date = parse(this.min, valuePattern, new Date());
+            if (isValid(date)) {
+                this.tokens.forEach((token) => {
+                    this.setProperties(token, "min", Number(format(date, token)));
+                });
+            }
+        }
+
+        if (_changedProperties.has("max") && this.max) {
+            const valuePattern = this.getPattern("value");
+            const date = parse(this.max, valuePattern, new Date());
+            if (isValid(date)) {
+                this.tokens.forEach((token) => {
+                    this.setProperties(token, "max", Number(format(date, token)));
+                });
+            }
+        }
+
+        if (_changedProperties.has("year") && this.year) {
+            this.setProperties("yyyy", "startValue", this.year);
+            this.setProperties("RRRR", "startValue", this.year);
+            this.setProperties("II", "max", getISOWeeksInYear(new Date(this.year, 0)));
+        }
+
+        if (_changedProperties.has("month") && this.month) {
+            const max = 32 - new Date(this.year, this.month, 32).getDate();
+            this.setProperties("dd", "max", max);
+            this.setProperties("dd", "threshold", Math.floor(max / 10));
+        }
+    }
+
+    getPattern(key) {
+        return this.types[this.type][key];
+    }
+
+    setPattern(key, value) {
+        this.types[this.type][key] = value;
+    }
+
+    getProperties(token) {
+        const prop = this.props[token];
+        if (!prop) {
+            return;
+        }
+        return prop;
+    }
+
+    setProperties(token, key, value) {
+        const prop = this.props[token];
+        if (!prop) {
+            return;
+        }
+        prop[key] = value;
     }
 
     _moveFocus(event, n) {
-        const current = event.currentTarget;
-        const currentIndex = Number(current.dataset.index || 0);
-        const nextIndex = currentIndex + n;
-
-        const next = this.querySelector(`[data-index="${nextIndex}"]`);
-        if (next) {
-            const input = next.native.value;
-            input.focus();
+        const index = Number(event.currentTarget.dataset.index);
+        const target = this.querySelector(`[data-index="${index + n}"]`);
+        if (target) {
+            const native = target.getRef("native").value;
+            native.focus();
         }
     }
 
-    focusLeft(event) {
+    focusNext(event) {
+        this._moveFocus(event, 1);
+    }
+
+    focusPrev(event) {
         this._moveFocus(event, -1);
     }
 
-    focusRight(event) {
-        this._moveFocus(event, +1);
-    }
-
-    _handleInputDatetimeKeydown(event) {
+    async _handleInput(event) {
+        const data = event.currentTarget.data;
         const originalEvent = event.detail.event;
-        if (originalEvent.key === "ArrowLeft") {
-            originalEvent.preventDefault();
-            this.focusLeft(event);
-        } else if (originalEvent.key === "ArrowRight") {
-            originalEvent.preventDefault();
-            this.focusRight(event);
-        }
-    }
 
-    _handleInputDatetimeInput(event) {
-        const dataset = event.currentTarget.dataset;
-        if (dataset.part === "MM" || dataset.part === "yyyy") {
-            this.requestUpdate();
+        const number = Number(event.currentTarget.value);
+        if ((data.token === "yyyy" || data.token === "RRRR") && !isNaN(number)) {
+            this.year = number;
+        }
+        if (data.token === "MM" && !isNaN(number)) {
+            this.month = number - 1;
         }
 
-        const fulfilled = this.tokens.every((token) => Boolean(this._getRef(token).value.value));
+        if (originalEvent && data.autoFocusNextOnComplete) {
+            this.focusNext(event);
+        }
+
+        await this.updateComplete;
+
+        await Promise.all(
+            this.tokens.map((token) => {
+                const part = this.getRef(token).value;
+                part.autoCorrect();
+                return part.updateComplete;
+            }),
+        );
+
+        const fulfilled = this.tokens.every((token) => Boolean(this.getRef(token).value.value));
         if (!fulfilled) {
             return;
         }
 
-        const result = this.formats[this.type].template.replace(this.tokenRegex, ($, $2) => this._getRef($2).value.value);
-        const date = parse(result, this.formats[this.type].fromTemplate, new Date());
+        const formatPattern = this.getPattern("format");
+        const reversePattern = this.getPattern("reverse");
+        const valuePattern = this.getPattern("value");
 
-        if ((this.type === "datetime-local" || this.type === "date") && isNaN(date.getDate())) {
-            return;
-        }
-        if (this.type === "week" && getISOWeeksInYear(date) > this._getConfig("II").max) {
-            return;
-        }
+        const result = formatPattern.replace(this.tokenRegex, ($, token) => this.getRef(token).value.value);
+        const date = parse(result, reversePattern, new Date());
+        const value = format(date, valuePattern);
 
-        const value = format(date, this.formats[this.type].forValue);
         this.value = value;
+
+        this.emit("onInputDatetimeInput", { event, element: this });
     }
 
-    _handleInputDatetimeBlur(event) {
-        this.tokens.forEach((token) => {
-            this._getRef(token).value.autoCorrect();
-        });
+    _handleChange(event) {
+        this.emit("onInputDatetimeChange", { event, element: this });
+    }
+
+    _handleKeydown(event) {
+        const originalEvent = event.detail.event;
+        if (originalEvent.key === "ArrowRight") {
+            originalEvent.preventDefault();
+            this.focusNext(event);
+        } else if (originalEvent.key === "ArrowLeft") {
+            originalEvent.preventDefault();
+            this.focusPrev(event);
+        }
+
+        this.emit("onInputDatetimeKeydown", { event, element: this });
+    }
+
+    _handleFocus(event) {
+        this.emit("onInputDatetimeFocus", { event, element: this });
+    }
+
+    _handleBlur(event) {
+        this.emit("onInputDatetimeBlur", { event, element: this });
     }
 }
 

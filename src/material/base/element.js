@@ -1,9 +1,12 @@
 import { LitElement } from "lit";
 import { updateWhenLocaleChanges } from "@lit/localize";
+import { createRef } from "lit/directives/ref.js";
 
 class MdElement extends LitElement {
     constructor() {
         super();
+
+        this.refMap = new Map();
 
         updateWhenLocaleChanges(this);
     }
@@ -24,6 +27,13 @@ class MdElement extends LitElement {
                 });
             });
         });
+    }
+
+    getRef(key) {
+        if (!this.refMap.has(key)) {
+            this.refMap.set(key, createRef());
+        }
+        return this.refMap.get(key);
     }
 
     on(type, listener) {

@@ -1,13 +1,14 @@
 import { html } from "lit";
 import { MdElement } from "../../base/element.js";
 import { ifDefined } from "lit/directives/if-defined.js";
-import { createRef, ref } from "lit/directives/ref.js";
+import { ref } from "lit/directives/ref.js";
 
 class MdInputNumber extends MdElement {
     static formAssociated = true;
 
     static properties = {
         value: { type: String },
+        size: { type: Number },
         step: { type: Number },
         min: { type: Number },
         max: { type: Number },
@@ -17,86 +18,140 @@ class MdInputNumber extends MdElement {
     allowRegex = /^[-+]?(\d+(\.\d*)?|\.\d*)?([eE][-+]?\d*)?$/;
     validRegex = /^[-+]?(\d+(\.\d+)?|\.\d+)([eE][-+]?\d+)?$/;
 
-    native = createRef();
-
     constructor() {
         super();
-
         this.internals = this.attachInternals();
 
         this.defaultValue = "";
+
+        this.value = "";
         this.step = 1;
+        this.min = null;
+        this.max = null;
     }
 
     /* prettier-ignore */
     render(){
         return html`
             <input 
-                ${ref(this.native)}
+                ${ref(this.getRef('native'))}
                 type="text"
-                .tabIndex="${ifDefined(this.tabIndex)}"
                 .value="${ifDefined(this.value)}"
+                .size="${ifDefined(this.size)}"
+                .tabIndex="${ifDefined(this.tabIndex)}"
                 @keydown="${this._handleKeydown}"
-                @input="${this._handleInput}"
+                @focus="${this._handleFocus}"
                 @blur="${this._handleBlur}"
+                @input="${this._handleInput}"
+                @change="${this._handleChange}"
             >
         `
+    }
+
+    connectedCallback() {
+        super.connectedCallback();
+
+        this.classList.add("md-input-number");
+
+        this.autoCorrect();
+    }
+
+    disconnectedCallback() {
+        super.disconnectedCallback();
+
+        this.classList.remove("md-input-number");
+    }
+
+    willUpdate(_changedProperties) {
+        super.willUpdate(_changedProperties);
+
+        if (_changedProperties.has("step") && (this.step <= 0 || isNaN(this.step))) {
+            this.step = 1;
+        }
+
+        if (_changedProperties.has("min") || _changedProperties.has("max")) {
+            if (typeof this.min === "number" && typeof this.max === "number") {
+                this.size = Math.max(String(this.min).length, String(this.max).length);
+            }
+        }
     }
 
     firstUpdated(_changedProperties) {
         super.firstUpdated(_changedProperties);
 
-        if (this.value !== undefined && this.value !== null) {
+        if (this.value !== null) {
             this.defaultValue = this.value;
         }
     }
 
-    formResetCallback() {
-        const input = this.native.value;
+    formResetCallback(event) {
+        const native = this.getRef("native").value;
 
-        input.value = this.defaultValue;
         this.value = this.defaultValue;
+        native.value = this.defaultValue;
     }
 
-    _clampNumber(number) {
-        if (this.min !== undefined && this.min !== null) {
-            number = Math.max(this.min, number);
-        }
-        if (this.max !== undefined && this.max !== null) {
-            number = Math.min(this.max, number);
-        }
-        return number;
-    }
-
-    _fixedNumber(number) {
+    _formatNumber(value) {
         const stepString = String(this.step);
         const fractionDigits = stepString.includes(".") ? stepString.split(".")[1].length : 0;
-        return Number(number.toFixed(fractionDigits));
+        return Number(value.toFixed(fractionDigits));
     }
 
-    _moveNumber(n) {
-        const input = this.native.value;
-        const value = input.value;
-        const number = Number(value);
+    _moveNumber(direction) {
+        let value = Number(this.value);
+        value = isNaN(value) || !isFinite(value) ? 0 : value;
 
-        let result = number + this.step * n;
-        result = this._clampNumber(result);
-        result = this._fixedNumber(result);
+        const base = this.min ?? value;
+        const diff = value - base;
+        const n = Math.floor(diff / this.step) + direction;
 
-        this.value = result;
-        this.emit("onInputNumberInput", { event, element: this });
+        value = base + this.step * n;
+
+        if ((this.max !== null && value > this.max) || (this.min !== null && value < this.min)) {
+            return;
+        }
+
+        value = this._formatNumber(value);
+
+        this.value = value;
+
+        this.emit("onInputNumberInput", { element: this });
+    }
+
+    autoCorrect() {
+        let value = Number(this.value);
+
+        if (!this.validRegex.test(this.value) || isNaN(value) || !isFinite(value)) {
+            this.value = "";
+            return;
+        }
+
+        const base = this.min ?? value;
+        const diff = value - base;
+        const n = Math.round(diff / this.step);
+
+        value = base + this.step * n;
+
+        if (this.max !== null && value > this.max) {
+            value = this.max;
+        }
+        if (this.min !== null && value < this.min) {
+            value = this.min;
+        }
+
+        value = this._formatNumber(value);
+
+        this.value = value;
+
+        this.emit("onInputNumberChange", { element: this });
     }
 
     stepUp() {
-        const n = +1;
-        this._moveNumber(n);
-        this.emit("onInputNumberStepUp", { element: this });
+        this._moveNumber(1);
     }
 
     stepDown() {
-        const n = -1;
-        this._moveNumber(n);
-        this.emit("onInputNumberStepDown", { element: this });
+        this._moveNumber(-1);
     }
 
     _handleKeydown(event) {
@@ -107,20 +162,12 @@ class MdInputNumber extends MdElement {
             event.preventDefault();
             this.stepDown();
         }
+
         this.emit("onInputNumberKeydown", { event, element: this });
     }
 
-    _handleInput(event) {
-        const input = this.native.value;
-        const value = input.value;
-
-        if (this.allowRegex.test(value)) {
-            this.value = value;
-        }
-
-        input.value = this.value;
-
-        this.emit("onInputNumberInput", { event, element: this });
+    _handleFocus(event) {
+        this.emit("onInputNumberFocus", { event, element: this });
     }
 
     _handleBlur(event) {
@@ -129,20 +176,20 @@ class MdInputNumber extends MdElement {
         this.emit("onInputNumberBlur", { event, element: this });
     }
 
-    autoCorrect() {
-        const input = this.native.value;
-        const value = input.value;
-        const number = Number(value);
-
-        let result = "";
-        if (this.validRegex.test(value)) {
-            result = Math.round(number / this.step) * this.step;
-            result = this._clampNumber(result);
-            result = this._fixedNumber(result);
+    _handleInput(event) {
+        const native = this.getRef("native").value;
+        if (!this.allowRegex.test(native.value)) {
+            native.value = this.value;
+            return;
         }
 
-        this.value = result;
-        input.value = result;
+        this.value = native.value;
+
+        this.emit("onInputNumberInput", { event, element: this });
+    }
+
+    _handleChange(event) {
+        this.emit("onInputNumberChange", { event, element: this });
     }
 }
 

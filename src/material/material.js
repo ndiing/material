@@ -80,6 +80,6 @@ import "./components/navigation-rail/navigation-rail.js";
 
 import "./components/datetime-picker/datetime-picker.js";
 
-// import "./service/snackbar.js";
+import "./service/snackbar.js";
 
-// import "./components/test/test.js";
+import "./components/test/test.js";

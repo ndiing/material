@@ -1,3 +1,4 @@
+.my-input-datetime,
 .md-input-datetime {
     display: inline-flex;
     background-color: #fff;
@@ -16,6 +17,7 @@
     }
 }
 
+.my-input-datetime__separator,
 .md-input-datetime__separator {
     white-space: pre;
 }
