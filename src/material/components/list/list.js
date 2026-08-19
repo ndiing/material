@@ -104,8 +104,8 @@ class MdList extends MdListElement {
             });
         }
 
-        this.on("keydown", this._handleListKeydown);
-        this.on("click", this._handleListClick);
+        this.addEventListener("keydown", this._handleListKeydown);
+        this.addEventListener("click", this._handleListClick);
     }
 
     disconnectedCallback() {
@@ -115,8 +115,8 @@ class MdList extends MdListElement {
             this.virtualScrollController.destroy();
         }
 
-        this.off("keydown", this._handleListKeydown);
-        this.off("click", this._handleListClick);
+        this.removeEventListener("keydown", this._handleListKeydown);
+        this.removeEventListener("click", this._handleListClick);
 
         this.classList.remove("md-list");
     }

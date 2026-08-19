@@ -157,7 +157,7 @@ class Router {
 
     async _handleNavigation() {
         // performance.mark("onNavigationStart");
-        this.emit("onNavigationStart", this);
+        this.emit("onNavigationStart", { router: this });
 
         const { pathname, search, hash } = this._parseURL();
         this.url.pathname = pathname;
@@ -167,7 +167,7 @@ class Router {
 
         const routes = this._getRoutes();
         if (!routes || routes.length === 0) {
-            this.emit("onNavigationError", new Error(`404 Not Found: ${this.url.pathname}`));
+            this.emit("onNavigationError", { router: this });
             return;
         }
 
@@ -183,14 +183,14 @@ class Router {
 
             if (route.beforeLoad) {
                 try {
-                    this.emit("onGuardsCheckStart", this);
+                    this.emit("onGuardsCheckStart", { router: this });
                     await this._beforeLoad(route);
-                    this.emit("onGuardsCheckEnd", this);
+                    this.emit("onGuardsCheckEnd", { router: this });
                 } catch (error) {
                     if (error.type === "abort" || error.name === "AbortError") {
                         return;
                     } else {
-                        this.emit("onNavigationError", error);
+                        this.emit("onNavigationError", { router: this });
                         throw error;
                     }
                 }
@@ -199,14 +199,14 @@ class Router {
             try {
                 await this._renderComponent(route);
             } catch (err) {
-                this.emit("onNavigationError", err);
+                this.emit("onNavigationError", { router: this });
                 throw err;
             }
         }
 
         this._removeComponent(routes);
 
-        this.emit("onNavigationEnd", this);
+        this.emit("onNavigationEnd", { router: this });
         // performance.mark("onNavigationEnd");
         // performance.measure("measureNavigation", "onNavigationStart", "onNavigationEnd");
         // performance.clearMarks("onNavigationStart");

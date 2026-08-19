@@ -64,13 +64,13 @@ class MdIconButton extends MdElement {
 
         this.classList.add("md-icon-button");
 
-        this.on("click", this._handleIconButtonClick);
+        this.addEventListener("click", this._handleIconButtonClick);
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
 
-        this.off("click", this._handleIconButtonClick);
+        this.removeEventListener("click", this._handleIconButtonClick);
 
         this.classList.remove("md-icon-button");
     }

@@ -17,15 +17,15 @@ class MdScrim extends MdElement {
 
         this.classList.add("md-scrim");
 
-        this.on("transitionend", this._handleScrimTransitionend);
-        this.on("click", this._handleScrimClick);
+        this.addEventListener("transitionend", this._handleScrimTransitionend);
+        this.addEventListener("click", this._handleScrimClick);
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
 
-        this.off("click", this._handleScrimClick);
-        this.off("transitionend", this._handleScrimTransitionend);
+        this.removeEventListener("click", this._handleScrimClick);
+        this.removeEventListener("transitionend", this._handleScrimTransitionend);
 
         this.classList.remove("md-scrim");
     }

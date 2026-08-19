@@ -53,12 +53,12 @@ class MdDialog extends MdElement {
 
         this.classList.add("md-dialog");
 
-        this.on("animationend", this._handleDialogAnimationend);
+        this.addEventListener("animationend", this._handleDialogAnimationend);
 
         if (!this.scrimElement) {
             this.scrimElement = document.createElement("md-scrim");
             this.parentElement.insertBefore(this.scrimElement, this.nextElementSibling);
-            this.scrimElement.on("onScrimClick", this._handleDialogScrimClick);
+            this.scrimElement.addEventListener("onScrimClick", this._handleDialogScrimClick);
         }
     }
 
@@ -68,12 +68,12 @@ class MdDialog extends MdElement {
         window.removeEventListener("keydown", this._handleWindowKeydown);
 
         if (this.scrimElement) {
-            this.scrimElement.off("onScrimClick", this._handleDialogScrimClick);
+            this.scrimElement.removeEventListener("onScrimClick", this._handleDialogScrimClick);
             this.scrimElement.remove();
             this.scrimElement = null;
         }
 
-        this.off("animationend", this._handleDialogAnimationend);
+        this.removeEventListener("animationend", this._handleDialogAnimationend);
 
         this.classList.remove("md-dialog");
     }

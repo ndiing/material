@@ -43,7 +43,7 @@ class MdFab extends MdElement {
     connectedCallback() {
         super.connectedCallback();
 
-        this.on("click", this._handleFabClick);
+        this.addEventListener("click", this._handleFabClick);
 
         this.classList.add("md-fab");
     }
@@ -51,7 +51,7 @@ class MdFab extends MdElement {
     disconnectedCallback() {
         super.disconnectedCallback();
 
-        this.off("click", this._handleFabClick);
+        this.removeEventListener("click", this._handleFabClick);
 
         this.classList.remove("md-fab");
     }

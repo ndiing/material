@@ -174,8 +174,8 @@ class MdDataTable extends MdElement {
             this.virtualScrollController.init();
         });
 
-        this.on("keydown", this._handleDataTableKeydown);
-        this.on("click", this._handleDataTableClick);
+        this.addEventListener("keydown", this._handleDataTableKeydown);
+        this.addEventListener("click", this._handleDataTableClick);
     }
 
     disconnectedCallback() {
@@ -183,8 +183,8 @@ class MdDataTable extends MdElement {
 
         this.virtualScrollController.destroy();
 
-        this.off("keydown", this._handleDataTableKeydown);
-        this.off("click", this._handleDataTableClick);
+        this.removeEventListener("keydown", this._handleDataTableKeydown);
+        this.removeEventListener("click", this._handleDataTableClick);
 
         this.classList.remove("md-data-table");
     }

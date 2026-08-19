@@ -56,7 +56,7 @@ class MdButton extends MdElement {
     connectedCallback() {
         super.connectedCallback();
 
-        this.on("click", this._handleButtonClick);
+        this.addEventListener("click", this._handleButtonClick);
 
         this.classList.add("md-button");
     }
@@ -64,7 +64,7 @@ class MdButton extends MdElement {
     disconnectedCallback() {
         super.disconnectedCallback();
 
-        this.off("click", this._handleButtonClick);
+        this.removeEventListener("click", this._handleButtonClick);
 
         this.classList.remove("md-button");
     }
