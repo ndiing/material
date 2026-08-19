@@ -258,7 +258,7 @@ class MdInputDatetime extends MdElement {
                 this.setProperties("RRRR", "startValue", this.year);
                 this.setProperties("II", "max", getISOWeeksInYear(new Date(this.year, 0)));
             }
-            
+
             if (this.month) {
                 const max = 32 - new Date(this.year, this.month, 32).getDate();
                 this.setProperties("dd", "max", max);

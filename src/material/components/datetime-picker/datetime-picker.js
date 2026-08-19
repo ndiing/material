@@ -6,7 +6,7 @@ import { styleMap } from "lit/directives/style-map.js";
 import { choose } from "lit/directives/choose.js";
 import { dateFormatter } from "../../core/date-formatter.js";
 import { addMonths, isValid, setISOWeek, subMonths } from "date-fns";
-import { createRef, ref } from "lit/directives/ref.js";
+import { ref } from "lit/directives/ref.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 
 class MdDatetimePicker extends MdDatetimePickerElement {
@@ -17,20 +17,6 @@ class MdDatetimePicker extends MdDatetimePickerElement {
         type: { type: String },
         value: { type: String },
     };
-
-    dateInputRef = createRef();
-    hourInputRef = createRef();
-    minuteInputRef = createRef();
-
-    get dateInput() {
-        return this.dateInputRef.value.textFieldNative.value;
-    }
-    get hourInput() {
-        return this.hourInputRef.value.textFieldNative.value;
-    }
-    get minuteInput() {
-        return this.minuteInputRef.value.textFieldNative.value;
-    }
 
     variants = ["docked", "modal", "modal-input", "dial", "input"];
 
@@ -324,7 +310,6 @@ class MdDatetimePicker extends MdDatetimePickerElement {
             <div class="md-datetime-picker__toolbar">
                 <div class="md-datetime-picker__input-time">
                     <md-text-field 
-                        ${ref(this.hourInputRef)}
                         class="${classMap({
                             "md-datetime-picker__text-field":true,
                             "md-datetime-picker__text-field--active":this.view==="hours",
@@ -337,7 +322,6 @@ class MdDatetimePicker extends MdDatetimePickerElement {
                     ></md-text-field>
                     <div class="md-datetime-picker__separator">:</div>
                     <md-text-field 
-                        ${ref(this.minuteInputRef)}
                         class="${classMap({
                             "md-datetime-picker__text-field":true,
                             "md-datetime-picker__text-field--active":this.view==="minutes",

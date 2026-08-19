@@ -1,7 +1,7 @@
 import { html, nothing } from "lit";
 import { MdElement } from "../../base/element.js";
 import { styleMap } from "lit/directives/style-map.js";
-import { createRef, ref } from "lit/directives/ref.js";
+import { ref } from "lit/directives/ref.js";
 import { classMap } from "lit/directives/class-map.js";
 import { VirtualScrollController } from "../../controller/virtual-scroll.js";
 import { RippleController } from "../../controller/ripple.js";

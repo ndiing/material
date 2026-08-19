@@ -1,6 +1,6 @@
 import { html, nothing } from "lit";
 import { MdElement } from "../../base/element.js";
-import { createRef, ref } from "lit/directives/ref.js";
+import { ref } from "lit/directives/ref.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { RippleController } from "../../controller/ripple.js";
 
@@ -16,8 +16,6 @@ class MdRadioButton extends MdElement {
         rippleOptions: { type: Object },
         tabIndex: { type: Number },
     };
-
-    radioButtonNative = createRef();
 
     constructor() {
         super();
@@ -36,7 +34,7 @@ class MdRadioButton extends MdElement {
         return html`
             <input 
                 aria-label="radio-button"
-                ${ref(this.radioButtonNative)}
+                ${ref(this.getRef('native'))}
                 class="md-radio-button__native"
                 type="radio"
                 name="${ifDefined(this.name)}"
@@ -85,13 +83,13 @@ class MdRadioButton extends MdElement {
 
     formResetCallback(event) {
         this.checked = this.defaultChecked;
-        const radioButtonNative = this.radioButtonNative.value;
-        radioButtonNative.checked = this.defaultChecked;
+        const native = this.getRef("native").value;
+        native.checked = this.defaultChecked;
     }
 
     _handleRadioButtonNativeInput(event) {
-        const radioButtonNative = this.radioButtonNative.value;
-        this.checked = radioButtonNative.checked;
+        const native = this.getRef("native").value;
+        this.checked = native.checked;
         this.emit("onRadioButtonNativeInput", { event, element: this });
     }
 }

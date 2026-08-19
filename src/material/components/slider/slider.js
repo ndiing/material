@@ -1,6 +1,6 @@
 import { html, nothing } from "lit";
 import { MdElement } from "../../base/element.js";
-import { createRef, ref } from "lit/directives/ref.js";
+import { ref } from "lit/directives/ref.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { RippleController } from "../../controller/ripple.js";
 import { classMap } from "lit/directives/class-map.js";
@@ -39,8 +39,6 @@ class MdSlider extends MdElement {
     variants = ["standard", "centered", "range"];
     orientations = ["horizontal", "vertical"];
     sizes = ["extra-small", "small", "medium", "large", "extra-large"];
-
-    sliderNative = [createRef(), createRef()];
 
     constructor() {
         super();
@@ -84,7 +82,7 @@ class MdSlider extends MdElement {
             <div class="md-slider__track"></div>
             ${this.values.map((value,index)=>html`
                 <input 
-                    ${ref(this.sliderNative[index])}
+                    ${ref(this.getRef(`native${index}`))}
                     class="${classMap({
                         'md-slider__native':true,
                         [`md-slider__native${index}`]:true,
@@ -176,10 +174,10 @@ class MdSlider extends MdElement {
         }
     }
 
-    _calculate(sliderNative) {
-        const min = Number(sliderNative.min);
-        const max = Number(sliderNative.max);
-        const value = Number(sliderNative.value);
+    _calculate(native) {
+        const min = Number(native.min);
+        const max = Number(native.max);
+        const value = Number(native.value);
         const fraction = getFraction(min, max, value);
         const percentage = fraction * 100;
         return { min, max, value, fraction, percentage };
@@ -201,8 +199,8 @@ class MdSlider extends MdElement {
     formResetCallback(event) {
         this.values = [...this.defaultValues];
         this.defaultValues.forEach((value, index) => {
-            const sliderNative = this.sliderNative[index].value;
-            sliderNative.value = value;
+            const native = this.getRef(`native${index}`).value;
+            native.value = value;
         });
 
         this._setVariantCssVar();
@@ -210,22 +208,22 @@ class MdSlider extends MdElement {
 
     _handleSliderNativeInput(event) {
         if (this.variant === "centered") {
-            const sliderNative = this.sliderNative[0].value;
-            this.values = [Number(sliderNative.value)];
+            const native0 = this.getRef("native0").value;
+            this.values = [Number(native0.value)];
         } else if (this.variant === "range") {
-            const sliderNative0 = this.sliderNative[0].value;
-            const sliderNative1 = this.sliderNative[1].value;
+            const native0 = this.getRef("native0").value;
+            const native1 = this.getRef("native1").value;
 
-            const clampValue0 = Math.min(Number(sliderNative0.value), this.values[1]);
-            const clampValue1 = Math.max(Number(sliderNative1.value), this.values[0]);
+            const clampValue0 = Math.min(Number(native0.value), this.values[1]);
+            const clampValue1 = Math.max(Number(native1.value), this.values[0]);
 
-            sliderNative0.value = clampValue0;
-            sliderNative1.value = clampValue1;
+            native0.value = clampValue0;
+            native1.value = clampValue1;
 
             this.values = [clampValue0, clampValue1];
         } else {
-            const sliderNative = this.sliderNative[0].value;
-            this.values = [Number(sliderNative.value)];
+            const native0 = this.getRef("native0").value;
+            this.values = [Number(native0.value)];
         }
 
         this._setVariantCssVar();
@@ -242,25 +240,25 @@ class MdSlider extends MdElement {
 
     _setVariantCssVar() {
         if (this.variant === "centered") {
-            const sliderNative = this.sliderNative[0].value;
+            const native0 = this.getRef("native0").value;
 
-            const { fraction, percentage } = this._calculate(sliderNative);
+            const { fraction, percentage } = this._calculate(native0);
             const percentage0 = Math.min(50, percentage);
             const percentage1 = Math.max(50, percentage);
             this._setCssVar(0, fraction, percentage0);
             this._setCssVar(1, fraction, percentage1);
         } else if (this.variant === "range") {
-            const sliderNative0 = this.sliderNative[0].value;
-            const sliderNative1 = this.sliderNative[1].value;
+            const native0 = this.getRef("native0").value;
+            const native1 = this.getRef("native1").value;
 
-            const { fraction: fraction0, percentage: percentage0 } = this._calculate(sliderNative0);
-            const { fraction: fraction1, percentage: percentage1 } = this._calculate(sliderNative1);
+            const { fraction: fraction0, percentage: percentage0 } = this._calculate(native0);
+            const { fraction: fraction1, percentage: percentage1 } = this._calculate(native1);
             this._setCssVar(0, fraction0, percentage0);
             this._setCssVar(1, fraction1, percentage1);
         } else {
-            const sliderNative = this.sliderNative[0].value;
+            const native0 = this.getRef("native0").value;
 
-            const { fraction: fraction0, percentage: percentage0 } = this._calculate(sliderNative);
+            const { fraction: fraction0, percentage: percentage0 } = this._calculate(native0);
             this._setCssVar(0, fraction0, percentage0);
         }
     }

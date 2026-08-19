@@ -1,7 +1,7 @@
 import { html } from "lit";
 import { MdElement } from "../../base/element.js";
 import { ifDefined } from "lit/directives/if-defined.js";
-import { createRef, ref } from "lit/directives/ref.js";
+import { ref } from "lit/directives/ref.js";
 import { styleMap } from "lit/directives/style-map.js";
 
 class MdImage extends MdElement {

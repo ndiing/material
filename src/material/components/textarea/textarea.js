@@ -15,13 +15,13 @@ class MdTextarea extends MdTextField {
     renderContent(){
         return html`
             <div
-                ${ref(this.textFieldContent)}
+                ${ref(this.getRef('content'))}
                 class="md-text-field__content"
             >
                 ${this.prefix?this.renderText({text:this.prefix}):nothing}
                 <textarea
                     aria-label="${ifDefined(this.ariaLabel || this.name || 'textarea')}"
-                    ${ref(this.textFieldNative)}
+                    ${ref(this.getRef('native'))}
                     class="md-text-field__native"
                     name="${ifDefined(this.name)}"
                     .value="${ifDefined(this.value)}"

@@ -4,7 +4,7 @@ import { RippleController } from "../../controller/ripple.js";
 import { choose } from "lit/directives/choose.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { styleMap } from "lit/directives/style-map.js";
-import { createRef, ref } from "lit/directives/ref.js";
+import { ref } from "lit/directives/ref.js";
 import { renderBadge, renderCheckbox, renderIcon, renderIconButton, renderImage, renderRadioButton, renderSwitch } from "../../core/template.js";
 
 class MdListItem extends MdElement {
@@ -33,8 +33,6 @@ class MdListItem extends MdElement {
     get hasSwitch() {
         return this.leading?.some((i) => i.component === "switch") || this.trailing?.some((i) => i.component === "switch");
     }
-
-    listSupporting = createRef();
 
     constructor() {
         super();
@@ -101,7 +99,7 @@ class MdListItem extends MdElement {
             <div class="md-list__content">
                 ${this.overline?html`<div class="md-list__overline">${this.overline}</div>`:nothing}
                 ${this.label?html`<div class="md-list__label">${this.label}</div>`:nothing}
-                ${this.supporting?html`<div ${ref(this.listSupporting)} class="md-list__supporting">${this.supporting}</div>`:nothing}
+                ${this.supporting?html`<div ${ref(this.getRef('supporting'))} class="md-list__supporting">${this.supporting}</div>`:nothing}
             </div>
         `
     }
@@ -139,8 +137,8 @@ class MdListItem extends MdElement {
         super.firstUpdated(_changedProperties);
 
         if (this.supporting) {
-            const clientHeight = this.listSupporting.value.clientHeight;
-            const lineHeight = parseInt(window.getComputedStyle(this.listSupporting.value).getPropertyValue("line-height"));
+            const clientHeight = this.getRef("supporting").value.clientHeight;
+            const lineHeight = parseInt(window.getComputedStyle(this.getRef("supporting").value).getPropertyValue("line-height"));
             this.layout = clientHeight > lineHeight ? "three-line" : "two-line";
         } else {
             this.layout = "one-line";

@@ -107,7 +107,7 @@ class MdInputSegment extends MdElement {
     }
 
     _moveNumber(n) {
-        const input = this.getRef("native").value;
+        const native = this.getRef("native").value;
         let value = Number(this.value);
 
         if (!this.value || isNaN(value)) {
@@ -120,7 +120,7 @@ class MdInputSegment extends MdElement {
         }
         value = this._formatNumber(value);
 
-        input.setRangeText(value, 0, input.value.length, "select");
+        native.setRangeText(value, 0, native.value.length, "select");
         this.value = value;
 
         this.emit("onInputSegmentInput", { element: this });
@@ -166,8 +166,8 @@ class MdInputSegment extends MdElement {
     _handleFocus(event) {
         this.buffer = "";
 
-        const input = this.getRef("native").value;
-        input.select();
+        const native = this.getRef("native").value;
+        native.select();
 
         this.emit("onInputSegmentFocus", { event, element: this });
     }
@@ -179,13 +179,13 @@ class MdInputSegment extends MdElement {
     }
 
     _handleInput(event) {
-        const input = this.getRef("native").value;
+        const native = this.getRef("native").value;
         const data = (event.data || "").replace(/\D/, "");
 
         if (!data || data.length !== 1) {
             this.buffer = "";
             this.value = "";
-            input.setRangeText(this.placeholder, 0, input.value.length, "select");
+            native.setRangeText(this.placeholder, 0, native.value.length, "select");
             return;
         }
 

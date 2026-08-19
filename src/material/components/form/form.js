@@ -1,6 +1,6 @@
 import { html } from "lit";
 import { MdElement } from "../../base/element.js";
-import { createRef, ref } from "lit/directives/ref.js";
+import { ref } from "lit/directives/ref.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 
 class MdForm extends MdElement {
@@ -14,13 +14,11 @@ class MdForm extends MdElement {
         inner: { type: Object },
     };
 
-    formNative = createRef();
-
     /* prettier-ignore */
     render(){
         return html`
             <form 
-                ${ref(this.formNative)}
+                ${ref(this.getRef('native'))}
                 class="md-form__native"
                 method="${ifDefined(this.method)}"
                 action="${ifDefined(this.action)}"
@@ -47,24 +45,24 @@ class MdForm extends MdElement {
     }
 
     reset() {
-        const formNative = this.formNative.value;
+        const native = this.getRef("native").value;
 
-        formNative.reset();
+        native.reset();
     }
 
     submit(button) {
-        const formNative = this.formNative.value;
+        const native = this.getRef("native").value;
 
-        formNative.reportValidity();
+        native.reportValidity();
 
-        if (formNative.requestSubmit) {
+        if (native.requestSubmit) {
             if (button) {
-                formNative.requestSubmit(button);
+                native.requestSubmit(button);
             } else {
-                formNative.requestSubmit();
+                native.requestSubmit();
             }
         } else {
-            formNative.submit();
+            native.submit();
         }
     }
 
@@ -79,8 +77,8 @@ class MdForm extends MdElement {
     _handleFormNativeSubmit(event) {
         event.preventDefault();
 
-        const formNative = this.formNative.value;
-        new FormData(formNative);
+        const native = this.getRef("native").value;
+        new FormData(native);
 
         this.emit("onFormNativeSubmit", { event, element: this });
     }

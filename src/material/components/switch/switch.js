@@ -1,6 +1,6 @@
 import { html, nothing } from "lit";
 import { MdElement } from "../../base/element.js";
-import { createRef, ref } from "lit/directives/ref.js";
+import { ref } from "lit/directives/ref.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { RippleController } from "../../controller/ripple.js";
 const converter = (value) => {
@@ -24,8 +24,6 @@ class MdSwitch extends MdElement {
         icon: { type: String, converter },
         tabIndex: { type: Number },
     };
-
-    switchNative = createRef();
 
     constructor() {
         super();
@@ -53,7 +51,7 @@ class MdSwitch extends MdElement {
         return html`
             <input 
                 aria-label="switch"
-                ${ref(this.switchNative)}
+                ${ref(this.getRef('native'))}
                 class="md-switch__native"
                 type="checkbox"
                 name="${ifDefined(this.name)}"
@@ -102,13 +100,13 @@ class MdSwitch extends MdElement {
 
     formResetCallback(event) {
         this.checked = this.defaultChecked;
-        const switchNative = this.switchNative.value;
-        switchNative.checked = this.defaultChecked;
+        const native = this.getRef("native").value;
+        native.checked = this.defaultChecked;
     }
 
     _handleSwitchNativeInput(event) {
-        const switchNative = this.switchNative.value;
-        this.checked = switchNative.checked;
+        const native = this.getRef("native").value;
+        this.checked = native.checked;
         this.emit("onSwitchNativeInput", { event, element: this });
     }
 }

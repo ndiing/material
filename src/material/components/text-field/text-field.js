@@ -1,6 +1,6 @@
 import { html, nothing } from "lit";
 import { MdElement } from "../../base/element.js";
-import { createRef, ref } from "lit/directives/ref.js";
+import { ref } from "lit/directives/ref.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { choose } from "lit/directives/choose.js";
 import { styleMap } from "lit/directives/style-map.js";
@@ -37,9 +37,6 @@ class MdTextField extends MdElement {
         validateOnBlur: { type: Boolean },
         validateOnInput: { type: Boolean },
     };
-
-    textFieldNative = createRef();
-    textFieldContent = createRef();
 
     colors = ["standard", "filled", "outlined"];
 
@@ -148,13 +145,13 @@ class MdTextField extends MdElement {
     renderContent(){
         return html`
             <div
-                ${ref(this.textFieldContent)}
+                ${ref(this.getRef('content'))}
                 class="md-text-field__content"
             >
                 ${this.prefix?this.renderText({text:this.prefix}):nothing}
                 <input 
                     aria-label="text-field"
-                    ${ref(this.textFieldNative)}
+                    ${ref(this.getRef('native'))}
                     class="md-text-field__native"
                     type="${ifDefined(this.type)}"
                     name="${ifDefined(this.name)}"
@@ -232,9 +229,9 @@ class MdTextField extends MdElement {
 
         this.defaultValue = this.defaultValue ?? this.value ?? "";
 
-        const textFieldNative = this.textFieldNative.value;
-        this.classList.toggle(`md-text-field--populated`, Boolean(textFieldNative.value));
-        this.style.setProperty("--md-comp-text-field-content-offset-left", this.textFieldContent.value.offsetLeft + "px");
+        const native = this.getRef("native").value;
+        this.classList.toggle(`md-text-field--populated`, Boolean(native.value));
+        this.style.setProperty("--md-comp-text-field-content-offset-left", this.getRef("content").value.offsetLeft + "px");
     }
 
     updated(_changedProperties) {
@@ -257,8 +254,8 @@ class MdTextField extends MdElement {
 
     formResetCallback(event) {
         this.value = this.defaultValue;
-        const textFieldNative = this.textFieldNative.value;
-        textFieldNative.value = this.defaultValue;
+        const native = this.getRef("native").value;
+        native.value = this.defaultValue;
         this.classList.toggle(`md-text-field--populated`, Boolean(this.value));
 
         this.validationMessage = "";
@@ -267,7 +264,7 @@ class MdTextField extends MdElement {
 
     _handleTextFieldNativeFocus(event) {
         this.classList.toggle(`md-text-field--focus`, true);
-        this.classList.toggle(`md-text-field--focus-visible`, !this.textFieldNative.value.matches(":active"));
+        this.classList.toggle(`md-text-field--focus-visible`, !this.getRef("native").value.matches(":active"));
 
         this.emit("onTextFieldNativeFocus", { event, element: this });
     }
@@ -300,8 +297,8 @@ class MdTextField extends MdElement {
     }
 
     _updateTextFieldNative() {
-        const textFieldNative = this.textFieldNative.value;
-        this.value = textFieldNative.value;
+        const native = this.getRef("native").value;
+        this.value = native.value;
         this.classList.toggle(`md-text-field--populated`, Boolean(this.value));
 
         if (this.validateOnInput) {
@@ -316,15 +313,15 @@ class MdTextField extends MdElement {
     }
 
     _handleTextFieldIconButtonClearClick(event) {
-        const textFieldNative = this.textFieldNative.value;
-        textFieldNative.value = "";
+        const native = this.getRef("native").value;
+        native.value = "";
         this.value = "";
         this.classList.toggle(`md-text-field--populated`, Boolean(this.value));
     }
 
     validate() {
-        const textFieldNative = this.textFieldNative.value;
-        this.validationMessage = textFieldNative.validationMessage;
+        const native = this.getRef("native").value;
+        this.validationMessage = native.validationMessage;
         this.classList.toggle(`md-text-field--error`, Boolean(this.validationMessage));
     }
 }
