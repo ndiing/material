@@ -84,18 +84,157 @@ function writeFiles() {
         ],
     );
 
+    
+const classNames=[
+  'MdDatetimePickerElement',
+  'VirtualScrollController',
+  'OrientationObserver',
+  'MdNavigationDrawer',
+  'BreakpointObserver',
+  'MdDatetimePicker',
+  'MdNavigationRail',
+  'RippleController',
+  'MdDataTableCell',
+  'MdInputDatetime',
+  'MdNavigationBar',
+  'MdDialogFooter',
+  'MdDialogHeader',
+  'MdInputSegment',
+  'SchemeObserver',
+  'MdListElement',
+  'MdButtonGroup',
+  'MdInputNumber',
+  'MdRadioButton',
+  'MdSheetFooter',
+  'MdSheetHeader',
+  'MdSplitButton',
+  'MediaObserver',
+  'MdCardFooter',
+  'MdCardHeader',
+  'MdDialogBody',
+  'MdGridColumn',
+  'MdIconButton',
+  'MdLayoutItem',
+  'QueryBuilder',
+  'MdDataTable',
+  'MdInputEnum',
+  'MdSheetBody',
+  'MdTextField',
+  'MdCardBody',
+  'MdCheckbox',
+  'MdListItem',
+  'MdPushMenu',
+  'MdSnackbar',
+  'MdTextarea',
+  'MdElement',
+  'MdTooltip',
+  'TaskQueue',
+  'MdButton',
+  'MdDialog',
+  'MdLayout',
+  'MdSlider',
+  'MdSwitch',
+  'Snackbar',
+  'MdBadge',
+  'MdImage',
+  'MdScrim',
+  'MdSheet',
+  'MdCard',
+  'MdForm',
+  'MdGrid',
+  'MdIcon',
+  'MdList',
+  'MdTree',
+  'Router',
+  'MdFab',
+  'Store'
+]
+const classNamesWithoutPrefix=[
+  'DatetimePickerElement',
+  'VirtualScrollController',
+  'OrientationObserver',
+  'NavigationDrawer',
+  'BreakpointObserver',
+  'DatetimePicker',
+  'NavigationRail',
+  'RippleController',
+  'DataTableCell',
+  'InputDatetime',
+  'NavigationBar',
+  'DialogFooter',
+  'DialogHeader',
+  'InputSegment',
+  'SchemeObserver',
+  'ListElement',
+  'ButtonGroup',
+  'InputNumber',
+  'RadioButton',
+  'SheetFooter',
+  'SheetHeader',
+  'SplitButton',
+  'MediaObserver',
+  'CardFooter',
+  'CardHeader',
+  'DialogBody',
+  'GridColumn',
+  'IconButton',
+  'LayoutItem',
+  'QueryBuilder',
+  'DataTable',
+  'InputEnum',
+  'SheetBody',
+  'TextField',
+  'CardBody',
+  'Checkbox',
+  'ListItem',
+  'PushMenu',
+  'Snackbar',
+  'Textarea',
+  'Element',
+  'Tooltip',
+  'TaskQueue',
+  'Button',
+  'Dialog',
+  'Layout',
+  'Slider',
+  'Switch',
+  'Snackbar',
+  'Badge',
+  'Image',
+  'Scrim',
+  'Sheet',
+  'Card',
+  'Form',
+  'Grid',
+  'Icon',
+  'List',
+  'Tree',
+  'Router',
+  'Fab',
+  'Store'
+]
+// console.log(classNames.map(name=>name.replace(/Md/,'')))
+
+    let handlersLength=0
     for (const name in result) {
         const value = result[name];
 
 
         for (const { root, dir, base, ext, name, file, data } of value) {
-            console.log(file);
+            // console.log(file);
 
+            const className=(data.match(/class (\w+)/)?.[1])
+            if(!className){continue}
 
+            const handlers=(data.match(new RegExp(`_handle(${classNamesWithoutPrefix.join('|')})\\w+`,'g')))
+            if(!handlers?.length){continue}
+            // console.log(handlers.length)
+            handlersLength+=handlers.length
 
         }
     }
 
+    console.log(handlersLength)
 }
 
 writeFiles();

@@ -136,3 +136,6 @@ dist
 .pnp.*
 
 scripts
+
+dev
+dev2
