@@ -3,20 +3,22 @@ import { MdElement } from "../../base/element.js";
 import { choose } from "lit/directives/choose.js";
 import { renderButton, renderIconButton } from "../../core/template.js";
 
+
 /**
  * @class MdSnackbar
  * @extends MdElement
- *
+ * 
  * @fires MdSnackbar#after-close
  * @fires MdSnackbar#after-show
  * @fires MdSnackbar#show
  * @fires MdSnackbar#close
  */
 class MdSnackbar extends MdElement {
+    
     /**
-     * @property {String} supporting -
-     * @property {Array} actions -
-     * @property {Boolean} open -
+     * @property {String} supporting - 
+     * @property {Array} actions - 
+     * @property {Boolean} open - 
      */
     static properties = {
         supporting: { type: String },
@@ -103,24 +105,27 @@ class MdSnackbar extends MdElement {
         }
     }
 
+    
     /**
-     *
+     * 
      */
     show() {
         this.open = true;
         this.emit("show", { element: this });
     }
 
+    
     /**
-     *
+     * 
      */
     close() {
         this.open = false;
         this.emit("close", { element: this });
     }
 
+    
     /**
-     *
+     * 
      */
     toggle() {
         if (this.open) {

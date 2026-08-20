@@ -1,5 +1,6 @@
 import { TaskQueue } from "../core/task-queue.js";
 
+
 /**
  * @class Snackbar
  */
@@ -10,8 +11,9 @@ class Snackbar {
         this.close = this.close.bind(this);
     }
 
+    
     /**
-     *
+     * 
      */
     show(params = {}) {
         const { supporting, actions = [], timeout = 5000 } = params;
@@ -54,8 +56,9 @@ class Snackbar {
         );
     }
 
+    
     /**
-     *
+     * 
      */
     close() {
         window.clearTimeout(this.timeout);

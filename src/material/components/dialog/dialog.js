@@ -4,11 +4,13 @@ import { MdDialogHeader } from "./dialog-header.js";
 import { MdDialogFooter } from "./dialog-footer.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 
+
 /**
  * @class MdDialog
  * @extends MdElement
  */
 class MdDialog extends MdElement {
+    
     /**
      */
     static properties = {
@@ -130,8 +132,9 @@ class MdDialog extends MdElement {
         }
     }
 
+    
     /**
-     *
+     * 
      */
     show() {
         if (this.open) {
@@ -142,8 +145,9 @@ class MdDialog extends MdElement {
         window.addEventListener("keydown", this._handleWindowKeydown);
     }
 
+    
     /**
-     *
+     * 
      */
     close() {
         if (!this.open) {
@@ -153,8 +157,9 @@ class MdDialog extends MdElement {
         window.removeEventListener("keydown", this._handleWindowKeydown);
     }
 
+    
     /**
-     *
+     * 
      */
     toggle() {
         if (this.open) {

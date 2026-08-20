@@ -1,3 +1,4 @@
+
 /**
  * @class TaskQueue
  */
@@ -10,8 +11,9 @@ class TaskQueue {
         this.timeout = options.timeout || 0;
     }
 
+    
     /**
-     *
+     * 
      */
     add(task, options = {}) {
         return new Promise((resolve, reject) => {
@@ -61,8 +63,9 @@ class TaskQueue {
         }
     }
 
+    
     /**
-     *
+     * 
      */
     async onIdle() {
         while (this.isProcessing || this.queue.length > 0) {
@@ -70,8 +73,9 @@ class TaskQueue {
         }
     }
 
+    
     /**
-     *
+     * 
      */
     clear() {
         const pending = this.queue.length;
@@ -79,15 +83,17 @@ class TaskQueue {
         return pending;
     }
 
+    
     /**
-     *
+     * 
      */
     get size() {
         return this.queue.length;
     }
 
+    
     /**
-     *
+     * 
      */
     get isRunning() {
         return this.isProcessing;

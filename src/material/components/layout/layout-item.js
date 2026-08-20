@@ -1,23 +1,25 @@
 import { html } from "lit";
 import { MdElement } from "../../base/element.js";
 
+
 /**
  * @class MdLayoutItem
  * @extends MdElement
  */
 class MdLayoutItem extends MdElement {
+    
     /**
      * @property {String} region - north,east,south,west,center
-     * @property {Number} size -
-     * @property {Number} collapsedSize -
-     * @property {Boolean} modal -
-     * @property {Boolean} open -
-     * @property {Boolean} expanded -
-     * @property {Boolean} docked -
-     * @property {Boolean} showScrimOnOpen -
-     * @property {Boolean} showScrimOnExpanded -
-     * @property {Boolean} closeOnScrimClick -
-     * @property {Boolean} collapseOnScrimClick -
+     * @property {Number} size - 
+     * @property {Number} collapsedSize - 
+     * @property {Boolean} modal - 
+     * @property {Boolean} open - 
+     * @property {Boolean} expanded - 
+     * @property {Boolean} docked - 
+     * @property {Boolean} showScrimOnOpen - 
+     * @property {Boolean} showScrimOnExpanded - 
+     * @property {Boolean} closeOnScrimClick - 
+     * @property {Boolean} collapseOnScrimClick - 
      */
     static properties = {
         region: { type: String },
@@ -189,22 +191,25 @@ class MdLayoutItem extends MdElement {
         this.classList.remove("md-layout-item--expanding");
     }
 
+    
     /**
-     *
+     * 
      */
     show() {
         this.open = true;
     }
 
+    
     /**
-     *
+     * 
      */
     close() {
         this.open = false;
     }
 
+    
     /**
-     *
+     * 
      */
     toggle() {
         if (this.open) {
@@ -214,8 +219,9 @@ class MdLayoutItem extends MdElement {
         }
     }
 
+    
     /**
-     *
+     * 
      */
     expand() {
         if (!this.open) {
@@ -224,8 +230,9 @@ class MdLayoutItem extends MdElement {
         this.expanded = true;
     }
 
+    
     /**
-     *
+     * 
      */
     collapse() {
         if (!this.open) {
@@ -234,8 +241,9 @@ class MdLayoutItem extends MdElement {
         this.expanded = false;
     }
 
+    
     /**
-     *
+     * 
      */
     toggleCollapse() {
         if (this.expanded) {

@@ -1,3 +1,4 @@
+
 /**
  * @class Store
  */
@@ -82,23 +83,26 @@ class Store {
         return values;
     }
 
+    
     /**
-     *
+     * 
      */
     load(docs) {
         this.docs = structuredClone(docs);
         this._rebuildIndex();
     }
 
+    
     /**
-     *
+     * 
      */
     get(id) {
         return this.docs.find((doc) => doc[this.primaryKey] === id) || null;
     }
 
+    
     /**
-     *
+     * 
      */
     getAll(options = {}) {
         const { _sort, _order, q, _page, _limit, _start, _end, ...restOptions } = options;
@@ -153,8 +157,9 @@ class Store {
         };
     }
 
+    
     /**
-     *
+     * 
      */
     post(doc = {}) {
         if (!doc[this.primaryKey]) {
@@ -169,8 +174,9 @@ class Store {
         return newDoc;
     }
 
+    
     /**
-     *
+     * 
      */
     patch(id, doc) {
         const index = this.docs.findIndex((d) => d[this.primaryKey] === id);
@@ -186,8 +192,9 @@ class Store {
         return this.docs[index];
     }
 
+    
     /**
-     *
+     * 
      */
     delete(id) {
         const index = this.docs.findIndex((d) => d[this.primaryKey] === id);
@@ -200,8 +207,9 @@ class Store {
         return deleted;
     }
 
+    
     /**
-     *
+     * 
      */
     search(docs, q = "") {
         if (!q || q.trim() === "") return docs;
@@ -244,8 +252,9 @@ class Store {
         return docs.filter((doc) => matchingIds.has(doc[this.primaryKey]));
     }
 
+    
     /**
-     *
+     * 
      */
     filter(docs, filters = []) {
         if (!filters.length) return docs;
@@ -284,8 +293,9 @@ class Store {
         });
     }
 
+    
     /**
-     *
+     * 
      */
     sort(docs, sorters = []) {
         if (!sorters.length) return docs;
@@ -309,8 +319,9 @@ class Store {
         });
     }
 
+    
     /**
-     *
+     * 
      */
     paginate(docs, _page = 1, _limit = 10) {
         const page = parseInt(_page) || 1;
@@ -319,8 +330,9 @@ class Store {
         return docs.slice(start, start + limit);
     }
 
+    
     /**
-     *
+     * 
      */
     slice(docs, _start, _end) {
         if (_start === undefined && _end === undefined) return docs;

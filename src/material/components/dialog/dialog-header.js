@@ -5,15 +5,17 @@ import { styleMap } from "lit/directives/style-map.js";
 import { choose } from "lit/directives/choose.js";
 import { renderButton, renderIcon, renderIconButton, renderImage } from "../../core/template.js";
 
+
 /**
  * @class MdDialogHeader
  * @extends MdElement
  */
 class MdDialogHeader extends MdElement {
+    
     /**
-     * @property {Array} leading -
-     * @property {String} headline -
-     * @property {Array} trailing -
+     * @property {Array} leading - 
+     * @property {String} headline - 
+     * @property {Array} trailing - 
      */
     static properties = {
         leading: { type: Array },

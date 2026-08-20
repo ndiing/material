@@ -3,23 +3,25 @@ import { MdElement } from "../../base/element.js";
 import { ref } from "lit/directives/ref.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 
+
 /**
  * @class MdForm
  * @extends MdElement
- *
+ * 
  * @fires MdForm#formdata
  * @fires MdForm#reset
  * @fires MdForm#submit
  */
 class MdForm extends MdElement {
+    
     /**
-     * @property {String} method -
-     * @property {String} action -
-     * @property {String} enctype -
-     * @property {String} target -
-     * @property {String} autocomplete -
-     * @property {Boolean} noValidate -
-     * @property {Object} inner -
+     * @property {String} method - 
+     * @property {String} action - 
+     * @property {String} enctype - 
+     * @property {String} target - 
+     * @property {String} autocomplete - 
+     * @property {Boolean} noValidate - 
+     * @property {Object} inner - 
      */
     static properties = {
         method: { type: String },
@@ -61,8 +63,9 @@ class MdForm extends MdElement {
         this.classList.remove("md-form");
     }
 
+    
     /**
-     *
+     * 
      */
     reset() {
         const native = this.getRef("native").value;
@@ -70,8 +73,9 @@ class MdForm extends MdElement {
         native.reset();
     }
 
+    
     /**
-     *
+     * 
      */
     submit(button) {
         const native = this.getRef("native").value;

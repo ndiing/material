@@ -4,16 +4,18 @@ import { ref } from "lit/directives/ref.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { RippleController } from "../../controller/ripple.js";
 
+
 /**
  * @class MdCheckbox
  * @extends MdElement
- *
+ * 
  * @fires MdCheckbox#invalid
  * @fires MdCheckbox#input
  */
 class MdCheckbox extends MdElement {
     static formAssociated = true;
 
+    
     /**
      */
     static properties = {
@@ -98,8 +100,9 @@ class MdCheckbox extends MdElement {
         }
     }
 
+    
     /**
-     *
+     * 
      */
     formResetCallback(event) {
         this.indeterminate = this.defaultIndeterminate;
@@ -137,8 +140,9 @@ class MdCheckbox extends MdElement {
         this.classList.toggle("md-checkbox--error", Boolean(this.validationMessage));
     }
 
+    
     /**
-     *
+     * 
      */
     validate() {
         const native = this.getRef("native").value;

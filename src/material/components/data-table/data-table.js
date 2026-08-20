@@ -6,41 +6,36 @@ import { classMap } from "lit/directives/class-map.js";
 import { VirtualScrollController } from "../../controller/virtual-scroll.js";
 import { RippleController } from "../../controller/ripple.js";
 
+
 /**
  * @class MdDataTable
  * @extends MdElement
- *
- * @fires MdDataTable#row-select
- * @fires MdDataTable#row-select
- * @fires MdDataTable#row-select
- * @fires MdDataTable#row-select
- * @fires MdDataTable#row-select
- * @fires MdDataTable#row-select
- * @fires MdDataTable#row-select
+ * 
  * @fires MdDataTable#row-select
  * @fires MdDataTable#row-click
  * @fires MdDataTable#cell-click
  */
 class MdDataTable extends MdElement {
+    
     /**
-     * @property {Array} columns -
-     * @property {Array} rows -
-     * @property {String} valueField -
-     * @property {Boolean} clearSelection -
-     * @property {Boolean} selectAll -
-     * @property {Boolean} activeRow -
-     * @property {Boolean} scrollOnArrowUpActiveRow -
-     * @property {Boolean} selectOnArrowUpActiveRow -
-     * @property {Boolean} scrollOnArrowDownActiveRow -
-     * @property {Boolean} selectOnArrowDownActiveRow -
-     * @property {Boolean} activeCell -
-     * @property {Boolean} selectOnEnterActiveRow -
-     * @property {Boolean} selectRange -
-     * @property {Boolean} multiSelect -
-     * @property {Boolean} singleSelect -
-     * @property {Boolean} activeVisible -
-     * @property {Boolean} checkbox -
-     * @property {Array} _rows -
+     * @property {Array} columns - 
+     * @property {Array} rows - 
+     * @property {String} valueField - 
+     * @property {Boolean} clearSelection - 
+     * @property {Boolean} selectAll - 
+     * @property {Boolean} activeRow - 
+     * @property {Boolean} scrollOnArrowUpActiveRow - 
+     * @property {Boolean} selectOnArrowUpActiveRow - 
+     * @property {Boolean} scrollOnArrowDownActiveRow - 
+     * @property {Boolean} selectOnArrowDownActiveRow - 
+     * @property {Boolean} activeCell - 
+     * @property {Boolean} selectOnEnterActiveRow - 
+     * @property {Boolean} selectRange - 
+     * @property {Boolean} multiSelect - 
+     * @property {Boolean} singleSelect - 
+     * @property {Boolean} activeVisible - 
+     * @property {Boolean} checkbox - 
+     * @property {Array} _rows - 
      */
     static properties = {
         columns: { type: Array },
@@ -402,8 +397,9 @@ class MdDataTable extends MdElement {
         this.emit("cell-click", { event, element: this });
     }
 
+    
     /**
-     *
+     * 
      */
     select(id) {
         this.selectedValues.clear();

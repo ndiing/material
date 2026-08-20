@@ -5,20 +5,22 @@ import { styleMap } from "lit/directives/style-map.js";
 import { repeat } from "lit/directives/repeat.js";
 import { classMap } from "lit/directives/class-map.js";
 
+
 /**
  * @class MdListElement
  * @extends MdElement
  */
 class MdListElement extends MdElement {
+    
     /**
-     * @property {Array} items -
-     * @property {Array} _list -
-     * @property {Array} _tree -
-     * @property {Array} _stack -
-     * @property {String} type -
-     * @property {String} valueField -
-     * @property {String} parentField -
-     * @property {String} labelField -
+     * @property {Array} items - 
+     * @property {Array} _list - 
+     * @property {Array} _tree - 
+     * @property {Array} _stack - 
+     * @property {String} type - 
+     * @property {String} valueField - 
+     * @property {String} parentField - 
+     * @property {String} labelField - 
      */
     static properties = {
         items: { type: Array },
@@ -31,8 +33,9 @@ class MdListElement extends MdElement {
         labelField: { type: String },
     };
 
+    
     /**
-     *
+     * 
      */
     get current() {
         return this._stack[this._stack.length - 1];
@@ -238,8 +241,9 @@ class MdListElement extends MdElement {
         }
     }
 
+    
     /**
-     *
+     * 
      */
     push(item) {
         this._stack = [
@@ -251,8 +255,9 @@ class MdListElement extends MdElement {
         ];
     }
 
+    
     /**
-     *
+     * 
      */
     pop() {
         if (this._stack.length > 1) {

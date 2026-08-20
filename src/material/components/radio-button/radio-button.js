@@ -4,15 +4,17 @@ import { ref } from "lit/directives/ref.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { RippleController } from "../../controller/ripple.js";
 
+
 /**
  * @class MdRadioButton
  * @extends MdElement
- *
+ * 
  * @fires MdRadioButton#input
  */
 class MdRadioButton extends MdElement {
     static formAssociated = true;
 
+    
     /**
      */
     static properties = {
@@ -89,8 +91,9 @@ class MdRadioButton extends MdElement {
         }
     }
 
+    
     /**
-     *
+     * 
      */
     formResetCallback(event) {
         this.checked = this.defaultChecked;

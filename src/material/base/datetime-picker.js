@@ -3,16 +3,18 @@ import { MdElement } from "./element.js";
 import { classMap } from "lit/directives/class-map.js";
 import { getISOWeek, setWeek } from "date-fns";
 
+
 /**
  * @class MdDatetimePickerElement
  * @extends MdElement
  */
 class MdDatetimePickerElement extends MdElement {
+    
     /**
-     * @property {Boolean} hour12 -
-     * @property {String} locale -
-     * @property {String} calendarType -
-     * @property {Date} selection -
+     * @property {Boolean} hour12 - 
+     * @property {String} locale - 
+     * @property {String} calendarType - 
+     * @property {Date} selection - 
      */
     static properties = {
         hour12: { type: Boolean },
@@ -21,8 +23,9 @@ class MdDatetimePickerElement extends MdElement {
         selection: { type: Date },
     };
 
+    
     /**
-     *
+     * 
      */
     get years() {
         const arr = [];
@@ -42,8 +45,9 @@ class MdDatetimePickerElement extends MdElement {
         return arr;
     }
 
+    
     /**
-     *
+     * 
      */
     get months() {
         const arr = [];
@@ -65,15 +69,17 @@ class MdDatetimePickerElement extends MdElement {
         return arr;
     }
 
+    
     /**
-     *
+     * 
      */
     get weekdays() {
         return this.calendarType === "week" ? this.weekColumns : this.dayColumns;
     }
 
+    
     /**
-     *
+     * 
      */
     get dayColumns() {
         const arr = [];
@@ -87,8 +93,9 @@ class MdDatetimePickerElement extends MdElement {
         return arr;
     }
 
+    
     /**
-     *
+     * 
      */
     get weekColumns() {
         const arr = [
@@ -106,15 +113,17 @@ class MdDatetimePickerElement extends MdElement {
         return arr;
     }
 
+    
     /**
-     *
+     * 
      */
     get calendar() {
         return this.calendarType === "week" ? this.weekCalendar : this.dayCalendar;
     }
 
+    
     /**
-     *
+     * 
      */
     get dayCalendar() {
         const selectionYear = this.selection.getFullYear();
@@ -142,8 +151,9 @@ class MdDatetimePickerElement extends MdElement {
         return rows;
     }
 
+    
     /**
-     *
+     * 
      */
     get weekCalendar() {
         const selectionYear = this.selection.getFullYear();
@@ -185,8 +195,9 @@ class MdDatetimePickerElement extends MdElement {
         return rows;
     }
 
+    
     /**
-     *
+     * 
      */
     get hours() {
         const hourCount = this.hour12 ? 12 : 24;
@@ -209,8 +220,9 @@ class MdDatetimePickerElement extends MdElement {
         return arr;
     }
 
+    
     /**
-     *
+     * 
      */
     get minutes() {
         const selectionYear = this.selection.getFullYear();
@@ -234,8 +246,9 @@ class MdDatetimePickerElement extends MdElement {
         return arr;
     }
 
+    
     /**
-     *
+     * 
      */
     get info() {
         return {

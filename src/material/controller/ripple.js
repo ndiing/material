@@ -1,3 +1,4 @@
+
 /**
  * @class RippleController
  */
@@ -19,8 +20,9 @@ class RippleController {
         this._handleBlur = this._handleBlur.bind(this);
     }
 
+    
     /**
-     *
+     * 
      */
     setOptions(options) {
         this.centered = options.centered ?? this.centered ?? false;
@@ -85,8 +87,9 @@ class RippleController {
         this.containerElement.classList.remove("md-ripple--focus");
     }
 
+    
     /**
-     *
+     * 
      */
     init() {
         this.containerElement = (typeof this.container === "string" ? this.host.querySelector(this.container) : this.container) ?? this.host;
@@ -107,8 +110,9 @@ class RippleController {
         this.triggerElement.addEventListener("blur", this._handleBlur);
     }
 
+    
     /**
-     *
+     * 
      */
     destroy() {
         this.containerElement.classList.remove("md-ripple");
@@ -135,8 +139,9 @@ class RippleController {
         this.triggerElement = null;
     }
 
+    
     /**
-     *
+     * 
      */
     reinit(options) {
         this.setOptions(options);
@@ -146,8 +151,9 @@ class RippleController {
         });
     }
 
+    
     /**
-     *
+     * 
      */
     hostConnected() {
         this.host.updateComplete.then(() => {
@@ -155,8 +161,9 @@ class RippleController {
         });
     }
 
+    
     /**
-     *
+     * 
      */
     hostDisconnected() {
         this.destroy();

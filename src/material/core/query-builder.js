@@ -1,3 +1,4 @@
+
 /**
  * @class QueryBuilder
  */
@@ -14,8 +15,9 @@ class QueryBuilder {
         this._end = options._end ?? 10;
     }
 
+    
     /**
-     *
+     * 
      */
     search(q) {
         if (q && String(q).trim() !== "") {
@@ -26,8 +28,9 @@ class QueryBuilder {
         return this;
     }
 
+    
     /**
-     *
+     * 
      */
     filter(name, value, operator = "") {
         if (!name) {
@@ -48,8 +51,9 @@ class QueryBuilder {
         return this;
     }
 
+    
     /**
-     *
+     * 
      */
     sort(_sort, _order) {
         if (_sort) {
@@ -85,8 +89,9 @@ class QueryBuilder {
         return this;
     }
 
+    
     /**
-     *
+     * 
      */
     paginate(_page, _limit = this._limit) {
         this.searchParams.delete("_start");
@@ -101,8 +106,9 @@ class QueryBuilder {
         return this;
     }
 
+    
     /**
-     *
+     * 
      */
     slice(_start, _end = this._end) {
         this.searchParams.delete("_page");
@@ -117,8 +123,9 @@ class QueryBuilder {
         return this;
     }
 
+    
     /**
-     *
+     * 
      */
     clear() {
         [...this.searchParams.keys()].forEach((key) => {
@@ -127,16 +134,18 @@ class QueryBuilder {
         return this;
     }
 
+    
     /**
-     *
+     * 
      */
     toString() {
         const str = this.searchParams.toString();
         return str ? `?${str}` : "";
     }
 
+    
     /**
-     *
+     * 
      */
     toJSON() {
         const query = {};

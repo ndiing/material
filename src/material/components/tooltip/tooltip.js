@@ -3,20 +3,22 @@ import { MdElement } from "../../base/element.js";
 import { renderButton } from "../../core/template.js";
 import { setPosition } from "../../core/positioner.js";
 
+
 /**
  * @class MdTooltip
  * @extends MdElement
  */
 class MdTooltip extends MdElement {
+    
     /**
-     * @property {String} subhead -
-     * @property {String} supporting -
-     * @property {Array} buttons -
+     * @property {String} subhead - 
+     * @property {String} supporting - 
+     * @property {Array} buttons - 
      * @property {String} variant - plain,rich
-     * @property {Boolean} open -
-     * @property {Array} placement -
-     * @property {Number} offset -
-     * @property {String} for -
+     * @property {Boolean} open - 
+     * @property {Array} placement - 
+     * @property {Number} offset - 
+     * @property {String} for - 
      */
     static properties = {
         subhead: { type: String },
@@ -137,8 +139,9 @@ class MdTooltip extends MdElement {
         }
     }
 
+    
     /**
-     *
+     * 
      */
     show(trigger) {
         const target = trigger || this.trigger;
@@ -151,15 +154,17 @@ class MdTooltip extends MdElement {
         this.open = true;
     }
 
+    
     /**
-     *
+     * 
      */
     close() {
         this.open = false;
     }
 
+    
     /**
-     *
+     * 
      */
     toggle(trigger) {
         if (this.open) {

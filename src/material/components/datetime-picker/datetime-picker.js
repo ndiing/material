@@ -9,13 +9,15 @@ import { addMonths, isValid, setISOWeek, subMonths } from "date-fns";
 import { ref } from "lit/directives/ref.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 
+
 /**
  * @class MdDatetimePicker
  * @extends MdDatetimePickerElement
- *
+ * 
  * @fires MdDatetimePicker#change
  */
 class MdDatetimePicker extends MdDatetimePickerElement {
+    
     /**
      */
     static properties = {
@@ -695,8 +697,9 @@ class MdDatetimePicker extends MdDatetimePickerElement {
         this.emit("change", { data });
     }
 
+    
     /**
-     *
+     * 
      */
     reset() {
         const date = dateFormatter[this.type].parse(this.value);
@@ -704,8 +707,9 @@ class MdDatetimePicker extends MdDatetimePickerElement {
         this.selected = new Date(date);
     }
 
+    
     /**
-     *
+     * 
      */
     setHour(hour, periode) {
         if (periode === "AM" && hour >= 12) {
@@ -720,8 +724,9 @@ class MdDatetimePicker extends MdDatetimePickerElement {
         this.selected = new Date(this.selection);
     }
 
+    
     /**
-     *
+     * 
      */
     setMinute(minute) {
         this.selection.setMinutes(minute);

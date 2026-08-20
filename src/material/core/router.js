@@ -1,14 +1,13 @@
 import { QueryBuilder } from "./query-builder.js";
 
+
 /**
  * @class Router
- *
+ * 
  * @fires Router#navigation-start
  * @fires Router#navigation-error
  * @fires Router#guards-check-start
  * @fires Router#guards-check-end
- * @fires Router#navigation-error
- * @fires Router#navigation-error
  * @fires Router#navigation-end
  */
 class Router {
@@ -225,8 +224,9 @@ class Router {
         performance.clearMeasures("measureNavigation");
     }
 
+    
     /**
-     *
+     * 
      */
     navigate(url, options = {}) {
         let targetUrl = url;
@@ -258,8 +258,9 @@ class Router {
         this.navigate(url);
     }
 
+    
     /**
-     *
+     * 
      */
     listen() {
         if (document.readyState === "loading") {
@@ -277,22 +278,25 @@ class Router {
         window.addEventListener("click", (event) => this._handleNavigate(event));
     }
 
+    
     /**
-     *
+     * 
      */
     on(type, listener) {
         window.addEventListener(type, listener);
     }
 
+    
     /**
-     *
+     * 
      */
     off(type, listener) {
         window.removeEventListener(type, listener);
     }
 
+    
     /**
-     *
+     * 
      */
     emit(type, detail) {
         const event = new CustomEvent(type, {
@@ -303,56 +307,63 @@ class Router {
         window.dispatchEvent(event);
     }
 
+    
     /**
-     *
+     * 
      */
     search(...args) {
         this.queryBuilder.search(...args);
         return this;
     }
 
+    
     /**
-     *
+     * 
      */
     filter(...args) {
         this.queryBuilder.filter(...args);
         return this;
     }
 
+    
     /**
-     *
+     * 
      */
     sort(...args) {
         this.queryBuilder.sort(...args);
         return this;
     }
 
+    
     /**
-     *
+     * 
      */
     paginate(...args) {
         this.queryBuilder.paginate(...args);
         return this;
     }
 
+    
     /**
-     *
+     * 
      */
     slice(...args) {
         this.queryBuilder.slice(...args);
         return this;
     }
 
+    
     /**
-     *
+     * 
      */
     hash(hash) {
         this.url.hash = hash;
         return this;
     }
 
+    
     /**
-     *
+     * 
      */
     clear(...args) {
         this.url.hash = "";
@@ -360,8 +371,9 @@ class Router {
         return this;
     }
 
+    
     /**
-     *
+     * 
      */
     reload(force = false) {
         if (force) {
@@ -371,15 +383,17 @@ class Router {
         }
     }
 
+    
     /**
-     *
+     * 
      */
     back() {
         window.history.back();
     }
 
+    
     /**
-     *
+     * 
      */
     forward() {
         window.history.forward();

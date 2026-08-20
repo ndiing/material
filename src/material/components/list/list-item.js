@@ -7,21 +7,23 @@ import { styleMap } from "lit/directives/style-map.js";
 import { ref } from "lit/directives/ref.js";
 import { renderBadge, renderCheckbox, renderIcon, renderIconButton, renderImage, renderRadioButton, renderSwitch } from "../../core/template.js";
 
+
 /**
  * @class MdListItem
  * @extends MdElement
  */
 class MdListItem extends MdElement {
+    
     /**
-     * @property {Array} leading -
-     * @property {Array} trailing -
-     * @property {String} overline -
-     * @property {String} label -
-     * @property {String} supporting -
-     * @property {String} routerLink -
-     * @property {Boolean} interactive -
-     * @property {Object} rippleOptions -
-     * @property {Boolean} selected -
+     * @property {Array} leading - 
+     * @property {Array} trailing - 
+     * @property {String} overline - 
+     * @property {String} label - 
+     * @property {String} supporting - 
+     * @property {String} routerLink - 
+     * @property {Boolean} interactive - 
+     * @property {Object} rippleOptions - 
+     * @property {Boolean} selected - 
      */
     static properties = {
         leading: { type: Array },
@@ -37,22 +39,25 @@ class MdListItem extends MdElement {
 
     layouts = ["one-line", "two-line", "three-line"];
 
+    
     /**
-     *
+     * 
      */
     get hasCheckbox() {
         return this.leading?.some((i) => i.component === "checkbox") || this.trailing?.some((i) => i.component === "checkbox");
     }
 
+    
     /**
-     *
+     * 
      */
     get hasRadioButton() {
         return this.leading?.some((i) => i.component === "radio-button") || this.trailing?.some((i) => i.component === "radioButton");
     }
 
+    
     /**
-     *
+     * 
      */
     get hasSwitch() {
         return this.leading?.some((i) => i.component === "switch") || this.trailing?.some((i) => i.component === "switch");

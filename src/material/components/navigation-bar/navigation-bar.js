@@ -4,11 +4,13 @@ import { renderList } from "../../core/template.js";
 import { MdList } from "../list/list.js";
 import { MdLayoutItem } from "../layout/layout-item.js";
 
+
 /**
  * @class MdNavigationBar
  * @extends MdLayoutItem
  */
 class MdNavigationBar extends MdLayoutItem {
+    
     /**
      */
     static properties = {

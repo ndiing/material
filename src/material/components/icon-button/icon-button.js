@@ -10,13 +10,15 @@ const converter = (value) => {
     }
 };
 
+
 /**
  * @class MdIconButton
  * @extends MdElement
- *
+ * 
  * @fires MdIconButton#select
  */
 class MdIconButton extends MdElement {
+    
     /**
      */
     static properties = {

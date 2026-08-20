@@ -3,21 +3,21 @@ import { MdElement } from "../../base/element.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { ref } from "lit/directives/ref.js";
 
+
 /**
  * @class MdInputNumber
  * @extends MdElement
- *
+ * 
  * @fires MdInputNumber#input
  * @fires MdInputNumber#change
  * @fires MdInputNumber#keydown
  * @fires MdInputNumber#focus
  * @fires MdInputNumber#blur
- * @fires MdInputNumber#input
- * @fires MdInputNumber#change
  */
 class MdInputNumber extends MdElement {
     static formAssociated = true;
 
+    
     /**
      */
     static properties = {
@@ -98,8 +98,9 @@ class MdInputNumber extends MdElement {
         }
     }
 
+    
     /**
-     *
+     * 
      */
     formResetCallback(event) {
         const native = this.getRef("native").value;
@@ -135,8 +136,9 @@ class MdInputNumber extends MdElement {
         this.emit("input", { element: this });
     }
 
+    
     /**
-     *
+     * 
      */
     autoCorrect() {
         let value = Number(this.value);
@@ -166,15 +168,17 @@ class MdInputNumber extends MdElement {
         this.emit("change", { element: this });
     }
 
+    
     /**
-     *
+     * 
      */
     stepUp() {
         this._moveNumber(1);
     }
 
+    
     /**
-     *
+     * 
      */
     stepDown() {
         this._moveNumber(-1);

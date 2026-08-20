@@ -1,15 +1,17 @@
 import { html } from "lit";
 import { MdElement } from "../../base/element.js";
 
+
 /**
  * @class MdGridColumn
  * @extends MdElement
  */
 class MdGridColumn extends MdElement {
+    
     /**
-     * @property {Number} expanded -
-     * @property {Number} medium -
-     * @property {Number} compact -
+     * @property {Number} expanded - 
+     * @property {Number} medium - 
+     * @property {Number} compact - 
      */
     static properties = {
         expanded: { type: Number },

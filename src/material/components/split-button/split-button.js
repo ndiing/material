@@ -4,10 +4,11 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { renderButton, renderIconButton } from "../../core/template.js";
 import { RippleController } from "../../controller/ripple.js";
 
+
 /**
  * @class MdSplitButton
  * @extends MdElement
- *
+ * 
  * @fires MdSplitButton#click
  * @fires MdSplitButton#keydown
  * @fires MdSplitButton#icon-click
@@ -15,13 +16,14 @@ import { RippleController } from "../../controller/ripple.js";
  * @fires MdSplitButton#select
  */
 class MdSplitButton extends MdElement {
+    
     /**
-     * @property {String} icon -
-     * @property {String} label -
-     * @property {String} trailingIcon -
+     * @property {String} icon - 
+     * @property {String} label - 
+     * @property {String} trailingIcon - 
      * @property {String} size - extra-small,small,medium,large,extra-large
      * @property {String} color - elevated,filled,tonal,outlined,text
-     * @property {Boolean} selected -
+     * @property {Boolean} selected - 
      */
     static properties = {
         icon: { type: String },
@@ -129,8 +131,9 @@ class MdSplitButton extends MdElement {
         this.emit("icon-keydown", { event, element: this });
     }
 
+    
     /**
-     *
+     * 
      */
     toggleSelect(event = {}) {
         this.selected = !this.selected;

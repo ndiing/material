@@ -3,18 +3,20 @@ import { MdElement } from "../../base/element.js";
 import { renderIcon } from "../../core/template.js";
 import { RippleController } from "../../controller/ripple.js";
 
+
 /**
  * @class MdFab
  * @extends MdElement
  */
 class MdFab extends MdElement {
+    
     /**
      * @property {String} size - small,medium,large
      * @property {String} color - primary-container,secondary-container,tertiary-container,primary,secondary,tertiary
-     * @property {String} icon -
-     * @property {String} label -
-     * @property {Object} rippleController -
-     * @property {Boolean} unelevated -
+     * @property {String} icon - 
+     * @property {String} label - 
+     * @property {Object} rippleController - 
+     * @property {Boolean} unelevated - 
      */
     static properties = {
         size: { type: String },

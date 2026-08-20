@@ -1,5 +1,6 @@
 import { MediaObserver } from "./observer.js";
 
+
 /**
  * @class OrientationObserver
  * @extends MediaObserver

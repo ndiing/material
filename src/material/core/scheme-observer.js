@@ -1,5 +1,6 @@
 import { MediaObserver } from "./observer.js";
 
+
 /**
  * @class SchemeObserver
  * @extends MediaObserver
