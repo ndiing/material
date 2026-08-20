@@ -1596,7 +1596,7 @@ eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpa
   \**************************/
 (__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
-eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _material_core_router_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../material/core/router.js */ \"./src/material/core/router.js\");\n/* harmony import */ var _routes_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./routes.js */ \"./src/demo/routes.js\");\n\n\nconst router = new _material_core_router_js__WEBPACK_IMPORTED_MODULE_0__.Router(_routes_js__WEBPACK_IMPORTED_MODULE_1__.routes, {\n  historyApiFallback: true\n});\nrouter.listen();\n\n//# sourceURL=webpack://webpack-project/./src/demo/demo.js?\n}");
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _material_core_router_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../material/core/router.js */ \"./src/material/core/router.js\");\n/* harmony import */ var _routes_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./routes.js */ \"./src/demo/routes.js\");\n\n\nconst router = new _material_core_router_js__WEBPACK_IMPORTED_MODULE_0__.Router(_routes_js__WEBPACK_IMPORTED_MODULE_1__.routes, {\n  // historyApiFallback: true,\n});\nrouter.listen();\n\n//# sourceURL=webpack://webpack-project/./src/demo/demo.js?\n}");
 
 /***/ },
 
