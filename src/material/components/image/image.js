@@ -4,24 +4,22 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { ref } from "lit/directives/ref.js";
 import { styleMap } from "lit/directives/style-map.js";
 
-
 /**
  * @class MdImage
  * @extends MdElement
- * 
+ *
  * @fires MdImage#load
  * @fires MdImage#error
  */
 class MdImage extends MdElement {
-    
     /**
-     * @property {String} src - 
-     * @property {String} alt - 
-     * @property {String} loading - 
+     * @property {String} src -
+     * @property {String} alt -
+     * @property {String} loading -
      * @property {String} shape - round,square,sharp
-     * @property {String} errorSrc - 
-     * @property {Boolean} error - 
-     * @property {Boolean} loaded - 
+     * @property {String} errorSrc -
+     * @property {Boolean} error -
+     * @property {Boolean} loaded -
      */
     static properties = {
         src: { type: String },

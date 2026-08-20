@@ -4,7 +4,6 @@ import { MdListElement } from "../../base/list.js";
 import { repeat } from "lit/directives/repeat.js";
 import { styleMap } from "lit/directives/style-map.js";
 
-
 /**
  * @class MdPushMenu
  * @extends MdListElement

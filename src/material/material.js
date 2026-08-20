@@ -1,23 +1,22 @@
-import "./core/router.js";
-import "./core/observer.js";
-import "./core/breakpoint-observer.js";
-import "./core/scheme-observer.js";
-import "./core/orientation-observer.js";
-import "./core/theme.js";
-import "./core/localization.js";
-import "./core/store.js";
-import "./core/query-builder.js";
-import "./core/positioner.js";
-import "./core/task-queue.js";
-import "./core/date-formatter.js";
-import "./core/template.js";
+// import "./core/router.js";
+// import "./core/observer.js";
+// import "./core/breakpoint-observer.js";
+// import "./core/scheme-observer.js";
+// import "./core/orientation-observer.js";
+// import "./core/theme.js";
+// import "./core/localization.js";
+// import "./core/store.js";
+// import "./core/query-builder.js";
+// import "./core/positioner.js";
+// import "./core/task-queue.js";
+// import "./core/template.js";
 
-import "./base/element.js";
-import "./base/list.js";
-import "./base/datetime-picker.js";
+// import "./base/element.js";
+// import "./base/list.js";
+// import "./base/datetime-picker.js";
 
-import "./controller/virtual-scroll.js";
-import "./controller/ripple.js";
+// import "./controller/virtual-scroll.js";
+// import "./controller/ripple.js";
 
 import "./components/input/input-number.js";
 import "./components/input/input-segment.js";

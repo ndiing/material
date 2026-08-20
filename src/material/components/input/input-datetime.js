@@ -7,11 +7,10 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { ref } from "lit/directives/ref.js";
 import { format, getISOWeeksInYear, isValid, parse } from "date-fns";
 
-
 /**
  * @class MdInputDatetime
  * @extends MdElement
- * 
+ *
  * @fires MdInputDatetime#input
  * @fires MdInputDatetime#change
  * @fires MdInputDatetime#keydown
@@ -19,16 +18,15 @@ import { format, getISOWeeksInYear, isValid, parse } from "date-fns";
  * @fires MdInputDatetime#blur
  */
 class MdInputDatetime extends MdElement {
-    
     /**
-     * @property {String} type - 
-     * @property {String} value - 
-     * @property {String} placeholder - 
-     * @property {String} format - 
-     * @property {String} min - 
-     * @property {String} max - 
-     * @property {Number} year - 
-     * @property {Number} month - 
+     * @property {String} type -
+     * @property {String} value -
+     * @property {String} placeholder -
+     * @property {String} format -
+     * @property {String} min -
+     * @property {String} max -
+     * @property {Number} year -
+     * @property {Number} month -
      */
     static properties = {
         type: { type: String },
@@ -293,25 +291,22 @@ class MdInputDatetime extends MdElement {
         }
     }
 
-    
     /**
-     * 
+     *
      */
     getPattern(key) {
         return this.types[this.type][key];
     }
 
-    
     /**
-     * 
+     *
      */
     setPattern(key, value) {
         this.types[this.type][key] = value;
     }
 
-    
     /**
-     * 
+     *
      */
     getProperties(token) {
         const prop = this.props[token];
@@ -321,9 +316,8 @@ class MdInputDatetime extends MdElement {
         return prop;
     }
 
-    
     /**
-     * 
+     *
      */
     setProperties(token, key, value) {
         const prop = this.props[token];
@@ -342,17 +336,15 @@ class MdInputDatetime extends MdElement {
         }
     }
 
-    
     /**
-     * 
+     *
      */
     focusNext(event) {
         this._moveFocus(event, 1);
     }
 
-    
     /**
-     * 
+     *
      */
     focusPrev(event) {
         this._moveFocus(event, -1);

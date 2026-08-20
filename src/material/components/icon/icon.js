@@ -1,15 +1,13 @@
 import { html } from "lit";
 import { MdElement } from "../../base/element.js";
 
-
 /**
  * @class MdIcon
  * @extends MdElement
  */
 class MdIcon extends MdElement {
-    
     /**
-     * @property {String} icon - 
+     * @property {String} icon -
      */
     static properties = {
         icon: { type: String },

@@ -4,20 +4,17 @@ import { MdDatetimePickerElement } from "../../base/datetime-picker.js";
 import { classMap } from "lit/directives/class-map.js";
 import { styleMap } from "lit/directives/style-map.js";
 import { choose } from "lit/directives/choose.js";
-import { dateFormatter } from "../../core/date-formatter.js";
-import { addMonths, isValid, setISOWeek, subMonths } from "date-fns";
+import { addMonths, format, isValid, parse, setISOWeek, subMonths } from "date-fns";
 import { ref } from "lit/directives/ref.js";
 import { ifDefined } from "lit/directives/if-defined.js";
-
 
 /**
  * @class MdDatetimePicker
  * @extends MdDatetimePickerElement
- * 
+ *
  * @fires MdDatetimePicker#change
  */
 class MdDatetimePicker extends MdDatetimePickerElement {
-    
     /**
      */
     static properties = {
@@ -689,7 +686,7 @@ class MdDatetimePicker extends MdDatetimePickerElement {
     }
 
     _emitChange() {
-        const value = dateFormatter[this.type].toString(this.selected);
+        const value = format(this.selected, "yyyy-MM-dd'T'HH:mm");
         const data = {
             type: this.type,
             value,
@@ -697,19 +694,17 @@ class MdDatetimePicker extends MdDatetimePickerElement {
         this.emit("change", { data });
     }
 
-    
     /**
-     * 
+     *
      */
     reset() {
-        const date = dateFormatter[this.type].parse(this.value);
+        const date = parse(this.value, "yyyy-MM-dd'T'HH:mm", new Date());
         this.selection = new Date(date);
         this.selected = new Date(date);
     }
 
-    
     /**
-     * 
+     *
      */
     setHour(hour, periode) {
         if (periode === "AM" && hour >= 12) {
@@ -724,9 +719,8 @@ class MdDatetimePicker extends MdDatetimePickerElement {
         this.selected = new Date(this.selection);
     }
 
-    
     /**
-     * 
+     *
      */
     setMinute(minute) {
         this.selection.setMinutes(minute);

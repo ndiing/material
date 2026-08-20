@@ -17,7 +17,6 @@ function getFraction(min, max, value) {
     return (value - min) / (max - min);
 }
 
-
 /**
  * @class MdSlider
  * @extends MdElement
@@ -25,7 +24,6 @@ function getFraction(min, max, value) {
 class MdSlider extends MdElement {
     static formAssociated = true;
 
-    
     /**
      */
     static properties = {
@@ -204,9 +202,8 @@ class MdSlider extends MdElement {
         this._setVariantCssVar();
     }
 
-    
     /**
-     * 
+     *
      */
     formResetCallback(event) {
         this.values = [...this.defaultValues];

@@ -7,16 +7,14 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { MdListElement } from "../../base/list.js";
 import { repeat } from "lit/directives/repeat.js";
 
-
 /**
  * @class MdList
  * @extends MdListElement
- * 
+ *
  * @fires MdList#select
  * @fires MdList#item-click
  */
 class MdList extends MdListElement {
-    
     /**
      */
     static properties = {
@@ -303,9 +301,8 @@ class MdList extends MdListElement {
         this.emit("item-click", { event, element: this });
     }
 
-    
     /**
-     * 
+     *
      */
     select(item) {
         if (item.hasChildren) {

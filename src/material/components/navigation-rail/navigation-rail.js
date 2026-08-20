@@ -4,13 +4,11 @@ import { renderFab, renderIconButton, renderList } from "../../core/template.js"
 import { MdList } from "../list/list.js";
 import { MdLayoutItem } from "../layout/layout-item.js";
 
-
 /**
  * @class MdNavigationRail
  * @extends MdLayoutItem
  */
 class MdNavigationRail extends MdLayoutItem {
-    
     /**
      */
     static properties = {

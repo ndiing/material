@@ -3,25 +3,23 @@ import { MdElement } from "../../base/element.js";
 import { renderButton, renderIconButton } from "../../core/template.js";
 import { choose } from "lit/directives/choose.js";
 
-
 /**
  * @class MdButtonGroup
  * @extends MdElement
- * 
+ *
  * @fires MdButtonGroup#item-select
  * @fires MdButtonGroup#item-click
  */
 class MdButtonGroup extends MdElement {
-    
     /**
-     * @property {Array} buttons - 
+     * @property {Array} buttons -
      * @property {String} variant - standard,connected
      * @property {String} size - extra-small,small,medium,large,extra-large
      * @property {String} shape - round,square
      * @property {String} color - elevated,filled,tonal,outlined,text
-     * @property {Boolean} vertical - 
-     * @property {Boolean} singleSelect - 
-     * @property {Boolean} multiSelect - 
+     * @property {Boolean} vertical -
+     * @property {Boolean} singleSelect -
+     * @property {Boolean} multiSelect -
      */
     static properties = {
         buttons: { type: Array },

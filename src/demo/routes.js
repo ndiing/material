@@ -82,7 +82,7 @@ export const routes = [
             
             { path: "/components/datetime-picker", load: () => import("./components/datetime-picker.js").then((module) => module.default), children: [] },
 
-            { path: "/components/test", load: () => import("./components/test.js").then((module) => module.default), children: [] },
+            // { path: "/components/test", load: () => import("./components/test.js").then((module) => module.default), children: [] },
             { path: "/components/input-number", load: () => import("./components/input-number.js").then((module) => module.default), children: [] },
             { path: "/components/input-segment", load: () => import("./components/input-segment.js").then((module) => module.default), children: [] },
             { path: "/components/input-enum", load: () => import("./components/input-enum.js").then((module) => module.default), children: [] },

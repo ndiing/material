@@ -11,17 +11,15 @@ const converter = (value) => {
     }
 };
 
-
 /**
  * @class MdSwitch
  * @extends MdElement
- * 
+ *
  * @fires MdSwitch#input
  */
 class MdSwitch extends MdElement {
     static formAssociated = true;
 
-    
     /**
      */
     static properties = {
@@ -109,9 +107,8 @@ class MdSwitch extends MdElement {
         }
     }
 
-    
     /**
-     * 
+     *
      */
     formResetCallback(event) {
         this.checked = this.defaultChecked;

@@ -3,27 +3,25 @@ import { MdElement } from "../../base/element.js";
 import { RippleController } from "../../controller/ripple.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 
-
 /**
  * @class MdButton
  * @extends MdElement
- * 
+ *
  * @fires MdButton#select
  */
 class MdButton extends MdElement {
-    
     /**
      * @property {String} variant - default,toggle
      * @property {String} size - extra-small,small,medium,large,extra-large
      * @property {String} shape - round,square
      * @property {String} color - elevated,filled,tonal,outlined,text
-     * @property {String} label - 
-     * @property {String} icon - 
-     * @property {Boolean} selected - 
-     * @property {Boolean} disabled - 
-     * @property {String} type - 
-     * @property {Object} rippleOptions - 
-     * @property {Boolean} selectOnToggle - 
+     * @property {String} label -
+     * @property {String} icon -
+     * @property {Boolean} selected -
+     * @property {Boolean} disabled -
+     * @property {String} type -
+     * @property {Object} rippleOptions -
+     * @property {Boolean} selectOnToggle -
      */
     static properties = {
         variant: { type: String },

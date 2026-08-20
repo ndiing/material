@@ -6,11 +6,10 @@ import { choose } from "lit/directives/choose.js";
 import { styleMap } from "lit/directives/style-map.js";
 import { classMap } from "lit/directives/class-map.js";
 
-
 /**
  * @class MdTextField
  * @extends MdElement
- * 
+ *
  * @fires MdTextField#focus
  * @fires MdTextField#blur
  * @fires MdTextField#input
@@ -21,7 +20,6 @@ import { classMap } from "lit/directives/class-map.js";
 class MdTextField extends MdElement {
     static formAssociated = true;
 
-    
     /**
      */
     static properties = {
@@ -275,9 +273,8 @@ class MdTextField extends MdElement {
         }
     }
 
-    
     /**
-     * 
+     *
      */
     formResetCallback(event) {
         this.value = this.defaultValue;
@@ -352,9 +349,8 @@ class MdTextField extends MdElement {
         this.classList.toggle(`md-text-field--populated`, Boolean(this.value));
     }
 
-    
     /**
-     * 
+     *
      */
     validate() {
         const native = this.getRef("native").value;

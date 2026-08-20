@@ -2,7 +2,6 @@ import { LitElement } from "lit";
 import { updateWhenLocaleChanges } from "@lit/localize";
 import { createRef } from "lit/directives/ref.js";
 
-
 /**
  * @class MdElement
  * @extends LitElement
@@ -16,9 +15,8 @@ class MdElement extends LitElement {
         updateWhenLocaleChanges(this);
     }
 
-    
     /**
-     * 
+     *
      */
     createRenderRoot() {
         return this;
@@ -38,9 +36,8 @@ class MdElement extends LitElement {
         });
     }
 
-    
     /**
-     * 
+     *
      */
     getRef(key) {
         if (!this.refMap.has(key)) {
@@ -49,25 +46,22 @@ class MdElement extends LitElement {
         return this.refMap.get(key);
     }
 
-    
     /**
-     * 
+     *
      */
     on(type, listener) {
         this.addEventListener(type, listener);
     }
 
-    
     /**
-     * 
+     *
      */
     off(type, listener) {
         this.removeEventListener(type, listener);
     }
 
-    
     /**
-     * 
+     *
      */
     emit(type, detail) {
         const event = new CustomEvent(type, {

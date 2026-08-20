@@ -1,4 +1,3 @@
-
 /**
  * @class MediaObserver
  */
@@ -9,9 +8,8 @@ class MediaObserver {
         this.observe = this.observe.bind(this);
     }
 
-    
     /**
-     * 
+     *
      */
     observe(list) {
         if (!this.list) {
@@ -26,9 +24,8 @@ class MediaObserver {
         this.item.mql.addEventListener("change", this.observe);
     }
 
-    
     /**
-     * 
+     *
      */
     disconnect() {
         if (this.item?.mql) {

@@ -4,13 +4,11 @@ import { MdTextField } from "../text-field/text-field.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { ref } from "lit/directives/ref.js";
 
-
 /**
  * @class MdTextarea
  * @extends MdTextField
  */
 class MdTextarea extends MdTextField {
-    
     /**
      */
     static properties = {

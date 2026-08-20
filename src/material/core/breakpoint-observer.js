@@ -1,6 +1,5 @@
 import { MediaObserver } from "./observer.js";
 
-
 /**
  * @class BreakpointObserver
  * @extends MediaObserver

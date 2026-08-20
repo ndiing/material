@@ -1,7 +1,6 @@
 import { html } from "lit";
 import { MdElement } from "../../base/element.js";
 
-
 /**
  * @class MdGrid
  * @extends MdElement

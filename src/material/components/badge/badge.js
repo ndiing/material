@@ -1,17 +1,15 @@
 import { html, nothing } from "lit";
 import { MdElement } from "../../base/element.js";
 
-
 /**
  * @class MdBadge
  * @extends MdElement
  */
 class MdBadge extends MdElement {
-    
     /**
-     * @property {String} label - 
-     * @property {Number} max - 
-     * @property {Number} maxLength - 
+     * @property {String} label -
+     * @property {Number} max -
+     * @property {Number} maxLength -
      */
     static properties = {
         label: { type: String },

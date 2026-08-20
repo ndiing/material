@@ -3,11 +3,10 @@ import { MdElement } from "../../base/element.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { ref } from "lit/directives/ref.js";
 
-
 /**
  * @class MdInputEnum
  * @extends MdElement
- * 
+ *
  * @fires MdInputEnum#input
  * @fires MdInputEnum#change
  * @fires MdInputEnum#keydown
@@ -17,7 +16,6 @@ import { ref } from "lit/directives/ref.js";
 class MdInputEnum extends MdElement {
     static formAssociated = true;
 
-    
     /**
      */
     static properties = {
@@ -102,9 +100,8 @@ class MdInputEnum extends MdElement {
         }
     }
 
-    
     /**
-     * 
+     *
      */
     formResetCallback(event) {
         const native = this.getRef("native").value;
@@ -132,9 +129,8 @@ class MdInputEnum extends MdElement {
         this.emit("input", { element: this });
     }
 
-    
     /**
-     * 
+     *
      */
     autoCorrect() {
         if (!this.options?.length) {
@@ -164,17 +160,15 @@ class MdInputEnum extends MdElement {
         this.emit("change", { element: this });
     }
 
-    
     /**
-     * 
+     *
      */
     stepUp() {
         this._moveIndex(1);
     }
 
-    
     /**
-     * 
+     *
      */
     stepDown() {
         this._moveIndex(-1);

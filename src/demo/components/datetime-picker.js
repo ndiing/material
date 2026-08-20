@@ -1,8 +1,5 @@
 import { html } from "lit";
 import { MdElement } from "../../material/base/element.js";
-import { dateFormatter } from "../../material/core/date-formatter.js";
-
-// console.log(dateFormatter["datetime-local"].toString(new Date()))
 
 class DemoDatetimePicker extends MdElement {
     /* prettier-ignore */
