@@ -48,6 +48,7 @@ class MdElement extends LitElement {
         const event = new CustomEvent(type, {
             bubbles: true,
             cancelable: true,
+            composed: true,
             detail,
         });
 
