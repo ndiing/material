@@ -4,6 +4,10 @@ import { MdListElement } from "../../base/list.js";
 import { repeat } from "lit/directives/repeat.js";
 import { styleMap } from "lit/directives/style-map.js";
 
+/**
+ * @class MdTree
+ * @extends MdListElement
+ */
 class MdTree extends MdListElement {
     constructor() {
         super();
@@ -21,7 +25,7 @@ class MdTree extends MdListElement {
                 .item="${item}"
                 .label="${item[this.labelField]}"
                 .leading="${this._getLeadingItem(item,rootHasBranch)}"
-                @click="${this._handleListItemClick}"
+                @click="${this._handleClick}"
             ></md-list-item>
         `)
     }
@@ -41,7 +45,7 @@ class MdTree extends MdListElement {
         return leading;
     }
 
-    _handleListItemClick(event) {
+    _handleClick(event) {
         const li = event.currentTarget;
         const item = li.item;
 

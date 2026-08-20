@@ -3,7 +3,21 @@ import { MdElement } from "../../base/element.js";
 import { renderButton } from "../../core/template.js";
 import { setPosition } from "../../core/positioner.js";
 
+/**
+ * @class MdTooltip
+ * @extends MdElement
+ */
 class MdTooltip extends MdElement {
+    /**
+     * @property {String} subhead -
+     * @property {String} supporting -
+     * @property {Array} buttons -
+     * @property {String} variant - plain,rich
+     * @property {Boolean} open -
+     * @property {Array} placement -
+     * @property {Number} offset -
+     * @property {String} for -
+     */
     static properties = {
         subhead: { type: String },
         supporting: { type: String },
@@ -22,22 +36,12 @@ class MdTooltip extends MdElement {
 
         this.variant = "plain";
         this.buttons = [];
-        this.placement = [
-            //
-            "above",
-            "after",
-            "below",
-            "before",
-            "north-east",
-            "south-east",
-            "south-west",
-            "north-west",
-        ];
+        this.placement = ["above", "after", "below", "before", "north-east", "south-east", "south-west", "north-west"];
         this.offset = 4;
 
-        this._handleTooltipTriggerPointerenter = this._handleTooltipTriggerPointerenter.bind(this);
-        this._handleTooltipTriggerPointerleave = this._handleTooltipTriggerPointerleave.bind(this);
-        this._handleTooltipAnimationend = this._handleTooltipAnimationend.bind(this);
+        this._handleTriggerPointerenter = this._handleTriggerPointerenter.bind(this);
+        this._handleTriggerPointerleave = this._handleTriggerPointerleave.bind(this);
+        this._handleAnimationend = this._handleAnimationend.bind(this);
     }
 
     render() {
@@ -64,14 +68,14 @@ class MdTooltip extends MdElement {
     connectedCallback() {
         super.connectedCallback();
         this.classList.add("md-tooltip");
-        this.addEventListener("animationend", this._handleTooltipAnimationend);
+        this.addEventListener("animationend", this._handleAnimationend);
         this._attachTrigger();
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
         this._detachTrigger();
-        this.removeEventListener("animationend", this._handleTooltipAnimationend);
+        this.removeEventListener("animationend", this._handleAnimationend);
         this.classList.remove("md-tooltip");
     }
 
@@ -102,29 +106,29 @@ class MdTooltip extends MdElement {
             const target = document.getElementById(this.for);
             if (target) {
                 this.trigger = target;
-                this.trigger.addEventListener("pointerenter", this._handleTooltipTriggerPointerenter);
-                this.trigger.addEventListener("pointerleave", this._handleTooltipTriggerPointerleave);
+                this.trigger.addEventListener("pointerenter", this._handleTriggerPointerenter);
+                this.trigger.addEventListener("pointerleave", this._handleTriggerPointerleave);
             }
         }
     }
 
     _detachTrigger() {
         if (this.trigger) {
-            this.trigger.removeEventListener("pointerenter", this._handleTooltipTriggerPointerenter);
-            this.trigger.removeEventListener("pointerleave", this._handleTooltipTriggerPointerleave);
+            this.trigger.removeEventListener("pointerenter", this._handleTriggerPointerenter);
+            this.trigger.removeEventListener("pointerleave", this._handleTriggerPointerleave);
             this.trigger = null;
         }
     }
 
-    _handleTooltipTriggerPointerenter(event) {
+    _handleTriggerPointerenter(event) {
         this.show(event.currentTarget || this.trigger);
     }
 
-    _handleTooltipTriggerPointerleave() {
+    _handleTriggerPointerleave() {
         this.close();
     }
 
-    _handleTooltipAnimationend(event) {
+    _handleAnimationend(event) {
         if (event.target !== event.currentTarget) {
             return;
         }
@@ -133,6 +137,9 @@ class MdTooltip extends MdElement {
         }
     }
 
+    /**
+     *
+     */
     show(trigger) {
         const target = trigger || this.trigger;
         if (!target) return;
@@ -144,10 +151,16 @@ class MdTooltip extends MdElement {
         this.open = true;
     }
 
+    /**
+     *
+     */
     close() {
         this.open = false;
     }
 
+    /**
+     *
+     */
     toggle(trigger) {
         if (this.open) {
             this.close();

@@ -17,9 +17,15 @@ function getFraction(min, max, value) {
     return (value - min) / (max - min);
 }
 
+/**
+ * @class MdSlider
+ * @extends MdElement
+ */
 class MdSlider extends MdElement {
     static formAssociated = true;
 
+    /**
+     */
     static properties = {
         name: { type: String },
         min: { type: Number },
@@ -92,9 +98,9 @@ class MdSlider extends MdElement {
                     max="${ifDefined(this.max)}"
                     step="${ifDefined(this.step)}"
                     value="${ifDefined(value)}"
-                    @input="${this._handleSliderNativeInput}"
-                    @focus="${this._handleSliderNativeFocus}"
-                    @blur="${this._handleSliderNativeBlur}"
+                    @input="${this._handleInput}"
+                    @focus="${this._handleFocus}"
+                    @blur="${this._handleBlur}"
                 >
                 <div 
                     class="${classMap({
@@ -196,6 +202,9 @@ class MdSlider extends MdElement {
         this._setVariantCssVar();
     }
 
+    /**
+     *
+     */
     formResetCallback(event) {
         this.values = [...this.defaultValues];
         this.defaultValues.forEach((value, index) => {
@@ -206,7 +215,7 @@ class MdSlider extends MdElement {
         this._setVariantCssVar();
     }
 
-    _handleSliderNativeInput(event) {
+    _handleInput(event) {
         if (this.variant === "centered") {
             const native0 = this.getRef("native0").value;
             this.values = [Number(native0.value)];
@@ -229,11 +238,11 @@ class MdSlider extends MdElement {
         this._setVariantCssVar();
     }
 
-    _handleSliderNativeFocus(event) {
+    _handleFocus(event) {
         this.classList.toggle("md-slider--focus", true);
         this.classList.toggle("md-slider--focus-visible", !this.matches(":active"));
     }
-    _handleSliderNativeBlur(event) {
+    _handleBlur(event) {
         this.classList.toggle("md-slider--focus", false);
         this.classList.toggle("md-slider--focus-visible", false);
     }

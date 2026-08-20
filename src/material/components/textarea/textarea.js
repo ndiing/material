@@ -4,7 +4,13 @@ import { MdTextField } from "../text-field/text-field.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { ref } from "lit/directives/ref.js";
 
+/**
+ * @class MdTextarea
+ * @extends MdTextField
+ */
 class MdTextarea extends MdTextField {
+    /**
+     */
     static properties = {
         ...MdTextField.properties,
         rows: { type: Number },
@@ -12,6 +18,7 @@ class MdTextarea extends MdTextField {
     };
 
     /* prettier-ignore */
+
     renderContent(){
         return html`
             <div
@@ -34,10 +41,10 @@ class MdTextarea extends MdTextField {
                     minlength="${ifDefined(this.minLength)}"
                     maxlength="${ifDefined(this.maxLength)}"
                     autocomplete="${ifDefined(this.autocomplete)}"
-                    @focus="${this._handleTextFieldNativeFocus}"
-                    @input="${this._handleTextFieldNativeInput}"
-                    @blur="${this._handleTextFieldNativeBlur}"
-                    @invalid="${this._handleTextFieldNativeInvalid}"
+                    @focus="${this._handleFocus}"
+                    @input="${this._handleInput}"
+                    @blur="${this._handleBlur}"
+                    @invalid="${this._handleInvalid}"
                 ></textarea>
                 ${this.suffix?this.renderText({text:this.suffix}):nothing}
             </div>

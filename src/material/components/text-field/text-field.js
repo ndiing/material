@@ -6,9 +6,22 @@ import { choose } from "lit/directives/choose.js";
 import { styleMap } from "lit/directives/style-map.js";
 import { classMap } from "lit/directives/class-map.js";
 
+/**
+ * @class MdTextField
+ * @extends MdElement
+ *
+ * @fires MdTextField#focus
+ * @fires MdTextField#blur
+ * @fires MdTextField#input
+ * @fires MdTextField#change
+ * @fires MdTextField#click
+ * @fires MdTextField#invalid
+ */
 class MdTextField extends MdElement {
     static formAssociated = true;
 
+    /**
+     */
     static properties = {
         leading: { type: Array },
         label: { type: String },
@@ -49,10 +62,11 @@ class MdTextField extends MdElement {
         this.validateOnInput = true;
         this.variant = "filled";
 
-        this._handleTextFieldIconButtonClearClick = this._handleTextFieldIconButtonClearClick.bind(this);
+        this._handleIconButtonClearClick = this._handleIconButtonClearClick.bind(this);
     }
 
     /* prettier-ignore */
+
     renderAvatar(properties){
         return html`
             <md-image 
@@ -67,12 +81,13 @@ class MdTextField extends MdElement {
                 .shape="${ifDefined(properties.shape??'round')}"
                 .error="${ifDefined(properties.error)}"
                 .errorSrc="${ifDefined(properties.errorSrc)}"
-                @click="${properties.onTextFieldAvatarClick}"
+                @click="${properties.avatarClick}"
             ></md-image>
         `
     }
 
     /* prettier-ignore */
+
     renderIcon(properties){
         return html`
             <md-icon 
@@ -82,12 +97,13 @@ class MdTextField extends MdElement {
                 })}"
                 style="${styleMap(properties.style??{})}"
                 .icon="${ifDefined(properties.icon)}"
-                @click="${properties.onTextFieldIconClick}"
+                @click="${properties.iconClick}"
             ></md-icon>
         `
     }
 
     /* prettier-ignore */
+
     renderIconButton(properties){
         return html`
             <md-icon-button 
@@ -105,12 +121,13 @@ class MdTextField extends MdElement {
                 .selected="${ifDefined(properties.selected)}"
                 .disabled="${ifDefined(properties.disabled)}"
                 .rippleOptions="${ifDefined(properties.rippleOptions)}"
-                @click="${properties.onTextFieldIconButtonClick}"
+                @click="${properties.iconButtonClick}"
             ></md-icon-button>
         `
     }
 
     /* prettier-ignore */
+
     renderText(properties){
         return html`
             <div 
@@ -121,6 +138,7 @@ class MdTextField extends MdElement {
     }
 
     /* prettier-ignore */
+
     renderComponent(component,properties){
         return choose(component,[
             ['avatar', () => this.renderAvatar(properties)],
@@ -131,6 +149,7 @@ class MdTextField extends MdElement {
     }
 
     /* prettier-ignore */
+
     renderLeading(){
         return this.leading?.length?html`
             <div class="md-text-field__leading">
@@ -142,6 +161,7 @@ class MdTextField extends MdElement {
     }
 
     /* prettier-ignore */
+
     renderContent(){
         return html`
             <div
@@ -168,12 +188,12 @@ class MdTextField extends MdElement {
                     pattern="${ifDefined(this.pattern)}"
                     autocomplete="${ifDefined(this.autocomplete)}"
                     inputmode="${ifDefined(this.inputmode)}"
-                    @focus="${this._handleTextFieldNativeFocus}"
-                    @input="${this._handleTextFieldNativeInput}"
-                    @change="${this._handleTextFieldNativeChange}"
-                    @click="${this._handleTextFieldNativeClick}"
-                    @blur="${this._handleTextFieldNativeBlur}"
-                    @invalid="${this._handleTextFieldNativeInvalid}"
+                    @focus="${this._handleFocus}"
+                    @input="${this._handleInput}"
+                    @change="${this._handleChange}"
+                    @click="${this._handleClick}"
+                    @blur="${this._handleBlur}"
+                    @invalid="${this._handleInvalid}"
                 >
                 ${this.suffix?this.renderText({text:this.suffix}):nothing}
             </div>
@@ -181,10 +201,11 @@ class MdTextField extends MdElement {
     }
 
     /* prettier-ignore */
+
     renderTrailing(){
         return (this.clearable&&this.value)||this.validationMessage||this.trailing?.length?html`
             <div class="md-text-field__trailing">
-                ${(this.clearable&&this.value)?this.renderIconButton({icon:'cancel',color:'standard',onTextFieldIconButtonClick:this._handleTextFieldIconButtonClearClick}):nothing}
+                ${(this.clearable&&this.value)?this.renderIconButton({icon:'cancel',color:'standard',onTextFieldIconButtonClick:this._handleIconButtonClearClick}):nothing}
                 ${this.validationMessage?this.renderIcon({icon:'error',class:{'md-text-field__icon--error':true}}):nothing}
                 ${this.trailing.map(({component,...properties}) => {
                     return this.renderComponent(component,properties)
@@ -252,6 +273,9 @@ class MdTextField extends MdElement {
         }
     }
 
+    /**
+     *
+     */
     formResetCallback(event) {
         this.value = this.defaultValue;
         const native = this.getRef("native").value;
@@ -262,14 +286,16 @@ class MdTextField extends MdElement {
         this.classList.toggle(`md-text-field--error`, Boolean(this.validationMessage));
     }
 
-    _handleTextFieldNativeFocus(event) {
+    _handleFocus(event) {
+        event.stopPropagation();
         this.classList.toggle(`md-text-field--focus`, true);
         this.classList.toggle(`md-text-field--focus-visible`, !this.getRef("native").value.matches(":active"));
 
-        this.emit("onTextFieldNativeFocus", { event, element: this });
+        this.emit("focus", { event, element: this });
     }
 
-    _handleTextFieldNativeBlur(event) {
+    _handleBlur(event) {
+        event.stopPropagation();
         this.classList.toggle(`md-text-field--focus`, false);
         this.classList.toggle(`md-text-field--focus-visible`, false);
 
@@ -277,23 +303,26 @@ class MdTextField extends MdElement {
             this.validate();
         }
 
-        this.emit("onTextFieldNativeBlur", { event, element: this });
+        this.emit("blur", { event, element: this });
     }
 
-    _handleTextFieldNativeInput(event) {
+    _handleInput(event) {
+        event.stopPropagation();
         this._updateTextFieldNative();
 
-        this.emit("onTextFieldNativeInput", { event, element: this });
+        this.emit("input", { event, element: this });
     }
 
-    _handleTextFieldNativeChange(event) {
+    _handleChange(event) {
+        event.stopPropagation();
         this._updateTextFieldNative();
 
-        this.emit("onTextFieldNativeChange", { event, element: this });
+        this.emit("change", { event, element: this });
     }
 
-    _handleTextFieldNativeClick(event) {
-        this.emit("onTextFieldNativeClick", { event, element: this });
+    _handleClick(event) {
+        event.stopPropagation();
+        this.emit("click", { event, element: this });
     }
 
     _updateTextFieldNative() {
@@ -306,19 +335,23 @@ class MdTextField extends MdElement {
         }
     }
 
-    _handleTextFieldNativeInvalid(event) {
+    _handleInvalid(event) {
+        event.stopPropagation();
         event.preventDefault();
         this.validate();
-        this.emit("onTextFieldNativeInvalid", { event, element: this });
+        this.emit("invalid", { event, element: this });
     }
 
-    _handleTextFieldIconButtonClearClick(event) {
+    _handleIconButtonClearClick(event) {
         const native = this.getRef("native").value;
         native.value = "";
         this.value = "";
         this.classList.toggle(`md-text-field--populated`, Boolean(this.value));
     }
 
+    /**
+     *
+     */
     validate() {
         const native = this.getRef("native").value;
         this.validationMessage = native.validationMessage;

@@ -3,7 +3,26 @@ import { MdElement } from "../../base/element.js";
 import { RippleController } from "../../controller/ripple.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 
+/**
+ * @class MdButton
+ * @extends MdElement
+ *
+ * @fires MdButton#select
+ */
 class MdButton extends MdElement {
+    /**
+     * @property {String} variant - default,toggle
+     * @property {String} size - extra-small,small,medium,large,extra-large
+     * @property {String} shape - round,square
+     * @property {String} color - elevated,filled,tonal,outlined,text
+     * @property {String} label -
+     * @property {String} icon -
+     * @property {Boolean} selected -
+     * @property {Boolean} disabled -
+     * @property {String} type -
+     * @property {Object} rippleOptions -
+     * @property {Boolean} selectOnToggle -
+     */
     static properties = {
         variant: { type: String },
         size: { type: String },
@@ -33,7 +52,7 @@ class MdButton extends MdElement {
         this.type = "button";
         this.selectOnToggle = true;
 
-        this._handleButtonClick = this._handleButtonClick.bind(this);
+        this._handleClick = this._handleClick.bind(this);
 
         this.rippleController = new RippleController(this, {
             trigger: ".md-button__native",
@@ -56,7 +75,7 @@ class MdButton extends MdElement {
     connectedCallback() {
         super.connectedCallback();
 
-        this.addEventListener("click", this._handleButtonClick);
+        this.addEventListener("click", this._handleClick);
 
         this.classList.add("md-button");
     }
@@ -64,7 +83,7 @@ class MdButton extends MdElement {
     disconnectedCallback() {
         super.disconnectedCallback();
 
-        this.removeEventListener("click", this._handleButtonClick);
+        this.removeEventListener("click", this._handleClick);
 
         this.classList.remove("md-button");
     }
@@ -109,14 +128,12 @@ class MdButton extends MdElement {
         }
     }
 
-    _handleButtonClick(event) {
+    _handleClick(event) {
         if (this.variant === "toggle" && this.selectOnToggle) {
             this.selected = !this.selected;
 
-            this.emit("onButtonSelection", { event, element: this, selected: this.selected });
+            this.emit("select", { event, element: this, selected: this.selected });
         }
-
-        this.emit("onButtonClick", { event, element: this });
     }
 }
 

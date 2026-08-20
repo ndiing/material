@@ -3,7 +3,25 @@ import { MdElement } from "../../base/element.js";
 import { renderButton, renderIconButton } from "../../core/template.js";
 import { choose } from "lit/directives/choose.js";
 
+/**
+ * @class MdButtonGroup
+ * @extends MdElement
+ *
+ * @fires MdButtonGroup#item-select
+ * @fires MdButtonGroup#item-select
+ * @fires MdButtonGroup#item-click
+ */
 class MdButtonGroup extends MdElement {
+    /**
+     * @property {Array} buttons -
+     * @property {String} variant - standard,connected
+     * @property {String} size - extra-small,small,medium,large,extra-large
+     * @property {String} shape - round,square
+     * @property {String} color - elevated,filled,tonal,outlined,text
+     * @property {Boolean} vertical -
+     * @property {Boolean} singleSelect -
+     * @property {Boolean} multiSelect -
+     */
     static properties = {
         buttons: { type: Array },
         variant: { type: String },
@@ -32,10 +50,11 @@ class MdButtonGroup extends MdElement {
 
         this.selectedButtons = new Set();
 
-        this._handleButtonGroupItemClick = this._handleButtonGroupItemClick.bind(this);
+        this._handleItemClick = this._handleItemClick.bind(this);
     }
 
     /* prettier-ignore */
+
     renderComponent(component,properties){
         const computedProperties = {
             variant: 'toggle',
@@ -46,8 +65,8 @@ class MdButtonGroup extends MdElement {
             selectOnToggle:false
         }
         return choose(component,[
-            ['icon-button', () => renderIconButton({ classMap: { "md-button-group__icon-button": true, ...properties.classMap },...properties, onIconButtonClick:this._handleButtonGroupItemClick, ...computedProperties })],
-            ['button', () => renderButton({ classMap: { "md-button-group__button": true, ...properties.classMap },...properties, onButtonClick:this._handleButtonGroupItemClick, ...computedProperties })],
+            ['icon-button', () => renderIconButton({ classMap: { "md-button-group__icon-button": true, ...properties.classMap },...properties, click:this._handleItemClick, ...computedProperties })],
+            ['button', () => renderButton({ classMap: { "md-button-group__button": true, ...properties.classMap },...properties, click:this._handleItemClick, ...computedProperties })],
         ],() => nothing)
     }
 
@@ -109,9 +128,8 @@ class MdButtonGroup extends MdElement {
         }
     }
 
-    _handleButtonGroupItemClick(event) {
-        const originalEvent = event.detail.event;
-        const data = originalEvent.currentTarget.data;
+    _handleItemClick(event) {
+        const data = event.currentTarget.data;
 
         if (this.multiSelect && originalEvent.ctrlKey) {
             if (this.selectedButtons.has(data.id)) {
@@ -120,17 +138,17 @@ class MdButtonGroup extends MdElement {
                 this.selectedButtons.add(data.id);
             }
 
-            this.emit("onButtonGroupItemSelection", { event, element: this, data });
+            this.emit("item-select", { event, element: this, data });
         } else if (this.singleSelect) {
             this.selectedButtons.clear();
             this.selectedButtons.add(data.id);
 
-            this.emit("onButtonGroupItemSelection", { event, element: this, data });
+            this.emit("item-select", { event, element: this, data });
         }
 
         this.requestUpdate();
 
-        this.emit("onButtonGroupItemClick", { event, element: this });
+        this.emit("item-click", { event, element: this });
     }
 }
 

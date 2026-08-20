@@ -4,7 +4,25 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { renderButton, renderIconButton } from "../../core/template.js";
 import { RippleController } from "../../controller/ripple.js";
 
+/**
+ * @class MdSplitButton
+ * @extends MdElement
+ *
+ * @fires MdSplitButton#click
+ * @fires MdSplitButton#keydown
+ * @fires MdSplitButton#icon-click
+ * @fires MdSplitButton#icon-keydown
+ * @fires MdSplitButton#select
+ */
 class MdSplitButton extends MdElement {
+    /**
+     * @property {String} icon -
+     * @property {String} label -
+     * @property {String} trailingIcon -
+     * @property {String} size - extra-small,small,medium,large,extra-large
+     * @property {String} color - elevated,filled,tonal,outlined,text
+     * @property {Boolean} selected -
+     */
     static properties = {
         icon: { type: String },
         label: { type: String },
@@ -40,8 +58,8 @@ class MdSplitButton extends MdElement {
             <div 
                 class="md-split-button__leading"
                 tabindex="0"
-                @click="${this._handleSplitButtonClick}"
-                @keydown="${this._handleSplitButtonKeydown}"
+                @click="${this._handleClick}"
+                @keydown="${this._handleKeydown}"
             >
                 ${this.icon?html`<md-icon class="md-split-button__icon" .icon="${this.icon}"></md-icon>`:nothing}
                 ${this.label?html`<div class="md-split-button__label">${this.label}</div>`:nothing}
@@ -49,8 +67,8 @@ class MdSplitButton extends MdElement {
             <div 
                 class="md-split-button__trailing"
                 tabindex="0"
-                @click="${this._handleSplitButtonIconClick}"
-                @keydown="${this._handleSplitButtonIconKeydown}"
+                @click="${this._handleIconClick}"
+                @keydown="${this._handleIconKeydown}"
             >
                 <md-icon class="md-split-button__icon" .icon="${this.trailingIcon}"></md-icon>
             </div>
@@ -87,35 +105,36 @@ class MdSplitButton extends MdElement {
         }
     }
 
-    _handleSplitButtonClick(event) {
-        this.emit("onSplitButtonClick", { event, element: this });
+    _handleClick(event) {
+        this.emit("click", { event, element: this });
     }
 
-    _handleSplitButtonKeydown(event) {
+    _handleKeydown(event) {
         if (event.key === "Enter" || event.code === "Space") {
             event.preventDefault();
-            this.emit("onSplitButtonPress", { event, element: this });
         }
-        this.emit("onSplitButtonKeydown", { event, element: this });
+        this.emit("keydown", { event, element: this });
     }
 
-    _handleSplitButtonIconClick(event) {
+    _handleIconClick(event) {
         this.toggleSelect(event);
-        this.emit("onSplitButtonIconClick", { event, element: this });
+        this.emit("icon-click", { event, element: this });
     }
 
-    _handleSplitButtonIconKeydown(event) {
+    _handleIconKeydown(event) {
         if (event.key === "Enter" || event.code === "Space") {
             event.preventDefault();
-            this.emit("onSplitButtonPress", { event, element: this });
             this.toggleSelect(event);
         }
-        this.emit("onSplitButtonKeydown", { event, element: this });
+        this.emit("icon-keydown", { event, element: this });
     }
 
+    /**
+     *
+     */
     toggleSelect(event = {}) {
         this.selected = !this.selected;
-        this.emit("onSplitButtonSelection", { event, element: this, selected: this.selected });
+        this.emit("select", { event, element: this, selected: this.selected });
     }
 }
 

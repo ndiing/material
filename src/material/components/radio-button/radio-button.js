@@ -4,9 +4,17 @@ import { ref } from "lit/directives/ref.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { RippleController } from "../../controller/ripple.js";
 
+/**
+ * @class MdRadioButton
+ * @extends MdElement
+ *
+ * @fires MdRadioButton#input
+ */
 class MdRadioButton extends MdElement {
     static formAssociated = true;
 
+    /**
+     */
     static properties = {
         name: { type: String },
         value: { type: String },
@@ -43,7 +51,7 @@ class MdRadioButton extends MdElement {
                 ?disabled="${ifDefined(this.disabled)}"
                 ?required="${ifDefined(this.required)}"
                 .tabIndex="${ifDefined(this.tabIndex)}"
-                @input="${this._handleRadioButtonNativeInput}"
+                @input="${this._handleInput}"
             >
             <div class="md-radio-button__container">
                 <div class="md-radio-button__icon"></div>
@@ -81,16 +89,21 @@ class MdRadioButton extends MdElement {
         }
     }
 
+    /**
+     *
+     */
     formResetCallback(event) {
         this.checked = this.defaultChecked;
         const native = this.getRef("native").value;
         native.checked = this.defaultChecked;
     }
 
-    _handleRadioButtonNativeInput(event) {
+    _handleInput(event) {
+        event.stopPropagation();
+
         const native = this.getRef("native").value;
         this.checked = native.checked;
-        this.emit("onRadioButtonNativeInput", { event, element: this });
+        this.emit("input", { event, element: this });
     }
 }
 

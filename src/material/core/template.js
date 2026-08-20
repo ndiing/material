@@ -36,8 +36,8 @@ function renderButton(properties = {}) {
             .type="${ifDefined(properties.type)}"
             .rippleOptions="${ifDefined(properties.rippleOptions)}"
             .selectOnToggle="${ifDefined(properties.selectOnToggle)}"
-            @onButtonSelection="${ifDefined(properties.onButtonSelection)}"
-            @onButtonClick="${ifDefined(properties.onButtonClick)}"
+            @select="${ifDefined(properties.selection)}"
+            @click="${ifDefined(properties.click)}"
         ></md-button>
     `
 }
@@ -57,8 +57,8 @@ function renderButtonGroup(properties = {}) {
             .vertical="${ifDefined(properties.vertical)}"
             .singleSelect="${ifDefined(properties.singleSelect)}"
             .multiSelect="${ifDefined(properties.multiSelect)}"
-            @onButtonGroupItemSelection="${ifDefined(properties.onButtonGroupItemSelection)}"
-            @onButtonGroupItemClick="${ifDefined(properties.onButtonGroupItemClick)}"
+            @item-select="${ifDefined(properties.itemSelection)}"
+            @item-click="${ifDefined(properties.itemClick)}"
         ></md-button-group>
     `
 }
@@ -124,8 +124,8 @@ function renderCheckbox(properties = {}) {
             .rippleOptions="${ifDefined(properties.rippleOptions)}"
             .validateOnInput="${ifDefined(properties.validateOnInput)}"
             .tabIndex="${ifDefined(properties.tabIndex)}"
-            @onCheckboxNativeInvalid="${ifDefined(properties.onCheckboxNativeInvalid)}"
-            @onCheckboxNativeInput="${ifDefined(properties.onCheckboxNativeInput)}"
+            @invalid="${ifDefined(properties.invalid)}"
+            @input="${ifDefined(properties.input)}"
         ></md-checkbox>
     `
 }
@@ -165,11 +165,11 @@ function renderDataTable(properties = {}) {
             .multiSelect="${ifDefined(properties.multiSelect)}"
             .singleSelect="${ifDefined(properties.singleSelect)}"
             .checkbox="${ifDefined(properties.checkbox)}"
-            @onDataTableRowSelection="${ifDefined(properties.onDataTableRowSelection)}"
-            @onDataTableClick="${ifDefined(properties.onDataTableClick)}"
-            @onDataTableKeydown="${ifDefined(properties.onDataTableKeydown)}"
-            @onDataTableRowClick="${ifDefined(properties.onDataTableRowClick)}"
-            @onDataTableCellClick="${ifDefined(properties.onDataTableCellClick)}"
+            @row-select="${ifDefined(properties.rowSelection)}"
+            @click="${ifDefined(properties.click)}"
+            @keydown="${ifDefined(properties.keydown)}"
+            @row-click="${ifDefined(properties.rowClick)}"
+            @click="${ifDefined(properties.click)}"
         ></md-data-table>
     `
 }
@@ -189,7 +189,7 @@ function renderDatetimePicker(properties = {}) {
             .view="${ifDefined(properties.view)}"
             .type="${ifDefined(properties.type)}"
             .value="${ifDefined(properties.value)}"
-            @onDatetimePickerChange="${ifDefined(properties.onDatetimePickerChange)}"
+            @change="${ifDefined(properties.change)}"
         ></md-datetime-picker>
     `
 }
@@ -262,7 +262,7 @@ function renderFab(properties = {}) {
             .label="${ifDefined(properties.label)}"
             .rippleController="${ifDefined(properties.rippleController)}"
             .unelevated="${ifDefined(properties.unelevated)}"
-            @onFabClick="${ifDefined(properties.onFabClick)}"
+            @click="${ifDefined(properties.click)}"
         ></md-fab>
     `
 }
@@ -281,9 +281,9 @@ function renderForm(properties = {}) {
             .autocomplete="${ifDefined(properties.autocomplete)}"
             .noValidate="${ifDefined(properties.noValidate)}"
             .inner="${ifDefined(properties.inner)}"
-            @onFormNativeFormdata="${ifDefined(properties.onFormNativeFormdata)}"
-            @onFormNativeReset="${ifDefined(properties.onFormNativeReset)}"
-            @onFormNativeSubmit="${ifDefined(properties.onFormNativeSubmit)}"
+            @formdata="${ifDefined(properties.formdata)}"
+            @reset="${ifDefined(properties.reset)}"
+            @submit="${ifDefined(properties.submit)}"
         ></md-form>
     `
 }
@@ -342,8 +342,8 @@ function renderIconButton(properties = {}) {
             .disabled="${ifDefined(properties.disabled)}"
             .rippleOptions="${ifDefined(properties.rippleOptions)}"
             .selectOnToggle="${ifDefined(properties.selectOnToggle)}"
-            @onIconButtonSelection="${ifDefined(properties.onIconButtonSelection)}"
-            @onIconButtonClick="${ifDefined(properties.onIconButtonClick)}"
+            @select="${ifDefined(properties.selection)}"
+            @click="${ifDefined(properties.click)}"
         ></md-icon-button>
     `
 }
@@ -360,8 +360,8 @@ function renderImage(properties = {}) {
             .loading="${ifDefined(properties.loading)}"
             .shape="${ifDefined(properties.shape)}"
             .errorSrc="${ifDefined(properties.errorSrc)}"
-            @onImageNativeLoad="${ifDefined(properties.onImageNativeLoad)}"
-            @onImageNativeError="${ifDefined(properties.onImageNativeError)}"
+            @load="${ifDefined(properties.load)}"
+            @error="${ifDefined(properties.error)}"
         ></md-image>
     `
 }
@@ -392,11 +392,11 @@ function renderInputEnum(properties = {}) {
             .options="${ifDefined(properties.options)}"
             .selectedIndex="${ifDefined(properties.selectedIndex)}"
             .bufferTimeout="${ifDefined(properties.bufferTimeout)}"
-            @onInputEnumInput="${ifDefined(properties.onInputEnumInput)}"
-            @onInputEnumChange="${ifDefined(properties.onInputEnumChange)}"
-            @onInputEnumKeydown="${ifDefined(properties.onInputEnumKeydown)}"
-            @onInputEnumFocus="${ifDefined(properties.onInputEnumFocus)}"
-            @onInputEnumBlur="${ifDefined(properties.onInputEnumBlur)}"
+            @input="${ifDefined(properties.input)}"
+            @change="${ifDefined(properties.change)}"
+            @keydown="${ifDefined(properties.keydown)}"
+            @focus="${ifDefined(properties.focus)}"
+            @blur="${ifDefined(properties.blur)}"
         ></md-input-enum>
     `
 }
@@ -414,11 +414,11 @@ function renderInputNumber(properties = {}) {
             .min="${ifDefined(properties.min)}"
             .max="${ifDefined(properties.max)}"
             .tabIndex="${ifDefined(properties.tabIndex)}"
-            @onInputNumberInput="${ifDefined(properties.onInputNumberInput)}"
-            @onInputNumberChange="${ifDefined(properties.onInputNumberChange)}"
-            @onInputNumberKeydown="${ifDefined(properties.onInputNumberKeydown)}"
-            @onInputNumberFocus="${ifDefined(properties.onInputNumberFocus)}"
-            @onInputNumberBlur="${ifDefined(properties.onInputNumberBlur)}"
+            @input="${ifDefined(properties.input)}"
+            @change="${ifDefined(properties.change)}"
+            @keydown="${ifDefined(properties.keydown)}"
+            @focus="${ifDefined(properties.focus)}"
+            @blur="${ifDefined(properties.blur)}"
         ></md-input-number>
     `
 }
@@ -441,11 +441,11 @@ function renderInputSegment(properties = {}) {
             .maxLength="${ifDefined(properties.maxLength)}"
             .clampOnInput="${ifDefined(properties.clampOnInput)}"
             .tabIndex="${ifDefined(properties.tabIndex)}"
-            @onInputSegmentInput="${ifDefined(properties.onInputSegmentInput)}"
-            @onInputSegmentChange="${ifDefined(properties.onInputSegmentChange)}"
-            @onInputSegmentKeydown="${ifDefined(properties.onInputSegmentKeydown)}"
-            @onInputSegmentFocus="${ifDefined(properties.onInputSegmentFocus)}"
-            @onInputSegmentBlur="${ifDefined(properties.onInputSegmentBlur)}"
+            @input="${ifDefined(properties.input)}"
+            @change="${ifDefined(properties.change)}"
+            @keydown="${ifDefined(properties.keydown)}"
+            @focus="${ifDefined(properties.focus)}"
+            @blur="${ifDefined(properties.blur)}"
         ></md-input-segment>
     `
 }
@@ -529,10 +529,10 @@ function renderList(properties = {}) {
             .virtualScroll="${ifDefined(properties.virtualScroll)}"
             .virtualScrollOptions="${ifDefined(properties.virtualScrollOptions)}"
             .rippleOptions="${ifDefined(properties.rippleOptions)}"
-            @onListItemSelection="${ifDefined(properties.onListItemSelection)}"
-            @onListClick="${ifDefined(properties.onListClick)}"
-            @onListKeydown="${ifDefined(properties.onListKeydown)}"
-            @onListItemClick="${ifDefined(properties.onListItemClick)}"
+            @select="${ifDefined(properties.selection)}"
+            @click="${ifDefined(properties.click)}"
+            @keydown="${ifDefined(properties.keydown)}"
+            @item-click="${ifDefined(properties.itemClick)}"
         ></md-list>
     `
 }
@@ -688,7 +688,7 @@ function renderRadioButton(properties = {}) {
             .required="${ifDefined(properties.required)}"
             .rippleOptions="${ifDefined(properties.rippleOptions)}"
             .tabIndex="${ifDefined(properties.tabIndex)}"
-            @onRadioButtonNativeInput="${ifDefined(properties.onRadioButtonNativeInput)}"
+            @input="${ifDefined(properties.input)}"
         ></md-radio-button>
     `
 }
@@ -701,11 +701,11 @@ function renderScrim(properties = {}) {
             class="${classMap(properties.classMap ?? {})}"
             style="${styleMap(properties.styleMap ?? {})}"
             .open="${ifDefined(properties.open)}"
-            @onScrimClick="${ifDefined(properties.onScrimClick)}"
-            @onScrimShowed="${ifDefined(properties.onScrimShowed)}"
-            @onScrimClosed="${ifDefined(properties.onScrimClosed)}"
-            @onScrimShow="${ifDefined(properties.onScrimShow)}"
-            @onScrimClose="${ifDefined(properties.onScrimClose)}"
+            @click="${ifDefined(properties.click)}"
+            @after-show="${ifDefined(properties.after-show)}"
+            @after-close="${ifDefined(properties.after-close)}"
+            @show="${ifDefined(properties.show)}"
+            @close="${ifDefined(properties.close)}"
         ></md-scrim>
     `
 }
@@ -805,10 +805,10 @@ function renderSnackbar(properties = {}) {
             .supporting="${ifDefined(properties.supporting)}"
             .actions="${ifDefined(properties.actions)}"
             .open="${ifDefined(properties.open)}"
-            @onSnackbarClosed="${ifDefined(properties.onSnackbarClosed)}"
-            @onSnackbarShowed="${ifDefined(properties.onSnackbarShowed)}"
-            @onSnackbarShow="${ifDefined(properties.onSnackbarShow)}"
-            @onSnackbarClose="${ifDefined(properties.onSnackbarClose)}"
+            @after-close="${ifDefined(properties.after-close)}"
+            @after-show="${ifDefined(properties.after-show)}"
+            @show="${ifDefined(properties.show)}"
+            @close="${ifDefined(properties.close)}"
         ></md-snackbar>
     `
 }
@@ -826,11 +826,11 @@ function renderSplitButton(properties = {}) {
             .size="${ifDefined(properties.size)}"
             .color="${ifDefined(properties.color)}"
             .selected="${ifDefined(properties.selected)}"
-            @onSplitButtonClick="${ifDefined(properties.onSplitButtonClick)}"
-            @onSplitButtonPress="${ifDefined(properties.onSplitButtonPress)}"
-            @onSplitButtonKeydown="${ifDefined(properties.onSplitButtonKeydown)}"
-            @onSplitButtonIconClick="${ifDefined(properties.onSplitButtonIconClick)}"
-            @onSplitButtonSelection="${ifDefined(properties.onSplitButtonSelection)}"
+            @click="${ifDefined(properties.click)}"
+            @press="${ifDefined(properties.press)}"
+            @keydown="${ifDefined(properties.keydown)}"
+            @icon-click="${ifDefined(properties.iconClick)}"
+            @select="${ifDefined(properties.selection)}"
         ></md-split-button>
     `
 }
@@ -850,7 +850,7 @@ function renderSwitch(properties = {}) {
             .rippleOptions="${ifDefined(properties.rippleOptions)}"
             .icon="${ifDefined(properties.icon)}"
             .tabIndex="${ifDefined(properties.tabIndex)}"
-            @onSwitchNativeInput="${ifDefined(properties.onSwitchNativeInput)}"
+            @input="${ifDefined(properties.input)}"
         ></md-switch>
     `
 }
@@ -887,12 +887,12 @@ function renderTextField(properties = {}) {
             .inputmode="${ifDefined(properties.inputmode)}"
             .validateOnBlur="${ifDefined(properties.validateOnBlur)}"
             .validateOnInput="${ifDefined(properties.validateOnInput)}"
-            @onTextFieldNativeFocus="${ifDefined(properties.onTextFieldNativeFocus)}"
-            @onTextFieldNativeBlur="${ifDefined(properties.onTextFieldNativeBlur)}"
-            @onTextFieldNativeInput="${ifDefined(properties.onTextFieldNativeInput)}"
-            @onTextFieldNativeChange="${ifDefined(properties.onTextFieldNativeChange)}"
-            @onTextFieldNativeClick="${ifDefined(properties.onTextFieldNativeClick)}"
-            @onTextFieldNativeInvalid="${ifDefined(properties.onTextFieldNativeInvalid)}"
+            @focus="${ifDefined(properties.focus)}"
+            @blur="${ifDefined(properties.blur)}"
+            @input="${ifDefined(properties.input)}"
+            @change="${ifDefined(properties.change)}"
+            @click="${ifDefined(properties.click)}"
+            @invalid="${ifDefined(properties.invalid)}"
         ></md-text-field>
     `
 }

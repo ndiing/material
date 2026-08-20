@@ -1,3 +1,6 @@
+/**
+ * @class MediaObserver
+ */
 class MediaObserver {
     constructor(callback = () => {}, list) {
         this.callback = callback;
@@ -5,6 +8,9 @@ class MediaObserver {
         this.observe = this.observe.bind(this);
     }
 
+    /**
+     *
+     */
     observe(list) {
         if (!this.list) {
             this.list = list;
@@ -18,6 +24,9 @@ class MediaObserver {
         this.item.mql.addEventListener("change", this.observe);
     }
 
+    /**
+     *
+     */
     disconnect() {
         if (this.item?.mql) {
             this.item.mql.removeEventListener("change", this.observe);

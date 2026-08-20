@@ -3,7 +3,19 @@ import { MdElement } from "../../base/element.js";
 import { renderIcon } from "../../core/template.js";
 import { RippleController } from "../../controller/ripple.js";
 
+/**
+ * @class MdFab
+ * @extends MdElement
+ */
 class MdFab extends MdElement {
+    /**
+     * @property {String} size - small,medium,large
+     * @property {String} color - primary-container,secondary-container,tertiary-container,primary,secondary,tertiary
+     * @property {String} icon -
+     * @property {String} label -
+     * @property {Object} rippleController -
+     * @property {Boolean} unelevated -
+     */
     static properties = {
         size: { type: String },
         color: { type: String },
@@ -23,8 +35,6 @@ class MdFab extends MdElement {
         this.color = "primary-container";
 
         this.rippleController = new RippleController(this, {});
-
-        this._handleFabClick = this._handleFabClick.bind(this);
     }
 
     /* prettier-ignore */
@@ -43,7 +53,7 @@ class MdFab extends MdElement {
     connectedCallback() {
         super.connectedCallback();
 
-        this.addEventListener("click", this._handleFabClick);
+        this.addEventListener("click", this._handleClick);
 
         this.classList.add("md-fab");
     }
@@ -51,7 +61,7 @@ class MdFab extends MdElement {
     disconnectedCallback() {
         super.disconnectedCallback();
 
-        this.removeEventListener("click", this._handleFabClick);
+        this.removeEventListener("click", this._handleClick);
 
         this.classList.remove("md-fab");
     }
@@ -75,10 +85,6 @@ class MdFab extends MdElement {
         if (_changedProperties.has("rippleController")) {
             this.rippleController.reinit(this.rippleController);
         }
-    }
-
-    _handleFabClick(event) {
-        this.emit("onFabClick", { event, element: this });
     }
 }
 

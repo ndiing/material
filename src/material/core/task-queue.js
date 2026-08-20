@@ -1,3 +1,6 @@
+/**
+ * @class TaskQueue
+ */
 class TaskQueue {
     constructor(options = {}) {
         this.queue = [];
@@ -7,6 +10,9 @@ class TaskQueue {
         this.timeout = options.timeout || 0;
     }
 
+    /**
+     *
+     */
     add(task, options = {}) {
         return new Promise((resolve, reject) => {
             this.queue.push({
@@ -55,22 +61,34 @@ class TaskQueue {
         }
     }
 
+    /**
+     *
+     */
     async onIdle() {
         while (this.isProcessing || this.queue.length > 0) {
             await new Promise((resolve) => setTimeout(resolve, 100));
         }
     }
 
+    /**
+     *
+     */
     clear() {
         const pending = this.queue.length;
         this.queue = [];
         return pending;
     }
 
+    /**
+     *
+     */
     get size() {
         return this.queue.length;
     }
 
+    /**
+     *
+     */
     get isRunning() {
         return this.isProcessing;
     }

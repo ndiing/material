@@ -9,7 +9,15 @@ import { addMonths, isValid, setISOWeek, subMonths } from "date-fns";
 import { ref } from "lit/directives/ref.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 
+/**
+ * @class MdDatetimePicker
+ * @extends MdDatetimePickerElement
+ *
+ * @fires MdDatetimePicker#change
+ */
 class MdDatetimePicker extends MdDatetimePickerElement {
+    /**
+     */
     static properties = {
         ...MdDatetimePickerElement.properties,
         variant: { type: String },
@@ -28,11 +36,12 @@ class MdDatetimePicker extends MdDatetimePickerElement {
         this.view = "calendar";
         this.type = "datetime-local";
 
-        this._handleDatetimePickerHourInput = this._handleDatetimePickerHourInput.bind(this);
-        this._handleDatetimePickerMinuteInput = this._handleDatetimePickerMinuteInput.bind(this);
+        this._handleHourInput = this._handleHourInput.bind(this);
+        this._handleMinuteInput = this._handleMinuteInput.bind(this);
     }
 
     /* prettier-ignore */
+
     renderCalendar(){
         return html`
             <div class="md-datetime-picker__grid md-datetime-picker__grid--${this.calendarType}">
@@ -61,7 +70,7 @@ class MdDatetimePicker extends MdDatetimePickerElement {
                                     "md-datetime-picker__cell--in-range":cell.inRange,
                                     "md-datetime-picker__cell--range-end":cell.rangeEnd,
                                 })}"
-                                @click="${this._handleDatetimePickerDateSelection}"
+                                @click="${this._handleDateSelection}"
                             >${cell.label}</div>
                         `)}
                     `)}
@@ -72,6 +81,7 @@ class MdDatetimePicker extends MdDatetimePickerElement {
     }
 
     /* prettier-ignore */
+
     renderYears(){
         this.yearCount=this.variant==='modal'?7*3:10
         return html`
@@ -79,12 +89,13 @@ class MdDatetimePicker extends MdDatetimePickerElement {
                 class="md-datetime-picker__menu"
                 .items="${this.years}"
                 .singleSelect="${true}"
-                @onListItemSelection="${this._handleDatetimePickerYearSelection}"
+                @select="${this._handleYearSelection}"
             ></md-list>
         `
     }
 
     /* prettier-ignore */
+
     renderMonths(){
         return html`
             <md-list 
@@ -92,12 +103,13 @@ class MdDatetimePicker extends MdDatetimePickerElement {
                 .items="${this.months}"
                 .labelField="${this.variant==="docked"?"label":"labelShort"}"
                 .singleSelect="${true}"
-                @onListItemSelection="${this._handleDatetimePickerMonthSelection}"
+                @select="${this._handleMonthSelection}"
             ></md-list>
         `
     }
 
     /* prettier-ignore */
+
     renderHours(){
         return html`
             <div class="md-datetime-picker__dial md-datetime-picker__dial--hours">
@@ -109,7 +121,7 @@ class MdDatetimePicker extends MdDatetimePickerElement {
                             "md-datetime-picker__handle--now":cell.active,
                             "md-datetime-picker__handle--selected":cell.selected,
                         })}"
-                        @click="${this._handleDatetimePickerHourSelection}"
+                        @click="${this._handleHourSelection}"
                     >${cell.label}</div>
                 `)}
             </div>
@@ -117,6 +129,7 @@ class MdDatetimePicker extends MdDatetimePickerElement {
     }
 
     /* prettier-ignore */
+
     renderMinutes(){
         return html`
             <div class="md-datetime-picker__dial md-datetime-picker__dial--minutes">
@@ -128,7 +141,7 @@ class MdDatetimePicker extends MdDatetimePickerElement {
                             "md-datetime-picker__handle--now":cell.active,
                             "md-datetime-picker__handle--selected":cell.selected,
                         })}"
-                        @click="${this._handleDatetimePickerMinuteSelection}"
+                        @click="${this._handleMinuteSelection}"
                     >${cell.label}</div>
                 `)}
             </div>
@@ -136,10 +149,12 @@ class MdDatetimePicker extends MdDatetimePickerElement {
     }
 
     /* prettier-ignore */
+
     renderDockedHeader(){
         return nothing
     }
     /* prettier-ignore */
+
     renderDockedToolbar(){
         return html`
             <div class="md-datetime-picker__toolbar">
@@ -147,7 +162,7 @@ class MdDatetimePicker extends MdDatetimePickerElement {
                     class="md-datetime-picker__icon-button"
                     .icon="${"keyboard_arrow_left"}"
                     .color="${"standard"}"
-                    @onIconButtonClick="${this._handleDatetimePickerMonthPrev}"
+                    @click="${this._handleMonthPrev}"
                 ></md-icon-button>
                 <md-split-button 
                     class="md-datetime-picker__split-button"
@@ -155,20 +170,20 @@ class MdDatetimePicker extends MdDatetimePickerElement {
                     .color="${"text"}"
                     .trailingIcon="${"arrow_drop_down"}"
                     .selected="${this.view === "months"}"
-                    @onSplitButtonSelection="${this._handleDatetimePickerMonthMenu}"
+                    @select="${this._handleMonthMenu}"
                 ></md-split-button>
                 <md-icon-button 
                     class="md-datetime-picker__icon-button"
                     .icon="${"keyboard_arrow_right"}"
                     .color="${"standard"}"
-                    @onIconButtonClick="${this._handleDatetimePickerMonthNext}"
+                    @click="${this._handleMonthNext}"
                 ></md-icon-button>
                 <div class="md-datetime-picker__spacer"></div>
                 <md-icon-button 
                     class="md-datetime-picker__icon-button"
                     .icon="${"keyboard_arrow_left"}"
                     .color="${"standard"}"
-                    @onIconButtonClick="${this._handleDatetimePickerYearPrev}"
+                    @click="${this._handleYearPrev}"
                 ></md-icon-button>
                 <md-split-button 
                     class="md-datetime-picker__split-button"
@@ -176,18 +191,19 @@ class MdDatetimePicker extends MdDatetimePickerElement {
                     .color="${"text"}"
                     .trailingIcon="${"arrow_drop_down"}"
                     .selected="${this.view === "years"}"
-                    @onSplitButtonSelection="${this._handleDatetimePickerYearMenu}"
+                    @select="${this._handleYearMenu}"
                 ></md-split-button>
                 <md-icon-button 
                     class="md-datetime-picker__icon-button"
                     .icon="${"keyboard_arrow_right"}"
                     .color="${"standard"}"
-                    @onIconButtonClick="${this._handleDatetimePickerYearNext}"
+                    @click="${this._handleYearNext}"
                 ></md-icon-button>
             </div>
         `
     }
     /* prettier-ignore */
+
     renderDockedFooter(){
         return html`
             ${['dial','input'].includes(this.variant)?html`
@@ -195,7 +211,7 @@ class MdDatetimePicker extends MdDatetimePickerElement {
                     class="md-datetime-picker__icon-button"
                     .icon="${this.variant==="dial"?"keyboard":"schedule"}"
                     .color="${"standard"}"
-                    @onIconButtonClick="${this._handleDatetimePickerDialInput}"
+                    @click="${this._handleDialInput}"
                 ></md-icon-button>
             `:nothing}
             <div class="md-datetime-picker__spacer"></div>
@@ -203,18 +219,19 @@ class MdDatetimePicker extends MdDatetimePickerElement {
                 class="md-datetime-picker__button"
                 .label="${"Cancel"}"
                 .color="${"text"}"
-                @onButtonClick="${this._handleDatetimePickerCancel}"
+                @click="${this._handleCancel}"
             ></md-button>
             <md-button 
                 class="md-datetime-picker__button"
                 .label="${"Ok"}"
                 .color="${"text"}"
-                @onButtonClick="${this._handleDatetimePickerOk}"
+                @click="${this._handleOk}"
             ></md-button>
         `
     }
 
     /* prettier-ignore */
+
     renderModalHeader(){
         return html`
             <div class="md-datetime-picker__header">
@@ -229,13 +246,14 @@ class MdDatetimePicker extends MdDatetimePickerElement {
                         class="md-datetime-picker__icon-button"
                         .icon="${this.variant==="modal-input"?"calendar_today":"edit"}"
                         .color="${"standard"}"
-                        @onIconButtonClick="${this._handleDatetimePickerModalInput}"
+                        @click="${this._handleModalInput}"
                     ></md-icon-button>
                 </div>
             </div>
         `
     }
     /* prettier-ignore */
+
     renderModalToolbar(){
         return html`
             <div class="md-datetime-picker__toolbar">
@@ -245,34 +263,37 @@ class MdDatetimePicker extends MdDatetimePickerElement {
                     .color="${"text"}"
                     .trailingIcon="${"arrow_drop_down"}"
                     .selected="${['years','months'].includes(this.view)}"
-                    @onSplitButtonSelection="${this._handleDatetimePickerMonthYearMenu}"
+                    @select="${this._handleMonthYearMenu}"
                 ></md-split-button>
                 <div class="md-datetime-picker__spacer"></div>
                 <md-icon-button 
                     class="md-datetime-picker__icon-button"
                     .icon="${"keyboard_arrow_left"}"
                     .color="${"standard"}"
-                    @onIconButtonClick="${this._handleDatetimePickerMonthYearPrev}"
+                    @click="${this._handleMonthYearPrev}"
                 ></md-icon-button>
                 <md-icon-button 
                     class="md-datetime-picker__icon-button"
                     .icon="${"keyboard_arrow_right"}"
                     .color="${"standard"}"
-                    @onIconButtonClick="${this._handleDatetimePickerMonthYearNext}"
+                    @click="${this._handleMonthYearNext}"
                 ></md-icon-button>
             </div>
         `
     }
     /* prettier-ignore */
+
     renderModalFooter(){
         return this.renderDockedFooter()
     }
 
     /* prettier-ignore */
+
     renderModalInputHeader(){
         return this.renderModalHeader()
     }
     /* prettier-ignore */
+
     renderModalInputToolbar(){
         return html`
             <div class="md-datetime-picker__toolbar">
@@ -283,17 +304,19 @@ class MdDatetimePicker extends MdDatetimePickerElement {
                     .label="${"Date"}"
                     .placeholder="${"mm/dd/yyyy"}"
                     .color="${"outlined"}"
-                    @onTextFieldNativeInput="${this._handleDatetimePickerDateInput}"
+                    @input="${this._handleDateInput}"
                 ></md-text-field>
             </div>
         `
     }
     /* prettier-ignore */
+
     renderModalInputFooter(){
         return this.renderDockedFooter()
     }
 
     /* prettier-ignore */
+
     renderDialHeader(){
         return html`
             <div class="md-datetime-picker__header">
@@ -305,32 +328,35 @@ class MdDatetimePicker extends MdDatetimePickerElement {
         `
     }
     /* prettier-ignore */
+
     renderDialToolbar(){
         return html`
             <div class="md-datetime-picker__toolbar">
                 <div class="md-datetime-picker__input-time">
                     <md-text-field 
+                        ${ref(this.getRef('hour'))}
                         class="${classMap({
                             "md-datetime-picker__text-field":true,
                             "md-datetime-picker__text-field--active":this.view==="hours",
                         })}"
                         .value="${this.info.hour}"
                         .label="${ifDefined(this.variant==="input"?"Hour":undefined)}"
-                        @onTextFieldNativeClick="${this._handleDatetimePickerHourFocus}"
-                        @onTextFieldNativeFocus="${this._handleDatetimePickerHourFocus}"
-                        @onTextFieldNativeInput="${this._formatTimeInput({type:'hour',threshold: this.hour12 ? 1 : 2,max: this.hour12 ? 12 : 23,digit: 2,callback: this._handleDatetimePickerHourInput,})}"
+                        @click="${this._handleHourFocus}"
+                        @focus="${this._handleHourFocus}"
+                        @input="${this._formatTimeInput({type:'hour',threshold: this.hour12 ? 1 : 2,max: this.hour12 ? 12 : 23,digit: 2,callback: this._handleHourInput,})}"
                     ></md-text-field>
                     <div class="md-datetime-picker__separator">:</div>
                     <md-text-field 
+                        ${ref(this.getRef('minute'))}
                         class="${classMap({
                             "md-datetime-picker__text-field":true,
                             "md-datetime-picker__text-field--active":this.view==="minutes",
                         })}"
                         .value="${this.info.minute}"
                         .label="${ifDefined(this.variant==="input"?"Minute":undefined)}"
-                        @onTextFieldNativeClick="${this._handleDatetimePickerMinuteFocus}"
-                        @onTextFieldNativeFocus="${this._handleDatetimePickerMinuteFocus}"
-                        @onTextFieldNativeInput="${this._formatTimeInput({type:'minute',threshold: 5,max: 59,digit: 2,callback: this._handleDatetimePickerMinuteInput,})}"
+                        @click="${this._handleMinuteFocus}"
+                        @focus="${this._handleMinuteFocus}"
+                        @input="${this._formatTimeInput({type:'minute',threshold: 5,max: 59,digit: 2,callback: this._handleMinuteInput,})}"
                     ></md-text-field>
                 </div>
                 ${this.hour12?html`
@@ -345,31 +371,36 @@ class MdDatetimePicker extends MdDatetimePickerElement {
                         .shape="${"square"}"
                         .color="${"outlined"}"
                         .singleSelect="${true}"
-                        @onButtonGroupItemSelection="${this._handleDatetimePickerPeriodSelection}"
+                        @item-select="${this._handlePeriodSelection}"
                     ></md-button-group>
                 `:nothing}
             </div>
         `
     }
     /* prettier-ignore */
+
     renderDialFooter(){
         return this.renderDockedFooter()
     }
 
     /* prettier-ignore */
+
     renderInputHeader(){
         return this.renderDialHeader()
     }
     /* prettier-ignore */
+
     renderInputToolbar(){
         return this.renderDialToolbar()
     }
     /* prettier-ignore */
+
     renderInputFooter(){
         return this.renderDialFooter()
     }
 
     /* prettier-ignore */
+
     renderHeader(){
         return choose(this.variant,[
             ['docked',() => this.renderDockedHeader()],
@@ -380,6 +411,7 @@ class MdDatetimePicker extends MdDatetimePickerElement {
         ],() => nothing)
     }
     /* prettier-ignore */
+
     renderToolbar(){
         return choose(this.variant,[
             ['docked',() => this.renderDockedToolbar()],
@@ -390,6 +422,7 @@ class MdDatetimePicker extends MdDatetimePickerElement {
         ],() => nothing)
     }
     /* prettier-ignore */
+
     renderView(){
         return choose(this.view,[
             ["calendar",() => this.renderCalendar()],
@@ -400,6 +433,7 @@ class MdDatetimePicker extends MdDatetimePickerElement {
         ],() => nothing)
     }
     /* prettier-ignore */
+
     renderFooter(){
         return choose(this.variant,[
             ['docked',() => this.renderDockedFooter()],
@@ -454,8 +488,7 @@ class MdDatetimePicker extends MdDatetimePickerElement {
         }
     }
 
-    // Selection
-    _handleDatetimePickerYearSelection(event) {
+    _handleYearSelection(event) {
         const item = event.detail.item;
 
         this.selection.setFullYear(item.year);
@@ -467,7 +500,7 @@ class MdDatetimePicker extends MdDatetimePickerElement {
 
         this._emitChange();
     }
-    _handleDatetimePickerMonthSelection(event) {
+    _handleMonthSelection(event) {
         const item = event.detail.item;
 
         this.selection.setMonth(item.month);
@@ -479,7 +512,7 @@ class MdDatetimePicker extends MdDatetimePickerElement {
 
         this._emitChange();
     }
-    _handleDatetimePickerDateSelection(event) {
+    _handleDateSelection(event) {
         const cell = event.currentTarget.cell;
 
         if (cell.week === undefined) {
@@ -493,14 +526,14 @@ class MdDatetimePicker extends MdDatetimePickerElement {
 
         this._emitChange();
     }
-    _handleDatetimePickerHourSelection(event) {
+    _handleHourSelection(event) {
         const cell = event.currentTarget.cell;
 
         this.setHour(cell.hour, this.hour12 && this.info.ampm);
 
         this._emitChange();
     }
-    _handleDatetimePickerMinuteSelection(event) {
+    _handleMinuteSelection(event) {
         const cell = event.currentTarget.cell;
 
         this.setMinute(cell.minute);
@@ -510,7 +543,7 @@ class MdDatetimePicker extends MdDatetimePickerElement {
         this._emitChange();
     }
 
-    _handleDatetimePickerPeriodSelection(event) {
+    _handlePeriodSelection(event) {
         const data = event.detail.data;
 
         const hour = this.selection.getHours();
@@ -519,47 +552,53 @@ class MdDatetimePicker extends MdDatetimePickerElement {
         this._emitChange();
     }
 
-    _handleDatetimePickerMonthPrev(event) {
+    _handleMonthPrev(event) {
         this.selection.setMonth(this.selection.getMonth() - 1);
 
         this.selection = new Date(this.selection);
     }
-    _handleDatetimePickerMonthNext(event) {
+    _handleMonthNext(event) {
         this.selection.setMonth(this.selection.getMonth() + 1);
 
         this.selection = new Date(this.selection);
     }
 
-    _handleDatetimePickerYearPrev(event) {
+    _handleYearPrev(event) {
         const count = this.view === "years" ? this.yearCount : 1;
         this.selection.setFullYear(this.selection.getFullYear() - count);
 
         this.selection = new Date(this.selection);
     }
-    _handleDatetimePickerYearNext(event) {
+    _handleYearNext(event) {
         const count = this.view === "years" ? this.yearCount : 1;
         this.selection.setFullYear(this.selection.getFullYear() + count);
 
         this.selection = new Date(this.selection);
     }
 
-    _handleDatetimePickerMonthMenu({ detail: { selected } } = {}) {
+    _handleMonthMenu(event = {}) {
+        const {
+            detail: { selected },
+        } = event;
         this.view = selected ? "months" : "calendar";
     }
-    _handleDatetimePickerYearMenu({ detail: { selected } } = {}) {
+    _handleYearMenu(event = {}) {
+        const {
+            detail: { selected },
+        } = event;
         this.view = selected ? "years" : "calendar";
     }
 
-    _handleDatetimePickerModalInput(event) {
+    _handleModalInput(event) {
         this.variant = this.variant === "modal-input" ? "modal" : "modal-input";
         this.view = this.variant === "modal-input" ? "nothing" : "calendar";
     }
-    _handleDatetimePickerDialInput(event) {
+    _handleDialInput(event) {
         this.variant = this.variant === "dial" ? "input" : "dial";
         this.view = this.variant === "dial" ? "hours" : "nothing";
     }
 
-    _handleDatetimePickerMonthYearPrev(event) {
+    _handleMonthYearPrev(event) {
         if (this.view === "calendar") {
             this.selection.setMonth(this.selection.getMonth() - 1);
 
@@ -574,7 +613,7 @@ class MdDatetimePicker extends MdDatetimePickerElement {
             this.selection = new Date(this.selection);
         }
     }
-    _handleDatetimePickerMonthYearNext(event) {
+    _handleMonthYearNext(event) {
         if (this.view === "calendar") {
             this.selection.setMonth(this.selection.getMonth() + 1);
 
@@ -589,22 +628,25 @@ class MdDatetimePicker extends MdDatetimePickerElement {
             this.selection = new Date(this.selection);
         }
     }
-    _handleDatetimePickerMonthYearMenu({ detail: { selected } } = {}) {
+    _handleMonthYearMenu(event = {}) {
+        const {
+            detail: { selected },
+        } = event;
         this.view = selected ? "years" : "calendar";
     }
 
-    // Input
-    _handleDatetimePickerHourFocus(event) {
+    _handleHourFocus(event) {
         this.view = this.variant === "dial" ? "hours" : "nothing";
-        this.hourInput.select();
+        this.getRef("hour").value.getRef("native").value.select();
     }
-    _handleDatetimePickerMinuteFocus(event) {
+    _handleMinuteFocus(event) {
         this.view = this.variant === "dial" ? "minutes" : "nothing";
-        this.minuteInput.select();
+        this.getRef("minute").value.getRef("native").value.select();
     }
 
-    _handleDatetimePickerDateInput(event) {}
-    _formatTimeInput({ key, threshold, max, digit, callback } = {}) {
+    _handleDateInput(event) {}
+    _formatTimeInput(params = {}) {
+        const { type, key, threshold, max, digit, callback } = params;
         return ({ detail: { event } } = {}) => {
             const input = event.currentTarget;
             const data = (event.data || "").replace(/\D/, "");
@@ -625,22 +667,22 @@ class MdDatetimePicker extends MdDatetimePickerElement {
             }
         };
     }
-    _handleDatetimePickerHourInput(value) {
+    _handleHourInput(value) {
         this.setHour(value, this.hour12 && this.info.ampm);
-        this.minuteInput.focus();
+        this.getRef("minute").value.getRef("native").value.focus();
     }
 
-    _handleDatetimePickerMinuteInput(value) {
+    _handleMinuteInput(value) {
         this.setMinute(value);
         this.view = this.variant === "dial" ? "hours" : "nothing";
-        this.minuteInput.blur();
+        this.getRef("minute").value.getRef("native").value.blur();
     }
 
-    _handleDatetimePickerCancel(event) {
+    _handleCancel(event) {
         this.reset();
         this._emitChange();
     }
-    _handleDatetimePickerOk(event) {
+    _handleOk(event) {
         this._emitChange();
     }
 
@@ -650,15 +692,21 @@ class MdDatetimePicker extends MdDatetimePickerElement {
             type: this.type,
             value,
         };
-        this.emit("onDatetimePickerChange", { data });
+        this.emit("change", { data });
     }
 
+    /**
+     *
+     */
     reset() {
         const date = dateFormatter[this.type].parse(this.value);
         this.selection = new Date(date);
         this.selected = new Date(date);
     }
 
+    /**
+     *
+     */
     setHour(hour, periode) {
         if (periode === "AM" && hour >= 12) {
             this.selection.setHours(hour - 12);
@@ -672,6 +720,9 @@ class MdDatetimePicker extends MdDatetimePickerElement {
         this.selected = new Date(this.selection);
     }
 
+    /**
+     *
+     */
     setMinute(minute) {
         this.selection.setMinutes(minute);
 

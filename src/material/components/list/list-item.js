@@ -7,7 +7,22 @@ import { styleMap } from "lit/directives/style-map.js";
 import { ref } from "lit/directives/ref.js";
 import { renderBadge, renderCheckbox, renderIcon, renderIconButton, renderImage, renderRadioButton, renderSwitch } from "../../core/template.js";
 
+/**
+ * @class MdListItem
+ * @extends MdElement
+ */
 class MdListItem extends MdElement {
+    /**
+     * @property {Array} leading -
+     * @property {Array} trailing -
+     * @property {String} overline -
+     * @property {String} label -
+     * @property {String} supporting -
+     * @property {String} routerLink -
+     * @property {Boolean} interactive -
+     * @property {Object} rippleOptions -
+     * @property {Boolean} selected -
+     */
     static properties = {
         leading: { type: Array },
         trailing: { type: Array },
@@ -22,14 +37,23 @@ class MdListItem extends MdElement {
 
     layouts = ["one-line", "two-line", "three-line"];
 
+    /**
+     *
+     */
     get hasCheckbox() {
         return this.leading?.some((i) => i.component === "checkbox") || this.trailing?.some((i) => i.component === "checkbox");
     }
 
+    /**
+     *
+     */
     get hasRadioButton() {
         return this.leading?.some((i) => i.component === "radio-button") || this.trailing?.some((i) => i.component === "radioButton");
     }
 
+    /**
+     *
+     */
     get hasSwitch() {
         return this.leading?.some((i) => i.component === "switch") || this.trailing?.some((i) => i.component === "switch");
     }
@@ -46,6 +70,7 @@ class MdListItem extends MdElement {
     }
 
     /* prettier-ignore */
+
     renderText(properties){
         return html`
             <div 
@@ -56,6 +81,7 @@ class MdListItem extends MdElement {
     }
 
     /* prettier-ignore */
+
     renderComponent(component,properties){
         return choose(component,[
             ['avatar', () => renderImage({ classMap: { "md-list__avatar": true, ...properties.classMap }, shape: "round", ...properties })],
@@ -72,6 +98,7 @@ class MdListItem extends MdElement {
     }
 
     /* prettier-ignore */
+
     renderLeading(){
         return html`
             <div class="md-list__leading">
@@ -83,6 +110,7 @@ class MdListItem extends MdElement {
     }
 
     /* prettier-ignore */
+
     renderTrailing(){
         return html`
             <div class="md-list__trailing">
@@ -94,6 +122,7 @@ class MdListItem extends MdElement {
     }
 
     /* prettier-ignore */
+
     renderContent(){
         return html`
             <div class="md-list__content">

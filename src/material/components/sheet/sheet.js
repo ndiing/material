@@ -5,7 +5,13 @@ import { MdSheetHeader } from "./sheet-header.js";
 import { MdSheetFooter } from "./sheet-footer.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 
+/**
+ * @class MdSheet
+ * @extends MdLayoutItem
+ */
 class MdSheet extends MdLayoutItem {
+    /**
+     */
     static properties = {
         ...MdLayoutItem.properties,
         ...MdSheetHeader.properties,

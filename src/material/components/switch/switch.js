@@ -11,9 +11,17 @@ const converter = (value) => {
     }
 };
 
+/**
+ * @class MdSwitch
+ * @extends MdElement
+ *
+ * @fires MdSwitch#input
+ */
 class MdSwitch extends MdElement {
     static formAssociated = true;
 
+    /**
+     */
     static properties = {
         name: { type: String },
         value: { type: String },
@@ -39,6 +47,7 @@ class MdSwitch extends MdElement {
     }
 
     /* prettier-ignore */
+
     renderIcon(){
         const icons=Array.isArray(this.icon)?this.icon:[this.icon]
         const index=this.checked?1:0
@@ -60,7 +69,7 @@ class MdSwitch extends MdElement {
                 ?disabled="${ifDefined(this.disabled)}"
                 ?required="${ifDefined(this.required)}"
                 .tabIndex="${ifDefined(this.tabIndex)}"
-                @input="${this._handleSwitchNativeInput}"
+                @input="${this._handleInput}"
             >
             <div class="md-switch__track">
                 <div class="md-switch__thumb">${this.icon?this.renderIcon():nothing}</div>
@@ -98,16 +107,20 @@ class MdSwitch extends MdElement {
         }
     }
 
+    /**
+     *
+     */
     formResetCallback(event) {
         this.checked = this.defaultChecked;
         const native = this.getRef("native").value;
         native.checked = this.defaultChecked;
     }
 
-    _handleSwitchNativeInput(event) {
+    _handleInput(event) {
+        event.stopPropagation();
         const native = this.getRef("native").value;
         this.checked = native.checked;
-        this.emit("onSwitchNativeInput", { event, element: this });
+        this.emit("input", { event, element: this });
     }
 }
 

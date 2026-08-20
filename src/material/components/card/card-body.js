@@ -1,6 +1,10 @@
 import { html } from "lit";
 import { MdElement } from "../../base/element.js";
 
+/**
+ * @class MdCardBody
+ * @extends MdElement
+ */
 class MdCardBody extends MdElement {
     connectedCallback() {
         super.connectedCallback();

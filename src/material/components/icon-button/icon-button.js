@@ -10,7 +10,15 @@ const converter = (value) => {
     }
 };
 
+/**
+ * @class MdIconButton
+ * @extends MdElement
+ *
+ * @fires MdIconButton#select
+ */
 class MdIconButton extends MdElement {
+    /**
+     */
     static properties = {
         icon: { type: String, converter },
         variant: { type: String },
@@ -40,7 +48,7 @@ class MdIconButton extends MdElement {
         this.width = "default";
         this.selectOnToggle = true;
 
-        this._handleIconButtonClick = this._handleIconButtonClick.bind(this);
+        this._handleClick = this._handleClick.bind(this);
 
         this.rippleController = new RippleController(this, {});
     }
@@ -64,13 +72,13 @@ class MdIconButton extends MdElement {
 
         this.classList.add("md-icon-button");
 
-        this.addEventListener("click", this._handleIconButtonClick);
+        this.addEventListener("click", this._handleClick);
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
 
-        this.removeEventListener("click", this._handleIconButtonClick);
+        this.removeEventListener("click", this._handleClick);
 
         this.classList.remove("md-icon-button");
     }
@@ -121,14 +129,12 @@ class MdIconButton extends MdElement {
         }
     }
 
-    _handleIconButtonClick(event) {
+    _handleClick(event) {
         if (this.variant === "toggle" && this.selectOnToggle) {
             this.selected = !this.selected;
 
-            this.emit("onIconButtonSelection", { event, element: this });
+            this.emit("select", { event, element: this });
         }
-
-        this.emit("onIconButtonClick", { event, element: this });
     }
 }
 

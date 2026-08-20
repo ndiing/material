@@ -88,14 +88,6 @@ function _getRect(element) {
     return element.getBoundingClientRect();
 }
 
-/**
- * Set position of container relative to trigger
- * @param {HTMLElement|Event} trigger - Trigger element or event
- * @param {HTMLElement} container - Element to position
- * @param {Object} options - Positioning options
- * @param {string|string[]} options.placement - Single placement or array of fallbacks
- * @param {number|number[]} options.offset - Offset in pixels
- */
 function setPosition(trigger, container, options = {}) {
     options = {
         placement: Object.keys(STRATEGIES),

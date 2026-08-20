@@ -1,5 +1,16 @@
 import { QueryBuilder } from "./query-builder.js";
 
+/**
+ * @class Router
+ *
+ * @fires Router#navigation-start
+ * @fires Router#navigation-error
+ * @fires Router#guards-check-start
+ * @fires Router#guards-check-end
+ * @fires Router#navigation-error
+ * @fires Router#navigation-error
+ * @fires Router#navigation-end
+ */
 class Router {
     constructor(routes, options = {}) {
         this.routes = [...routes];
@@ -156,8 +167,8 @@ class Router {
     }
 
     async _handleNavigation() {
-        // performance.mark("onNavigationStart");
-        this.emit("onNavigationStart", { router: this });
+        performance.mark("onNavigationStart");
+        this.emit("navigation-start", { router: this });
 
         const { pathname, search, hash } = this._parseURL();
         this.url.pathname = pathname;
@@ -167,7 +178,7 @@ class Router {
 
         const routes = this._getRoutes();
         if (!routes || routes.length === 0) {
-            this.emit("onNavigationError", { router: this });
+            this.emit("navigation-error", { router: this });
             return;
         }
 
@@ -183,14 +194,14 @@ class Router {
 
             if (route.beforeLoad) {
                 try {
-                    this.emit("onGuardsCheckStart", { router: this });
+                    this.emit("guards-check-start", { router: this });
                     await this._beforeLoad(route);
-                    this.emit("onGuardsCheckEnd", { router: this });
+                    this.emit("guards-check-end", { router: this });
                 } catch (error) {
                     if (error.type === "abort" || error.name === "AbortError") {
                         return;
                     } else {
-                        this.emit("onNavigationError", { router: this });
+                        this.emit("navigation-error", { router: this });
                         throw error;
                     }
                 }
@@ -199,21 +210,24 @@ class Router {
             try {
                 await this._renderComponent(route);
             } catch (err) {
-                this.emit("onNavigationError", { router: this });
+                this.emit("navigation-error", { router: this });
                 throw err;
             }
         }
 
         this._removeComponent(routes);
 
-        this.emit("onNavigationEnd", { router: this });
-        // performance.mark("onNavigationEnd");
-        // performance.measure("measureNavigation", "onNavigationStart", "onNavigationEnd");
-        // performance.clearMarks("onNavigationStart");
-        // performance.clearMarks("onNavigationEnd");
-        // performance.clearMeasures("measureNavigation");
+        this.emit("navigation-end", { router: this });
+        performance.mark("onNavigationEnd");
+        performance.measure("measureNavigation", "onNavigationStart", "onNavigationEnd");
+        performance.clearMarks("onNavigationStart");
+        performance.clearMarks("onNavigationEnd");
+        performance.clearMeasures("measureNavigation");
     }
 
+    /**
+     *
+     */
     navigate(url, options = {}) {
         let targetUrl = url;
 
@@ -238,11 +252,15 @@ class Router {
         const routerLink = event.target.closest("[routerLink]");
         if (!routerLink) return;
 
+        event.stopPropagation();
         event.preventDefault();
         const url = routerLink.getAttribute("routerLink");
         this.navigate(url);
     }
 
+    /**
+     *
+     */
     listen() {
         if (document.readyState === "loading") {
             window.addEventListener("DOMContentLoaded", () => this._handleNavigation());
@@ -259,14 +277,23 @@ class Router {
         window.addEventListener("click", (event) => this._handleNavigate(event));
     }
 
+    /**
+     *
+     */
     on(type, listener) {
         window.addEventListener(type, listener);
     }
 
+    /**
+     *
+     */
     off(type, listener) {
         window.removeEventListener(type, listener);
     }
 
+    /**
+     *
+     */
     emit(type, detail) {
         const event = new CustomEvent(type, {
             bubbles: true,
@@ -276,42 +303,66 @@ class Router {
         window.dispatchEvent(event);
     }
 
+    /**
+     *
+     */
     search(...args) {
         this.queryBuilder.search(...args);
         return this;
     }
 
+    /**
+     *
+     */
     filter(...args) {
         this.queryBuilder.filter(...args);
         return this;
     }
 
+    /**
+     *
+     */
     sort(...args) {
         this.queryBuilder.sort(...args);
         return this;
     }
 
+    /**
+     *
+     */
     paginate(...args) {
         this.queryBuilder.paginate(...args);
         return this;
     }
 
+    /**
+     *
+     */
     slice(...args) {
         this.queryBuilder.slice(...args);
         return this;
     }
 
+    /**
+     *
+     */
     hash(hash) {
         this.url.hash = hash;
         return this;
     }
 
+    /**
+     *
+     */
     clear(...args) {
         this.url.hash = "";
         this.queryBuilder.clear(...args);
         return this;
     }
 
+    /**
+     *
+     */
     reload(force = false) {
         if (force) {
             window.location.reload();
@@ -320,10 +371,16 @@ class Router {
         }
     }
 
+    /**
+     *
+     */
     back() {
         window.history.back();
     }
 
+    /**
+     *
+     */
     forward() {
         window.history.forward();
     }

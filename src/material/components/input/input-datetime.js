@@ -7,7 +7,27 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { ref } from "lit/directives/ref.js";
 import { format, getISOWeeksInYear, isValid, parse } from "date-fns";
 
+/**
+ * @class MdInputDatetime
+ * @extends MdElement
+ *
+ * @fires MdInputDatetime#input
+ * @fires MdInputDatetime#change
+ * @fires MdInputDatetime#keydown
+ * @fires MdInputDatetime#focus
+ * @fires MdInputDatetime#blur
+ */
 class MdInputDatetime extends MdElement {
+    /**
+     * @property {String} type -
+     * @property {String} value -
+     * @property {String} placeholder -
+     * @property {String} format -
+     * @property {String} min -
+     * @property {String} max -
+     * @property {Number} year -
+     * @property {Number} month -
+     */
     static properties = {
         type: { type: String },
         value: { type: String },
@@ -88,6 +108,7 @@ class MdInputDatetime extends MdElement {
     }
 
     /* prettier-ignore */
+
     renderInputEnum(properties = {}) {
         return html`
             <md-input-enum
@@ -103,16 +124,17 @@ class MdInputDatetime extends MdElement {
                 .options="${ifDefined(properties.options)}"
                 .selectedIndex="${ifDefined(properties.selectedIndex)}"
                 .bufferTimeout="${ifDefined(properties.bufferTimeout)}"
-                @onInputEnumInput="${this._handleInput}"
-                @onInputEnumChange="${this._handleChange}"
-                @onInputEnumKeydown="${this._handleKeydown}"
-                @onInputEnumFocus="${this._handleFocus}"
-                @onInputEnumBlur="${this._handleBlur}"
+                @input="${this._handleInput}"
+                @change="${this._handleChange}"
+                @keydown="${this._handleKeydown}"
+                @focus="${this._handleFocus}"
+                @blur="${this._handleBlur}"
             ></md-input-enum>
         `
     }
 
     /* prettier-ignore */
+
     renderInputSegment(properties = {}) {
         return html`
             <md-input-segment
@@ -132,16 +154,17 @@ class MdInputDatetime extends MdElement {
                 .maxLength="${ifDefined(properties.maxLength)}"
                 .clampOnInput="${ifDefined(properties.clampOnInput)}"
                 .tabIndex="${ifDefined(properties.tabIndex)}"
-                @onInputSegmentInput="${this._handleInput}"
-                @onInputSegmentChange="${this._handleChange}"
-                @onInputSegmentKeydown="${this._handleKeydown}"
-                @onInputSegmentFocus="${this._handleFocus}"
-                @onInputSegmentBlur="${this._handleBlur}"
+                @input="${this._handleInput}"
+                @change="${this._handleChange}"
+                @keydown="${this._handleKeydown}"
+                @focus="${this._handleFocus}"
+                @blur="${this._handleBlur}"
             ></md-input-segment>
         `
     }
 
     /* prettier-ignore */
+
     renderInputSeparator(properties = {}) {
         return html`
             <span class="md-input-datetime__separator">${properties.placeholder}</span>
@@ -149,6 +172,7 @@ class MdInputDatetime extends MdElement {
     }
 
     /* prettier-ignore */
+
     renderComponent(properties = {}) {
         return choose(properties.component,[
             ["input-segment", () => this.renderInputSegment(properties)],
@@ -267,14 +291,23 @@ class MdInputDatetime extends MdElement {
         }
     }
 
+    /**
+     *
+     */
     getPattern(key) {
         return this.types[this.type][key];
     }
 
+    /**
+     *
+     */
     setPattern(key, value) {
         this.types[this.type][key] = value;
     }
 
+    /**
+     *
+     */
     getProperties(token) {
         const prop = this.props[token];
         if (!prop) {
@@ -283,6 +316,9 @@ class MdInputDatetime extends MdElement {
         return prop;
     }
 
+    /**
+     *
+     */
     setProperties(token, key, value) {
         const prop = this.props[token];
         if (!prop) {
@@ -300,15 +336,23 @@ class MdInputDatetime extends MdElement {
         }
     }
 
+    /**
+     *
+     */
     focusNext(event) {
         this._moveFocus(event, 1);
     }
 
+    /**
+     *
+     */
     focusPrev(event) {
         this._moveFocus(event, -1);
     }
 
     async _handleInput(event) {
+        event.stopPropagation();
+
         const data = event.currentTarget.data;
         const originalEvent = event.detail.event;
 
@@ -349,14 +393,20 @@ class MdInputDatetime extends MdElement {
 
         this.value = value;
 
-        this.emit("onInputDatetimeInput", { event, element: this });
+        this.emit("input", { event, element: this });
     }
 
     _handleChange(event) {
-        this.emit("onInputDatetimeChange", { event, element: this });
+        event.stopPropagation();
+
+        this.emit("change", { event, element: this });
     }
 
     _handleKeydown(event) {
+        event.stopPropagation();
+
+        event.stopPropagation();
+
         const originalEvent = event.detail.event;
         if (originalEvent.key === "ArrowRight") {
             originalEvent.preventDefault();
@@ -366,15 +416,19 @@ class MdInputDatetime extends MdElement {
             this.focusPrev(event);
         }
 
-        this.emit("onInputDatetimeKeydown", { event, element: this });
+        this.emit("keydown", { event, element: this });
     }
 
     _handleFocus(event) {
-        this.emit("onInputDatetimeFocus", { event, element: this });
+        event.stopPropagation();
+
+        this.emit("focus", { event, element: this });
     }
 
     _handleBlur(event) {
-        this.emit("onInputDatetimeBlur", { event, element: this });
+        event.stopPropagation();
+
+        this.emit("blur", { event, element: this });
     }
 }
 

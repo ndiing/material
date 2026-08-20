@@ -1,5 +1,8 @@
 import { TaskQueue } from "../core/task-queue.js";
 
+/**
+ * @class Snackbar
+ */
 class Snackbar {
     queue = new TaskQueue();
 
@@ -7,22 +10,26 @@ class Snackbar {
         this.close = this.close.bind(this);
     }
 
-    show({ supporting, actions = [], timeout = 5000 } = {}) {
+    /**
+     *
+     */
+    show(params = {}) {
+        const { supporting, actions = [], timeout = 5000 } = params;
         this.queue.add(
             () =>
                 new Promise((resolve) => {
                     this.snackbar = document.createElement("md-snackbar");
 
                     const remove = () => {
-                        this.snackbar.removeEventListener("onSnackbarClosed", remove);
+                        this.snackbar.removeEventListener("after-close", remove);
                         this.snackbar.remove();
                         resolve();
                     };
-                    this.snackbar.addEventListener("onSnackbarClosed", remove);
+                    this.snackbar.addEventListener("after-close", remove);
 
                     this.snackbar.supporting = supporting;
                     this.snackbar.actions = actions.map((action) => {
-                        const originalHandler = action.onButtonClick || action.onIconButtonClick;
+                        const originalHandler = action.click || action.click;
                         const handlerWrapper = (event) => {
                             if (originalHandler) {
                                 originalHandler(originalHandler);
@@ -30,10 +37,10 @@ class Snackbar {
                             this.close();
                         };
                         if (action.component === "button") {
-                            return { ...action, onButtonClick: handlerWrapper };
+                            return { ...action, click: handlerWrapper };
                         }
                         if (action.component === "icon-button") {
-                            return { ...action, onIconButtonClick: handlerWrapper };
+                            return { ...action, click: handlerWrapper };
                         }
                         return action;
                     });
@@ -47,6 +54,9 @@ class Snackbar {
         );
     }
 
+    /**
+     *
+     */
     close() {
         window.clearTimeout(this.timeout);
         this.snackbar.close();

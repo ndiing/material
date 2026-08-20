@@ -1,5 +1,9 @@
 import { MediaObserver } from "./observer.js";
 
+/**
+ * @class SchemeObserver
+ * @extends MediaObserver
+ */
 class SchemeObserver extends MediaObserver {
     constructor(callback, list) {
         super(callback, [

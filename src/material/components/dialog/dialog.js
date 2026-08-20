@@ -4,7 +4,13 @@ import { MdDialogHeader } from "./dialog-header.js";
 import { MdDialogFooter } from "./dialog-footer.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 
+/**
+ * @class MdDialog
+ * @extends MdElement
+ */
 class MdDialog extends MdElement {
+    /**
+     */
     static properties = {
         ...MdDialogHeader.properties,
         ...MdDialogFooter.properties,
@@ -20,8 +26,8 @@ class MdDialog extends MdElement {
 
         this.variant = "basic";
 
-        this._handleDialogScrimClick = this._handleDialogScrimClick.bind(this);
-        this._handleDialogAnimationend = this._handleDialogAnimationend.bind(this);
+        this._handleScrimClick = this._handleScrimClick.bind(this);
+        this._handleAnimationend = this._handleAnimationend.bind(this);
         this._handleWindowKeydown = this._handleWindowKeydown.bind(this);
     }
 
@@ -53,12 +59,12 @@ class MdDialog extends MdElement {
 
         this.classList.add("md-dialog");
 
-        this.addEventListener("animationend", this._handleDialogAnimationend);
+        this.addEventListener("animationend", this._handleAnimationend);
 
         if (!this.scrimElement) {
             this.scrimElement = document.createElement("md-scrim");
             this.parentElement.insertBefore(this.scrimElement, this.nextElementSibling);
-            this.scrimElement.addEventListener("onScrimClick", this._handleDialogScrimClick);
+            this.scrimElement.addEventListener("click", this._handleScrimClick);
         }
     }
 
@@ -68,12 +74,12 @@ class MdDialog extends MdElement {
         window.removeEventListener("keydown", this._handleWindowKeydown);
 
         if (this.scrimElement) {
-            this.scrimElement.removeEventListener("onScrimClick", this._handleDialogScrimClick);
+            this.scrimElement.removeEventListener("click", this._handleScrimClick);
             this.scrimElement.remove();
             this.scrimElement = null;
         }
 
-        this.removeEventListener("animationend", this._handleDialogAnimationend);
+        this.removeEventListener("animationend", this._handleAnimationend);
 
         this.classList.remove("md-dialog");
     }
@@ -104,11 +110,11 @@ class MdDialog extends MdElement {
         }
     }
 
-    _handleDialogScrimClick(event) {
+    _handleScrimClick(event) {
         this.close();
     }
 
-    _handleDialogAnimationend(event) {
+    _handleAnimationend(event) {
         if (event.target !== event.currentTarget) {
             return;
         }
@@ -124,6 +130,9 @@ class MdDialog extends MdElement {
         }
     }
 
+    /**
+     *
+     */
     show() {
         if (this.open) {
             return;
@@ -133,6 +142,9 @@ class MdDialog extends MdElement {
         window.addEventListener("keydown", this._handleWindowKeydown);
     }
 
+    /**
+     *
+     */
     close() {
         if (!this.open) {
             return;
@@ -141,6 +153,9 @@ class MdDialog extends MdElement {
         window.removeEventListener("keydown", this._handleWindowKeydown);
     }
 
+    /**
+     *
+     */
     toggle() {
         if (this.open) {
             this.close();

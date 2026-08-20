@@ -1,6 +1,10 @@
 import { html } from "lit";
 import { MdElement } from "../../base/element.js";
 
+/**
+ * @class MdGrid
+ * @extends MdElement
+ */
 class MdGrid extends MdElement {
     connectedCallback() {
         super.connectedCallback();

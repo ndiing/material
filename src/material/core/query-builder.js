@@ -1,3 +1,6 @@
+/**
+ * @class QueryBuilder
+ */
 class QueryBuilder {
     constructor(searchParams, options = {}) {
         this.searchParams = searchParams ?? new URLSearchParams();
@@ -11,6 +14,9 @@ class QueryBuilder {
         this._end = options._end ?? 10;
     }
 
+    /**
+     *
+     */
     search(q) {
         if (q && String(q).trim() !== "") {
             this.searchParams.set("q", q.trim());
@@ -20,6 +26,9 @@ class QueryBuilder {
         return this;
     }
 
+    /**
+     *
+     */
     filter(name, value, operator = "") {
         if (!name) {
             const systemKeys = ["_sort", "_order", "_page", "_limit", "_start", "_end", "q"];
@@ -39,6 +48,9 @@ class QueryBuilder {
         return this;
     }
 
+    /**
+     *
+     */
     sort(_sort, _order) {
         if (_sort) {
             const _sorts = this.searchParams.getAll("_sort");
@@ -73,6 +85,9 @@ class QueryBuilder {
         return this;
     }
 
+    /**
+     *
+     */
     paginate(_page, _limit = this._limit) {
         this.searchParams.delete("_start");
         this.searchParams.delete("_end");
@@ -86,6 +101,9 @@ class QueryBuilder {
         return this;
     }
 
+    /**
+     *
+     */
     slice(_start, _end = this._end) {
         this.searchParams.delete("_page");
         this.searchParams.delete("_limit");
@@ -99,6 +117,9 @@ class QueryBuilder {
         return this;
     }
 
+    /**
+     *
+     */
     clear() {
         [...this.searchParams.keys()].forEach((key) => {
             this.searchParams.delete(key);
@@ -106,11 +127,17 @@ class QueryBuilder {
         return this;
     }
 
+    /**
+     *
+     */
     toString() {
         const str = this.searchParams.toString();
         return str ? `?${str}` : "";
     }
 
+    /**
+     *
+     */
     toJSON() {
         const query = {};
         for (const [key, value] of this.searchParams.entries()) {

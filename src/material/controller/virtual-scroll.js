@@ -1,3 +1,6 @@
+/**
+ * @class VirtualScrollController
+ */
 class VirtualScrollController {
     constructor(host, options = {}) {
         this.host = host;
@@ -12,6 +15,9 @@ class VirtualScrollController {
         this._handleResizeObserver = this._handleResizeObserver.bind(this);
     }
 
+    /**
+     *
+     */
     setOptions(options) {
         this.viewport = options.viewport ?? this.viewport ?? this.host;
         this.itemCount = options.itemCount ?? this.itemCount ?? 0;
@@ -64,7 +70,11 @@ class VirtualScrollController {
         });
     }
 
-    scrollTo(index, { behavior = "auto", align = "auto", offset = 0 } = {}) {
+    /**
+     *
+     */
+    scrollTo(index, options = {}) {
+        const { behavior = "auto", align = "auto", offset = 0 } = options;
         const rowTop = this.rowHeight * index;
         const rowBottom = rowTop + this.rowHeight;
         const viewportTop = this.viewport.scrollTop;
@@ -92,6 +102,9 @@ class VirtualScrollController {
         }
     }
 
+    /**
+     *
+     */
     init() {
         this.viewport.classList.add("md-virtual-scroll");
 
@@ -103,6 +116,9 @@ class VirtualScrollController {
         this.resizeObserver.observe(this.viewport);
     }
 
+    /**
+     *
+     */
     destroy() {
         this.resizeObserver.disconnect();
 
@@ -111,18 +127,27 @@ class VirtualScrollController {
         this.viewport.classList.remove("md-virtual-scroll");
     }
 
+    /**
+     *
+     */
     reinit(options) {
         this.setOptions(options);
         this.destroy();
         this.init();
     }
 
+    /**
+     *
+     */
     hostConnected() {
         this.host.updateComplete.then(() => {
             this.init();
         });
     }
 
+    /**
+     *
+     */
     hostDisconnected() {
         this.destroy();
     }

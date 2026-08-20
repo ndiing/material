@@ -16,7 +16,7 @@ window.navigation.addEventListener("navigate", (event) => {
     }
 });
 
-window.addEventListener("onNavigationStart", () => {
+window.addEventListener("navigation-start", () => {
     if (isInitialLoad) {
         isInitialLoad = false;
         return;
@@ -37,7 +37,7 @@ window.addEventListener("onNavigationStart", () => {
     }
 });
 
-window.addEventListener("onNavigationEnd", () => {
+window.addEventListener("navigation-end", () => {
     if (resolveNavigation) {
         resolveNavigation();
         resolveNavigation = null;

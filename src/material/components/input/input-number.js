@@ -3,9 +3,23 @@ import { MdElement } from "../../base/element.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { ref } from "lit/directives/ref.js";
 
+/**
+ * @class MdInputNumber
+ * @extends MdElement
+ *
+ * @fires MdInputNumber#input
+ * @fires MdInputNumber#change
+ * @fires MdInputNumber#keydown
+ * @fires MdInputNumber#focus
+ * @fires MdInputNumber#blur
+ * @fires MdInputNumber#input
+ * @fires MdInputNumber#change
+ */
 class MdInputNumber extends MdElement {
     static formAssociated = true;
 
+    /**
+     */
     static properties = {
         value: { type: String },
         size: { type: Number },
@@ -84,6 +98,9 @@ class MdInputNumber extends MdElement {
         }
     }
 
+    /**
+     *
+     */
     formResetCallback(event) {
         const native = this.getRef("native").value;
 
@@ -115,9 +132,12 @@ class MdInputNumber extends MdElement {
 
         this.value = value;
 
-        this.emit("onInputNumberInput", { element: this });
+        this.emit("input", { element: this });
     }
 
+    /**
+     *
+     */
     autoCorrect() {
         let value = Number(this.value);
 
@@ -143,18 +163,26 @@ class MdInputNumber extends MdElement {
 
         this.value = value;
 
-        this.emit("onInputNumberChange", { element: this });
+        this.emit("change", { element: this });
     }
 
+    /**
+     *
+     */
     stepUp() {
         this._moveNumber(1);
     }
 
+    /**
+     *
+     */
     stepDown() {
         this._moveNumber(-1);
     }
 
     _handleKeydown(event) {
+        event.stopPropagation();
+
         if (event.key === "ArrowUp") {
             event.preventDefault();
             this.stepUp();
@@ -163,20 +191,26 @@ class MdInputNumber extends MdElement {
             this.stepDown();
         }
 
-        this.emit("onInputNumberKeydown", { event, element: this });
+        this.emit("keydown", { event, element: this });
     }
 
     _handleFocus(event) {
-        this.emit("onInputNumberFocus", { event, element: this });
+        event.stopPropagation();
+
+        this.emit("focus", { event, element: this });
     }
 
     _handleBlur(event) {
+        event.stopPropagation();
+
         this.autoCorrect();
 
-        this.emit("onInputNumberBlur", { event, element: this });
+        this.emit("blur", { event, element: this });
     }
 
     _handleInput(event) {
+        event.stopPropagation();
+
         const native = this.getRef("native").value;
         if (!this.allowRegex.test(native.value)) {
             native.value = this.value;
@@ -185,11 +219,13 @@ class MdInputNumber extends MdElement {
 
         this.value = native.value;
 
-        this.emit("onInputNumberInput", { event, element: this });
+        this.emit("input", { event, element: this });
     }
 
     _handleChange(event) {
-        this.emit("onInputNumberChange", { event, element: this });
+        event.stopPropagation();
+
+        this.emit("change", { event, element: this });
     }
 }
 

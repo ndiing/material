@@ -7,7 +7,23 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { MdListElement } from "../../base/list.js";
 import { repeat } from "lit/directives/repeat.js";
 
+/**
+ * @class MdList
+ * @extends MdListElement
+ *
+ * @fires MdList#select
+ * @fires MdList#select
+ * @fires MdList#select
+ * @fires MdList#select
+ * @fires MdList#select
+ * @fires MdList#select
+ * @fires MdList#select
+ * @fires MdList#select
+ * @fires MdList#item-click
+ */
 class MdList extends MdListElement {
+    /**
+     */
     static properties = {
         ...MdListElement.properties,
         clearSelection: { type: Boolean },
@@ -36,18 +52,19 @@ class MdList extends MdListElement {
         this.activeVisible = false;
         this.startNode = 0;
 
-        this._handleListVirtualScrollUpdate = this._handleListVirtualScrollUpdate.bind(this);
-        this._handleListKeydown = this._handleListKeydown.bind(this);
-        this._handleListClick = this._handleListClick.bind(this);
+        this._handleVirtualScrollUpdate = this._handleVirtualScrollUpdate.bind(this);
+        this._handleKeydown = this._handleKeydown.bind(this);
+        this._handleClick = this._handleClick.bind(this);
 
         this.virtualScrollController = new VirtualScrollController(this, {
             rowHeight: 56,
             register: false,
-            onUpdate: this._handleListVirtualScrollUpdate,
+            onUpdate: this._handleVirtualScrollUpdate,
         });
     }
 
     /* prettier-ignore */
+
     renderItems(){
         return repeat(this._items, (item) => item[this.valueField], (item,rowIndex)=>{
             const selected=this.selectedValues.has(item[this.valueField])
@@ -71,13 +88,14 @@ class MdList extends MdListElement {
                     .interactive="${ifDefined(item.interactive)}"
                     .rippleOptions="${ifDefined(item.rippleOptions??this.rippleOptions)}"
                     .selected="${selected}"
-                    @click="${this._handleListItemClick}"
+                    @click="${this._handleItemClick}"
                 ></md-list-item>    
             `
         })
     }
 
     /* prettier-ignore */
+
     renderEmptyItems(){
         return html`
             <md-list-item
@@ -104,8 +122,8 @@ class MdList extends MdListElement {
             });
         }
 
-        this.addEventListener("keydown", this._handleListKeydown);
-        this.addEventListener("click", this._handleListClick);
+        this.addEventListener("keydown", this._handleKeydown);
+        this.addEventListener("click", this._handleClick);
     }
 
     disconnectedCallback() {
@@ -115,8 +133,8 @@ class MdList extends MdListElement {
             this.virtualScrollController.destroy();
         }
 
-        this.removeEventListener("keydown", this._handleListKeydown);
-        this.removeEventListener("click", this._handleListClick);
+        this.removeEventListener("keydown", this._handleKeydown);
+        this.removeEventListener("click", this._handleClick);
 
         this.classList.remove("md-list");
     }
@@ -163,26 +181,25 @@ class MdList extends MdListElement {
         return [...((item.trailing?.length && item.trailing) || []), ...trailing];
     }
 
-    _handleListVirtualScrollUpdate({ controller } = {}) {
+    _handleVirtualScrollUpdate(params = {}) {
+        const { controller } = params;
         this.startNode = controller.startNode;
 
         this._items = this._list.slice(controller.startNode, controller.endNode);
     }
 
-    _handleListClick(event) {
+    _handleClick(event) {
         if (this.clearSelection && !event.target.closest(".md-list__item")) {
             event.preventDefault();
 
             this.selectedValues.clear();
             this.requestUpdate();
 
-            this.emit("onListItemSelection", { event, element: this });
+            this.emit("select", { event, element: this });
         }
-
-        this.emit("onListClick", { event, element: this });
     }
 
-    _handleListKeydown(event) {
+    _handleKeydown(event) {
         if (this.selectAll && event.ctrlKey && event.code === "KeyA") {
             event.preventDefault();
 
@@ -191,7 +208,7 @@ class MdList extends MdListElement {
             });
             this.requestUpdate();
 
-            this.emit("onListItemSelection", { event, element: this });
+            this.emit("select", { event, element: this });
         }
 
         if (this.activeRow && (event.key === "ArrowUp" || event.key === "ArrowLeft")) {
@@ -206,7 +223,7 @@ class MdList extends MdListElement {
 
             if (this.selectOnArrowUpActiveRow) {
                 this.select(this.items[this.activeRowIndex]);
-                this.emit("onListItemSelection", { event, element: this });
+                this.emit("select", { event, element: this });
             }
 
             this.requestUpdate();
@@ -224,7 +241,7 @@ class MdList extends MdListElement {
 
             if (this.selectOnArrowDownActiveRow) {
                 this.select(this.items[this.activeRowIndex]);
-                this.emit("onListItemSelection", { event, element: this });
+                this.emit("select", { event, element: this });
             }
 
             this.requestUpdate();
@@ -244,12 +261,11 @@ class MdList extends MdListElement {
                 this.requestUpdate();
             }
 
-            this.emit("onListItemSelection", { event, element: this });
+            this.emit("select", { event, element: this });
         }
-        this.emit("onListKeydown", { event, element: this });
     }
 
-    _handleListItemClick(event) {
+    _handleItemClick(event) {
         const li = event.currentTarget;
         const item = li.item;
 
@@ -267,7 +283,7 @@ class MdList extends MdListElement {
             });
             this.requestUpdate();
 
-            this.emit("onListItemSelection", { event, element: this, item });
+            this.emit("select", { event, element: this, item });
         } else if ((this.multiSelect && event.ctrlKey) || li.hasCheckbox || li.hasSwitch) {
             if (this.selectedValues.has(item[this.valueField])) {
                 this.selectedValues.delete(item[this.valueField]);
@@ -275,10 +291,10 @@ class MdList extends MdListElement {
                 this.selectedValues.add(item[this.valueField]);
             }
             this.requestUpdate();
-            this.emit("onListItemSelection", { event, element: this, item });
+            this.emit("select", { event, element: this, item });
         } else if (this.singleSelect || li.hasRadioButton) {
             this.select(item);
-            this.emit("onListItemSelection", { event, element: this, item });
+            this.emit("select", { event, element: this, item });
         }
         if (this.activeRow) {
             this.activeVisible = false;
@@ -289,9 +305,12 @@ class MdList extends MdListElement {
             this.requestUpdate();
         }
 
-        this.emit("onListItemClick", { event, element: this });
+        this.emit("item-click", { event, element: this });
     }
 
+    /**
+     *
+     */
     select(item) {
         if (item.hasChildren) {
             if (this.expandedValues.has(item[this.valueField])) {

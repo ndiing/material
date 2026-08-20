@@ -1,7 +1,24 @@
 import { html } from "lit";
 import { MdElement } from "../../base/element.js";
 
+/**
+ * @class MdLayoutItem
+ * @extends MdElement
+ */
 class MdLayoutItem extends MdElement {
+    /**
+     * @property {String} region - north,east,south,west,center
+     * @property {Number} size -
+     * @property {Number} collapsedSize -
+     * @property {Boolean} modal -
+     * @property {Boolean} open -
+     * @property {Boolean} expanded -
+     * @property {Boolean} docked -
+     * @property {Boolean} showScrimOnOpen -
+     * @property {Boolean} showScrimOnExpanded -
+     * @property {Boolean} closeOnScrimClick -
+     * @property {Boolean} collapseOnScrimClick -
+     */
     static properties = {
         region: { type: String },
         size: { type: Number },
@@ -31,9 +48,9 @@ class MdLayoutItem extends MdElement {
         this.showScrimOnExpanded = false;
         this.collapseOnScrimClick = false;
 
-        this._handleLayoutItemScrimClick = this._handleLayoutItemScrimClick.bind(this);
-        this._handleLayoutItemTransitionend = this._handleLayoutItemTransitionend.bind(this);
-        this._handleLayoutTransitionend = this._handleLayoutTransitionend.bind(this);
+        this._handleScrimClick = this._handleScrimClick.bind(this);
+        this._handleTransitionend = this._handleTransitionend.bind(this);
+        this._handleTransitionend = this._handleTransitionend.bind(this);
     }
 
     connectedCallback() {
@@ -41,13 +58,13 @@ class MdLayoutItem extends MdElement {
 
         this.classList.add("md-layout__item");
 
-        this.addEventListener("transitionend", this._handleLayoutItemTransitionend);
-        this.parentElement.addEventListener("transitionend", this._handleLayoutTransitionend);
+        this.addEventListener("transitionend", this._handleTransitionend);
+        this.parentElement.addEventListener("transitionend", this._handleTransitionend);
 
         if (!this.scrimElement) {
             this.scrimElement = document.createElement("md-scrim");
             this.parentElement.insertBefore(this.scrimElement, this.nextElementSibling);
-            this.scrimElement.addEventListener("onScrimClick", this._handleLayoutItemScrimClick);
+            this.scrimElement.addEventListener("click", this._handleScrimClick);
         }
 
         this._restoreState();
@@ -59,13 +76,13 @@ class MdLayoutItem extends MdElement {
         this._clearState();
 
         if (this.scrimElement) {
-            this.scrimElement.removeEventListener("onScrimClick", this._handleLayoutItemScrimClick);
+            this.scrimElement.removeEventListener("click", this._handleScrimClick);
             this.scrimElement.remove();
             this.scrimElement = null;
         }
 
-        this.parentElement.removeEventListener("transitionend", this._handleLayoutTransitionend);
-        this.removeEventListener("transitionend", this._handleLayoutItemTransitionend);
+        this.parentElement.removeEventListener("transitionend", this._handleTransitionend);
+        this.removeEventListener("transitionend", this._handleTransitionend);
 
         this.classList.remove("md-layout__item");
     }
@@ -147,7 +164,7 @@ class MdLayoutItem extends MdElement {
         this.parentElement.style.setProperty(`--md-comp-layout-item-${this.region}-size`, `${currentSize}px`);
     }
 
-    _handleLayoutItemScrimClick() {
+    _handleScrimClick() {
         if (this.closeOnScrimClick) {
             this.close();
         }
@@ -156,7 +173,7 @@ class MdLayoutItem extends MdElement {
         }
     }
 
-    _handleLayoutTransitionend(event) {
+    _handleTransitionend(event) {
         if (event.target !== event.currentTarget) {
             return;
         }
@@ -164,7 +181,7 @@ class MdLayoutItem extends MdElement {
         this.parentElement.classList.remove("md-layout-item--expanding");
     }
 
-    _handleLayoutItemTransitionend(event) {
+    _handleTransitionend(event) {
         if (event.target !== event.currentTarget) {
             return;
         }
@@ -172,14 +189,23 @@ class MdLayoutItem extends MdElement {
         this.classList.remove("md-layout-item--expanding");
     }
 
+    /**
+     *
+     */
     show() {
         this.open = true;
     }
 
+    /**
+     *
+     */
     close() {
         this.open = false;
     }
 
+    /**
+     *
+     */
     toggle() {
         if (this.open) {
             this.close();
@@ -188,6 +214,9 @@ class MdLayoutItem extends MdElement {
         }
     }
 
+    /**
+     *
+     */
     expand() {
         if (!this.open) {
             return;
@@ -195,6 +224,9 @@ class MdLayoutItem extends MdElement {
         this.expanded = true;
     }
 
+    /**
+     *
+     */
     collapse() {
         if (!this.open) {
             return;
@@ -202,6 +234,9 @@ class MdLayoutItem extends MdElement {
         this.expanded = false;
     }
 
+    /**
+     *
+     */
     toggleCollapse() {
         if (this.expanded) {
             this.collapse();

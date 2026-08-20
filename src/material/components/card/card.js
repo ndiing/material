@@ -1,7 +1,14 @@
 import { html } from "lit";
 import { MdElement } from "../../base/element.js";
 
+/**
+ * @class MdCard
+ * @extends MdElement
+ */
 class MdCard extends MdElement {
+    /**
+     * @property {String} color - elevated,filled,outlined
+     */
     static properties = {
         color: { type: String },
     };

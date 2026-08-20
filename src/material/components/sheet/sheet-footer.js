@@ -4,7 +4,14 @@ import { styleMap } from "lit/directives/style-map.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { renderButton } from "../../core/template.js";
 
+/**
+ * @class MdSheetFooter
+ * @extends MdElement
+ */
 class MdSheetFooter extends MdElement {
+    /**
+     * @property {Array} buttons -
+     */
     static properties = {
         buttons: { type: Array },
     };

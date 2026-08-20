@@ -2,7 +2,14 @@ import { html } from "lit";
 import { MdElement } from "../../base/element.js";
 import { RippleController } from "../../controller/ripple.js";
 
+/**
+ * @class MdDataTableCell
+ * @extends MdElement
+ */
 class MdDataTableCell extends MdElement {
+    /**
+     * @property {String} label -
+     */
     static properties = {
         label: { type: String },
     };

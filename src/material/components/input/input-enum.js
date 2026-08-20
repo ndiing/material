@@ -3,9 +3,23 @@ import { MdElement } from "../../base/element.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { ref } from "lit/directives/ref.js";
 
+/**
+ * @class MdInputEnum
+ * @extends MdElement
+ *
+ * @fires MdInputEnum#input
+ * @fires MdInputEnum#change
+ * @fires MdInputEnum#keydown
+ * @fires MdInputEnum#focus
+ * @fires MdInputEnum#blur
+ * @fires MdInputEnum#input
+ * @fires MdInputEnum#change
+ */
 class MdInputEnum extends MdElement {
     static formAssociated = true;
 
+    /**
+     */
     static properties = {
         value: { type: String },
         size: { type: Number },
@@ -88,6 +102,9 @@ class MdInputEnum extends MdElement {
         }
     }
 
+    /**
+     *
+     */
     formResetCallback(event) {
         const native = this.getRef("native").value;
 
@@ -111,9 +128,12 @@ class MdInputEnum extends MdElement {
         native.setRangeText(option?.label ?? option, 0, native.value.length, "select");
         this.value = option?.label ?? option;
 
-        this.emit("onInputEnumInput", { element: this });
+        this.emit("input", { element: this });
     }
 
+    /**
+     *
+     */
     autoCorrect() {
         if (!this.options?.length) {
             this.value = "";
@@ -139,18 +159,26 @@ class MdInputEnum extends MdElement {
             }
         }
 
-        this.emit("onInputEnumChange", { element: this });
+        this.emit("change", { element: this });
     }
 
+    /**
+     *
+     */
     stepUp() {
         this._moveIndex(1);
     }
 
+    /**
+     *
+     */
     stepDown() {
         this._moveIndex(-1);
     }
 
     _handleKeydown(event) {
+        event.stopPropagation();
+
         if (event.key === "ArrowUp") {
             event.preventDefault();
             this.stepUp();
@@ -159,26 +187,32 @@ class MdInputEnum extends MdElement {
             this.stepDown();
         }
 
-        this.emit("onInputEnumKeydown", { event, element: this });
+        this.emit("keydown", { event, element: this });
     }
 
     _handleFocus(event) {
+        event.stopPropagation();
+
         this.buffer = "";
         this.validBuffer = "";
 
         const native = this.getRef("native").value;
         native.select();
 
-        this.emit("onInputEnumFocus", { event, element: this });
+        this.emit("focus", { event, element: this });
     }
 
     _handleBlur(event) {
+        event.stopPropagation();
+
         this.autoCorrect();
 
-        this.emit("onInputEnumBlur", { event, element: this });
+        this.emit("blur", { event, element: this });
     }
 
     _handleInput(event) {
+        event.stopPropagation();
+
         const native = this.getRef("native").value;
         const data = event.data || "";
 
@@ -215,18 +249,20 @@ class MdInputEnum extends MdElement {
         this.selectedIndex = this.options.indexOf(this.filtered[this.filteredIndex]);
         if (this.selectedIndex !== -1) {
             const option = this.options[this.selectedIndex];
-            input.setRangeText(option?.label ?? option, 0, input.value.length, "select");
+            native.setRangeText(option?.label ?? option, 0, native.value.length, "select");
             this.value = option?.label ?? option;
 
-            this.emit("onInputEnumInput", { event, element: this });
+            this.emit("input", { event, element: this });
         } else {
             this.value = "";
-            input.setRangeText(this.placeholder, 0, input.value.length, "select");
+            native.setRangeText(this.placeholder, 0, native.value.length, "select");
         }
     }
 
     _handleChange(event) {
-        this.emit("onInputEnumChange", { event, element: this });
+        event.stopPropagation();
+
+        this.emit("change", { event, element: this });
     }
 }
 

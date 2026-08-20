@@ -5,7 +5,16 @@ import { styleMap } from "lit/directives/style-map.js";
 import { choose } from "lit/directives/choose.js";
 import { renderButton, renderIcon, renderIconButton, renderImage } from "../../core/template.js";
 
+/**
+ * @class MdSheetHeader
+ * @extends MdElement
+ */
 class MdSheetHeader extends MdElement {
+    /**
+     * @property {Array} leading -
+     * @property {String} headline -
+     * @property {Array} trailing -
+     */
     static properties = {
         leading: { type: Array },
         headline: { type: String },
@@ -20,6 +29,7 @@ class MdSheetHeader extends MdElement {
     }
 
     /* prettier-ignore */
+
     renderComponent(component,properties){
         return choose(component,[
             ['avatar', () => renderImage({classMap:{'md-sheet__avatar':true,...properties.classMap},shape:'round',...properties})],
@@ -30,6 +40,7 @@ class MdSheetHeader extends MdElement {
     }
 
     /* prettier-ignore */
+
     renderLeading(){
         return html`
             <div class="md-sheet__leading">
@@ -41,6 +52,7 @@ class MdSheetHeader extends MdElement {
     }
 
     /* prettier-ignore */
+
     renderTrailing(){
         return html`
             <div class="md-sheet__trailing">
@@ -52,6 +64,7 @@ class MdSheetHeader extends MdElement {
     }
 
     /* prettier-ignore */
+
     renderContent(){
         return html`
             <div class="md-sheet__content">

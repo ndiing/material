@@ -1,5 +1,9 @@
 import { MediaObserver } from "./observer.js";
 
+/**
+ * @class BreakpointObserver
+ * @extends MediaObserver
+ */
 class BreakpointObserver extends MediaObserver {
     constructor(callback, list) {
         super(callback, [

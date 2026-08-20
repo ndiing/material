@@ -4,6 +4,10 @@ import { MdListElement } from "../../base/list.js";
 import { repeat } from "lit/directives/repeat.js";
 import { styleMap } from "lit/directives/style-map.js";
 
+/**
+ * @class MdPushMenu
+ * @extends MdListElement
+ */
 class MdPushMenu extends MdListElement {
     constructor() {
         super();
@@ -32,7 +36,7 @@ class MdPushMenu extends MdListElement {
                     .label="${item[this.labelField]}"
                     .leading="${this._getLeadingItem(item,parent)}"
                     .trailing="${this._getTrailingItem(item)}"
-                    @click="${this._handleListItemClick}"
+                    @click="${this._handleClick}"
                 ></md-list-item>
             `)}
         `
@@ -66,7 +70,7 @@ class MdPushMenu extends MdListElement {
         return leading;
     }
 
-    _handleListItemClick(event) {
+    _handleClick(event) {
         const li = event.currentTarget;
         const item = li.item;
 

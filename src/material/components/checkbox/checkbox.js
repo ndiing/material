@@ -4,8 +4,18 @@ import { ref } from "lit/directives/ref.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { RippleController } from "../../controller/ripple.js";
 
+/**
+ * @class MdCheckbox
+ * @extends MdElement
+ *
+ * @fires MdCheckbox#invalid
+ * @fires MdCheckbox#input
+ */
 class MdCheckbox extends MdElement {
     static formAssociated = true;
+
+    /**
+     */
     static properties = {
         name: { type: String },
         value: { type: String },
@@ -48,8 +58,8 @@ class MdCheckbox extends MdElement {
                 ?disabled="${ifDefined(this.disabled)}"
                 ?required="${ifDefined(this.required)}"
                 .tabIndex="${ifDefined(this.tabIndex)}"
-                @invalid="${this._handleCheckboxNativeInvalid}"
-                @input="${this._handleCheckboxNativeInput}"
+                @invalid="${this._handleInvalid}"
+                @input="${this._handleInput}"
             >
             <div class="md-checkbox__container">
                 <div class="md-checkbox__icon"></div>
@@ -88,6 +98,9 @@ class MdCheckbox extends MdElement {
         }
     }
 
+    /**
+     *
+     */
     formResetCallback(event) {
         this.indeterminate = this.defaultIndeterminate;
         this.checked = this.defaultChecked;
@@ -100,13 +113,15 @@ class MdCheckbox extends MdElement {
         this._updateValidationClass();
     }
 
-    _handleCheckboxNativeInvalid(event) {
+    _handleInvalid(event) {
+        event.stopPropagation();
         event.preventDefault();
         this.validate();
-        this.emit("onCheckboxNativeInvalid", { event, element: this });
+        this.emit("invalid", { event, element: this });
     }
 
-    _handleCheckboxNativeInput(event) {
+    _handleInput(event) {
+        event.stopPropagation();
         const native = this.getRef("native").value;
         this.indeterminate = native.indeterminate;
         this.checked = native.checked;
@@ -115,13 +130,16 @@ class MdCheckbox extends MdElement {
             this.validate();
         }
 
-        this.emit("onCheckboxNativeInput", { event, element: this });
+        this.emit("input", { event, element: this });
     }
 
     _updateValidationClass() {
         this.classList.toggle("md-checkbox--error", Boolean(this.validationMessage));
     }
 
+    /**
+     *
+     */
     validate() {
         const native = this.getRef("native").value;
         this.validationMessage = native.validationMessage;

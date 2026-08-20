@@ -3,7 +3,17 @@ import { MdElement } from "./element.js";
 import { classMap } from "lit/directives/class-map.js";
 import { getISOWeek, setWeek } from "date-fns";
 
+/**
+ * @class MdDatetimePickerElement
+ * @extends MdElement
+ */
 class MdDatetimePickerElement extends MdElement {
+    /**
+     * @property {Boolean} hour12 -
+     * @property {String} locale -
+     * @property {String} calendarType -
+     * @property {Date} selection -
+     */
     static properties = {
         hour12: { type: Boolean },
         locale: { type: String },
@@ -11,6 +21,9 @@ class MdDatetimePickerElement extends MdElement {
         selection: { type: Date },
     };
 
+    /**
+     *
+     */
     get years() {
         const arr = [];
         const selectionYear = Math.floor(this.selection.getFullYear() / 10) * 10;
@@ -29,23 +42,22 @@ class MdDatetimePickerElement extends MdElement {
         return arr;
     }
 
+    /**
+     *
+     */
     get months() {
         const arr = [];
         const selectionYear = this.selection.getFullYear();
         for (let i = 0; i < 12; i++) {
             const date = new Date(selectionYear, i);
-            const selected =
-                date.getFullYear() === this.selected.getFullYear() && //
-                date.getMonth() === this.selected.getMonth();
+            const selected = date.getFullYear() === this.selected.getFullYear() && date.getMonth() === this.selected.getMonth();
             arr.push({
                 id: date.getMonth(),
                 year: date.getFullYear(),
                 month: date.getMonth(),
                 label: this.monthFormat(date),
                 labelShort: this.monthFormatShort(date),
-                active:
-                    date.getFullYear() === this.current.getFullYear() && //
-                    date.getMonth() === this.current.getMonth(),
+                active: date.getFullYear() === this.current.getFullYear() && date.getMonth() === this.current.getMonth(),
                 selected,
                 leading: [{ component: "icon", icon: selected ? "check" : "" }],
             });
@@ -53,10 +65,16 @@ class MdDatetimePickerElement extends MdElement {
         return arr;
     }
 
+    /**
+     *
+     */
     get weekdays() {
         return this.calendarType === "week" ? this.weekColumns : this.dayColumns;
     }
 
+    /**
+     *
+     */
     get dayColumns() {
         const arr = [];
         for (let i = 0; i < 7; i++) {
@@ -69,6 +87,9 @@ class MdDatetimePickerElement extends MdElement {
         return arr;
     }
 
+    /**
+     *
+     */
     get weekColumns() {
         const arr = [
             {
@@ -85,10 +106,16 @@ class MdDatetimePickerElement extends MdElement {
         return arr;
     }
 
+    /**
+     *
+     */
     get calendar() {
         return this.calendarType === "week" ? this.weekCalendar : this.dayCalendar;
     }
 
+    /**
+     *
+     */
     get dayCalendar() {
         const selectionYear = this.selection.getFullYear();
         const selectionMonth = this.selection.getMonth();
@@ -104,18 +131,9 @@ class MdDatetimePickerElement extends MdElement {
                     month: date.getMonth(),
                     date: date.getDate(),
                     label: this.dateFormat(date),
-                    active:
-                        date.getFullYear() === this.current.getFullYear() && //
-                        date.getMonth() === this.current.getMonth() && //
-                        date.getDate() === this.current.getDate(),
-                    selected:
-                        date.getFullYear() === this.selected.getFullYear() && //
-                        date.getMonth() === this.selected.getMonth() && //
-                        date.getDate() === this.selected.getDate(),
-                    outside: !(
-                        date.getFullYear() === this.selection.getFullYear() && //
-                        date.getMonth() === this.selection.getMonth()
-                    ),
+                    active: date.getFullYear() === this.current.getFullYear() && date.getMonth() === this.current.getMonth() && date.getDate() === this.current.getDate(),
+                    selected: date.getFullYear() === this.selected.getFullYear() && date.getMonth() === this.selected.getMonth() && date.getDate() === this.selected.getDate(),
+                    outside: !(date.getFullYear() === this.selection.getFullYear() && date.getMonth() === this.selection.getMonth()),
                     sunday: date.getDay() === 0,
                 });
             }
@@ -124,6 +142,9 @@ class MdDatetimePickerElement extends MdElement {
         return rows;
     }
 
+    /**
+     *
+     */
     get weekCalendar() {
         const selectionYear = this.selection.getFullYear();
         const selectionMonth = this.selection.getMonth();
@@ -138,41 +159,25 @@ class MdDatetimePickerElement extends MdElement {
                 month: weekDate.getMonth(),
                 week: getISOWeek(weekDate),
                 label: getISOWeek(weekDate),
-                active:
-                    weekDate.getFullYear() === this.current.getFullYear() && //
-                    getISOWeek(weekDate) === getISOWeek(this.current),
-                selected:
-                    weekDate.getFullYear() === this.selected.getFullYear() && //
-                    getISOWeek(weekDate) === getISOWeek(this.selected),
+                active: weekDate.getFullYear() === this.current.getFullYear() && getISOWeek(weekDate) === getISOWeek(this.current),
+                selected: weekDate.getFullYear() === this.selected.getFullYear() && getISOWeek(weekDate) === getISOWeek(this.selected),
                 sunday: weekDate.getDay() === 0,
             });
             for (let j = 0; j < 7; j++) {
                 const k = i * 7 + j + 1;
                 const date = new Date(selectionYear, selectionMonth, k - firstDayOfMonth);
-                const selected =
-                    date.getFullYear() === this.selected.getFullYear() && //
-                    getISOWeek(date) === getISOWeek(this.selected);
+                const selected = date.getFullYear() === this.selected.getFullYear() && getISOWeek(date) === getISOWeek(this.selected);
                 cells.push({
                     year: date.getFullYear(),
                     month: date.getMonth(),
                     date: date.getDate(),
                     label: this.dateFormat(date),
                     selected,
-                    outside: !(
-                        date.getFullYear() === this.selection.getFullYear() && //
-                        date.getMonth() === this.selection.getMonth()
-                    ),
+                    outside: !(date.getFullYear() === this.selection.getFullYear() && date.getMonth() === this.selection.getMonth()),
                     sunday: date.getDay() === 0,
-                    rangeStart:
-                        selected && //
-                        date.getDay() === 1,
-                    inRange:
-                        selected && //
-                        date.getDay() !== 1 && //
-                        date.getDay() !== 0,
-                    rangeEnd:
-                        selected && //
-                        date.getDay() === 0,
+                    rangeStart: selected && date.getDay() === 1,
+                    inRange: selected && date.getDay() !== 1 && date.getDay() !== 0,
+                    rangeEnd: selected && date.getDay() === 0,
                 });
             }
             rows.push(cells);
@@ -180,6 +185,9 @@ class MdDatetimePickerElement extends MdElement {
         return rows;
     }
 
+    /**
+     *
+     */
     get hours() {
         const hourCount = this.hour12 ? 12 : 24;
         const selectionYear = this.selection.getFullYear();
@@ -201,6 +209,9 @@ class MdDatetimePickerElement extends MdElement {
         return arr;
     }
 
+    /**
+     *
+     */
     get minutes() {
         const selectionYear = this.selection.getFullYear();
         const selectionMonth = this.selection.getMonth();
@@ -223,6 +234,9 @@ class MdDatetimePickerElement extends MdElement {
         return arr;
     }
 
+    /**
+     *
+     */
     get info() {
         return {
             monthShort: this.infoFormat.monthShort(this.selection),

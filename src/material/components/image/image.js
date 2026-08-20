@@ -4,7 +4,23 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { ref } from "lit/directives/ref.js";
 import { styleMap } from "lit/directives/style-map.js";
 
+/**
+ * @class MdImage
+ * @extends MdElement
+ *
+ * @fires MdImage#load
+ * @fires MdImage#error
+ */
 class MdImage extends MdElement {
+    /**
+     * @property {String} src -
+     * @property {String} alt -
+     * @property {String} loading -
+     * @property {String} shape - round,square,sharp
+     * @property {String} errorSrc -
+     * @property {Boolean} error -
+     * @property {Boolean} loaded -
+     */
     static properties = {
         src: { type: String },
         alt: { type: String },
@@ -23,7 +39,7 @@ class MdImage extends MdElement {
         this.shape = "square";
         this.errorSrc = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=";
 
-        this._handleImageResizeObserver = this._handleImageResizeObserver.bind(this);
+        this._handleResizeObserver = this._handleResizeObserver.bind(this);
     }
 
     /* prettier-ignore */
@@ -34,8 +50,8 @@ class MdImage extends MdElement {
                 src="${this.error?this.errorSrc:ifDefined(this.src)}"
                 alt="${ifDefined(this.alt??'alt')}"
                 loading="${ifDefined(this.loading)}"
-                @load="${this._handleImageNativeLoad}"
-                @error="${this._handleImageNativeError}"
+                @load="${this._handleLoad}"
+                @error="${this._handleError}"
             >
         `
     }
@@ -45,7 +61,7 @@ class MdImage extends MdElement {
 
         this.classList.add("md-image");
 
-        this.resizeObserver = new ResizeObserver(this._handleImageResizeObserver);
+        this.resizeObserver = new ResizeObserver(this._handleResizeObserver);
         this.resizeObserver.observe(this);
     }
 
@@ -86,22 +102,26 @@ class MdImage extends MdElement {
         }
     }
 
-    _handleImageResizeObserver() {
+    _handleResizeObserver() {
         window.requestAnimationFrame(() => {
             this._updateSquareRadius();
         });
     }
 
-    _handleImageNativeLoad(event) {
+    _handleLoad(event) {
+        event.stopPropagation();
+
         this.loaded = true;
 
-        this.emit("onImageNativeLoad", { event, element: this });
+        this.emit("load", { event, element: this });
     }
 
-    _handleImageNativeError(event) {
+    _handleError(event) {
+        event.stopPropagation();
+
         this.error = true;
 
-        this.emit("onImageNativeError", { event, element: this });
+        this.emit("error", { event, element: this });
     }
 }
 

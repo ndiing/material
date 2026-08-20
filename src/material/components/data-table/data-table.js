@@ -6,7 +6,42 @@ import { classMap } from "lit/directives/class-map.js";
 import { VirtualScrollController } from "../../controller/virtual-scroll.js";
 import { RippleController } from "../../controller/ripple.js";
 
+/**
+ * @class MdDataTable
+ * @extends MdElement
+ *
+ * @fires MdDataTable#row-select
+ * @fires MdDataTable#row-select
+ * @fires MdDataTable#row-select
+ * @fires MdDataTable#row-select
+ * @fires MdDataTable#row-select
+ * @fires MdDataTable#row-select
+ * @fires MdDataTable#row-select
+ * @fires MdDataTable#row-select
+ * @fires MdDataTable#row-click
+ * @fires MdDataTable#cell-click
+ */
 class MdDataTable extends MdElement {
+    /**
+     * @property {Array} columns -
+     * @property {Array} rows -
+     * @property {String} valueField -
+     * @property {Boolean} clearSelection -
+     * @property {Boolean} selectAll -
+     * @property {Boolean} activeRow -
+     * @property {Boolean} scrollOnArrowUpActiveRow -
+     * @property {Boolean} selectOnArrowUpActiveRow -
+     * @property {Boolean} scrollOnArrowDownActiveRow -
+     * @property {Boolean} selectOnArrowDownActiveRow -
+     * @property {Boolean} activeCell -
+     * @property {Boolean} selectOnEnterActiveRow -
+     * @property {Boolean} selectRange -
+     * @property {Boolean} multiSelect -
+     * @property {Boolean} singleSelect -
+     * @property {Boolean} activeVisible -
+     * @property {Boolean} checkbox -
+     * @property {Array} _rows -
+     */
     static properties = {
         columns: { type: Array },
         rows: { type: Array },
@@ -39,12 +74,13 @@ class MdDataTable extends MdElement {
         this.activeCellIndex = 0;
         this.checkbox = true;
 
-        this._handleDataTableVirtualScrollUpdate = this._handleDataTableVirtualScrollUpdate.bind(this);
-        this._handleDataTableKeydown = this._handleDataTableKeydown.bind(this);
-        this._handleDataTableClick = this._handleDataTableClick.bind(this);
+        this._handleVirtualScrollUpdate = this._handleVirtualScrollUpdate.bind(this);
+        this._handleKeydown = this._handleKeydown.bind(this);
+        this._handleClick = this._handleClick.bind(this);
     }
 
     /* prettier-ignore */
+
     renderThead(){
         const size=this.selectedValues.size
         const checked = size&&size===this.rows.length
@@ -60,7 +96,7 @@ class MdDataTable extends MdElement {
                                     .tabIndex="${-1}"
                                     .indeterminate="${indeterminate}"
                                     .checked="${checked}"
-                                    @onCheckboxNativeInput="${this._handleDataTableHeaderCellCheckboxNativeInput}"
+                                    @input="${this._handleHeaderCellCheckboxNativeInput}"
                                 ></md-checkbox>
                             </div>
                         </th>
@@ -80,6 +116,7 @@ class MdDataTable extends MdElement {
     }
 
     /* prettier-ignore */
+
     renderTbody(){
         return html`
             <tbody
@@ -95,7 +132,7 @@ class MdDataTable extends MdElement {
                                 'md-data-table__row--selected':selected
                             })}"
                             .row="${row}"
-                            @click="${this._handleDataTableRowClick}"
+                            @click="${this._handleRowClick}"
                         >
                             ${this.checkbox?html`
                                 <td>
@@ -104,7 +141,7 @@ class MdDataTable extends MdElement {
                                             class="md-data-table__checkbox"
                                             .tabIndex="${-1}"
                                             .checked="${selected}"
-                                            @onCheckboxNativeInput="${this._handleDataTableCellCheckboxNativeInput}"
+                                            @input="${this._handleCheckboxNativeInput}"
                                         ></md-checkbox>
                                     </div>
                                 </td>
@@ -115,7 +152,7 @@ class MdDataTable extends MdElement {
                                         'md-data-table__cell--active':((this.activeVisible&&this.activeRow&&this.activeCell)&&(this.activeRowIndex-this.startNode)===rowIndex&&this.activeCellIndex===cellIndex)
                                     })}"
                                     .cell="${cell}"
-                                    @click="${this._handleDataTableCellClick}"
+                                    @click="${this._handleCellClick}"
                                 >
                                     <md-data-table-cell
                                         .label="${row[cell.name]}"
@@ -130,6 +167,7 @@ class MdDataTable extends MdElement {
     }
 
     /* prettier-ignore */
+
     renderEmptyTbody(){
         return html`
             <tbody>
@@ -168,14 +206,14 @@ class MdDataTable extends MdElement {
                 this.virtualScrollController = new VirtualScrollController(this.querySelector("table"), {
                     register: false,
                     rowHeight: 52,
-                    onUpdate: this._handleDataTableVirtualScrollUpdate,
+                    onUpdate: this._handleVirtualScrollUpdate,
                 });
             }
             this.virtualScrollController.init();
         });
 
-        this.addEventListener("keydown", this._handleDataTableKeydown);
-        this.addEventListener("click", this._handleDataTableClick);
+        this.addEventListener("keydown", this._handleKeydown);
+        this.addEventListener("click", this._handleClick);
     }
 
     disconnectedCallback() {
@@ -183,8 +221,8 @@ class MdDataTable extends MdElement {
 
         this.virtualScrollController.destroy();
 
-        this.removeEventListener("keydown", this._handleDataTableKeydown);
-        this.removeEventListener("click", this._handleDataTableClick);
+        this.removeEventListener("keydown", this._handleKeydown);
+        this.removeEventListener("click", this._handleClick);
 
         this.classList.remove("md-data-table");
     }
@@ -200,7 +238,7 @@ class MdDataTable extends MdElement {
         }
     }
 
-    _handleDataTableHeaderCellCheckboxNativeInput(event) {
+    _handleHeaderCellCheckboxNativeInput(event) {
         const checkbox = event.detail.element;
 
         if (checkbox.checked) {
@@ -214,29 +252,28 @@ class MdDataTable extends MdElement {
         this.requestUpdate();
     }
 
-    _handleDataTableCellCheckboxNativeInput(event) {}
+    _handleCheckboxNativeInput(event) {}
 
-    _handleDataTableVirtualScrollUpdate({ controller } = {}) {
+    _handleVirtualScrollUpdate(params = {}) {
+        const { controller } = params;
         this.startNode = controller.startNode;
         this.endNode = controller.endNode;
 
         this._rows = this.rows.slice(controller.startNode, controller.endNode);
     }
 
-    _handleDataTableClick(event) {
+    _handleClick(event) {
         if (this.clearSelection && !event.target.closest("tr")) {
             event.preventDefault();
 
             this.selectedValues.clear();
             this.requestUpdate();
 
-            this.emit("onDataTableRowSelection", { event, element: this });
+            this.emit("row-select", { event, element: this });
         }
-
-        this.emit("onDataTableClick", { event, element: this });
     }
 
-    _handleDataTableKeydown(event) {
+    _handleKeydown(event) {
         if (this.selectAll && event.ctrlKey && event.code === "KeyA") {
             event.preventDefault();
 
@@ -245,7 +282,7 @@ class MdDataTable extends MdElement {
             });
             this.requestUpdate();
 
-            this.emit("onDataTableRowSelection", { event, element: this });
+            this.emit("row-select", { event, element: this });
         }
 
         if (this.activeRow && event.key === "ArrowUp") {
@@ -260,7 +297,7 @@ class MdDataTable extends MdElement {
 
             if (this.selectOnArrowUpActiveRow) {
                 this.select(this.rows[this.activeRowIndex][this.valueField]);
-                this.emit("onDataTableRowSelection", { event, element: this });
+                this.emit("row-select", { event, element: this });
             }
 
             this.requestUpdate();
@@ -278,7 +315,7 @@ class MdDataTable extends MdElement {
 
             if (this.selectOnArrowDownActiveRow) {
                 this.select(this.rows[this.activeRowIndex][this.valueField]);
-                this.emit("onDataTableRowSelection", { event, element: this });
+                this.emit("row-select", { event, element: this });
             }
 
             this.requestUpdate();
@@ -310,13 +347,11 @@ class MdDataTable extends MdElement {
             this.select(this.rows[this.activeRowIndex][this.valueField]);
             this.requestUpdate();
 
-            this.emit("onDataTableRowSelection", { event, element: this });
+            this.emit("row-select", { event, element: this });
         }
-
-        this.emit("onDataTableKeydown", { event, element: this });
     }
 
-    _handleDataTableRowClick(event) {
+    _handleRowClick(event) {
         const tr = event.currentTarget;
         const row = tr.row;
 
@@ -333,7 +368,7 @@ class MdDataTable extends MdElement {
                 }
             });
 
-            this.emit("onDataTableRowSelection", { event, element: this });
+            this.emit("row-select", { event, element: this });
         } else if ((this.multiSelect && event.ctrlKey) || this.checkbox) {
             if (this.selectedValues.has(row[this.valueField])) {
                 this.selectedValues.delete(row[this.valueField]);
@@ -341,18 +376,18 @@ class MdDataTable extends MdElement {
                 this.selectedValues.add(row[this.valueField]);
             }
 
-            this.emit("onDataTableRowSelection", { event, element: this });
+            this.emit("row-select", { event, element: this });
         } else if (this.singleSelect) {
             this.select(row[this.valueField]);
 
-            this.emit("onDataTableRowSelection", { event, element: this });
+            this.emit("row-select", { event, element: this });
         }
 
         this.requestUpdate();
-        this.emit("onDataTableRowClick", { event, element: this });
+        this.emit("row-click", { event, element: this });
     }
 
-    _handleDataTableCellClick(event) {
+    _handleCellClick(event) {
         if (!(this.activeRow && this.activeCell)) {
             return;
         }
@@ -364,9 +399,12 @@ class MdDataTable extends MdElement {
         this.activeRowIndex = tr.sectionRowIndex + this.startNode;
         this.activeCellIndex = td.cellIndex;
 
-        this.emit("onDataTableCellClick", { event, element: this });
+        this.emit("cell-click", { event, element: this });
     }
 
+    /**
+     *
+     */
     select(id) {
         this.selectedValues.clear();
         this.selectedValues.add(id);

@@ -3,9 +3,23 @@ import { MdElement } from "../../base/element.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { ref } from "lit/directives/ref.js";
 
+/**
+ * @class MdInputSegment
+ * @extends MdElement
+ *
+ * @fires MdInputSegment#input
+ * @fires MdInputSegment#change
+ * @fires MdInputSegment#keydown
+ * @fires MdInputSegment#focus
+ * @fires MdInputSegment#blur
+ * @fires MdInputSegment#input
+ * @fires MdInputSegment#change
+ */
 class MdInputSegment extends MdElement {
     static formAssociated = true;
 
+    /**
+     */
     static properties = {
         value: { type: String },
         size: { type: Number },
@@ -91,6 +105,9 @@ class MdInputSegment extends MdElement {
         }
     }
 
+    /**
+     *
+     */
     formResetCallback(event) {
         const native = this.getRef("native").value;
 
@@ -123,9 +140,12 @@ class MdInputSegment extends MdElement {
         native.setRangeText(value, 0, native.value.length, "select");
         this.value = value;
 
-        this.emit("onInputSegmentInput", { element: this });
+        this.emit("input", { element: this });
     }
 
+    /**
+     *
+     */
     autoCorrect() {
         let value = Number(this.value);
 
@@ -140,18 +160,26 @@ class MdInputSegment extends MdElement {
 
         this.value = value;
 
-        this.emit("onInputSegmentChange", { element: this });
+        this.emit("change", { element: this });
     }
 
+    /**
+     *
+     */
     stepUp() {
         this._moveNumber(1);
     }
 
+    /**
+     *
+     */
     stepDown() {
         this._moveNumber(-1);
     }
 
     _handleKeydown(event) {
+        event.stopPropagation();
+
         if (event.key === "ArrowUp") {
             event.preventDefault();
             this.stepUp();
@@ -160,25 +188,31 @@ class MdInputSegment extends MdElement {
             this.stepDown();
         }
 
-        this.emit("onInputSegmentKeydown", { event, element: this });
+        this.emit("keydown", { event, element: this });
     }
 
     _handleFocus(event) {
+        event.stopPropagation();
+
         this.buffer = "";
 
         const native = this.getRef("native").value;
         native.select();
 
-        this.emit("onInputSegmentFocus", { event, element: this });
+        this.emit("focus", { event, element: this });
     }
 
     _handleBlur(event) {
+        event.stopPropagation();
+
         this.autoCorrect();
 
-        this.emit("onInputSegmentBlur", { event, element: this });
+        this.emit("blur", { event, element: this });
     }
 
     _handleInput(event) {
+        event.stopPropagation();
+
         const native = this.getRef("native").value;
         const data = (event.data || "").replace(/\D/, "");
 
@@ -200,18 +234,20 @@ class MdInputSegment extends MdElement {
         }
         value = this._formatNumber(value);
 
-        input.setRangeText(value, 0, input.value.length, "select");
+        native.setRangeText(value, 0, native.value.length, "select");
 
         if (this.buffer.length === this.maxLength) {
             this.buffer = "";
             this.value = value;
 
-            this.emit("onInputSegmentInput", { event, element: this });
+            this.emit("input", { event, element: this });
         }
     }
 
     _handleChange(event) {
-        this.emit("onInputSegmentChange", { event, element: this });
+        event.stopPropagation();
+
+        this.emit("change", { event, element: this });
     }
 }
 

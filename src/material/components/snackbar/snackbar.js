@@ -3,7 +3,21 @@ import { MdElement } from "../../base/element.js";
 import { choose } from "lit/directives/choose.js";
 import { renderButton, renderIconButton } from "../../core/template.js";
 
+/**
+ * @class MdSnackbar
+ * @extends MdElement
+ *
+ * @fires MdSnackbar#after-close
+ * @fires MdSnackbar#after-show
+ * @fires MdSnackbar#show
+ * @fires MdSnackbar#close
+ */
 class MdSnackbar extends MdElement {
+    /**
+     * @property {String} supporting -
+     * @property {Array} actions -
+     * @property {Boolean} open -
+     */
     static properties = {
         supporting: { type: String },
         actions: { type: Array },
@@ -15,10 +29,11 @@ class MdSnackbar extends MdElement {
 
         this.actions = [];
 
-        this._handleSnackbarAnimationend = this._handleSnackbarAnimationend.bind(this);
+        this._handleAnimationend = this._handleAnimationend.bind(this);
     }
 
     /* prettier-ignore */
+
     renderComponent(component,properties){
         return choose(component,[
             ['icon-button', () => renderIconButton({ classMap: { "md-snackbar__icon-button": true, ...properties.classMap }, color:'standard', ...properties })],
@@ -27,6 +42,7 @@ class MdSnackbar extends MdElement {
     }
 
     /* prettier-ignore */
+
     renderActions(){
         return html`
             <div class="md-snackbar__actions">
@@ -50,12 +66,12 @@ class MdSnackbar extends MdElement {
 
         this.classList.add("md-snackbar");
 
-        this.addEventListener("animationend", this._handleSnackbarAnimationend);
+        this.addEventListener("animationend", this._handleAnimationend);
     }
 
     disconnectedCallback() {
         super.disconnectedCallback();
-        this.removeEventListener("animationend", this._handleSnackbarAnimationend);
+        this.removeEventListener("animationend", this._handleAnimationend);
 
         this.classList.remove("md-snackbar");
     }
@@ -75,26 +91,37 @@ class MdSnackbar extends MdElement {
         }
     }
 
-    _handleSnackbarAnimationend(event) {
+    _handleAnimationend(event) {
         if (event.target !== event.currentTarget) {
             return;
         }
         if (!this.open) {
             this.classList.remove("md-snackbar--close");
-            this.emit("onSnackbarClosed", { element: this });
+            this.emit("after-close", { element: this });
         } else {
-            this.emit("onSnackbarShowed", { element: this });
+            this.emit("after-show", { element: this });
         }
     }
 
+    /**
+     *
+     */
     show() {
         this.open = true;
-        this.emit("onSnackbarShow", { element: this });
+        this.emit("show", { element: this });
     }
+
+    /**
+     *
+     */
     close() {
         this.open = false;
-        this.emit("onSnackbarClose", { element: this });
+        this.emit("close", { element: this });
     }
+
+    /**
+     *
+     */
     toggle() {
         if (this.open) {
             this.close();
